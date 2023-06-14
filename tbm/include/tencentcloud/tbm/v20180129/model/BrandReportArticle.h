@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取文章标题
                      * @return Title 文章标题
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置文章标题
-                     * @param Title 文章标题
+                     * @param _title 文章标题
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取文章url地址
                      * @return Url 文章url地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置文章url地址
-                     * @param Url 文章url地址
+                     * @param _url 文章url地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取文章来源
                      * @return FromSite 文章来源
+                     * 
                      */
                     std::string GetFromSite() const;
 
                     /**
                      * 设置文章来源
-                     * @param FromSite 文章来源
+                     * @param _fromSite 文章来源
+                     * 
                      */
                     void SetFromSite(const std::string& _fromSite);
 
                     /**
                      * 判断参数 FromSite 是否已赋值
                      * @return FromSite 是否已赋值
+                     * 
                      */
                     bool FromSiteHasBeenSet() const;
 
                     /**
                      * 获取文章发表日期
                      * @return PubTime 文章发表日期
+                     * 
                      */
                     std::string GetPubTime() const;
 
                     /**
                      * 设置文章发表日期
-                     * @param PubTime 文章发表日期
+                     * @param _pubTime 文章发表日期
+                     * 
                      */
                     void SetPubTime(const std::string& _pubTime);
 
                     /**
                      * 判断参数 PubTime 是否已赋值
                      * @return PubTime 是否已赋值
+                     * 
                      */
                     bool PubTimeHasBeenSet() const;
 
                     /**
                      * 获取文章标识
                      * @return Flag 文章标识
+                     * 
                      */
                     uint64_t GetFlag() const;
 
                     /**
                      * 设置文章标识
-                     * @param Flag 文章标识
+                     * @param _flag 文章标识
+                     * 
                      */
                     void SetFlag(const uint64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
                     /**
                      * 获取文章热度值
                      * @return Hot 文章热度值
+                     * 
                      */
                     uint64_t GetHot() const;
 
                     /**
                      * 设置文章热度值
-                     * @param Hot 文章热度值
+                     * @param _hot 文章热度值
+                     * 
                      */
                     void SetHot(const uint64_t& _hot);
 
                     /**
                      * 判断参数 Hot 是否已赋值
                      * @return Hot 是否已赋值
+                     * 
                      */
                     bool HotHasBeenSet() const;
 
                     /**
                      * 获取文章来源等级
                      * @return Level 文章来源等级
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置文章来源等级
-                     * @param Level 文章来源等级
+                     * @param _level 文章来源等级
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取文章摘要
                      * @return Abstract 文章摘要
+                     * 
                      */
                     std::string GetAbstract() const;
 
                     /**
                      * 设置文章摘要
-                     * @param Abstract 文章摘要
+                     * @param _abstract 文章摘要
+                     * 
                      */
                     void SetAbstract(const std::string& _abstract);
 
                     /**
                      * 判断参数 Abstract 是否已赋值
                      * @return Abstract 是否已赋值
+                     * 
                      */
                     bool AbstractHasBeenSet() const;
 
                     /**
                      * 获取文章ID
                      * @return ArticleId 文章ID
+                     * 
                      */
                     std::string GetArticleId() const;
 
                     /**
                      * 设置文章ID
-                     * @param ArticleId 文章ID
+                     * @param _articleId 文章ID
+                     * 
                      */
                     void SetArticleId(const std::string& _articleId);
 
                     /**
                      * 判断参数 ArticleId 是否已赋值
                      * @return ArticleId 是否已赋值
+                     * 
                      */
                     bool ArticleIdHasBeenSet() const;
 

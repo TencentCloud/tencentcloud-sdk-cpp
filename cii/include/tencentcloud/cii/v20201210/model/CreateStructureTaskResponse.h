@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取本次结构化任务的ID
                      * @return TaskId 本次结构化任务的ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

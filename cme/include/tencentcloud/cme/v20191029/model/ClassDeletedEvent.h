@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取删除的分类归属。
                      * @return Owner 删除的分类归属。
+                     * 
                      */
                     Entity GetOwner() const;
 
                     /**
                      * 设置删除的分类归属。
-                     * @param Owner 删除的分类归属。
+                     * @param _owner 删除的分类归属。
+                     * 
                      */
                     void SetOwner(const Entity& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取删除的分类路径列表。
                      * @return ClassPathSet 删除的分类路径列表。
+                     * 
                      */
                     std::vector<std::string> GetClassPathSet() const;
 
                     /**
                      * 设置删除的分类路径列表。
-                     * @param ClassPathSet 删除的分类路径列表。
+                     * @param _classPathSet 删除的分类路径列表。
+                     * 
                      */
                     void SetClassPathSet(const std::vector<std::string>& _classPathSet);
 
                     /**
                      * 判断参数 ClassPathSet 是否已赋值
                      * @return ClassPathSet 是否已赋值
+                     * 
                      */
                     bool ClassPathSetHasBeenSet() const;
 

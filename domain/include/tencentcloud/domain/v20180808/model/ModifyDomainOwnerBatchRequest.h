@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取要过户的域名。
                      * @return Domains 要过户的域名。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置要过户的域名。
-                     * @param Domains 要过户的域名。
+                     * @param _domains 要过户的域名。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
                     /**
                      * 获取转入账户的uin。
                      * @return NewOwnerUin 转入账户的uin。
+                     * 
                      */
                     std::string GetNewOwnerUin() const;
 
                     /**
                      * 设置转入账户的uin。
-                     * @param NewOwnerUin 转入账户的uin。
+                     * @param _newOwnerUin 转入账户的uin。
+                     * 
                      */
                     void SetNewOwnerUin(const std::string& _newOwnerUin);
 
                     /**
                      * 判断参数 NewOwnerUin 是否已赋值
                      * @return NewOwnerUin 是否已赋值
+                     * 
                      */
                     bool NewOwnerUinHasBeenSet() const;
 
                     /**
                      * 获取是否同时转移对应的 DNS 解析域名，默认false
                      * @return TransferDns 是否同时转移对应的 DNS 解析域名，默认false
+                     * 
                      */
                     bool GetTransferDns() const;
 
                     /**
                      * 设置是否同时转移对应的 DNS 解析域名，默认false
-                     * @param TransferDns 是否同时转移对应的 DNS 解析域名，默认false
+                     * @param _transferDns 是否同时转移对应的 DNS 解析域名，默认false
+                     * 
                      */
                     void SetTransferDns(const bool& _transferDns);
 
                     /**
                      * 判断参数 TransferDns 是否已赋值
                      * @return TransferDns 是否已赋值
+                     * 
                      */
                     bool TransferDnsHasBeenSet() const;
 
                     /**
                      * 获取转入账户的appid。
                      * @return NewOwnerAppId 转入账户的appid。
+                     * 
                      */
                     std::string GetNewOwnerAppId() const;
 
                     /**
                      * 设置转入账户的appid。
-                     * @param NewOwnerAppId 转入账户的appid。
+                     * @param _newOwnerAppId 转入账户的appid。
+                     * 
                      */
                     void SetNewOwnerAppId(const std::string& _newOwnerAppId);
 
                     /**
                      * 判断参数 NewOwnerAppId 是否已赋值
                      * @return NewOwnerAppId 是否已赋值
+                     * 
                      */
                     bool NewOwnerAppIdHasBeenSet() const;
 

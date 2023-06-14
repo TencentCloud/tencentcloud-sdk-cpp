@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取手机或者邮箱号。
                      * @return Code 手机或者邮箱号。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置手机或者邮箱号。
-                     * @param Code 手机或者邮箱号。
+                     * @param _code 手机或者邮箱号。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取1：手机  2：邮箱。
                      * @return Type 1：手机  2：邮箱。
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置1：手机  2：邮箱。
-                     * @param Type 1：手机  2：邮箱。
+                     * @param _type 1：手机  2：邮箱。
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

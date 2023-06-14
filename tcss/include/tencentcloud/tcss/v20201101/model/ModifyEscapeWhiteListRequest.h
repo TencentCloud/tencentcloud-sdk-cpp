@@ -59,6 +59,7 @@ namespace TencentCloud
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
+                     * 
                      */
                     std::vector<std::string> GetEventType() const;
 
@@ -71,7 +72,7 @@ namespace TencentCloud
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
-                     * @param EventType 加白名单事件类型
+                     * @param _eventType 加白名单事件类型
    ESCAPE_CGROUPS：利用cgroup机制逃逸
    ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
    ESCAPE_DOCKER_API：访问Docker API接口逃逸
@@ -79,30 +80,35 @@ namespace TencentCloud
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
+                     * 
                      */
                     void SetEventType(const std::vector<std::string>& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取白名单记录ID
                      * @return IDSet 白名单记录ID
+                     * 
                      */
                     std::vector<int64_t> GetIDSet() const;
 
                     /**
                      * 设置白名单记录ID
-                     * @param IDSet 白名单记录ID
+                     * @param _iDSet 白名单记录ID
+                     * 
                      */
                     void SetIDSet(const std::vector<int64_t>& _iDSet);
 
                     /**
                      * 判断参数 IDSet 是否已赋值
                      * @return IDSet 是否已赋值
+                     * 
                      */
                     bool IDSetHasBeenSet() const;
 

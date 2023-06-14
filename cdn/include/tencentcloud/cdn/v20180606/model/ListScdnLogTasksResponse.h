@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取日志下载任务详情
                      * @return TaskList 日志下载任务详情
+                     * 
                      */
                     std::vector<ScdnLogTaskDetail> GetTaskList() const;
 
                     /**
                      * 判断参数 TaskList 是否已赋值
                      * @return TaskList 是否已赋值
+                     * 
                      */
                     bool TaskListHasBeenSet() const;
 
                     /**
                      * 获取查询到的下载任务的总数
                      * @return TotalCount 查询到的下载任务的总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

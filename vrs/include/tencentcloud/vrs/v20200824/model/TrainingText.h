@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextId 文本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTextId() const;
 
                     /**
                      * 设置文本ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextId 文本ID
+                     * @param _textId 文本ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextId(const std::string& _textId);
 
                     /**
                      * 判断参数 TextId 是否已赋值
                      * @return TextId 是否已赋值
+                     * 
                      */
                     bool TextIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 文本
+                     * @param _text 文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

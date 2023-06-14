@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取授权书的下载地址
                      * @return CertificateUrls 授权书的下载地址
+                     * 
                      */
                     std::vector<std::string> GetCertificateUrls() const;
 
                     /**
                      * 判断参数 CertificateUrls 是否已赋值
                      * @return CertificateUrls 是否已赋值
+                     * 
                      */
                     bool CertificateUrlsHasBeenSet() const;
 

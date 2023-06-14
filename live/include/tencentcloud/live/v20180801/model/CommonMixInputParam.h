@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return InputStreamName 输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。
 当LayoutParams.InputType=0(音视频)/4(纯音频)/5(纯视频)时，该值为需要混流的流名称。
 当LayoutParams.InputType=2(图片)/3(画布)时，该值仅用作标识输入，可用类似Canvas1、Pictrue1的名称。
+                     * 
                      */
                     std::string GetInputStreamName() const;
 
@@ -62,51 +63,59 @@ namespace TencentCloud
                      * 设置输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。
 当LayoutParams.InputType=0(音视频)/4(纯音频)/5(纯视频)时，该值为需要混流的流名称。
 当LayoutParams.InputType=2(图片)/3(画布)时，该值仅用作标识输入，可用类似Canvas1、Pictrue1的名称。
-                     * @param InputStreamName 输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。
+                     * @param _inputStreamName 输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。
 当LayoutParams.InputType=0(音视频)/4(纯音频)/5(纯视频)时，该值为需要混流的流名称。
 当LayoutParams.InputType=2(图片)/3(画布)时，该值仅用作标识输入，可用类似Canvas1、Pictrue1的名称。
+                     * 
                      */
                     void SetInputStreamName(const std::string& _inputStreamName);
 
                     /**
                      * 判断参数 InputStreamName 是否已赋值
                      * @return InputStreamName 是否已赋值
+                     * 
                      */
                     bool InputStreamNameHasBeenSet() const;
 
                     /**
                      * 获取输入流布局参数。
                      * @return LayoutParams 输入流布局参数。
+                     * 
                      */
                     CommonMixLayoutParams GetLayoutParams() const;
 
                     /**
                      * 设置输入流布局参数。
-                     * @param LayoutParams 输入流布局参数。
+                     * @param _layoutParams 输入流布局参数。
+                     * 
                      */
                     void SetLayoutParams(const CommonMixLayoutParams& _layoutParams);
 
                     /**
                      * 判断参数 LayoutParams 是否已赋值
                      * @return LayoutParams 是否已赋值
+                     * 
                      */
                     bool LayoutParamsHasBeenSet() const;
 
                     /**
                      * 获取输入流裁剪参数。
                      * @return CropParams 输入流裁剪参数。
+                     * 
                      */
                     CommonMixCropParams GetCropParams() const;
 
                     /**
                      * 设置输入流裁剪参数。
-                     * @param CropParams 输入流裁剪参数。
+                     * @param _cropParams 输入流裁剪参数。
+                     * 
                      */
                     void SetCropParams(const CommonMixCropParams& _cropParams);
 
                     /**
                      * 判断参数 CropParams 是否已赋值
                      * @return CropParams 是否已赋值
+                     * 
                      */
                     bool CropParamsHasBeenSet() const;
 

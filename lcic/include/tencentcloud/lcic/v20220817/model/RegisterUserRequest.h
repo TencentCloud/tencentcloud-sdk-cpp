@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取低代码互动课堂的SdkAppId。
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户名称。
                      * @return Name 用户名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户名称。
-                     * @param Name 用户名称。
+                     * @param _name 用户名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取用户在客户系统的Id，需要在同一应用下唯一。
                      * @return OriginId 用户在客户系统的Id，需要在同一应用下唯一。
+                     * 
                      */
                     std::string GetOriginId() const;
 
                     /**
                      * 设置用户在客户系统的Id，需要在同一应用下唯一。
-                     * @param OriginId 用户在客户系统的Id，需要在同一应用下唯一。
+                     * @param _originId 用户在客户系统的Id，需要在同一应用下唯一。
+                     * 
                      */
                     void SetOriginId(const std::string& _originId);
 
                     /**
                      * 判断参数 OriginId 是否已赋值
                      * @return OriginId 是否已赋值
+                     * 
                      */
                     bool OriginIdHasBeenSet() const;
 
                     /**
                      * 获取用户头像。
                      * @return Avatar 用户头像。
+                     * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 设置用户头像。
-                     * @param Avatar 用户头像。
+                     * @param _avatar 用户头像。
+                     * 
                      */
                     void SetAvatar(const std::string& _avatar);
 
                     /**
                      * 判断参数 Avatar 是否已赋值
                      * @return Avatar 是否已赋值
+                     * 
                      */
                     bool AvatarHasBeenSet() const;
 

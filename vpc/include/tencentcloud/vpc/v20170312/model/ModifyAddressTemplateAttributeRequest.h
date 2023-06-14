@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取IP地址模板实例ID，例如：ipm-mdunqeb6。
                      * @return AddressTemplateId IP地址模板实例ID，例如：ipm-mdunqeb6。
+                     * 
                      */
                     std::string GetAddressTemplateId() const;
 
                     /**
                      * 设置IP地址模板实例ID，例如：ipm-mdunqeb6。
-                     * @param AddressTemplateId IP地址模板实例ID，例如：ipm-mdunqeb6。
+                     * @param _addressTemplateId IP地址模板实例ID，例如：ipm-mdunqeb6。
+                     * 
                      */
                     void SetAddressTemplateId(const std::string& _addressTemplateId);
 
                     /**
                      * 判断参数 AddressTemplateId 是否已赋值
                      * @return AddressTemplateId 是否已赋值
+                     * 
                      */
                     bool AddressTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取IP地址模板名称。
                      * @return AddressTemplateName IP地址模板名称。
+                     * 
                      */
                     std::string GetAddressTemplateName() const;
 
                     /**
                      * 设置IP地址模板名称。
-                     * @param AddressTemplateName IP地址模板名称。
+                     * @param _addressTemplateName IP地址模板名称。
+                     * 
                      */
                     void SetAddressTemplateName(const std::string& _addressTemplateName);
 
                     /**
                      * 判断参数 AddressTemplateName 是否已赋值
                      * @return AddressTemplateName 是否已赋值
+                     * 
                      */
                     bool AddressTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取地址信息，支持 IP、CIDR、IP 范围。
                      * @return Addresses 地址信息，支持 IP、CIDR、IP 范围。
+                     * 
                      */
                     std::vector<std::string> GetAddresses() const;
 
                     /**
                      * 设置地址信息，支持 IP、CIDR、IP 范围。
-                     * @param Addresses 地址信息，支持 IP、CIDR、IP 范围。
+                     * @param _addresses 地址信息，支持 IP、CIDR、IP 范围。
+                     * 
                      */
                     void SetAddresses(const std::vector<std::string>& _addresses);
 
                     /**
                      * 判断参数 Addresses 是否已赋值
                      * @return Addresses 是否已赋值
+                     * 
                      */
                     bool AddressesHasBeenSet() const;
 
                     /**
                      * 获取支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
                      * @return AddressesExtra 支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     * 
                      */
                     std::vector<AddressInfo> GetAddressesExtra() const;
 
                     /**
                      * 设置支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
-                     * @param AddressesExtra 支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     * @param _addressesExtra 支持添加备注的地址信息，支持 IP、CIDR、IP 范围。
+                     * 
                      */
                     void SetAddressesExtra(const std::vector<AddressInfo>& _addressesExtra);
 
                     /**
                      * 判断参数 AddressesExtra 是否已赋值
                      * @return AddressesExtra 是否已赋值
+                     * 
                      */
                     bool AddressesExtraHasBeenSet() const;
 

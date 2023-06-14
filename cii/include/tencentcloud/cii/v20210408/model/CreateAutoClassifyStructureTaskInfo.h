@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可
                      * @return FileList 报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可
+                     * 
                      */
                     std::vector<std::string> GetFileList() const;
 
                     /**
                      * 设置报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可
-                     * @param FileList 报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可
+                     * @param _fileList 报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可
+                     * 
                      */
                     void SetFileList(const std::vector<std::string>& _fileList);
 
                     /**
                      * 判断参数 FileList 是否已赋值
                      * @return FileList 是否已赋值
+                     * 
                      */
                     bool FileListHasBeenSet() const;
 
                     /**
                      * 获取客户号
                      * @return CustomerId 客户号
+                     * 
                      */
                     std::string GetCustomerId() const;
 
                     /**
                      * 设置客户号
-                     * @param CustomerId 客户号
+                     * @param _customerId 客户号
+                     * 
                      */
                     void SetCustomerId(const std::string& _customerId);
 
                     /**
                      * 判断参数 CustomerId 是否已赋值
                      * @return CustomerId 是否已赋值
+                     * 
                      */
                     bool CustomerIdHasBeenSet() const;
 
                     /**
                      * 获取客户姓名
                      * @return CustomerName 客户姓名
+                     * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
                      * 设置客户姓名
-                     * @param CustomerName 客户姓名
+                     * @param _customerName 客户姓名
+                     * 
                      */
                     void SetCustomerName(const std::string& _customerName);
 
                     /**
                      * 判断参数 CustomerName 是否已赋值
                      * @return CustomerName 是否已赋值
+                     * 
                      */
                     bool CustomerNameHasBeenSet() const;
 
                     /**
                      * 获取报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列
                      * @return ImageList 报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列
+                     * 
                      */
                     std::vector<std::string> GetImageList() const;
 
                     /**
                      * 设置报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列
-                     * @param ImageList 报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列
+                     * @param _imageList 报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列
+                     * 
                      */
                     void SetImageList(const std::vector<std::string>& _imageList);
 
                     /**
                      * 判断参数 ImageList 是否已赋值
                      * @return ImageList 是否已赋值
+                     * 
                      */
                     bool ImageListHasBeenSet() const;
 

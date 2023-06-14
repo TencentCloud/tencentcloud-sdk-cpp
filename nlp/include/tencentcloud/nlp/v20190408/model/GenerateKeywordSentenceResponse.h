@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取生成的句子列表。
                      * @return KeywordSentenceList 生成的句子列表。
+                     * 
                      */
                     std::vector<KeywordSentence> GetKeywordSentenceList() const;
 
                     /**
                      * 判断参数 KeywordSentenceList 是否已赋值
                      * @return KeywordSentenceList 是否已赋值
+                     * 
                      */
                     bool KeywordSentenceListHasBeenSet() const;
 

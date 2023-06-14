@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 资产总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DBAssetVO> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionList 地域枚举
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FilterDataObject> GetRegionList() const;
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 
@@ -92,12 +98,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetTypeList 资产类型枚举
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FilterDataObject> GetAssetTypeList() const;
 
                     /**
                      * 判断参数 AssetTypeList 是否已赋值
                      * @return AssetTypeList 是否已赋值
+                     * 
                      */
                     bool AssetTypeListHasBeenSet() const;
 
@@ -106,12 +114,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcList Vpc枚举
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FilterDataObject> GetVpcList() const;
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 
@@ -120,12 +130,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppIdList Appid枚举
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FilterDataObject> GetAppIdList() const;
 
                     /**
                      * 判断参数 AppIdList 是否已赋值
                      * @return AppIdList 是否已赋值
+                     * 
                      */
                     bool AppIdListHasBeenSet() const;
 

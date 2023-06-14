@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Area 加速地区，可选值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland：中国境外。</li>
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置加速地区，可选值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland：中国境外。</li>
-                     * @param Area 加速地区，可选值：
+                     * @param _area 加速地区，可选值：
 <li>Chinese Mainland：中国境内（不包含港澳台）。</li>
 <li>Outside Chinese Mainland：中国境外。</li>
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return TencentDisableReason 腾讯禁用原因，可选值：
 <li>ForLegalReasons：因法律原因导致关闭加速；</li>
 <li>ForOverdueBills：因欠费停服导致关闭加速。</li>
+                     * 
                      */
                     std::string GetTencentDisableReason() const;
 
@@ -86,33 +90,38 @@ namespace TencentCloud
                      * 设置腾讯禁用原因，可选值：
 <li>ForLegalReasons：因法律原因导致关闭加速；</li>
 <li>ForOverdueBills：因欠费停服导致关闭加速。</li>
-                     * @param TencentDisableReason 腾讯禁用原因，可选值：
+                     * @param _tencentDisableReason 腾讯禁用原因，可选值：
 <li>ForLegalReasons：因法律原因导致关闭加速；</li>
 <li>ForOverdueBills：因欠费停服导致关闭加速。</li>
+                     * 
                      */
                     void SetTencentDisableReason(const std::string& _tencentDisableReason);
 
                     /**
                      * 判断参数 TencentDisableReason 是否已赋值
                      * @return TencentDisableReason 是否已赋值
+                     * 
                      */
                     bool TencentDisableReasonHasBeenSet() const;
 
                     /**
                      * 获取加速域名对应的 CNAME 域名。
                      * @return TencentEdgeDomain 加速域名对应的 CNAME 域名。
+                     * 
                      */
                     std::string GetTencentEdgeDomain() const;
 
                     /**
                      * 设置加速域名对应的 CNAME 域名。
-                     * @param TencentEdgeDomain 加速域名对应的 CNAME 域名。
+                     * @param _tencentEdgeDomain 加速域名对应的 CNAME 域名。
+                     * 
                      */
                     void SetTencentEdgeDomain(const std::string& _tencentEdgeDomain);
 
                     /**
                      * 判断参数 TencentEdgeDomain 是否已赋值
                      * @return TencentEdgeDomain 是否已赋值
+                     * 
                      */
                     bool TencentEdgeDomainHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取Binlog文件名称
                      * @return FileName Binlog文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置Binlog文件名称
-                     * @param FileName Binlog文件名称
+                     * @param _fileName Binlog文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取文件大小，单位：字节
                      * @return FileSize 文件大小，单位：字节
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置文件大小，单位：字节
-                     * @param FileSize 文件大小，单位：字节
+                     * @param _fileSize 文件大小，单位：字节
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取事务最早时间
                      * @return StartTime 事务最早时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置事务最早时间
-                     * @param StartTime 事务最早时间
+                     * @param _startTime 事务最早时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取事务最晚时间
                      * @return FinishTime 事务最晚时间
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置事务最晚时间
-                     * @param FinishTime 事务最晚时间
+                     * @param _finishTime 事务最晚时间
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取Binlog文件ID
                      * @return BinlogId Binlog文件ID
+                     * 
                      */
                     int64_t GetBinlogId() const;
 
                     /**
                      * 设置Binlog文件ID
-                     * @param BinlogId Binlog文件ID
+                     * @param _binlogId Binlog文件ID
+                     * 
                      */
                     void SetBinlogId(const int64_t& _binlogId);
 
                     /**
                      * 判断参数 BinlogId 是否已赋值
                      * @return BinlogId 是否已赋值
+                     * 
                      */
                     bool BinlogIdHasBeenSet() const;
 

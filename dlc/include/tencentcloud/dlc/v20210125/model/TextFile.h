@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取文本类型，本参数取值为TextFile。
                      * @return Format 文本类型，本参数取值为TextFile。
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置文本类型，本参数取值为TextFile。
-                     * @param Format 文本类型，本参数取值为TextFile。
+                     * @param _format 文本类型，本参数取值为TextFile。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regex 处理文本用的正则表达式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置处理文本用的正则表达式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Regex 处理文本用的正则表达式。
+                     * @param _regex 处理文本用的正则表达式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取分页内容
                      * @return Records 分页内容
+                     * 
                      */
                     std::vector<TemNamespaceInfo> GetRecords() const;
 
                     /**
                      * 设置分页内容
-                     * @param Records 分页内容
+                     * @param _records 分页内容
+                     * 
                      */
                     void SetRecords(const std::vector<TemNamespaceInfo>& _records);
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数
-                     * @param Total 总数
+                     * @param _total 总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取条目数
                      * @return Size 条目数
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置条目数
-                     * @param Size 条目数
+                     * @param _size 条目数
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return Pages 页数
+                     * 
                      */
                     int64_t GetPages() const;
 
                     /**
                      * 设置页数
-                     * @param Pages 页数
+                     * @param _pages 页数
+                     * 
                      */
                     void SetPages(const int64_t& _pages);
 
                     /**
                      * 判断参数 Pages 是否已赋值
                      * @return Pages 是否已赋值
+                     * 
                      */
                     bool PagesHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Current 当前条目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCurrent() const;
 
                     /**
                      * 设置当前条目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Current 当前条目
+                     * @param _current 当前条目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrent(const int64_t& _current);
 
                     /**
                      * 判断参数 Current 是否已赋值
                      * @return Current 是否已赋值
+                     * 
                      */
                     bool CurrentHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取IP
                      * @return ClientIp IP
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置IP
-                     * @param ClientIp IP
+                     * @param _clientIp IP
+                     * 
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取在给定的时间段中，1秒内的最大请求量
                      * @return Request 在给定的时间段中，1秒内的最大请求量
+                     * 
                      */
                     uint64_t GetRequest() const;
 
                     /**
                      * 设置在给定的时间段中，1秒内的最大请求量
-                     * @param Request 在给定的时间段中，1秒内的最大请求量
+                     * @param _request 在给定的时间段中，1秒内的最大请求量
+                     * 
                      */
                     void SetRequest(const uint64_t& _request);
 
                     /**
                      * 判断参数 Request 是否已赋值
                      * @return Request 是否已赋值
+                     * 
                      */
                     bool RequestHasBeenSet() const;
 
                     /**
                      * 获取在获取的Top信息中，IP出现的次数
                      * @return Count 在获取的Top信息中，IP出现的次数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置在获取的Top信息中，IP出现的次数
-                     * @param Count 在获取的Top信息中，IP出现的次数
+                     * @param _count 在获取的Top信息中，IP出现的次数
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取在给定的时间段中，1秒内的最大请求量对应的时间
                      * @return Time 在给定的时间段中，1秒内的最大请求量对应的时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置在给定的时间段中，1秒内的最大请求量对应的时间
-                     * @param Time 在给定的时间段中，1秒内的最大请求量对应的时间
+                     * @param _time 在给定的时间段中，1秒内的最大请求量对应的时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

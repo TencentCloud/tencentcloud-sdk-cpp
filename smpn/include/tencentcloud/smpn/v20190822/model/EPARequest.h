@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取电话号码
                      * @return PhoneNumber 电话号码
+                     * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
                      * 设置电话号码
-                     * @param PhoneNumber 电话号码
+                     * @param _phoneNumber 电话号码
+                     * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
 
                     /**
                      * 判断参数 PhoneNumber 是否已赋值
                      * @return PhoneNumber 是否已赋值
+                     * 
                      */
                     bool PhoneNumberHasBeenSet() const;
 
                     /**
                      * 获取黄页名称
                      * @return Name 黄页名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置黄页名称
-                     * @param Name 黄页名称
+                     * @param _name 黄页名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

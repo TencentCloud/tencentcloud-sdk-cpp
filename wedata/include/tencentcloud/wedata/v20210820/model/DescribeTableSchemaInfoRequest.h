@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取表名称
                      * @return Name 表名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置表名称
-                     * @param Name 表名称
+                     * @param _name 表名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取数据库名称
                      * @return DatabaseName 数据库名称
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称
-                     * @param DatabaseName 数据库名称
+                     * @param _databaseName 数据库名称
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取表类型
                      * @return MsType 表类型
+                     * 
                      */
                     std::string GetMsType() const;
 
                     /**
                      * 设置表类型
-                     * @param MsType 表类型
+                     * @param _msType 表类型
+                     * 
                      */
                     void SetMsType(const std::string& _msType);
 
                     /**
                      * 判断参数 MsType 是否已赋值
                      * @return MsType 是否已赋值
+                     * 
                      */
                     bool MsTypeHasBeenSet() const;
 
                     /**
                      * 获取数据源id
                      * @return DatasourceId 数据源id
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据源id
-                     * @param DatasourceId 数据源id
+                     * @param _datasourceId 数据源id
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
                      * 获取HIVE传rpc
                      * @return ConnectionType HIVE传rpc
+                     * 
                      */
                     std::string GetConnectionType() const;
 
                     /**
                      * 设置HIVE传rpc
-                     * @param ConnectionType HIVE传rpc
+                     * @param _connectionType HIVE传rpc
+                     * 
                      */
                     void SetConnectionType(const std::string& _connectionType);
 
                     /**
                      * 判断参数 ConnectionType 是否已赋值
                      * @return ConnectionType 是否已赋值
+                     * 
                      */
                     bool ConnectionTypeHasBeenSet() const;
 
                     /**
                      * 获取元数据Database下的Schema名称
                      * @return SchemaName 元数据Database下的Schema名称
+                     * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置元数据Database下的Schema名称
-                     * @param SchemaName 元数据Database下的Schema名称
+                     * @param _schemaName 元数据Database下的Schema名称
+                     * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
 
                     /**
                      * 判断参数 SchemaName 是否已赋值
                      * @return SchemaName 是否已赋值
+                     * 
                      */
                     bool SchemaNameHasBeenSet() const;
 

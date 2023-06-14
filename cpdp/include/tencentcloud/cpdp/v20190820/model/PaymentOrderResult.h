@@ -53,6 +53,7 @@ OCCASION:偶然所得
                      * @return IncomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
+                     * 
                      */
                     std::string GetIncomeType() const;
 
@@ -60,123 +61,143 @@ OCCASION:偶然所得
                      * 设置收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
-                     * @param IncomeType 收入类型
+                     * @param _incomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
+                     * 
                      */
                     void SetIncomeType(const std::string& _incomeType);
 
                     /**
                      * 判断参数 IncomeType 是否已赋值
                      * @return IncomeType 是否已赋值
+                     * 
                      */
                     bool IncomeTypeHasBeenSet() const;
 
                     /**
                      * 获取税前金额
                      * @return AmountBeforeTax 税前金额
+                     * 
                      */
                     std::string GetAmountBeforeTax() const;
 
                     /**
                      * 设置税前金额
-                     * @param AmountBeforeTax 税前金额
+                     * @param _amountBeforeTax 税前金额
+                     * 
                      */
                     void SetAmountBeforeTax(const std::string& _amountBeforeTax);
 
                     /**
                      * 判断参数 AmountBeforeTax 是否已赋值
                      * @return AmountBeforeTax 是否已赋值
+                     * 
                      */
                     bool AmountBeforeTaxHasBeenSet() const;
 
                     /**
                      * 获取税后金额
                      * @return AmountAfterTax 税后金额
+                     * 
                      */
                     std::string GetAmountAfterTax() const;
 
                     /**
                      * 设置税后金额
-                     * @param AmountAfterTax 税后金额
+                     * @param _amountAfterTax 税后金额
+                     * 
                      */
                     void SetAmountAfterTax(const std::string& _amountAfterTax);
 
                     /**
                      * 判断参数 AmountAfterTax 是否已赋值
                      * @return AmountAfterTax 是否已赋值
+                     * 
                      */
                     bool AmountAfterTaxHasBeenSet() const;
 
                     /**
                      * 获取税金
                      * @return Tax 税金
+                     * 
                      */
                     std::string GetTax() const;
 
                     /**
                      * 设置税金
-                     * @param Tax 税金
+                     * @param _tax 税金
+                     * 
                      */
                     void SetTax(const std::string& _tax);
 
                     /**
                      * 判断参数 Tax 是否已赋值
                      * @return Tax 是否已赋值
+                     * 
                      */
                     bool TaxHasBeenSet() const;
 
                     /**
                      * 获取外部订单ID
                      * @return OutOrderId 外部订单ID
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部订单ID
-                     * @param OutOrderId 外部订单ID
+                     * @param _outOrderId 外部订单ID
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取订单ID
                      * @return OrderId 订单ID
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单ID
-                     * @param OrderId 订单ID
+                     * @param _orderId 订单ID
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取发起时间
                      * @return InitiateTime 发起时间
+                     * 
                      */
                     std::string GetInitiateTime() const;
 
                     /**
                      * 设置发起时间
-                     * @param InitiateTime 发起时间
+                     * @param _initiateTime 发起时间
+                     * 
                      */
                     void SetInitiateTime(const std::string& _initiateTime);
 
                     /**
                      * 判断参数 InitiateTime 是否已赋值
                      * @return InitiateTime 是否已赋值
+                     * 
                      */
                     bool InitiateTimeHasBeenSet() const;
 
@@ -185,20 +206,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置完成时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishTime 完成时间
+                     * @param _finishTime 完成时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
@@ -217,6 +241,7 @@ PAYING:付款中
 PAYED:完成付款渠道调用
 SUCCEED:已成功
 FAILED:已失败
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -228,37 +253,42 @@ PAYING:付款中
 PAYED:完成付款渠道调用
 SUCCEED:已成功
 FAILED:已失败
-                     * @param Status 状态
+                     * @param _status 状态
 ACCEPTED:已受理
 ACCOUNTED:已记账
 PAYING:付款中
 PAYED:完成付款渠道调用
 SUCCEED:已成功
 FAILED:已失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return StatusDesc 状态描述
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置状态描述
-                     * @param StatusDesc 状态描述
+                     * @param _statusDesc 状态描述
+                     * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
@@ -267,56 +297,65 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 提现备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置提现备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 提现备注
+                     * @param _remark 提现备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
                     /**
                      * 获取外部用户ID
                      * @return OutUserId 外部用户ID
+                     * 
                      */
                     std::string GetOutUserId() const;
 
                     /**
                      * 设置外部用户ID
-                     * @param OutUserId 外部用户ID
+                     * @param _outUserId 外部用户ID
+                     * 
                      */
                     void SetOutUserId(const std::string& _outUserId);
 
                     /**
                      * 判断参数 OutUserId 是否已赋值
                      * @return OutUserId 是否已赋值
+                     * 
                      */
                     bool OutUserIdHasBeenSet() const;
 
@@ -325,20 +364,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelOrderId 渠道支付订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置渠道支付订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelOrderId 渠道支付订单号
+                     * @param _channelOrderId 渠道支付订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
@@ -347,20 +389,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vat 增值税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVat() const;
 
                     /**
                      * 设置增值税
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vat 增值税
+                     * @param _vat 增值税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVat(const std::string& _vat);
 
                     /**
                      * 判断参数 Vat 是否已赋值
                      * @return Vat 是否已赋值
+                     * 
                      */
                     bool VatHasBeenSet() const;
 
@@ -369,20 +414,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndividualIncomeTax 个人所得税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndividualIncomeTax() const;
 
                     /**
                      * 设置个人所得税
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IndividualIncomeTax 个人所得税
+                     * @param _individualIncomeTax 个人所得税
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndividualIncomeTax(const std::string& _individualIncomeTax);
 
                     /**
                      * 判断参数 IndividualIncomeTax 是否已赋值
                      * @return IndividualIncomeTax 是否已赋值
+                     * 
                      */
                     bool IndividualIncomeTaxHasBeenSet() const;
 
@@ -391,20 +439,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionalTaxSum 附加税总税额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdditionalTaxSum() const;
 
                     /**
                      * 设置附加税总税额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdditionalTaxSum 附加税总税额
+                     * @param _additionalTaxSum 附加税总税额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdditionalTaxSum(const std::string& _additionalTaxSum);
 
                     /**
                      * 判断参数 AdditionalTaxSum 是否已赋值
                      * @return AdditionalTaxSum 是否已赋值
+                     * 
                      */
                     bool AdditionalTaxSumHasBeenSet() const;
 
@@ -413,20 +464,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionalTaxItem 附加税税项。格式为JSON格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAdditionalTaxItem() const;
 
                     /**
                      * 设置附加税税项。格式为JSON格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AdditionalTaxItem 附加税税项。格式为JSON格式
+                     * @param _additionalTaxItem 附加税税项。格式为JSON格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAdditionalTaxItem(const std::string& _additionalTaxItem);
 
                     /**
                      * 判断参数 AdditionalTaxItem 是否已赋值
                      * @return AdditionalTaxItem 是否已赋值
+                     * 
                      */
                     bool AdditionalTaxItemHasBeenSet() const;
 
@@ -435,20 +489,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因。当Status为FAILED时，改字段为失败的原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因。当Status为FAILED时，改字段为失败的原因。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因。当Status为FAILED时，改字段为失败的原因。
+                     * @param _failReason 失败原因。当Status为FAILED时，改字段为失败的原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
@@ -457,20 +514,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FundingAccountSubType 资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFundingAccountSubType() const;
 
                     /**
                      * 设置资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FundingAccountSubType 资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
+                     * @param _fundingAccountSubType 资金账户字类型: WECHATPAY_ACCOUNT 微信零钱, BANK_ACCOUNT 银行卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFundingAccountSubType(const std::string& _fundingAccountSubType);
 
                     /**
                      * 判断参数 FundingAccountSubType 是否已赋值
                      * @return FundingAccountSubType 是否已赋值
+                     * 
                      */
                     bool FundingAccountSubTypeHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CfwInsId nat实例信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCfwInsId() const;
 
                     /**
                      * 判断参数 CfwInsId 是否已赋值
                      * @return CfwInsId 是否已赋值
+                     * 
                      */
                     bool CfwInsIdHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 段落文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseInfo GetText() const;
 
                     /**
                      * 设置段落文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 段落文本
+                     * @param _text 段落文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const BaseInfo& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 结论详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BaseInfo> GetItems() const;
 
                     /**
                      * 设置结论详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Items 结论详情
+                     * @param _items 结论详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItems(const std::vector<BaseInfo>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

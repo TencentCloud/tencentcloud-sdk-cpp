@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取分片节点名称。
                      * @return ShardName 分片节点名称。
+                     * 
                      */
                     std::string GetShardName() const;
 
                     /**
                      * 设置分片节点名称。
-                     * @param ShardName 分片节点名称。
+                     * @param _shardName 分片节点名称。
+                     * 
                      */
                     void SetShardName(const std::string& _shardName);
 
                     /**
                      * 判断参数 ShardName 是否已赋值
                      * @return ShardName 是否已赋值
+                     * 
                      */
                     bool ShardNameHasBeenSet() const;
 
                     /**
                      * 获取分片节点序号。
                      * @return ShardId 分片节点序号。
+                     * 
                      */
                     std::string GetShardId() const;
 
                     /**
                      * 设置分片节点序号。
-                     * @param ShardId 分片节点序号。
+                     * @param _shardId 分片节点序号。
+                     * 
                      */
                     void SetShardId(const std::string& _shardId);
 
                     /**
                      * 判断参数 ShardId 是否已赋值
                      * @return ShardId 是否已赋值
+                     * 
                      */
                     bool ShardIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return Role 分片节点的角色。
 - 0：主节点。
 - 1：副本节点。
+                     * 
                      */
                     int64_t GetRole() const;
 
@@ -96,105 +103,122 @@ namespace TencentCloud
                      * 设置分片节点的角色。
 - 0：主节点。
 - 1：副本节点。
-                     * @param Role 分片节点的角色。
+                     * @param _role 分片节点的角色。
 - 0：主节点。
 - 1：副本节点。
+                     * 
                      */
                     void SetRole(const int64_t& _role);
 
                     /**
                      * 判断参数 Role 是否已赋值
                      * @return Role 是否已赋值
+                     * 
                      */
                     bool RoleHasBeenSet() const;
 
                     /**
                      * 获取Key数量。
                      * @return Keys Key数量。
+                     * 
                      */
                     int64_t GetKeys() const;
 
                     /**
                      * 设置Key数量。
-                     * @param Keys Key数量。
+                     * @param _keys Key数量。
+                     * 
                      */
                     void SetKeys(const int64_t& _keys);
 
                     /**
                      * 判断参数 Keys 是否已赋值
                      * @return Keys 是否已赋值
+                     * 
                      */
                     bool KeysHasBeenSet() const;
 
                     /**
                      * 获取Slot信息。
                      * @return Slots Slot信息。
+                     * 
                      */
                     std::string GetSlots() const;
 
                     /**
                      * 设置Slot信息。
-                     * @param Slots Slot信息。
+                     * @param _slots Slot信息。
+                     * 
                      */
                     void SetSlots(const std::string& _slots);
 
                     /**
                      * 判断参数 Slots 是否已赋值
                      * @return Slots 是否已赋值
+                     * 
                      */
                     bool SlotsHasBeenSet() const;
 
                     /**
                      * 获取已使用容量。
                      * @return Storage 已使用容量。
+                     * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置已使用容量。
-                     * @param Storage 已使用容量。
+                     * @param _storage 已使用容量。
+                     * 
                      */
                     void SetStorage(const int64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取容量倾斜率。
                      * @return StorageSlope 容量倾斜率。
+                     * 
                      */
                     double GetStorageSlope() const;
 
                     /**
                      * 设置容量倾斜率。
-                     * @param StorageSlope 容量倾斜率。
+                     * @param _storageSlope 容量倾斜率。
+                     * 
                      */
                     void SetStorageSlope(const double& _storageSlope);
 
                     /**
                      * 判断参数 StorageSlope 是否已赋值
                      * @return StorageSlope 是否已赋值
+                     * 
                      */
                     bool StorageSlopeHasBeenSet() const;
 
                     /**
                      * 获取实例运行时节点 ID。
                      * @return Runid 实例运行时节点 ID。
+                     * 
                      */
                     std::string GetRunid() const;
 
                     /**
                      * 设置实例运行时节点 ID。
-                     * @param Runid 实例运行时节点 ID。
+                     * @param _runid 实例运行时节点 ID。
+                     * 
                      */
                     void SetRunid(const std::string& _runid);
 
                     /**
                      * 判断参数 Runid 是否已赋值
                      * @return Runid 是否已赋值
+                     * 
                      */
                     bool RunidHasBeenSet() const;
 
@@ -205,6 +229,7 @@ namespace TencentCloud
                      * @return Connected 服务状态。
 - 0：down。
 - 1：on。
+                     * 
                      */
                     int64_t GetConnected() const;
 
@@ -212,15 +237,17 @@ namespace TencentCloud
                      * 设置服务状态。
 - 0：down。
 - 1：on。
-                     * @param Connected 服务状态。
+                     * @param _connected 服务状态。
 - 0：down。
 - 1：on。
+                     * 
                      */
                     void SetConnected(const int64_t& _connected);
 
                     /**
                      * 判断参数 Connected 是否已赋值
                      * @return Connected 是否已赋值
+                     * 
                      */
                     bool ConnectedHasBeenSet() const;
 

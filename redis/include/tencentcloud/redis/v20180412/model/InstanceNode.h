@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return Id 实例 ID。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param Id 实例 ID。
+                     * @param _id 实例 ID。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取节点详细信息。
                      * @return InstanceClusterNode 节点详细信息。
+                     * 
                      */
                     std::vector<InstanceClusterNode> GetInstanceClusterNode() const;
 
                     /**
                      * 设置节点详细信息。
-                     * @param InstanceClusterNode 节点详细信息。
+                     * @param _instanceClusterNode 节点详细信息。
+                     * 
                      */
                     void SetInstanceClusterNode(const std::vector<InstanceClusterNode>& _instanceClusterNode);
 
                     /**
                      * 判断参数 InstanceClusterNode 是否已赋值
                      * @return InstanceClusterNode 是否已赋值
+                     * 
                      */
                     bool InstanceClusterNodeHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例已挂载弹性云盘数量
                      * @return AttachedDiskCount 实例已挂载弹性云盘数量
+                     * 
                      */
                     int64_t GetAttachedDiskCount() const;
 
                     /**
                      * 设置实例已挂载弹性云盘数量
-                     * @param AttachedDiskCount 实例已挂载弹性云盘数量
+                     * @param _attachedDiskCount 实例已挂载弹性云盘数量
+                     * 
                      */
                     void SetAttachedDiskCount(const int64_t& _attachedDiskCount);
 
                     /**
                      * 判断参数 AttachedDiskCount 是否已赋值
                      * @return AttachedDiskCount 是否已赋值
+                     * 
                      */
                     bool AttachedDiskCountHasBeenSet() const;
 
                     /**
                      * 获取可挂载弹性云盘数量
                      * @return MaxAttachCount 可挂载弹性云盘数量
+                     * 
                      */
                     int64_t GetMaxAttachCount() const;
 
                     /**
                      * 设置可挂载弹性云盘数量
-                     * @param MaxAttachCount 可挂载弹性云盘数量
+                     * @param _maxAttachCount 可挂载弹性云盘数量
+                     * 
                      */
                     void SetMaxAttachCount(const int64_t& _maxAttachCount);
 
                     /**
                      * 判断参数 MaxAttachCount 是否已赋值
                      * @return MaxAttachCount 是否已赋值
+                     * 
                      */
                     bool MaxAttachCountHasBeenSet() const;
 

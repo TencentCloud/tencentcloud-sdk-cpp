@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）
                      * @return RuleId 7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）
-                     * @param RuleId 7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）
+                     * @param _ruleId 7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取开启或关闭，取值["on"(开启)，"off"(关闭)]
                      * @return Method 开启或关闭，取值["on"(开启)，"off"(关闭)]
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置开启或关闭，取值["on"(开启)，"off"(关闭)]
-                     * @param Method 开启或关闭，取值["on"(开启)，"off"(关闭)]
+                     * @param _method 开启或关闭，取值["on"(开启)，"off"(关闭)]
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 

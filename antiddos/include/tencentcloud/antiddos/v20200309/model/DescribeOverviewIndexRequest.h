@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取拉取指标起始时间
                      * @return StartTime 拉取指标起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置拉取指标起始时间
-                     * @param StartTime 拉取指标起始时间
+                     * @param _startTime 拉取指标起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取拉取指标结束时间
                      * @return EndTime 拉取指标结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置拉取指标结束时间
-                     * @param EndTime 拉取指标结束时间
+                     * @param _endTime 拉取指标结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

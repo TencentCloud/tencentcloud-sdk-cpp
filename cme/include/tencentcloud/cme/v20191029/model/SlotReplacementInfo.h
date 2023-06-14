@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取卡槽 Id。
                      * @return Id 卡槽 Id。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置卡槽 Id。
-                     * @param Id 卡槽 Id。
+                     * @param _id 卡槽 Id。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
 <li> IMAGE ：图片；</li>
 <li> TEXT ：文本。</li>
 注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
+                     * 
                      */
                     std::string GetReplacementType() const;
 
@@ -89,54 +93,62 @@ namespace TencentCloud
 <li> IMAGE ：图片；</li>
 <li> TEXT ：文本。</li>
 注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
-                     * @param ReplacementType 替换类型，可取值有：
+                     * @param _replacementType 替换类型，可取值有：
 <li> AUDIO ：音频；</li>
 <li> VIDEO ：视频；</li>
 <li> IMAGE ：图片；</li>
 <li> TEXT ：文本。</li>
 注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
+                     * 
                      */
                     void SetReplacementType(const std::string& _replacementType);
 
                     /**
                      * 判断参数 ReplacementType 是否已赋值
                      * @return ReplacementType 是否已赋值
+                     * 
                      */
                     bool ReplacementTypeHasBeenSet() const;
 
                     /**
                      * 获取媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。
                      * @return MediaReplacementInfo 媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。
+                     * 
                      */
                     MediaReplacementInfo GetMediaReplacementInfo() const;
 
                     /**
                      * 设置媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。
-                     * @param MediaReplacementInfo 媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。
+                     * @param _mediaReplacementInfo 媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。
+                     * 
                      */
                     void SetMediaReplacementInfo(const MediaReplacementInfo& _mediaReplacementInfo);
 
                     /**
                      * 判断参数 MediaReplacementInfo 是否已赋值
                      * @return MediaReplacementInfo 是否已赋值
+                     * 
                      */
                     bool MediaReplacementInfoHasBeenSet() const;
 
                     /**
                      * 获取文本替换信息，仅当要替换的卡槽类型为文本时有效。
                      * @return TextReplacementInfo 文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     * 
                      */
                     TextReplacementInfo GetTextReplacementInfo() const;
 
                     /**
                      * 设置文本替换信息，仅当要替换的卡槽类型为文本时有效。
-                     * @param TextReplacementInfo 文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     * @param _textReplacementInfo 文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     * 
                      */
                     void SetTextReplacementInfo(const TextReplacementInfo& _textReplacementInfo);
 
                     /**
                      * 判断参数 TextReplacementInfo 是否已赋值
                      * @return TextReplacementInfo 是否已赋值
+                     * 
                      */
                     bool TextReplacementInfoHasBeenSet() const;
 

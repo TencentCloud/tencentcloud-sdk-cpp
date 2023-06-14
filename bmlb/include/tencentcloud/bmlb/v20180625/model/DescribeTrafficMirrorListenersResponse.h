@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取监听器列表。
                      * @return ListenerSet 监听器列表。
+                     * 
                      */
                     std::vector<TrafficMirrorListener> GetListenerSet() const;
 
                     /**
                      * 判断参数 ListenerSet 是否已赋值
                      * @return ListenerSet 是否已赋值
+                     * 
                      */
                     bool ListenerSetHasBeenSet() const;
 
                     /**
                      * 获取监听器总数。
                      * @return TotalCount 监听器总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

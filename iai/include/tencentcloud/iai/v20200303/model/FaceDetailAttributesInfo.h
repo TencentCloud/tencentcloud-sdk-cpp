@@ -62,20 +62,23 @@ namespace TencentCloud
 FaceAttributesType 不为含Age 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Age 年龄 [0,65]，其中65代表“65岁及以上”。 
 FaceAttributesType 不为含Age 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     int64_t GetAge() const;
 
                     /**
                      * 设置年龄 [0,65]，其中65代表“65岁及以上”。 
 FaceAttributesType 不为含Age 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Age 年龄 [0,65]，其中65代表“65岁及以上”。 
+                     * @param _age 年龄 [0,65]，其中65代表“65岁及以上”。 
 FaceAttributesType 不为含Age 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetAge(const int64_t& _age);
 
                     /**
                      * 判断参数 Age 是否已赋值
                      * @return Age 是否已赋值
+                     * 
                      */
                     bool AgeHasBeenSet() const;
 
@@ -84,20 +87,23 @@ FaceAttributesType 不为含Age 或检测超过 5 张人脸时，此参数仍返
 FaceAttributesType 不含 Beauty 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Beauty 美丑打分[0,100]。 
 FaceAttributesType 不含 Beauty 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     int64_t GetBeauty() const;
 
                     /**
                      * 设置美丑打分[0,100]。 
 FaceAttributesType 不含 Beauty 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Beauty 美丑打分[0,100]。 
+                     * @param _beauty 美丑打分[0,100]。 
 FaceAttributesType 不含 Beauty 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetBeauty(const int64_t& _beauty);
 
                     /**
                      * 判断参数 Beauty 是否已赋值
                      * @return Beauty 是否已赋值
+                     * 
                      */
                     bool BeautyHasBeenSet() const;
 
@@ -108,6 +114,7 @@ FaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍�
                      * @return Emotion 情绪，可识别自然、高兴、惊讶、生气、悲伤、厌恶、害怕。 
 AttributeItem对应的Type为 —— 0：自然，1：高兴，2：惊讶，3：生气，4：悲伤，5：厌恶，6：害怕
 FaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetEmotion() const;
 
@@ -115,15 +122,17 @@ FaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍�
                      * 设置情绪，可识别自然、高兴、惊讶、生气、悲伤、厌恶、害怕。 
 AttributeItem对应的Type为 —— 0：自然，1：高兴，2：惊讶，3：生气，4：悲伤，5：厌恶，6：害怕
 FaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Emotion 情绪，可识别自然、高兴、惊讶、生气、悲伤、厌恶、害怕。 
+                     * @param _emotion 情绪，可识别自然、高兴、惊讶、生气、悲伤、厌恶、害怕。 
 AttributeItem对应的Type为 —— 0：自然，1：高兴，2：惊讶，3：生气，4：悲伤，5：厌恶，6：害怕
 FaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetEmotion(const AttributeItem& _emotion);
 
                     /**
                      * 判断参数 Emotion 是否已赋值
                      * @return Emotion 是否已赋值
+                     * 
                      */
                     bool EmotionHasBeenSet() const;
 
@@ -132,20 +141,23 @@ FaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍�
 FaceAttributesType 不含Eye 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Eye 眼睛相关信息，可识别是否戴眼镜、是否闭眼、是否双眼皮和眼睛大小。 
 FaceAttributesType 不含Eye 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     Eye GetEye() const;
 
                     /**
                      * 设置眼睛相关信息，可识别是否戴眼镜、是否闭眼、是否双眼皮和眼睛大小。 
 FaceAttributesType 不含Eye 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Eye 眼睛相关信息，可识别是否戴眼镜、是否闭眼、是否双眼皮和眼睛大小。 
+                     * @param _eye 眼睛相关信息，可识别是否戴眼镜、是否闭眼、是否双眼皮和眼睛大小。 
 FaceAttributesType 不含Eye 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetEye(const Eye& _eye);
 
                     /**
                      * 判断参数 Eye 是否已赋值
                      * @return Eye 是否已赋值
+                     * 
                      */
                     bool EyeHasBeenSet() const;
 
@@ -154,20 +166,23 @@ FaceAttributesType 不含Eye 或检测超过 5 张人脸时，此参数仍返回
 FaceAttributesType 不含Eyebrow 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Eyebrow 眉毛相关信息，可识别眉毛浓密、弯曲、长短信息。 
 FaceAttributesType 不含Eyebrow 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     Eyebrow GetEyebrow() const;
 
                     /**
                      * 设置眉毛相关信息，可识别眉毛浓密、弯曲、长短信息。 
 FaceAttributesType 不含Eyebrow 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Eyebrow 眉毛相关信息，可识别眉毛浓密、弯曲、长短信息。 
+                     * @param _eyebrow 眉毛相关信息，可识别眉毛浓密、弯曲、长短信息。 
 FaceAttributesType 不含Eyebrow 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetEyebrow(const Eyebrow& _eyebrow);
 
                     /**
                      * 判断参数 Eyebrow 是否已赋值
                      * @return Eyebrow 是否已赋值
+                     * 
                      */
                     bool EyebrowHasBeenSet() const;
 
@@ -178,6 +193,7 @@ FaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返
                      * @return Gender 性别信息。 
 AttributeItem对应的Type为 —— 	0：男性，1：女性。
 FaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetGender() const;
 
@@ -185,15 +201,17 @@ FaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返
                      * 设置性别信息。 
 AttributeItem对应的Type为 —— 	0：男性，1：女性。
 FaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Gender 性别信息。 
+                     * @param _gender 性别信息。 
 AttributeItem对应的Type为 —— 	0：男性，1：女性。
 FaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetGender(const AttributeItem& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
@@ -202,20 +220,23 @@ FaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返
 FaceAttributesType 不含Hair 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Hair 头发信息，包含头发长度、有无刘海、头发颜色。 
 FaceAttributesType 不含Hair 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     Hair GetHair() const;
 
                     /**
                      * 设置头发信息，包含头发长度、有无刘海、头发颜色。 
 FaceAttributesType 不含Hair 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Hair 头发信息，包含头发长度、有无刘海、头发颜色。 
+                     * @param _hair 头发信息，包含头发长度、有无刘海、头发颜色。 
 FaceAttributesType 不含Hair 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetHair(const Hair& _hair);
 
                     /**
                      * 判断参数 Hair 是否已赋值
                      * @return Hair 是否已赋值
+                     * 
                      */
                     bool HairHasBeenSet() const;
 
@@ -224,20 +245,23 @@ FaceAttributesType 不含Hair 或检测超过 5 张人脸时，此参数仍返�
 FaceAttributesType 不含Hat 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Hat 帽子信息，可识别是否佩戴帽子、帽子款式、帽子颜色。 
 FaceAttributesType 不含Hat 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     Hat GetHat() const;
 
                     /**
                      * 设置帽子信息，可识别是否佩戴帽子、帽子款式、帽子颜色。 
 FaceAttributesType 不含Hat 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Hat 帽子信息，可识别是否佩戴帽子、帽子款式、帽子颜色。 
+                     * @param _hat 帽子信息，可识别是否佩戴帽子、帽子款式、帽子颜色。 
 FaceAttributesType 不含Hat 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetHat(const Hat& _hat);
 
                     /**
                      * 判断参数 Hat 是否已赋值
                      * @return Hat 是否已赋值
+                     * 
                      */
                     bool HatHasBeenSet() const;
 
@@ -246,20 +270,23 @@ FaceAttributesType 不含Hat 或检测超过 5 张人脸时，此参数仍返回
 FaceAttributesType 不含Headpose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return HeadPose 姿态信息，包含人脸的上下偏移、左右偏移、平面旋转信息。 
 FaceAttributesType 不含Headpose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     HeadPose GetHeadPose() const;
 
                     /**
                      * 设置姿态信息，包含人脸的上下偏移、左右偏移、平面旋转信息。 
 FaceAttributesType 不含Headpose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param HeadPose 姿态信息，包含人脸的上下偏移、左右偏移、平面旋转信息。 
+                     * @param _headPose 姿态信息，包含人脸的上下偏移、左右偏移、平面旋转信息。 
 FaceAttributesType 不含Headpose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetHeadPose(const HeadPose& _headPose);
 
                     /**
                      * 判断参数 HeadPose 是否已赋值
                      * @return HeadPose 是否已赋值
+                     * 
                      */
                     bool HeadPoseHasBeenSet() const;
 
@@ -270,6 +297,7 @@ FaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返�
                      * @return Mask 口罩佩戴信息。 
 AttributeItem对应的Type为 —— 0: 无口罩， 1: 有口罩不遮脸，2: 有口罩遮下巴，3: 有口罩遮嘴，4: 正确佩戴口罩。
 FaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetMask() const;
 
@@ -277,15 +305,17 @@ FaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返�
                      * 设置口罩佩戴信息。 
 AttributeItem对应的Type为 —— 0: 无口罩， 1: 有口罩不遮脸，2: 有口罩遮下巴，3: 有口罩遮嘴，4: 正确佩戴口罩。
 FaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Mask 口罩佩戴信息。 
+                     * @param _mask 口罩佩戴信息。 
 AttributeItem对应的Type为 —— 0: 无口罩， 1: 有口罩不遮脸，2: 有口罩遮下巴，3: 有口罩遮嘴，4: 正确佩戴口罩。
 FaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetMask(const AttributeItem& _mask);
 
                     /**
                      * 判断参数 Mask 是否已赋值
                      * @return Mask 是否已赋值
+                     * 
                      */
                     bool MaskHasBeenSet() const;
 
@@ -294,20 +324,23 @@ FaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返�
 FaceAttributesType 不含 Mouth 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Mouth 嘴巴信息，可识别是否张嘴、嘴唇厚度。 
 FaceAttributesType 不含 Mouth 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     Mouth GetMouth() const;
 
                     /**
                      * 设置嘴巴信息，可识别是否张嘴、嘴唇厚度。 
 FaceAttributesType 不含 Mouth 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Mouth 嘴巴信息，可识别是否张嘴、嘴唇厚度。 
+                     * @param _mouth 嘴巴信息，可识别是否张嘴、嘴唇厚度。 
 FaceAttributesType 不含 Mouth 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetMouth(const Mouth& _mouth);
 
                     /**
                      * 判断参数 Mouth 是否已赋值
                      * @return Mouth 是否已赋值
+                     * 
                      */
                     bool MouthHasBeenSet() const;
 
@@ -318,6 +351,7 @@ FaceAttributesType 不含 Moustache 或检测超过 5 张人脸时，此参数�
                      * @return Moustache 胡子信息。
 AttributeItem对应的Type为 —— 0：无胡子，1：有胡子。 
 FaceAttributesType 不含 Moustache 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetMoustache() const;
 
@@ -325,15 +359,17 @@ FaceAttributesType 不含 Moustache 或检测超过 5 张人脸时，此参数�
                      * 设置胡子信息。
 AttributeItem对应的Type为 —— 0：无胡子，1：有胡子。 
 FaceAttributesType 不含 Moustache 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Moustache 胡子信息。
+                     * @param _moustache 胡子信息。
 AttributeItem对应的Type为 —— 0：无胡子，1：有胡子。 
 FaceAttributesType 不含 Moustache 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetMoustache(const AttributeItem& _moustache);
 
                     /**
                      * 判断参数 Moustache 是否已赋值
                      * @return Moustache 是否已赋值
+                     * 
                      */
                     bool MoustacheHasBeenSet() const;
 
@@ -344,6 +380,7 @@ FaceAttributesType 不含 Nose 或检测超过 5 张人脸时，此参数仍返�
                      * @return Nose 鼻子信息。 
 AttributeItem对应的Type为 —— 0：朝天鼻，1：鹰钩鼻，2：普通，3：圆鼻头
 FaceAttributesType 不含 Nose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetNose() const;
 
@@ -351,15 +388,17 @@ FaceAttributesType 不含 Nose 或检测超过 5 张人脸时，此参数仍返�
                      * 设置鼻子信息。 
 AttributeItem对应的Type为 —— 0：朝天鼻，1：鹰钩鼻，2：普通，3：圆鼻头
 FaceAttributesType 不含 Nose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Nose 鼻子信息。 
+                     * @param _nose 鼻子信息。 
 AttributeItem对应的Type为 —— 0：朝天鼻，1：鹰钩鼻，2：普通，3：圆鼻头
 FaceAttributesType 不含 Nose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetNose(const AttributeItem& _nose);
 
                     /**
                      * 判断参数 Nose 是否已赋值
                      * @return Nose 是否已赋值
+                     * 
                      */
                     bool NoseHasBeenSet() const;
 
@@ -370,6 +409,7 @@ FaceAttributesType 不含 Shape 或检测超过 5 张人脸时，此参数仍返
                      * @return Shape 脸型信息。 
 AttributeItem对应的Type为 —— 0：方脸，1：三角脸，2：鹅蛋脸，3：心形脸，4：圆脸。
 FaceAttributesType 不含 Shape 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetShape() const;
 
@@ -377,15 +417,17 @@ FaceAttributesType 不含 Shape 或检测超过 5 张人脸时，此参数仍返
                      * 设置脸型信息。 
 AttributeItem对应的Type为 —— 0：方脸，1：三角脸，2：鹅蛋脸，3：心形脸，4：圆脸。
 FaceAttributesType 不含 Shape 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Shape 脸型信息。 
+                     * @param _shape 脸型信息。 
 AttributeItem对应的Type为 —— 0：方脸，1：三角脸，2：鹅蛋脸，3：心形脸，4：圆脸。
 FaceAttributesType 不含 Shape 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetShape(const AttributeItem& _shape);
 
                     /**
                      * 判断参数 Shape 是否已赋值
                      * @return Shape 是否已赋值
+                     * 
                      */
                     bool ShapeHasBeenSet() const;
 
@@ -396,6 +438,7 @@ FaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返�
                      * @return Skin 肤色信息。 
 AttributeItem对应的Type为 —— 0：黄色皮肤，1：棕色皮肤，2：黑色皮肤，3：白色皮肤。
 FaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     AttributeItem GetSkin() const;
 
@@ -403,15 +446,17 @@ FaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返�
                      * 设置肤色信息。 
 AttributeItem对应的Type为 —— 0：黄色皮肤，1：棕色皮肤，2：黑色皮肤，3：白色皮肤。
 FaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Skin 肤色信息。 
+                     * @param _skin 肤色信息。 
 AttributeItem对应的Type为 —— 0：黄色皮肤，1：棕色皮肤，2：黑色皮肤，3：白色皮肤。
 FaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetSkin(const AttributeItem& _skin);
 
                     /**
                      * 判断参数 Skin 是否已赋值
                      * @return Skin 是否已赋值
+                     * 
                      */
                     bool SkinHasBeenSet() const;
 
@@ -420,20 +465,23 @@ FaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返�
 FaceAttributesType 不含 Smile 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
                      * @return Smile 微笑程度，[0,100]。 
 FaceAttributesType 不含 Smile 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     int64_t GetSmile() const;
 
                     /**
                      * 设置微笑程度，[0,100]。 
 FaceAttributesType 不含 Smile 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
-                     * @param Smile 微笑程度，[0,100]。 
+                     * @param _smile 微笑程度，[0,100]。 
 FaceAttributesType 不含 Smile 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。
+                     * 
                      */
                     void SetSmile(const int64_t& _smile);
 
                     /**
                      * 判断参数 Smile 是否已赋值
                      * @return Smile 是否已赋值
+                     * 
                      */
                     bool SmileHasBeenSet() const;
 

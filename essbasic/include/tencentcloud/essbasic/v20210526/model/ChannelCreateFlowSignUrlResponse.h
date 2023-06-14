@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取签署人签署链接信息
                      * @return FlowApproverUrlInfos 签署人签署链接信息
+                     * 
                      */
                     std::vector<FlowApproverUrlInfo> GetFlowApproverUrlInfos() const;
 
                     /**
                      * 判断参数 FlowApproverUrlInfos 是否已赋值
                      * @return FlowApproverUrlInfos 是否已赋值
+                     * 
                      */
                     bool FlowApproverUrlInfosHasBeenSet() const;
 

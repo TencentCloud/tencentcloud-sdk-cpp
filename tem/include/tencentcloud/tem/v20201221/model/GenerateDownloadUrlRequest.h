@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务ID
                      * @return ServiceId 服务ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务ID
-                     * @param ServiceId 服务ID
+                     * @param _serviceId 服务ID
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取包名
                      * @return PkgName 包名
+                     * 
                      */
                     std::string GetPkgName() const;
 
                     /**
                      * 设置包名
-                     * @param PkgName 包名
+                     * @param _pkgName 包名
+                     * 
                      */
                     void SetPkgName(const std::string& _pkgName);
 
                     /**
                      * 判断参数 PkgName 是否已赋值
                      * @return PkgName 是否已赋值
+                     * 
                      */
                     bool PkgNameHasBeenSet() const;
 
                     /**
                      * 获取需要下载的包版本
                      * @return DeployVersion 需要下载的包版本
+                     * 
                      */
                     std::string GetDeployVersion() const;
 
                     /**
                      * 设置需要下载的包版本
-                     * @param DeployVersion 需要下载的包版本
+                     * @param _deployVersion 需要下载的包版本
+                     * 
                      */
                     void SetDeployVersion(const std::string& _deployVersion);
 
                     /**
                      * 判断参数 DeployVersion 是否已赋值
                      * @return DeployVersion 是否已赋值
+                     * 
                      */
                     bool DeployVersionHasBeenSet() const;
 
                     /**
                      * 获取来源 channel
                      * @return SourceChannel 来源 channel
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源 channel
-                     * @param SourceChannel 来源 channel
+                     * @param _sourceChannel 来源 channel
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 

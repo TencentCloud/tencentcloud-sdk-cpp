@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取生成包操作系统的镜像Id
                      * @return ImageId 生成包操作系统的镜像Id
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置生成包操作系统的镜像Id
-                     * @param ImageId 生成包操作系统的镜像Id
+                     * @param _imageId 生成包操作系统的镜像Id
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取生成包操作系统的类型
                      * @return OsType 生成包操作系统的类型
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置生成包操作系统的类型
-                     * @param OsType 生成包操作系统的类型
+                     * @param _osType 生成包操作系统的类型
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取生成包操作系统的位数
                      * @return OsBit 生成包操作系统的位数
+                     * 
                      */
                     int64_t GetOsBit() const;
 
                     /**
                      * 设置生成包操作系统的位数
-                     * @param OsBit 生成包操作系统的位数
+                     * @param _osBit 生成包操作系统的位数
+                     * 
                      */
                     void SetOsBit(const int64_t& _osBit);
 
                     /**
                      * 判断参数 OsBit 是否已赋值
                      * @return OsBit 是否已赋值
+                     * 
                      */
                     bool OsBitHasBeenSet() const;
 
                     /**
                      * 获取生成包操作系统的版本
                      * @return OsVersion 生成包操作系统的版本
+                     * 
                      */
                     std::string GetOsVersion() const;
 
                     /**
                      * 设置生成包操作系统的版本
-                     * @param OsVersion 生成包操作系统的版本
+                     * @param _osVersion 生成包操作系统的版本
+                     * 
                      */
                     void SetOsVersion(const std::string& _osVersion);
 
                     /**
                      * 判断参数 OsVersion 是否已赋值
                      * @return OsVersion 是否已赋值
+                     * 
                      */
                     bool OsVersionHasBeenSet() const;
 

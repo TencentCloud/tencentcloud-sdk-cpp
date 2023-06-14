@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取资源id
                      * @return ResourceId 资源id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id
-                     * @param ResourceId 资源id
+                     * @param _resourceId 资源id
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return PlanName 策略名称
+                     * 
                      */
                     std::string GetPlanName() const;
 
                     /**
                      * 设置策略名称
-                     * @param PlanName 策略名称
+                     * @param _planName 策略名称
+                     * 
                      */
                     void SetPlanName(const std::string& _planName);
 
                     /**
                      * 判断参数 PlanName 是否已赋值
                      * @return PlanName 是否已赋值
+                     * 
                      */
                     bool PlanNameHasBeenSet() const;
 
                     /**
                      * 获取策略具体信息
                      * @return PlanInfo 策略具体信息
+                     * 
                      */
                     PlanInfo GetPlanInfo() const;
 
                     /**
                      * 设置策略具体信息
-                     * @param PlanInfo 策略具体信息
+                     * @param _planInfo 策略具体信息
+                     * 
                      */
                     void SetPlanInfo(const PlanInfo& _planInfo);
 
                     /**
                      * 判断参数 PlanInfo 是否已赋值
                      * @return PlanInfo 是否已赋值
+                     * 
                      */
                     bool PlanInfoHasBeenSet() const;
 

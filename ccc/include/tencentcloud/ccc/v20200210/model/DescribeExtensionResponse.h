@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取分机号
                      * @return ExtensionId 分机号
+                     * 
                      */
                     std::string GetExtensionId() const;
 
                     /**
                      * 判断参数 ExtensionId 是否已赋值
                      * @return ExtensionId 是否已赋值
+                     * 
                      */
                     bool ExtensionIdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return ExtensionDomain 域名
+                     * 
                      */
                     std::string GetExtensionDomain() const;
 
                     /**
                      * 判断参数 ExtensionDomain 是否已赋值
                      * @return ExtensionDomain 是否已赋值
+                     * 
                      */
                     bool ExtensionDomainHasBeenSet() const;
 
                     /**
                      * 获取注册密码
                      * @return Password 注册密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取代理服务器地址
                      * @return OutboundProxy 代理服务器地址
+                     * 
                      */
                     std::string GetOutboundProxy() const;
 
                     /**
                      * 判断参数 OutboundProxy 是否已赋值
                      * @return OutboundProxy 是否已赋值
+                     * 
                      */
                     bool OutboundProxyHasBeenSet() const;
 
                     /**
                      * 获取传输协议
                      * @return Transport 传输协议
+                     * 
                      */
                     std::string GetTransport() const;
 
                     /**
                      * 判断参数 Transport 是否已赋值
                      * @return Transport 是否已赋值
+                     * 
                      */
                     bool TransportHasBeenSet() const;
 

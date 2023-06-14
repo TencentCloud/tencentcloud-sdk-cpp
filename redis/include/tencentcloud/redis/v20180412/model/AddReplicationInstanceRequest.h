@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取复制组ID。
                      * @return GroupId 复制组ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置复制组ID。
-                     * @param GroupId 复制组ID。
+                     * @param _groupId 复制组ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      * @return InstanceRole 给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
                      * 设置给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
-                     * @param InstanceRole 给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * @param _instanceRole 给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
 
                     /**
                      * 判断参数 InstanceRole 是否已赋值
                      * @return InstanceRole 是否已赋值
+                     * 
                      */
                     bool InstanceRoleHasBeenSet() const;
 

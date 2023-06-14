@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取嵌入的web链接
                      * @return WebUrl 嵌入的web链接
+                     * 
                      */
                     std::string GetWebUrl() const;
 
                     /**
                      * 判断参数 WebUrl 是否已赋值
                      * @return WebUrl 是否已赋值
+                     * 
                      */
                     bool WebUrlHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取后台指标
                      * @return Metric 后台指标
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置后台指标
-                     * @param Metric 后台指标
+                     * @param _metric 后台指标
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取前台展示指标名称
                      * @return Alias 前台展示指标名称
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置前台展示指标名称
-                     * @param Alias 前台展示指标名称
+                     * @param _alias 前台展示指标名称
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -88,92 +94,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 指标描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置指标描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 指标描述
+                     * @param _description 指标描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取指标类型
                      * @return MetricType 指标类型
+                     * 
                      */
                     std::string GetMetricType() const;
 
                     /**
                      * 设置指标类型
-                     * @param MetricType 指标类型
+                     * @param _metricType 指标类型
+                     * 
                      */
                     void SetMetricType(const std::string& _metricType);
 
                     /**
                      * 判断参数 MetricType 是否已赋值
                      * @return MetricType 是否已赋值
+                     * 
                      */
                     bool MetricTypeHasBeenSet() const;
 
                     /**
                      * 获取默认指标单位
                      * @return Unit 默认指标单位
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置默认指标单位
-                     * @param Unit 默认指标单位
+                     * @param _unit 默认指标单位
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
                     /**
                      * 获取指标支持的聚合函数
                      * @return Aggregations 指标支持的聚合函数
+                     * 
                      */
                     std::vector<AggregationLegend> GetAggregations() const;
 
                     /**
                      * 设置指标支持的聚合函数
-                     * @param Aggregations 指标支持的聚合函数
+                     * @param _aggregations 指标支持的聚合函数
+                     * 
                      */
                     void SetAggregations(const std::vector<AggregationLegend>& _aggregations);
 
                     /**
                      * 判断参数 Aggregations 是否已赋值
                      * @return Aggregations 是否已赋值
+                     * 
                      */
                     bool AggregationsHasBeenSet() const;
 
                     /**
                      * 获取是否内部指标，内部指标不可在前台提供用户自由选择
                      * @return InnerMetric 是否内部指标，内部指标不可在前台提供用户自由选择
+                     * 
                      */
                     bool GetInnerMetric() const;
 
                     /**
                      * 设置是否内部指标，内部指标不可在前台提供用户自由选择
-                     * @param InnerMetric 是否内部指标，内部指标不可在前台提供用户自由选择
+                     * @param _innerMetric 是否内部指标，内部指标不可在前台提供用户自由选择
+                     * 
                      */
                     void SetInnerMetric(const bool& _innerMetric);
 
                     /**
                      * 判断参数 InnerMetric 是否已赋值
                      * @return InnerMetric 是否已赋值
+                     * 
                      */
                     bool InnerMetricHasBeenSet() const;
 

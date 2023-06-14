@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目。最大50
                      * @return Limit 限制数目。最大50
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置限制数目。最大50
-                     * @param Limit 限制数目。最大50
+                     * @param _limit 限制数目。最大50
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取成员Uin。
                      * @return MemberUin 成员Uin。
+                     * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置成员Uin。
-                     * @param MemberUin 成员Uin。
+                     * @param _memberUin 成员Uin。
+                     * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字。可用于策略名或描述搜索
                      * @return SearchKey 搜索关键字。可用于策略名或描述搜索
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置搜索关键字。可用于策略名或描述搜索
-                     * @param SearchKey 搜索关键字。可用于策略名或描述搜索
+                     * @param _searchKey 搜索关键字。可用于策略名或描述搜索
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 

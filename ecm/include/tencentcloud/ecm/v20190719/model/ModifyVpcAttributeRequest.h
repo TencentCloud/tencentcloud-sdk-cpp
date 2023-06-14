@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。形如：vpc-f49l6u0z。
                      * @return VpcId VPC实例ID。形如：vpc-f49l6u0z。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。形如：vpc-f49l6u0z。
-                     * @param VpcId VPC实例ID。形如：vpc-f49l6u0z。
+                     * @param _vpcId VPC实例ID。形如：vpc-f49l6u0z。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取私有网络名称，可任意命名，但不得超过60个字符。
                      * @return VpcName 私有网络名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置私有网络名称，可任意命名，但不得超过60个字符。
-                     * @param VpcName 私有网络名称，可任意命名，但不得超过60个字符。
+                     * @param _vpcName 私有网络名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-                     * @param Tags 标签
+                     * @param _tags 标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取私有网络描述
                      * @return Description 私有网络描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置私有网络描述
-                     * @param Description 私有网络描述
+                     * @param _description 私有网络描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

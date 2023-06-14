@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取vpc的id
                      * @return VpcId vpc的id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的id
-                     * @param VpcId vpc的id
+                     * @param _vpcId vpc的id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网id
                      * @return SubnetId 子网id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-                     * @param SubnetId 子网id
+                     * @param _subnetId 子网id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取vpc接入点信息
                      * @return VpcEndpoint vpc接入点信息
+                     * 
                      */
                     std::string GetVpcEndpoint() const;
 
                     /**
                      * 设置vpc接入点信息
-                     * @param VpcEndpoint vpc接入点信息
+                     * @param _vpcEndpoint vpc接入点信息
+                     * 
                      */
                     void SetVpcEndpoint(const std::string& _vpcEndpoint);
 
                     /**
                      * 判断参数 VpcEndpoint 是否已赋值
                      * @return VpcEndpoint 是否已赋值
+                     * 
                      */
                     bool VpcEndpointHasBeenSet() const;
 
@@ -107,6 +116,7 @@ OFF/ON/CREATING/DELETING
                      * @return VpcDataStreamEndpointStatus vpc接入点状态
 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcDataStreamEndpointStatus() const;
 
@@ -114,15 +124,17 @@ OFF/ON/CREATING/DELETING
                      * 设置vpc接入点状态
 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcDataStreamEndpointStatus vpc接入点状态
+                     * @param _vpcDataStreamEndpointStatus vpc接入点状态
 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcDataStreamEndpointStatus(const std::string& _vpcDataStreamEndpointStatus);
 
                     /**
                      * 判断参数 VpcDataStreamEndpointStatus 是否已赋值
                      * @return VpcDataStreamEndpointStatus 是否已赋值
+                     * 
                      */
                     bool VpcDataStreamEndpointStatusHasBeenSet() const;
 

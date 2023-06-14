@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取片区Id
                      * @return AreaId 片区Id
+                     * 
                      */
                     int64_t GetAreaId() const;
 
                     /**
                      * 设置片区Id
-                     * @param AreaId 片区Id
+                     * @param _areaId 片区Id
+                     * 
                      */
                     void SetAreaId(const int64_t& _areaId);
 
                     /**
                      * 判断参数 AreaId 是否已赋值
                      * @return AreaId 是否已赋值
+                     * 
                      */
                     bool AreaIdHasBeenSet() const;
 
                     /**
                      * 获取片区状态(1=有效，2=无效)
                      * @return AreaStatus 片区状态(1=有效，2=无效)
+                     * 
                      */
                     int64_t GetAreaStatus() const;
 
                     /**
                      * 设置片区状态(1=有效，2=无效)
-                     * @param AreaStatus 片区状态(1=有效，2=无效)
+                     * @param _areaStatus 片区状态(1=有效，2=无效)
+                     * 
                      */
                     void SetAreaStatus(const int64_t& _areaStatus);
 
                     /**
                      * 判断参数 AreaStatus 是否已赋值
                      * @return AreaStatus 是否已赋值
+                     * 
                      */
                     bool AreaStatusHasBeenSet() const;
 
                     /**
                      * 获取片区名称
                      * @return AreaName 片区名称
+                     * 
                      */
                     std::string GetAreaName() const;
 
                     /**
                      * 设置片区名称
-                     * @param AreaName 片区名称
+                     * @param _areaName 片区名称
+                     * 
                      */
                     void SetAreaName(const std::string& _areaName);
 
                     /**
                      * 判断参数 AreaName 是否已赋值
                      * @return AreaName 是否已赋值
+                     * 
                      */
                     bool AreaNameHasBeenSet() const;
 
                     /**
                      * 获取片区Key
                      * @return AreaKey 片区Key
+                     * 
                      */
                     std::string GetAreaKey() const;
 
                     /**
                      * 设置片区Key
-                     * @param AreaKey 片区Key
+                     * @param _areaKey 片区Key
+                     * 
                      */
                     void SetAreaKey(const std::string& _areaKey);
 
                     /**
                      * 判断参数 AreaKey 是否已赋值
                      * @return AreaKey 是否已赋值
+                     * 
                      */
                     bool AreaKeyHasBeenSet() const;
 
                     /**
                      * 获取地域码表 id
                      * @return AreaRegionID 地域码表 id
+                     * 
                      */
                     std::string GetAreaRegionID() const;
 
                     /**
                      * 设置地域码表 id
-                     * @param AreaRegionID 地域码表 id
+                     * @param _areaRegionID 地域码表 id
+                     * 
                      */
                     void SetAreaRegionID(const std::string& _areaRegionID);
 
                     /**
                      * 判断参数 AreaRegionID 是否已赋值
                      * @return AreaRegionID 是否已赋值
+                     * 
                      */
                     bool AreaRegionIDHasBeenSet() const;
 
                     /**
                      * 获取地域码表 code 如 ap-xxx（xxx 为地域词）
                      * @return AreaRegionCode 地域码表 code 如 ap-xxx（xxx 为地域词）
+                     * 
                      */
                     std::string GetAreaRegionCode() const;
 
                     /**
                      * 设置地域码表 code 如 ap-xxx（xxx 为地域词）
-                     * @param AreaRegionCode 地域码表 code 如 ap-xxx（xxx 为地域词）
+                     * @param _areaRegionCode 地域码表 code 如 ap-xxx（xxx 为地域词）
+                     * 
                      */
                     void SetAreaRegionCode(const std::string& _areaRegionCode);
 
                     /**
                      * 判断参数 AreaRegionCode 是否已赋值
                      * @return AreaRegionCode 是否已赋值
+                     * 
                      */
                     bool AreaRegionCodeHasBeenSet() const;
 
                     /**
                      * 获取地域缩写
                      * @return AreaAbbr 地域缩写
+                     * 
                      */
                     std::string GetAreaAbbr() const;
 
                     /**
                      * 设置地域缩写
-                     * @param AreaAbbr 地域缩写
+                     * @param _areaAbbr 地域缩写
+                     * 
                      */
                     void SetAreaAbbr(const std::string& _areaAbbr);
 
                     /**
                      * 判断参数 AreaAbbr 是否已赋值
                      * @return AreaAbbr 是否已赋值
+                     * 
                      */
                     bool AreaAbbrHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 下一次分页参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListOver 是否获取完结
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetListOver() const;
 
                     /**
                      * 判断参数 ListOver 是否已赋值
                      * @return ListOver 是否已赋值
+                     * 
                      */
                     bool ListOverHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 日志详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<JobLogResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogUrl 日志url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogUrl() const;
 
                     /**
                      * 判断参数 LogUrl 是否已赋值
                      * @return LogUrl 是否已赋值
+                     * 
                      */
                     bool LogUrlHasBeenSet() const;
 

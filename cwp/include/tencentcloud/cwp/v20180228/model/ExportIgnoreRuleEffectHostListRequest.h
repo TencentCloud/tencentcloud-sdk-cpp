@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取检测项id
                      * @return RuleId 检测项id
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置检测项id
-                     * @param RuleId 检测项id
+                     * @param _ruleId 检测项id
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -66,20 +69,23 @@ namespace TencentCloud
 <li>AliasName- String- 主机别名</li>
                      * @return Filters 过滤条件。
 <li>AliasName- String- 主机别名</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
 <li>AliasName- String- 主机别名</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>AliasName- String- 主机别名</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

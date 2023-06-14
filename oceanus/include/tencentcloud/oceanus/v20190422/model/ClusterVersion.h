@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Flink 集群的Flink版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlink() const;
 
                     /**
                      * 设置集群的Flink版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Flink 集群的Flink版本
+                     * @param _flink 集群的Flink版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlink(const std::string& _flink);
 
                     /**
                      * 判断参数 Flink 是否已赋值
                      * @return Flink 是否已赋值
+                     * 
                      */
                     bool FlinkHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportedFlink 集群支持的Flink版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSupportedFlink() const;
 
                     /**
                      * 设置集群支持的Flink版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SupportedFlink 集群支持的Flink版本
+                     * @param _supportedFlink 集群支持的Flink版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupportedFlink(const std::vector<std::string>& _supportedFlink);
 
                     /**
                      * 判断参数 SupportedFlink 是否已赋值
                      * @return SupportedFlink 是否已赋值
+                     * 
                      */
                     bool SupportedFlinkHasBeenSet() const;
 

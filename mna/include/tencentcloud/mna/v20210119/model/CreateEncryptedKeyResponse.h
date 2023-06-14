@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取预置密钥
                      * @return EncryptedKey 预置密钥
+                     * 
                      */
                     std::string GetEncryptedKey() const;
 
                     /**
                      * 判断参数 EncryptedKey 是否已赋值
                      * @return EncryptedKey 是否已赋值
+                     * 
                      */
                     bool EncryptedKeyHasBeenSet() const;
 

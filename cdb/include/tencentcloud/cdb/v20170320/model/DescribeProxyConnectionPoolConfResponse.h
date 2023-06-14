@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 配置规格数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolConf 连接池配置规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PoolConf GetPoolConf() const;
 
                     /**
                      * 判断参数 PoolConf 是否已赋值
                      * @return PoolConf 是否已赋值
+                     * 
                      */
                     bool PoolConfHasBeenSet() const;
 

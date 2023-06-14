@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取新IP地址。
                      * @return NewIPAddress 新IP地址。
+                     * 
                      */
                     std::string GetNewIPAddress() const;
 
                     /**
                      * 设置新IP地址。
-                     * @param NewIPAddress 新IP地址。
+                     * @param _newIPAddress 新IP地址。
+                     * 
                      */
                     void SetNewIPAddress(const std::string& _newIPAddress);
 
                     /**
                      * 判断参数 NewIPAddress 是否已赋值
                      * @return NewIPAddress 是否已赋值
+                     * 
                      */
                     bool NewIPAddressHasBeenSet() const;
 
                     /**
                      * 获取原IP地址。
                      * @return OldIpAddress 原IP地址。
+                     * 
                      */
                     std::string GetOldIpAddress() const;
 
                     /**
                      * 设置原IP地址。
-                     * @param OldIpAddress 原IP地址。
+                     * @param _oldIpAddress 原IP地址。
+                     * 
                      */
                     void SetOldIpAddress(const std::string& _oldIpAddress);
 
                     /**
                      * 判断参数 OldIpAddress 是否已赋值
                      * @return OldIpAddress 是否已赋值
+                     * 
                      */
                     bool OldIpAddressHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
                      * @return AssetRegion 生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
+                     * 
                      */
                     std::string GetAssetRegion() const;
 
                     /**
                      * 设置生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
-                     * @param AssetRegion 生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
+                     * @param _assetRegion 生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)
+                     * 
                      */
                     void SetAssetRegion(const std::string& _assetRegion);
 
                     /**
                      * 判断参数 AssetRegion 是否已赋值
                      * @return AssetRegion 是否已赋值
+                     * 
                      */
                     bool AssetRegionHasBeenSet() const;
 
                     /**
                      * 获取生成包的ZIP包名，例如：server.zip
                      * @return BucketKey 生成包的ZIP包名，例如：server.zip
+                     * 
                      */
                     std::string GetBucketKey() const;
 
                     /**
                      * 设置生成包的ZIP包名，例如：server.zip
-                     * @param BucketKey 生成包的ZIP包名，例如：server.zip
+                     * @param _bucketKey 生成包的ZIP包名，例如：server.zip
+                     * 
                      */
                     void SetBucketKey(const std::string& _bucketKey);
 
                     /**
                      * 判断参数 BucketKey 是否已赋值
                      * @return BucketKey 是否已赋值
+                     * 
                      */
                     bool BucketKeyHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindId 绑定ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBindId() const;
 
                     /**
                      * 判断参数 BindId 是否已赋值
                      * @return BindId 是否已赋值
+                     * 
                      */
                     bool BindIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyTime 申请时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplyTime() const;
 
                     /**
                      * 判断参数 ApplyTime 是否已赋值
                      * @return ApplyTime 是否已赋值
+                     * 
                      */
                     bool ApplyTimeHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 邮箱地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindStatus 绑定状态    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBindStatus() const;
 
                     /**
                      * 判断参数 BindStatus 是否已赋值
                      * @return BindStatus 是否已赋值
+                     * 
                      */
                     bool BindStatusHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindTime 绑定时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBindTime() const;
 
                     /**
                      * 判断参数 BindTime 是否已赋值
                      * @return BindTime 是否已赋值
+                     * 
                      */
                     bool BindTimeHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 失败说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneBind 安全手机绑定状态  未绑定：0，已绑定：1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPhoneBind() const;
 
                     /**
                      * 判断参数 PhoneBind 是否已赋值
                      * @return PhoneBind 是否已赋值
+                     * 
                      */
                     bool PhoneBindHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CountryCode 国际区号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
                      * 判断参数 CountryCode 是否已赋值
                      * @return CountryCode 是否已赋值
+                     * 
                      */
                     bool CountryCodeHasBeenSet() const;
 

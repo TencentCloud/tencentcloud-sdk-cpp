@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取CDN转推URL。
                      * @return PublishCdnUrl CDN转推URL。
+                     * 
                      */
                     std::string GetPublishCdnUrl() const;
 
                     /**
                      * 设置CDN转推URL。
-                     * @param PublishCdnUrl CDN转推URL。
+                     * @param _publishCdnUrl CDN转推URL。
+                     * 
                      */
                     void SetPublishCdnUrl(const std::string& _publishCdnUrl);
 
                     /**
                      * 判断参数 PublishCdnUrl 是否已赋值
                      * @return PublishCdnUrl 是否已赋值
+                     * 
                      */
                     bool PublishCdnUrlHasBeenSet() const;
 
                     /**
                      * 获取是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：1，为避免误产生转推费用，该参数建议明确填写，转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明；2，国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN需求，请联系腾讯云技术支持。
                      * @return IsTencentCdn 是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：1，为避免误产生转推费用，该参数建议明确填写，转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明；2，国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN需求，请联系腾讯云技术支持。
+                     * 
                      */
                     uint64_t GetIsTencentCdn() const;
 
                     /**
                      * 设置是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：1，为避免误产生转推费用，该参数建议明确填写，转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明；2，国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN需求，请联系腾讯云技术支持。
-                     * @param IsTencentCdn 是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：1，为避免误产生转推费用，该参数建议明确填写，转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明；2，国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN需求，请联系腾讯云技术支持。
+                     * @param _isTencentCdn 是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：1，为避免误产生转推费用，该参数建议明确填写，转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明；2，国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN需求，请联系腾讯云技术支持。
+                     * 
                      */
                     void SetIsTencentCdn(const uint64_t& _isTencentCdn);
 
                     /**
                      * 判断参数 IsTencentCdn 是否已赋值
                      * @return IsTencentCdn 是否已赋值
+                     * 
                      */
                     bool IsTencentCdnHasBeenSet() const;
 

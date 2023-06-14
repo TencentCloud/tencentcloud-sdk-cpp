@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return Time 时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-                     * @param Time 时间
+                     * @param _time 时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取状态类型： Online 上线，Offline 下线
                      * @return Type 状态类型： Online 上线，Offline 下线
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置状态类型： Online 上线，Offline 下线
-                     * @param Type 状态类型： Online 上线，Offline 下线
+                     * @param _type 状态类型： Online 上线，Offline 下线
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取日志信息
                      * @return Data 日志信息
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置日志信息
-                     * @param Data 日志信息
+                     * @param _data 日志信息
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

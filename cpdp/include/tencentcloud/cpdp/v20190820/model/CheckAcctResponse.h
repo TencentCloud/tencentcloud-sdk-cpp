@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取前置流水号，请保存
                      * @return FrontSeqNo 前置流水号，请保存
+                     * 
                      */
                     std::string GetFrontSeqNo() const;
 
                     /**
                      * 判断参数 FrontSeqNo 是否已赋值
                      * @return FrontSeqNo 是否已赋值
+                     * 
                      */
                     bool FrontSeqNoHasBeenSet() const;
 

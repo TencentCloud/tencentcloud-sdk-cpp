@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return FailureMode 运行失败模式，取值范围：
 - ContinueWhilePossible
 - NoNewCalls
+                     * 
                      */
                     std::string GetFailureMode() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置运行失败模式，取值范围：
 - ContinueWhilePossible
 - NoNewCalls
-                     * @param FailureMode 运行失败模式，取值范围：
+                     * @param _failureMode 运行失败模式，取值范围：
 - ContinueWhilePossible
 - NoNewCalls
+                     * 
                      */
                     void SetFailureMode(const std::string& _failureMode);
 
                     /**
                      * 判断参数 FailureMode 是否已赋值
                      * @return FailureMode 是否已赋值
+                     * 
                      */
                     bool FailureModeHasBeenSet() const;
 
                     /**
                      * 获取是否使用Call-Caching功能。
                      * @return UseCallCache 是否使用Call-Caching功能。
+                     * 
                      */
                     bool GetUseCallCache() const;
 
                     /**
                      * 设置是否使用Call-Caching功能。
-                     * @param UseCallCache 是否使用Call-Caching功能。
+                     * @param _useCallCache 是否使用Call-Caching功能。
+                     * 
                      */
                     void SetUseCallCache(const bool& _useCallCache);
 
                     /**
                      * 判断参数 UseCallCache 是否已赋值
                      * @return UseCallCache 是否已赋值
+                     * 
                      */
                     bool UseCallCacheHasBeenSet() const;
 
                     /**
                      * 获取是否使用错误挂起功能。
                      * @return UseErrorOnHold 是否使用错误挂起功能。
+                     * 
                      */
                     bool GetUseErrorOnHold() const;
 
                     /**
                      * 设置是否使用错误挂起功能。
-                     * @param UseErrorOnHold 是否使用错误挂起功能。
+                     * @param _useErrorOnHold 是否使用错误挂起功能。
+                     * 
                      */
                     void SetUseErrorOnHold(const bool& _useErrorOnHold);
 
                     /**
                      * 判断参数 UseErrorOnHold 是否已赋值
                      * @return UseErrorOnHold 是否已赋值
+                     * 
                      */
                     bool UseErrorOnHoldHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinalWorkflowOutputsDir 输出归档COS路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinalWorkflowOutputsDir() const;
 
                     /**
                      * 设置输出归档COS路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinalWorkflowOutputsDir 输出归档COS路径。
+                     * @param _finalWorkflowOutputsDir 输出归档COS路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinalWorkflowOutputsDir(const std::string& _finalWorkflowOutputsDir);
 
                     /**
                      * 判断参数 FinalWorkflowOutputsDir 是否已赋值
                      * @return FinalWorkflowOutputsDir 是否已赋值
+                     * 
                      */
                     bool FinalWorkflowOutputsDirHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseRelativeOutputPaths 是否使用相对目录归档输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUseRelativeOutputPaths() const;
 
                     /**
                      * 设置是否使用相对目录归档输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseRelativeOutputPaths 是否使用相对目录归档输出。
+                     * @param _useRelativeOutputPaths 是否使用相对目录归档输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseRelativeOutputPaths(const bool& _useRelativeOutputPaths);
 
                     /**
                      * 判断参数 UseRelativeOutputPaths 是否已赋值
                      * @return UseRelativeOutputPaths 是否已赋值
+                     * 
                      */
                     bool UseRelativeOutputPathsHasBeenSet() const;
 

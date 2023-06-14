@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据迁移任务ID
                      * @return JobId 数据迁移任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置数据迁移任务ID
-                     * @param JobId 数据迁移任务ID
+                     * @param _jobId 数据迁移任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取恢复任务的模式，目前的取值有：clearData 清空目标实例数据，overwrite 以覆盖写的方式执行任务，normal 跟正常流程一样，不做额外动作；注意，clearData、overwrite仅对redis生效，normal仅针对非redis链路生效
                      * @return ResumeOption 恢复任务的模式，目前的取值有：clearData 清空目标实例数据，overwrite 以覆盖写的方式执行任务，normal 跟正常流程一样，不做额外动作；注意，clearData、overwrite仅对redis生效，normal仅针对非redis链路生效
+                     * 
                      */
                     std::string GetResumeOption() const;
 
                     /**
                      * 设置恢复任务的模式，目前的取值有：clearData 清空目标实例数据，overwrite 以覆盖写的方式执行任务，normal 跟正常流程一样，不做额外动作；注意，clearData、overwrite仅对redis生效，normal仅针对非redis链路生效
-                     * @param ResumeOption 恢复任务的模式，目前的取值有：clearData 清空目标实例数据，overwrite 以覆盖写的方式执行任务，normal 跟正常流程一样，不做额外动作；注意，clearData、overwrite仅对redis生效，normal仅针对非redis链路生效
+                     * @param _resumeOption 恢复任务的模式，目前的取值有：clearData 清空目标实例数据，overwrite 以覆盖写的方式执行任务，normal 跟正常流程一样，不做额外动作；注意，clearData、overwrite仅对redis生效，normal仅针对非redis链路生效
+                     * 
                      */
                     void SetResumeOption(const std::string& _resumeOption);
 
                     /**
                      * 判断参数 ResumeOption 是否已赋值
                      * @return ResumeOption 是否已赋值
+                     * 
                      */
                     bool ResumeOptionHasBeenSet() const;
 

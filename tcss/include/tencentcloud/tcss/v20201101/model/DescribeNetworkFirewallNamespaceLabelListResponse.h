@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取集群总数
                      * @return TotalCount 集群总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取集群空间标签详细信息
                      * @return ClusterNamespaceLabelList 集群空间标签详细信息
+                     * 
                      */
                     std::vector<NetworkClusterNamespaceLabelInfo> GetClusterNamespaceLabelList() const;
 
                     /**
                      * 判断参数 ClusterNamespaceLabelList 是否已赋值
                      * @return ClusterNamespaceLabelList 是否已赋值
+                     * 
                      */
                     bool ClusterNamespaceLabelListHasBeenSet() const;
 

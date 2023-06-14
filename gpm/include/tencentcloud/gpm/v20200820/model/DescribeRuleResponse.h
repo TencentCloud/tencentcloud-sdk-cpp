@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleInfo 规则信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleInfo GetRuleInfo() const;
 
                     /**
                      * 判断参数 RuleInfo 是否已赋值
                      * @return RuleInfo 是否已赋值
+                     * 
                      */
                     bool RuleInfoHasBeenSet() const;
 

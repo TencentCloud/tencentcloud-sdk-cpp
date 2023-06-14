@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadata 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RspMetadata GetMetadata() const;
 
                     /**
                      * 判断参数 Metadata 是否已赋值
                      * @return Metadata 是否已赋值
+                     * 
                      */
                     bool MetadataHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Payload 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     GetIndustryV1HomeMembersRespPayload GetPayload() const;
 
                     /**
                      * 判断参数 Payload 是否已赋值
                      * @return Payload 是否已赋值
+                     * 
                      */
                     bool PayloadHasBeenSet() const;
 

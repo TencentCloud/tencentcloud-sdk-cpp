@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取客户实例的vip
                      * @return ServiceVip 客户实例的vip
+                     * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置客户实例的vip
-                     * @param ServiceVip 客户实例的vip
+                     * @param _serviceVip 客户实例的vip
+                     * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
 
                     /**
                      * 判断参数 ServiceVip 是否已赋值
                      * @return ServiceVip 是否已赋值
+                     * 
                      */
                     bool ServiceVipHasBeenSet() const;
 
                     /**
                      * 获取客户实例的vpcId
                      * @return UniqVpcId 客户实例的vpcId
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置客户实例的vpcId
-                     * @param UniqVpcId 客户实例的vpcId
+                     * @param _uniqVpcId 客户实例的vpcId
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 

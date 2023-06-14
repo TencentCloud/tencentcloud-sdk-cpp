@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取流名称。
                      * @return StreamName 流名称。
+                     * 
                      */
                     std::string GetStreamName() const;
 
                     /**
                      * 设置流名称。
-                     * @param StreamName 流名称。
+                     * @param _streamName 流名称。
+                     * 
                      */
                     void SetStreamName(const std::string& _streamName);
 
                     /**
                      * 判断参数 StreamName 是否已赋值
                      * @return StreamName 是否已赋值
+                     * 
                      */
                     bool StreamNameHasBeenSet() const;
 
                     /**
                      * 获取起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。
                      * @return StartTime 起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。
-                     * @param StartTime 起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。
+                     * @param _startTime 起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。
                      * @return EndTime 结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。
-                     * @param EndTime 结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。
+                     * @param _endTime 结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取推流域名。
                      * @return PushDomain 推流域名。
+                     * 
                      */
                     std::string GetPushDomain() const;
 
                     /**
                      * 设置推流域名。
-                     * @param PushDomain 推流域名。
+                     * @param _pushDomain 推流域名。
+                     * 
                      */
                     void SetPushDomain(const std::string& _pushDomain);
 
                     /**
                      * 判断参数 PushDomain 是否已赋值
                      * @return PushDomain 是否已赋值
+                     * 
                      */
                     bool PushDomainHasBeenSet() const;
 
                     /**
                      * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
                      * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * @param _appName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 

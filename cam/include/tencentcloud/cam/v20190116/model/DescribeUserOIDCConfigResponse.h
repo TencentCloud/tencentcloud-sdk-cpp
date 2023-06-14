@@ -46,132 +46,154 @@ namespace TencentCloud
                     /**
                      * 获取身份提供商类型。 12：用户OIDC身份提供商
                      * @return ProviderType 身份提供商类型。 12：用户OIDC身份提供商
+                     * 
                      */
                     uint64_t GetProviderType() const;
 
                     /**
                      * 判断参数 ProviderType 是否已赋值
                      * @return ProviderType 是否已赋值
+                     * 
                      */
                     bool ProviderTypeHasBeenSet() const;
 
                     /**
                      * 获取身份提供商URL
                      * @return IdentityUrl 身份提供商URL
+                     * 
                      */
                     std::string GetIdentityUrl() const;
 
                     /**
                      * 判断参数 IdentityUrl 是否已赋值
                      * @return IdentityUrl 是否已赋值
+                     * 
                      */
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
                      * 获取签名公钥
                      * @return IdentityKey 签名公钥
+                     * 
                      */
                     std::string GetIdentityKey() const;
 
                     /**
                      * 判断参数 IdentityKey 是否已赋值
                      * @return IdentityKey 是否已赋值
+                     * 
                      */
                     bool IdentityKeyHasBeenSet() const;
 
                     /**
                      * 获取客户端id
                      * @return ClientId 客户端id
+                     * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 判断参数 ClientId 是否已赋值
                      * @return ClientId 是否已赋值
+                     * 
                      */
                     bool ClientIdHasBeenSet() const;
 
                     /**
                      * 获取状态：0:未设置，11:已开启，2:已禁用
                      * @return Status 状态：0:未设置，11:已开启，2:已禁用
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取授权请求Endpoint
                      * @return AuthorizationEndpoint 授权请求Endpoint
+                     * 
                      */
                     std::string GetAuthorizationEndpoint() const;
 
                     /**
                      * 判断参数 AuthorizationEndpoint 是否已赋值
                      * @return AuthorizationEndpoint 是否已赋值
+                     * 
                      */
                     bool AuthorizationEndpointHasBeenSet() const;
 
                     /**
                      * 获取授权请求Scope
                      * @return Scope 授权请求Scope
+                     * 
                      */
                     std::vector<std::string> GetScope() const;
 
                     /**
                      * 判断参数 Scope 是否已赋值
                      * @return Scope 是否已赋值
+                     * 
                      */
                     bool ScopeHasBeenSet() const;
 
                     /**
                      * 获取授权请求Response type
                      * @return ResponseType 授权请求Response type
+                     * 
                      */
                     std::string GetResponseType() const;
 
                     /**
                      * 判断参数 ResponseType 是否已赋值
                      * @return ResponseType 是否已赋值
+                     * 
                      */
                     bool ResponseTypeHasBeenSet() const;
 
                     /**
                      * 获取授权请求Response mode
                      * @return ResponseMode 授权请求Response mode
+                     * 
                      */
                     std::string GetResponseMode() const;
 
                     /**
                      * 判断参数 ResponseMode 是否已赋值
                      * @return ResponseMode 是否已赋值
+                     * 
                      */
                     bool ResponseModeHasBeenSet() const;
 
                     /**
                      * 获取映射字段名称
                      * @return MappingFiled 映射字段名称
+                     * 
                      */
                     std::string GetMappingFiled() const;
 
                     /**
                      * 判断参数 MappingFiled 是否已赋值
                      * @return MappingFiled 是否已赋值
+                     * 
                      */
                     bool MappingFiledHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

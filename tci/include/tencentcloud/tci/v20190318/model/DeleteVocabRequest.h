@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要删除词汇的词汇库名
                      * @return VocabLibName 要删除词汇的词汇库名
+                     * 
                      */
                     std::string GetVocabLibName() const;
 
                     /**
                      * 设置要删除词汇的词汇库名
-                     * @param VocabLibName 要删除词汇的词汇库名
+                     * @param _vocabLibName 要删除词汇的词汇库名
+                     * 
                      */
                     void SetVocabLibName(const std::string& _vocabLibName);
 
                     /**
                      * 判断参数 VocabLibName 是否已赋值
                      * @return VocabLibName 是否已赋值
+                     * 
                      */
                     bool VocabLibNameHasBeenSet() const;
 
                     /**
                      * 获取要删除的词汇列表
                      * @return VocabList 要删除的词汇列表
+                     * 
                      */
                     std::vector<std::string> GetVocabList() const;
 
                     /**
                      * 设置要删除的词汇列表
-                     * @param VocabList 要删除的词汇列表
+                     * @param _vocabList 要删除的词汇列表
+                     * 
                      */
                     void SetVocabList(const std::vector<std::string>& _vocabList);
 
                     /**
                      * 判断参数 VocabList 是否已赋值
                      * @return VocabList 是否已赋值
+                     * 
                      */
                     bool VocabListHasBeenSet() const;
 

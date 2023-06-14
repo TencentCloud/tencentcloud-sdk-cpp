@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取任务执行信息描述。
                      * @return Info 任务执行信息描述。
+                     * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 设置任务执行信息描述。
-                     * @param Info 任务执行信息描述。
+                     * @param _info 任务执行信息描述。
+                     * 
                      */
                     void SetInfo(const std::string& _info);
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。
                      * @return Status 任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。
-                     * @param Status 任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。
+                     * @param _status 任务执行结果。可能的取值：INITIAL - 初始化，RUNNING - 运行中，SUCCESS - 执行成功，FAILED - 执行失败，KILLED - 已终止，REMOVED - 已删除，PAUSED - 终止中。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务执行进度。取值范围为[0, 100]。
                      * @return Progress 任务执行进度。取值范围为[0, 100]。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置任务执行进度。取值范围为[0, 100]。
-                     * @param Progress 任务执行进度。取值范围为[0, 100]。
+                     * @param _progress 任务执行进度。取值范围为[0, 100]。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取任务开始时间。
                      * @return StartTime 任务开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务开始时间。
-                     * @param StartTime 任务开始时间。
+                     * @param _startTime 任务开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取任务结束时间。
                      * @return EndTime 任务结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务结束时间。
-                     * @param EndTime 任务结束时间。
+                     * @param _endTime 任务结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 回档任务详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RollbackInstancesInfo> GetDetail() const;
 
                     /**
                      * 设置回档任务详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Detail 回档任务详情。
+                     * @param _detail 回档任务详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetail(const std::vector<RollbackInstancesInfo>& _detail);
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

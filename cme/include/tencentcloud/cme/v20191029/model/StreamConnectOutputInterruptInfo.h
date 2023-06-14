@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取云转推输出标识。
                      * @return Id 云转推输出标识。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置云转推输出标识。
-                     * @param Id 云转推输出标识。
+                     * @param _id 云转推输出标识。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取云转推输出名称。
                      * @return Name 云转推输出名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置云转推输出名称。
-                     * @param Name 云转推输出名称。
+                     * @param _name 云转推输出名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取云转推输出地址。
                      * @return Url 云转推输出地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置云转推输出地址。
-                     * @param Url 云转推输出地址。
+                     * @param _url 云转推输出地址。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

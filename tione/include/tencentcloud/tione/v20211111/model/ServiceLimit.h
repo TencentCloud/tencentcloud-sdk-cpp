@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效
                      * @return EnableInstanceRpsLimit 是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效
+                     * 
                      */
                     bool GetEnableInstanceRpsLimit() const;
 
                     /**
                      * 设置是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效
-                     * @param EnableInstanceRpsLimit 是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效
+                     * @param _enableInstanceRpsLimit 是否开启实例层面限流限速，true or false。true 则 InstanceRpsLimit 必填， false 则 InstanceRpsLimit 不生效
+                     * 
                      */
                     void SetEnableInstanceRpsLimit(const bool& _enableInstanceRpsLimit);
 
                     /**
                      * 判断参数 EnableInstanceRpsLimit 是否已赋值
                      * @return EnableInstanceRpsLimit 是否已赋值
+                     * 
                      */
                     bool EnableInstanceRpsLimitHasBeenSet() const;
 
                     /**
                      * 获取每个服务实例的 request per second 限速, 0 为不限流
                      * @return InstanceRpsLimit 每个服务实例的 request per second 限速, 0 为不限流
+                     * 
                      */
                     int64_t GetInstanceRpsLimit() const;
 
                     /**
                      * 设置每个服务实例的 request per second 限速, 0 为不限流
-                     * @param InstanceRpsLimit 每个服务实例的 request per second 限速, 0 为不限流
+                     * @param _instanceRpsLimit 每个服务实例的 request per second 限速, 0 为不限流
+                     * 
                      */
                     void SetInstanceRpsLimit(const int64_t& _instanceRpsLimit);
 
                     /**
                      * 判断参数 InstanceRpsLimit 是否已赋值
                      * @return InstanceRpsLimit 是否已赋值
+                     * 
                      */
                     bool InstanceRpsLimitHasBeenSet() const;
 

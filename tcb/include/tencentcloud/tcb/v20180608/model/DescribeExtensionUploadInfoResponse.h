@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取待上传文件的信息数组
                      * @return FilesData 待上传文件的信息数组
+                     * 
                      */
                     std::vector<ExtensionFileInfo> GetFilesData() const;
 
                     /**
                      * 判断参数 FilesData 是否已赋值
                      * @return FilesData 是否已赋值
+                     * 
                      */
                     bool FilesDataHasBeenSet() const;
 

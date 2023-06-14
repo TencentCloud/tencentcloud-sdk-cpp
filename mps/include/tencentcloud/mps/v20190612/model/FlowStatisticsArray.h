@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取时间戳。
                      * @return Timestamp 时间戳。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置时间戳。
-                     * @param Timestamp 时间戳。
+                     * @param _timestamp 时间戳。
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取每个会话的统计数据。
                      * @return FlowStatistics 每个会话的统计数据。
+                     * 
                      */
                     std::vector<FlowStatistics> GetFlowStatistics() const;
 
                     /**
                      * 设置每个会话的统计数据。
-                     * @param FlowStatistics 每个会话的统计数据。
+                     * @param _flowStatistics 每个会话的统计数据。
+                     * 
                      */
                     void SetFlowStatistics(const std::vector<FlowStatistics>& _flowStatistics);
 
                     /**
                      * 判断参数 FlowStatistics 是否已赋值
                      * @return FlowStatistics 是否已赋值
+                     * 
                      */
                     bool FlowStatisticsHasBeenSet() const;
 

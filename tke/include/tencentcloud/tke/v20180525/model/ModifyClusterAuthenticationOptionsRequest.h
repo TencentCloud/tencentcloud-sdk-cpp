@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取ServiceAccount认证配置
                      * @return ServiceAccounts ServiceAccount认证配置
+                     * 
                      */
                     ServiceAccountAuthenticationOptions GetServiceAccounts() const;
 
                     /**
                      * 设置ServiceAccount认证配置
-                     * @param ServiceAccounts ServiceAccount认证配置
+                     * @param _serviceAccounts ServiceAccount认证配置
+                     * 
                      */
                     void SetServiceAccounts(const ServiceAccountAuthenticationOptions& _serviceAccounts);
 
                     /**
                      * 判断参数 ServiceAccounts 是否已赋值
                      * @return ServiceAccounts 是否已赋值
+                     * 
                      */
                     bool ServiceAccountsHasBeenSet() const;
 
                     /**
                      * 获取OIDC认证配置
                      * @return OIDCConfig OIDC认证配置
+                     * 
                      */
                     OIDCConfigAuthenticationOptions GetOIDCConfig() const;
 
                     /**
                      * 设置OIDC认证配置
-                     * @param OIDCConfig OIDC认证配置
+                     * @param _oIDCConfig OIDC认证配置
+                     * 
                      */
                     void SetOIDCConfig(const OIDCConfigAuthenticationOptions& _oIDCConfig);
 
                     /**
                      * 判断参数 OIDCConfig 是否已赋值
                      * @return OIDCConfig 是否已赋值
+                     * 
                      */
                     bool OIDCConfigHasBeenSet() const;
 

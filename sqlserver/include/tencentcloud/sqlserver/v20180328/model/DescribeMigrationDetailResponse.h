@@ -49,168 +49,196 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务ID
                      * @return MigrateId 迁移任务ID
+                     * 
                      */
                     uint64_t GetMigrateId() const;
 
                     /**
                      * 判断参数 MigrateId 是否已赋值
                      * @return MigrateId 是否已赋值
+                     * 
                      */
                     bool MigrateIdHasBeenSet() const;
 
                     /**
                      * 获取迁移任务名称
                      * @return MigrateName 迁移任务名称
+                     * 
                      */
                     std::string GetMigrateName() const;
 
                     /**
                      * 判断参数 MigrateName 是否已赋值
                      * @return MigrateName 是否已赋值
+                     * 
                      */
                     bool MigrateNameHasBeenSet() const;
 
                     /**
                      * 获取迁移任务所属的用户ID
                      * @return AppId 迁移任务所属的用户ID
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取迁移任务所属的地域
                      * @return Region 迁移任务所属的地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）
                      * @return SourceType 迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）
+                     * 
                      */
                     int64_t GetSourceType() const;
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取迁移任务的创建时间
                      * @return CreateTime 迁移任务的创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取迁移任务的开始时间
                      * @return StartTime 迁移任务的开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取迁移任务的结束时间
                      * @return EndTime 迁移任务的结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取迁移任务的状态（1:初始化,4:迁移中,5.迁移失败,6.迁移成功）
                      * @return Status 迁移任务的状态（1:初始化,4:迁移中,5.迁移失败,6.迁移成功）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取迁移任务当前进度
                      * @return Progress 迁移任务当前进度
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 
                     /**
                      * 获取迁移类型（1:结构迁移 2:数据迁移 3:增量同步）
                      * @return MigrateType 迁移类型（1:结构迁移 2:数据迁移 3:增量同步）
+                     * 
                      */
                     int64_t GetMigrateType() const;
 
                     /**
                      * 判断参数 MigrateType 是否已赋值
                      * @return MigrateType 是否已赋值
+                     * 
                      */
                     bool MigrateTypeHasBeenSet() const;
 
                     /**
                      * 获取迁移源
                      * @return Source 迁移源
+                     * 
                      */
                     MigrateSource GetSource() const;
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取迁移目标
                      * @return Target 迁移目标
+                     * 
                      */
                     MigrateTarget GetTarget() const;
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
                     /**
                      * 获取迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用。
                      * @return MigrateDBSet 迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用。
+                     * 
                      */
                     std::vector<MigrateDB> GetMigrateDBSet() const;
 
                     /**
                      * 判断参数 MigrateDBSet 是否已赋值
                      * @return MigrateDBSet 是否已赋值
+                     * 
                      */
                     bool MigrateDBSetHasBeenSet() const;
 

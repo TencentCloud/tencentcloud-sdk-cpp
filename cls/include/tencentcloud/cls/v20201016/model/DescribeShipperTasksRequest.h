@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取投递规则ID
                      * @return ShipperId 投递规则ID
+                     * 
                      */
                     std::string GetShipperId() const;
 
                     /**
                      * 设置投递规则ID
-                     * @param ShipperId 投递规则ID
+                     * @param _shipperId 投递规则ID
+                     * 
                      */
                     void SetShipperId(const std::string& _shipperId);
 
                     /**
                      * 判断参数 ShipperId 是否已赋值
                      * @return ShipperId 是否已赋值
+                     * 
                      */
                     bool ShipperIdHasBeenSet() const;
 
                     /**
                      * 获取查询的开始时间戳，支持最近3天的查询， 毫秒
                      * @return StartTime 查询的开始时间戳，支持最近3天的查询， 毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置查询的开始时间戳，支持最近3天的查询， 毫秒
-                     * @param StartTime 查询的开始时间戳，支持最近3天的查询， 毫秒
+                     * @param _startTime 查询的开始时间戳，支持最近3天的查询， 毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询的结束时间戳， 毫秒
                      * @return EndTime 查询的结束时间戳， 毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置查询的结束时间戳， 毫秒
-                     * @param EndTime 查询的结束时间戳， 毫秒
+                     * @param _endTime 查询的结束时间戳， 毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

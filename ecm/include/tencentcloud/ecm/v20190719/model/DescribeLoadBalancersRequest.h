@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取区域。如果不传则默认查询所有区域。
                      * @return EcmRegion 区域。如果不传则默认查询所有区域。
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置区域。如果不传则默认查询所有区域。
-                     * @param EcmRegion 区域。如果不传则默认查询所有区域。
+                     * @param _ecmRegion 区域。如果不传则默认查询所有区域。
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerIds 负载均衡实例 ID。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerIds 负载均衡实例 ID。
+                     * @param _loadBalancerIds 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例的名称。
                      * @return LoadBalancerName 负载均衡实例的名称。
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡实例的名称。
-                     * @param LoadBalancerName 负载均衡实例的名称。
+                     * @param _loadBalancerName 负载均衡实例的名称。
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例的 VIP 地址，支持多个。
                      * @return LoadBalancerVips 负载均衡实例的 VIP 地址，支持多个。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerVips() const;
 
                     /**
                      * 设置负载均衡实例的 VIP 地址，支持多个。
-                     * @param LoadBalancerVips 负载均衡实例的 VIP 地址，支持多个。
+                     * @param _loadBalancerVips 负载均衡实例的 VIP 地址，支持多个。
+                     * 
                      */
                     void SetLoadBalancerVips(const std::vector<std::string>& _loadBalancerVips);
 
                     /**
                      * 判断参数 LoadBalancerVips 是否已赋值
                      * @return LoadBalancerVips 是否已赋值
+                     * 
                      */
                     bool LoadBalancerVipsHasBeenSet() const;
 
                     /**
                      * 获取负载均衡绑定的后端服务的内网 IP。
                      * @return BackendPrivateIps 负载均衡绑定的后端服务的内网 IP。
+                     * 
                      */
                     std::vector<std::string> GetBackendPrivateIps() const;
 
                     /**
                      * 设置负载均衡绑定的后端服务的内网 IP。
-                     * @param BackendPrivateIps 负载均衡绑定的后端服务的内网 IP。
+                     * @param _backendPrivateIps 负载均衡绑定的后端服务的内网 IP。
+                     * 
                      */
                     void SetBackendPrivateIps(const std::vector<std::string>& _backendPrivateIps);
 
                     /**
                      * 判断参数 BackendPrivateIps 是否已赋值
                      * @return BackendPrivateIps 是否已赋值
+                     * 
                      */
                     bool BackendPrivateIpsHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认为 0。
                      * @return Offset 数据偏移量，默认为 0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认为 0。
-                     * @param Offset 数据偏移量，默认为 0。
+                     * @param _offset 数据偏移量，默认为 0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回负载均衡实例的数量，默认为20，最大值为100。
                      * @return Limit 返回负载均衡实例的数量，默认为20，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回负载均衡实例的数量，默认为20，最大值为100。
-                     * @param Limit 返回负载均衡实例的数量，默认为20，最大值为100。
+                     * @param _limit 返回负载均衡实例的数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -174,38 +195,44 @@ namespace TencentCloud
 如果不传则默认查询全部。
                      * @return WithBackend 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。 
 如果不传则默认查询全部。
+                     * 
                      */
                     int64_t GetWithBackend() const;
 
                     /**
                      * 设置负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。 
 如果不传则默认查询全部。
-                     * @param WithBackend 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。 
+                     * @param _withBackend 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。 
 如果不传则默认查询全部。
+                     * 
                      */
                     void SetWithBackend(const int64_t& _withBackend);
 
                     /**
                      * 判断参数 WithBackend 是否已赋值
                      * @return WithBackend 是否已赋值
+                     * 
                      */
                     bool WithBackendHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx。
                      * @return VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx。
-                     * @param VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx。
+                     * @param _vpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -214,38 +241,44 @@ namespace TencentCloud
 tag-key - String - 是否必填：否 - （过滤条件）按照标签的键过滤。
                      * @return Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：
 tag-key - String - 是否必填：否 - （过滤条件）按照标签的键过滤。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：
 tag-key - String - 是否必填：否 - （过滤条件）按照标签的键过滤。
-                     * @param Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：
+                     * @param _filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：
 tag-key - String - 是否必填：否 - （过滤条件）按照标签的键过滤。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取安全组。
                      * @return SecurityGroup 安全组。
+                     * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置安全组。
-                     * @param SecurityGroup 安全组。
+                     * @param _securityGroup 安全组。
+                     * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 

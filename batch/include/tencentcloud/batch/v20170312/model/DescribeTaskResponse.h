@@ -48,96 +48,112 @@ namespace TencentCloud
                     /**
                      * 获取作业ID
                      * @return JobId 作业ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取任务名称
                      * @return TaskName 任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return TaskState 任务状态
+                     * 
                      */
                     std::string GetTaskState() const;
 
                     /**
                      * 判断参数 TaskState 是否已赋值
                      * @return TaskState 是否已赋值
+                     * 
                      */
                     bool TaskStateHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务实例总数
                      * @return TaskInstanceTotalCount 任务实例总数
+                     * 
                      */
                     int64_t GetTaskInstanceTotalCount() const;
 
                     /**
                      * 判断参数 TaskInstanceTotalCount 是否已赋值
                      * @return TaskInstanceTotalCount 是否已赋值
+                     * 
                      */
                     bool TaskInstanceTotalCountHasBeenSet() const;
 
                     /**
                      * 获取任务实例信息
                      * @return TaskInstanceSet 任务实例信息
+                     * 
                      */
                     std::vector<TaskInstanceView> GetTaskInstanceSet() const;
 
                     /**
                      * 判断参数 TaskInstanceSet 是否已赋值
                      * @return TaskInstanceSet 是否已赋值
+                     * 
                      */
                     bool TaskInstanceSetHasBeenSet() const;
 
                     /**
                      * 获取任务实例统计指标
                      * @return TaskInstanceMetrics 任务实例统计指标
+                     * 
                      */
                     TaskInstanceMetrics GetTaskInstanceMetrics() const;
 
                     /**
                      * 判断参数 TaskInstanceMetrics 是否已赋值
                      * @return TaskInstanceMetrics 是否已赋值
+                     * 
                      */
                     bool TaskInstanceMetricsHasBeenSet() const;
 

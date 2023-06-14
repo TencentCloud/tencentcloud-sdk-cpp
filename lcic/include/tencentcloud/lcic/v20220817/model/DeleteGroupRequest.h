@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待删除群组ID列表
                      * @return GroupIds 待删除群组ID列表
+                     * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置待删除群组ID列表
-                     * @param GroupIds 待删除群组ID列表
+                     * @param _groupIds 待删除群组ID列表
+                     * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
 
                     /**
                      * 判断参数 GroupIds 是否已赋值
                      * @return GroupIds 是否已赋值
+                     * 
                      */
                     bool GroupIdsHasBeenSet() const;
 
                     /**
                      * 获取低代码平台应用ID
                      * @return SdkAppId 低代码平台应用ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码平台应用ID
-                     * @param SdkAppId 低代码平台应用ID
+                     * @param _sdkAppId 低代码平台应用ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取请求的图片宽度。
                      * @return ImageWidth 请求的图片宽度。
+                     * 
                      */
                     int64_t GetImageWidth() const;
 
                     /**
                      * 判断参数 ImageWidth 是否已赋值
                      * @return ImageWidth 是否已赋值
+                     * 
                      */
                     bool ImageWidthHasBeenSet() const;
 
                     /**
                      * 获取请求的图片高度。
                      * @return ImageHeight 请求的图片高度。
+                     * 
                      */
                     int64_t GetImageHeight() const;
 
                     /**
                      * 判断参数 ImageHeight 是否已赋值
                      * @return ImageHeight 是否已赋值
+                     * 
                      */
                     bool ImageHeightHasBeenSet() const;
 
                     /**
                      * 获取稠密人脸关键点具体信息。
                      * @return DenseFaceShapeSet 稠密人脸关键点具体信息。
+                     * 
                      */
                     std::vector<DenseFaceShape> GetDenseFaceShapeSet() const;
 
                     /**
                      * 判断参数 DenseFaceShapeSet 是否已赋值
                      * @return DenseFaceShapeSet 是否已赋值
+                     * 
                      */
                     bool DenseFaceShapeSetHasBeenSet() const;
 
                     /**
                      * 获取人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。
                      * @return FaceModelVersion 人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

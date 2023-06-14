@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取带宽配额
                      * @return Bandwidth 带宽配额
+                     * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽配额
-                     * @param Bandwidth 带宽配额
+                     * @param _bandwidth 带宽配额
+                     * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取配额中文名称
                      * @return Cname 配额中文名称
+                     * 
                      */
                     std::string GetCname() const;
 
                     /**
                      * 设置配额中文名称
-                     * @param Cname 配额中文名称
+                     * @param _cname 配额中文名称
+                     * 
                      */
                     void SetCname(const std::string& _cname);
 
                     /**
                      * 判断参数 Cname 是否已赋值
                      * @return Cname 是否已赋值
+                     * 
                      */
                     bool CnameHasBeenSet() const;
 
                     /**
                      * 获取配额英文名称
                      * @return Name 配额英文名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置配额英文名称
-                     * @param Name 配额英文名称
+                     * @param _name 配额英文名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

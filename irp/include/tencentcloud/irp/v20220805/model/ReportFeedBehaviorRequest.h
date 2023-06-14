@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，在控制台获取
                      * @return InstanceId 实例ID，在控制台获取
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，在控制台获取
-                     * @param InstanceId 实例ID，在控制台获取
+                     * @param _instanceId 实例ID，在控制台获取
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取上报的行为数据数组，数量不超过50
                      * @return FeedBehaviorList 上报的行为数据数组，数量不超过50
+                     * 
                      */
                     std::vector<FeedBehaviorInfo> GetFeedBehaviorList() const;
 
                     /**
                      * 设置上报的行为数据数组，数量不超过50
-                     * @param FeedBehaviorList 上报的行为数据数组，数量不超过50
+                     * @param _feedBehaviorList 上报的行为数据数组，数量不超过50
+                     * 
                      */
                     void SetFeedBehaviorList(const std::vector<FeedBehaviorInfo>& _feedBehaviorList);
 
                     /**
                      * 判断参数 FeedBehaviorList 是否已赋值
                      * @return FeedBehaviorList 是否已赋值
+                     * 
                      */
                     bool FeedBehaviorListHasBeenSet() const;
 

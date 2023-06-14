@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取创建工作空间凭证 DTO
                      * @return WorkspaceTokenDTO 创建工作空间凭证 DTO
+                     * 
                      */
                     WorkspaceTokenDTO GetWorkspaceTokenDTO() const;
 
                     /**
                      * 设置创建工作空间凭证 DTO
-                     * @param WorkspaceTokenDTO 创建工作空间凭证 DTO
+                     * @param _workspaceTokenDTO 创建工作空间凭证 DTO
+                     * 
                      */
                     void SetWorkspaceTokenDTO(const WorkspaceTokenDTO& _workspaceTokenDTO);
 
                     /**
                      * 判断参数 WorkspaceTokenDTO 是否已赋值
                      * @return WorkspaceTokenDTO 是否已赋值
+                     * 
                      */
                     bool WorkspaceTokenDTOHasBeenSet() const;
 

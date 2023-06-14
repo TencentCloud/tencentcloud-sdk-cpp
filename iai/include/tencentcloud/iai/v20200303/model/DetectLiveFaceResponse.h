@@ -48,24 +48,28 @@ namespace TencentCloud
 本字段当且仅当FaceModelVersion为2.0时才具备参考意义。
                      * @return Score 活体打分，取值范围 [0,100]，分数一般落于[80, 100]区间内，0分也为常见值。推荐相大于 87 时可判断为活体。可根据具体场景自行调整阈值。
 本字段当且仅当FaceModelVersion为2.0时才具备参考意义。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取人脸识别所用的算法模型版本。
                      * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 本字段只有FaceModelVersion为3.0时才具备参考意义。
                      * @return IsLiveness 活体检测是否通过。
 本字段只有FaceModelVersion为3.0时才具备参考意义。
+                     * 
                      */
                     bool GetIsLiveness() const;
 
                     /**
                      * 判断参数 IsLiveness 是否已赋值
                      * @return IsLiveness 是否已赋值
+                     * 
                      */
                     bool IsLivenessHasBeenSet() const;
 

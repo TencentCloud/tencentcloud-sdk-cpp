@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取域名ID
                      * @return DomainId 域名ID
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置域名ID
-                     * @param DomainId 域名ID
+                     * @param _domainId 域名ID
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取通道ID列表
                      * @return ProxyIdList 通道ID列表
+                     * 
                      */
                     std::vector<std::string> GetProxyIdList() const;
 
                     /**
                      * 设置通道ID列表
-                     * @param ProxyIdList 通道ID列表
+                     * @param _proxyIdList 通道ID列表
+                     * 
                      */
                     void SetProxyIdList(const std::vector<std::string>& _proxyIdList);
 
                     /**
                      * 判断参数 ProxyIdList 是否已赋值
                      * @return ProxyIdList 是否已赋值
+                     * 
                      */
                     bool ProxyIdListHasBeenSet() const;
 
                     /**
                      * 获取国家ID列表
                      * @return NationCountryInnerCodes 国家ID列表
+                     * 
                      */
                     std::vector<std::string> GetNationCountryInnerCodes() const;
 
                     /**
                      * 设置国家ID列表
-                     * @param NationCountryInnerCodes 国家ID列表
+                     * @param _nationCountryInnerCodes 国家ID列表
+                     * 
                      */
                     void SetNationCountryInnerCodes(const std::vector<std::string>& _nationCountryInnerCodes);
 
                     /**
                      * 判断参数 NationCountryInnerCodes 是否已赋值
                      * @return NationCountryInnerCodes 是否已赋值
+                     * 
                      */
                     bool NationCountryInnerCodesHasBeenSet() const;
 

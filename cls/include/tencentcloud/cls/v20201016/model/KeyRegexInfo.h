@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取需要过滤日志的key
                      * @return Key 需要过滤日志的key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置需要过滤日志的key
-                     * @param Key 需要过滤日志的key
+                     * @param _key 需要过滤日志的key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取key对应的过滤规则regex
                      * @return Regex key对应的过滤规则regex
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置key对应的过滤规则regex
-                     * @param Regex key对应的过滤规则regex
+                     * @param _regex key对应的过滤规则regex
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 

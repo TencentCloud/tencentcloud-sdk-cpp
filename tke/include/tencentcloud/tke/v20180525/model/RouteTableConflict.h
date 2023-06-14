@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取路由表类型。
                      * @return RouteTableType 路由表类型。
+                     * 
                      */
                     std::string GetRouteTableType() const;
 
                     /**
                      * 设置路由表类型。
-                     * @param RouteTableType 路由表类型。
+                     * @param _routeTableType 路由表类型。
+                     * 
                      */
                     void SetRouteTableType(const std::string& _routeTableType);
 
                     /**
                      * 判断参数 RouteTableType 是否已赋值
                      * @return RouteTableType 是否已赋值
+                     * 
                      */
                     bool RouteTableTypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableCidrBlock 路由表CIDR。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRouteTableCidrBlock() const;
 
                     /**
                      * 设置路由表CIDR。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteTableCidrBlock 路由表CIDR。
+                     * @param _routeTableCidrBlock 路由表CIDR。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteTableCidrBlock(const std::string& _routeTableCidrBlock);
 
                     /**
                      * 判断参数 RouteTableCidrBlock 是否已赋值
                      * @return RouteTableCidrBlock 是否已赋值
+                     * 
                      */
                     bool RouteTableCidrBlockHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableName 路由表名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
                      * 设置路由表名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteTableName 路由表名称。
+                     * @param _routeTableName 路由表名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
 
                     /**
                      * 判断参数 RouteTableName 是否已赋值
                      * @return RouteTableName 是否已赋值
+                     * 
                      */
                     bool RouteTableNameHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableId 路由表ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteTableId 路由表ID。
+                     * @param _routeTableId 路由表ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 

@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取规则模版ID。
                      * @return RuleTemplateId 规则模版ID。
+                     * 
                      */
                     std::string GetRuleTemplateId() const;
 
                     /**
                      * 设置规则模版ID。
-                     * @param RuleTemplateId 规则模版ID。
+                     * @param _ruleTemplateId 规则模版ID。
+                     * 
                      */
                     void SetRuleTemplateId(const std::string& _ruleTemplateId);
 
                     /**
                      * 判断参数 RuleTemplateId 是否已赋值
                      * @return RuleTemplateId 是否已赋值
+                     * 
                      */
                     bool RuleTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取规则模版名称。
                      * @return RuleTemplateName 规则模版名称。
+                     * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
                      * 设置规则模版名称。
-                     * @param RuleTemplateName 规则模版名称。
+                     * @param _ruleTemplateName 规则模版名称。
+                     * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
 
                     /**
                      * 判断参数 RuleTemplateName 是否已赋值
                      * @return RuleTemplateName 是否已赋值
+                     * 
                      */
                     bool RuleTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取规则模版的过滤条件
                      * @return RuleFilters 规则模版的过滤条件
+                     * 
                      */
                     std::vector<RuleFilters> GetRuleFilters() const;
 
                     /**
                      * 设置规则模版的过滤条件
-                     * @param RuleFilters 规则模版的过滤条件
+                     * @param _ruleFilters 规则模版的过滤条件
+                     * 
                      */
                     void SetRuleFilters(const std::vector<RuleFilters>& _ruleFilters);
 
                     /**
                      * 判断参数 RuleFilters 是否已赋值
                      * @return RuleFilters 是否已赋值
+                     * 
                      */
                     bool RuleFiltersHasBeenSet() const;
 
@@ -106,38 +115,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则模版描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则模版描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 规则模版描述。
+                     * @param _description 规则模版描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取规则模版创建时间。
                      * @return CreateAt 规则模版创建时间。
+                     * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
                      * 设置规则模版创建时间。
-                     * @param CreateAt 规则模版创建时间。
+                     * @param _createAt 规则模版创建时间。
+                     * 
                      */
                     void SetCreateAt(const std::string& _createAt);
 
                     /**
                      * 判断参数 CreateAt 是否已赋值
                      * @return CreateAt 是否已赋值
+                     * 
                      */
                     bool CreateAtHasBeenSet() const;
 

@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取识别出的文本行内容
                      * @return DetectedText 识别出的文本行内容
+                     * 
                      */
                     std::string GetDetectedText() const;
 
                     /**
                      * 设置识别出的文本行内容
-                     * @param DetectedText 识别出的文本行内容
+                     * @param _detectedText 识别出的文本行内容
+                     * 
                      */
                     void SetDetectedText(const std::string& _detectedText);
 
                     /**
                      * 判断参数 DetectedText 是否已赋值
                      * @return DetectedText 是否已赋值
+                     * 
                      */
                     bool DetectedTextHasBeenSet() const;
 
                     /**
                      * 获取算式运算结果，true-正确   false-错误或非法参数
                      * @return Result 算式运算结果，true-正确   false-错误或非法参数
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 设置算式运算结果，true-正确   false-错误或非法参数
-                     * @param Result 算式运算结果，true-正确   false-错误或非法参数
+                     * @param _result 算式运算结果，true-正确   false-错误或非法参数
+                     * 
                      */
                     void SetResult(const bool& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取保留字段，暂不支持
                      * @return Confidence 保留字段，暂不支持
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置保留字段，暂不支持
-                     * @param Confidence 保留字段，暂不支持
+                     * @param _confidence 保留字段，暂不支持
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -107,56 +116,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Polygon 原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetPolygon() const;
 
                     /**
                      * 设置原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Polygon 原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
+                     * @param _polygon 原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolygon(const std::vector<Coord>& _polygon);
 
                     /**
                      * 判断参数 Polygon 是否已赋值
                      * @return Polygon 是否已赋值
+                     * 
                      */
                     bool PolygonHasBeenSet() const;
 
                     /**
                      * 获取保留字段，暂不支持
                      * @return AdvancedInfo 保留字段，暂不支持
+                     * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 设置保留字段，暂不支持
-                     * @param AdvancedInfo 保留字段，暂不支持
+                     * @param _advancedInfo 保留字段，暂不支持
+                     * 
                      */
                     void SetAdvancedInfo(const std::string& _advancedInfo);
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
+                     * 
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
                      * 获取文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
                      * @return ItemCoord 文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 
                      */
                     ItemCoord GetItemCoord() const;
 
                     /**
                      * 设置文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
-                     * @param ItemCoord 文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * @param _itemCoord 文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）
+                     * 
                      */
                     void SetItemCoord(const ItemCoord& _itemCoord);
 
                     /**
                      * 判断参数 ItemCoord 是否已赋值
                      * @return ItemCoord 是否已赋值
+                     * 
                      */
                     bool ItemCoordHasBeenSet() const;
 
@@ -185,6 +203,7 @@ namespace TencentCloud
 ‘9’: 竖式乘除法
 ‘10’: 脱式计算
 ‘11’: 解方程
+                     * 
                      */
                     std::string GetExpressionType() const;
 
@@ -201,7 +220,7 @@ namespace TencentCloud
 ‘9’: 竖式乘除法
 ‘10’: 脱式计算
 ‘11’: 解方程
-                     * @param ExpressionType 算式题型编号：
+                     * @param _expressionType 算式题型编号：
 ‘1’: 加减乘除四则
 ‘2’: 加减乘除已知结果求运算因子
 ‘3’: 判断大小
@@ -213,30 +232,35 @@ namespace TencentCloud
 ‘9’: 竖式乘除法
 ‘10’: 脱式计算
 ‘11’: 解方程
+                     * 
                      */
                     void SetExpressionType(const std::string& _expressionType);
 
                     /**
                      * 判断参数 ExpressionType 是否已赋值
                      * @return ExpressionType 是否已赋值
+                     * 
                      */
                     bool ExpressionTypeHasBeenSet() const;
 
                     /**
                      * 获取错题推荐答案，算式运算结果正确返回为""，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)
                      * @return Answer 错题推荐答案，算式运算结果正确返回为""，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)
+                     * 
                      */
                     std::string GetAnswer() const;
 
                     /**
                      * 设置错题推荐答案，算式运算结果正确返回为""，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)
-                     * @param Answer 错题推荐答案，算式运算结果正确返回为""，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)
+                     * @param _answer 错题推荐答案，算式运算结果正确返回为""，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)
+                     * 
                      */
                     void SetAnswer(const std::string& _answer);
 
                     /**
                      * 判断参数 Answer 是否已赋值
                      * @return Answer 是否已赋值
+                     * 
                      */
                     bool AnswerHasBeenSet() const;
 

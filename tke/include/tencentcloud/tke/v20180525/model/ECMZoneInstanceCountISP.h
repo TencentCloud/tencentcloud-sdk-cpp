@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取创建实例的可用区
                      * @return Zone 创建实例的可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置创建实例的可用区
-                     * @param Zone 创建实例的可用区
+                     * @param _zone 创建实例的可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取在当前可用区欲创建的实例数目
                      * @return InstanceCount 在当前可用区欲创建的实例数目
+                     * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置在当前可用区欲创建的实例数目
-                     * @param InstanceCount 在当前可用区欲创建的实例数目
+                     * @param _instanceCount 在当前可用区欲创建的实例数目
+                     * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取运营商
                      * @return ISP 运营商
+                     * 
                      */
                     std::string GetISP() const;
 
                     /**
                      * 设置运营商
-                     * @param ISP 运营商
+                     * @param _iSP 运营商
+                     * 
                      */
                     void SetISP(const std::string& _iSP);
 
                     /**
                      * 判断参数 ISP 是否已赋值
                      * @return ISP 是否已赋值
+                     * 
                      */
                     bool ISPHasBeenSet() const;
 

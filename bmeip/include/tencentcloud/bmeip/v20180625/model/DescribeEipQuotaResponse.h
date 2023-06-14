@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取能拥有的EIP个数的总配额，默认是100个
                      * @return EipNumQuota 能拥有的EIP个数的总配额，默认是100个
+                     * 
                      */
                     int64_t GetEipNumQuota() const;
 
                     /**
                      * 判断参数 EipNumQuota 是否已赋值
                      * @return EipNumQuota 是否已赋值
+                     * 
                      */
                     bool EipNumQuotaHasBeenSet() const;
 
                     /**
                      * 获取当前已使用的EIP个数，包括创建中、绑定中、已绑定、解绑中、未绑定几种状态的EIP个数总和
                      * @return CurrentEipNum 当前已使用的EIP个数，包括创建中、绑定中、已绑定、解绑中、未绑定几种状态的EIP个数总和
+                     * 
                      */
                     int64_t GetCurrentEipNum() const;
 
                     /**
                      * 判断参数 CurrentEipNum 是否已赋值
                      * @return CurrentEipNum 是否已赋值
+                     * 
                      */
                     bool CurrentEipNumHasBeenSet() const;
 
                     /**
                      * 获取当天申请EIP次数
                      * @return DailyApplyCount 当天申请EIP次数
+                     * 
                      */
                     int64_t GetDailyApplyCount() const;
 
                     /**
                      * 判断参数 DailyApplyCount 是否已赋值
                      * @return DailyApplyCount 是否已赋值
+                     * 
                      */
                     bool DailyApplyCountHasBeenSet() const;
 
                     /**
                      * 获取每日申请EIP的次数限制
                      * @return DailyApplyQuota 每日申请EIP的次数限制
+                     * 
                      */
                     int64_t GetDailyApplyQuota() const;
 
                     /**
                      * 判断参数 DailyApplyQuota 是否已赋值
                      * @return DailyApplyQuota 是否已赋值
+                     * 
                      */
                     bool DailyApplyQuotaHasBeenSet() const;
 
                     /**
                      * 获取BatchApplyMax
                      * @return BatchApplyMax BatchApplyMax
+                     * 
                      */
                     int64_t GetBatchApplyMax() const;
 
                     /**
                      * 判断参数 BatchApplyMax 是否已赋值
                      * @return BatchApplyMax 是否已赋值
+                     * 
                      */
                     bool BatchApplyMaxHasBeenSet() const;
 

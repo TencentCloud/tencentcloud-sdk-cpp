@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取true: 验证码正确，false: 验证码错误
                      * @return Success true: 验证码正确，false: 验证码错误
+                     * 
                      */
                     bool GetSuccess() const;
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 
@@ -60,24 +62,28 @@ namespace TencentCloud
 6:参数错误
                      * @return Result 0: 验证码正确 1:验证码错误或过期 2:验证码错误 3:验证码和流程不匹配 4:验证码输入错误超过次数 5:内部错误
 6:参数错误
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取结果描述
                      * @return Description 结果描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

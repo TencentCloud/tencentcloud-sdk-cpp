@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取配置类型:CLB 负载均衡维度。 SERVER 域名维度。 LOCATION 规则维度。
                      * @return ConfigType 配置类型:CLB 负载均衡维度。 SERVER 域名维度。 LOCATION 规则维度。
+                     * 
                      */
                     std::string GetConfigType() const;
 
                     /**
                      * 设置配置类型:CLB 负载均衡维度。 SERVER 域名维度。 LOCATION 规则维度。
-                     * @param ConfigType 配置类型:CLB 负载均衡维度。 SERVER 域名维度。 LOCATION 规则维度。
+                     * @param _configType 配置类型:CLB 负载均衡维度。 SERVER 域名维度。 LOCATION 规则维度。
+                     * 
                      */
                     void SetConfigType(const std::string& _configType);
 
                     /**
                      * 判断参数 ConfigType 是否已赋值
                      * @return ConfigType 是否已赋值
+                     * 
                      */
                     bool ConfigTypeHasBeenSet() const;
 
                     /**
                      * 获取拉取页偏移，默认值0
                      * @return Offset 拉取页偏移，默认值0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置拉取页偏移，默认值0
-                     * @param Offset 拉取页偏移，默认值0
+                     * @param _offset 拉取页偏移，默认值0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取拉取数目，默认值20
                      * @return Limit 拉取数目，默认值20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置拉取数目，默认值20
-                     * @param Limit 拉取数目，默认值20
+                     * @param _limit 拉取数目，默认值20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取拉取指定配置名字，模糊匹配。
                      * @return ConfigName 拉取指定配置名字，模糊匹配。
+                     * 
                      */
                     std::string GetConfigName() const;
 
                     /**
                      * 设置拉取指定配置名字，模糊匹配。
-                     * @param ConfigName 拉取指定配置名字，模糊匹配。
+                     * @param _configName 拉取指定配置名字，模糊匹配。
+                     * 
                      */
                     void SetConfigName(const std::string& _configName);
 
                     /**
                      * 判断参数 ConfigName 是否已赋值
                      * @return ConfigName 是否已赋值
+                     * 
                      */
                     bool ConfigNameHasBeenSet() const;
 
                     /**
                      * 获取配置ID
                      * @return UconfigIds 配置ID
+                     * 
                      */
                     std::vector<std::string> GetUconfigIds() const;
 
                     /**
                      * 设置配置ID
-                     * @param UconfigIds 配置ID
+                     * @param _uconfigIds 配置ID
+                     * 
                      */
                     void SetUconfigIds(const std::vector<std::string>& _uconfigIds);
 
                     /**
                      * 判断参数 UconfigIds 是否已赋值
                      * @return UconfigIds 是否已赋值
+                     * 
                      */
                     bool UconfigIdsHasBeenSet() const;
 
@@ -140,6 +155,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件如下：
 <li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如："lb-12345678"。</li>
 <li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如："1.1.1.1","2204::22:3"。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -147,15 +163,17 @@ namespace TencentCloud
                      * 设置过滤条件如下：
 <li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如："lb-12345678"。</li>
 <li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如："1.1.1.1","2204::22:3"。</li>
-                     * @param Filters 过滤条件如下：
+                     * @param _filters 过滤条件如下：
 <li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如："lb-12345678"。</li>
 <li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如："1.1.1.1","2204::22:3"。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

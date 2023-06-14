@@ -50,216 +50,252 @@ namespace TencentCloud
                     /**
                      * 获取实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)
                      * @return InstanceStatus 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)
+                     * 
                      */
                     int64_t GetInstanceStatus() const;
 
                     /**
                      * 设置实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)
-                     * @param InstanceStatus 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)
+                     * @param _instanceStatus 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)
+                     * 
                      */
                     void SetInstanceStatus(const int64_t& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
                      * 获取片区Id
                      * @return AreaId 片区Id
+                     * 
                      */
                     int64_t GetAreaId() const;
 
                     /**
                      * 设置片区Id
-                     * @param AreaId 片区Id
+                     * @param _areaId 片区Id
+                     * 
                      */
                     void SetAreaId(const int64_t& _areaId);
 
                     /**
                      * 判断参数 AreaId 是否已赋值
                      * @return AreaId 是否已赋值
+                     * 
                      */
                     bool AreaIdHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Tags 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表
-                     * @param Tags 标签列表
+                     * @param _tags 标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集群Id
                      * @return ClusterId 集群Id
+                     * 
                      */
                     int64_t GetClusterId() const;
 
                     /**
                      * 设置集群Id
-                     * @param ClusterId 集群Id
+                     * @param _clusterId 集群Id
+                     * 
                      */
                     void SetClusterId(const int64_t& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例描述
                      * @return InstanceDesc 实例描述
+                     * 
                      */
                     std::string GetInstanceDesc() const;
 
                     /**
                      * 设置实例描述
-                     * @param InstanceDesc 实例描述
+                     * @param _instanceDesc 实例描述
+                     * 
                      */
                     void SetInstanceDesc(const std::string& _instanceDesc);
 
                     /**
                      * 判断参数 InstanceDesc 是否已赋值
                      * @return InstanceDesc 是否已赋值
+                     * 
                      */
                     bool InstanceDescHasBeenSet() const;
 
                     /**
                      * 获取计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)
                      * @return ChargeStatus 计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)
+                     * 
                      */
                     int64_t GetChargeStatus() const;
 
                     /**
                      * 设置计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)
-                     * @param ChargeStatus 计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)
+                     * @param _chargeStatus 计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)
+                     * 
                      */
                     void SetChargeStatus(const int64_t& _chargeStatus);
 
                     /**
                      * 判断参数 ChargeStatus 是否已赋值
                      * @return ChargeStatus 是否已赋值
+                     * 
                      */
                     bool ChargeStatusHasBeenSet() const;
 
                     /**
                      * 获取计费类型(1=免费版，2=预付费，3=后付费)
                      * @return ChargeType 计费类型(1=免费版，2=预付费，3=后付费)
+                     * 
                      */
                     int64_t GetChargeType() const;
 
                     /**
                      * 设置计费类型(1=免费版，2=预付费，3=后付费)
-                     * @param ChargeType 计费类型(1=免费版，2=预付费，3=后付费)
+                     * @param _chargeType 计费类型(1=免费版，2=预付费，3=后付费)
+                     * 
                      */
                     void SetChargeType(const int64_t& _chargeType);
 
                     /**
                      * 判断参数 ChargeType 是否已赋值
                      * @return ChargeType 是否已赋值
+                     * 
                      */
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedAt 更新时间
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdatedAt 更新时间
+                     * @param _updatedAt 更新时间
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
                      * 获取数据保留时间(天)
                      * @return DataRetentionDays 数据保留时间(天)
+                     * 
                      */
                     int64_t GetDataRetentionDays() const;
 
                     /**
                      * 设置数据保留时间(天)
-                     * @param DataRetentionDays 数据保留时间(天)
+                     * @param _dataRetentionDays 数据保留时间(天)
+                     * 
                      */
                     void SetDataRetentionDays(const int64_t& _dataRetentionDays);
 
                     /**
                      * 判断参数 DataRetentionDays 是否已赋值
                      * @return DataRetentionDays 是否已赋值
+                     * 
                      */
                     bool DataRetentionDaysHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedAt 创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -268,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型 1:原web相关类型 2:app端类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型 1:原web相关类型 2:app端类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 实例类型 1:原web相关类型 2:app端类型
+                     * @param _instanceType 实例类型 1:原web相关类型 2:app端类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

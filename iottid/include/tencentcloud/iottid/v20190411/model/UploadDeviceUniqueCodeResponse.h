@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取本次已上传数量
                      * @return Count 本次已上传数量
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -60,24 +62,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExistedCodeSet 重复的硬件唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetExistedCodeSet() const;
 
                     /**
                      * 判断参数 ExistedCodeSet 是否已赋值
                      * @return ExistedCodeSet 是否已赋值
+                     * 
                      */
                     bool ExistedCodeSetHasBeenSet() const;
 
                     /**
                      * 获取剩余可上传数量
                      * @return LeftQuantity 剩余可上传数量
+                     * 
                      */
                     uint64_t GetLeftQuantity() const;
 
                     /**
                      * 判断参数 LeftQuantity 是否已赋值
                      * @return LeftQuantity 是否已赋值
+                     * 
                      */
                     bool LeftQuantityHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IllegalCodeSet 错误的硬件唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetIllegalCodeSet() const;
 
                     /**
                      * 判断参数 IllegalCodeSet 是否已赋值
                      * @return IllegalCodeSet 是否已赋值
+                     * 
                      */
                     bool IllegalCodeSetHasBeenSet() const;
 

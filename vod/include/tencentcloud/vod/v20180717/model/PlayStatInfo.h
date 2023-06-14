@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
 <li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>
 <li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>
+                     * 
                      */
                     std::string GetTime() const;
 
@@ -60,69 +61,80 @@ namespace TencentCloud
                      * 设置数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
 <li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>
 <li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>
-                     * @param Time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
+                     * @param _time 数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。
 <li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>
 <li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取媒体文件ID。
                      * @return FileId 媒体文件ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件ID。
-                     * @param FileId 媒体文件ID。
+                     * @param _fileId 媒体文件ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取播放次数。
                      * @return PlayTimes 播放次数。
+                     * 
                      */
                     uint64_t GetPlayTimes() const;
 
                     /**
                      * 设置播放次数。
-                     * @param PlayTimes 播放次数。
+                     * @param _playTimes 播放次数。
+                     * 
                      */
                     void SetPlayTimes(const uint64_t& _playTimes);
 
                     /**
                      * 判断参数 PlayTimes 是否已赋值
                      * @return PlayTimes 是否已赋值
+                     * 
                      */
                     bool PlayTimesHasBeenSet() const;
 
                     /**
                      * 获取播放流量，单位：字节。
                      * @return Traffic 播放流量，单位：字节。
+                     * 
                      */
                     uint64_t GetTraffic() const;
 
                     /**
                      * 设置播放流量，单位：字节。
-                     * @param Traffic 播放流量，单位：字节。
+                     * @param _traffic 播放流量，单位：字节。
+                     * 
                      */
                     void SetTraffic(const uint64_t& _traffic);
 
                     /**
                      * 判断参数 Traffic 是否已赋值
                      * @return Traffic 是否已赋值
+                     * 
                      */
                     bool TrafficHasBeenSet() const;
 

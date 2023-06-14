@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取下载攻击日志记录数组
                      * @return Records 下载攻击日志记录数组
+                     * 
                      */
                     std::vector<DownloadAttackRecordInfo> GetRecords() const;
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取页码，从1开始
                      * @return Page 页码，从1开始
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置页码，从1开始
-                     * @param Page 页码，从1开始
+                     * @param _page 页码，从1开始
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页行数，不能大于200
                      * @return Rp 每页行数，不能大于200
+                     * 
                      */
                     uint64_t GetRp() const;
 
                     /**
                      * 设置每页行数，不能大于200
-                     * @param Rp 每页行数，不能大于200
+                     * @param _rp 每页行数，不能大于200
+                     * 
                      */
                     void SetRp(const uint64_t& _rp);
 
                     /**
                      * 判断参数 Rp 是否已赋值
                      * @return Rp 是否已赋值
+                     * 
                      */
                     bool RpHasBeenSet() const;
 
                     /**
                      * 获取标签筛选
                      * @return Tags 标签筛选
+                     * 
                      */
                     std::vector<RoleTags> GetTags() const;
 
                     /**
                      * 设置标签筛选
-                     * @param Tags 标签筛选
+                     * @param _tags 标签筛选
+                     * 
                      */
                     void SetTags(const std::vector<RoleTags>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

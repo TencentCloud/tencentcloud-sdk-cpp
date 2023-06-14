@@ -55,12 +55,14 @@ Key为ProductName时，value表示云产品实例的名称；
 Key为ProductInstanceId时，value表示云产品实例的ID；
 Key为ProductType时，value表示的是云产品的类型（cvm表示云主机、clb表示负载均衡）;
 Key为IP时，value表示云产品实例的IP；
+                     * 
                      */
                     std::vector<KeyValueRecord> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取渠道申请编号。
                      * @return ChannelApplyId 渠道申请编号。
+                     * 
                      */
                     std::string GetChannelApplyId() const;
 
                     /**
                      * 设置渠道申请编号。
-                     * @param ChannelApplyId 渠道申请编号。
+                     * @param _channelApplyId 渠道申请编号。
+                     * 
                      */
                     void SetChannelApplyId(const std::string& _channelApplyId);
 
                     /**
                      * 判断参数 ChannelApplyId 是否已赋值
                      * @return ChannelApplyId 是否已赋值
+                     * 
                      */
                     bool ChannelApplyIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ __SUCCESS__: 绑定成功
 __FAILED__: 绑定失败
 __PROCESSING__: 绑定中。
 注意：若返回绑定中，需要再次调用绑定结果查询接口,查询结果。
+                     * 
                      */
                     std::string GetBindStatus() const;
 
@@ -84,17 +88,19 @@ __SUCCESS__: 绑定成功
 __FAILED__: 绑定失败
 __PROCESSING__: 绑定中。
 注意：若返回绑定中，需要再次调用绑定结果查询接口,查询结果。
-                     * @param BindStatus 绑定状态。
+                     * @param _bindStatus 绑定状态。
 __SUCCESS__: 绑定成功
 __FAILED__: 绑定失败
 __PROCESSING__: 绑定中。
 注意：若返回绑定中，需要再次调用绑定结果查询接口,查询结果。
+                     * 
                      */
                     void SetBindStatus(const std::string& _bindStatus);
 
                     /**
                      * 判断参数 BindStatus 是否已赋值
                      * @return BindStatus 是否已赋值
+                     * 
                      */
                     bool BindStatusHasBeenSet() const;
 
@@ -103,20 +109,23 @@ __PROCESSING__: 绑定中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindMessage 绑定返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBindMessage() const;
 
                     /**
                      * 设置绑定返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindMessage 绑定返回描述, 例如失败原因等。
+                     * @param _bindMessage 绑定返回描述, 例如失败原因等。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindMessage(const std::string& _bindMessage);
 
                     /**
                      * 判断参数 BindMessage 是否已赋值
                      * @return BindMessage 是否已赋值
+                     * 
                      */
                     bool BindMessageHasBeenSet() const;
 
@@ -125,20 +134,23 @@ __PROCESSING__: 绑定中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalSubMerchantBankAccountReturnData 渠道子商户银行账户信息, 为JSON格式字符串（绑定成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalSubMerchantBankAccountReturnData() const;
 
                     /**
                      * 设置渠道子商户银行账户信息, 为JSON格式字符串（绑定成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalSubMerchantBankAccountReturnData 渠道子商户银行账户信息, 为JSON格式字符串（绑定成功状态下返回）。详情见附录-复杂类型。
+                     * @param _externalSubMerchantBankAccountReturnData 渠道子商户银行账户信息, 为JSON格式字符串（绑定成功状态下返回）。详情见附录-复杂类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalSubMerchantBankAccountReturnData(const std::string& _externalSubMerchantBankAccountReturnData);
 
                     /**
                      * 判断参数 ExternalSubMerchantBankAccountReturnData 是否已赋值
                      * @return ExternalSubMerchantBankAccountReturnData 是否已赋值
+                     * 
                      */
                     bool ExternalSubMerchantBankAccountReturnDataHasBeenSet() const;
 
@@ -147,20 +159,23 @@ __PROCESSING__: 绑定中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindSerialNo 绑卡序列号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBindSerialNo() const;
 
                     /**
                      * 设置绑卡序列号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BindSerialNo 绑卡序列号。
+                     * @param _bindSerialNo 绑卡序列号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBindSerialNo(const std::string& _bindSerialNo);
 
                     /**
                      * 判断参数 BindSerialNo 是否已赋值
                      * @return BindSerialNo 是否已赋值
+                     * 
                      */
                     bool BindSerialNoHasBeenSet() const;
 

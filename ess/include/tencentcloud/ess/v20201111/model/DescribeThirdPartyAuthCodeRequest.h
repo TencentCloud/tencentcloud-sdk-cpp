@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取电子签小程序跳转客户小程序时携带的授权查看码
                      * @return AuthCode 电子签小程序跳转客户小程序时携带的授权查看码
+                     * 
                      */
                     std::string GetAuthCode() const;
 
                     /**
                      * 设置电子签小程序跳转客户小程序时携带的授权查看码
-                     * @param AuthCode 电子签小程序跳转客户小程序时携带的授权查看码
+                     * @param _authCode 电子签小程序跳转客户小程序时携带的授权查看码
+                     * 
                      */
                     void SetAuthCode(const std::string& _authCode);
 
                     /**
                      * 判断参数 AuthCode 是否已赋值
                      * @return AuthCode 是否已赋值
+                     * 
                      */
                     bool AuthCodeHasBeenSet() const;
 

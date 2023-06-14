@@ -59,20 +59,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务的JobID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务的JobID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobId 任务的JobID
+                     * @param _jobId 任务的JobID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
@@ -81,20 +84,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioId 任务的场景ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置任务的场景ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScenarioId 任务的场景ID
+                     * @param _scenarioId 任务的场景ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Load 任务的施压配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Load GetLoad() const;
 
                     /**
                      * 设置任务的施压配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Load 任务的施压配置
+                     * @param _load 任务的施压配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoad(const Load& _load);
 
                     /**
                      * 判断参数 Load 是否已赋值
                      * @return Load 是否已赋值
+                     * 
                      */
                     bool LoadHasBeenSet() const;
 
@@ -125,20 +134,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Configs 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetConfigs() const;
 
                     /**
                      * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Configs 此字段不再使用
+                     * @param _configs 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigs(const std::vector<std::string>& _configs);
 
                     /**
                      * 判断参数 Configs 是否已赋值
                      * @return Configs 是否已赋值
+                     * 
                      */
                     bool ConfigsHasBeenSet() const;
 
@@ -147,20 +159,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Datasets 任务的数据集文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TestData> GetDatasets() const;
 
                     /**
                      * 设置任务的数据集文件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Datasets 任务的数据集文件
+                     * @param _datasets 任务的数据集文件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasets(const std::vector<TestData>& _datasets);
 
                     /**
                      * 判断参数 Datasets 是否已赋值
                      * @return Datasets 是否已赋值
+                     * 
                      */
                     bool DatasetsHasBeenSet() const;
 
@@ -169,20 +184,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extensions 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetExtensions() const;
 
                     /**
                      * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Extensions 此字段不再使用
+                     * @param _extensions 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtensions(const std::vector<std::string>& _extensions);
 
                     /**
                      * 判断参数 Extensions 是否已赋值
                      * @return Extensions 是否已赋值
+                     * 
                      */
                     bool ExtensionsHasBeenSet() const;
 
@@ -195,6 +213,7 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -203,16 +222,18 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
+                     * @param _status 任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -221,20 +242,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 任务的开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务的开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 任务的开始时间
+                     * @param _startTime 任务的开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -243,20 +267,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务的结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务的结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 任务的结束时间
+                     * @param _endTime 任务的结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -265,20 +292,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxVirtualUserCount 任务的最大VU数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxVirtualUserCount() const;
 
                     /**
                      * 设置任务的最大VU数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxVirtualUserCount 任务的最大VU数
+                     * @param _maxVirtualUserCount 任务的最大VU数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxVirtualUserCount(const int64_t& _maxVirtualUserCount);
 
                     /**
                      * 判断参数 MaxVirtualUserCount 是否已赋值
                      * @return MaxVirtualUserCount 是否已赋值
+                     * 
                      */
                     bool MaxVirtualUserCountHasBeenSet() const;
 
@@ -287,20 +317,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 任务的备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置任务的备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Note 任务的备注信息
+                     * @param _note 任务的备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 
@@ -309,20 +342,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorRate 错误率百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetErrorRate() const;
 
                     /**
                      * 设置错误率百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorRate 错误率百分比
+                     * @param _errorRate 错误率百分比
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorRate(const double& _errorRate);
 
                     /**
                      * 判断参数 ErrorRate 是否已赋值
                      * @return ErrorRate 是否已赋值
+                     * 
                      */
                     bool ErrorRateHasBeenSet() const;
 
@@ -331,20 +367,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobOwner 任务发起人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJobOwner() const;
 
                     /**
                      * 设置任务发起人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobOwner 任务发起人
+                     * @param _jobOwner 任务发起人
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobOwner(const std::string& _jobOwner);
 
                     /**
                      * 判断参数 JobOwner 是否已赋值
                      * @return JobOwner 是否已赋值
+                     * 
                      */
                     bool JobOwnerHasBeenSet() const;
 
@@ -353,20 +392,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadSources 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LoadSource GetLoadSources() const;
 
                     /**
                      * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadSources 此字段不再使用
+                     * @param _loadSources 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadSources(const LoadSource& _loadSources);
 
                     /**
                      * 判断参数 LoadSources 是否已赋值
                      * @return LoadSources 是否已赋值
+                     * 
                      */
                     bool LoadSourcesHasBeenSet() const;
 
@@ -375,20 +417,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 任务时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置任务时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 任务时长
+                     * @param _duration 任务时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -397,20 +442,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestsPerSecond 最大每秒请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxRequestsPerSecond() const;
 
                     /**
                      * 设置最大每秒请求数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxRequestsPerSecond 最大每秒请求数
+                     * @param _maxRequestsPerSecond 最大每秒请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond);
 
                     /**
                      * 判断参数 MaxRequestsPerSecond 是否已赋值
                      * @return MaxRequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool MaxRequestsPerSecondHasBeenSet() const;
 
@@ -419,20 +467,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestTotal 总请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRequestTotal() const;
 
                     /**
                      * 设置总请求数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestTotal 总请求数
+                     * @param _requestTotal 总请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestTotal(const double& _requestTotal);
 
                     /**
                      * 判断参数 RequestTotal 是否已赋值
                      * @return RequestTotal 是否已赋值
+                     * 
                      */
                     bool RequestTotalHasBeenSet() const;
 
@@ -441,20 +492,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestsPerSecond 平均每秒请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetRequestsPerSecond() const;
 
                     /**
                      * 设置平均每秒请求数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestsPerSecond 平均每秒请求数
+                     * @param _requestsPerSecond 平均每秒请求数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestsPerSecond(const double& _requestsPerSecond);
 
                     /**
                      * 判断参数 RequestsPerSecond 是否已赋值
                      * @return RequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool RequestsPerSecondHasBeenSet() const;
 
@@ -463,20 +517,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeAverage 平均响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResponseTimeAverage() const;
 
                     /**
                      * 设置平均响应时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTimeAverage 平均响应时间
+                     * @param _responseTimeAverage 平均响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTimeAverage(const double& _responseTimeAverage);
 
                     /**
                      * 判断参数 ResponseTimeAverage 是否已赋值
                      * @return ResponseTimeAverage 是否已赋值
+                     * 
                      */
                     bool ResponseTimeAverageHasBeenSet() const;
 
@@ -485,20 +542,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeP99 响应时间第99百分位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResponseTimeP99() const;
 
                     /**
                      * 设置响应时间第99百分位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTimeP99 响应时间第99百分位
+                     * @param _responseTimeP99 响应时间第99百分位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTimeP99(const double& _responseTimeP99);
 
                     /**
                      * 判断参数 ResponseTimeP99 是否已赋值
                      * @return ResponseTimeP99 是否已赋值
+                     * 
                      */
                     bool ResponseTimeP99HasBeenSet() const;
 
@@ -507,20 +567,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeP95 响应时间第95百分位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResponseTimeP95() const;
 
                     /**
                      * 设置响应时间第95百分位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTimeP95 响应时间第95百分位
+                     * @param _responseTimeP95 响应时间第95百分位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTimeP95(const double& _responseTimeP95);
 
                     /**
                      * 判断参数 ResponseTimeP95 是否已赋值
                      * @return ResponseTimeP95 是否已赋值
+                     * 
                      */
                     bool ResponseTimeP95HasBeenSet() const;
 
@@ -529,20 +592,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeP90 响应时间第90百分位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResponseTimeP90() const;
 
                     /**
                      * 设置响应时间第90百分位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTimeP90 响应时间第90百分位
+                     * @param _responseTimeP90 响应时间第90百分位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTimeP90(const double& _responseTimeP90);
 
                     /**
                      * 判断参数 ResponseTimeP90 是否已赋值
                      * @return ResponseTimeP90 是否已赋值
+                     * 
                      */
                     bool ResponseTimeP90HasBeenSet() const;
 
@@ -551,20 +617,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scripts 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetScripts() const;
 
                     /**
                      * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scripts 此字段不再使用
+                     * @param _scripts 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScripts(const std::vector<std::string>& _scripts);
 
                     /**
                      * 判断参数 Scripts 是否已赋值
                      * @return Scripts 是否已赋值
+                     * 
                      */
                     bool ScriptsHasBeenSet() const;
 
@@ -573,20 +642,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeMax 最大响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResponseTimeMax() const;
 
                     /**
                      * 设置最大响应时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTimeMax 最大响应时间
+                     * @param _responseTimeMax 最大响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTimeMax(const double& _responseTimeMax);
 
                     /**
                      * 判断参数 ResponseTimeMax 是否已赋值
                      * @return ResponseTimeMax 是否已赋值
+                     * 
                      */
                     bool ResponseTimeMaxHasBeenSet() const;
 
@@ -595,20 +667,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeMin 最小响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResponseTimeMin() const;
 
                     /**
                      * 设置最小响应时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTimeMin 最小响应时间
+                     * @param _responseTimeMin 最小响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTimeMin(const double& _responseTimeMin);
 
                     /**
                      * 判断参数 ResponseTimeMin 是否已赋值
                      * @return ResponseTimeMin 是否已赋值
+                     * 
                      */
                     bool ResponseTimeMinHasBeenSet() const;
 
@@ -617,20 +692,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadSourceInfos 发压host信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoadSource> GetLoadSourceInfos() const;
 
                     /**
                      * 设置发压host信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadSourceInfos 发压host信息
+                     * @param _loadSourceInfos 发压host信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadSourceInfos(const std::vector<LoadSource>& _loadSourceInfos);
 
                     /**
                      * 判断参数 LoadSourceInfos 是否已赋值
                      * @return LoadSourceInfos 是否已赋值
+                     * 
                      */
                     bool LoadSourceInfosHasBeenSet() const;
 
@@ -639,20 +717,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TestScripts 测试脚本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScriptInfo> GetTestScripts() const;
 
                     /**
                      * 设置测试脚本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TestScripts 测试脚本信息
+                     * @param _testScripts 测试脚本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTestScripts(const std::vector<ScriptInfo>& _testScripts);
 
                     /**
                      * 判断参数 TestScripts 是否已赋值
                      * @return TestScripts 是否已赋值
+                     * 
                      */
                     bool TestScriptsHasBeenSet() const;
 
@@ -661,20 +742,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocols 协议脚本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProtocolInfo> GetProtocols() const;
 
                     /**
                      * 设置协议脚本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocols 协议脚本信息
+                     * @param _protocols 协议脚本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocols(const std::vector<ProtocolInfo>& _protocols);
 
                     /**
                      * 判断参数 Protocols 是否已赋值
                      * @return Protocols 是否已赋值
+                     * 
                      */
                     bool ProtocolsHasBeenSet() const;
 
@@ -683,20 +767,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestFiles 请求文件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FileInfo> GetRequestFiles() const;
 
                     /**
                      * 设置请求文件信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestFiles 请求文件信息
+                     * @param _requestFiles 请求文件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestFiles(const std::vector<FileInfo>& _requestFiles);
 
                     /**
                      * 判断参数 RequestFiles 是否已赋值
                      * @return RequestFiles 是否已赋值
+                     * 
                      */
                     bool RequestFilesHasBeenSet() const;
 
@@ -705,20 +792,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Plugins 拓展包文件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FileInfo> GetPlugins() const;
 
                     /**
                      * 设置拓展包文件信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Plugins 拓展包文件信息
+                     * @param _plugins 拓展包文件信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlugins(const std::vector<FileInfo>& _plugins);
 
                     /**
                      * 判断参数 Plugins 是否已赋值
                      * @return Plugins 是否已赋值
+                     * 
                      */
                     bool PluginsHasBeenSet() const;
 
@@ -727,20 +817,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronId 定时任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCronId() const;
 
                     /**
                      * 设置定时任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CronId 定时任务ID
+                     * @param _cronId 定时任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCronId(const std::string& _cronId);
 
                     /**
                      * 判断参数 CronId 是否已赋值
                      * @return CronId 是否已赋值
+                     * 
                      */
                     bool CronIdHasBeenSet() const;
 
@@ -749,20 +842,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 场景类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置场景类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 场景类型
+                     * @param _type 场景类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -771,20 +867,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNameConfig 域名绑定配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DomainNameConfig GetDomainNameConfig() const;
 
                     /**
                      * 设置域名绑定配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainNameConfig 域名绑定配置
+                     * @param _domainNameConfig 域名绑定配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomainNameConfig(const DomainNameConfig& _domainNameConfig);
 
                     /**
                      * 判断参数 DomainNameConfig 是否已赋值
                      * @return DomainNameConfig 是否已赋值
+                     * 
                      */
                     bool DomainNameConfigHasBeenSet() const;
 
@@ -793,20 +892,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Debug false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDebug() const;
 
                     /**
                      * 设置false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Debug false
+                     * @param _debug false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDebug(const bool& _debug);
 
                     /**
                      * 判断参数 Debug 是否已赋值
                      * @return Debug 是否已赋值
+                     * 
                      */
                     bool DebugHasBeenSet() const;
 
@@ -815,20 +917,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbortReason 中断原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAbortReason() const;
 
                     /**
                      * 设置中断原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AbortReason 中断原因
+                     * @param _abortReason 中断原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAbortReason(const int64_t& _abortReason);
 
                     /**
                      * 判断参数 AbortReason 是否已赋值
                      * @return AbortReason 是否已赋值
+                     * 
                      */
                     bool AbortReasonHasBeenSet() const;
 
@@ -837,20 +942,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedAt 任务的创建时间
+                     * @param _createdAt 任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -859,20 +967,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -881,20 +992,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotificationHooks 通知事件回调
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NotificationHook> GetNotificationHooks() const;
 
                     /**
                      * 设置通知事件回调
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotificationHooks 通知事件回调
+                     * @param _notificationHooks 通知事件回调
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotificationHooks(const std::vector<NotificationHook>& _notificationHooks);
 
                     /**
                      * 判断参数 NotificationHooks 是否已赋值
                      * @return NotificationHooks 是否已赋值
+                     * 
                      */
                     bool NotificationHooksHasBeenSet() const;
 
@@ -903,20 +1017,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkReceiveRate 每秒接收字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetNetworkReceiveRate() const;
 
                     /**
                      * 设置每秒接收字节数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkReceiveRate 每秒接收字节数
+                     * @param _networkReceiveRate 每秒接收字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetworkReceiveRate(const double& _networkReceiveRate);
 
                     /**
                      * 判断参数 NetworkReceiveRate 是否已赋值
                      * @return NetworkReceiveRate 是否已赋值
+                     * 
                      */
                     bool NetworkReceiveRateHasBeenSet() const;
 
@@ -925,20 +1042,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkSendRate 每秒发送字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetNetworkSendRate() const;
 
                     /**
                      * 设置每秒发送字节数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkSendRate 每秒发送字节数
+                     * @param _networkSendRate 每秒发送字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetworkSendRate(const double& _networkSendRate);
 
                     /**
                      * 判断参数 NetworkSendRate 是否已赋值
                      * @return NetworkSendRate 是否已赋值
+                     * 
                      */
                     bool NetworkSendRateHasBeenSet() const;
 
@@ -947,20 +1067,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 任务状态描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置任务状态描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 任务状态描述
+                     * @param _message 任务状态描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -969,20 +1092,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName test-project
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置test-project
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectName test-project
+                     * @param _projectName test-project
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
@@ -991,20 +1117,23 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioName test-scenario
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScenarioName() const;
 
                     /**
                      * 设置test-scenario
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScenarioName test-scenario
+                     * @param _scenarioName test-scenario
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScenarioName(const std::string& _scenarioName);
 
                     /**
                      * 判断参数 ScenarioName 是否已赋值
                      * @return ScenarioName 是否已赋值
+                     * 
                      */
                     bool ScenarioNameHasBeenSet() const;
 

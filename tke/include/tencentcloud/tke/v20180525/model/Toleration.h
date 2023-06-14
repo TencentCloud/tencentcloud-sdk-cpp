@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取容忍应用到的 taint key
                      * @return Key 容忍应用到的 taint key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置容忍应用到的 taint key
-                     * @param Key 容忍应用到的 taint key
+                     * @param _key 容忍应用到的 taint key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取键与值的关系
                      * @return Operator 键与值的关系
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置键与值的关系
-                     * @param Operator 键与值的关系
+                     * @param _operator 键与值的关系
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取要匹配的污点效果
                      * @return Effect 要匹配的污点效果
+                     * 
                      */
                     std::string GetEffect() const;
 
                     /**
                      * 设置要匹配的污点效果
-                     * @param Effect 要匹配的污点效果
+                     * @param _effect 要匹配的污点效果
+                     * 
                      */
                     void SetEffect(const std::string& _effect);
 
                     /**
                      * 判断参数 Effect 是否已赋值
                      * @return Effect 是否已赋值
+                     * 
                      */
                     bool EffectHasBeenSet() const;
 

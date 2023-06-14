@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取pod的名称
                      * @return Name pod的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置pod的名称
-                     * @param Name pod的名称
+                     * @param _name pod的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取pod uuid
                      * @return Uuid pod uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置pod uuid
-                     * @param Uuid pod uuid
+                     * @param _uuid pod uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取pod的状态
                      * @return State pod的状态
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置pod的状态
-                     * @param State pod的状态
+                     * @param _state pod的状态
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取pod处于该状态原因
                      * @return Reason pod处于该状态原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置pod处于该状态原因
-                     * @param Reason pod处于该状态原因
+                     * @param _reason pod处于该状态原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取pod所属集群
                      * @return OwnerCluster pod所属集群
+                     * 
                      */
                     std::string GetOwnerCluster() const;
 
                     /**
                      * 设置pod所属集群
-                     * @param OwnerCluster pod所属集群
+                     * @param _ownerCluster pod所属集群
+                     * 
                      */
                     void SetOwnerCluster(const std::string& _ownerCluster);
 
                     /**
                      * 判断参数 OwnerCluster 是否已赋值
                      * @return OwnerCluster 是否已赋值
+                     * 
                      */
                     bool OwnerClusterHasBeenSet() const;
 
                     /**
                      * 获取pod内存大小
                      * @return Memory pod内存大小
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置pod内存大小
-                     * @param Memory pod内存大小
+                     * @param _memory pod内存大小
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 

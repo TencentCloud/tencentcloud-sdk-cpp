@@ -52,110 +52,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 列表数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DomainSiteInfo> GetResult() const;
 
                     /**
                      * 设置列表数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 列表数据
+                     * @param _result 列表数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::vector<DomainSiteInfo>& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取搜索出来的数量
                      * @return SearchTotal 搜索出来的数量
+                     * 
                      */
                     int64_t GetSearchTotal() const;
 
                     /**
                      * 设置搜索出来的数量
-                     * @param SearchTotal 搜索出来的数量
+                     * @param _searchTotal 搜索出来的数量
+                     * 
                      */
                     void SetSearchTotal(const int64_t& _searchTotal);
 
                     /**
                      * 判断参数 SearchTotal 是否已赋值
                      * @return SearchTotal 是否已赋值
+                     * 
                      */
                     bool SearchTotalHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数
-                     * @param Total 总数
+                     * @param _total 总数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取允许的监控数量
                      * @return AllowMonitoringCount 允许的监控数量
+                     * 
                      */
                     int64_t GetAllowMonitoringCount() const;
 
                     /**
                      * 设置允许的监控数量
-                     * @param AllowMonitoringCount 允许的监控数量
+                     * @param _allowMonitoringCount 允许的监控数量
+                     * 
                      */
                     void SetAllowMonitoringCount(const int64_t& _allowMonitoringCount);
 
                     /**
                      * 判断参数 AllowMonitoringCount 是否已赋值
                      * @return AllowMonitoringCount 是否已赋值
+                     * 
                      */
                     bool AllowMonitoringCountHasBeenSet() const;
 
                     /**
                      * 获取当前监控的数量
                      * @return CurrentMonitoringCount 当前监控的数量
+                     * 
                      */
                     int64_t GetCurrentMonitoringCount() const;
 
                     /**
                      * 设置当前监控的数量
-                     * @param CurrentMonitoringCount 当前监控的数量
+                     * @param _currentMonitoringCount 当前监控的数量
+                     * 
                      */
                     void SetCurrentMonitoringCount(const int64_t& _currentMonitoringCount);
 
                     /**
                      * 判断参数 CurrentMonitoringCount 是否已赋值
                      * @return CurrentMonitoringCount 是否已赋值
+                     * 
                      */
                     bool CurrentMonitoringCountHasBeenSet() const;
 
                     /**
                      * 获取允许添加域名总数
                      * @return AllowMaxAddDomain 允许添加域名总数
+                     * 
                      */
                     int64_t GetAllowMaxAddDomain() const;
 
                     /**
                      * 设置允许添加域名总数
-                     * @param AllowMaxAddDomain 允许添加域名总数
+                     * @param _allowMaxAddDomain 允许添加域名总数
+                     * 
                      */
                     void SetAllowMaxAddDomain(const int64_t& _allowMaxAddDomain);
 
                     /**
                      * 判断参数 AllowMaxAddDomain 是否已赋值
                      * @return AllowMaxAddDomain 是否已赋值
+                     * 
                      */
                     bool AllowMaxAddDomainHasBeenSet() const;
 

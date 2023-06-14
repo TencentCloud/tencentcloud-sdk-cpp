@@ -48,132 +48,154 @@ namespace TencentCloud
                     /**
                      * 获取分省份分运营商错误码为2或3或4或5开头的状态码数据信息。
                      * @return ProIspInfoList 分省份分运营商错误码为2或3或4或5开头的状态码数据信息。
+                     * 
                      */
                     std::vector<ProIspPlayCodeDataInfo> GetProIspInfoList() const;
 
                     /**
                      * 判断参数 ProIspInfoList 是否已赋值
                      * @return ProIspInfoList 是否已赋值
+                     * 
                      */
                     bool ProIspInfoListHasBeenSet() const;
 
                     /**
                      * 获取所有状态码的加和的次数。
                      * @return TotalCodeAll 所有状态码的加和的次数。
+                     * 
                      */
                     uint64_t GetTotalCodeAll() const;
 
                     /**
                      * 判断参数 TotalCodeAll 是否已赋值
                      * @return TotalCodeAll 是否已赋值
+                     * 
                      */
                     bool TotalCodeAllHasBeenSet() const;
 
                     /**
                      * 获取状态码为4开头的总次数。
                      * @return TotalCode4xx 状态码为4开头的总次数。
+                     * 
                      */
                     uint64_t GetTotalCode4xx() const;
 
                     /**
                      * 判断参数 TotalCode4xx 是否已赋值
                      * @return TotalCode4xx 是否已赋值
+                     * 
                      */
                     bool TotalCode4xxHasBeenSet() const;
 
                     /**
                      * 获取状态码为5开头的总次数。
                      * @return TotalCode5xx 状态码为5开头的总次数。
+                     * 
                      */
                     uint64_t GetTotalCode5xx() const;
 
                     /**
                      * 判断参数 TotalCode5xx 是否已赋值
                      * @return TotalCode5xx 是否已赋值
+                     * 
                      */
                     bool TotalCode5xxHasBeenSet() const;
 
                     /**
                      * 获取各状态码的总次数。
                      * @return TotalCodeList 各状态码的总次数。
+                     * 
                      */
                     std::vector<PlayCodeTotalInfo> GetTotalCodeList() const;
 
                     /**
                      * 判断参数 TotalCodeList 是否已赋值
                      * @return TotalCodeList 是否已赋值
+                     * 
                      */
                     bool TotalCodeListHasBeenSet() const;
 
                     /**
                      * 获取页号。
                      * @return PageNum 页号。
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取每页大小。
                      * @return PageSize 每页大小。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取总页数。
                      * @return TotalPage 总页数。
+                     * 
                      */
                     uint64_t GetTotalPage() const;
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 
                     /**
                      * 获取总记录数。
                      * @return TotalNum 总记录数。
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 
                     /**
                      * 获取状态码为2开头的总次数。
                      * @return TotalCode2xx 状态码为2开头的总次数。
+                     * 
                      */
                     uint64_t GetTotalCode2xx() const;
 
                     /**
                      * 判断参数 TotalCode2xx 是否已赋值
                      * @return TotalCode2xx 是否已赋值
+                     * 
                      */
                     bool TotalCode2xxHasBeenSet() const;
 
                     /**
                      * 获取状态码为3开头的总次数。
                      * @return TotalCode3xx 状态码为3开头的总次数。
+                     * 
                      */
                     uint64_t GetTotalCode3xx() const;
 
                     /**
                      * 判断参数 TotalCode3xx 是否已赋值
                      * @return TotalCode3xx 是否已赋值
+                     * 
                      */
                     bool TotalCode3xxHasBeenSet() const;
 

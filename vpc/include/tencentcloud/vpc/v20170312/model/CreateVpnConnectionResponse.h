@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取通道实例对象。
                      * @return VpnConnection 通道实例对象。
+                     * 
                      */
                     VpnConnection GetVpnConnection() const;
 
                     /**
                      * 判断参数 VpnConnection 是否已赋值
                      * @return VpnConnection 是否已赋值
+                     * 
                      */
                     bool VpnConnectionHasBeenSet() const;
 

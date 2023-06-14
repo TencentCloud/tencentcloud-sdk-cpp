@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
                      * @return SceneType 根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
+                     * 
                      */
                     std::string GetSceneType() const;
 
                     /**
                      * 设置根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
-                     * @param SceneType 根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
+                     * @param _sceneType 根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
+                     * 
                      */
                     void SetSceneType(const std::string& _sceneType);
 
                     /**
                      * 判断参数 SceneType 是否已赋值
                      * @return SceneType 是否已赋值
+                     * 
                      */
                     bool SceneTypeHasBeenSet() const;
 
                     /**
                      * 获取固定值，为"monitor"
                      * @return Module 固定值，为"monitor"
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置固定值，为"monitor"
-                     * @param Module 固定值，为"monitor"
+                     * @param _module 固定值，为"monitor"
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
                      * @return MonitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
+                     * 
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
                      * 设置根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
-                     * @param MonitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
+                     * @param _monitorTypes 根据监控类型过滤 不填默认查所有类型 "MT_QCE"=云产品监控
+                     * 
                      */
                     void SetMonitorTypes(const std::vector<std::string>& _monitorTypes);
 
                     /**
                      * 判断参数 MonitorTypes 是否已赋值
                      * @return MonitorTypes 是否已赋值
+                     * 
                      */
                     bool MonitorTypesHasBeenSet() const;
 
                     /**
                      * 获取根据namespace的Id过滤 不填默认查询所有
                      * @return Ids 根据namespace的Id过滤 不填默认查询所有
+                     * 
                      */
                     std::vector<std::string> GetIds() const;
 
                     /**
                      * 设置根据namespace的Id过滤 不填默认查询所有
-                     * @param Ids 根据namespace的Id过滤 不填默认查询所有
+                     * @param _ids 根据namespace的Id过滤 不填默认查询所有
+                     * 
                      */
                     void SetIds(const std::vector<std::string>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

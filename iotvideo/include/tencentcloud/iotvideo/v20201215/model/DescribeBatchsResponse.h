@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取批次数量
                      * @return TotalCount 批次数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取批次列表详情
                      * @return Data 批次列表详情
+                     * 
                      */
                     std::vector<VideoBatch> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

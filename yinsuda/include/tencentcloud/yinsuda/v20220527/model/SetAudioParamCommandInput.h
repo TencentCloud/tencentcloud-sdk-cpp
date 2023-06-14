@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 音频类型，取值有：
 <li>Original：原唱</li>
 <li>Accompaniment：伴奏</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置音频类型，取值有：
 <li>Original：原唱</li>
 <li>Accompaniment：伴奏</li>
-                     * @param Type 音频类型，取值有：
+                     * @param _type 音频类型，取值有：
 <li>Original：原唱</li>
 <li>Accompaniment：伴奏</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

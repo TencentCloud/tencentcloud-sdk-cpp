@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取需要开通服务的资源ID
                      * @return ResourceId 需要开通服务的资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置需要开通服务的资源ID
-                     * @param ResourceId 需要开通服务的资源ID
+                     * @param _resourceId 需要开通服务的资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的地域
                      * @return ApCode 需要开通服务的地域
+                     * 
                      */
                     std::string GetApCode() const;
 
                     /**
                      * 设置需要开通服务的地域
-                     * @param ApCode 需要开通服务的地域
+                     * @param _apCode 需要开通服务的地域
+                     * 
                      */
                     void SetApCode(const std::string& _apCode);
 
                     /**
                      * 判断参数 ApCode 是否已赋值
                      * @return ApCode 是否已赋值
+                     * 
                      */
                     bool ApCodeHasBeenSet() const;
 
                     /**
                      * 获取子网所在可用区
                      * @return Zone 子网所在可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置子网所在可用区
-                     * @param Zone 子网所在可用区
+                     * @param _zone 子网所在可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的VPC
                      * @return VpcId 需要开通服务的VPC
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置需要开通服务的VPC
-                     * @param VpcId 需要开通服务的VPC
+                     * @param _vpcId 需要开通服务的VPC
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的子网ID
                      * @return SubnetId 需要开通服务的子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置需要开通服务的子网ID
-                     * @param SubnetId 需要开通服务的子网ID
+                     * @param _subnetId 需要开通服务的子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的子网网段
                      * @return CidrBlock 需要开通服务的子网网段
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置需要开通服务的子网网段
-                     * @param CidrBlock 需要开通服务的子网网段
+                     * @param _cidrBlock 需要开通服务的子网网段
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的VPC名称
                      * @return VpcName 需要开通服务的VPC名称
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置需要开通服务的VPC名称
-                     * @param VpcName 需要开通服务的VPC名称
+                     * @param _vpcName 需要开通服务的VPC名称
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的VPC对应的网段
                      * @return VpcCidrBlock 需要开通服务的VPC对应的网段
+                     * 
                      */
                     std::string GetVpcCidrBlock() const;
 
                     /**
                      * 设置需要开通服务的VPC对应的网段
-                     * @param VpcCidrBlock 需要开通服务的VPC对应的网段
+                     * @param _vpcCidrBlock 需要开通服务的VPC对应的网段
+                     * 
                      */
                     void SetVpcCidrBlock(const std::string& _vpcCidrBlock);
 
                     /**
                      * 判断参数 VpcCidrBlock 是否已赋值
                      * @return VpcCidrBlock 是否已赋值
+                     * 
                      */
                     bool VpcCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取需要开通服务的子网名称
                      * @return SubnetName 需要开通服务的子网名称
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置需要开通服务的子网名称
-                     * @param SubnetName 需要开通服务的子网名称
+                     * @param _subnetName 需要开通服务的子网名称
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 

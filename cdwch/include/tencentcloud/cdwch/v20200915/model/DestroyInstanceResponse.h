@@ -48,36 +48,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowID 作业id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowID() const;
 
                     /**
                      * 判断参数 FlowID 是否已赋值
                      * @return FlowID 是否已赋值
+                     * 
                      */
                     bool FlowIDHasBeenSet() const;
 
                     /**
                      * 获取集群id
                      * @return InstanceID 集群id
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return ErrorMsg 错误信息
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

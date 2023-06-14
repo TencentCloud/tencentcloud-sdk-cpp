@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取git地址
                      * @return RepositoryUrl git地址
+                     * 
                      */
                     std::string GetRepositoryUrl() const;
 
                     /**
                      * 设置git地址
-                     * @param RepositoryUrl git地址
+                     * @param _repositoryUrl git地址
+                     * 
                      */
                     void SetRepositoryUrl(const std::string& _repositoryUrl);
 
                     /**
                      * 判断参数 RepositoryUrl 是否已赋值
                      * @return RepositoryUrl 是否已赋值
+                     * 
                      */
                     bool RepositoryUrlHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 代码分支
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置代码分支
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Branch 代码分支
+                     * @param _branch 代码分支
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBranch(const std::string& _branch);
 
                     /**
                      * 判断参数 Branch 是否已赋值
                      * @return Branch 是否已赋值
+                     * 
                      */
                     bool BranchHasBeenSet() const;
 

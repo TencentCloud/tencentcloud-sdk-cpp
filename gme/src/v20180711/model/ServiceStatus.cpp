@@ -25,7 +25,8 @@ ServiceStatus::ServiceStatus() :
     m_voiceMessageHasBeenSet(false),
     m_pornHasBeenSet(false),
     m_liveHasBeenSet(false),
-    m_realTimeAsrHasBeenSet(false)
+    m_realTimeAsrHasBeenSet(false),
+    m_textTranslateHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,23 @@ CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
         m_realTimeAsrHasBeenSet = true;
     }
 
+    if (value.HasMember("TextTranslate") && !value["TextTranslate"].IsNull())
+    {
+        if (!value["TextTranslate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceStatus.TextTranslate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_textTranslate.Deserialize(value["TextTranslate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_textTranslateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -169,6 +187,15 @@ void ServiceStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_realTimeAsr.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_textTranslateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextTranslate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_textTranslate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -252,5 +279,21 @@ void ServiceStatus::SetRealTimeAsr(const StatusInfo& _realTimeAsr)
 bool ServiceStatus::RealTimeAsrHasBeenSet() const
 {
     return m_realTimeAsrHasBeenSet;
+}
+
+StatusInfo ServiceStatus::GetTextTranslate() const
+{
+    return m_textTranslate;
+}
+
+void ServiceStatus::SetTextTranslate(const StatusInfo& _textTranslate)
+{
+    m_textTranslate = _textTranslate;
+    m_textTranslateHasBeenSet = true;
+}
+
+bool ServiceStatus::TextTranslateHasBeenSet() const
+{
+    return m_textTranslateHasBeenSet;
 }
 

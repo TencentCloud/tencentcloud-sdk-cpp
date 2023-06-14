@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取增值服务名称
                      * @return Name 增值服务名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置增值服务名称
-                     * @param Name 增值服务名称
+                     * @param _name 增值服务名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取增值服务标识
                      * @return Key 增值服务标识
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置增值服务标识
-                     * @param Key 增值服务标识
+                     * @param _key 增值服务标识
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取增值服务最大用量
                      * @return LimitCount 增值服务最大用量
+                     * 
                      */
                     uint64_t GetLimitCount() const;
 
                     /**
                      * 设置增值服务最大用量
-                     * @param LimitCount 增值服务最大用量
+                     * @param _limitCount 增值服务最大用量
+                     * 
                      */
                     void SetLimitCount(const uint64_t& _limitCount);
 
                     /**
                      * 判断参数 LimitCount 是否已赋值
                      * @return LimitCount 是否已赋值
+                     * 
                      */
                     bool LimitCountHasBeenSet() const;
 
                     /**
                      * 获取增值服务已使用的用量
                      * @return UseCount 增值服务已使用的用量
+                     * 
                      */
                     uint64_t GetUseCount() const;
 
                     /**
                      * 设置增值服务已使用的用量
-                     * @param UseCount 增值服务已使用的用量
+                     * @param _useCount 增值服务已使用的用量
+                     * 
                      */
                     void SetUseCount(const uint64_t& _useCount);
 
                     /**
                      * 判断参数 UseCount 是否已赋值
                      * @return UseCount 是否已赋值
+                     * 
                      */
                     bool UseCountHasBeenSet() const;
 

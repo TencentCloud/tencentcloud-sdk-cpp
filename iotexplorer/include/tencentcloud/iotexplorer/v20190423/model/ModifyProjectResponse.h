@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取项目详情
                      * @return Project 项目详情
+                     * 
                      */
                     ProjectEntry GetProject() const;
 
                     /**
                      * 判断参数 Project 是否已赋值
                      * @return Project 是否已赋值
+                     * 
                      */
                     bool ProjectHasBeenSet() const;
 

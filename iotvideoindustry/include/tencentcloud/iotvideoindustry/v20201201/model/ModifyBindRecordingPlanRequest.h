@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取操作类型： 1-绑定设备 ；2-解绑设备
                      * @return Type 操作类型： 1-绑定设备 ；2-解绑设备
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置操作类型： 1-绑定设备 ；2-解绑设备
-                     * @param Type 操作类型： 1-绑定设备 ；2-解绑设备
+                     * @param _type 操作类型： 1-绑定设备 ；2-解绑设备
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取录制计划ID
                      * @return PlanId 录制计划ID
+                     * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置录制计划ID
-                     * @param PlanId 录制计划ID
+                     * @param _planId 录制计划ID
+                     * 
                      */
                     void SetPlanId(const std::string& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取录制通道列表
                      * @return Channels 录制通道列表
+                     * 
                      */
                     std::vector<ChannelItem> GetChannels() const;
 
                     /**
                      * 设置录制通道列表
-                     * @param Channels 录制通道列表
+                     * @param _channels 录制通道列表
+                     * 
                      */
                     void SetChannels(const std::vector<ChannelItem>& _channels);
 
                     /**
                      * 判断参数 Channels 是否已赋值
                      * @return Channels 是否已赋值
+                     * 
                      */
                     bool ChannelsHasBeenSet() const;
 

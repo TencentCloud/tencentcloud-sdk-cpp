@@ -52,38 +52,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Res ip黑白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IpAccessControlItem> GetRes() const;
 
                     /**
                      * 设置ip黑白名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Res ip黑白名单
+                     * @param _res ip黑白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRes(const std::vector<IpAccessControlItem>& _res);
 
                     /**
                      * 判断参数 Res 是否已赋值
                      * @return Res 是否已赋值
+                     * 
                      */
                     bool ResHasBeenSet() const;
 
                     /**
                      * 获取计数
                      * @return TotalCount 计数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置计数
-                     * @param TotalCount 计数
+                     * @param _totalCount 计数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

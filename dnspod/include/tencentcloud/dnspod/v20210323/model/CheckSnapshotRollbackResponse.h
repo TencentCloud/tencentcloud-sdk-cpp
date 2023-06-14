@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取快照记录 ID
                      * @return SnapshotId 快照记录 ID
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取回滚时长（分钟）
                      * @return CostMinutes 回滚时长（分钟）
+                     * 
                      */
                     uint64_t GetCostMinutes() const;
 
                     /**
                      * 判断参数 CostMinutes 是否已赋值
                      * @return CostMinutes 是否已赋值
+                     * 
                      */
                     bool CostMinutesHasBeenSet() const;
 
                     /**
                      * 获取快照所属域名
                      * @return Domain 快照所属域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取解析记录总数
                      * @return Total 解析记录总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -97,12 +105,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 值为 1，表示超时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
@@ -111,12 +121,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Failed 检查失败数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFailed() const;
 
                     /**
                      * 判断参数 Failed 是否已赋值
                      * @return Failed 是否已赋值
+                     * 
                      */
                     bool FailedHasBeenSet() const;
 
@@ -125,12 +137,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedRecordList 失败记录信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SnapshotRecord> GetFailedRecordList() const;
 
                     /**
                      * 判断参数 FailedRecordList 是否已赋值
                      * @return FailedRecordList 是否已赋值
+                     * 
                      */
                     bool FailedRecordListHasBeenSet() const;
 

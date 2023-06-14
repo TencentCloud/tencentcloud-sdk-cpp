@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取客户的终端用户在IoT Video上的唯一标识ID
                      * @return AccessId 客户的终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置客户的终端用户在IoT Video上的唯一标识ID
-                     * @param AccessId 客户的终端用户在IoT Video上的唯一标识ID
+                     * @param _accessId 客户的终端用户在IoT Video上的唯一标识ID
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取设备TID列表,0<元素数量<=100
                      * @return Tids 设备TID列表,0<元素数量<=100
+                     * 
                      */
                     std::vector<std::string> GetTids() const;
 
                     /**
                      * 设置设备TID列表,0<元素数量<=100
-                     * @param Tids 设备TID列表,0<元素数量<=100
+                     * @param _tids 设备TID列表,0<元素数量<=100
+                     * 
                      */
                     void SetTids(const std::vector<std::string>& _tids);
 
                     /**
                      * 判断参数 Tids 是否已赋值
                      * @return Tids 是否已赋值
+                     * 
                      */
                     bool TidsHasBeenSet() const;
 
                     /**
                      * 获取Token的TTL(time to alive)分钟数
                      * @return TtlMinutes Token的TTL(time to alive)分钟数
+                     * 
                      */
                     uint64_t GetTtlMinutes() const;
 
                     /**
                      * 设置Token的TTL(time to alive)分钟数
-                     * @param TtlMinutes Token的TTL(time to alive)分钟数
+                     * @param _ttlMinutes Token的TTL(time to alive)分钟数
+                     * 
                      */
                     void SetTtlMinutes(const uint64_t& _ttlMinutes);
 
                     /**
                      * 判断参数 TtlMinutes 是否已赋值
                      * @return TtlMinutes 是否已赋值
+                     * 
                      */
                     bool TtlMinutesHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取门店名称
                      * @return Name 门店名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置门店名称
-                     * @param Name 门店名称
+                     * @param _name 门店名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取地区编码
                      * @return AreaCode 地区编码
+                     * 
                      */
                     std::string GetAreaCode() const;
 
                     /**
                      * 设置地区编码
-                     * @param AreaCode 地区编码
+                     * @param _areaCode 地区编码
+                     * 
                      */
                     void SetAreaCode(const std::string& _areaCode);
 
                     /**
                      * 判断参数 AreaCode 是否已赋值
                      * @return AreaCode 是否已赋值
+                     * 
                      */
                     bool AreaCodeHasBeenSet() const;
 
                     /**
                      * 获取详细地址
                      * @return Address 详细地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置详细地址
-                     * @param Address 详细地址
+                     * @param _address 详细地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取门店编号
                      * @return Id 门店编号
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置门店编号
-                     * @param Id 门店编号
+                     * @param _id 门店编号
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

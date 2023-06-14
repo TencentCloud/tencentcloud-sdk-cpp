@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话放置的唯一标识符
                      * @return PlacementId 游戏服务器会话放置的唯一标识符
+                     * 
                      */
                     std::string GetPlacementId() const;
 
                     /**
                      * 设置游戏服务器会话放置的唯一标识符
-                     * @param PlacementId 游戏服务器会话放置的唯一标识符
+                     * @param _placementId 游戏服务器会话放置的唯一标识符
+                     * 
                      */
                     void SetPlacementId(const std::string& _placementId);
 
                     /**
                      * 判断参数 PlacementId 是否已赋值
                      * @return PlacementId 是否已赋值
+                     * 
                      */
                     bool PlacementIdHasBeenSet() const;
 

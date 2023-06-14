@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取通道 ID 数组。例如：nchannel-abcd1234
                      * @return ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234
+                     * 
                      */
                     std::vector<std::string> GetChannelIDs() const;
 
                     /**
                      * 设置通道 ID 数组。例如：nchannel-abcd1234
-                     * @param ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234
+                     * @param _channelIDs 通道 ID 数组。例如：nchannel-abcd1234
+                     * 
                      */
                     void SetChannelIDs(const std::vector<std::string>& _channelIDs);
 
                     /**
                      * 判断参数 ChannelIDs 是否已赋值
                      * @return ChannelIDs 是否已赋值
+                     * 
                      */
                     bool ChannelIDsHasBeenSet() const;
 
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-abcdefgh
                      * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

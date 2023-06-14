@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID
                      * @return InstanceId 集群实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例ID
-                     * @param InstanceId 集群实例ID
+                     * @param _instanceId 集群实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集群用户名列表
                      * @return UserNameList 集群用户名列表
+                     * 
                      */
                     std::vector<std::string> GetUserNameList() const;
 
                     /**
                      * 设置集群用户名列表
-                     * @param UserNameList 集群用户名列表
+                     * @param _userNameList 集群用户名列表
+                     * 
                      */
                     void SetUserNameList(const std::vector<std::string>& _userNameList);
 
                     /**
                      * 判断参数 UserNameList 是否已赋值
                      * @return UserNameList 是否已赋值
+                     * 
                      */
                     bool UserNameListHasBeenSet() const;
 
                     /**
                      * 获取tke/eks集群id，容器集群传
                      * @return TkeClusterId tke/eks集群id，容器集群传
+                     * 
                      */
                     std::string GetTkeClusterId() const;
 
                     /**
                      * 设置tke/eks集群id，容器集群传
-                     * @param TkeClusterId tke/eks集群id，容器集群传
+                     * @param _tkeClusterId tke/eks集群id，容器集群传
+                     * 
                      */
                     void SetTkeClusterId(const std::string& _tkeClusterId);
 
                     /**
                      * 判断参数 TkeClusterId 是否已赋值
                      * @return TkeClusterId 是否已赋值
+                     * 
                      */
                     bool TkeClusterIdHasBeenSet() const;
 
                     /**
                      * 获取默认空，容器版传"native"
                      * @return DisplayStrategy 默认空，容器版传"native"
+                     * 
                      */
                     std::string GetDisplayStrategy() const;
 
                     /**
                      * 设置默认空，容器版传"native"
-                     * @param DisplayStrategy 默认空，容器版传"native"
+                     * @param _displayStrategy 默认空，容器版传"native"
+                     * 
                      */
                     void SetDisplayStrategy(const std::string& _displayStrategy);
 
                     /**
                      * 判断参数 DisplayStrategy 是否已赋值
                      * @return DisplayStrategy 是否已赋值
+                     * 
                      */
                     bool DisplayStrategyHasBeenSet() const;
 
                     /**
                      * 获取用户组
                      * @return UserGroupList 用户组
+                     * 
                      */
                     std::vector<UserAndGroup> GetUserGroupList() const;
 
                     /**
                      * 设置用户组
-                     * @param UserGroupList 用户组
+                     * @param _userGroupList 用户组
+                     * 
                      */
                     void SetUserGroupList(const std::vector<UserAndGroup>& _userGroupList);
 
                     /**
                      * 判断参数 UserGroupList 是否已赋值
                      * @return UserGroupList 是否已赋值
+                     * 
                      */
                     bool UserGroupListHasBeenSet() const;
 

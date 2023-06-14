@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取过期时间
                      * @return ExpiredTime 过期时间
+                     * 
                      */
                     uint64_t GetExpiredTime() const;
 
                     /**
                      * 设置过期时间
-                     * @param ExpiredTime 过期时间
+                     * @param _expiredTime 过期时间
+                     * 
                      */
                     void SetExpiredTime(const uint64_t& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
                      * 获取会话token
                      * @return SessionToken 会话token
+                     * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
                      * 设置会话token
-                     * @param SessionToken 会话token
+                     * @param _sessionToken 会话token
+                     * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
 
                     /**
                      * 判断参数 SessionToken 是否已赋值
                      * @return SessionToken 是否已赋值
+                     * 
                      */
                     bool SessionTokenHasBeenSet() const;
 
                     /**
                      * 获取临时密钥id
                      * @return TmpSecretId 临时密钥id
+                     * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时密钥id
-                     * @param TmpSecretId 临时密钥id
+                     * @param _tmpSecretId 临时密钥id
+                     * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
                     /**
                      * 判断参数 TmpSecretId 是否已赋值
                      * @return TmpSecretId 是否已赋值
+                     * 
                      */
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
                      * 获取临时密钥
                      * @return TmpSecretKey 临时密钥
+                     * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时密钥
-                     * @param TmpSecretKey 临时密钥
+                     * @param _tmpSecretKey 临时密钥
+                     * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
                     /**
                      * 判断参数 TmpSecretKey 是否已赋值
                      * @return TmpSecretKey 是否已赋值
+                     * 
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取cos信息
                      * @return CosInfo cos信息
+                     * 
                      */
                     UploadFansInfoCosInfo GetCosInfo() const;
 
                     /**
                      * 设置cos信息
-                     * @param CosInfo cos信息
+                     * @param _cosInfo cos信息
+                     * 
                      */
                     void SetCosInfo(const UploadFansInfoCosInfo& _cosInfo);
 
                     /**
                      * 判断参数 CosInfo 是否已赋值
                      * @return CosInfo 是否已赋值
+                     * 
                      */
                     bool CosInfoHasBeenSet() const;
 

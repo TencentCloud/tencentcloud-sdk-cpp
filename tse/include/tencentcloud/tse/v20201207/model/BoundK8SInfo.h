@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取绑定的kubernetes集群ID
                      * @return BoundClusterId 绑定的kubernetes集群ID
+                     * 
                      */
                     std::string GetBoundClusterId() const;
 
                     /**
                      * 设置绑定的kubernetes集群ID
-                     * @param BoundClusterId 绑定的kubernetes集群ID
+                     * @param _boundClusterId 绑定的kubernetes集群ID
+                     * 
                      */
                     void SetBoundClusterId(const std::string& _boundClusterId);
 
                     /**
                      * 判断参数 BoundClusterId 是否已赋值
                      * @return BoundClusterId 是否已赋值
+                     * 
                      */
                     bool BoundClusterIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoundClusterType 绑定的kubernetes的集群类型，分tke和eks两种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBoundClusterType() const;
 
                     /**
                      * 设置绑定的kubernetes的集群类型，分tke和eks两种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BoundClusterType 绑定的kubernetes的集群类型，分tke和eks两种
+                     * @param _boundClusterType 绑定的kubernetes的集群类型，分tke和eks两种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBoundClusterType(const std::string& _boundClusterType);
 
                     /**
                      * 判断参数 BoundClusterType 是否已赋值
                      * @return BoundClusterType 是否已赋值
+                     * 
                      */
                     bool BoundClusterTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncMode 服务同步模式，all为全量同步，demand为按需同步
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSyncMode() const;
 
                     /**
                      * 设置服务同步模式，all为全量同步，demand为按需同步
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SyncMode 服务同步模式，all为全量同步，demand为按需同步
+                     * @param _syncMode 服务同步模式，all为全量同步，demand为按需同步
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSyncMode(const std::string& _syncMode);
 
                     /**
                      * 判断参数 SyncMode 是否已赋值
                      * @return SyncMode 是否已赋值
+                     * 
                      */
                     bool SyncModeHasBeenSet() const;
 

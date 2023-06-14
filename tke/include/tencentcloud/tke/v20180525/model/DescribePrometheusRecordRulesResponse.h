@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取聚合规则
                      * @return Records 聚合规则
+                     * 
                      */
                     std::vector<PrometheusRecordRuleYamlItem> GetRecords() const;
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

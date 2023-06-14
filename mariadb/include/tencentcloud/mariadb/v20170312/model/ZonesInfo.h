@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取可用区英文ID
                      * @return Zone 可用区英文ID
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区英文ID
-                     * @param Zone 可用区英文ID
+                     * @param _zone 可用区英文ID
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区数字ID
                      * @return ZoneId 可用区数字ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区数字ID
-                     * @param ZoneId 可用区数字ID
+                     * @param _zoneId 可用区数字ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取可用区中文名
                      * @return ZoneName 可用区中文名
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区中文名
-                     * @param ZoneName 可用区中文名
+                     * @param _zoneName 可用区中文名
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取是否在售
                      * @return OnSale 是否在售
+                     * 
                      */
                     bool GetOnSale() const;
 
                     /**
                      * 设置是否在售
-                     * @param OnSale 是否在售
+                     * @param _onSale 是否在售
+                     * 
                      */
                     void SetOnSale(const bool& _onSale);
 
                     /**
                      * 判断参数 OnSale 是否已赋值
                      * @return OnSale 是否已赋值
+                     * 
                      */
                     bool OnSaleHasBeenSet() const;
 

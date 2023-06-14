@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取基础词
                      * @return Word 基础词
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置基础词
-                     * @param Word 基础词
+                     * @param _word 基础词
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取长度
                      * @return Length 长度
+                     * 
                      */
                     int64_t GetLength() const;
 
                     /**
                      * 设置长度
-                     * @param Length 长度
+                     * @param _length 长度
+                     * 
                      */
                     void SetLength(const int64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
                     /**
                      * 获取起始位置
                      * @return BeginOffset 起始位置
+                     * 
                      */
                     int64_t GetBeginOffset() const;
 
                     /**
                      * 设置起始位置
-                     * @param BeginOffset 起始位置
+                     * @param _beginOffset 起始位置
+                     * 
                      */
                     void SetBeginOffset(const int64_t& _beginOffset);
 
                     /**
                      * 判断参数 BeginOffset 是否已赋值
                      * @return BeginOffset 是否已赋值
+                     * 
                      */
                     bool BeginOffsetHasBeenSet() const;
 
                     /**
                      * 获取词性
                      * @return Pos 词性
+                     * 
                      */
                     std::string GetPos() const;
 
                     /**
                      * 设置词性
-                     * @param Pos 词性
+                     * @param _pos 词性
+                     * 
                      */
                     void SetPos(const std::string& _pos);
 
                     /**
                      * 判断参数 Pos 是否已赋值
                      * @return Pos 是否已赋值
+                     * 
                      */
                     bool PosHasBeenSet() const;
 

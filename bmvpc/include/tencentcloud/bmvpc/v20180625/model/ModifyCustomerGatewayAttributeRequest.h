@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
                      * @return CustomerGatewayId 对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
+                     * 
                      */
                     std::string GetCustomerGatewayId() const;
 
                     /**
                      * 设置对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
-                     * @param CustomerGatewayId 对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
+                     * @param _customerGatewayId 对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
+                     * 
                      */
                     void SetCustomerGatewayId(const std::string& _customerGatewayId);
 
                     /**
                      * 判断参数 CustomerGatewayId 是否已赋值
                      * @return CustomerGatewayId 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取对端网关名称，可任意命名，但不得超过60个字符。
                      * @return CustomerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetCustomerGatewayName() const;
 
                     /**
                      * 设置对端网关名称，可任意命名，但不得超过60个字符。
-                     * @param CustomerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * @param _customerGatewayName 对端网关名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetCustomerGatewayName(const std::string& _customerGatewayName);
 
                     /**
                      * 判断参数 CustomerGatewayName 是否已赋值
                      * @return CustomerGatewayName 是否已赋值
+                     * 
                      */
                     bool CustomerGatewayNameHasBeenSet() const;
 

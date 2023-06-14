@@ -51,162 +51,189 @@ namespace TencentCloud
                     /**
                      * 获取是否启用
                      * @return Enable 是否启用
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否启用
-                     * @param Enable 是否启用
+                     * @param _enable 是否启用
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取采用的模板，可选值：istio（默认）、trace
                      * @return Template 采用的模板，可选值：istio（默认）、trace
+                     * 
                      */
                     std::string GetTemplate() const;
 
                     /**
                      * 设置采用的模板，可选值：istio（默认）、trace
-                     * @param Template 采用的模板，可选值：istio（默认）、trace
+                     * @param _template 采用的模板，可选值：istio（默认）、trace
+                     * 
                      */
                     void SetTemplate(const std::string& _template);
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 
                     /**
                      * 获取选中的范围
                      * @return SelectedRange 选中的范围
+                     * 
                      */
                     SelectedRange GetSelectedRange() const;
 
                     /**
                      * 设置选中的范围
-                     * @param SelectedRange 选中的范围
+                     * @param _selectedRange 选中的范围
+                     * 
                      */
                     void SetSelectedRange(const SelectedRange& _selectedRange);
 
                     /**
                      * 判断参数 SelectedRange 是否已赋值
                      * @return SelectedRange 是否已赋值
+                     * 
                      */
                     bool SelectedRangeHasBeenSet() const;
 
                     /**
                      * 获取腾讯云日志服务相关参数
                      * @return CLS 腾讯云日志服务相关参数
+                     * 
                      */
                     CLS GetCLS() const;
 
                     /**
                      * 设置腾讯云日志服务相关参数
-                     * @param CLS 腾讯云日志服务相关参数
+                     * @param _cLS 腾讯云日志服务相关参数
+                     * 
                      */
                     void SetCLS(const CLS& _cLS);
 
                     /**
                      * 判断参数 CLS 是否已赋值
                      * @return CLS 是否已赋值
+                     * 
                      */
                     bool CLSHasBeenSet() const;
 
                     /**
                      * 获取编码格式，可选值：TEXT、JSON
                      * @return Encoding 编码格式，可选值：TEXT、JSON
+                     * 
                      */
                     std::string GetEncoding() const;
 
                     /**
                      * 设置编码格式，可选值：TEXT、JSON
-                     * @param Encoding 编码格式，可选值：TEXT、JSON
+                     * @param _encoding 编码格式，可选值：TEXT、JSON
+                     * 
                      */
                     void SetEncoding(const std::string& _encoding);
 
                     /**
                      * 判断参数 Encoding 是否已赋值
                      * @return Encoding 是否已赋值
+                     * 
                      */
                     bool EncodingHasBeenSet() const;
 
                     /**
                      * 获取日志格式
                      * @return Format 日志格式
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置日志格式
-                     * @param Format 日志格式
+                     * @param _format 日志格式
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取GRPC第三方服务器地址
                      * @return Address GRPC第三方服务器地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置GRPC第三方服务器地址
-                     * @param Address GRPC第三方服务器地址
+                     * @param _address GRPC第三方服务器地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取是否启用GRPC第三方服务器
                      * @return EnableServer 是否启用GRPC第三方服务器
+                     * 
                      */
                     bool GetEnableServer() const;
 
                     /**
                      * 设置是否启用GRPC第三方服务器
-                     * @param EnableServer 是否启用GRPC第三方服务器
+                     * @param _enableServer 是否启用GRPC第三方服务器
+                     * 
                      */
                     void SetEnableServer(const bool& _enableServer);
 
                     /**
                      * 判断参数 EnableServer 是否已赋值
                      * @return EnableServer 是否已赋值
+                     * 
                      */
                     bool EnableServerHasBeenSet() const;
 
                     /**
                      * 获取是否启用标准输出
                      * @return EnableStdout 是否启用标准输出
+                     * 
                      */
                     bool GetEnableStdout() const;
 
                     /**
                      * 设置是否启用标准输出
-                     * @param EnableStdout 是否启用标准输出
+                     * @param _enableStdout 是否启用标准输出
+                     * 
                      */
                     void SetEnableStdout(const bool& _enableStdout);
 
                     /**
                      * 判断参数 EnableStdout 是否已赋值
                      * @return EnableStdout 是否已赋值
+                     * 
                      */
                     bool EnableStdoutHasBeenSet() const;
 

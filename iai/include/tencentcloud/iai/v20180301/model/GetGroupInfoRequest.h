@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取人员库 ID。
                      * @return GroupId 人员库 ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置人员库 ID。
-                     * @param GroupId 人员库 ID。
+                     * @param _groupId 人员库 ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

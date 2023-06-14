@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取所属区块高度
                      * @return BlockNumber 所属区块高度
+                     * 
                      */
                     int64_t GetBlockNumber() const;
 
                     /**
                      * 设置所属区块高度
-                     * @param BlockNumber 所属区块高度
+                     * @param _blockNumber 所属区块高度
+                     * 
                      */
                     void SetBlockNumber(const int64_t& _blockNumber);
 
                     /**
                      * 判断参数 BlockNumber 是否已赋值
                      * @return BlockNumber 是否已赋值
+                     * 
                      */
                     bool BlockNumberHasBeenSet() const;
 
                     /**
                      * 获取区块时间戳
                      * @return BlockTimestamp 区块时间戳
+                     * 
                      */
                     std::string GetBlockTimestamp() const;
 
                     /**
                      * 设置区块时间戳
-                     * @param BlockTimestamp 区块时间戳
+                     * @param _blockTimestamp 区块时间戳
+                     * 
                      */
                     void SetBlockTimestamp(const std::string& _blockTimestamp);
 
                     /**
                      * 判断参数 BlockTimestamp 是否已赋值
                      * @return BlockTimestamp 是否已赋值
+                     * 
                      */
                     bool BlockTimestampHasBeenSet() const;
 
                     /**
                      * 获取交易哈希
                      * @return TransHash 交易哈希
+                     * 
                      */
                     std::string GetTransHash() const;
 
                     /**
                      * 设置交易哈希
-                     * @param TransHash 交易哈希
+                     * @param _transHash 交易哈希
+                     * 
                      */
                     void SetTransHash(const std::string& _transHash);
 
                     /**
                      * 判断参数 TransHash 是否已赋值
                      * @return TransHash 是否已赋值
+                     * 
                      */
                     bool TransHashHasBeenSet() const;
 
                     /**
                      * 获取交易发起者
                      * @return TransFrom 交易发起者
+                     * 
                      */
                     std::string GetTransFrom() const;
 
                     /**
                      * 设置交易发起者
-                     * @param TransFrom 交易发起者
+                     * @param _transFrom 交易发起者
+                     * 
                      */
                     void SetTransFrom(const std::string& _transFrom);
 
                     /**
                      * 判断参数 TransFrom 是否已赋值
                      * @return TransFrom 是否已赋值
+                     * 
                      */
                     bool TransFromHasBeenSet() const;
 
                     /**
                      * 获取交易接收者
                      * @return TransTo 交易接收者
+                     * 
                      */
                     std::string GetTransTo() const;
 
                     /**
                      * 设置交易接收者
-                     * @param TransTo 交易接收者
+                     * @param _transTo 交易接收者
+                     * 
                      */
                     void SetTransTo(const std::string& _transTo);
 
                     /**
                      * 判断参数 TransTo 是否已赋值
                      * @return TransTo 是否已赋值
+                     * 
                      */
                     bool TransToHasBeenSet() const;
 
                     /**
                      * 获取落库时间
                      * @return CreateTime 落库时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置落库时间
-                     * @param CreateTime 落库时间
+                     * @param _createTime 落库时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

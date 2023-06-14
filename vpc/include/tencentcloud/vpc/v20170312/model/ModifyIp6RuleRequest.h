@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取IPV6转换实例唯一ID，形如ip6-xxxxxxxx
                      * @return Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     std::string GetIp6TranslatorId() const;
 
                     /**
                      * 设置IPV6转换实例唯一ID，形如ip6-xxxxxxxx
-                     * @param Ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * @param _ip6TranslatorId IPV6转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     void SetIp6TranslatorId(const std::string& _ip6TranslatorId);
 
                     /**
                      * 判断参数 Ip6TranslatorId 是否已赋值
                      * @return Ip6TranslatorId 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorIdHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则唯一ID，形如rule6-xxxxxxxx
                      * @return Ip6RuleId IPV6转换规则唯一ID，形如rule6-xxxxxxxx
+                     * 
                      */
                     std::string GetIp6RuleId() const;
 
                     /**
                      * 设置IPV6转换规则唯一ID，形如rule6-xxxxxxxx
-                     * @param Ip6RuleId IPV6转换规则唯一ID，形如rule6-xxxxxxxx
+                     * @param _ip6RuleId IPV6转换规则唯一ID，形如rule6-xxxxxxxx
+                     * 
                      */
                     void SetIp6RuleId(const std::string& _ip6RuleId);
 
                     /**
                      * 判断参数 Ip6RuleId 是否已赋值
                      * @return Ip6RuleId 是否已赋值
+                     * 
                      */
                     bool Ip6RuleIdHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则修改后的名称
                      * @return Ip6RuleName IPV6转换规则修改后的名称
+                     * 
                      */
                     std::string GetIp6RuleName() const;
 
                     /**
                      * 设置IPV6转换规则修改后的名称
-                     * @param Ip6RuleName IPV6转换规则修改后的名称
+                     * @param _ip6RuleName IPV6转换规则修改后的名称
+                     * 
                      */
                     void SetIp6RuleName(const std::string& _ip6RuleName);
 
                     /**
                      * 判断参数 Ip6RuleName 是否已赋值
                      * @return Ip6RuleName 是否已赋值
+                     * 
                      */
                     bool Ip6RuleNameHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则修改后的IPV4地址
                      * @return Vip IPV6转换规则修改后的IPV4地址
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IPV6转换规则修改后的IPV4地址
-                     * @param Vip IPV6转换规则修改后的IPV4地址
+                     * @param _vip IPV6转换规则修改后的IPV4地址
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取IPV6转换规则修改后的IPV4端口号
                      * @return Vport IPV6转换规则修改后的IPV4端口号
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置IPV6转换规则修改后的IPV4端口号
-                     * @param Vport IPV6转换规则修改后的IPV4端口号
+                     * @param _vport IPV6转换规则修改后的IPV4端口号
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 

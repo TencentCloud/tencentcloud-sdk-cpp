@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取坐席名称
                      * @return Name 坐席名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置坐席名称
-                     * @param Name 坐席名称
+                     * @param _name 坐席名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取坐席邮箱
                      * @return Mail 坐席邮箱
+                     * 
                      */
                     std::string GetMail() const;
 
                     /**
                      * 设置坐席邮箱
-                     * @param Mail 坐席邮箱
+                     * @param _mail 坐席邮箱
+                     * 
                      */
                     void SetMail(const std::string& _mail);
 
                     /**
                      * 判断参数 Mail 是否已赋值
                      * @return Mail 是否已赋值
+                     * 
                      */
                     bool MailHasBeenSet() const;
 
@@ -87,74 +93,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StaffNumber 工号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
                      * 设置工号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StaffNumber 工号
+                     * @param _staffNumber 工号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStaffNumber(const std::string& _staffNumber);
 
                     /**
                      * 判断参数 StaffNumber 是否已赋值
                      * @return StaffNumber 是否已赋值
+                     * 
                      */
                     bool StaffNumberHasBeenSet() const;
 
                     /**
                      * 获取坐席电话号码（带0086前缀）
                      * @return Phone 坐席电话号码（带0086前缀）
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置坐席电话号码（带0086前缀）
-                     * @param Phone 坐席电话号码（带0086前缀）
+                     * @param _phone 坐席电话号码（带0086前缀）
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取坐席昵称
                      * @return Nick 坐席昵称
+                     * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置坐席昵称
-                     * @param Nick 坐席昵称
+                     * @param _nick 坐席昵称
+                     * 
                      */
                     void SetNick(const std::string& _nick);
 
                     /**
                      * 判断参数 Nick 是否已赋值
                      * @return Nick 是否已赋值
+                     * 
                      */
                     bool NickHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupNameList 坐席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSkillGroupNameList() const;
 
                     /**
                      * 设置坐席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkillGroupNameList 坐席关联的技能组列表
+                     * @param _skillGroupNameList 坐席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkillGroupNameList(const std::vector<std::string>& _skillGroupNameList);
 
                     /**
                      * 判断参数 SkillGroupNameList 是否已赋值
                      * @return SkillGroupNameList 是否已赋值
+                     * 
                      */
                     bool SkillGroupNameListHasBeenSet() const;
 

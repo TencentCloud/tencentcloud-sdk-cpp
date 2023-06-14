@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取资产组名，最大长度32字符，不能为空
                      * @return Name 资产组名，最大长度32字符，不能为空
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资产组名，最大长度32字符，不能为空
-                     * @param Name 资产组名，最大长度32字符，不能为空
+                     * @param _name 资产组名，最大长度32字符，不能为空
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取资产组ID
                      * @return Id 资产组ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置资产组ID
-                     * @param Id 资产组ID
+                     * @param _id 资产组ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取资产组所属部门ID，如：1.2.3
                      * @return DepartmentId 资产组所属部门ID，如：1.2.3
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置资产组所属部门ID，如：1.2.3
-                     * @param DepartmentId 资产组所属部门ID，如：1.2.3
+                     * @param _departmentId 资产组所属部门ID，如：1.2.3
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 

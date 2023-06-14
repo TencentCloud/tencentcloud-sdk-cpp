@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取网关设备的产品ID
                      * @return GatewayProductId 网关设备的产品ID
+                     * 
                      */
                     std::string GetGatewayProductId() const;
 
                     /**
                      * 设置网关设备的产品ID
-                     * @param GatewayProductId 网关设备的产品ID
+                     * @param _gatewayProductId 网关设备的产品ID
+                     * 
                      */
                     void SetGatewayProductId(const std::string& _gatewayProductId);
 
                     /**
                      * 判断参数 GatewayProductId 是否已赋值
                      * @return GatewayProductId 是否已赋值
+                     * 
                      */
                     bool GatewayProductIdHasBeenSet() const;
 
                     /**
                      * 获取网关设备的设备名
                      * @return GatewayDeviceName 网关设备的设备名
+                     * 
                      */
                     std::string GetGatewayDeviceName() const;
 
                     /**
                      * 设置网关设备的设备名
-                     * @param GatewayDeviceName 网关设备的设备名
+                     * @param _gatewayDeviceName 网关设备的设备名
+                     * 
                      */
                     void SetGatewayDeviceName(const std::string& _gatewayDeviceName);
 
                     /**
                      * 判断参数 GatewayDeviceName 是否已赋值
                      * @return GatewayDeviceName 是否已赋值
+                     * 
                      */
                     bool GatewayDeviceNameHasBeenSet() const;
 
                     /**
                      * 获取偏移量，Offset从0开始
                      * @return Offset 偏移量，Offset从0开始
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，Offset从0开始
-                     * @param Offset 偏移量，Offset从0开始
+                     * @param _offset 偏移量，Offset从0开始
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的页大小
                      * @return Limit 分页的页大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页的页大小
-                     * @param Limit 分页的页大小
+                     * @param _limit 分页的页大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取LoRa产品的ID
                      * @return ProductId LoRa产品的ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置LoRa产品的ID
-                     * @param ProductId LoRa产品的ID
+                     * @param _productId LoRa产品的ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

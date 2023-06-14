@@ -53,6 +53,7 @@ namespace TencentCloud
 1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
 3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * 
                      */
                     std::string GetBusinessType() const;
 
@@ -61,52 +62,60 @@ namespace TencentCloud
 1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
 3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-                     * @param BusinessType 文件对应业务类型
+                     * @param _businessType 文件对应业务类型
 1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html
 3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * 
                      */
                     void SetBusinessType(const std::string& _businessType);
 
                     /**
                      * 判断参数 BusinessType 是否已赋值
                      * @return BusinessType 是否已赋值
+                     * 
                      */
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
                      * 获取调用方信息，其中OperatorId为必填字段，即用户的UserId
                      * @return Caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息，其中OperatorId为必填字段，即用户的UserId
-                     * @param Caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * @param _caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取上传文件内容数组，最多支持20个文件
                      * @return FileInfos 上传文件内容数组，最多支持20个文件
+                     * 
                      */
                     std::vector<UploadFile> GetFileInfos() const;
 
                     /**
                      * 设置上传文件内容数组，最多支持20个文件
-                     * @param FileInfos 上传文件内容数组，最多支持20个文件
+                     * @param _fileInfos 上传文件内容数组，最多支持20个文件
+                     * 
                      */
                     void SetFileInfos(const std::vector<UploadFile>& _fileInfos);
 
                     /**
                      * 判断参数 FileInfos 是否已赋值
                      * @return FileInfos 是否已赋值
+                     * 
                      */
                     bool FileInfosHasBeenSet() const;
 
@@ -115,20 +124,23 @@ namespace TencentCloud
 如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
                      * @return FileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
 如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
 如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
-                     * @param FileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
+                     * @param _fileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
 如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
@@ -139,6 +151,7 @@ true--是，处理置白
                      * @return CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 默认为false--否，不处理
+                     * 
                      */
                     bool GetCoverRect() const;
 
@@ -146,51 +159,59 @@ true--是，处理置白
                      * 设置此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 默认为false--否，不处理
-                     * @param CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
+                     * @param _coverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 默认为false--否，不处理
+                     * 
                      */
                     void SetCoverRect(const bool& _coverRect);
 
                     /**
                      * 判断参数 CoverRect 是否已赋值
                      * @return CoverRect 是否已赋值
+                     * 
                      */
                     bool CoverRectHasBeenSet() const;
 
                     /**
                      * 获取用户自定义ID数组，与上传文件一一对应
                      * @return CustomIds 用户自定义ID数组，与上传文件一一对应
+                     * 
                      */
                     std::vector<std::string> GetCustomIds() const;
 
                     /**
                      * 设置用户自定义ID数组，与上传文件一一对应
-                     * @param CustomIds 用户自定义ID数组，与上传文件一一对应
+                     * @param _customIds 用户自定义ID数组，与上传文件一一对应
+                     * 
                      */
                     void SetCustomIds(const std::vector<std::string>& _customIds);
 
                     /**
                      * 判断参数 CustomIds 是否已赋值
                      * @return CustomIds 是否已赋值
+                     * 
                      */
                     bool CustomIdsHasBeenSet() const;
 
                     /**
                      * 获取不再使用，上传文件链接数组，最多支持20个URL
                      * @return FileUrls 不再使用，上传文件链接数组，最多支持20个URL
+                     * @deprecated
                      */
                     std::string GetFileUrls() const;
 
                     /**
                      * 设置不再使用，上传文件链接数组，最多支持20个URL
-                     * @param FileUrls 不再使用，上传文件链接数组，最多支持20个URL
+                     * @param _fileUrls 不再使用，上传文件链接数组，最多支持20个URL
+                     * @deprecated
                      */
                     void SetFileUrls(const std::string& _fileUrls);
 
                     /**
                      * 判断参数 FileUrls 是否已赋值
                      * @return FileUrls 是否已赋值
+                     * @deprecated
                      */
                     bool FileUrlsHasBeenSet() const;
 

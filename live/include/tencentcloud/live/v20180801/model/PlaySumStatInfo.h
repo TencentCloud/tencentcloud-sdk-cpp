@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取域名或流 ID。
                      * @return Name 域名或流 ID。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置域名或流 ID。
-                     * @param Name 域名或流 ID。
+                     * @param _name 域名或流 ID。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return AvgFluxPerSecond 平均下载速度，
 单位: MB/s。
 计算公式: 每分钟的下载速度求平均值。
+                     * 
                      */
                     double GetAvgFluxPerSecond() const;
 
@@ -78,51 +82,59 @@ namespace TencentCloud
                      * 设置平均下载速度，
 单位: MB/s。
 计算公式: 每分钟的下载速度求平均值。
-                     * @param AvgFluxPerSecond 平均下载速度，
+                     * @param _avgFluxPerSecond 平均下载速度，
 单位: MB/s。
 计算公式: 每分钟的下载速度求平均值。
+                     * 
                      */
                     void SetAvgFluxPerSecond(const double& _avgFluxPerSecond);
 
                     /**
                      * 判断参数 AvgFluxPerSecond 是否已赋值
                      * @return AvgFluxPerSecond 是否已赋值
+                     * 
                      */
                     bool AvgFluxPerSecondHasBeenSet() const;
 
                     /**
                      * 获取总流量，单位: MB。
                      * @return TotalFlux 总流量，单位: MB。
+                     * 
                      */
                     double GetTotalFlux() const;
 
                     /**
                      * 设置总流量，单位: MB。
-                     * @param TotalFlux 总流量，单位: MB。
+                     * @param _totalFlux 总流量，单位: MB。
+                     * 
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
                     /**
                      * 判断参数 TotalFlux 是否已赋值
                      * @return TotalFlux 是否已赋值
+                     * 
                      */
                     bool TotalFluxHasBeenSet() const;
 
                     /**
                      * 获取总请求数。
                      * @return TotalRequest 总请求数。
+                     * 
                      */
                     uint64_t GetTotalRequest() const;
 
                     /**
                      * 设置总请求数。
-                     * @param TotalRequest 总请求数。
+                     * @param _totalRequest 总请求数。
+                     * 
                      */
                     void SetTotalRequest(const uint64_t& _totalRequest);
 
                     /**
                      * 判断参数 TotalRequest 是否已赋值
                      * @return TotalRequest 是否已赋值
+                     * 
                      */
                     bool TotalRequestHasBeenSet() const;
 

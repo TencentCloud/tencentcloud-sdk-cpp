@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取下衣类型，返回值为以下集合中的一个 {裤子,裙子} 。
                      * @return Type 下衣类型，返回值为以下集合中的一个 {裤子,裙子} 。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置下衣类型，返回值为以下集合中的一个 {裤子,裙子} 。
-                     * @param Type 下衣类型，返回值为以下集合中的一个 {裤子,裙子} 。
+                     * @param _type 下衣类型，返回值为以下集合中的一个 {裤子,裙子} 。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
                      * @return Probability Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
+                     * 
                      */
                     double GetProbability() const;
 
                     /**
                      * 设置Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
-                     * @param Probability Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
+                     * @param _probability Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
+                     * 
                      */
                     void SetProbability(const double& _probability);
 
                     /**
                      * 判断参数 Probability 是否已赋值
                      * @return Probability 是否已赋值
+                     * 
                      */
                     bool ProbabilityHasBeenSet() const;
 

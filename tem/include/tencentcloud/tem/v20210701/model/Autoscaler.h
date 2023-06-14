@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取弹性伸缩最小实例数
                      * @return MinReplicas 弹性伸缩最小实例数
+                     * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置弹性伸缩最小实例数
-                     * @param MinReplicas 弹性伸缩最小实例数
+                     * @param _minReplicas 弹性伸缩最小实例数
+                     * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
 
                     /**
                      * 判断参数 MinReplicas 是否已赋值
                      * @return MinReplicas 是否已赋值
+                     * 
                      */
                     bool MinReplicasHasBeenSet() const;
 
                     /**
                      * 获取弹性伸缩最大实例数
                      * @return MaxReplicas 弹性伸缩最大实例数
+                     * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置弹性伸缩最大实例数
-                     * @param MaxReplicas 弹性伸缩最大实例数
+                     * @param _maxReplicas 弹性伸缩最大实例数
+                     * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
+                     * 
                      */
                     bool MaxReplicasHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HorizontalAutoscaler 指标弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HorizontalAutoscaler> GetHorizontalAutoscaler() const;
 
                     /**
                      * 设置指标弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HorizontalAutoscaler 指标弹性伸缩策略
+                     * @param _horizontalAutoscaler 指标弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHorizontalAutoscaler(const std::vector<HorizontalAutoscaler>& _horizontalAutoscaler);
 
                     /**
                      * 判断参数 HorizontalAutoscaler 是否已赋值
                      * @return HorizontalAutoscaler 是否已赋值
+                     * 
                      */
                     bool HorizontalAutoscalerHasBeenSet() const;
 
@@ -111,20 +120,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronHorizontalAutoscaler 定时弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CronHorizontalAutoscaler> GetCronHorizontalAutoscaler() const;
 
                     /**
                      * 设置定时弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CronHorizontalAutoscaler 定时弹性伸缩策略
+                     * @param _cronHorizontalAutoscaler 定时弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCronHorizontalAutoscaler(const std::vector<CronHorizontalAutoscaler>& _cronHorizontalAutoscaler);
 
                     /**
                      * 判断参数 CronHorizontalAutoscaler 是否已赋值
                      * @return CronHorizontalAutoscaler 是否已赋值
+                     * 
                      */
                     bool CronHorizontalAutoscalerHasBeenSet() const;
 
@@ -133,20 +145,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalerId 弹性伸缩ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAutoscalerId() const;
 
                     /**
                      * 设置弹性伸缩ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoscalerId 弹性伸缩ID
+                     * @param _autoscalerId 弹性伸缩ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoscalerId(const std::string& _autoscalerId);
 
                     /**
                      * 判断参数 AutoscalerId 是否已赋值
                      * @return AutoscalerId 是否已赋值
+                     * 
                      */
                     bool AutoscalerIdHasBeenSet() const;
 
@@ -155,20 +170,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalerName 弹性伸缩名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAutoscalerName() const;
 
                     /**
                      * 设置弹性伸缩名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoscalerName 弹性伸缩名称
+                     * @param _autoscalerName 弹性伸缩名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoscalerName(const std::string& _autoscalerName);
 
                     /**
                      * 判断参数 AutoscalerName 是否已赋值
                      * @return AutoscalerName 是否已赋值
+                     * 
                      */
                     bool AutoscalerNameHasBeenSet() const;
 
@@ -177,20 +195,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 弹性伸缩描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置弹性伸缩描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 弹性伸缩描述
+                     * @param _description 弹性伸缩描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -199,20 +220,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 创建日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置创建日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateDate 创建日期
+                     * @param _createDate 创建日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateDate(const std::string& _createDate);
 
                     /**
                      * 判断参数 CreateDate 是否已赋值
                      * @return CreateDate 是否已赋值
+                     * 
                      */
                     bool CreateDateHasBeenSet() const;
 
@@ -221,20 +245,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyDate 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifyDate() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifyDate 修改时间
+                     * @param _modifyDate 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifyDate(const std::string& _modifyDate);
 
                     /**
                      * 判断参数 ModifyDate 是否已赋值
                      * @return ModifyDate 是否已赋值
+                     * 
                      */
                     bool ModifyDateHasBeenSet() const;
 
@@ -243,20 +270,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableDate 启用时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnableDate() const;
 
                     /**
                      * 设置启用时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableDate 启用时间
+                     * @param _enableDate 启用时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableDate(const std::string& _enableDate);
 
                     /**
                      * 判断参数 EnableDate 是否已赋值
                      * @return EnableDate 是否已赋值
+                     * 
                      */
                     bool EnableDateHasBeenSet() const;
 
@@ -265,20 +295,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否启用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否启用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enabled 是否启用
+                     * @param _enabled 是否启用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 

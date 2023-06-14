@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取主机安全客户端UUID、填写"all"表示所有主机。
                      * @return Uuid 主机安全客户端UUID、填写"all"表示所有主机。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机安全客户端UUID、填写"all"表示所有主机。
-                     * @param Uuid 主机安全客户端UUID、填写"all"表示所有主机。
+                     * @param _uuid 主机安全客户端UUID、填写"all"表示所有主机。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 

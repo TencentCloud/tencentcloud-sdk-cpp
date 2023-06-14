@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取应用SdkAppId
                      * @return SdkAppId 应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用SdkAppId
-                     * @param SdkAppId 应用SdkAppId
+                     * @param _sdkAppId 应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取App名字
                      * @return AppName App名字
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置App名字
-                     * @param AppName App名字
+                     * @param _appName App名字
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取创建IM应用需要的SKey
                      * @return SKey 创建IM应用需要的SKey
+                     * 
                      */
                     std::string GetSKey() const;
 
                     /**
                      * 设置创建IM应用需要的SKey
-                     * @param SKey 创建IM应用需要的SKey
+                     * @param _sKey 创建IM应用需要的SKey
+                     * 
                      */
                     void SetSKey(const std::string& _sKey);
 
                     /**
                      * 判断参数 SKey 是否已赋值
                      * @return SKey 是否已赋值
+                     * 
                      */
                     bool SKeyHasBeenSet() const;
 
                     /**
                      * 获取创建IM应用需要的TinyId
                      * @return TinyId 创建IM应用需要的TinyId
+                     * 
                      */
                     std::string GetTinyId() const;
 
                     /**
                      * 设置创建IM应用需要的TinyId
-                     * @param TinyId 创建IM应用需要的TinyId
+                     * @param _tinyId 创建IM应用需要的TinyId
+                     * 
                      */
                     void SetTinyId(const std::string& _tinyId);
 
                     /**
                      * 判断参数 TinyId 是否已赋值
                      * @return TinyId 是否已赋值
+                     * 
                      */
                     bool TinyIdHasBeenSet() const;
 
                     /**
                      * 获取需要绑定的标签列表
                      * @return TagList 需要绑定的标签列表
+                     * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
                      * 设置需要绑定的标签列表
-                     * @param TagList 需要绑定的标签列表
+                     * @param _tagList 需要绑定的标签列表
+                     * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 

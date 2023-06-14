@@ -61,6 +61,7 @@ namespace TencentCloud
    ESCAPE_PRIVILEDGE_CONTAINER_START:特权容器启动逃逸
    ESCAPE_MOUNT_SENSITIVE_PTAH:敏感路径挂载
    ESCAPE_SYSCALL:Syscall逃逸
+                     * 
                      */
                     std::string GetType() const;
 
@@ -72,37 +73,42 @@ namespace TencentCloud
    ESCAPE_PRIVILEDGE_CONTAINER_START:特权容器启动逃逸
    ESCAPE_MOUNT_SENSITIVE_PTAH:敏感路径挂载
    ESCAPE_SYSCALL:Syscall逃逸
-                     * @param Type 规则类型
+                     * @param _type 规则类型
    ESCAPE_HOST_ACESS_FILE:宿主机文件访问逃逸
    ESCAPE_MOUNT_NAMESPACE:MountNamespace逃逸
    ESCAPE_PRIVILEDGE:程序提权逃逸
    ESCAPE_PRIVILEDGE_CONTAINER_START:特权容器启动逃逸
    ESCAPE_MOUNT_SENSITIVE_PTAH:敏感路径挂载
    ESCAPE_SYSCALL:Syscall逃逸
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取是否打开：false否 ，true是
                      * @return IsEnable 是否打开：false否 ，true是
+                     * 
                      */
                     bool GetIsEnable() const;
 
                     /**
                      * 设置是否打开：false否 ，true是
-                     * @param IsEnable 是否打开：false否 ，true是
+                     * @param _isEnable 是否打开：false否 ，true是
+                     * 
                      */
                     void SetIsEnable(const bool& _isEnable);
 
                     /**
                      * 判断参数 IsEnable 是否已赋值
                      * @return IsEnable 是否已赋值
+                     * 
                      */
                     bool IsEnableHasBeenSet() const;
 

@@ -50,180 +50,210 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskID 任务id
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskID 任务id
+                     * @param _taskID 任务id
+                     * 
                      */
                     void SetTaskID(const std::string& _taskID);
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
                     /**
                      * 获取小程序appid
                      * @return MiniAppID 小程序appid
+                     * 
                      */
                     std::string GetMiniAppID() const;
 
                     /**
                      * 设置小程序appid
-                     * @param MiniAppID 小程序appid
+                     * @param _miniAppID 小程序appid
+                     * 
                      */
                     void SetMiniAppID(const std::string& _miniAppID);
 
                     /**
                      * 判断参数 MiniAppID 是否已赋值
                      * @return MiniAppID 是否已赋值
+                     * 
                      */
                     bool MiniAppIDHasBeenSet() const;
 
                     /**
                      * 获取小程序名称
                      * @return MiniAppName 小程序名称
+                     * 
                      */
                     std::string GetMiniAppName() const;
 
                     /**
                      * 设置小程序名称
-                     * @param MiniAppName 小程序名称
+                     * @param _miniAppName 小程序名称
+                     * 
                      */
                     void SetMiniAppName(const std::string& _miniAppName);
 
                     /**
                      * 判断参数 MiniAppName 是否已赋值
                      * @return MiniAppName 是否已赋值
+                     * 
                      */
                     bool MiniAppNameHasBeenSet() const;
 
                     /**
                      * 获取小程序版本
                      * @return MiniAppVersion 小程序版本
+                     * 
                      */
                     std::string GetMiniAppVersion() const;
 
                     /**
                      * 设置小程序版本
-                     * @param MiniAppVersion 小程序版本
+                     * @param _miniAppVersion 小程序版本
+                     * 
                      */
                     void SetMiniAppVersion(const std::string& _miniAppVersion);
 
                     /**
                      * 判断参数 MiniAppVersion 是否已赋值
                      * @return MiniAppVersion 是否已赋值
+                     * 
                      */
                     bool MiniAppVersionHasBeenSet() const;
 
                     /**
                      * 获取诊断模式 1:基础诊断，2:深度诊断
                      * @return Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 设置诊断模式 1:基础诊断，2:深度诊断
-                     * @param Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * @param _mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     void SetMode(const int64_t& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
                      * @return Status 诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
-                     * @param Status 诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * @param _status 诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取诊断时间
                      * @return CreateTime 诊断时间
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置诊断时间
-                     * @param CreateTime 诊断时间
+                     * @param _createTime 诊断时间
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取诊断得分
                      * @return RiskScore 诊断得分
+                     * 
                      */
                     std::string GetRiskScore() const;
 
                     /**
                      * 设置诊断得分
-                     * @param RiskScore 诊断得分
+                     * @param _riskScore 诊断得分
+                     * 
                      */
                     void SetRiskScore(const std::string& _riskScore);
 
                     /**
                      * 判断参数 RiskScore 是否已赋值
                      * @return RiskScore 是否已赋值
+                     * 
                      */
                     bool RiskScoreHasBeenSet() const;
 
                     /**
                      * 获取诊断风险等级 1:高风险 2:中风险 3:低风险
                      * @return RiskLevel 诊断风险等级 1:高风险 2:中风险 3:低风险
+                     * 
                      */
                     int64_t GetRiskLevel() const;
 
                     /**
                      * 设置诊断风险等级 1:高风险 2:中风险 3:低风险
-                     * @param RiskLevel 诊断风险等级 1:高风险 2:中风险 3:低风险
+                     * @param _riskLevel 诊断风险等级 1:高风险 2:中风险 3:低风险
+                     * 
                      */
                     void SetRiskLevel(const int64_t& _riskLevel);
 
                     /**
                      * 判断参数 RiskLevel 是否已赋值
                      * @return RiskLevel 是否已赋值
+                     * 
                      */
                     bool RiskLevelHasBeenSet() const;
 
                     /**
                      * 获取诊断8大维度得分情况(每项总分100分)
                      * @return RiskItems 诊断8大维度得分情况(每项总分100分)
+                     * 
                      */
                     FlySecMiniAppRiskItems GetRiskItems() const;
 
                     /**
                      * 设置诊断8大维度得分情况(每项总分100分)
-                     * @param RiskItems 诊断8大维度得分情况(每项总分100分)
+                     * @param _riskItems 诊断8大维度得分情况(每项总分100分)
+                     * 
                      */
                     void SetRiskItems(const FlySecMiniAppRiskItems& _riskItems);
 
                     /**
                      * 判断参数 RiskItems 是否已赋值
                      * @return RiskItems 是否已赋值
+                     * 
                      */
                     bool RiskItemsHasBeenSet() const;
 

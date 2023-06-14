@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return Sdkappid 应用ID
+                     * 
                      */
                     std::string GetSdkappid() const;
 
                     /**
                      * 设置应用ID
-                     * @param Sdkappid 应用ID
+                     * @param _sdkappid 应用ID
+                     * 
                      */
                     void SetSdkappid(const std::string& _sdkappid);
 
                     /**
                      * 判断参数 Sdkappid 是否已赋值
                      * @return Sdkappid 是否已赋值
+                     * 
                      */
                     bool SdkappidHasBeenSet() const;
 
                     /**
                      * 获取偏移值
                      * @return Offset 偏移值
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移值
-                     * @param Offset 偏移值
+                     * @param _offset 偏移值
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取列表限制
                      * @return Limit 列表限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置列表限制
-                     * @param Limit 列表限制
+                     * @param _limit 列表限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

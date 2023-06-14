@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectID 项目ID
+                     * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectID 项目ID
+                     * @param _projectID 项目ID
+                     * 
                      */
                     void SetProjectID(const int64_t& _projectID);
 
                     /**
                      * 判断参数 ProjectID 是否已赋值
                      * @return ProjectID 是否已赋值
+                     * 
                      */
                     bool ProjectIDHasBeenSet() const;
 
                     /**
                      * 获取项目接口
                      * @return ProjectInterface 项目接口
+                     * 
                      */
                     std::string GetProjectInterface() const;
 
                     /**
                      * 设置项目接口
-                     * @param ProjectInterface 项目接口
+                     * @param _projectInterface 项目接口
+                     * 
                      */
                     void SetProjectInterface(const std::string& _projectInterface);
 
                     /**
                      * 判断参数 ProjectInterface 是否已赋值
                      * @return ProjectInterface 是否已赋值
+                     * 
                      */
                     bool ProjectInterfaceHasBeenSet() const;
 
                     /**
                      * 获取上报比例   10代表10%
                      * @return ReportRate 上报比例   10代表10%
+                     * 
                      */
                     int64_t GetReportRate() const;
 
                     /**
                      * 设置上报比例   10代表10%
-                     * @param ReportRate 上报比例   10代表10%
+                     * @param _reportRate 上报比例   10代表10%
+                     * 
                      */
                     void SetReportRate(const int64_t& _reportRate);
 
                     /**
                      * 判断参数 ReportRate 是否已赋值
                      * @return ReportRate 是否已赋值
+                     * 
                      */
                     bool ReportRateHasBeenSet() const;
 
                     /**
                      * 获取上报类型 1：比例  2：上报量
                      * @return ReportType 上报类型 1：比例  2：上报量
+                     * 
                      */
                     int64_t GetReportType() const;
 
                     /**
                      * 设置上报类型 1：比例  2：上报量
-                     * @param ReportType 上报类型 1：比例  2：上报量
+                     * @param _reportType 上报类型 1：比例  2：上报量
+                     * 
                      */
                     void SetReportType(const int64_t& _reportType);
 
                     /**
                      * 判断参数 ReportType 是否已赋值
                      * @return ReportType 是否已赋值
+                     * 
                      */
                     bool ReportTypeHasBeenSet() const;
 
                     /**
                      * 获取主键ID
                      * @return ID 主键ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置主键ID
-                     * @param ID 主键ID
+                     * @param _iD 主键ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 

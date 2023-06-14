@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Code 无
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置无
-                     * @param Code 无
+                     * @param _code 无
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Message 无
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置无
-                     * @param Message 无
+                     * @param _message 无
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SessionID 无
+                     * 
                      */
                     std::string GetSessionID() const;
 
                     /**
                      * 设置无
-                     * @param SessionID 无
+                     * @param _sessionID 无
+                     * 
                      */
                     void SetSessionID(const std::string& _sessionID);
 
                     /**
                      * 判断参数 SessionID 是否已赋值
                      * @return SessionID 是否已赋值
+                     * 
                      */
                     bool SessionIDHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return SessionDelta 无
+                     * 
                      */
                     std::string GetSessionDelta() const;
 
                     /**
                      * 设置无
-                     * @param SessionDelta 无
+                     * @param _sessionDelta 无
+                     * 
                      */
                     void SetSessionDelta(const std::string& _sessionDelta);
 
                     /**
                      * 判断参数 SessionDelta 是否已赋值
                      * @return SessionDelta 是否已赋值
+                     * 
                      */
                     bool SessionDeltaHasBeenSet() const;
 

@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return BeginTime 开始时间
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param BeginTime 开始时间
+                     * @param _beginTime 开始时间
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取IP（不为空时，进行IP过滤）
                      * @return Ip IP（不为空时，进行IP过滤）
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP（不为空时，进行IP过滤）
-                     * @param Ip IP（不为空时，进行IP过滤）
+                     * @param _ip IP（不为空时，进行IP过滤）
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；
                      * @return Paging 分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；
+                     * 
                      */
                     Paging GetPaging() const;
 
                     /**
                      * 设置分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；
-                     * @param Paging 分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；
+                     * @param _paging 分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；
+                     * 
                      */
                     void SetPaging(const Paging& _paging);
 
                     /**
                      * 判断参数 Paging 是否已赋值
                      * @return Paging 是否已赋值
+                     * 
                      */
                     bool PagingHasBeenSet() const;
 
                     /**
                      * 获取一页条数，填0表示不分页
                      * @return Limit 一页条数，填0表示不分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，填0表示不分页
-                     * @param Limit 一页条数，填0表示不分页
+                     * @param _limit 一页条数，填0表示不分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

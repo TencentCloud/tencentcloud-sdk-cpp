@@ -57,6 +57,7 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：Javascript挑战；</li>
 <li>monitor：观察。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -66,35 +67,40 @@ namespace TencentCloud
 <li>trans：放行；</li>
 <li>alg：Javascript挑战；</li>
 <li>monitor：观察。</li>
-                     * @param Action 触发规则后的处置方式，取值有：
+                     * @param _action 触发规则后的处置方式，取值有：
 <li>drop：拦截；</li>
 <li>trans：放行；</li>
 <li>alg：Javascript挑战；</li>
 <li>monitor：观察。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取本规则的ID。仅出参使用。
                      * @return RuleID 本规则的ID。仅出参使用。
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置本规则的ID。仅出参使用。
-                     * @param RuleID 本规则的ID。仅出参使用。
+                     * @param _ruleID 本规则的ID。仅出参使用。
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransManagedIds 放行的规则ID。默认所有规则不配置放行。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetTransManagedIds() const;
 
                     /**
                      * 设置放行的规则ID。默认所有规则不配置放行。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TransManagedIds 放行的规则ID。默认所有规则不配置放行。
+                     * @param _transManagedIds 放行的规则ID。默认所有规则不配置放行。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransManagedIds(const std::vector<int64_t>& _transManagedIds);
 
                     /**
                      * 判断参数 TransManagedIds 是否已赋值
                      * @return TransManagedIds 是否已赋值
+                     * 
                      */
                     bool TransManagedIdsHasBeenSet() const;
 
@@ -125,20 +134,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlgManagedIds JS挑战的规则ID。默认所有规则不配置JS挑战。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetAlgManagedIds() const;
 
                     /**
                      * 设置JS挑战的规则ID。默认所有规则不配置JS挑战。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlgManagedIds JS挑战的规则ID。默认所有规则不配置JS挑战。
+                     * @param _algManagedIds JS挑战的规则ID。默认所有规则不配置JS挑战。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlgManagedIds(const std::vector<int64_t>& _algManagedIds);
 
                     /**
                      * 判断参数 AlgManagedIds 是否已赋值
                      * @return AlgManagedIds 是否已赋值
+                     * 
                      */
                     bool AlgManagedIdsHasBeenSet() const;
 
@@ -147,20 +159,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CapManagedIds 数字验证码的规则ID。默认所有规则不配置数字验证码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetCapManagedIds() const;
 
                     /**
                      * 设置数字验证码的规则ID。默认所有规则不配置数字验证码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CapManagedIds 数字验证码的规则ID。默认所有规则不配置数字验证码。
+                     * @param _capManagedIds 数字验证码的规则ID。默认所有规则不配置数字验证码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCapManagedIds(const std::vector<int64_t>& _capManagedIds);
 
                     /**
                      * 判断参数 CapManagedIds 是否已赋值
                      * @return CapManagedIds 是否已赋值
+                     * 
                      */
                     bool CapManagedIdsHasBeenSet() const;
 
@@ -169,20 +184,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonManagedIds 观察的规则ID。默认所有规则不配置观察。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetMonManagedIds() const;
 
                     /**
                      * 设置观察的规则ID。默认所有规则不配置观察。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonManagedIds 观察的规则ID。默认所有规则不配置观察。
+                     * @param _monManagedIds 观察的规则ID。默认所有规则不配置观察。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonManagedIds(const std::vector<int64_t>& _monManagedIds);
 
                     /**
                      * 判断参数 MonManagedIds 是否已赋值
                      * @return MonManagedIds 是否已赋值
+                     * 
                      */
                     bool MonManagedIdsHasBeenSet() const;
 
@@ -191,20 +209,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropManagedIds 拦截的规则ID。默认所有规则不配置拦截。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetDropManagedIds() const;
 
                     /**
                      * 设置拦截的规则ID。默认所有规则不配置拦截。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropManagedIds 拦截的规则ID。默认所有规则不配置拦截。
+                     * @param _dropManagedIds 拦截的规则ID。默认所有规则不配置拦截。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDropManagedIds(const std::vector<int64_t>& _dropManagedIds);
 
                     /**
                      * 判断参数 DropManagedIds 是否已赋值
                      * @return DropManagedIds 是否已赋值
+                     * 
                      */
                     bool DropManagedIdsHasBeenSet() const;
 

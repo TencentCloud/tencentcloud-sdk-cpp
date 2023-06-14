@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取注册集群ID
                      * @return ClusterId 注册集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置注册集群ID
-                     * @param ClusterId 注册集群ID
+                     * @param _clusterId 注册集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取默认false 获取内网，是否获取外网版注册命令
                      * @return IsExtranet 默认false 获取内网，是否获取外网版注册命令
+                     * 
                      */
                     bool GetIsExtranet() const;
 
                     /**
                      * 设置默认false 获取内网，是否获取外网版注册命令
-                     * @param IsExtranet 默认false 获取内网，是否获取外网版注册命令
+                     * @param _isExtranet 默认false 获取内网，是否获取外网版注册命令
+                     * 
                      */
                     void SetIsExtranet(const bool& _isExtranet);
 
                     /**
                      * 判断参数 IsExtranet 是否已赋值
                      * @return IsExtranet 是否已赋值
+                     * 
                      */
                     bool IsExtranetHasBeenSet() const;
 
                     /**
                      * 获取默认false 不刷新有效时间 ，true刷新有效时间
                      * @return IsRefreshExpirationTime 默认false 不刷新有效时间 ，true刷新有效时间
+                     * 
                      */
                     bool GetIsRefreshExpirationTime() const;
 
                     /**
                      * 设置默认false 不刷新有效时间 ，true刷新有效时间
-                     * @param IsRefreshExpirationTime 默认false 不刷新有效时间 ，true刷新有效时间
+                     * @param _isRefreshExpirationTime 默认false 不刷新有效时间 ，true刷新有效时间
+                     * 
                      */
                     void SetIsRefreshExpirationTime(const bool& _isRefreshExpirationTime);
 
                     /**
                      * 判断参数 IsRefreshExpirationTime 是否已赋值
                      * @return IsRefreshExpirationTime 是否已赋值
+                     * 
                      */
                     bool IsRefreshExpirationTimeHasBeenSet() const;
 

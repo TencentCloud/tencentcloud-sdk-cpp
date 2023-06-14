@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取项目 Id。
                      * @return ProjectId 项目 Id。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 Id。
-                     * @param ProjectId 项目 Id。
+                     * @param _projectId 项目 Id。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 <li>Stopped：点播转直播结束；</li>
 <li>SourceInterrupted：点播转直播输入断流；</li>
 <li>DestinationInterrupted：点播转直播输出断流。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -86,53 +90,61 @@ namespace TencentCloud
 <li>Stopped：点播转直播结束；</li>
 <li>SourceInterrupted：点播转直播输入断流；</li>
 <li>DestinationInterrupted：点播转直播输出断流。</li>
-                     * @param Status 项目状态，取值有：
+                     * @param _status 项目状态，取值有：
 <li>Started：点播转直播开始；</li>
 <li>Stopped：点播转直播结束；</li>
 <li>SourceInterrupted：点播转直播输入断流；</li>
 <li>DestinationInterrupted：点播转直播输出断流。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。
                      * @return SourceInterruptInfo 点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。
+                     * 
                      */
                     MediaCastSourceInterruptInfo GetSourceInterruptInfo() const;
 
                     /**
                      * 设置点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。
-                     * @param SourceInterruptInfo 点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。
+                     * @param _sourceInterruptInfo 点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。
+                     * 
                      */
                     void SetSourceInterruptInfo(const MediaCastSourceInterruptInfo& _sourceInterruptInfo);
 
                     /**
                      * 判断参数 SourceInterruptInfo 是否已赋值
                      * @return SourceInterruptInfo 是否已赋值
+                     * 
                      */
                     bool SourceInterruptInfoHasBeenSet() const;
 
                     /**
                      * 获取点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。
                      * @return DestinationInterruptInfo 点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。
+                     * 
                      */
                     MediaCastDestinationInterruptInfo GetDestinationInterruptInfo() const;
 
                     /**
                      * 设置点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。
-                     * @param DestinationInterruptInfo 点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。
+                     * @param _destinationInterruptInfo 点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。
+                     * 
                      */
                     void SetDestinationInterruptInfo(const MediaCastDestinationInterruptInfo& _destinationInterruptInfo);
 
                     /**
                      * 判断参数 DestinationInterruptInfo 是否已赋值
                      * @return DestinationInterruptInfo 是否已赋值
+                     * 
                      */
                     bool DestinationInterruptInfoHasBeenSet() const;
 

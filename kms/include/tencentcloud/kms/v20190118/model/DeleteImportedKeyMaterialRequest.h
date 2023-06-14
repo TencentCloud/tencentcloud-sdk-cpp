@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定需要删除密钥材料的EXTERNAL CMK。
                      * @return KeyId 指定需要删除密钥材料的EXTERNAL CMK。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置指定需要删除密钥材料的EXTERNAL CMK。
-                     * @param KeyId 指定需要删除密钥材料的EXTERNAL CMK。
+                     * @param _keyId 指定需要删除密钥材料的EXTERNAL CMK。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

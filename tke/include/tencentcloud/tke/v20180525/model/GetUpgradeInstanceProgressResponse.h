@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取升级节点总数
                      * @return Total 升级节点总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已升级节点总数
                      * @return Done 已升级节点总数
+                     * 
                      */
                     int64_t GetDone() const;
 
                     /**
                      * 判断参数 Done 是否已赋值
                      * @return Done 是否已赋值
+                     * 
                      */
                     bool DoneHasBeenSet() const;
 
@@ -84,36 +88,42 @@ pauing 正在停止
 done  已完成
 timeout 已超时
 aborted 已取消
+                     * 
                      */
                     std::string GetLifeState() const;
 
                     /**
                      * 判断参数 LifeState 是否已赋值
                      * @return LifeState 是否已赋值
+                     * 
                      */
                     bool LifeStateHasBeenSet() const;
 
                     /**
                      * 获取各节点升级进度详情
                      * @return Instances 各节点升级进度详情
+                     * 
                      */
                     std::vector<InstanceUpgradeProgressItem> GetInstances() const;
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 
                     /**
                      * 获取集群当前状态
                      * @return ClusterStatus 集群当前状态
+                     * 
                      */
                     InstanceUpgradeClusterStatus GetClusterStatus() const;
 
                     /**
                      * 判断参数 ClusterStatus 是否已赋值
                      * @return ClusterStatus 是否已赋值
+                     * 
                      */
                     bool ClusterStatusHasBeenSet() const;
 

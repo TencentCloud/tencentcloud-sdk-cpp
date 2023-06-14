@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取码规则ID
                      * @return CustomId 码规则ID
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置码规则ID
-                     * @param CustomId 码规则ID
+                     * @param _customId 码规则ID
+                     * 
                      */
                     void SetCustomId(const std::string& _customId);
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 码规则名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置码规则名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 码规则名
+                     * @param _name 码规则名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
@@ -114,110 +123,128 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 商户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MerchantId 商户ID
+                     * @param _merchantId 商户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取码ID长度
                      * @return CodeLength 码ID长度
+                     * 
                      */
                     uint64_t GetCodeLength() const;
 
                     /**
                      * 设置码ID长度
-                     * @param CodeLength 码ID长度
+                     * @param _codeLength 码ID长度
+                     * 
                      */
                     void SetCodeLength(const uint64_t& _codeLength);
 
                     /**
                      * 判断参数 CodeLength 是否已赋值
                      * @return CodeLength 是否已赋值
+                     * 
                      */
                     bool CodeLengthHasBeenSet() const;
 
                     /**
                      * 获取规则状态
                      * @return Status 规则状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置规则状态
-                     * @param Status 规则状态
+                     * @param _status 规则状态
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取码段配置
                      * @return CodeParts 码段配置
+                     * 
                      */
                     std::vector<CodePart> GetCodeParts() const;
 
                     /**
                      * 设置码段配置
-                     * @param CodeParts 码段配置
+                     * @param _codeParts 码段配置
+                     * 
                      */
                     void SetCodeParts(const std::vector<CodePart>& _codeParts);
 
                     /**
                      * 判断参数 CodeParts 是否已赋值
                      * @return CodeParts 是否已赋值
+                     * 
                      */
                     bool CodePartsHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取起始时间戳，Unix 时间戳
                      * @return StartTimeStamp 起始时间戳，Unix 时间戳
+                     * 
                      */
                     int64_t GetStartTimeStamp() const;
 
                     /**
                      * 设置起始时间戳，Unix 时间戳
-                     * @param StartTimeStamp 起始时间戳，Unix 时间戳
+                     * @param _startTimeStamp 起始时间戳，Unix 时间戳
+                     * 
                      */
                     void SetStartTimeStamp(const int64_t& _startTimeStamp);
 
                     /**
                      * 判断参数 StartTimeStamp 是否已赋值
                      * @return StartTimeStamp 是否已赋值
+                     * 
                      */
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳，Unix 时间戳，查询时间范围最大为90天
                      * @return EndTimeStamp 结束时间戳，Unix 时间戳，查询时间范围最大为90天
+                     * 
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
                      * 设置结束时间戳，Unix 时间戳，查询时间范围最大为90天
-                     * @param EndTimeStamp 结束时间戳，Unix 时间戳，查询时间范围最大为90天
+                     * @param _endTimeStamp 结束时间戳，Unix 时间戳，查询时间范围最大为90天
+                     * 
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
 
                     /**
                      * 判断参数 EndTimeStamp 是否已赋值
                      * @return EndTimeStamp 是否已赋值
+                     * 
                      */
                     bool EndTimeStampHasBeenSet() const;
 
                     /**
                      * 获取应用ID列表，多个ID时，返回值为多个ID使用总和
                      * @return SdkAppIdList 应用ID列表，多个ID时，返回值为多个ID使用总和
+                     * 
                      */
                     std::vector<int64_t> GetSdkAppIdList() const;
 
                     /**
                      * 设置应用ID列表，多个ID时，返回值为多个ID使用总和
-                     * @param SdkAppIdList 应用ID列表，多个ID时，返回值为多个ID使用总和
+                     * @param _sdkAppIdList 应用ID列表，多个ID时，返回值为多个ID使用总和
+                     * 
                      */
                     void SetSdkAppIdList(const std::vector<int64_t>& _sdkAppIdList);
 
                     /**
                      * 判断参数 SdkAppIdList 是否已赋值
                      * @return SdkAppIdList 是否已赋值
+                     * 
                      */
                     bool SdkAppIdListHasBeenSet() const;
 

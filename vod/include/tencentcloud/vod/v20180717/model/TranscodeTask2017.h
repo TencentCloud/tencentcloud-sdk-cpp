@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取转码任务 ID。
                      * @return TaskId 转码任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置转码任务 ID。
-                     * @param TaskId 转码任务 ID。
+                     * @param _taskId 转码任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return ErrCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -79,123 +83,143 @@ namespace TencentCloud
                      * 设置错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-                     * @param ErrCode 错误码
+                     * @param _errCode 错误码
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return Message 错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-                     * @param Message 错误信息。
+                     * @param _message 错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取被转码文件 ID。
                      * @return FileId 被转码文件 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置被转码文件 ID。
-                     * @param FileId 被转码文件 ID。
+                     * @param _fileId 被转码文件 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取被转码文件名称。
                      * @return FileName 被转码文件名称。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置被转码文件名称。
-                     * @param FileName 被转码文件名称。
+                     * @param _fileName 被转码文件名称。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取视频时长，单位：秒。
                      * @return Duration 视频时长，单位：秒。
+                     * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
                      * 设置视频时长，单位：秒。
-                     * @param Duration 视频时长，单位：秒。
+                     * @param _duration 视频时长，单位：秒。
+                     * 
                      */
                     void SetDuration(const uint64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取封面地址。
                      * @return CoverUrl 封面地址。
+                     * 
                      */
                     std::string GetCoverUrl() const;
 
                     /**
                      * 设置封面地址。
-                     * @param CoverUrl 封面地址。
+                     * @param _coverUrl 封面地址。
+                     * 
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
                     /**
                      * 判断参数 CoverUrl 是否已赋值
                      * @return CoverUrl 是否已赋值
+                     * 
                      */
                     bool CoverUrlHasBeenSet() const;
 
                     /**
                      * 获取视频转码后生成的播放信息。
                      * @return PlayInfoSet 视频转码后生成的播放信息。
+                     * 
                      */
                     std::vector<TranscodePlayInfo2017> GetPlayInfoSet() const;
 
                     /**
                      * 设置视频转码后生成的播放信息。
-                     * @param PlayInfoSet 视频转码后生成的播放信息。
+                     * @param _playInfoSet 视频转码后生成的播放信息。
+                     * 
                      */
                     void SetPlayInfoSet(const std::vector<TranscodePlayInfo2017>& _playInfoSet);
 
                     /**
                      * 判断参数 PlayInfoSet 是否已赋值
                      * @return PlayInfoSet 是否已赋值
+                     * 
                      */
                     bool PlayInfoSetHasBeenSet() const;
 

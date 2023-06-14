@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取本次查询的起始偏移量，默认为0。
                      * @return Offset 本次查询的起始偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置本次查询的起始偏移量，默认为0。
-                     * @param Offset 本次查询的起始偏移量，默认为0。
+                     * @param _offset 本次查询的起始偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取本次查询的数据量，默认为10，最大值为100。
                      * @return Limit 本次查询的数据量，默认为10，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置本次查询的数据量，默认为10，最大值为100。
-                     * @param Limit 本次查询的数据量，默认为10，最大值为100。
+                     * @param _limit 本次查询的数据量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询的过滤条件。Name字段可取值"Namespace"。
                      * @return Filters 查询的过滤条件。Name字段可取值"Namespace"。
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
                      * 设置查询的过滤条件。Name字段可取值"Namespace"。
-                     * @param Filters 查询的过滤条件。Name字段可取值"Namespace"。
+                     * @param _filters 查询的过滤条件。Name字段可取值"Namespace"。
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

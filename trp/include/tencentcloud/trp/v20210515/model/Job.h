@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取调度ID
                      * @return JobId 调度ID
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 设置调度ID
-                     * @param JobId 调度ID
+                     * @param _jobId 调度ID
+                     * 
                      */
                     void SetJobId(const int64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败
                      * @return Status 执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败
-                     * @param Status 执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败
+                     * @param _status 执行状态 init:初始化, pending: 执行中, done: 执行成功, error: 执行失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

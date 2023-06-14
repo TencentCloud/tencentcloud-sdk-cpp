@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取每页输出实例列表的大小，参数默认值20。
                      * @return Limit 每页输出实例列表的大小，参数默认值20。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页输出实例列表的大小，参数默认值20。
-                     * @param Limit 每页输出实例列表的大小，参数默认值20。
+                     * @param _limit 每页输出实例列表的大小，参数默认值20。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param _offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取复制组ID。
                      * @return GroupId 复制组ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置复制组ID。
-                     * @param GroupId 复制组ID。
+                     * @param _groupId 复制组ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
                      * @return SearchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
-                     * @param SearchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * @param _searchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 

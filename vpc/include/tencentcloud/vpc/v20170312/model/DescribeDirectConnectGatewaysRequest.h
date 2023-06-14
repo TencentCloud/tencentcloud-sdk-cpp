@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取专线网关唯一`ID`，形如：`dcg-9o233uri`。
                      * @return DirectConnectGatewayIds 专线网关唯一`ID`，形如：`dcg-9o233uri`。
+                     * 
                      */
                     std::vector<std::string> GetDirectConnectGatewayIds() const;
 
                     /**
                      * 设置专线网关唯一`ID`，形如：`dcg-9o233uri`。
-                     * @param DirectConnectGatewayIds 专线网关唯一`ID`，形如：`dcg-9o233uri`。
+                     * @param _directConnectGatewayIds 专线网关唯一`ID`，形如：`dcg-9o233uri`。
+                     * 
                      */
                     void SetDirectConnectGatewayIds(const std::vector<std::string>& _directConnectGatewayIds);
 
                     /**
                      * 判断参数 DirectConnectGatewayIds 是否已赋值
                      * @return DirectConnectGatewayIds 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayIdsHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
 <li>network-type- String - 网络类型，可选值：`VPC`（私有网络类型）、`CCN`（云联网类型）。</li>
 <li>ccn-id - String - 专线网关所在云联网`ID`。</li>
 <li>vpc-id - String - 专线网关所在私有网络`ID`。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -90,7 +94,7 @@ namespace TencentCloud
 <li>network-type- String - 网络类型，可选值：`VPC`（私有网络类型）、`CCN`（云联网类型）。</li>
 <li>ccn-id - String - 专线网关所在云联网`ID`。</li>
 <li>vpc-id - String - 专线网关所在私有网络`ID`。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定`DirectConnectGatewayIds`和`Filters`。
+                     * @param _filters 过滤条件，参数不支持同时指定`DirectConnectGatewayIds`和`Filters`。
 <li>direct-connect-gateway-id - String - 专线网关唯一`ID`，形如：`dcg-9o233uri`。</li>
 <li>direct-connect-gateway-name - String - 专线网关名称，默认模糊查询。</li>
 <li>direct-connect-gateway-ip - String - 专线网关`IP`。</li>
@@ -98,48 +102,56 @@ namespace TencentCloud
 <li>network-type- String - 网络类型，可选值：`VPC`（私有网络类型）、`CCN`（云联网类型）。</li>
 <li>ccn-id - String - 专线网关所在云联网`ID`。</li>
 <li>vpc-id - String - 专线网关所在私有网络`ID`。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量。
                      * @return Limit 返回数量。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量。
-                     * @param Limit 返回数量。
+                     * @param _limit 返回数量。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

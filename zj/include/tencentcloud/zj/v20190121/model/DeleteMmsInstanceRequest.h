@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取超级短信样例id
                      * @return InstanceId 超级短信样例id
+                     * 
                      */
                     uint64_t GetInstanceId() const;
 
                     /**
                      * 设置超级短信样例id
-                     * @param InstanceId 超级短信样例id
+                     * @param _instanceId 超级短信样例id
+                     * 
                      */
                     void SetInstanceId(const uint64_t& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

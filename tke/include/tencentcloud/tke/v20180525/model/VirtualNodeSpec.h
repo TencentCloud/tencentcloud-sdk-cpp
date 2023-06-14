@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取节点展示名称
                      * @return DisplayName 节点展示名称
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置节点展示名称
-                     * @param DisplayName 节点展示名称
+                     * @param _displayName 节点展示名称
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取腾讯云标签
                      * @return Tags 腾讯云标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置腾讯云标签
-                     * @param Tags 腾讯云标签
+                     * @param _tags 腾讯云标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

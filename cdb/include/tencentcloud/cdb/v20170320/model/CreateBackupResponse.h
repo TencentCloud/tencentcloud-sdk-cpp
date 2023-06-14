@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取备份任务 ID。
                      * @return BackupId 备份任务 ID。
+                     * 
                      */
                     uint64_t GetBackupId() const;
 
                     /**
                      * 判断参数 BackupId 是否已赋值
                      * @return BackupId 是否已赋值
+                     * 
                      */
                     bool BackupIdHasBeenSet() const;
 

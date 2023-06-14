@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取vpc列表
                      * @return VpcList vpc列表
+                     * 
                      */
                     std::vector<std::string> GetVpcList() const;
 
                     /**
                      * 设置vpc列表
-                     * @param VpcList vpc列表
+                     * @param _vpcList vpc列表
+                     * 
                      */
                     void SetVpcList(const std::vector<std::string>& _vpcList);
 
                     /**
                      * 判断参数 VpcList 是否已赋值
                      * @return VpcList 是否已赋值
+                     * 
                      */
                     bool VpcListHasBeenSet() const;
 
                     /**
                      * 获取zone列表
                      * @return AllZoneList zone列表
+                     * 
                      */
                     std::vector<VpcZoneData> GetAllZoneList() const;
 
                     /**
                      * 设置zone列表
-                     * @param AllZoneList zone列表
+                     * @param _allZoneList zone列表
+                     * 
                      */
                     void SetAllZoneList(const std::vector<VpcZoneData>& _allZoneList);
 
                     /**
                      * 判断参数 AllZoneList 是否已赋值
                      * @return AllZoneList 是否已赋值
+                     * 
                      */
                     bool AllZoneListHasBeenSet() const;
 

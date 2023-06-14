@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取信誉分，1-5从低到高
                      * @return Star 信誉分，1-5从低到高
+                     * 
                      */
                     int64_t GetStar() const;
 
                     /**
                      * 设置信誉分，1-5从低到高
-                     * @param Star 信誉分，1-5从低到高
+                     * @param _star 信誉分，1-5从低到高
+                     * 
                      */
                     void SetStar(const int64_t& _star);
 
                     /**
                      * 判断参数 Star 是否已赋值
                      * @return Star 是否已赋值
+                     * 
                      */
                     bool StarHasBeenSet() const;
 

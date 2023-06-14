@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取图片审核次数统计数据，展示查询时间范围内的图片审核次数的概览数据。
                      * @return ImageReviewUsageDataSet 图片审核次数统计数据，展示查询时间范围内的图片审核次数的概览数据。
+                     * 
                      */
                     std::vector<ImageReviewUsageDataItem> GetImageReviewUsageDataSet() const;
 
                     /**
                      * 判断参数 ImageReviewUsageDataSet 是否已赋值
                      * @return ImageReviewUsageDataSet 是否已赋值
+                     * 
                      */
                     bool ImageReviewUsageDataSetHasBeenSet() const;
 

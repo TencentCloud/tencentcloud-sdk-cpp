@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取模板名称
                      * @return CptName 模板名称
+                     * 
                      */
                     std::string GetCptName() const;
 
                     /**
                      * 设置模板名称
-                     * @param CptName 模板名称
+                     * @param _cptName 模板名称
+                     * 
                      */
                     void SetCptName(const std::string& _cptName);
 
                     /**
                      * 判断参数 CptName 是否已赋值
                      * @return CptName 是否已赋值
+                     * 
                      */
                     bool CptNameHasBeenSet() const;
 
                     /**
                      * 获取名次
                      * @return Rank 名次
+                     * 
                      */
                     int64_t GetRank() const;
 
                     /**
                      * 设置名次
-                     * @param Rank 名次
+                     * @param _rank 名次
+                     * 
                      */
                     void SetRank(const int64_t& _rank);
 
                     /**
                      * 判断参数 Rank 是否已赋值
                      * @return Rank 是否已赋值
+                     * 
                      */
                     bool RankHasBeenSet() const;
 
                     /**
                      * 获取颁发量
                      * @return Count 颁发量
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置颁发量
-                     * @param Count 颁发量
+                     * @param _count 颁发量
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取应用名称
                      * @return ApplyName 应用名称
+                     * 
                      */
                     std::string GetApplyName() const;
 
                     /**
                      * 设置应用名称
-                     * @param ApplyName 应用名称
+                     * @param _applyName 应用名称
+                     * 
                      */
                     void SetApplyName(const std::string& _applyName);
 
                     /**
                      * 判断参数 ApplyName 是否已赋值
                      * @return ApplyName 是否已赋值
+                     * 
                      */
                     bool ApplyNameHasBeenSet() const;
 
                     /**
                      * 获取应用ID
                      * @return ApplyId 应用ID
+                     * 
                      */
                     uint64_t GetApplyId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplyId 应用ID
+                     * @param _applyId 应用ID
+                     * 
                      */
                     void SetApplyId(const uint64_t& _applyId);
 
                     /**
                      * 判断参数 ApplyId 是否已赋值
                      * @return ApplyId 是否已赋值
+                     * 
                      */
                     bool ApplyIdHasBeenSet() const;
 

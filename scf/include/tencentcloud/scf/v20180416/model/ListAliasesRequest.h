@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取函数名称
                      * @return FunctionName 函数名称
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置函数名称
-                     * @param FunctionName 函数名称
+                     * @param _functionName 函数名称
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取函数所在的命名空间
                      * @return Namespace 函数所在的命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数所在的命名空间
-                     * @param Namespace 函数所在的命名空间
+                     * @param _namespace 函数所在的命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取如果提供此参数，则只返回与该函数版本有关联的别名
                      * @return FunctionVersion 如果提供此参数，则只返回与该函数版本有关联的别名
+                     * 
                      */
                     std::string GetFunctionVersion() const;
 
                     /**
                      * 设置如果提供此参数，则只返回与该函数版本有关联的别名
-                     * @param FunctionVersion 如果提供此参数，则只返回与该函数版本有关联的别名
+                     * @param _functionVersion 如果提供此参数，则只返回与该函数版本有关联的别名
+                     * 
                      */
                     void SetFunctionVersion(const std::string& _functionVersion);
 
                     /**
                      * 判断参数 FunctionVersion 是否已赋值
                      * @return FunctionVersion 是否已赋值
+                     * 
                      */
                     bool FunctionVersionHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认值为 0
                      * @return Offset 数据偏移量，默认值为 0
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认值为 0
-                     * @param Offset 数据偏移量，默认值为 0
+                     * @param _offset 数据偏移量，默认值为 0
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数据长度，默认值为 20
                      * @return Limit 返回数据长度，默认值为 20
+                     * 
                      */
                     std::string GetLimit() const;
 
                     /**
                      * 设置返回数据长度，默认值为 20
-                     * @param Limit 返回数据长度，默认值为 20
+                     * @param _limit 返回数据长度，默认值为 20
+                     * 
                      */
                     void SetLimit(const std::string& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取组件列表
                      * @return ComponentList 组件列表
+                     * 
                      */
                     std::vector<MarketComponentInfo> GetComponentList() const;
 
                     /**
                      * 判断参数 ComponentList 是否已赋值
                      * @return ComponentList 是否已赋值
+                     * 
                      */
                     bool ComponentListHasBeenSet() const;
 
                     /**
                      * 获取组件总数
                      * @return TotalCount 组件总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

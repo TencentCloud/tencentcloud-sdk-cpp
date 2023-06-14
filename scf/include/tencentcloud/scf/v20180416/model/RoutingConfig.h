@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取随机权重路由附加版本
                      * @return AdditionalVersionWeights 随机权重路由附加版本
+                     * 
                      */
                     std::vector<VersionWeight> GetAdditionalVersionWeights() const;
 
                     /**
                      * 设置随机权重路由附加版本
-                     * @param AdditionalVersionWeights 随机权重路由附加版本
+                     * @param _additionalVersionWeights 随机权重路由附加版本
+                     * 
                      */
                     void SetAdditionalVersionWeights(const std::vector<VersionWeight>& _additionalVersionWeights);
 
                     /**
                      * 判断参数 AdditionalVersionWeights 是否已赋值
                      * @return AdditionalVersionWeights 是否已赋值
+                     * 
                      */
                     bool AdditionalVersionWeightsHasBeenSet() const;
 
                     /**
                      * 获取规则路由附加版本
                      * @return AddtionVersionMatchs 规则路由附加版本
+                     * 
                      */
                     std::vector<VersionMatch> GetAddtionVersionMatchs() const;
 
                     /**
                      * 设置规则路由附加版本
-                     * @param AddtionVersionMatchs 规则路由附加版本
+                     * @param _addtionVersionMatchs 规则路由附加版本
+                     * 
                      */
                     void SetAddtionVersionMatchs(const std::vector<VersionMatch>& _addtionVersionMatchs);
 
                     /**
                      * 判断参数 AddtionVersionMatchs 是否已赋值
                      * @return AddtionVersionMatchs 是否已赋值
+                     * 
                      */
                     bool AddtionVersionMatchsHasBeenSet() const;
 

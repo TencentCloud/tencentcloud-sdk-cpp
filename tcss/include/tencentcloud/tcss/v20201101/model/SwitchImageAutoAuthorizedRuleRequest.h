@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取规则是否生效，0:不生效，1:已生效
                      * @return IsEnabled 规则是否生效，0:不生效，1:已生效
+                     * 
                      */
                     int64_t GetIsEnabled() const;
 
                     /**
                      * 设置规则是否生效，0:不生效，1:已生效
-                     * @param IsEnabled 规则是否生效，0:不生效，1:已生效
+                     * @param _isEnabled 规则是否生效，0:不生效，1:已生效
+                     * 
                      */
                     void SetIsEnabled(const int64_t& _isEnabled);
 
                     /**
                      * 判断参数 IsEnabled 是否已赋值
                      * @return IsEnabled 是否已赋值
+                     * 
                      */
                     bool IsEnabledHasBeenSet() const;
 
                     /**
                      * 获取规则id
                      * @return RuleId 规则id
+                     * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则id
-                     * @param RuleId 规则id
+                     * @param _ruleId 规则id
+                     * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

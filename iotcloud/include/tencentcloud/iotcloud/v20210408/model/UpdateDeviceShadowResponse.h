@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取设备影子数据，JSON字符串格式
                      * @return Data 设备影子数据，JSON字符串格式
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

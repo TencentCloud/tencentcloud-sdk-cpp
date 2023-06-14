@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取日志集ID。
                      * @return LogsetId 日志集ID。
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID。
-                     * @param LogsetId 日志集ID。
+                     * @param _logsetId 日志集ID。
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取日志集名称。
                      * @return LogsetName 日志集名称。
+                     * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集名称。
-                     * @param LogsetName 日志集名称。
+                     * @param _logsetName 日志集名称。
+                     * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
 
                     /**
                      * 判断参数 LogsetName 是否已赋值
                      * @return LogsetName 是否已赋值
+                     * 
                      */
                     bool LogsetNameHasBeenSet() const;
 
                     /**
                      * 获取日志主题ID。
                      * @return TopicId 日志主题ID。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID。
-                     * @param TopicId 日志主题ID。
+                     * @param _topicId 日志主题ID。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取日志主题名称。
                      * @return TopicName 日志主题名称。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题名称。
-                     * @param TopicName 日志主题名称。
+                     * @param _topicName 日志主题名称。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取查询语句。
                      * @return Query 查询语句。
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询语句。
-                     * @param Query 查询语句。
+                     * @param _query 查询语句。
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取告警对象序号。
                      * @return Number 告警对象序号。
+                     * 
                      */
                     int64_t GetNumber() const;
 
                     /**
                      * 设置告警对象序号。
-                     * @param Number 告警对象序号。
+                     * @param _number 告警对象序号。
+                     * 
                      */
                     void SetNumber(const int64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
                      * @return StartTimeOffset 查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
+                     * 
                      */
                     int64_t GetStartTimeOffset() const;
 
                     /**
                      * 设置查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
-                     * @param StartTimeOffset 查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
+                     * @param _startTimeOffset 查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
+                     * 
                      */
                     void SetStartTimeOffset(const int64_t& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
                      * @return EndTimeOffset 查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
+                     * 
                      */
                     int64_t GetEndTimeOffset() const;
 
                     /**
                      * 设置查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
-                     * @param EndTimeOffset 查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
+                     * @param _endTimeOffset 查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
+                     * 
                      */
                     void SetEndTimeOffset(const int64_t& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 

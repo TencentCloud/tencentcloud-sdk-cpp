@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取语法Rule规则保持一致
                      * @return Filter 语法Rule规则保持一致
+                     * 
                      */
                     std::string GetFilter() const;
 
                     /**
                      * 设置语法Rule规则保持一致
-                     * @param Filter 语法Rule规则保持一致
+                     * @param _filter 语法Rule规则保持一致
+                     * 
                      */
                     void SetFilter(const std::string& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 

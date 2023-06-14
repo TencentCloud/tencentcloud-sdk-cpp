@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取搜索指定设备的id
                      * @return DeviceId 搜索指定设备的id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置搜索指定设备的id
-                     * @param DeviceId 搜索指定设备的id
+                     * @param _deviceId 搜索指定设备的id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

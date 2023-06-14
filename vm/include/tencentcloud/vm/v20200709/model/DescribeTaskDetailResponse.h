@@ -53,12 +53,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -67,12 +69,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 审核时传入的数据Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 
@@ -81,12 +85,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizType 业务类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 
@@ -95,12 +101,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -119,12 +127,14 @@ RUNNING 进行中
 ERROR 出错
 CANCELLED 已取消
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -133,12 +143,14 @@ CANCELLED 已取消
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -155,12 +167,14 @@ Pass 通过
 Reveiw 建议复审
 Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -169,12 +183,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 审核结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskLabel> GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -183,12 +199,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaInfo 媒体解码信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaInfo GetMediaInfo() const;
 
                     /**
                      * 判断参数 MediaInfo 是否已赋值
                      * @return MediaInfo 是否已赋值
+                     * 
                      */
                     bool MediaInfoHasBeenSet() const;
 
@@ -197,12 +215,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 任务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InputInfo GetInputInfo() const;
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
@@ -211,12 +231,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -225,12 +247,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
@@ -239,12 +263,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TryInSeconds 在秒后重试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTryInSeconds() const;
 
                     /**
                      * 判断参数 TryInSeconds 是否已赋值
                      * @return TryInSeconds 是否已赋值
+                     * 
                      */
                     bool TryInSecondsHasBeenSet() const;
 
@@ -253,12 +279,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSegments 图片结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImageSegments> GetImageSegments() const;
 
                     /**
                      * 判断参数 ImageSegments 是否已赋值
                      * @return ImageSegments 是否已赋值
+                     * 
                      */
                     bool ImageSegmentsHasBeenSet() const;
 
@@ -267,12 +295,14 @@ Block 确认违规
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioSegments 音频结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
 
                     /**
                      * 判断参数 AudioSegments 是否已赋值
                      * @return AudioSegments 是否已赋值
+                     * 
                      */
                     bool AudioSegmentsHasBeenSet() const;
 
@@ -289,12 +319,14 @@ DECODE_ERROR: 解码失败。（输入资源中可能包含无法解码的视频
 URL_ERROR：下载地址验证失败。
 TIMEOUT_ERROR：处理超时。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorType() const;
 
                     /**
                      * 判断参数 ErrorType 是否已赋值
                      * @return ErrorType 是否已赋值
+                     * 
                      */
                     bool ErrorTypeHasBeenSet() const;
 
@@ -303,12 +335,14 @@ TIMEOUT_ERROR：处理超时。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorDescription 审核任务错误日志。当Error不为空时，会展示该字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorDescription() const;
 
                     /**
                      * 判断参数 ErrorDescription 是否已赋值
                      * @return ErrorDescription 是否已赋值
+                     * 
                      */
                     bool ErrorDescriptionHasBeenSet() const;
 

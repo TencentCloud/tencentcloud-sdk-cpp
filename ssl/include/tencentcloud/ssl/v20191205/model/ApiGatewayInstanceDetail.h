@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return ServiceId 实例ID
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param ServiceId 实例ID
+                     * @param _serviceId 实例ID
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return ServiceName 实例名称
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param ServiceName 实例名称
+                     * @param _serviceName 实例名称
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -105,38 +114,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 证书ID
+                     * @param _certId 证书ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertId(const std::string& _certId);
 
                     /**
                      * 判断参数 CertId 是否已赋值
                      * @return CertId 是否已赋值
+                     * 
                      */
                     bool CertIdHasBeenSet() const;
 
                     /**
                      * 获取使用协议
                      * @return Protocol 使用协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置使用协议
-                     * @param Protocol 使用协议
+                     * @param _protocol 使用协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

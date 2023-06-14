@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取人脸图片唯一标识。
                      * @return FaceId 人脸图片唯一标识。
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceRect 检测出的人脸框的位置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FaceRect GetFaceRect() const;
 
                     /**
                      * 判断参数 FaceRect 是否已赋值
                      * @return FaceRect 是否已赋值
+                     * 
                      */
                     bool FaceRectHasBeenSet() const;
 
@@ -75,24 +79,28 @@ namespace TencentCloud
 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
                      * @return SimilarPersonId 疑似同一人的PersonId。 
 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+                     * 
                      */
                     std::string GetSimilarPersonId() const;
 
                     /**
                      * 判断参数 SimilarPersonId 是否已赋值
                      * @return SimilarPersonId 是否已赋值
+                     * 
                      */
                     bool SimilarPersonIdHasBeenSet() const;
 
                     /**
                      * 获取人脸识别所用的算法模型版本。
                      * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 

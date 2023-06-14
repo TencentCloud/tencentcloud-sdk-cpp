@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取工作流id
                      * @return WorkflowId 工作流id
+                     * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
                      * 设置工作流id
-                     * @param WorkflowId 工作流id
+                     * @param _workflowId 工作流id
+                     * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
                      * 获取任务名
                      * @return TaskName 任务名
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名
-                     * @param TaskName 任务名
+                     * @param _taskName 任务名
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
                      * @return TaskType 26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
-                     * @param TaskType 26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
+                     * @param _taskType 26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取扩展属性
                      * @return TaskExt 扩展属性
+                     * 
                      */
                     std::vector<TaskExtInfo> GetTaskExt() const;
 
                     /**
                      * 设置扩展属性
-                     * @param TaskExt 扩展属性
+                     * @param _taskExt 扩展属性
+                     * 
                      */
                     void SetTaskExt(const std::vector<TaskExtInfo>& _taskExt);
 
                     /**
                      * 判断参数 TaskExt 是否已赋值
                      * @return TaskExt 是否已赋值
+                     * 
                      */
                     bool TaskExtHasBeenSet() const;
 

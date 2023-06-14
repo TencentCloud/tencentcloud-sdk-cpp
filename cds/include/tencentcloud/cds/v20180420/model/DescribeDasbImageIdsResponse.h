@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取基础镜像ID
                      * @return BaseImageId 基础镜像ID
+                     * 
                      */
                     std::string GetBaseImageId() const;
 
                     /**
                      * 判断参数 BaseImageId 是否已赋值
                      * @return BaseImageId 是否已赋值
+                     * 
                      */
                     bool BaseImageIdHasBeenSet() const;
 
                     /**
                      * 获取AI镜像ID
                      * @return AiImageId AI镜像ID
+                     * 
                      */
                     std::string GetAiImageId() const;
 
                     /**
                      * 判断参数 AiImageId 是否已赋值
                      * @return AiImageId 是否已赋值
+                     * 
                      */
                     bool AiImageIdHasBeenSet() const;
 

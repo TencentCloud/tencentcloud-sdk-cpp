@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取帧率。
                      * @return Fps 帧率。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置帧率。
-                     * @param Fps 帧率。
+                     * @param _fps 帧率。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 
                     /**
                      * 获取码率，单位是bps。
                      * @return Rate 码率，单位是bps。
+                     * 
                      */
                     int64_t GetRate() const;
 
                     /**
                      * 设置码率，单位是bps。
-                     * @param Rate 码率，单位是bps。
+                     * @param _rate 码率，单位是bps。
+                     * 
                      */
                     void SetRate(const int64_t& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
                     /**
                      * 获取音频Pid。
                      * @return Pid 音频Pid。
+                     * 
                      */
                     int64_t GetPid() const;
 
                     /**
                      * 设置音频Pid。
-                     * @param Pid 音频Pid。
+                     * @param _pid 音频Pid。
+                     * 
                      */
                     void SetPid(const int64_t& _pid);
 
                     /**
                      * 判断参数 Pid 是否已赋值
                      * @return Pid 是否已赋值
+                     * 
                      */
                     bool PidHasBeenSet() const;
 

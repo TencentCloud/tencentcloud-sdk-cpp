@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要开始下一批次的服务id
                      * @return ApplicationId 需要开始下一批次的服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置需要开始下一批次的服务id
-                     * @param ApplicationId 需要开始下一批次的服务id
+                     * @param _applicationId 需要开始下一批次的服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取环境id
                      * @return EnvironmentId 环境id
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvironmentId 环境id
+                     * @param _environmentId 环境id
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 

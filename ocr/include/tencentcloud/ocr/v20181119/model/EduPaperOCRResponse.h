@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取检测到的文本信息，具体内容请点击左侧链接。
                      * @return EduPaperInfos 检测到的文本信息，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<TextEduPaper> GetEduPaperInfos() const;
 
                     /**
                      * 判断参数 EduPaperInfos 是否已赋值
                      * @return EduPaperInfos 是否已赋值
+                     * 
                      */
                     bool EduPaperInfosHasBeenSet() const;
 
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。
                      * @return Angle 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。
+                     * 
                      */
                     int64_t GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 
                     /**
                      * 获取结构化方式输出，具体内容请点击左侧链接。
                      * @return QuestionBlockInfos 结构化方式输出，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<QuestionBlockObj> GetQuestionBlockInfos() const;
 
                     /**
                      * 判断参数 QuestionBlockInfos 是否已赋值
                      * @return QuestionBlockInfos 是否已赋值
+                     * 
                      */
                     bool QuestionBlockInfosHasBeenSet() const;
 

@@ -51,180 +51,210 @@ namespace TencentCloud
                     /**
                      * 获取生命周期挂钩ID
                      * @return LifecycleHookId 生命周期挂钩ID
+                     * 
                      */
                     std::string GetLifecycleHookId() const;
 
                     /**
                      * 设置生命周期挂钩ID
-                     * @param LifecycleHookId 生命周期挂钩ID
+                     * @param _lifecycleHookId 生命周期挂钩ID
+                     * 
                      */
                     void SetLifecycleHookId(const std::string& _lifecycleHookId);
 
                     /**
                      * 判断参数 LifecycleHookId 是否已赋值
                      * @return LifecycleHookId 是否已赋值
+                     * 
                      */
                     bool LifecycleHookIdHasBeenSet() const;
 
                     /**
                      * 获取生命周期挂钩名称
                      * @return LifecycleHookName 生命周期挂钩名称
+                     * 
                      */
                     std::string GetLifecycleHookName() const;
 
                     /**
                      * 设置生命周期挂钩名称
-                     * @param LifecycleHookName 生命周期挂钩名称
+                     * @param _lifecycleHookName 生命周期挂钩名称
+                     * 
                      */
                     void SetLifecycleHookName(const std::string& _lifecycleHookName);
 
                     /**
                      * 判断参数 LifecycleHookName 是否已赋值
                      * @return LifecycleHookName 是否已赋值
+                     * 
                      */
                     bool LifecycleHookNameHasBeenSet() const;
 
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID
-                     * @param AutoScalingGroupId 伸缩组ID
+                     * @param _autoScalingGroupId 伸缩组ID
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取生命周期挂钩默认结果
                      * @return DefaultResult 生命周期挂钩默认结果
+                     * 
                      */
                     std::string GetDefaultResult() const;
 
                     /**
                      * 设置生命周期挂钩默认结果
-                     * @param DefaultResult 生命周期挂钩默认结果
+                     * @param _defaultResult 生命周期挂钩默认结果
+                     * 
                      */
                     void SetDefaultResult(const std::string& _defaultResult);
 
                     /**
                      * 判断参数 DefaultResult 是否已赋值
                      * @return DefaultResult 是否已赋值
+                     * 
                      */
                     bool DefaultResultHasBeenSet() const;
 
                     /**
                      * 获取生命周期挂钩等待超时时间
                      * @return HeartbeatTimeout 生命周期挂钩等待超时时间
+                     * 
                      */
                     int64_t GetHeartbeatTimeout() const;
 
                     /**
                      * 设置生命周期挂钩等待超时时间
-                     * @param HeartbeatTimeout 生命周期挂钩等待超时时间
+                     * @param _heartbeatTimeout 生命周期挂钩等待超时时间
+                     * 
                      */
                     void SetHeartbeatTimeout(const int64_t& _heartbeatTimeout);
 
                     /**
                      * 判断参数 HeartbeatTimeout 是否已赋值
                      * @return HeartbeatTimeout 是否已赋值
+                     * 
                      */
                     bool HeartbeatTimeoutHasBeenSet() const;
 
                     /**
                      * 获取生命周期挂钩适用场景
                      * @return LifecycleTransition 生命周期挂钩适用场景
+                     * 
                      */
                     std::string GetLifecycleTransition() const;
 
                     /**
                      * 设置生命周期挂钩适用场景
-                     * @param LifecycleTransition 生命周期挂钩适用场景
+                     * @param _lifecycleTransition 生命周期挂钩适用场景
+                     * 
                      */
                     void SetLifecycleTransition(const std::string& _lifecycleTransition);
 
                     /**
                      * 判断参数 LifecycleTransition 是否已赋值
                      * @return LifecycleTransition 是否已赋值
+                     * 
                      */
                     bool LifecycleTransitionHasBeenSet() const;
 
                     /**
                      * 获取通知目标的附加信息
                      * @return NotificationMetadata 通知目标的附加信息
+                     * 
                      */
                     std::string GetNotificationMetadata() const;
 
                     /**
                      * 设置通知目标的附加信息
-                     * @param NotificationMetadata 通知目标的附加信息
+                     * @param _notificationMetadata 通知目标的附加信息
+                     * 
                      */
                     void SetNotificationMetadata(const std::string& _notificationMetadata);
 
                     /**
                      * 判断参数 NotificationMetadata 是否已赋值
                      * @return NotificationMetadata 是否已赋值
+                     * 
                      */
                     bool NotificationMetadataHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedTime 创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取通知目标
                      * @return NotificationTarget 通知目标
+                     * 
                      */
                     NotificationTarget GetNotificationTarget() const;
 
                     /**
                      * 设置通知目标
-                     * @param NotificationTarget 通知目标
+                     * @param _notificationTarget 通知目标
+                     * 
                      */
                     void SetNotificationTarget(const NotificationTarget& _notificationTarget);
 
                     /**
                      * 判断参数 NotificationTarget 是否已赋值
                      * @return NotificationTarget 是否已赋值
+                     * 
                      */
                     bool NotificationTargetHasBeenSet() const;
 
                     /**
                      * 获取生命周期挂钩适用场景
                      * @return LifecycleTransitionType 生命周期挂钩适用场景
+                     * 
                      */
                     std::string GetLifecycleTransitionType() const;
 
                     /**
                      * 设置生命周期挂钩适用场景
-                     * @param LifecycleTransitionType 生命周期挂钩适用场景
+                     * @param _lifecycleTransitionType 生命周期挂钩适用场景
+                     * 
                      */
                     void SetLifecycleTransitionType(const std::string& _lifecycleTransitionType);
 
                     /**
                      * 判断参数 LifecycleTransitionType 是否已赋值
                      * @return LifecycleTransitionType 是否已赋值
+                     * 
                      */
                     bool LifecycleTransitionTypeHasBeenSet() const;
 
@@ -233,20 +263,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifecycleCommand 远程命令执行对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LifecycleCommand GetLifecycleCommand() const;
 
                     /**
                      * 设置远程命令执行对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LifecycleCommand 远程命令执行对象
+                     * @param _lifecycleCommand 远程命令执行对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand);
 
                     /**
                      * 判断参数 LifecycleCommand 是否已赋值
                      * @return LifecycleCommand 是否已赋值
+                     * 
                      */
                     bool LifecycleCommandHasBeenSet() const;
 

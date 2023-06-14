@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取用户信息。
                      * @return UserInfo 用户信息。
+                     * 
                      */
                     UserInfo GetUserInfo() const;
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 

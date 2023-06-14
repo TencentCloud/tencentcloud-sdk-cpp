@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 树状标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<L1Tag> GetTagSet() const;
 
                     /**
                      * 设置树状标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSet 树状标签信息
+                     * @param _tagSet 树状标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSet(const std::vector<L1Tag>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppearInfo 标签在识别结果中的定位信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AppearInfo GetAppearInfo() const;
 
                     /**
                      * 设置标签在识别结果中的定位信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppearInfo 标签在识别结果中的定位信息
+                     * @param _appearInfo 标签在识别结果中的定位信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppearInfo(const AppearInfo& _appearInfo);
 
                     /**
                      * 判断参数 AppearInfo 是否已赋值
                      * @return AppearInfo 是否已赋值
+                     * 
                      */
                     bool AppearInfoHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取需要添加的nat访问控制规则列表
                      * @return Rules 需要添加的nat访问控制规则列表
+                     * 
                      */
                     std::vector<CreateNatRuleItem> GetRules() const;
 
                     /**
                      * 设置需要添加的nat访问控制规则列表
-                     * @param Rules 需要添加的nat访问控制规则列表
+                     * @param _rules 需要添加的nat访问控制规则列表
+                     * 
                      */
                     void SetRules(const std::vector<CreateNatRuleItem>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
                      * @return From 添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
-                     * @param From 添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
+                     * @param _from 添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 

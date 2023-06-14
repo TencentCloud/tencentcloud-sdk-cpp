@@ -55,6 +55,7 @@ namespace TencentCloud
 <li>Mini：150 x 150 尺寸；</li>
 <li>Small：240 x 240 尺寸；</li>
 <li>Medium：480 x 480 尺寸。</li>
+                     * 
                      */
                     std::string GetDimension() const;
 
@@ -63,34 +64,39 @@ namespace TencentCloud
 <li>Mini：150 x 150 尺寸；</li>
 <li>Small：240 x 240 尺寸；</li>
 <li>Medium：480 x 480 尺寸。</li>
-                     * @param Dimension 尺寸规格，取值有：
+                     * @param _dimension 尺寸规格，取值有：
 <li>Mini：150 x 150 尺寸；</li>
 <li>Small：240 x 240 尺寸；</li>
 <li>Medium：480 x 480 尺寸。</li>
+                     * 
                      */
                     void SetDimension(const std::string& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 
                     /**
                      * 获取下载链接。
                      * @return Url 下载链接。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载链接。
-                     * @param Url 下载链接。
+                     * @param _url 下载链接。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

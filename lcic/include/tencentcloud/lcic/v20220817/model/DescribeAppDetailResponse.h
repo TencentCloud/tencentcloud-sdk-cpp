@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取SDK 对应的AppId 
                      * @return SdkAppId SDK 对应的AppId 
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取应用配置
                      * @return AppConfig 应用配置
+                     * 
                      */
                     AppConfig GetAppConfig() const;
 
                     /**
                      * 判断参数 AppConfig 是否已赋值
                      * @return AppConfig 是否已赋值
+                     * 
                      */
                     bool AppConfigHasBeenSet() const;
 
                     /**
                      * 获取场景配置
                      * @return SceneConfig 场景配置
+                     * 
                      */
                     std::vector<SceneItem> GetSceneConfig() const;
 
                     /**
                      * 判断参数 SceneConfig 是否已赋值
                      * @return SceneConfig 是否已赋值
+                     * 
                      */
                     bool SceneConfigHasBeenSet() const;
 

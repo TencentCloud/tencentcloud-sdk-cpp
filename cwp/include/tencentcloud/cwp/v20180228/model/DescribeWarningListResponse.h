@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取获取告警列表
                      * @return WarningInfoList 获取告警列表
+                     * 
                      */
                     std::vector<WarningInfoObj> GetWarningInfoList() const;
 
                     /**
                      * 判断参数 WarningInfoList 是否已赋值
                      * @return WarningInfoList 是否已赋值
+                     * 
                      */
                     bool WarningInfoListHasBeenSet() const;
 

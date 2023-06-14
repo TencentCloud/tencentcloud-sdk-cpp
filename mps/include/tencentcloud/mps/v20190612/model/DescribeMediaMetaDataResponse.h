@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取媒体元信息。
                      * @return MetaData 媒体元信息。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 

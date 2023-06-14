@@ -56,204 +56,238 @@ namespace TencentCloud
 028:增值税电子专用发票
 010:电子发票（普通发票）
 020:电子发票（增值税专用发票）
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取发票代码
                      * @return InvoiceCode 发票代码
+                     * 
                      */
                     std::string GetInvoiceCode() const;
 
                     /**
                      * 判断参数 InvoiceCode 是否已赋值
                      * @return InvoiceCode 是否已赋值
+                     * 
                      */
                     bool InvoiceCodeHasBeenSet() const;
 
                     /**
                      * 获取发票号码
                      * @return InvoiceNumber 发票号码
+                     * 
                      */
                     std::string GetInvoiceNumber() const;
 
                     /**
                      * 判断参数 InvoiceNumber 是否已赋值
                      * @return InvoiceNumber 是否已赋值
+                     * 
                      */
                     bool InvoiceNumberHasBeenSet() const;
 
                     /**
                      * 获取开票日期
                      * @return IssueDate 开票日期
+                     * 
                      */
                     std::string GetIssueDate() const;
 
                     /**
                      * 判断参数 IssueDate 是否已赋值
                      * @return IssueDate 是否已赋值
+                     * 
                      */
                     bool IssueDateHasBeenSet() const;
 
                     /**
                      * 获取验证码
                      * @return InvoiceCheckCode 验证码
+                     * 
                      */
                     std::string GetInvoiceCheckCode() const;
 
                     /**
                      * 判断参数 InvoiceCheckCode 是否已赋值
                      * @return InvoiceCheckCode 是否已赋值
+                     * 
                      */
                     bool InvoiceCheckCodeHasBeenSet() const;
 
                     /**
                      * 获取机器编号
                      * @return MachineNumber 机器编号
+                     * 
                      */
                     std::string GetMachineNumber() const;
 
                     /**
                      * 判断参数 MachineNumber 是否已赋值
                      * @return MachineNumber 是否已赋值
+                     * 
                      */
                     bool MachineNumberHasBeenSet() const;
 
                     /**
                      * 获取密码区
                      * @return TaxControlCode 密码区
+                     * 
                      */
                     std::string GetTaxControlCode() const;
 
                     /**
                      * 判断参数 TaxControlCode 是否已赋值
                      * @return TaxControlCode 是否已赋值
+                     * 
                      */
                     bool TaxControlCodeHasBeenSet() const;
 
                     /**
                      * 获取购买方
                      * @return Buyer 购买方
+                     * 
                      */
                     VatInvoiceUserInfo GetBuyer() const;
 
                     /**
                      * 判断参数 Buyer 是否已赋值
                      * @return Buyer 是否已赋值
+                     * 
                      */
                     bool BuyerHasBeenSet() const;
 
                     /**
                      * 获取销售方
                      * @return Seller 销售方
+                     * 
                      */
                     VatInvoiceUserInfo GetSeller() const;
 
                     /**
                      * 判断参数 Seller 是否已赋值
                      * @return Seller 是否已赋值
+                     * 
                      */
                     bool SellerHasBeenSet() const;
 
                     /**
                      * 获取价税合计
                      * @return TaxInclusiveTotalAmount 价税合计
+                     * 
                      */
                     std::string GetTaxInclusiveTotalAmount() const;
 
                     /**
                      * 判断参数 TaxInclusiveTotalAmount 是否已赋值
                      * @return TaxInclusiveTotalAmount 是否已赋值
+                     * 
                      */
                     bool TaxInclusiveTotalAmountHasBeenSet() const;
 
                     /**
                      * 获取开票人
                      * @return InvoiceClerk 开票人
+                     * 
                      */
                     std::string GetInvoiceClerk() const;
 
                     /**
                      * 判断参数 InvoiceClerk 是否已赋值
                      * @return InvoiceClerk 是否已赋值
+                     * 
                      */
                     bool InvoiceClerkHasBeenSet() const;
 
                     /**
                      * 获取收款人
                      * @return Payee 收款人
+                     * 
                      */
                     std::string GetPayee() const;
 
                     /**
                      * 判断参数 Payee 是否已赋值
                      * @return Payee 是否已赋值
+                     * 
                      */
                     bool PayeeHasBeenSet() const;
 
                     /**
                      * 获取复核人
                      * @return Checker 复核人
+                     * 
                      */
                     std::string GetChecker() const;
 
                     /**
                      * 判断参数 Checker 是否已赋值
                      * @return Checker 是否已赋值
+                     * 
                      */
                     bool CheckerHasBeenSet() const;
 
                     /**
                      * 获取税额
                      * @return TaxTotalAmount 税额
+                     * 
                      */
                     std::string GetTaxTotalAmount() const;
 
                     /**
                      * 判断参数 TaxTotalAmount 是否已赋值
                      * @return TaxTotalAmount 是否已赋值
+                     * 
                      */
                     bool TaxTotalAmountHasBeenSet() const;
 
                     /**
                      * 获取不含税金额
                      * @return TaxExclusiveTotalAmount 不含税金额
+                     * 
                      */
                     std::string GetTaxExclusiveTotalAmount() const;
 
                     /**
                      * 判断参数 TaxExclusiveTotalAmount 是否已赋值
                      * @return TaxExclusiveTotalAmount 是否已赋值
+                     * 
                      */
                     bool TaxExclusiveTotalAmountHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Note 备注
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 
                     /**
                      * 获取货物或服务清单
                      * @return GoodsInfos 货物或服务清单
+                     * 
                      */
                     std::vector<VatInvoiceGoodsInfo> GetGoodsInfos() const;
 
                     /**
                      * 判断参数 GoodsInfos 是否已赋值
                      * @return GoodsInfos 是否已赋值
+                     * 
                      */
                     bool GoodsInfosHasBeenSet() const;
 

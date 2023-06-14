@@ -55,6 +55,7 @@ namespace TencentCloud
 <li> drop：拦截；</li>
 <li> trans：放行；</li>
 <li> monitor：观察。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 <li> drop：拦截；</li>
 <li> trans：放行；</li>
 <li> monitor：观察。</li>
-                     * @param Action 动作，取值有：
+                     * @param _action 动作，取值有：
 <li> drop：拦截；</li>
 <li> trans：放行；</li>
 <li> monitor：观察。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
                      * @return MatchFrom 根据类型匹配，取值有：
 <li>ip：对ip进行匹配；</li>
 <li>area：对ip所属地区匹配。</li>
+                     * 
                      */
                     std::string GetMatchFrom() const;
 
@@ -90,15 +94,17 @@ namespace TencentCloud
                      * 设置根据类型匹配，取值有：
 <li>ip：对ip进行匹配；</li>
 <li>area：对ip所属地区匹配。</li>
-                     * @param MatchFrom 根据类型匹配，取值有：
+                     * @param _matchFrom 根据类型匹配，取值有：
 <li>ip：对ip进行匹配；</li>
 <li>area：对ip所属地区匹配。</li>
+                     * 
                      */
                     void SetMatchFrom(const std::string& _matchFrom);
 
                     /**
                      * 判断参数 MatchFrom 是否已赋值
                      * @return MatchFrom 是否已赋值
+                     * 
                      */
                     bool MatchFromHasBeenSet() const;
 
@@ -121,6 +127,7 @@ namespace TencentCloud
 <li> equal：等于；</li>
 <li> not_equal：不等于。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperator() const;
 
@@ -134,7 +141,7 @@ namespace TencentCloud
 <li> equal：等于；</li>
 <li> not_equal：不等于。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operator 规则的匹配方式，默认为空代表等于。
+                     * @param _operator 规则的匹配方式，默认为空代表等于。
 取值有：
 <li> is_emty：配置为空；</li>
 <li> not_exists：配置为不存在；</li>
@@ -143,48 +150,56 @@ namespace TencentCloud
 <li> equal：等于；</li>
 <li> not_equal：不等于。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取规则id。仅出参使用。
                      * @return RuleID 规则id。仅出参使用。
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则id。仅出参使用。
-                     * @param RuleID 规则id。仅出参使用。
+                     * @param _ruleID 规则id。仅出参使用。
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
                     /**
                      * 获取更新时间。仅出参使用。
                      * @return UpdateTime 更新时间。仅出参使用。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。仅出参使用。
-                     * @param UpdateTime 更新时间。仅出参使用。
+                     * @param _updateTime 更新时间。仅出参使用。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -197,6 +212,7 @@ namespace TencentCloud
 <li> on：启用；</li>
 <li> off：未启用。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -205,16 +221,18 @@ namespace TencentCloud
 <li> on：启用；</li>
 <li> off：未启用。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 规则启用状态，当返回为null时，为启用。取值有：
+                     * @param _status 规则启用状态，当返回为null时，为启用。取值有：
 <li> on：启用；</li>
 <li> off：未启用。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -223,38 +241,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName 规则名。
+                     * @param _ruleName 规则名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
                      * @return MatchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * 
                      */
                     std::string GetMatchContent() const;
 
                     /**
                      * 设置匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
-                     * @param MatchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * @param _matchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * 
                      */
                     void SetMatchContent(const std::string& _matchContent);
 
                     /**
                      * 判断参数 MatchContent 是否已赋值
                      * @return MatchContent 是否已赋值
+                     * 
                      */
                     bool MatchContentHasBeenSet() const;
 

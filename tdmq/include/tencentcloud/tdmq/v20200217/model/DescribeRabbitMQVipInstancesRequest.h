@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取查询条件过滤器
                      * @return Filters 查询条件过滤器
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置查询条件过滤器
-                     * @param Filters 查询条件过滤器
+                     * @param _filters 查询条件过滤器
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取查询数目上限，默认20
                      * @return Limit 查询数目上限，默认20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询数目上限，默认20
-                     * @param Limit 查询数目上限，默认20
+                     * @param _limit 查询数目上限，默认20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询起始位置
                      * @return Offset 查询起始位置
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询起始位置
-                     * @param Offset 查询起始位置
+                     * @param _offset 查询起始位置
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

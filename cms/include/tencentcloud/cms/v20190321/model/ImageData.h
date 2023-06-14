@@ -73,6 +73,7 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
+                     * 
                      */
                     int64_t GetEvilType() const;
 
@@ -85,7 +86,7 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
-                     * @param EvilType 恶意类型
+                     * @param _evilType 恶意类型
 100：正常 
 20001：政治
 20002：色情 
@@ -93,12 +94,14 @@ namespace TencentCloud
 20007：谩骂 
 20103：性感
 24001：暴恐
+                     * 
                      */
                     void SetEvilType(const int64_t& _evilType);
 
                     /**
                      * 判断参数 EvilType 是否已赋值
                      * @return EvilType 是否已赋值
+                     * 
                      */
                     bool EvilTypeHasBeenSet() const;
 
@@ -107,38 +110,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HotDetect 图片性感详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageHotDetect GetHotDetect() const;
 
                     /**
                      * 设置图片性感详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HotDetect 图片性感详情
+                     * @param _hotDetect 图片性感详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHotDetect(const ImageHotDetect& _hotDetect);
 
                     /**
                      * 判断参数 HotDetect 是否已赋值
                      * @return HotDetect 是否已赋值
+                     * 
                      */
                     bool HotDetectHasBeenSet() const;
 
                     /**
                      * 获取是否恶意 0：正常 1：可疑
                      * @return EvilFlag 是否恶意 0：正常 1：可疑
+                     * 
                      */
                     int64_t GetEvilFlag() const;
 
                     /**
                      * 设置是否恶意 0：正常 1：可疑
-                     * @param EvilFlag 是否恶意 0：正常 1：可疑
+                     * @param _evilFlag 是否恶意 0：正常 1：可疑
+                     * 
                      */
                     void SetEvilFlag(const int64_t& _evilFlag);
 
                     /**
                      * 判断参数 EvilFlag 是否已赋值
                      * @return EvilFlag 是否已赋值
+                     * 
                      */
                     bool EvilFlagHasBeenSet() const;
 
@@ -147,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeDetect 图片二维码详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CodeDetect GetCodeDetect() const;
 
                     /**
                      * 设置图片二维码详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeDetect 图片二维码详情
+                     * @param _codeDetect 图片二维码详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeDetect(const CodeDetect& _codeDetect);
 
                     /**
                      * 判断参数 CodeDetect 是否已赋值
                      * @return CodeDetect 是否已赋值
+                     * 
                      */
                     bool CodeDetectHasBeenSet() const;
 
@@ -169,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolityDetect 图片涉政详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImagePolityDetect GetPolityDetect() const;
 
                     /**
                      * 设置图片涉政详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolityDetect 图片涉政详情
+                     * @param _polityDetect 图片涉政详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolityDetect(const ImagePolityDetect& _polityDetect);
 
                     /**
                      * 判断参数 PolityDetect 是否已赋值
                      * @return PolityDetect 是否已赋值
+                     * 
                      */
                     bool PolityDetectHasBeenSet() const;
 
@@ -191,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IllegalDetect 图片违法详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageIllegalDetect GetIllegalDetect() const;
 
                     /**
                      * 设置图片违法详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IllegalDetect 图片违法详情
+                     * @param _illegalDetect 图片违法详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIllegalDetect(const ImageIllegalDetect& _illegalDetect);
 
                     /**
                      * 判断参数 IllegalDetect 是否已赋值
                      * @return IllegalDetect 是否已赋值
+                     * 
                      */
                     bool IllegalDetectHasBeenSet() const;
 
@@ -213,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PornDetect 图片涉黄详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImagePornDetect GetPornDetect() const;
 
                     /**
                      * 设置图片涉黄详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PornDetect 图片涉黄详情
+                     * @param _pornDetect 图片涉黄详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPornDetect(const ImagePornDetect& _pornDetect);
 
                     /**
                      * 判断参数 PornDetect 是否已赋值
                      * @return PornDetect 是否已赋值
+                     * 
                      */
                     bool PornDetectHasBeenSet() const;
 
@@ -235,20 +256,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerrorDetect 图片暴恐详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageTerrorDetect GetTerrorDetect() const;
 
                     /**
                      * 设置图片暴恐详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TerrorDetect 图片暴恐详情
+                     * @param _terrorDetect 图片暴恐详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTerrorDetect(const ImageTerrorDetect& _terrorDetect);
 
                     /**
                      * 判断参数 TerrorDetect 是否已赋值
                      * @return TerrorDetect 是否已赋值
+                     * 
                      */
                     bool TerrorDetectHasBeenSet() const;
 
@@ -257,20 +281,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OCRDetect 图片OCR详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OCRDetect GetOCRDetect() const;
 
                     /**
                      * 设置图片OCR详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OCRDetect 图片OCR详情
+                     * @param _oCRDetect 图片OCR详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOCRDetect(const OCRDetect& _oCRDetect);
 
                     /**
                      * 判断参数 OCRDetect 是否已赋值
                      * @return OCRDetect 是否已赋值
+                     * 
                      */
                     bool OCRDetectHasBeenSet() const;
 
@@ -279,20 +306,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogoDetect logo详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LogoDetail GetLogoDetect() const;
 
                     /**
                      * 设置logo详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogoDetect logo详情
+                     * @param _logoDetect logo详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogoDetect(const LogoDetail& _logoDetect);
 
                     /**
                      * 判断参数 LogoDetect 是否已赋值
                      * @return LogoDetect 是否已赋值
+                     * 
                      */
                     bool LogoDetectHasBeenSet() const;
 
@@ -301,20 +331,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Similar 图片相似度详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Similar GetSimilar() const;
 
                     /**
                      * 设置图片相似度详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Similar 图片相似度详情
+                     * @param _similar 图片相似度详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSimilar(const Similar& _similar);
 
                     /**
                      * 判断参数 Similar 是否已赋值
                      * @return Similar 是否已赋值
+                     * 
                      */
                     bool SimilarHasBeenSet() const;
 
@@ -323,20 +356,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhoneDetect 手机检测详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PhoneDetect GetPhoneDetect() const;
 
                     /**
                      * 设置手机检测详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneDetect 手机检测详情
+                     * @param _phoneDetect 手机检测详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneDetect(const PhoneDetect& _phoneDetect);
 
                     /**
                      * 判断参数 PhoneDetect 是否已赋值
                      * @return PhoneDetect 是否已赋值
+                     * 
                      */
                     bool PhoneDetectHasBeenSet() const;
 

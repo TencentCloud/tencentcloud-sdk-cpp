@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取群组编号，可在群组列表中获取
                      * @return GroupId 群组编号，可在群组列表中获取
+                     * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置群组编号，可在群组列表中获取
-                     * @param GroupId 群组编号，可在群组列表中获取
+                     * @param _groupId 群组编号，可在群组列表中获取
+                     * 
                      */
                     void SetGroupId(const int64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取交易哈希值，可以从InvokeBcosTrans接口的返回值中解析获取
                      * @return TransHash 交易哈希值，可以从InvokeBcosTrans接口的返回值中解析获取
+                     * 
                      */
                     std::string GetTransHash() const;
 
                     /**
                      * 设置交易哈希值，可以从InvokeBcosTrans接口的返回值中解析获取
-                     * @param TransHash 交易哈希值，可以从InvokeBcosTrans接口的返回值中解析获取
+                     * @param _transHash 交易哈希值，可以从InvokeBcosTrans接口的返回值中解析获取
+                     * 
                      */
                     void SetTransHash(const std::string& _transHash);
 
                     /**
                      * 判断参数 TransHash 是否已赋值
                      * @return TransHash 是否已赋值
+                     * 
                      */
                     bool TransHashHasBeenSet() const;
 

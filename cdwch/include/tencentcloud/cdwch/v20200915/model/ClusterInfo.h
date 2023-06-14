@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName vcluster名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置vcluster名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName vcluster名字
+                     * @param _clusterName vcluster名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeIps 当前cluster的IP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNodeIps() const;
 
                     /**
                      * 设置当前cluster的IP列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeIps 当前cluster的IP列表
+                     * @param _nodeIps 当前cluster的IP列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeIps(const std::vector<std::string>& _nodeIps);
 
                     /**
                      * 判断参数 NodeIps 是否已赋值
                      * @return NodeIps 是否已赋值
+                     * 
                      */
                     bool NodeIpsHasBeenSet() const;
 

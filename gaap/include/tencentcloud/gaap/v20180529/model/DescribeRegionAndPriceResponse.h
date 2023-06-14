@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取源站区域总数
                      * @return TotalCount 源站区域总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取源站区域详情列表
                      * @return DestRegionSet 源站区域详情列表
+                     * 
                      */
                     std::vector<RegionDetail> GetDestRegionSet() const;
 
                     /**
                      * 判断参数 DestRegionSet 是否已赋值
                      * @return DestRegionSet 是否已赋值
+                     * 
                      */
                     bool DestRegionSetHasBeenSet() const;
 
                     /**
                      * 获取通道带宽费用梯度价格
                      * @return BandwidthUnitPrice 通道带宽费用梯度价格
+                     * 
                      */
                     std::vector<BandwidthPriceGradient> GetBandwidthUnitPrice() const;
 
                     /**
                      * 判断参数 BandwidthUnitPrice 是否已赋值
                      * @return BandwidthUnitPrice 是否已赋值
+                     * 
                      */
                     bool BandwidthUnitPriceHasBeenSet() const;
 
@@ -88,12 +94,14 @@ USD 美元
                      * @return Currency 带宽价格货币类型：
 CNY 人民币
 USD 美元
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 

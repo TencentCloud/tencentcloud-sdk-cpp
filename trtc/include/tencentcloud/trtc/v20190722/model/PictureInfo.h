@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取图片长度
                      * @return Height 图片长度
+                     * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置图片长度
-                     * @param Height 图片长度
+                     * @param _height 图片长度
+                     * 
                      */
                     void SetHeight(const uint64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取图片宽度
                      * @return Width 图片宽度
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置图片宽度
-                     * @param Width 图片宽度
+                     * @param _width 图片宽度
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取显示位置x轴方向
                      * @return XPosition 显示位置x轴方向
+                     * 
                      */
                     uint64_t GetXPosition() const;
 
                     /**
                      * 设置显示位置x轴方向
-                     * @param XPosition 显示位置x轴方向
+                     * @param _xPosition 显示位置x轴方向
+                     * 
                      */
                     void SetXPosition(const uint64_t& _xPosition);
 
                     /**
                      * 判断参数 XPosition 是否已赋值
                      * @return XPosition 是否已赋值
+                     * 
                      */
                     bool XPositionHasBeenSet() const;
 
                     /**
                      * 获取显示位置y轴方向
                      * @return YPosition 显示位置y轴方向
+                     * 
                      */
                     uint64_t GetYPosition() const;
 
                     /**
                      * 设置显示位置y轴方向
-                     * @param YPosition 显示位置y轴方向
+                     * @param _yPosition 显示位置y轴方向
+                     * 
                      */
                     void SetYPosition(const uint64_t& _yPosition);
 
                     /**
                      * 判断参数 YPosition 是否已赋值
                      * @return YPosition 是否已赋值
+                     * 
                      */
                     bool YPositionHasBeenSet() const;
 
                     /**
                      * 获取应用id
                      * @return SdkAppId 应用id
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用id
-                     * @param SdkAppId 应用id
+                     * @param _sdkAppId 应用id
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取图片id
                      * @return PictureId 图片id
+                     * 
                      */
                     uint64_t GetPictureId() const;
 
                     /**
                      * 设置图片id
-                     * @param PictureId 图片id
+                     * @param _pictureId 图片id
+                     * 
                      */
                     void SetPictureId(const uint64_t& _pictureId);
 
                     /**
                      * 判断参数 PictureId 是否已赋值
                      * @return PictureId 是否已赋值
+                     * 
                      */
                     bool PictureIdHasBeenSet() const;
 

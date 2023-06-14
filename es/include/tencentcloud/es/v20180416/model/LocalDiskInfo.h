@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>
                      * @return LocalDiskType 本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>
+                     * 
                      */
                     std::string GetLocalDiskType() const;
 
                     /**
                      * 设置本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>
-                     * @param LocalDiskType 本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>
+                     * @param _localDiskType 本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>
+                     * 
                      */
                     void SetLocalDiskType(const std::string& _localDiskType);
 
                     /**
                      * 判断参数 LocalDiskType 是否已赋值
                      * @return LocalDiskType 是否已赋值
+                     * 
                      */
                     bool LocalDiskTypeHasBeenSet() const;
 
                     /**
                      * 获取本地盘单盘大小
                      * @return LocalDiskSize 本地盘单盘大小
+                     * 
                      */
                     uint64_t GetLocalDiskSize() const;
 
                     /**
                      * 设置本地盘单盘大小
-                     * @param LocalDiskSize 本地盘单盘大小
+                     * @param _localDiskSize 本地盘单盘大小
+                     * 
                      */
                     void SetLocalDiskSize(const uint64_t& _localDiskSize);
 
                     /**
                      * 判断参数 LocalDiskSize 是否已赋值
                      * @return LocalDiskSize 是否已赋值
+                     * 
                      */
                     bool LocalDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取本地盘块数
                      * @return LocalDiskCount 本地盘块数
+                     * 
                      */
                     uint64_t GetLocalDiskCount() const;
 
                     /**
                      * 设置本地盘块数
-                     * @param LocalDiskCount 本地盘块数
+                     * @param _localDiskCount 本地盘块数
+                     * 
                      */
                     void SetLocalDiskCount(const uint64_t& _localDiskCount);
 
                     /**
                      * 判断参数 LocalDiskCount 是否已赋值
                      * @return LocalDiskCount 是否已赋值
+                     * 
                      */
                     bool LocalDiskCountHasBeenSet() const;
 

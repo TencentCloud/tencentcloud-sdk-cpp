@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取模版类型 1.系统模版 2.自定义模版
                      * @return Type 模版类型 1.系统模版 2.自定义模版
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置模版类型 1.系统模版 2.自定义模版
-                     * @param Type 模版类型 1.系统模版 2.自定义模版
+                     * @param _type 模版类型 1.系统模版 2.自定义模版
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取1.常量 2.离线表级 2.离线字段级
                      * @return SourceObjectType 1.常量 2.离线表级 2.离线字段级
+                     * 
                      */
                     uint64_t GetSourceObjectType() const;
 
                     /**
                      * 设置1.常量 2.离线表级 2.离线字段级
-                     * @param SourceObjectType 1.常量 2.离线表级 2.离线字段级
+                     * @param _sourceObjectType 1.常量 2.离线表级 2.离线字段级
+                     * 
                      */
                     void SetSourceObjectType(const uint64_t& _sourceObjectType);
 
                     /**
                      * 判断参数 SourceObjectType 是否已赋值
                      * @return SourceObjectType 是否已赋值
+                     * 
                      */
                     bool SourceObjectTypeHasBeenSet() const;
 
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取源端对应的引擎类型
                      * @return SourceEngineTypes 源端对应的引擎类型
+                     * 
                      */
                     std::vector<uint64_t> GetSourceEngineTypes() const;
 
                     /**
                      * 设置源端对应的引擎类型
-                     * @param SourceEngineTypes 源端对应的引擎类型
+                     * @param _sourceEngineTypes 源端对应的引擎类型
+                     * 
                      */
                     void SetSourceEngineTypes(const std::vector<uint64_t>& _sourceEngineTypes);
 
                     /**
                      * 判断参数 SourceEngineTypes 是否已赋值
                      * @return SourceEngineTypes 是否已赋值
+                     * 
                      */
                     bool SourceEngineTypesHasBeenSet() const;
 

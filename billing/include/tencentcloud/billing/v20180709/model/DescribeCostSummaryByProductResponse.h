@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取数据是否准备好，0未准备好，1准备好
                      * @return Ready 数据是否准备好，0未准备好，1准备好
+                     * 
                      */
                     uint64_t GetReady() const;
 
                     /**
                      * 判断参数 Ready 是否已赋值
                      * @return Ready 是否已赋值
+                     * 
                      */
                     bool ReadyHasBeenSet() const;
 
                     /**
                      * 获取消耗详情
                      * @return Total 消耗详情
+                     * 
                      */
                     ConsumptionSummaryTotal GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 消耗按产品汇总详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordNum 记录数量，NeedRecordNum为0是返回null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRecordNum() const;
 
                     /**
                      * 判断参数 RecordNum 是否已赋值
                      * @return RecordNum 是否已赋值
+                     * 
                      */
                     bool RecordNumHasBeenSet() const;
 

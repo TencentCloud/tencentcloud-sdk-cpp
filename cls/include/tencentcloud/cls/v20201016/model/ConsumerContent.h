@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableTag 是否投递 TAG 信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableTag() const;
 
                     /**
                      * 设置是否投递 TAG 信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableTag 是否投递 TAG 信息
+                     * @param _enableTag 是否投递 TAG 信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableTag(const bool& _enableTag);
 
                     /**
                      * 判断参数 EnableTag 是否已赋值
                      * @return EnableTag 是否已赋值
+                     * 
                      */
                     bool EnableTagHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMetaFields() const;
 
                     /**
                      * 设置需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
+                     * @param _metaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaFields(const std::vector<std::string>& _metaFields);
 
                     /**
                      * 判断参数 MetaFields 是否已赋值
                      * @return MetaFields 是否已赋值
+                     * 
                      */
                     bool MetaFieldsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetTagJsonNotTiled() const;
 
                     /**
                      * 设置当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+                     * @param _tagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagJsonNotTiled(const bool& _tagJsonNotTiled);
 
                     /**
                      * 判断参数 TagJsonNotTiled 是否已赋值
                      * @return TagJsonNotTiled 是否已赋值
+                     * 
                      */
                     bool TagJsonNotTiledHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimestampAccuracy() const;
 
                     /**
                      * 设置投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+                     * @param _timestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimestampAccuracy(const int64_t& _timestampAccuracy);
 
                     /**
                      * 判断参数 TimestampAccuracy 是否已赋值
                      * @return TimestampAccuracy 是否已赋值
+                     * 
                      */
                     bool TimestampAccuracyHasBeenSet() const;
 

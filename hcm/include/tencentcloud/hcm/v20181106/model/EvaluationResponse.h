@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取图片唯一标识，一张图片一个SessionId；
                      * @return SessionId 图片唯一标识，一张图片一个SessionId；
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
@@ -61,24 +63,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 识别出的算式信息；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Item> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取任务 id，用于查询接口
                      * @return TaskId 任务 id，用于查询接口
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

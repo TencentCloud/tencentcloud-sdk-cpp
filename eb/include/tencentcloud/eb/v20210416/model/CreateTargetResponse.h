@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取目标ID
                      * @return TargetId 目标ID
+                     * 
                      */
                     std::string GetTargetId() const;
 
                     /**
                      * 判断参数 TargetId 是否已赋值
                      * @return TargetId 是否已赋值
+                     * 
                      */
                     bool TargetIdHasBeenSet() const;
 

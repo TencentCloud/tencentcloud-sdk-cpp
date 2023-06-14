@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayCurrency 支付币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayCurrency() const;
 
                     /**
                      * 设置支付币种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayCurrency 支付币种
+                     * @param _payCurrency 支付币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayCurrency(const std::string& _payCurrency);
 
                     /**
                      * 判断参数 PayCurrency 是否已赋值
                      * @return PayCurrency 是否已赋值
+                     * 
                      */
                     bool PayCurrencyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayIcon 支付图标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayIcon() const;
 
                     /**
                      * 设置支付图标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayIcon 支付图标
+                     * @param _payIcon 支付图标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayIcon(const std::string& _payIcon);
 
                     /**
                      * 判断参数 PayIcon 是否已赋值
                      * @return PayIcon 是否已赋值
+                     * 
                      */
                     bool PayIconHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayInternalName 支付名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayInternalName() const;
 
                     /**
                      * 设置支付名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayInternalName 支付名称
+                     * @param _payInternalName 支付名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayInternalName(const std::string& _payInternalName);
 
                     /**
                      * 判断参数 PayInternalName 是否已赋值
                      * @return PayInternalName 是否已赋值
+                     * 
                      */
                     bool PayInternalNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayName 支付简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayName() const;
 
                     /**
                      * 设置支付简称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayName 支付简称
+                     * @param _payName 支付简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayName(const std::string& _payName);
 
                     /**
                      * 判断参数 PayName 是否已赋值
                      * @return PayName 是否已赋值
+                     * 
                      */
                     bool PayNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaySplitRefund 是否支持退款
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPaySplitRefund() const;
 
                     /**
                      * 设置是否支持退款
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaySplitRefund 是否支持退款
+                     * @param _paySplitRefund 是否支持退款
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPaySplitRefund(const std::string& _paySplitRefund);
 
                     /**
                      * 判断参数 PaySplitRefund 是否已赋值
                      * @return PaySplitRefund 是否已赋值
+                     * 
                      */
                     bool PaySplitRefundHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayTag 支付标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayTag() const;
 
                     /**
                      * 设置支付标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayTag 支付标签
+                     * @param _payTag 支付标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayTag(const std::string& _payTag);
 
                     /**
                      * 判断参数 PayTag 是否已赋值
                      * @return PayTag 是否已赋值
+                     * 
                      */
                     bool PayTagHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayTicketIcon 支付凭证图标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayTicketIcon() const;
 
                     /**
                      * 设置支付凭证图标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayTicketIcon 支付凭证图标
+                     * @param _payTicketIcon 支付凭证图标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayTicketIcon(const std::string& _payTicketIcon);
 
                     /**
                      * 判断参数 PayTicketIcon 是否已赋值
                      * @return PayTicketIcon 是否已赋值
+                     * 
                      */
                     bool PayTicketIconHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayType 支付类型，逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayType() const;
 
                     /**
                      * 设置支付类型，逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayType 支付类型，逗号分隔
+                     * @param _payType 支付类型，逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayType(const std::string& _payType);
 
                     /**
                      * 判断参数 PayType 是否已赋值
                      * @return PayType 是否已赋值
+                     * 
                      */
                     bool PayTypeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TicketName 凭证名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTicketName() const;
 
                     /**
                      * 设置凭证名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TicketName 凭证名称
+                     * @param _ticketName 凭证名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTicketName(const std::string& _ticketName);
 
                     /**
                      * 判断参数 TicketName 是否已赋值
                      * @return TicketName 是否已赋值
+                     * 
                      */
                     bool TicketNameHasBeenSet() const;
 

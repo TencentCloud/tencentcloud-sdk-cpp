@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取单元化规则ID
                      * @return Id 单元化规则ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置单元化规则ID
-                     * @param Id 单元化规则ID
+                     * @param _id 单元化规则ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

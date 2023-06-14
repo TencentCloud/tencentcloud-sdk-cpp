@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取查询起始时间
                      * @return FromTime 查询起始时间
+                     * 
                      */
                     std::string GetFromTime() const;
 
                     /**
                      * 设置查询起始时间
-                     * @param FromTime 查询起始时间
+                     * @param _fromTime 查询起始时间
+                     * 
                      */
                     void SetFromTime(const std::string& _fromTime);
 
                     /**
                      * 判断参数 FromTime 是否已赋值
                      * @return FromTime 是否已赋值
+                     * 
                      */
                     bool FromTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间
                      * @return ToTime 查询结束时间
+                     * 
                      */
                     std::string GetToTime() const;
 
                     /**
                      * 设置查询结束时间
-                     * @param ToTime 查询结束时间
+                     * @param _toTime 查询结束时间
+                     * 
                      */
                     void SetToTime(const std::string& _toTime);
 
                     /**
                      * 判断参数 ToTime 是否已赋值
                      * @return ToTime 是否已赋值
+                     * 
                      */
                     bool ToTimeHasBeenSet() const;
 
                     /**
                      * 获取需要查询的域名，当前用户所有域名可以不传
                      * @return Domain 需要查询的域名，当前用户所有域名可以不传
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要查询的域名，当前用户所有域名可以不传
-                     * @param Domain 需要查询的域名，当前用户所有域名可以不传
+                     * @param _domain 需要查询的域名，当前用户所有域名可以不传
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取只有两个值有效，sparta-waf，clb-waf，不传则不过滤
                      * @return Edition 只有两个值有效，sparta-waf，clb-waf，不传则不过滤
+                     * 
                      */
                     std::string GetEdition() const;
 
                     /**
                      * 设置只有两个值有效，sparta-waf，clb-waf，不传则不过滤
-                     * @param Edition 只有两个值有效，sparta-waf，clb-waf，不传则不过滤
+                     * @param _edition 只有两个值有效，sparta-waf，clb-waf，不传则不过滤
+                     * 
                      */
                     void SetEdition(const std::string& _edition);
 
                     /**
                      * 判断参数 Edition 是否已赋值
                      * @return Edition 是否已赋值
+                     * 
                      */
                     bool EditionHasBeenSet() const;
 
                     /**
                      * 获取WAF实例ID，不传则不过滤
                      * @return InstanceID WAF实例ID，不传则不过滤
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置WAF实例ID，不传则不过滤
-                     * @param InstanceID WAF实例ID，不传则不过滤
+                     * @param _instanceID WAF实例ID，不传则不过滤
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 
@@ -145,6 +160,7 @@ down-下行峰值带宽
 up-上行峰值带宽
 attack-Web攻击总数
 cc-CC攻击总数趋势图
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -155,18 +171,20 @@ down-下行峰值带宽
 up-上行峰值带宽
 attack-Web攻击总数
 cc-CC攻击总数趋势图
-                     * @param MetricName 五个值可选：
+                     * @param _metricName 五个值可选：
 access-峰值qps
 down-下行峰值带宽
 up-上行峰值带宽
 attack-Web攻击总数
 cc-CC攻击总数趋势图
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 

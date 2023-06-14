@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取主播Id
                      * @return AnchorId 主播Id
+                     * 
                      */
                     std::string GetAnchorId() const;
 
                     /**
                      * 设置主播Id
-                     * @param AnchorId 主播Id
+                     * @param _anchorId 主播Id
+                     * 
                      */
                     void SetAnchorId(const std::string& _anchorId);
 
                     /**
                      * 判断参数 AnchorId 是否已赋值
                      * @return AnchorId 是否已赋值
+                     * 
                      */
                     bool AnchorIdHasBeenSet() const;
 

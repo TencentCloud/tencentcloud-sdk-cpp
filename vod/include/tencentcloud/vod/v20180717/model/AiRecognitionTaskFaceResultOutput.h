@@ -52,56 +52,65 @@ namespace TencentCloud
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
                      * @return ResultSet 智能人脸识别结果集。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
+                     * 
                      */
                     std::vector<AiRecognitionTaskFaceResultItem> GetResultSet() const;
 
                     /**
                      * 设置智能人脸识别结果集。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
-                     * @param ResultSet 智能人脸识别结果集。
+                     * @param _resultSet 智能人脸识别结果集。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
+                     * 
                      */
                     void SetResultSet(const std::vector<AiRecognitionTaskFaceResultItem>& _resultSet);
 
                     /**
                      * 判断参数 ResultSet 是否已赋值
                      * @return ResultSet 是否已赋值
+                     * 
                      */
                     bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取智能人脸识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
                      * @return ResultSetFileUrl 智能人脸识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * 
                      */
                     std::string GetResultSetFileUrl() const;
 
                     /**
                      * 设置智能人脸识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
-                     * @param ResultSetFileUrl 智能人脸识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * @param _resultSetFileUrl 智能人脸识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * 
                      */
                     void SetResultSetFileUrl(const std::string& _resultSetFileUrl);
 
                     /**
                      * 判断参数 ResultSetFileUrl 是否已赋值
                      * @return ResultSetFileUrl 是否已赋值
+                     * 
                      */
                     bool ResultSetFileUrlHasBeenSet() const;
 
                     /**
                      * 获取智能人脸识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return ResultSetFileUrlExpireTime 智能人脸识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetResultSetFileUrlExpireTime() const;
 
                     /**
                      * 设置智能人脸识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param ResultSetFileUrlExpireTime 智能人脸识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _resultSetFileUrlExpireTime 智能人脸识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetResultSetFileUrlExpireTime(const std::string& _resultSetFileUrlExpireTime);
 
                     /**
                      * 判断参数 ResultSetFileUrlExpireTime 是否已赋值
                      * @return ResultSetFileUrlExpireTime 是否已赋值
+                     * 
                      */
                     bool ResultSetFileUrlExpireTimeHasBeenSet() const;
 

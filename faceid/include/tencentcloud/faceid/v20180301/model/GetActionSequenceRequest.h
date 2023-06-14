@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取默认不需要使用
                      * @return ActionType 默认不需要使用
+                     * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置默认不需要使用
-                     * @param ActionType 默认不需要使用
+                     * @param _actionType 默认不需要使用
+                     * 
                      */
                     void SetActionType(const std::string& _actionType);
 
                     /**
                      * 判断参数 ActionType 是否已赋值
                      * @return ActionType 是否已赋值
+                     * 
                      */
                     bool ActionTypeHasBeenSet() const;
 

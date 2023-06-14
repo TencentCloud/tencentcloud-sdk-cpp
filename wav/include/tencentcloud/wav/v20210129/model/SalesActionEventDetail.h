@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取事件码
                      * @return EventCode 事件码
+                     * 
                      */
                     std::string GetEventCode() const;
 
                     /**
                      * 设置事件码
-                     * @param EventCode 事件码
+                     * @param _eventCode 事件码
+                     * 
                      */
                     void SetEventCode(const std::string& _eventCode);
 
                     /**
                      * 判断参数 EventCode 是否已赋值
                      * @return EventCode 是否已赋值
+                     * 
                      */
                     bool EventCodeHasBeenSet() const;
 
                     /**
                      * 获取事件类型
                      * @return EventType 事件类型
+                     * 
                      */
                     int64_t GetEventType() const;
 
                     /**
                      * 设置事件类型
-                     * @param EventType 事件类型
+                     * @param _eventType 事件类型
+                     * 
                      */
                     void SetEventType(const int64_t& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取事件来源
                      * @return EventSource 事件来源
+                     * 
                      */
                     int64_t GetEventSource() const;
 
                     /**
                      * 设置事件来源
-                     * @param EventSource 事件来源
+                     * @param _eventSource 事件来源
+                     * 
                      */
                     void SetEventSource(const int64_t& _eventSource);
 
                     /**
                      * 判断参数 EventSource 是否已赋值
                      * @return EventSource 是否已赋值
+                     * 
                      */
                     bool EventSourceHasBeenSet() const;
 
                     /**
                      * 获取销售顾问id
                      * @return SalesId 销售顾问id
+                     * 
                      */
                     uint64_t GetSalesId() const;
 
                     /**
                      * 设置销售顾问id
-                     * @param SalesId 销售顾问id
+                     * @param _salesId 销售顾问id
+                     * 
                      */
                     void SetSalesId(const uint64_t& _salesId);
 
                     /**
                      * 判断参数 SalesId 是否已赋值
                      * @return SalesId 是否已赋值
+                     * 
                      */
                     bool SalesIdHasBeenSet() const;
 
                     /**
                      * 获取素材类型
                      * @return MaterialType 素材类型
+                     * 
                      */
                     int64_t GetMaterialType() const;
 
                     /**
                      * 设置素材类型
-                     * @param MaterialType 素材类型
+                     * @param _materialType 素材类型
+                     * 
                      */
                     void SetMaterialType(const int64_t& _materialType);
 
                     /**
                      * 判断参数 MaterialType 是否已赋值
                      * @return MaterialType 是否已赋值
+                     * 
                      */
                     bool MaterialTypeHasBeenSet() const;
 
                     /**
                      * 获取素材编号id
                      * @return MaterialId 素材编号id
+                     * 
                      */
                     uint64_t GetMaterialId() const;
 
                     /**
                      * 设置素材编号id
-                     * @param MaterialId 素材编号id
+                     * @param _materialId 素材编号id
+                     * 
                      */
                     void SetMaterialId(const uint64_t& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取事件上报时间，单位：秒
                      * @return EventTime 事件上报时间，单位：秒
+                     * 
                      */
                     uint64_t GetEventTime() const;
 
                     /**
                      * 设置事件上报时间，单位：秒
-                     * @param EventTime 事件上报时间，单位：秒
+                     * @param _eventTime 事件上报时间，单位：秒
+                     * 
                      */
                     void SetEventTime(const uint64_t& _eventTime);
 
                     /**
                      * 判断参数 EventTime 是否已赋值
                      * @return EventTime 是否已赋值
+                     * 
                      */
                     bool EventTimeHasBeenSet() const;
 

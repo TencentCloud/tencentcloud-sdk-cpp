@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterDesc 集群描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterDesc() const;
 
                     /**
                      * 设置集群描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterDesc 集群描述
+                     * @param _clusterDesc 集群描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterDesc(const std::string& _clusterDesc);
 
                     /**
                      * 判断参数 ClusterDesc 是否已赋值
                      * @return ClusterDesc 是否已赋值
+                     * 
                      */
                     bool ClusterDescHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterType 集群类型
+                     * @param _clusterType 集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterType(const std::string& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 集群所属私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置集群所属私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 集群所属私有网络ID
+                     * @param _vpcId 集群所属私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 集群状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterStatus() const;
 
                     /**
                      * 设置集群状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterStatus 集群状态
+                     * @param _clusterStatus 集群状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterStatus(const std::string& _clusterStatus);
 
                     /**
                      * 判断参数 ClusterStatus 是否已赋值
                      * @return ClusterStatus 是否已赋值
+                     * 
                      */
                     bool ClusterStatusHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterCIDR 集群CIDR
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterCIDR() const;
 
                     /**
                      * 设置集群CIDR
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterCIDR 集群CIDR
+                     * @param _clusterCIDR 集群CIDR
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterCIDR(const std::string& _clusterCIDR);
 
                     /**
                      * 判断参数 ClusterCIDR 是否已赋值
                      * @return ClusterCIDR 是否已赋值
+                     * 
                      */
                     bool ClusterCIDRHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterTotalCpu 集群总CPU，单位: 核
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetClusterTotalCpu() const;
 
                     /**
                      * 设置集群总CPU，单位: 核
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterTotalCpu 集群总CPU，单位: 核
+                     * @param _clusterTotalCpu 集群总CPU，单位: 核
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterTotalCpu(const double& _clusterTotalCpu);
 
                     /**
                      * 判断参数 ClusterTotalCpu 是否已赋值
                      * @return ClusterTotalCpu 是否已赋值
+                     * 
                      */
                     bool ClusterTotalCpuHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterTotalMem 集群总内存，单位: G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetClusterTotalMem() const;
 
                     /**
                      * 设置集群总内存，单位: G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterTotalMem 集群总内存，单位: G
+                     * @param _clusterTotalMem 集群总内存，单位: G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterTotalMem(const double& _clusterTotalMem);
 
                     /**
                      * 判断参数 ClusterTotalMem 是否已赋值
                      * @return ClusterTotalMem 是否已赋值
+                     * 
                      */
                     bool ClusterTotalMemHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterUsedCpu 集群已使用CPU，单位: 核
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetClusterUsedCpu() const;
 
                     /**
                      * 设置集群已使用CPU，单位: 核
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterUsedCpu 集群已使用CPU，单位: 核
+                     * @param _clusterUsedCpu 集群已使用CPU，单位: 核
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterUsedCpu(const double& _clusterUsedCpu);
 
                     /**
                      * 判断参数 ClusterUsedCpu 是否已赋值
                      * @return ClusterUsedCpu 是否已赋值
+                     * 
                      */
                     bool ClusterUsedCpuHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterUsedMem 集群已使用内存，单位: G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetClusterUsedMem() const;
 
                     /**
                      * 设置集群已使用内存，单位: G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterUsedMem 集群已使用内存，单位: G
+                     * @param _clusterUsedMem 集群已使用内存，单位: G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterUsedMem(const double& _clusterUsedMem);
 
                     /**
                      * 判断参数 ClusterUsedMem 是否已赋值
                      * @return ClusterUsedMem 是否已赋值
+                     * 
                      */
                     bool ClusterUsedMemHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 集群机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置集群机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceCount 集群机器实例数量
+                     * @param _instanceCount 集群机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunInstanceCount 集群可用的机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
                      * 设置集群可用的机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RunInstanceCount 集群可用的机器实例数量
+                     * @param _runInstanceCount 集群可用的机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRunInstanceCount(const int64_t& _runInstanceCount);
 
                     /**
                      * 判断参数 RunInstanceCount 是否已赋值
                      * @return RunInstanceCount 是否已赋值
+                     * 
                      */
                     bool RunInstanceCountHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormalInstanceCount 集群正常状态的机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNormalInstanceCount() const;
 
                     /**
                      * 设置集群正常状态的机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NormalInstanceCount 集群正常状态的机器实例数量
+                     * @param _normalInstanceCount 集群正常状态的机器实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNormalInstanceCount(const int64_t& _normalInstanceCount);
 
                     /**
                      * 判断参数 NormalInstanceCount 是否已赋值
                      * @return NormalInstanceCount 是否已赋值
+                     * 
                      */
                     bool NormalInstanceCountHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteFlag 删除标记：true：可以删除；false：不可删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDeleteFlag() const;
 
                     /**
                      * 设置删除标记：true：可以删除；false：不可删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeleteFlag 删除标记：true：可以删除；false：不可删除
+                     * @param _deleteFlag 删除标记：true：可以删除；false：不可删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleteFlag(const bool& _deleteFlag);
 
                     /**
                      * 判断参数 DeleteFlag 是否已赋值
                      * @return DeleteFlag 是否已赋值
+                     * 
                      */
                     bool DeleteFlagHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TsfRegionId 集群所属TSF地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTsfRegionId() const;
 
                     /**
                      * 设置集群所属TSF地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TsfRegionId 集群所属TSF地域ID
+                     * @param _tsfRegionId 集群所属TSF地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTsfRegionId(const std::string& _tsfRegionId);
 
                     /**
                      * 判断参数 TsfRegionId 是否已赋值
                      * @return TsfRegionId 是否已赋值
+                     * 
                      */
                     bool TsfRegionIdHasBeenSet() const;
 
@@ -448,20 +502,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TsfRegionName 集群所属TSF地域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTsfRegionName() const;
 
                     /**
                      * 设置集群所属TSF地域名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TsfRegionName 集群所属TSF地域名称
+                     * @param _tsfRegionName 集群所属TSF地域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTsfRegionName(const std::string& _tsfRegionName);
 
                     /**
                      * 判断参数 TsfRegionName 是否已赋值
                      * @return TsfRegionName 是否已赋值
+                     * 
                      */
                     bool TsfRegionNameHasBeenSet() const;
 
@@ -470,20 +527,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TsfZoneId 集群所属TSF可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTsfZoneId() const;
 
                     /**
                      * 设置集群所属TSF可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TsfZoneId 集群所属TSF可用区ID
+                     * @param _tsfZoneId 集群所属TSF可用区ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTsfZoneId(const std::string& _tsfZoneId);
 
                     /**
                      * 判断参数 TsfZoneId 是否已赋值
                      * @return TsfZoneId 是否已赋值
+                     * 
                      */
                     bool TsfZoneIdHasBeenSet() const;
 
@@ -492,20 +552,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TsfZoneName 集群所属TSF可用区名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTsfZoneName() const;
 
                     /**
                      * 设置集群所属TSF可用区名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TsfZoneName 集群所属TSF可用区名称
+                     * @param _tsfZoneName 集群所属TSF可用区名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTsfZoneName(const std::string& _tsfZoneName);
 
                     /**
                      * 判断参数 TsfZoneName 是否已赋值
                      * @return TsfZoneName 是否已赋值
+                     * 
                      */
                     bool TsfZoneNameHasBeenSet() const;
 
@@ -514,20 +577,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteFlagReason 集群不可删除的原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeleteFlagReason() const;
 
                     /**
                      * 设置集群不可删除的原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeleteFlagReason 集群不可删除的原因
+                     * @param _deleteFlagReason 集群不可删除的原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleteFlagReason(const std::string& _deleteFlagReason);
 
                     /**
                      * 判断参数 DeleteFlagReason 是否已赋值
                      * @return DeleteFlagReason 是否已赋值
+                     * 
                      */
                     bool DeleteFlagReasonHasBeenSet() const;
 
@@ -536,20 +602,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterLimitCpu 集群最大CPU限制，单位：核
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetClusterLimitCpu() const;
 
                     /**
                      * 设置集群最大CPU限制，单位：核
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterLimitCpu 集群最大CPU限制，单位：核
+                     * @param _clusterLimitCpu 集群最大CPU限制，单位：核
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterLimitCpu(const double& _clusterLimitCpu);
 
                     /**
                      * 判断参数 ClusterLimitCpu 是否已赋值
                      * @return ClusterLimitCpu 是否已赋值
+                     * 
                      */
                     bool ClusterLimitCpuHasBeenSet() const;
 
@@ -558,20 +627,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterLimitMem 集群最大内存限制，单位：G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetClusterLimitMem() const;
 
                     /**
                      * 设置集群最大内存限制，单位：G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterLimitMem 集群最大内存限制，单位：G
+                     * @param _clusterLimitMem 集群最大内存限制，单位：G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterLimitMem(const double& _clusterLimitMem);
 
                     /**
                      * 判断参数 ClusterLimitMem 是否已赋值
                      * @return ClusterLimitMem 是否已赋值
+                     * 
                      */
                     bool ClusterLimitMemHasBeenSet() const;
 
@@ -580,20 +652,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunServiceInstanceCount 集群可用的服务实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunServiceInstanceCount() const;
 
                     /**
                      * 设置集群可用的服务实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RunServiceInstanceCount 集群可用的服务实例数量
+                     * @param _runServiceInstanceCount 集群可用的服务实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRunServiceInstanceCount(const int64_t& _runServiceInstanceCount);
 
                     /**
                      * 判断参数 RunServiceInstanceCount 是否已赋值
                      * @return RunServiceInstanceCount 是否已赋值
+                     * 
                      */
                     bool RunServiceInstanceCountHasBeenSet() const;
 
@@ -602,20 +677,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 集群所属子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置集群所属子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 集群所属子网ID
+                     * @param _subnetId 集群所属子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -624,20 +702,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationInfo 返回给前端的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OperationInfo GetOperationInfo() const;
 
                     /**
                      * 设置返回给前端的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperationInfo 返回给前端的控制信息
+                     * @param _operationInfo 返回给前端的控制信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperationInfo(const OperationInfo& _operationInfo);
 
                     /**
                      * 判断参数 OperationInfo 是否已赋值
                      * @return OperationInfo 是否已赋值
+                     * 
                      */
                     bool OperationInfoHasBeenSet() const;
 
@@ -646,20 +727,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置集群版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterVersion 集群版本
+                     * @param _clusterVersion 集群版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
 
                     /**
                      * 判断参数 ClusterVersion 是否已赋值
                      * @return ClusterVersion 是否已赋值
+                     * 
                      */
                     bool ClusterVersionHasBeenSet() const;
 

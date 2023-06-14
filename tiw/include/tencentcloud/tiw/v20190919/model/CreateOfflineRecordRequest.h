@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取客户的SdkAppId
                      * @return SdkAppId 客户的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置客户的SdkAppId
-                     * @param SdkAppId 客户的SdkAppId
+                     * @param _sdkAppId 客户的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取录制任务对应的房间号
                      * @return RoomId 录制任务对应的房间号
+                     * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
                      * 设置录制任务对应的房间号
-                     * @param RoomId 录制任务对应的房间号
+                     * @param _roomId 录制任务对应的房间号
+                     * 
                      */
                     void SetRoomId(const int64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取录制任务对应的群组Id
                      * @return GroupId 录制任务对应的群组Id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置录制任务对应的群组Id
-                     * @param GroupId 录制任务对应的群组Id
+                     * @param _groupId 录制任务对应的群组Id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -103,38 +112,44 @@ namespace TencentCloud
 目前课后录制暂未支持自定义混流布局Custom参数
                      * @return MixStream 混流参数配置
 目前课后录制暂未支持自定义混流布局Custom参数
+                     * 
                      */
                     MixStream GetMixStream() const;
 
                     /**
                      * 设置混流参数配置
 目前课后录制暂未支持自定义混流布局Custom参数
-                     * @param MixStream 混流参数配置
+                     * @param _mixStream 混流参数配置
 目前课后录制暂未支持自定义混流布局Custom参数
+                     * 
                      */
                     void SetMixStream(const MixStream& _mixStream);
 
                     /**
                      * 判断参数 MixStream 是否已赋值
                      * @return MixStream 是否已赋值
+                     * 
                      */
                     bool MixStreamHasBeenSet() const;
 
                     /**
                      * 获取白板参数配置
                      * @return Whiteboard 白板参数配置
+                     * 
                      */
                     Whiteboard GetWhiteboard() const;
 
                     /**
                      * 设置白板参数配置
-                     * @param Whiteboard 白板参数配置
+                     * @param _whiteboard 白板参数配置
+                     * 
                      */
                     void SetWhiteboard(const Whiteboard& _whiteboard);
 
                     /**
                      * 判断参数 Whiteboard 是否已赋值
                      * @return Whiteboard 是否已赋值
+                     * 
                      */
                     bool WhiteboardHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取条形码
                      * @return BarCode 条形码
+                     * 
                      */
                     std::string GetBarCode() const;
 
                     /**
                      * 设置条形码
-                     * @param BarCode 条形码
+                     * @param _barCode 条形码
+                     * 
                      */
                     void SetBarCode(const std::string& _barCode);
 
                     /**
                      * 判断参数 BarCode 是否已赋值
                      * @return BarCode 是否已赋值
+                     * 
                      */
                     bool BarCodeHasBeenSet() const;
 

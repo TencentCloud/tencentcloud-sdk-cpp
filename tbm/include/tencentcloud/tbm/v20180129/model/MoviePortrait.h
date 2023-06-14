@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取电影名称
                      * @return Name 电影名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置电影名称
-                     * @param Name 电影名称
+                     * @param _name 电影名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取百分比
                      * @return Percent 百分比
+                     * 
                      */
                     double GetPercent() const;
 
                     /**
                      * 设置百分比
-                     * @param Percent 百分比
+                     * @param _percent 百分比
+                     * 
                      */
                     void SetPercent(const double& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

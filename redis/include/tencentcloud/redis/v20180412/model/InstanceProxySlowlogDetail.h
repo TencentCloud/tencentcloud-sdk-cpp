@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取慢查询耗时时长。单位：毫秒。
                      * @return Duration 慢查询耗时时长。单位：毫秒。
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置慢查询耗时时长。单位：毫秒。
-                     * @param Duration 慢查询耗时时长。单位：毫秒。
+                     * @param _duration 慢查询耗时时长。单位：毫秒。
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取客户端地址。
                      * @return Client 客户端地址。
+                     * 
                      */
                     std::string GetClient() const;
 
                     /**
                      * 设置客户端地址。
-                     * @param Client 客户端地址。
+                     * @param _client 客户端地址。
+                     * 
                      */
                     void SetClient(const std::string& _client);
 
                     /**
                      * 判断参数 Client 是否已赋值
                      * @return Client 是否已赋值
+                     * 
                      */
                     bool ClientHasBeenSet() const;
 
                     /**
                      * 获取慢查询的命令。
                      * @return Command 慢查询的命令。
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置慢查询的命令。
-                     * @param Command 慢查询的命令。
+                     * @param _command 慢查询的命令。
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取慢查询详细命令行信息。
                      * @return CommandLine 慢查询详细命令行信息。
+                     * 
                      */
                     std::string GetCommandLine() const;
 
                     /**
                      * 设置慢查询详细命令行信息。
-                     * @param CommandLine 慢查询详细命令行信息。
+                     * @param _commandLine 慢查询详细命令行信息。
+                     * 
                      */
                     void SetCommandLine(const std::string& _commandLine);
 
                     /**
                      * 判断参数 CommandLine 是否已赋值
                      * @return CommandLine 是否已赋值
+                     * 
                      */
                     bool CommandLineHasBeenSet() const;
 
                     /**
                      * 获取执行时间。
                      * @return ExecuteTime 执行时间。
+                     * 
                      */
                     std::string GetExecuteTime() const;
 
                     /**
                      * 设置执行时间。
-                     * @param ExecuteTime 执行时间。
+                     * @param _executeTime 执行时间。
+                     * 
                      */
                     void SetExecuteTime(const std::string& _executeTime);
 
                     /**
                      * 判断参数 ExecuteTime 是否已赋值
                      * @return ExecuteTime 是否已赋值
+                     * 
                      */
                     bool ExecuteTimeHasBeenSet() const;
 

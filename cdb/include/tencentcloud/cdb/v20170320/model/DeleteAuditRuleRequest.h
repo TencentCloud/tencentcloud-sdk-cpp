@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取审计规则 ID。
                      * @return RuleId 审计规则 ID。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置审计规则 ID。
-                     * @param RuleId 审计规则 ID。
+                     * @param _ruleId 审计规则 ID。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

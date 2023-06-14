@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取客户端ip。
                      * @return ClientIp 客户端ip。
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置客户端ip。
-                     * @param ClientIp 客户端ip。
+                     * @param _clientIp 客户端ip。
+                     * 
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取最大qps。
                      * @return RequestMaxQps 最大qps。
+                     * 
                      */
                     int64_t GetRequestMaxQps() const;
 
                     /**
                      * 设置最大qps。
-                     * @param RequestMaxQps 最大qps。
+                     * @param _requestMaxQps 最大qps。
+                     * 
                      */
                     void SetRequestMaxQps(const int64_t& _requestMaxQps);
 
                     /**
                      * 判断参数 RequestMaxQps 是否已赋值
                      * @return RequestMaxQps 是否已赋值
+                     * 
                      */
                     bool RequestMaxQpsHasBeenSet() const;
 
                     /**
                      * 获取请求数。
                      * @return RequestNum 请求数。
+                     * 
                      */
                     int64_t GetRequestNum() const;
 
                     /**
                      * 设置请求数。
-                     * @param RequestNum 请求数。
+                     * @param _requestNum 请求数。
+                     * 
                      */
                     void SetRequestNum(const int64_t& _requestNum);
 
                     /**
                      * 判断参数 RequestNum 是否已赋值
                      * @return RequestNum 是否已赋值
+                     * 
                      */
                     bool RequestNumHasBeenSet() const;
 

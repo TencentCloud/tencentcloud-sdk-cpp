@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取操作所在的分片名
                      * @return ReplicaSetName 操作所在的分片名
+                     * 
                      */
                     std::string GetReplicaSetName() const;
 
                     /**
                      * 设置操作所在的分片名
-                     * @param ReplicaSetName 操作所在的分片名
+                     * @param _replicaSetName 操作所在的分片名
+                     * 
                      */
                     void SetReplicaSetName(const std::string& _replicaSetName);
 
                     /**
                      * 判断参数 ReplicaSetName 是否已赋值
                      * @return ReplicaSetName 是否已赋值
+                     * 
                      */
                     bool ReplicaSetNameHasBeenSet() const;
 
                     /**
                      * 获取操作所在的节点名
                      * @return NodeName 操作所在的节点名
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置操作所在的节点名
-                     * @param NodeName 操作所在的节点名
+                     * @param _nodeName 操作所在的节点名
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
                     /**
                      * 获取操作序号
                      * @return OpId 操作序号
+                     * 
                      */
                     int64_t GetOpId() const;
 
                     /**
                      * 设置操作序号
-                     * @param OpId 操作序号
+                     * @param _opId 操作序号
+                     * 
                      */
                     void SetOpId(const int64_t& _opId);
 
                     /**
                      * 判断参数 OpId 是否已赋值
                      * @return OpId 是否已赋值
+                     * 
                      */
                     bool OpIdHasBeenSet() const;
 

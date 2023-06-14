@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取RO组ID，形如：pgro-4t9c6g7k。
                      * @return ReadOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置RO组ID，形如：pgro-4t9c6g7k。
-                     * @param ReadOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * @param _readOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络统一 ID。
                      * @return VpcId 私有网络统一 ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络统一 ID。
-                     * @param VpcId 私有网络统一 ID。
+                     * @param _vpcId 私有网络统一 ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID。
                      * @return SubnetId 子网ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID。
-                     * @param SubnetId 子网ID。
+                     * @param _subnetId 子网ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取是否指定分配vip true-指定分配  false-自动分配。
                      * @return IsAssignVip 是否指定分配vip true-指定分配  false-自动分配。
+                     * 
                      */
                     bool GetIsAssignVip() const;
 
                     /**
                      * 设置是否指定分配vip true-指定分配  false-自动分配。
-                     * @param IsAssignVip 是否指定分配vip true-指定分配  false-自动分配。
+                     * @param _isAssignVip 是否指定分配vip true-指定分配  false-自动分配。
+                     * 
                      */
                     void SetIsAssignVip(const bool& _isAssignVip);
 
                     /**
                      * 判断参数 IsAssignVip 是否已赋值
                      * @return IsAssignVip 是否已赋值
+                     * 
                      */
                     bool IsAssignVipHasBeenSet() const;
 
                     /**
                      * 获取目标VIP地址。
                      * @return Vip 目标VIP地址。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置目标VIP地址。
-                     * @param Vip 目标VIP地址。
+                     * @param _vip 目标VIP地址。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 

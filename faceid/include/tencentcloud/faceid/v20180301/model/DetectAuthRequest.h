@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
                      * @return RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
-                     * @param RuleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * @param _ruleId 用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取本接口不需要传递此参数。
                      * @return TerminalType 本接口不需要传递此参数。
+                     * 
                      */
                     std::string GetTerminalType() const;
 
                     /**
                      * 设置本接口不需要传递此参数。
-                     * @param TerminalType 本接口不需要传递此参数。
+                     * @param _terminalType 本接口不需要传递此参数。
+                     * 
                      */
                     void SetTerminalType(const std::string& _terminalType);
 
                     /**
                      * 判断参数 TerminalType 是否已赋值
                      * @return TerminalType 是否已赋值
+                     * 
                      */
                     bool TerminalTypeHasBeenSet() const;
 
@@ -86,74 +92,86 @@ namespace TencentCloud
 规则：a-zA-Z0-9组合。最长长度32位。
                      * @return IdCard 身份标识（未使用OCR服务时，必须传入）。
 规则：a-zA-Z0-9组合。最长长度32位。
+                     * 
                      */
                     std::string GetIdCard() const;
 
                     /**
                      * 设置身份标识（未使用OCR服务时，必须传入）。
 规则：a-zA-Z0-9组合。最长长度32位。
-                     * @param IdCard 身份标识（未使用OCR服务时，必须传入）。
+                     * @param _idCard 身份标识（未使用OCR服务时，必须传入）。
 规则：a-zA-Z0-9组合。最长长度32位。
+                     * 
                      */
                     void SetIdCard(const std::string& _idCard);
 
                     /**
                      * 判断参数 IdCard 是否已赋值
                      * @return IdCard 是否已赋值
+                     * 
                      */
                     bool IdCardHasBeenSet() const;
 
                     /**
                      * 获取姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
                      * @return Name 姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
-                     * @param Name 姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
+                     * @param _name 姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取认证结束后重定向的回调链接地址。最长长度1024位。
                      * @return RedirectUrl 认证结束后重定向的回调链接地址。最长长度1024位。
+                     * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
                      * 设置认证结束后重定向的回调链接地址。最长长度1024位。
-                     * @param RedirectUrl 认证结束后重定向的回调链接地址。最长长度1024位。
+                     * @param _redirectUrl 认证结束后重定向的回调链接地址。最长长度1024位。
+                     * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
                     /**
                      * 判断参数 RedirectUrl 是否已赋值
                      * @return RedirectUrl 是否已赋值
+                     * 
                      */
                     bool RedirectUrlHasBeenSet() const;
 
                     /**
                      * 获取透传字段，在获取验证结果时返回。
                      * @return Extra 透传字段，在获取验证结果时返回。
+                     * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 设置透传字段，在获取验证结果时返回。
-                     * @param Extra 透传字段，在获取验证结果时返回。
+                     * @param _extra 透传字段，在获取验证结果时返回。
+                     * 
                      */
                     void SetExtra(const std::string& _extra);
 
                     /**
                      * 判断参数 Extra 是否已赋值
                      * @return Extra 是否已赋值
+                     * 
                      */
                     bool ExtraHasBeenSet() const;
 
@@ -162,92 +180,107 @@ namespace TencentCloud
 Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
                      * @return ImageBase64 用于人脸比对的照片，图片的Base64值；
 Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置用于人脸比对的照片，图片的Base64值；
 Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
-                     * @param ImageBase64 用于人脸比对的照片，图片的Base64值；
+                     * @param _imageBase64 用于人脸比对的照片，图片的Base64值；
 Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 
                     /**
                      * 获取敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
                      * @return Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     Encryption GetEncryption() const;
 
                     /**
                      * 设置敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
-                     * @param Encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * @param _encryption 敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。
+                     * 
                      */
                     void SetEncryption(const Encryption& _encryption);
 
                     /**
                      * 判断参数 Encryption 是否已赋值
                      * @return Encryption 是否已赋值
+                     * 
                      */
                     bool EncryptionHasBeenSet() const;
 
                     /**
                      * 获取意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
                      * @return IntentionVerifyText 意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 
                      */
                     std::string GetIntentionVerifyText() const;
 
                     /**
                      * 设置意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
-                     * @param IntentionVerifyText 意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * @param _intentionVerifyText 意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 
                      */
                     void SetIntentionVerifyText(const std::string& _intentionVerifyText);
 
                     /**
                      * 判断参数 IntentionVerifyText 是否已赋值
                      * @return IntentionVerifyText 是否已赋值
+                     * 
                      */
                     bool IntentionVerifyTextHasBeenSet() const;
 
                     /**
                      * 获取意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
                      * @return IntentionQuestions 意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
+                     * 
                      */
                     std::vector<IntentionQuestion> GetIntentionQuestions() const;
 
                     /**
                      * 设置意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
-                     * @param IntentionQuestions 意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
+                     * @param _intentionQuestions 意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。
+                     * 
                      */
                     void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
 
                     /**
                      * 判断参数 IntentionQuestions 是否已赋值
                      * @return IntentionQuestions 是否已赋值
+                     * 
                      */
                     bool IntentionQuestionsHasBeenSet() const;
 
                     /**
                      * 获取RuleId相关配置
                      * @return Config RuleId相关配置
+                     * 
                      */
                     RuleIdConfig GetConfig() const;
 
                     /**
                      * 设置RuleId相关配置
-                     * @param Config RuleId相关配置
+                     * @param _config RuleId相关配置
+                     * 
                      */
                     void SetConfig(const RuleIdConfig& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 

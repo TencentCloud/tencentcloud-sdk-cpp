@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取模型ID，TrainingModel ID
                      * @return Id 模型ID，TrainingModel ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取模型版本ID
                      * @return TrainingModelVersionId 模型版本ID
+                     * 
                      */
                     std::string GetTrainingModelVersionId() const;
 
                     /**
                      * 判断参数 TrainingModelVersionId 是否已赋值
                      * @return TrainingModelVersionId 是否已赋值
+                     * 
                      */
                     bool TrainingModelVersionIdHasBeenSet() const;
 

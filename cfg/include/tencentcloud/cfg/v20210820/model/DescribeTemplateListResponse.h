@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取经验库列表
                      * @return TemplateList 经验库列表
+                     * 
                      */
                     std::vector<TemplateListItem> GetTemplateList() const;
 
                     /**
                      * 判断参数 TemplateList 是否已赋值
                      * @return TemplateList 是否已赋值
+                     * 
                      */
                     bool TemplateListHasBeenSet() const;
 
                     /**
                      * 获取列表数量
                      * @return Total 列表数量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

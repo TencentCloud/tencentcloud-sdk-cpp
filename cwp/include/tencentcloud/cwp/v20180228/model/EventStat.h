@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取事件数
                      * @return EventsNum 事件数
+                     * 
                      */
                     uint64_t GetEventsNum() const;
 
                     /**
                      * 设置事件数
-                     * @param EventsNum 事件数
+                     * @param _eventsNum 事件数
+                     * 
                      */
                     void SetEventsNum(const uint64_t& _eventsNum);
 
                     /**
                      * 判断参数 EventsNum 是否已赋值
                      * @return EventsNum 是否已赋值
+                     * 
                      */
                     bool EventsNumHasBeenSet() const;
 
                     /**
                      * 获取受影响的主机数
                      * @return MachineAffectNum 受影响的主机数
+                     * 
                      */
                     uint64_t GetMachineAffectNum() const;
 
                     /**
                      * 设置受影响的主机数
-                     * @param MachineAffectNum 受影响的主机数
+                     * @param _machineAffectNum 受影响的主机数
+                     * 
                      */
                     void SetMachineAffectNum(const uint64_t& _machineAffectNum);
 
                     /**
                      * 判断参数 MachineAffectNum 是否已赋值
                      * @return MachineAffectNum 是否已赋值
+                     * 
                      */
                     bool MachineAffectNumHasBeenSet() const;
 

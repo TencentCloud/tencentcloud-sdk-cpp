@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取加速域名
                      * @return Domain 加速域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置加速域名
-                     * @param Domain 加速域名
+                     * @param _domain 加速域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -69,6 +72,7 @@ last：表示回源层节点
 edge：表示边缘节点
 last：表示回源层节点
 不填充情况下，默认返回边缘节点信息
+                     * 
                      */
                     std::string GetLayer() const;
 
@@ -77,16 +81,18 @@ last：表示回源层节点
 edge：表示边缘节点
 last：表示回源层节点
 不填充情况下，默认返回边缘节点信息
-                     * @param Layer 节点类型：
+                     * @param _layer 节点类型：
 edge：表示边缘节点
 last：表示回源层节点
 不填充情况下，默认返回边缘节点信息
+                     * 
                      */
                     void SetLayer(const std::string& _layer);
 
                     /**
                      * 判断参数 Layer 是否已赋值
                      * @return Layer 是否已赋值
+                     * 
                      */
                     bool LayerHasBeenSet() const;
 
@@ -99,6 +105,7 @@ global: 全球节点
 mainland: 国内节点
 overseas: 海外节点
 global: 全球节点
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -107,70 +114,81 @@ global: 全球节点
 mainland: 国内节点
 overseas: 海外节点
 global: 全球节点
-                     * @param Area 查询区域：
+                     * @param _area 查询区域：
 mainland: 国内节点
 overseas: 海外节点
 global: 全球节点
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取是否以IP段的格式返回。
                      * @return Segment 是否以IP段的格式返回。
+                     * 
                      */
                     bool GetSegment() const;
 
                     /**
                      * 设置是否以IP段的格式返回。
-                     * @param Segment 是否以IP段的格式返回。
+                     * @param _segment 是否以IP段的格式返回。
+                     * 
                      */
                     void SetSegment(const bool& _segment);
 
                     /**
                      * 判断参数 Segment 是否已赋值
                      * @return Segment 是否已赋值
+                     * 
                      */
                     bool SegmentHasBeenSet() const;
 
                     /**
                      * 获取是否查询节点 IPV6 信息。
                      * @return ShowIpv6 是否查询节点 IPV6 信息。
+                     * 
                      */
                     bool GetShowIpv6() const;
 
                     /**
                      * 设置是否查询节点 IPV6 信息。
-                     * @param ShowIpv6 是否查询节点 IPV6 信息。
+                     * @param _showIpv6 是否查询节点 IPV6 信息。
+                     * 
                      */
                     void SetShowIpv6(const bool& _showIpv6);
 
                     /**
                      * 判断参数 ShowIpv6 是否已赋值
                      * @return ShowIpv6 是否已赋值
+                     * 
                      */
                     bool ShowIpv6HasBeenSet() const;
 
                     /**
                      * 获取是否对IPV6进行缩写。
                      * @return AbbreviationIpv6 是否对IPV6进行缩写。
+                     * 
                      */
                     bool GetAbbreviationIpv6() const;
 
                     /**
                      * 设置是否对IPV6进行缩写。
-                     * @param AbbreviationIpv6 是否对IPV6进行缩写。
+                     * @param _abbreviationIpv6 是否对IPV6进行缩写。
+                     * 
                      */
                     void SetAbbreviationIpv6(const bool& _abbreviationIpv6);
 
                     /**
                      * 判断参数 AbbreviationIpv6 是否已赋值
                      * @return AbbreviationIpv6 是否已赋值
+                     * 
                      */
                     bool AbbreviationIpv6HasBeenSet() const;
 

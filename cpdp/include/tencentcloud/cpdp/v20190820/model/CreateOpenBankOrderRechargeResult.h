@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取云企付平台订单号。
                      * @return ChannelOrderId 云企付平台订单号。
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置云企付平台订单号。
-                     * @param ChannelOrderId 云企付平台订单号。
+                     * @param _channelOrderId 云企付平台订单号。
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThirdPayOrderId 第三方支付平台返回支付订单号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetThirdPayOrderId() const;
 
                     /**
                      * 设置第三方支付平台返回支付订单号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ThirdPayOrderId 第三方支付平台返回支付订单号。
+                     * @param _thirdPayOrderId 第三方支付平台返回支付订单号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetThirdPayOrderId(const std::string& _thirdPayOrderId);
 
                     /**
                      * 判断参数 ThirdPayOrderId 是否已赋值
                      * @return ThirdPayOrderId 是否已赋值
+                     * 
                      */
                     bool ThirdPayOrderIdHasBeenSet() const;
 
@@ -92,38 +98,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectInfo 跳转参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OpenBankRechargeRedirectInfo GetRedirectInfo() const;
 
                     /**
                      * 设置跳转参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectInfo 跳转参数
+                     * @param _redirectInfo 跳转参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectInfo(const OpenBankRechargeRedirectInfo& _redirectInfo);
 
                     /**
                      * 判断参数 RedirectInfo 是否已赋值
                      * @return RedirectInfo 是否已赋值
+                     * 
                      */
                     bool RedirectInfoHasBeenSet() const;
 
                     /**
                      * 获取外部商户订单号，只能是数字、大小写字母，且在同一个接入平台下唯一。
                      * @return OutOrderId 外部商户订单号，只能是数字、大小写字母，且在同一个接入平台下唯一。
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部商户订单号，只能是数字、大小写字母，且在同一个接入平台下唯一。
-                     * @param OutOrderId 外部商户订单号，只能是数字、大小写字母，且在同一个接入平台下唯一。
+                     * @param _outOrderId 外部商户订单号，只能是数字、大小写字母，且在同一个接入平台下唯一。
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealStatus 充值状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealStatus() const;
 
                     /**
                      * 设置充值状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealStatus 充值状态
+                     * @param _dealStatus 充值状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealStatus(const std::string& _dealStatus);
 
                     /**
                      * 判断参数 DealStatus 是否已赋值
                      * @return DealStatus 是否已赋值
+                     * 
                      */
                     bool DealStatusHasBeenSet() const;
 
@@ -154,20 +169,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealMessage 充值返回描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealMessage() const;
 
                     /**
                      * 设置充值返回描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealMessage 充值返回描述
+                     * @param _dealMessage 充值返回描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealMessage(const std::string& _dealMessage);
 
                     /**
                      * 判断参数 DealMessage 是否已赋值
                      * @return DealMessage 是否已赋值
+                     * 
                      */
                     bool DealMessageHasBeenSet() const;
 
@@ -176,20 +194,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PcWebUrl PC web端跳转链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPcWebUrl() const;
 
                     /**
                      * 设置PC web端跳转链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PcWebUrl PC web端跳转链接
+                     * @param _pcWebUrl PC web端跳转链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPcWebUrl(const std::string& _pcWebUrl);
 
                     /**
                      * 判断参数 PcWebUrl 是否已赋值
                      * @return PcWebUrl 是否已赋值
+                     * 
                      */
                     bool PcWebUrlHasBeenSet() const;
 

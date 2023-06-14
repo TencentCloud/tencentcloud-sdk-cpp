@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取询价参数键。
                      * @return Key 询价参数键。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置询价参数键。
-                     * @param Key 询价参数键。
+                     * @param _key 询价参数键。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取询价参数值。
                      * @return Value 询价参数值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置询价参数值。
-                     * @param Value 询价参数值。
+                     * @param _value 询价参数值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

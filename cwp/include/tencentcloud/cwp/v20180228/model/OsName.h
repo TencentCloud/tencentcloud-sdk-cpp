@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取系统名称
                      * @return Name 系统名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置系统名称
-                     * @param Name 系统名称
+                     * @param _name 系统名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取操作系统类型枚举值
                      * @return MachineOSType 操作系统类型枚举值
+                     * 
                      */
                     uint64_t GetMachineOSType() const;
 
                     /**
                      * 设置操作系统类型枚举值
-                     * @param MachineOSType 操作系统类型枚举值
+                     * @param _machineOSType 操作系统类型枚举值
+                     * 
                      */
                     void SetMachineOSType(const uint64_t& _machineOSType);
 
                     /**
                      * 判断参数 MachineOSType 是否已赋值
                      * @return MachineOSType 是否已赋值
+                     * 
                      */
                     bool MachineOSTypeHasBeenSet() const;
 

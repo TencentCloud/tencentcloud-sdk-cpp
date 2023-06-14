@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务唯一标识符
                      * @return JobId 任务唯一标识符
+                     * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 设置任务唯一标识符
-                     * @param JobId 任务唯一标识符
+                     * @param _jobId 任务唯一标识符
+                     * 
                      */
                     void SetJobId(const int64_t& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

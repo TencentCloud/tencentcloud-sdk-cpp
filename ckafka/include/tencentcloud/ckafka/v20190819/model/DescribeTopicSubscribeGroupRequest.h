@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称
                      * @return TopicName 主题名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-                     * @param TopicName 主题名称
+                     * @param _topicName 主题名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取分页时的起始位置
                      * @return Offset 分页时的起始位置
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页时的起始位置
-                     * @param Offset 分页时的起始位置
+                     * @param _offset 分页时的起始位置
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页时的个数
                      * @return Limit 分页时的个数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页时的个数
-                     * @param Limit 分页时的个数
+                     * @param _limit 分页时的个数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

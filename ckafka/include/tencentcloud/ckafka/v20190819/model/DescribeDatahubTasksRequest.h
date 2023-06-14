@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取返回数量，默认为20，最大值为100
                      * @return Limit 返回数量，默认为20，最大值为100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100
-                     * @param Limit 返回数量，默认为20，最大值为100
+                     * @param _limit 返回数量，默认为20，最大值为100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认为0
                      * @return Offset 分页偏移量，默认为0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认为0
-                     * @param Offset 分页偏移量，默认为0
+                     * @param _offset 分页偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取过滤条件，按照 TaskName 过滤，支持模糊查询
                      * @return SearchWord 过滤条件，按照 TaskName 过滤，支持模糊查询
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置过滤条件，按照 TaskName 过滤，支持模糊查询
-                     * @param SearchWord 过滤条件，按照 TaskName 过滤，支持模糊查询
+                     * @param _searchWord 过滤条件，按照 TaskName 过滤，支持模糊查询
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取转储的目标类型
                      * @return TargetType 转储的目标类型
+                     * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置转储的目标类型
-                     * @param TargetType 转储的目标类型
+                     * @param _targetType 转储的目标类型
+                     * 
                      */
                     void SetTargetType(const std::string& _targetType);
 
                     /**
                      * 判断参数 TargetType 是否已赋值
                      * @return TargetType 是否已赋值
+                     * 
                      */
                     bool TargetTypeHasBeenSet() const;
 
                     /**
                      * 获取任务类型，SOURCE数据接入，SINK数据流出
                      * @return TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型，SOURCE数据接入，SINK数据流出
-                     * @param TaskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * @param _taskType 任务类型，SOURCE数据接入，SINK数据流出
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取转储的源类型
                      * @return SourceType 转储的源类型
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置转储的源类型
-                     * @param SourceType 转储的源类型
+                     * @param _sourceType 转储的源类型
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
                     /**
                      * 获取转储的资源
                      * @return Resource 转储的资源
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置转储的资源
-                     * @param Resource 转储的资源
+                     * @param _resource 转储的资源
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 

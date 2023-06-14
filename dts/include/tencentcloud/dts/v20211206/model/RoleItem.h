@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName 角色名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleName 角色名称
+                     * @param _roleName 角色名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewRoleName 迁移后的角色名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewRoleName() const;
 
                     /**
                      * 设置迁移后的角色名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewRoleName 迁移后的角色名称
+                     * @param _newRoleName 迁移后的角色名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewRoleName(const std::string& _newRoleName);
 
                     /**
                      * 判断参数 NewRoleName 是否已赋值
                      * @return NewRoleName 是否已赋值
+                     * 
                      */
                     bool NewRoleNameHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取泳道名称
                      * @return LaneName 泳道名称
+                     * 
                      */
                     std::string GetLaneName() const;
 
                     /**
                      * 设置泳道名称
-                     * @param LaneName 泳道名称
+                     * @param _laneName 泳道名称
+                     * 
                      */
                     void SetLaneName(const std::string& _laneName);
 
                     /**
                      * 判断参数 LaneName 是否已赋值
                      * @return LaneName 是否已赋值
+                     * 
                      */
                     bool LaneNameHasBeenSet() const;
 
                     /**
                      * 获取泳道备注
                      * @return Remark 泳道备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置泳道备注
-                     * @param Remark 泳道备注
+                     * @param _remark 泳道备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取泳道部署组信息
                      * @return LaneGroupList 泳道部署组信息
+                     * 
                      */
                     std::vector<LaneGroup> GetLaneGroupList() const;
 
                     /**
                      * 设置泳道部署组信息
-                     * @param LaneGroupList 泳道部署组信息
+                     * @param _laneGroupList 泳道部署组信息
+                     * 
                      */
                     void SetLaneGroupList(const std::vector<LaneGroup>& _laneGroupList);
 
                     /**
                      * 判断参数 LaneGroupList 是否已赋值
                      * @return LaneGroupList 是否已赋值
+                     * 
                      */
                     bool LaneGroupListHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProgramIdList 无
+                     * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
                      * 设置无
-                     * @param ProgramIdList 无
+                     * @param _programIdList 无
+                     * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
 
                     /**
                      * 判断参数 ProgramIdList 是否已赋值
                      * @return ProgramIdList 是否已赋值
+                     * 
                      */
                     bool ProgramIdListHasBeenSet() const;
 

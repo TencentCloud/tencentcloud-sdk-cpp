@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取数据库标识
                      * @return Fid 数据库标识
+                     * 
                      */
                     int64_t GetFid() const;
 
                     /**
                      * 设置数据库标识
-                     * @param Fid 数据库标识
+                     * @param _fid 数据库标识
+                     * 
                      */
                     void SetFid(const int64_t& _fid);
 
                     /**
                      * 判断参数 Fid 是否已赋值
                      * @return Fid 是否已赋值
+                     * 
                      */
                     bool FidHasBeenSet() const;
 
                     /**
                      * 获取标签名称字段
                      * @return Fname 标签名称字段
+                     * 
                      */
                     std::string GetFname() const;
 
                     /**
                      * 设置标签名称字段
-                     * @param Fname 标签名称字段
+                     * @param _fname 标签名称字段
+                     * 
                      */
                     void SetFname(const std::string& _fname);
 
                     /**
                      * 判断参数 Fname 是否已赋值
                      * @return Fname 是否已赋值
+                     * 
                      */
                     bool FnameHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取代理商ID。
                      * @return AgentId 代理商ID。
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置代理商ID。
-                     * @param AgentId 代理商ID。
+                     * @param _agentId 代理商ID。
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取代理商名称。
                      * @return AgentName 代理商名称。
+                     * 
                      */
                     std::string GetAgentName() const;
 
                     /**
                      * 设置代理商名称。
-                     * @param AgentName 代理商名称。
+                     * @param _agentName 代理商名称。
+                     * 
                      */
                     void SetAgentName(const std::string& _agentName);
 
                     /**
                      * 判断参数 AgentName 是否已赋值
                      * @return AgentName 是否已赋值
+                     * 
                      */
                     bool AgentNameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnchorId 主播ID。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnchorId() const;
 
                     /**
                      * 设置主播ID。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnchorId 主播ID。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
+                     * @param _anchorId 主播ID。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnchorId(const std::string& _anchorId);
 
                     /**
                      * 判断参数 AnchorId 是否已赋值
                      * @return AnchorId 是否已赋值
+                     * 
                      */
                     bool AnchorIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnchorName 主播名称。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnchorName() const;
 
                     /**
                      * 设置主播名称。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnchorName 主播名称。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
+                     * @param _anchorName 主播名称。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnchorName(const std::string& _anchorName);
 
                     /**
                      * 判断参数 AnchorName 是否已赋值
                      * @return AnchorName 是否已赋值
+                     * 
                      */
                     bool AnchorNameHasBeenSet() const;
 
@@ -131,38 +143,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单号。当入参Dimension为ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号。当入参Dimension为ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderId 订单号。当入参Dimension为ORDER时，该字段才会有值。
+                     * @param _orderId 订单号。当入参Dimension为ORDER时，该字段才会有值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取超额类型。目前支持 AGENT_EXCEED_100 和 ANCHOR_EXCEED_100_12 两种类型。
                      * @return ExceedingType 超额类型。目前支持 AGENT_EXCEED_100 和 ANCHOR_EXCEED_100_12 两种类型。
+                     * 
                      */
                     std::string GetExceedingType() const;
 
                     /**
                      * 设置超额类型。目前支持 AGENT_EXCEED_100 和 ANCHOR_EXCEED_100_12 两种类型。
-                     * @param ExceedingType 超额类型。目前支持 AGENT_EXCEED_100 和 ANCHOR_EXCEED_100_12 两种类型。
+                     * @param _exceedingType 超额类型。目前支持 AGENT_EXCEED_100 和 ANCHOR_EXCEED_100_12 两种类型。
+                     * 
                      */
                     void SetExceedingType(const std::string& _exceedingType);
 
                     /**
                      * 判断参数 ExceedingType 是否已赋值
                      * @return ExceedingType 是否已赋值
+                     * 
                      */
                     bool ExceedingTypeHasBeenSet() const;
 

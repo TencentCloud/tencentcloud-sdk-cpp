@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资产组ID
                      * @return Id 资产组ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置资产组ID
-                     * @param Id 资产组ID
+                     * @param _id 资产组ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取需要删除的资产ID集合
                      * @return MemberIdSet 需要删除的资产ID集合
+                     * 
                      */
                     std::vector<uint64_t> GetMemberIdSet() const;
 
                     /**
                      * 设置需要删除的资产ID集合
-                     * @param MemberIdSet 需要删除的资产ID集合
+                     * @param _memberIdSet 需要删除的资产ID集合
+                     * 
                      */
                     void SetMemberIdSet(const std::vector<uint64_t>& _memberIdSet);
 
                     /**
                      * 判断参数 MemberIdSet 是否已赋值
                      * @return MemberIdSet 是否已赋值
+                     * 
                      */
                     bool MemberIdSetHasBeenSet() const;
 

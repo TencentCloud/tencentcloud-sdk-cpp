@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取音视频审核模板 ID。
                      * @return Definition 音视频审核模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置音视频审核模板 ID。
-                     * @param Definition 音视频审核模板 ID。
+                     * @param _definition 音视频审核模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取自定义响应配置错误码。
                      * @return Code 自定义响应配置错误码。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置自定义响应配置错误码。
-                     * @param Code 自定义响应配置错误码。
+                     * @param _code 自定义响应配置错误码。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取自定义响应配置错误信息。
                      * @return Msg 自定义响应配置错误信息。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置自定义响应配置错误信息。
-                     * @param Msg 自定义响应配置错误信息。
+                     * @param _msg 自定义响应配置错误信息。
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
                     /**
                      * 获取自定义响应配置错误码备注。
                      * @return Desc 自定义响应配置错误码备注。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置自定义响应配置错误码备注。
-                     * @param Desc 自定义响应配置错误码备注。
+                     * @param _desc 自定义响应配置错误码备注。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
                     /**
                      * 获取自定义错误码转换。
                      * @return ConvertedCode 自定义错误码转换。
+                     * 
                      */
                     int64_t GetConvertedCode() const;
 
                     /**
                      * 设置自定义错误码转换。
-                     * @param ConvertedCode 自定义错误码转换。
+                     * @param _convertedCode 自定义错误码转换。
+                     * 
                      */
                     void SetConvertedCode(const int64_t& _convertedCode);
 
                     /**
                      * 判断参数 ConvertedCode 是否已赋值
                      * @return ConvertedCode 是否已赋值
+                     * 
                      */
                     bool ConvertedCodeHasBeenSet() const;
 
                     /**
                      * 获取是否需要开启错误码转换。
                      * @return NeedConvert 是否需要开启错误码转换。
+                     * 
                      */
                     bool GetNeedConvert() const;
 
                     /**
                      * 设置是否需要开启错误码转换。
-                     * @param NeedConvert 是否需要开启错误码转换。
+                     * @param _needConvert 是否需要开启错误码转换。
+                     * 
                      */
                     void SetNeedConvert(const bool& _needConvert);
 
                     /**
                      * 判断参数 NeedConvert 是否已赋值
                      * @return NeedConvert 是否已赋值
+                     * 
                      */
                     bool NeedConvertHasBeenSet() const;
 

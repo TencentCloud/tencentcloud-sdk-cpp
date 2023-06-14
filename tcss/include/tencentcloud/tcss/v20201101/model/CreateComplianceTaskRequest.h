@@ -55,6 +55,7 @@ ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
 AssetTypeSet, PolicySetId, PeriodTaskId三个参数，必须要给其中一个参数填写有效的值。
+                     * 
                      */
                     std::vector<std::string> GetAssetTypeSet() const;
 
@@ -65,54 +66,62 @@ ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
 AssetTypeSet, PolicySetId, PeriodTaskId三个参数，必须要给其中一个参数填写有效的值。
-                     * @param AssetTypeSet 指定要扫描的资产类型列表。
+                     * @param _assetTypeSet 指定要扫描的资产类型列表。
 ASSET_CONTAINER, 容器
 ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 ASSET_K8S, K8S资产
 AssetTypeSet, PolicySetId, PeriodTaskId三个参数，必须要给其中一个参数填写有效的值。
+                     * 
                      */
                     void SetAssetTypeSet(const std::vector<std::string>& _assetTypeSet);
 
                     /**
                      * 判断参数 AssetTypeSet 是否已赋值
                      * @return AssetTypeSet 是否已赋值
+                     * 
                      */
                     bool AssetTypeSetHasBeenSet() const;
 
                     /**
                      * 获取按照策略集ID指定的策略执行合规检查。
                      * @return PolicySetId 按照策略集ID指定的策略执行合规检查。
+                     * 
                      */
                     uint64_t GetPolicySetId() const;
 
                     /**
                      * 设置按照策略集ID指定的策略执行合规检查。
-                     * @param PolicySetId 按照策略集ID指定的策略执行合规检查。
+                     * @param _policySetId 按照策略集ID指定的策略执行合规检查。
+                     * 
                      */
                     void SetPolicySetId(const uint64_t& _policySetId);
 
                     /**
                      * 判断参数 PolicySetId 是否已赋值
                      * @return PolicySetId 是否已赋值
+                     * 
                      */
                     bool PolicySetIdHasBeenSet() const;
 
                     /**
                      * 获取按照定时任务ID指定的策略执行合规检查。
                      * @return PeriodTaskId 按照定时任务ID指定的策略执行合规检查。
+                     * 
                      */
                     uint64_t GetPeriodTaskId() const;
 
                     /**
                      * 设置按照定时任务ID指定的策略执行合规检查。
-                     * @param PeriodTaskId 按照定时任务ID指定的策略执行合规检查。
+                     * @param _periodTaskId 按照定时任务ID指定的策略执行合规检查。
+                     * 
                      */
                     void SetPeriodTaskId(const uint64_t& _periodTaskId);
 
                     /**
                      * 判断参数 PeriodTaskId 是否已赋值
                      * @return PeriodTaskId 是否已赋值
+                     * 
                      */
                     bool PeriodTaskIdHasBeenSet() const;
 

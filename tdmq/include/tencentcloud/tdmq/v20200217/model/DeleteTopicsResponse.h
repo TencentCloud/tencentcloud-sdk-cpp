@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取被删除的主题数组。
                      * @return TopicSets 被删除的主题数组。
+                     * 
                      */
                     std::vector<TopicRecord> GetTopicSets() const;
 
                     /**
                      * 判断参数 TopicSets 是否已赋值
                      * @return TopicSets 是否已赋值
+                     * 
                      */
                     bool TopicSetsHasBeenSet() const;
 

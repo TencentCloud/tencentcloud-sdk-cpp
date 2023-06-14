@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareVal 昨日同比指标值，已弃用，不建议使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompareVal() const;
 
                     /**
                      * 设置昨日同比指标值，已弃用，不建议使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareVal 昨日同比指标值，已弃用，不建议使用
+                     * @param _compareVal 昨日同比指标值，已弃用，不建议使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareVal(const std::string& _compareVal);
 
                     /**
                      * 判断参数 CompareVal 是否已赋值
                      * @return CompareVal 是否已赋值
+                     * 
                      */
                     bool CompareValHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareVals Compare值结果数组，推荐使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<APMKVItem> GetCompareVals() const;
 
                     /**
                      * 设置Compare值结果数组，推荐使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareVals Compare值结果数组，推荐使用
+                     * @param _compareVals Compare值结果数组，推荐使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareVals(const std::vector<APMKVItem>& _compareVals);
 
                     /**
                      * 判断参数 CompareVals 是否已赋值
                      * @return CompareVals 是否已赋值
+                     * 
                      */
                     bool CompareValsHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 指标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置指标值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 指标值
+                     * @param _value 指标值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const double& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -119,38 +128,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 指标所对应的单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标所对应的单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 指标所对应的单位
+                     * @param _unit 指标所对应的单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
                     /**
                      * 获取请求数
                      * @return Key 请求数
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置请求数
-                     * @param Key 请求数
+                     * @param _key 请求数
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -159,20 +174,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastPeriodValue 同环比上周期具体数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<APMKV> GetLastPeriodValue() const;
 
                     /**
                      * 设置同环比上周期具体数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastPeriodValue 同环比上周期具体数值
+                     * @param _lastPeriodValue 同环比上周期具体数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastPeriodValue(const std::vector<APMKV>& _lastPeriodValue);
 
                     /**
                      * 判断参数 LastPeriodValue 是否已赋值
                      * @return LastPeriodValue 是否已赋值
+                     * 
                      */
                     bool LastPeriodValueHasBeenSet() const;
 

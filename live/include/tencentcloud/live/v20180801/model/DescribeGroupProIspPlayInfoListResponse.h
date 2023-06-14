@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据内容。
                      * @return DataInfoList 数据内容。
+                     * 
                      */
                     std::vector<GroupProIspDataInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

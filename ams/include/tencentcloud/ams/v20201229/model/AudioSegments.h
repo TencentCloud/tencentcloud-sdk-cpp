@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffsetTime 该字段用于返回音频片段的开始时间，单位为秒。对于点播文件，该参数代表对应音频相对于完整音轨的偏移时间，如0（代表不偏移），5（音轨开始后5秒），10（音轨开始后10秒）；对于直播文件，该参数则返回对应音频片段开始时的Unix时间戳，如：1594650717。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOffsetTime() const;
 
                     /**
                      * 设置该字段用于返回音频片段的开始时间，单位为秒。对于点播文件，该参数代表对应音频相对于完整音轨的偏移时间，如0（代表不偏移），5（音轨开始后5秒），10（音轨开始后10秒）；对于直播文件，该参数则返回对应音频片段开始时的Unix时间戳，如：1594650717。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OffsetTime 该字段用于返回音频片段的开始时间，单位为秒。对于点播文件，该参数代表对应音频相对于完整音轨的偏移时间，如0（代表不偏移），5（音轨开始后5秒），10（音轨开始后10秒）；对于直播文件，该参数则返回对应音频片段开始时的Unix时间戳，如：1594650717。
+                     * @param _offsetTime 该字段用于返回音频片段的开始时间，单位为秒。对于点播文件，该参数代表对应音频相对于完整音轨的偏移时间，如0（代表不偏移），5（音轨开始后5秒），10（音轨开始后10秒）；对于直播文件，该参数则返回对应音频片段开始时的Unix时间戳，如：1594650717。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffsetTime(const std::string& _offsetTime);
 
                     /**
                      * 判断参数 OffsetTime 是否已赋值
                      * @return OffsetTime 是否已赋值
+                     * 
                      */
                     bool OffsetTimeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 该字段用于返回音频片段的具体审核结果，详细内容敬请参考AudioResult数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioResult GetResult() const;
 
                     /**
                      * 设置该字段用于返回音频片段的具体审核结果，详细内容敬请参考AudioResult数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 该字段用于返回音频片段的具体审核结果，详细内容敬请参考AudioResult数据结构的描述。
+                     * @param _result 该字段用于返回音频片段的具体审核结果，详细内容敬请参考AudioResult数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const AudioResult& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

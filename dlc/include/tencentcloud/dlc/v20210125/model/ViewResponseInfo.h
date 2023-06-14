@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取视图基本信息。
                      * @return ViewBaseInfo 视图基本信息。
+                     * 
                      */
                     ViewBaseInfo GetViewBaseInfo() const;
 
                     /**
                      * 设置视图基本信息。
-                     * @param ViewBaseInfo 视图基本信息。
+                     * @param _viewBaseInfo 视图基本信息。
+                     * 
                      */
                     void SetViewBaseInfo(const ViewBaseInfo& _viewBaseInfo);
 
                     /**
                      * 判断参数 ViewBaseInfo 是否已赋值
                      * @return ViewBaseInfo 是否已赋值
+                     * 
                      */
                     bool ViewBaseInfoHasBeenSet() const;
 
@@ -72,20 +75,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 视图列信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Column> GetColumns() const;
 
                     /**
                      * 设置视图列信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Columns 视图列信息。
+                     * @param _columns 视图列信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColumns(const std::vector<Column>& _columns);
 
                     /**
                      * 判断参数 Columns 是否已赋值
                      * @return Columns 是否已赋值
+                     * 
                      */
                     bool ColumnsHasBeenSet() const;
 
@@ -94,56 +100,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Properties 视图属性信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
                      * 设置视图属性信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Properties 视图属性信息。
+                     * @param _properties 视图属性信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProperties(const std::vector<Property>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 
                     /**
                      * 获取视图创建时间。
                      * @return CreateTime 视图创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置视图创建时间。
-                     * @param CreateTime 视图创建时间。
+                     * @param _createTime 视图创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取视图更新时间。
                      * @return ModifiedTime 视图更新时间。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置视图更新时间。
-                     * @param ModifiedTime 视图更新时间。
+                     * @param _modifiedTime 视图更新时间。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 

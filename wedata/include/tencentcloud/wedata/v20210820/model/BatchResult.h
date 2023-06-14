@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取正在运行的任务数
                      * @return Running 正在运行的任务数
+                     * 
                      */
                     int64_t GetRunning() const;
 
                     /**
                      * 设置正在运行的任务数
-                     * @param Running 正在运行的任务数
+                     * @param _running 正在运行的任务数
+                     * 
                      */
                     void SetRunning(const int64_t& _running);
 
                     /**
                      * 判断参数 Running 是否已赋值
                      * @return Running 是否已赋值
+                     * 
                      */
                     bool RunningHasBeenSet() const;
 
                     /**
                      * 获取执行成功的任务数
                      * @return Success 执行成功的任务数
+                     * 
                      */
                     int64_t GetSuccess() const;
 
                     /**
                      * 设置执行成功的任务数
-                     * @param Success 执行成功的任务数
+                     * @param _success 执行成功的任务数
+                     * 
                      */
                     void SetSuccess(const int64_t& _success);
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 
                     /**
                      * 获取执行失败的任务数
                      * @return Failed 执行失败的任务数
+                     * 
                      */
                     int64_t GetFailed() const;
 
                     /**
                      * 设置执行失败的任务数
-                     * @param Failed 执行失败的任务数
+                     * @param _failed 执行失败的任务数
+                     * 
                      */
                     void SetFailed(const int64_t& _failed);
 
                     /**
                      * 判断参数 Failed 是否已赋值
                      * @return Failed 是否已赋值
+                     * 
                      */
                     bool FailedHasBeenSet() const;
 
                     /**
                      * 获取总任务数
                      * @return Total 总任务数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总任务数
-                     * @param Total 总任务数
+                     * @param _total 总任务数
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

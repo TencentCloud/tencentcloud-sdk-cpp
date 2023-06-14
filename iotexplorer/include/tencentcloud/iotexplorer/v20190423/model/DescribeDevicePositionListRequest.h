@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取产品标识列表
                      * @return ProductIdList 产品标识列表
+                     * 
                      */
                     std::vector<std::string> GetProductIdList() const;
 
                     /**
                      * 设置产品标识列表
-                     * @param ProductIdList 产品标识列表
+                     * @param _productIdList 产品标识列表
+                     * 
                      */
                     void SetProductIdList(const std::vector<std::string>& _productIdList);
 
                     /**
                      * 判断参数 ProductIdList 是否已赋值
                      * @return ProductIdList 是否已赋值
+                     * 
                      */
                     bool ProductIdListHasBeenSet() const;
 
                     /**
                      * 获取坐标类型
                      * @return CoordinateType 坐标类型
+                     * 
                      */
                     int64_t GetCoordinateType() const;
 
                     /**
                      * 设置坐标类型
-                     * @param CoordinateType 坐标类型
+                     * @param _coordinateType 坐标类型
+                     * 
                      */
                     void SetCoordinateType(const int64_t& _coordinateType);
 
                     /**
                      * 判断参数 CoordinateType 是否已赋值
                      * @return CoordinateType 是否已赋值
+                     * 
                      */
                     bool CoordinateTypeHasBeenSet() const;
 
                     /**
                      * 获取分页偏移
                      * @return Offset 分页偏移
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移
-                     * @param Offset 分页偏移
+                     * @param _offset 分页偏移
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的大小
                      * @return Limit 分页的大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页的大小
-                     * @param Limit 分页的大小
+                     * @param _limit 分页的大小
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

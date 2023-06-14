@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc的id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId vpc的id
+                     * @param _vpcId vpc的id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetIds 子网id
+                     * @param _subnetIds 子网id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateType 创建类型(0=继承; 1=新建; 2=指定)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateType() const;
 
                     /**
                      * 设置创建类型(0=继承; 1=新建; 2=指定)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateType 创建类型(0=继承; 1=新建; 2=指定)
+                     * @param _createType 创建类型(0=继承; 1=新建; 2=指定)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateType(const int64_t& _createType);
 
                     /**
                      * 判断参数 CreateType 是否已赋值
                      * @return CreateType 是否已赋值
+                     * 
                      */
                     bool CreateTypeHasBeenSet() const;
 

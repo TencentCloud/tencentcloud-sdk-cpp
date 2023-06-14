@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取录制任务的唯一Id。
                      * @return TaskId 录制任务的唯一Id。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -65,12 +67,14 @@ Exited：表示当前录制任务正在退出的过程中。
 Idle：表示当前录制任务空闲中
 InProgress：表示当前录制任务正在进行中。
 Exited：表示当前录制任务正在退出的过程中。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -79,12 +83,14 @@ Exited：表示当前录制任务正在退出的过程中。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageFileList 录制文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StorageFile> GetStorageFileList() const;
 
                     /**
                      * 判断参数 StorageFileList 是否已赋值
                      * @return StorageFileList 是否已赋值
+                     * 
                      */
                     bool StorageFileListHasBeenSet() const;
 

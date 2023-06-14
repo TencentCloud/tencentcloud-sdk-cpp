@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取聚鑫分配的支付主MidasAppId
                      * @return MidasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫分配的支付主MidasAppId
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
+                     * @param _midasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID，长度不小于5位，仅支持字母和数字的组合
                      * @return UserId 用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID，长度不小于5位，仅支持字母和数字的组合
-                     * @param UserId 用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * @param _userId 用户ID，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取签约使用的渠道
                      * @return Channel 签约使用的渠道
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置签约使用的渠道
-                     * @param Channel 签约使用的渠道
+                     * @param _channel 签约使用的渠道
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取业务签约合同协议号
                      * @return OutContractCode 业务签约合同协议号
+                     * 
                      */
                     std::string GetOutContractCode() const;
 
                     /**
                      * 设置业务签约合同协议号
-                     * @param OutContractCode 业务签约合同协议号
+                     * @param _outContractCode 业务签约合同协议号
+                     * 
                      */
                     void SetOutContractCode(const std::string& _outContractCode);
 
                     /**
                      * 判断参数 OutContractCode 是否已赋值
                      * @return OutContractCode 是否已赋值
+                     * 
                      */
                     bool OutContractCodeHasBeenSet() const;
 
@@ -127,6 +139,7 @@ CONTRACT_STATUS_INVALID=无效状态
 CONTRACT_STATUS_SIGNED=已签约
 CONTRACT_STATUS_TERMINATED=已解约
 CONTRACT_STATUS_PENDING=签约进行中
+                     * 
                      */
                     std::string GetContractStatus() const;
 
@@ -136,89 +149,103 @@ CONTRACT_STATUS_INVALID=无效状态
 CONTRACT_STATUS_SIGNED=已签约
 CONTRACT_STATUS_TERMINATED=已解约
 CONTRACT_STATUS_PENDING=签约进行中
-                     * @param ContractStatus 签约状态，枚举值
+                     * @param _contractStatus 签约状态，枚举值
 CONTRACT_STATUS_INVALID=无效状态
 CONTRACT_STATUS_SIGNED=已签约
 CONTRACT_STATUS_TERMINATED=已解约
 CONTRACT_STATUS_PENDING=签约进行中
+                     * 
                      */
                     void SetContractStatus(const std::string& _contractStatus);
 
                     /**
                      * 判断参数 ContractStatus 是否已赋值
                      * @return ContractStatus 是否已赋值
+                     * 
                      */
                     bool ContractStatusHasBeenSet() const;
 
                     /**
                      * 获取签约同步信息
                      * @return ContractSyncInfo 签约同步信息
+                     * 
                      */
                     ContractSyncInfo GetContractSyncInfo() const;
 
                     /**
                      * 设置签约同步信息
-                     * @param ContractSyncInfo 签约同步信息
+                     * @param _contractSyncInfo 签约同步信息
+                     * 
                      */
                     void SetContractSyncInfo(const ContractSyncInfo& _contractSyncInfo);
 
                     /**
                      * 判断参数 ContractSyncInfo 是否已赋值
                      * @return ContractSyncInfo 是否已赋值
+                     * 
                      */
                     bool ContractSyncInfoHasBeenSet() const;
 
                     /**
                      * 获取按照聚鑫安全密钥计算的签名
                      * @return MidasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置按照聚鑫安全密钥计算的签名
-                     * @param MidasSignature 按照聚鑫安全密钥计算的签名
+                     * @param _midasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
                      * @return MidasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的安全ID
-                     * @param MidasSecretId 聚鑫分配的安全ID
+                     * @param _midasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置聚鑫计费SubAppId，代表子商户
-                     * @param SubAppId 聚鑫计费SubAppId，代表子商户
+                     * @param _subAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -231,6 +258,7 @@ ANONYMOUS: 匿名类型 USER_ID
 USER_ID: 用户ID
 ANONYMOUS: 匿名类型 USER_ID
 默认值为 USER_ID
+                     * 
                      */
                     std::string GetUserType() const;
 
@@ -239,34 +267,39 @@ ANONYMOUS: 匿名类型 USER_ID
 USER_ID: 用户ID
 ANONYMOUS: 匿名类型 USER_ID
 默认值为 USER_ID
-                     * @param UserType 用户类型，枚举值
+                     * @param _userType 用户类型，枚举值
 USER_ID: 用户ID
 ANONYMOUS: 匿名类型 USER_ID
 默认值为 USER_ID
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
                     /**
                      * 获取场景信息
                      * @return SceneInfo 场景信息
+                     * 
                      */
                     SceneInfo GetSceneInfo() const;
 
                     /**
                      * 设置场景信息
-                     * @param SceneInfo 场景信息
+                     * @param _sceneInfo 场景信息
+                     * 
                      */
                     void SetSceneInfo(const SceneInfo& _sceneInfo);
 
                     /**
                      * 判断参数 SceneInfo 是否已赋值
                      * @return SceneInfo 是否已赋值
+                     * 
                      */
                     bool SceneInfoHasBeenSet() const;
 
@@ -281,6 +314,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -290,17 +324,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param MidasEnvironment 环境名:
+                     * @param _midasEnvironment 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

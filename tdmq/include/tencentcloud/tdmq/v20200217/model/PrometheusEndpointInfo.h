@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrometheusEndpointStatus Prometheus开关的状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrometheusEndpointStatus() const;
 
                     /**
                      * 设置Prometheus开关的状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrometheusEndpointStatus Prometheus开关的状态。
+                     * @param _prometheusEndpointStatus Prometheus开关的状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrometheusEndpointStatus(const std::string& _prometheusEndpointStatus);
 
                     /**
                      * 判断参数 PrometheusEndpointStatus 是否已赋值
                      * @return PrometheusEndpointStatus 是否已赋值
+                     * 
                      */
                     bool PrometheusEndpointStatusHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcPrometheusEndpoint prometheus信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetVpcPrometheusEndpoint() const;
 
                     /**
                      * 设置prometheus信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcPrometheusEndpoint prometheus信息
+                     * @param _vpcPrometheusEndpoint prometheus信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcPrometheusEndpoint(const std::vector<std::string>& _vpcPrometheusEndpoint);
 
                     /**
                      * 判断参数 VpcPrometheusEndpoint 是否已赋值
                      * @return VpcPrometheusEndpoint 是否已赋值
+                     * 
                      */
                     bool VpcPrometheusEndpointHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePrometheusAddress 节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNodePrometheusAddress() const;
 
                     /**
                      * 设置节点信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodePrometheusAddress 节点信息
+                     * @param _nodePrometheusAddress 节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodePrometheusAddress(const std::vector<std::string>& _nodePrometheusAddress);
 
                     /**
                      * 判断参数 NodePrometheusAddress 是否已赋值
                      * @return NodePrometheusAddress 是否已赋值
+                     * 
                      */
                     bool NodePrometheusAddressHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcEndpointInfo vpc信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VpcEndpointInfo GetVpcEndpointInfo() const;
 
                     /**
                      * 设置vpc信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcEndpointInfo vpc信息
+                     * @param _vpcEndpointInfo vpc信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcEndpointInfo(const VpcEndpointInfo& _vpcEndpointInfo);
 
                     /**
                      * 判断参数 VpcEndpointInfo 是否已赋值
                      * @return VpcEndpointInfo 是否已赋值
+                     * 
                      */
                     bool VpcEndpointInfoHasBeenSet() const;
 

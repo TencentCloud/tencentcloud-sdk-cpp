@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取CHC物理服务器的实例id
                      * @return ChcId CHC物理服务器的实例id
+                     * 
                      */
                     std::string GetChcId() const;
 
                     /**
                      * 设置CHC物理服务器的实例id
-                     * @param ChcId CHC物理服务器的实例id
+                     * @param _chcId CHC物理服务器的实例id
+                     * 
                      */
                     void SetChcId(const std::string& _chcId);
 
                     /**
                      * 判断参数 ChcId 是否已赋值
                      * @return ChcId 是否已赋值
+                     * 
                      */
                     bool ChcIdHasBeenSet() const;
 
                     /**
                      * 获取CHC物理服务器的状态
                      * @return State CHC物理服务器的状态
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置CHC物理服务器的状态
-                     * @param State CHC物理服务器的状态
+                     * @param _state CHC物理服务器的状态
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取当前CHC物理服务器禁止做的操作
                      * @return DenyActions 当前CHC物理服务器禁止做的操作
+                     * 
                      */
                     std::vector<std::string> GetDenyActions() const;
 
                     /**
                      * 设置当前CHC物理服务器禁止做的操作
-                     * @param DenyActions 当前CHC物理服务器禁止做的操作
+                     * @param _denyActions 当前CHC物理服务器禁止做的操作
+                     * 
                      */
                     void SetDenyActions(const std::vector<std::string>& _denyActions);
 
                     /**
                      * 判断参数 DenyActions 是否已赋值
                      * @return DenyActions 是否已赋值
+                     * 
                      */
                     bool DenyActionsHasBeenSet() const;
 

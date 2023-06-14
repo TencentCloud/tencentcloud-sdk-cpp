@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取源转发规则ID
                      * @return SourceLocationId 源转发规则ID
+                     * 
                      */
                     std::string GetSourceLocationId() const;
 
                     /**
                      * 设置源转发规则ID
-                     * @param SourceLocationId 源转发规则ID
+                     * @param _sourceLocationId 源转发规则ID
+                     * 
                      */
                     void SetSourceLocationId(const std::string& _sourceLocationId);
 
                     /**
                      * 判断参数 SourceLocationId 是否已赋值
                      * @return SourceLocationId 是否已赋值
+                     * 
                      */
                     bool SourceLocationIdHasBeenSet() const;
 
                     /**
                      * 获取重定向至的目标转发规则ID
                      * @return TargetLocationId 重定向至的目标转发规则ID
+                     * 
                      */
                     std::string GetTargetLocationId() const;
 
                     /**
                      * 设置重定向至的目标转发规则ID
-                     * @param TargetLocationId 重定向至的目标转发规则ID
+                     * @param _targetLocationId 重定向至的目标转发规则ID
+                     * 
                      */
                     void SetTargetLocationId(const std::string& _targetLocationId);
 
                     /**
                      * 判断参数 TargetLocationId 是否已赋值
                      * @return TargetLocationId 是否已赋值
+                     * 
                      */
                     bool TargetLocationIdHasBeenSet() const;
 
                     /**
                      * 获取重定向状态码，可取值301,302,307
                      * @return RewriteCode 重定向状态码，可取值301,302,307
+                     * 
                      */
                     int64_t GetRewriteCode() const;
 
                     /**
                      * 设置重定向状态码，可取值301,302,307
-                     * @param RewriteCode 重定向状态码，可取值301,302,307
+                     * @param _rewriteCode 重定向状态码，可取值301,302,307
+                     * 
                      */
                     void SetRewriteCode(const int64_t& _rewriteCode);
 
                     /**
                      * 判断参数 RewriteCode 是否已赋值
                      * @return RewriteCode 是否已赋值
+                     * 
                      */
                     bool RewriteCodeHasBeenSet() const;
 
                     /**
                      * 获取重定向是否携带匹配的url，配置RewriteCode时必填
                      * @return TakeUrl 重定向是否携带匹配的url，配置RewriteCode时必填
+                     * 
                      */
                     bool GetTakeUrl() const;
 
                     /**
                      * 设置重定向是否携带匹配的url，配置RewriteCode时必填
-                     * @param TakeUrl 重定向是否携带匹配的url，配置RewriteCode时必填
+                     * @param _takeUrl 重定向是否携带匹配的url，配置RewriteCode时必填
+                     * 
                      */
                     void SetTakeUrl(const bool& _takeUrl);
 
                     /**
                      * 判断参数 TakeUrl 是否已赋值
                      * @return TakeUrl 是否已赋值
+                     * 
                      */
                     bool TakeUrlHasBeenSet() const;
 
                     /**
                      * 获取源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
                      * @return SourceDomain 源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     * 
                      */
                     std::string GetSourceDomain() const;
 
                     /**
                      * 设置源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
-                     * @param SourceDomain 源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     * @param _sourceDomain 源转发的域名，必须是SourceLocationId对应的域名，配置RewriteCode时必填
+                     * 
                      */
                     void SetSourceDomain(const std::string& _sourceDomain);
 
                     /**
                      * 判断参数 SourceDomain 是否已赋值
                      * @return SourceDomain 是否已赋值
+                     * 
                      */
                     bool SourceDomainHasBeenSet() const;
 

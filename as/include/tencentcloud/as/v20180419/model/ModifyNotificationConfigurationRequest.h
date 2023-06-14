@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待修改的通知ID。
                      * @return AutoScalingNotificationId 待修改的通知ID。
+                     * 
                      */
                     std::string GetAutoScalingNotificationId() const;
 
                     /**
                      * 设置待修改的通知ID。
-                     * @param AutoScalingNotificationId 待修改的通知ID。
+                     * @param _autoScalingNotificationId 待修改的通知ID。
+                     * 
                      */
                     void SetAutoScalingNotificationId(const std::string& _autoScalingNotificationId);
 
                     /**
                      * 判断参数 AutoScalingNotificationId 是否已赋值
                      * @return AutoScalingNotificationId 是否已赋值
+                     * 
                      */
                     bool AutoScalingNotificationIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 <li>SCALE_IN_FAILED：缩容失败</li>
 <li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
 <li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
+                     * 
                      */
                     std::vector<std::string> GetNotificationTypes() const;
 
@@ -86,73 +90,84 @@ namespace TencentCloud
 <li>SCALE_IN_FAILED：缩容失败</li>
 <li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
 <li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
-                     * @param NotificationTypes 通知类型，即为需要订阅的通知类型集合，取值范围如下：
+                     * @param _notificationTypes 通知类型，即为需要订阅的通知类型集合，取值范围如下：
 <li>SCALE_OUT_SUCCESSFUL：扩容成功</li>
 <li>SCALE_OUT_FAILED：扩容失败</li>
 <li>SCALE_IN_SUCCESSFUL：缩容成功</li>
 <li>SCALE_IN_FAILED：缩容失败</li>
 <li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
 <li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
+                     * 
                      */
                     void SetNotificationTypes(const std::vector<std::string>& _notificationTypes);
 
                     /**
                      * 判断参数 NotificationTypes 是否已赋值
                      * @return NotificationTypes 是否已赋值
+                     * 
                      */
                     bool NotificationTypesHasBeenSet() const;
 
                     /**
                      * 获取通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
                      * @return NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
+                     * 
                      */
                     std::vector<std::string> GetNotificationUserGroupIds() const;
 
                     /**
                      * 设置通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
-                     * @param NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
+                     * @param _notificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。
+                     * 
                      */
                     void SetNotificationUserGroupIds(const std::vector<std::string>& _notificationUserGroupIds);
 
                     /**
                      * 判断参数 NotificationUserGroupIds 是否已赋值
                      * @return NotificationUserGroupIds 是否已赋值
+                     * 
                      */
                     bool NotificationUserGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取CMQ 队列或 TDMQ CMQ 队列名。
                      * @return QueueName CMQ 队列或 TDMQ CMQ 队列名。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置CMQ 队列或 TDMQ CMQ 队列名。
-                     * @param QueueName CMQ 队列或 TDMQ CMQ 队列名。
+                     * @param _queueName CMQ 队列或 TDMQ CMQ 队列名。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
                     /**
                      * 获取CMQ 主题或 TDMQ CMQ 主题名。
                      * @return TopicName CMQ 主题或 TDMQ CMQ 主题名。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置CMQ 主题或 TDMQ CMQ 主题名。
-                     * @param TopicName CMQ 主题或 TDMQ CMQ 主题名。
+                     * @param _topicName CMQ 主题或 TDMQ CMQ 主题名。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

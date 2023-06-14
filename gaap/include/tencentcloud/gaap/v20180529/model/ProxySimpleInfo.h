@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取通道ID
                      * @return ProxyId 通道ID
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置通道ID
-                     * @param ProxyId 通道ID
+                     * @param _proxyId 通道ID
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
                     /**
                      * 获取通道名称
                      * @return ProxyName 通道名称
+                     * 
                      */
                     std::string GetProxyName() const;
 
                     /**
                      * 设置通道名称
-                     * @param ProxyName 通道名称
+                     * @param _proxyName 通道名称
+                     * 
                      */
                     void SetProxyName(const std::string& _proxyName);
 
                     /**
                      * 判断参数 ProxyName 是否已赋值
                      * @return ProxyName 是否已赋值
+                     * 
                      */
                     bool ProxyNameHasBeenSet() const;
 
                     /**
                      * 获取监听器列表
                      * @return ListenerList 监听器列表
+                     * 
                      */
                     std::vector<ListenerInfo> GetListenerList() const;
 
                     /**
                      * 设置监听器列表
-                     * @param ListenerList 监听器列表
+                     * @param _listenerList 监听器列表
+                     * 
                      */
                     void SetListenerList(const std::vector<ListenerInfo>& _listenerList);
 
                     /**
                      * 判断参数 ListenerList 是否已赋值
                      * @return ListenerList 是否已赋值
+                     * 
                      */
                     bool ListenerListHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品名
                      * @return ProductId 产品名
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品名
-                     * @param ProductId 产品名
+                     * @param _productId 产品名
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名
                      * @return DeviceName 设备名
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名
-                     * @param DeviceName 设备名
+                     * @param _deviceName 设备名
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取设备的psk
                      * @return Psk 设备的psk
+                     * 
                      */
                     std::string GetPsk() const;
 
                     /**
                      * 设置设备的psk
-                     * @param Psk 设备的psk
+                     * @param _psk 设备的psk
+                     * 
                      */
                     void SetPsk(const std::string& _psk);
 
                     /**
                      * 判断参数 Psk 是否已赋值
                      * @return Psk 是否已赋值
+                     * 
                      */
                     bool PskHasBeenSet() const;
 

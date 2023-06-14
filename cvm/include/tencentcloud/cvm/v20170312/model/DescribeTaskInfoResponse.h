@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询返回的维修任务总数量。
                      * @return TotalCount 查询返回的维修任务总数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepairTaskInfoSet 查询返回的维修任务列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RepairTaskInfo> GetRepairTaskInfoSet() const;
 
                     /**
                      * 判断参数 RepairTaskInfoSet 是否已赋值
                      * @return RepairTaskInfoSet 是否已赋值
+                     * 
                      */
                     bool RepairTaskInfoSetHasBeenSet() const;
 

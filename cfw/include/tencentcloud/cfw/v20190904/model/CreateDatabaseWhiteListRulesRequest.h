@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取创建白名单数据
                      * @return DatabaseWhiteListRuleData 创建白名单数据
+                     * 
                      */
                     std::vector<DatabaseWhiteListRuleData> GetDatabaseWhiteListRuleData() const;
 
                     /**
                      * 设置创建白名单数据
-                     * @param DatabaseWhiteListRuleData 创建白名单数据
+                     * @param _databaseWhiteListRuleData 创建白名单数据
+                     * 
                      */
                     void SetDatabaseWhiteListRuleData(const std::vector<DatabaseWhiteListRuleData>& _databaseWhiteListRuleData);
 
                     /**
                      * 判断参数 DatabaseWhiteListRuleData 是否已赋值
                      * @return DatabaseWhiteListRuleData 是否已赋值
+                     * 
                      */
                     bool DatabaseWhiteListRuleDataHasBeenSet() const;
 

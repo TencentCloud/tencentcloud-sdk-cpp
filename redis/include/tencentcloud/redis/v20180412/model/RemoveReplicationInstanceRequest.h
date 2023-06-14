@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取复制组ID
                      * @return GroupId 复制组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置复制组ID
-                     * @param GroupId 复制组ID
+                     * @param _groupId 复制组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
                      * @return SyncType 数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
+                     * 
                      */
                     bool GetSyncType() const;
 
                     /**
                      * 设置数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
-                     * @param SyncType 数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
+                     * @param _syncType 数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例
+                     * 
                      */
                     void SetSyncType(const bool& _syncType);
 
                     /**
                      * 判断参数 SyncType 是否已赋值
                      * @return SyncType 是否已赋值
+                     * 
                      */
                     bool SyncTypeHasBeenSet() const;
 

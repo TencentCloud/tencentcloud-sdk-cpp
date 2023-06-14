@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境（命名空间）名称。
-                     * @param EnvironmentId 环境（命名空间）名称。
+                     * @param _environmentId 环境（命名空间）名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称。
                      * @return TopicName 主题名称。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称。
-                     * @param TopicName 主题名称。
+                     * @param _topicName 主题名称。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取起始下标，不填默认为0。
                      * @return Offset 起始下标，不填默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置起始下标，不填默认为0。
-                     * @param Offset 起始下标，不填默认为0。
+                     * @param _offset 起始下标，不填默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，不填则默认为10，最大值为20。
                      * @return Limit 返回数量，不填则默认为10，最大值为20。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，不填则默认为10，最大值为20。
-                     * @param Limit 返回数量，不填则默认为10，最大值为20。
+                     * @param _limit 返回数量，不填则默认为10，最大值为20。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取订阅者名称，模糊匹配。
                      * @return SubscriptionName 订阅者名称，模糊匹配。
+                     * 
                      */
                     std::string GetSubscriptionName() const;
 
                     /**
                      * 设置订阅者名称，模糊匹配。
-                     * @param SubscriptionName 订阅者名称，模糊匹配。
+                     * @param _subscriptionName 订阅者名称，模糊匹配。
+                     * 
                      */
                     void SetSubscriptionName(const std::string& _subscriptionName);
 
                     /**
                      * 判断参数 SubscriptionName 是否已赋值
                      * @return SubscriptionName 是否已赋值
+                     * 
                      */
                     bool SubscriptionNameHasBeenSet() const;
 
                     /**
                      * 获取数据过滤条件。
                      * @return Filters 数据过滤条件。
+                     * 
                      */
                     std::vector<FilterSubscription> GetFilters() const;
 
                     /**
                      * 设置数据过滤条件。
-                     * @param Filters 数据过滤条件。
+                     * @param _filters 数据过滤条件。
+                     * 
                      */
                     void SetFilters(const std::vector<FilterSubscription>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置Pulsar 集群的ID
-                     * @param ClusterId Pulsar 集群的ID
+                     * @param _clusterId Pulsar 集群的ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

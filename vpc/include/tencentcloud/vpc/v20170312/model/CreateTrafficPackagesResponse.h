@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的流量包ID列表。
                      * @return TrafficPackageSet 创建的流量包ID列表。
+                     * 
                      */
                     std::vector<std::string> GetTrafficPackageSet() const;
 
                     /**
                      * 判断参数 TrafficPackageSet 是否已赋值
                      * @return TrafficPackageSet 是否已赋值
+                     * 
                      */
                     bool TrafficPackageSetHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MedicineList 药品列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Medicine> GetMedicineList() const;
 
                     /**
                      * 设置药品列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MedicineList 药品列表
+                     * @param _medicineList 药品列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMedicineList(const std::vector<Medicine>& _medicineList);
 
                     /**
                      * 判断参数 MedicineList 是否已赋值
                      * @return MedicineList 是否已赋值
+                     * 
                      */
                     bool MedicineListHasBeenSet() const;
 

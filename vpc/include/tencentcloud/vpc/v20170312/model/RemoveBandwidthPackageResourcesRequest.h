@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取带宽包唯一标识ID，形如'bwp-xxxx'
                      * @return BandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
                      * 设置带宽包唯一标识ID，形如'bwp-xxxx'
-                     * @param BandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * @param _bandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
 
                     /**
                      * 判断参数 BandwidthPackageId 是否已赋值
                      * @return BandwidthPackageId 是否已赋值
+                     * 
                      */
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
                      * 获取资源类型，包括‘Address’, ‘LoadBalance’
                      * @return ResourceType 资源类型，包括‘Address’, ‘LoadBalance’
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型，包括‘Address’, ‘LoadBalance’
-                     * @param ResourceType 资源类型，包括‘Address’, ‘LoadBalance’
+                     * @param _resourceType 资源类型，包括‘Address’, ‘LoadBalance’
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
                      * @return ResourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
-                     * @param ResourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
+                     * @param _resourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 

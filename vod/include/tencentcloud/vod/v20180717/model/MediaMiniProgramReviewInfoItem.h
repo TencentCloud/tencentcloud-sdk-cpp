@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取模板id。小程序视频发布的视频所对应的转码模板ID，为0代表原始视频。
                      * @return Definition 模板id。小程序视频发布的视频所对应的转码模板ID，为0代表原始视频。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置模板id。小程序视频发布的视频所对应的转码模板ID，为0代表原始视频。
-                     * @param Definition 模板id。小程序视频发布的视频所对应的转码模板ID，为0代表原始视频。
+                     * @param _definition 模板id。小程序视频发布的视频所对应的转码模板ID，为0代表原始视频。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取视频元信息。
                      * @return MetaData 视频元信息。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置视频元信息。
-                     * @param MetaData 视频元信息。
+                     * @param _metaData 视频元信息。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取小程序音视频审核视频播放地址。
                      * @return Url 小程序音视频审核视频播放地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置小程序音视频审核视频播放地址。
-                     * @param Url 小程序音视频审核视频播放地址。
+                     * @param _url 小程序音视频审核视频播放地址。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
                      * @return ReviewResult 小程序视频发布状态：
 <li>Pass：成功。</li>
 <li>Rejected：未通过。</li>
+                     * 
                      */
                     std::string GetReviewResult() const;
 
@@ -116,33 +126,38 @@ namespace TencentCloud
                      * 设置小程序视频发布状态：
 <li>Pass：成功。</li>
 <li>Rejected：未通过。</li>
-                     * @param ReviewResult 小程序视频发布状态：
+                     * @param _reviewResult 小程序视频发布状态：
 <li>Pass：成功。</li>
 <li>Rejected：未通过。</li>
+                     * 
                      */
                     void SetReviewResult(const std::string& _reviewResult);
 
                     /**
                      * 判断参数 ReviewResult 是否已赋值
                      * @return ReviewResult 是否已赋值
+                     * 
                      */
                     bool ReviewResultHasBeenSet() const;
 
                     /**
                      * 获取小程序音视频审核元素。
                      * @return ReviewSummary 小程序音视频审核元素。
+                     * 
                      */
                     std::vector<MediaMiniProgramReviewElem> GetReviewSummary() const;
 
                     /**
                      * 设置小程序音视频审核元素。
-                     * @param ReviewSummary 小程序音视频审核元素。
+                     * @param _reviewSummary 小程序音视频审核元素。
+                     * 
                      */
                     void SetReviewSummary(const std::vector<MediaMiniProgramReviewElem>& _reviewSummary);
 
                     /**
                      * 判断参数 ReviewSummary 是否已赋值
                      * @return ReviewSummary 是否已赋值
+                     * 
                      */
                     bool ReviewSummaryHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskIds 任务id
+                     * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskIds 任务id
+                     * @param _taskIds 任务id
+                     * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
 
                     /**
                      * 判断参数 TaskIds 是否已赋值
                      * @return TaskIds 是否已赋值
+                     * 
                      */
                     bool TaskIdsHasBeenSet() const;
 
                     /**
                      * 获取告警配置信息
                      * @return TaskAlarmInfo 告警配置信息
+                     * 
                      */
                     TaskAlarmInfo GetTaskAlarmInfo() const;
 
                     /**
                      * 设置告警配置信息
-                     * @param TaskAlarmInfo 告警配置信息
+                     * @param _taskAlarmInfo 告警配置信息
+                     * 
                      */
                     void SetTaskAlarmInfo(const TaskAlarmInfo& _taskAlarmInfo);
 
                     /**
                      * 判断参数 TaskAlarmInfo 是否已赋值
                      * @return TaskAlarmInfo 是否已赋值
+                     * 
                      */
                     bool TaskAlarmInfoHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

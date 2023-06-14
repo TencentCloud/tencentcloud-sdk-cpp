@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取服务
                      * @return Service 服务
+                     * 
                      */
                     ModelService GetService() const;
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 

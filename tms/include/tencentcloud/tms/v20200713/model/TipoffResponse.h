@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取举报结果， "0-举报数据提交成功  99-举报数据提交失败"
                      * @return ResultCode 举报结果， "0-举报数据提交成功  99-举报数据提交失败"
+                     * 
                      */
                     int64_t GetResultCode() const;
 
                     /**
                      * 设置举报结果， "0-举报数据提交成功  99-举报数据提交失败"
-                     * @param ResultCode 举报结果， "0-举报数据提交成功  99-举报数据提交失败"
+                     * @param _resultCode 举报结果， "0-举报数据提交成功  99-举报数据提交失败"
+                     * 
                      */
                     void SetResultCode(const int64_t& _resultCode);
 
                     /**
                      * 判断参数 ResultCode 是否已赋值
                      * @return ResultCode 是否已赋值
+                     * 
                      */
                     bool ResultCodeHasBeenSet() const;
 
                     /**
                      * 获取结果描述
                      * @return ResultMsg 结果描述
+                     * 
                      */
                     std::string GetResultMsg() const;
 
                     /**
                      * 设置结果描述
-                     * @param ResultMsg 结果描述
+                     * @param _resultMsg 结果描述
+                     * 
                      */
                     void SetResultMsg(const std::string& _resultMsg);
 
                     /**
                      * 判断参数 ResultMsg 是否已赋值
                      * @return ResultMsg 是否已赋值
+                     * 
                      */
                     bool ResultMsgHasBeenSet() const;
 

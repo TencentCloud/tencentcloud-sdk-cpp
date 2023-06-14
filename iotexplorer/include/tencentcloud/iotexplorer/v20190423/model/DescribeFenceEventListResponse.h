@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取围栏告警事件列表
                      * @return List 围栏告警事件列表
+                     * 
                      */
                     std::vector<FenceEventItem> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取围栏告警事件总数
                      * @return Total 围栏告警事件总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

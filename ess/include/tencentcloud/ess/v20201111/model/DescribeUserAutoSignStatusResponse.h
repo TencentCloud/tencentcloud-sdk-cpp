@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取是否已开通自动签
                      * @return IsOpen 是否已开通自动签
+                     * 
                      */
                     bool GetIsOpen() const;
 
                     /**
                      * 判断参数 IsOpen 是否已赋值
                      * @return IsOpen 是否已赋值
+                     * 
                      */
                     bool IsOpenHasBeenSet() const;
 
                     /**
                      * 获取自动签许可生效时间。当且仅当已开通自动签时有值。
                      * @return LicenseFrom 自动签许可生效时间。当且仅当已开通自动签时有值。
+                     * 
                      */
                     int64_t GetLicenseFrom() const;
 
                     /**
                      * 判断参数 LicenseFrom 是否已赋值
                      * @return LicenseFrom 是否已赋值
+                     * 
                      */
                     bool LicenseFromHasBeenSet() const;
 
                     /**
                      * 获取自动签许可到期时间。当且仅当已开通自动签时有值。
                      * @return LicenseTo 自动签许可到期时间。当且仅当已开通自动签时有值。
+                     * 
                      */
                     int64_t GetLicenseTo() const;
 
                     /**
                      * 判断参数 LicenseTo 是否已赋值
                      * @return LicenseTo 是否已赋值
+                     * 
                      */
                     bool LicenseToHasBeenSet() const;
 

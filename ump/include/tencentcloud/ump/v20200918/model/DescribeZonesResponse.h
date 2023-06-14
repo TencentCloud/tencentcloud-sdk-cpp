@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取点位列表
                      * @return Zones 点位列表
+                     * 
                      */
                     std::vector<ZoneConfig> GetZones() const;
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 

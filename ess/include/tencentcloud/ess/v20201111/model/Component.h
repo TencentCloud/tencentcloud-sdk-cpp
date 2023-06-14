@@ -89,6 +89,7 @@ SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内�
 SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
 
 表单域的控件不能作为印章和签名控件
+                     * 
                      */
                     std::string GetComponentType() const;
 
@@ -114,7 +115,7 @@ SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内�
 SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
 
 表单域的控件不能作为印章和签名控件
-                     * @param ComponentType 如果是Component填写控件类型，则可选的字段为：
+                     * @param _componentType 如果是Component填写控件类型，则可选的字段为：
 TEXT - 普通文本控件，输入文本字符串；
 MULTI_LINE_TEXT - 多行文本控件，输入文本字符串；
 CHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；
@@ -135,192 +136,224 @@ SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内�
 SIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。
 
 表单域的控件不能作为印章和签名控件
+                     * 
                      */
                     void SetComponentType(const std::string& _componentType);
 
                     /**
                      * 判断参数 ComponentType 是否已赋值
                      * @return ComponentType 是否已赋值
+                     * 
                      */
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
                      * 获取控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
                      * @return FileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * 
                      */
                     int64_t GetFileIndex() const;
 
                     /**
                      * 设置控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
-                     * @param FileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * @param _fileIndex 控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0
+                     * 
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
 
                     /**
                      * 判断参数 FileIndex 是否已赋值
                      * @return FileIndex 是否已赋值
+                     * 
                      */
                     bool FileIndexHasBeenSet() const;
 
                     /**
                      * 获取参数控件高度，单位pt
                      * @return ComponentHeight 参数控件高度，单位pt
+                     * 
                      */
                     double GetComponentHeight() const;
 
                     /**
                      * 设置参数控件高度，单位pt
-                     * @param ComponentHeight 参数控件高度，单位pt
+                     * @param _componentHeight 参数控件高度，单位pt
+                     * 
                      */
                     void SetComponentHeight(const double& _componentHeight);
 
                     /**
                      * 判断参数 ComponentHeight 是否已赋值
                      * @return ComponentHeight 是否已赋值
+                     * 
                      */
                     bool ComponentHeightHasBeenSet() const;
 
                     /**
                      * 获取参数控件宽度，单位pt
                      * @return ComponentWidth 参数控件宽度，单位pt
+                     * 
                      */
                     double GetComponentWidth() const;
 
                     /**
                      * 设置参数控件宽度，单位pt
-                     * @param ComponentWidth 参数控件宽度，单位pt
+                     * @param _componentWidth 参数控件宽度，单位pt
+                     * 
                      */
                     void SetComponentWidth(const double& _componentWidth);
 
                     /**
                      * 判断参数 ComponentWidth 是否已赋值
                      * @return ComponentWidth 是否已赋值
+                     * 
                      */
                     bool ComponentWidthHasBeenSet() const;
 
                     /**
                      * 获取参数控件所在页码，取值为：1-N
                      * @return ComponentPage 参数控件所在页码，取值为：1-N
+                     * 
                      */
                     int64_t GetComponentPage() const;
 
                     /**
                      * 设置参数控件所在页码，取值为：1-N
-                     * @param ComponentPage 参数控件所在页码，取值为：1-N
+                     * @param _componentPage 参数控件所在页码，取值为：1-N
+                     * 
                      */
                     void SetComponentPage(const int64_t& _componentPage);
 
                     /**
                      * 判断参数 ComponentPage 是否已赋值
                      * @return ComponentPage 是否已赋值
+                     * 
                      */
                     bool ComponentPageHasBeenSet() const;
 
                     /**
                      * 获取参数控件X位置，单位pt
                      * @return ComponentPosX 参数控件X位置，单位pt
+                     * 
                      */
                     double GetComponentPosX() const;
 
                     /**
                      * 设置参数控件X位置，单位pt
-                     * @param ComponentPosX 参数控件X位置，单位pt
+                     * @param _componentPosX 参数控件X位置，单位pt
+                     * 
                      */
                     void SetComponentPosX(const double& _componentPosX);
 
                     /**
                      * 判断参数 ComponentPosX 是否已赋值
                      * @return ComponentPosX 是否已赋值
+                     * 
                      */
                     bool ComponentPosXHasBeenSet() const;
 
                     /**
                      * 获取参数控件Y位置，单位pt
                      * @return ComponentPosY 参数控件Y位置，单位pt
+                     * 
                      */
                     double GetComponentPosY() const;
 
                     /**
                      * 设置参数控件Y位置，单位pt
-                     * @param ComponentPosY 参数控件Y位置，单位pt
+                     * @param _componentPosY 参数控件Y位置，单位pt
+                     * 
                      */
                     void SetComponentPosY(const double& _componentPosY);
 
                     /**
                      * 判断参数 ComponentPosY 是否已赋值
                      * @return ComponentPosY 是否已赋值
+                     * 
                      */
                     bool ComponentPosYHasBeenSet() const;
 
                     /**
                      * 获取查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
                      * @return ComponentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * 
                      */
                     std::string GetComponentId() const;
 
                     /**
                      * 设置查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
-                     * @param ComponentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * @param _componentId 查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字
+                     * 
                      */
                     void SetComponentId(const std::string& _componentId);
 
                     /**
                      * 判断参数 ComponentId 是否已赋值
                      * @return ComponentId 是否已赋值
+                     * 
                      */
                     bool ComponentIdHasBeenSet() const;
 
                     /**
                      * 获取查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
                      * @return ComponentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
-                     * @param ComponentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * @param _componentName 查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称
+                     * 
                      */
                     void SetComponentName(const std::string& _componentName);
 
                     /**
                      * 判断参数 ComponentName 是否已赋值
                      * @return ComponentName 是否已赋值
+                     * 
                      */
                     bool ComponentNameHasBeenSet() const;
 
                     /**
                      * 获取是否必选，默认为false
                      * @return ComponentRequired 是否必选，默认为false
+                     * 
                      */
                     bool GetComponentRequired() const;
 
                     /**
                      * 设置是否必选，默认为false
-                     * @param ComponentRequired 是否必选，默认为false
+                     * @param _componentRequired 是否必选，默认为false
+                     * 
                      */
                     void SetComponentRequired(const bool& _componentRequired);
 
                     /**
                      * 判断参数 ComponentRequired 是否已赋值
                      * @return ComponentRequired 是否已赋值
+                     * 
                      */
                     bool ComponentRequiredHasBeenSet() const;
 
                     /**
                      * 获取控件关联的签署人ID
                      * @return ComponentRecipientId 控件关联的签署人ID
+                     * 
                      */
                     std::string GetComponentRecipientId() const;
 
                     /**
                      * 设置控件关联的签署人ID
-                     * @param ComponentRecipientId 控件关联的签署人ID
+                     * @param _componentRecipientId 控件关联的签署人ID
+                     * 
                      */
                     void SetComponentRecipientId(const std::string& _componentRecipientId);
 
                     /**
                      * 判断参数 ComponentRecipientId 是否已赋值
                      * @return ComponentRecipientId 是否已赋值
+                     * 
                      */
                     bool ComponentRecipientIdHasBeenSet() const;
 
@@ -336,11 +369,10 @@ ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
 HANDWRITE – 手写签名
-BORDERLESS_ESIGN – 自动生成无边框腾讯体
 OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}
 
 ComponentType为SIGN_DATE时，支持以下参数：
 1 Font：字符串类型目前只支持"黑体"、"宋体"，如果不填默认为"黑体"
@@ -362,11 +394,10 @@ ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
 HANDWRITE – 手写签名
-BORDERLESS_ESIGN – 自动生成无边框腾讯体
 OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}
 
 ComponentType为SIGN_DATE时，支持以下参数：
 1 Font：字符串类型目前只支持"黑体"、"宋体"，如果不填默认为"黑体"
@@ -377,6 +408,7 @@ ComponentType为SIGN_DATE时，支持以下参数：
 如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期
 特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）
 参数样例：    "ComponentExtra": "{\"Format\":“yyyy m d”,\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}",
+                     * 
                      */
                     std::string GetComponentExtra() const;
 
@@ -392,11 +424,10 @@ ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
 HANDWRITE – 手写签名
-BORDERLESS_ESIGN – 自动生成无边框腾讯体
 OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}
 
 ComponentType为SIGN_DATE时，支持以下参数：
 1 Font：字符串类型目前只支持"黑体"、"宋体"，如果不填默认为"黑体"
@@ -407,7 +438,7 @@ ComponentType为SIGN_DATE时，支持以下参数：
 如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期
 特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）
 参数样例：    "ComponentExtra": "{\"Format\":“yyyy m d”,\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}",
-                     * @param ComponentExtra 扩展参数：
+                     * @param _componentExtra 扩展参数：
 为JSON格式。
 
 ComponentType为FILL_IMAGE时，支持以下参数：
@@ -418,11 +449,10 @@ ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
 HANDWRITE – 手写签名
-BORDERLESS_ESIGN – 自动生成无边框腾讯体
 OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}
 
 ComponentType为SIGN_DATE时，支持以下参数：
 1 Font：字符串类型目前只支持"黑体"、"宋体"，如果不填默认为"黑体"
@@ -433,30 +463,35 @@ ComponentType为SIGN_DATE时，支持以下参数：
 如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期
 特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）
 参数样例：    "ComponentExtra": "{\"Format\":“yyyy m d”,\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}",
+                     * 
                      */
                     void SetComponentExtra(const std::string& _componentExtra);
 
                     /**
                      * 判断参数 ComponentExtra 是否已赋值
                      * @return ComponentExtra 是否已赋值
+                     * 
                      */
                     bool ComponentExtraHasBeenSet() const;
 
                     /**
                      * 获取是否是表单域类型，默认不false-不是
                      * @return IsFormType 是否是表单域类型，默认不false-不是
+                     * 
                      */
                     bool GetIsFormType() const;
 
                     /**
                      * 设置是否是表单域类型，默认不false-不是
-                     * @param IsFormType 是否是表单域类型，默认不false-不是
+                     * @param _isFormType 是否是表单域类型，默认不false-不是
+                     * 
                      */
                     void SetIsFormType(const bool& _isFormType);
 
                     /**
                      * 判断参数 IsFormType 是否已赋值
                      * @return IsFormType 是否已赋值
+                     * 
                      */
                     bool IsFormTypeHasBeenSet() const;
 
@@ -613,6 +648,7 @@ SIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取
 
 学历控件：
   同单行文本控件约束，填写选择值中的字符串
+                     * 
                      */
                     std::string GetComponentValue() const;
 
@@ -693,7 +729,7 @@ SIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取
 
 学历控件：
   同单行文本控件约束，填写选择值中的字符串
-                     * @param ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
+                     * @param _componentValue 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
@@ -769,12 +805,14 @@ SIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取
 
 学历控件：
   同单行文本控件约束，填写选择值中的字符串
+                     * 
                      */
                     void SetComponentValue(const std::string& _componentValue);
 
                     /**
                      * 判断参数 ComponentValue 是否已赋值
                      * @return ComponentValue 是否已赋值
+                     * 
                      */
                     bool ComponentValueHasBeenSet() const;
 
@@ -785,6 +823,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      * @return GenerateMode NORMAL 正常模式，使用坐标制定签署控件位置
 FIELD 表单域，需使用ComponentName指定表单域名称
 KEYWORD 关键字，使用ComponentId指定关键字
+                     * 
                      */
                     std::string GetGenerateMode() const;
 
@@ -792,105 +831,122 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      * 设置NORMAL 正常模式，使用坐标制定签署控件位置
 FIELD 表单域，需使用ComponentName指定表单域名称
 KEYWORD 关键字，使用ComponentId指定关键字
-                     * @param GenerateMode NORMAL 正常模式，使用坐标制定签署控件位置
+                     * @param _generateMode NORMAL 正常模式，使用坐标制定签署控件位置
 FIELD 表单域，需使用ComponentName指定表单域名称
 KEYWORD 关键字，使用ComponentId指定关键字
+                     * 
                      */
                     void SetGenerateMode(const std::string& _generateMode);
 
                     /**
                      * 判断参数 GenerateMode 是否已赋值
                      * @return GenerateMode 是否已赋值
+                     * 
                      */
                     bool GenerateModeHasBeenSet() const;
 
                     /**
                      * 获取日期签署控件的字号，默认为 12
                      * @return ComponentDateFontSize 日期签署控件的字号，默认为 12
+                     * 
                      */
                     int64_t GetComponentDateFontSize() const;
 
                     /**
                      * 设置日期签署控件的字号，默认为 12
-                     * @param ComponentDateFontSize 日期签署控件的字号，默认为 12
+                     * @param _componentDateFontSize 日期签署控件的字号，默认为 12
+                     * 
                      */
                     void SetComponentDateFontSize(const int64_t& _componentDateFontSize);
 
                     /**
                      * 判断参数 ComponentDateFontSize 是否已赋值
                      * @return ComponentDateFontSize 是否已赋值
+                     * 
                      */
                     bool ComponentDateFontSizeHasBeenSet() const;
 
                     /**
                      * 获取第三方应用集成平台模板控件 id 标识
                      * @return ChannelComponentId 第三方应用集成平台模板控件 id 标识
+                     * 
                      */
                     std::string GetChannelComponentId() const;
 
                     /**
                      * 设置第三方应用集成平台模板控件 id 标识
-                     * @param ChannelComponentId 第三方应用集成平台模板控件 id 标识
+                     * @param _channelComponentId 第三方应用集成平台模板控件 id 标识
+                     * 
                      */
                     void SetChannelComponentId(const std::string& _channelComponentId);
 
                     /**
                      * 判断参数 ChannelComponentId 是否已赋值
                      * @return ChannelComponentId 是否已赋值
+                     * 
                      */
                     bool ChannelComponentIdHasBeenSet() const;
 
                     /**
                      * 获取指定关键字时横坐标偏移量，单位pt
                      * @return OffsetX 指定关键字时横坐标偏移量，单位pt
+                     * 
                      */
                     double GetOffsetX() const;
 
                     /**
                      * 设置指定关键字时横坐标偏移量，单位pt
-                     * @param OffsetX 指定关键字时横坐标偏移量，单位pt
+                     * @param _offsetX 指定关键字时横坐标偏移量，单位pt
+                     * 
                      */
                     void SetOffsetX(const double& _offsetX);
 
                     /**
                      * 判断参数 OffsetX 是否已赋值
                      * @return OffsetX 是否已赋值
+                     * 
                      */
                     bool OffsetXHasBeenSet() const;
 
                     /**
                      * 获取指定关键字时纵坐标偏移量，单位pt
                      * @return OffsetY 指定关键字时纵坐标偏移量，单位pt
+                     * 
                      */
                     double GetOffsetY() const;
 
                     /**
                      * 设置指定关键字时纵坐标偏移量，单位pt
-                     * @param OffsetY 指定关键字时纵坐标偏移量，单位pt
+                     * @param _offsetY 指定关键字时纵坐标偏移量，单位pt
+                     * 
                      */
                     void SetOffsetY(const double& _offsetY);
 
                     /**
                      * 判断参数 OffsetY 是否已赋值
                      * @return OffsetY 是否已赋值
+                     * 
                      */
                     bool OffsetYHasBeenSet() const;
 
                     /**
                      * 获取第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
                      * @return ChannelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * 
                      */
                     uint64_t GetChannelComponentSource() const;
 
                     /**
                      * 设置第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
-                     * @param ChannelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * @param _channelComponentSource 第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义
+                     * 
                      */
                     void SetChannelComponentSource(const uint64_t& _channelComponentSource);
 
                     /**
                      * 判断参数 ChannelComponentSource 是否已赋值
                      * @return ChannelComponentSource 是否已赋值
+                     * 
                      */
                     bool ChannelComponentSourceHasBeenSet() const;
 
@@ -899,74 +955,86 @@ KEYWORD 关键字，使用ComponentId指定关键字
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
                      * @return KeywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
+                     * 
                      */
                     std::string GetKeywordOrder() const;
 
                     /**
                      * 设置指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
-                     * @param KeywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
+                     * @param _keywordOrder 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
 传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。
+                     * 
                      */
                     void SetKeywordOrder(const std::string& _keywordOrder);
 
                     /**
                      * 判断参数 KeywordOrder 是否已赋值
                      * @return KeywordOrder 是否已赋值
+                     * 
                      */
                     bool KeywordOrderHasBeenSet() const;
 
                     /**
                      * 获取指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      * @return KeywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 
                      */
                     int64_t GetKeywordPage() const;
 
                     /**
                      * 设置指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
-                     * @param KeywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @param _keywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * 
                      */
                     void SetKeywordPage(const int64_t& _keywordPage);
 
                     /**
                      * 判断参数 KeywordPage 是否已赋值
                      * @return KeywordPage 是否已赋值
+                     * 
                      */
                     bool KeywordPageHasBeenSet() const;
 
                     /**
                      * 获取关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      * @return RelativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 
                      */
                     std::string GetRelativeLocation() const;
 
                     /**
                      * 设置关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
-                     * @param RelativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @param _relativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * 
                      */
                     void SetRelativeLocation(const std::string& _relativeLocation);
 
                     /**
                      * 判断参数 RelativeLocation 是否已赋值
                      * @return RelativeLocation 是否已赋值
+                     * 
                      */
                     bool RelativeLocationHasBeenSet() const;
 
                     /**
                      * 获取关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      * @return KeywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 
                      */
                     std::vector<int64_t> GetKeywordIndexes() const;
 
                     /**
                      * 设置关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
-                     * @param KeywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @param _keywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * 
                      */
                     void SetKeywordIndexes(const std::vector<int64_t>& _keywordIndexes);
 
                     /**
                      * 判断参数 KeywordIndexes 是否已赋值
                      * @return KeywordIndexes 是否已赋值
+                     * 
                      */
                     bool KeywordIndexesHasBeenSet() const;
 
@@ -1070,11 +1138,10 @@ ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
 HANDWRITE – 手写签名
-BORDERLESS_ESIGN – 自动生成无边框腾讯体
 OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
+如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}
 
 ComponentType为SIGN_DATE时，支持以下参数：
 1 Font：字符串类型目前只支持"黑体"、"宋体"，如果不填默认为"黑体"

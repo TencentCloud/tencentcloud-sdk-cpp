@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取证书内容。
                      * @return CertificatePublicKey 证书内容。
+                     * 
                      */
                     std::string GetCertificatePublicKey() const;
 
                     /**
                      * 设置证书内容。
-                     * @param CertificatePublicKey 证书内容。
+                     * @param _certificatePublicKey 证书内容。
+                     * 
                      */
                     void SetCertificatePublicKey(const std::string& _certificatePublicKey);
 
                     /**
                      * 判断参数 CertificatePublicKey 是否已赋值
                      * @return CertificatePublicKey 是否已赋值
+                     * 
                      */
                     bool CertificatePublicKeyHasBeenSet() const;
 
                     /**
                      * 获取私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。
                      * @return CertificatePrivateKey 私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。
+                     * 
                      */
                     std::string GetCertificatePrivateKey() const;
 
                     /**
                      * 设置私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。
-                     * @param CertificatePrivateKey 私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。
+                     * @param _certificatePrivateKey 私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。
+                     * 
                      */
                     void SetCertificatePrivateKey(const std::string& _certificatePrivateKey);
 
                     /**
                      * 判断参数 CertificatePrivateKey 是否已赋值
                      * @return CertificatePrivateKey 是否已赋值
+                     * 
                      */
                     bool CertificatePrivateKeyHasBeenSet() const;
 
                     /**
                      * 获取证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
                      * @return CertificateType 证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
+                     * 
                      */
                     std::string GetCertificateType() const;
 
                     /**
                      * 设置证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
-                     * @param CertificateType 证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
+                     * @param _certificateType 证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
+                     * 
                      */
                     void SetCertificateType(const std::string& _certificateType);
 
                     /**
                      * 判断参数 CertificateType 是否已赋值
                      * @return CertificateType 是否已赋值
+                     * 
                      */
                     bool CertificateTypeHasBeenSet() const;
 
                     /**
                      * 获取备注名称。
                      * @return Alias 备注名称。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置备注名称。
-                     * @param Alias 备注名称。
+                     * @param _alias 备注名称。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取项目 ID。
                      * @return ProjectId 项目 ID。
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
-                     * @param ProjectId 项目 ID。
+                     * @param _projectId 项目 ID。
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
                      * @return CertificateUse 证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     * 
                      */
                     std::string GetCertificateUse() const;
 
                     /**
                      * 设置证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
-                     * @param CertificateUse 证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     * @param _certificateUse 证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”
+                     * 
                      */
                     void SetCertificateUse(const std::string& _certificateUse);
 
                     /**
                      * 判断参数 CertificateUse 是否已赋值
                      * @return CertificateUse 是否已赋值
+                     * 
                      */
                     bool CertificateUseHasBeenSet() const;
 
                     /**
                      * 获取相同的证书是否允许重复上传
                      * @return Repeatable 相同的证书是否允许重复上传
+                     * 
                      */
                     bool GetRepeatable() const;
 
                     /**
                      * 设置相同的证书是否允许重复上传
-                     * @param Repeatable 相同的证书是否允许重复上传
+                     * @param _repeatable 相同的证书是否允许重复上传
+                     * 
                      */
                     void SetRepeatable(const bool& _repeatable);
 
                     /**
                      * 判断参数 Repeatable 是否已赋值
                      * @return Repeatable 是否已赋值
+                     * 
                      */
                     bool RepeatableHasBeenSet() const;
 

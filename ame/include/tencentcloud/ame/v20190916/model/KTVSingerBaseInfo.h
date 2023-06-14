@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取歌手id
                      * @return SingerId 歌手id
+                     * 
                      */
                     std::string GetSingerId() const;
 
                     /**
                      * 设置歌手id
-                     * @param SingerId 歌手id
+                     * @param _singerId 歌手id
+                     * 
                      */
                     void SetSingerId(const std::string& _singerId);
 
                     /**
                      * 判断参数 SingerId 是否已赋值
                      * @return SingerId 是否已赋值
+                     * 
                      */
                     bool SingerIdHasBeenSet() const;
 
                     /**
                      * 获取歌手名
                      * @return Name 歌手名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置歌手名
-                     * @param Name 歌手名
+                     * @param _name 歌手名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取外部回单申请编号
                      * @return OutApplyId 外部回单申请编号
+                     * 
                      */
                     std::string GetOutApplyId() const;
 
                     /**
                      * 设置外部回单申请编号
-                     * @param OutApplyId 外部回单申请编号
+                     * @param _outApplyId 外部回单申请编号
+                     * 
                      */
                     void SetOutApplyId(const std::string& _outApplyId);
 
                     /**
                      * 判断参数 OutApplyId 是否已赋值
                      * @return OutApplyId 是否已赋值
+                     * 
                      */
                     bool OutApplyIdHasBeenSet() const;
 
                     /**
                      * 获取渠道商户ID
                      * @return ChannelMerchantId 渠道商户ID
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户ID
-                     * @param ChannelMerchantId 渠道商户ID
+                     * @param _channelMerchantId 渠道商户ID
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户ID
                      * @return ChannelSubMerchantId 渠道子商户ID
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户ID
-                     * @param ChannelSubMerchantId 渠道子商户ID
+                     * @param _channelSubMerchantId 渠道子商户ID
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道名称，目前只支持ALIPAY
                      * @return ChannelName 渠道名称，目前只支持ALIPAY
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置渠道名称，目前只支持ALIPAY
-                     * @param ChannelName 渠道名称，目前只支持ALIPAY
+                     * @param _channelName 渠道名称，目前只支持ALIPAY
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
                     /**
                      * 获取支付方式，目前只支持SAFT_ISV
                      * @return PaymentMethod 支付方式，目前只支持SAFT_ISV
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
                     /**
                      * 设置支付方式，目前只支持SAFT_ISV
-                     * @param PaymentMethod 支付方式，目前只支持SAFT_ISV
+                     * @param _paymentMethod 支付方式，目前只支持SAFT_ISV
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
                     /**
                      * 获取云企付平台订单号
                      * @return ChannelOrderId 云企付平台订单号
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置云企付平台订单号
-                     * @param ChannelOrderId 云企付平台订单号
+                     * @param _channelOrderId 云企付平台订单号
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
@@ -159,6 +177,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -167,16 +186,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

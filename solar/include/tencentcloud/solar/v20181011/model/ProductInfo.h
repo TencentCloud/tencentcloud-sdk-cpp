@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateId 模板id
+                     * @param _templateId 模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductTitle 模板主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductTitle() const;
 
                     /**
                      * 设置模板主题
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductTitle 模板主题
+                     * @param _productTitle 模板主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductTitle(const std::string& _productTitle);
 
                     /**
                      * 判断参数 ProductTitle 是否已赋值
                      * @return ProductTitle 是否已赋值
+                     * 
                      */
                     bool ProductTitleHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductDesc 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductDesc() const;
 
                     /**
                      * 设置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductDesc 模板描述
+                     * @param _productDesc 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductDesc(const std::string& _productDesc);
 
                     /**
                      * 判断参数 ProductDesc 是否已赋值
                      * @return ProductDesc 是否已赋值
+                     * 
                      */
                     bool ProductDescHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCover 模板封面地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductCover() const;
 
                     /**
                      * 设置模板封面地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductCover 模板封面地址
+                     * @param _productCover 模板封面地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductCover(const std::string& _productCover);
 
                     /**
                      * 判断参数 ProductCover 是否已赋值
                      * @return ProductCover 是否已赋值
+                     * 
                      */
                     bool ProductCoverHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 内容作品id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置内容作品id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 内容作品id
+                     * @param _productId 内容作品id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductUrl 作品预览链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductUrl() const;
 
                     /**
                      * 设置作品预览链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductUrl 作品预览链接
+                     * @param _productUrl 作品预览链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductUrl(const std::string& _productUrl);
 
                     /**
                      * 判断参数 ProductUrl 是否已赋值
                      * @return ProductUrl 是否已赋值
+                     * 
                      */
                     bool ProductUrlHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 作品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置作品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 作品名称
+                     * @param _productName 作品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 

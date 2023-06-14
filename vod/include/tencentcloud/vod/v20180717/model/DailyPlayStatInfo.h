@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return Date 播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param Date 播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _date 播放媒体文件的日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取媒体文件ID。
                      * @return FileId 媒体文件ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置媒体文件ID。
-                     * @param FileId 媒体文件ID。
+                     * @param _fileId 媒体文件ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取播放次数。
                      * @return PlayTimes 播放次数。
+                     * 
                      */
                     uint64_t GetPlayTimes() const;
 
                     /**
                      * 设置播放次数。
-                     * @param PlayTimes 播放次数。
+                     * @param _playTimes 播放次数。
+                     * 
                      */
                     void SetPlayTimes(const uint64_t& _playTimes);
 
                     /**
                      * 判断参数 PlayTimes 是否已赋值
                      * @return PlayTimes 是否已赋值
+                     * 
                      */
                     bool PlayTimesHasBeenSet() const;
 
                     /**
                      * 获取播放流量，单位：字节。
                      * @return Traffic 播放流量，单位：字节。
+                     * 
                      */
                     uint64_t GetTraffic() const;
 
                     /**
                      * 设置播放流量，单位：字节。
-                     * @param Traffic 播放流量，单位：字节。
+                     * @param _traffic 播放流量，单位：字节。
+                     * 
                      */
                     void SetTraffic(const uint64_t& _traffic);
 
                     /**
                      * 判断参数 Traffic 是否已赋值
                      * @return Traffic 是否已赋值
+                     * 
                      */
                     bool TrafficHasBeenSet() const;
 

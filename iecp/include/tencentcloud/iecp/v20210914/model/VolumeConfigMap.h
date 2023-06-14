@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Key列表配置
                      * @return Items Key列表配置
+                     * 
                      */
                     std::vector<VolumeConfigMapKeyToPath> GetItems() const;
 
                     /**
                      * 设置Key列表配置
-                     * @param Items Key列表配置
+                     * @param _items Key列表配置
+                     * 
                      */
                     void SetItems(const std::vector<VolumeConfigMapKeyToPath>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

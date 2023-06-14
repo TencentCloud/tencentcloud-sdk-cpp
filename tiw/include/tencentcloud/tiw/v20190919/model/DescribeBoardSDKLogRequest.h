@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取白板应用的SdkAppId
                      * @return SdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置白板应用的SdkAppId
-                     * @param SdkAppId 白板应用的SdkAppId
+                     * @param _sdkAppId 白板应用的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询日志的白板房间号
                      * @return RoomId 需要查询日志的白板房间号
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置需要查询日志的白板房间号
-                     * @param RoomId 需要查询日志的白板房间号
+                     * @param _roomId 需要查询日志的白板房间号
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询日志的用户ID
                      * @return UserId 需要查询日志的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置需要查询日志的用户ID
-                     * @param UserId 需要查询日志的用户ID
+                     * @param _userId 需要查询日志的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
                      * @return TimeRange 查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
+                     * 
                      */
                     std::vector<int64_t> GetTimeRange() const;
 
                     /**
                      * 设置查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
-                     * @param TimeRange 查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
+                     * @param _timeRange 查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间
+                     * 
                      */
                     void SetTimeRange(const std::vector<int64_t>& _timeRange);
 
                     /**
                      * 判断参数 TimeRange 是否已赋值
                      * @return TimeRange 是否已赋值
+                     * 
                      */
                     bool TimeRangeHasBeenSet() const;
 
                     /**
                      * 获取聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等
                      * @return AggregationInterval 聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等
+                     * 
                      */
                     std::string GetAggregationInterval() const;
 
                     /**
                      * 设置聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等
-                     * @param AggregationInterval 聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等
+                     * @param _aggregationInterval 聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等
+                     * 
                      */
                     void SetAggregationInterval(const std::string& _aggregationInterval);
 
                     /**
                      * 判断参数 AggregationInterval 是否已赋值
                      * @return AggregationInterval 是否已赋值
+                     * 
                      */
                     bool AggregationIntervalHasBeenSet() const;
 
                     /**
                      * 获取额外的查询条件
                      * @return Query 额外的查询条件
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置额外的查询条件
-                     * @param Query 额外的查询条件
+                     * @param _query 额外的查询条件
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取是否按时间升序排列
                      * @return Ascending 是否按时间升序排列
+                     * 
                      */
                     bool GetAscending() const;
 
                     /**
                      * 设置是否按时间升序排列
-                     * @param Ascending 是否按时间升序排列
+                     * @param _ascending 是否按时间升序排列
+                     * 
                      */
                     void SetAscending(const bool& _ascending);
 
                     /**
                      * 判断参数 Ascending 是否已赋值
                      * @return Ascending 是否已赋值
+                     * 
                      */
                     bool AscendingHasBeenSet() const;
 
                     /**
                      * 获取用于递归拉取的上下文Key，在上一次请求中返回
                      * @return Context 用于递归拉取的上下文Key，在上一次请求中返回
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置用于递归拉取的上下文Key，在上一次请求中返回
-                     * @param Context 用于递归拉取的上下文Key，在上一次请求中返回
+                     * @param _context 用于递归拉取的上下文Key，在上一次请求中返回
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取资源类型，例如CBS
                      * @return ResourceType 资源类型，例如CBS
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源类型，例如CBS
-                     * @param ResourceType 资源类型，例如CBS
+                     * @param _resourceType 资源类型，例如CBS
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取集群删除时资源的删除模式：terminate（销毁），retain （保留）
                      * @return DeleteMode 集群删除时资源的删除模式：terminate（销毁），retain （保留）
+                     * 
                      */
                     std::string GetDeleteMode() const;
 
                     /**
                      * 设置集群删除时资源的删除模式：terminate（销毁），retain （保留）
-                     * @param DeleteMode 集群删除时资源的删除模式：terminate（销毁），retain （保留）
+                     * @param _deleteMode 集群删除时资源的删除模式：terminate（销毁），retain （保留）
+                     * 
                      */
                     void SetDeleteMode(const std::string& _deleteMode);
 
                     /**
                      * 判断参数 DeleteMode 是否已赋值
                      * @return DeleteMode 是否已赋值
+                     * 
                      */
                     bool DeleteModeHasBeenSet() const;
 

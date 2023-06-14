@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 是否开启HTTPS回源SNI。
 开启：on，
 关闭：off
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置是否开启HTTPS回源SNI。
 开启：on，
 关闭：off
-                     * @param Switch 是否开启HTTPS回源SNI。
+                     * @param _switch 是否开启HTTPS回源SNI。
 开启：on，
 关闭：off
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerName 回源域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 设置回源域名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServerName 回源域名。
+                     * @param _serverName 回源域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServerName(const std::string& _serverName);
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 

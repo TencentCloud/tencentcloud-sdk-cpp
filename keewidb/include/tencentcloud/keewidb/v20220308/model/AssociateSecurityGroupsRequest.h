@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取数据库引擎名称：keewidb。
                      * @return Product 数据库引擎名称：keewidb。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置数据库引擎名称：keewidb。
-                     * @param Product 数据库引擎名称：keewidb。
+                     * @param _product 数据库引擎名称：keewidb。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取要绑定的安全组 ID，类似sg-efil7***。
                      * @return SecurityGroupId 要绑定的安全组 ID，类似sg-efil7***。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置要绑定的安全组 ID，类似sg-efil7***。
-                     * @param SecurityGroupId 要绑定的安全组 ID，类似sg-efil7***。
+                     * @param _securityGroupId 要绑定的安全组 ID，类似sg-efil7***。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例 ID，格式如：kee-c1nl9***，支持指定多个实例。
                      * @return InstanceIds 实例 ID，格式如：kee-c1nl9***，支持指定多个实例。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例 ID，格式如：kee-c1nl9***，支持指定多个实例。
-                     * @param InstanceIds 实例 ID，格式如：kee-c1nl9***，支持指定多个实例。
+                     * @param _instanceIds 实例 ID，格式如：kee-c1nl9***，支持指定多个实例。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

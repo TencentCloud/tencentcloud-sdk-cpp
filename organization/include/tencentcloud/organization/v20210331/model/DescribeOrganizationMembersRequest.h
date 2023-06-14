@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取偏移量。取值是limit的整数倍，默认值 : 0
                      * @return Offset 偏移量。取值是limit的整数倍，默认值 : 0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。取值是limit的整数倍，默认值 : 0
-                     * @param Offset 偏移量。取值是limit的整数倍，默认值 : 0
+                     * @param _offset 偏移量。取值是limit的整数倍，默认值 : 0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目。取值范围：1~50，默认值：10
                      * @return Limit 限制数目。取值范围：1~50，默认值：10
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目。取值范围：1~50，默认值：10
-                     * @param Limit 限制数目。取值范围：1~50，默认值：10
+                     * @param _limit 限制数目。取值范围：1~50，默认值：10
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取国际站：en，国内站：zh
                      * @return Lang 国际站：en，国内站：zh
+                     * 
                      */
                     std::string GetLang() const;
 
                     /**
                      * 设置国际站：en，国内站：zh
-                     * @param Lang 国际站：en，国内站：zh
+                     * @param _lang 国际站：en，国内站：zh
+                     * 
                      */
                     void SetLang(const std::string& _lang);
 
                     /**
                      * 判断参数 Lang 是否已赋值
                      * @return Lang 是否已赋值
+                     * 
                      */
                     bool LangHasBeenSet() const;
 
                     /**
                      * 获取成员名称或者成员ID搜索。
                      * @return SearchKey 成员名称或者成员ID搜索。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置成员名称或者成员ID搜索。
-                     * @param SearchKey 成员名称或者成员ID搜索。
+                     * @param _searchKey 成员名称或者成员ID搜索。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取主体名称搜索。
                      * @return AuthName 主体名称搜索。
+                     * 
                      */
                     std::string GetAuthName() const;
 
                     /**
                      * 设置主体名称搜索。
-                     * @param AuthName 主体名称搜索。
+                     * @param _authName 主体名称搜索。
+                     * 
                      */
                     void SetAuthName(const std::string& _authName);
 
                     /**
                      * 判断参数 AuthName 是否已赋值
                      * @return AuthName 是否已赋值
+                     * 
                      */
                     bool AuthNameHasBeenSet() const;
 
                     /**
                      * 获取可信服务产品简称。可信服务管理员查询时必须指定
                      * @return Product 可信服务产品简称。可信服务管理员查询时必须指定
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置可信服务产品简称。可信服务管理员查询时必须指定
-                     * @param Product 可信服务产品简称。可信服务管理员查询时必须指定
+                     * @param _product 可信服务产品简称。可信服务管理员查询时必须指定
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

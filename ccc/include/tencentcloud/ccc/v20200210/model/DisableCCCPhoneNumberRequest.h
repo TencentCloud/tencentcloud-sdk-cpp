@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取号码列表，0086开头
                      * @return PhoneNumbers 号码列表，0086开头
+                     * 
                      */
                     std::vector<std::string> GetPhoneNumbers() const;
 
                     /**
                      * 设置号码列表，0086开头
-                     * @param PhoneNumbers 号码列表，0086开头
+                     * @param _phoneNumbers 号码列表，0086开头
+                     * 
                      */
                     void SetPhoneNumbers(const std::vector<std::string>& _phoneNumbers);
 
                     /**
                      * 判断参数 PhoneNumbers 是否已赋值
                      * @return PhoneNumbers 是否已赋值
+                     * 
                      */
                     bool PhoneNumbersHasBeenSet() const;
 
                     /**
                      * 获取停用开关，0启用 1停用
                      * @return Disabled 停用开关，0启用 1停用
+                     * 
                      */
                     int64_t GetDisabled() const;
 
                     /**
                      * 设置停用开关，0启用 1停用
-                     * @param Disabled 停用开关，0启用 1停用
+                     * @param _disabled 停用开关，0启用 1停用
+                     * 
                      */
                     void SetDisabled(const int64_t& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 
                     /**
                      * 获取TCCC 实例应用 ID
                      * @return SdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TCCC 实例应用 ID
-                     * @param SdkAppId TCCC 实例应用 ID
+                     * @param _sdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

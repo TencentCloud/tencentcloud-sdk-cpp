@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取推送类型。ckafka：消息队列；forward：http/https推送
                      * @return Type 推送类型。ckafka：消息队列；forward：http/https推送
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置推送类型。ckafka：消息队列；forward：http/https推送
-                     * @param Type 推送类型。ckafka：消息队列；forward：http/https推送
+                     * @param _type 推送类型。ckafka：消息队列；forward：http/https推送
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取第三方推送地址
                      * @return ForwardAddress 第三方推送地址
+                     * 
                      */
                     std::string GetForwardAddress() const;
 
                     /**
                      * 设置第三方推送地址
-                     * @param ForwardAddress 第三方推送地址
+                     * @param _forwardAddress 第三方推送地址
+                     * 
                      */
                     void SetForwardAddress(const std::string& _forwardAddress);
 
                     /**
                      * 判断参数 ForwardAddress 是否已赋值
                      * @return ForwardAddress 是否已赋值
+                     * 
                      */
                     bool ForwardAddressHasBeenSet() const;
 
                     /**
                      * 获取第三方推送密钥，不填写则不生成签名。
                      * @return ForwardKey 第三方推送密钥，不填写则不生成签名。
+                     * 
                      */
                     std::string GetForwardKey() const;
 
                     /**
                      * 设置第三方推送密钥，不填写则不生成签名。
-                     * @param ForwardKey 第三方推送密钥，不填写则不生成签名。
+                     * @param _forwardKey 第三方推送密钥，不填写则不生成签名。
+                     * 
                      */
                     void SetForwardKey(const std::string& _forwardKey);
 
                     /**
                      * 判断参数 ForwardKey 是否已赋值
                      * @return ForwardKey 是否已赋值
+                     * 
                      */
                     bool ForwardKeyHasBeenSet() const;
 
                     /**
                      * 获取ckafka地域
                      * @return CKafkaRegion ckafka地域
+                     * 
                      */
                     std::string GetCKafkaRegion() const;
 
                     /**
                      * 设置ckafka地域
-                     * @param CKafkaRegion ckafka地域
+                     * @param _cKafkaRegion ckafka地域
+                     * 
                      */
                     void SetCKafkaRegion(const std::string& _cKafkaRegion);
 
                     /**
                      * 判断参数 CKafkaRegion 是否已赋值
                      * @return CKafkaRegion 是否已赋值
+                     * 
                      */
                     bool CKafkaRegionHasBeenSet() const;
 
                     /**
                      * 获取ckafka实例
                      * @return CKafkaInstance ckafka实例
+                     * 
                      */
                     std::string GetCKafkaInstance() const;
 
                     /**
                      * 设置ckafka实例
-                     * @param CKafkaInstance ckafka实例
+                     * @param _cKafkaInstance ckafka实例
+                     * 
                      */
                     void SetCKafkaInstance(const std::string& _cKafkaInstance);
 
                     /**
                      * 判断参数 CKafkaInstance 是否已赋值
                      * @return CKafkaInstance 是否已赋值
+                     * 
                      */
                     bool CKafkaInstanceHasBeenSet() const;
 
                     /**
                      * 获取ckafka订阅主题
                      * @return CKafkaTopic ckafka订阅主题
+                     * 
                      */
                     std::string GetCKafkaTopic() const;
 
                     /**
                      * 设置ckafka订阅主题
-                     * @param CKafkaTopic ckafka订阅主题
+                     * @param _cKafkaTopic ckafka订阅主题
+                     * 
                      */
                     void SetCKafkaTopic(const std::string& _cKafkaTopic);
 
                     /**
                      * 判断参数 CKafkaTopic 是否已赋值
                      * @return CKafkaTopic 是否已赋值
+                     * 
                      */
                     bool CKafkaTopicHasBeenSet() const;
 

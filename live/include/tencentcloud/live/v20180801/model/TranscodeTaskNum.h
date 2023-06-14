@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时间点。
                      * @return Time 时间点。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间点。
-                     * @param Time 时间点。
+                     * @param _time 时间点。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取码率。
                      * @return CodeRate 码率。
+                     * 
                      */
                     uint64_t GetCodeRate() const;
 
                     /**
                      * 设置码率。
-                     * @param CodeRate 码率。
+                     * @param _codeRate 码率。
+                     * 
                      */
                     void SetCodeRate(const uint64_t& _codeRate);
 
                     /**
                      * 判断参数 CodeRate 是否已赋值
                      * @return CodeRate 是否已赋值
+                     * 
                      */
                     bool CodeRateHasBeenSet() const;
 
                     /**
                      * 获取任务数。
                      * @return Num 任务数。
+                     * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 设置任务数。
-                     * @param Num 任务数。
+                     * @param _num 任务数。
+                     * 
                      */
                     void SetNum(const uint64_t& _num);
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取客户的SdkAppId
                      * @return SdkAppId 客户的SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置客户的SdkAppId
-                     * @param SdkAppId 客户的SdkAppId
+                     * @param _sdkAppId 客户的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
                      * @return Url 经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
-                     * @param Url 经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
+                     * @param _url 经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
                      * @return IsStaticPPT 是否为静态PPT，默认为False；
 如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
+                     * 
                      */
                     bool GetIsStaticPPT() const;
 
                     /**
                      * 设置是否为静态PPT，默认为False；
 如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
-                     * @param IsStaticPPT 是否为静态PPT，默认为False；
+                     * @param _isStaticPPT 是否为静态PPT，默认为False；
 如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
+                     * 
                      */
                     void SetIsStaticPPT(const bool& _isStaticPPT);
 
                     /**
                      * 判断参数 IsStaticPPT 是否已赋值
                      * @return IsStaticPPT 是否已赋值
+                     * 
                      */
                     bool IsStaticPPTHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 
                      */
                     std::string GetMinResolution() const;
 
@@ -120,35 +130,40 @@ namespace TencentCloud
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @param MinResolution 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
+                     * @param _minResolution 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
 
 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
 
 示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 
                      */
                     void SetMinResolution(const std::string& _minResolution);
 
                     /**
                      * 判断参数 MinResolution 是否已赋值
                      * @return MinResolution 是否已赋值
+                     * 
                      */
                     bool MinResolutionHasBeenSet() const;
 
                     /**
                      * 获取动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
                      * @return ThumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
+                     * 
                      */
                     std::string GetThumbnailResolution() const;
 
                     /**
                      * 设置动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-                     * @param ThumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
+                     * @param _thumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
+                     * 
                      */
                     void SetThumbnailResolution(const std::string& _thumbnailResolution);
 
                     /**
                      * 判断参数 ThumbnailResolution 是否已赋值
                      * @return ThumbnailResolution 是否已赋值
+                     * 
                      */
                     bool ThumbnailResolutionHasBeenSet() const;
 
@@ -161,6 +176,7 @@ tar.gz： 生成`.tar.gz`压缩包
 
 zip： 生成`.zip`压缩包
 tar.gz： 生成`.tar.gz`压缩包
+                     * 
                      */
                     std::string GetCompressFileType() const;
 
@@ -169,34 +185,39 @@ tar.gz： 生成`.tar.gz`压缩包
 
 zip： 生成`.zip`压缩包
 tar.gz： 生成`.tar.gz`压缩包
-                     * @param CompressFileType 转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
+                     * @param _compressFileType 转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
 
 zip： 生成`.zip`压缩包
 tar.gz： 生成`.tar.gz`压缩包
+                     * 
                      */
                     void SetCompressFileType(const std::string& _compressFileType);
 
                     /**
                      * 判断参数 CompressFileType 是否已赋值
                      * @return CompressFileType 是否已赋值
+                     * 
                      */
                     bool CompressFileTypeHasBeenSet() const;
 
                     /**
                      * 获取内部参数
                      * @return ExtraData 内部参数
+                     * 
                      */
                     std::string GetExtraData() const;
 
                     /**
                      * 设置内部参数
-                     * @param ExtraData 内部参数
+                     * @param _extraData 内部参数
+                     * 
                      */
                     void SetExtraData(const std::string& _extraData);
 
                     /**
                      * 判断参数 ExtraData 是否已赋值
                      * @return ExtraData 是否已赋值
+                     * 
                      */
                     bool ExtraDataHasBeenSet() const;
 
@@ -211,6 +232,7 @@ tar.gz： 生成`.tar.gz`压缩包
 - 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
 <br/>
 注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
+                     * 
                      */
                     std::string GetPriority() const;
 
@@ -220,17 +242,19 @@ tar.gz： 生成`.tar.gz`压缩包
 - 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
 <br/>
 注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
-                     * @param Priority 文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
+                     * @param _priority 文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
 - low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>
 - 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
 <br/>
 注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
+                     * 
                      */
                     void SetPriority(const std::string& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
@@ -243,6 +267,7 @@ tar.gz： 生成`.tar.gz`压缩包
 分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
 
 示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 
                      */
                     std::string GetMinScaleResolution() const;
 
@@ -251,16 +276,18 @@ tar.gz： 生成`.tar.gz`压缩包
 分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
 
 示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @param MinScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
+                     * @param _minScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
 分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
 
 示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 
                      */
                     void SetMinScaleResolution(const std::string& _minScaleResolution);
 
                     /**
                      * 判断参数 MinScaleResolution 是否已赋值
                      * @return MinScaleResolution 是否已赋值
+                     * 
                      */
                     bool MinScaleResolutionHasBeenSet() const;
 
@@ -277,6 +304,7 @@ tar.gz： 生成`.tar.gz`压缩包
 1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
 2. 自动翻页：移除PPT上所有的自动翻页设置，并设置为单击鼠标翻页
 3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     * 
                      */
                     bool GetAutoHandleUnsupportedElement() const;
 
@@ -287,18 +315,20 @@ tar.gz： 生成`.tar.gz`压缩包
 1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
 2. 自动翻页：移除PPT上所有的自动翻页设置，并设置为单击鼠标翻页
 3. 已损坏音视频：移除PPT上对损坏音视频的引用
-                     * @param AutoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认不开启。
+                     * @param _autoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认不开启。
 
 在开启自动处理的情况下，会自动进行如下处理：
 1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
 2. 自动翻页：移除PPT上所有的自动翻页设置，并设置为单击鼠标翻页
 3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     * 
                      */
                     void SetAutoHandleUnsupportedElement(const bool& _autoHandleUnsupportedElement);
 
                     /**
                      * 判断参数 AutoHandleUnsupportedElement 是否已赋值
                      * @return AutoHandleUnsupportedElement 是否已赋值
+                     * 
                      */
                     bool AutoHandleUnsupportedElementHasBeenSet() const;
 

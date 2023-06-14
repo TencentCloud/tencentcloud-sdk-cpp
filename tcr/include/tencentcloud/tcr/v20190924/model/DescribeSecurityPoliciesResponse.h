@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityPolicySet 实例安全策略组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SecurityPolicy> GetSecurityPolicySet() const;
 
                     /**
                      * 判断参数 SecurityPolicySet 是否已赋值
                      * @return SecurityPolicySet 是否已赋值
+                     * 
                      */
                     bool SecurityPolicySetHasBeenSet() const;
 

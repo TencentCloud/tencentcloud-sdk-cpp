@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取业务风险情报响应体
                      * @return ResponseData 业务风险情报响应体
+                     * 
                      */
                     BRIResponse GetResponseData() const;
 
                     /**
                      * 判断参数 ResponseData 是否已赋值
                      * @return ResponseData 是否已赋值
+                     * 
                      */
                     bool ResponseDataHasBeenSet() const;
 

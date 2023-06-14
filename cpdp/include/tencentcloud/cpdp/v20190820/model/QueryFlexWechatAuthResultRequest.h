@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取商户核身单号
                      * @return AuthNo 商户核身单号
+                     * 
                      */
                     std::string GetAuthNo() const;
 
                     /**
                      * 设置商户核身单号
-                     * @param AuthNo 商户核身单号
+                     * @param _authNo 商户核身单号
+                     * 
                      */
                     void SetAuthNo(const std::string& _authNo);
 
                     /**
                      * 判断参数 AuthNo 是否已赋值
                      * @return AuthNo 是否已赋值
+                     * 
                      */
                     bool AuthNoHasBeenSet() const;
 
@@ -69,6 +72,7 @@ sandbox 沙箱
 test 测试
 release 生产
 sandbox 沙箱
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -77,16 +81,18 @@ sandbox 沙箱
 test 测试
 release 生产
 sandbox 沙箱
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 test 测试
 release 生产
 sandbox 沙箱
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

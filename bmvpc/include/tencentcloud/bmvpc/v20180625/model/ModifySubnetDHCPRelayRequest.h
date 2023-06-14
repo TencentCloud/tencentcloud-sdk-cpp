@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启DHCP Relay
                      * @return EnableDHCP 是否开启DHCP Relay
+                     * 
                      */
                     bool GetEnableDHCP() const;
 
                     /**
                      * 设置是否开启DHCP Relay
-                     * @param EnableDHCP 是否开启DHCP Relay
+                     * @param _enableDHCP 是否开启DHCP Relay
+                     * 
                      */
                     void SetEnableDHCP(const bool& _enableDHCP);
 
                     /**
                      * 判断参数 EnableDHCP 是否已赋值
                      * @return EnableDHCP 是否已赋值
+                     * 
                      */
                     bool EnableDHCPHasBeenSet() const;
 
                     /**
                      * 获取DHCP服务器IP
                      * @return ServerIps DHCP服务器IP
+                     * 
                      */
                     std::vector<std::string> GetServerIps() const;
 
                     /**
                      * 设置DHCP服务器IP
-                     * @param ServerIps DHCP服务器IP
+                     * @param _serverIps DHCP服务器IP
+                     * 
                      */
                     void SetServerIps(const std::vector<std::string>& _serverIps);
 
                     /**
                      * 判断参数 ServerIps 是否已赋值
                      * @return ServerIps 是否已赋值
+                     * 
                      */
                     bool ServerIpsHasBeenSet() const;
 
                     /**
                      * 获取预留IP个数
                      * @return ReservedIpCount 预留IP个数
+                     * 
                      */
                     uint64_t GetReservedIpCount() const;
 
                     /**
                      * 设置预留IP个数
-                     * @param ReservedIpCount 预留IP个数
+                     * @param _reservedIpCount 预留IP个数
+                     * 
                      */
                     void SetReservedIpCount(const uint64_t& _reservedIpCount);
 
                     /**
                      * 判断参数 ReservedIpCount 是否已赋值
                      * @return ReservedIpCount 是否已赋值
+                     * 
                      */
                     bool ReservedIpCountHasBeenSet() const;
 

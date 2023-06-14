@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的资源组 ID
                      * @return ResourceGroupId 要删除的资源组 ID
+                     * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
                      * 设置要删除的资源组 ID
-                     * @param ResourceGroupId 要删除的资源组 ID
+                     * @param _resourceGroupId 要删除的资源组 ID
+                     * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
 
                     /**
                      * 判断参数 ResourceGroupId 是否已赋值
                      * @return ResourceGroupId 是否已赋值
+                     * 
                      */
                     bool ResourceGroupIdHasBeenSet() const;
 

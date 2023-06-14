@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如postgres-4wdeb0zv
                      * @return DBInstanceId 实例ID，形如postgres-4wdeb0zv
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如postgres-4wdeb0zv
-                     * @param DBInstanceId 实例ID，形如postgres-4wdeb0zv
+                     * @param _dBInstanceId 实例ID，形如postgres-4wdeb0zv
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例账户名
                      * @return UserName 实例账户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置实例账户名
-                     * @param UserName 实例账户名
+                     * @param _userName 实例账户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取UserName账户对应的新密码
                      * @return Password UserName账户对应的新密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置UserName账户对应的新密码
-                     * @param Password UserName账户对应的新密码
+                     * @param _password UserName账户对应的新密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

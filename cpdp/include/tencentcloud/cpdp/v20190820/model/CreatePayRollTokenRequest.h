@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取用户在商户对应appid下的唯一标识
                      * @return OpenId 用户在商户对应appid下的唯一标识
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置用户在商户对应appid下的唯一标识
-                     * @param OpenId 用户在商户对应appid下的唯一标识
+                     * @param _openId 用户在商户对应appid下的唯一标识
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取微信服务商下特约商户的商户号，由微信支付生成并下发
                      * @return SubMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * 
                      */
                     std::string GetSubMerchantId() const;
 
                     /**
                      * 设置微信服务商下特约商户的商户号，由微信支付生成并下发
-                     * @param SubMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * @param _subMerchantId 微信服务商下特约商户的商户号，由微信支付生成并下发
+                     * 
                      */
                     void SetSubMerchantId(const std::string& _subMerchantId);
 
                     /**
                      * 判断参数 SubMerchantId 是否已赋值
                      * @return SubMerchantId 是否已赋值
+                     * 
                      */
                     bool SubMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
                      * @return UserName 用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
-                     * @param UserName 用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+                     * @param _userName 用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
                      * @return IdNo 用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+                     * 
                      */
                     std::string GetIdNo() const;
 
                     /**
                      * 设置用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
-                     * @param IdNo 用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+                     * @param _idNo 用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+                     * 
                      */
                     void SetIdNo(const std::string& _idNo);
 
                     /**
                      * 判断参数 IdNo 是否已赋值
                      * @return IdNo 是否已赋值
+                     * 
                      */
                     bool IdNoHasBeenSet() const;
 
@@ -123,6 +135,7 @@ COOPERATION_EMPLOYMENT：合作关系
 LONG_TERM_EMPLOYMENT：长期用工，
 SHORT_TERM_EMPLOYMENT： 短期用工，
 COOPERATION_EMPLOYMENT：合作关系
+                     * 
                      */
                     std::string GetEmploymentType() const;
 
@@ -131,16 +144,18 @@ COOPERATION_EMPLOYMENT：合作关系
 LONG_TERM_EMPLOYMENT：长期用工，
 SHORT_TERM_EMPLOYMENT： 短期用工，
 COOPERATION_EMPLOYMENT：合作关系
-                     * @param EmploymentType 微工卡服务仅支持用于与商户有用工关系的用户，需明确用工类型；参考值：
+                     * @param _employmentType 微工卡服务仅支持用于与商户有用工关系的用户，需明确用工类型；参考值：
 LONG_TERM_EMPLOYMENT：长期用工，
 SHORT_TERM_EMPLOYMENT： 短期用工，
 COOPERATION_EMPLOYMENT：合作关系
+                     * 
                      */
                     void SetEmploymentType(const std::string& _employmentType);
 
                     /**
                      * 判断参数 EmploymentType 是否已赋值
                      * @return EmploymentType 是否已赋值
+                     * 
                      */
                     bool EmploymentTypeHasBeenSet() const;
 
@@ -149,20 +164,23 @@ COOPERATION_EMPLOYMENT：合作关系
 当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
                      * @return WechatAppId 是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）
 当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
+                     * 
                      */
                     std::string GetWechatAppId() const;
 
                     /**
                      * 设置是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）
 当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
-                     * @param WechatAppId 是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）
+                     * @param _wechatAppId 是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）
 当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
+                     * 
                      */
                     void SetWechatAppId(const std::string& _wechatAppId);
 
                     /**
                      * 判断参数 WechatAppId 是否已赋值
                      * @return WechatAppId 是否已赋值
+                     * 
                      */
                     bool WechatAppIdHasBeenSet() const;
 
@@ -171,20 +189,23 @@ COOPERATION_EMPLOYMENT：合作关系
 当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
                      * @return WechatSubAppId 特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）
 当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
+                     * 
                      */
                     std::string GetWechatSubAppId() const;
 
                     /**
                      * 设置特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）
 当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
-                     * @param WechatSubAppId 特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）
+                     * @param _wechatSubAppId 特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）
 当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID
+                     * 
                      */
                     void SetWechatSubAppId(const std::string& _wechatSubAppId);
 
                     /**
                      * 判断参数 WechatSubAppId 是否已赋值
                      * @return WechatSubAppId 是否已赋值
+                     * 
                      */
                     bool WechatSubAppIdHasBeenSet() const;
 

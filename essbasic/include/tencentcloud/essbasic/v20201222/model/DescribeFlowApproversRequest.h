@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取需要查询的流程ID
                      * @return FlowId 需要查询的流程ID
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置需要查询的流程ID
-                     * @param FlowId 需要查询的流程ID
+                     * @param _flowId 需要查询的流程ID
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询的用户ID，为空则默认查询所有用户信息
                      * @return UserId 需要查询的用户ID，为空则默认查询所有用户信息
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置需要查询的用户ID，为空则默认查询所有用户信息
-                     * @param UserId 需要查询的用户ID，为空则默认查询所有用户信息
+                     * @param _userId 需要查询的用户ID，为空则默认查询所有用户信息
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询的签署ID，为空则不按签署ID过滤
                      * @return SignId 需要查询的签署ID，为空则不按签署ID过滤
+                     * 
                      */
                     std::string GetSignId() const;
 
                     /**
                      * 设置需要查询的签署ID，为空则不按签署ID过滤
-                     * @param SignId 需要查询的签署ID，为空则不按签署ID过滤
+                     * @param _signId 需要查询的签署ID，为空则不按签署ID过滤
+                     * 
                      */
                     void SetSignId(const std::string& _signId);
 
                     /**
                      * 判断参数 SignId 是否已赋值
                      * @return SignId 是否已赋值
+                     * 
                      */
                     bool SignIdHasBeenSet() const;
 

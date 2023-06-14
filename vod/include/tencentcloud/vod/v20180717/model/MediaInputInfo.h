@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取视频 URL。
                      * @return Url 视频 URL。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置视频 URL。
-                     * @param Url 视频 URL。
+                     * @param _url 视频 URL。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取视频名称。
                      * @return Name 视频名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置视频名称。
-                     * @param Name 视频名称。
+                     * @param _name 视频名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取视频自定义 ID。
                      * @return Id 视频自定义 ID。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置视频自定义 ID。
-                     * @param Id 视频自定义 ID。
+                     * @param _id 视频自定义 ID。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

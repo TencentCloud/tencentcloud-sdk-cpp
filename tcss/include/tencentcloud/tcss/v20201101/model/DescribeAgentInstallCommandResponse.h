@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取linux系统安装命令
                      * @return LinuxCommand linux系统安装命令
+                     * 
                      */
                     std::string GetLinuxCommand() const;
 
                     /**
                      * 判断参数 LinuxCommand 是否已赋值
                      * @return LinuxCommand 是否已赋值
+                     * 
                      */
                     bool LinuxCommandHasBeenSet() const;
 
                     /**
                      * 获取windows系统安装命令（windows2008及以上）
                      * @return WindowsCommand windows系统安装命令（windows2008及以上）
+                     * 
                      */
                     std::string GetWindowsCommand() const;
 
                     /**
                      * 判断参数 WindowsCommand 是否已赋值
                      * @return WindowsCommand 是否已赋值
+                     * 
                      */
                     bool WindowsCommandHasBeenSet() const;
 
                     /**
                      * 获取windows系统安装命令第一步（windows2003）
                      * @return WindowsStepOne windows系统安装命令第一步（windows2003）
+                     * 
                      */
                     std::string GetWindowsStepOne() const;
 
                     /**
                      * 判断参数 WindowsStepOne 是否已赋值
                      * @return WindowsStepOne 是否已赋值
+                     * 
                      */
                     bool WindowsStepOneHasBeenSet() const;
 
                     /**
                      * 获取windows系统安装命令第二步（windows2003）
                      * @return WindowsStepTwo windows系统安装命令第二步（windows2003）
+                     * 
                      */
                     std::string GetWindowsStepTwo() const;
 
                     /**
                      * 判断参数 WindowsStepTwo 是否已赋值
                      * @return WindowsStepTwo 是否已赋值
+                     * 
                      */
                     bool WindowsStepTwoHasBeenSet() const;
 
                     /**
                      * 获取windows版agent下载链接
                      * @return WindowsDownloadUrl windows版agent下载链接
+                     * 
                      */
                     std::string GetWindowsDownloadUrl() const;
 
                     /**
                      * 判断参数 WindowsDownloadUrl 是否已赋值
                      * @return WindowsDownloadUrl 是否已赋值
+                     * 
                      */
                     bool WindowsDownloadUrlHasBeenSet() const;
 

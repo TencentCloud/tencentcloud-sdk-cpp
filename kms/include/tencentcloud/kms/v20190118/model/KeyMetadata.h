@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取CMK的全局唯一标识
                      * @return KeyId CMK的全局唯一标识
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的全局唯一标识
-                     * @param KeyId CMK的全局唯一标识
+                     * @param _keyId CMK的全局唯一标识
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取作为密钥更容易辨识，更容易被人看懂的别名
                      * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置作为密钥更容易辨识，更容易被人看懂的别名
-                     * @param Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * @param _alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取密钥创建时间
                      * @return CreateTime 密钥创建时间
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置密钥创建时间
-                     * @param CreateTime 密钥创建时间
+                     * @param _createTime 密钥创建时间
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取CMK的描述
                      * @return Description CMK的描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置CMK的描述
-                     * @param Description CMK的描述
+                     * @param _description CMK的描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
                      * @return KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * 
                      */
                     std::string GetKeyState() const;
 
                     /**
                      * 设置CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
-                     * @param KeyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * @param _keyState CMK的状态， 取值为：Enabled | Disabled | PendingDelete | PendingImport | Archived
+                     * 
                      */
                     void SetKeyState(const std::string& _keyState);
 
                     /**
                      * 判断参数 KeyState 是否已赋值
                      * @return KeyState 是否已赋值
+                     * 
                      */
                     bool KeyStateHasBeenSet() const;
 
                     /**
                      * 获取CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
                      * @return KeyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
+                     * 
                      */
                     std::string GetKeyUsage() const;
 
                     /**
                      * 设置CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
-                     * @param KeyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
+                     * @param _keyUsage CMK用途，取值为: ENCRYPT_DECRYPT | ASYMMETRIC_DECRYPT_RSA_2048 | ASYMMETRIC_DECRYPT_SM2 | ASYMMETRIC_SIGN_VERIFY_SM2 | ASYMMETRIC_SIGN_VERIFY_RSA_2048 | ASYMMETRIC_SIGN_VERIFY_ECC
+                     * 
                      */
                     void SetKeyUsage(const std::string& _keyUsage);
 
                     /**
                      * 判断参数 KeyUsage 是否已赋值
                      * @return KeyUsage 是否已赋值
+                     * 
                      */
                     bool KeyUsageHasBeenSet() const;
 
                     /**
                      * 获取CMK类型，2 表示符合FIPS标准，4表示符合国密标准
                      * @return Type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置CMK类型，2 表示符合FIPS标准，4表示符合国密标准
-                     * @param Type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * @param _type CMK类型，2 表示符合FIPS标准，4表示符合国密标准
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取创建者
                      * @return CreatorUin 创建者
+                     * 
                      */
                     uint64_t GetCreatorUin() const;
 
                     /**
                      * 设置创建者
-                     * @param CreatorUin 创建者
+                     * @param _creatorUin 创建者
+                     * 
                      */
                     void SetCreatorUin(const uint64_t& _creatorUin);
 
                     /**
                      * 判断参数 CreatorUin 是否已赋值
                      * @return CreatorUin 是否已赋值
+                     * 
                      */
                     bool CreatorUinHasBeenSet() const;
 
                     /**
                      * 获取是否开启了密钥轮换功能
                      * @return KeyRotationEnabled 是否开启了密钥轮换功能
+                     * 
                      */
                     bool GetKeyRotationEnabled() const;
 
                     /**
                      * 设置是否开启了密钥轮换功能
-                     * @param KeyRotationEnabled 是否开启了密钥轮换功能
+                     * @param _keyRotationEnabled 是否开启了密钥轮换功能
+                     * 
                      */
                     void SetKeyRotationEnabled(const bool& _keyRotationEnabled);
 
                     /**
                      * 判断参数 KeyRotationEnabled 是否已赋值
                      * @return KeyRotationEnabled 是否已赋值
+                     * 
                      */
                     bool KeyRotationEnabledHasBeenSet() const;
 
                     /**
                      * 获取CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
                      * @return Owner CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
-                     * @param Owner CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
+                     * @param _owner CMK的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取在密钥轮换开启状态下，下次轮换的时间
                      * @return NextRotateTime 在密钥轮换开启状态下，下次轮换的时间
+                     * 
                      */
                     uint64_t GetNextRotateTime() const;
 
                     /**
                      * 设置在密钥轮换开启状态下，下次轮换的时间
-                     * @param NextRotateTime 在密钥轮换开启状态下，下次轮换的时间
+                     * @param _nextRotateTime 在密钥轮换开启状态下，下次轮换的时间
+                     * 
                      */
                     void SetNextRotateTime(const uint64_t& _nextRotateTime);
 
                     /**
                      * 判断参数 NextRotateTime 是否已赋值
                      * @return NextRotateTime 是否已赋值
+                     * 
                      */
                     bool NextRotateTimeHasBeenSet() const;
 
@@ -249,20 +282,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeletionDate 计划删除的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDeletionDate() const;
 
                     /**
                      * 设置计划删除的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeletionDate 计划删除的时间
+                     * @param _deletionDate 计划删除的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeletionDate(const uint64_t& _deletionDate);
 
                     /**
                      * 判断参数 DeletionDate 是否已赋值
                      * @return DeletionDate 是否已赋值
+                     * 
                      */
                     bool DeletionDateHasBeenSet() const;
 
@@ -271,20 +307,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrigin() const;
 
                     /**
                      * 设置CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
+                     * @param _origin CMK 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrigin(const std::string& _origin);
 
                     /**
                      * 判断参数 Origin 是否已赋值
                      * @return Origin 是否已赋值
+                     * 
                      */
                     bool OriginHasBeenSet() const;
 
@@ -293,38 +332,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetValidTo() const;
 
                     /**
                      * 设置在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValidTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
+                     * @param _validTo 在Origin为  EXTERNAL 时有效，表示密钥材料的有效日期， 0 表示不过期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValidTo(const uint64_t& _validTo);
 
                     /**
                      * 判断参数 ValidTo 是否已赋值
                      * @return ValidTo 是否已赋值
+                     * 
                      */
                     bool ValidToHasBeenSet() const;
 
                     /**
                      * 获取资源ID，格式：creatorUin/$creatorUin/$keyId
                      * @return ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID，格式：creatorUin/$creatorUin/$keyId
-                     * @param ResourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * @param _resourceId 资源ID，格式：creatorUin/$creatorUin/$keyId
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -333,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
                      * 设置HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+                     * @param _hsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHsmClusterId(const std::string& _hsmClusterId);
 
                     /**
                      * 判断参数 HsmClusterId 是否已赋值
                      * @return HsmClusterId 是否已赋值
+                     * 
                      */
                     bool HsmClusterIdHasBeenSet() const;
 

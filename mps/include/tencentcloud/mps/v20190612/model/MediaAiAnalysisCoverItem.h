@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取智能封面存储路径。
                      * @return CoverPath 智能封面存储路径。
+                     * 
                      */
                     std::string GetCoverPath() const;
 
                     /**
                      * 设置智能封面存储路径。
-                     * @param CoverPath 智能封面存储路径。
+                     * @param _coverPath 智能封面存储路径。
+                     * 
                      */
                     void SetCoverPath(const std::string& _coverPath);
 
                     /**
                      * 判断参数 CoverPath 是否已赋值
                      * @return CoverPath 是否已赋值
+                     * 
                      */
                     bool CoverPathHasBeenSet() const;
 
                     /**
                      * 获取智能封面的可信度，取值范围是 0 到 100。
                      * @return Confidence 智能封面的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置智能封面的可信度，取值范围是 0 到 100。
-                     * @param Confidence 智能封面的可信度，取值范围是 0 到 100。
+                     * @param _confidence 智能封面的可信度，取值范围是 0 到 100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

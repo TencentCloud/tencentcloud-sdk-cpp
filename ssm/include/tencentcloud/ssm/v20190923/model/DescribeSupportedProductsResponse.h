@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取支持的产品列表。
                      * @return Products 支持的产品列表。
+                     * 
                      */
                     std::vector<std::string> GetProducts() const;
 
                     /**
                      * 判断参数 Products 是否已赋值
                      * @return Products 是否已赋值
+                     * 
                      */
                     bool ProductsHasBeenSet() const;
 
                     /**
                      * 获取支持的产品个数
                      * @return TotalCount 支持的产品个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
                      * @return Data 属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
-                     * @param Data 属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
+                     * @param _data 属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
                      * @return Method 请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
-                     * @param Method 请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
+                     * @param _method 请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
                      * @return DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
-                     * @param DeviceId 设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
+                     * @param _deviceId 设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
                      * @return DataTimestamp 上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     * 
                      */
                     int64_t GetDataTimestamp() const;
 
                     /**
                      * 设置上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
-                     * @param DataTimestamp 上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     * @param _dataTimestamp 上报数据UNIX时间戳(毫秒), 仅对Method:reported有效
+                     * 
                      */
                     void SetDataTimestamp(const int64_t& _dataTimestamp);
 
                     /**
                      * 判断参数 DataTimestamp 是否已赋值
                      * @return DataTimestamp 是否已赋值
+                     * 
                      */
                     bool DataTimestampHasBeenSet() const;
 

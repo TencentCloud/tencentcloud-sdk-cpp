@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源任务执行状态结果
                      * @return Result 资源任务执行状态结果
+                     * 
                      */
                     ResourceTaskStatusResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

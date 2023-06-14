@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用户自定义数据类型，json格式的字符串
                      * @return IotDataType 用户自定义数据类型，json格式的字符串
+                     * 
                      */
                     std::string GetIotDataType() const;
 
                     /**
                      * 设置用户自定义数据类型，json格式的字符串
-                     * @param IotDataType 用户自定义数据类型，json格式的字符串
+                     * @param _iotDataType 用户自定义数据类型，json格式的字符串
+                     * 
                      */
                     void SetIotDataType(const std::string& _iotDataType);
 
                     /**
                      * 判断参数 IotDataType 是否已赋值
                      * @return IotDataType 是否已赋值
+                     * 
                      */
                     bool IotDataTypeHasBeenSet() const;
 

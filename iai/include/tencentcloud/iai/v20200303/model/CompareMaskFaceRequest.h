@@ -51,6 +51,7 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImageA() const;
 
@@ -59,16 +60,18 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param ImageA A 图片 base64 数据，base64 编码后大小不可超过5M。
+                     * @param _imageA A 图片 base64 数据，base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImageA(const std::string& _imageA);
 
                     /**
                      * 判断参数 ImageA 是否已赋值
                      * @return ImageA 是否已赋值
+                     * 
                      */
                     bool ImageAHasBeenSet() const;
 
@@ -81,6 +84,7 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImageB() const;
 
@@ -89,16 +93,18 @@ jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param ImageB B 图片 base64 数据，base64 编码后大小不可超过5M。
+                     * @param _imageB B 图片 base64 数据，base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImageB(const std::string& _imageB);
 
                     /**
                      * 判断参数 ImageB 是否已赋值
                      * @return ImageB 是否已赋值
+                     * 
                      */
                     bool ImageBHasBeenSet() const;
 
@@ -117,6 +123,7 @@ A 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrlA() const;
 
@@ -128,19 +135,21 @@ A 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param UrlA A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。
+                     * @param _urlA A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 A 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrlA(const std::string& _urlA);
 
                     /**
                      * 判断参数 UrlA 是否已赋值
                      * @return UrlA 是否已赋值
+                     * 
                      */
                     bool UrlAHasBeenSet() const;
 
@@ -159,6 +168,7 @@ B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrlB() const;
 
@@ -170,37 +180,42 @@ B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param UrlB B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。
+                     * @param _urlB B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。
 jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。
 B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。
 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrlB(const std::string& _urlB);
 
                     /**
                      * 判断参数 UrlB 是否已赋值
                      * @return UrlB 是否已赋值
+                     * 
                      */
                     bool UrlBHasBeenSet() const;
 
                     /**
                      * 获取人脸识别服务所用的算法模型版本。该接口只支持"3.0"
                      * @return FaceModelVersion 人脸识别服务所用的算法模型版本。该接口只支持"3.0"
+                     * 
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
                      * 设置人脸识别服务所用的算法模型版本。该接口只支持"3.0"
-                     * @param FaceModelVersion 人脸识别服务所用的算法模型版本。该接口只支持"3.0"
+                     * @param _faceModelVersion 人脸识别服务所用的算法模型版本。该接口只支持"3.0"
+                     * 
                      */
                     void SetFaceModelVersion(const std::string& _faceModelVersion);
 
                     /**
                      * 判断参数 FaceModelVersion 是否已赋值
                      * @return FaceModelVersion 是否已赋值
+                     * 
                      */
                     bool FaceModelVersionHasBeenSet() const;
 
@@ -221,6 +236,7 @@ B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； 
 默认 0。 
 若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     * 
                      */
                     uint64_t GetQualityControl() const;
 
@@ -233,7 +249,7 @@ B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； 
 默认 0。 
 若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
-                     * @param QualityControl 图片质量控制。 
+                     * @param _qualityControl 图片质量控制。 
 0: 不进行控制； 
 1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； 
 2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； 
@@ -241,12 +257,14 @@ B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。
 4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； 
 默认 0。 
 若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。
+                     * 
                      */
                     void SetQualityControl(const uint64_t& _qualityControl);
 
                     /**
                      * 判断参数 QualityControl 是否已赋值
                      * @return QualityControl 是否已赋值
+                     * 
                      */
                     bool QualityControlHasBeenSet() const;
 

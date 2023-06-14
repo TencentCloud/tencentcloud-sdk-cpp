@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云兔ID
                      * @return LinkID 云兔ID
+                     * 
                      */
                     int64_t GetLinkID() const;
 
                     /**
                      * 设置云兔ID
-                     * @param LinkID 云兔ID
+                     * @param _linkID 云兔ID
+                     * 
                      */
                     void SetLinkID(const int64_t& _linkID);
 
                     /**
                      * 判断参数 LinkID 是否已赋值
                      * @return LinkID 是否已赋值
+                     * 
                      */
                     bool LinkIDHasBeenSet() const;
 
                     /**
                      * 获取策略ID
                      * @return TacticID 策略ID
+                     * 
                      */
                     int64_t GetTacticID() const;
 
                     /**
                      * 设置策略ID
-                     * @param TacticID 策略ID
+                     * @param _tacticID 策略ID
+                     * 
                      */
                     void SetTacticID(const int64_t& _tacticID);
 
                     /**
                      * 判断参数 TacticID 是否已赋值
                      * @return TacticID 是否已赋值
+                     * 
                      */
                     bool TacticIDHasBeenSet() const;
 

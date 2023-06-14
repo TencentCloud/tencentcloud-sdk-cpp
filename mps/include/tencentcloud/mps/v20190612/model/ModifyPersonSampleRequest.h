@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取素材 ID。
                      * @return PersonId 素材 ID。
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置素材 ID。
-                     * @param PersonId 素材 ID。
+                     * @param _personId 素材 ID。
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取名称，长度限制：128 个字符。
                      * @return Name 名称，长度限制：128 个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称，长度限制：128 个字符。
-                     * @param Name 名称，长度限制：128 个字符。
+                     * @param _name 名称，长度限制：128 个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述，长度限制：1024 个字符。
                      * @return Description 描述，长度限制：1024 个字符。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述，长度限制：1024 个字符。
-                     * @param Description 描述，长度限制：1024 个字符。
+                     * @param _description 描述，长度限制：1024 个字符。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
 1. Recognition：用于内容识别，等价于 Recognition.Face。
 2. Review：用于不适宜的内容识别，等价于 Review.Face。
 3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
+                     * 
                      */
                     std::vector<std::string> GetUsages() const;
 
@@ -115,52 +125,60 @@ namespace TencentCloud
 1. Recognition：用于内容识别，等价于 Recognition.Face。
 2. Review：用于不适宜的内容识别，等价于 Review.Face。
 3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
-                     * @param Usages 素材应用场景，可选值：
+                     * @param _usages 素材应用场景，可选值：
 1. Recognition：用于内容识别，等价于 Recognition.Face。
 2. Review：用于不适宜的内容识别，等价于 Review.Face。
 3. All：用于内容识别、不适宜的内容识别，等价于 1+2。
+                     * 
                      */
                     void SetUsages(const std::vector<std::string>& _usages);
 
                     /**
                      * 判断参数 Usages 是否已赋值
                      * @return Usages 是否已赋值
+                     * 
                      */
                     bool UsagesHasBeenSet() const;
 
                     /**
                      * 获取五官操作信息。
                      * @return FaceOperationInfo 五官操作信息。
+                     * 
                      */
                     AiSampleFaceOperation GetFaceOperationInfo() const;
 
                     /**
                      * 设置五官操作信息。
-                     * @param FaceOperationInfo 五官操作信息。
+                     * @param _faceOperationInfo 五官操作信息。
+                     * 
                      */
                     void SetFaceOperationInfo(const AiSampleFaceOperation& _faceOperationInfo);
 
                     /**
                      * 判断参数 FaceOperationInfo 是否已赋值
                      * @return FaceOperationInfo 是否已赋值
+                     * 
                      */
                     bool FaceOperationInfoHasBeenSet() const;
 
                     /**
                      * 获取标签操作信息。
                      * @return TagOperationInfo 标签操作信息。
+                     * 
                      */
                     AiSampleTagOperation GetTagOperationInfo() const;
 
                     /**
                      * 设置标签操作信息。
-                     * @param TagOperationInfo 标签操作信息。
+                     * @param _tagOperationInfo 标签操作信息。
+                     * 
                      */
                     void SetTagOperationInfo(const AiSampleTagOperation& _tagOperationInfo);
 
                     /**
                      * 判断参数 TagOperationInfo 是否已赋值
                      * @return TagOperationInfo 是否已赋值
+                     * 
                      */
                     bool TagOperationInfoHasBeenSet() const;
 

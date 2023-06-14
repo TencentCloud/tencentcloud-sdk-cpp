@@ -49,6 +49,7 @@ SAFT_ISV支付方式下，填写渠道子商户号。
                      * @return ChannelMerchantId 渠道商户号，外部接入平台方入驻云企付平台后下发。
 EBANK_PAYMENT支付方式下，填写渠道商户号；
 SAFT_ISV支付方式下，填写渠道子商户号。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
@@ -56,69 +57,80 @@ SAFT_ISV支付方式下，填写渠道子商户号。
                      * 设置渠道商户号，外部接入平台方入驻云企付平台后下发。
 EBANK_PAYMENT支付方式下，填写渠道商户号；
 SAFT_ISV支付方式下，填写渠道子商户号。
-                     * @param ChannelMerchantId 渠道商户号，外部接入平台方入驻云企付平台后下发。
+                     * @param _channelMerchantId 渠道商户号，外部接入平台方入驻云企付平台后下发。
 EBANK_PAYMENT支付方式下，填写渠道商户号；
 SAFT_ISV支付方式下，填写渠道子商户号。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取账单日期,yyyy-MM-dd。
                      * @return BillDate 账单日期,yyyy-MM-dd。
+                     * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置账单日期,yyyy-MM-dd。
-                     * @param BillDate 账单日期,yyyy-MM-dd。
+                     * @param _billDate 账单日期,yyyy-MM-dd。
+                     * 
                      */
                     void SetBillDate(const std::string& _billDate);
 
                     /**
                      * 判断参数 BillDate 是否已赋值
                      * @return BillDate 是否已赋值
+                     * 
                      */
                     bool BillDateHasBeenSet() const;
 
                     /**
                      * 获取账单类型，默认交易账单。
                      * @return BillType 账单类型，默认交易账单。
+                     * 
                      */
                     std::string GetBillType() const;
 
                     /**
                      * 设置账单类型，默认交易账单。
-                     * @param BillType 账单类型，默认交易账单。
+                     * @param _billType 账单类型，默认交易账单。
+                     * 
                      */
                     void SetBillType(const std::string& _billType);
 
                     /**
                      * 判断参数 BillType 是否已赋值
                      * @return BillType 是否已赋值
+                     * 
                      */
                     bool BillTypeHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
                      * @return Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
+                     * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
                      * 设置接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
-                     * @param Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
+                     * @param _environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境。
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 
@@ -131,6 +143,7 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -139,16 +152,18 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-                     * @param ChannelName 渠道名称。不填默认为商企付。
+                     * @param _channelName 渠道名称。不填默认为商企付。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -161,6 +176,7 @@ __SAFT_ISV__: 人资ISV支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 __SAFT_ISV__: 人资ISV支付
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
@@ -169,16 +185,18 @@ __SAFT_ISV__: 人资ISV支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 __SAFT_ISV__: 人资ISV支付
-                     * @param PaymentMethod 支付方式。不填默认为ebank支付。
+                     * @param _paymentMethod 支付方式。不填默认为ebank支付。
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 __SAFT_ISV__: 人资ISV支付
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 

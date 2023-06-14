@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return RouteList 无
+                     * 
                      */
                     std::vector<RouteInfo> GetRouteList() const;
 
                     /**
                      * 判断参数 RouteList 是否已赋值
                      * @return RouteList 是否已赋值
+                     * 
                      */
                     bool RouteListHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return TotalCount 无
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取搜索过滤条件
                      * @return Filter 搜索过滤条件
+                     * 
                      */
                     std::string GetFilter() const;
 
                     /**
                      * 设置搜索过滤条件
-                     * @param Filter 搜索过滤条件
+                     * @param _filter 搜索过滤条件
+                     * 
                      */
                     void SetFilter(const std::string& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取任务流状态。0-成功，1-失败，2-处理中
                      * @return Status 任务流状态。0-成功，1-失败，2-处理中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

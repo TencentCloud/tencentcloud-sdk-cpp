@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Grade 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetGrade() const;
 
                     /**
                      * 设置等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Grade 等级
+                     * @param _grade 等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrade(const BlockInfo& _grade);
 
                     /**
                      * 判断参数 Grade 是否已赋值
                      * @return Grade 是否已赋值
+                     * 
                      */
                     bool GradeHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Part GetPart() const;
 
                     /**
                      * 设置部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位
+                     * @param _part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const Part& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 原文位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetIndex() const;
 
                     /**
                      * 设置原文位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 原文位置
+                     * @param _index 原文位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::vector<int64_t>& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Symptom 病变
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BlockInfo GetSymptom() const;
 
                     /**
                      * 设置病变
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Symptom 病变
+                     * @param _symptom 病变
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSymptom(const BlockInfo& _symptom);
 
                     /**
                      * 判断参数 Symptom 是否已赋值
                      * @return Symptom 是否已赋值
+                     * 
                      */
                     bool SymptomHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attrs 属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<BlockInfo> GetAttrs() const;
 
                     /**
                      * 设置属性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Attrs 属性
+                     * @param _attrs 属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttrs(const std::vector<BlockInfo>& _attrs);
 
                     /**
                      * 判断参数 Attrs 是否已赋值
                      * @return Attrs 是否已赋值
+                     * 
                      */
                     bool AttrsHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 坐标
+                     * @param _coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

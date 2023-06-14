@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取搜索过滤查询参数
                      * @return Filter 搜索过滤查询参数
+                     * 
                      */
                     std::string GetFilter() const;
 
                     /**
                      * 设置搜索过滤查询参数
-                     * @param Filter 搜索过滤查询参数
+                     * @param _filter 搜索过滤查询参数
+                     * 
                      */
                     void SetFilter(const std::string& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页偏移
                      * @return Offset 页偏移
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页偏移
-                     * @param Offset 页偏移
+                     * @param _offset 页偏移
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序列名
                      * @return Order 排序列名
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序列名
-                     * @param Order 排序列名
+                     * @param _order 排序列名
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序升降：desc-降序 asc-升序
                      * @return By 排序升降：desc-降序 asc-升序
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序升降：desc-降序 asc-升序
-                     * @param By 排序升降：desc-降序 asc-升序
+                     * @param _by 排序升降：desc-降序 asc-升序
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 
                     /**
                      * 获取开始查询时间
                      * @return StartTime 开始查询时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始查询时间
-                     * @param StartTime 开始查询时间
+                     * @param _startTime 开始查询时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束查询时间
                      * @return EndTime 结束查询时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束查询时间
-                     * @param EndTime 结束查询时间
+                     * @param _endTime 结束查询时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取是否过滤响应时间
                      * @return IsFilterResponseTime 是否过滤响应时间
+                     * 
                      */
                     bool GetIsFilterResponseTime() const;
 
                     /**
                      * 设置是否过滤响应时间
-                     * @param IsFilterResponseTime 是否过滤响应时间
+                     * @param _isFilterResponseTime 是否过滤响应时间
+                     * 
                      */
                     void SetIsFilterResponseTime(const bool& _isFilterResponseTime);
 
                     /**
                      * 判断参数 IsFilterResponseTime 是否已赋值
                      * @return IsFilterResponseTime 是否已赋值
+                     * 
                      */
                     bool IsFilterResponseTimeHasBeenSet() const;
 

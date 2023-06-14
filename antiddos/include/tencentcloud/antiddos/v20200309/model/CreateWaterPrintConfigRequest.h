@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取水印防护配置
                      * @return WaterPrintConfig 水印防护配置
+                     * 
                      */
                     WaterPrintConfig GetWaterPrintConfig() const;
 
                     /**
                      * 设置水印防护配置
-                     * @param WaterPrintConfig 水印防护配置
+                     * @param _waterPrintConfig 水印防护配置
+                     * 
                      */
                     void SetWaterPrintConfig(const WaterPrintConfig& _waterPrintConfig);
 
                     /**
                      * 判断参数 WaterPrintConfig 是否已赋值
                      * @return WaterPrintConfig 是否已赋值
+                     * 
                      */
                     bool WaterPrintConfigHasBeenSet() const;
 

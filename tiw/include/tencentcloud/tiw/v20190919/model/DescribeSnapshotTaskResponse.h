@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskID 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
@@ -67,12 +69,14 @@ Finished - 任务已结束
 Running - 任务执行中
 Finished - 任务已结束
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -81,12 +85,14 @@ Finished - 任务已结束
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建时间，单位s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -95,12 +101,14 @@ Finished - 任务已结束
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 任务完成时间，单位s
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFinishTime() const;
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
@@ -109,12 +117,14 @@ Finished - 任务已结束
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 任务结果信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SnapshotResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

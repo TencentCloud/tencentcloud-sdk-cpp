@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取IPV6端口号，可在0~65535范围取值
                      * @return Vport6 IPV6端口号，可在0~65535范围取值
+                     * 
                      */
                     int64_t GetVport6() const;
 
                     /**
                      * 设置IPV6端口号，可在0~65535范围取值
-                     * @param Vport6 IPV6端口号，可在0~65535范围取值
+                     * @param _vport6 IPV6端口号，可在0~65535范围取值
+                     * 
                      */
                     void SetVport6(const int64_t& _vport6);
 
                     /**
                      * 判断参数 Vport6 是否已赋值
                      * @return Vport6 是否已赋值
+                     * 
                      */
                     bool Vport6HasBeenSet() const;
 
                     /**
                      * 获取协议类型，支持TCP/UDP
                      * @return Protocol 协议类型，支持TCP/UDP
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议类型，支持TCP/UDP
-                     * @param Protocol 协议类型，支持TCP/UDP
+                     * @param _protocol 协议类型，支持TCP/UDP
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取IPV4地址
                      * @return Vip IPV4地址
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置IPV4地址
-                     * @param Vip IPV4地址
+                     * @param _vip IPV4地址
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取IPV4端口号，可在0~65535范围取值
                      * @return Vport IPV4端口号，可在0~65535范围取值
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置IPV4端口号，可在0~65535范围取值
-                     * @param Vport IPV4端口号，可在0~65535范围取值
+                     * @param _vport IPV4端口号，可在0~65535范围取值
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 

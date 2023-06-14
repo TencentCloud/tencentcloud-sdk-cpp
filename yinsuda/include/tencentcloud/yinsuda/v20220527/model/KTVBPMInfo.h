@@ -57,6 +57,7 @@ namespace TencentCloud
 <li>Middle：中等；</li>
 <li>Fast：快；</li>
 <li>Unknown：未知。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -66,35 +67,40 @@ namespace TencentCloud
 <li>Middle：中等；</li>
 <li>Fast：快；</li>
 <li>Unknown：未知。</li>
-                     * @param Type 节拍类型，取值有：
+                     * @param _type 节拍类型，取值有：
 <li>Slow：慢；</li>
 <li>Middle：中等；</li>
 <li>Fast：快；</li>
 <li>Unknown：未知。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取BPM 值。
                      * @return Value BPM 值。
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置BPM 值。
-                     * @param Value BPM 值。
+                     * @param _value BPM 值。
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

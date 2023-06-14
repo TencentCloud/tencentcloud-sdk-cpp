@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIPAddressInfo 实例的外网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PublicIPAddressInfo GetPublicIPAddressInfo() const;
 
                     /**
                      * 设置实例的外网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIPAddressInfo 实例的外网ip相关信息。
+                     * @param _publicIPAddressInfo 实例的外网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIPAddressInfo(const PublicIPAddressInfo& _publicIPAddressInfo);
 
                     /**
                      * 判断参数 PublicIPAddressInfo 是否已赋值
                      * @return PublicIPAddressInfo 是否已赋值
+                     * 
                      */
                     bool PublicIPAddressInfoHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateIPAddressInfo 实例的内网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PrivateIPAddressInfo GetPrivateIPAddressInfo() const;
 
                     /**
                      * 设置实例的内网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIPAddressInfo 实例的内网ip相关信息。
+                     * @param _privateIPAddressInfo 实例的内网ip相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateIPAddressInfo(const PrivateIPAddressInfo& _privateIPAddressInfo);
 
                     /**
                      * 判断参数 PrivateIPAddressInfo 是否已赋值
                      * @return PrivateIPAddressInfo 是否已赋值
+                     * 
                      */
                     bool PrivateIPAddressInfoHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIPv6AddressInfo 实例的外网ipv6相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PublicIPAddressInfo GetPublicIPv6AddressInfo() const;
 
                     /**
                      * 设置实例的外网ipv6相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIPv6AddressInfo 实例的外网ipv6相关信息。
+                     * @param _publicIPv6AddressInfo 实例的外网ipv6相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIPv6AddressInfo(const PublicIPAddressInfo& _publicIPv6AddressInfo);
 
                     /**
                      * 判断参数 PublicIPv6AddressInfo 是否已赋值
                      * @return PublicIPv6AddressInfo 是否已赋值
+                     * 
                      */
                     bool PublicIPv6AddressInfoHasBeenSet() const;
 

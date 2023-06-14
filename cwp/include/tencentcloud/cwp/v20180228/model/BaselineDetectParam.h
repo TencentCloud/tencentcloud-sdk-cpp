@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取检测的策略集合
                      * @return PolicyIds 检测的策略集合
+                     * 
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
                      * 设置检测的策略集合
-                     * @param PolicyIds 检测的策略集合
+                     * @param _policyIds 检测的策略集合
+                     * 
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
                     /**
                      * 判断参数 PolicyIds 是否已赋值
                      * @return PolicyIds 是否已赋值
+                     * 
                      */
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
                      * 获取检测的规则集合
                      * @return RuleIds 检测的规则集合
+                     * 
                      */
                     std::vector<int64_t> GetRuleIds() const;
 
                     /**
                      * 设置检测的规则集合
-                     * @param RuleIds 检测的规则集合
+                     * @param _ruleIds 检测的规则集合
+                     * 
                      */
                     void SetRuleIds(const std::vector<int64_t>& _ruleIds);
 
                     /**
                      * 判断参数 RuleIds 是否已赋值
                      * @return RuleIds 是否已赋值
+                     * 
                      */
                     bool RuleIdsHasBeenSet() const;
 
                     /**
                      * 获取检测项集合
                      * @return ItemIds 检测项集合
+                     * 
                      */
                     std::vector<int64_t> GetItemIds() const;
 
                     /**
                      * 设置检测项集合
-                     * @param ItemIds 检测项集合
+                     * @param _itemIds 检测项集合
+                     * 
                      */
                     void SetItemIds(const std::vector<int64_t>& _itemIds);
 
                     /**
                      * 判断参数 ItemIds 是否已赋值
                      * @return ItemIds 是否已赋值
+                     * 
                      */
                     bool ItemIdsHasBeenSet() const;
 
                     /**
                      * 获取检测的主机ID集合
                      * @return HostIds 检测的主机ID集合
+                     * 
                      */
                     std::vector<std::string> GetHostIds() const;
 
                     /**
                      * 设置检测的主机ID集合
-                     * @param HostIds 检测的主机ID集合
+                     * @param _hostIds 检测的主机ID集合
+                     * 
                      */
                     void SetHostIds(const std::vector<std::string>& _hostIds);
 
                     /**
                      * 判断参数 HostIds 是否已赋值
                      * @return HostIds 是否已赋值
+                     * 
                      */
                     bool HostIdsHasBeenSet() const;
 

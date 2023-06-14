@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
                      * @return ModuleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * 
                      */
                     std::string GetModuleType() const;
 
                     /**
                      * 设置模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
-                     * @param ModuleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * @param _moduleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * 
                      */
                     void SetModuleType(const std::string& _moduleType);
 
                     /**
                      * 判断参数 ModuleType 是否已赋值
                      * @return ModuleType 是否已赋值
+                     * 
                      */
                     bool ModuleTypeHasBeenSet() const;
 
@@ -66,20 +69,23 @@ namespace TencentCloud
 <li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
                      * @return Filters 过滤参数;
 <li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤参数;
 <li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
-                     * @param Filters 过滤参数;
+                     * @param _filters 过滤参数;
 <li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

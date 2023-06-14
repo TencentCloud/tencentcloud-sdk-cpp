@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date STRING(8)，日期（格式: 20190101）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置STRING(8)，日期（格式: 20190101）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Date STRING(8)，日期（格式: 20190101）
+                     * @param _date STRING(8)，日期（格式: 20190101）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAcctType STRING(40)，子账号类型（子帐号类型。1: 普通会员子账号; 2: 挂账子账号; 3: 手续费子账号; 4: 利息子账号; 5: 平台担保子账号; 7: 在途; 8: 理财购买子帐号; 9: 理财赎回子帐号; 10: 平台子拥有结算子帐号）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAcctType() const;
 
                     /**
                      * 设置STRING(40)，子账号类型（子帐号类型。1: 普通会员子账号; 2: 挂账子账号; 3: 手续费子账号; 4: 利息子账号; 5: 平台担保子账号; 7: 在途; 8: 理财购买子帐号; 9: 理财赎回子帐号; 10: 平台子拥有结算子帐号）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubAcctType STRING(40)，子账号类型（子帐号类型。1: 普通会员子账号; 2: 挂账子账号; 3: 手续费子账号; 4: 利息子账号; 5: 平台担保子账号; 7: 在途; 8: 理财购买子帐号; 9: 理财赎回子帐号; 10: 平台子拥有结算子帐号）
+                     * @param _subAcctType STRING(40)，子账号类型（子帐号类型。1: 普通会员子账号; 2: 挂账子账号; 3: 手续费子账号; 4: 利息子账号; 5: 平台担保子账号; 7: 在途; 8: 理财购买子帐号; 9: 理财赎回子帐号; 10: 平台子拥有结算子帐号）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubAcctType(const std::string& _subAcctType);
 
                     /**
                      * 判断参数 SubAcctType 是否已赋值
                      * @return SubAcctType 是否已赋值
+                     * 
                      */
                     bool SubAcctTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReconcileStatus STRING(3)，对账状态（0: 成功; 1: 失败）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReconcileStatus() const;
 
                     /**
                      * 设置STRING(3)，对账状态（0: 成功; 1: 失败）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReconcileStatus STRING(3)，对账状态（0: 成功; 1: 失败）
+                     * @param _reconcileStatus STRING(3)，对账状态（0: 成功; 1: 失败）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReconcileStatus(const std::string& _reconcileStatus);
 
                     /**
                      * 判断参数 ReconcileStatus 是否已赋值
                      * @return ReconcileStatus 是否已赋值
+                     * 
                      */
                     bool ReconcileStatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReconcileReturnMsg STRING(300)，对账返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReconcileReturnMsg() const;
 
                     /**
                      * 设置STRING(300)，对账返回信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReconcileReturnMsg STRING(300)，对账返回信息
+                     * @param _reconcileReturnMsg STRING(300)，对账返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReconcileReturnMsg(const std::string& _reconcileReturnMsg);
 
                     /**
                      * 判断参数 ReconcileReturnMsg 是否已赋值
                      * @return ReconcileReturnMsg 是否已赋值
+                     * 
                      */
                     bool ReconcileReturnMsgHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClearingStatus STRING(20)，清算状态（0: 成功; 1: 失败; 2: 异常; 3: 待处理）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClearingStatus() const;
 
                     /**
                      * 设置STRING(20)，清算状态（0: 成功; 1: 失败; 2: 异常; 3: 待处理）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClearingStatus STRING(20)，清算状态（0: 成功; 1: 失败; 2: 异常; 3: 待处理）
+                     * @param _clearingStatus STRING(20)，清算状态（0: 成功; 1: 失败; 2: 异常; 3: 待处理）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClearingStatus(const std::string& _clearingStatus);
 
                     /**
                      * 判断参数 ClearingStatus 是否已赋值
                      * @return ClearingStatus 是否已赋值
+                     * 
                      */
                     bool ClearingStatusHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClearingReturnMsg STRING(2)，清算返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClearingReturnMsg() const;
 
                     /**
                      * 设置STRING(2)，清算返回信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClearingReturnMsg STRING(2)，清算返回信息
+                     * @param _clearingReturnMsg STRING(2)，清算返回信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClearingReturnMsg(const std::string& _clearingReturnMsg);
 
                     /**
                      * 判断参数 ClearingReturnMsg 是否已赋值
                      * @return ClearingReturnMsg 是否已赋值
+                     * 
                      */
                     bool ClearingReturnMsgHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalAmt STRING(300)，待清算总金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTotalAmt() const;
 
                     /**
                      * 设置STRING(300)，待清算总金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalAmt STRING(300)，待清算总金额
+                     * @param _totalAmt STRING(300)，待清算总金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalAmt(const std::string& _totalAmt);
 
                     /**
                      * 判断参数 TotalAmt 是否已赋值
                      * @return TotalAmt 是否已赋值
+                     * 
                      */
                     bool TotalAmtHasBeenSet() const;
 

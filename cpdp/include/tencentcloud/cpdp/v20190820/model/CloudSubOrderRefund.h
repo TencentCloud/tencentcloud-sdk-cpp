@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取子订单退款金额
                      * @return RefundAmt 子订单退款金额
+                     * 
                      */
                     int64_t GetRefundAmt() const;
 
                     /**
                      * 设置子订单退款金额
-                     * @param RefundAmt 子订单退款金额
+                     * @param _refundAmt 子订单退款金额
+                     * 
                      */
                     void SetRefundAmt(const int64_t& _refundAmt);
 
                     /**
                      * 判断参数 RefundAmt 是否已赋值
                      * @return RefundAmt 是否已赋值
+                     * 
                      */
                     bool RefundAmtHasBeenSet() const;
 
                     /**
                      * 获取平台应退金额
                      * @return PlatformRefundAmt 平台应退金额
+                     * 
                      */
                     int64_t GetPlatformRefundAmt() const;
 
                     /**
                      * 设置平台应退金额
-                     * @param PlatformRefundAmt 平台应退金额
+                     * @param _platformRefundAmt 平台应退金额
+                     * 
                      */
                     void SetPlatformRefundAmt(const int64_t& _platformRefundAmt);
 
                     /**
                      * 判断参数 PlatformRefundAmt 是否已赋值
                      * @return PlatformRefundAmt 是否已赋值
+                     * 
                      */
                     bool PlatformRefundAmtHasBeenSet() const;
 
                     /**
                      * 获取商家应退金额
                      * @return SubMchRefundAmt 商家应退金额
+                     * 
                      */
                     int64_t GetSubMchRefundAmt() const;
 
                     /**
                      * 设置商家应退金额
-                     * @param SubMchRefundAmt 商家应退金额
+                     * @param _subMchRefundAmt 商家应退金额
+                     * 
                      */
                     void SetSubMchRefundAmt(const int64_t& _subMchRefundAmt);
 
                     /**
                      * 判断参数 SubMchRefundAmt 是否已赋值
                      * @return SubMchRefundAmt 是否已赋值
+                     * 
                      */
                     bool SubMchRefundAmtHasBeenSet() const;
 
                     /**
                      * 获取子订单号
                      * @return SubOutTradeNo 子订单号
+                     * 
                      */
                     std::string GetSubOutTradeNo() const;
 
                     /**
                      * 设置子订单号
-                     * @param SubOutTradeNo 子订单号
+                     * @param _subOutTradeNo 子订单号
+                     * 
                      */
                     void SetSubOutTradeNo(const std::string& _subOutTradeNo);
 
                     /**
                      * 判断参数 SubOutTradeNo 是否已赋值
                      * @return SubOutTradeNo 是否已赋值
+                     * 
                      */
                     bool SubOutTradeNoHasBeenSet() const;
 
                     /**
                      * 获取子退款单号，调用方需要保证全局唯一性
                      * @return SubRefundId 子退款单号，调用方需要保证全局唯一性
+                     * 
                      */
                     std::string GetSubRefundId() const;
 
                     /**
                      * 设置子退款单号，调用方需要保证全局唯一性
-                     * @param SubRefundId 子退款单号，调用方需要保证全局唯一性
+                     * @param _subRefundId 子退款单号，调用方需要保证全局唯一性
+                     * 
                      */
                     void SetSubRefundId(const std::string& _subRefundId);
 
                     /**
                      * 判断参数 SubRefundId 是否已赋值
                      * @return SubRefundId 是否已赋值
+                     * 
                      */
                     bool SubRefundIdHasBeenSet() const;
 

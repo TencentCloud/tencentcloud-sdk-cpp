@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount API 绑定的使用计划总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置API 绑定的使用计划总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount API 绑定的使用计划总数。
+                     * @param _totalCount API 绑定的使用计划总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiUsagePlanList API 绑定使用计划列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApiUsagePlan> GetApiUsagePlanList() const;
 
                     /**
                      * 设置API 绑定使用计划列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiUsagePlanList API 绑定使用计划列表。
+                     * @param _apiUsagePlanList API 绑定使用计划列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiUsagePlanList(const std::vector<ApiUsagePlan>& _apiUsagePlanList);
 
                     /**
                      * 判断参数 ApiUsagePlanList 是否已赋值
                      * @return ApiUsagePlanList 是否已赋值
+                     * 
                      */
                     bool ApiUsagePlanListHasBeenSet() const;
 

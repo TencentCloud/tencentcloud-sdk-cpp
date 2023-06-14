@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取指定凭据名称。
                      * @return SecretName 指定凭据名称。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置指定凭据名称。
-                     * @param SecretName 指定凭据名称。
+                     * @param _secretName 指定凭据名称。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取指定该名称下需要删除的凭据的版本号。
                      * @return VersionId 指定该名称下需要删除的凭据的版本号。
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置指定该名称下需要删除的凭据的版本号。
-                     * @param VersionId 指定该名称下需要删除的凭据的版本号。
+                     * @param _versionId 指定该名称下需要删除的凭据的版本号。
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

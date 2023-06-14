@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取待处理事件个数
                      * @return UnhandleEventCount 待处理事件个数
+                     * 
                      */
                     uint64_t GetUnhandleEventCount() const;
 
                     /**
                      * 判断参数 UnhandleEventCount 是否已赋值
                      * @return UnhandleEventCount 是否已赋值
+                     * 
                      */
                     bool UnhandleEventCountHasBeenSet() const;
 
                     /**
                      * 获取待处理高危事件个数
                      * @return UnhandleHighLevelEventCount 待处理高危事件个数
+                     * 
                      */
                     uint64_t GetUnhandleHighLevelEventCount() const;
 
                     /**
                      * 判断参数 UnhandleHighLevelEventCount 是否已赋值
                      * @return UnhandleHighLevelEventCount 是否已赋值
+                     * 
                      */
                     bool UnhandleHighLevelEventCountHasBeenSet() const;
 
                     /**
                      * 获取待处理中危事件个数
                      * @return UnhandleMediumLevelEventCount 待处理中危事件个数
+                     * 
                      */
                     uint64_t GetUnhandleMediumLevelEventCount() const;
 
                     /**
                      * 判断参数 UnhandleMediumLevelEventCount 是否已赋值
                      * @return UnhandleMediumLevelEventCount 是否已赋值
+                     * 
                      */
                     bool UnhandleMediumLevelEventCountHasBeenSet() const;
 
                     /**
                      * 获取待处理低危事件个数
                      * @return UnhandleLowLevelEventCount 待处理低危事件个数
+                     * 
                      */
                     uint64_t GetUnhandleLowLevelEventCount() const;
 
                     /**
                      * 判断参数 UnhandleLowLevelEventCount 是否已赋值
                      * @return UnhandleLowLevelEventCount 是否已赋值
+                     * 
                      */
                     bool UnhandleLowLevelEventCountHasBeenSet() const;
 
                     /**
                      * 获取待处理提示级别事件个数
                      * @return UnhandleNoticeLevelEventCount 待处理提示级别事件个数
+                     * 
                      */
                     uint64_t GetUnhandleNoticeLevelEventCount() const;
 
                     /**
                      * 判断参数 UnhandleNoticeLevelEventCount 是否已赋值
                      * @return UnhandleNoticeLevelEventCount 是否已赋值
+                     * 
                      */
                     bool UnhandleNoticeLevelEventCountHasBeenSet() const;
 

@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取卖场编码
                      * @return MallId 卖场编码
+                     * 
                      */
                     std::string GetMallId() const;
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 
                     /**
                      * 获取客户编码
                      * @return PersonId 客户编码
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取轨迹编码
                      * @return TraceId 轨迹编码
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 
                     /**
                      * 获取轨迹点坐标序列
                      * @return CoordinateSet 轨迹点坐标序列
+                     * 
                      */
                     std::vector<PersonCoordinate> GetCoordinateSet() const;
 
                     /**
                      * 判断参数 CoordinateSet 是否已赋值
                      * @return CoordinateSet 是否已赋值
+                     * 
                      */
                     bool CoordinateSetHasBeenSet() const;
 

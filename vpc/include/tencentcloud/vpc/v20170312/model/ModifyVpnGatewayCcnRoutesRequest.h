@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关实例ID。
                      * @return VpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
                      * 设置VPN网关实例ID。
-                     * @param VpnGatewayId VPN网关实例ID。
+                     * @param _vpnGatewayId VPN网关实例ID。
+                     * 
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
                     /**
                      * 判断参数 VpnGatewayId 是否已赋值
                      * @return VpnGatewayId 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取云联网路由（IDC网段）列表。
                      * @return Routes 云联网路由（IDC网段）列表。
+                     * 
                      */
                     std::vector<VpngwCcnRoutes> GetRoutes() const;
 
                     /**
                      * 设置云联网路由（IDC网段）列表。
-                     * @param Routes 云联网路由（IDC网段）列表。
+                     * @param _routes 云联网路由（IDC网段）列表。
+                     * 
                      */
                     void SetRoutes(const std::vector<VpngwCcnRoutes>& _routes);
 
                     /**
                      * 判断参数 Routes 是否已赋值
                      * @return Routes 是否已赋值
+                     * 
                      */
                     bool RoutesHasBeenSet() const;
 

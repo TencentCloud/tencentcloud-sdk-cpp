@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要关闭的设备ID列表
                      * @return InstanceIds 需要关闭的设备ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置需要关闭的设备ID列表
-                     * @param InstanceIds 需要关闭的设备ID列表
+                     * @param _instanceIds 需要关闭的设备ID列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

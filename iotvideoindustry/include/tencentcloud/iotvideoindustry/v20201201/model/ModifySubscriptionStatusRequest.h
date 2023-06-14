@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备ID
                      * @return DeviceId 设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-                     * @param DeviceId 设备ID
+                     * @param _deviceId 设备ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取订阅状态 1：关闭订阅 2：开启订阅
                      * @return Status 订阅状态 1：关闭订阅 2：开启订阅
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置订阅状态 1：关闭订阅 2：开启订阅
-                     * @param Status 订阅状态 1：关闭订阅 2：开启订阅
+                     * @param _status 订阅状态 1：关闭订阅 2：开启订阅
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅
                      * @return SubscriptionItem 订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅
+                     * 
                      */
                     std::string GetSubscriptionItem() const;
 
                     /**
                      * 设置订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅
-                     * @param SubscriptionItem 订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅
+                     * @param _subscriptionItem 订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅
+                     * 
                      */
                     void SetSubscriptionItem(const std::string& _subscriptionItem);
 
                     /**
                      * 判断参数 SubscriptionItem 是否已赋值
                      * @return SubscriptionItem 是否已赋值
+                     * 
                      */
                     bool SubscriptionItemHasBeenSet() const;
 

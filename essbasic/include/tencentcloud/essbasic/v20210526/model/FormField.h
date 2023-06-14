@@ -61,6 +61,7 @@ CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
 DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
+                     * 
                      */
                     std::string GetComponentValue() const;
 
@@ -72,19 +73,21 @@ CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
 DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
-                     * @param ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
+                     * @param _componentValue 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
 FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
 SELECTOR - 选项值
 DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo
+                     * 
                      */
                     void SetComponentValue(const std::string& _componentValue);
 
                     /**
                      * 判断参数 ComponentValue 是否已赋值
                      * @return ComponentValue 是否已赋值
+                     * 
                      */
                     bool ComponentValueHasBeenSet() const;
 
@@ -95,6 +98,7 @@ CreateFlowsByTemplates 接口不使用此字段。
                      * @return ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
 CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComponentId() const;
 
@@ -102,15 +106,17 @@ CreateFlowsByTemplates 接口不使用此字段。
                      * 设置表单域或控件的ID，跟ComponentName二选一，不能全为空；
 CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
+                     * @param _componentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
 CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComponentId(const std::string& _componentId);
 
                     /**
                      * 判断参数 ComponentId 是否已赋值
                      * @return ComponentId 是否已赋值
+                     * 
                      */
                     bool ComponentIdHasBeenSet() const;
 
@@ -119,20 +125,23 @@ CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentName 控件的名字，跟ComponentId二选一，不能全为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置控件的名字，跟ComponentId二选一，不能全为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComponentName 控件的名字，跟ComponentId二选一，不能全为空
+                     * @param _componentName 控件的名字，跟ComponentId二选一，不能全为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComponentName(const std::string& _componentName);
 
                     /**
                      * 判断参数 ComponentName 是否已赋值
                      * @return ComponentName 是否已赋值
+                     * 
                      */
                     bool ComponentNameHasBeenSet() const;
 

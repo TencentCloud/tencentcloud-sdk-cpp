@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取失败原因
                      * @return Reason 失败原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
-                     * @param Reason 失败原因
+                     * @param _reason 失败原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致
                      * @return Targets 处理失败的资源列表。
 该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致
+                     * 
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
                      * 设置处理失败的资源列表。
 该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致
-                     * @param Targets 处理失败的资源列表。
+                     * @param _targets 处理失败的资源列表。
 该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致
+                     * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

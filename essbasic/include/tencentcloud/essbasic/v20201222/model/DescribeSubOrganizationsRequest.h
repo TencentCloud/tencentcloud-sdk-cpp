@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取子机构ID数组
                      * @return SubOrganizationIds 子机构ID数组
+                     * 
                      */
                     std::vector<std::string> GetSubOrganizationIds() const;
 
                     /**
                      * 设置子机构ID数组
-                     * @param SubOrganizationIds 子机构ID数组
+                     * @param _subOrganizationIds 子机构ID数组
+                     * 
                      */
                     void SetSubOrganizationIds(const std::vector<std::string>& _subOrganizationIds);
 
                     /**
                      * 判断参数 SubOrganizationIds 是否已赋值
                      * @return SubOrganizationIds 是否已赋值
+                     * 
                      */
                     bool SubOrganizationIdsHasBeenSet() const;
 

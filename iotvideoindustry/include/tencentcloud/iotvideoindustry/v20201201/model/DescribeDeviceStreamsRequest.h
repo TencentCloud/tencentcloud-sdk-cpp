@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备唯一标识
                      * @return DeviceId 设备唯一标识
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备唯一标识
-                     * @param DeviceId 设备唯一标识
+                     * @param _deviceId 设备唯一标识
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取流地址失效时间
                      * @return ExpireTime 流地址失效时间
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置流地址失效时间
-                     * @param ExpireTime 流地址失效时间
+                     * @param _expireTime 流地址失效时间
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取通道唯一标识（接口升级字段为必填）
                      * @return ChannelId 通道唯一标识（接口升级字段为必填）
+                     * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道唯一标识（接口升级字段为必填）
-                     * @param ChannelId 通道唯一标识（接口升级字段为必填）
+                     * @param _channelId 通道唯一标识（接口升级字段为必填）
+                     * 
                      */
                     void SetChannelId(const std::string& _channelId);
 
                     /**
                      * 判断参数 ChannelId 是否已赋值
                      * @return ChannelId 是否已赋值
+                     * 
                      */
                     bool ChannelIdHasBeenSet() const;
 

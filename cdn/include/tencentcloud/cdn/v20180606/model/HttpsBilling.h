@@ -55,6 +55,7 @@ off：关闭，拦截https请求
 on：开启，缺省时默认开启，会产生计费
 off：关闭，拦截https请求
 
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ off：关闭，拦截https请求
 on：开启，缺省时默认开启，会产生计费
 off：关闭，拦截https请求
 
-                     * @param Switch HTTPS服务配置开关，取值有：
+                     * @param _switch HTTPS服务配置开关，取值有：
 on：开启，缺省时默认开启，会产生计费
 off：关闭，拦截https请求
 
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

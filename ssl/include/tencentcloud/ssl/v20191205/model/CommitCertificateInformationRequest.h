@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取证书 ID。
                      * @return CertificateId 证书 ID。
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置证书 ID。
-                     * @param CertificateId 证书 ID。
+                     * @param _certificateId 证书 ID。
+                     * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取域名验证方式
                      * @return VerifyType 域名验证方式
+                     * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
                      * 设置域名验证方式
-                     * @param VerifyType 域名验证方式
+                     * @param _verifyType 域名验证方式
+                     * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
 
                     /**
                      * 判断参数 VerifyType 是否已赋值
                      * @return VerifyType 是否已赋值
+                     * 
                      */
                     bool VerifyTypeHasBeenSet() const;
 

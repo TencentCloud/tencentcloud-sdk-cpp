@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCount 成功条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailCount 失败条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFailCount() const;
 
                     /**
                      * 判断参数 FailCount 是否已赋值
                      * @return FailCount 是否已赋值
+                     * 
                      */
                     bool FailCountHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CopyJobsResults 结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CopyJobResult> GetCopyJobsResults() const;
 
                     /**
                      * 判断参数 CopyJobsResults 是否已赋值
                      * @return CopyJobsResults 是否已赋值
+                     * 
                      */
                     bool CopyJobsResultsHasBeenSet() const;
 

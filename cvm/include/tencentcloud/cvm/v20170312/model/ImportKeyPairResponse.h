@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取密钥对ID。
                      * @return KeyId 密钥对ID。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 

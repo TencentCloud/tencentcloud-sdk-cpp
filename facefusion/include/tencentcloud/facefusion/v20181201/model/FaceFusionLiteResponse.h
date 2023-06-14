@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。
                      * @return Image RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReviewResultSet 鉴政结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FuseFaceReviewResult> GetReviewResultSet() const;
 
                     /**
                      * 判断参数 ReviewResultSet 是否已赋值
                      * @return ReviewResultSet 是否已赋值
+                     * 
                      */
                     bool ReviewResultSetHasBeenSet() const;
 

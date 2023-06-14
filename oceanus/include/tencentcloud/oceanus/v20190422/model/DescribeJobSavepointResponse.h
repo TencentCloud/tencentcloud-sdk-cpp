@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalNumber 快照列表总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalNumber() const;
 
                     /**
                      * 判断参数 TotalNumber 是否已赋值
                      * @return TotalNumber 是否已赋值
+                     * 
                      */
                     bool TotalNumberHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Savepoint 快照列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Savepoint> GetSavepoint() const;
 
                     /**
                      * 判断参数 Savepoint 是否已赋值
                      * @return Savepoint 是否已赋值
+                     * 
                      */
                     bool SavepointHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningSavepoint 进行中的快照列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Savepoint> GetRunningSavepoint() const;
 
                     /**
                      * 判断参数 RunningSavepoint 是否已赋值
                      * @return RunningSavepoint 是否已赋值
+                     * 
                      */
                     bool RunningSavepointHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningTotalNumber 进行中的快照列表总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRunningTotalNumber() const;
 
                     /**
                      * 判断参数 RunningTotalNumber 是否已赋值
                      * @return RunningTotalNumber 是否已赋值
+                     * 
                      */
                     bool RunningTotalNumberHasBeenSet() const;
 

@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerId 定时器ID，进行encode，填写时更新
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimerId() const;
 
                     /**
                      * 设置定时器ID，进行encode，填写时更新
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerId 定时器ID，进行encode，填写时更新
+                     * @param _timerId 定时器ID，进行encode，填写时更新
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerId(const std::string& _timerId);
 
                     /**
                      * 判断参数 TimerId 是否已赋值
                      * @return TimerId 是否已赋值
+                     * 
                      */
                     bool TimerIdHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerName 定时器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimerName() const;
 
                     /**
                      * 设置定时器名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerName 定时器名称
+                     * @param _timerName 定时器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerName(const std::string& _timerName);
 
                     /**
                      * 判断参数 TimerName 是否已赋值
                      * @return TimerName 是否已赋值
+                     * 
                      */
                     bool TimerNameHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerStatus 定时器状态(未定义0、未生效1、生效中2、已停止3、已过期4)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimerStatus() const;
 
                     /**
                      * 设置定时器状态(未定义0、未生效1、生效中2、已停止3、已过期4)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerStatus 定时器状态(未定义0、未生效1、生效中2、已停止3、已过期4)
+                     * @param _timerStatus 定时器状态(未定义0、未生效1、生效中2、已停止3、已过期4)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerStatus(const int64_t& _timerStatus);
 
                     /**
                      * 判断参数 TimerStatus 是否已赋值
                      * @return TimerStatus 是否已赋值
+                     * 
                      */
                     bool TimerStatusHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerFleetCapacity 定时器弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TimerFleetCapacity GetTimerFleetCapacity() const;
 
                     /**
                      * 设置定时器弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerFleetCapacity 定时器弹性伸缩策略
+                     * @param _timerFleetCapacity 定时器弹性伸缩策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerFleetCapacity(const TimerFleetCapacity& _timerFleetCapacity);
 
                     /**
                      * 判断参数 TimerFleetCapacity 是否已赋值
                      * @return TimerFleetCapacity 是否已赋值
+                     * 
                      */
                     bool TimerFleetCapacityHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimerConfiguration 重复周期配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TimerConfiguration GetTimerConfiguration() const;
 
                     /**
                      * 设置重复周期配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerConfiguration 重复周期配置
+                     * @param _timerConfiguration 重复周期配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimerConfiguration(const TimerConfiguration& _timerConfiguration);
 
                     /**
                      * 判断参数 TimerConfiguration 是否已赋值
                      * @return TimerConfiguration 是否已赋值
+                     * 
                      */
                     bool TimerConfigurationHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取分页大小参数。默认值为 20，最小值为 1，最大值为 100。
                      * @return Limit 分页大小参数。默认值为 20，最小值为 1，最大值为 100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页大小参数。默认值为 20，最小值为 1，最大值为 100。
-                     * @param Limit 分页大小参数。默认值为 20，最小值为 1，最大值为 100。
+                     * @param _limit 分页大小参数。默认值为 20，最小值为 1，最大值为 100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量。
                      * @return Offset 分页偏移量。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量。
-                     * @param Offset 分页偏移量。
+                     * @param _offset 分页偏移量。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取审计日志文件名。
                      * @return FileName 审计日志文件名。
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置审计日志文件名。
-                     * @param FileName 审计日志文件名。
+                     * @param _fileName 审计日志文件名。
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 

@@ -54,6 +54,7 @@ off：关闭
                      * @return Switch 启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -61,33 +62,38 @@ off：关闭
                      * 设置启发式缓存配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch 启发式缓存配置开关，取值有：
+                     * @param _switch 启发式缓存配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取自定义启发式缓存时间配置
                      * @return CacheConfig 自定义启发式缓存时间配置
+                     * 
                      */
                     CacheConfig GetCacheConfig() const;
 
                     /**
                      * 设置自定义启发式缓存时间配置
-                     * @param CacheConfig 自定义启发式缓存时间配置
+                     * @param _cacheConfig 自定义启发式缓存时间配置
+                     * 
                      */
                     void SetCacheConfig(const CacheConfig& _cacheConfig);
 
                     /**
                      * 判断参数 CacheConfig 是否已赋值
                      * @return CacheConfig 是否已赋值
+                     * 
                      */
                     bool CacheConfigHasBeenSet() const;
 

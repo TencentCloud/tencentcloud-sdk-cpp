@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的通知数量。
                      * @return TotalCount 符合条件的通知数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取弹性伸缩事件通知详细信息列表。
                      * @return AutoScalingNotificationSet 弹性伸缩事件通知详细信息列表。
+                     * 
                      */
                     std::vector<AutoScalingNotification> GetAutoScalingNotificationSet() const;
 
                     /**
                      * 判断参数 AutoScalingNotificationSet 是否已赋值
                      * @return AutoScalingNotificationSet 是否已赋值
+                     * 
                      */
                     bool AutoScalingNotificationSetHasBeenSet() const;
 

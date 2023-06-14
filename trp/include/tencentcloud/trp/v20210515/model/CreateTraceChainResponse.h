@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取溯源ID
                      * @return TraceId 溯源ID
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 

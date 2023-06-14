@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取维护时间窗起始时间，如：17:00
                      * @return StartTime 维护时间窗起始时间，如：17:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置维护时间窗起始时间，如：17:00
-                     * @param StartTime 维护时间窗起始时间，如：17:00
+                     * @param _startTime 维护时间窗起始时间，如：17:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取维护时间窗结束时间，如：19:00
                      * @return EndTime 维护时间窗结束时间，如：19:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置维护时间窗结束时间，如：19:00
-                     * @param EndTime 维护时间窗结束时间，如：19:00
+                     * @param _endTime 维护时间窗结束时间，如：19:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

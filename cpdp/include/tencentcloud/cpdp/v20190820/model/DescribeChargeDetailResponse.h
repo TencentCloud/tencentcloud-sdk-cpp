@@ -46,156 +46,182 @@ namespace TencentCloud
                     /**
                      * 获取交易状态 （0：成功，1：失败，2：异常,3:冲正，5：待处理）
                      * @return OrderStatus 交易状态 （0：成功，1：失败，2：异常,3:冲正，5：待处理）
+                     * 
                      */
                     std::string GetOrderStatus() const;
 
                     /**
                      * 判断参数 OrderStatus 是否已赋值
                      * @return OrderStatus 是否已赋值
+                     * 
                      */
                     bool OrderStatusHasBeenSet() const;
 
                     /**
                      * 获取交易金额
                      * @return OrderAmount 交易金额
+                     * 
                      */
                     std::string GetOrderAmount() const;
 
                     /**
                      * 判断参数 OrderAmount 是否已赋值
                      * @return OrderAmount 是否已赋值
+                     * 
                      */
                     bool OrderAmountHasBeenSet() const;
 
                     /**
                      * 获取佣金费
                      * @return CommissionAmount 佣金费
+                     * 
                      */
                     std::string GetCommissionAmount() const;
 
                     /**
                      * 判断参数 CommissionAmount 是否已赋值
                      * @return CommissionAmount 是否已赋值
+                     * 
                      */
                     bool CommissionAmountHasBeenSet() const;
 
                     /**
                      * 获取支付方式  0-冻结支付 1-普通支付
                      * @return PayMode 支付方式  0-冻结支付 1-普通支付
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取交易日期
                      * @return OrderDate 交易日期
+                     * 
                      */
                     std::string GetOrderDate() const;
 
                     /**
                      * 判断参数 OrderDate 是否已赋值
                      * @return OrderDate 是否已赋值
+                     * 
                      */
                     bool OrderDateHasBeenSet() const;
 
                     /**
                      * 获取交易时间
                      * @return OrderTime 交易时间
+                     * 
                      */
                     std::string GetOrderTime() const;
 
                     /**
                      * 判断参数 OrderTime 是否已赋值
                      * @return OrderTime 是否已赋值
+                     * 
                      */
                     bool OrderTimeHasBeenSet() const;
 
                     /**
                      * 获取订单实际转入见证子账户的名称
                      * @return OrderActualInSubAccountName 订单实际转入见证子账户的名称
+                     * 
                      */
                     std::string GetOrderActualInSubAccountName() const;
 
                     /**
                      * 判断参数 OrderActualInSubAccountName 是否已赋值
                      * @return OrderActualInSubAccountName 是否已赋值
+                     * 
                      */
                     bool OrderActualInSubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取订单实际转入见证子账户的帐号
                      * @return OrderActualInSubAccountNumber 订单实际转入见证子账户的帐号
+                     * 
                      */
                     std::string GetOrderActualInSubAccountNumber() const;
 
                     /**
                      * 判断参数 OrderActualInSubAccountNumber 是否已赋值
                      * @return OrderActualInSubAccountNumber 是否已赋值
+                     * 
                      */
                     bool OrderActualInSubAccountNumberHasBeenSet() const;
 
                     /**
                      * 获取订单实际转入见证子账户的帐号
                      * @return OrderInSubAccountName 订单实际转入见证子账户的帐号
+                     * 
                      */
                     std::string GetOrderInSubAccountName() const;
 
                     /**
                      * 判断参数 OrderInSubAccountName 是否已赋值
                      * @return OrderInSubAccountName 是否已赋值
+                     * 
                      */
                     bool OrderInSubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取订单转入见证子账户的帐号
                      * @return OrderInSubAccountNumber 订单转入见证子账户的帐号
+                     * 
                      */
                     std::string GetOrderInSubAccountNumber() const;
 
                     /**
                      * 判断参数 OrderInSubAccountNumber 是否已赋值
                      * @return OrderInSubAccountNumber 是否已赋值
+                     * 
                      */
                     bool OrderInSubAccountNumberHasBeenSet() const;
 
                     /**
                      * 获取银行流水号
                      * @return FrontSequenceNumber 银行流水号
+                     * 
                      */
                     std::string GetFrontSequenceNumber() const;
 
                     /**
                      * 判断参数 FrontSequenceNumber 是否已赋值
                      * @return FrontSequenceNumber 是否已赋值
+                     * 
                      */
                     bool FrontSequenceNumberHasBeenSet() const;
 
                     /**
                      * 获取当充值失败时，返回交易失败原因
                      * @return FailMessage 当充值失败时，返回交易失败原因
+                     * 
                      */
                     std::string GetFailMessage() const;
 
                     /**
                      * 判断参数 FailMessage 是否已赋值
                      * @return FailMessage 是否已赋值
+                     * 
                      */
                     bool FailMessageHasBeenSet() const;
 
                     /**
                      * 获取请求类型
                      * @return RequestType 请求类型
+                     * 
                      */
                     std::string GetRequestType() const;
 
                     /**
                      * 判断参数 RequestType 是否已赋值
                      * @return RequestType 是否已赋值
+                     * 
                      */
                     bool RequestTypeHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AverageScore 周期平均分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAverageScore() const;
 
                     /**
                      * 设置周期平均分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AverageScore 周期平均分
+                     * @param _averageScore 周期平均分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAverageScore(const double& _averageScore);
 
                     /**
                      * 判断参数 AverageScore 是否已赋值
                      * @return AverageScore 是否已赋值
+                     * 
                      */
                     bool AverageScoreHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DailyScoreList 日评分列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DailyScoreInfo> GetDailyScoreList() const;
 
                     /**
                      * 设置日评分列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DailyScoreList 日评分列表
+                     * @param _dailyScoreList 日评分列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDailyScoreList(const std::vector<DailyScoreInfo>& _dailyScoreList);
 
                     /**
                      * 判断参数 DailyScoreList 是否已赋值
                      * @return DailyScoreList 是否已赋值
+                     * 
                      */
                     bool DailyScoreListHasBeenSet() const;
 

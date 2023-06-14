@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return HeaderMode http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
 请求头部暂不支持set。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeaderMode() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
 请求头部暂不支持set。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderMode http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
+                     * @param _headerMode http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。
 请求头部暂不支持set。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderMode(const std::string& _headerMode);
 
                     /**
                      * 判断参数 HeaderMode 是否已赋值
                      * @return HeaderMode 是否已赋值
+                     * 
                      */
                     bool HeaderModeHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderName http头部名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeaderName() const;
 
                     /**
                      * 设置http头部名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderName http头部名称。
+                     * @param _headerName http头部名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderName(const std::string& _headerName);
 
                     /**
                      * 判断参数 HeaderName 是否已赋值
                      * @return HeaderName 是否已赋值
+                     * 
                      */
                     bool HeaderNameHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderValue http头部值。del时可不填写该字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHeaderValue() const;
 
                     /**
                      * 设置http头部值。del时可不填写该字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderValue http头部值。del时可不填写该字段。
+                     * @param _headerValue http头部值。del时可不填写该字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeaderValue(const std::string& _headerValue);
 
                     /**
                      * 判断参数 HeaderValue 是否已赋值
                      * @return HeaderValue 是否已赋值
+                     * 
                      */
                     bool HeaderValueHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 生效的url路径规则类型，支持all，file，directory或path，分别表示全部路径，文件后缀类型，目录或绝对路径生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置生效的url路径规则类型，支持all，file，directory或path，分别表示全部路径，文件后缀类型，目录或绝对路径生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 生效的url路径规则类型，支持all，file，directory或path，分别表示全部路径，文件后缀类型，目录或绝对路径生效。
+                     * @param _ruleType 生效的url路径规则类型，支持all，file，directory或path，分别表示全部路径，文件后缀类型，目录或绝对路径生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -143,20 +155,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RulePaths url路径或文件类型列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
                     /**
                      * 设置url路径或文件类型列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RulePaths url路径或文件类型列表。
+                     * @param _rulePaths url路径或文件类型列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
                     /**
                      * 判断参数 RulePaths 是否已赋值
                      * @return RulePaths 是否已赋值
+                     * 
                      */
                     bool RulePathsHasBeenSet() const;
 

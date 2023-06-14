@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的API网关插件的ID。
                      * @return PluginId 要删除的API网关插件的ID。
+                     * 
                      */
                     std::string GetPluginId() const;
 
                     /**
                      * 设置要删除的API网关插件的ID。
-                     * @param PluginId 要删除的API网关插件的ID。
+                     * @param _pluginId 要删除的API网关插件的ID。
+                     * 
                      */
                     void SetPluginId(const std::string& _pluginId);
 
                     /**
                      * 判断参数 PluginId 是否已赋值
                      * @return PluginId 是否已赋值
+                     * 
                      */
                     bool PluginIdHasBeenSet() const;
 

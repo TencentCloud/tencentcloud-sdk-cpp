@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取执行器ID列表。列表上限 100。
                      * @return InvokerIds 执行器ID列表。列表上限 100。
+                     * 
                      */
                     std::vector<std::string> GetInvokerIds() const;
 
                     /**
                      * 设置执行器ID列表。列表上限 100。
-                     * @param InvokerIds 执行器ID列表。列表上限 100。
+                     * @param _invokerIds 执行器ID列表。列表上限 100。
+                     * 
                      */
                     void SetInvokerIds(const std::vector<std::string>& _invokerIds);
 
                     /**
                      * 判断参数 InvokerIds 是否已赋值
                      * @return InvokerIds 是否已赋值
+                     * 
                      */
                     bool InvokerIdsHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

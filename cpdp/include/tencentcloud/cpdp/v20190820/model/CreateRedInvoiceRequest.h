@@ -50,6 +50,7 @@ namespace TencentCloud
                      * @return InvoicePlatformId 开票平台ID
 0 : 高灯
 1 : 票易通
+                     * 
                      */
                     int64_t GetInvoicePlatformId() const;
 
@@ -57,69 +58,80 @@ namespace TencentCloud
                      * 设置开票平台ID
 0 : 高灯
 1 : 票易通
-                     * @param InvoicePlatformId 开票平台ID
+                     * @param _invoicePlatformId 开票平台ID
 0 : 高灯
 1 : 票易通
+                     * 
                      */
                     void SetInvoicePlatformId(const int64_t& _invoicePlatformId);
 
                     /**
                      * 判断参数 InvoicePlatformId 是否已赋值
                      * @return InvoicePlatformId 是否已赋值
+                     * 
                      */
                     bool InvoicePlatformIdHasBeenSet() const;
 
                     /**
                      * 获取红冲明细
                      * @return Invoices 红冲明细
+                     * 
                      */
                     std::vector<CreateRedInvoiceItem> GetInvoices() const;
 
                     /**
                      * 设置红冲明细
-                     * @param Invoices 红冲明细
+                     * @param _invoices 红冲明细
+                     * 
                      */
                     void SetInvoices(const std::vector<CreateRedInvoiceItem>& _invoices);
 
                     /**
                      * 判断参数 Invoices 是否已赋值
                      * @return Invoices 是否已赋值
+                     * 
                      */
                     bool InvoicesHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填 sandbox。
                      * @return Profile 接入环境。沙箱环境填 sandbox。
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填 sandbox。
-                     * @param Profile 接入环境。沙箱环境填 sandbox。
+                     * @param _profile 接入环境。沙箱环境填 sandbox。
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 
                     /**
                      * 获取开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
                      * @return InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * 
                      */
                     int64_t GetInvoiceChannel() const;
 
                     /**
                      * 设置开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
-                     * @param InvoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * @param _invoiceChannel 开票渠道。0：线上渠道，1：线下渠道。不填默认为线上渠道
+                     * 
                      */
                     void SetInvoiceChannel(const int64_t& _invoiceChannel);
 
                     /**
                      * 判断参数 InvoiceChannel 是否已赋值
                      * @return InvoiceChannel 是否已赋值
+                     * 
                      */
                     bool InvoiceChannelHasBeenSet() const;
 

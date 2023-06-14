@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取转发监听端口列表，端口取值1~65535
                      * @return ProxyPorts 转发监听端口列表，端口取值1~65535
+                     * 
                      */
                     std::vector<int64_t> GetProxyPorts() const;
 
                     /**
                      * 设置转发监听端口列表，端口取值1~65535
-                     * @param ProxyPorts 转发监听端口列表，端口取值1~65535
+                     * @param _proxyPorts 转发监听端口列表，端口取值1~65535
+                     * 
                      */
                     void SetProxyPorts(const std::vector<int64_t>& _proxyPorts);
 
                     /**
                      * 判断参数 ProxyPorts 是否已赋值
                      * @return ProxyPorts 是否已赋值
+                     * 
                      */
                     bool ProxyPortsHasBeenSet() const;
 
@@ -73,6 +76,7 @@ https(HTTPS协议)
 http(HTTP协议)
 https(HTTPS协议)
 ]
+                     * 
                      */
                     std::string GetProxyType() const;
 
@@ -81,16 +85,18 @@ https(HTTPS协议)
 http(HTTP协议)
 https(HTTPS协议)
 ]
-                     * @param ProxyType 转发协议，取值[
+                     * @param _proxyType 转发协议，取值[
 http(HTTP协议)
 https(HTTPS协议)
 ]
+                     * 
                      */
                     void SetProxyType(const std::string& _proxyType);
 
                     /**
                      * 判断参数 ProxyType 是否已赋值
                      * @return ProxyType 是否已赋值
+                     * 
                      */
                     bool ProxyTypeHasBeenSet() const;
 

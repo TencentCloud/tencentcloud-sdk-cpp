@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待查询的账号(不填默认查当前账号)
                      * @return TargetUin 待查询的账号(不填默认查当前账号)
+                     * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
                      * 设置待查询的账号(不填默认查当前账号)
-                     * @param TargetUin 待查询的账号(不填默认查当前账号)
+                     * @param _targetUin 待查询的账号(不填默认查当前账号)
+                     * 
                      */
                     void SetTargetUin(const uint64_t& _targetUin);
 
                     /**
                      * 判断参数 TargetUin 是否已赋值
                      * @return TargetUin 是否已赋值
+                     * 
                      */
                     bool TargetUinHasBeenSet() const;
 

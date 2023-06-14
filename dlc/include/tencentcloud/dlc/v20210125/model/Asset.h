@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 主键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置主键
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 主键
+                     * @param _id 主键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Guid 对象GUID值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGuid() const;
 
                     /**
                      * 设置对象GUID值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Guid 对象GUID值
+                     * @param _guid 对象GUID值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGuid(const std::string& _guid);
 
                     /**
                      * 判断参数 Guid 是否已赋值
                      * @return Guid 是否已赋值
+                     * 
                      */
                     bool GuidHasBeenSet() const;
 
@@ -118,200 +127,233 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalog 数据目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCatalog() const;
 
                     /**
                      * 设置数据目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Catalog 数据目录
+                     * @param _catalog 数据目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCatalog(const std::string& _catalog);
 
                     /**
                      * 判断参数 Catalog 是否已赋值
                      * @return Catalog 是否已赋值
+                     * 
                      */
                     bool CatalogHasBeenSet() const;
 
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取对象owner
                      * @return Owner 对象owner
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置对象owner
-                     * @param Owner 对象owner
+                     * @param _owner 对象owner
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取对象owner账户
                      * @return OwnerAccount 对象owner账户
+                     * 
                      */
                     std::string GetOwnerAccount() const;
 
                     /**
                      * 设置对象owner账户
-                     * @param OwnerAccount 对象owner账户
+                     * @param _ownerAccount 对象owner账户
+                     * 
                      */
                     void SetOwnerAccount(const std::string& _ownerAccount);
 
                     /**
                      * 判断参数 OwnerAccount 是否已赋值
                      * @return OwnerAccount 是否已赋值
+                     * 
                      */
                     bool OwnerAccountHasBeenSet() const;
 
                     /**
                      * 获取权限
                      * @return PermValues 权限
+                     * 
                      */
                     std::vector<KVPair> GetPermValues() const;
 
                     /**
                      * 设置权限
-                     * @param PermValues 权限
+                     * @param _permValues 权限
+                     * 
                      */
                     void SetPermValues(const std::vector<KVPair>& _permValues);
 
                     /**
                      * 判断参数 PermValues 是否已赋值
                      * @return PermValues 是否已赋值
+                     * 
                      */
                     bool PermValuesHasBeenSet() const;
 
                     /**
                      * 获取附加属性
                      * @return Params 附加属性
+                     * 
                      */
                     std::vector<KVPair> GetParams() const;
 
                     /**
                      * 设置附加属性
-                     * @param Params 附加属性
+                     * @param _params 附加属性
+                     * 
                      */
                     void SetParams(const std::vector<KVPair>& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 
                     /**
                      * 获取附加业务属性
                      * @return BizParams 附加业务属性
+                     * 
                      */
                     std::vector<KVPair> GetBizParams() const;
 
                     /**
                      * 设置附加业务属性
-                     * @param BizParams 附加业务属性
+                     * @param _bizParams 附加业务属性
+                     * 
                      */
                     void SetBizParams(const std::vector<KVPair>& _bizParams);
 
                     /**
                      * 判断参数 BizParams 是否已赋值
                      * @return BizParams 是否已赋值
+                     * 
                      */
                     bool BizParamsHasBeenSet() const;
 
                     /**
                      * 获取数据版本
                      * @return DataVersion 数据版本
+                     * 
                      */
                     int64_t GetDataVersion() const;
 
                     /**
                      * 设置数据版本
-                     * @param DataVersion 数据版本
+                     * @param _dataVersion 数据版本
+                     * 
                      */
                     void SetDataVersion(const int64_t& _dataVersion);
 
                     /**
                      * 判断参数 DataVersion 是否已赋值
                      * @return DataVersion 是否已赋值
+                     * 
                      */
                     bool DataVersionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifiedTime 修改时间
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifiedTime 修改时间
+                     * @param _modifiedTime 修改时间
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
                     /**
                      * 获取数据源主键
                      * @return DatasourceId 数据源主键
+                     * 
                      */
                     int64_t GetDatasourceId() const;
 
                     /**
                      * 设置数据源主键
-                     * @param DatasourceId 数据源主键
+                     * @param _datasourceId 数据源主键
+                     * 
                      */
                     void SetDatasourceId(const int64_t& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取域名 ID
                      * @return DomainId 域名 ID
+                     * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名 ID
-                     * @param DomainId 域名 ID
+                     * @param _domainId 域名 ID
+                     * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -87,56 +93,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 错误信息
+                     * @param _error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const std::string& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 
                     /**
                      * 获取删除状态
                      * @return Status 删除状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置删除状态
-                     * @param Status 删除状态
+                     * @param _status 删除状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取操作
                      * @return Operation 操作
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作
-                     * @param Operation 操作
+                     * @param _operation 操作
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 

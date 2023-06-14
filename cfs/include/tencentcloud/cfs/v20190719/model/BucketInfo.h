@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取桶名称
                      * @return Name 桶名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置桶名称
-                     * @param Name 桶名称
+                     * @param _name 桶名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 桶所在地域
+                     * @param _region 桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

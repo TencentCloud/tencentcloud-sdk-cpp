@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取点位ID
                      * @return ZoneId 点位ID
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置点位ID
-                     * @param ZoneId 点位ID
+                     * @param _zoneId 点位ID
+                     * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取点位名称
                      * @return ZoneName 点位名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置点位名称
-                     * @param ZoneName 点位名称
+                     * @param _zoneName 点位名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取铺位编码
                      * @return BunkCodes 铺位编码
+                     * 
                      */
                     std::string GetBunkCodes() const;
 
                     /**
                      * 设置铺位编码
-                     * @param BunkCodes 铺位编码
+                     * @param _bunkCodes 铺位编码
+                     * 
                      */
                     void SetBunkCodes(const std::string& _bunkCodes);
 
                     /**
                      * 判断参数 BunkCodes 是否已赋值
                      * @return BunkCodes 是否已赋值
+                     * 
                      */
                     bool BunkCodesHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取
                      * @return PolicyId 行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取
+                     * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
                      * 设置行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取
-                     * @param PolicyId 行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取
+                     * @param _policyId 行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取
+                     * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取新的过滤策略。
                      * @return Policy 新的过滤策略。
+                     * 
                      */
                     Policy GetPolicy() const;
 
                     /**
                      * 设置新的过滤策略。
-                     * @param Policy 新的过滤策略。
+                     * @param _policy 新的过滤策略。
+                     * 
                      */
                     void SetPolicy(const Policy& _policy);
 
                     /**
                      * 判断参数 Policy 是否已赋值
                      * @return Policy 是否已赋值
+                     * 
                      */
                     bool PolicyHasBeenSet() const;
 

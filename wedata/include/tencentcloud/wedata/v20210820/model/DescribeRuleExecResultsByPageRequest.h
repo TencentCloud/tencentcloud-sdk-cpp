@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取执行规则组ID
                      * @return RuleGroupExecId 执行规则组ID
+                     * 
                      */
                     int64_t GetRuleGroupExecId() const;
 
                     /**
                      * 设置执行规则组ID
-                     * @param RuleGroupExecId 执行规则组ID
+                     * @param _ruleGroupExecId 执行规则组ID
+                     * 
                      */
                     void SetRuleGroupExecId(const int64_t& _ruleGroupExecId);
 
                     /**
                      * 判断参数 RuleGroupExecId 是否已赋值
                      * @return RuleGroupExecId 是否已赋值
+                     * 
                      */
                     bool RuleGroupExecIdHasBeenSet() const;
 
                     /**
                      * 获取page number
                      * @return PageNumber page number
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置page number
-                     * @param PageNumber page number
+                     * @param _pageNumber page number
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取page size
                      * @return PageSize page size
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置page size
-                     * @param PageSize page size
+                     * @param _pageSize page size
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

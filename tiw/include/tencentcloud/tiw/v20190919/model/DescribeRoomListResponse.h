@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取白板房间列表
                      * @return RoomList 白板房间列表
+                     * 
                      */
                     std::vector<RoomListItem> GetRoomList() const;
 
                     /**
                      * 判断参数 RoomList 是否已赋值
                      * @return RoomList 是否已赋值
+                     * 
                      */
                     bool RoomListHasBeenSet() const;
 

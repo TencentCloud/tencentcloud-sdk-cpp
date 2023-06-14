@@ -51,56 +51,65 @@ namespace TencentCloud
 <li>PRESET：预置标签；</li>
                      * @return Type 标签类型，取值为：
 <li>PRESET：预置标签；</li>
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置标签类型，取值为：
 <li>PRESET：预置标签；</li>
-                     * @param Type 标签类型，取值为：
+                     * @param _type 标签类型，取值为：
 <li>PRESET：预置标签；</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。
                      * @return Id 标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。
-                     * @param Id 标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。
+                     * @param _id 标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取标签名称。
                      * @return Name 标签名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名称。
-                     * @param Name 标签名称。
+                     * @param _name 标签名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

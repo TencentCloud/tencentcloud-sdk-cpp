@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheRules 缓存过期规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AdvanceCacheRule> GetCacheRules() const;
 
                     /**
                      * 设置缓存过期规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheRules 缓存过期规则
+                     * @param _cacheRules 缓存过期规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheRules(const std::vector<AdvanceCacheRule>& _cacheRules);
 
                     /**
                      * 判断参数 CacheRules 是否已赋值
                      * @return CacheRules 是否已赋值
+                     * 
                      */
                     bool CacheRulesHasBeenSet() const;
 
@@ -82,6 +85,7 @@ off：关闭
 开启时，源站返回 no-cache、no-store 头部时，仍按照缓存过期规则进行节点缓存
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIgnoreCacheControl() const;
 
@@ -92,18 +96,20 @@ off：关闭
 开启时，源站返回 no-cache、no-store 头部时，仍按照缓存过期规则进行节点缓存
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreCacheControl 强制缓存配置
+                     * @param _ignoreCacheControl 强制缓存配置
 on：开启
 off：关闭
 开启时，源站返回 no-cache、no-store 头部时，仍按照缓存过期规则进行节点缓存
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreCacheControl(const std::string& _ignoreCacheControl);
 
                     /**
                      * 判断参数 IgnoreCacheControl 是否已赋值
                      * @return IgnoreCacheControl 是否已赋值
+                     * 
                      */
                     bool IgnoreCacheControlHasBeenSet() const;
 
@@ -118,6 +124,7 @@ on：开启，不缓存该头部及body
 off：关闭，遵循用户自定义的节点缓存规则
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIgnoreSetCookie() const;
 
@@ -127,17 +134,19 @@ on：开启，不缓存该头部及body
 off：关闭，遵循用户自定义的节点缓存规则
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreSetCookie 当源站返回Set-Cookie头部时，节点是否缓存该头部及body
+                     * @param _ignoreSetCookie 当源站返回Set-Cookie头部时，节点是否缓存该头部及body
 on：开启，不缓存该头部及body
 off：关闭，遵循用户自定义的节点缓存规则
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIgnoreSetCookie(const std::string& _ignoreSetCookie);
 
                     /**
                      * 判断参数 IgnoreSetCookie 是否已赋值
                      * @return IgnoreSetCookie 是否已赋值
+                     * 
                      */
                     bool IgnoreSetCookieHasBeenSet() const;
 

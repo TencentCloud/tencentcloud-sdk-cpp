@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 是否开启延播平滑吐流，true开启，false不开启，默认不开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置是否开启延播平滑吐流，true开启，false不开启，默认不开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Enable 是否开启延播平滑吐流，true开启，false不开启，默认不开启。
+                     * @param _enable 是否开启延播平滑吐流，true开启，false不开启，默认不开启。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BufferTime 延播时间，单位秒，目前支持的范围为10~300秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBufferTime() const;
 
                     /**
                      * 设置延播时间，单位秒，目前支持的范围为10~300秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BufferTime 延播时间，单位秒，目前支持的范围为10~300秒。
+                     * @param _bufferTime 延播时间，单位秒，目前支持的范围为10~300秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBufferTime(const uint64_t& _bufferTime);
 
                     /**
                      * 判断参数 BufferTime 是否已赋值
                      * @return BufferTime 是否已赋值
+                     * 
                      */
                     bool BufferTimeHasBeenSet() const;
 

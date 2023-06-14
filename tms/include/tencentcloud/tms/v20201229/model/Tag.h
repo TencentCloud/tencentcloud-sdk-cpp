@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keyword 该字段用于返回命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置该字段用于返回命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keyword 该字段用于返回命中的关键词
+                     * @param _keyword 该字段用于返回命中的关键词
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubLabel 该字段用于返回子标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置该字段用于返回子标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubLabel 该字段用于返回子标签
+                     * @param _subLabel 该字段用于返回子标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
 
                     /**
                      * 判断参数 SubLabel 是否已赋值
                      * @return SubLabel 是否已赋值
+                     * 
                      */
                     bool SubLabelHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 该字段用于返回子标签对应的分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置该字段用于返回子标签对应的分数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 该字段用于返回子标签对应的分数
+                     * @param _score 该字段用于返回子标签对应的分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

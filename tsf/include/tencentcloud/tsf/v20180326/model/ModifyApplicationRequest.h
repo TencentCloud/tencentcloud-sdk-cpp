@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return ApplicationId 应用ID
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-                     * @param ApplicationId 应用ID
+                     * @param _applicationId 应用ID
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取应用名称
                      * @return ApplicationName 应用名称
+                     * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
-                     * @param ApplicationName 应用名称
+                     * @param _applicationName 应用名称
+                     * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
 
                     /**
                      * 判断参数 ApplicationName 是否已赋值
                      * @return ApplicationName 是否已赋值
+                     * 
                      */
                     bool ApplicationNameHasBeenSet() const;
 
                     /**
                      * 获取应用备注
                      * @return ApplicationDesc 应用备注
+                     * 
                      */
                     std::string GetApplicationDesc() const;
 
                     /**
                      * 设置应用备注
-                     * @param ApplicationDesc 应用备注
+                     * @param _applicationDesc 应用备注
+                     * 
                      */
                     void SetApplicationDesc(const std::string& _applicationDesc);
 
                     /**
                      * 判断参数 ApplicationDesc 是否已赋值
                      * @return ApplicationDesc 是否已赋值
+                     * 
                      */
                     bool ApplicationDescHasBeenSet() const;
 
                     /**
                      * 获取应用备注名
                      * @return ApplicationRemarkName 应用备注名
+                     * 
                      */
                     std::string GetApplicationRemarkName() const;
 
                     /**
                      * 设置应用备注名
-                     * @param ApplicationRemarkName 应用备注名
+                     * @param _applicationRemarkName 应用备注名
+                     * 
                      */
                     void SetApplicationRemarkName(const std::string& _applicationRemarkName);
 
                     /**
                      * 判断参数 ApplicationRemarkName 是否已赋值
                      * @return ApplicationRemarkName 是否已赋值
+                     * 
                      */
                     bool ApplicationRemarkNameHasBeenSet() const;
 
                     /**
                      * 获取服务配置信息列表
                      * @return ServiceConfigList 服务配置信息列表
+                     * 
                      */
                     std::vector<ServiceConfig> GetServiceConfigList() const;
 
                     /**
                      * 设置服务配置信息列表
-                     * @param ServiceConfigList 服务配置信息列表
+                     * @param _serviceConfigList 服务配置信息列表
+                     * 
                      */
                     void SetServiceConfigList(const std::vector<ServiceConfig>& _serviceConfigList);
 
                     /**
                      * 判断参数 ServiceConfigList 是否已赋值
                      * @return ServiceConfigList 是否已赋值
+                     * 
                      */
                     bool ServiceConfigListHasBeenSet() const;
 

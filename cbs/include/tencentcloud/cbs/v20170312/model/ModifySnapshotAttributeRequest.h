@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
                      * @return SnapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
-                     * @param SnapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * @param _snapshotId 快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      * @return IsPermanent 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
+                     * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
                      * 设置快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
-                     * @param IsPermanent 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
+                     * @param _isPermanent 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
+                     * 
                      */
                     void SetIsPermanent(const bool& _isPermanent);
 
                     /**
                      * 判断参数 IsPermanent 是否已赋值
                      * @return IsPermanent 是否已赋值
+                     * 
                      */
                     bool IsPermanentHasBeenSet() const;
 
                     /**
                      * 获取新的快照名称。最长为60个字符。
                      * @return SnapshotName 新的快照名称。最长为60个字符。
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置新的快照名称。最长为60个字符。
-                     * @param SnapshotName 新的快照名称。最长为60个字符。
+                     * @param _snapshotName 新的快照名称。最长为60个字符。
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
                      * 获取快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
                      * @return Deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * 
                      */
                     std::string GetDeadline() const;
 
                     /**
                      * 设置快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
-                     * @param Deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * @param _deadline 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
+                     * 
                      */
                     void SetDeadline(const std::string& _deadline);
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 

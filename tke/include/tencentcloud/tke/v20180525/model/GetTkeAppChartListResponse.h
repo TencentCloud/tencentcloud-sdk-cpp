@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppCharts 所支持的chart列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AppChart> GetAppCharts() const;
 
                     /**
                      * 判断参数 AppCharts 是否已赋值
                      * @return AppCharts 是否已赋值
+                     * 
                      */
                     bool AppChartsHasBeenSet() const;
 

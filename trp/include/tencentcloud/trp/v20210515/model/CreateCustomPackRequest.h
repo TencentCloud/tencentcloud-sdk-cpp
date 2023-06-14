@@ -47,180 +47,210 @@ namespace TencentCloud
                     /**
                      * 获取商户ID
                      * @return MerchantId 商户ID
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户ID
-                     * @param MerchantId 商户ID
+                     * @param _merchantId 商户ID
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取生码数量, 普通码包时必填
                      * @return Amount 生码数量, 普通码包时必填
+                     * 
                      */
                     uint64_t GetAmount() const;
 
                     /**
                      * 设置生码数量, 普通码包时必填
-                     * @param Amount 生码数量, 普通码包时必填
+                     * @param _amount 生码数量, 普通码包时必填
+                     * 
                      */
                     void SetAmount(const uint64_t& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取码包类型 0: 普通码包 1: 层级码包
                      * @return PackType 码包类型 0: 普通码包 1: 层级码包
+                     * 
                      */
                     uint64_t GetPackType() const;
 
                     /**
                      * 设置码包类型 0: 普通码包 1: 层级码包
-                     * @param PackType 码包类型 0: 普通码包 1: 层级码包
+                     * @param _packType 码包类型 0: 普通码包 1: 层级码包
+                     * 
                      */
                     void SetPackType(const uint64_t& _packType);
 
                     /**
                      * 判断参数 PackType 是否已赋值
                      * @return PackType 是否已赋值
+                     * 
                      */
                     bool PackTypeHasBeenSet() const;
 
                     /**
                      * 获取码包层级
                      * @return PackLevel 码包层级
+                     * 
                      */
                     uint64_t GetPackLevel() const;
 
                     /**
                      * 设置码包层级
-                     * @param PackLevel 码包层级
+                     * @param _packLevel 码包层级
+                     * 
                      */
                     void SetPackLevel(const uint64_t& _packLevel);
 
                     /**
                      * 判断参数 PackLevel 是否已赋值
                      * @return PackLevel 是否已赋值
+                     * 
                      */
                     bool PackLevelHasBeenSet() const;
 
                     /**
                      * 获取层级码包规则
                      * @return PackSpec 层级码包规则
+                     * 
                      */
                     std::vector<PackSpec> GetPackSpec() const;
 
                     /**
                      * 设置层级码包规则
-                     * @param PackSpec 层级码包规则
+                     * @param _packSpec 层级码包规则
+                     * 
                      */
                     void SetPackSpec(const std::vector<PackSpec>& _packSpec);
 
                     /**
                      * 判断参数 PackSpec 是否已赋值
                      * @return PackSpec 是否已赋值
+                     * 
                      */
                     bool PackSpecHasBeenSet() const;
 
                     /**
                      * 获取码规则ID,  和CodeParts二选一必填
                      * @return CustomId 码规则ID,  和CodeParts二选一必填
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置码规则ID,  和CodeParts二选一必填
-                     * @param CustomId 码规则ID,  和CodeParts二选一必填
+                     * @param _customId 码规则ID,  和CodeParts二选一必填
+                     * 
                      */
                     void SetCustomId(const std::string& _customId);
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 
                     /**
                      * 获取码段配置，和CustomId二选一必填
                      * @return CodeParts 码段配置，和CustomId二选一必填
+                     * 
                      */
                     std::vector<CodePart> GetCodeParts() const;
 
                     /**
                      * 设置码段配置，和CustomId二选一必填
-                     * @param CodeParts 码段配置，和CustomId二选一必填
+                     * @param _codeParts 码段配置，和CustomId二选一必填
+                     * 
                      */
                     void SetCodeParts(const std::vector<CodePart>& _codeParts);
 
                     /**
                      * 判断参数 CodeParts 是否已赋值
                      * @return CodeParts 是否已赋值
+                     * 
                      */
                     bool CodePartsHasBeenSet() const;
 
                     /**
                      * 获取批次ID，如果传了生码后会同时绑定批次，并激活码
                      * @return BatchId 批次ID，如果传了生码后会同时绑定批次，并激活码
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID，如果传了生码后会同时绑定批次，并激活码
-                     * @param BatchId 批次ID，如果传了生码后会同时绑定批次，并激活码
+                     * @param _batchId 批次ID，如果传了生码后会同时绑定批次，并激活码
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取是否有流水码 0:无 1:有
                      * @return SerialType 是否有流水码 0:无 1:有
+                     * 
                      */
                     uint64_t GetSerialType() const;
 
                     /**
                      * 设置是否有流水码 0:无 1:有
-                     * @param SerialType 是否有流水码 0:无 1:有
+                     * @param _serialType 是否有流水码 0:无 1:有
+                     * 
                      */
                     void SetSerialType(const uint64_t& _serialType);
 
                     /**
                      * 判断参数 SerialType 是否已赋值
                      * @return SerialType 是否已赋值
+                     * 
                      */
                     bool SerialTypeHasBeenSet() const;
 

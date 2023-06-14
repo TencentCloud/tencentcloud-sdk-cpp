@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
                      * @return Revision 物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
+                     * 
                      */
                     int64_t GetRevision() const;
 
                     /**
                      * 设置物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
-                     * @param Revision 物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
+                     * @param _revision 物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。
+                     * 
                      */
                     void SetRevision(const int64_t& _revision);
 
                     /**
                      * 判断参数 Revision 是否已赋值
                      * @return Revision 是否已赋值
+                     * 
                      */
                     bool RevisionHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取表Id
                      * @return TableId 表Id
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置表Id
-                     * @param TableId 表Id
+                     * @param _tableId 表Id
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表名
+                     * @param _tableName 表名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取数
                      * @return Cnt 数
+                     * 
                      */
                     uint64_t GetCnt() const;
 
                     /**
                      * 设置数
-                     * @param Cnt 数
+                     * @param _cnt 数
+                     * 
                      */
                     void SetCnt(const uint64_t& _cnt);
 
                     /**
                      * 判断参数 Cnt 是否已赋值
                      * @return Cnt 是否已赋值
+                     * 
                      */
                     bool CntHasBeenSet() const;
 

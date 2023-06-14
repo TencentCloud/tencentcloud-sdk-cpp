@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取趋势类型，upward上升/downward下降/none无
                      * @return Type 趋势类型，upward上升/downward下降/none无
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置趋势类型，upward上升/downward下降/none无
-                     * @param Type 趋势类型，upward上升/downward下降/none无
+                     * @param _type 趋势类型，upward上升/downward下降/none无
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 趋势值，Type为none是该字段值为null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置趋势值，Type为none是该字段值为null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 趋势值，Type为none是该字段值为null
+                     * @param _value 趋势值，Type为none是该字段值为null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

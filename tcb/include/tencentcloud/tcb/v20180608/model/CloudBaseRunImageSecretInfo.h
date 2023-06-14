@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取镜像地址
                      * @return RegistryServer 镜像地址
+                     * 
                      */
                     std::string GetRegistryServer() const;
 
                     /**
                      * 设置镜像地址
-                     * @param RegistryServer 镜像地址
+                     * @param _registryServer 镜像地址
+                     * 
                      */
                     void SetRegistryServer(const std::string& _registryServer);
 
                     /**
                      * 判断参数 RegistryServer 是否已赋值
                      * @return RegistryServer 是否已赋值
+                     * 
                      */
                     bool RegistryServerHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取仓库密码
                      * @return Password 仓库密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置仓库密码
-                     * @param Password 仓库密码
+                     * @param _password 仓库密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取邮箱
                      * @return Email 邮箱
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱
-                     * @param Email 邮箱
+                     * @param _email 邮箱
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 

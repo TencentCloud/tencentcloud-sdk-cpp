@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取集群实例id
                      * @return InstanceId 集群实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例id
-                     * @param InstanceId 集群实例id
+                     * @param _instanceId 集群实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户名
                      * @return UserName 用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-                     * @param UserName 用户名
+                     * @param _userName 用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return PassWord 密码
+                     * 
                      */
                     std::string GetPassWord() const;
 
                     /**
                      * 设置密码
-                     * @param PassWord 密码
+                     * @param _passWord 密码
+                     * 
                      */
                     void SetPassWord(const std::string& _passWord);
 
                     /**
                      * 判断参数 PassWord 是否已赋值
                      * @return PassWord 是否已赋值
+                     * 
                      */
                     bool PassWordHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Describe 描述
+                     * 
                      */
                     std::string GetDescribe() const;
 
                     /**
                      * 设置描述
-                     * @param Describe 描述
+                     * @param _describe 描述
+                     * 
                      */
                     void SetDescribe(const std::string& _describe);
 
                     /**
                      * 判断参数 Describe 是否已赋值
                      * @return Describe 是否已赋值
+                     * 
                      */
                     bool DescribeHasBeenSet() const;
 

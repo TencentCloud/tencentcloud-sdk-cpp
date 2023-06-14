@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationCountOfDay 近24小时调用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvocationCountOfDay() const;
 
                     /**
                      * 设置近24小时调用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvocationCountOfDay 近24小时调用数量
+                     * @param _invocationCountOfDay 近24小时调用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvocationCountOfDay(const std::string& _invocationCountOfDay);
 
                     /**
                      * 判断参数 InvocationCountOfDay 是否已赋值
                      * @return InvocationCountOfDay 是否已赋值
+                     * 
                      */
                     bool InvocationCountOfDayHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvocationCount 总调用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInvocationCount() const;
 
                     /**
                      * 设置总调用数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvocationCount 总调用数量
+                     * @param _invocationCount 总调用数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvocationCount(const std::string& _invocationCount);
 
                     /**
                      * 判断参数 InvocationCount 是否已赋值
                      * @return InvocationCount 是否已赋值
+                     * 
                      */
                     bool InvocationCountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorCountOfDay 近24小时调用错误数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorCountOfDay() const;
 
                     /**
                      * 设置近24小时调用错误数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorCountOfDay 近24小时调用错误数量
+                     * @param _errorCountOfDay 近24小时调用错误数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorCountOfDay(const std::string& _errorCountOfDay);
 
                     /**
                      * 判断参数 ErrorCountOfDay 是否已赋值
                      * @return ErrorCountOfDay 是否已赋值
+                     * 
                      */
                     bool ErrorCountOfDayHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorCount 总调用错误数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorCount() const;
 
                     /**
                      * 设置总调用错误数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorCount 总调用错误数量
+                     * @param _errorCount 总调用错误数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorCount(const std::string& _errorCount);
 
                     /**
                      * 判断参数 ErrorCount 是否已赋值
                      * @return ErrorCount 是否已赋值
+                     * 
                      */
                     bool ErrorCountHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessRatioOfDay 近24小时调用成功率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuccessRatioOfDay() const;
 
                     /**
                      * 设置近24小时调用成功率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuccessRatioOfDay 近24小时调用成功率
+                     * @param _successRatioOfDay 近24小时调用成功率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccessRatioOfDay(const std::string& _successRatioOfDay);
 
                     /**
                      * 判断参数 SuccessRatioOfDay 是否已赋值
                      * @return SuccessRatioOfDay 是否已赋值
+                     * 
                      */
                     bool SuccessRatioOfDayHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessRatio 总调用成功率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuccessRatio() const;
 
                     /**
                      * 设置总调用成功率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuccessRatio 总调用成功率
+                     * @param _successRatio 总调用成功率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccessRatio(const std::string& _successRatio);
 
                     /**
                      * 判断参数 SuccessRatio 是否已赋值
                      * @return SuccessRatio 是否已赋值
+                     * 
                      */
                     bool SuccessRatioHasBeenSet() const;
 

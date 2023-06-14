@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取COS存储大小，单位TB
                      * @return Size COS存储大小，单位TB
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置COS存储大小，单位TB
-                     * @param Size COS存储大小，单位TB
+                     * @param _size COS存储大小，单位TB
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取COS存储类型，默认为cos
                      * @return Type COS存储类型，默认为cos
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置COS存储类型，默认为cos
-                     * @param Type COS存储类型，默认为cos
+                     * @param _type COS存储类型，默认为cos
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

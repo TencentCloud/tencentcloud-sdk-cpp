@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取地域资源实例数
                      * @return RegionList 地域资源实例数
+                     * 
                      */
                     std::vector<RegionInstanceCount> GetRegionList() const;
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 

@@ -48,74 +48,86 @@ namespace TencentCloud
 <li>长度限制：10。</li>
                      * @return Operations 图片处理操作数组，操作将以其在数组中的顺序执行。
 <li>长度限制：10。</li>
+                     * 
                      */
                     std::vector<ImageOperation> GetOperations() const;
 
                     /**
                      * 设置图片处理操作数组，操作将以其在数组中的顺序执行。
 <li>长度限制：10。</li>
-                     * @param Operations 图片处理操作数组，操作将以其在数组中的顺序执行。
+                     * @param _operations 图片处理操作数组，操作将以其在数组中的顺序执行。
 <li>长度限制：10。</li>
+                     * 
                      */
                     void SetOperations(const std::vector<ImageOperation>& _operations);
 
                     /**
                      * 判断参数 Operations 是否已赋值
                      * @return Operations 是否已赋值
+                     * 
                      */
                     bool OperationsHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取图片处理模板名称，长度限制：64 个字符。
                      * @return Name 图片处理模板名称，长度限制：64 个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置图片处理模板名称，长度限制：64 个字符。
-                     * @param Name 图片处理模板名称，长度限制：64 个字符。
+                     * @param _name 图片处理模板名称，长度限制：64 个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息，长度限制：256 个字符。
                      * @return Comment 模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息，长度限制：256 个字符。
-                     * @param Comment 模板描述信息，长度限制：256 个字符。
+                     * @param _comment 模板描述信息，长度限制：256 个字符。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 

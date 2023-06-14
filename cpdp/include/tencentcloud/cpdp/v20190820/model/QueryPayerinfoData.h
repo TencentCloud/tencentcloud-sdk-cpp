@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取付款人ID
                      * @return PayerId 付款人ID
+                     * 
                      */
                     std::string GetPayerId() const;
 
                     /**
                      * 设置付款人ID
-                     * @param PayerId 付款人ID
+                     * @param _payerId 付款人ID
+                     * 
                      */
                     void SetPayerId(const std::string& _payerId);
 
                     /**
                      * 判断参数 PayerId 是否已赋值
                      * @return PayerId 是否已赋值
+                     * 
                      */
                     bool PayerIdHasBeenSet() const;
 
                     /**
                      * 获取审核状态
                      * @return Status 审核状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置审核状态
-                     * @param Status 审核状态
+                     * @param _status 审核状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -105,92 +114,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因
+                     * @param _failReason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
                     /**
                      * 获取付款人类型
                      * @return PayerType 付款人类型
+                     * 
                      */
                     std::string GetPayerType() const;
 
                     /**
                      * 设置付款人类型
-                     * @param PayerType 付款人类型
+                     * @param _payerType 付款人类型
+                     * 
                      */
                     void SetPayerType(const std::string& _payerType);
 
                     /**
                      * 判断参数 PayerType 是否已赋值
                      * @return PayerType 是否已赋值
+                     * 
                      */
                     bool PayerTypeHasBeenSet() const;
 
                     /**
                      * 获取付款人姓名
                      * @return PayerName 付款人姓名
+                     * 
                      */
                     std::string GetPayerName() const;
 
                     /**
                      * 设置付款人姓名
-                     * @param PayerName 付款人姓名
+                     * @param _payerName 付款人姓名
+                     * 
                      */
                     void SetPayerName(const std::string& _payerName);
 
                     /**
                      * 判断参数 PayerName 是否已赋值
                      * @return PayerName 是否已赋值
+                     * 
                      */
                     bool PayerNameHasBeenSet() const;
 
                     /**
                      * 获取付款人证件类型
                      * @return PayerIdType 付款人证件类型
+                     * 
                      */
                     std::string GetPayerIdType() const;
 
                     /**
                      * 设置付款人证件类型
-                     * @param PayerIdType 付款人证件类型
+                     * @param _payerIdType 付款人证件类型
+                     * 
                      */
                     void SetPayerIdType(const std::string& _payerIdType);
 
                     /**
                      * 判断参数 PayerIdType 是否已赋值
                      * @return PayerIdType 是否已赋值
+                     * 
                      */
                     bool PayerIdTypeHasBeenSet() const;
 
                     /**
                      * 获取付款人证件号
                      * @return PayerIdNo 付款人证件号
+                     * 
                      */
                     std::string GetPayerIdNo() const;
 
                     /**
                      * 设置付款人证件号
-                     * @param PayerIdNo 付款人证件号
+                     * @param _payerIdNo 付款人证件号
+                     * 
                      */
                     void SetPayerIdNo(const std::string& _payerIdNo);
 
                     /**
                      * 判断参数 PayerIdNo 是否已赋值
                      * @return PayerIdNo 是否已赋值
+                     * 
                      */
                     bool PayerIdNoHasBeenSet() const;
 
@@ -199,20 +223,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerContactNumber 付款人联系电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayerContactNumber() const;
 
                     /**
                      * 设置付款人联系电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayerContactNumber 付款人联系电话
+                     * @param _payerContactNumber 付款人联系电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayerContactNumber(const std::string& _payerContactNumber);
 
                     /**
                      * 判断参数 PayerContactNumber 是否已赋值
                      * @return PayerContactNumber 是否已赋值
+                     * 
                      */
                     bool PayerContactNumberHasBeenSet() const;
 
@@ -221,38 +248,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerEmailAddress 付款人联系邮箱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayerEmailAddress() const;
 
                     /**
                      * 设置付款人联系邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayerEmailAddress 付款人联系邮箱
+                     * @param _payerEmailAddress 付款人联系邮箱
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayerEmailAddress(const std::string& _payerEmailAddress);
 
                     /**
                      * 判断参数 PayerEmailAddress 是否已赋值
                      * @return PayerEmailAddress 是否已赋值
+                     * 
                      */
                     bool PayerEmailAddressHasBeenSet() const;
 
                     /**
                      * 获取付款人常驻国家或地区编码
                      * @return PayerCountryCode 付款人常驻国家或地区编码
+                     * 
                      */
                     std::string GetPayerCountryCode() const;
 
                     /**
                      * 设置付款人常驻国家或地区编码
-                     * @param PayerCountryCode 付款人常驻国家或地区编码
+                     * @param _payerCountryCode 付款人常驻国家或地区编码
+                     * 
                      */
                     void SetPayerCountryCode(const std::string& _payerCountryCode);
 
                     /**
                      * 判断参数 PayerCountryCode 是否已赋值
                      * @return PayerCountryCode 是否已赋值
+                     * 
                      */
                     bool PayerCountryCodeHasBeenSet() const;
 
@@ -261,20 +294,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerContactName 付款人联系名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayerContactName() const;
 
                     /**
                      * 设置付款人联系名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayerContactName 付款人联系名称
+                     * @param _payerContactName 付款人联系名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayerContactName(const std::string& _payerContactName);
 
                     /**
                      * 判断参数 PayerContactName 是否已赋值
                      * @return PayerContactName 是否已赋值
+                     * 
                      */
                     bool PayerContactNameHasBeenSet() const;
 

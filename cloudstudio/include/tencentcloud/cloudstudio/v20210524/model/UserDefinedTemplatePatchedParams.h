@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 模板来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置模板来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Source 模板来源
+                     * @param _source 模板来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 模板名称
+                     * @param _name 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Icon 模板图标地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIcon() const;
 
                     /**
                      * 设置模板图标地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Icon 模板图标地址
+                     * @param _icon 模板图标地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIcon(const std::string& _icon);
 
                     /**
                      * 判断参数 Icon 是否已赋值
                      * @return Icon 是否已赋值
+                     * 
                      */
                     bool IconHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置模板描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 模板描述
+                     * @param _description 模板描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 模板标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置模板标签列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 模板标签列表
+                     * @param _tags 模板标签列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

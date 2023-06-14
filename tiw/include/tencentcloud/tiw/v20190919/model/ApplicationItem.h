@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取应用SdkAppId
                      * @return SdkAppId 应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用SdkAppId
-                     * @param SdkAppId 应用SdkAppId
+                     * @param _sdkAppId 应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取应用名
                      * @return AppName 应用名
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名
-                     * @param AppName 应用名
+                     * @param _appName 应用名
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return TagList 标签列表
+                     * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
                      * 设置标签列表
-                     * @param TagList 标签列表
+                     * @param _tagList 标签列表
+                     * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 

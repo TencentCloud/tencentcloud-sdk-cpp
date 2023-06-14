@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取查询
                      * @return Query 查询
+                     * 
                      */
                     RuleQuery GetQuery() const;
 
                     /**
                      * 设置查询
-                     * @param Query 查询
+                     * @param _query 查询
+                     * 
                      */
                     void SetQuery(const RuleQuery& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取转发动作列表
                      * @return Actions 转发动作列表
+                     * 
                      */
                     std::vector<Action> GetActions() const;
 
                     /**
                      * 设置转发动作列表
-                     * @param Actions 转发动作列表
+                     * @param _actions 转发动作列表
+                     * 
                      */
                     void SetActions(const std::vector<Action>& _actions);
 
                     /**
                      * 判断参数 Actions 是否已赋值
                      * @return Actions 是否已赋值
+                     * 
                      */
                     bool ActionsHasBeenSet() const;
 
                     /**
                      * 获取数据类型（0：文本，1：二进制）
                      * @return DataType 数据类型（0：文本，1：二进制）
+                     * 
                      */
                     uint64_t GetDataType() const;
 
                     /**
                      * 设置数据类型（0：文本，1：二进制）
-                     * @param DataType 数据类型（0：文本，1：二进制）
+                     * @param _dataType 数据类型（0：文本，1：二进制）
+                     * 
                      */
                     void SetDataType(const uint64_t& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 

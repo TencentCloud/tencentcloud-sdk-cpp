@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取事件总数量
                      * @return TotalCount 事件总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取白名单信息列表
                      * @return WhiteListSet 白名单信息列表
+                     * 
                      */
                     std::vector<ReverseShellWhiteListBaseInfo> GetWhiteListSet() const;
 
                     /**
                      * 判断参数 WhiteListSet 是否已赋值
                      * @return WhiteListSet 是否已赋值
+                     * 
                      */
                     bool WhiteListSetHasBeenSet() const;
 

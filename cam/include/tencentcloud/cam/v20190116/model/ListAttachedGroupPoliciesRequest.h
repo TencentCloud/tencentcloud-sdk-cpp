@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取用户组ID
                      * @return TargetGroupId 用户组ID
+                     * 
                      */
                     uint64_t GetTargetGroupId() const;
 
                     /**
                      * 设置用户组ID
-                     * @param TargetGroupId 用户组ID
+                     * @param _targetGroupId 用户组ID
+                     * 
                      */
                     void SetTargetGroupId(const uint64_t& _targetGroupId);
 
                     /**
                      * 判断参数 TargetGroupId 是否已赋值
                      * @return TargetGroupId 是否已赋值
+                     * 
                      */
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
                      * 获取页码，默认值是 1，从 1 开始
                      * @return Page 页码，默认值是 1，从 1 开始
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置页码，默认值是 1，从 1 开始
-                     * @param Page 页码，默认值是 1，从 1 开始
+                     * @param _page 页码，默认值是 1，从 1 开始
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页大小，默认值是 20
                      * @return Rp 每页大小，默认值是 20
+                     * 
                      */
                     uint64_t GetRp() const;
 
                     /**
                      * 设置每页大小，默认值是 20
-                     * @param Rp 每页大小，默认值是 20
+                     * @param _rp 每页大小，默认值是 20
+                     * 
                      */
                     void SetRp(const uint64_t& _rp);
 
                     /**
                      * 判断参数 Rp 是否已赋值
                      * @return Rp 是否已赋值
+                     * 
                      */
                     bool RpHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字
                      * @return Keyword 搜索关键字
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置搜索关键字
-                     * @param Keyword 搜索关键字
+                     * @param _keyword 搜索关键字
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

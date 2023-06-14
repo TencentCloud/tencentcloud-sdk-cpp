@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取源站信息列表
                      * @return RealServerSet 源站信息列表
+                     * 
                      */
                     std::vector<NewRealServer> GetRealServerSet() const;
 
                     /**
                      * 判断参数 RealServerSet 是否已赋值
                      * @return RealServerSet 是否已赋值
+                     * 
                      */
                     bool RealServerSetHasBeenSet() const;
 

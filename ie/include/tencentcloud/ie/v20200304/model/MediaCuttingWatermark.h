@@ -55,6 +55,7 @@ namespace TencentCloud
                      * @return Type 水印类型，可选值：
 <li>Image：图像水印；</li>
 <li>Text：文字水印。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -62,51 +63,59 @@ namespace TencentCloud
                      * 设置水印类型，可选值：
 <li>Image：图像水印；</li>
 <li>Text：文字水印。</li>
-                     * @param Type 水印类型，可选值：
+                     * @param _type 水印类型，可选值：
 <li>Image：图像水印；</li>
 <li>Text：文字水印。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取图像水印信息，当 Type=Image 时必选。
                      * @return Image 图像水印信息，当 Type=Image 时必选。
+                     * 
                      */
                     MediaCuttingWatermarkImage GetImage() const;
 
                     /**
                      * 设置图像水印信息，当 Type=Image 时必选。
-                     * @param Image 图像水印信息，当 Type=Image 时必选。
+                     * @param _image 图像水印信息，当 Type=Image 时必选。
+                     * 
                      */
                     void SetImage(const MediaCuttingWatermarkImage& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取文字水印信息，当 Type=Text 时必选。
                      * @return Text 文字水印信息，当 Type=Text 时必选。
+                     * 
                      */
                     MediaCuttingWatermarkText GetText() const;
 
                     /**
                      * 设置文字水印信息，当 Type=Text 时必选。
-                     * @param Text 文字水印信息，当 Type=Text 时必选。
+                     * @param _text 文字水印信息，当 Type=Text 时必选。
+                     * 
                      */
                     void SetText(const MediaCuttingWatermarkText& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

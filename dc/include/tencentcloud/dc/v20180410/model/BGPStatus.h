@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取腾讯侧主互联IP BGP状态
                      * @return TencentAddressBgpState 腾讯侧主互联IP BGP状态
+                     * 
                      */
                     std::string GetTencentAddressBgpState() const;
 
                     /**
                      * 设置腾讯侧主互联IP BGP状态
-                     * @param TencentAddressBgpState 腾讯侧主互联IP BGP状态
+                     * @param _tencentAddressBgpState 腾讯侧主互联IP BGP状态
+                     * 
                      */
                     void SetTencentAddressBgpState(const std::string& _tencentAddressBgpState);
 
                     /**
                      * 判断参数 TencentAddressBgpState 是否已赋值
                      * @return TencentAddressBgpState 是否已赋值
+                     * 
                      */
                     bool TencentAddressBgpStateHasBeenSet() const;
 
                     /**
                      * 获取腾讯侧备互联IP BGP状态
                      * @return TencentBackupAddressBgpState 腾讯侧备互联IP BGP状态
+                     * 
                      */
                     std::string GetTencentBackupAddressBgpState() const;
 
                     /**
                      * 设置腾讯侧备互联IP BGP状态
-                     * @param TencentBackupAddressBgpState 腾讯侧备互联IP BGP状态
+                     * @param _tencentBackupAddressBgpState 腾讯侧备互联IP BGP状态
+                     * 
                      */
                     void SetTencentBackupAddressBgpState(const std::string& _tencentBackupAddressBgpState);
 
                     /**
                      * 判断参数 TencentBackupAddressBgpState 是否已赋值
                      * @return TencentBackupAddressBgpState 是否已赋值
+                     * 
                      */
                     bool TencentBackupAddressBgpStateHasBeenSet() const;
 

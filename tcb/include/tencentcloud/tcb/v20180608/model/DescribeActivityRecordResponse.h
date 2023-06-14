@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取活动记录详情
                      * @return ActivityRecords 活动记录详情
+                     * 
                      */
                     std::vector<ActivityRecordItem> GetActivityRecords() const;
 
                     /**
                      * 判断参数 ActivityRecords 是否已赋值
                      * @return ActivityRecords 是否已赋值
+                     * 
                      */
                     bool ActivityRecordsHasBeenSet() const;
 

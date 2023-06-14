@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取指定监听器的源站状态统计数据
                      * @return StatisticsData 指定监听器的源站状态统计数据
+                     * 
                      */
                     std::vector<StatisticsDataInfo> GetStatisticsData() const;
 
                     /**
                      * 判断参数 StatisticsData 是否已赋值
                      * @return StatisticsData 是否已赋值
+                     * 
                      */
                     bool StatisticsDataHasBeenSet() const;
 
                     /**
                      * 获取多个源站状态统计数据
                      * @return RsStatisticsData 多个源站状态统计数据
+                     * 
                      */
                     std::vector<MetricStatisticsInfo> GetRsStatisticsData() const;
 
                     /**
                      * 判断参数 RsStatisticsData 是否已赋值
                      * @return RsStatisticsData 是否已赋值
+                     * 
                      */
                     bool RsStatisticsDataHasBeenSet() const;
 

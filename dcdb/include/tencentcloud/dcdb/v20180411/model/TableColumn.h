@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取列名称
                      * @return Col 列名称
+                     * 
                      */
                     std::string GetCol() const;
 
                     /**
                      * 设置列名称
-                     * @param Col 列名称
+                     * @param _col 列名称
+                     * 
                      */
                     void SetCol(const std::string& _col);
 
                     /**
                      * 判断参数 Col 是否已赋值
                      * @return Col 是否已赋值
+                     * 
                      */
                     bool ColHasBeenSet() const;
 
                     /**
                      * 获取列类型
                      * @return Type 列类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置列类型
-                     * @param Type 列类型
+                     * @param _type 列类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

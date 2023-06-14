@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取处于不可销毁状态下的通道实例ID列表。
                      * @return InvalidStatusInstanceSet 处于不可销毁状态下的通道实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetInvalidStatusInstanceSet() const;
 
                     /**
                      * 判断参数 InvalidStatusInstanceSet 是否已赋值
                      * @return InvalidStatusInstanceSet 是否已赋值
+                     * 
                      */
                     bool InvalidStatusInstanceSetHasBeenSet() const;
 
                     /**
                      * 获取销毁操作失败的通道实例ID列表。
                      * @return OperationFailedInstanceSet 销毁操作失败的通道实例ID列表。
+                     * 
                      */
                     std::vector<std::string> GetOperationFailedInstanceSet() const;
 
                     /**
                      * 判断参数 OperationFailedInstanceSet 是否已赋值
                      * @return OperationFailedInstanceSet 是否已赋值
+                     * 
                      */
                     bool OperationFailedInstanceSetHasBeenSet() const;
 

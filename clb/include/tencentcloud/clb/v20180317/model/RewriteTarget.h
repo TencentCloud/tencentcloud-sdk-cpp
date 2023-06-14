@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return TargetListenerId 重定向目标的监听器ID
 注意：此字段可能返回 null，表示无重定向。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetListenerId() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置重定向目标的监听器ID
 注意：此字段可能返回 null，表示无重定向。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetListenerId 重定向目标的监听器ID
+                     * @param _targetListenerId 重定向目标的监听器ID
 注意：此字段可能返回 null，表示无重定向。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetListenerId(const std::string& _targetListenerId);
 
                     /**
                      * 判断参数 TargetListenerId 是否已赋值
                      * @return TargetListenerId 是否已赋值
+                     * 
                      */
                     bool TargetListenerIdHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return TargetLocationId 重定向目标的转发规则ID
 注意：此字段可能返回 null，表示无重定向。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetLocationId() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置重定向目标的转发规则ID
 注意：此字段可能返回 null，表示无重定向。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetLocationId 重定向目标的转发规则ID
+                     * @param _targetLocationId 重定向目标的转发规则ID
 注意：此字段可能返回 null，表示无重定向。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetLocationId(const std::string& _targetLocationId);
 
                     /**
                      * 判断参数 TargetLocationId 是否已赋值
                      * @return TargetLocationId 是否已赋值
+                     * 
                      */
                     bool TargetLocationIdHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RewriteCode 重定向状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRewriteCode() const;
 
                     /**
                      * 设置重定向状态码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RewriteCode 重定向状态码
+                     * @param _rewriteCode 重定向状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRewriteCode(const int64_t& _rewriteCode);
 
                     /**
                      * 判断参数 RewriteCode 是否已赋值
                      * @return RewriteCode 是否已赋值
+                     * 
                      */
                     bool RewriteCodeHasBeenSet() const;
 
@@ -125,20 +134,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TakeUrl 重定向是否携带匹配的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetTakeUrl() const;
 
                     /**
                      * 设置重定向是否携带匹配的url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TakeUrl 重定向是否携带匹配的url
+                     * @param _takeUrl 重定向是否携带匹配的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTakeUrl(const bool& _takeUrl);
 
                     /**
                      * 判断参数 TakeUrl 是否已赋值
                      * @return TakeUrl 是否已赋值
+                     * 
                      */
                     bool TakeUrlHasBeenSet() const;
 
@@ -147,20 +159,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RewriteType 重定向类型，Manual: 手动重定向，Auto:  自动重定向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRewriteType() const;
 
                     /**
                      * 设置重定向类型，Manual: 手动重定向，Auto:  自动重定向
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RewriteType 重定向类型，Manual: 手动重定向，Auto:  自动重定向
+                     * @param _rewriteType 重定向类型，Manual: 手动重定向，Auto:  自动重定向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRewriteType(const std::string& _rewriteType);
 
                     /**
                      * 判断参数 RewriteType 是否已赋值
                      * @return RewriteType 是否已赋值
+                     * 
                      */
                     bool RewriteTypeHasBeenSet() const;
 

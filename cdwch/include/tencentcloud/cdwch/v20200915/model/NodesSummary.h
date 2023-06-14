@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取机型，如 S1
                      * @return Spec 机型，如 S1
+                     * 
                      */
                     std::string GetSpec() const;
 
                     /**
                      * 设置机型，如 S1
-                     * @param Spec 机型，如 S1
+                     * @param _spec 机型，如 S1
+                     * 
                      */
                     void SetSpec(const std::string& _spec);
 
                     /**
                      * 判断参数 Spec 是否已赋值
                      * @return Spec 是否已赋值
+                     * 
                      */
                     bool SpecHasBeenSet() const;
 
                     /**
                      * 获取节点数目
                      * @return NodeSize 节点数目
+                     * 
                      */
                     int64_t GetNodeSize() const;
 
                     /**
                      * 设置节点数目
-                     * @param NodeSize 节点数目
+                     * @param _nodeSize 节点数目
+                     * 
                      */
                     void SetNodeSize(const int64_t& _nodeSize);
 
                     /**
                      * 判断参数 NodeSize 是否已赋值
                      * @return NodeSize 是否已赋值
+                     * 
                      */
                     bool NodeSizeHasBeenSet() const;
 
                     /**
                      * 获取cpu核数，单位个
                      * @return Core cpu核数，单位个
+                     * 
                      */
                     int64_t GetCore() const;
 
                     /**
                      * 设置cpu核数，单位个
-                     * @param Core cpu核数，单位个
+                     * @param _core cpu核数，单位个
+                     * 
                      */
                     void SetCore(const int64_t& _core);
 
                     /**
                      * 判断参数 Core 是否已赋值
                      * @return Core 是否已赋值
+                     * 
                      */
                     bool CoreHasBeenSet() const;
 
                     /**
                      * 获取内存大小，单位G
                      * @return Memory 内存大小，单位G
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置内存大小，单位G
-                     * @param Memory 内存大小，单位G
+                     * @param _memory 内存大小，单位G
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取磁盘大小，单位G
                      * @return Disk 磁盘大小，单位G
+                     * 
                      */
                     int64_t GetDisk() const;
 
                     /**
                      * 设置磁盘大小，单位G
-                     * @param Disk 磁盘大小，单位G
+                     * @param _disk 磁盘大小，单位G
+                     * 
                      */
                     void SetDisk(const int64_t& _disk);
 
                     /**
                      * 判断参数 Disk 是否已赋值
                      * @return Disk 是否已赋值
+                     * 
                      */
                     bool DiskHasBeenSet() const;
 
                     /**
                      * 获取磁盘类型
                      * @return DiskType 磁盘类型
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型
-                     * @param DiskType 磁盘类型
+                     * @param _diskType 磁盘类型
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取磁盘描述
                      * @return DiskDesc 磁盘描述
+                     * 
                      */
                     std::string GetDiskDesc() const;
 
                     /**
                      * 设置磁盘描述
-                     * @param DiskDesc 磁盘描述
+                     * @param _diskDesc 磁盘描述
+                     * 
                      */
                     void SetDiskDesc(const std::string& _diskDesc);
 
                     /**
                      * 判断参数 DiskDesc 是否已赋值
                      * @return DiskDesc 是否已赋值
+                     * 
                      */
                     bool DiskDescHasBeenSet() const;
 
@@ -178,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachCBSSpec 挂载云盘信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AttachCBSSpec GetAttachCBSSpec() const;
 
                     /**
                      * 设置挂载云盘信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachCBSSpec 挂载云盘信息
+                     * @param _attachCBSSpec 挂载云盘信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachCBSSpec(const AttachCBSSpec& _attachCBSSpec);
 
                     /**
                      * 判断参数 AttachCBSSpec 是否已赋值
                      * @return AttachCBSSpec 是否已赋值
+                     * 
                      */
                     bool AttachCBSSpecHasBeenSet() const;
 
@@ -200,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductType 子产品类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubProductType() const;
 
                     /**
                      * 设置子产品类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubProductType 子产品类型
+                     * @param _subProductType 子产品类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubProductType(const std::string& _subProductType);
 
                     /**
                      * 判断参数 SubProductType 是否已赋值
                      * @return SubProductType 是否已赋值
+                     * 
                      */
                     bool SubProductTypeHasBeenSet() const;
 
@@ -222,20 +249,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecCore 规格对应的核数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSpecCore() const;
 
                     /**
                      * 设置规格对应的核数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecCore 规格对应的核数
+                     * @param _specCore 规格对应的核数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecCore(const int64_t& _specCore);
 
                     /**
                      * 判断参数 SpecCore 是否已赋值
                      * @return SpecCore 是否已赋值
+                     * 
                      */
                     bool SpecCoreHasBeenSet() const;
 
@@ -244,20 +274,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecMemory 规格对应的内存大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSpecMemory() const;
 
                     /**
                      * 设置规格对应的内存大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecMemory 规格对应的内存大小
+                     * @param _specMemory 规格对应的内存大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecMemory(const int64_t& _specMemory);
 
                     /**
                      * 判断参数 SpecMemory 是否已赋值
                      * @return SpecMemory 是否已赋值
+                     * 
                      */
                     bool SpecMemoryHasBeenSet() const;
 
@@ -266,20 +299,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskCount 磁盘的数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskCount() const;
 
                     /**
                      * 设置磁盘的数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskCount 磁盘的数量
+                     * @param _diskCount 磁盘的数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskCount(const int64_t& _diskCount);
 
                     /**
                      * 判断参数 DiskCount 是否已赋值
                      * @return DiskCount 是否已赋值
+                     * 
                      */
                     bool DiskCountHasBeenSet() const;
 
@@ -288,20 +324,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDiskSize 磁盘的最大大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxDiskSize() const;
 
                     /**
                      * 设置磁盘的最大大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxDiskSize 磁盘的最大大小
+                     * @param _maxDiskSize 磁盘的最大大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxDiskSize(const int64_t& _maxDiskSize);
 
                     /**
                      * 判断参数 MaxDiskSize 是否已赋值
                      * @return MaxDiskSize 是否已赋值
+                     * 
                      */
                     bool MaxDiskSizeHasBeenSet() const;
 
@@ -310,20 +349,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encrypt 是否为加密云盘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEncrypt() const;
 
                     /**
                      * 设置是否为加密云盘
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Encrypt 是否为加密云盘
+                     * @param _encrypt 是否为加密云盘
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEncrypt(const int64_t& _encrypt);
 
                     /**
                      * 判断参数 Encrypt 是否已赋值
                      * @return Encrypt 是否已赋值
+                     * 
                      */
                     bool EncryptHasBeenSet() const;
 

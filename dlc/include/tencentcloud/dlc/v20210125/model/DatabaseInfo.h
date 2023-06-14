@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
                      * @return DatabaseName 数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
-                     * @param DatabaseName 数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
+                     * @param _databaseName 数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Comment 数据库描述信息，长度 0~500。
+                     * @param _comment 数据库描述信息，长度 0~500。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Properties 数据库属性列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
                      * 设置数据库属性列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Properties 数据库属性列表。
+                     * @param _properties 数据库属性列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProperties(const std::vector<Property>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 数据库cos路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置数据库cos路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Location 数据库cos路径
+                     * @param _location 数据库cos路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

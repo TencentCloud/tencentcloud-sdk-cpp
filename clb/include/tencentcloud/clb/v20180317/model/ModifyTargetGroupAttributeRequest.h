@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取目标组的ID。
                      * @return TargetGroupId 目标组的ID。
+                     * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
                      * 设置目标组的ID。
-                     * @param TargetGroupId 目标组的ID。
+                     * @param _targetGroupId 目标组的ID。
+                     * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
 
                     /**
                      * 判断参数 TargetGroupId 是否已赋值
                      * @return TargetGroupId 是否已赋值
+                     * 
                      */
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
                      * 获取目标组的新名称。
                      * @return TargetGroupName 目标组的新名称。
+                     * 
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
                      * 设置目标组的新名称。
-                     * @param TargetGroupName 目标组的新名称。
+                     * @param _targetGroupName 目标组的新名称。
+                     * 
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
 
                     /**
                      * 判断参数 TargetGroupName 是否已赋值
                      * @return TargetGroupName 是否已赋值
+                     * 
                      */
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
                      * 获取目标组的新默认端口。
                      * @return Port 目标组的新默认端口。
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置目标组的新默认端口。
-                     * @param Port 目标组的新默认端口。
+                     * @param _port 目标组的新默认端口。
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 

@@ -46,234 +46,273 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：["gz", "sh"]
                      * @return RegionList 地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：["gz", "sh"]
+                     * 
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
                      * 设置地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：["gz", "sh"]
-                     * @param RegionList 地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：["gz", "sh"]
+                     * @param _regionList 地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：["gz", "sh"]
+                     * 
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
                     /**
                      * 判断参数 RegionList 是否已赋值
                      * @return RegionList 是否已赋值
+                     * 
                      */
                     bool RegionListHasBeenSet() const;
 
                     /**
                      * 获取线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；
                      * @return Line 线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；
+                     * 
                      */
                     std::vector<uint64_t> GetLine() const;
 
                     /**
                      * 设置线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；
-                     * @param Line 线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；
+                     * @param _line 线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；
+                     * 
                      */
                     void SetLine(const std::vector<uint64_t>& _line);
 
                     /**
                      * 判断参数 Line 是否已赋值
                      * @return Line 是否已赋值
+                     * 
                      */
                     bool LineHasBeenSet() const;
 
                     /**
                      * 获取资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；
                      * @return IdList 资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；
+                     * 
                      */
                     std::vector<std::string> GetIdList() const;
 
                     /**
                      * 设置资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；
-                     * @param IdList 资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；
+                     * @param _idList 资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；
+                     * 
                      */
                     void SetIdList(const std::vector<std::string>& _idList);
 
                     /**
                      * 判断参数 IdList 是否已赋值
                      * @return IdList 是否已赋值
+                     * 
                      */
                     bool IdListHasBeenSet() const;
 
                     /**
                      * 获取资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；
                      * @return Name 资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；
-                     * @param Name 资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；
+                     * @param _name 资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取IP搜索列表，可选，当不为空时表示按照IP搜索资源；
                      * @return IpList IP搜索列表，可选，当不为空时表示按照IP搜索资源；
+                     * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
                      * 设置IP搜索列表，可选，当不为空时表示按照IP搜索资源；
-                     * @param IpList IP搜索列表，可选，当不为空时表示按照IP搜索资源；
+                     * @param _ipList IP搜索列表，可选，当不为空时表示按照IP搜索资源；
+                     * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
 
                     /**
                      * 判断参数 IpList 是否已赋值
                      * @return IpList 是否已赋值
+                     * 
                      */
                     bool IpListHasBeenSet() const;
 
                     /**
                      * 获取资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；
                      * @return Status 资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；
+                     * 
                      */
                     std::vector<uint64_t> GetStatus() const;
 
                     /**
                      * 设置资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；
-                     * @param Status 资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；
+                     * @param _status 资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；
+                     * 
                      */
                     void SetStatus(const std::vector<uint64_t>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]
                      * @return Expire 即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]
+                     * 
                      */
                     uint64_t GetExpire() const;
 
                     /**
                      * 设置即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]
-                     * @param Expire 即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]
+                     * @param _expire 即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]
+                     * 
                      */
                     void SetExpire(const uint64_t& _expire);
 
                     /**
                      * 判断参数 Expire 是否已赋值
                      * @return Expire 是否已赋值
+                     * 
                      */
                     bool ExpireHasBeenSet() const;
 
                     /**
                      * 获取排序字段，可选
                      * @return OderBy 排序字段，可选
+                     * 
                      */
                     std::vector<OrderBy> GetOderBy() const;
 
                     /**
                      * 设置排序字段，可选
-                     * @param OderBy 排序字段，可选
+                     * @param _oderBy 排序字段，可选
+                     * 
                      */
                     void SetOderBy(const std::vector<OrderBy>& _oderBy);
 
                     /**
                      * 判断参数 OderBy 是否已赋值
                      * @return OderBy 是否已赋值
+                     * 
                      */
                     bool OderByHasBeenSet() const;
 
                     /**
                      * 获取一页条数，填0表示不分页
                      * @return Limit 一页条数，填0表示不分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，填0表示不分页
-                     * @param Limit 一页条数，填0表示不分页
+                     * @param _limit 一页条数，填0表示不分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；
                      * @return CName 高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；
+                     * 
                      */
                     std::string GetCName() const;
 
                     /**
                      * 设置高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；
-                     * @param CName 高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；
+                     * @param _cName 高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；
+                     * 
                      */
                     void SetCName(const std::string& _cName);
 
                     /**
                      * 判断参数 CName 是否已赋值
                      * @return CName 是否已赋值
+                     * 
                      */
                     bool CNameHasBeenSet() const;
 
                     /**
                      * 获取高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；
                      * @return Domain 高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；
-                     * @param Domain 高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；
+                     * @param _domain 高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取相似度
                      * @return Similarity 相似度
+                     * 
                      */
                     double GetSimilarity() const;
 
                     /**
                      * 设置相似度
-                     * @param Similarity 相似度
+                     * @param _similarity 相似度
+                     * 
                      */
                     void SetSimilarity(const double& _similarity);
 
                     /**
                      * 判断参数 Similarity 是否已赋值
                      * @return Similarity 是否已赋值
+                     * 
                      */
                     bool SimilarityHasBeenSet() const;
 
                     /**
                      * 获取截图的存储地址
                      * @return SnapshotUrl 截图的存储地址
+                     * 
                      */
                     std::string GetSnapshotUrl() const;
 
                     /**
                      * 设置截图的存储地址
-                     * @param SnapshotUrl 截图的存储地址
+                     * @param _snapshotUrl 截图的存储地址
+                     * 
                      */
                     void SetSnapshotUrl(const std::string& _snapshotUrl);
 
                     /**
                      * 判断参数 SnapshotUrl 是否已赋值
                      * @return SnapshotUrl 是否已赋值
+                     * 
                      */
                     bool SnapshotUrlHasBeenSet() const;
 
                     /**
                      * 获取相对于视频起始时间的时间戳，单位秒
                      * @return Ts 相对于视频起始时间的时间戳，单位秒
+                     * 
                      */
                     int64_t GetTs() const;
 
                     /**
                      * 设置相对于视频起始时间的时间戳，单位秒
-                     * @param Ts 相对于视频起始时间的时间戳，单位秒
+                     * @param _ts 相对于视频起始时间的时间戳，单位秒
+                     * 
                      */
                     void SetTs(const int64_t& _ts);
 
                     /**
                      * 判断参数 Ts 是否已赋值
                      * @return Ts 是否已赋值
+                     * 
                      */
                     bool TsHasBeenSet() const;
 

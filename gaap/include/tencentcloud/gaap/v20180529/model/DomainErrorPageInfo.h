@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取错误定制响应的配置ID
                      * @return ErrorPageId 错误定制响应的配置ID
+                     * 
                      */
                     std::string GetErrorPageId() const;
 
                     /**
                      * 设置错误定制响应的配置ID
-                     * @param ErrorPageId 错误定制响应的配置ID
+                     * @param _errorPageId 错误定制响应的配置ID
+                     * 
                      */
                     void SetErrorPageId(const std::string& _errorPageId);
 
                     /**
                      * 判断参数 ErrorPageId 是否已赋值
                      * @return ErrorPageId 是否已赋值
+                     * 
                      */
                     bool ErrorPageIdHasBeenSet() const;
 
                     /**
                      * 获取监听器ID
                      * @return ListenerId 监听器ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * @param _listenerId 监听器ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取原始错误码
                      * @return ErrorNos 原始错误码
+                     * 
                      */
                     std::vector<int64_t> GetErrorNos() const;
 
                     /**
                      * 设置原始错误码
-                     * @param ErrorNos 原始错误码
+                     * @param _errorNos 原始错误码
+                     * 
                      */
                     void SetErrorNos(const std::vector<int64_t>& _errorNos);
 
                     /**
                      * 判断参数 ErrorNos 是否已赋值
                      * @return ErrorNos 是否已赋值
+                     * 
                      */
                     bool ErrorNosHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewErrorNo 新的错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNewErrorNo() const;
 
                     /**
                      * 设置新的错误码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewErrorNo 新的错误码
+                     * @param _newErrorNo 新的错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewErrorNo(const int64_t& _newErrorNo);
 
                     /**
                      * 判断参数 NewErrorNo 是否已赋值
                      * @return NewErrorNo 是否已赋值
+                     * 
                      */
                     bool NewErrorNoHasBeenSet() const;
 
@@ -146,20 +161,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClearHeaders 需要清理的响应头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetClearHeaders() const;
 
                     /**
                      * 设置需要清理的响应头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClearHeaders 需要清理的响应头
+                     * @param _clearHeaders 需要清理的响应头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClearHeaders(const std::vector<std::string>& _clearHeaders);
 
                     /**
                      * 判断参数 ClearHeaders 是否已赋值
                      * @return ClearHeaders 是否已赋值
+                     * 
                      */
                     bool ClearHeadersHasBeenSet() const;
 
@@ -168,20 +186,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetHeaders 需要设置的响应头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<HttpHeaderParam> GetSetHeaders() const;
 
                     /**
                      * 设置需要设置的响应头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SetHeaders 需要设置的响应头
+                     * @param _setHeaders 需要设置的响应头
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSetHeaders(const std::vector<HttpHeaderParam>& _setHeaders);
 
                     /**
                      * 判断参数 SetHeaders 是否已赋值
                      * @return SetHeaders 是否已赋值
+                     * 
                      */
                     bool SetHeadersHasBeenSet() const;
 
@@ -190,20 +211,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Body 设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Body 设置的响应体(不包括 HTTP头)
+                     * @param _body 设置的响应体(不包括 HTTP头)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
+                     * 
                      */
                     bool BodyHasBeenSet() const;
 
@@ -212,20 +236,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 规则状态,0为成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置规则状态,0为成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 规则状态,0为成功
+                     * @param _status 规则状态,0为成功
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

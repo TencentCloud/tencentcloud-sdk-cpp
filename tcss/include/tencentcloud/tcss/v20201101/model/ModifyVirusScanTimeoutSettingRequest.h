@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取超时时长单位小时(5~24h)
                      * @return Timeout 超时时长单位小时(5~24h)
+                     * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
                      * 设置超时时长单位小时(5~24h)
-                     * @param Timeout 超时时长单位小时(5~24h)
+                     * @param _timeout 超时时长单位小时(5~24h)
+                     * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
                     /**
                      * 获取设置类型0一键检测，1定时检测
                      * @return ScanType 设置类型0一键检测，1定时检测
+                     * 
                      */
                     uint64_t GetScanType() const;
 
                     /**
                      * 设置设置类型0一键检测，1定时检测
-                     * @param ScanType 设置类型0一键检测，1定时检测
+                     * @param _scanType 设置类型0一键检测，1定时检测
+                     * 
                      */
                     void SetScanType(const uint64_t& _scanType);
 
                     /**
                      * 判断参数 ScanType 是否已赋值
                      * @return ScanType 是否已赋值
+                     * 
                      */
                     bool ScanTypeHasBeenSet() const;
 

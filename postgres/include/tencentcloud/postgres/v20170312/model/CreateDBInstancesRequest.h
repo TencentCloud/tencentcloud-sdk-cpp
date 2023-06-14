@@ -46,360 +46,420 @@ namespace TencentCloud
                     /**
                      * 获取售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
                      * @return SpecCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
                      * 设置售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
-                     * @param SpecCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * @param _specCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * 
                      */
                     void SetSpecCode(const std::string& _specCode);
 
                     /**
                      * 判断参数 SpecCode 是否已赋值
                      * @return SpecCode 是否已赋值
+                     * 
                      */
                     bool SpecCodeHasBeenSet() const;
 
                     /**
                      * 获取实例容量大小，单位：GB。
                      * @return Storage 实例容量大小，单位：GB。
+                     * 
                      */
                     uint64_t GetStorage() const;
 
                     /**
                      * 设置实例容量大小，单位：GB。
-                     * @param Storage 实例容量大小，单位：GB。
+                     * @param _storage 实例容量大小，单位：GB。
+                     * 
                      */
                     void SetStorage(const uint64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取一次性购买的实例数量。取值1-100
                      * @return InstanceCount 一次性购买的实例数量。取值1-100
+                     * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
                      * 设置一次性购买的实例数量。取值1-100
-                     * @param InstanceCount 一次性购买的实例数量。取值1-100
+                     * @param _instanceCount 一次性购买的实例数量。取值1-100
+                     * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
                      * @return Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
-                     * @param Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * @param _period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
                      * @return Zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @param Zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * @param _zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取项目ID。
                      * @return ProjectId 项目ID。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID。
-                     * @param ProjectId 项目ID。
+                     * @param _projectId 项目ID。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
                      * @return DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * 
                      */
                     std::string GetDBVersion() const;
 
                     /**
                      * 设置PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
-                     * @param DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * @param _dBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * 
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
                     /**
                      * 判断参数 DBVersion 是否已赋值
                      * @return DBVersion 是否已赋值
+                     * 
                      */
                     bool DBVersionHasBeenSet() const;
 
                     /**
                      * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
                      * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
-                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * @param _instanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取是否自动使用代金券。1（是），0（否），默认不使用。
                      * @return AutoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 
                      */
                     uint64_t GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动使用代金券。1（是），0（否），默认不使用。
-                     * @param AutoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * @param _autoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 
                      */
                     void SetAutoVoucher(const uint64_t& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取代金券ID列表，目前仅支持指定一张代金券。
                      * @return VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
                      * 设置代金券ID列表，目前仅支持指定一张代金券。
-                     * @param VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * @param _voucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
 
                     /**
                      * 判断参数 VoucherIds 是否已赋值
                      * @return VoucherIds 是否已赋值
+                     * 
                      */
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID。
                      * @return VpcId 私有网络ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID。
-                     * @param VpcId 私有网络ID。
+                     * @param _vpcId 私有网络ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络子网ID。
                      * @return SubnetId 私有网络子网ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置私有网络子网ID。
-                     * @param SubnetId 私有网络子网ID。
+                     * @param _subnetId 私有网络子网ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取续费标记：0-正常续费（默认）；1-自动续费；
                      * @return AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置续费标记：0-正常续费（默认）；1-自动续费；
-                     * @param AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     * @param _autoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取活动ID
                      * @return ActivityId 活动ID
+                     * 
                      */
                     int64_t GetActivityId() const;
 
                     /**
                      * 设置活动ID
-                     * @param ActivityId 活动ID
+                     * @param _activityId 活动ID
+                     * 
                      */
                     void SetActivityId(const int64_t& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取实例名(后续支持)
                      * @return Name 实例名(后续支持)
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例名(后续支持)
-                     * @param Name 实例名(后续支持)
+                     * @param _name 实例名(后续支持)
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否需要支持Ipv6，1：是，0：否
                      * @return NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否
+                     * 
                      */
                     uint64_t GetNeedSupportIpv6() const;
 
                     /**
                      * 设置是否需要支持Ipv6，1：是，0：否
-                     * @param NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否
+                     * @param _needSupportIpv6 是否需要支持Ipv6，1：是，0：否
+                     * 
                      */
                     void SetNeedSupportIpv6(const uint64_t& _needSupportIpv6);
 
                     /**
                      * 判断参数 NeedSupportIpv6 是否已赋值
                      * @return NeedSupportIpv6 是否已赋值
+                     * 
                      */
                     bool NeedSupportIpv6HasBeenSet() const;
 
                     /**
                      * 获取实例需要绑定的Tag信息，默认为空
                      * @return TagList 实例需要绑定的Tag信息，默认为空
+                     * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
                      * 设置实例需要绑定的Tag信息，默认为空
-                     * @param TagList 实例需要绑定的Tag信息，默认为空
+                     * @param _tagList 实例需要绑定的Tag信息，默认为空
+                     * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
 
                     /**
                      * 判断参数 TagList 是否已赋值
                      * @return TagList 是否已赋值
+                     * 
                      */
                     bool TagListHasBeenSet() const;
 
                     /**
                      * 获取安全组id
                      * @return SecurityGroupIds 安全组id
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组id
-                     * @param SecurityGroupIds 安全组id
+                     * @param _securityGroupIds 安全组id
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
                      * @return DBMajorVersion PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
                      * 设置PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
-                     * @param DBMajorVersion PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * @param _dBMajorVersion PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
 
                     /**
                      * 判断参数 DBMajorVersion 是否已赋值
                      * @return DBMajorVersion 是否已赋值
+                     * 
                      */
                     bool DBMajorVersionHasBeenSet() const;
 
                     /**
                      * 获取PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
                      * @return DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * 
                      */
                     std::string GetDBKernelVersion() const;
 
                     /**
                      * 设置PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
-                     * @param DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * @param _dBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * 
                      */
                     void SetDBKernelVersion(const std::string& _dBKernelVersion);
 
                     /**
                      * 判断参数 DBKernelVersion 是否已赋值
                      * @return DBKernelVersion 是否已赋值
+                     * 
                      */
                     bool DBKernelVersionHasBeenSet() const;
 

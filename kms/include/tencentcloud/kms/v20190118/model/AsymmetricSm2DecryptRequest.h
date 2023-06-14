@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取CMK的唯一标识
                      * @return KeyId CMK的唯一标识
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的唯一标识
-                     * @param KeyId CMK的唯一标识
+                     * @param _keyId CMK的唯一标识
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
                      * @return Ciphertext 使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
+                     * 
                      */
                     std::string GetCiphertext() const;
 
                     /**
                      * 设置使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
-                     * @param Ciphertext 使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
+                     * @param _ciphertext 使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
+                     * 
                      */
                     void SetCiphertext(const std::string& _ciphertext);
 
                     /**
                      * 判断参数 Ciphertext 是否已赋值
                      * @return Ciphertext 是否已赋值
+                     * 
                      */
                     bool CiphertextHasBeenSet() const;
 

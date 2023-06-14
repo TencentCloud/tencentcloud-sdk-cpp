@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取文件系统信息
                      * @return FileSystems 文件系统信息
+                     * 
                      */
                     std::vector<FileSystemInfo> GetFileSystems() const;
 
                     /**
                      * 判断参数 FileSystems 是否已赋值
                      * @return FileSystems 是否已赋值
+                     * 
                      */
                     bool FileSystemsHasBeenSet() const;
 
                     /**
                      * 获取文件系统总数
                      * @return TotalCount 文件系统总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

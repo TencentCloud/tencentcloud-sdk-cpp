@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例启动模板总数。
                      * @return TotalCount 实例启动模板总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取实例启动模板版本集合。
                      * @return LaunchTemplateVersionSet 实例启动模板版本集合。
+                     * 
                      */
                     std::vector<LaunchTemplateVersionInfo> GetLaunchTemplateVersionSet() const;
 
                     /**
                      * 判断参数 LaunchTemplateVersionSet 是否已赋值
                      * @return LaunchTemplateVersionSet 是否已赋值
+                     * 
                      */
                     bool LaunchTemplateVersionSetHasBeenSet() const;
 

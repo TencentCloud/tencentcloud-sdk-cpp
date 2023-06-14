@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取App包名
                      * @return AppPackage App包名
+                     * 
                      */
                     std::string GetAppPackage() const;
 
                     /**
                      * 设置App包名
-                     * @param AppPackage App包名
+                     * @param _appPackage App包名
+                     * 
                      */
                     void SetAppPackage(const std::string& _appPackage);
 
                     /**
                      * 判断参数 AppPackage 是否已赋值
                      * @return AppPackage 是否已赋值
+                     * 
                      */
                     bool AppPackageHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName App名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置App名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppName App名称
+                     * @param _appName App名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 
@@ -91,38 +97,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppVersion App版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
                      * 设置App版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppVersion App版本
+                     * @param _appVersion App版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
 
                     /**
                      * 判断参数 AppVersion 是否已赋值
                      * @return AppVersion 是否已赋值
+                     * 
                      */
                     bool AppVersionHasBeenSet() const;
 
                     /**
                      * 获取应用平台, 0:android, 1:ios, 2:小程序
                      * @return Platform 应用平台, 0:android, 1:ios, 2:小程序
+                     * 
                      */
                     int64_t GetPlatform() const;
 
                     /**
                      * 设置应用平台, 0:android, 1:ios, 2:小程序
-                     * @param Platform 应用平台, 0:android, 1:ios, 2:小程序
+                     * @param _platform 应用平台, 0:android, 1:ios, 2:小程序
+                     * 
                      */
                     void SetPlatform(const int64_t& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl App隐私诊断报告下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 设置App隐私诊断报告下载链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportUrl App隐私诊断报告下载链接
+                     * @param _reportUrl App隐私诊断报告下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportUrl(const std::string& _reportUrl);
 
                     /**
                      * 判断参数 ReportUrl 是否已赋值
                      * @return ReportUrl 是否已赋值
+                     * 
                      */
                     bool ReportUrlHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTitle App隐私诊断报告名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportTitle() const;
 
                     /**
                      * 设置App隐私诊断报告名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportTitle App隐私诊断报告名称
+                     * @param _reportTitle App隐私诊断报告名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReportTitle(const std::string& _reportTitle);
 
                     /**
                      * 判断参数 ReportTitle 是否已赋值
                      * @return ReportTitle 是否已赋值
+                     * 
                      */
                     bool ReportTitleHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BehaviorUrl App诊断堆栈报告下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBehaviorUrl() const;
 
                     /**
                      * 设置App诊断堆栈报告下载链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BehaviorUrl App诊断堆栈报告下载链接
+                     * @param _behaviorUrl App诊断堆栈报告下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBehaviorUrl(const std::string& _behaviorUrl);
 
                     /**
                      * 判断参数 BehaviorUrl 是否已赋值
                      * @return BehaviorUrl 是否已赋值
+                     * 
                      */
                     bool BehaviorUrlHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BehaviorTitle App诊断堆栈报告名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBehaviorTitle() const;
 
                     /**
                      * 设置App诊断堆栈报告名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BehaviorTitle App诊断堆栈报告名称
+                     * @param _behaviorTitle App诊断堆栈报告名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBehaviorTitle(const std::string& _behaviorTitle);
 
                     /**
                      * 判断参数 BehaviorTitle 是否已赋值
                      * @return BehaviorTitle 是否已赋值
+                     * 
                      */
                     bool BehaviorTitleHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighRiskCount 诊断高风险项数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHighRiskCount() const;
 
                     /**
                      * 设置诊断高风险项数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HighRiskCount 诊断高风险项数量
+                     * @param _highRiskCount 诊断高风险项数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHighRiskCount(const int64_t& _highRiskCount);
 
                     /**
                      * 判断参数 HighRiskCount 是否已赋值
                      * @return HighRiskCount 是否已赋值
+                     * 
                      */
                     bool HighRiskCountHasBeenSet() const;
 
@@ -241,20 +268,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivacyTextName 隐私申明文件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivacyTextName() const;
 
                     /**
                      * 设置隐私申明文件名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivacyTextName 隐私申明文件名称
+                     * @param _privacyTextName 隐私申明文件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivacyTextName(const std::string& _privacyTextName);
 
                     /**
                      * 判断参数 PrivacyTextName 是否已赋值
                      * @return PrivacyTextName 是否已赋值
+                     * 
                      */
                     bool PrivacyTextNameHasBeenSet() const;
 
@@ -263,20 +293,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoftwareMD5 软件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSoftwareMD5() const;
 
                     /**
                      * 设置软件MD5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoftwareMD5 软件MD5
+                     * @param _softwareMD5 软件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoftwareMD5(const std::string& _softwareMD5);
 
                     /**
                      * 判断参数 SoftwareMD5 是否已赋值
                      * @return SoftwareMD5 是否已赋值
+                     * 
                      */
                     bool SoftwareMD5HasBeenSet() const;
 
@@ -285,20 +318,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivacyTextMD5 隐私文本MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivacyTextMD5() const;
 
                     /**
                      * 设置隐私文本MD5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivacyTextMD5 隐私文本MD5
+                     * @param _privacyTextMD5 隐私文本MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivacyTextMD5(const std::string& _privacyTextMD5);
 
                     /**
                      * 判断参数 PrivacyTextMD5 是否已赋值
                      * @return PrivacyTextMD5 是否已赋值
+                     * 
                      */
                     bool PrivacyTextMD5HasBeenSet() const;
 

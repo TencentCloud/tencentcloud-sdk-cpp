@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取私有网络名称
                      * @return Vpc 私有网络名称
+                     * 
                      */
                     std::string GetVpc() const;
 
                     /**
                      * 设置私有网络名称
-                     * @param Vpc 私有网络名称
+                     * @param _vpc 私有网络名称
+                     * 
                      */
                     void SetVpc(const std::string& _vpc);
 
                     /**
                      * 判断参数 Vpc 是否已赋值
                      * @return Vpc 是否已赋值
+                     * 
                      */
                     bool VpcHasBeenSet() const;
 
                     /**
                      * 获取子网列表
                      * @return SubnetIds 子网列表
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网列表
-                     * @param SubnetIds 子网列表
+                     * @param _subnetIds 子网列表
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取命名空间描述
                      * @return Description 命名空间描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置命名空间描述
-                     * @param Description 命名空间描述
+                     * @param _description 命名空间描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取K8s version
                      * @return K8sVersion K8s version
+                     * 
                      */
                     std::string GetK8sVersion() const;
 
                     /**
                      * 设置K8s version
-                     * @param K8sVersion K8s version
+                     * @param _k8sVersion K8s version
+                     * 
                      */
                     void SetK8sVersion(const std::string& _k8sVersion);
 
                     /**
                      * 判断参数 K8sVersion 是否已赋值
                      * @return K8sVersion 是否已赋值
+                     * 
                      */
                     bool K8sVersionHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取是否开启tsw服务
                      * @return EnableTswTraceService 是否开启tsw服务
+                     * 
                      */
                     bool GetEnableTswTraceService() const;
 
                     /**
                      * 设置是否开启tsw服务
-                     * @param EnableTswTraceService 是否开启tsw服务
+                     * @param _enableTswTraceService 是否开启tsw服务
+                     * 
                      */
                     void SetEnableTswTraceService(const bool& _enableTswTraceService);
 
                     /**
                      * 判断参数 EnableTswTraceService 是否已赋值
                      * @return EnableTswTraceService 是否已赋值
+                     * 
                      */
                     bool EnableTswTraceServiceHasBeenSet() const;
 

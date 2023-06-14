@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取目的地域的镜像ID信息。
                      * @return ImageSet 目的地域的镜像ID信息。
+                     * 
                      */
                     std::vector<SyncImage> GetImageSet() const;
 
                     /**
                      * 判断参数 ImageSet 是否已赋值
                      * @return ImageSet 是否已赋值
+                     * 
                      */
                     bool ImageSetHasBeenSet() const;
 

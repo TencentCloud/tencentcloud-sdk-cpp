@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Code 无
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置无
-                     * @param Code 无
+                     * @param _code 无
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 

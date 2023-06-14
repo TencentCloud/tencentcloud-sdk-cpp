@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取轮播播单唯一标识。
                      * @return RoundPlayId 轮播播单唯一标识。
+                     * 
                      */
                     std::string GetRoundPlayId() const;
 
                     /**
                      * 判断参数 RoundPlayId 是否已赋值
                      * @return RoundPlayId 是否已赋值
+                     * 
                      */
                     bool RoundPlayIdHasBeenSet() const;
 
                     /**
                      * 获取轮播播放地址。
                      * @return Url 轮播播放地址。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

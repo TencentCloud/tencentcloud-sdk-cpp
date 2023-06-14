@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceIds 实例ID
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceIds 实例ID
+                     * @param _instanceIds 实例ID
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取集群参数列表
                      * @return ClusterParamList 集群参数列表
+                     * 
                      */
                     std::vector<ModifyParamItem> GetClusterParamList() const;
 
                     /**
                      * 设置集群参数列表
-                     * @param ClusterParamList 集群参数列表
+                     * @param _clusterParamList 集群参数列表
+                     * 
                      */
                     void SetClusterParamList(const std::vector<ModifyParamItem>& _clusterParamList);
 
                     /**
                      * 判断参数 ClusterParamList 是否已赋值
                      * @return ClusterParamList 是否已赋值
+                     * 
                      */
                     bool ClusterParamListHasBeenSet() const;
 
                     /**
                      * 获取实例参数列表
                      * @return InstanceParamList 实例参数列表
+                     * 
                      */
                     std::vector<ModifyParamItem> GetInstanceParamList() const;
 
                     /**
                      * 设置实例参数列表
-                     * @param InstanceParamList 实例参数列表
+                     * @param _instanceParamList 实例参数列表
+                     * 
                      */
                     void SetInstanceParamList(const std::vector<ModifyParamItem>& _instanceParamList);
 
                     /**
                      * 判断参数 InstanceParamList 是否已赋值
                      * @return InstanceParamList 是否已赋值
+                     * 
                      */
                     bool InstanceParamListHasBeenSet() const;
 
                     /**
                      * 获取yes：在运维时间窗内修改，no：立即执行（默认值）
                      * @return IsInMaintainPeriod yes：在运维时间窗内修改，no：立即执行（默认值）
+                     * 
                      */
                     std::string GetIsInMaintainPeriod() const;
 
                     /**
                      * 设置yes：在运维时间窗内修改，no：立即执行（默认值）
-                     * @param IsInMaintainPeriod yes：在运维时间窗内修改，no：立即执行（默认值）
+                     * @param _isInMaintainPeriod yes：在运维时间窗内修改，no：立即执行（默认值）
+                     * 
                      */
                     void SetIsInMaintainPeriod(const std::string& _isInMaintainPeriod);
 
                     /**
                      * 判断参数 IsInMaintainPeriod 是否已赋值
                      * @return IsInMaintainPeriod 是否已赋值
+                     * 
                      */
                     bool IsInMaintainPeriodHasBeenSet() const;
 

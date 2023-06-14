@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取主实例的ID
                      * @return InstanceId 主实例的ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置主实例的ID
-                     * @param InstanceId 主实例的ID
+                     * @param _instanceId 主实例的ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取只读组的ID
                      * @return ReadOnlyGroupId 只读组的ID
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组的ID
-                     * @param ReadOnlyGroupId 只读组的ID
+                     * @param _readOnlyGroupId 只读组的ID
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 

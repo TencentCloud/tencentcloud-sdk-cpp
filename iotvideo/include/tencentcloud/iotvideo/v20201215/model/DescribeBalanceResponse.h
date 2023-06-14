@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取账户余额，单位：分（人民币）。
                      * @return Balance 账户余额，单位：分（人民币）。
+                     * 
                      */
                     uint64_t GetBalance() const;
 
                     /**
                      * 判断参数 Balance 是否已赋值
                      * @return Balance 是否已赋值
+                     * 
                      */
                     bool BalanceHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息; 必选
                      * @return Caller 调用方信息; 必选
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息; 必选
-                     * @param Caller 调用方信息; 必选
+                     * @param _caller 调用方信息; 必选
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-                     * @param Name 姓名
+                     * @param _name 姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取身份证件号码
                      * @return IdCardNumber 身份证件号码
+                     * 
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置身份证件号码
-                     * @param IdCardNumber 身份证件号码
+                     * @param _idCardNumber 身份证件号码
+                     * 
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
                     /**
                      * 判断参数 IdCardNumber 是否已赋值
                      * @return IdCardNumber 是否已赋值
+                     * 
                      */
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
                      * 获取身份证件类型; ID_CARD
                      * @return IdCardType 身份证件类型; ID_CARD
+                     * 
                      */
                     std::string GetIdCardType() const;
 
                     /**
                      * 设置身份证件类型; ID_CARD
-                     * @param IdCardType 身份证件类型; ID_CARD
+                     * @param _idCardType 身份证件类型; ID_CARD
+                     * 
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
                     /**
                      * 判断参数 IdCardType 是否已赋值
                      * @return IdCardType 是否已赋值
+                     * 
                      */
                     bool IdCardTypeHasBeenSet() const;
 

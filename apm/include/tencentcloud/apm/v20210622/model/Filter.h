@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤方式（=, !=, in）
                      * @return Type 过滤方式（=, !=, in）
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置过滤方式（=, !=, in）
-                     * @param Type 过滤方式（=, !=, in）
+                     * @param _type 过滤方式（=, !=, in）
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取过滤维度名
                      * @return Key 过滤维度名
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置过滤维度名
-                     * @param Key 过滤维度名
+                     * @param _key 过滤维度名
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取过滤值，in过滤方式用逗号分割多个值
                      * @return Value 过滤值，in过滤方式用逗号分割多个值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤值，in过滤方式用逗号分割多个值
-                     * @param Value 过滤值，in过滤方式用逗号分割多个值
+                     * @param _value 过滤值，in过滤方式用逗号分割多个值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

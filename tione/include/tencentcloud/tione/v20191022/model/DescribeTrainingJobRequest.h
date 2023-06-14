@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取训练任务名称
                      * @return TrainingJobName 训练任务名称
+                     * 
                      */
                     std::string GetTrainingJobName() const;
 
                     /**
                      * 设置训练任务名称
-                     * @param TrainingJobName 训练任务名称
+                     * @param _trainingJobName 训练任务名称
+                     * 
                      */
                     void SetTrainingJobName(const std::string& _trainingJobName);
 
                     /**
                      * 判断参数 TrainingJobName 是否已赋值
                      * @return TrainingJobName 是否已赋值
+                     * 
                      */
                     bool TrainingJobNameHasBeenSet() const;
 

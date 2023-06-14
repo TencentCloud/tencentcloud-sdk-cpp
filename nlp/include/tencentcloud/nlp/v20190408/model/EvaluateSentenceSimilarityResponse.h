@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取每个句子对的相似度分值。
                      * @return ScoreList 每个句子对的相似度分值。
+                     * 
                      */
                     std::vector<double> GetScoreList() const;
 
                     /**
                      * 判断参数 ScoreList 是否已赋值
                      * @return ScoreList 是否已赋值
+                     * 
                      */
                     bool ScoreListHasBeenSet() const;
 

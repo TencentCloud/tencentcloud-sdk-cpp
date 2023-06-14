@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实例操作限制列表详细信息。
                      * @return InstanceDeniedActionSet 实例操作限制列表详细信息。
+                     * 
                      */
                     std::vector<InstanceDeniedActions> GetInstanceDeniedActionSet() const;
 
                     /**
                      * 判断参数 InstanceDeniedActionSet 是否已赋值
                      * @return InstanceDeniedActionSet 是否已赋值
+                     * 
                      */
                     bool InstanceDeniedActionSetHasBeenSet() const;
 

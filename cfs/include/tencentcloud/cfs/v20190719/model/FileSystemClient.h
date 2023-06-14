@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取文件系统IP地址
                      * @return CfsVip 文件系统IP地址
+                     * 
                      */
                     std::string GetCfsVip() const;
 
                     /**
                      * 设置文件系统IP地址
-                     * @param CfsVip 文件系统IP地址
+                     * @param _cfsVip 文件系统IP地址
+                     * 
                      */
                     void SetCfsVip(const std::string& _cfsVip);
 
                     /**
                      * 判断参数 CfsVip 是否已赋值
                      * @return CfsVip 是否已赋值
+                     * 
                      */
                     bool CfsVipHasBeenSet() const;
 
                     /**
                      * 获取客户端IP地址
                      * @return ClientIp 客户端IP地址
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置客户端IP地址
-                     * @param ClientIp 客户端IP地址
+                     * @param _clientIp 客户端IP地址
+                     * 
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取文件系统所属VPCID
                      * @return VpcId 文件系统所属VPCID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置文件系统所属VPCID
-                     * @param VpcId 文件系统所属VPCID
+                     * @param _vpcId 文件系统所属VPCID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表
                      * @return Zone 可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表
-                     * @param Zone 可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表
+                     * @param _zone 可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取可用区中文名称
                      * @return ZoneName 可用区中文名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区中文名称
-                     * @param ZoneName 可用区中文名称
+                     * @param _zoneName 可用区中文名称
+                     * 
                      */
                     void SetZoneName(const std::string& _zoneName);
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取该文件系统被挂载到客户端上的路径信息
                      * @return MountDirectory 该文件系统被挂载到客户端上的路径信息
+                     * 
                      */
                     std::string GetMountDirectory() const;
 
                     /**
                      * 设置该文件系统被挂载到客户端上的路径信息
-                     * @param MountDirectory 该文件系统被挂载到客户端上的路径信息
+                     * @param _mountDirectory 该文件系统被挂载到客户端上的路径信息
+                     * 
                      */
                     void SetMountDirectory(const std::string& _mountDirectory);
 
                     /**
                      * 判断参数 MountDirectory 是否已赋值
                      * @return MountDirectory 是否已赋值
+                     * 
                      */
                     bool MountDirectoryHasBeenSet() const;
 

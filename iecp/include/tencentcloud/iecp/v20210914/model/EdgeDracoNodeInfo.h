@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取节点ID
                      * @return Id 节点ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置节点ID
-                     * @param Id 节点ID
+                     * @param _id 节点ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return Name 节点名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点名称
-                     * @param Name 节点名称
+                     * @param _name 节点名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否已激活
                      * @return IsUsed 是否已激活
+                     * 
                      */
                     bool GetIsUsed() const;
 
                     /**
                      * 设置是否已激活
-                     * @param IsUsed 是否已激活
+                     * @param _isUsed 是否已激活
+                     * 
                      */
                     void SetIsUsed(const bool& _isUsed);
 
                     /**
                      * 判断参数 IsUsed 是否已赋值
                      * @return IsUsed 是否已赋值
+                     * 
                      */
                     bool IsUsedHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取备注信息，如批次
                      * @return Remark 备注信息，如批次
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息，如批次
-                     * @param Remark 备注信息，如批次
+                     * @param _remark 备注信息，如批次
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取SN 设备号
                      * @return SN SN 设备号
+                     * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置SN 设备号
-                     * @param SN SN 设备号
+                     * @param _sN SN 设备号
+                     * 
                      */
                     void SetSN(const std::string& _sN);
 
                     /**
                      * 判断参数 SN 是否已赋值
                      * @return SN 是否已赋值
+                     * 
                      */
                     bool SNHasBeenSet() const;
 

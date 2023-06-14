@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取路由表名称。
                      * @return RouteTableName 路由表名称。
+                     * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
                      * 设置路由表名称。
-                     * @param RouteTableName 路由表名称。
+                     * @param _routeTableName 路由表名称。
+                     * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
 
                     /**
                      * 判断参数 RouteTableName 是否已赋值
                      * @return RouteTableName 是否已赋值
+                     * 
                      */
                     bool RouteTableNameHasBeenSet() const;
 
                     /**
                      * 获取目的端CIDR。
                      * @return DestinationCidrBlock 目的端CIDR。
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置目的端CIDR。
-                     * @param DestinationCidrBlock 目的端CIDR。
+                     * @param _destinationCidrBlock 目的端CIDR。
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取下一跳地址。
                      * @return GatewayIp 下一跳地址。
+                     * 
                      */
                     std::string GetGatewayIp() const;
 
                     /**
                      * 设置下一跳地址。
-                     * @param GatewayIp 下一跳地址。
+                     * @param _gatewayIp 下一跳地址。
+                     * 
                      */
                     void SetGatewayIp(const std::string& _gatewayIp);
 
                     /**
                      * 判断参数 GatewayIp 是否已赋值
                      * @return GatewayIp 是否已赋值
+                     * 
                      */
                     bool GatewayIpHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取复制组ID
                      * @return GroupId 复制组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置复制组ID
-                     * @param GroupId 复制组ID
+                     * @param _groupId 复制组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例角色，rw可读写，r只读
                      * @return InstanceRole 实例角色，rw可读写，r只读
+                     * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
                      * 设置实例角色，rw可读写，r只读
-                     * @param InstanceRole 实例角色，rw可读写，r只读
+                     * @param _instanceRole 实例角色，rw可读写，r只读
+                     * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
 
                     /**
                      * 判断参数 InstanceRole 是否已赋值
                      * @return InstanceRole 是否已赋值
+                     * 
                      */
                     bool InstanceRoleHasBeenSet() const;
 

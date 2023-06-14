@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话队列
                      * @return GameServerSessionQueue 游戏服务器会话队列
+                     * 
                      */
                     GameServerSessionQueue GetGameServerSessionQueue() const;
 
                     /**
                      * 判断参数 GameServerSessionQueue 是否已赋值
                      * @return GameServerSessionQueue 是否已赋值
+                     * 
                      */
                     bool GameServerSessionQueueHasBeenSet() const;
 

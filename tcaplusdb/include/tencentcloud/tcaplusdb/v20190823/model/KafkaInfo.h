@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取kafaka address
                      * @return Address kafaka address
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置kafaka address
-                     * @param Address kafaka address
+                     * @param _address kafaka address
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取kafaka topic
                      * @return Topic kafaka topic
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置kafaka topic
-                     * @param Topic kafaka topic
+                     * @param _topic kafaka topic
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取kafka username
                      * @return User kafka username
+                     * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置kafka username
-                     * @param User kafka username
+                     * @param _user kafka username
+                     * 
                      */
                     void SetUser(const std::string& _user);
 
                     /**
                      * 判断参数 User 是否已赋值
                      * @return User 是否已赋值
+                     * 
                      */
                     bool UserHasBeenSet() const;
 
                     /**
                      * 获取kafka password
                      * @return Password kafka password
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置kafka password
-                     * @param Password kafka password
+                     * @param _password kafka password
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取ckafka实例
                      * @return Instance ckafka实例
+                     * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置ckafka实例
-                     * @param Instance ckafka实例
+                     * @param _instance ckafka实例
+                     * 
                      */
                     void SetInstance(const std::string& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
                      * @return Instance 是否已赋值
+                     * 
                      */
                     bool InstanceHasBeenSet() const;
 
                     /**
                      * 获取是否走VPC
                      * @return IsVpc 是否走VPC
+                     * 
                      */
                     int64_t GetIsVpc() const;
 
                     /**
                      * 设置是否走VPC
-                     * @param IsVpc 是否走VPC
+                     * @param _isVpc 是否走VPC
+                     * 
                      */
                     void SetIsVpc(const int64_t& _isVpc);
 
                     /**
                      * 判断参数 IsVpc 是否已赋值
                      * @return IsVpc 是否已赋值
+                     * 
                      */
                     bool IsVpcHasBeenSet() const;
 

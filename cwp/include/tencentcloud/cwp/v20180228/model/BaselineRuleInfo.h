@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取检测项名称
                      * @return RuleName 检测项名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置检测项名称
-                     * @param RuleName 检测项名称
+                     * @param _ruleName 检测项名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取检测项描述
                      * @return Description 检测项描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置检测项描述
-                     * @param Description 检测项描述
+                     * @param _description 检测项描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取修复建议
                      * @return FixMessage 修复建议
+                     * 
                      */
                     std::string GetFixMessage() const;
 
                     /**
                      * 设置修复建议
-                     * @param FixMessage 修复建议
+                     * @param _fixMessage 修复建议
+                     * 
                      */
                     void SetFixMessage(const std::string& _fixMessage);
 
                     /**
                      * 判断参数 FixMessage 是否已赋值
                      * @return FixMessage 是否已赋值
+                     * 
                      */
                     bool FixMessageHasBeenSet() const;
 
                     /**
                      * 获取危害等级
                      * @return Level 危害等级
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危害等级
-                     * @param Level 危害等级
+                     * @param _level 危害等级
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取状态
                      * @return Status 状态
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态
-                     * @param Status 状态
+                     * @param _status 状态
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取检测项id
                      * @return RuleId 检测项id
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置检测项id
-                     * @param RuleId 检测项id
+                     * @param _ruleId 检测项id
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取最后检测时间
                      * @return LastScanAt 最后检测时间
+                     * 
                      */
                     std::string GetLastScanAt() const;
 
                     /**
                      * 设置最后检测时间
-                     * @param LastScanAt 最后检测时间
+                     * @param _lastScanAt 最后检测时间
+                     * 
                      */
                     void SetLastScanAt(const std::string& _lastScanAt);
 
                     /**
                      * 判断参数 LastScanAt 是否已赋值
                      * @return LastScanAt 是否已赋值
+                     * 
                      */
                     bool LastScanAtHasBeenSet() const;
 
                     /**
                      * 获取具体原因说明
                      * @return RuleRemark 具体原因说明
+                     * 
                      */
                     std::string GetRuleRemark() const;
 
                     /**
                      * 设置具体原因说明
-                     * @param RuleRemark 具体原因说明
+                     * @param _ruleRemark 具体原因说明
+                     * 
                      */
                     void SetRuleRemark(const std::string& _ruleRemark);
 
                     /**
                      * 判断参数 RuleRemark 是否已赋值
                      * @return RuleRemark 是否已赋值
+                     * 
                      */
                     bool RuleRemarkHasBeenSet() const;
 
                     /**
                      * 获取唯一Uuid
                      * @return Uuid 唯一Uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置唯一Uuid
-                     * @param Uuid 唯一Uuid
+                     * @param _uuid 唯一Uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取唯一事件ID
                      * @return EventId 唯一事件ID
+                     * 
                      */
                     uint64_t GetEventId() const;
 
                     /**
                      * 设置唯一事件ID
-                     * @param EventId 唯一事件ID
+                     * @param _eventId 唯一事件ID
+                     * 
                      */
                     void SetEventId(const uint64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

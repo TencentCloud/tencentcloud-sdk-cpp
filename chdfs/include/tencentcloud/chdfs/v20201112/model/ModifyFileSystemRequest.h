@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取文件系统ID
                      * @return FileSystemId 文件系统ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统ID
-                     * @param FileSystemId 文件系统ID
+                     * @param _fileSystemId 文件系统ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取文件系统名称
                      * @return FileSystemName 文件系统名称
+                     * 
                      */
                     std::string GetFileSystemName() const;
 
                     /**
                      * 设置文件系统名称
-                     * @param FileSystemName 文件系统名称
+                     * @param _fileSystemName 文件系统名称
+                     * 
                      */
                     void SetFileSystemName(const std::string& _fileSystemName);
 
                     /**
                      * 判断参数 FileSystemName 是否已赋值
                      * @return FileSystemName 是否已赋值
+                     * 
                      */
                     bool FileSystemNameHasBeenSet() const;
 
                     /**
                      * 获取文件系统描述
                      * @return Description 文件系统描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置文件系统描述
-                     * @param Description 文件系统描述
+                     * @param _description 文件系统描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -101,92 +110,107 @@ namespace TencentCloud
 注意：修改的文件系统容量不能小于当前使用量
                      * @return CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
+                     * 
                      */
                     uint64_t GetCapacityQuota() const;
 
                     /**
                      * 设置文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
-                     * @param CapacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
+                     * @param _capacityQuota 文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍
 注意：修改的文件系统容量不能小于当前使用量
+                     * 
                      */
                     void SetCapacityQuota(const uint64_t& _capacityQuota);
 
                     /**
                      * 判断参数 CapacityQuota 是否已赋值
                      * @return CapacityQuota 是否已赋值
+                     * 
                      */
                     bool CapacityQuotaHasBeenSet() const;
 
                     /**
                      * 获取超级用户名列表，可以为空数组
                      * @return SuperUsers 超级用户名列表，可以为空数组
+                     * 
                      */
                     std::vector<std::string> GetSuperUsers() const;
 
                     /**
                      * 设置超级用户名列表，可以为空数组
-                     * @param SuperUsers 超级用户名列表，可以为空数组
+                     * @param _superUsers 超级用户名列表，可以为空数组
+                     * 
                      */
                     void SetSuperUsers(const std::vector<std::string>& _superUsers);
 
                     /**
                      * 判断参数 SuperUsers 是否已赋值
                      * @return SuperUsers 是否已赋值
+                     * 
                      */
                     bool SuperUsersHasBeenSet() const;
 
                     /**
                      * 获取是否校验POSIX ACL
                      * @return PosixAcl 是否校验POSIX ACL
+                     * 
                      */
                     bool GetPosixAcl() const;
 
                     /**
                      * 设置是否校验POSIX ACL
-                     * @param PosixAcl 是否校验POSIX ACL
+                     * @param _posixAcl 是否校验POSIX ACL
+                     * 
                      */
                     void SetPosixAcl(const bool& _posixAcl);
 
                     /**
                      * 判断参数 PosixAcl 是否已赋值
                      * @return PosixAcl 是否已赋值
+                     * 
                      */
                     bool PosixAclHasBeenSet() const;
 
                     /**
                      * 获取是否打开Ranger地址校验
                      * @return EnableRanger 是否打开Ranger地址校验
+                     * 
                      */
                     bool GetEnableRanger() const;
 
                     /**
                      * 设置是否打开Ranger地址校验
-                     * @param EnableRanger 是否打开Ranger地址校验
+                     * @param _enableRanger 是否打开Ranger地址校验
+                     * 
                      */
                     void SetEnableRanger(const bool& _enableRanger);
 
                     /**
                      * 判断参数 EnableRanger 是否已赋值
                      * @return EnableRanger 是否已赋值
+                     * 
                      */
                     bool EnableRangerHasBeenSet() const;
 
                     /**
                      * 获取Ranger地址列表，可以为空数组
                      * @return RangerServiceAddresses Ranger地址列表，可以为空数组
+                     * 
                      */
                     std::vector<std::string> GetRangerServiceAddresses() const;
 
                     /**
                      * 设置Ranger地址列表，可以为空数组
-                     * @param RangerServiceAddresses Ranger地址列表，可以为空数组
+                     * @param _rangerServiceAddresses Ranger地址列表，可以为空数组
+                     * 
                      */
                     void SetRangerServiceAddresses(const std::vector<std::string>& _rangerServiceAddresses);
 
                     /**
                      * 判断参数 RangerServiceAddresses 是否已赋值
                      * @return RangerServiceAddresses 是否已赋值
+                     * 
                      */
                     bool RangerServiceAddressesHasBeenSet() const;
 

@@ -55,6 +55,7 @@ namespace TencentCloud
 当Label 为Teenager 时 Name可能取值有：Teenager 
 当Label 为Gender 时 Name可能取值有：Male 、Female
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 当Label 为Teenager 时 Name可能取值有：Teenager 
 当Label 为Gender 时 Name可能取值有：Male 、Female
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 根据Label字段确定具体名称：
+                     * @param _name 根据Label字段确定具体名称：
 当Label 为Teenager 时 Name可能取值有：Teenager 
 当Label 为Gender 时 Name可能取值有：Male 、Female
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -81,20 +84,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 置信分：0～100，数值越大表示置信度越高
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置置信分：0～100，数值越大表示置信度越高
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 置信分：0～100，数值越大表示置信度越高
+                     * @param _score 置信分：0～100，数值越大表示置信度越高
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -103,20 +109,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 识别开始偏移时间，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetStartTime() const;
 
                     /**
                      * 设置识别开始偏移时间，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 识别开始偏移时间，单位：毫秒
+                     * @param _startTime 识别开始偏移时间，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const double& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -125,20 +134,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 识别结束偏移时间，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetEndTime() const;
 
                     /**
                      * 设置识别结束偏移时间，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 识别结束偏移时间，单位：毫秒
+                     * @param _endTime 识别结束偏移时间，单位：毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const double& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取资金账户号
                      * @return FundingAccountNo 资金账户号
+                     * 
                      */
                     std::string GetFundingAccountNo() const;
 
                     /**
                      * 设置资金账户号
-                     * @param FundingAccountNo 资金账户号
+                     * @param _fundingAccountNo 资金账户号
+                     * 
                      */
                     void SetFundingAccountNo(const std::string& _fundingAccountNo);
 
                     /**
                      * 判断参数 FundingAccountNo 是否已赋值
                      * @return FundingAccountNo 是否已赋值
+                     * 
                      */
                     bool FundingAccountNoHasBeenSet() const;
 
                     /**
                      * 获取资金账户类型
                      * @return FundingAccountType 资金账户类型
+                     * 
                      */
                     std::string GetFundingAccountType() const;
 
                     /**
                      * 设置资金账户类型
-                     * @param FundingAccountType 资金账户类型
+                     * @param _fundingAccountType 资金账户类型
+                     * 
                      */
                     void SetFundingAccountType(const std::string& _fundingAccountType);
 
                     /**
                      * 判断参数 FundingAccountType 是否已赋值
                      * @return FundingAccountType 是否已赋值
+                     * 
                      */
                     bool FundingAccountTypeHasBeenSet() const;
 
                     /**
                      * 获取资金账户绑定序列号
                      * @return FundingAccountBindSerialNo 资金账户绑定序列号
+                     * 
                      */
                     std::string GetFundingAccountBindSerialNo() const;
 
                     /**
                      * 设置资金账户绑定序列号
-                     * @param FundingAccountBindSerialNo 资金账户绑定序列号
+                     * @param _fundingAccountBindSerialNo 资金账户绑定序列号
+                     * 
                      */
                     void SetFundingAccountBindSerialNo(const std::string& _fundingAccountBindSerialNo);
 
                     /**
                      * 判断参数 FundingAccountBindSerialNo 是否已赋值
                      * @return FundingAccountBindSerialNo 是否已赋值
+                     * 
                      */
                     bool FundingAccountBindSerialNoHasBeenSet() const;
 
                     /**
                      * 获取资金账户名称
                      * @return FundingAccountName 资金账户名称
+                     * 
                      */
                     std::string GetFundingAccountName() const;
 
                     /**
                      * 设置资金账户名称
-                     * @param FundingAccountName 资金账户名称
+                     * @param _fundingAccountName 资金账户名称
+                     * 
                      */
                     void SetFundingAccountName(const std::string& _fundingAccountName);
 
                     /**
                      * 判断参数 FundingAccountName 是否已赋值
                      * @return FundingAccountName 是否已赋值
+                     * 
                      */
                     bool FundingAccountNameHasBeenSet() const;
 

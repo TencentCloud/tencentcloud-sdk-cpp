@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManuallyAdded 手动管理的节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ManuallyAdded GetManuallyAdded() const;
 
                     /**
                      * 设置手动管理的节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ManuallyAdded 手动管理的节点
+                     * @param _manuallyAdded 手动管理的节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManuallyAdded(const ManuallyAdded& _manuallyAdded);
 
                     /**
                      * 判断参数 ManuallyAdded 是否已赋值
                      * @return ManuallyAdded 是否已赋值
+                     * 
                      */
                     bool ManuallyAddedHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalingAdded 自动管理的节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AutoscalingAdded GetAutoscalingAdded() const;
 
                     /**
                      * 设置自动管理的节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoscalingAdded 自动管理的节点
+                     * @param _autoscalingAdded 自动管理的节点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoscalingAdded(const AutoscalingAdded& _autoscalingAdded);
 
                     /**
                      * 判断参数 AutoscalingAdded 是否已赋值
                      * @return AutoscalingAdded 是否已赋值
+                     * 
                      */
                     bool AutoscalingAddedHasBeenSet() const;
 

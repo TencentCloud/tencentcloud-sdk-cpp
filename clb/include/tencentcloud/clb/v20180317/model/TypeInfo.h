@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 运营商类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置运营商类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 运营商类型
+                     * @param _type 运营商类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecAvailabilitySet 规格可用性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SpecAvailability> GetSpecAvailabilitySet() const;
 
                     /**
                      * 设置规格可用性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecAvailabilitySet 规格可用性
+                     * @param _specAvailabilitySet 规格可用性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpecAvailabilitySet(const std::vector<SpecAvailability>& _specAvailabilitySet);
 
                     /**
                      * 判断参数 SpecAvailabilitySet 是否已赋值
                      * @return SpecAvailabilitySet 是否已赋值
+                     * 
                      */
                     bool SpecAvailabilitySetHasBeenSet() const;
 

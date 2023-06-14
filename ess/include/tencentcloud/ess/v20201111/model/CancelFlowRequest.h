@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取签署流程id
                      * @return FlowId 签署流程id
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署流程id
-                     * @param FlowId 签署流程id
+                     * @param _flowId 签署流程id
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取撤销原因，最长200个字符；
                      * @return CancelMessage 撤销原因，最长200个字符；
+                     * 
                      */
                     std::string GetCancelMessage() const;
 
                     /**
                      * 设置撤销原因，最长200个字符；
-                     * @param CancelMessage 撤销原因，最长200个字符；
+                     * @param _cancelMessage 撤销原因，最长200个字符；
+                     * 
                      */
                     void SetCancelMessage(const std::string& _cancelMessage);
 
                     /**
                      * 判断参数 CancelMessage 是否已赋值
                      * @return CancelMessage 是否已赋值
+                     * 
                      */
                     bool CancelMessageHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 

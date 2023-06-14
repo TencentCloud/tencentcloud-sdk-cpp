@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取分配给商户的 AppId，该 AppId 为后续各项 交易的商户标识。
                      * @return MerchantAppId 分配给商户的 AppId，该 AppId 为后续各项 交易的商户标识。
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
                     /**
                      * 获取收款商户名称。
                      * @return MerchantName 收款商户名称。
+                     * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 判断参数 MerchantName 是否已赋值
                      * @return MerchantName 是否已赋值
+                     * 
                      */
                     bool MerchantNameHasBeenSet() const;
 
                     /**
                      * 获取B2B 支付标志。是否开通 B2B 支付， 1:开通 0:不开通。
                      * @return BusinessPayFlag B2B 支付标志。是否开通 B2B 支付， 1:开通 0:不开通。
+                     * 
                      */
                     std::string GetBusinessPayFlag() const;
 
                     /**
                      * 判断参数 BusinessPayFlag 是否已赋值
                      * @return BusinessPayFlag 是否已赋值
+                     * 
                      */
                     bool BusinessPayFlagHasBeenSet() const;
 

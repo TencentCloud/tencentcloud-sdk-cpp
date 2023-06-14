@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取站点的url列表
                      * @return Urls 站点的url列表
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置站点的url列表
-                     * @param Urls 站点的url列表
+                     * @param _urls 站点的url列表
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 
                     /**
                      * 获取访问网站的客户端标识
                      * @return UserAgent 访问网站的客户端标识
+                     * 
                      */
                     std::string GetUserAgent() const;
 
                     /**
                      * 设置访问网站的客户端标识
-                     * @param UserAgent 访问网站的客户端标识
+                     * @param _userAgent 访问网站的客户端标识
+                     * 
                      */
                     void SetUserAgent(const std::string& _userAgent);
 
                     /**
                      * 判断参数 UserAgent 是否已赋值
                      * @return UserAgent 是否已赋值
+                     * 
                      */
                     bool UserAgentHasBeenSet() const;
 

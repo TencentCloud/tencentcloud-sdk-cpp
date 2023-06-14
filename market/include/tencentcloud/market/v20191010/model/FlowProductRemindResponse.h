@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取是否成功
                      * @return Success 是否成功
+                     * 
                      */
                     std::string GetSuccess() const;
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 
                     /**
                      * 获取流水号
                      * @return FlowId 流水号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

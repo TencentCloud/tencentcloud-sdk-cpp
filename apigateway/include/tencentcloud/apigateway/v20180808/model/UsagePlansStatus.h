@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的使用计划数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的使用计划数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 符合条件的使用计划数量。
+                     * @param _totalCount 符合条件的使用计划数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsagePlanStatusSet 使用计划列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<UsagePlanStatusInfo> GetUsagePlanStatusSet() const;
 
                     /**
                      * 设置使用计划列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsagePlanStatusSet 使用计划列表。
+                     * @param _usagePlanStatusSet 使用计划列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsagePlanStatusSet(const std::vector<UsagePlanStatusInfo>& _usagePlanStatusSet);
 
                     /**
                      * 判断参数 UsagePlanStatusSet 是否已赋值
                      * @return UsagePlanStatusSet 是否已赋值
+                     * 
                      */
                     bool UsagePlanStatusSetHasBeenSet() const;
 

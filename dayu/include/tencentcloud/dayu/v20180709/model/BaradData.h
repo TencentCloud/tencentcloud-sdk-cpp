@@ -63,6 +63,7 @@ outtraffic表示出流量；
 alltraffic表示出流量和入流量之和；
 inpkg表示入包速率；
 outpkg表示出包速率；）
+                     * 
                      */
                     std::string GetMetricName() const;
 
@@ -75,7 +76,7 @@ outtraffic表示出流量；
 alltraffic表示出流量和入流量之和；
 inpkg表示入包速率；
 outpkg表示出包速率；）
-                     * @param MetricName 指标名（connum表示TCP活跃连接数；
+                     * @param _metricName 指标名（connum表示TCP活跃连接数；
 new_conn表示新建TCP连接数；
 inactive_conn表示非活跃连接数;
 intraffic表示入流量；
@@ -83,48 +84,56 @@ outtraffic表示出流量；
 alltraffic表示出流量和入流量之和；
 inpkg表示入包速率；
 outpkg表示出包速率；）
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取值数组
                      * @return Data 值数组
+                     * 
                      */
                     std::vector<double> GetData() const;
 
                     /**
                      * 设置值数组
-                     * @param Data 值数组
+                     * @param _data 值数组
+                     * 
                      */
                     void SetData(const std::vector<double>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取值数组的大小
                      * @return Count 值数组的大小
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置值数组的大小
-                     * @param Count 值数组的大小
+                     * @param _count 值数组的大小
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

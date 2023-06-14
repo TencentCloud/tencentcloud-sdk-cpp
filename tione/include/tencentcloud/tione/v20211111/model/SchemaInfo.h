@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取长度30字符内
                      * @return Name 长度30字符内
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置长度30字符内
-                     * @param Name 长度30字符内
+                     * @param _name 长度30字符内
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取数据类型
                      * @return Type 数据类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置数据类型
-                     * @param Type 数据类型
+                     * @param _type 数据类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

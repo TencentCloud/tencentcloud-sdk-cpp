@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取行业报道ID
                      * @return IndustryId 行业报道ID
+                     * 
                      */
                     std::string GetIndustryId() const;
 
                     /**
                      * 设置行业报道ID
-                     * @param IndustryId 行业报道ID
+                     * @param _industryId 行业报道ID
+                     * 
                      */
                     void SetIndustryId(const std::string& _industryId);
 
                     /**
                      * 判断参数 IndustryId 是否已赋值
                      * @return IndustryId 是否已赋值
+                     * 
                      */
                     bool IndustryIdHasBeenSet() const;
 
                     /**
                      * 获取报道发表时间
                      * @return PubTime 报道发表时间
+                     * 
                      */
                     std::string GetPubTime() const;
 
                     /**
                      * 设置报道发表时间
-                     * @param PubTime 报道发表时间
+                     * @param _pubTime 报道发表时间
+                     * 
                      */
                     void SetPubTime(const std::string& _pubTime);
 
                     /**
                      * 判断参数 PubTime 是否已赋值
                      * @return PubTime 是否已赋值
+                     * 
                      */
                     bool PubTimeHasBeenSet() const;
 
                     /**
                      * 获取报道来源
                      * @return FromSite 报道来源
+                     * 
                      */
                     std::string GetFromSite() const;
 
                     /**
                      * 设置报道来源
-                     * @param FromSite 报道来源
+                     * @param _fromSite 报道来源
+                     * 
                      */
                     void SetFromSite(const std::string& _fromSite);
 
                     /**
                      * 判断参数 FromSite 是否已赋值
                      * @return FromSite 是否已赋值
+                     * 
                      */
                     bool FromSiteHasBeenSet() const;
 
                     /**
                      * 获取报道标题
                      * @return Title 报道标题
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置报道标题
-                     * @param Title 报道标题
+                     * @param _title 报道标题
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取报道来源url
                      * @return Url 报道来源url
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置报道来源url
-                     * @param Url 报道来源url
+                     * @param _url 报道来源url
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取报道来源等级
                      * @return Level 报道来源等级
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置报道来源等级
-                     * @param Level 报道来源等级
+                     * @param _level 报道来源等级
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取热度值
                      * @return Hot 热度值
+                     * 
                      */
                     uint64_t GetHot() const;
 
                     /**
                      * 设置热度值
-                     * @param Hot 热度值
+                     * @param _hot 热度值
+                     * 
                      */
                     void SetHot(const uint64_t& _hot);
 
                     /**
                      * 判断参数 Hot 是否已赋值
                      * @return Hot 是否已赋值
+                     * 
                      */
                     bool HotHasBeenSet() const;
 
                     /**
                      * 获取报道标识
                      * @return Flag 报道标识
+                     * 
                      */
                     uint64_t GetFlag() const;
 
                     /**
                      * 设置报道标识
-                     * @param Flag 报道标识
+                     * @param _flag 报道标识
+                     * 
                      */
                     void SetFlag(const uint64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 
                     /**
                      * 获取报道摘要
                      * @return Abstract 报道摘要
+                     * 
                      */
                     std::string GetAbstract() const;
 
                     /**
                      * 设置报道摘要
-                     * @param Abstract 报道摘要
+                     * @param _abstract 报道摘要
+                     * 
                      */
                     void SetAbstract(const std::string& _abstract);
 
                     /**
                      * 判断参数 Abstract 是否已赋值
                      * @return Abstract 是否已赋值
+                     * 
                      */
                     bool AbstractHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取添加了此外部联系人的企业成员userid
                      * @return UserId 添加了此外部联系人的企业成员userid
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置添加了此外部联系人的企业成员userid
-                     * @param UserId 添加了此外部联系人的企业成员userid
+                     * @param _userId 添加了此外部联系人的企业成员userid
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 该成员对此外部联系人的备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置该成员对此外部联系人的备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 该成员对此外部联系人的备注
+                     * @param _remark 该成员对此外部联系人的备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -92,74 +98,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 该成员对此外部联系人的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置该成员对此外部联系人的描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 该成员对此外部联系人的描述
+                     * @param _description 该成员对此外部联系人的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取该成员添加此外部联系人的时间戳，单位为秒
                      * @return CreateTime 该成员添加此外部联系人的时间戳，单位为秒
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置该成员添加此外部联系人的时间戳，单位为秒
-                     * @param CreateTime 该成员添加此外部联系人的时间戳，单位为秒
+                     * @param _createTime 该成员添加此外部联系人的时间戳，单位为秒
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
                      * @return AddWay 该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * 
                      */
                     int64_t GetAddWay() const;
 
                     /**
                      * 设置该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
-                     * @param AddWay 该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * @param _addWay 该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * 
                      */
                     void SetAddWay(const int64_t& _addWay);
 
                     /**
                      * 判断参数 AddWay 是否已赋值
                      * @return AddWay 是否已赋值
+                     * 
                      */
                     bool AddWayHasBeenSet() const;
 
                     /**
                      * 获取发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid
                      * @return OperUserId 发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid
+                     * 
                      */
                     std::string GetOperUserId() const;
 
                     /**
                      * 设置发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid
-                     * @param OperUserId 发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid
+                     * @param _operUserId 发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid
+                     * 
                      */
                     void SetOperUserId(const std::string& _operUserId);
 
                     /**
                      * 判断参数 OperUserId 是否已赋值
                      * @return OperUserId 是否已赋值
+                     * 
                      */
                     bool OperUserIdHasBeenSet() const;
 
@@ -168,20 +186,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 该成员添加此外部联系人所打标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ExternalContactTag> GetTags() const;
 
                     /**
                      * 设置该成员添加此外部联系人所打标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 该成员添加此外部联系人所打标签信息
+                     * @param _tags 该成员添加此外部联系人所打标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<ExternalContactTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -190,38 +211,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesName 添加了此外部联系人的企业成员的姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSalesName() const;
 
                     /**
                      * 设置添加了此外部联系人的企业成员的姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SalesName 添加了此外部联系人的企业成员的姓名
+                     * @param _salesName 添加了此外部联系人的企业成员的姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSalesName(const std::string& _salesName);
 
                     /**
                      * 判断参数 SalesName 是否已赋值
                      * @return SalesName 是否已赋值
+                     * 
                      */
                     bool SalesNameHasBeenSet() const;
 
                     /**
                      * 获取企业成员的归属部门id列表
                      * @return DepartmentIdList 企业成员的归属部门id列表
+                     * 
                      */
                     std::vector<int64_t> GetDepartmentIdList() const;
 
                     /**
                      * 设置企业成员的归属部门id列表
-                     * @param DepartmentIdList 企业成员的归属部门id列表
+                     * @param _departmentIdList 企业成员的归属部门id列表
+                     * 
                      */
                     void SetDepartmentIdList(const std::vector<int64_t>& _departmentIdList);
 
                     /**
                      * 判断参数 DepartmentIdList 是否已赋值
                      * @return DepartmentIdList 是否已赋值
+                     * 
                      */
                     bool DepartmentIdListHasBeenSet() const;
 

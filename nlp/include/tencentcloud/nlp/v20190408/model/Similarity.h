@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取目标文本句子
                      * @return Text 目标文本句子
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置目标文本句子
-                     * @param Text 目标文本句子
+                     * @param _text 目标文本句子
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取相似度分数
                      * @return Score 相似度分数
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置相似度分数
-                     * @param Score 相似度分数
+                     * @param _score 相似度分数
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

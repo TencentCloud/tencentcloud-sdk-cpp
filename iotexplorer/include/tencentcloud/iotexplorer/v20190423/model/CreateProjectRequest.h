@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称
-                     * @param ProjectName 项目名称
+                     * @param _projectName 项目名称
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目描述
                      * @return ProjectDesc 项目描述
+                     * 
                      */
                     std::string GetProjectDesc() const;
 
                     /**
                      * 设置项目描述
-                     * @param ProjectDesc 项目描述
+                     * @param _projectDesc 项目描述
+                     * 
                      */
                     void SetProjectDesc(const std::string& _projectDesc);
 
                     /**
                      * 判断参数 ProjectDesc 是否已赋值
                      * @return ProjectDesc 是否已赋值
+                     * 
                      */
                     bool ProjectDescHasBeenSet() const;
 
                     /**
                      * 获取实例ID，不带实例ID，默认为公共实例
                      * @return InstanceId 实例ID，不带实例ID，默认为公共实例
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，不带实例ID，默认为公共实例
-                     * @param InstanceId 实例ID，不带实例ID，默认为公共实例
+                     * @param _instanceId 实例ID，不带实例ID，默认为公共实例
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

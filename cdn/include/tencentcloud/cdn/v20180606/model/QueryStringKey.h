@@ -55,6 +55,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,16 +64,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch CacheKey是否由QueryString组成配置开关，取值有：
+                     * @param _switch CacheKey是否由QueryString组成配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,20 +84,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reorder 是否重新排序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReorder() const;
 
                     /**
                      * 设置是否重新排序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reorder 是否重新排序
+                     * @param _reorder 是否重新排序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReorder(const std::string& _reorder);
 
                     /**
                      * 判断参数 Reorder 是否已赋值
                      * @return Reorder 是否已赋值
+                     * 
                      */
                     bool ReorderHasBeenSet() const;
 
@@ -111,6 +117,7 @@ excludeAll：排除所有
 includeCustom：自定义包含
 excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -121,18 +128,20 @@ excludeAll：排除所有
 includeCustom：自定义包含
 excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 使用/排除部分url参数，取值有：
+                     * @param _action 使用/排除部分url参数，取值有：
 includeAll：包含所有
 excludeAll：排除所有
 includeCustom：自定义包含
 excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -141,20 +150,23 @@ excludeCustom：自定义排除
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 使用/排除的url参数数组，';' 分割
+                     * @param _value 使用/排除的url参数数组，';' 分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

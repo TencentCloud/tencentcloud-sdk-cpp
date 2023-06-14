@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取批量添加域名信息
                      * @return DetailList 批量添加域名信息
+                     * 
                      */
                     std::vector<CreateDomainBatchDetail> GetDetailList() const;
 
                     /**
                      * 判断参数 DetailList 是否已赋值
                      * @return DetailList 是否已赋值
+                     * 
                      */
                     bool DetailListHasBeenSet() const;
 
                     /**
                      * 获取批量任务的ID
                      * @return JobId 批量任务的ID
+                     * 
                      */
                     uint64_t GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 

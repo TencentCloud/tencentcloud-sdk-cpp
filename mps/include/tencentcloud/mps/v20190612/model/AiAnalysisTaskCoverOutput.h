@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取智能封面列表。
                      * @return CoverSet 智能封面列表。
+                     * 
                      */
                     std::vector<MediaAiAnalysisCoverItem> GetCoverSet() const;
 
                     /**
                      * 设置智能封面列表。
-                     * @param CoverSet 智能封面列表。
+                     * @param _coverSet 智能封面列表。
+                     * 
                      */
                     void SetCoverSet(const std::vector<MediaAiAnalysisCoverItem>& _coverSet);
 
                     /**
                      * 判断参数 CoverSet 是否已赋值
                      * @return CoverSet 是否已赋值
+                     * 
                      */
                     bool CoverSetHasBeenSet() const;
 
                     /**
                      * 获取智能封面的存储位置。
                      * @return OutputStorage 智能封面的存储位置。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置智能封面的存储位置。
-                     * @param OutputStorage 智能封面的存储位置。
+                     * @param _outputStorage 智能封面的存储位置。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 

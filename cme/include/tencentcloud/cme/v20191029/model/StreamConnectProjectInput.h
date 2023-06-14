@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取云转推主输入源信息。
                      * @return MainInput 云转推主输入源信息。
+                     * 
                      */
                     StreamInputInfo GetMainInput() const;
 
                     /**
                      * 设置云转推主输入源信息。
-                     * @param MainInput 云转推主输入源信息。
+                     * @param _mainInput 云转推主输入源信息。
+                     * 
                      */
                     void SetMainInput(const StreamInputInfo& _mainInput);
 
                     /**
                      * 判断参数 MainInput 是否已赋值
                      * @return MainInput 是否已赋值
+                     * 
                      */
                     bool MainInputHasBeenSet() const;
 
                     /**
                      * 获取云转推备输入源信息。
                      * @return BackupInput 云转推备输入源信息。
+                     * 
                      */
                     StreamInputInfo GetBackupInput() const;
 
                     /**
                      * 设置云转推备输入源信息。
-                     * @param BackupInput 云转推备输入源信息。
+                     * @param _backupInput 云转推备输入源信息。
+                     * 
                      */
                     void SetBackupInput(const StreamInputInfo& _backupInput);
 
                     /**
                      * 判断参数 BackupInput 是否已赋值
                      * @return BackupInput 是否已赋值
+                     * 
                      */
                     bool BackupInputHasBeenSet() const;
 
                     /**
                      * 获取云转推输出源信息。
                      * @return Outputs 云转推输出源信息。
+                     * 
                      */
                     std::vector<StreamConnectOutput> GetOutputs() const;
 
                     /**
                      * 设置云转推输出源信息。
-                     * @param Outputs 云转推输出源信息。
+                     * @param _outputs 云转推输出源信息。
+                     * 
                      */
                     void SetOutputs(const std::vector<StreamConnectOutput>& _outputs);
 
                     /**
                      * 判断参数 Outputs 是否已赋值
                      * @return Outputs 是否已赋值
+                     * 
                      */
                     bool OutputsHasBeenSet() const;
 

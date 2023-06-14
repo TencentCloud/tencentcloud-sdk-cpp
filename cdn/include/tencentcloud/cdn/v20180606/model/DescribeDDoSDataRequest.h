@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
                      * @return StartTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
-                     * @param StartTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * @param _startTime 查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
                      * @return EndTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
-                     * @param EndTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * @param _endTime 查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -89,6 +95,7 @@ min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可�
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -98,17 +105,19 @@ min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可�
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
-                     * @param Interval 时间粒度，支持以下几种模式：
+                     * @param _interval 时间粒度，支持以下几种模式：
 min：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据
 5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据
 hour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据
 day：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 

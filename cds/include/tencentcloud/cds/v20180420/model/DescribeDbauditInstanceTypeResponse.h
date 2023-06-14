@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据安全审计产品规格信息列表
                      * @return DbauditTypesSet 数据安全审计产品规格信息列表
+                     * 
                      */
                     std::vector<DbauditTypesInfo> GetDbauditTypesSet() const;
 
                     /**
                      * 判断参数 DbauditTypesSet 是否已赋值
                      * @return DbauditTypesSet 是否已赋值
+                     * 
                      */
                     bool DbauditTypesSetHasBeenSet() const;
 

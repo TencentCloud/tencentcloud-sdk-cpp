@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取操作成功的任务数
                      * @return SuccessCount 操作成功的任务数
+                     * 
                      */
                     int64_t GetSuccessCount() const;
 
                     /**
                      * 判断参数 SuccessCount 是否已赋值
                      * @return SuccessCount 是否已赋值
+                     * 
                      */
                     bool SuccessCountHasBeenSet() const;
 
                     /**
                      * 获取操作失败的任务数
                      * @return FailedCount 操作失败的任务数
+                     * 
                      */
                     int64_t GetFailedCount() const;
 
                     /**
                      * 判断参数 FailedCount 是否已赋值
                      * @return FailedCount 是否已赋值
+                     * 
                      */
                     bool FailedCountHasBeenSet() const;
 
                     /**
                      * 获取任务总数
                      * @return TotalCount 任务总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

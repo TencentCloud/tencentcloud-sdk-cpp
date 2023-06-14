@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取CPU的ID
                      * @return CpuId CPU的ID
+                     * 
                      */
                     uint64_t GetCpuId() const;
 
                     /**
                      * 设置CPU的ID
-                     * @param CpuId CPU的ID
+                     * @param _cpuId CPU的ID
+                     * 
                      */
                     void SetCpuId(const uint64_t& _cpuId);
 
                     /**
                      * 判断参数 CpuId 是否已赋值
                      * @return CpuId 是否已赋值
+                     * 
                      */
                     bool CpuIdHasBeenSet() const;
 
                     /**
                      * 获取CPU型号描述
                      * @return CpuDescription CPU型号描述
+                     * 
                      */
                     std::string GetCpuDescription() const;
 
                     /**
                      * 设置CPU型号描述
-                     * @param CpuDescription CPU型号描述
+                     * @param _cpuDescription CPU型号描述
+                     * 
                      */
                     void SetCpuDescription(const std::string& _cpuDescription);
 
                     /**
                      * 判断参数 CpuDescription 是否已赋值
                      * @return CpuDescription 是否已赋值
+                     * 
                      */
                     bool CpuDescriptionHasBeenSet() const;
 
                     /**
                      * 获取机型序列
                      * @return Series 机型序列
+                     * 
                      */
                     uint64_t GetSeries() const;
 
                     /**
                      * 设置机型序列
-                     * @param Series 机型序列
+                     * @param _series 机型序列
+                     * 
                      */
                     void SetSeries(const uint64_t& _series);
 
                     /**
                      * 判断参数 Series 是否已赋值
                      * @return Series 是否已赋值
+                     * 
                      */
                     bool SeriesHasBeenSet() const;
 
                     /**
                      * 获取支持的RAID方式，0：有RAID卡，1：没有RAID卡
                      * @return ContainRaidCard 支持的RAID方式，0：有RAID卡，1：没有RAID卡
+                     * 
                      */
                     std::vector<uint64_t> GetContainRaidCard() const;
 
                     /**
                      * 设置支持的RAID方式，0：有RAID卡，1：没有RAID卡
-                     * @param ContainRaidCard 支持的RAID方式，0：有RAID卡，1：没有RAID卡
+                     * @param _containRaidCard 支持的RAID方式，0：有RAID卡，1：没有RAID卡
+                     * 
                      */
                     void SetContainRaidCard(const std::vector<uint64_t>& _containRaidCard);
 
                     /**
                      * 判断参数 ContainRaidCard 是否已赋值
                      * @return ContainRaidCard 是否已赋值
+                     * 
                      */
                     bool ContainRaidCardHasBeenSet() const;
 

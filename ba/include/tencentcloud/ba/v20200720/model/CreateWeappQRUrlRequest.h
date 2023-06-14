@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取代理角色临时密钥的Token
                      * @return SessionKey 代理角色临时密钥的Token
+                     * 
                      */
                     std::string GetSessionKey() const;
 
                     /**
                      * 设置代理角色临时密钥的Token
-                     * @param SessionKey 代理角色临时密钥的Token
+                     * @param _sessionKey 代理角色临时密钥的Token
+                     * 
                      */
                     void SetSessionKey(const std::string& _sessionKey);
 
                     /**
                      * 判断参数 SessionKey 是否已赋值
                      * @return SessionKey 是否已赋值
+                     * 
                      */
                     bool SessionKeyHasBeenSet() const;
 

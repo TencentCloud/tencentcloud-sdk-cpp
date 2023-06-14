@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanInfo 当前账户可购买套餐类型及相关信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PlanInfo> GetPlanInfo() const;
 
                     /**
                      * 判断参数 PlanInfo 是否已赋值
                      * @return PlanInfo 是否已赋值
+                     * 
                      */
                     bool PlanInfoHasBeenSet() const;
 

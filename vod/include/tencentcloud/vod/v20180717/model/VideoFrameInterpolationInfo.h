@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 智能插帧控制开关，可选值：
 <li>ON：开启智能插帧；</li>
 <li>OFF：关闭智能插帧。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置智能插帧控制开关，可选值：
 <li>ON：开启智能插帧；</li>
 <li>OFF：关闭智能插帧。</li>
-                     * @param Switch 智能插帧控制开关，可选值：
+                     * @param _switch 智能插帧控制开关，可选值：
 <li>ON：开启智能插帧；</li>
 <li>OFF：关闭智能插帧。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取智能插帧帧率，帧率范围为 (0, 100]，仅当智能插帧控制开关为 ON 时有效。默认跟源文件帧率一致。
                      * @return Fps 智能插帧帧率，帧率范围为 (0, 100]，仅当智能插帧控制开关为 ON 时有效。默认跟源文件帧率一致。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置智能插帧帧率，帧率范围为 (0, 100]，仅当智能插帧控制开关为 ON 时有效。默认跟源文件帧率一致。
-                     * @param Fps 智能插帧帧率，帧率范围为 (0, 100]，仅当智能插帧控制开关为 ON 时有效。默认跟源文件帧率一致。
+                     * @param _fps 智能插帧帧率，帧率范围为 (0, 100]，仅当智能插帧控制开关为 ON 时有效。默认跟源文件帧率一致。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 

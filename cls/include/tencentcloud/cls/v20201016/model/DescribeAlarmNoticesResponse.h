@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmNotices 告警通知模板列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AlarmNotice> GetAlarmNotices() const;
 
                     /**
                      * 判断参数 AlarmNotices 是否已赋值
                      * @return AlarmNotices 是否已赋值
+                     * 
                      */
                     bool AlarmNoticesHasBeenSet() const;
 
                     /**
                      * 获取符合条件的告警通知模板总数。
                      * @return TotalCount 符合条件的告警通知模板总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

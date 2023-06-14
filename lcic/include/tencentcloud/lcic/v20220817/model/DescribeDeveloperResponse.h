@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取开发商ID
                      * @return DeveloperId 开发商ID
+                     * 
                      */
                     std::string GetDeveloperId() const;
 
                     /**
                      * 判断参数 DeveloperId 是否已赋值
                      * @return DeveloperId 是否已赋值
+                     * 
                      */
                     bool DeveloperIdHasBeenSet() const;
 

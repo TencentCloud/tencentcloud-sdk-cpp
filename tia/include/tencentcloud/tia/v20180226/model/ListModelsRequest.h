@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取部署模型的集群， `集群模式` 必填
                      * @return Cluster 部署模型的集群， `集群模式` 必填
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置部署模型的集群， `集群模式` 必填
-                     * @param Cluster 部署模型的集群， `集群模式` 必填
+                     * @param _cluster 部署模型的集群， `集群模式` 必填
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取分页参数，返回数量上限
                      * @return Limit 分页参数，返回数量上限
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页参数，返回数量上限
-                     * @param Limit 分页参数，返回数量上限
+                     * @param _limit 分页参数，返回数量上限
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数，分页起始位置
                      * @return Offset 分页参数，分页起始位置
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页参数，分页起始位置
-                     * @param Offset 分页参数，分页起始位置
+                     * @param _offset 分页参数，分页起始位置
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取部署类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`。
                      * @return ServType 部署类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`。
+                     * 
                      */
                     std::string GetServType() const;
 
                     /**
                      * 设置部署类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`。
-                     * @param ServType 部署类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`。
+                     * @param _servType 部署类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`。
+                     * 
                      */
                     void SetServType(const std::string& _servType);
 
                     /**
                      * 判断参数 ServType 是否已赋值
                      * @return ServType 是否已赋值
+                     * 
                      */
                     bool ServTypeHasBeenSet() const;
 

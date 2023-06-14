@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取是否被邀请。1：被邀请，0：发出的邀请
                      * @return Invited 是否被邀请。1：被邀请，0：发出的邀请
+                     * 
                      */
                     uint64_t GetInvited() const;
 
                     /**
                      * 设置是否被邀请。1：被邀请，0：发出的邀请
-                     * @param Invited 是否被邀请。1：被邀请，0：发出的邀请
+                     * @param _invited 是否被邀请。1：被邀请，0：发出的邀请
+                     * 
                      */
                     void SetInvited(const uint64_t& _invited);
 
                     /**
                      * 判断参数 Invited 是否已赋值
                      * @return Invited 是否已赋值
+                     * 
                      */
                     bool InvitedHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

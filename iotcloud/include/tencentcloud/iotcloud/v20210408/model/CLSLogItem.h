@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取日志内容
                      * @return Content 日志内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-                     * @param Content 日志内容
+                     * @param _content 日志内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取请求ID
                      * @return RequestId 请求ID
+                     * 
                      */
                     std::string GetRequestId() const;
 
                     /**
                      * 设置请求ID
-                     * @param RequestId 请求ID
+                     * @param _requestId 请求ID
+                     * 
                      */
                     void SetRequestId(const std::string& _requestId);
 
                     /**
                      * 判断参数 RequestId 是否已赋值
                      * @return RequestId 是否已赋值
+                     * 
                      */
                     bool RequestIdHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return Result 结果
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置结果
-                     * @param Result 结果
+                     * @param _result 结果
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取模块
                      * @return Scene 模块
+                     * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置模块
-                     * @param Scene 模块
+                     * @param _scene 模块
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 
                     /**
                      * 获取日志时间
                      * @return Time 日志时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置日志时间
-                     * @param Time 日志时间
+                     * @param _time 日志时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取腾讯云账号
                      * @return Userid 腾讯云账号
+                     * 
                      */
                     std::string GetUserid() const;
 
                     /**
                      * 设置腾讯云账号
-                     * @param Userid 腾讯云账号
+                     * @param _userid 腾讯云账号
+                     * 
                      */
                     void SetUserid(const std::string& _userid);
 
                     /**
                      * 判断参数 Userid 是否已赋值
                      * @return Userid 是否已赋值
+                     * 
                      */
                     bool UseridHasBeenSet() const;
 

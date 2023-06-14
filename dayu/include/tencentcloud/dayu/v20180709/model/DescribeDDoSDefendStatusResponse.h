@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefendStatus 防护状态，为0表示防护处于关闭状态，为1表示防护处于开启状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDefendStatus() const;
 
                     /**
                      * 判断参数 DefendStatus 是否已赋值
                      * @return DefendStatus 是否已赋值
+                     * 
                      */
                     bool DefendStatusHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UndefendExpire 防护临时关闭的过期时间，当防护状态为开启时此字段为空；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUndefendExpire() const;
 
                     /**
                      * 判断参数 UndefendExpire 是否已赋值
                      * @return UndefendExpire 是否已赋值
+                     * 
                      */
                     bool UndefendExpireHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShowFlag 控制台功能展示字段，为1表示控制台功能展示，为0表示控制台功能隐藏
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetShowFlag() const;
 
                     /**
                      * 判断参数 ShowFlag 是否已赋值
                      * @return ShowFlag 是否已赋值
+                     * 
                      */
                     bool ShowFlagHasBeenSet() const;
 

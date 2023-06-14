@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取代理组ID
                      * @return ProxyGroupId 代理组ID
+                     * 
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
                      * 设置代理组ID
-                     * @param ProxyGroupId 代理组ID
+                     * @param _proxyGroupId 代理组ID
+                     * 
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
                     /**
                      * 判断参数 ProxyGroupId 是否已赋值
                      * @return ProxyGroupId 是否已赋值
+                     * 
                      */
                     bool ProxyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取代理组地址ID
                      * @return ProxyAddressId 代理组地址ID
+                     * 
                      */
                     std::string GetProxyAddressId() const;
 
                     /**
                      * 设置代理组地址ID
-                     * @param ProxyAddressId 代理组地址ID
+                     * @param _proxyAddressId 代理组地址ID
+                     * 
                      */
                     void SetProxyAddressId(const std::string& _proxyAddressId);
 
                     /**
                      * 判断参数 ProxyAddressId 是否已赋值
                      * @return ProxyAddressId 是否已赋值
+                     * 
                      */
                     bool ProxyAddressIdHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Desc 描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-                     * @param Desc 描述
+                     * @param _desc 描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 

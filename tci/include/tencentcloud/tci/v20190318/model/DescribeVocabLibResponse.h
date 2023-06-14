@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回该appid下的所有词汇库名
                      * @return VocabLibNameSet 返回该appid下的所有词汇库名
+                     * 
                      */
                     std::vector<std::string> GetVocabLibNameSet() const;
 
                     /**
                      * 判断参数 VocabLibNameSet 是否已赋值
                      * @return VocabLibNameSet 是否已赋值
+                     * 
                      */
                     bool VocabLibNameSetHasBeenSet() const;
 

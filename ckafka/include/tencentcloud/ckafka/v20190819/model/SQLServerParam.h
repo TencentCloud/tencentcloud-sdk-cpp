@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取SQLServer的数据库名称
                      * @return Database SQLServer的数据库名称
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置SQLServer的数据库名称
-                     * @param Database SQLServer的数据库名称
+                     * @param _database SQLServer的数据库名称
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取SQLServer的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
                      * @return Table SQLServer的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置SQLServer的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
-                     * @param Table SQLServer的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+                     * @param _table SQLServer的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
                     /**
                      * 获取该SQLServer在连接管理内的Id
                      * @return Resource 该SQLServer在连接管理内的Id
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置该SQLServer在连接管理内的Id
-                     * @param Resource 该SQLServer在连接管理内的Id
+                     * @param _resource 该SQLServer在连接管理内的Id
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取复制存量信息(schema_only增量, initial全量)，默认为initial
                      * @return SnapshotMode 复制存量信息(schema_only增量, initial全量)，默认为initial
+                     * 
                      */
                     std::string GetSnapshotMode() const;
 
                     /**
                      * 设置复制存量信息(schema_only增量, initial全量)，默认为initial
-                     * @param SnapshotMode 复制存量信息(schema_only增量, initial全量)，默认为initial
+                     * @param _snapshotMode 复制存量信息(schema_only增量, initial全量)，默认为initial
+                     * 
                      */
                     void SetSnapshotMode(const std::string& _snapshotMode);
 
                     /**
                      * 判断参数 SnapshotMode 是否已赋值
                      * @return SnapshotMode 是否已赋值
+                     * 
                      */
                     bool SnapshotModeHasBeenSet() const;
 

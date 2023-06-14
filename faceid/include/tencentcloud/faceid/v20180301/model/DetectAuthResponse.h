@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取用于发起核身流程的URL，仅微信H5场景使用。
                      * @return Url 用于发起核身流程的URL，仅微信H5场景使用。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 完成核身后，可用该标识获取验证结果信息。
                      * @return BizToken 一次核身流程的标识，有效时间为7,200秒；
 完成核身后，可用该标识获取验证结果信息。
+                     * 
                      */
                     std::string GetBizToken() const;
 
                     /**
                      * 判断参数 BizToken 是否已赋值
                      * @return BizToken 是否已赋值
+                     * 
                      */
                     bool BizTokenHasBeenSet() const;
 

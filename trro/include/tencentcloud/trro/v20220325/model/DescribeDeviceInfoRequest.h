@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取目标设备所属项目ID
                      * @return ProjectId 目标设备所属项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置目标设备所属项目ID
-                     * @param ProjectId 目标设备所属项目ID
+                     * @param _projectId 目标设备所属项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取目标设备ID
                      * @return DeviceId 目标设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置目标设备ID
-                     * @param DeviceId 目标设备ID
+                     * @param _deviceId 目标设备ID
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

@@ -48,60 +48,70 @@ namespace TencentCloud
                     /**
                      * 获取识别出的车牌号码。
                      * @return Number 识别出的车牌号码。
+                     * 
                      */
                     std::string GetNumber() const;
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取置信度，0 - 100 之间。
                      * @return Confidence 置信度，0 - 100 之间。
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取文本行在原图片中的像素坐标框。
                      * @return Rect 文本行在原图片中的像素坐标框。
+                     * 
                      */
                     Rect GetRect() const;
 
                     /**
                      * 判断参数 Rect 是否已赋值
                      * @return Rect 是否已赋值
+                     * 
                      */
                     bool RectHasBeenSet() const;
 
                     /**
                      * 获取识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。
                      * @return Color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。
+                     * 
                      */
                     std::string GetColor() const;
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 
                     /**
                      * 获取全部车牌信息。
                      * @return LicensePlateInfos 全部车牌信息。
+                     * 
                      */
                     std::vector<LicensePlateInfo> GetLicensePlateInfos() const;
 
                     /**
                      * 判断参数 LicensePlateInfos 是否已赋值
                      * @return LicensePlateInfos 是否已赋值
+                     * 
                      */
                     bool LicensePlateInfosHasBeenSet() const;
 

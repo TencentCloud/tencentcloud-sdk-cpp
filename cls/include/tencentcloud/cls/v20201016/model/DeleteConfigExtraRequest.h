@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取采集规则扩展配置ID
                      * @return ConfigExtraId 采集规则扩展配置ID
+                     * 
                      */
                     std::string GetConfigExtraId() const;
 
                     /**
                      * 设置采集规则扩展配置ID
-                     * @param ConfigExtraId 采集规则扩展配置ID
+                     * @param _configExtraId 采集规则扩展配置ID
+                     * 
                      */
                     void SetConfigExtraId(const std::string& _configExtraId);
 
                     /**
                      * 判断参数 ConfigExtraId 是否已赋值
                      * @return ConfigExtraId 是否已赋值
+                     * 
                      */
                     bool ConfigExtraIdHasBeenSet() const;
 

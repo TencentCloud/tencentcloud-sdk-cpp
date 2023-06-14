@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取事件发生的秒级unix时间戳。
                      * @return Timestamp 事件发生的秒级unix时间戳。
+                     * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置事件发生的秒级unix时间戳。
-                     * @param Timestamp 事件发生的秒级unix时间戳。
+                     * @param _timestamp 事件发生的秒级unix时间戳。
+                     * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
@@ -86,6 +89,7 @@ ScreenOn: 屏幕共享打开
 ScreenOff: 屏幕共享关闭
 VisibleOn: 页面可见
 VisibleOff: 页面不可见
+                     * 
                      */
                     std::string GetEventType() const;
 
@@ -100,7 +104,7 @@ ScreenOn: 屏幕共享打开
 ScreenOff: 屏幕共享关闭
 VisibleOn: 页面可见
 VisibleOff: 页面不可见
-                     * @param EventType 事件类型,有以下值:
+                     * @param _eventType 事件类型,有以下值:
 RoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束
 Camera0n: 摄像头打开
 Camera0ff: 摄像头关闭
@@ -110,12 +114,14 @@ ScreenOn: 屏幕共享打开
 ScreenOff: 屏幕共享关闭
 VisibleOn: 页面可见
 VisibleOff: 页面不可见
+                     * 
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
@@ -124,20 +130,23 @@ VisibleOff: 页面不可见
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventData 事件详细内容，包含房间号,成员类型事件包含用户Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EventDataInfo GetEventData() const;
 
                     /**
                      * 设置事件详细内容，包含房间号,成员类型事件包含用户Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventData 事件详细内容，包含房间号,成员类型事件包含用户Id。
+                     * @param _eventData 事件详细内容，包含房间号,成员类型事件包含用户Id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventData(const EventDataInfo& _eventData);
 
                     /**
                      * 判断参数 EventData 是否已赋值
                      * @return EventData 是否已赋值
+                     * 
                      */
                     bool EventDataHasBeenSet() const;
 

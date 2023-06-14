@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnData 返回的查询数据，大部分情况是list，也可能是bool
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReturnData() const;
 
                     /**
                      * 判断参数 ReturnData 是否已赋值
                      * @return ReturnData 是否已赋值
+                     * 
                      */
                     bool ReturnDataHasBeenSet() const;
 

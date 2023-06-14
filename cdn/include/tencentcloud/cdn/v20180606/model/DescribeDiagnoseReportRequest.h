@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取报告ID
                      * @return ReportId 报告ID
+                     * 
                      */
                     std::string GetReportId() const;
 
                     /**
                      * 设置报告ID
-                     * @param ReportId 报告ID
+                     * @param _reportId 报告ID
+                     * 
                      */
                     void SetReportId(const std::string& _reportId);
 
                     /**
                      * 判断参数 ReportId 是否已赋值
                      * @return ReportId 是否已赋值
+                     * 
                      */
                     bool ReportIdHasBeenSet() const;
 

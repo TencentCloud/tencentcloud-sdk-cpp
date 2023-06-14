@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取订单号列表。每个实例对应一个订单号。
                      * @return DealNames 订单号列表。每个实例对应一个订单号。
+                     * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
                      * 判断参数 DealNames 是否已赋值
                      * @return DealNames 是否已赋值
+                     * 
                      */
                     bool DealNamesHasBeenSet() const;
 
                     /**
                      * 获取冻结流水号
                      * @return BillId 冻结流水号
+                     * 
                      */
                     std::string GetBillId() const;
 
                     /**
                      * 判断参数 BillId 是否已赋值
                      * @return BillId 是否已赋值
+                     * 
                      */
                     bool BillIdHasBeenSet() const;
 
                     /**
                      * 获取创建成功的实例ID集合，只在后付费情景下有返回值
                      * @return DBInstanceIdSet 创建成功的实例ID集合，只在后付费情景下有返回值
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 

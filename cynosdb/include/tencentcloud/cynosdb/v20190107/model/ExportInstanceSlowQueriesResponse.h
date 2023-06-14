@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取慢查询导出内容
                      * @return FileContent 慢查询导出内容
+                     * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 判断参数 FileContent 是否已赋值
                      * @return FileContent 是否已赋值
+                     * 
                      */
                     bool FileContentHasBeenSet() const;
 

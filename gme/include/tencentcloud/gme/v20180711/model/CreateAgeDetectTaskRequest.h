@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取应用id
                      * @return BizId 应用id
+                     * 
                      */
                     int64_t GetBizId() const;
 
                     /**
                      * 设置应用id
-                     * @param BizId 应用id
+                     * @param _bizId 应用id
+                     * 
                      */
                     void SetBizId(const int64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return Tasks 语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：
 <li>DataId：数据的唯一ID</li>
 <li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>
+                     * 
                      */
                     std::vector<AgeDetectTask> GetTasks() const;
 
@@ -75,33 +79,38 @@ namespace TencentCloud
                      * 设置语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：
 <li>DataId：数据的唯一ID</li>
 <li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>
-                     * @param Tasks 语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：
+                     * @param _tasks 语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：
 <li>DataId：数据的唯一ID</li>
 <li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>
+                     * 
                      */
                     void SetTasks(const std::vector<AgeDetectTask>& _tasks);
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 
                     /**
                      * 获取任务结束时gme后台会自动触发回调
                      * @return Callback 任务结束时gme后台会自动触发回调
+                     * 
                      */
                     std::string GetCallback() const;
 
                     /**
                      * 设置任务结束时gme后台会自动触发回调
-                     * @param Callback 任务结束时gme后台会自动触发回调
+                     * @param _callback 任务结束时gme后台会自动触发回调
+                     * 
                      */
                     void SetCallback(const std::string& _callback);
 
                     /**
                      * 判断参数 Callback 是否已赋值
                      * @return Callback 是否已赋值
+                     * 
                      */
                     bool CallbackHasBeenSet() const;
 

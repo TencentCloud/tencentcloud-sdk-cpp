@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（net表示高防IP专业版）
                      * @return Business 大禹子产品代号（net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取攻击开始时间
                      * @return StartTime 攻击开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取攻击结束时间
                      * @return EndTime 攻击结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -99,12 +107,14 @@ Key为"LogMessage"时，Value值为Ip日志内容
                      * @return Data IP攻击日志，KeyValue数组，Key-Value取值说明：
 Key为"LogTime"时，Value值为IP日志时间
 Key为"LogMessage"时，Value值为Ip日志内容
+                     * 
                      */
                     std::vector<KeyValueRecord> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

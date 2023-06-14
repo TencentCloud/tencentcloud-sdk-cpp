@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取生成的随机数的长度。最小值为1， 最大值为1024。
                      * @return NumberOfBytes 生成的随机数的长度。最小值为1， 最大值为1024。
+                     * 
                      */
                     uint64_t GetNumberOfBytes() const;
 
                     /**
                      * 设置生成的随机数的长度。最小值为1， 最大值为1024。
-                     * @param NumberOfBytes 生成的随机数的长度。最小值为1， 最大值为1024。
+                     * @param _numberOfBytes 生成的随机数的长度。最小值为1， 最大值为1024。
+                     * 
                      */
                     void SetNumberOfBytes(const uint64_t& _numberOfBytes);
 
                     /**
                      * 判断参数 NumberOfBytes 是否已赋值
                      * @return NumberOfBytes 是否已赋值
+                     * 
                      */
                     bool NumberOfBytesHasBeenSet() const;
 

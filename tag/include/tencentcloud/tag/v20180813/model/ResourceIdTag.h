@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceId 资源唯一标识
+                     * @param _resourceId 资源唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagKeyValues 标签键值对
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTagKeyValues() const;
 
                     /**
                      * 设置标签键值对
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagKeyValues 标签键值对
+                     * @param _tagKeyValues 标签键值对
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagKeyValues(const std::vector<Tag>& _tagKeyValues);
 
                     /**
                      * 判断参数 TagKeyValues 是否已赋值
                      * @return TagKeyValues 是否已赋值
+                     * 
                      */
                     bool TagKeyValuesHasBeenSet() const;
 

@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateName 模板名称
+                     * @param _templateName 模板名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 指标触发条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AlarmPolicyCondition GetCondition() const;
 
                     /**
                      * 设置指标触发条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Condition 指标触发条件
+                     * @param _condition 指标触发条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCondition(const AlarmPolicyCondition& _condition);
 
                     /**
                      * 判断参数 Condition 是否已赋值
                      * @return Condition 是否已赋值
+                     * 
                      */
                     bool ConditionHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventCondition 事件触发条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AlarmPolicyEventCondition GetEventCondition() const;
 
                     /**
                      * 设置事件触发条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventCondition 事件触发条件
+                     * @param _eventCondition 事件触发条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventCondition(const AlarmPolicyEventCondition& _eventCondition);
 
                     /**
                      * 判断参数 EventCondition 是否已赋值
                      * @return EventCondition 是否已赋值
+                     * 
                      */
                     bool EventConditionHasBeenSet() const;
 

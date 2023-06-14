@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取schema id
                      * @return Id schema id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置schema id
-                     * @param Id schema id
+                     * @param _id schema id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取schema名称
                      * @return Name schema名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置schema名称
-                     * @param Name schema名称
+                     * @param _name schema名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取schema类型
                      * @return Type schema类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置schema类型
-                     * @param Type schema类型
+                     * @param _type schema类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value schema值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置schema值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value schema值
+                     * @param _value schema值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Properties schema拓展属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RecordField> GetProperties() const;
 
                     /**
                      * 设置schema拓展属性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Properties schema拓展属性
+                     * @param _properties schema拓展属性
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProperties(const std::vector<RecordField>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
                      * @return Properties 是否已赋值
+                     * 
                      */
                     bool PropertiesHasBeenSet() const;
 
@@ -150,20 +165,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias schema别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置schema别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias schema别名
+                     * @param _alias schema别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

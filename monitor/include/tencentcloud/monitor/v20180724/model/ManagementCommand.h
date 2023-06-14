@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Install Agent 安装命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstall() const;
 
                     /**
                      * 设置Agent 安装命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Install Agent 安装命令
+                     * @param _install Agent 安装命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstall(const std::string& _install);
 
                     /**
                      * 判断参数 Install 是否已赋值
                      * @return Install 是否已赋值
+                     * 
                      */
                     bool InstallHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Restart Agent 重启命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRestart() const;
 
                     /**
                      * 设置Agent 重启命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Restart Agent 重启命令
+                     * @param _restart Agent 重启命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRestart(const std::string& _restart);
 
                     /**
                      * 判断参数 Restart 是否已赋值
                      * @return Restart 是否已赋值
+                     * 
                      */
                     bool RestartHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stop Agent 停止命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStop() const;
 
                     /**
                      * 设置Agent 停止命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Stop Agent 停止命令
+                     * @param _stop Agent 停止命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStop(const std::string& _stop);
 
                     /**
                      * 判断参数 Stop 是否已赋值
                      * @return Stop 是否已赋值
+                     * 
                      */
                     bool StopHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusCheck Agent 状态检测命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusCheck() const;
 
                     /**
                      * 设置Agent 状态检测命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusCheck Agent 状态检测命令
+                     * @param _statusCheck Agent 状态检测命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusCheck(const std::string& _statusCheck);
 
                     /**
                      * 判断参数 StatusCheck 是否已赋值
                      * @return StatusCheck 是否已赋值
+                     * 
                      */
                     bool StatusCheckHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogCheck Agent 日志检测命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLogCheck() const;
 
                     /**
                      * 设置Agent 日志检测命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogCheck Agent 日志检测命令
+                     * @param _logCheck Agent 日志检测命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLogCheck(const std::string& _logCheck);
 
                     /**
                      * 判断参数 LogCheck 是否已赋值
                      * @return LogCheck 是否已赋值
+                     * 
                      */
                     bool LogCheckHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
                      * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取CVM实例ID。形如：ins-r8hr2upy。
                      * @return InstanceId CVM实例ID。形如：ins-r8hr2upy。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置CVM实例ID。形如：ins-r8hr2upy。
-                     * @param InstanceId CVM实例ID。形如：ins-r8hr2upy。
+                     * @param _instanceId CVM实例ID。形如：ins-r8hr2upy。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取网卡的挂载类型：0 标准型，1扩展型，默认值0。
                      * @return AttachType 网卡的挂载类型：0 标准型，1扩展型，默认值0。
+                     * 
                      */
                     uint64_t GetAttachType() const;
 
                     /**
                      * 设置网卡的挂载类型：0 标准型，1扩展型，默认值0。
-                     * @param AttachType 网卡的挂载类型：0 标准型，1扩展型，默认值0。
+                     * @param _attachType 网卡的挂载类型：0 标准型，1扩展型，默认值0。
+                     * 
                      */
                     void SetAttachType(const uint64_t& _attachType);
 
                     /**
                      * 判断参数 AttachType 是否已赋值
                      * @return AttachType 是否已赋值
+                     * 
                      */
                     bool AttachTypeHasBeenSet() const;
 

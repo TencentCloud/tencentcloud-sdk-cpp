@@ -57,6 +57,7 @@ oversea(海外)
 china(国内)
 customized(自定义地区)
 ]
+                     * 
                      */
                     std::string GetRegionType() const;
 
@@ -66,17 +67,19 @@ oversea(海外)
 china(国内)
 customized(自定义地区)
 ]
-                     * @param RegionType 区域类型，取值[
+                     * @param _regionType 区域类型，取值[
 oversea(海外)
 china(国内)
 customized(自定义地区)
 ]
+                     * 
                      */
                     void SetRegionType(const std::string& _regionType);
 
                     /**
                      * 判断参数 RegionType 是否已赋值
                      * @return RegionType 是否已赋值
+                     * 
                      */
                     bool RegionTypeHasBeenSet() const;
 
@@ -89,6 +92,7 @@ alg(人机校验)
 drop(拦截)
 alg(人机校验)
 ]
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -97,52 +101,60 @@ alg(人机校验)
 drop(拦截)
 alg(人机校验)
 ]
-                     * @param Action 封禁动作，取值[
+                     * @param _action 封禁动作，取值[
 drop(拦截)
 alg(人机校验)
 ]
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID
                      * @return Id 配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID
-                     * @param Id 配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID
+                     * @param _id 配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取当RegionType为customized时，必须填写AreaList；当RegionType为china或oversea时，AreaList为空
                      * @return AreaList 当RegionType为customized时，必须填写AreaList；当RegionType为china或oversea时，AreaList为空
+                     * 
                      */
                     std::vector<int64_t> GetAreaList() const;
 
                     /**
                      * 设置当RegionType为customized时，必须填写AreaList；当RegionType为china或oversea时，AreaList为空
-                     * @param AreaList 当RegionType为customized时，必须填写AreaList；当RegionType为china或oversea时，AreaList为空
+                     * @param _areaList 当RegionType为customized时，必须填写AreaList；当RegionType为china或oversea时，AreaList为空
+                     * 
                      */
                     void SetAreaList(const std::vector<int64_t>& _areaList);
 
                     /**
                      * 判断参数 AreaList 是否已赋值
                      * @return AreaList 是否已赋值
+                     * 
                      */
                     bool AreaListHasBeenSet() const;
 

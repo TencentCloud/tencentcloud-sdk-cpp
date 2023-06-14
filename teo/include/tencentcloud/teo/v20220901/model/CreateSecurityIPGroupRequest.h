@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取站点 Id。
                      * @return ZoneId 站点 Id。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 Id。
-                     * @param ZoneId 站点 Id。
+                     * @param _zoneId 站点 Id。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取IP 组信息。
                      * @return IPGroup IP 组信息。
+                     * 
                      */
                     IPGroup GetIPGroup() const;
 
                     /**
                      * 设置IP 组信息。
-                     * @param IPGroup IP 组信息。
+                     * @param _iPGroup IP 组信息。
+                     * 
                      */
                     void SetIPGroup(const IPGroup& _iPGroup);
 
                     /**
                      * 判断参数 IPGroup 是否已赋值
                      * @return IPGroup 是否已赋值
+                     * 
                      */
                     bool IPGroupHasBeenSet() const;
 

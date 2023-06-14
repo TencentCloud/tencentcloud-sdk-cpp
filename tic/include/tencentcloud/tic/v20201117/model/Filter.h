@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取条件名字
                      * @return Name 条件名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置条件名字
-                     * @param Name 条件名字
+                     * @param _name 条件名字
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取匹配的值，可以有多个
                      * @return Values 匹配的值，可以有多个
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置匹配的值，可以有多个
-                     * @param Values 匹配的值，可以有多个
+                     * @param _values 匹配的值，可以有多个
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

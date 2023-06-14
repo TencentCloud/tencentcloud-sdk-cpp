@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepNo 步骤编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStepNo() const;
 
                     /**
                      * 设置步骤编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepNo 步骤编号
+                     * @param _stepNo 步骤编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepNo(const uint64_t& _stepNo);
 
                     /**
                      * 判断参数 StepNo 是否已赋值
                      * @return StepNo 是否已赋值
+                     * 
                      */
                     bool StepNoHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepName 步骤名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStepName() const;
 
                     /**
                      * 设置步骤名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepName 步骤名
+                     * @param _stepName 步骤名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepName(const std::string& _stepName);
 
                     /**
                      * 判断参数 StepName 是否已赋值
                      * @return StepName 是否已赋值
+                     * 
                      */
                     bool StepNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepId 步骤标号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStepId() const;
 
                     /**
                      * 设置步骤标号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StepId 步骤标号
+                     * @param _stepId 步骤标号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStepId(const std::string& _stepId);
 
                     /**
                      * 判断参数 StepId 是否已赋值
                      * @return StepId 是否已赋值
+                     * 
                      */
                     bool StepIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 当前步骤状态,可能返回有 notStarted(未开始)、running(校验中)、failed(校验任务失败)、finished(完成)、skipped(跳过)、paused(暂停)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置当前步骤状态,可能返回有 notStarted(未开始)、running(校验中)、failed(校验任务失败)、finished(完成)、skipped(跳过)、paused(暂停)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 当前步骤状态,可能返回有 notStarted(未开始)、running(校验中)、failed(校验任务失败)、finished(完成)、skipped(跳过)、paused(暂停)
+                     * @param _status 当前步骤状态,可能返回有 notStarted(未开始)、running(校验中)、failed(校验任务失败)、finished(完成)、skipped(跳过)、paused(暂停)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 步骤开始时间，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置步骤开始时间，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 步骤开始时间，可能为空
+                     * @param _startTime 步骤开始时间，可能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errors 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StepTip> GetErrors() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Errors 错误信息
+                     * @param _errors 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrors(const std::vector<StepTip>& _errors);
 
                     /**
                      * 判断参数 Errors 是否已赋值
                      * @return Errors 是否已赋值
+                     * 
                      */
                     bool ErrorsHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Warnings 警告信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StepTip> GetWarnings() const;
 
                     /**
                      * 设置警告信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Warnings 警告信息
+                     * @param _warnings 警告信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWarnings(const std::vector<StepTip>& _warnings);
 
                     /**
                      * 判断参数 Warnings 是否已赋值
                      * @return Warnings 是否已赋值
+                     * 
                      */
                     bool WarningsHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Progress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
+                     * @param _progress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

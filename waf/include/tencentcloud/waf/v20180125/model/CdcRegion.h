@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Clusters 该地域对应的集群信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CdcCluster> GetClusters() const;
 
                     /**
                      * 设置该地域对应的集群信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Clusters 该地域对应的集群信息
+                     * @param _clusters 该地域对应的集群信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusters(const std::vector<CdcCluster>& _clusters);
 
                     /**
                      * 判断参数 Clusters 是否已赋值
                      * @return Clusters 是否已赋值
+                     * 
                      */
                     bool ClustersHasBeenSet() const;
 

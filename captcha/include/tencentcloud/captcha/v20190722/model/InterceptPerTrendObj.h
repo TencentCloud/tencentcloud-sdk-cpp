@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取时间参数
                      * @return Ftime 时间参数
+                     * 
                      */
                     std::string GetFtime() const;
 
                     /**
                      * 设置时间参数
-                     * @param Ftime 时间参数
+                     * @param _ftime 时间参数
+                     * 
                      */
                     void SetFtime(const std::string& _ftime);
 
                     /**
                      * 判断参数 Ftime 是否已赋值
                      * @return Ftime 是否已赋值
+                     * 
                      */
                     bool FtimeHasBeenSet() const;
 
                     /**
                      * 获取拦截率
                      * @return RequestInterceptPer 拦截率
+                     * 
                      */
                     double GetRequestInterceptPer() const;
 
                     /**
                      * 设置拦截率
-                     * @param RequestInterceptPer 拦截率
+                     * @param _requestInterceptPer 拦截率
+                     * 
                      */
                     void SetRequestInterceptPer(const double& _requestInterceptPer);
 
                     /**
                      * 判断参数 RequestInterceptPer 是否已赋值
                      * @return RequestInterceptPer 是否已赋值
+                     * 
                      */
                     bool RequestInterceptPerHasBeenSet() const;
 
                     /**
                      * 获取答案拦截率
                      * @return AnswerInterceptPer 答案拦截率
+                     * 
                      */
                     double GetAnswerInterceptPer() const;
 
                     /**
                      * 设置答案拦截率
-                     * @param AnswerInterceptPer 答案拦截率
+                     * @param _answerInterceptPer 答案拦截率
+                     * 
                      */
                     void SetAnswerInterceptPer(const double& _answerInterceptPer);
 
                     /**
                      * 判断参数 AnswerInterceptPer 是否已赋值
                      * @return AnswerInterceptPer 是否已赋值
+                     * 
                      */
                     bool AnswerInterceptPerHasBeenSet() const;
 
                     /**
                      * 获取策略拦截率
                      * @return PolicyInterceptPer 策略拦截率
+                     * 
                      */
                     double GetPolicyInterceptPer() const;
 
                     /**
                      * 设置策略拦截率
-                     * @param PolicyInterceptPer 策略拦截率
+                     * @param _policyInterceptPer 策略拦截率
+                     * 
                      */
                     void SetPolicyInterceptPer(const double& _policyInterceptPer);
 
                     /**
                      * 判断参数 PolicyInterceptPer 是否已赋值
                      * @return PolicyInterceptPer 是否已赋值
+                     * 
                      */
                     bool PolicyInterceptPerHasBeenSet() const;
 

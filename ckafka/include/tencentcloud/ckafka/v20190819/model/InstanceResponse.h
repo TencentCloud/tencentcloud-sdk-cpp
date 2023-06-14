@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList 符合条件的实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Instance> GetInstanceList() const;
 
                     /**
                      * 设置符合条件的实例列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceList 符合条件的实例列表
+                     * @param _instanceList 符合条件的实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceList(const std::vector<Instance>& _instanceList);
 
                     /**
                      * 判断参数 InstanceList 是否已赋值
                      * @return InstanceList 是否已赋值
+                     * 
                      */
                     bool InstanceListHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的结果总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置符合条件的结果总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 符合条件的结果总数
+                     * @param _totalCount 符合条件的结果总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

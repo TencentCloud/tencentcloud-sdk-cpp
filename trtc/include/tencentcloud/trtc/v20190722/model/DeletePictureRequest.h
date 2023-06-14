@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取图片id
                      * @return PictureId 图片id
+                     * 
                      */
                     uint64_t GetPictureId() const;
 
                     /**
                      * 设置图片id
-                     * @param PictureId 图片id
+                     * @param _pictureId 图片id
+                     * 
                      */
                     void SetPictureId(const uint64_t& _pictureId);
 
                     /**
                      * 判断参数 PictureId 是否已赋值
                      * @return PictureId 是否已赋值
+                     * 
                      */
                     bool PictureIdHasBeenSet() const;
 
                     /**
                      * 获取应用id
                      * @return SdkAppId 应用id
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用id
-                     * @param SdkAppId 应用id
+                     * @param _sdkAppId 应用id
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

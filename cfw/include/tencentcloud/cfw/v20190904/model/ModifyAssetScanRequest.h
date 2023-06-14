@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取扫描范围：1端口, 2端口+漏扫
                      * @return ScanRange 扫描范围：1端口, 2端口+漏扫
+                     * 
                      */
                     int64_t GetScanRange() const;
 
                     /**
                      * 设置扫描范围：1端口, 2端口+漏扫
-                     * @param ScanRange 扫描范围：1端口, 2端口+漏扫
+                     * @param _scanRange 扫描范围：1端口, 2端口+漏扫
+                     * 
                      */
                     void SetScanRange(const int64_t& _scanRange);
 
                     /**
                      * 判断参数 ScanRange 是否已赋值
                      * @return ScanRange 是否已赋值
+                     * 
                      */
                     bool ScanRangeHasBeenSet() const;
 
                     /**
                      * 获取扫描深度：'heavy', 'medium', 'light'
                      * @return ScanDeep 扫描深度：'heavy', 'medium', 'light'
+                     * 
                      */
                     std::string GetScanDeep() const;
 
                     /**
                      * 设置扫描深度：'heavy', 'medium', 'light'
-                     * @param ScanDeep 扫描深度：'heavy', 'medium', 'light'
+                     * @param _scanDeep 扫描深度：'heavy', 'medium', 'light'
+                     * 
                      */
                     void SetScanDeep(const std::string& _scanDeep);
 
                     /**
                      * 判断参数 ScanDeep 是否已赋值
                      * @return ScanDeep 是否已赋值
+                     * 
                      */
                     bool ScanDeepHasBeenSet() const;
 
                     /**
                      * 获取扫描类型：1立即扫描 2 周期任务
                      * @return RangeType 扫描类型：1立即扫描 2 周期任务
+                     * 
                      */
                     int64_t GetRangeType() const;
 
                     /**
                      * 设置扫描类型：1立即扫描 2 周期任务
-                     * @param RangeType 扫描类型：1立即扫描 2 周期任务
+                     * @param _rangeType 扫描类型：1立即扫描 2 周期任务
+                     * 
                      */
                     void SetRangeType(const int64_t& _rangeType);
 
                     /**
                      * 判断参数 RangeType 是否已赋值
                      * @return RangeType 是否已赋值
+                     * 
                      */
                     bool RangeTypeHasBeenSet() const;
 
                     /**
                      * 获取RangeType为2 是必须添加，定时任务时间
                      * @return ScanPeriod RangeType为2 是必须添加，定时任务时间
+                     * 
                      */
                     std::string GetScanPeriod() const;
 
                     /**
                      * 设置RangeType为2 是必须添加，定时任务时间
-                     * @param ScanPeriod RangeType为2 是必须添加，定时任务时间
+                     * @param _scanPeriod RangeType为2 是必须添加，定时任务时间
+                     * 
                      */
                     void SetScanPeriod(const std::string& _scanPeriod);
 
                     /**
                      * 判断参数 ScanPeriod 是否已赋值
                      * @return ScanPeriod 是否已赋值
+                     * 
                      */
                     bool ScanPeriodHasBeenSet() const;
 
                     /**
                      * 获取立即扫描这个字段传过滤的扫描集合
                      * @return ScanFilterIp 立即扫描这个字段传过滤的扫描集合
+                     * 
                      */
                     std::vector<std::string> GetScanFilterIp() const;
 
                     /**
                      * 设置立即扫描这个字段传过滤的扫描集合
-                     * @param ScanFilterIp 立即扫描这个字段传过滤的扫描集合
+                     * @param _scanFilterIp 立即扫描这个字段传过滤的扫描集合
+                     * 
                      */
                     void SetScanFilterIp(const std::vector<std::string>& _scanFilterIp);
 
                     /**
                      * 判断参数 ScanFilterIp 是否已赋值
                      * @return ScanFilterIp 是否已赋值
+                     * 
                      */
                     bool ScanFilterIpHasBeenSet() const;
 
                     /**
                      * 获取1全量2单个
                      * @return ScanType 1全量2单个
+                     * 
                      */
                     int64_t GetScanType() const;
 
                     /**
                      * 设置1全量2单个
-                     * @param ScanType 1全量2单个
+                     * @param _scanType 1全量2单个
+                     * 
                      */
                     void SetScanType(const int64_t& _scanType);
 
                     /**
                      * 判断参数 ScanType 是否已赋值
                      * @return ScanType 是否已赋值
+                     * 
                      */
                     bool ScanTypeHasBeenSet() const;
 

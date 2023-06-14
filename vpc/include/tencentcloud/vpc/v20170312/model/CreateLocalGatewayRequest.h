@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取本地网关名称。
                      * @return LocalGatewayName 本地网关名称。
+                     * 
                      */
                     std::string GetLocalGatewayName() const;
 
                     /**
                      * 设置本地网关名称。
-                     * @param LocalGatewayName 本地网关名称。
+                     * @param _localGatewayName 本地网关名称。
+                     * 
                      */
                     void SetLocalGatewayName(const std::string& _localGatewayName);
 
                     /**
                      * 判断参数 LocalGatewayName 是否已赋值
                      * @return LocalGatewayName 是否已赋值
+                     * 
                      */
                     bool LocalGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取CDC实例ID。
                      * @return CdcId CDC实例ID。
+                     * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置CDC实例ID。
-                     * @param CdcId CDC实例ID。
+                     * @param _cdcId CDC实例ID。
+                     * 
                      */
                     void SetCdcId(const std::string& _cdcId);
 
                     /**
                      * 判断参数 CdcId 是否已赋值
                      * @return CdcId 是否已赋值
+                     * 
                      */
                     bool CdcIdHasBeenSet() const;
 

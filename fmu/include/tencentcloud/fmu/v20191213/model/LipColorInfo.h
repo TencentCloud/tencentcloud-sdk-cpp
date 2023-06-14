@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取使用RGBA模型试唇色。
                      * @return RGBA 使用RGBA模型试唇色。
+                     * 
                      */
                     RGBAInfo GetRGBA() const;
 
                     /**
                      * 设置使用RGBA模型试唇色。
-                     * @param RGBA 使用RGBA模型试唇色。
+                     * @param _rGBA 使用RGBA模型试唇色。
+                     * 
                      */
                     void SetRGBA(const RGBAInfo& _rGBA);
 
                     /**
                      * 判断参数 RGBA 是否已赋值
                      * @return RGBA 是否已赋值
+                     * 
                      */
                     bool RGBAHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId。
                      * @return ModelId 使用已注册的 LUT 文件试唇色。  
 ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId。
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置使用已注册的 LUT 文件试唇色。  
 ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId。
-                     * @param ModelId 使用已注册的 LUT 文件试唇色。  
+                     * @param _modelId 使用已注册的 LUT 文件试唇色。  
 ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId。
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
@@ -93,38 +99,44 @@ ModelId 和 RGBA 两个参数只需提供一个，若都提供只使用 ModelId�
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
                      * @return FaceRect 人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
+                     * 
                      */
                     FaceRect GetFaceRect() const;
 
                     /**
                      * 设置人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
-                     * @param FaceRect 人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
+                     * @param _faceRect 人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  
 您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。
+                     * 
                      */
                     void SetFaceRect(const FaceRect& _faceRect);
 
                     /**
                      * 判断参数 FaceRect 是否已赋值
                      * @return FaceRect 是否已赋值
+                     * 
                      */
                     bool FaceRectHasBeenSet() const;
 
                     /**
                      * 获取涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
                      * @return ModelAlpha 涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     * 
                      */
                     int64_t GetModelAlpha() const;
 
                     /**
                      * 设置涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
-                     * @param ModelAlpha 涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     * @param _modelAlpha 涂妆浓淡[0,100]。建议取值50。本参数仅控制ModelId对应的涂妆浓淡。
+                     * 
                      */
                     void SetModelAlpha(const int64_t& _modelAlpha);
 
                     /**
                      * 判断参数 ModelAlpha 是否已赋值
                      * @return ModelAlpha 是否已赋值
+                     * 
                      */
                     bool ModelAlphaHasBeenSet() const;
 

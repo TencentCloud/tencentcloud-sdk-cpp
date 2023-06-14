@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取低代码互动课堂的SdkAppId。
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数，从1开始递增
                      * @return Page 分页查询当前页数，从1开始递增
+                     * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置分页查询当前页数，从1开始递增
-                     * @param Page 分页查询当前页数，从1开始递增
+                     * @param _page 分页查询当前页数，从1开始递增
+                     * 
                      */
                     void SetPage(const int64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数据量，最大1000
                      * @return Limit 每页数据量，最大1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页数据量，最大1000
-                     * @param Limit 每页数据量，最大1000
+                     * @param _limit 每页数据量，最大1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件
                      * @return Permission 课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件
+                     * 
                      */
                     std::vector<uint64_t> GetPermission() const;
 
                     /**
                      * 设置课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件
-                     * @param Permission 课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件
+                     * @param _permission 课件权限。[0]：获取owner的私有课件；[1]：获取owner的公开课件; [0,1]：则获取owner的私有课件和公开课件；[2]：获取owner的私有课件和所有人(包括owner)的公开课件
+                     * 
                      */
                     void SetPermission(const std::vector<uint64_t>& _permission);
 
                     /**
                      * 判断参数 Permission 是否已赋值
                      * @return Permission 是否已赋值
+                     * 
                      */
                     bool PermissionHasBeenSet() const;
 
                     /**
                      * 获取课件所有者的user_id，不填默认获取SdkAppId下所有课件
                      * @return Owner 课件所有者的user_id，不填默认获取SdkAppId下所有课件
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置课件所有者的user_id，不填默认获取SdkAppId下所有课件
-                     * @param Owner 课件所有者的user_id，不填默认获取SdkAppId下所有课件
+                     * @param _owner 课件所有者的user_id，不填默认获取SdkAppId下所有课件
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取课件名称搜索词
                      * @return Keyword 课件名称搜索词
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置课件名称搜索词
-                     * @param Keyword 课件名称搜索词
+                     * @param _keyword 课件名称搜索词
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取课件id列表，从列表中查询，忽略错误的id
                      * @return DocumentId 课件id列表，从列表中查询，忽略错误的id
+                     * 
                      */
                     std::vector<std::string> GetDocumentId() const;
 
                     /**
                      * 设置课件id列表，从列表中查询，忽略错误的id
-                     * @param DocumentId 课件id列表，从列表中查询，忽略错误的id
+                     * @param _documentId 课件id列表，从列表中查询，忽略错误的id
+                     * 
                      */
                     void SetDocumentId(const std::vector<std::string>& _documentId);
 
                     /**
                      * 判断参数 DocumentId 是否已赋值
                      * @return DocumentId 是否已赋值
+                     * 
                      */
                     bool DocumentIdHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取注册引擎实例Id
                      * @return InstanceId 注册引擎实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置注册引擎实例Id
-                     * @param InstanceId 注册引擎实例Id
+                     * @param _instanceId 注册引擎实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取VPC ID
                      * @return VpcId VPC ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID
-                     * @param VpcId VPC ID
+                     * @param _vpcId VPC ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取引擎其他组件名称（pushgateway、polaris-limiter）
                      * @return Workload 引擎其他组件名称（pushgateway、polaris-limiter）
+                     * 
                      */
                     std::string GetWorkload() const;
 
                     /**
                      * 设置引擎其他组件名称（pushgateway、polaris-limiter）
-                     * @param Workload 引擎其他组件名称（pushgateway、polaris-limiter）
+                     * @param _workload 引擎其他组件名称（pushgateway、polaris-limiter）
+                     * 
                      */
                     void SetWorkload(const std::string& _workload);
 
                     /**
                      * 判断参数 Workload 是否已赋值
                      * @return Workload 是否已赋值
+                     * 
                      */
                     bool WorkloadHasBeenSet() const;
 
                     /**
                      * 获取部署地域
                      * @return EngineRegion 部署地域
+                     * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置部署地域
-                     * @param EngineRegion 部署地域
+                     * @param _engineRegion 部署地域
+                     * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
 
                     /**
                      * 判断参数 EngineRegion 是否已赋值
                      * @return EngineRegion 是否已赋值
+                     * 
                      */
                     bool EngineRegionHasBeenSet() const;
 

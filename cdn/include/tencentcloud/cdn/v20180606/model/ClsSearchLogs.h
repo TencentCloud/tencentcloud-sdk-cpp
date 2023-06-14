@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取获取更多检索结果的游标
                      * @return Context 获取更多检索结果的游标
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置获取更多检索结果的游标
-                     * @param Context 获取更多检索结果的游标
+                     * @param _context 获取更多检索结果的游标
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取搜索结果是否已经全部返回
                      * @return Listover 搜索结果是否已经全部返回
+                     * 
                      */
                     bool GetListover() const;
 
                     /**
                      * 设置搜索结果是否已经全部返回
-                     * @param Listover 搜索结果是否已经全部返回
+                     * @param _listover 搜索结果是否已经全部返回
+                     * 
                      */
                     void SetListover(const bool& _listover);
 
                     /**
                      * 判断参数 Listover 是否已赋值
                      * @return Listover 是否已赋值
+                     * 
                      */
                     bool ListoverHasBeenSet() const;
 
                     /**
                      * 获取日志内容信息
                      * @return Results 日志内容信息
+                     * 
                      */
                     std::vector<ClsLogObject> GetResults() const;
 
                     /**
                      * 设置日志内容信息
-                     * @param Results 日志内容信息
+                     * @param _results 日志内容信息
+                     * 
                      */
                     void SetResults(const std::vector<ClsLogObject>& _results);
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

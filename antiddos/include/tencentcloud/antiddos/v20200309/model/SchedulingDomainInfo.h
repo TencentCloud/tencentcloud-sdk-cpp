@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取调度域名
                      * @return Domain 调度域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置调度域名
-                     * @param Domain 调度域名
+                     * @param _domain 调度域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取线路IP列表
                      * @return LineIPList 线路IP列表
+                     * 
                      */
                     std::vector<IPLineInfo> GetLineIPList() const;
 
                     /**
                      * 设置线路IP列表
-                     * @param LineIPList 线路IP列表
+                     * @param _lineIPList 线路IP列表
+                     * 
                      */
                     void SetLineIPList(const std::vector<IPLineInfo>& _lineIPList);
 
                     /**
                      * 判断参数 LineIPList 是否已赋值
                      * @return LineIPList 是否已赋值
+                     * 
                      */
                     bool LineIPListHasBeenSet() const;
 
                     /**
                      * 获取调度方式，当前仅支持优先级的方式，取值[priority]
                      * @return Method 调度方式，当前仅支持优先级的方式，取值[priority]
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置调度方式，当前仅支持优先级的方式，取值[priority]
-                     * @param Method 调度方式，当前仅支持优先级的方式，取值[priority]
+                     * @param _method 调度方式，当前仅支持优先级的方式，取值[priority]
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取调度域名解析记录的TTL值
                      * @return TTL 调度域名解析记录的TTL值
+                     * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
                      * 设置调度域名解析记录的TTL值
-                     * @param TTL 调度域名解析记录的TTL值
+                     * @param _tTL 调度域名解析记录的TTL值
+                     * 
                      */
                     void SetTTL(const uint64_t& _tTL);
 
                     /**
                      * 判断参数 TTL 是否已赋值
                      * @return TTL 是否已赋值
+                     * 
                      */
                     bool TTLHasBeenSet() const;
 
@@ -130,6 +142,7 @@ namespace TencentCloud
 1：运行中
 2：运行异常
 ]
+                     * 
                      */
                     uint64_t GetStatus() const;
 
@@ -139,53 +152,61 @@ namespace TencentCloud
 1：运行中
 2：运行异常
 ]
-                     * @param Status 运行状态，取值[
+                     * @param _status 运行状态，取值[
 0：未运行
 1：运行中
 2：运行异常
 ]
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedTime 创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取最后修改时间
                      * @return ModifyTime 最后修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置最后修改时间
-                     * @param ModifyTime 最后修改时间
+                     * @param _modifyTime 最后修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
@@ -194,20 +215,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsrDomainName 域名名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsrDomainName() const;
 
                     /**
                      * 设置域名名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsrDomainName 域名名称
+                     * @param _usrDomainName 域名名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsrDomainName(const std::string& _usrDomainName);
 
                     /**
                      * 判断参数 UsrDomainName 是否已赋值
                      * @return UsrDomainName 是否已赋值
+                     * 
                      */
                     bool UsrDomainNameHasBeenSet() const;
 

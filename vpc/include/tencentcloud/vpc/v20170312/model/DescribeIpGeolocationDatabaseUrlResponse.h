@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取IP地理位置库下载链接地址。
                      * @return DownLoadUrl IP地理位置库下载链接地址。
+                     * 
                      */
                     std::string GetDownLoadUrl() const;
 
                     /**
                      * 判断参数 DownLoadUrl 是否已赋值
                      * @return DownLoadUrl 是否已赋值
+                     * 
                      */
                     bool DownLoadUrlHasBeenSet() const;
 
                     /**
                      * 获取链接到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。
                      * @return ExpiredAt 链接到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。
+                     * 
                      */
                     std::string GetExpiredAt() const;
 
                     /**
                      * 判断参数 ExpiredAt 是否已赋值
                      * @return ExpiredAt 是否已赋值
+                     * 
                      */
                     bool ExpiredAtHasBeenSet() const;
 

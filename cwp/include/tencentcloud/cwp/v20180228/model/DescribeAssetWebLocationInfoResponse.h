@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebLocation 站点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AssetWebLocationInfo GetWebLocation() const;
 
                     /**
                      * 判断参数 WebLocation 是否已赋值
                      * @return WebLocation 是否已赋值
+                     * 
                      */
                     bool WebLocationHasBeenSet() const;
 

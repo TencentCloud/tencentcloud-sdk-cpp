@@ -77,12 +77,14 @@ namespace TencentCloud
 <li>独立结构，eg: 两个单句在结构上彼此独立
 <li>标点符号，eg: 。
 <li>核心关系，eg: 整个句子的核心
+                     * 
                      */
                     std::vector<DpToken> GetDpTokens() const;
 
                     /**
                      * 判断参数 DpTokens 是否已赋值
                      * @return DpTokens 是否已赋值
+                     * 
                      */
                     bool DpTokensHasBeenSet() const;
 

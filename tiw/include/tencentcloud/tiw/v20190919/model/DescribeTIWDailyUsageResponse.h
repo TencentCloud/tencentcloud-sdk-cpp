@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取指定区间指定产品的用量汇总
                      * @return Usages 指定区间指定产品的用量汇总
+                     * 
                      */
                     std::vector<UsageDataItem> GetUsages() const;
 
                     /**
                      * 判断参数 Usages 是否已赋值
                      * @return Usages 是否已赋值
+                     * 
                      */
                     bool UsagesHasBeenSet() const;
 

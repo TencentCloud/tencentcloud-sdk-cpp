@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取pod名字
                      * @return PodName pod名字
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置pod名字
-                     * @param PodName pod名字
+                     * @param _podName pod名字
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace pod空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置pod空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Namespace pod空间
+                     * @param _namespace pod空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels pod标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置pod标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Labels pod标签
+                     * @param _labels pod标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLabels(const std::string& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadKind pod类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWorkloadKind() const;
 
                     /**
                      * 设置pod类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkloadKind pod类型
+                     * @param _workloadKind pod类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkloadKind(const std::string& _workloadKind);
 
                     /**
                      * 判断参数 WorkloadKind 是否已赋值
                      * @return WorkloadKind 是否已赋值
+                     * 
                      */
                     bool WorkloadKindHasBeenSet() const;
 

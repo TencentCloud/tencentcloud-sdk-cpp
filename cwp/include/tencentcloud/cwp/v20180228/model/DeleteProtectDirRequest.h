@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取删除的目录ID 最大100条
                      * @return Ids 删除的目录ID 最大100条
+                     * 
                      */
                     std::vector<std::string> GetIds() const;
 
                     /**
                      * 设置删除的目录ID 最大100条
-                     * @param Ids 删除的目录ID 最大100条
+                     * @param _ids 删除的目录ID 最大100条
+                     * 
                      */
                     void SetIds(const std::vector<std::string>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取日志总行数，上限2000条日志
                      * @return TotalCount 日志总行数，上限2000条日志
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取日志列表
                      * @return CompileLogList 日志列表
+                     * 
                      */
                     std::vector<LogDetailForUser> GetCompileLogList() const;
 
                     /**
                      * 判断参数 CompileLogList 是否已赋值
                      * @return CompileLogList 是否已赋值
+                     * 
                      */
                     bool CompileLogListHasBeenSet() const;
 

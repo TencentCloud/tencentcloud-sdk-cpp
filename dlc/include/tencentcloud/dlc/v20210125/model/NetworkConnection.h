@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 网络配置id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置网络配置id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 网络配置id
+                     * @param _id 网络配置id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateId 网络配置唯一标志符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssociateId() const;
 
                     /**
                      * 设置网络配置唯一标志符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssociateId 网络配置唯一标志符
+                     * @param _associateId 网络配置唯一标志符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssociateId(const std::string& _associateId);
 
                     /**
                      * 判断参数 AssociateId 是否已赋值
                      * @return AssociateId 是否已赋值
+                     * 
                      */
                     bool AssociateIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HouseId 计算引擎id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHouseId() const;
 
                     /**
                      * 设置计算引擎id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HouseId 计算引擎id
+                     * @param _houseId 计算引擎id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHouseId(const std::string& _houseId);
 
                     /**
                      * 判断参数 HouseId 是否已赋值
                      * @return HouseId 是否已赋值
+                     * 
                      */
                     bool HouseIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionId 数据源id(已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionId() const;
 
                     /**
                      * 设置数据源id(已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionId 数据源id(已废弃)
+                     * @param _datasourceConnectionId 数据源id(已废弃)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionId(const std::string& _datasourceConnectionId);
 
                     /**
                      * 判断参数 DatasourceConnectionId 是否已赋值
                      * @return DatasourceConnectionId 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 网络配置状态（0-初始化，1-正常）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置网络配置状态（0-初始化，1-正常）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 网络配置状态（0-初始化，1-正常）
+                     * @param _state 网络配置状态（0-初始化，1-正常）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Appid 创建用户Appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAppid() const;
 
                     /**
                      * 设置创建用户Appid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Appid 创建用户Appid
+                     * @param _appid 创建用户Appid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppid(const int64_t& _appid);
 
                     /**
                      * 判断参数 Appid 是否已赋值
                      * @return Appid 是否已赋值
+                     * 
                      */
                     bool AppidHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HouseName 计算引擎名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHouseName() const;
 
                     /**
                      * 设置计算引擎名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HouseName 计算引擎名称
+                     * @param _houseName 计算引擎名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHouseName(const std::string& _houseName);
 
                     /**
                      * 判断参数 HouseName 是否已赋值
                      * @return HouseName 是否已赋值
+                     * 
                      */
                     bool HouseNameHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionName 网络配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置网络配置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionName 网络配置名称
+                     * @param _datasourceConnectionName 网络配置名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkConnectionType 网络配置类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNetworkConnectionType() const;
 
                     /**
                      * 设置网络配置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkConnectionType 网络配置类型
+                     * @param _networkConnectionType 网络配置类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetworkConnectionType(const int64_t& _networkConnectionType);
 
                     /**
                      * 判断参数 NetworkConnectionType 是否已赋值
                      * @return NetworkConnectionType 是否已赋值
+                     * 
                      */
                     bool NetworkConnectionTypeHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 创建用户uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置创建用户uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uin 创建用户uin
+                     * @param _uin 创建用户uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 创建用户SubAccountUin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置创建用户SubAccountUin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubAccountUin 创建用户SubAccountUin
+                     * @param _subAccountUin 创建用户SubAccountUin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
 
                     /**
                      * 判断参数 SubAccountUin 是否已赋值
                      * @return SubAccountUin 是否已赋值
+                     * 
                      */
                     bool SubAccountUinHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkConnectionDesc 网络配置描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNetworkConnectionDesc() const;
 
                     /**
                      * 设置网络配置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkConnectionDesc 网络配置描述
+                     * @param _networkConnectionDesc 网络配置描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetworkConnectionDesc(const std::string& _networkConnectionDesc);
 
                     /**
                      * 判断参数 NetworkConnectionDesc 是否已赋值
                      * @return NetworkConnectionDesc 是否已赋值
+                     * 
                      */
                     bool NetworkConnectionDescHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionVpcId 数据源vpcid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionVpcId() const;
 
                     /**
                      * 设置数据源vpcid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionVpcId 数据源vpcid
+                     * @param _datasourceConnectionVpcId 数据源vpcid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionVpcId(const std::string& _datasourceConnectionVpcId);
 
                     /**
                      * 判断参数 DatasourceConnectionVpcId 是否已赋值
                      * @return DatasourceConnectionVpcId 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionVpcIdHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionSubnetId 数据源SubnetId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionSubnetId() const;
 
                     /**
                      * 设置数据源SubnetId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionSubnetId 数据源SubnetId
+                     * @param _datasourceConnectionSubnetId 数据源SubnetId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionSubnetId(const std::string& _datasourceConnectionSubnetId);
 
                     /**
                      * 判断参数 DatasourceConnectionSubnetId 是否已赋值
                      * @return DatasourceConnectionSubnetId 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionSubnetIdHasBeenSet() const;
 
@@ -403,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionCidrBlock 数据源SubnetId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionCidrBlock() const;
 
                     /**
                      * 设置数据源SubnetId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionCidrBlock 数据源SubnetId
+                     * @param _datasourceConnectionCidrBlock 数据源SubnetId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionCidrBlock(const std::string& _datasourceConnectionCidrBlock);
 
                     /**
                      * 判断参数 DatasourceConnectionCidrBlock 是否已赋值
                      * @return DatasourceConnectionCidrBlock 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionCidrBlockHasBeenSet() const;
 
@@ -425,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionSubnetCidrBlock 数据源SubnetCidrBlock
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatasourceConnectionSubnetCidrBlock() const;
 
                     /**
                      * 设置数据源SubnetCidrBlock
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatasourceConnectionSubnetCidrBlock 数据源SubnetCidrBlock
+                     * @param _datasourceConnectionSubnetCidrBlock 数据源SubnetCidrBlock
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatasourceConnectionSubnetCidrBlock(const std::string& _datasourceConnectionSubnetCidrBlock);
 
                     /**
                      * 判断参数 DatasourceConnectionSubnetCidrBlock 是否已赋值
                      * @return DatasourceConnectionSubnetCidrBlock 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionSubnetCidrBlockHasBeenSet() const;
 

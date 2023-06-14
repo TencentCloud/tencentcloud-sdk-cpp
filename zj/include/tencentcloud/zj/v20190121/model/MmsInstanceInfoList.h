@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数据量
                      * @return Total 总数据量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数据量
-                     * @param Total 总数据量
+                     * @param _total 总数据量
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取彩信实例状态信息列表
                      * @return List 彩信实例状态信息列表
+                     * 
                      */
                     std::vector<MmsInstanceInfo> GetList() const;
 
                     /**
                      * 设置彩信实例状态信息列表
-                     * @param List 彩信实例状态信息列表
+                     * @param _list 彩信实例状态信息列表
+                     * 
                      */
                     void SetList(const std::vector<MmsInstanceInfo>& _list);
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

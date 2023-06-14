@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取人脸识别模板 ID。
                      * @return Definition 人脸识别模板 ID。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置人脸识别模板 ID。
-                     * @param Definition 人脸识别模板 ID。
+                     * @param _definition 人脸识别模板 ID。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

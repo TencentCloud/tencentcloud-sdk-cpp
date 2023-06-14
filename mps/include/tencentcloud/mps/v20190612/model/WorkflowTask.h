@@ -56,18 +56,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体处理任务 ID。
                      * @return TaskId 媒体处理任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置媒体处理任务 ID。
-                     * @param TaskId 媒体处理任务 ID。
+                     * @param _taskId 媒体处理任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
                      * @return Status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -85,51 +89,59 @@ namespace TencentCloud
                      * 设置任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-                     * @param Status 任务流状态，取值：
+                     * @param _status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
                      * @return ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-                     * @param ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * @param _errCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
                      * @return Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-                     * @param Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * @param _message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -138,20 +150,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputInfo 媒体处理的目标文件信息。
+                     * @param _inputInfo 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
@@ -160,92 +175,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 原始视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置原始视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 原始视频的元信息。
+                     * @param _metaData 原始视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取媒体处理任务的执行状态与结果。
                      * @return MediaProcessResultSet 媒体处理任务的执行状态与结果。
+                     * 
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
                      * 设置媒体处理任务的执行状态与结果。
-                     * @param MediaProcessResultSet 媒体处理任务的执行状态与结果。
+                     * @param _mediaProcessResultSet 媒体处理任务的执行状态与结果。
+                     * 
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
 
                     /**
                      * 判断参数 MediaProcessResultSet 是否已赋值
                      * @return MediaProcessResultSet 是否已赋值
+                     * 
                      */
                     bool MediaProcessResultSetHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核任务的执行状态与结果。
                      * @return AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * 
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
                      * 设置视频内容审核任务的执行状态与结果。
-                     * @param AiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * @param _aiContentReviewResultSet 视频内容审核任务的执行状态与结果。
+                     * 
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
 
                     /**
                      * 判断参数 AiContentReviewResultSet 是否已赋值
                      * @return AiContentReviewResultSet 是否已赋值
+                     * 
                      */
                     bool AiContentReviewResultSetHasBeenSet() const;
 
                     /**
                      * 获取视频内容分析任务的执行状态与结果。
                      * @return AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * 
                      */
                     std::vector<AiAnalysisResult> GetAiAnalysisResultSet() const;
 
                     /**
                      * 设置视频内容分析任务的执行状态与结果。
-                     * @param AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * @param _aiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * 
                      */
                     void SetAiAnalysisResultSet(const std::vector<AiAnalysisResult>& _aiAnalysisResultSet);
 
                     /**
                      * 判断参数 AiAnalysisResultSet 是否已赋值
                      * @return AiAnalysisResultSet 是否已赋值
+                     * 
                      */
                     bool AiAnalysisResultSetHasBeenSet() const;
 
                     /**
                      * 获取视频内容识别任务的执行状态与结果。
                      * @return AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * 
                      */
                     std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
 
                     /**
                      * 设置视频内容识别任务的执行状态与结果。
-                     * @param AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * @param _aiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * 
                      */
                     void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
 
                     /**
                      * 判断参数 AiRecognitionResultSet 是否已赋值
                      * @return AiRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool AiRecognitionResultSetHasBeenSet() const;
 
@@ -254,20 +284,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiQualityControlTaskResult 视频质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScheduleQualityControlTaskResult GetAiQualityControlTaskResult() const;
 
                     /**
                      * 设置视频质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AiQualityControlTaskResult 视频质检任务的执行状态与结果。
+                     * @param _aiQualityControlTaskResult 视频质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAiQualityControlTaskResult(const ScheduleQualityControlTaskResult& _aiQualityControlTaskResult);
 
                     /**
                      * 判断参数 AiQualityControlTaskResult 是否已赋值
                      * @return AiQualityControlTaskResult 是否已赋值
+                     * 
                      */
                     bool AiQualityControlTaskResultHasBeenSet() const;
 

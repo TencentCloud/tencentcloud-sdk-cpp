@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例调整的机型配置的数量。
                      * @return TotalCount 实例调整的机型配置的数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取实例支持调整的机型配置列表。
                      * @return InstanceTypeConfigStatusSet 实例支持调整的机型配置列表。
+                     * 
                      */
                     std::vector<InstanceTypeConfigStatus> GetInstanceTypeConfigStatusSet() const;
 
                     /**
                      * 判断参数 InstanceTypeConfigStatusSet 是否已赋值
                      * @return InstanceTypeConfigStatusSet 是否已赋值
+                     * 
                      */
                     bool InstanceTypeConfigStatusSetHasBeenSet() const;
 

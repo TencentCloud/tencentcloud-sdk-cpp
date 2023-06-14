@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeSerialNo 交易流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 设置交易流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TradeSerialNo 交易流水号
+                     * @param _tradeSerialNo 交易流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTradeSerialNo(const std::string& _tradeSerialNo);
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
@@ -115,6 +121,7 @@ namespace TencentCloud
 8 订单重复提交
 99 未知系统异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -131,7 +138,7 @@ namespace TencentCloud
 8 订单重复提交
 99 未知系统异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 交易状态。
+                     * @param _status 交易状态。
 0 处理中  
 1 预占成功 
 2 交易成功 
@@ -143,12 +150,14 @@ namespace TencentCloud
 8 订单重复提交
 99 未知系统异常
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -157,20 +166,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 状态描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置状态描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusDesc 状态描述
+                     * @param _statusDesc 状态描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
@@ -179,20 +191,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentId 代理商ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置代理商ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AgentId 代理商ID
+                     * @param _agentId 代理商ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
@@ -201,20 +216,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentName 代理商名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAgentName() const;
 
                     /**
                      * 设置代理商名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AgentName 代理商名称
+                     * @param _agentName 代理商名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAgentName(const std::string& _agentName);
 
                     /**
                      * 判断参数 AgentName 是否已赋值
                      * @return AgentName 是否已赋值
+                     * 
                      */
                     bool AgentNameHasBeenSet() const;
 

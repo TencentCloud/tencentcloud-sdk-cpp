@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取数据详情列表
                      * @return Rows 数据详情列表
+                     * 
                      */
                     std::vector<DataSourceDetail> GetRows() const;
 
                     /**
                      * 设置数据详情列表
-                     * @param Rows 数据详情列表
+                     * @param _rows 数据详情列表
+                     * 
                      */
                     void SetRows(const std::vector<DataSourceDetail>& _rows);
 
                     /**
                      * 判断参数 Rows 是否已赋值
                      * @return Rows 是否已赋值
+                     * 
                      */
                     bool RowsHasBeenSet() const;
 
                     /**
                      * 获取数据源列表总个数
                      * @return Count 数据源列表总个数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置数据源列表总个数
-                     * @param Count 数据源列表总个数
+                     * @param _count 数据源列表总个数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

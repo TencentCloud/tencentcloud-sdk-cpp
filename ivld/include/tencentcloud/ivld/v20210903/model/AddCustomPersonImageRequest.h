@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取自定义人物Id
                      * @return PersonId 自定义人物Id
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置自定义人物Id
-                     * @param PersonId 自定义人物Id
+                     * @param _personId 自定义人物Id
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取自定义人物图片地址
                      * @return ImageURL 自定义人物图片地址
+                     * 
                      */
                     std::string GetImageURL() const;
 
                     /**
                      * 设置自定义人物图片地址
-                     * @param ImageURL 自定义人物图片地址
+                     * @param _imageURL 自定义人物图片地址
+                     * 
                      */
                     void SetImageURL(const std::string& _imageURL);
 
                     /**
                      * 判断参数 ImageURL 是否已赋值
                      * @return ImageURL 是否已赋值
+                     * 
                      */
                     bool ImageURLHasBeenSet() const;
 
                     /**
                      * 获取图片数据base64之后的结果
                      * @return Image 图片数据base64之后的结果
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置图片数据base64之后的结果
-                     * @param Image 图片数据base64之后的结果
+                     * @param _image 图片数据base64之后的结果
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 

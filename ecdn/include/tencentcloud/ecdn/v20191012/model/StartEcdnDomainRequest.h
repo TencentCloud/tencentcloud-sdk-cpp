@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待启用域名。
                      * @return Domain 待启用域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置待启用域名。
-                     * @param Domain 待启用域名。
+                     * @param _domain 待启用域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

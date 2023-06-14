@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取只读实例ID，格式如：mssqlro-3l3fgqn7
                      * @return ReadOnlyInstanceId 只读实例ID，格式如：mssqlro-3l3fgqn7
+                     * 
                      */
                     std::string GetReadOnlyInstanceId() const;
 
                     /**
                      * 设置只读实例ID，格式如：mssqlro-3l3fgqn7
-                     * @param ReadOnlyInstanceId 只读实例ID，格式如：mssqlro-3l3fgqn7
+                     * @param _readOnlyInstanceId 只读实例ID，格式如：mssqlro-3l3fgqn7
+                     * 
                      */
                     void SetReadOnlyInstanceId(const std::string& _readOnlyInstanceId);
 
                     /**
                      * 判断参数 ReadOnlyInstanceId 是否已赋值
                      * @return ReadOnlyInstanceId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取只读实例权重 ，范围是0-100
                      * @return ReadOnlyWeight 只读实例权重 ，范围是0-100
+                     * 
                      */
                     int64_t GetReadOnlyWeight() const;
 
                     /**
                      * 设置只读实例权重 ，范围是0-100
-                     * @param ReadOnlyWeight 只读实例权重 ，范围是0-100
+                     * @param _readOnlyWeight 只读实例权重 ，范围是0-100
+                     * 
                      */
                     void SetReadOnlyWeight(const int64_t& _readOnlyWeight);
 
                     /**
                      * 判断参数 ReadOnlyWeight 是否已赋值
                      * @return ReadOnlyWeight 是否已赋值
+                     * 
                      */
                     bool ReadOnlyWeightHasBeenSet() const;
 

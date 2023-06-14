@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取当前统计维度解析量小计
                      * @return Num 当前统计维度解析量小计
+                     * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 设置当前统计维度解析量小计
-                     * @param Num 当前统计维度解析量小计
+                     * @param _num 当前统计维度解析量小计
+                     * 
                      */
                     void SetNum(const uint64_t& _num);
 
                     /**
                      * 判断参数 Num 是否已赋值
                      * @return Num 是否已赋值
+                     * 
                      */
                     bool NumHasBeenSet() const;
 
                     /**
                      * 获取按天统计时，为统计日期
                      * @return DateKey 按天统计时，为统计日期
+                     * 
                      */
                     std::string GetDateKey() const;
 
                     /**
                      * 设置按天统计时，为统计日期
-                     * @param DateKey 按天统计时，为统计日期
+                     * @param _dateKey 按天统计时，为统计日期
+                     * 
                      */
                     void SetDateKey(const std::string& _dateKey);
 
                     /**
                      * 判断参数 DateKey 是否已赋值
                      * @return DateKey 是否已赋值
+                     * 
                      */
                     bool DateKeyHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HourKey 按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetHourKey() const;
 
                     /**
                      * 设置按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HourKey 按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量
+                     * @param _hourKey 按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHourKey(const uint64_t& _hourKey);
 
                     /**
                      * 判断参数 HourKey 是否已赋值
                      * @return HourKey 是否已赋值
+                     * 
                      */
                     bool HourKeyHasBeenSet() const;
 

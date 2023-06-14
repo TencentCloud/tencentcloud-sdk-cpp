@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取单次批量提交配额上限。
                      * @return Batch 单次批量提交配额上限。
+                     * 
                      */
                     int64_t GetBatch() const;
 
                     /**
                      * 设置单次批量提交配额上限。
-                     * @param Batch 单次批量提交配额上限。
+                     * @param _batch 单次批量提交配额上限。
+                     * 
                      */
                     void SetBatch(const int64_t& _batch);
 
                     /**
                      * 判断参数 Batch 是否已赋值
                      * @return Batch 是否已赋值
+                     * 
                      */
                     bool BatchHasBeenSet() const;
 
                     /**
                      * 获取每日提交配额上限。
                      * @return Daily 每日提交配额上限。
+                     * 
                      */
                     int64_t GetDaily() const;
 
                     /**
                      * 设置每日提交配额上限。
-                     * @param Daily 每日提交配额上限。
+                     * @param _daily 每日提交配额上限。
+                     * 
                      */
                     void SetDaily(const int64_t& _daily);
 
                     /**
                      * 判断参数 Daily 是否已赋值
                      * @return Daily 是否已赋值
+                     * 
                      */
                     bool DailyHasBeenSet() const;
 
                     /**
                      * 获取每日剩余的可提交配额。
                      * @return DailyAvailable 每日剩余的可提交配额。
+                     * 
                      */
                     int64_t GetDailyAvailable() const;
 
                     /**
                      * 设置每日剩余的可提交配额。
-                     * @param DailyAvailable 每日剩余的可提交配额。
+                     * @param _dailyAvailable 每日剩余的可提交配额。
+                     * 
                      */
                     void SetDailyAvailable(const int64_t& _dailyAvailable);
 
                     /**
                      * 判断参数 DailyAvailable 是否已赋值
                      * @return DailyAvailable 是否已赋值
+                     * 
                      */
                     bool DailyAvailableHasBeenSet() const;
 
@@ -113,6 +122,7 @@ namespace TencentCloud
 <li> purge_host：按Hostname刷新；</li>
 <li> purge_all：刷新全部缓存内容；</li>
 <li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -123,18 +133,20 @@ namespace TencentCloud
 <li> purge_host：按Hostname刷新；</li>
 <li> purge_all：刷新全部缓存内容；</li>
 <li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
-                     * @param Type 刷新预热缓存类型，取值有：
+                     * @param _type 刷新预热缓存类型，取值有：
 <li> purge_prefix：按前缀刷新；</li>
 <li> purge_url：按URL刷新；</li>
 <li> purge_host：按Hostname刷新；</li>
 <li> purge_all：刷新全部缓存内容；</li>
 <li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

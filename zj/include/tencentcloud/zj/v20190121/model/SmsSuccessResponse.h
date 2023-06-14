@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取成功返回信息
                      * @return Message 成功返回信息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置成功返回信息
-                     * @param Message 成功返回信息
+                     * @param _message 成功返回信息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

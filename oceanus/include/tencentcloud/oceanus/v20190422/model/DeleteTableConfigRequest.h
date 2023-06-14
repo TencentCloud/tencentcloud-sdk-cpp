@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取作业ID
                      * @return JobId 作业ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业ID
-                     * @param JobId 作业ID
+                     * @param _jobId 作业ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取调试作业ID
                      * @return DebugId 调试作业ID
+                     * 
                      */
                     int64_t GetDebugId() const;
 
                     /**
                      * 设置调试作业ID
-                     * @param DebugId 调试作业ID
+                     * @param _debugId 调试作业ID
+                     * 
                      */
                     void SetDebugId(const int64_t& _debugId);
 
                     /**
                      * 判断参数 DebugId 是否已赋值
                      * @return DebugId 是否已赋值
+                     * 
                      */
                     bool DebugIdHasBeenSet() const;
 
                     /**
                      * 获取表名
                      * @return TableName 表名
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名
-                     * @param TableName 表名
+                     * @param _tableName 表名
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

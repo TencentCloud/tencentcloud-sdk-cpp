@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.AppId必填。
                      * @return Agent 应用相关信息。 此接口Agent.AppId必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.AppId必填。
-                     * @param Agent 应用相关信息。 此接口Agent.AppId必填。
+                     * @param _agent 应用相关信息。 此接口Agent.AppId必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
                      * @return OperateType 操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
+                     * 
                      */
                     std::string GetOperateType() const;
 
                     /**
                      * 设置操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
-                     * @param OperateType 操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
+                     * @param _operateType 操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
+                     * 
                      */
                     void SetOperateType(const std::string& _operateType);
 
                     /**
                      * 判断参数 OperateType 是否已赋值
                      * @return OperateType 是否已赋值
+                     * 
                      */
                     bool OperateTypeHasBeenSet() const;
 
                     /**
                      * 获取第三方应用平台模板库模板唯一标识
                      * @return TemplateId 第三方应用平台模板库模板唯一标识
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置第三方应用平台模板库模板唯一标识
-                     * @param TemplateId 第三方应用平台模板库模板唯一标识
+                     * @param _templateId 第三方应用平台模板库模板唯一标识
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
                      * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * 
                      */
                     std::string GetProxyOrganizationOpenIds() const;
 
                     /**
                      * 设置合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
-                     * @param ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * @param _proxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * 
                      */
                     void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
 
                     /**
                      * 判断参数 ProxyOrganizationOpenIds 是否已赋值
                      * @return ProxyOrganizationOpenIds 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationOpenIdsHasBeenSet() const;
 
                     /**
                      * 获取模板可见性, 全部可见-"all", 部分可见-"part"
                      * @return AuthTag 模板可见性, 全部可见-"all", 部分可见-"part"
+                     * 
                      */
                     std::string GetAuthTag() const;
 
                     /**
                      * 设置模板可见性, 全部可见-"all", 部分可见-"part"
-                     * @param AuthTag 模板可见性, 全部可见-"all", 部分可见-"part"
+                     * @param _authTag 模板可见性, 全部可见-"all", 部分可见-"part"
+                     * 
                      */
                     void SetAuthTag(const std::string& _authTag);
 
                     /**
                      * 判断参数 AuthTag 是否已赋值
                      * @return AuthTag 是否已赋值
+                     * 
                      */
                     bool AuthTagHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

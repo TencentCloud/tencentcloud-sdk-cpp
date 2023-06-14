@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取字段名称
                      * @return FieldName 字段名称
+                     * 
                      */
                     std::string GetFieldName() const;
 
                     /**
                      * 设置字段名称
-                     * @param FieldName 字段名称
+                     * @param _fieldName 字段名称
+                     * 
                      */
                     void SetFieldName(const std::string& _fieldName);
 
                     /**
                      * 判断参数 FieldName 是否已赋值
                      * @return FieldName 是否已赋值
+                     * 
                      */
                     bool FieldNameHasBeenSet() const;
 
                     /**
                      * 获取字段类型
                      * @return FieldType 字段类型
+                     * 
                      */
                     std::string GetFieldType() const;
 
                     /**
                      * 设置字段类型
-                     * @param FieldType 字段类型
+                     * @param _fieldType 字段类型
+                     * 
                      */
                     void SetFieldType(const std::string& _fieldType);
 
                     /**
                      * 判断参数 FieldType 是否已赋值
                      * @return FieldType 是否已赋值
+                     * 
                      */
                     bool FieldTypeHasBeenSet() const;
 
                     /**
                      * 获取字段别名
                      * @return Alias 字段别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置字段别名
-                     * @param Alias 字段别名
+                     * @param _alias 字段别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

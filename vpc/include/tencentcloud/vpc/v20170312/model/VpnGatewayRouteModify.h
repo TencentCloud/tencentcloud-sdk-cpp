@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取VPN网关路由ID。
                      * @return RouteId VPN网关路由ID。
+                     * 
                      */
                     std::string GetRouteId() const;
 
                     /**
                      * 设置VPN网关路由ID。
-                     * @param RouteId VPN网关路由ID。
+                     * @param _routeId VPN网关路由ID。
+                     * 
                      */
                     void SetRouteId(const std::string& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
                     /**
                      * 获取VPN网关状态, ENABLE 启用, DISABLE禁用。
                      * @return Status VPN网关状态, ENABLE 启用, DISABLE禁用。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置VPN网关状态, ENABLE 启用, DISABLE禁用。
-                     * @param Status VPN网关状态, ENABLE 启用, DISABLE禁用。
+                     * @param _status VPN网关状态, ENABLE 启用, DISABLE禁用。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

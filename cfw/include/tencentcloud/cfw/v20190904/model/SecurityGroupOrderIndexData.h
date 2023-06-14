@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取企业安全组规则当前执行顺序
                      * @return OrderIndex 企业安全组规则当前执行顺序
+                     * 
                      */
                     uint64_t GetOrderIndex() const;
 
                     /**
                      * 设置企业安全组规则当前执行顺序
-                     * @param OrderIndex 企业安全组规则当前执行顺序
+                     * @param _orderIndex 企业安全组规则当前执行顺序
+                     * 
                      */
                     void SetOrderIndex(const uint64_t& _orderIndex);
 
                     /**
                      * 判断参数 OrderIndex 是否已赋值
                      * @return OrderIndex 是否已赋值
+                     * 
                      */
                     bool OrderIndexHasBeenSet() const;
 
                     /**
                      * 获取企业安全组规则更新目标执行顺序
                      * @return NewOrderIndex 企业安全组规则更新目标执行顺序
+                     * 
                      */
                     uint64_t GetNewOrderIndex() const;
 
                     /**
                      * 设置企业安全组规则更新目标执行顺序
-                     * @param NewOrderIndex 企业安全组规则更新目标执行顺序
+                     * @param _newOrderIndex 企业安全组规则更新目标执行顺序
+                     * 
                      */
                     void SetNewOrderIndex(const uint64_t& _newOrderIndex);
 
                     /**
                      * 判断参数 NewOrderIndex 是否已赋值
                      * @return NewOrderIndex 是否已赋值
+                     * 
                      */
                     bool NewOrderIndexHasBeenSet() const;
 

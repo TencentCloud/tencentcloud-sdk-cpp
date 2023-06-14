@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数。
                      * @return TotalCount 记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取恶意请求记录数组。
                      * @return MaliciousRequests 恶意请求记录数组。
+                     * 
                      */
                     std::vector<MaliciousRequest> GetMaliciousRequests() const;
 
                     /**
                      * 判断参数 MaliciousRequests 是否已赋值
                      * @return MaliciousRequests 是否已赋值
+                     * 
                      */
                     bool MaliciousRequestsHasBeenSet() const;
 

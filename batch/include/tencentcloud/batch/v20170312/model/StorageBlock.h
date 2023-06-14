@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type HDD本地存储类型，值为：LOCAL_PRO.
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置HDD本地存储类型，值为：LOCAL_PRO.
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type HDD本地存储类型，值为：LOCAL_PRO.
+                     * @param _type HDD本地存储类型，值为：LOCAL_PRO.
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinSize HDD本地存储的最小容量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
                      * 设置HDD本地存储的最小容量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinSize HDD本地存储的最小容量
+                     * @param _minSize HDD本地存储的最小容量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinSize(const int64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSize HDD本地存储的最大容量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置HDD本地存储的最大容量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxSize HDD本地存储的最大容量
+                     * @param _maxSize HDD本地存储的最大容量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 

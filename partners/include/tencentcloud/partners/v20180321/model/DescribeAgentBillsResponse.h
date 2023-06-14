@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合查询条件列表总数量
                      * @return TotalCount 符合查询条件列表总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取业务明细列表
                      * @return AgentBillSet 业务明细列表
+                     * 
                      */
                     std::vector<AgentBillElem> GetAgentBillSet() const;
 
                     /**
                      * 判断参数 AgentBillSet 是否已赋值
                      * @return AgentBillSet 是否已赋值
+                     * 
                      */
                     bool AgentBillSetHasBeenSet() const;
 

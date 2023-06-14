@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关对象数组。
                      * @return NatGatewaySet NAT网关对象数组。
+                     * 
                      */
                     std::vector<NatGateway> GetNatGatewaySet() const;
 
                     /**
                      * 判断参数 NatGatewaySet 是否已赋值
                      * @return NatGatewaySet 是否已赋值
+                     * 
                      */
                     bool NatGatewaySetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的NAT网关对象个数。
                      * @return TotalCount 符合条件的NAT网关对象个数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

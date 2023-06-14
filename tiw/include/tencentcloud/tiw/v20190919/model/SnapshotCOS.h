@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取cos所在腾讯云帐号uin
                      * @return Uin cos所在腾讯云帐号uin
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置cos所在腾讯云帐号uin
-                     * @param Uin cos所在腾讯云帐号uin
+                     * @param _uin cos所在腾讯云帐号uin
+                     * 
                      */
                     void SetUin(const uint64_t& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取cos所在地区
                      * @return Region cos所在地区
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置cos所在地区
-                     * @param Region cos所在地区
+                     * @param _region cos所在地区
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取cos存储桶名称
                      * @return Bucket cos存储桶名称
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置cos存储桶名称
-                     * @param Bucket cos存储桶名称
+                     * @param _bucket cos存储桶名称
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取板书文件存储根目录
                      * @return TargetDir 板书文件存储根目录
+                     * 
                      */
                     std::string GetTargetDir() const;
 
                     /**
                      * 设置板书文件存储根目录
-                     * @param TargetDir 板书文件存储根目录
+                     * @param _targetDir 板书文件存储根目录
+                     * 
                      */
                     void SetTargetDir(const std::string& _targetDir);
 
                     /**
                      * 判断参数 TargetDir 是否已赋值
                      * @return TargetDir 是否已赋值
+                     * 
                      */
                     bool TargetDirHasBeenSet() const;
 
                     /**
                      * 获取CDN加速域名
                      * @return Domain CDN加速域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置CDN加速域名
-                     * @param Domain CDN加速域名
+                     * @param _domain CDN加速域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

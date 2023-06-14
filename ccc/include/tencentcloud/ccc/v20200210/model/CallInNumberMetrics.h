@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取线路号码
                      * @return Number 线路号码
+                     * 
                      */
                     std::string GetNumber() const;
 
                     /**
                      * 设置线路号码
-                     * @param Number 线路号码
+                     * @param _number 线路号码
+                     * 
                      */
                     void SetNumber(const std::string& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 
                     /**
                      * 获取线路相关指标
                      * @return Metrics 线路相关指标
+                     * 
                      */
                     CallInMetrics GetMetrics() const;
 
                     /**
                      * 设置线路相关指标
-                     * @param Metrics 线路相关指标
+                     * @param _metrics 线路相关指标
+                     * 
                      */
                     void SetMetrics(const CallInMetrics& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取所属技能组相关指标
                      * @return SkillGroupMetrics 所属技能组相关指标
+                     * 
                      */
                     std::vector<CallInSkillGroupMetrics> GetSkillGroupMetrics() const;
 
                     /**
                      * 设置所属技能组相关指标
-                     * @param SkillGroupMetrics 所属技能组相关指标
+                     * @param _skillGroupMetrics 所属技能组相关指标
+                     * 
                      */
                     void SetSkillGroupMetrics(const std::vector<CallInSkillGroupMetrics>& _skillGroupMetrics);
 
                     /**
                      * 判断参数 SkillGroupMetrics 是否已赋值
                      * @return SkillGroupMetrics 是否已赋值
+                     * 
                      */
                     bool SkillGroupMetricsHasBeenSet() const;
 

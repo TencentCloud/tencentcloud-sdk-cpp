@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取表格组所属集群ID
                      * @return ClusterId 表格组所属集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表格组所属集群ID
-                     * @param ClusterId 表格组所属集群ID
+                     * @param _clusterId 表格组所属集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取表格组名称，可以采用中文、英文或数字字符，最大长度32个字符
                      * @return TableGroupName 表格组名称，可以采用中文、英文或数字字符，最大长度32个字符
+                     * 
                      */
                     std::string GetTableGroupName() const;
 
                     /**
                      * 设置表格组名称，可以采用中文、英文或数字字符，最大长度32个字符
-                     * @param TableGroupName 表格组名称，可以采用中文、英文或数字字符，最大长度32个字符
+                     * @param _tableGroupName 表格组名称，可以采用中文、英文或数字字符，最大长度32个字符
+                     * 
                      */
                     void SetTableGroupName(const std::string& _tableGroupName);
 
                     /**
                      * 判断参数 TableGroupName 是否已赋值
                      * @return TableGroupName 是否已赋值
+                     * 
                      */
                     bool TableGroupNameHasBeenSet() const;
 
                     /**
                      * 获取表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式
                      * @return TableGroupId 表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式
-                     * @param TableGroupId 表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式
+                     * @param _tableGroupId 表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表格组标签列表
                      * @return ResourceTags 表格组标签列表
+                     * 
                      */
                     std::vector<TagInfoUnit> GetResourceTags() const;
 
                     /**
                      * 设置表格组标签列表
-                     * @param ResourceTags 表格组标签列表
+                     * @param _resourceTags 表格组标签列表
+                     * 
                      */
                     void SetResourceTags(const std::vector<TagInfoUnit>& _resourceTags);
 
                     /**
                      * 判断参数 ResourceTags 是否已赋值
                      * @return ResourceTags 是否已赋值
+                     * 
                      */
                     bool ResourceTagsHasBeenSet() const;
 

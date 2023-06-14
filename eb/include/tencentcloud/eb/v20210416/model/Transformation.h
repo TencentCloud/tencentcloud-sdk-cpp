@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extraction 描述如何提取数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Extraction GetExtraction() const;
 
                     /**
                      * 设置描述如何提取数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Extraction 描述如何提取数据
+                     * @param _extraction 描述如何提取数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraction(const Extraction& _extraction);
 
                     /**
                      * 判断参数 Extraction 是否已赋值
                      * @return Extraction 是否已赋值
+                     * 
                      */
                     bool ExtractionHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EtlFilter 描述如何过滤数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EtlFilter GetEtlFilter() const;
 
                     /**
                      * 设置描述如何过滤数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EtlFilter 描述如何过滤数据
+                     * @param _etlFilter 描述如何过滤数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEtlFilter(const EtlFilter& _etlFilter);
 
                     /**
                      * 判断参数 EtlFilter 是否已赋值
                      * @return EtlFilter 是否已赋值
+                     * 
                      */
                     bool EtlFilterHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transform 描述如何数据转换
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Transform GetTransform() const;
 
                     /**
                      * 设置描述如何数据转换
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Transform 描述如何数据转换
+                     * @param _transform 描述如何数据转换
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTransform(const Transform& _transform);
 
                     /**
                      * 判断参数 Transform 是否已赋值
                      * @return Transform 是否已赋值
+                     * 
                      */
                     bool TransformHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID。
                      * @return ClusterId 集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID。
-                     * @param ClusterId 集群ID。
+                     * @param _clusterId 集群ID。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取本地挂载路径。
                      * @return LocalPath 本地挂载路径。
+                     * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置本地挂载路径。
-                     * @param LocalPath 本地挂载路径。
+                     * @param _localPath 本地挂载路径。
+                     * 
                      */
                     void SetLocalPath(const std::string& _localPath);
 
                     /**
                      * 判断参数 LocalPath 是否已赋值
                      * @return LocalPath 是否已赋值
+                     * 
                      */
                     bool LocalPathHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
                      * @return Track 加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
+                     * 
                      */
                     std::string GetTrack() const;
 
                     /**
                      * 设置加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
-                     * @param Track 加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
+                     * @param _track 加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。
+                     * 
                      */
                     void SetTrack(const std::string& _track);
 
                     /**
                      * 判断参数 Track 是否已赋值
                      * @return Track 是否已赋值
+                     * 
                      */
                     bool TrackHasBeenSet() const;
 
                     /**
                      * 获取密钥ID。
                      * @return KeyId 密钥ID。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置密钥ID。
-                     * @param KeyId 密钥ID。
+                     * @param _keyId 密钥ID。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
                      * @return Key 原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
-                     * @param Key 原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
+                     * @param _key 原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
                      * @return Iv 原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
+                     * 
                      */
                     std::string GetIv() const;
 
                     /**
                      * 设置原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
-                     * @param Iv 原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
+                     * @param _iv 原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。
+                     * 
                      */
                     void SetIv(const std::string& _iv);
 
                     /**
                      * 判断参数 Iv 是否已赋值
                      * @return Iv 是否已赋值
+                     * 
                      */
                     bool IvHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTimestamp 该key生成时的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInsertTimestamp() const;
 
                     /**
                      * 设置该key生成时的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InsertTimestamp 该key生成时的时间戳
+                     * @param _insertTimestamp 该key生成时的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInsertTimestamp(const uint64_t& _insertTimestamp);
 
                     /**
                      * 判断参数 InsertTimestamp 是否已赋值
                      * @return InsertTimestamp 是否已赋值
+                     * 
                      */
                     bool InsertTimestampHasBeenSet() const;
 

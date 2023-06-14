@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设置类型0一键检测，1定时检测
                      * @return ScanType 设置类型0一键检测，1定时检测
+                     * 
                      */
                     uint64_t GetScanType() const;
 
                     /**
                      * 设置设置类型0一键检测，1定时检测
-                     * @param ScanType 设置类型0一键检测，1定时检测
+                     * @param _scanType 设置类型0一键检测，1定时检测
+                     * 
                      */
                     void SetScanType(const uint64_t& _scanType);
 
                     /**
                      * 判断参数 ScanType 是否已赋值
                      * @return ScanType 是否已赋值
+                     * 
                      */
                     bool ScanTypeHasBeenSet() const;
 

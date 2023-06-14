@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return RegistryId 实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例Id
-                     * @param RegistryId 实例Id
+                     * @param _registryId 实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取创建CFS的归属的VPCID
                      * @return VpcId 创建CFS的归属的VPCID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置创建CFS的归属的VPCID
-                     * @param VpcId 创建CFS的归属的VPCID
+                     * @param _vpcId 创建CFS的归属的VPCID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取创建CFS的归属的子网ID
                      * @return SubnetId 创建CFS的归属的子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置创建CFS的归属的子网ID
-                     * @param SubnetId 创建CFS的归属的子网ID
+                     * @param _subnetId 创建CFS的归属的子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。
                      * @return StorageType 创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。
+                     * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。
-                     * @param StorageType 创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。
+                     * @param _storageType 创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。
+                     * 
                      */
                     void SetStorageType(const std::string& _storageType);
 
                     /**
                      * 判断参数 StorageType 是否已赋值
                      * @return StorageType 是否已赋值
+                     * 
                      */
                     bool StorageTypeHasBeenSet() const;
 
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 设置权限组 ID
-                     * @param PGroupId 权限组 ID
+                     * @param _pGroupId 权限组 ID
+                     * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表
                      * @return Zone 可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表
-                     * @param Zone 可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表
+                     * @param _zone 可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取云标签描述
                      * @return TagSpecification 云标签描述
+                     * 
                      */
                     TagSpecification GetTagSpecification() const;
 
                     /**
                      * 设置云标签描述
-                     * @param TagSpecification 云标签描述
+                     * @param _tagSpecification 云标签描述
+                     * 
                      */
                     void SetTagSpecification(const TagSpecification& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 

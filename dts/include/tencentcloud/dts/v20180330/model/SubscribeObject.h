@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectsType 数据订阅对象的类型，0-数据库，1-数据库内的表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetObjectsType() const;
 
                     /**
                      * 设置数据订阅对象的类型，0-数据库，1-数据库内的表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectsType 数据订阅对象的类型，0-数据库，1-数据库内的表
+                     * @param _objectsType 数据订阅对象的类型，0-数据库，1-数据库内的表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjectsType(const int64_t& _objectsType);
 
                     /**
                      * 判断参数 ObjectsType 是否已赋值
                      * @return ObjectsType 是否已赋值
+                     * 
                      */
                     bool ObjectsTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 订阅数据库的名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置订阅数据库的名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 订阅数据库的名称
+                     * @param _databaseName 订阅数据库的名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableNames 订阅数据库中表名称数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTableNames() const;
 
                     /**
                      * 设置订阅数据库中表名称数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableNames 订阅数据库中表名称数组
+                     * @param _tableNames 订阅数据库中表名称数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableNames(const std::vector<std::string>& _tableNames);
 
                     /**
                      * 判断参数 TableNames 是否已赋值
                      * @return TableNames 是否已赋值
+                     * 
                      */
                     bool TableNamesHasBeenSet() const;
 

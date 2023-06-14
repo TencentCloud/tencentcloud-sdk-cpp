@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例切换记录的总数。
                      * @return TotalCount 实例切换记录的总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取实例切换记录详情。
                      * @return Items 实例切换记录详情。
+                     * 
                      */
                     std::vector<DBSwitchInfo> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

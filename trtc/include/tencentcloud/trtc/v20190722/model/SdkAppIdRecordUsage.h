@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取SdkAppId的值。
                      * @return SdkAppId SdkAppId的值。
+                     * 
                      */
                     std::string GetSdkAppId() const;
 
                     /**
                      * 设置SdkAppId的值。
-                     * @param SdkAppId SdkAppId的值。
+                     * @param _sdkAppId SdkAppId的值。
+                     * 
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取统计的时间点数据。
                      * @return Usages 统计的时间点数据。
+                     * 
                      */
                     std::vector<RecordUsage> GetUsages() const;
 
                     /**
                      * 设置统计的时间点数据。
-                     * @param Usages 统计的时间点数据。
+                     * @param _usages 统计的时间点数据。
+                     * 
                      */
                     void SetUsages(const std::vector<RecordUsage>& _usages);
 
                     /**
                      * 判断参数 Usages 是否已赋值
                      * @return Usages 是否已赋值
+                     * 
                      */
                     bool UsagesHasBeenSet() const;
 

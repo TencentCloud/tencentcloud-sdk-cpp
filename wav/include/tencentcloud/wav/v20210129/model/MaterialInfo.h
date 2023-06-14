@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取素材id
                      * @return MaterialId 素材id
+                     * 
                      */
                     uint64_t GetMaterialId() const;
 
                     /**
                      * 设置素材id
-                     * @param MaterialId 素材id
+                     * @param _materialId 素材id
+                     * 
                      */
                     void SetMaterialId(const uint64_t& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaterialName 素材名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMaterialName() const;
 
                     /**
                      * 设置素材名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaterialName 素材名称
+                     * @param _materialName 素材名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaterialName(const std::string& _materialName);
 
                     /**
                      * 判断参数 MaterialName 是否已赋值
                      * @return MaterialName 是否已赋值
+                     * 
                      */
                     bool MaterialNameHasBeenSet() const;
 
                     /**
                      * 获取素材状态, -1: 删除 0: 启用 1: 禁用
                      * @return Status 素材状态, -1: 删除 0: 启用 1: 禁用
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置素材状态, -1: 删除 0: 启用 1: 禁用
-                     * @param Status 素材状态, -1: 删除 0: 启用 1: 禁用
+                     * @param _status 素材状态, -1: 删除 0: 启用 1: 禁用
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

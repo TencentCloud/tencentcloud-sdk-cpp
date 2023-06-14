@@ -48,12 +48,14 @@ namespace TencentCloud
                     /**
                      * 获取映射关系数组。
                      * @return MapInfoList 映射关系数组。
+                     * 
                      */
                     std::vector<MapInfo> GetMapInfoList() const;
 
                     /**
                      * 判断参数 MapInfoList 是否已赋值
                      * @return MapInfoList 是否已赋值
+                     * 
                      */
                     bool MapInfoListHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerRegionRelation 服务端区域id和子区域id的映射关系。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RegionMapRelation> GetServerRegionRelation() const;
 
                     /**
                      * 判断参数 ServerRegionRelation 是否已赋值
                      * @return ServerRegionRelation 是否已赋值
+                     * 
                      */
                     bool ServerRegionRelationHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientRegionRelation 客户端区域id和子区域id的映射关系。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RegionMapRelation> GetClientRegionRelation() const;
 
                     /**
                      * 判断参数 ClientRegionRelation 是否已赋值
                      * @return ClientRegionRelation 是否已赋值
+                     * 
                      */
                     bool ClientRegionRelationHasBeenSet() const;
 

@@ -48,54 +48,63 @@ namespace TencentCloud
                     /**
                      * 获取用户信息，其中UserId为必填参数
                      * @return Operator 用户信息，其中UserId为必填参数
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置用户信息，其中UserId为必填参数
-                     * @param Operator 用户信息，其中UserId为必填参数
+                     * @param _operator 用户信息，其中UserId为必填参数
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取模板ID
                      * @return TemplateId 模板ID
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateId 模板ID
+                     * @param _templateId 模板ID
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取签署流程名称，最大长度不超过200字符
                      * @return FlowName 签署流程名称，最大长度不超过200字符
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置签署流程名称，最大长度不超过200字符
-                     * @param FlowName 签署流程名称，最大长度不超过200字符
+                     * @param _flowName 签署流程名称，最大长度不超过200字符
+                     * 
                      */
                     void SetFlowName(const std::string& _flowName);
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
@@ -104,92 +113,107 @@ namespace TencentCloud
 发起流程数量超过此上限后二维码自动失效
                      * @return MaxFlowNum 最大可发起签署流程份数，默认5份 
 发起流程数量超过此上限后二维码自动失效
+                     * 
                      */
                     int64_t GetMaxFlowNum() const;
 
                     /**
                      * 设置最大可发起签署流程份数，默认5份 
 发起流程数量超过此上限后二维码自动失效
-                     * @param MaxFlowNum 最大可发起签署流程份数，默认5份 
+                     * @param _maxFlowNum 最大可发起签署流程份数，默认5份 
 发起流程数量超过此上限后二维码自动失效
+                     * 
                      */
                     void SetMaxFlowNum(const int64_t& _maxFlowNum);
 
                     /**
                      * 判断参数 MaxFlowNum 是否已赋值
                      * @return MaxFlowNum 是否已赋值
+                     * 
                      */
                     bool MaxFlowNumHasBeenSet() const;
 
                     /**
                      * 获取签署流程有效天数 默认7天 最高设置不超过30天
                      * @return FlowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
+                     * 
                      */
                     int64_t GetFlowEffectiveDay() const;
 
                     /**
                      * 设置签署流程有效天数 默认7天 最高设置不超过30天
-                     * @param FlowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
+                     * @param _flowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
+                     * 
                      */
                     void SetFlowEffectiveDay(const int64_t& _flowEffectiveDay);
 
                     /**
                      * 判断参数 FlowEffectiveDay 是否已赋值
                      * @return FlowEffectiveDay 是否已赋值
+                     * 
                      */
                     bool FlowEffectiveDayHasBeenSet() const;
 
                     /**
                      * 获取二维码有效天数 默认7天 最高设置不超过90天
                      * @return QrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * 
                      */
                     int64_t GetQrEffectiveDay() const;
 
                     /**
                      * 设置二维码有效天数 默认7天 最高设置不超过90天
-                     * @param QrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * @param _qrEffectiveDay 二维码有效天数 默认7天 最高设置不超过90天
+                     * 
                      */
                     void SetQrEffectiveDay(const int64_t& _qrEffectiveDay);
 
                     /**
                      * 判断参数 QrEffectiveDay 是否已赋值
                      * @return QrEffectiveDay 是否已赋值
+                     * 
                      */
                     bool QrEffectiveDayHasBeenSet() const;
 
                     /**
                      * 获取限制二维码用户条件
                      * @return Restrictions 限制二维码用户条件
+                     * 
                      */
                     std::vector<ApproverRestriction> GetRestrictions() const;
 
                     /**
                      * 设置限制二维码用户条件
-                     * @param Restrictions 限制二维码用户条件
+                     * @param _restrictions 限制二维码用户条件
+                     * 
                      */
                     void SetRestrictions(const std::vector<ApproverRestriction>& _restrictions);
 
                     /**
                      * 判断参数 Restrictions 是否已赋值
                      * @return Restrictions 是否已赋值
+                     * 
                      */
                     bool RestrictionsHasBeenSet() const;
 
                     /**
                      * 获取用户自定义字段，回调的时候会进行透传，长度需要小于20480
                      * @return UserData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * 
                      */
                     std::string GetUserData() const;
 
                     /**
                      * 设置用户自定义字段，回调的时候会进行透传，长度需要小于20480
-                     * @param UserData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * @param _userData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * 
                      */
                     void SetUserData(const std::string& _userData);
 
                     /**
                      * 判断参数 UserData 是否已赋值
                      * @return UserData 是否已赋值
+                     * 
                      */
                     bool UserDataHasBeenSet() const;
 
@@ -200,6 +224,7 @@ namespace TencentCloud
                      * @return CallbackUrl 回调地址,最大长度1000字符串
 回调时机：
 用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
@@ -207,51 +232,59 @@ namespace TencentCloud
                      * 设置回调地址,最大长度1000字符串
 回调时机：
 用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * @param CallbackUrl 回调地址,最大长度1000字符串
+                     * @param _callbackUrl 回调地址,最大长度1000字符串
 回调时机：
 用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取应用信息
                      * @return Agent 应用信息
+                     * @deprecated
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用信息
-                     * @param Agent 应用信息
+                     * @param _agent 应用信息
+                     * @deprecated
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * @deprecated
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取限制二维码用户条件（已弃用）
                      * @return ApproverRestrictions 限制二维码用户条件（已弃用）
+                     * @deprecated
                      */
                     ApproverRestriction GetApproverRestrictions() const;
 
                     /**
                      * 设置限制二维码用户条件（已弃用）
-                     * @param ApproverRestrictions 限制二维码用户条件（已弃用）
+                     * @param _approverRestrictions 限制二维码用户条件（已弃用）
+                     * @deprecated
                      */
                     void SetApproverRestrictions(const ApproverRestriction& _approverRestrictions);
 
                     /**
                      * 判断参数 ApproverRestrictions 是否已赋值
                      * @return ApproverRestrictions 是否已赋值
+                     * @deprecated
                      */
                     bool ApproverRestrictionsHasBeenSet() const;
 

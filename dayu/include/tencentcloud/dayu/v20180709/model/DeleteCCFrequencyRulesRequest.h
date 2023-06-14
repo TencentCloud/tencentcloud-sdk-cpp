@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取CC防护的访问频率控制规则ID
                      * @return CCFrequencyRuleId CC防护的访问频率控制规则ID
+                     * 
                      */
                     std::string GetCCFrequencyRuleId() const;
 
                     /**
                      * 设置CC防护的访问频率控制规则ID
-                     * @param CCFrequencyRuleId CC防护的访问频率控制规则ID
+                     * @param _cCFrequencyRuleId CC防护的访问频率控制规则ID
+                     * 
                      */
                     void SetCCFrequencyRuleId(const std::string& _cCFrequencyRuleId);
 
                     /**
                      * 判断参数 CCFrequencyRuleId 是否已赋值
                      * @return CCFrequencyRuleId 是否已赋值
+                     * 
                      */
                     bool CCFrequencyRuleIdHasBeenSet() const;
 

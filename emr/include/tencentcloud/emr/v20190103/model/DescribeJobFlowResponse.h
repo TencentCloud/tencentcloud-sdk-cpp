@@ -61,24 +61,28 @@ JobFlowStepsRunning，流程任务步骤已提交。
 JobFlowStepsComplete，流程任务步骤已完成。
 JobFlowTerminating，流程任务所需资源销毁中。
 JobFlowFinish，流程任务已完成。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取流程任务步骤结果。
                      * @return Details 流程任务步骤结果。
+                     * 
                      */
                     std::vector<JobResult> GetDetails() const;
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

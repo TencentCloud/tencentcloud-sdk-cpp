@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效
                      * @return ScheduleStop 是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效
+                     * 
                      */
                     bool GetScheduleStop() const;
 
                     /**
                      * 设置是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效
-                     * @param ScheduleStop 是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效
+                     * @param _scheduleStop 是否要定时停止服务，true or false。true 则 ScheduleStopTime 必填， false 则 ScheduleStopTime 不生效
+                     * 
                      */
                     void SetScheduleStop(const bool& _scheduleStop);
 
                     /**
                      * 判断参数 ScheduleStop 是否已赋值
                      * @return ScheduleStop 是否已赋值
+                     * 
                      */
                     bool ScheduleStopHasBeenSet() const;
 
                     /**
                      * 获取要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
                      * @return ScheduleStopTime 要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
+                     * 
                      */
                     std::string GetScheduleStopTime() const;
 
                     /**
                      * 设置要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
-                     * @param ScheduleStopTime 要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
+                     * @param _scheduleStopTime 要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
+                     * 
                      */
                     void SetScheduleStopTime(const std::string& _scheduleStopTime);
 
                     /**
                      * 判断参数 ScheduleStopTime 是否已赋值
                      * @return ScheduleStopTime 是否已赋值
+                     * 
                      */
                     bool ScheduleStopTimeHasBeenSet() const;
 

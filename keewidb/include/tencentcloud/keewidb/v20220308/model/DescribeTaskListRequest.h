@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，如：kee-6ubh****。
                      * @return InstanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，如：kee-6ubh****。
-                     * @param InstanceId 实例 ID，如：kee-6ubh****。
+                     * @param _instanceId 实例 ID，如：kee-6ubh****。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称。
                      * @return InstanceName 实例名称。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。
-                     * @param InstanceName 实例名称。
+                     * @param _instanceName 实例名称。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取每页输出的任务列表大小。默认为 20，最多输出100条。
                      * @return Limit 每页输出的任务列表大小。默认为 20，最多输出100条。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页输出的任务列表大小。默认为 20，最多输出100条。
-                     * @param Limit 每页输出的任务列表大小。默认为 20，最多输出100条。
+                     * @param _limit 每页输出的任务列表大小。默认为 20，最多输出100条。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      * @return Offset Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
-                     * @param Offset Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param _offset Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取项目ID。
                      * @return ProjectIds 项目ID。
+                     * 
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
                      * 设置项目ID。
-                     * @param ProjectIds 项目ID。
+                     * @param _projectIds 项目ID。
+                     * 
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
                     /**
                      * 判断参数 ProjectIds 是否已赋值
                      * @return ProjectIds 是否已赋值
+                     * 
                      */
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
                      * 获取任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。
                      * @return TaskTypes 任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。
+                     * 
                      */
                     std::vector<std::string> GetTaskTypes() const;
 
                     /**
                      * 设置任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。
-                     * @param TaskTypes 任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。
+                     * @param _taskTypes 任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。
+                     * 
                      */
                     void SetTaskTypes(const std::vector<std::string>& _taskTypes);
 
                     /**
                      * 判断参数 TaskTypes 是否已赋值
                      * @return TaskTypes 是否已赋值
+                     * 
                      */
                     bool TaskTypesHasBeenSet() const;
 
                     /**
                      * 获取起始时间。
                      * @return BeginTime 起始时间。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置起始时间。
-                     * @param BeginTime 起始时间。
+                     * @param _beginTime 起始时间。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取终止时间。
                      * @return EndTime 终止时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置终止时间。
-                     * @param EndTime 终止时间。
+                     * @param _endTime 终止时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务状态。
                      * @return TaskStatus 任务状态。
+                     * 
                      */
                     std::vector<int64_t> GetTaskStatus() const;
 
                     /**
                      * 设置任务状态。
-                     * @param TaskStatus 任务状态。
+                     * @param _taskStatus 任务状态。
+                     * 
                      */
                     void SetTaskStatus(const std::vector<int64_t>& _taskStatus);
 
                     /**
                      * 判断参数 TaskStatus 是否已赋值
                      * @return TaskStatus 是否已赋值
+                     * 
                      */
                     bool TaskStatusHasBeenSet() const;
 

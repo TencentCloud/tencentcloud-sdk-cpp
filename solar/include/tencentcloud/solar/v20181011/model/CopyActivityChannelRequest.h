@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取活动ID
                      * @return ActivityId 活动ID
+                     * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置活动ID
-                     * @param ActivityId 活动ID
+                     * @param _activityId 活动ID
+                     * 
                      */
                     void SetActivityId(const std::string& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取来源渠道ID
                      * @return ChannelFrom 来源渠道ID
+                     * 
                      */
                     std::string GetChannelFrom() const;
 
                     /**
                      * 设置来源渠道ID
-                     * @param ChannelFrom 来源渠道ID
+                     * @param _channelFrom 来源渠道ID
+                     * 
                      */
                     void SetChannelFrom(const std::string& _channelFrom);
 
                     /**
                      * 判断参数 ChannelFrom 是否已赋值
                      * @return ChannelFrom 是否已赋值
+                     * 
                      */
                     bool ChannelFromHasBeenSet() const;
 
                     /**
                      * 获取目的渠道id
                      * @return ChannelTo 目的渠道id
+                     * 
                      */
                     std::vector<std::string> GetChannelTo() const;
 
                     /**
                      * 设置目的渠道id
-                     * @param ChannelTo 目的渠道id
+                     * @param _channelTo 目的渠道id
+                     * 
                      */
                     void SetChannelTo(const std::vector<std::string>& _channelTo);
 
                     /**
                      * 判断参数 ChannelTo 是否已赋值
                      * @return ChannelTo 是否已赋值
+                     * 
                      */
                     bool ChannelToHasBeenSet() const;
 

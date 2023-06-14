@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取独立网关信息列表
                      * @return StandaloneGatewayList 独立网关信息列表
+                     * 
                      */
                     std::vector<StandaloneGatewayInfo> GetStandaloneGatewayList() const;
 
                     /**
                      * 判断参数 StandaloneGatewayList 是否已赋值
                      * @return StandaloneGatewayList 是否已赋值
+                     * 
                      */
                     bool StandaloneGatewayListHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

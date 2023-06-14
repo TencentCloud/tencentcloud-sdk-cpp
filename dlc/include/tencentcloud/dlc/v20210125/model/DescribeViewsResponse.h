@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取视图对象列表。
                      * @return ViewList 视图对象列表。
+                     * 
                      */
                     std::vector<ViewResponseInfo> GetViewList() const;
 
                     /**
                      * 判断参数 ViewList 是否已赋值
                      * @return ViewList 是否已赋值
+                     * 
                      */
                     bool ViewListHasBeenSet() const;
 
                     /**
                      * 获取实例总数。
                      * @return TotalCount 实例总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

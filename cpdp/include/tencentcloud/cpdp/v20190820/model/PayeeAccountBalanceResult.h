@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountId 账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置账户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountId 账户ID
+                     * @param _accountId 账户ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
@@ -77,6 +80,7 @@ OCCASION:偶然所得
 LABOR:劳务所得
 OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIncomeType() const;
 
@@ -85,16 +89,18 @@ OCCASION:偶然所得
 LABOR:劳务所得
 OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncomeType 收入类型
+                     * @param _incomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIncomeType(const int64_t& _incomeType);
 
                     /**
                      * 判断参数 IncomeType 是否已赋值
                      * @return IncomeType 是否已赋值
+                     * 
                      */
                     bool IncomeTypeHasBeenSet() const;
 
@@ -103,20 +109,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Balance 总余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBalance() const;
 
                     /**
                      * 设置总余额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Balance 总余额
+                     * @param _balance 总余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBalance(const std::string& _balance);
 
                     /**
                      * 判断参数 Balance 是否已赋值
                      * @return Balance 是否已赋值
+                     * 
                      */
                     bool BalanceHasBeenSet() const;
 
@@ -125,20 +134,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemFreezeBalance 系统冻结余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSystemFreezeBalance() const;
 
                     /**
                      * 设置系统冻结余额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SystemFreezeBalance 系统冻结余额
+                     * @param _systemFreezeBalance 系统冻结余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSystemFreezeBalance(const std::string& _systemFreezeBalance);
 
                     /**
                      * 判断参数 SystemFreezeBalance 是否已赋值
                      * @return SystemFreezeBalance 是否已赋值
+                     * 
                      */
                     bool SystemFreezeBalanceHasBeenSet() const;
 
@@ -147,20 +159,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManualFreezeBalance 人工冻结余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetManualFreezeBalance() const;
 
                     /**
                      * 设置人工冻结余额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ManualFreezeBalance 人工冻结余额
+                     * @param _manualFreezeBalance 人工冻结余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManualFreezeBalance(const std::string& _manualFreezeBalance);
 
                     /**
                      * 判断参数 ManualFreezeBalance 是否已赋值
                      * @return ManualFreezeBalance 是否已赋值
+                     * 
                      */
                     bool ManualFreezeBalanceHasBeenSet() const;
 
@@ -169,20 +184,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayableBalance 可提现余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayableBalance() const;
 
                     /**
                      * 设置可提现余额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayableBalance 可提现余额
+                     * @param _payableBalance 可提现余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayableBalance(const std::string& _payableBalance);
 
                     /**
                      * 判断参数 PayableBalance 是否已赋值
                      * @return PayableBalance 是否已赋值
+                     * 
                      */
                     bool PayableBalanceHasBeenSet() const;
 
@@ -191,20 +209,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaidBalance 已提现余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPaidBalance() const;
 
                     /**
                      * 设置已提现余额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaidBalance 已提现余额
+                     * @param _paidBalance 已提现余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPaidBalance(const std::string& _paidBalance);
 
                     /**
                      * 判断参数 PaidBalance 是否已赋值
                      * @return PaidBalance 是否已赋值
+                     * 
                      */
                     bool PaidBalanceHasBeenSet() const;
 
@@ -213,20 +234,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InPayBalance 提现中余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInPayBalance() const;
 
                     /**
                      * 设置提现中余额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InPayBalance 提现中余额
+                     * @param _inPayBalance 提现中余额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInPayBalance(const std::string& _inPayBalance);
 
                     /**
                      * 判断参数 InPayBalance 是否已赋值
                      * @return InPayBalance 是否已赋值
+                     * 
                      */
                     bool InPayBalanceHasBeenSet() const;
 
@@ -235,20 +259,23 @@ OCCASION:偶然所得
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SumSettlementAmount 累计结算金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSumSettlementAmount() const;
 
                     /**
                      * 设置累计结算金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SumSettlementAmount 累计结算金额
+                     * @param _sumSettlementAmount 累计结算金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSumSettlementAmount(const std::string& _sumSettlementAmount);
 
                     /**
                      * 判断参数 SumSettlementAmount 是否已赋值
                      * @return SumSettlementAmount 是否已赋值
+                     * 
                      */
                     bool SumSettlementAmountHasBeenSet() const;
 

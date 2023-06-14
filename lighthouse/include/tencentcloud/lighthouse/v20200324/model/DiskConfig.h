@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取可用区。
                      * @return Zone 可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-                     * @param Zone 可用区。
+                     * @param _zone 可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取云硬盘类型。
                      * @return DiskType 云硬盘类型。
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置云硬盘类型。
-                     * @param DiskType 云硬盘类型。
+                     * @param _diskType 云硬盘类型。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取云硬盘可售卖状态。
                      * @return DiskSalesState 云硬盘可售卖状态。
+                     * 
                      */
                     std::string GetDiskSalesState() const;
 
                     /**
                      * 设置云硬盘可售卖状态。
-                     * @param DiskSalesState 云硬盘可售卖状态。
+                     * @param _diskSalesState 云硬盘可售卖状态。
+                     * 
                      */
                     void SetDiskSalesState(const std::string& _diskSalesState);
 
                     /**
                      * 判断参数 DiskSalesState 是否已赋值
                      * @return DiskSalesState 是否已赋值
+                     * 
                      */
                     bool DiskSalesStateHasBeenSet() const;
 
                     /**
                      * 获取最大云硬盘大小。
                      * @return MaxDiskSize 最大云硬盘大小。
+                     * 
                      */
                     int64_t GetMaxDiskSize() const;
 
                     /**
                      * 设置最大云硬盘大小。
-                     * @param MaxDiskSize 最大云硬盘大小。
+                     * @param _maxDiskSize 最大云硬盘大小。
+                     * 
                      */
                     void SetMaxDiskSize(const int64_t& _maxDiskSize);
 
                     /**
                      * 判断参数 MaxDiskSize 是否已赋值
                      * @return MaxDiskSize 是否已赋值
+                     * 
                      */
                     bool MaxDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取最小云硬盘大小。
                      * @return MinDiskSize 最小云硬盘大小。
+                     * 
                      */
                     int64_t GetMinDiskSize() const;
 
                     /**
                      * 设置最小云硬盘大小。
-                     * @param MinDiskSize 最小云硬盘大小。
+                     * @param _minDiskSize 最小云硬盘大小。
+                     * 
                      */
                     void SetMinDiskSize(const int64_t& _minDiskSize);
 
                     /**
                      * 判断参数 MinDiskSize 是否已赋值
                      * @return MinDiskSize 是否已赋值
+                     * 
                      */
                     bool MinDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取云硬盘步长。
                      * @return DiskStepSize 云硬盘步长。
+                     * 
                      */
                     int64_t GetDiskStepSize() const;
 
                     /**
                      * 设置云硬盘步长。
-                     * @param DiskStepSize 云硬盘步长。
+                     * @param _diskStepSize 云硬盘步长。
+                     * 
                      */
                     void SetDiskStepSize(const int64_t& _diskStepSize);
 
                     /**
                      * 判断参数 DiskStepSize 是否已赋值
                      * @return DiskStepSize 是否已赋值
+                     * 
                      */
                     bool DiskStepSizeHasBeenSet() const;
 

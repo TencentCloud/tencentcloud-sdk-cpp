@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsHealthCheck 是否开启健康检查。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsHealthCheck() const;
 
                     /**
                      * 设置是否开启健康检查。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsHealthCheck 是否开启健康检查。
+                     * @param _isHealthCheck 是否开启健康检查。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsHealthCheck(const bool& _isHealthCheck);
 
                     /**
                      * 判断参数 IsHealthCheck 是否已赋值
                      * @return IsHealthCheck 是否已赋值
+                     * 
                      */
                     bool IsHealthCheckHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestVolumeThreshold 健康检查阈值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRequestVolumeThreshold() const;
 
                     /**
                      * 设置健康检查阈值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestVolumeThreshold 健康检查阈值。
+                     * @param _requestVolumeThreshold 健康检查阈值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequestVolumeThreshold(const int64_t& _requestVolumeThreshold);
 
                     /**
                      * 判断参数 RequestVolumeThreshold 是否已赋值
                      * @return RequestVolumeThreshold 是否已赋值
+                     * 
                      */
                     bool RequestVolumeThresholdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SleepWindowInMilliseconds 窗口大小。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSleepWindowInMilliseconds() const;
 
                     /**
                      * 设置窗口大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SleepWindowInMilliseconds 窗口大小。
+                     * @param _sleepWindowInMilliseconds 窗口大小。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSleepWindowInMilliseconds(const int64_t& _sleepWindowInMilliseconds);
 
                     /**
                      * 判断参数 SleepWindowInMilliseconds 是否已赋值
                      * @return SleepWindowInMilliseconds 是否已赋值
+                     * 
                      */
                     bool SleepWindowInMillisecondsHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorThresholdPercentage 阈值百分比。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetErrorThresholdPercentage() const;
 
                     /**
                      * 设置阈值百分比。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorThresholdPercentage 阈值百分比。
+                     * @param _errorThresholdPercentage 阈值百分比。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorThresholdPercentage(const int64_t& _errorThresholdPercentage);
 
                     /**
                      * 判断参数 ErrorThresholdPercentage 是否已赋值
                      * @return ErrorThresholdPercentage 是否已赋值
+                     * 
                      */
                     bool ErrorThresholdPercentageHasBeenSet() const;
 

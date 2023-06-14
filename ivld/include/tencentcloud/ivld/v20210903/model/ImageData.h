@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrSet 图片中出现的可视文本识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImageOcr> GetOcrSet() const;
 
                     /**
                      * 设置图片中出现的可视文本识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrSet 图片中出现的可视文本识别结果
+                     * @param _ocrSet 图片中出现的可视文本识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcrSet(const std::vector<ImageOcr>& _ocrSet);
 
                     /**
                      * 判断参数 OcrSet 是否已赋值
                      * @return OcrSet 是否已赋值
+                     * 
                      */
                     bool OcrSetHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameTagSet 图片中出现的帧标签识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MultiLevelTag GetFrameTagSet() const;
 
                     /**
                      * 设置图片中出现的帧标签识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameTagSet 图片中出现的帧标签识别结果
+                     * @param _frameTagSet 图片中出现的帧标签识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameTagSet(const MultiLevelTag& _frameTagSet);
 
                     /**
                      * 判断参数 FrameTagSet 是否已赋值
                      * @return FrameTagSet 是否已赋值
+                     * 
                      */
                     bool FrameTagSetHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiLevelPersonInfoSet 图片中出现的层级人物识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MultiLevelPersonInfo> GetMultiLevelPersonInfoSet() const;
 
                     /**
                      * 设置图片中出现的层级人物识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MultiLevelPersonInfoSet 图片中出现的层级人物识别结果
+                     * @param _multiLevelPersonInfoSet 图片中出现的层级人物识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMultiLevelPersonInfoSet(const std::vector<MultiLevelPersonInfo>& _multiLevelPersonInfoSet);
 
                     /**
                      * 判断参数 MultiLevelPersonInfoSet 是否已赋值
                      * @return MultiLevelPersonInfoSet 是否已赋值
+                     * 
                      */
                     bool MultiLevelPersonInfoSetHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TvLogo 图片中出现的台标识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageLogo GetTvLogo() const;
 
                     /**
                      * 设置图片中出现的台标识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TvLogo 图片中出现的台标识别结果
+                     * @param _tvLogo 图片中出现的台标识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTvLogo(const ImageLogo& _tvLogo);
 
                     /**
                      * 判断参数 TvLogo 是否已赋值
                      * @return TvLogo 是否已赋值
+                     * 
                      */
                     bool TvLogoHasBeenSet() const;
 
@@ -143,20 +155,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceLogo 图片中出现的来源信息识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageLogo GetSourceLogo() const;
 
                     /**
                      * 设置图片中出现的来源信息识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceLogo 图片中出现的来源信息识别结果
+                     * @param _sourceLogo 图片中出现的来源信息识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceLogo(const ImageLogo& _sourceLogo);
 
                     /**
                      * 判断参数 SourceLogo 是否已赋值
                      * @return SourceLogo 是否已赋值
+                     * 
                      */
                     bool SourceLogoHasBeenSet() const;
 

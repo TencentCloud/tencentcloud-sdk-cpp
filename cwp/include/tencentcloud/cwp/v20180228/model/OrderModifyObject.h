@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取新产品标识,这里支持PRO_VERSION 专业版,FLAGSHIP 旗舰版
                      * @return NewSubProductCode 新产品标识,这里支持PRO_VERSION 专业版,FLAGSHIP 旗舰版
+                     * 
                      */
                     std::string GetNewSubProductCode() const;
 
                     /**
                      * 设置新产品标识,这里支持PRO_VERSION 专业版,FLAGSHIP 旗舰版
-                     * @param NewSubProductCode 新产品标识,这里支持PRO_VERSION 专业版,FLAGSHIP 旗舰版
+                     * @param _newSubProductCode 新产品标识,这里支持PRO_VERSION 专业版,FLAGSHIP 旗舰版
+                     * 
                      */
                     void SetNewSubProductCode(const std::string& _newSubProductCode);
 
                     /**
                      * 判断参数 NewSubProductCode 是否已赋值
                      * @return NewSubProductCode 是否已赋值
+                     * 
                      */
                     bool NewSubProductCodeHasBeenSet() const;
 
                     /**
                      * 获取扩容/缩容数,变配子产品忽略该参数
                      * @return InquireNum 扩容/缩容数,变配子产品忽略该参数
+                     * 
                      */
                     int64_t GetInquireNum() const;
 
                     /**
                      * 设置扩容/缩容数,变配子产品忽略该参数
-                     * @param InquireNum 扩容/缩容数,变配子产品忽略该参数
+                     * @param _inquireNum 扩容/缩容数,变配子产品忽略该参数
+                     * 
                      */
                     void SetInquireNum(const int64_t& _inquireNum);
 
                     /**
                      * 判断参数 InquireNum 是否已赋值
                      * @return InquireNum 是否已赋值
+                     * 
                      */
                     bool InquireNumHasBeenSet() const;
 

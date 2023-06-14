@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取应用名
                      * @return ApplyName 应用名
+                     * 
                      */
                     std::string GetApplyName() const;
 
                     /**
                      * 设置应用名
-                     * @param ApplyName 应用名
+                     * @param _applyName 应用名
+                     * 
                      */
                     void SetApplyName(const std::string& _applyName);
 
                     /**
                      * 判断参数 ApplyName 是否已赋值
                      * @return ApplyName 是否已赋值
+                     * 
                      */
                     bool ApplyNameHasBeenSet() const;
 
                     /**
                      * 获取合约状态 true:已启用 false:未启用
                      * @return Enable 合约状态 true:已启用 false:未启用
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置合约状态 true:已启用 false:未启用
-                     * @param Enable 合约状态 true:已启用 false:未启用
+                     * @param _enable 合约状态 true:已启用 false:未启用
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取合约CNS地址
                      * @return Hash 合约CNS地址
+                     * 
                      */
                     std::string GetHash() const;
 
                     /**
                      * 设置合约CNS地址
-                     * @param Hash 合约CNS地址
+                     * @param _hash 合约CNS地址
+                     * 
                      */
                     void SetHash(const std::string& _hash);
 
                     /**
                      * 判断参数 Hash 是否已赋值
                      * @return Hash 是否已赋值
+                     * 
                      */
                     bool HashHasBeenSet() const;
 
                     /**
                      * 获取合约CNS地址脱敏
                      * @return HashShow 合约CNS地址脱敏
+                     * 
                      */
                     std::string GetHashShow() const;
 
                     /**
                      * 设置合约CNS地址脱敏
-                     * @param HashShow 合约CNS地址脱敏
+                     * @param _hashShow 合约CNS地址脱敏
+                     * 
                      */
                     void SetHashShow(const std::string& _hashShow);
 
                     /**
                      * 判断参数 HashShow 是否已赋值
                      * @return HashShow 是否已赋值
+                     * 
                      */
                     bool HashShowHasBeenSet() const;
 
                     /**
                      * 获取部署机构DID
                      * @return WeId 部署机构DID
+                     * 
                      */
                     std::string GetWeId() const;
 
                     /**
                      * 设置部署机构DID
-                     * @param WeId 部署机构DID
+                     * @param _weId 部署机构DID
+                     * 
                      */
                     void SetWeId(const std::string& _weId);
 
                     /**
                      * 判断参数 WeId 是否已赋值
                      * @return WeId 是否已赋值
+                     * 
                      */
                     bool WeIdHasBeenSet() const;
 
                     /**
                      * 获取部署机构名称
                      * @return DeployName 部署机构名称
+                     * 
                      */
                     std::string GetDeployName() const;
 
                     /**
                      * 设置部署机构名称
-                     * @param DeployName 部署机构名称
+                     * @param _deployName 部署机构名称
+                     * 
                      */
                     void SetDeployName(const std::string& _deployName);
 
                     /**
                      * 判断参数 DeployName 是否已赋值
                      * @return DeployName 是否已赋值
+                     * 
                      */
                     bool DeployNameHasBeenSet() const;
 
                     /**
                      * 获取部署群组
                      * @return GroupId 部署群组
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署群组
-                     * @param GroupId 部署群组
+                     * @param _groupId 部署群组
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取部署时间
                      * @return CreateTime 部署时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置部署时间
-                     * @param CreateTime 部署时间
+                     * @param _createTime 部署时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

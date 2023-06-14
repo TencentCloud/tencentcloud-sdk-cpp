@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取主题名
                      * @return TopicName 主题名
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名
-                     * @param TopicName 主题名
+                     * @param _topicName 主题名
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取消息内容，消息总大小需不大于1024K
                      * @return MsgContent 消息内容，消息总大小需不大于1024K
+                     * 
                      */
                     std::string GetMsgContent() const;
 
                     /**
                      * 设置消息内容，消息总大小需不大于1024K
-                     * @param MsgContent 消息内容，消息总大小需不大于1024K
+                     * @param _msgContent 消息内容，消息总大小需不大于1024K
+                     * 
                      */
                     void SetMsgContent(const std::string& _msgContent);
 
                     /**
                      * 判断参数 MsgContent 是否已赋值
                      * @return MsgContent 是否已赋值
+                     * 
                      */
                     bool MsgContentHasBeenSet() const;
 
                     /**
                      * 获取消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
                      * @return MsgTag 消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
+                     * 
                      */
                     std::vector<std::string> GetMsgTag() const;
 
                     /**
                      * 设置消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
-                     * @param MsgTag 消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
+                     * @param _msgTag 消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。
+                     * 
                      */
                     void SetMsgTag(const std::vector<std::string>& _msgTag);
 
                     /**
                      * 判断参数 MsgTag 是否已赋值
                      * @return MsgTag 是否已赋值
+                     * 
                      */
                     bool MsgTagHasBeenSet() const;
 

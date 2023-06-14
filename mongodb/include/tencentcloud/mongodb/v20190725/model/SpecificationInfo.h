@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取地域信息
                      * @return Region 地域信息
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域信息
-                     * @param Region 地域信息
+                     * @param _region 地域信息
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取可用区信息
                      * @return Zone 可用区信息
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区信息
-                     * @param Zone 可用区信息
+                     * @param _zone 可用区信息
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取售卖规格信息
                      * @return SpecItems 售卖规格信息
+                     * 
                      */
                     std::vector<SpecItem> GetSpecItems() const;
 
                     /**
                      * 设置售卖规格信息
-                     * @param SpecItems 售卖规格信息
+                     * @param _specItems 售卖规格信息
+                     * 
                      */
                     void SetSpecItems(const std::vector<SpecItem>& _specItems);
 
                     /**
                      * 判断参数 SpecItems 是否已赋值
                      * @return SpecItems 是否已赋值
+                     * 
                      */
                     bool SpecItemsHasBeenSet() const;
 
                     /**
                      * 获取是否支持跨可用区部署 1-支持，0-不支持
                      * @return SupportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     * 
                      */
                     int64_t GetSupportMultiAZ() const;
 
                     /**
                      * 设置是否支持跨可用区部署 1-支持，0-不支持
-                     * @param SupportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     * @param _supportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     * 
                      */
                     void SetSupportMultiAZ(const int64_t& _supportMultiAZ);
 
                     /**
                      * 判断参数 SupportMultiAZ 是否已赋值
                      * @return SupportMultiAZ 是否已赋值
+                     * 
                      */
                     bool SupportMultiAZHasBeenSet() const;
 

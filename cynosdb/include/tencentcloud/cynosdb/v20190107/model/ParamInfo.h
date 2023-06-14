@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取当前值
                      * @return CurrentValue 当前值
+                     * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
                      * 设置当前值
-                     * @param CurrentValue 当前值
+                     * @param _currentValue 当前值
+                     * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
                     /**
                      * 判断参数 CurrentValue 是否已赋值
                      * @return CurrentValue 是否已赋值
+                     * 
                      */
                     bool CurrentValueHasBeenSet() const;
 
                     /**
                      * 获取默认值
                      * @return Default 默认值
+                     * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置默认值
-                     * @param Default 默认值
+                     * @param _default 默认值
+                     * 
                      */
                     void SetDefault(const std::string& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 
@@ -88,164 +94,191 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnumValue 参数为enum/string/bool时，可选值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数为enum/string/bool时，可选值列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnumValue 参数为enum/string/bool时，可选值列表
+                     * @param _enumValue 参数为enum/string/bool时，可选值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
 
                     /**
                      * 判断参数 EnumValue 是否已赋值
                      * @return EnumValue 是否已赋值
+                     * 
                      */
                     bool EnumValueHasBeenSet() const;
 
                     /**
                      * 获取参数类型为float/integer时的最大值
                      * @return Max 参数类型为float/integer时的最大值
+                     * 
                      */
                     std::string GetMax() const;
 
                     /**
                      * 设置参数类型为float/integer时的最大值
-                     * @param Max 参数类型为float/integer时的最大值
+                     * @param _max 参数类型为float/integer时的最大值
+                     * 
                      */
                     void SetMax(const std::string& _max);
 
                     /**
                      * 判断参数 Max 是否已赋值
                      * @return Max 是否已赋值
+                     * 
                      */
                     bool MaxHasBeenSet() const;
 
                     /**
                      * 获取参数类型为float/integer时的最小值
                      * @return Min 参数类型为float/integer时的最小值
+                     * 
                      */
                     std::string GetMin() const;
 
                     /**
                      * 设置参数类型为float/integer时的最小值
-                     * @param Min 参数类型为float/integer时的最小值
+                     * @param _min 参数类型为float/integer时的最小值
+                     * 
                      */
                     void SetMin(const std::string& _min);
 
                     /**
                      * 判断参数 Min 是否已赋值
                      * @return Min 是否已赋值
+                     * 
                      */
                     bool MinHasBeenSet() const;
 
                     /**
                      * 获取参数名称
                      * @return ParamName 参数名称
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名称
-                     * @param ParamName 参数名称
+                     * @param _paramName 参数名称
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取是否需要重启生效
                      * @return NeedReboot 是否需要重启生效
+                     * 
                      */
                     int64_t GetNeedReboot() const;
 
                     /**
                      * 设置是否需要重启生效
-                     * @param NeedReboot 是否需要重启生效
+                     * @param _needReboot 是否需要重启生效
+                     * 
                      */
                     void SetNeedReboot(const int64_t& _needReboot);
 
                     /**
                      * 判断参数 NeedReboot 是否已赋值
                      * @return NeedReboot 是否已赋值
+                     * 
                      */
                     bool NeedRebootHasBeenSet() const;
 
                     /**
                      * 获取参数类型：integer/float/string/enum/bool
                      * @return ParamType 参数类型：integer/float/string/enum/bool
+                     * 
                      */
                     std::string GetParamType() const;
 
                     /**
                      * 设置参数类型：integer/float/string/enum/bool
-                     * @param ParamType 参数类型：integer/float/string/enum/bool
+                     * @param _paramType 参数类型：integer/float/string/enum/bool
+                     * 
                      */
                     void SetParamType(const std::string& _paramType);
 
                     /**
                      * 判断参数 ParamType 是否已赋值
                      * @return ParamType 是否已赋值
+                     * 
                      */
                     bool ParamTypeHasBeenSet() const;
 
                     /**
                      * 获取匹配类型，multiVal, regex在参数类型是string时使用
                      * @return MatchType 匹配类型，multiVal, regex在参数类型是string时使用
+                     * 
                      */
                     std::string GetMatchType() const;
 
                     /**
                      * 设置匹配类型，multiVal, regex在参数类型是string时使用
-                     * @param MatchType 匹配类型，multiVal, regex在参数类型是string时使用
+                     * @param _matchType 匹配类型，multiVal, regex在参数类型是string时使用
+                     * 
                      */
                     void SetMatchType(const std::string& _matchType);
 
                     /**
                      * 判断参数 MatchType 是否已赋值
                      * @return MatchType 是否已赋值
+                     * 
                      */
                     bool MatchTypeHasBeenSet() const;
 
                     /**
                      * 获取匹配目标值，当multiVal时，各个key用;分割
                      * @return MatchValue 匹配目标值，当multiVal时，各个key用;分割
+                     * 
                      */
                     std::string GetMatchValue() const;
 
                     /**
                      * 设置匹配目标值，当multiVal时，各个key用;分割
-                     * @param MatchValue 匹配目标值，当multiVal时，各个key用;分割
+                     * @param _matchValue 匹配目标值，当multiVal时，各个key用;分割
+                     * 
                      */
                     void SetMatchValue(const std::string& _matchValue);
 
                     /**
                      * 判断参数 MatchValue 是否已赋值
                      * @return MatchValue 是否已赋值
+                     * 
                      */
                     bool MatchValueHasBeenSet() const;
 
                     /**
                      * 获取参数描述
                      * @return Description 参数描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置参数描述
-                     * @param Description 参数描述
+                     * @param _description 参数描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -254,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGlobal 是否为全局参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsGlobal() const;
 
                     /**
                      * 设置是否为全局参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsGlobal 是否为全局参数
+                     * @param _isGlobal 是否为全局参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsGlobal(const int64_t& _isGlobal);
 
                     /**
                      * 判断参数 IsGlobal 是否已赋值
                      * @return IsGlobal 是否已赋值
+                     * 
                      */
                     bool IsGlobalHasBeenSet() const;
 
@@ -276,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiableInfo 参数是否可修改
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ModifiableInfo GetModifiableInfo() const;
 
                     /**
                      * 设置参数是否可修改
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifiableInfo 参数是否可修改
+                     * @param _modifiableInfo 参数是否可修改
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifiableInfo(const ModifiableInfo& _modifiableInfo);
 
                     /**
                      * 判断参数 ModifiableInfo 是否已赋值
                      * @return ModifiableInfo 是否已赋值
+                     * 
                      */
                     bool ModifiableInfoHasBeenSet() const;
 
@@ -298,20 +337,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFunc 是否为函数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsFunc() const;
 
                     /**
                      * 设置是否为函数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsFunc 是否为函数
+                     * @param _isFunc 是否为函数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsFunc(const bool& _isFunc);
 
                     /**
                      * 判断参数 IsFunc 是否已赋值
                      * @return IsFunc 是否已赋值
+                     * 
                      */
                     bool IsFuncHasBeenSet() const;
 
@@ -320,20 +362,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Func 函数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFunc() const;
 
                     /**
                      * 设置函数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Func 函数
+                     * @param _func 函数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFunc(const std::string& _func);
 
                     /**
                      * 判断参数 Func 是否已赋值
                      * @return Func 是否已赋值
+                     * 
                      */
                     bool FuncHasBeenSet() const;
 

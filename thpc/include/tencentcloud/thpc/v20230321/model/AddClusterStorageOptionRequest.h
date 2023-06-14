@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID。
                      * @return ClusterId 集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID。
-                     * @param ClusterId 集群ID。
+                     * @param _clusterId 集群ID。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群存储选项。
                      * @return StorageOption 集群存储选项。
+                     * 
                      */
                     StorageOption GetStorageOption() const;
 
                     /**
                      * 设置集群存储选项。
-                     * @param StorageOption 集群存储选项。
+                     * @param _storageOption 集群存储选项。
+                     * 
                      */
                     void SetStorageOption(const StorageOption& _storageOption);
 
                     /**
                      * 判断参数 StorageOption 是否已赋值
                      * @return StorageOption 是否已赋值
+                     * 
                      */
                     bool StorageOptionHasBeenSet() const;
 

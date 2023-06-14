@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取接收请求的目标节点类型列表
                      * @return TargetNodeTypes 接收请求的目标节点类型列表
+                     * 
                      */
                     std::vector<std::string> GetTargetNodeTypes() const;
 
                     /**
                      * 判断参数 TargetNodeTypes 是否已赋值
                      * @return TargetNodeTypes 是否已赋值
+                     * 
                      */
                     bool TargetNodeTypesHasBeenSet() const;
 

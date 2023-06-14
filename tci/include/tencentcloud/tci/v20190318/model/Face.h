@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取人脸唯一标识符
                      * @return FaceId 人脸唯一标识符
+                     * 
                      */
                     std::string GetFaceId() const;
 
                     /**
                      * 设置人脸唯一标识符
-                     * @param FaceId 人脸唯一标识符
+                     * @param _faceId 人脸唯一标识符
+                     * 
                      */
                     void SetFaceId(const std::string& _faceId);
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取人脸图片 URL
                      * @return FaceUrl 人脸图片 URL
+                     * 
                      */
                     std::string GetFaceUrl() const;
 
                     /**
                      * 设置人脸图片 URL
-                     * @param FaceUrl 人脸图片 URL
+                     * @param _faceUrl 人脸图片 URL
+                     * 
                      */
                     void SetFaceUrl(const std::string& _faceUrl);
 
                     /**
                      * 判断参数 FaceUrl 是否已赋值
                      * @return FaceUrl 是否已赋值
+                     * 
                      */
                     bool FaceUrlHasBeenSet() const;
 
                     /**
                      * 获取人员唯一标识符
                      * @return PersonId 人员唯一标识符
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员唯一标识符
-                     * @param PersonId 人员唯一标识符
+                     * @param _personId 人员唯一标识符
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

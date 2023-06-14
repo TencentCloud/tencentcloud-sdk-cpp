@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取一页条数，当Limit=0时，默认一页条数为100;最大取值为100
                      * @return Limit 一页条数，当Limit=0时，默认一页条数为100;最大取值为100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置一页条数，当Limit=0时，默认一页条数为100;最大取值为100
-                     * @param Limit 一页条数，当Limit=0时，默认一页条数为100;最大取值为100
+                     * @param _limit 一页条数，当Limit=0时，默认一页条数为100;最大取值为100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例
                      * @return FilterInstanceId 资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例
+                     * 
                      */
                     std::string GetFilterInstanceId() const;
 
                     /**
                      * 设置资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例
-                     * @param FilterInstanceId 资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例
+                     * @param _filterInstanceId 资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例
+                     * 
                      */
                     void SetFilterInstanceId(const std::string& _filterInstanceId);
 
                     /**
                      * 判断参数 FilterInstanceId 是否已赋值
                      * @return FilterInstanceId 是否已赋值
+                     * 
                      */
                     bool FilterInstanceIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ namespace TencentCloud
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
+                     * 
                      */
                     int64_t GetFilterAlarmType() const;
 
@@ -113,52 +123,60 @@ namespace TencentCloud
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
-                     * @param FilterAlarmType 告警阈值类型搜索，取值[
+                     * @param _filterAlarmType 告警阈值类型搜索，取值[
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
+                     * 
                      */
                     void SetFilterAlarmType(const int64_t& _filterAlarmType);
 
                     /**
                      * 判断参数 FilterAlarmType 是否已赋值
                      * @return FilterAlarmType 是否已赋值
+                     * 
                      */
                     bool FilterAlarmTypeHasBeenSet() const;
 
                     /**
                      * 获取IP搜索
                      * @return FilterIp IP搜索
+                     * 
                      */
                     std::string GetFilterIp() const;
 
                     /**
                      * 设置IP搜索
-                     * @param FilterIp IP搜索
+                     * @param _filterIp IP搜索
+                     * 
                      */
                     void SetFilterIp(const std::string& _filterIp);
 
                     /**
                      * 判断参数 FilterIp 是否已赋值
                      * @return FilterIp 是否已赋值
+                     * 
                      */
                     bool FilterIpHasBeenSet() const;
 
                     /**
                      * 获取高防IP实例资源的cname
                      * @return FilterCname 高防IP实例资源的cname
+                     * 
                      */
                     std::string GetFilterCname() const;
 
                     /**
                      * 设置高防IP实例资源的cname
-                     * @param FilterCname 高防IP实例资源的cname
+                     * @param _filterCname 高防IP实例资源的cname
+                     * 
                      */
                     void SetFilterCname(const std::string& _filterCname);
 
                     /**
                      * 判断参数 FilterCname 是否已赋值
                      * @return FilterCname 是否已赋值
+                     * 
                      */
                     bool FilterCnameHasBeenSet() const;
 

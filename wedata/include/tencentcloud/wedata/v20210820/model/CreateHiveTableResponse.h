@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取建表是否成功
                      * @return IsSuccess 建表是否成功
+                     * 
                      */
                     bool GetIsSuccess() const;
 
                     /**
                      * 判断参数 IsSuccess 是否已赋值
                      * @return IsSuccess 是否已赋值
+                     * 
                      */
                     bool IsSuccessHasBeenSet() const;
 

@@ -52,198 +52,231 @@ namespace TencentCloud
                     /**
                      * 获取工作流 ID。
                      * @return WorkflowId 工作流 ID。
+                     * 
                      */
                     int64_t GetWorkflowId() const;
 
                     /**
                      * 设置工作流 ID。
-                     * @param WorkflowId 工作流 ID。
+                     * @param _workflowId 工作流 ID。
+                     * 
                      */
                     void SetWorkflowId(const int64_t& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
                      * 获取工作流名称，最多128字符。同一个用户该名称唯一。
                      * @return WorkflowName 工作流名称，最多128字符。同一个用户该名称唯一。
+                     * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
                      * 设置工作流名称，最多128字符。同一个用户该名称唯一。
-                     * @param WorkflowName 工作流名称，最多128字符。同一个用户该名称唯一。
+                     * @param _workflowName 工作流名称，最多128字符。同一个用户该名称唯一。
+                     * 
                      */
                     void SetWorkflowName(const std::string& _workflowName);
 
                     /**
                      * 判断参数 WorkflowName 是否已赋值
                      * @return WorkflowName 是否已赋值
+                     * 
                      */
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
                      * 获取工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
                      * @return Trigger 工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
+                     * 
                      */
                     WorkflowTrigger GetTrigger() const;
 
                     /**
                      * 设置工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
-                     * @param Trigger 工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
+                     * @param _trigger 工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
+                     * 
                      */
                     void SetTrigger(const WorkflowTrigger& _trigger);
 
                     /**
                      * 判断参数 Trigger 是否已赋值
                      * @return Trigger 是否已赋值
+                     * 
                      */
                     bool TriggerHasBeenSet() const;
 
                     /**
                      * 获取视频处理的文件输出配置。不填则继承 Trigger 中的存储位置。
                      * @return OutputStorage 视频处理的文件输出配置。不填则继承 Trigger 中的存储位置。
+                     * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
                      * 设置视频处理的文件输出配置。不填则继承 Trigger 中的存储位置。
-                     * @param OutputStorage 视频处理的文件输出配置。不填则继承 Trigger 中的存储位置。
+                     * @param _outputStorage 视频处理的文件输出配置。不填则继承 Trigger 中的存储位置。
+                     * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
                     /**
                      * 判断参数 OutputStorage 是否已赋值
                      * @return OutputStorage 是否已赋值
+                     * 
                      */
                     bool OutputStorageHasBeenSet() const;
 
                     /**
                      * 获取视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
                      * @return OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
                      * 设置视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
-                     * @param OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * @param _outputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
 
                     /**
                      * 判断参数 OutputDir 是否已赋值
                      * @return OutputDir 是否已赋值
+                     * 
                      */
                     bool OutputDirHasBeenSet() const;
 
                     /**
                      * 获取视频处理类型任务参数。
                      * @return MediaProcessTask 视频处理类型任务参数。
+                     * 
                      */
                     MediaProcessTaskInput GetMediaProcessTask() const;
 
                     /**
                      * 设置视频处理类型任务参数。
-                     * @param MediaProcessTask 视频处理类型任务参数。
+                     * @param _mediaProcessTask 视频处理类型任务参数。
+                     * 
                      */
                     void SetMediaProcessTask(const MediaProcessTaskInput& _mediaProcessTask);
 
                     /**
                      * 判断参数 MediaProcessTask 是否已赋值
                      * @return MediaProcessTask 是否已赋值
+                     * 
                      */
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核类型任务参数。
                      * @return AiContentReviewTask 视频内容审核类型任务参数。
+                     * 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
                      * 设置视频内容审核类型任务参数。
-                     * @param AiContentReviewTask 视频内容审核类型任务参数。
+                     * @param _aiContentReviewTask 视频内容审核类型任务参数。
+                     * 
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
                     /**
                      * 判断参数 AiContentReviewTask 是否已赋值
                      * @return AiContentReviewTask 是否已赋值
+                     * 
                      */
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容分析类型任务参数。
                      * @return AiAnalysisTask 视频内容分析类型任务参数。
+                     * 
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
                      * 设置视频内容分析类型任务参数。
-                     * @param AiAnalysisTask 视频内容分析类型任务参数。
+                     * @param _aiAnalysisTask 视频内容分析类型任务参数。
+                     * 
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
 
                     /**
                      * 判断参数 AiAnalysisTask 是否已赋值
                      * @return AiAnalysisTask 是否已赋值
+                     * 
                      */
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
                      * 获取视频内容识别类型任务参数。
                      * @return AiRecognitionTask 视频内容识别类型任务参数。
+                     * 
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
                      * 设置视频内容识别类型任务参数。
-                     * @param AiRecognitionTask 视频内容识别类型任务参数。
+                     * @param _aiRecognitionTask 视频内容识别类型任务参数。
+                     * 
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
                     /**
                      * 判断参数 AiRecognitionTask 是否已赋值
                      * @return AiRecognitionTask 是否已赋值
+                     * 
                      */
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
                      * 获取工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      * @return TaskPriority 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     int64_t GetTaskPriority() const;
 
                     /**
                      * 设置工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param TaskPriority 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param _taskPriority 工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     void SetTaskPriority(const int64_t& _taskPriority);
 
                     /**
                      * 判断参数 TaskPriority 是否已赋值
                      * @return TaskPriority 是否已赋值
+                     * 
                      */
                     bool TaskPriorityHasBeenSet() const;
 
                     /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
                      * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
                      * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
 
                     /**
                      * 判断参数 TaskNotifyConfig 是否已赋值
                      * @return TaskNotifyConfig 是否已赋值
+                     * 
                      */
                     bool TaskNotifyConfigHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取复制明细列表
                      * @return JobItems 复制明细列表
+                     * 
                      */
                     std::vector<CopyJobItem> GetJobItems() const;
 
                     /**
                      * 设置复制明细列表
-                     * @param JobItems 复制明细列表
+                     * @param _jobItems 复制明细列表
+                     * 
                      */
                     void SetJobItems(const std::vector<CopyJobItem>& _jobItems);
 
                     /**
                      * 判断参数 JobItems 是否已赋值
                      * @return JobItems 是否已赋值
+                     * 
                      */
                     bool JobItemsHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

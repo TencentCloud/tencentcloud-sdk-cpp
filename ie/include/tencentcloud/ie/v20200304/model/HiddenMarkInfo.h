@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取数字水印路径,，如果不从Cos拉取水印，则必填
                      * @return Path 数字水印路径,，如果不从Cos拉取水印，则必填
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置数字水印路径,，如果不从Cos拉取水印，则必填
-                     * @param Path 数字水印路径,，如果不从Cos拉取水印，则必填
+                     * @param _path 数字水印路径,，如果不从Cos拉取水印，则必填
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取数字水印频率，可选值：[1,256]，默认值为30
                      * @return Frequency 数字水印频率，可选值：[1,256]，默认值为30
+                     * 
                      */
                     int64_t GetFrequency() const;
 
                     /**
                      * 设置数字水印频率，可选值：[1,256]，默认值为30
-                     * @param Frequency 数字水印频率，可选值：[1,256]，默认值为30
+                     * @param _frequency 数字水印频率，可选值：[1,256]，默认值为30
+                     * 
                      */
                     void SetFrequency(const int64_t& _frequency);
 
                     /**
                      * 判断参数 Frequency 是否已赋值
                      * @return Frequency 是否已赋值
+                     * 
                      */
                     bool FrequencyHasBeenSet() const;
 
                     /**
                      * 获取数字水印强度，可选值：[32,128]，默认值为64
                      * @return Strength 数字水印强度，可选值：[32,128]，默认值为64
+                     * 
                      */
                     int64_t GetStrength() const;
 
                     /**
                      * 设置数字水印强度，可选值：[32,128]，默认值为64
-                     * @param Strength 数字水印强度，可选值：[32,128]，默认值为64
+                     * @param _strength 数字水印强度，可选值：[32,128]，默认值为64
+                     * 
                      */
                     void SetStrength(const int64_t& _strength);
 
                     /**
                      * 判断参数 Strength 是否已赋值
                      * @return Strength 是否已赋值
+                     * 
                      */
                     bool StrengthHasBeenSet() const;
 
                     /**
                      * 获取数字水印的Cos 信息，从Cos上拉取图片水印时必填。
                      * @return CosInfo 数字水印的Cos 信息，从Cos上拉取图片水印时必填。
+                     * 
                      */
                     CosInfo GetCosInfo() const;
 
                     /**
                      * 设置数字水印的Cos 信息，从Cos上拉取图片水印时必填。
-                     * @param CosInfo 数字水印的Cos 信息，从Cos上拉取图片水印时必填。
+                     * @param _cosInfo 数字水印的Cos 信息，从Cos上拉取图片水印时必填。
+                     * 
                      */
                     void SetCosInfo(const CosInfo& _cosInfo);
 
                     /**
                      * 判断参数 CosInfo 是否已赋值
                      * @return CosInfo 是否已赋值
+                     * 
                      */
                     bool CosInfoHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取启用标志
                      * @return EnableTag 启用标志
+                     * 
                      */
                     bool GetEnableTag() const;
 
                     /**
                      * 设置启用标志
-                     * @param EnableTag 启用标志
+                     * @param _enableTag 启用标志
+                     * 
                      */
                     void SetEnableTag(const bool& _enableTag);
 
                     /**
                      * 判断参数 EnableTag 是否已赋值
                      * @return EnableTag 是否已赋值
+                     * 
                      */
                     bool EnableTagHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMetaFields() const;
 
                     /**
                      * 设置元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
+                     * @param _metaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaFields(const std::vector<std::string>& _metaFields);
 
                     /**
                      * 判断参数 MetaFields 是否已赋值
                      * @return MetaFields 是否已赋值
+                     * 
                      */
                     bool MetaFieldsHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetJsonType() const;
 
                     /**
                      * 设置投递Json格式，0：字符串方式投递；1:以结构化方式投递
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
+                     * @param _jsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJsonType(const int64_t& _jsonType);
 
                     /**
                      * 判断参数 JsonType 是否已赋值
                      * @return JsonType 是否已赋值
+                     * 
                      */
                     bool JsonTypeHasBeenSet() const;
 

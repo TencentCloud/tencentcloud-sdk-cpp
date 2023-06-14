@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取面板组名称
                      * @return DashboardName 面板组名称
+                     * 
                      */
                     std::string GetDashboardName() const;
 
                     /**
                      * 设置面板组名称
-                     * @param DashboardName 面板组名称
+                     * @param _dashboardName 面板组名称
+                     * 
                      */
                     void SetDashboardName(const std::string& _dashboardName);
 
                     /**
                      * 判断参数 DashboardName 是否已赋值
                      * @return DashboardName 是否已赋值
+                     * 
                      */
                     bool DashboardNameHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 每一项是一个grafana dashboard的json定义
                      * @return Contents 面板列表
 每一项是一个grafana dashboard的json定义
+                     * 
                      */
                     std::vector<std::string> GetContents() const;
 
                     /**
                      * 设置面板列表
 每一项是一个grafana dashboard的json定义
-                     * @param Contents 面板列表
+                     * @param _contents 面板列表
 每一项是一个grafana dashboard的json定义
+                     * 
                      */
                     void SetContents(const std::vector<std::string>& _contents);
 
                     /**
                      * 判断参数 Contents 是否已赋值
                      * @return Contents 是否已赋值
+                     * 
                      */
                     bool ContentsHasBeenSet() const;
 

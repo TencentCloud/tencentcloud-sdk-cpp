@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取增加策略信息，策略id为空，编辑策略是id不能为空
                      * @return RuleInfo 增加策略信息，策略id为空，编辑策略是id不能为空
+                     * 
                      */
                     AccessControlRuleInfo GetRuleInfo() const;
 
                     /**
                      * 设置增加策略信息，策略id为空，编辑策略是id不能为空
-                     * @param RuleInfo 增加策略信息，策略id为空，编辑策略是id不能为空
+                     * @param _ruleInfo 增加策略信息，策略id为空，编辑策略是id不能为空
+                     * 
                      */
                     void SetRuleInfo(const AccessControlRuleInfo& _ruleInfo);
 
                     /**
                      * 判断参数 RuleInfo 是否已赋值
                      * @return RuleInfo 是否已赋值
+                     * 
                      */
                     bool RuleInfoHasBeenSet() const;
 
                     /**
                      * 获取仅在白名单时候使用
                      * @return EventId 仅在白名单时候使用
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置仅在白名单时候使用
-                     * @param EventId 仅在白名单时候使用
+                     * @param _eventId 仅在白名单时候使用
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 

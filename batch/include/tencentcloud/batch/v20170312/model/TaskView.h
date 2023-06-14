@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取任务名称
                      * @return TaskName 任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return TaskState 任务状态
+                     * 
                      */
                     std::string GetTaskState() const;
 
                     /**
                      * 设置任务状态
-                     * @param TaskState 任务状态
+                     * @param _taskState 任务状态
+                     * 
                      */
                     void SetTaskState(const std::string& _taskState);
 
                     /**
                      * 判断参数 TaskState 是否已赋值
                      * @return TaskState 是否已赋值
+                     * 
                      */
                     bool TaskStateHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return CreateTime 开始时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param CreateTime 开始时间
+                     * @param _createTime 开始时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

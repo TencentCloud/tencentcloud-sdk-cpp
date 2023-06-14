@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取策略列表总数
                      * @return Total 策略列表总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取策略列表详情
                      * @return PrecisionPolicyList 策略列表详情
+                     * 
                      */
                     std::vector<CCPrecisionPolicy> GetPrecisionPolicyList() const;
 
                     /**
                      * 判断参数 PrecisionPolicyList 是否已赋值
                      * @return PrecisionPolicyList 是否已赋值
+                     * 
                      */
                     bool PrecisionPolicyListHasBeenSet() const;
 

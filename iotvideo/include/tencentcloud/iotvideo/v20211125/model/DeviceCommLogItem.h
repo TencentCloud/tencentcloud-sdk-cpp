@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时间
                      * @return Time 时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间
-                     * @param Time 时间
+                     * @param _time 时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取日志类型，device 设备上行，shadow 服务端下行。
                      * @return Type 日志类型，device 设备上行，shadow 服务端下行。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置日志类型，device 设备上行，shadow 服务端下行。
-                     * @param Type 日志类型，device 设备上行，shadow 服务端下行。
+                     * @param _type 日志类型，device 设备上行，shadow 服务端下行。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取通讯数据。
                      * @return Data 通讯数据。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置通讯数据。
-                     * @param Data 通讯数据。
+                     * @param _data 通讯数据。
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

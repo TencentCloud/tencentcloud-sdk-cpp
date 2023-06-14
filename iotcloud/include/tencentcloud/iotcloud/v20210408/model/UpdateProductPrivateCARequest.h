@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取私有CA证书名称
                      * @return CertName 私有CA证书名称
+                     * 
                      */
                     std::string GetCertName() const;
 
                     /**
                      * 设置私有CA证书名称
-                     * @param CertName 私有CA证书名称
+                     * @param _certName 私有CA证书名称
+                     * 
                      */
                     void SetCertName(const std::string& _certName);
 
                     /**
                      * 判断参数 CertName 是否已赋值
                      * @return CertName 是否已赋值
+                     * 
                      */
                     bool CertNameHasBeenSet() const;
 

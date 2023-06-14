@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新建链接的媒体 Id。
                      * @return MaterialId 新建链接的媒体 Id。
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 

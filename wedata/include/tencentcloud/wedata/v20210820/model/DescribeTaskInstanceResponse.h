@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务实例详情
                      * @return TaskInstanceDetail 任务实例详情
+                     * 
                      */
                     TaskInstanceDetail GetTaskInstanceDetail() const;
 
                     /**
                      * 判断参数 TaskInstanceDetail 是否已赋值
                      * @return TaskInstanceDetail 是否已赋值
+                     * 
                      */
                     bool TaskInstanceDetailHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 任务实例详情。与TaskInstanceDetail相同含义，优先取Data，Data为空时，取TaskInstanceDetail
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskInstanceDetail GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

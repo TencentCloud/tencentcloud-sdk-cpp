@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取策略列表数据
                      * @return PolicyList 策略列表数据
+                     * 
                      */
                     std::vector<AttachedUserPolicy> GetPolicyList() const;
 
                     /**
                      * 判断参数 PolicyList 是否已赋值
                      * @return PolicyList 是否已赋值
+                     * 
                      */
                     bool PolicyListHasBeenSet() const;
 
                     /**
                      * 获取策略总数
                      * @return TotalNum 策略总数
+                     * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 判断参数 TotalNum 是否已赋值
                      * @return TotalNum 是否已赋值
+                     * 
                      */
                     bool TotalNumHasBeenSet() const;
 

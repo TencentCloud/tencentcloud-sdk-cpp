@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return DBInstanceId 实例ID。
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param DBInstanceId 实例ID。
+                     * @param _dBInstanceId 实例ID。
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取基础备份ID。
                      * @return BaseBackupId 基础备份ID。
+                     * 
                      */
                     std::string GetBaseBackupId() const;
 
                     /**
                      * 设置基础备份ID。
-                     * @param BaseBackupId 基础备份ID。
+                     * @param _baseBackupId 基础备份ID。
+                     * 
                      */
                     void SetBaseBackupId(const std::string& _baseBackupId);
 
                     /**
                      * 判断参数 BaseBackupId 是否已赋值
                      * @return BaseBackupId 是否已赋值
+                     * 
                      */
                     bool BaseBackupIdHasBeenSet() const;
 
                     /**
                      * 获取新过期时间。
                      * @return NewExpireTime 新过期时间。
+                     * 
                      */
                     std::string GetNewExpireTime() const;
 
                     /**
                      * 设置新过期时间。
-                     * @param NewExpireTime 新过期时间。
+                     * @param _newExpireTime 新过期时间。
+                     * 
                      */
                     void SetNewExpireTime(const std::string& _newExpireTime);
 
                     /**
                      * 判断参数 NewExpireTime 是否已赋值
                      * @return NewExpireTime 是否已赋值
+                     * 
                      */
                     bool NewExpireTimeHasBeenSet() const;
 

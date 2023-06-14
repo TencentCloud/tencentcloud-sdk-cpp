@@ -71,6 +71,7 @@ namespace TencentCloud
 机动车所有人7、身份证明名称7、号码7、登记机关7、登记日期7
 【抵押登记页】
 机动车登记证书编号、身份证明名称/号码、抵押权人姓名/名称、抵押登记日期。
+                     * 
                      */
                     std::string GetName() const;
 
@@ -87,7 +88,7 @@ namespace TencentCloud
 机动车所有人7、身份证明名称7、号码7、登记机关7、登记日期7
 【抵押登记页】
 机动车登记证书编号、身份证明名称/号码、抵押权人姓名/名称、抵押登记日期。
-                     * @param Name 识别出的字段名称(关键字)，支持以下字段：
+                     * @param _name 识别出的字段名称(关键字)，支持以下字段：
 【注册登记页】
 车辆型号、车辆识别代号/车架号、发动机号、制造厂名称、轴距、轮胎数、总质量、外廓尺寸、轴数、车辆出厂日期、发证日期、使用性质、车辆获得方式、车辆类型、国产/进口、燃料种类、车身颜色、发动机型号、车辆品牌、编号、转向形式、
 机动车所有人1、身份证明名称1、号码1、登记机关1、登记日期1
@@ -99,30 +100,35 @@ namespace TencentCloud
 机动车所有人7、身份证明名称7、号码7、登记机关7、登记日期7
 【抵押登记页】
 机动车登记证书编号、身份证明名称/号码、抵押权人姓名/名称、抵押登记日期。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

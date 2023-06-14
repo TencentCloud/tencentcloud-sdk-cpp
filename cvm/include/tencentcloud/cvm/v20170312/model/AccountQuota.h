@@ -54,90 +54,105 @@ namespace TencentCloud
                     /**
                      * 获取后付费配额列表
                      * @return PostPaidQuotaSet 后付费配额列表
+                     * 
                      */
                     std::vector<PostPaidQuota> GetPostPaidQuotaSet() const;
 
                     /**
                      * 设置后付费配额列表
-                     * @param PostPaidQuotaSet 后付费配额列表
+                     * @param _postPaidQuotaSet 后付费配额列表
+                     * 
                      */
                     void SetPostPaidQuotaSet(const std::vector<PostPaidQuota>& _postPaidQuotaSet);
 
                     /**
                      * 判断参数 PostPaidQuotaSet 是否已赋值
                      * @return PostPaidQuotaSet 是否已赋值
+                     * 
                      */
                     bool PostPaidQuotaSetHasBeenSet() const;
 
                     /**
                      * 获取预付费配额列表
                      * @return PrePaidQuotaSet 预付费配额列表
+                     * 
                      */
                     std::vector<PrePaidQuota> GetPrePaidQuotaSet() const;
 
                     /**
                      * 设置预付费配额列表
-                     * @param PrePaidQuotaSet 预付费配额列表
+                     * @param _prePaidQuotaSet 预付费配额列表
+                     * 
                      */
                     void SetPrePaidQuotaSet(const std::vector<PrePaidQuota>& _prePaidQuotaSet);
 
                     /**
                      * 判断参数 PrePaidQuotaSet 是否已赋值
                      * @return PrePaidQuotaSet 是否已赋值
+                     * 
                      */
                     bool PrePaidQuotaSetHasBeenSet() const;
 
                     /**
                      * 获取spot配额列表
                      * @return SpotPaidQuotaSet spot配额列表
+                     * 
                      */
                     std::vector<SpotPaidQuota> GetSpotPaidQuotaSet() const;
 
                     /**
                      * 设置spot配额列表
-                     * @param SpotPaidQuotaSet spot配额列表
+                     * @param _spotPaidQuotaSet spot配额列表
+                     * 
                      */
                     void SetSpotPaidQuotaSet(const std::vector<SpotPaidQuota>& _spotPaidQuotaSet);
 
                     /**
                      * 判断参数 SpotPaidQuotaSet 是否已赋值
                      * @return SpotPaidQuotaSet 是否已赋值
+                     * 
                      */
                     bool SpotPaidQuotaSetHasBeenSet() const;
 
                     /**
                      * 获取镜像配额列表
                      * @return ImageQuotaSet 镜像配额列表
+                     * 
                      */
                     std::vector<ImageQuota> GetImageQuotaSet() const;
 
                     /**
                      * 设置镜像配额列表
-                     * @param ImageQuotaSet 镜像配额列表
+                     * @param _imageQuotaSet 镜像配额列表
+                     * 
                      */
                     void SetImageQuotaSet(const std::vector<ImageQuota>& _imageQuotaSet);
 
                     /**
                      * 判断参数 ImageQuotaSet 是否已赋值
                      * @return ImageQuotaSet 是否已赋值
+                     * 
                      */
                     bool ImageQuotaSetHasBeenSet() const;
 
                     /**
                      * 获取置放群组配额列表
                      * @return DisasterRecoverGroupQuotaSet 置放群组配额列表
+                     * 
                      */
                     std::vector<DisasterRecoverGroupQuota> GetDisasterRecoverGroupQuotaSet() const;
 
                     /**
                      * 设置置放群组配额列表
-                     * @param DisasterRecoverGroupQuotaSet 置放群组配额列表
+                     * @param _disasterRecoverGroupQuotaSet 置放群组配额列表
+                     * 
                      */
                     void SetDisasterRecoverGroupQuotaSet(const std::vector<DisasterRecoverGroupQuota>& _disasterRecoverGroupQuotaSet);
 
                     /**
                      * 判断参数 DisasterRecoverGroupQuotaSet 是否已赋值
                      * @return DisasterRecoverGroupQuotaSet 是否已赋值
+                     * 
                      */
                     bool DisasterRecoverGroupQuotaSetHasBeenSet() const;
 

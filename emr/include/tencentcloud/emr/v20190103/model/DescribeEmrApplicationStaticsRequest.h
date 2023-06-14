@@ -45,198 +45,231 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return InstanceId 集群id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群id
-                     * @param InstanceId 集群id
+                     * @param _instanceId 集群id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取起始时间，时间戳（秒）
                      * @return StartTime 起始时间，时间戳（秒）
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置起始时间，时间戳（秒）
-                     * @param StartTime 起始时间，时间戳（秒）
+                     * @param _startTime 起始时间，时间戳（秒）
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，时间戳（秒）
                      * @return EndTime 结束时间，时间戳（秒）
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间，时间戳（秒）
-                     * @param EndTime 结束时间，时间戳（秒）
+                     * @param _endTime 结束时间，时间戳（秒）
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取过滤的队列名
                      * @return Queues 过滤的队列名
+                     * 
                      */
                     std::vector<std::string> GetQueues() const;
 
                     /**
                      * 设置过滤的队列名
-                     * @param Queues 过滤的队列名
+                     * @param _queues 过滤的队列名
+                     * 
                      */
                     void SetQueues(const std::vector<std::string>& _queues);
 
                     /**
                      * 判断参数 Queues 是否已赋值
                      * @return Queues 是否已赋值
+                     * 
                      */
                     bool QueuesHasBeenSet() const;
 
                     /**
                      * 获取过滤的用户名
                      * @return Users 过滤的用户名
+                     * 
                      */
                     std::vector<std::string> GetUsers() const;
 
                     /**
                      * 设置过滤的用户名
-                     * @param Users 过滤的用户名
+                     * @param _users 过滤的用户名
+                     * 
                      */
                     void SetUsers(const std::vector<std::string>& _users);
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 
                     /**
                      * 获取过滤的作业类型
                      * @return ApplicationTypes 过滤的作业类型
+                     * 
                      */
                     std::vector<std::string> GetApplicationTypes() const;
 
                     /**
                      * 设置过滤的作业类型
-                     * @param ApplicationTypes 过滤的作业类型
+                     * @param _applicationTypes 过滤的作业类型
+                     * 
                      */
                     void SetApplicationTypes(const std::vector<std::string>& _applicationTypes);
 
                     /**
                      * 判断参数 ApplicationTypes 是否已赋值
                      * @return ApplicationTypes 是否已赋值
+                     * 
                      */
                     bool ApplicationTypesHasBeenSet() const;
 
                     /**
                      * 获取分组字段，可选：queue, user, applicationType
                      * @return GroupBy 分组字段，可选：queue, user, applicationType
+                     * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
                      * 设置分组字段，可选：queue, user, applicationType
-                     * @param GroupBy 分组字段，可选：queue, user, applicationType
+                     * @param _groupBy 分组字段，可选：queue, user, applicationType
+                     * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
                     /**
                      * 判断参数 GroupBy 是否已赋值
                      * @return GroupBy 是否已赋值
+                     * 
                      */
                     bool GroupByHasBeenSet() const;
 
                     /**
                      * 获取排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead
                      * @return OrderBy 排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead
-                     * @param OrderBy 排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead
+                     * @param _orderBy 排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取是否顺序排序，0-逆序，1-正序
                      * @return IsAsc 是否顺序排序，0-逆序，1-正序
+                     * 
                      */
                     int64_t GetIsAsc() const;
 
                     /**
                      * 设置是否顺序排序，0-逆序，1-正序
-                     * @param IsAsc 是否顺序排序，0-逆序，1-正序
+                     * @param _isAsc 是否顺序排序，0-逆序，1-正序
+                     * 
                      */
                     void SetIsAsc(const int64_t& _isAsc);
 
                     /**
                      * 判断参数 IsAsc 是否已赋值
                      * @return IsAsc 是否已赋值
+                     * 
                      */
                     bool IsAscHasBeenSet() const;
 
                     /**
                      * 获取页号
                      * @return Offset 页号
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页号
-                     * @param Offset 页号
+                     * @param _offset 页号
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取页容量
                      * @return Limit 页容量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置页容量
-                     * @param Limit 页容量
+                     * @param _limit 页容量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

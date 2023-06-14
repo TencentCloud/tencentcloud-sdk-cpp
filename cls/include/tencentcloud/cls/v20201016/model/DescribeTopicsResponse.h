@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取日志主题列表
                      * @return Topics 日志主题列表
+                     * 
                      */
                     std::vector<TopicInfo> GetTopics() const;
 
                     /**
                      * 判断参数 Topics 是否已赋值
                      * @return Topics 是否已赋值
+                     * 
                      */
                     bool TopicsHasBeenSet() const;
 
                     /**
                      * 获取总数目
                      * @return TotalCount 总数目
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

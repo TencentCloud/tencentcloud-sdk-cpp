@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取DDoS告警阈值
                      * @return DDoSAlarmThreshold DDoS告警阈值
+                     * 
                      */
                     DDoSAlarmThreshold GetDDoSAlarmThreshold() const;
 
                     /**
                      * 判断参数 DDoSAlarmThreshold 是否已赋值
                      * @return DDoSAlarmThreshold 是否已赋值
+                     * 
                      */
                     bool DDoSAlarmThresholdHasBeenSet() const;
 

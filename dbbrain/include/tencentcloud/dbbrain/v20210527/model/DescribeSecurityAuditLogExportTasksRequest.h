@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取安全审计组Id。
                      * @return SecAuditGroupId 安全审计组Id。
+                     * 
                      */
                     std::string GetSecAuditGroupId() const;
 
                     /**
                      * 设置安全审计组Id。
-                     * @param SecAuditGroupId 安全审计组Id。
+                     * @param _secAuditGroupId 安全审计组Id。
+                     * 
                      */
                     void SetSecAuditGroupId(const std::string& _secAuditGroupId);
 
                     /**
                      * 判断参数 SecAuditGroupId 是否已赋值
                      * @return SecAuditGroupId 是否已赋值
+                     * 
                      */
                     bool SecAuditGroupIdHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL。
                      * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL。
-                     * @param Product 服务产品类型，支持值："mysql" - 云数据库 MySQL。
+                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
                     /**
                      * 获取日志导出任务Id列表。
                      * @return AsyncRequestIds 日志导出任务Id列表。
+                     * 
                      */
                     std::vector<uint64_t> GetAsyncRequestIds() const;
 
                     /**
                      * 设置日志导出任务Id列表。
-                     * @param AsyncRequestIds 日志导出任务Id列表。
+                     * @param _asyncRequestIds 日志导出任务Id列表。
+                     * 
                      */
                     void SetAsyncRequestIds(const std::vector<uint64_t>& _asyncRequestIds);
 
                     /**
                      * 判断参数 AsyncRequestIds 是否已赋值
                      * @return AsyncRequestIds 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认0。
                      * @return Offset 偏移量，默认0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认0。
-                     * @param Offset 偏移量，默认0。
+                     * @param _offset 偏移量，默认0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认20，最大值为100。
                      * @return Limit 返回数量，默认20，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认20，最大值为100。
-                     * @param Limit 返回数量，默认20，最大值为100。
+                     * @param _limit 返回数量，默认20，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

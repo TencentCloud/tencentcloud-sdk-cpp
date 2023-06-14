@@ -85,6 +85,7 @@ namespace TencentCloud
 • 16k_pt：葡萄牙语；
 • 16k_tr：土耳其语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
+                     * 
                      */
                     std::string GetEngineModelType() const;
 
@@ -110,7 +111,7 @@ namespace TencentCloud
 • 16k_pt：葡萄牙语；
 • 16k_tr：土耳其语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
-                     * @param EngineModelType 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
+                     * @param _engineModelType 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_zh：中文电话通用；
 • 8k_en：英文电话通用；
@@ -131,66 +132,77 @@ namespace TencentCloud
 • 16k_pt：葡萄牙语；
 • 16k_tr：土耳其语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
+                     * 
                      */
                     void SetEngineModelType(const std::string& _engineModelType);
 
                     /**
                      * 判断参数 EngineModelType 是否已赋值
                      * @return EngineModelType 是否已赋值
+                     * 
                      */
                     bool EngineModelTypeHasBeenSet() const;
 
                     /**
                      * 获取识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
                      * @return ChannelNum 识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
+                     * 
                      */
                     uint64_t GetChannelNum() const;
 
                     /**
                      * 设置识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
-                     * @param ChannelNum 识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
+                     * @param _channelNum 识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
+                     * 
                      */
                     void SetChannelNum(const uint64_t& _channelNum);
 
                     /**
                      * 判断参数 ChannelNum 是否已赋值
                      * @return ChannelNum 是否已赋值
+                     * 
                      */
                     bool ChannelNumHasBeenSet() const;
 
                     /**
                      * 获取识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。
                      * @return ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。
+                     * 
                      */
                     uint64_t GetResTextFormat() const;
 
                     /**
                      * 设置识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。
-                     * @param ResTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。
+                     * @param _resTextFormat 识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。
+                     * 
                      */
                     void SetResTextFormat(const uint64_t& _resTextFormat);
 
                     /**
                      * 判断参数 ResTextFormat 是否已赋值
                      * @return ResTextFormat 是否已赋值
+                     * 
                      */
                     bool ResTextFormatHasBeenSet() const;
 
                     /**
                      * 获取语音数据来源。0：语音 URL；1：语音数据（post body）。
                      * @return SourceType 语音数据来源。0：语音 URL；1：语音数据（post body）。
+                     * 
                      */
                     uint64_t GetSourceType() const;
 
                     /**
                      * 设置语音数据来源。0：语音 URL；1：语音数据（post body）。
-                     * @param SourceType 语音数据来源。0：语音 URL；1：语音数据（post body）。
+                     * @param _sourceType 语音数据来源。0：语音 URL；1：语音数据（post body）。
+                     * 
                      */
                     void SetSourceType(const uint64_t& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -199,20 +211,23 @@ namespace TencentCloud
 注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
                      * @return SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
 注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
+                     * 
                      */
                     int64_t GetSpeakerDiarization() const;
 
                     /**
                      * 设置是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
 注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
-                     * @param SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
+                     * @param _speakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
 注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
+                     * 
                      */
                     void SetSpeakerDiarization(const int64_t& _speakerDiarization);
 
                     /**
                      * 判断参数 SpeakerDiarization 是否已赋值
                      * @return SpeakerDiarization 是否已赋值
+                     * 
                      */
                     bool SpeakerDiarizationHasBeenSet() const;
 
@@ -221,272 +236,317 @@ namespace TencentCloud
 注：此功能结果仅供参考，请根据您的需要谨慎使用。
                      * @return SpeakerNumber 说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。默认值为 0。
 注：此功能结果仅供参考，请根据您的需要谨慎使用。
+                     * 
                      */
                     int64_t GetSpeakerNumber() const;
 
                     /**
                      * 设置说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。默认值为 0。
 注：此功能结果仅供参考，请根据您的需要谨慎使用。
-                     * @param SpeakerNumber 说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。默认值为 0。
+                     * @param _speakerNumber 说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。默认值为 0。
 注：此功能结果仅供参考，请根据您的需要谨慎使用。
+                     * 
                      */
                     void SetSpeakerNumber(const int64_t& _speakerNumber);
 
                     /**
                      * 判断参数 SpeakerNumber 是否已赋值
                      * @return SpeakerNumber 是否已赋值
+                     * 
                      */
                     bool SpeakerNumberHasBeenSet() const;
 
                     /**
                      * 获取回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
                      * @return CallbackUrl 回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
-                     * @param CallbackUrl 回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+                     * @param _callbackUrl 回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
                      * @return Url 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
-                     * @param Url 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * @param _url 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      * @return Data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
-                     * @param Data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * @param _data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
                      * @return DataLen 数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 
                      */
                     uint64_t GetDataLen() const;
 
                     /**
                      * 设置数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
-                     * @param DataLen 数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
+                     * @param _dataLen 数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。
+                     * 
                      */
                     void SetDataLen(const uint64_t& _dataLen);
 
                     /**
                      * 判断参数 DataLen 是否已赋值
                      * @return DataLen 是否已赋值
+                     * 
                      */
                     bool DataLenHasBeenSet() const;
 
                     /**
                      * 获取是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      * @return ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 
                      */
                     int64_t GetConvertNumMode() const;
 
                     /**
                      * 设置是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
-                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * @param _convertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 
                      */
                     void SetConvertNumMode(const int64_t& _convertNumMode);
 
                     /**
                      * 判断参数 ConvertNumMode 是否已赋值
                      * @return ConvertNumMode 是否已赋值
+                     * 
                      */
                     bool ConvertNumModeHasBeenSet() const;
 
                     /**
                      * 获取是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
                      * @return FilterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
+                     * 
                      */
                     int64_t GetFilterDirty() const;
 
                     /**
                      * 设置是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
-                     * @param FilterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
+                     * @param _filterDirty 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
+                     * 
                      */
                     void SetFilterDirty(const int64_t& _filterDirty);
 
                     /**
                      * 判断参数 FilterDirty 是否已赋值
                      * @return FilterDirty 是否已赋值
+                     * 
                      */
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
                      * 获取热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
                      * @return HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
+                     * 
                      */
                     std::string GetHotwordId() const;
 
                     /**
                      * 设置热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
-                     * @param HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
+                     * @param _hotwordId 热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
+                     * 
                      */
                     void SetHotwordId(const std::string& _hotwordId);
 
                     /**
                      * 判断参数 HotwordId 是否已赋值
                      * @return HotwordId 是否已赋值
+                     * 
                      */
                     bool HotwordIdHasBeenSet() const;
 
                     /**
                      * 获取自学习模型 id。如设置了该参数，将生效对应的自学习模型。
                      * @return CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * 
                      */
                     std::string GetCustomizationId() const;
 
                     /**
                      * 设置自学习模型 id。如设置了该参数，将生效对应的自学习模型。
-                     * @param CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * @param _customizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * 
                      */
                     void SetCustomizationId(const std::string& _customizationId);
 
                     /**
                      * 判断参数 CustomizationId 是否已赋值
                      * @return CustomizationId 是否已赋值
+                     * 
                      */
                     bool CustomizationIdHasBeenSet() const;
 
                     /**
                      * 获取附加参数(该参数无意义，忽略即可)
                      * @return Extra 附加参数(该参数无意义，忽略即可)
+                     * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 设置附加参数(该参数无意义，忽略即可)
-                     * @param Extra 附加参数(该参数无意义，忽略即可)
+                     * @param _extra 附加参数(该参数无意义，忽略即可)
+                     * 
                      */
                     void SetExtra(const std::string& _extra);
 
                     /**
                      * 判断参数 Extra 是否已赋值
                      * @return Extra 是否已赋值
+                     * 
                      */
                     bool ExtraHasBeenSet() const;
 
                     /**
                      * 获取是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
                      * @return FilterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
+                     * 
                      */
                     int64_t GetFilterPunc() const;
 
                     /**
                      * 设置是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
-                     * @param FilterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
+                     * @param _filterPunc 是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。
+                     * 
                      */
                     void SetFilterPunc(const int64_t& _filterPunc);
 
                     /**
                      * 判断参数 FilterPunc 是否已赋值
                      * @return FilterPunc 是否已赋值
+                     * 
                      */
                     bool FilterPuncHasBeenSet() const;
 
                     /**
                      * 获取是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
                      * @return FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 
                      */
                     int64_t GetFilterModal() const;
 
                     /**
                      * 设置是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
-                     * @param FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * @param _filterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 
                      */
                     void SetFilterModal(const int64_t& _filterModal);
 
                     /**
                      * 判断参数 FilterModal 是否已赋值
                      * @return FilterModal 是否已赋值
+                     * 
                      */
                     bool FilterModalHasBeenSet() const;
 
                     /**
                      * 获取情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。0:不开启，1:开启
                      * @return EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。0:不开启，1:开启
+                     * 
                      */
                     int64_t GetEmotionalEnergy() const;
 
                     /**
                      * 设置情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。0:不开启，1:开启
-                     * @param EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。0:不开启，1:开启
+                     * @param _emotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。0:不开启，1:开启
+                     * 
                      */
                     void SetEmotionalEnergy(const int64_t& _emotionalEnergy);
 
                     /**
                      * 判断参数 EmotionalEnergy 是否已赋值
                      * @return EmotionalEnergy 是否已赋值
+                     * 
                      */
                     bool EmotionalEnergyHasBeenSet() const;
 
                     /**
                      * 获取热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
                      * @return ReinforceHotword 热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
+                     * 
                      */
                     int64_t GetReinforceHotword() const;
 
                     /**
                      * 设置热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
-                     * @param ReinforceHotword 热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
+                     * @param _reinforceHotword 热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。
+                     * 
                      */
                     void SetReinforceHotword(const int64_t& _reinforceHotword);
 
                     /**
                      * 判断参数 ReinforceHotword 是否已赋值
                      * @return ReinforceHotword 是否已赋值
+                     * 
                      */
                     bool ReinforceHotwordHasBeenSet() const;
 
                     /**
                      * 获取单标点最多字数，取值范围：[6，40]。默认为0，不开启该功能。该参数可用于字幕生成场景，控制单行字幕最大字数（设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果）。
                      * @return SentenceMaxLength 单标点最多字数，取值范围：[6，40]。默认为0，不开启该功能。该参数可用于字幕生成场景，控制单行字幕最大字数（设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果）。
+                     * 
                      */
                     int64_t GetSentenceMaxLength() const;
 
                     /**
                      * 设置单标点最多字数，取值范围：[6，40]。默认为0，不开启该功能。该参数可用于字幕生成场景，控制单行字幕最大字数（设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果）。
-                     * @param SentenceMaxLength 单标点最多字数，取值范围：[6，40]。默认为0，不开启该功能。该参数可用于字幕生成场景，控制单行字幕最大字数（设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果）。
+                     * @param _sentenceMaxLength 单标点最多字数，取值范围：[6，40]。默认为0，不开启该功能。该参数可用于字幕生成场景，控制单行字幕最大字数（设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果）。
+                     * 
                      */
                     void SetSentenceMaxLength(const int64_t& _sentenceMaxLength);
 
                     /**
                      * 判断参数 SentenceMaxLength 是否已赋值
                      * @return SentenceMaxLength 是否已赋值
+                     * 
                      */
                     bool SentenceMaxLengthHasBeenSet() const;
 
@@ -495,20 +555,23 @@ namespace TencentCloud
 注意：本功能为增值服务，购买对应套餐包后，将参数设置为1或2时方可按对应方式生效，并消耗套餐包对应资源。参数设置为0时无需购买套餐包，也不会消耗对应资源。
                      * @return EmotionRecognition 情绪识别能力(目前支持16k_zh) 默认为0，不开启。 1：开启情绪识别但是不会在文本展示“情绪标签”， 2：开启情绪识别并且在文本展示“情绪标签”。（该功能需要设置ResTextFormat 大于0）
 注意：本功能为增值服务，购买对应套餐包后，将参数设置为1或2时方可按对应方式生效，并消耗套餐包对应资源。参数设置为0时无需购买套餐包，也不会消耗对应资源。
+                     * 
                      */
                     int64_t GetEmotionRecognition() const;
 
                     /**
                      * 设置情绪识别能力(目前支持16k_zh) 默认为0，不开启。 1：开启情绪识别但是不会在文本展示“情绪标签”， 2：开启情绪识别并且在文本展示“情绪标签”。（该功能需要设置ResTextFormat 大于0）
 注意：本功能为增值服务，购买对应套餐包后，将参数设置为1或2时方可按对应方式生效，并消耗套餐包对应资源。参数设置为0时无需购买套餐包，也不会消耗对应资源。
-                     * @param EmotionRecognition 情绪识别能力(目前支持16k_zh) 默认为0，不开启。 1：开启情绪识别但是不会在文本展示“情绪标签”， 2：开启情绪识别并且在文本展示“情绪标签”。（该功能需要设置ResTextFormat 大于0）
+                     * @param _emotionRecognition 情绪识别能力(目前支持16k_zh) 默认为0，不开启。 1：开启情绪识别但是不会在文本展示“情绪标签”， 2：开启情绪识别并且在文本展示“情绪标签”。（该功能需要设置ResTextFormat 大于0）
 注意：本功能为增值服务，购买对应套餐包后，将参数设置为1或2时方可按对应方式生效，并消耗套餐包对应资源。参数设置为0时无需购买套餐包，也不会消耗对应资源。
+                     * 
                      */
                     void SetEmotionRecognition(const int64_t& _emotionRecognition);
 
                     /**
                      * 判断参数 EmotionRecognition 是否已赋值
                      * @return EmotionRecognition 是否已赋值
+                     * 
                      */
                     bool EmotionRecognitionHasBeenSet() const;
 

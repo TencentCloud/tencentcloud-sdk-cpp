@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取资产ID集合
                      * @return DeviceIdSet 资产ID集合
+                     * 
                      */
                     std::vector<uint64_t> GetDeviceIdSet() const;
 
                     /**
                      * 设置资产ID集合
-                     * @param DeviceIdSet 资产ID集合
+                     * @param _deviceIdSet 资产ID集合
+                     * 
                      */
                     void SetDeviceIdSet(const std::vector<uint64_t>& _deviceIdSet);
 
                     /**
                      * 判断参数 DeviceIdSet 是否已赋值
                      * @return DeviceIdSet 是否已赋值
+                     * 
                      */
                     bool DeviceIdSetHasBeenSet() const;
 
                     /**
                      * 获取堡垒机服务ID
                      * @return ResourceId 堡垒机服务ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置堡垒机服务ID
-                     * @param ResourceId 堡垒机服务ID
+                     * @param _resourceId 堡垒机服务ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

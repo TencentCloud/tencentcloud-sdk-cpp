@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取可售卖的资源规格，仅为以下值:"TASK","CORE","MASTER","ROUTER"。
                      * @return NodeType 可售卖的资源规格，仅为以下值:"TASK","CORE","MASTER","ROUTER"。
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置可售卖的资源规格，仅为以下值:"TASK","CORE","MASTER","ROUTER"。
-                     * @param NodeType 可售卖的资源规格，仅为以下值:"TASK","CORE","MASTER","ROUTER"。
+                     * @param _nodeType 可售卖的资源规格，仅为以下值:"TASK","CORE","MASTER","ROUTER"。
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取Cpu核数。
                      * @return Cpu Cpu核数。
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置Cpu核数。
-                     * @param Cpu Cpu核数。
+                     * @param _cpu Cpu核数。
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
                     /**
                      * 获取内存数量，单位为GB。
                      * @return Memory 内存数量，单位为GB。
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存数量，单位为GB。
-                     * @param Memory 内存数量，单位为GB。
+                     * @param _memory 内存数量，单位为GB。
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取该规格资源可申请的最大数量。
                      * @return Number 该规格资源可申请的最大数量。
+                     * 
                      */
                     uint64_t GetNumber() const;
 
                     /**
                      * 设置该规格资源可申请的最大数量。
-                     * @param Number 该规格资源可申请的最大数量。
+                     * @param _number 该规格资源可申请的最大数量。
+                     * 
                      */
                     void SetNumber(const uint64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 

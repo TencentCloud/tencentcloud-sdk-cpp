@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取自动隔离开关(true:开 false:关)
                      * @return AutoIsolateSwitch 自动隔离开关(true:开 false:关)
+                     * 
                      */
                     bool GetAutoIsolateSwitch() const;
 
                     /**
                      * 设置自动隔离开关(true:开 false:关)
-                     * @param AutoIsolateSwitch 自动隔离开关(true:开 false:关)
+                     * @param _autoIsolateSwitch 自动隔离开关(true:开 false:关)
+                     * 
                      */
                     void SetAutoIsolateSwitch(const bool& _autoIsolateSwitch);
 
                     /**
                      * 判断参数 AutoIsolateSwitch 是否已赋值
                      * @return AutoIsolateSwitch 是否已赋值
+                     * 
                      */
                     bool AutoIsolateSwitchHasBeenSet() const;
 
                     /**
                      * 获取是否中断隔离文件关联的进程(true:是 false:否)
                      * @return IsKillProgress 是否中断隔离文件关联的进程(true:是 false:否)
+                     * 
                      */
                     bool GetIsKillProgress() const;
 
                     /**
                      * 设置是否中断隔离文件关联的进程(true:是 false:否)
-                     * @param IsKillProgress 是否中断隔离文件关联的进程(true:是 false:否)
+                     * @param _isKillProgress 是否中断隔离文件关联的进程(true:是 false:否)
+                     * 
                      */
                     void SetIsKillProgress(const bool& _isKillProgress);
 
                     /**
                      * 判断参数 IsKillProgress 是否已赋值
                      * @return IsKillProgress 是否已赋值
+                     * 
                      */
                     bool IsKillProgressHasBeenSet() const;
 

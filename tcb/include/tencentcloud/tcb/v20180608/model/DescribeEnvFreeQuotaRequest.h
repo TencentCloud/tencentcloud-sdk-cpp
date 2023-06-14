@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 不传则返回全部资源指标
                      * @return ResourceTypes 资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF
 不传则返回全部资源指标
+                     * 
                      */
                     std::vector<std::string> GetResourceTypes() const;
 
                     /**
                      * 设置资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF
 不传则返回全部资源指标
-                     * @param ResourceTypes 资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF
+                     * @param _resourceTypes 资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF
 不传则返回全部资源指标
+                     * 
                      */
                     void SetResourceTypes(const std::vector<std::string>& _resourceTypes);
 
                     /**
                      * 判断参数 ResourceTypes 是否已赋值
                      * @return ResourceTypes 是否已赋值
+                     * 
                      */
                     bool ResourceTypesHasBeenSet() const;
 

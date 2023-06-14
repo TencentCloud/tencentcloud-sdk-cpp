@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取集团ID
                      * @return CompanyId 集团ID
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺ID
                      * @return ShopId 店铺ID
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取区域ID
                      * @return ZoneId 区域ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取区域名称
                      * @return ZoneName 区域名称
+                     * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 判断参数 ZoneName 是否已赋值
                      * @return ZoneName 是否已赋值
+                     * 
                      */
                     bool ZoneNameHasBeenSet() const;
 
                     /**
                      * 获取男性占比
                      * @return MalePercent 男性占比
+                     * 
                      */
                     double GetMalePercent() const;
 
                     /**
                      * 判断参数 MalePercent 是否已赋值
                      * @return MalePercent 是否已赋值
+                     * 
                      */
                     bool MalePercentHasBeenSet() const;
 
                     /**
                      * 获取女性占比
                      * @return FemalePercent 女性占比
+                     * 
                      */
                     double GetFemalePercent() const;
 
                     /**
                      * 判断参数 FemalePercent 是否已赋值
                      * @return FemalePercent 是否已赋值
+                     * 
                      */
                     bool FemalePercentHasBeenSet() const;
 

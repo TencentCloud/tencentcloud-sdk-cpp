@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。
                      * @return InstanceId 实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-                     * @param InstanceId 实例 ID。
+                     * @param _instanceId 实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例解隔离操作的结果值。返回值为0表示成功。
                      * @return Code 实例解隔离操作的结果值。返回值为0表示成功。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置实例解隔离操作的结果值。返回值为0表示成功。
-                     * @param Code 实例解隔离操作的结果值。返回值为0表示成功。
+                     * @param _code 实例解隔离操作的结果值。返回值为0表示成功。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取实例解隔离操作的错误信息。
                      * @return Message 实例解隔离操作的错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置实例解隔离操作的错误信息。
-                     * @param Message 实例解隔离操作的错误信息。
+                     * @param _message 实例解隔离操作的错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取文件系统 ID
                      * @return FileSystemId 文件系统 ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统 ID
-                     * @param FileSystemId 文件系统 ID
+                     * @param _fileSystemId 文件系统 ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
 <br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -75,51 +79,59 @@ namespace TencentCloud
                      * 设置过滤条件。
 <br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
 <br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )
 <br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取Offset 分页码
                      * @return Offset Offset 分页码
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置Offset 分页码
-                     * @param Offset Offset 分页码
+                     * @param _offset Offset 分页码
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取Limit 页面大小
                      * @return Limit Limit 页面大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置Limit 页面大小
-                     * @param Limit Limit 页面大小
+                     * @param _limit Limit 页面大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

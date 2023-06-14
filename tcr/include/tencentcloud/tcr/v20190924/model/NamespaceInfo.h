@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreationTime 创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
+                     * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取命名空间下仓库数量
                      * @return RepoCount 命名空间下仓库数量
+                     * 
                      */
                     int64_t GetRepoCount() const;
 
                     /**
                      * 设置命名空间下仓库数量
-                     * @param RepoCount 命名空间下仓库数量
+                     * @param _repoCount 命名空间下仓库数量
+                     * 
                      */
                     void SetRepoCount(const int64_t& _repoCount);
 
                     /**
                      * 判断参数 RepoCount 是否已赋值
                      * @return RepoCount 是否已赋值
+                     * 
                      */
                     bool RepoCountHasBeenSet() const;
 

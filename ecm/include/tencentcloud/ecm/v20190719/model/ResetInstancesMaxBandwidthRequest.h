@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取待重置带宽上限的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
                      * @return InstanceIdSet 待重置带宽上限的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置待重置带宽上限的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
-                     * @param InstanceIdSet 待重置带宽上限的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * @param _instanceIdSet 待重置带宽上限的实例ID列表。在单次请求的过程中，单个region下的请求实例数上限为100。
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取修改后的最大出带宽上限。
                      * @return MaxBandwidthOut 修改后的最大出带宽上限。
+                     * 
                      */
                     int64_t GetMaxBandwidthOut() const;
 
                     /**
                      * 设置修改后的最大出带宽上限。
-                     * @param MaxBandwidthOut 修改后的最大出带宽上限。
+                     * @param _maxBandwidthOut 修改后的最大出带宽上限。
+                     * 
                      */
                     void SetMaxBandwidthOut(const int64_t& _maxBandwidthOut);
 
                     /**
                      * 判断参数 MaxBandwidthOut 是否已赋值
                      * @return MaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool MaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取修改后的最大入带宽上限。
                      * @return MaxBandwidthIn 修改后的最大入带宽上限。
+                     * 
                      */
                     int64_t GetMaxBandwidthIn() const;
 
                     /**
                      * 设置修改后的最大入带宽上限。
-                     * @param MaxBandwidthIn 修改后的最大入带宽上限。
+                     * @param _maxBandwidthIn 修改后的最大入带宽上限。
+                     * 
                      */
                     void SetMaxBandwidthIn(const int64_t& _maxBandwidthIn);
 
                     /**
                      * 判断参数 MaxBandwidthIn 是否已赋值
                      * @return MaxBandwidthIn 是否已赋值
+                     * 
                      */
                     bool MaxBandwidthInHasBeenSet() const;
 

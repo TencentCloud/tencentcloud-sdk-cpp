@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return BizId 应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID
-                     * @param BizId 应用ID
+                     * @param _bizId 应用ID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 

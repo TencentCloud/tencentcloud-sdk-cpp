@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取查询的域名，所有域名使用all
                      * @return Domain 查询的域名，所有域名使用all
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置查询的域名，所有域名使用all
-                     * @param Domain 查询的域名，所有域名使用all
+                     * @param _domain 查询的域名，所有域名使用all
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取查询起始时间
                      * @return StartTime 查询起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间
-                     * @param StartTime 查询起始时间
+                     * @param _startTime 查询起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间
                      * @return EndTime 查询结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间
-                     * @param EndTime 查询结束时间
+                     * @param _endTime 查询结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取Lucene语法
                      * @return QueryString Lucene语法
+                     * 
                      */
                     std::string GetQueryString() const;
 
                     /**
                      * 设置Lucene语法
-                     * @param QueryString Lucene语法
+                     * @param _queryString Lucene语法
+                     * 
                      */
                     void SetQueryString(const std::string& _queryString);
 
                     /**
                      * 判断参数 QueryString 是否已赋值
                      * @return QueryString 是否已赋值
+                     * 
                      */
                     bool QueryStringHasBeenSet() const;
 
                     /**
                      * 获取任务名称
                      * @return TaskName 任务名称
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
                     /**
                      * 获取默认为desc，可以取值desc和asc
                      * @return Sort 默认为desc，可以取值desc和asc
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置默认为desc，可以取值desc和asc
-                     * @param Sort 默认为desc，可以取值desc和asc
+                     * @param _sort 默认为desc，可以取值desc和asc
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取下载的日志条数
                      * @return Count 下载的日志条数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置下载的日志条数
-                     * @param Count 下载的日志条数
+                     * @param _count 下载的日志条数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

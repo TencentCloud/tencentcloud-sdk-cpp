@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取加固策略数量
                      * @return TotalCount 加固策略数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置加固策略数量
-                     * @param TotalCount 加固策略数量
+                     * @param _totalCount 加固策略数量
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取加固策略具体信息数组
                      * @return PlanSet 加固策略具体信息数组
+                     * 
                      */
                     std::vector<PlanDetailInfo> GetPlanSet() const;
 
                     /**
                      * 设置加固策略具体信息数组
-                     * @param PlanSet 加固策略具体信息数组
+                     * @param _planSet 加固策略具体信息数组
+                     * 
                      */
                     void SetPlanSet(const std::vector<PlanDetailInfo>& _planSet);
 
                     /**
                      * 判断参数 PlanSet 是否已赋值
                      * @return PlanSet 是否已赋值
+                     * 
                      */
                     bool PlanSetHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取模块ID。
                      * @return ModuleId 模块ID。
+                     * 
                      */
                     std::string GetModuleId() const;
 
                     /**
                      * 设置模块ID。
-                     * @param ModuleId 模块ID。
+                     * @param _moduleId 模块ID。
+                     * 
                      */
                     void SetModuleId(const std::string& _moduleId);
 
                     /**
                      * 判断参数 ModuleId 是否已赋值
                      * @return ModuleId 是否已赋值
+                     * 
                      */
                     bool ModuleIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ false：表示开通IP直通
                      * @return CloseIpDirect 是否关闭IP直通。取值范围：
 true：表示关闭IP直通
 false：表示开通IP直通
+                     * 
                      */
                     bool GetCloseIpDirect() const;
 
@@ -74,15 +78,17 @@ false：表示开通IP直通
                      * 设置是否关闭IP直通。取值范围：
 true：表示关闭IP直通
 false：表示开通IP直通
-                     * @param CloseIpDirect 是否关闭IP直通。取值范围：
+                     * @param _closeIpDirect 是否关闭IP直通。取值范围：
 true：表示关闭IP直通
 false：表示开通IP直通
+                     * 
                      */
                     void SetCloseIpDirect(const bool& _closeIpDirect);
 
                     /**
                      * 判断参数 CloseIpDirect 是否已赋值
                      * @return CloseIpDirect 是否已赋值
+                     * 
                      */
                     bool CloseIpDirectHasBeenSet() const;
 

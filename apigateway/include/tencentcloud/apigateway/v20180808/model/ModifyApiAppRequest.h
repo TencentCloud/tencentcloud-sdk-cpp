@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用唯一 ID。
                      * @return ApiAppId 应用唯一 ID。
+                     * 
                      */
                     std::string GetApiAppId() const;
 
                     /**
                      * 设置应用唯一 ID。
-                     * @param ApiAppId 应用唯一 ID。
+                     * @param _apiAppId 应用唯一 ID。
+                     * 
                      */
                     void SetApiAppId(const std::string& _apiAppId);
 
                     /**
                      * 判断参数 ApiAppId 是否已赋值
                      * @return ApiAppId 是否已赋值
+                     * 
                      */
                     bool ApiAppIdHasBeenSet() const;
 
                     /**
                      * 获取修改的应用名称
                      * @return ApiAppName 修改的应用名称
+                     * 
                      */
                     std::string GetApiAppName() const;
 
                     /**
                      * 设置修改的应用名称
-                     * @param ApiAppName 修改的应用名称
+                     * @param _apiAppName 修改的应用名称
+                     * 
                      */
                     void SetApiAppName(const std::string& _apiAppName);
 
                     /**
                      * 判断参数 ApiAppName 是否已赋值
                      * @return ApiAppName 是否已赋值
+                     * 
                      */
                     bool ApiAppNameHasBeenSet() const;
 
                     /**
                      * 获取修改的应用描述
                      * @return ApiAppDesc 修改的应用描述
+                     * 
                      */
                     std::string GetApiAppDesc() const;
 
                     /**
                      * 设置修改的应用描述
-                     * @param ApiAppDesc 修改的应用描述
+                     * @param _apiAppDesc 修改的应用描述
+                     * 
                      */
                     void SetApiAppDesc(const std::string& _apiAppDesc);
 
                     /**
                      * 判断参数 ApiAppDesc 是否已赋值
                      * @return ApiAppDesc 是否已赋值
+                     * 
                      */
                     bool ApiAppDescHasBeenSet() const;
 

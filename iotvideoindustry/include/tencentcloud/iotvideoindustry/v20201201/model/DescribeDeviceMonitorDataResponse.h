@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询设备统计monitor信息列表
                      * @return Data 查询设备统计monitor信息列表
+                     * 
                      */
                     std::vector<DeviceMonitorValue> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

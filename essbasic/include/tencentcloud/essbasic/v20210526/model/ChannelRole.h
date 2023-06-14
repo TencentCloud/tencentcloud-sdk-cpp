@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleId 角色id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleId 角色id
+                     * @param _roleId 角色id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoleId(const std::string& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
+                     * 
                      */
                     bool RoleIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName 角色名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleName 角色名
+                     * @param _roleName 角色名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleStatus 角色状态：1-启用；2-禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRoleStatus() const;
 
                     /**
                      * 设置角色状态：1-启用；2-禁用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleStatus 角色状态：1-启用；2-禁用
+                     * @param _roleStatus 角色状态：1-启用；2-禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoleStatus(const uint64_t& _roleStatus);
 
                     /**
                      * 判断参数 RoleStatus 是否已赋值
                      * @return RoleStatus 是否已赋值
+                     * 
                      */
                     bool RoleStatusHasBeenSet() const;
 

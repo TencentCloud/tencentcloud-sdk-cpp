@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取采集器ID
                      * @return AgentId 采集器ID
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置采集器ID
-                     * @param AgentId 采集器ID
+                     * @param _agentId 采集器ID
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取WeData项目ID
                      * @return ProjectId WeData项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置WeData项目ID
-                     * @param ProjectId WeData项目ID
+                     * @param _projectId WeData项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

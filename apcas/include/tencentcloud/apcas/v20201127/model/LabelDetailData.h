@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取标签数据对象
                      * @return Value 标签数据对象
+                     * 
                      */
                     LabelValue GetValue() const;
 
                     /**
                      * 设置标签数据对象
-                     * @param Value 标签数据对象
+                     * @param _value 标签数据对象
+                     * 
                      */
                     void SetValue(const LabelValue& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取标签表述，如"汽车资讯"、"游戏#手游"等
                      * @return Label 标签表述，如"汽车资讯"、"游戏#手游"等
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签表述，如"汽车资讯"、"游戏#手游"等
-                     * @param Label 标签表述，如"汽车资讯"、"游戏#手游"等
+                     * @param _label 标签表述，如"汽车资讯"、"游戏#手游"等
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 

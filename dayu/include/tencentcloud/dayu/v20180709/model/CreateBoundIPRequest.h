@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）
                      * @return Business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）
-                     * @param Business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）
+                     * @param _business 大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID
                      * @return Id 资源实例ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param Id 资源实例ID
+                     * @param _id 资源实例ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
                      * @return BoundDevList 绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
+                     * 
                      */
                     std::vector<BoundIpInfo> GetBoundDevList() const;
 
                     /**
                      * 设置绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
-                     * @param BoundDevList 绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
+                     * @param _boundDevList 绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
+                     * 
                      */
                     void SetBoundDevList(const std::vector<BoundIpInfo>& _boundDevList);
 
                     /**
                      * 判断参数 BoundDevList 是否已赋值
                      * @return BoundDevList 是否已赋值
+                     * 
                      */
                     bool BoundDevListHasBeenSet() const;
 
                     /**
                      * 获取与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
                      * @return UnBoundDevList 与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
+                     * 
                      */
                     std::vector<BoundIpInfo> GetUnBoundDevList() const;
 
                     /**
                      * 设置与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
-                     * @param UnBoundDevList 与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
+                     * @param _unBoundDevList 与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；
+                     * 
                      */
                     void SetUnBoundDevList(const std::vector<BoundIpInfo>& _unBoundDevList);
 
                     /**
                      * 判断参数 UnBoundDevList 是否已赋值
                      * @return UnBoundDevList 是否已赋值
+                     * 
                      */
                     bool UnBoundDevListHasBeenSet() const;
 
                     /**
                      * 获取已弃用，不填
                      * @return CopyPolicy 已弃用，不填
+                     * 
                      */
                     std::string GetCopyPolicy() const;
 
                     /**
                      * 设置已弃用，不填
-                     * @param CopyPolicy 已弃用，不填
+                     * @param _copyPolicy 已弃用，不填
+                     * 
                      */
                     void SetCopyPolicy(const std::string& _copyPolicy);
 
                     /**
                      * 判断参数 CopyPolicy 是否已赋值
                      * @return CopyPolicy 是否已赋值
+                     * 
                      */
                     bool CopyPolicyHasBeenSet() const;
 

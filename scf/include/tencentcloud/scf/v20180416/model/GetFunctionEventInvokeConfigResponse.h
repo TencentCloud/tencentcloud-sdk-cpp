@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取异步重试配置信息
                      * @return AsyncTriggerConfig 异步重试配置信息
+                     * 
                      */
                     AsyncTriggerConfig GetAsyncTriggerConfig() const;
 
                     /**
                      * 判断参数 AsyncTriggerConfig 是否已赋值
                      * @return AsyncTriggerConfig 是否已赋值
+                     * 
                      */
                     bool AsyncTriggerConfigHasBeenSet() const;
 

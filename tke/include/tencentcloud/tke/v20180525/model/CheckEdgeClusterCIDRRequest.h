@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群的vpc-id
                      * @return VpcId 集群的vpc-id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置集群的vpc-id
-                     * @param VpcId 集群的vpc-id
+                     * @param _vpcId 集群的vpc-id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取集群的pod CIDR
                      * @return PodCIDR 集群的pod CIDR
+                     * 
                      */
                     std::string GetPodCIDR() const;
 
                     /**
                      * 设置集群的pod CIDR
-                     * @param PodCIDR 集群的pod CIDR
+                     * @param _podCIDR 集群的pod CIDR
+                     * 
                      */
                     void SetPodCIDR(const std::string& _podCIDR);
 
                     /**
                      * 判断参数 PodCIDR 是否已赋值
                      * @return PodCIDR 是否已赋值
+                     * 
                      */
                     bool PodCIDRHasBeenSet() const;
 
                     /**
                      * 获取集群的service CIDR
                      * @return ServiceCIDR 集群的service CIDR
+                     * 
                      */
                     std::string GetServiceCIDR() const;
 
                     /**
                      * 设置集群的service CIDR
-                     * @param ServiceCIDR 集群的service CIDR
+                     * @param _serviceCIDR 集群的service CIDR
+                     * 
                      */
                     void SetServiceCIDR(const std::string& _serviceCIDR);
 
                     /**
                      * 判断参数 ServiceCIDR 是否已赋值
                      * @return ServiceCIDR 是否已赋值
+                     * 
                      */
                     bool ServiceCIDRHasBeenSet() const;
 

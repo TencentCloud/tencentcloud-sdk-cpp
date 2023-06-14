@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡唯一ID，例如：lb-12345678。
                      * @return LoadBalancerId 负载均衡唯一ID，例如：lb-12345678。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡唯一ID，例如：lb-12345678。
-                     * @param LoadBalancerId 负载均衡唯一ID，例如：lb-12345678。
+                     * @param _loadBalancerId 负载均衡唯一ID，例如：lb-12345678。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取删除SnatIp地址数组。
                      * @return Ips 删除SnatIp地址数组。
+                     * 
                      */
                     std::vector<std::string> GetIps() const;
 
                     /**
                      * 设置删除SnatIp地址数组。
-                     * @param Ips 删除SnatIp地址数组。
+                     * @param _ips 删除SnatIp地址数组。
+                     * 
                      */
                     void SetIps(const std::vector<std::string>& _ips);
 
                     /**
                      * 判断参数 Ips 是否已赋值
                      * @return Ips 是否已赋值
+                     * 
                      */
                     bool IpsHasBeenSet() const;
 

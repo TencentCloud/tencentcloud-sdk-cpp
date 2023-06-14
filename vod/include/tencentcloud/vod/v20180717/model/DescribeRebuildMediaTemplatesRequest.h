@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取音画质重生模板列表。
                      * @return Definitions 音画质重生模板列表。
+                     * 
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
                      * 设置音画质重生模板列表。
-                     * @param Definitions 音画质重生模板列表。
+                     * @param _definitions 音画质重生模板列表。
+                     * 
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
                     /**
                      * 判断参数 Definitions 是否已赋值
                      * @return Definitions 是否已赋值
+                     * 
                      */
                     bool DefinitionsHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     int64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const int64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Type 模板类型过滤条件，可选值：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -92,51 +99,59 @@ namespace TencentCloud
                      * 设置模板类型过滤条件，可选值：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
-                     * @param Type 模板类型过滤条件，可选值：
+                     * @param _type 模板类型过滤条件，可选值：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。
-                     * @param Offset 分页偏移量，默认值：0。
+                     * @param _offset 分页偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
                      * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param Limit 返回记录条数，默认值：10，最大值：100。
+                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

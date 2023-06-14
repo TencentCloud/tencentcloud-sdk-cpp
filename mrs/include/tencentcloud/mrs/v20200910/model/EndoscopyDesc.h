@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 描述内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置描述内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 描述内容
+                     * @param _text 描述内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Organ 器官
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EndoscopyOrgan> GetOrgan() const;
 
                     /**
                      * 设置器官
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Organ 器官
+                     * @param _organ 器官
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgan(const std::vector<EndoscopyOrgan>& _organ);
 
                     /**
                      * 判断参数 Organ 是否已赋值
                      * @return Organ 是否已赋值
+                     * 
                      */
                     bool OrganHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 坐标
+                     * @param _coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

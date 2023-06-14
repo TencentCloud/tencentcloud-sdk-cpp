@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取本次交易返回查询结果记录数。
                      * @return ResultCount 本次交易返回查询结果记录数。
+                     * 
                      */
                     uint64_t GetResultCount() const;
 
                     /**
                      * 设置本次交易返回查询结果记录数。
-                     * @param ResultCount 本次交易返回查询结果记录数。
+                     * @param _resultCount 本次交易返回查询结果记录数。
+                     * 
                      */
                     void SetResultCount(const uint64_t& _resultCount);
 
                     /**
                      * 判断参数 ResultCount 是否已赋值
                      * @return ResultCount 是否已赋值
+                     * 
                      */
                     bool ResultCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合业务查询条件的记录总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置符合业务查询条件的记录总数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 符合业务查询条件的记录总数。
+                     * @param _totalCount 符合业务查询条件的记录总数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -96,6 +102,7 @@ __1__：是
 __0__：否
 __1__：是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndFlag() const;
 
@@ -104,16 +111,18 @@ __1__：是
 __0__：否
 __1__：是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndFlag 结束标志。
+                     * @param _endFlag 结束标志。
 __0__：否
 __1__：是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndFlag(const std::string& _endFlag);
 
                     /**
                      * 判断参数 EndFlag 是否已赋值
                      * @return EndFlag 是否已赋值
+                     * 
                      */
                     bool EndFlagHasBeenSet() const;
 
@@ -122,20 +131,23 @@ __1__：是
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranItemArray 会员间交易信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MemberTransactionItem> GetTranItemArray() const;
 
                     /**
                      * 设置会员间交易信息数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranItemArray 会员间交易信息数组
+                     * @param _tranItemArray 会员间交易信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranItemArray(const std::vector<MemberTransactionItem>& _tranItemArray);
 
                     /**
                      * 判断参数 TranItemArray 是否已赋值
                      * @return TranItemArray 是否已赋值
+                     * 
                      */
                     bool TranItemArrayHasBeenSet() const;
 

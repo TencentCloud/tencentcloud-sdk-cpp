@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取安全事件名称
                      * @return EventName 安全事件名称
+                     * 
                      */
                     std::string GetEventName() const;
 
                     /**
                      * 设置安全事件名称
-                     * @param EventName 安全事件名称
+                     * @param _eventName 安全事件名称
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
                     /**
                      * 获取未处置事件数量
                      * @return Total 未处置事件数量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 设置未处置事件数量
-                     * @param Total 未处置事件数量
+                     * @param _total 未处置事件数量
+                     * 
                      */
                     void SetTotal(const uint64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

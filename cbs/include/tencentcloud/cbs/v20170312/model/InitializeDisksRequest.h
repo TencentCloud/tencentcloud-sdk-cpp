@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
                      * @return DiskIds 待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
-                     * @param DiskIds 待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
+                     * @param _diskIds 待重新初始化的云硬盘ID列表， 单次初始化限制20块以内
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 

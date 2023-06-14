@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取审批id
                      * @return ApproveId 审批id
+                     * 
                      */
                     uint64_t GetApproveId() const;
 
                     /**
                      * 设置审批id
-                     * @param ApproveId 审批id
+                     * @param _approveId 审批id
+                     * 
                      */
                     void SetApproveId(const uint64_t& _approveId);
 
                     /**
                      * 判断参数 ApproveId 是否已赋值
                      * @return ApproveId 是否已赋值
+                     * 
                      */
                     bool ApproveIdHasBeenSet() const;
 

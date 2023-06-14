@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取创建成功的queueId
                      * @return QueueId 创建成功的queueId
+                     * 
                      */
                     std::string GetQueueId() const;
 
                     /**
                      * 判断参数 QueueId 是否已赋值
                      * @return QueueId 是否已赋值
+                     * 
                      */
                     bool QueueIdHasBeenSet() const;
 

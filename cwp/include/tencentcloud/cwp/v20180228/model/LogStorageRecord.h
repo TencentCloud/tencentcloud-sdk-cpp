@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Month 年月份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置年月份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Month 年月份
+                     * @param _month 年月份
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMonth(const std::string& _month);
 
                     /**
                      * 判断参数 Month 是否已赋值
                      * @return Month 是否已赋值
+                     * 
                      */
                     bool MonthHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedSize 存储量，字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUsedSize() const;
 
                     /**
                      * 设置存储量，字节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsedSize 存储量，字节
+                     * @param _usedSize 存储量，字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsedSize(const uint64_t& _usedSize);
 
                     /**
                      * 判断参数 UsedSize 是否已赋值
                      * @return UsedSize 是否已赋值
+                     * 
                      */
                     bool UsedSizeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InquireSize 总量，字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInquireSize() const;
 
                     /**
                      * 设置总量，字节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InquireSize 总量，字节
+                     * @param _inquireSize 总量，字节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInquireSize(const uint64_t& _inquireSize);
 
                     /**
                      * 判断参数 InquireSize 是否已赋值
                      * @return InquireSize 是否已赋值
+                     * 
                      */
                     bool InquireSizeHasBeenSet() const;
 

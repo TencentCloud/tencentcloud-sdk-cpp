@@ -69,6 +69,7 @@ reportData由两部分数据组成：
 
 详细说明请参考文档reportdata.docx：
 https://github.com/tencentyun/ame-documents
+                     * 
                      */
                     std::string GetReportData() const;
 
@@ -86,7 +87,7 @@ reportData由两部分数据组成：
 
 详细说明请参考文档reportdata.docx：
 https://github.com/tencentyun/ame-documents
-                     * @param ReportData 上报数据
+                     * @param _reportData 上报数据
 注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据
 压缩说明：
 a) 上报的json格式字符串通过流的转换（ByteArrayInputStream, java.util.zip.GZIPOutputStream），获取到压缩后的字节数组。
@@ -99,12 +100,14 @@ reportData由两部分数据组成：
 
 详细说明请参考文档reportdata.docx：
 https://github.com/tencentyun/ame-documents
+                     * 
                      */
                     void SetReportData(const std::string& _reportData);
 
                     /**
                      * 判断参数 ReportData 是否已赋值
                      * @return ReportData 是否已赋值
+                     * 
                      */
                     bool ReportDataHasBeenSet() const;
 

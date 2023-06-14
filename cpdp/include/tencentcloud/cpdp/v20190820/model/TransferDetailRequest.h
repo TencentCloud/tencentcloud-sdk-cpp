@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return MerchantDetailNo 商家明细单号。
 商户系统内部区分转账批次单下不同转账明细单的唯一标识，要求此参数只能由数字、大小写字母组成。
 示例值：x23zy545Bd5436
+                     * 
                      */
                     std::string GetMerchantDetailNo() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置商家明细单号。
 商户系统内部区分转账批次单下不同转账明细单的唯一标识，要求此参数只能由数字、大小写字母组成。
 示例值：x23zy545Bd5436
-                     * @param MerchantDetailNo 商家明细单号。
+                     * @param _merchantDetailNo 商家明细单号。
 商户系统内部区分转账批次单下不同转账明细单的唯一标识，要求此参数只能由数字、大小写字母组成。
 示例值：x23zy545Bd5436
+                     * 
                      */
                     void SetMerchantDetailNo(const std::string& _merchantDetailNo);
 
                     /**
                      * 判断参数 MerchantDetailNo 是否已赋值
                      * @return MerchantDetailNo 是否已赋值
+                     * 
                      */
                     bool MerchantDetailNoHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return TransferAmount 转账金额。
 转账金额单位为分。
 示例值：200000
+                     * 
                      */
                     uint64_t GetTransferAmount() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置转账金额。
 转账金额单位为分。
 示例值：200000
-                     * @param TransferAmount 转账金额。
+                     * @param _transferAmount 转账金额。
 转账金额单位为分。
 示例值：200000
+                     * 
                      */
                     void SetTransferAmount(const uint64_t& _transferAmount);
 
                     /**
                      * 判断参数 TransferAmount 是否已赋值
                      * @return TransferAmount 是否已赋值
+                     * 
                      */
                     bool TransferAmountHasBeenSet() const;
 
@@ -105,6 +111,7 @@ namespace TencentCloud
                      * @return TransferRemark 转账备注。
 单条转账备注（微信用户会收到该备注）。UTF8编码，最多32字符。
 示例值：2020年4月报销
+                     * 
                      */
                     std::string GetTransferRemark() const;
 
@@ -112,15 +119,17 @@ namespace TencentCloud
                      * 设置转账备注。
 单条转账备注（微信用户会收到该备注）。UTF8编码，最多32字符。
 示例值：2020年4月报销
-                     * @param TransferRemark 转账备注。
+                     * @param _transferRemark 转账备注。
 单条转账备注（微信用户会收到该备注）。UTF8编码，最多32字符。
 示例值：2020年4月报销
+                     * 
                      */
                     void SetTransferRemark(const std::string& _transferRemark);
 
                     /**
                      * 判断参数 TransferRemark 是否已赋值
                      * @return TransferRemark 是否已赋值
+                     * 
                      */
                     bool TransferRemarkHasBeenSet() const;
 
@@ -129,20 +138,23 @@ namespace TencentCloud
 示例值：o-MYE42l80oelYMDE34nYD456Xoy
                      * @return OpenId 用户在直连商户下的唯一标识。
 示例值：o-MYE42l80oelYMDE34nYD456Xoy
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置用户在直连商户下的唯一标识。
 示例值：o-MYE42l80oelYMDE34nYD456Xoy
-                     * @param OpenId 用户在直连商户下的唯一标识。
+                     * @param _openId 用户在直连商户下的唯一标识。
 示例值：o-MYE42l80oelYMDE34nYD456Xoy
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
@@ -153,6 +165,7 @@ namespace TencentCloud
                      * @return UserName 收款用户姓名。
 收款方姓名。
 示例值：张三
+                     * 
                      */
                     std::string GetUserName() const;
 
@@ -160,15 +173,17 @@ namespace TencentCloud
                      * 设置收款用户姓名。
 收款方姓名。
 示例值：张三
-                     * @param UserName 收款用户姓名。
+                     * @param _userName 收款用户姓名。
 收款方姓名。
 示例值：张三
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 

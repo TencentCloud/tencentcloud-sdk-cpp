@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeStamp 事件的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeStamp() const;
 
                     /**
                      * 设置事件的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeStamp 事件的时间戳
+                     * @param _timeStamp 事件的时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeStamp(const int64_t& _timeStamp);
 
                     /**
                      * 判断参数 TimeStamp 是否已赋值
                      * @return TimeStamp 是否已赋值
+                     * 
                      */
                     bool TimeStampHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 事件的产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置事件的产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 事件的产品ID
+                     * @param _productId 事件的产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 事件的设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置事件的设备名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceName 事件的设备名称
+                     * @param _deviceName 事件的设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件的标识符ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件的标识符ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventId 事件的标识符ID
+                     * @param _eventId 事件的标识符ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 事件的类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件的类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 事件的类型
+                     * @param _type 事件的类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 事件的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置事件的数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 事件的数据
+                     * @param _data 事件的数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

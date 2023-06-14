@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户私网 ipv4 地址
                      * @return SrcIpv4 用户私网 ipv4 地址
+                     * 
                      */
                     std::string GetSrcIpv4() const;
 
                     /**
                      * 设置用户私网 ipv4 地址
-                     * @param SrcIpv4 用户私网 ipv4 地址
+                     * @param _srcIpv4 用户私网 ipv4 地址
+                     * 
                      */
                     void SetSrcIpv4(const std::string& _srcIpv4);
 
                     /**
                      * 判断参数 SrcIpv4 是否已赋值
                      * @return SrcIpv4 是否已赋值
+                     * 
                      */
                     bool SrcIpv4HasBeenSet() const;
 
                     /**
                      * 获取用户公网 ipv4 地址
                      * @return SrcPublicIpv4 用户公网 ipv4 地址
+                     * 
                      */
                     std::string GetSrcPublicIpv4() const;
 
                     /**
                      * 设置用户公网 ipv4 地址
-                     * @param SrcPublicIpv4 用户公网 ipv4 地址
+                     * @param _srcPublicIpv4 用户公网 ipv4 地址
+                     * 
                      */
                     void SetSrcPublicIpv4(const std::string& _srcPublicIpv4);
 
                     /**
                      * 判断参数 SrcPublicIpv4 是否已赋值
                      * @return SrcPublicIpv4 是否已赋值
+                     * 
                      */
                     bool SrcPublicIpv4HasBeenSet() const;
 
                     /**
                      * 获取用户 ipv6 地址
                      * @return SrcIpv6 用户 ipv6 地址
+                     * 
                      */
                     std::string GetSrcIpv6() const;
 
                     /**
                      * 设置用户 ipv6 地址
-                     * @param SrcIpv6 用户 ipv6 地址
+                     * @param _srcIpv6 用户 ipv6 地址
+                     * 
                      */
                     void SetSrcIpv6(const std::string& _srcIpv6);
 
                     /**
                      * 判断参数 SrcIpv6 是否已赋值
                      * @return SrcIpv6 是否已赋值
+                     * 
                      */
                     bool SrcIpv6HasBeenSet() const;
 

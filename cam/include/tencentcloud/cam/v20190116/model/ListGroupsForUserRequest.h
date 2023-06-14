@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取子用户 UID
                      * @return Uid 子用户 UID
+                     * 
                      */
                     uint64_t GetUid() const;
 
                     /**
                      * 设置子用户 UID
-                     * @param Uid 子用户 UID
+                     * @param _uid 子用户 UID
+                     * 
                      */
                     void SetUid(const uint64_t& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
                     /**
                      * 获取每页数量。默认为20。
                      * @return Rp 每页数量。默认为20。
+                     * 
                      */
                     uint64_t GetRp() const;
 
                     /**
                      * 设置每页数量。默认为20。
-                     * @param Rp 每页数量。默认为20。
+                     * @param _rp 每页数量。默认为20。
+                     * 
                      */
                     void SetRp(const uint64_t& _rp);
 
                     /**
                      * 判断参数 Rp 是否已赋值
                      * @return Rp 是否已赋值
+                     * 
                      */
                     bool RpHasBeenSet() const;
 
                     /**
                      * 获取页码。默认为1。
                      * @return Page 页码。默认为1。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置页码。默认为1。
-                     * @param Page 页码。默认为1。
+                     * @param _page 页码。默认为1。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取子账号UIN
                      * @return SubUin 子账号UIN
+                     * 
                      */
                     uint64_t GetSubUin() const;
 
                     /**
                      * 设置子账号UIN
-                     * @param SubUin 子账号UIN
+                     * @param _subUin 子账号UIN
+                     * 
                      */
                     void SetSubUin(const uint64_t& _subUin);
 
                     /**
                      * 判断参数 SubUin 是否已赋值
                      * @return SubUin 是否已赋值
+                     * 
                      */
                     bool SubUinHasBeenSet() const;
 

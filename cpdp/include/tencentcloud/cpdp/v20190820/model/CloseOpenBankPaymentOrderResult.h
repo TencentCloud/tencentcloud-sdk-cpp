@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取外部商户订单号
                      * @return OutOrderId 外部商户订单号
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部商户订单号
-                     * @param OutOrderId 外部商户订单号
+                     * @param _outOrderId 外部商户订单号
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取云企付平台订单号
                      * @return ChannelOrderId 云企付平台订单号
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 设置云企付平台订单号
-                     * @param ChannelOrderId 云企付平台订单号
+                     * @param _channelOrderId 云企付平台订单号
+                     * 
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
                     /**
                      * 获取订单状态。关单成功CLOSED
                      * @return OrderStatus 订单状态。关单成功CLOSED
+                     * 
                      */
                     std::string GetOrderStatus() const;
 
                     /**
                      * 设置订单状态。关单成功CLOSED
-                     * @param OrderStatus 订单状态。关单成功CLOSED
+                     * @param _orderStatus 订单状态。关单成功CLOSED
+                     * 
                      */
                     void SetOrderStatus(const std::string& _orderStatus);
 
                     /**
                      * 判断参数 OrderStatus 是否已赋值
                      * @return OrderStatus 是否已赋值
+                     * 
                      */
                     bool OrderStatusHasBeenSet() const;
 

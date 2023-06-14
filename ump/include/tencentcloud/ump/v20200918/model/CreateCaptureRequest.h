@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取原始抓拍报文
                      * @return Data 原始抓拍报文
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置原始抓拍报文
-                     * @param Data 原始抓拍报文
+                     * @param _data 原始抓拍报文
+                     * 
                      */
                     void SetData(const std::string& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取模型加速任务名称
                      * @return ModelAccTaskName 模型加速任务名称
+                     * 
                      */
                     std::string GetModelAccTaskName() const;
 
                     /**
                      * 设置模型加速任务名称
-                     * @param ModelAccTaskName 模型加速任务名称
+                     * @param _modelAccTaskName 模型加速任务名称
+                     * 
                      */
                     void SetModelAccTaskName(const std::string& _modelAccTaskName);
 
                     /**
                      * 判断参数 ModelAccTaskName 是否已赋值
                      * @return ModelAccTaskName 是否已赋值
+                     * 
                      */
                     bool ModelAccTaskNameHasBeenSet() const;
 
                     /**
                      * 获取批量模型加速任务
                      * @return BatchModelAccTasks 批量模型加速任务
+                     * 
                      */
                     std::vector<BatchModelAccTask> GetBatchModelAccTasks() const;
 
                     /**
                      * 设置批量模型加速任务
-                     * @param BatchModelAccTasks 批量模型加速任务
+                     * @param _batchModelAccTasks 批量模型加速任务
+                     * 
                      */
                     void SetBatchModelAccTasks(const std::vector<BatchModelAccTask>& _batchModelAccTasks);
 
                     /**
                      * 判断参数 BatchModelAccTasks 是否已赋值
                      * @return BatchModelAccTasks 是否已赋值
+                     * 
                      */
                     bool BatchModelAccTasksHasBeenSet() const;
 
                     /**
                      * 获取模型加速保存路径
                      * @return ModelOutputPath 模型加速保存路径
+                     * 
                      */
                     CosPathInfo GetModelOutputPath() const;
 
                     /**
                      * 设置模型加速保存路径
-                     * @param ModelOutputPath 模型加速保存路径
+                     * @param _modelOutputPath 模型加速保存路径
+                     * 
                      */
                     void SetModelOutputPath(const CosPathInfo& _modelOutputPath);
 
                     /**
                      * 判断参数 ModelOutputPath 是否已赋值
                      * @return ModelOutputPath 是否已赋值
+                     * 
                      */
                     bool ModelOutputPathHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签
-                     * @param Tags 标签
+                     * @param _tags 标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取优化级别(NO_LOSS/FP16/INT8)，默认FP16
                      * @return OptimizationLevel 优化级别(NO_LOSS/FP16/INT8)，默认FP16
+                     * 
                      */
                     std::string GetOptimizationLevel() const;
 
                     /**
                      * 设置优化级别(NO_LOSS/FP16/INT8)，默认FP16
-                     * @param OptimizationLevel 优化级别(NO_LOSS/FP16/INT8)，默认FP16
+                     * @param _optimizationLevel 优化级别(NO_LOSS/FP16/INT8)，默认FP16
+                     * 
                      */
                     void SetOptimizationLevel(const std::string& _optimizationLevel);
 
                     /**
                      * 判断参数 OptimizationLevel 是否已赋值
                      * @return OptimizationLevel 是否已赋值
+                     * 
                      */
                     bool OptimizationLevelHasBeenSet() const;
 
                     /**
                      * 获取GPU卡类型(T4/V100/A10)，默认T4
                      * @return GPUType GPU卡类型(T4/V100/A10)，默认T4
+                     * 
                      */
                     std::string GetGPUType() const;
 
                     /**
                      * 设置GPU卡类型(T4/V100/A10)，默认T4
-                     * @param GPUType GPU卡类型(T4/V100/A10)，默认T4
+                     * @param _gPUType GPU卡类型(T4/V100/A10)，默认T4
+                     * 
                      */
                     void SetGPUType(const std::string& _gPUType);
 
                     /**
                      * 判断参数 GPUType 是否已赋值
                      * @return GPUType 是否已赋值
+                     * 
                      */
                     bool GPUTypeHasBeenSet() const;
 
                     /**
                      * 获取专业参数设置
                      * @return HyperParameter 专业参数设置
+                     * 
                      */
                     HyperParameter GetHyperParameter() const;
 
                     /**
                      * 设置专业参数设置
-                     * @param HyperParameter 专业参数设置
+                     * @param _hyperParameter 专业参数设置
+                     * 
                      */
                     void SetHyperParameter(const HyperParameter& _hyperParameter);
 
                     /**
                      * 判断参数 HyperParameter 是否已赋值
                      * @return HyperParameter 是否已赋值
+                     * 
                      */
                     bool HyperParameterHasBeenSet() const;
 

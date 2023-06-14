@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取todo/doing/done/error
                      * @return Status todo/doing/done/error
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

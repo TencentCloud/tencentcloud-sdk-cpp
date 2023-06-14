@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取Region id
                      * @return RegionId Region id
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置Region id
-                     * @param RegionId Region id
+                     * @param _regionId Region id
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取ZoneInfo数组
                      * @return Zones ZoneInfo数组
+                     * 
                      */
                     std::vector<ZoneInfo> GetZones() const;
 
                     /**
                      * 设置ZoneInfo数组
-                     * @param Zones ZoneInfo数组
+                     * @param _zones ZoneInfo数组
+                     * 
                      */
                     void SetZones(const std::vector<ZoneInfo>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 

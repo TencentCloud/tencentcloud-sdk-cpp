@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取同步任务id
                      * @return JobId 同步任务id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置同步任务id
-                     * @param JobId 同步任务id
+                     * @param _jobId 同步任务id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取任务规格
                      * @return NewInstanceClass 任务规格
+                     * 
                      */
                     std::string GetNewInstanceClass() const;
 
                     /**
                      * 设置任务规格
-                     * @param NewInstanceClass 任务规格
+                     * @param _newInstanceClass 任务规格
+                     * 
                      */
                     void SetNewInstanceClass(const std::string& _newInstanceClass);
 
                     /**
                      * 判断参数 NewInstanceClass 是否已赋值
                      * @return NewInstanceClass 是否已赋值
+                     * 
                      */
                     bool NewInstanceClassHasBeenSet() const;
 

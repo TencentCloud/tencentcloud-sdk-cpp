@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合查询条件的记录总数。
                      * @return TotalCount 符合查询条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取平台信息列表。
                      * @return PlatformInfoSet 平台信息列表。
+                     * 
                      */
                     std::vector<PlatformInfo> GetPlatformInfoSet() const;
 
                     /**
                      * 判断参数 PlatformInfoSet 是否已赋值
                      * @return PlatformInfoSet 是否已赋值
+                     * 
                      */
                     bool PlatformInfoSetHasBeenSet() const;
 

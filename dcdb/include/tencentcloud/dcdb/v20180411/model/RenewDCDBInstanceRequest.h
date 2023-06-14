@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
                      * @return InstanceId 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
-                     * @param InstanceId 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * @param _instanceId 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取续费时长，单位：月。
                      * @return Period 续费时长，单位：月。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置续费时长，单位：月。
-                     * @param Period 续费时长，单位：月。
+                     * @param _period 续费时长，单位：月。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取是否自动使用代金券进行支付，默认不使用。
                      * @return AutoVoucher 是否自动使用代金券进行支付，默认不使用。
+                     * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
                      * 设置是否自动使用代金券进行支付，默认不使用。
-                     * @param AutoVoucher 是否自动使用代金券进行支付，默认不使用。
+                     * @param _autoVoucher 是否自动使用代金券进行支付，默认不使用。
+                     * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取代金券ID列表，目前仅支持指定一张代金券。
                      * @return VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
                      * 设置代金券ID列表，目前仅支持指定一张代金券。
-                     * @param VoucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * @param _voucherIds 代金券ID列表，目前仅支持指定一张代金券。
+                     * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
 
                     /**
                      * 判断参数 VoucherIds 是否已赋值
                      * @return VoucherIds 是否已赋值
+                     * 
                      */
                     bool VoucherIdsHasBeenSet() const;
 

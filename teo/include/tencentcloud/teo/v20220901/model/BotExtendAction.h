@@ -63,6 +63,7 @@ namespace TencentCloud
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -75,7 +76,7 @@ namespace TencentCloud
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
-                     * @param Action 处置动作，取值有：
+                     * @param _action 处置动作，取值有：
 <li>monitor：观察；</li>
 <li>alg：JavaScript挑战；</li>
 <li>captcha：托管挑战；</li>
@@ -83,12 +84,14 @@ namespace TencentCloud
 <li>silence：静默；</li>
 <li>shortdelay：短时响应；</li>
 <li>longdelay：长时响应。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -97,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 处置方式的触发概率，范围0-100。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
                      * 设置处置方式的触发概率，范围0-100。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Percent 处置方式的触发概率，范围0-100。
+                     * @param _percent 处置方式的触发概率，范围0-100。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPercent(const uint64_t& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

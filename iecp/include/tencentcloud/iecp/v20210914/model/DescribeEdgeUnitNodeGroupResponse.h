@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数
                      * @return Total 记录总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取NodeGroup数组
                      * @return NodeGroupInfo NodeGroup数组
+                     * 
                      */
                     std::vector<NodeGroupInfo> GetNodeGroupInfo() const;
 
                     /**
                      * 判断参数 NodeGroupInfo 是否已赋值
                      * @return NodeGroupInfo 是否已赋值
+                     * 
                      */
                     bool NodeGroupInfoHasBeenSet() const;
 

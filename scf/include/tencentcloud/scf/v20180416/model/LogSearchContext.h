@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取日志条数
                      * @return Limit 日志条数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置日志条数
-                     * @param Limit 日志条数
+                     * @param _limit 日志条数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取日志关键词
                      * @return Keyword 日志关键词
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置日志关键词
-                     * @param Keyword 日志关键词
+                     * @param _keyword 日志关键词
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取日志类型，支持Application和Platform，默认为Application
                      * @return Type 日志类型，支持Application和Platform，默认为Application
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置日志类型，支持Application和Platform，默认为Application
-                     * @param Type 日志类型，支持Application和Platform，默认为Application
+                     * @param _type 日志类型，支持Application和Platform，默认为Application
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

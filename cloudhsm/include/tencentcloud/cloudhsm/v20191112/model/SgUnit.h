@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgId 安全组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSgId() const;
 
                     /**
                      * 设置安全组Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SgId 安全组Id
+                     * @param _sgId 安全组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSgId(const std::string& _sgId);
 
                     /**
                      * 判断参数 SgId 是否已赋值
                      * @return SgId 是否已赋值
+                     * 
                      */
                     bool SgIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgName 安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSgName() const;
 
                     /**
                      * 设置安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SgName 安全组名称
+                     * @param _sgName 安全组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSgName(const std::string& _sgName);
 
                     /**
                      * 判断参数 SgName 是否已赋值
                      * @return SgName 是否已赋值
+                     * 
                      */
                     bool SgNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SgRemark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSgRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SgRemark 备注
+                     * @param _sgRemark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSgRemark(const std::string& _sgRemark);
 
                     /**
                      * 判断参数 SgRemark 是否已赋值
                      * @return SgRemark 是否已赋值
+                     * 
                      */
                     bool SgRemarkHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

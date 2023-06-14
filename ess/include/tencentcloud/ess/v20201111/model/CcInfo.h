@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取被抄送人手机号，11位数字
                      * @return Mobile 被抄送人手机号，11位数字
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置被抄送人手机号，11位数字
-                     * @param Mobile 被抄送人手机号，11位数字
+                     * @param _mobile 被抄送人手机号，11位数字
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取被抄送人姓名
                      * @return Name 被抄送人姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置被抄送人姓名
-                     * @param Name 被抄送人姓名
+                     * @param _name 被抄送人姓名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return CcType 被抄送人类型,
 0--个人
 1--员工
+                     * 
                      */
                     int64_t GetCcType() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置被抄送人类型,
 0--个人
 1--员工
-                     * @param CcType 被抄送人类型,
+                     * @param _ccType 被抄送人类型,
 0--个人
 1--员工
+                     * 
                      */
                     void SetCcType(const int64_t& _ccType);
 
                     /**
                      * 判断参数 CcType 是否已赋值
                      * @return CcType 是否已赋值
+                     * 
                      */
                     bool CcTypeHasBeenSet() const;
 
@@ -115,6 +124,7 @@ namespace TencentCloud
                      * @return CcPermission 被抄送人权限
 0--可查看
 1--可查看也可下载
+                     * 
                      */
                     int64_t GetCcPermission() const;
 
@@ -122,15 +132,17 @@ namespace TencentCloud
                      * 设置被抄送人权限
 0--可查看
 1--可查看也可下载
-                     * @param CcPermission 被抄送人权限
+                     * @param _ccPermission 被抄送人权限
 0--可查看
 1--可查看也可下载
+                     * 
                      */
                     void SetCcPermission(const int64_t& _ccPermission);
 
                     /**
                      * 判断参数 CcPermission 是否已赋值
                      * @return CcPermission 是否已赋值
+                     * 
                      */
                     bool CcPermissionHasBeenSet() const;
 

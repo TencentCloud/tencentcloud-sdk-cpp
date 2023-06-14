@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取任务 Id。
                      * @return TaskId 任务 Id。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 Id。
-                     * @param TaskId 任务 Id。
+                     * @param _taskId 任务 Id。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return Status 任务状态，取值有：
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -79,15 +83,17 @@ namespace TencentCloud
                      * 设置任务状态，取值有：
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
-                     * @param Status 任务状态，取值有：
+                     * @param _status 任务状态，取值有：
 <li>SUCCESS：成功；</li>
 <li>FAIL：失败。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
                      * @return ErrCode 错误码，取值有：
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -105,33 +112,38 @@ namespace TencentCloud
                      * 设置错误码，取值有：
 <li>0：成功；</li>
 <li>其他值：失败。</li>
-                     * @param ErrCode 错误码，取值有：
+                     * @param _errCode 错误码，取值有：
 <li>0：成功；</li>
 <li>其他值：失败。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return ErrMsg 错误信息。
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置错误信息。
-                     * @param ErrMsg 错误信息。
+                     * @param _errMsg 错误信息。
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     VideoEditProjectOutput GetOutput() const;
 
                     /**
                      * 设置任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 任务输出。
+                     * @param _output 任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutput(const VideoEditProjectOutput& _output);
 
                     /**
                      * 判断参数 Output 是否已赋值
                      * @return Output 是否已赋值
+                     * 
                      */
                     bool OutputHasBeenSet() const;
 

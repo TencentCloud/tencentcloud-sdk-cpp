@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取匹配到的歌曲列表。
                      * @return MatchMusicSet 匹配到的歌曲列表。
+                     * 
                      */
                     std::vector<KTVMatchMusic> GetMatchMusicSet() const;
 
                     /**
                      * 判断参数 MatchMusicSet 是否已赋值
                      * @return MatchMusicSet 是否已赋值
+                     * 
                      */
                     bool MatchMusicSetHasBeenSet() const;
 
                     /**
                      * 获取未匹配的规则列表。
                      * @return NotMatchRuleSet 未匹配的规则列表。
+                     * 
                      */
                     std::vector<KTVMatchRule> GetNotMatchRuleSet() const;
 
                     /**
                      * 判断参数 NotMatchRuleSet 是否已赋值
                      * @return NotMatchRuleSet 是否已赋值
+                     * 
                      */
                     bool NotMatchRuleSetHasBeenSet() const;
 

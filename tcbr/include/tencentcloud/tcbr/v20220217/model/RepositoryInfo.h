@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取git source
                      * @return Source git source
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置git source
-                     * @param Source git source
+                     * @param _source git source
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取仓库名
                      * @return Repo 仓库名
+                     * 
                      */
                     std::string GetRepo() const;
 
                     /**
                      * 设置仓库名
-                     * @param Repo 仓库名
+                     * @param _repo 仓库名
+                     * 
                      */
                     void SetRepo(const std::string& _repo);
 
                     /**
                      * 判断参数 Repo 是否已赋值
                      * @return Repo 是否已赋值
+                     * 
                      */
                     bool RepoHasBeenSet() const;
 
                     /**
                      * 获取分支名
                      * @return Branch 分支名
+                     * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置分支名
-                     * @param Branch 分支名
+                     * @param _branch 分支名
+                     * 
                      */
                     void SetBranch(const std::string& _branch);
 
                     /**
                      * 判断参数 Branch 是否已赋值
                      * @return Branch 是否已赋值
+                     * 
                      */
                     bool BranchHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取限制操作名。
                      * @return Action 限制操作名。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置限制操作名。
-                     * @param Action 限制操作名。
+                     * @param _action 限制操作名。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取限制操作消息码。
                      * @return Code 限制操作消息码。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置限制操作消息码。
-                     * @param Code 限制操作消息码。
+                     * @param _code 限制操作消息码。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取限制操作消息。
                      * @return Message 限制操作消息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置限制操作消息。
-                     * @param Message 限制操作消息。
+                     * @param _message 限制操作消息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取库名
                      * @return Database 库名
+                     * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置库名
-                     * @param Database 库名
+                     * @param _database 库名
+                     * 
                      */
                     void SetDatabase(const std::string& _database);
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 
                     /**
                      * 获取表名，多个表,（逗号）隔开
                      * @return Table 表名，多个表,（逗号）隔开
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名，多个表,（逗号）隔开
-                     * @param Table 表名，多个表,（逗号）隔开
+                     * @param _table 表名，多个表,（逗号）隔开
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 
                     /**
                      * 获取Topic名称
                      * @return Topic Topic名称
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Topic名称
-                     * @param Topic Topic名称
+                     * @param _topic Topic名称
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
                     /**
                      * 获取Topic ID
                      * @return TopicId Topic ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Topic ID
-                     * @param TopicId Topic ID
+                     * @param _topicId Topic ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取用户组 ID
                      * @return GroupId 用户组 ID
+                     * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
                      * 设置用户组 ID
-                     * @param GroupId 用户组 ID
+                     * @param _groupId 用户组 ID
+                     * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取子用户 UID
                      * @return Uid 子用户 UID
+                     * 
                      */
                     uint64_t GetUid() const;
 
                     /**
                      * 设置子用户 UID
-                     * @param Uid 子用户 UID
+                     * @param _uid 子用户 UID
+                     * 
                      */
                     void SetUid(const uint64_t& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
                     /**
                      * 获取子用户 Uin，Uid和Uin至少有一个必填
                      * @return Uin 子用户 Uin，Uid和Uin至少有一个必填
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置子用户 Uin，Uid和Uin至少有一个必填
-                     * @param Uin 子用户 Uin，Uid和Uin至少有一个必填
+                     * @param _uin 子用户 Uin，Uid和Uin至少有一个必填
+                     * 
                      */
                     void SetUin(const uint64_t& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 

@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取会话数量
                      * @return SessionNum 会话数量
+                     * 
                      */
                     uint64_t GetSessionNum() const;
 
                     /**
                      * 判断参数 SessionNum 是否已赋值
                      * @return SessionNum 是否已赋值
+                     * 
                      */
                     bool SessionNumHasBeenSet() const;
 
                     /**
                      * 获取通话时长，单位：分钟
                      * @return TotalDuration 通话时长，单位：分钟
+                     * 
                      */
                     uint64_t GetTotalDuration() const;
 
                     /**
                      * 判断参数 TotalDuration 是否已赋值
                      * @return TotalDuration 是否已赋值
+                     * 
                      */
                     bool TotalDurationHasBeenSet() const;
 
                     /**
                      * 获取活跃现场设备数
                      * @return ActiveFieldDeviceNum 活跃现场设备数
+                     * 
                      */
                     uint64_t GetActiveFieldDeviceNum() const;
 
                     /**
                      * 判断参数 ActiveFieldDeviceNum 是否已赋值
                      * @return ActiveFieldDeviceNum 是否已赋值
+                     * 
                      */
                     bool ActiveFieldDeviceNumHasBeenSet() const;
 
                     /**
                      * 获取活跃远端设备数
                      * @return ActiveRemoteDeviceNum 活跃远端设备数
+                     * 
                      */
                     uint64_t GetActiveRemoteDeviceNum() const;
 
                     /**
                      * 判断参数 ActiveRemoteDeviceNum 是否已赋值
                      * @return ActiveRemoteDeviceNum 是否已赋值
+                     * 
                      */
                     bool ActiveRemoteDeviceNumHasBeenSet() const;
 
                     /**
                      * 获取优良会话占比，单位：%
                      * @return NotBadSessionRatio 优良会话占比，单位：%
+                     * 
                      */
                     uint64_t GetNotBadSessionRatio() const;
 
                     /**
                      * 判断参数 NotBadSessionRatio 是否已赋值
                      * @return NotBadSessionRatio 是否已赋值
+                     * 
                      */
                     bool NotBadSessionRatioHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取权重信息列表
                      * @return WeightInfoList 权重信息列表
+                     * 
                      */
                     std::vector<WeightInfo> GetWeightInfoList() const;
 
                     /**
                      * 设置权重信息列表
-                     * @param WeightInfoList 权重信息列表
+                     * @param _weightInfoList 权重信息列表
+                     * 
                      */
                     void SetWeightInfoList(const std::vector<WeightInfo>& _weightInfoList);
 
                     /**
                      * 判断参数 WeightInfoList 是否已赋值
                      * @return WeightInfoList 是否已赋值
+                     * 
                      */
                     bool WeightInfoListHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否重刷历史数据
                      * @return Refresh 是否重刷历史数据
+                     * 
                      */
                     bool GetRefresh() const;
 
                     /**
                      * 设置是否重刷历史数据
-                     * @param Refresh 是否重刷历史数据
+                     * @param _refresh 是否重刷历史数据
+                     * 
                      */
                     void SetRefresh(const bool& _refresh);
 
                     /**
                      * 判断参数 Refresh 是否已赋值
                      * @return Refresh 是否已赋值
+                     * 
                      */
                     bool RefreshHasBeenSet() const;
 

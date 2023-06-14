@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return EdgeUnitId 无
+                     * 
                      */
                     int64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置无
-                     * @param EdgeUnitId 无
+                     * @param _edgeUnitId 无
+                     * 
                      */
                     void SetEdgeUnitId(const int64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return Devices 无
+                     * 
                      */
                     std::vector<DeleteEdgeUnitDevicesDevice> GetDevices() const;
 
                     /**
                      * 设置无
-                     * @param Devices 无
+                     * @param _devices 无
+                     * 
                      */
                     void SetDevices(const std::vector<DeleteEdgeUnitDevicesDevice>& _devices);
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 

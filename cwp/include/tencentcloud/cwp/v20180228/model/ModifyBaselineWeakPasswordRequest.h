@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Data 无
+                     * 
                      */
                     std::vector<BaselineWeakPassword> GetData() const;
 
                     /**
                      * 设置无
-                     * @param Data 无
+                     * @param _data 无
+                     * 
                      */
                     void SetData(const std::vector<BaselineWeakPassword>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

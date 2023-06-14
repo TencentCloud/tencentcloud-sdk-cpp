@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取卖场编码
                      * @return MallId 卖场编码
+                     * 
                      */
                     std::string GetMallId() const;
 
                     /**
                      * 设置卖场编码
-                     * @param MallId 卖场编码
+                     * @param _mallId 卖场编码
+                     * 
                      */
                     void SetMallId(const std::string& _mallId);
 
                     /**
                      * 判断参数 MallId 是否已赋值
                      * @return MallId 是否已赋值
+                     * 
                      */
                     bool MallIdHasBeenSet() const;
 
                     /**
                      * 获取客户编码
                      * @return PersonId 客户编码
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置客户编码
-                     * @param PersonId 客户编码
+                     * @param _personId 客户编码
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取轨迹编码
                      * @return TraceId 轨迹编码
+                     * 
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 设置轨迹编码
-                     * @param TraceId 轨迹编码
+                     * @param _traceId 轨迹编码
+                     * 
                      */
                     void SetTraceId(const std::string& _traceId);
 
                     /**
                      * 判断参数 TraceId 是否已赋值
                      * @return TraceId 是否已赋值
+                     * 
                      */
                     bool TraceIdHasBeenSet() const;
 

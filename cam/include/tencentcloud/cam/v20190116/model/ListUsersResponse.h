@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取子用户信息
                      * @return Data 子用户信息
+                     * 
                      */
                     std::vector<SubAccountInfo> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

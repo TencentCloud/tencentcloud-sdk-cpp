@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return Id 任务ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置任务ID
-                     * @param Id 任务ID
+                     * @param _id 任务ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

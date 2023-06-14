@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取人员ID
                      * @return PersonId 人员ID
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置人员ID
-                     * @param PersonId 人员ID
+                     * @param _personId 人员ID
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取待删除的人脸ID列表
                      * @return FaceIds 待删除的人脸ID列表
+                     * 
                      */
                     std::vector<std::string> GetFaceIds() const;
 
                     /**
                      * 设置待删除的人脸ID列表
-                     * @param FaceIds 待删除的人脸ID列表
+                     * @param _faceIds 待删除的人脸ID列表
+                     * 
                      */
                     void SetFaceIds(const std::vector<std::string>& _faceIds);
 
                     /**
                      * 判断参数 FaceIds 是否已赋值
                      * @return FaceIds 是否已赋值
+                     * 
                      */
                     bool FaceIdsHasBeenSet() const;
 

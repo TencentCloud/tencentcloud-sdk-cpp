@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取组件名称
                      * @return Name 组件名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组件名称
-                     * @param Name 组件名称
+                     * @param _name 组件名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取组件版本
                      * @return Version 组件版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置组件版本
-                     * @param Version 组件版本
+                     * @param _version 组件版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取组件路径
                      * @return Path 组件路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置组件路径
-                     * @param Path 组件路径
+                     * @param _path 组件路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取组件类型
                      * @return Type 组件类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置组件类型
-                     * @param Type 组件类型
+                     * @param _type 组件类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCount 组件漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulCount() const;
 
                     /**
                      * 设置组件漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VulCount 组件漏洞数量
+                     * @param _vulCount 组件漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVulCount(const uint64_t& _vulCount);
 
                     /**
                      * 判断参数 VulCount 是否已赋值
                      * @return VulCount 是否已赋值
+                     * 
                      */
                     bool VulCountHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageID 镜像ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageID 镜像ID
+                     * @param _imageID 镜像ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 

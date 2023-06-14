@@ -68,6 +68,7 @@ namespace TencentCloud
 <li>AiContentReview：内容审核。</li>
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
+                     * 
                      */
                     std::string GetActivityType() const;
 
@@ -82,7 +83,7 @@ namespace TencentCloud
 <li>AiContentReview：内容审核。</li>
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
-                     * @param ActivityType 原子任务类型。
+                     * @param _activityType 原子任务类型。
 <li>Transcode：转码。</li>
 <li>SampleSnapshot：采样截图。</li>
 <li>AnimatedGraphics：转动图。</li>
@@ -92,30 +93,35 @@ namespace TencentCloud
 <li>AiContentReview：内容审核。</li>
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
+                     * 
                      */
                     void SetActivityType(const std::string& _activityType);
 
                     /**
                      * 判断参数 ActivityType 是否已赋值
                      * @return ActivityType 是否已赋值
+                     * 
                      */
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
                      * 获取原子任务输出。
                      * @return ActivityResItem 原子任务输出。
+                     * 
                      */
                     ActivityResItem GetActivityResItem() const;
 
                     /**
                      * 设置原子任务输出。
-                     * @param ActivityResItem 原子任务输出。
+                     * @param _activityResItem 原子任务输出。
+                     * 
                      */
                     void SetActivityResItem(const ActivityResItem& _activityResItem);
 
                     /**
                      * 判断参数 ActivityResItem 是否已赋值
                      * @return ActivityResItem 是否已赋值
+                     * 
                      */
                     bool ActivityResItemHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取异常规则的总数
                      * @return Total 异常规则的总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取异常规则列表，返回值说明: Key值为规则ID，Value值为异常IP，多个IP用","分割
                      * @return ErrHealths 异常规则列表，返回值说明: Key值为规则ID，Value值为异常IP，多个IP用","分割
+                     * 
                      */
                     std::vector<KeyValue> GetErrHealths() const;
 
                     /**
                      * 判断参数 ErrHealths 是否已赋值
                      * @return ErrHealths 是否已赋值
+                     * 
                      */
                     bool ErrHealthsHasBeenSet() const;
 

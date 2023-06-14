@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取语音验证码发送状态。
                      * @return SendStatus 语音验证码发送状态。
+                     * 
                      */
                     SendStatus GetSendStatus() const;
 
                     /**
                      * 判断参数 SendStatus 是否已赋值
                      * @return SendStatus 是否已赋值
+                     * 
                      */
                     bool SendStatusHasBeenSet() const;
 

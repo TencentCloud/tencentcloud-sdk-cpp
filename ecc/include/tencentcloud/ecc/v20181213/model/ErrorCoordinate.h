@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取维度单词坐标
                      * @return Coordinate 维度单词坐标
+                     * 
                      */
                     std::vector<int64_t> GetCoordinate() const;
 
                     /**
                      * 设置维度单词坐标
-                     * @param Coordinate 维度单词坐标
+                     * @param _coordinate 维度单词坐标
+                     * 
                      */
                     void SetCoordinate(const std::vector<int64_t>& _coordinate);
 
                     /**
                      * 判断参数 Coordinate 是否已赋值
                      * @return Coordinate 是否已赋值
+                     * 
                      */
                     bool CoordinateHasBeenSet() const;
 

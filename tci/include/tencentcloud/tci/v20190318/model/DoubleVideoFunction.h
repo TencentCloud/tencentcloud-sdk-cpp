@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取片头片尾增加图片开关
                      * @return EnableCoverPictures 片头片尾增加图片开关
+                     * 
                      */
                     bool GetEnableCoverPictures() const;
 
                     /**
                      * 设置片头片尾增加图片开关
-                     * @param EnableCoverPictures 片头片尾增加图片开关
+                     * @param _enableCoverPictures 片头片尾增加图片开关
+                     * 
                      */
                     void SetEnableCoverPictures(const bool& _enableCoverPictures);
 
                     /**
                      * 判断参数 EnableCoverPictures 是否已赋值
                      * @return EnableCoverPictures 是否已赋值
+                     * 
                      */
                     bool EnableCoverPicturesHasBeenSet() const;
 

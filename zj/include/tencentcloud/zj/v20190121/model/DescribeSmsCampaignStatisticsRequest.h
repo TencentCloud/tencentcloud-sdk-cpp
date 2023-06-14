@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取活动id
                      * @return CampaignId 活动id
+                     * 
                      */
                     uint64_t GetCampaignId() const;
 
                     /**
                      * 设置活动id
-                     * @param CampaignId 活动id
+                     * @param _campaignId 活动id
+                     * 
                      */
                     void SetCampaignId(const uint64_t& _campaignId);
 
                     /**
                      * 判断参数 CampaignId 是否已赋值
                      * @return CampaignId 是否已赋值
+                     * 
                      */
                     bool CampaignIdHasBeenSet() const;
 
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 

@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取名字，长度不小于1字符不超过1024字符
                      * @return Name 名字，长度不小于1字符不超过1024字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字，长度不小于1字符不超过1024字符
-                     * @param Name 名字，长度不小于1字符不超过1024字符
+                     * @param _name 名字，长度不小于1字符不超过1024字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取别名的路由配置
                      * @return RoutingStrategy 别名的路由配置
+                     * 
                      */
                     RoutingStrategy GetRoutingStrategy() const;
 
                     /**
                      * 设置别名的路由配置
-                     * @param RoutingStrategy 别名的路由配置
+                     * @param _routingStrategy 别名的路由配置
+                     * 
                      */
                     void SetRoutingStrategy(const RoutingStrategy& _routingStrategy);
 
                     /**
                      * 判断参数 RoutingStrategy 是否已赋值
                      * @return RoutingStrategy 是否已赋值
+                     * 
                      */
                     bool RoutingStrategyHasBeenSet() const;
 
                     /**
                      * 获取别名的可读说明，长度不小于1字符不超过1024字符
                      * @return Description 别名的可读说明，长度不小于1字符不超过1024字符
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置别名的可读说明，长度不小于1字符不超过1024字符
-                     * @param Description 别名的可读说明，长度不小于1字符不超过1024字符
+                     * @param _description 别名的可读说明，长度不小于1字符不超过1024字符
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取标签列表，最大长度50组
                      * @return Tags 标签列表，最大长度50组
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表，最大长度50组
-                     * @param Tags 标签列表，最大长度50组
+                     * @param _tags 标签列表，最大长度50组
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

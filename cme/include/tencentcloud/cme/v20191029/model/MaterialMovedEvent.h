@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取要移动的媒体 Id 列表。
                      * @return MaterialIdSet 要移动的媒体 Id 列表。
+                     * 
                      */
                     std::vector<std::string> GetMaterialIdSet() const;
 
                     /**
                      * 设置要移动的媒体 Id 列表。
-                     * @param MaterialIdSet 要移动的媒体 Id 列表。
+                     * @param _materialIdSet 要移动的媒体 Id 列表。
+                     * 
                      */
                     void SetMaterialIdSet(const std::vector<std::string>& _materialIdSet);
 
                     /**
                      * 判断参数 MaterialIdSet 是否已赋值
                      * @return MaterialIdSet 是否已赋值
+                     * 
                      */
                     bool MaterialIdSetHasBeenSet() const;
 
                     /**
                      * 获取源媒体归属。
                      * @return SourceOwner 源媒体归属。
+                     * 
                      */
                     Entity GetSourceOwner() const;
 
                     /**
                      * 设置源媒体归属。
-                     * @param SourceOwner 源媒体归属。
+                     * @param _sourceOwner 源媒体归属。
+                     * 
                      */
                     void SetSourceOwner(const Entity& _sourceOwner);
 
                     /**
                      * 判断参数 SourceOwner 是否已赋值
                      * @return SourceOwner 是否已赋值
+                     * 
                      */
                     bool SourceOwnerHasBeenSet() const;
 
                     /**
                      * 获取源媒体分类路径。
                      * @return SourceClassPath 源媒体分类路径。
+                     * 
                      */
                     std::string GetSourceClassPath() const;
 
                     /**
                      * 设置源媒体分类路径。
-                     * @param SourceClassPath 源媒体分类路径。
+                     * @param _sourceClassPath 源媒体分类路径。
+                     * 
                      */
                     void SetSourceClassPath(const std::string& _sourceClassPath);
 
                     /**
                      * 判断参数 SourceClassPath 是否已赋值
                      * @return SourceClassPath 是否已赋值
+                     * 
                      */
                     bool SourceClassPathHasBeenSet() const;
 
                     /**
                      * 获取目标媒体分类归属。
                      * @return DestinationOwner 目标媒体分类归属。
+                     * 
                      */
                     Entity GetDestinationOwner() const;
 
                     /**
                      * 设置目标媒体分类归属。
-                     * @param DestinationOwner 目标媒体分类归属。
+                     * @param _destinationOwner 目标媒体分类归属。
+                     * 
                      */
                     void SetDestinationOwner(const Entity& _destinationOwner);
 
                     /**
                      * 判断参数 DestinationOwner 是否已赋值
                      * @return DestinationOwner 是否已赋值
+                     * 
                      */
                     bool DestinationOwnerHasBeenSet() const;
 
                     /**
                      * 获取目标媒体分类路径。
                      * @return DestinationClassPath 目标媒体分类路径。
+                     * 
                      */
                     std::string GetDestinationClassPath() const;
 
                     /**
                      * 设置目标媒体分类路径。
-                     * @param DestinationClassPath 目标媒体分类路径。
+                     * @param _destinationClassPath 目标媒体分类路径。
+                     * 
                      */
                     void SetDestinationClassPath(const std::string& _destinationClassPath);
 
                     /**
                      * 判断参数 DestinationClassPath 是否已赋值
                      * @return DestinationClassPath 是否已赋值
+                     * 
                      */
                     bool DestinationClassPathHasBeenSet() const;
 

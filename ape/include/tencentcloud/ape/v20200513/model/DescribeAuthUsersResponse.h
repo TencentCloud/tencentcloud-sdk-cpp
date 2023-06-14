@@ -49,36 +49,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 授权人信息数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AuthInfo> GetUsers() const;
 
                     /**
                      * 判断参数 Users 是否已赋值
                      * @return Users 是否已赋值
+                     * 
                      */
                     bool UsersHasBeenSet() const;
 
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取是否是老策略用户
                      * @return OldUser 是否是老策略用户
+                     * 
                      */
                     bool GetOldUser() const;
 
                     /**
                      * 判断参数 OldUser 是否已赋值
                      * @return OldUser 是否已赋值
+                     * 
                      */
                     bool OldUserHasBeenSet() const;
 

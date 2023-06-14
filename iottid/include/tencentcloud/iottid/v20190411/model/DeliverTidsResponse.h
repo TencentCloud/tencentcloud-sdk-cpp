@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TidSet 空发的TID信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TidKeysInfo> GetTidSet() const;
 
                     /**
                      * 判断参数 TidSet 是否已赋值
                      * @return TidSet 是否已赋值
+                     * 
                      */
                     bool TidSetHasBeenSet() const;
 
                     /**
                      * 获取产品公钥
                      * @return ProductKey 产品公钥
+                     * 
                      */
                     std::string GetProductKey() const;
 
                     /**
                      * 判断参数 ProductKey 是否已赋值
                      * @return ProductKey 是否已赋值
+                     * 
                      */
                     bool ProductKeyHasBeenSet() const;
 

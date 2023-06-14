@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例的套餐 ID。
                      * @return BundleId 实例的套餐 ID。
+                     * 
                      */
                     std::string GetBundleId() const;
 
                     /**
                      * 设置实例的套餐 ID。
-                     * @param BundleId 实例的套餐 ID。
+                     * @param _bundleId 实例的套餐 ID。
+                     * 
                      */
                     void SetBundleId(const std::string& _bundleId);
 
                     /**
                      * 判断参数 BundleId 是否已赋值
                      * @return BundleId 是否已赋值
+                     * 
                      */
                     bool BundleIdHasBeenSet() const;
 
                     /**
                      * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * @param _instanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取创建数量，默认为 1。
                      * @return InstanceCount 创建数量，默认为 1。
+                     * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置创建数量，默认为 1。
-                     * @param InstanceCount 创建数量，默认为 1。
+                     * @param _instanceCount 创建数量，默认为 1。
+                     * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
                     /**
                      * 获取应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
                      * @return BlueprintId 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * 
                      */
                     std::string GetBlueprintId() const;
 
                     /**
                      * 设置应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
-                     * @param BlueprintId 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * @param _blueprintId 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * 
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
                     /**
                      * 判断参数 BlueprintId 是否已赋值
                      * @return BlueprintId 是否已赋值
+                     * 
                      */
                     bool BlueprintIdHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取语音关键词。
                      * @return Word 语音关键词。
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置语音关键词。
-                     * @param Word 语音关键词。
+                     * @param _word 语音关键词。
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取识别片段起始的 PTS 时间，单位：秒。
                      * @return StartPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetStartPtsTime() const;
 
                     /**
                      * 设置识别片段起始的 PTS 时间，单位：秒。
-                     * @param StartPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * @param _startPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetStartPtsTime(const double& _startPtsTime);
 
                     /**
                      * 判断参数 StartPtsTime 是否已赋值
                      * @return StartPtsTime 是否已赋值
+                     * 
                      */
                     bool StartPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取识别片段终止的 PTS 时间，单位：秒。
                      * @return EndPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetEndPtsTime() const;
 
                     /**
                      * 设置识别片段终止的 PTS 时间，单位：秒。
-                     * @param EndPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * @param _endPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetEndPtsTime(const double& _endPtsTime);
 
                     /**
                      * 判断参数 EndPtsTime 是否已赋值
                      * @return EndPtsTime 是否已赋值
+                     * 
                      */
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取识别片段置信度。取值：0~100。
                      * @return Confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置识别片段置信度。取值：0~100。
-                     * @param Confidence 识别片段置信度。取值：0~100。
+                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 

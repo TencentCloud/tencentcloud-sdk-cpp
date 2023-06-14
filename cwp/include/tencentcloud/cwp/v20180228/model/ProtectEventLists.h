@@ -50,162 +50,189 @@ namespace TencentCloud
                     /**
                      * 获取服务器名称
                      * @return HostName 服务器名称
+                     * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置服务器名称
-                     * @param HostName 服务器名称
+                     * @param _hostName 服务器名称
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
                     /**
                      * 获取服务器ip
                      * @return HostIp 服务器ip
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置服务器ip
-                     * @param HostIp 服务器ip
+                     * @param _hostIp 服务器ip
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取事件地址
                      * @return EventDir 事件地址
+                     * 
                      */
                     std::string GetEventDir() const;
 
                     /**
                      * 设置事件地址
-                     * @param EventDir 事件地址
+                     * @param _eventDir 事件地址
+                     * 
                      */
                     void SetEventDir(const std::string& _eventDir);
 
                     /**
                      * 判断参数 EventDir 是否已赋值
                      * @return EventDir 是否已赋值
+                     * 
                      */
                     bool EventDirHasBeenSet() const;
 
                     /**
                      * 获取事件类型 0-内容被修改恢复；1-权限被修改恢复；2-归属被修改恢复；3-被删除恢复；4-新增删除
                      * @return EventType 事件类型 0-内容被修改恢复；1-权限被修改恢复；2-归属被修改恢复；3-被删除恢复；4-新增删除
+                     * 
                      */
                     uint64_t GetEventType() const;
 
                     /**
                      * 设置事件类型 0-内容被修改恢复；1-权限被修改恢复；2-归属被修改恢复；3-被删除恢复；4-新增删除
-                     * @param EventType 事件类型 0-内容被修改恢复；1-权限被修改恢复；2-归属被修改恢复；3-被删除恢复；4-新增删除
+                     * @param _eventType 事件类型 0-内容被修改恢复；1-权限被修改恢复；2-归属被修改恢复；3-被删除恢复；4-新增删除
+                     * 
                      */
                     void SetEventType(const uint64_t& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取事件状态 1 已恢复 0 未恢复
                      * @return EventStatus 事件状态 1 已恢复 0 未恢复
+                     * 
                      */
                     uint64_t GetEventStatus() const;
 
                     /**
                      * 设置事件状态 1 已恢复 0 未恢复
-                     * @param EventStatus 事件状态 1 已恢复 0 未恢复
+                     * @param _eventStatus 事件状态 1 已恢复 0 未恢复
+                     * 
                      */
                     void SetEventStatus(const uint64_t& _eventStatus);
 
                     /**
                      * 判断参数 EventStatus 是否已赋值
                      * @return EventStatus 是否已赋值
+                     * 
                      */
                     bool EventStatusHasBeenSet() const;
 
                     /**
                      * 获取发现时间
                      * @return CreateTime 发现时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置发现时间
-                     * @param CreateTime 发现时间
+                     * @param _createTime 发现时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取恢复时间
                      * @return RestoreTime 恢复时间
+                     * 
                      */
                     std::string GetRestoreTime() const;
 
                     /**
                      * 设置恢复时间
-                     * @param RestoreTime 恢复时间
+                     * @param _restoreTime 恢复时间
+                     * 
                      */
                     void SetRestoreTime(const std::string& _restoreTime);
 
                     /**
                      * 判断参数 RestoreTime 是否已赋值
                      * @return RestoreTime 是否已赋值
+                     * 
                      */
                     bool RestoreTimeHasBeenSet() const;
 
                     /**
                      * 获取唯一ID
                      * @return Id 唯一ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置唯一ID
-                     * @param Id 唯一ID
+                     * @param _id 唯一ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取文件类型 0-常规文件；1-目录；2-软链
                      * @return FileType 文件类型 0-常规文件；1-目录；2-软链
+                     * 
                      */
                     uint64_t GetFileType() const;
 
                     /**
                      * 设置文件类型 0-常规文件；1-目录；2-软链
-                     * @param FileType 文件类型 0-常规文件；1-目录；2-软链
+                     * @param _fileType 文件类型 0-常规文件；1-目录；2-软链
+                     * 
                      */
                     void SetFileType(const uint64_t& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 
@@ -214,20 +241,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
                      * 设置主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineExtraInfo 主机额外信息
+                     * @param _machineExtraInfo 主机额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
 
                     /**
                      * 判断参数 MachineExtraInfo 是否已赋值
                      * @return MachineExtraInfo 是否已赋值
+                     * 
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
@@ -236,20 +266,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 机器实例uuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置机器实例uuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quuid 机器实例uuid
+                     * @param _quuid 机器实例uuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 

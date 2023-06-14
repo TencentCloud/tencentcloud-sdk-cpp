@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus 实例 ID，例如：prom-abcd1234
                      * @return InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Prometheus 实例 ID，例如：prom-abcd1234
-                     * @param InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * @param _instanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
                      * @return AgentId Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-                     * @param AgentId Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * @param _agentId Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取抓取任务配置，格式：job_name:xx
                      * @return Config 抓取任务配置，格式：job_name:xx
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置抓取任务配置，格式：job_name:xx
-                     * @param Config 抓取任务配置，格式：job_name:xx
+                     * @param _config 抓取任务配置，格式：job_name:xx
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 

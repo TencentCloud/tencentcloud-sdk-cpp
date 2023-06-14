@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取是否授权
                      * @return IsAuthorized 是否授权
+                     * 
                      */
                     std::string GetIsAuthorized() const;
 
                     /**
                      * 设置是否授权
-                     * @param IsAuthorized 是否授权
+                     * @param _isAuthorized 是否授权
+                     * 
                      */
                     void SetIsAuthorized(const std::string& _isAuthorized);
 
                     /**
                      * 判断参数 IsAuthorized 是否已赋值
                      * @return IsAuthorized 是否已赋值
+                     * 
                      */
                     bool IsAuthorizedHasBeenSet() const;
 
                     /**
                      * 获取加密类型
                      * @return CryptoType 加密类型
+                     * 
                      */
                     std::string GetCryptoType() const;
 
                     /**
                      * 设置加密类型
-                     * @param CryptoType 加密类型
+                     * @param _cryptoType 加密类型
+                     * 
                      */
                     void SetCryptoType(const std::string& _cryptoType);
 
                     /**
                      * 判断参数 CryptoType 是否已赋值
                      * @return CryptoType 是否已赋值
+                     * 
                      */
                     bool CryptoTypeHasBeenSet() const;
 
                     /**
                      * 获取加密内容
                      * @return CryptoContent 加密内容
+                     * 
                      */
                     std::string GetCryptoContent() const;
 
                     /**
                      * 设置加密内容
-                     * @param CryptoContent 加密内容
+                     * @param _cryptoContent 加密内容
+                     * 
                      */
                     void SetCryptoContent(const std::string& _cryptoContent);
 
                     /**
                      * 判断参数 CryptoContent 是否已赋值
                      * @return CryptoContent 是否已赋值
+                     * 
                      */
                     bool CryptoContentHasBeenSet() const;
 

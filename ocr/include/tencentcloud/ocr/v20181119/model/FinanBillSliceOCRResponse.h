@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取金融票据切片识别结果，具体内容请点击左侧链接。
                      * @return FinanBillSliceInfos 金融票据切片识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<FinanBillSliceInfo> GetFinanBillSliceInfos() const;
 
                     /**
                      * 判断参数 FinanBillSliceInfos 是否已赋值
                      * @return FinanBillSliceInfos 是否已赋值
+                     * 
                      */
                     bool FinanBillSliceInfosHasBeenSet() const;
 

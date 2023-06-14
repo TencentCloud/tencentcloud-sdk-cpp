@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 策略数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置策略数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 策略数量。
+                     * @param _totalCount 策略数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategySet 策略列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IPStrategy> GetStrategySet() const;
 
                     /**
                      * 设置策略列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrategySet 策略列表。
+                     * @param _strategySet 策略列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrategySet(const std::vector<IPStrategy>& _strategySet);
 
                     /**
                      * 判断参数 StrategySet 是否已赋值
                      * @return StrategySet 是否已赋值
+                     * 
                      */
                     bool StrategySetHasBeenSet() const;
 

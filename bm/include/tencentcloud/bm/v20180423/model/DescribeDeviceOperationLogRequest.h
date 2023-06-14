@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取设备实例ID
                      * @return InstanceId 设备实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置设备实例ID
-                     * @param InstanceId 设备实例ID
+                     * @param _instanceId 设备实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始日期
                      * @return StartTime 查询开始日期
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始日期
-                     * @param StartTime 查询开始日期
+                     * @param _startTime 查询开始日期
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束日期
                      * @return EndTime 查询结束日期
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束日期
-                     * @param EndTime 查询结束日期
+                     * @param _endTime 查询结束日期
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量
                      * @return Limit 返回数量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量
-                     * @param Limit 返回数量
+                     * @param _limit 返回数量
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

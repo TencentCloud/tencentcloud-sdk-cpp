@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取属性字典 key [a-zA-Z0-9-\.]*
                      * @return Key 属性字典 key [a-zA-Z0-9-\.]*
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置属性字典 key [a-zA-Z0-9-\.]*
-                     * @param Key 属性字典 key [a-zA-Z0-9-\.]*
+                     * @param _key 属性字典 key [a-zA-Z0-9-\.]*
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取属性字典 value
                      * @return Value 属性字典 value
+                     * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置属性字典 value
-                     * @param Value 属性字典 value
+                     * @param _value 属性字典 value
+                     * 
                      */
                     void SetValue(const int64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

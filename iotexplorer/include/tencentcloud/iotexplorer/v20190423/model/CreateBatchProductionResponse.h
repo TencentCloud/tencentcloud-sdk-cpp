@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取产品Id
                      * @return ProductId 产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取量产id
                      * @return BatchProductionId 量产id
+                     * 
                      */
                     std::string GetBatchProductionId() const;
 
                     /**
                      * 判断参数 BatchProductionId 是否已赋值
                      * @return BatchProductionId 是否已赋值
+                     * 
                      */
                     bool BatchProductionIdHasBeenSet() const;
 

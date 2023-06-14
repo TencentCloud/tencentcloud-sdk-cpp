@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取拨测 url。
                      * @return Url 拨测 url。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置拨测 url。
-                     * @param Url 拨测 url。
+                     * @param _url 拨测 url。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取拨测 url 是否使用 https。
                      * @return Tls 拨测 url 是否使用 https。
+                     * 
                      */
                     bool GetTls() const;
 
                     /**
                      * 设置拨测 url 是否使用 https。
-                     * @param Tls 拨测 url 是否使用 https。
+                     * @param _tls 拨测 url 是否使用 https。
+                     * 
                      */
                     void SetTls(const bool& _tls);
 
                     /**
                      * 判断参数 Tls 是否已赋值
                      * @return Tls 是否已赋值
+                     * 
                      */
                     bool TlsHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间。
                      * @return CreatedOn 任务创建时间。
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置任务创建时间。
-                     * @param CreatedOn 任务创建时间。
+                     * @param _createdOn 任务创建时间。
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
 <li> 100：任务进行中。</li>
 <li> 503: 任务失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatusCode() const;
 
@@ -120,17 +130,19 @@ namespace TencentCloud
 <li> 100：任务进行中。</li>
 <li> 503: 任务失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusCode 任务状态，取值有：
+                     * @param _statusCode 任务状态，取值有：
 <li> 200：任务完成;</li>
 <li> 100：任务进行中。</li>
 <li> 503: 任务失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UA 拨测 UA。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUA() const;
 
                     /**
                      * 设置拨测 UA。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UA 拨测 UA。
+                     * @param _uA 拨测 UA。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUA(const std::string& _uA);
 
                     /**
                      * 判断参数 UA 是否已赋值
                      * @return UA 是否已赋值
+                     * 
                      */
                     bool UAHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Connectivity 网络环境。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConnectivity() const;
 
                     /**
                      * 设置网络环境。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Connectivity 网络环境。
+                     * @param _connectivity 网络环境。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectivity(const std::string& _connectivity);
 
                     /**
                      * 判断参数 Connectivity 是否已赋值
                      * @return Connectivity 是否已赋值
+                     * 
                      */
                     bool ConnectivityHasBeenSet() const;
 
@@ -187,6 +205,7 @@ namespace TencentCloud
 <li> true：可达；</li>
 <li> false：不可达。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetReachable() const;
 
@@ -195,16 +214,18 @@ namespace TencentCloud
 <li> true：可达；</li>
 <li> false：不可达。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reachable 是否可达，取值：
+                     * @param _reachable 是否可达，取值：
 <li> true：可达；</li>
 <li> false：不可达。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReachable(const bool& _reachable);
 
                     /**
                      * 判断参数 Reachable 是否已赋值
                      * @return Reachable 是否已赋值
+                     * 
                      */
                     bool ReachableHasBeenSet() const;
 
@@ -217,6 +238,7 @@ namespace TencentCloud
 <li> true：超时；</li>
 <li> false：不超时。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetTimedOut() const;
 
@@ -225,16 +247,18 @@ namespace TencentCloud
 <li> true：超时；</li>
 <li> false：不超时。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimedOut 是否超时，取值：
+                     * @param _timedOut 是否超时，取值：
 <li> true：超时；</li>
 <li> false：不超时。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimedOut(const bool& _timedOut);
 
                     /**
                      * 判断参数 TimedOut 是否已赋值
                      * @return TimedOut 是否已赋值
+                     * 
                      */
                     bool TimedOutHasBeenSet() const;
 

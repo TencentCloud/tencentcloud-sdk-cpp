@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取节点名称
                      * @return NodeName 节点名称
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
                     /**
                      * 获取数据来源
                      * @return DataSource 数据来源
+                     * 
                      */
                     std::string GetDataSource() const;
 
                     /**
                      * 设置数据来源
-                     * @param DataSource 数据来源
+                     * @param _dataSource 数据来源
+                     * 
                      */
                     void SetDataSource(const std::string& _dataSource);
 
                     /**
                      * 判断参数 DataSource 是否已赋值
                      * @return DataSource 是否已赋值
+                     * 
                      */
                     bool DataSourceHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return TotalWriteRecords 总条数
+                     * 
                      */
                     uint64_t GetTotalWriteRecords() const;
 
                     /**
                      * 设置总条数
-                     * @param TotalWriteRecords 总条数
+                     * @param _totalWriteRecords 总条数
+                     * 
                      */
                     void SetTotalWriteRecords(const uint64_t& _totalWriteRecords);
 
                     /**
                      * 判断参数 TotalWriteRecords 是否已赋值
                      * @return TotalWriteRecords 是否已赋值
+                     * 
                      */
                     bool TotalWriteRecordsHasBeenSet() const;
 
                     /**
                      * 获取总字节数
                      * @return TotalWriteBytes 总字节数
+                     * 
                      */
                     uint64_t GetTotalWriteBytes() const;
 
                     /**
                      * 设置总字节数
-                     * @param TotalWriteBytes 总字节数
+                     * @param _totalWriteBytes 总字节数
+                     * 
                      */
                     void SetTotalWriteBytes(const uint64_t& _totalWriteBytes);
 
                     /**
                      * 判断参数 TotalWriteBytes 是否已赋值
                      * @return TotalWriteBytes 是否已赋值
+                     * 
                      */
                     bool TotalWriteBytesHasBeenSet() const;
 
                     /**
                      * 获取速度（条/秒）
                      * @return RecordSpeed 速度（条/秒）
+                     * 
                      */
                     uint64_t GetRecordSpeed() const;
 
                     /**
                      * 设置速度（条/秒）
-                     * @param RecordSpeed 速度（条/秒）
+                     * @param _recordSpeed 速度（条/秒）
+                     * 
                      */
                     void SetRecordSpeed(const uint64_t& _recordSpeed);
 
                     /**
                      * 判断参数 RecordSpeed 是否已赋值
                      * @return RecordSpeed 是否已赋值
+                     * 
                      */
                     bool RecordSpeedHasBeenSet() const;
 
                     /**
                      * 获取吞吐（Byte/秒）
                      * @return ByteSpeed 吞吐（Byte/秒）
+                     * 
                      */
                     double GetByteSpeed() const;
 
                     /**
                      * 设置吞吐（Byte/秒）
-                     * @param ByteSpeed 吞吐（Byte/秒）
+                     * @param _byteSpeed 吞吐（Byte/秒）
+                     * 
                      */
                     void SetByteSpeed(const double& _byteSpeed);
 
                     /**
                      * 判断参数 ByteSpeed 是否已赋值
                      * @return ByteSpeed 是否已赋值
+                     * 
                      */
                     bool ByteSpeedHasBeenSet() const;
 
                     /**
                      * 获取脏数据条数
                      * @return TotalErrorRecords 脏数据条数
+                     * 
                      */
                     uint64_t GetTotalErrorRecords() const;
 
                     /**
                      * 设置脏数据条数
-                     * @param TotalErrorRecords 脏数据条数
+                     * @param _totalErrorRecords 脏数据条数
+                     * 
                      */
                     void SetTotalErrorRecords(const uint64_t& _totalErrorRecords);
 
                     /**
                      * 判断参数 TotalErrorRecords 是否已赋值
                      * @return TotalErrorRecords 是否已赋值
+                     * 
                      */
                     bool TotalErrorRecordsHasBeenSet() const;
 

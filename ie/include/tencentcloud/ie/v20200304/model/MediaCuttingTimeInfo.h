@@ -57,6 +57,7 @@ SectionSet：时间片段集合。
 PointSet：时间点集合；
 IntervalPoint：周期采样点；
 SectionSet：时间片段集合。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -65,70 +66,81 @@ SectionSet：时间片段集合。
 PointSet：时间点集合；
 IntervalPoint：周期采样点；
 SectionSet：时间片段集合。
-                     * @param Type 时间类型，可选值：
+                     * @param _type 时间类型，可选值：
 PointSet：时间点集合；
 IntervalPoint：周期采样点；
 SectionSet：时间片段集合。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取截取时间点集合，单位毫秒，Type=PointSet时必选。
                      * @return PointSet 截取时间点集合，单位毫秒，Type=PointSet时必选。
+                     * 
                      */
                     std::vector<int64_t> GetPointSet() const;
 
                     /**
                      * 设置截取时间点集合，单位毫秒，Type=PointSet时必选。
-                     * @param PointSet 截取时间点集合，单位毫秒，Type=PointSet时必选。
+                     * @param _pointSet 截取时间点集合，单位毫秒，Type=PointSet时必选。
+                     * 
                      */
                     void SetPointSet(const std::vector<int64_t>& _pointSet);
 
                     /**
                      * 判断参数 PointSet 是否已赋值
                      * @return PointSet 是否已赋值
+                     * 
                      */
                     bool PointSetHasBeenSet() const;
 
                     /**
                      * 获取周期采样点信息，Type=IntervalPoint时必选。
                      * @return IntervalPoint 周期采样点信息，Type=IntervalPoint时必选。
+                     * 
                      */
                     IntervalTime GetIntervalPoint() const;
 
                     /**
                      * 设置周期采样点信息，Type=IntervalPoint时必选。
-                     * @param IntervalPoint 周期采样点信息，Type=IntervalPoint时必选。
+                     * @param _intervalPoint 周期采样点信息，Type=IntervalPoint时必选。
+                     * 
                      */
                     void SetIntervalPoint(const IntervalTime& _intervalPoint);
 
                     /**
                      * 判断参数 IntervalPoint 是否已赋值
                      * @return IntervalPoint 是否已赋值
+                     * 
                      */
                     bool IntervalPointHasBeenSet() const;
 
                     /**
                      * 获取时间区间集合信息，Type=SectionSet时必选。
                      * @return SectionSet 时间区间集合信息，Type=SectionSet时必选。
+                     * 
                      */
                     std::vector<SectionTime> GetSectionSet() const;
 
                     /**
                      * 设置时间区间集合信息，Type=SectionSet时必选。
-                     * @param SectionSet 时间区间集合信息，Type=SectionSet时必选。
+                     * @param _sectionSet 时间区间集合信息，Type=SectionSet时必选。
+                     * 
                      */
                     void SetSectionSet(const std::vector<SectionTime>& _sectionSet);
 
                     /**
                      * 判断参数 SectionSet 是否已赋值
                      * @return SectionSet 是否已赋值
+                     * 
                      */
                     bool SectionSetHasBeenSet() const;
 

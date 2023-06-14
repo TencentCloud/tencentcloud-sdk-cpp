@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return TraceData 无
+                     * 
                      */
                     TraceData GetTraceData() const;
 
                     /**
                      * 判断参数 TraceData 是否已赋值
                      * @return TraceData 是否已赋值
+                     * 
                      */
                     bool TraceDataHasBeenSet() const;
 

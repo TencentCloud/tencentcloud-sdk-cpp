@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取错误码
                      * @return ErrorCode 错误码
+                     * 
                      */
                     std::string GetErrorCode() const;
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindId 绑定 ID，该 ID 全局唯一
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBindId() const;
 
                     /**
                      * 判断参数 BindId 是否已赋值
                      * @return BindId 是否已赋值
+                     * 
                      */
                     bool BindIdHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefNum 中间号还剩引用计数，如果计数为 0 会解绑
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRefNum() const;
 
                     /**
                      * 判断参数 RefNum 是否已赋值
                      * @return RefNum 是否已赋值
+                     * 
                      */
                     bool RefNumHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualNum 中间号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVirtualNum() const;
 
                     /**
                      * 判断参数 VirtualNum 是否已赋值
                      * @return VirtualNum 是否已赋值
+                     * 
                      */
                     bool VirtualNumHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg 错误原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

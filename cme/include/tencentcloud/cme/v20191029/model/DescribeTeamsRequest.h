@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
                      * @return TeamIds 团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
+                     * 
                      */
                     std::vector<std::string> GetTeamIds() const;
 
                     /**
                      * 设置团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
-                     * @param TeamIds 团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
+                     * @param _teamIds 团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。
+                     * 
                      */
                     void SetTeamIds(const std::vector<std::string>& _teamIds);
 
                     /**
                      * 判断参数 TeamIds 是否已赋值
                      * @return TeamIds 是否已赋值
+                     * 
                      */
                     bool TeamIdsHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。
-                     * @param Offset 分页偏移量，默认值：0。
+                     * @param _offset 分页偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：20，最大值：30。
                      * @return Limit 返回记录条数，默认值：20，最大值：30。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，默认值：20，最大值：30。
-                     * @param Limit 返回记录条数，默认值：20，最大值：30。
+                     * @param _limit 返回记录条数，默认值：20，最大值：30。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

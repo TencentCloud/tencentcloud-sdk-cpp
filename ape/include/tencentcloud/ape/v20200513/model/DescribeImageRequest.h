@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取图片ID
                      * @return ImageId 图片ID
+                     * 
                      */
                     uint64_t GetImageId() const;
 
                     /**
                      * 设置图片ID
-                     * @param ImageId 图片ID
+                     * @param _imageId 图片ID
+                     * 
                      */
                     void SetImageId(const uint64_t& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 

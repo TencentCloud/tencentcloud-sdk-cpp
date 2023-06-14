@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取密码Id
                      * @return PasswordId 密码Id
+                     * 
                      */
                     int64_t GetPasswordId() const;
 
                     /**
                      * 设置密码Id
-                     * @param PasswordId 密码Id
+                     * @param _passwordId 密码Id
+                     * 
                      */
                     void SetPasswordId(const int64_t& _passwordId);
 
                     /**
                      * 判断参数 PasswordId 是否已赋值
                      * @return PasswordId 是否已赋值
+                     * 
                      */
                     bool PasswordIdHasBeenSet() const;
 
                     /**
                      * 获取密码
                      * @return WeakPassword 密码
+                     * 
                      */
                     std::string GetWeakPassword() const;
 
                     /**
                      * 设置密码
-                     * @param WeakPassword 密码
+                     * @param _weakPassword 密码
+                     * 
                      */
                     void SetWeakPassword(const std::string& _weakPassword);
 
                     /**
                      * 判断参数 WeakPassword 是否已赋值
                      * @return WeakPassword 是否已赋值
+                     * 
                      */
                     bool WeakPasswordHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

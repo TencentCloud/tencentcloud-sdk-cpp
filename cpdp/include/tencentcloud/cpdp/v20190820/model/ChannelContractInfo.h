@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取外部合约协议号
                      * @return OutContractCode 外部合约协议号
+                     * 
                      */
                     std::string GetOutContractCode() const;
 
                     /**
                      * 设置外部合约协议号
-                     * @param OutContractCode 外部合约协议号
+                     * @param _outContractCode 外部合约协议号
+                     * 
                      */
                     void SetOutContractCode(const std::string& _outContractCode);
 
                     /**
                      * 判断参数 OutContractCode 是否已赋值
                      * @return OutContractCode 是否已赋值
+                     * 
                      */
                     bool OutContractCodeHasBeenSet() const;
 
                     /**
                      * 获取米大师内部生成的合约协议号
                      * @return ChannelContractCode 米大师内部生成的合约协议号
+                     * 
                      */
                     std::string GetChannelContractCode() const;
 
                     /**
                      * 设置米大师内部生成的合约协议号
-                     * @param ChannelContractCode 米大师内部生成的合约协议号
+                     * @param _channelContractCode 米大师内部生成的合约协议号
+                     * 
                      */
                     void SetChannelContractCode(const std::string& _channelContractCode);
 
                     /**
                      * 判断参数 ChannelContractCode 是否已赋值
                      * @return ChannelContractCode 是否已赋值
+                     * 
                      */
                     bool ChannelContractCodeHasBeenSet() const;
 

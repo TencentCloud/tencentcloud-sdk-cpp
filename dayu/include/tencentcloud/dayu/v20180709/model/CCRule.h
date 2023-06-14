@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取规则的key, 可以为host、cgi、ua、referer
                      * @return Skey 规则的key, 可以为host、cgi、ua、referer
+                     * 
                      */
                     std::string GetSkey() const;
 
                     /**
                      * 设置规则的key, 可以为host、cgi、ua、referer
-                     * @param Skey 规则的key, 可以为host、cgi、ua、referer
+                     * @param _skey 规则的key, 可以为host、cgi、ua、referer
+                     * 
                      */
                     void SetSkey(const std::string& _skey);
 
                     /**
                      * 判断参数 Skey 是否已赋值
                      * @return Skey 是否已赋值
+                     * 
                      */
                     bool SkeyHasBeenSet() const;
 
                     /**
                      * 获取规则的条件，可以为include、not_include、equal
                      * @return Operator 规则的条件，可以为include、not_include、equal
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置规则的条件，可以为include、not_include、equal
-                     * @param Operator 规则的条件，可以为include、not_include、equal
+                     * @param _operator 规则的条件，可以为include、not_include、equal
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取规则的值，长度小于31字节
                      * @return Value 规则的值，长度小于31字节
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置规则的值，长度小于31字节
-                     * @param Value 规则的值，长度小于31字节
+                     * @param _value 规则的值，长度小于31字节
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

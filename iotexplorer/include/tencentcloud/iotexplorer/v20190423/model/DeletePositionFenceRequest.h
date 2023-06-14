@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取位置空间Id
                      * @return SpaceId 位置空间Id
+                     * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
                      * 设置位置空间Id
-                     * @param SpaceId 位置空间Id
+                     * @param _spaceId 位置空间Id
+                     * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
 
                     /**
                      * 判断参数 SpaceId 是否已赋值
                      * @return SpaceId 是否已赋值
+                     * 
                      */
                     bool SpaceIdHasBeenSet() const;
 
                     /**
                      * 获取围栏Id
                      * @return FenceId 围栏Id
+                     * 
                      */
                     int64_t GetFenceId() const;
 
                     /**
                      * 设置围栏Id
-                     * @param FenceId 围栏Id
+                     * @param _fenceId 围栏Id
+                     * 
                      */
                     void SetFenceId(const int64_t& _fenceId);
 
                     /**
                      * 判断参数 FenceId 是否已赋值
                      * @return FenceId 是否已赋值
+                     * 
                      */
                     bool FenceIdHasBeenSet() const;
 

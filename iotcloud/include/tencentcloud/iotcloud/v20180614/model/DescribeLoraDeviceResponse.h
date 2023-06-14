@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取LoRa应用UUID
                      * @return AppEui LoRa应用UUID
+                     * 
                      */
                     std::string GetAppEui() const;
 
                     /**
                      * 判断参数 AppEui 是否已赋值
                      * @return AppEui 是否已赋值
+                     * 
                      */
                     bool AppEuiHasBeenSet() const;
 
                     /**
                      * 获取LoRa设备UUID
                      * @return DeviceEui LoRa设备UUID
+                     * 
                      */
                     std::string GetDeviceEui() const;
 
                     /**
                      * 判断参数 DeviceEui 是否已赋值
                      * @return DeviceEui 是否已赋值
+                     * 
                      */
                     bool DeviceEuiHasBeenSet() const;
 
                     /**
                      * 获取LoRa应用密钥
                      * @return AppKey LoRa应用密钥
+                     * 
                      */
                     std::string GetAppKey() const;
 
                     /**
                      * 判断参数 AppKey 是否已赋值
                      * @return AppKey 是否已赋值
+                     * 
                      */
                     bool AppKeyHasBeenSet() const;
 
                     /**
                      * 获取设备类型,目前支持A、B、C三种
                      * @return ClassType 设备类型,目前支持A、B、C三种
+                     * 
                      */
                     std::string GetClassType() const;
 
                     /**
                      * 判断参数 ClassType 是否已赋值
                      * @return ClassType 是否已赋值
+                     * 
                      */
                     bool ClassTypeHasBeenSet() const;
 
                     /**
                      * 获取设备所属产品id
                      * @return ProductId 设备所属产品id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 

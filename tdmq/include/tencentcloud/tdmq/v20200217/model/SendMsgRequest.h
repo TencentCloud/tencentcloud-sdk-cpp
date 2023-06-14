@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）名称。
                      * @return EnvironmentId 环境（命名空间）名称。
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境（命名空间）名称。
-                     * @param EnvironmentId 环境（命名空间）名称。
+                     * @param _environmentId 环境（命名空间）名称。
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。
                      * @return TopicName 主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。
-                     * @param TopicName 主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。
+                     * @param _topicName 主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取消息内容，不能为空且大小不得大于5242880个byte。
                      * @return MsgContent 消息内容，不能为空且大小不得大于5242880个byte。
+                     * 
                      */
                     std::string GetMsgContent() const;
 
                     /**
                      * 设置消息内容，不能为空且大小不得大于5242880个byte。
-                     * @param MsgContent 消息内容，不能为空且大小不得大于5242880个byte。
+                     * @param _msgContent 消息内容，不能为空且大小不得大于5242880个byte。
+                     * 
                      */
                     void SetMsgContent(const std::string& _msgContent);
 
                     /**
                      * 判断参数 MsgContent 是否已赋值
                      * @return MsgContent 是否已赋值
+                     * 
                      */
                     bool MsgContentHasBeenSet() const;
 
                     /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置Pulsar 集群的ID
-                     * @param ClusterId Pulsar 集群的ID
+                     * @param _clusterId Pulsar 集群的ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

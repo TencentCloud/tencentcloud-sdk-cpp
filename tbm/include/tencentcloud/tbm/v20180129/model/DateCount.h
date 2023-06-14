@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取统计日期
                      * @return Date 统计日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置统计日期
-                     * @param Date 统计日期
+                     * @param _date 统计日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取统计值
                      * @return Count 统计值
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置统计值
-                     * @param Count 统计值
+                     * @param _count 统计值
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取有效期 10分钟。只能完成1次核身。
                      * @return FaceIdToken 有效期 10分钟。只能完成1次核身。
+                     * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
                      * 判断参数 FaceIdToken 是否已赋值
                      * @return FaceIdToken 是否已赋值
+                     * 
                      */
                     bool FaceIdTokenHasBeenSet() const;
 

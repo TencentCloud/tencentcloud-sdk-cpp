@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取数据库对象列表。
                      * @return DatabaseList 数据库对象列表。
+                     * 
                      */
                     std::vector<DatabaseResponseInfo> GetDatabaseList() const;
 
                     /**
                      * 判断参数 DatabaseList 是否已赋值
                      * @return DatabaseList 是否已赋值
+                     * 
                      */
                     bool DatabaseListHasBeenSet() const;
 
                     /**
                      * 获取实例总数。
                      * @return TotalCount 实例总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

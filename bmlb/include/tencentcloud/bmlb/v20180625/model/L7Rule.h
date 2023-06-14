@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取转发域名。
                      * @return Domain 转发域名。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置转发域名。
-                     * @param Domain 转发域名。
+                     * @param _domain 转发域名。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取转发域名实例ID。
                      * @return DomainId 转发域名实例ID。
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置转发域名实例ID。
-                     * @param DomainId 转发域名实例ID。
+                     * @param _domainId 转发域名实例ID。
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
                      * @return Status 转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
-                     * @param Status 转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     * @param _status 转发路径当前状态（0代表创建中，1代表正常运行，2代表创建失败，3代表删除中，4代表删除失败）。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间戳。
                      * @return AddTimestamp 创建时间戳。
+                     * 
                      */
                     std::string GetAddTimestamp() const;
 
                     /**
                      * 设置创建时间戳。
-                     * @param AddTimestamp 创建时间戳。
+                     * @param _addTimestamp 创建时间戳。
+                     * 
                      */
                     void SetAddTimestamp(const std::string& _addTimestamp);
 
                     /**
                      * 判断参数 AddTimestamp 是否已赋值
                      * @return AddTimestamp 是否已赋值
+                     * 
                      */
                     bool AddTimestampHasBeenSet() const;
 
                     /**
                      * 获取该转发域名下面的转发路径列表。
                      * @return LocationSet 该转发域名下面的转发路径列表。
+                     * 
                      */
                     std::vector<L7RulesLocation> GetLocationSet() const;
 
                     /**
                      * 设置该转发域名下面的转发路径列表。
-                     * @param LocationSet 该转发域名下面的转发路径列表。
+                     * @param _locationSet 该转发域名下面的转发路径列表。
+                     * 
                      */
                     void SetLocationSet(const std::vector<L7RulesLocation>& _locationSet);
 
                     /**
                      * 判断参数 LocationSet 是否已赋值
                      * @return LocationSet 是否已赋值
+                     * 
                      */
                     bool LocationSetHasBeenSet() const;
 

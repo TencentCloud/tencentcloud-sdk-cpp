@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取独享集群内的DB实例列表
                      * @return Instances 独享集群内的DB实例列表
+                     * 
                      */
                     std::vector<DBInstanceDetail> GetInstances() const;
 
                     /**
                      * 判断参数 Instances 是否已赋值
                      * @return Instances 是否已赋值
+                     * 
                      */
                     bool InstancesHasBeenSet() const;
 
                     /**
                      * 获取独享集群内的DB实例总数
                      * @return TotalCount 独享集群内的DB实例总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

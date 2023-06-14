@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayerId 玩家Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置玩家Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlayerId 玩家Id
+                     * @param _playerId 玩家Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 
@@ -73,38 +76,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionIdentifier 延迟对应的区域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionIdentifier() const;
 
                     /**
                      * 设置延迟对应的区域名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionIdentifier 延迟对应的区域名称
+                     * @param _regionIdentifier 延迟对应的区域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionIdentifier(const std::string& _regionIdentifier);
 
                     /**
                      * 判断参数 RegionIdentifier 是否已赋值
                      * @return RegionIdentifier 是否已赋值
+                     * 
                      */
                     bool RegionIdentifierHasBeenSet() const;
 
                     /**
                      * 获取毫秒级延迟
                      * @return LatencyInMilliseconds 毫秒级延迟
+                     * 
                      */
                     uint64_t GetLatencyInMilliseconds() const;
 
                     /**
                      * 设置毫秒级延迟
-                     * @param LatencyInMilliseconds 毫秒级延迟
+                     * @param _latencyInMilliseconds 毫秒级延迟
+                     * 
                      */
                     void SetLatencyInMilliseconds(const uint64_t& _latencyInMilliseconds);
 
                     /**
                      * 判断参数 LatencyInMilliseconds 是否已赋值
                      * @return LatencyInMilliseconds 是否已赋值
+                     * 
                      */
                     bool LatencyInMillisecondsHasBeenSet() const;
 

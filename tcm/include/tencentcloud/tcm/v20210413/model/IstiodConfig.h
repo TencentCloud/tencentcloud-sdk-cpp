@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取工作负载配置
                      * @return Workload 工作负载配置
+                     * 
                      */
                     WorkloadConfig GetWorkload() const;
 
                     /**
                      * 设置工作负载配置
-                     * @param Workload 工作负载配置
+                     * @param _workload 工作负载配置
+                     * 
                      */
                     void SetWorkload(const WorkloadConfig& _workload);
 
                     /**
                      * 判断参数 Workload 是否已赋值
                      * @return Workload 是否已赋值
+                     * 
                      */
                     bool WorkloadHasBeenSet() const;
 

@@ -48,36 +48,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username 用户名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
                     /**
                      * 获取访问凭证
                      * @return Token 访问凭证
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取访问凭证过期时间戳，是一个时间戳数字，无单位
                      * @return ExpTime 访问凭证过期时间戳，是一个时间戳数字，无单位
+                     * 
                      */
                     int64_t GetExpTime() const;
 
                     /**
                      * 判断参数 ExpTime 是否已赋值
                      * @return ExpTime 是否已赋值
+                     * 
                      */
                     bool ExpTimeHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TokenId 长期凭证的TokenId，短期凭证没有TokenId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTokenId() const;
 
                     /**
                      * 判断参数 TokenId 是否已赋值
                      * @return TokenId 是否已赋值
+                     * 
                      */
                     bool TokenIdHasBeenSet() const;
 

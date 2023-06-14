@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 报告 URL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 判断参数 ReportUrl 是否已赋值
                      * @return ReportUrl 是否已赋值
+                     * 
                      */
                     bool ReportUrlHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
                      * @return Status 执行中：EvidenceStatusExecuting
 成功：EvidenceStatusSuccess
 失败：EvidenceStatusFailed
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

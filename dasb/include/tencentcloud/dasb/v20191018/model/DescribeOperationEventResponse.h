@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取操作日志列表
                      * @return OperationEventSet 操作日志列表
+                     * 
                      */
                     std::vector<OperationEvent> GetOperationEventSet() const;
 
                     /**
                      * 判断参数 OperationEventSet 是否已赋值
                      * @return OperationEventSet 是否已赋值
+                     * 
                      */
                     bool OperationEventSetHasBeenSet() const;
 
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建的子应用 ID。
                      * @return SubAppId 新创建的子应用 ID。
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

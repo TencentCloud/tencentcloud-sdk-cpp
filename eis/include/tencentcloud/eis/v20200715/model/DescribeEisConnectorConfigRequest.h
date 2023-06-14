@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取连接器名称
                      * @return ConnectorName 连接器名称
+                     * 
                      */
                     std::string GetConnectorName() const;
 
                     /**
                      * 设置连接器名称
-                     * @param ConnectorName 连接器名称
+                     * @param _connectorName 连接器名称
+                     * 
                      */
                     void SetConnectorName(const std::string& _connectorName);
 
                     /**
                      * 判断参数 ConnectorName 是否已赋值
                      * @return ConnectorName 是否已赋值
+                     * 
                      */
                     bool ConnectorNameHasBeenSet() const;
 
                     /**
                      * 获取连接器版本
                      * @return ConnectorVersion 连接器版本
+                     * 
                      */
                     std::string GetConnectorVersion() const;
 
                     /**
                      * 设置连接器版本
-                     * @param ConnectorVersion 连接器版本
+                     * @param _connectorVersion 连接器版本
+                     * 
                      */
                     void SetConnectorVersion(const std::string& _connectorVersion);
 
                     /**
                      * 判断参数 ConnectorVersion 是否已赋值
                      * @return ConnectorVersion 是否已赋值
+                     * 
                      */
                     bool ConnectorVersionHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取agent列表
                      * @return Agents agent列表
+                     * 
                      */
                     std::vector<PrometheusAgentInfo> GetAgents() const;
 
                     /**
                      * 设置agent列表
-                     * @param Agents agent列表
+                     * @param _agents agent列表
+                     * 
                      */
                     void SetAgents(const std::vector<PrometheusAgentInfo>& _agents);
 
                     /**
                      * 判断参数 Agents 是否已赋值
                      * @return Agents 是否已赋值
+                     * 
                      */
                     bool AgentsHasBeenSet() const;
 
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

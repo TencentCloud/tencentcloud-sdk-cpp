@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 组件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组件名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 组件名称
+                     * @param _name 组件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 组件版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetVersion() const;
 
                     /**
                      * 设置组件版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 组件版本
+                     * @param _version 组件版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::vector<std::string>& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixedVersion 组件修复版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFixedVersion() const;
 
                     /**
                      * 设置组件修复版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FixedVersion 组件修复版本
+                     * @param _fixedVersion 组件修复版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFixedVersion(const std::vector<std::string>& _fixedVersion);
 
                     /**
                      * 判断参数 FixedVersion 是否已赋值
                      * @return FixedVersion 是否已赋值
+                     * 
                      */
                     bool FixedVersionHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取ACL策略名
                      * @return RuleName ACL策略名
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置ACL策略名
-                     * @param RuleName ACL策略名
+                     * @param _ruleName ACL策略名
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取是否应用到新增的Topic
                      * @return IsApplied 是否应用到新增的Topic
+                     * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
                      * 设置是否应用到新增的Topic
-                     * @param IsApplied 是否应用到新增的Topic
+                     * @param _isApplied 是否应用到新增的Topic
+                     * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
 
                     /**
                      * 判断参数 IsApplied 是否已赋值
                      * @return IsApplied 是否已赋值
+                     * 
                      */
                     bool IsAppliedHasBeenSet() const;
 

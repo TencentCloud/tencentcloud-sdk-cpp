@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取购买相关参数。
                      * @return ChargePrepaid 购买相关参数。
+                     * 
                      */
                     ChargePrepaid GetChargePrepaid() const;
 
                     /**
                      * 设置购买相关参数。
-                     * @param ChargePrepaid 购买相关参数。
+                     * @param _chargePrepaid 购买相关参数。
+                     * 
                      */
                     void SetChargePrepaid(const ChargePrepaid& _chargePrepaid);
 
                     /**
                      * 判断参数 ChargePrepaid 是否已赋值
                      * @return ChargePrepaid 是否已赋值
+                     * 
                      */
                     bool ChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取需要开通专业版主机信息数组。
                      * @return Machines 需要开通专业版主机信息数组。
+                     * 
                      */
                     std::vector<ProVersionMachine> GetMachines() const;
 
                     /**
                      * 设置需要开通专业版主机信息数组。
-                     * @param Machines 需要开通专业版主机信息数组。
+                     * @param _machines 需要开通专业版主机信息数组。
+                     * 
                      */
                     void SetMachines(const std::vector<ProVersionMachine>& _machines);
 
                     /**
                      * 判断参数 Machines 是否已赋值
                      * @return Machines 是否已赋值
+                     * 
                      */
                     bool MachinesHasBeenSet() const;
 

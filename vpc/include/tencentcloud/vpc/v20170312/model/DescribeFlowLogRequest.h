@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取私用网络ID或者统一ID，建议使用统一ID。
                      * @return VpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私用网络ID或者统一ID，建议使用统一ID。
-                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取流日志唯一ID。
                      * @return FlowLogId 流日志唯一ID。
+                     * 
                      */
                     std::string GetFlowLogId() const;
 
                     /**
                      * 设置流日志唯一ID。
-                     * @param FlowLogId 流日志唯一ID。
+                     * @param _flowLogId 流日志唯一ID。
+                     * 
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
 
                     /**
                      * 判断参数 FlowLogId 是否已赋值
                      * @return FlowLogId 是否已赋值
+                     * 
                      */
                     bool FlowLogIdHasBeenSet() const;
 

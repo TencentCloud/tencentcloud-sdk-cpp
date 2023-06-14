@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取主集群名称
                      * @return DataEngineName 主集群名称
+                     * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置主集群名称
-                     * @param DataEngineName 主集群名称
+                     * @param _dataEngineName 主集群名称
+                     * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
 
                     /**
                      * 判断参数 DataEngineName 是否已赋值
                      * @return DataEngineName 是否已赋值
+                     * 
                      */
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
                      * 获取是否开启备集群
                      * @return StartStandbyCluster 是否开启备集群
+                     * 
                      */
                     bool GetStartStandbyCluster() const;
 
                     /**
                      * 设置是否开启备集群
-                     * @param StartStandbyCluster 是否开启备集群
+                     * @param _startStandbyCluster 是否开启备集群
+                     * 
                      */
                     void SetStartStandbyCluster(const bool& _startStandbyCluster);
 
                     /**
                      * 判断参数 StartStandbyCluster 是否已赋值
                      * @return StartStandbyCluster 是否已赋值
+                     * 
                      */
                     bool StartStandbyClusterHasBeenSet() const;
 

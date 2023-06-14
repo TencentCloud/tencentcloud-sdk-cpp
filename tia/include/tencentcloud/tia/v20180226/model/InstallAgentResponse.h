@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取Agent版本, 用于私有集群的agent安装
                      * @return TiaVersion Agent版本, 用于私有集群的agent安装
+                     * 
                      */
                     std::string GetTiaVersion() const;
 
                     /**
                      * 判断参数 TiaVersion 是否已赋值
                      * @return TiaVersion 是否已赋值
+                     * 
                      */
                     bool TiaVersionHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取文件夹名称
                      * @return FolderName 文件夹名称
+                     * 
                      */
                     std::string GetFolderName() const;
 
                     /**
                      * 设置文件夹名称
-                     * @param FolderName 文件夹名称
+                     * @param _folderName 文件夹名称
+                     * 
                      */
                     void SetFolderName(const std::string& _folderName);
 
                     /**
                      * 判断参数 FolderName 是否已赋值
                      * @return FolderName 是否已赋值
+                     * 
                      */
                     bool FolderNameHasBeenSet() const;
 
                     /**
                      * 获取文件夹Id
                      * @return FolderId 文件夹Id
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 设置文件夹Id
-                     * @param FolderId 文件夹Id
+                     * @param _folderId 文件夹Id
+                     * 
                      */
                     void SetFolderId(const std::string& _folderId);
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 
                     /**
                      * 获取父文件夹ID
                      * @return ParentsFolderId 父文件夹ID
+                     * 
                      */
                     std::string GetParentsFolderId() const;
 
                     /**
                      * 设置父文件夹ID
-                     * @param ParentsFolderId 父文件夹ID
+                     * @param _parentsFolderId 父文件夹ID
+                     * 
                      */
                     void SetParentsFolderId(const std::string& _parentsFolderId);
 
                     /**
                      * 判断参数 ParentsFolderId 是否已赋值
                      * @return ParentsFolderId 是否已赋值
+                     * 
                      */
                     bool ParentsFolderIdHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbortJob 停止压测任务成功与否
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAbortJob() const;
 
                     /**
                      * 设置停止压测任务成功与否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AbortJob 停止压测任务成功与否
+                     * @param _abortJob 停止压测任务成功与否
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAbortJob(const uint64_t& _abortJob);
 
                     /**
                      * 判断参数 AbortJob 是否已赋值
                      * @return AbortJob 是否已赋值
+                     * 
                      */
                     bool AbortJobHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SendNotice 发送告警通知成功与否
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSendNotice() const;
 
                     /**
                      * 设置发送告警通知成功与否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SendNotice 发送告警通知成功与否
+                     * @param _sendNotice 发送告警通知成功与否
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSendNotice(const uint64_t& _sendNotice);
 
                     /**
                      * 判断参数 SendNotice 是否已赋值
                      * @return SendNotice 是否已赋值
+                     * 
                      */
                     bool SendNoticeHasBeenSet() const;
 

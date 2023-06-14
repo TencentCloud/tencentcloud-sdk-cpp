@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取容器镜像列表
                      * @return Images 容器镜像列表
+                     * 
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
                      * 设置容器镜像列表
-                     * @param Images 容器镜像列表
+                     * @param _images 容器镜像列表
+                     * 
                      */
                     void SetImages(const std::vector<std::string>& _images);
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 

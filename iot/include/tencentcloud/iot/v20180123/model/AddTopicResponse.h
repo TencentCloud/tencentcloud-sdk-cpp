@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Topic信息
                      * @return Topic Topic信息
+                     * 
                      */
                     Topic GetTopic() const;
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 

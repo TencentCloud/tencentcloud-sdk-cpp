@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineName 机器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 设置机器名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineName 机器名称
+                     * @param _machineName 机器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineName(const std::string& _machineName);
 
                     /**
                      * 判断参数 MachineName 是否已赋值
                      * @return MachineName 是否已赋值
+                     * 
                      */
                     bool MachineNameHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachinePublicIp 机器公网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMachinePublicIp() const;
 
                     /**
                      * 设置机器公网ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachinePublicIp 机器公网ip
+                     * @param _machinePublicIp 机器公网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachinePublicIp(const std::string& _machinePublicIp);
 
                     /**
                      * 判断参数 MachinePublicIp 是否已赋值
                      * @return MachinePublicIp 是否已赋值
+                     * 
                      */
                     bool MachinePublicIpHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachinePrivateIp 机器内网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMachinePrivateIp() const;
 
                     /**
                      * 设置机器内网ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachinePrivateIp 机器内网ip
+                     * @param _machinePrivateIp 机器内网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachinePrivateIp(const std::string& _machinePrivateIp);
 
                     /**
                      * 判断参数 MachinePrivateIp 是否已赋值
                      * @return MachinePrivateIp 是否已赋值
+                     * 
                      */
                     bool MachinePrivateIpHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineTag 机器标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MachineTag> GetMachineTag() const;
 
                     /**
                      * 设置机器标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineTag 机器标签
+                     * @param _machineTag 机器标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineTag(const std::vector<MachineTag>& _machineTag);
 
                     /**
                      * 判断参数 MachineTag 是否已赋值
                      * @return MachineTag 是否已赋值
+                     * 
                      */
                     bool MachineTagHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Quuid 机器Quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置机器Quuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Quuid 机器Quuid
+                     * @param _quuid 机器Quuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 云镜Uuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置云镜Uuid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uuid 云镜Uuid
+                     * @param _uuid 云镜Uuid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KernelVersion 内核版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKernelVersion() const;
 
                     /**
                      * 设置内核版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KernelVersion 内核版本号
+                     * @param _kernelVersion 内核版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKernelVersion(const std::string& _kernelVersion);
 
                     /**
                      * 判断参数 KernelVersion 是否已赋值
                      * @return KernelVersion 是否已赋值
+                     * 
                      */
                     bool KernelVersionHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineStatus 在线状态 OFFLINE，ONLINE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMachineStatus() const;
 
                     /**
                      * 设置在线状态 OFFLINE，ONLINE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineStatus 在线状态 OFFLINE，ONLINE
+                     * @param _machineStatus 在线状态 OFFLINE，ONLINE
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
 
                     /**
                      * 判断参数 MachineStatus 是否已赋值
                      * @return MachineStatus 是否已赋值
+                     * 
                      */
                     bool MachineStatusHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseOrder 授权订单对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LicenseOrder GetLicenseOrder() const;
 
                     /**
                      * 设置授权订单对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LicenseOrder 授权订单对象
+                     * @param _licenseOrder 授权订单对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLicenseOrder(const LicenseOrder& _licenseOrder);
 
                     /**
                      * 判断参数 LicenseOrder 是否已赋值
                      * @return LicenseOrder 是否已赋值
+                     * 
                      */
                     bool LicenseOrderHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulNum 漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulNum() const;
 
                     /**
                      * 设置漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VulNum 漏洞数量
+                     * @param _vulNum 漏洞数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVulNum(const uint64_t& _vulNum);
 
                     /**
                      * 判断参数 VulNum 是否已赋值
                      * @return VulNum 是否已赋值
+                     * 
                      */
                     bool VulNumHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudTags 云标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tags> GetCloudTags() const;
 
                     /**
                      * 设置云标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CloudTags 云标签信息
+                     * @param _cloudTags 云标签信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCloudTags(const std::vector<Tags>& _cloudTags);
 
                     /**
                      * 判断参数 CloudTags 是否已赋值
                      * @return CloudTags 是否已赋值
+                     * 
                      */
                     bool CloudTagsHasBeenSet() const;
 
@@ -296,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 机器instance ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置机器instance ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceID 机器instance ID
+                     * @param _instanceID 机器instance ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
+                     * 
                      */
                     bool InstanceIDHasBeenSet() const;
 

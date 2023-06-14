@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取白盒解密密钥，base64编码
                      * @return DecryptKey 白盒解密密钥，base64编码
+                     * 
                      */
                     std::string GetDecryptKey() const;
 
                     /**
                      * 判断参数 DecryptKey 是否已赋值
                      * @return DecryptKey 是否已赋值
+                     * 
                      */
                     bool DecryptKeyHasBeenSet() const;
 

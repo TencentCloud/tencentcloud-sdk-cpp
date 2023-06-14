@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的转发规则列表。
                      * @return RuleSet 返回的转发规则列表。
+                     * 
                      */
                     std::vector<L7Rule> GetRuleSet() const;
 
                     /**
                      * 判断参数 RuleSet 是否已赋值
                      * @return RuleSet 是否已赋值
+                     * 
                      */
                     bool RuleSetHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeSet 节点详细信息的列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Node> GetNodeSet() const;
 
                     /**
                      * 判断参数 NodeSet 是否已赋值
                      * @return NodeSet 是否已赋值
+                     * 
                      */
                     bool NodeSetHasBeenSet() const;
 
                     /**
                      * 获取所有的节点数量。
                      * @return TotalCount 所有的节点数量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

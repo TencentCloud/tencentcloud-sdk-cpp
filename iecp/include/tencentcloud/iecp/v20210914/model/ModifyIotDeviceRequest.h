@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取设备id
                      * @return DeviceId 设备id
+                     * 
                      */
                     int64_t GetDeviceId() const;
 
                     /**
                      * 设置设备id
-                     * @param DeviceId 设备id
+                     * @param _deviceId 设备id
+                     * 
                      */
                     void SetDeviceId(const int64_t& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取设备是否开启
                      * @return Disabled 设备是否开启
+                     * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置设备是否开启
-                     * @param Disabled 设备是否开启
+                     * @param _disabled 设备是否开启
+                     * 
                      */
                     void SetDisabled(const bool& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 
                     /**
                      * 获取日志设置
                      * @return LogSetting 日志设置
+                     * 
                      */
                     int64_t GetLogSetting() const;
 
                     /**
                      * 设置日志设置
-                     * @param LogSetting 日志设置
+                     * @param _logSetting 日志设置
+                     * 
                      */
                     void SetLogSetting(const int64_t& _logSetting);
 
                     /**
                      * 判断参数 LogSetting 是否已赋值
                      * @return LogSetting 是否已赋值
+                     * 
                      */
                     bool LogSettingHasBeenSet() const;
 
                     /**
                      * 获取日志级别
                      * @return LogLevel 日志级别
+                     * 
                      */
                     int64_t GetLogLevel() const;
 
                     /**
                      * 设置日志级别
-                     * @param LogLevel 日志级别
+                     * @param _logLevel 日志级别
+                     * 
                      */
                     void SetLogLevel(const int64_t& _logLevel);
 
                     /**
                      * 判断参数 LogLevel 是否已赋值
                      * @return LogLevel 是否已赋值
+                     * 
                      */
                     bool LogLevelHasBeenSet() const;
 

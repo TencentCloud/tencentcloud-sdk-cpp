@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取删除表格分布式索引结果数量
                      * @return TotalCount 删除表格分布式索引结果数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取删除表格分布式索引结果列表
                      * @return TableResults 删除表格分布式索引结果列表
+                     * 
                      */
                     std::vector<TableResultNew> GetTableResults() const;
 
                     /**
                      * 判断参数 TableResults 是否已赋值
                      * @return TableResults 是否已赋值
+                     * 
                      */
                     bool TableResultsHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取容器实例ID
                      * @return InstanceId 容器实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

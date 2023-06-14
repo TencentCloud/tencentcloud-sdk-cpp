@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取平台标识。
                      * @return Platform 平台标识。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台标识。
-                     * @param Platform 平台标识。
+                     * @param _platform 平台标识。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取平台描述。
                      * @return Description 平台描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置平台描述。
-                     * @param Description 平台描述。
+                     * @param _description 平台描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取云点播子应用 Id。
                      * @return VodSubAppId 云点播子应用 Id。
+                     * 
                      */
                     uint64_t GetVodSubAppId() const;
 
                     /**
                      * 设置云点播子应用 Id。
-                     * @param VodSubAppId 云点播子应用 Id。
+                     * @param _vodSubAppId 云点播子应用 Id。
+                     * 
                      */
                     void SetVodSubAppId(const uint64_t& _vodSubAppId);
 
                     /**
                      * 判断参数 VodSubAppId 是否已赋值
                      * @return VodSubAppId 是否已赋值
+                     * 
                      */
                     bool VodSubAppIdHasBeenSet() const;
 
                     /**
                      * 获取平台绑定的 license Id。
                      * @return LicenseId 平台绑定的 license Id。
+                     * 
                      */
                     std::string GetLicenseId() const;
 
                     /**
                      * 设置平台绑定的 license Id。
-                     * @param LicenseId 平台绑定的 license Id。
+                     * @param _licenseId 平台绑定的 license Id。
+                     * 
                      */
                     void SetLicenseId(const std::string& _licenseId);
 
                     /**
                      * 判断参数 LicenseId 是否已赋值
                      * @return LicenseId 是否已赋值
+                     * 
                      */
                     bool LicenseIdHasBeenSet() const;
 
@@ -127,6 +139,7 @@ namespace TencentCloud
 <li>Normal：正常，可使用。；</li>
 <li>Stopped：已停用，暂无法使用；</li>
 <li>Expired：已过期，需要重新购买会员包。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -135,52 +148,60 @@ namespace TencentCloud
 <li>Normal：正常，可使用。；</li>
 <li>Stopped：已停用，暂无法使用；</li>
 <li>Expired：已过期，需要重新购买会员包。</li>
-                     * @param Status 平台状态，可取值为：
+                     * @param _status 平台状态，可取值为：
 <li>Normal：正常，可使用。；</li>
 <li>Stopped：已停用，暂无法使用；</li>
 <li>Expired：已过期，需要重新购买会员包。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间，格式按照 ISO 8601 标准表示。
                      * @return CreateTime 创建时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，格式按照 ISO 8601 标准表示。
-                     * @param CreateTime 创建时间，格式按照 ISO 8601 标准表示。
+                     * @param _createTime 创建时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间，格式按照 ISO 8601 标准表示。
                      * @return UpdateTime 更新时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，格式按照 ISO 8601 标准表示。
-                     * @param UpdateTime 更新时间，格式按照 ISO 8601 标准表示。
+                     * @param _updateTime 更新时间，格式按照 ISO 8601 标准表示。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

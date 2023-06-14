@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取true 是 false 否
                      * @return Exist true 是 false 否
+                     * 
                      */
                     bool GetExist() const;
 
                     /**
                      * 判断参数 Exist 是否已赋值
                      * @return Exist 是否已赋值
+                     * 
                      */
                     bool ExistHasBeenSet() const;
 

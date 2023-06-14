@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取环境名
                      * @return EnvName 环境名
+                     * 
                      */
                     std::string GetEnvName() const;
 
                     /**
                      * 设置环境名
-                     * @param EnvName 环境名
+                     * @param _envName 环境名
+                     * 
                      */
                     void SetEnvName(const std::string& _envName);
 
                     /**
                      * 判断参数 EnvName 是否已赋值
                      * @return EnvName 是否已赋值
+                     * 
                      */
                     bool EnvNameHasBeenSet() const;
 
                     /**
                      * 获取是否开启config公网
                      * @return EnableConfigInternet 是否开启config公网
+                     * 
                      */
                     bool GetEnableConfigInternet() const;
 
                     /**
                      * 设置是否开启config公网
-                     * @param EnableConfigInternet 是否开启config公网
+                     * @param _enableConfigInternet 是否开启config公网
+                     * 
                      */
                     void SetEnableConfigInternet(const bool& _enableConfigInternet);
 
                     /**
                      * 判断参数 EnableConfigInternet 是否已赋值
                      * @return EnableConfigInternet 是否已赋值
+                     * 
                      */
                     bool EnableConfigInternetHasBeenSet() const;
 
                     /**
                      * 获取config公网ip
                      * @return ConfigInternetServiceIp config公网ip
+                     * 
                      */
                     std::string GetConfigInternetServiceIp() const;
 
                     /**
                      * 设置config公网ip
-                     * @param ConfigInternetServiceIp config公网ip
+                     * @param _configInternetServiceIp config公网ip
+                     * 
                      */
                     void SetConfigInternetServiceIp(const std::string& _configInternetServiceIp);
 
                     /**
                      * 判断参数 ConfigInternetServiceIp 是否已赋值
                      * @return ConfigInternetServiceIp 是否已赋值
+                     * 
                      */
                     bool ConfigInternetServiceIpHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigIntranetAddress config内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConfigIntranetAddress() const;
 
                     /**
                      * 设置config内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigIntranetAddress config内网访问地址
+                     * @param _configIntranetAddress config内网访问地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfigIntranetAddress(const std::string& _configIntranetAddress);
 
                     /**
                      * 判断参数 ConfigIntranetAddress 是否已赋值
                      * @return ConfigIntranetAddress 是否已赋值
+                     * 
                      */
                     bool ConfigIntranetAddressHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableConfigIntranet 是否开启config内网clb
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableConfigIntranet() const;
 
                     /**
                      * 设置是否开启config内网clb
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableConfigIntranet 是否开启config内网clb
+                     * @param _enableConfigIntranet 是否开启config内网clb
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableConfigIntranet(const bool& _enableConfigIntranet);
 
                     /**
                      * 判断参数 EnableConfigIntranet 是否已赋值
                      * @return EnableConfigIntranet 是否已赋值
+                     * 
                      */
                     bool EnableConfigIntranetHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetBandWidth 客户端公网带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInternetBandWidth() const;
 
                     /**
                      * 设置客户端公网带宽
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetBandWidth 客户端公网带宽
+                     * @param _internetBandWidth 客户端公网带宽
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetBandWidth(const int64_t& _internetBandWidth);
 
                     /**
                      * 判断参数 InternetBandWidth 是否已赋值
                      * @return InternetBandWidth 是否已赋值
+                     * 
                      */
                     bool InternetBandWidthHasBeenSet() const;
 

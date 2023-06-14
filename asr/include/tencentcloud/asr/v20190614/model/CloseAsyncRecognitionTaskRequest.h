@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取语音流异步识别任务的唯一标识，在创建任务时会返回
                      * @return TaskId 语音流异步识别任务的唯一标识，在创建任务时会返回
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置语音流异步识别任务的唯一标识，在创建任务时会返回
-                     * @param TaskId 语音流异步识别任务的唯一标识，在创建任务时会返回
+                     * @param _taskId 语音流异步识别任务的唯一标识，在创建任务时会返回
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

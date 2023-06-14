@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取动态打包任务状态列表
                      * @return EdgePackTaskStatusSet 动态打包任务状态列表
+                     * 
                      */
                     std::vector<EdgePackTaskStatus> GetEdgePackTaskStatusSet() const;
 
                     /**
                      * 判断参数 EdgePackTaskStatusSet 是否已赋值
                      * @return EdgePackTaskStatusSet 是否已赋值
+                     * 
                      */
                     bool EdgePackTaskStatusSetHasBeenSet() const;
 
                     /**
                      * 获取总数，用于分页查询
                      * @return TotalCount 总数，用于分页查询
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

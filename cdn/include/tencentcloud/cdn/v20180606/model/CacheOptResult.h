@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessUrls 成功的url列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSuccessUrls() const;
 
                     /**
                      * 设置成功的url列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuccessUrls 成功的url列表
+                     * @param _successUrls 成功的url列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccessUrls(const std::vector<std::string>& _successUrls);
 
                     /**
                      * 判断参数 SuccessUrls 是否已赋值
                      * @return SuccessUrls 是否已赋值
+                     * 
                      */
                     bool SuccessUrlsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailUrls 失败的url列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailUrls() const;
 
                     /**
                      * 设置失败的url列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailUrls 失败的url列表
+                     * @param _failUrls 失败的url列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailUrls(const std::vector<std::string>& _failUrls);
 
                     /**
                      * 判断参数 FailUrls 是否已赋值
                      * @return FailUrls 是否已赋值
+                     * 
                      */
                     bool FailUrlsHasBeenSet() const;
 

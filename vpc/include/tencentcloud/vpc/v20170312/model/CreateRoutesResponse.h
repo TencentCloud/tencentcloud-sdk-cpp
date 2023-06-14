@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取新增的实例个数。
                      * @return TotalCount 新增的实例个数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取路由表对象。
                      * @return RouteTableSet 路由表对象。
+                     * 
                      */
                     std::vector<RouteTable> GetRouteTableSet() const;
 
                     /**
                      * 判断参数 RouteTableSet 是否已赋值
                      * @return RouteTableSet 是否已赋值
+                     * 
                      */
                     bool RouteTableSetHasBeenSet() const;
 

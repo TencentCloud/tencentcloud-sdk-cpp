@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Data 无
+                     * 
                      */
                     BaselinePolicy GetData() const;
 
                     /**
                      * 设置无
-                     * @param Data 无
+                     * @param _data 无
+                     * 
                      */
                     void SetData(const BaselinePolicy& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
                      * @return Filters <li>RuleName - String - 是否必填：否 - 规则名称</li>
 <li>CategoryId - int64 - 是否必填：否 自定义筛选为-1 - 规则分类</li>
 <li>RuleType - int - 是否必填：否 0:系统 1:自定义 - 规则类型</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -76,33 +80,38 @@ namespace TencentCloud
                      * 设置<li>RuleName - String - 是否必填：否 - 规则名称</li>
 <li>CategoryId - int64 - 是否必填：否 自定义筛选为-1 - 规则分类</li>
 <li>RuleType - int - 是否必填：否 0:系统 1:自定义 - 规则类型</li>
-                     * @param Filters <li>RuleName - String - 是否必填：否 - 规则名称</li>
+                     * @param _filters <li>RuleName - String - 是否必填：否 - 规则名称</li>
 <li>CategoryId - int64 - 是否必填：否 自定义筛选为-1 - 规则分类</li>
 <li>RuleType - int - 是否必填：否 0:系统 1:自定义 - 规则类型</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取是否按照过滤的全选
                      * @return SelectAll 是否按照过滤的全选
+                     * 
                      */
                     int64_t GetSelectAll() const;
 
                     /**
                      * 设置是否按照过滤的全选
-                     * @param SelectAll 是否按照过滤的全选
+                     * @param _selectAll 是否按照过滤的全选
+                     * 
                      */
                     void SetSelectAll(const int64_t& _selectAll);
 
                     /**
                      * 判断参数 SelectAll 是否已赋值
                      * @return SelectAll 是否已赋值
+                     * 
                      */
                     bool SelectAllHasBeenSet() const;
 

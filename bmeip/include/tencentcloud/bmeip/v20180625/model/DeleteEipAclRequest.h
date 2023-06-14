@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的 ACL 实例 ID
                      * @return AclId 待删除的 ACL 实例 ID
+                     * 
                      */
                     std::string GetAclId() const;
 
                     /**
                      * 设置待删除的 ACL 实例 ID
-                     * @param AclId 待删除的 ACL 实例 ID
+                     * @param _aclId 待删除的 ACL 实例 ID
+                     * 
                      */
                     void SetAclId(const std::string& _aclId);
 
                     /**
                      * 判断参数 AclId 是否已赋值
                      * @return AclId 是否已赋值
+                     * 
                      */
                     bool AclIdHasBeenSet() const;
 

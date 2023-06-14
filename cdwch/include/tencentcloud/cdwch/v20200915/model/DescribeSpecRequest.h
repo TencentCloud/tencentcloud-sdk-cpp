@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取地域信息，例如"ap-guangzhou-1"
                      * @return Zone 地域信息，例如"ap-guangzhou-1"
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置地域信息，例如"ap-guangzhou-1"
-                     * @param Zone 地域信息，例如"ap-guangzhou-1"
+                     * @param _zone 地域信息，例如"ap-guangzhou-1"
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费
                      * @return PayMode 计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费
-                     * @param PayMode 计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费
+                     * @param _payMode 计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费
+                     * 
                      */
                     void SetPayMode(const std::string& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取是否弹性ck
                      * @return IsElastic 是否弹性ck
+                     * 
                      */
                     bool GetIsElastic() const;
 
                     /**
                      * 设置是否弹性ck
-                     * @param IsElastic 是否弹性ck
+                     * @param _isElastic 是否弹性ck
+                     * 
                      */
                     void SetIsElastic(const bool& _isElastic);
 
                     /**
                      * 判断参数 IsElastic 是否已赋值
                      * @return IsElastic 是否已赋值
+                     * 
                      */
                     bool IsElasticHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取用户账户被允许创建的启动配置最大数量
                      * @return MaxNumberOfLaunchConfigurations 用户账户被允许创建的启动配置最大数量
+                     * 
                      */
                     int64_t GetMaxNumberOfLaunchConfigurations() const;
 
                     /**
                      * 判断参数 MaxNumberOfLaunchConfigurations 是否已赋值
                      * @return MaxNumberOfLaunchConfigurations 是否已赋值
+                     * 
                      */
                     bool MaxNumberOfLaunchConfigurationsHasBeenSet() const;
 
                     /**
                      * 获取用户账户启动配置的当前数量
                      * @return NumberOfLaunchConfigurations 用户账户启动配置的当前数量
+                     * 
                      */
                     int64_t GetNumberOfLaunchConfigurations() const;
 
                     /**
                      * 判断参数 NumberOfLaunchConfigurations 是否已赋值
                      * @return NumberOfLaunchConfigurations 是否已赋值
+                     * 
                      */
                     bool NumberOfLaunchConfigurationsHasBeenSet() const;
 
                     /**
                      * 获取用户账户被允许创建的伸缩组最大数量
                      * @return MaxNumberOfAutoScalingGroups 用户账户被允许创建的伸缩组最大数量
+                     * 
                      */
                     int64_t GetMaxNumberOfAutoScalingGroups() const;
 
                     /**
                      * 判断参数 MaxNumberOfAutoScalingGroups 是否已赋值
                      * @return MaxNumberOfAutoScalingGroups 是否已赋值
+                     * 
                      */
                     bool MaxNumberOfAutoScalingGroupsHasBeenSet() const;
 
                     /**
                      * 获取用户账户伸缩组的当前数量
                      * @return NumberOfAutoScalingGroups 用户账户伸缩组的当前数量
+                     * 
                      */
                     int64_t GetNumberOfAutoScalingGroups() const;
 
                     /**
                      * 判断参数 NumberOfAutoScalingGroups 是否已赋值
                      * @return NumberOfAutoScalingGroups 是否已赋值
+                     * 
                      */
                     bool NumberOfAutoScalingGroupsHasBeenSet() const;
 

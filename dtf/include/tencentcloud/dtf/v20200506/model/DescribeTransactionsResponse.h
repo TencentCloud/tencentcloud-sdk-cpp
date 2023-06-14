@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取主事务分页列表
                      * @return Result 主事务分页列表
+                     * 
                      */
                     PagedTransaction GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

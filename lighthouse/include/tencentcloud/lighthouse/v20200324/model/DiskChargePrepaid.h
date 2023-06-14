@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取新购周期。
                      * @return Period 新购周期。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置新购周期。
-                     * @param Period 新购周期。
+                     * @param _period 新购周期。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -79,6 +82,7 @@ NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费
 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
@@ -90,37 +94,42 @@ NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费
 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。
-                     * @param RenewFlag 自动续费标识。取值范围：
+                     * @param _renewFlag 自动续费标识。取值范围：
 
 NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。
 NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。
 DISABLE_NOTIFY_AND_AUTO_RENEW：不自动续费，且不通知。
 
 默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云盘到期后将按月自动续费。
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取新购单位. 默认值: "m"。
                      * @return TimeUnit 新购单位. 默认值: "m"。
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置新购单位. 默认值: "m"。
-                     * @param TimeUnit 新购单位. 默认值: "m"。
+                     * @param _timeUnit 新购单位. 默认值: "m"。
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 

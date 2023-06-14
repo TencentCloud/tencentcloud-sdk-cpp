@@ -51,20 +51,23 @@ namespace TencentCloud
 MULTI：多次解冻
                      * @return UnfreezeRule ONCE：仅单次解冻（默认）
 MULTI：多次解冻
+                     * 
                      */
                     std::string GetUnfreezeRule() const;
 
                     /**
                      * 设置ONCE：仅单次解冻（默认）
 MULTI：多次解冻
-                     * @param UnfreezeRule ONCE：仅单次解冻（默认）
+                     * @param _unfreezeRule ONCE：仅单次解冻（默认）
 MULTI：多次解冻
+                     * 
                      */
                     void SetUnfreezeRule(const std::string& _unfreezeRule);
 
                     /**
                      * 判断参数 UnfreezeRule 是否已赋值
                      * @return UnfreezeRule 是否已赋值
+                     * 
                      */
                     bool UnfreezeRuleHasBeenSet() const;
 
@@ -73,20 +76,23 @@ MULTI：多次解冻
 MULTI：多次退款
                      * @return RefundRule ONCE：仅单次退款（默认）
 MULTI：多次退款
+                     * 
                      */
                     std::string GetRefundRule() const;
 
                     /**
                      * 设置ONCE：仅单次退款（默认）
 MULTI：多次退款
-                     * @param RefundRule ONCE：仅单次退款（默认）
+                     * @param _refundRule ONCE：仅单次退款（默认）
 MULTI：多次退款
+                     * 
                      */
                     void SetRefundRule(const std::string& _refundRule);
 
                     /**
                      * 判断参数 RefundRule 是否已赋值
                      * @return RefundRule 是否已赋值
+                     * 
                      */
                     bool RefundRuleHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取私有域解析账号
                      * @return Account 私有域解析账号
+                     * 
                      */
                     PrivateDNSAccount GetAccount() const;
 
                     /**
                      * 设置私有域解析账号
-                     * @param Account 私有域解析账号
+                     * @param _account 私有域解析账号
+                     * 
                      */
                     void SetAccount(const PrivateDNSAccount& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 

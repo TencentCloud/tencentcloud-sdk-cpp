@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的资源栈数量
                      * @return TotalCount 符合条件的资源栈数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取资源栈详细信息列表
                      * @return Stacks 资源栈详细信息列表
+                     * 
                      */
                     std::vector<StackInfo> GetStacks() const;
 
                     /**
                      * 判断参数 Stacks 是否已赋值
                      * @return Stacks 是否已赋值
+                     * 
                      */
                     bool StacksHasBeenSet() const;
 

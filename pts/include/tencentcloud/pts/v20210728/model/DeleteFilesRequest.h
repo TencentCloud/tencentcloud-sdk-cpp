@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取项目 ID
                      * @return ProjectId 项目 ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-                     * @param ProjectId 项目 ID
+                     * @param _projectId 项目 ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取文件 ID 数组
                      * @return FileIds 文件 ID 数组
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置文件 ID 数组
-                     * @param FileIds 文件 ID 数组
+                     * @param _fileIds 文件 ID 数组
+                     * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 

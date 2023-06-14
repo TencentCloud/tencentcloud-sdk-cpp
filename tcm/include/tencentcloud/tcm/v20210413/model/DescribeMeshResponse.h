@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Mesh详细信息
                      * @return Mesh Mesh详细信息
+                     * 
                      */
                     Mesh GetMesh() const;
 
                     /**
                      * 判断参数 Mesh 是否已赋值
                      * @return Mesh 是否已赋值
+                     * 
                      */
                     bool MeshHasBeenSet() const;
 

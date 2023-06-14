@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取请求量
                      * @return Value 请求量
+                     * 
                      */
                     uint64_t GetValue() const;
 
                     /**
                      * 设置请求量
-                     * @param Value 请求量
+                     * @param _value 请求量
+                     * 
                      */
                     void SetValue(const uint64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取百分比
                      * @return Percent 百分比
+                     * 
                      */
                     double GetPercent() const;
 
                     /**
                      * 设置百分比
-                     * @param Percent 百分比
+                     * @param _percent 百分比
+                     * 
                      */
                     void SetPercent(const double& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 

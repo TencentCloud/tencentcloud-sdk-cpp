@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取日志数据
                      * @return LogMessage 日志数据
+                     * 
                      */
                     std::vector<std::string> GetLogMessage() const;
 
                     /**
                      * 判断参数 LogMessage 是否已赋值
                      * @return LogMessage 是否已赋值
+                     * 
                      */
                     bool LogMessageHasBeenSet() const;
 

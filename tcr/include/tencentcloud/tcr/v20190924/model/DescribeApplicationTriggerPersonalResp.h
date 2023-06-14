@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取返回条目总数
                      * @return TotalCount 返回条目总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置返回条目总数
-                     * @param TotalCount 返回条目总数
+                     * @param _totalCount 返回条目总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取触发器列表
                      * @return TriggerInfo 触发器列表
+                     * 
                      */
                     std::vector<TriggerResp> GetTriggerInfo() const;
 
                     /**
                      * 设置触发器列表
-                     * @param TriggerInfo 触发器列表
+                     * @param _triggerInfo 触发器列表
+                     * 
                      */
                     void SetTriggerInfo(const std::vector<TriggerResp>& _triggerInfo);
 
                     /**
                      * 判断参数 TriggerInfo 是否已赋值
                      * @return TriggerInfo 是否已赋值
+                     * 
                      */
                     bool TriggerInfoHasBeenSet() const;
 

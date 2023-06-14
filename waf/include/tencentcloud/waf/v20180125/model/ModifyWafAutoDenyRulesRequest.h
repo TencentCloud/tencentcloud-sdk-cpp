@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取触发IP封禁的攻击次数阈值，范围为2~100次
                      * @return AttackThreshold 触发IP封禁的攻击次数阈值，范围为2~100次
+                     * 
                      */
                     int64_t GetAttackThreshold() const;
 
                     /**
                      * 设置触发IP封禁的攻击次数阈值，范围为2~100次
-                     * @param AttackThreshold 触发IP封禁的攻击次数阈值，范围为2~100次
+                     * @param _attackThreshold 触发IP封禁的攻击次数阈值，范围为2~100次
+                     * 
                      */
                     void SetAttackThreshold(const int64_t& _attackThreshold);
 
                     /**
                      * 判断参数 AttackThreshold 是否已赋值
                      * @return AttackThreshold 是否已赋值
+                     * 
                      */
                     bool AttackThresholdHasBeenSet() const;
 
                     /**
                      * 获取IP封禁统计时间，范围为1-60分钟
                      * @return TimeThreshold IP封禁统计时间，范围为1-60分钟
+                     * 
                      */
                     int64_t GetTimeThreshold() const;
 
                     /**
                      * 设置IP封禁统计时间，范围为1-60分钟
-                     * @param TimeThreshold IP封禁统计时间，范围为1-60分钟
+                     * @param _timeThreshold IP封禁统计时间，范围为1-60分钟
+                     * 
                      */
                     void SetTimeThreshold(const int64_t& _timeThreshold);
 
                     /**
                      * 判断参数 TimeThreshold 是否已赋值
                      * @return TimeThreshold 是否已赋值
+                     * 
                      */
                     bool TimeThresholdHasBeenSet() const;
 
                     /**
                      * 获取触发IP封禁后的封禁时间，范围为5~360分钟
                      * @return DenyTimeThreshold 触发IP封禁后的封禁时间，范围为5~360分钟
+                     * 
                      */
                     int64_t GetDenyTimeThreshold() const;
 
                     /**
                      * 设置触发IP封禁后的封禁时间，范围为5~360分钟
-                     * @param DenyTimeThreshold 触发IP封禁后的封禁时间，范围为5~360分钟
+                     * @param _denyTimeThreshold 触发IP封禁后的封禁时间，范围为5~360分钟
+                     * 
                      */
                     void SetDenyTimeThreshold(const int64_t& _denyTimeThreshold);
 
                     /**
                      * 判断参数 DenyTimeThreshold 是否已赋值
                      * @return DenyTimeThreshold 是否已赋值
+                     * 
                      */
                     bool DenyTimeThresholdHasBeenSet() const;
 
                     /**
                      * 获取自动封禁状态
                      * @return DefenseStatus 自动封禁状态
+                     * 
                      */
                     int64_t GetDefenseStatus() const;
 
                     /**
                      * 设置自动封禁状态
-                     * @param DefenseStatus 自动封禁状态
+                     * @param _defenseStatus 自动封禁状态
+                     * 
                      */
                     void SetDefenseStatus(const int64_t& _defenseStatus);
 
                     /**
                      * 判断参数 DefenseStatus 是否已赋值
                      * @return DefenseStatus 是否已赋值
+                     * 
                      */
                     bool DefenseStatusHasBeenSet() const;
 

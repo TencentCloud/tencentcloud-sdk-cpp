@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID
                      * @return Id 任务ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置任务ID
-                     * @param Id 任务ID
+                     * @param _id 任务ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
 <li> **PROCESSING** </li>  执行中
 <li> **COMPLETED** </li>  完成
 <li> **FAILED** </li>  失败
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -89,18 +93,20 @@ namespace TencentCloud
 <li> **PROCESSING** </li>  执行中
 <li> **COMPLETED** </li>  完成
 <li> **FAILED** </li>  失败
-                     * @param Status 任务状态
+                     * @param _status 任务状态
 
 <li> **PENDING** </li>  待执行
 <li> **PROCESSING** </li>  执行中
 <li> **COMPLETED** </li>  完成
 <li> **FAILED** </li>  失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -113,6 +119,7 @@ namespace TencentCloud
 
 <li> **IMPORT_USER** </li>  用户导入
 <li> **EXPORT_USER** </li>  用户导出
+                     * 
                      */
                     std::string GetType() const;
 
@@ -121,34 +128,39 @@ namespace TencentCloud
 
 <li> **IMPORT_USER** </li>  用户导入
 <li> **EXPORT_USER** </li>  用户导出
-                     * @param Type 任务类型
+                     * @param _type 任务类型
 
 <li> **IMPORT_USER** </li>  用户导入
 <li> **EXPORT_USER** </li>  用户导出
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return CreatedDate 任务创建时间
+                     * 
                      */
                     int64_t GetCreatedDate() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param CreatedDate 任务创建时间
+                     * @param _createdDate 任务创建时间
+                     * 
                      */
                     void SetCreatedDate(const int64_t& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 
@@ -163,6 +175,7 @@ namespace TencentCloud
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormat() const;
 
@@ -172,17 +185,19 @@ namespace TencentCloud
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Format 任务的数据类型
+                     * @param _format 任务的数据类型
 
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
@@ -191,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 任务结果下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 设置任务结果下载地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Location 任务结果下载地址
+                     * @param _location 任务结果下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocation(const std::string& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
@@ -213,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorDetails 失败详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ErrorDetails> GetErrorDetails() const;
 
                     /**
                      * 设置失败详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorDetails 失败详情
+                     * @param _errorDetails 失败详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorDetails(const std::vector<ErrorDetails>& _errorDetails);
 
                     /**
                      * 判断参数 ErrorDetails 是否已赋值
                      * @return ErrorDetails 是否已赋值
+                     * 
                      */
                     bool ErrorDetailsHasBeenSet() const;
 
@@ -235,20 +256,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedUsers 失败的用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FailedUsers> GetFailedUsers() const;
 
                     /**
                      * 设置失败的用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailedUsers 失败的用户
+                     * @param _failedUsers 失败的用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailedUsers(const std::vector<FailedUsers>& _failedUsers);
 
                     /**
                      * 判断参数 FailedUsers 是否已赋值
                      * @return FailedUsers 是否已赋值
+                     * 
                      */
                     bool FailedUsersHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取文件二进制数据
                      * @return File 文件二进制数据
+                     * 
                      */
                     std::string GetFile() const;
 
                     /**
                      * 设置文件二进制数据
-                     * @param File 文件二进制数据
+                     * @param _file 文件二进制数据
+                     * 
                      */
                     void SetFile(const std::string& _file);
 
                     /**
                      * 判断参数 File 是否已赋值
                      * @return File 是否已赋值
+                     * 
                      */
                     bool FileHasBeenSet() const;
 

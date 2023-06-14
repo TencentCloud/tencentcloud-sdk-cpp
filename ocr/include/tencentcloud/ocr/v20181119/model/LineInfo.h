@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取每行的一个元素
                      * @return Lines 每行的一个元素
+                     * 
                      */
                     std::vector<ItemInfo> GetLines() const;
 
                     /**
                      * 设置每行的一个元素
-                     * @param Lines 每行的一个元素
+                     * @param _lines 每行的一个元素
+                     * 
                      */
                     void SetLines(const std::vector<ItemInfo>& _lines);
 
                     /**
                      * 判断参数 Lines 是否已赋值
                      * @return Lines 是否已赋值
+                     * 
                      */
                     bool LinesHasBeenSet() const;
 

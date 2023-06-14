@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取服务名
                      * @return Name 服务名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务名
-                     * @param Name 服务名
+                     * @param _name 服务名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取端口信息列表
                      * @return Ports 端口信息列表
+                     * 
                      */
                     std::vector<Ports> GetPorts() const;
 
                     /**
                      * 设置端口信息列表
-                     * @param Ports 端口信息列表
+                     * @param _ports 端口信息列表
+                     * 
                      */
                     void SetPorts(const std::vector<Ports>& _ports);
 
                     /**
                      * 判断参数 Ports 是否已赋值
                      * @return Ports 是否已赋值
+                     * 
                      */
                     bool PortsHasBeenSet() const;
 
@@ -89,20 +95,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheck 健康检查配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HealthCheckConfig GetHealthCheck() const;
 
                     /**
                      * 设置健康检查配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HealthCheck 健康检查配置
+                     * @param _healthCheck 健康检查配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHealthCheck(const HealthCheckConfig& _healthCheck);
 
                     /**
                      * 判断参数 HealthCheck 是否已赋值
                      * @return HealthCheck 是否已赋值
+                     * 
                      */
                     bool HealthCheckHasBeenSet() const;
 

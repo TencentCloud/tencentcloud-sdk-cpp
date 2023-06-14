@@ -51,38 +51,44 @@ namespace TencentCloud
 ANONYMOUS: 匿名类型用户ID
                      * @return UserType USER_ID: 用户ID
 ANONYMOUS: 匿名类型用户ID
+                     * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置USER_ID: 用户ID
 ANONYMOUS: 匿名类型用户ID
-                     * @param UserType USER_ID: 用户ID
+                     * @param _userType USER_ID: 用户ID
 ANONYMOUS: 匿名类型用户ID
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
                     /**
                      * 获取用户类型
                      * @return UserId 用户类型
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户类型
-                     * @param UserId 用户类型
+                     * @param _userId 用户类型
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

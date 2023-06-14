@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
                      * @return TagKey 标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
-                     * @param TagKey 标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * @param _tagKey 标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
                      * @return TagValue 标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
-                     * @param TagValue 标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * @param _tagValue 标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认为 0, 必须为Limit参数的整数倍
                      * @return Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @param Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * @param _offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页大小，默认为 15
                      * @return Limit 每页大小，默认为 15
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页大小，默认为 15
-                     * @param Limit 每页大小，默认为 15
+                     * @param _limit 每页大小，默认为 15
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取创建者用户 Uin，不传或为空只将 Uin 作为条件查询
                      * @return CreateUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * 
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
                      * 设置创建者用户 Uin，不传或为空只将 Uin 作为条件查询
-                     * @param CreateUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * @param _createUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * 
                      */
                     void SetCreateUin(const uint64_t& _createUin);
 
                     /**
                      * 判断参数 CreateUin 是否已赋值
                      * @return CreateUin 是否已赋值
+                     * 
                      */
                     bool CreateUinHasBeenSet() const;
 
                     /**
                      * 获取标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
                      * @return TagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
+                     * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
                      * 设置标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
-                     * @param TagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
+                     * @param _tagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
+                     * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
 
                     /**
                      * 判断参数 TagKeys 是否已赋值
                      * @return TagKeys 是否已赋值
+                     * 
                      */
                     bool TagKeysHasBeenSet() const;
 
                     /**
                      * 获取是否展现项目标签
                      * @return ShowProject 是否展现项目标签
+                     * 
                      */
                     uint64_t GetShowProject() const;
 
                     /**
                      * 设置是否展现项目标签
-                     * @param ShowProject 是否展现项目标签
+                     * @param _showProject 是否展现项目标签
+                     * 
                      */
                     void SetShowProject(const uint64_t& _showProject);
 
                     /**
                      * 判断参数 ShowProject 是否已赋值
                      * @return ShowProject 是否已赋值
+                     * 
                      */
                     bool ShowProjectHasBeenSet() const;
 

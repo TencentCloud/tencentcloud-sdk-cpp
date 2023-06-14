@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取集群ID。
                      * @return ClusterId 集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取任务连续等待时间，队列的任务处于连续等待的时间。单位秒。
                      * @return ExpansionBusyTime 任务连续等待时间，队列的任务处于连续等待的时间。单位秒。
+                     * 
                      */
                     int64_t GetExpansionBusyTime() const;
 
                     /**
                      * 判断参数 ExpansionBusyTime 是否已赋值
                      * @return ExpansionBusyTime 是否已赋值
+                     * 
                      */
                     bool ExpansionBusyTimeHasBeenSet() const;
 
                     /**
                      * 获取节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。
                      * @return ShrinkIdleTime 节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。
+                     * 
                      */
                     int64_t GetShrinkIdleTime() const;
 
                     /**
                      * 判断参数 ShrinkIdleTime 是否已赋值
                      * @return ShrinkIdleTime 是否已赋值
+                     * 
                      */
                     bool ShrinkIdleTimeHasBeenSet() const;
 
                     /**
                      * 获取扩容队列配置概览列表。
                      * @return QueueConfigs 扩容队列配置概览列表。
+                     * 
                      */
                     std::vector<QueueConfigOverview> GetQueueConfigs() const;
 
                     /**
                      * 判断参数 QueueConfigs 是否已赋值
                      * @return QueueConfigs 是否已赋值
+                     * 
                      */
                     bool QueueConfigsHasBeenSet() const;
 

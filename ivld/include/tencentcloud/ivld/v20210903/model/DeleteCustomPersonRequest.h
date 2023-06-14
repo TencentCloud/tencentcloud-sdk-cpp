@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待删除的自定义人物ID
                      * @return PersonId 待删除的自定义人物ID
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置待删除的自定义人物ID
-                     * @param PersonId 待删除的自定义人物ID
+                     * @param _personId 待删除的自定义人物ID
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

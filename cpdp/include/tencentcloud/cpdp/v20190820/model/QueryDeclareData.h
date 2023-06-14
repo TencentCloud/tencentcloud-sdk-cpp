@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取对接方汇出指令编号
                      * @return TransactionId 对接方汇出指令编号
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 设置对接方汇出指令编号
-                     * @param TransactionId 对接方汇出指令编号
+                     * @param _transactionId 对接方汇出指令编号
+                     * 
                      */
                     void SetTransactionId(const std::string& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
                     /**
                      * 获取申报流水号
                      * @return DeclareId 申报流水号
+                     * 
                      */
                     std::string GetDeclareId() const;
 
                     /**
                      * 设置申报流水号
-                     * @param DeclareId 申报流水号
+                     * @param _declareId 申报流水号
+                     * 
                      */
                     void SetDeclareId(const std::string& _declareId);
 
                     /**
                      * 判断参数 DeclareId 是否已赋值
                      * @return DeclareId 是否已赋值
+                     * 
                      */
                     bool DeclareIdHasBeenSet() const;
 
@@ -105,56 +114,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalDeclareId 原申报流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOriginalDeclareId() const;
 
                     /**
                      * 设置原申报流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginalDeclareId 原申报流水号
+                     * @param _originalDeclareId 原申报流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOriginalDeclareId(const std::string& _originalDeclareId);
 
                     /**
                      * 判断参数 OriginalDeclareId 是否已赋值
                      * @return OriginalDeclareId 是否已赋值
+                     * 
                      */
                     bool OriginalDeclareIdHasBeenSet() const;
 
                     /**
                      * 获取付款人ID
                      * @return PayerId 付款人ID
+                     * 
                      */
                     std::string GetPayerId() const;
 
                     /**
                      * 设置付款人ID
-                     * @param PayerId 付款人ID
+                     * @param _payerId 付款人ID
+                     * 
                      */
                     void SetPayerId(const std::string& _payerId);
 
                     /**
                      * 判断参数 PayerId 是否已赋值
                      * @return PayerId 是否已赋值
+                     * 
                      */
                     bool PayerIdHasBeenSet() const;
 
                     /**
                      * 获取源币种
                      * @return SourceCurrency 源币种
+                     * 
                      */
                     std::string GetSourceCurrency() const;
 
                     /**
                      * 设置源币种
-                     * @param SourceCurrency 源币种
+                     * @param _sourceCurrency 源币种
+                     * 
                      */
                     void SetSourceCurrency(const std::string& _sourceCurrency);
 
                     /**
                      * 判断参数 SourceCurrency 是否已赋值
                      * @return SourceCurrency 是否已赋值
+                     * 
                      */
                     bool SourceCurrencyHasBeenSet() const;
 
@@ -163,38 +181,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceAmount 源金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceAmount() const;
 
                     /**
                      * 设置源金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceAmount 源金额
+                     * @param _sourceAmount 源金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceAmount(const std::string& _sourceAmount);
 
                     /**
                      * 判断参数 SourceAmount 是否已赋值
                      * @return SourceAmount 是否已赋值
+                     * 
                      */
                     bool SourceAmountHasBeenSet() const;
 
                     /**
                      * 获取目的币种
                      * @return TargetCurrency 目的币种
+                     * 
                      */
                     std::string GetTargetCurrency() const;
 
                     /**
                      * 设置目的币种
-                     * @param TargetCurrency 目的币种
+                     * @param _targetCurrency 目的币种
+                     * 
                      */
                     void SetTargetCurrency(const std::string& _targetCurrency);
 
                     /**
                      * 判断参数 TargetCurrency 是否已赋值
                      * @return TargetCurrency 是否已赋值
+                     * 
                      */
                     bool TargetCurrencyHasBeenSet() const;
 
@@ -203,38 +227,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetAmount 目的金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTargetAmount() const;
 
                     /**
                      * 设置目的金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetAmount 目的金额
+                     * @param _targetAmount 目的金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetAmount(const std::string& _targetAmount);
 
                     /**
                      * 判断参数 TargetAmount 是否已赋值
                      * @return TargetAmount 是否已赋值
+                     * 
                      */
                     bool TargetAmountHasBeenSet() const;
 
                     /**
                      * 获取交易编码
                      * @return TradeCode 交易编码
+                     * 
                      */
                     std::string GetTradeCode() const;
 
                     /**
                      * 设置交易编码
-                     * @param TradeCode 交易编码
+                     * @param _tradeCode 交易编码
+                     * 
                      */
                     void SetTradeCode(const std::string& _tradeCode);
 
                     /**
                      * 判断参数 TradeCode 是否已赋值
                      * @return TradeCode 是否已赋值
+                     * 
                      */
                     bool TradeCodeHasBeenSet() const;
 
@@ -243,20 +273,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

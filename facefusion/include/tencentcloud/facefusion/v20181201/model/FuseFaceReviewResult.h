@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取保留字段
                      * @return Category 保留字段
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置保留字段
-                     * @param Category 保留字段
+                     * @param _category 保留字段
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
                     /**
                      * 获取状态码， 0为处理成功，其他值为处理失败
                      * @return Code 状态码， 0为处理成功，其他值为处理失败
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置状态码， 0为处理成功，其他值为处理失败
-                     * @param Code 状态码， 0为处理成功，其他值为处理失败
+                     * @param _code 状态码， 0为处理成功，其他值为处理失败
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取对应状态码信息描述
                      * @return CodeDescription 对应状态码信息描述
+                     * 
                      */
                     std::string GetCodeDescription() const;
 
                     /**
                      * 设置对应状态码信息描述
-                     * @param CodeDescription 对应状态码信息描述
+                     * @param _codeDescription 对应状态码信息描述
+                     * 
                      */
                     void SetCodeDescription(const std::string& _codeDescription);
 
                     /**
                      * 判断参数 CodeDescription 是否已赋值
                      * @return CodeDescription 是否已赋值
+                     * 
                      */
                     bool CodeDescriptionHasBeenSet() const;
 
                     /**
                      * 获取保留字段
                      * @return Confidence 保留字段
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置保留字段
-                     * @param Confidence 保留字段
+                     * @param _confidence 保留字段
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取保留字段
                      * @return Suggestion 保留字段
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 设置保留字段
-                     * @param Suggestion 保留字段
+                     * @param _suggestion 保留字段
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
                     /**
                      * 获取审核详细内容
                      * @return DetailSet 审核详细内容
+                     * 
                      */
                     std::vector<FuseFaceReviewDetail> GetDetailSet() const;
 
                     /**
                      * 设置审核详细内容
-                     * @param DetailSet 审核详细内容
+                     * @param _detailSet 审核详细内容
+                     * 
                      */
                     void SetDetailSet(const std::vector<FuseFaceReviewDetail>& _detailSet);
 
                     /**
                      * 判断参数 DetailSet 是否已赋值
                      * @return DetailSet 是否已赋值
+                     * 
                      */
                     bool DetailSetHasBeenSet() const;
 

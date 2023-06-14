@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取机票行程单识别结果，具体内容请点击左侧链接。
                      * @return FlightInvoiceInfos 机票行程单识别结果，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<FlightInvoiceInfo> GetFlightInvoiceInfos() const;
 
                     /**
                      * 判断参数 FlightInvoiceInfos 是否已赋值
                      * @return FlightInvoiceInfos 是否已赋值
+                     * 
                      */
                     bool FlightInvoiceInfosHasBeenSet() const;
 

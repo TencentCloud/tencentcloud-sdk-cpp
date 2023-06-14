@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取人员库唯一标识符
                      * @return LibraryId 人员库唯一标识符
+                     * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
                      * 设置人员库唯一标识符
-                     * @param LibraryId 人员库唯一标识符
+                     * @param _libraryId 人员库唯一标识符
+                     * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
 
                     /**
                      * 判断参数 LibraryId 是否已赋值
                      * @return LibraryId 是否已赋值
+                     * 
                      */
                     bool LibraryIdHasBeenSet() const;
 
                     /**
                      * 获取人员库名称
                      * @return LibraryName 人员库名称
+                     * 
                      */
                     std::string GetLibraryName() const;
 
                     /**
                      * 设置人员库名称
-                     * @param LibraryName 人员库名称
+                     * @param _libraryName 人员库名称
+                     * 
                      */
                     void SetLibraryName(const std::string& _libraryName);
 
                     /**
                      * 判断参数 LibraryName 是否已赋值
                      * @return LibraryName 是否已赋值
+                     * 
                      */
                     bool LibraryNameHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取完税ID
                      * @return TaxId 完税ID
+                     * 
                      */
                     std::string GetTaxId() const;
 
                     /**
                      * 判断参数 TaxId 是否已赋值
                      * @return TaxId 是否已赋值
+                     * 
                      */
                     bool TaxIdHasBeenSet() const;
 

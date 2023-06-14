@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取企业微信子用户列表。
                      * @return Data 企业微信子用户列表。
+                     * 
                      */
                     std::vector<WeChatWorkSubAccount> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取总数目。
                      * @return TotalCount 总数目。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

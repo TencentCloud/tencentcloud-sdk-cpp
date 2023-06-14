@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取转码模板唯一标识。
                      * @return Definition 转码模板唯一标识。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置转码模板唯一标识。
-                     * @param Definition 转码模板唯一标识。
+                     * @param _definition 转码模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

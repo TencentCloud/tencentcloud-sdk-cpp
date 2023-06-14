@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取查询结果数据
                      * @return Data 查询结果数据
+                     * 
                      */
                     std::vector<std::string> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

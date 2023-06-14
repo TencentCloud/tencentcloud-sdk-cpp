@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取创建得到的资源栈ID
                      * @return StackId 创建得到的资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取资源栈版本ID
                      * @return VersionId 资源栈版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

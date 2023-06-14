@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。
                      * @return InstanceId 资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。
-                     * @param InstanceId 资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。
+                     * @param _instanceId 资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取资源实例ID对应的高防弹性公网IP。
                      * @return Eip 资源实例ID对应的高防弹性公网IP。
+                     * 
                      */
                     std::string GetEip() const;
 
                     /**
                      * 设置资源实例ID对应的高防弹性公网IP。
-                     * @param Eip 资源实例ID对应的高防弹性公网IP。
+                     * @param _eip 资源实例ID对应的高防弹性公网IP。
+                     * 
                      */
                     void SetEip(const std::string& _eip);
 
                     /**
                      * 判断参数 Eip 是否已赋值
                      * @return Eip 是否已赋值
+                     * 
                      */
                     bool EipHasBeenSet() const;
 
                     /**
                      * 获取要绑定的实例 ID。实例 ID 形如：ins-11112222。可通过登录控制台查询，也可通过 DescribeInstances 接口返回值中的InstanceId获取。
                      * @return CvmInstanceID 要绑定的实例 ID。实例 ID 形如：ins-11112222。可通过登录控制台查询，也可通过 DescribeInstances 接口返回值中的InstanceId获取。
+                     * 
                      */
                     std::string GetCvmInstanceID() const;
 
                     /**
                      * 设置要绑定的实例 ID。实例 ID 形如：ins-11112222。可通过登录控制台查询，也可通过 DescribeInstances 接口返回值中的InstanceId获取。
-                     * @param CvmInstanceID 要绑定的实例 ID。实例 ID 形如：ins-11112222。可通过登录控制台查询，也可通过 DescribeInstances 接口返回值中的InstanceId获取。
+                     * @param _cvmInstanceID 要绑定的实例 ID。实例 ID 形如：ins-11112222。可通过登录控制台查询，也可通过 DescribeInstances 接口返回值中的InstanceId获取。
+                     * 
                      */
                     void SetCvmInstanceID(const std::string& _cvmInstanceID);
 
                     /**
                      * 判断参数 CvmInstanceID 是否已赋值
                      * @return CvmInstanceID 是否已赋值
+                     * 
                      */
                     bool CvmInstanceIDHasBeenSet() const;
 
                     /**
                      * 获取cvm实例所在地域，例如：ap-hongkong。
                      * @return CvmRegion cvm实例所在地域，例如：ap-hongkong。
+                     * 
                      */
                     std::string GetCvmRegion() const;
 
                     /**
                      * 设置cvm实例所在地域，例如：ap-hongkong。
-                     * @param CvmRegion cvm实例所在地域，例如：ap-hongkong。
+                     * @param _cvmRegion cvm实例所在地域，例如：ap-hongkong。
+                     * 
                      */
                     void SetCvmRegion(const std::string& _cvmRegion);
 
                     /**
                      * 判断参数 CvmRegion 是否已赋值
                      * @return CvmRegion 是否已赋值
+                     * 
                      */
                     bool CvmRegionHasBeenSet() const;
 

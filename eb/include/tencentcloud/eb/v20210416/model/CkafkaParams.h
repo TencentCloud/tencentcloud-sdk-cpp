@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取kafka offset
                      * @return Offset kafka offset
+                     * 
                      */
                     std::string GetOffset() const;
 
                     /**
                      * 设置kafka offset
-                     * @param Offset kafka offset
+                     * @param _offset kafka offset
+                     * 
                      */
                     void SetOffset(const std::string& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取ckafka  topic
                      * @return TopicName ckafka  topic
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置ckafka  topic
-                     * @param TopicName ckafka  topic
+                     * @param _topicName ckafka  topic
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 

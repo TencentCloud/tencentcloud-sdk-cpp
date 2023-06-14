@@ -63,6 +63,7 @@ AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
@@ -75,7 +76,7 @@ AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 账号 ID。对应输入参数： AccountType 是 1 时，对应 QQ 的 OpenID。
+                     * @param _userId 账号 ID。对应输入参数： AccountType 是 1 时，对应 QQ 的 OpenID。
 AccountType 是 2 时，对应微信的 OpenID/UnionID。
 AccountType 是 4 时，对应手机号。
 AccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。
@@ -83,12 +84,14 @@ AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -99,6 +102,7 @@ AccountType 是 10004 时，对应手机号的 MD5。
                      * @return PostTime 操作时间戳，单位秒（对应输入参数）。 
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPostTime() const;
 
@@ -106,15 +110,17 @@ AccountType 是 10004 时，对应手机号的 MD5。
                      * 设置操作时间戳，单位秒（对应输入参数）。 
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PostTime 操作时间戳，单位秒（对应输入参数）。 
+                     * @param _postTime 操作时间戳，单位秒（对应输入参数）。 
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPostTime(const int64_t& _postTime);
 
                     /**
                      * 判断参数 PostTime 是否已赋值
                      * @return PostTime 是否已赋值
+                     * 
                      */
                     bool PostTimeHasBeenSet() const;
 
@@ -125,6 +131,7 @@ AccountType 是 10004 时，对应手机号的 MD5。
                      * @return AssociateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssociateAccount() const;
 
@@ -132,15 +139,17 @@ AccountType 是 10004 时，对应手机号的 MD5。
                      * 设置对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssociateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
+                     * @param _associateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssociateAccount(const std::string& _associateAccount);
 
                     /**
                      * 判断参数 AssociateAccount 是否已赋值
                      * @return AssociateAccount 是否已赋值
+                     * 
                      */
                     bool AssociateAccountHasBeenSet() const;
 
@@ -149,20 +158,23 @@ AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIp 业务详情。 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserIp() const;
 
                     /**
                      * 设置业务详情。 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserIp 业务详情。 注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userIp 业务详情。 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserIp(const std::string& _userIp);
 
                     /**
                      * 判断参数 UserIp 是否已赋值
                      * @return UserIp 是否已赋值
+                     * 
                      */
                     bool UserIpHasBeenSet() const;
 
@@ -177,6 +189,7 @@ review：需要人工审核
 reject：拒绝，高风险恶意
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskLevel() const;
 
@@ -186,17 +199,19 @@ review：需要人工审核
 reject：拒绝，高风险恶意
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskLevel 风险值 pass : 无恶意
+                     * @param _riskLevel 风险值 pass : 无恶意
 review：需要人工审核
 reject：拒绝，高风险恶意
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
 
                     /**
                      * 判断参数 RiskLevel 是否已赋值
                      * @return RiskLevel 是否已赋值
+                     * 
                      */
                     bool RiskLevelHasBeenSet() const;
 
@@ -245,6 +260,7 @@ reject：拒绝，高风险恶意
 	疑似 IP 异常 	2012	使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 
 	非公网有效 ip 	205	传进来的 IP 地址为内网 ip 地址或者 ip 保留地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetRiskType() const;
 
@@ -271,7 +287,7 @@ reject：拒绝，高风险恶意
 	疑似 IP 异常 	2012	使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 
 	非公网有效 ip 	205	传进来的 IP 地址为内网 ip 地址或者 ip 保留地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskType 风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskType 风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
 账号风险	
         账号信用低	1	账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 	疑似 低活跃账号	11	账号活跃度与正常用户有差异
@@ -293,12 +309,14 @@ reject：拒绝，高风险恶意
 	疑似 IP 异常 	2012	使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 
 	非公网有效 ip 	205	传进来的 IP 地址为内网 ip 地址或者 ip 保留地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskType(const std::vector<int64_t>& _riskType);
 
                     /**
                      * 判断参数 RiskType 是否已赋值
                      * @return RiskType 是否已赋值
+                     * 
                      */
                     bool RiskTypeHasBeenSet() const;
 

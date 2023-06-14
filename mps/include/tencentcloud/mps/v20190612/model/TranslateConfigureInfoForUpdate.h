@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 语音翻译任务开关，可选值：
 <li>ON：开启智能语音翻译任务；</li>
 <li>OFF：关闭智能语音翻译任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置语音翻译任务开关，可选值：
 <li>ON：开启智能语音翻译任务；</li>
 <li>OFF：关闭智能语音翻译任务。</li>
-                     * @param Switch 语音翻译任务开关，可选值：
+                     * @param _switch 语音翻译任务开关，可选值：
 <li>ON：开启智能语音翻译任务；</li>
 <li>OFF：关闭智能语音翻译任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取视频源语言。
                      * @return SourceLanguage 视频源语言。
+                     * 
                      */
                     std::string GetSourceLanguage() const;
 
                     /**
                      * 设置视频源语言。
-                     * @param SourceLanguage 视频源语言。
+                     * @param _sourceLanguage 视频源语言。
+                     * 
                      */
                     void SetSourceLanguage(const std::string& _sourceLanguage);
 
                     /**
                      * 判断参数 SourceLanguage 是否已赋值
                      * @return SourceLanguage 是否已赋值
+                     * 
                      */
                     bool SourceLanguageHasBeenSet() const;
 
                     /**
                      * 获取翻译目标语言。
                      * @return DestinationLanguage 翻译目标语言。
+                     * 
                      */
                     std::string GetDestinationLanguage() const;
 
                     /**
                      * 设置翻译目标语言。
-                     * @param DestinationLanguage 翻译目标语言。
+                     * @param _destinationLanguage 翻译目标语言。
+                     * 
                      */
                     void SetDestinationLanguage(const std::string& _destinationLanguage);
 
                     /**
                      * 判断参数 DestinationLanguage 是否已赋值
                      * @return DestinationLanguage 是否已赋值
+                     * 
                      */
                     bool DestinationLanguageHasBeenSet() const;
 

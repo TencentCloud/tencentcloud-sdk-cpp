@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取C端用户端的唯一ID
                      * @return UUId C端用户端的唯一ID
+                     * 
                      */
                     std::string GetUUId() const;
 
                     /**
                      * 设置C端用户端的唯一ID
-                     * @param UUId C端用户端的唯一ID
+                     * @param _uUId C端用户端的唯一ID
+                     * 
                      */
                     void SetUUId(const std::string& _uUId);
 
                     /**
                      * 判断参数 UUId 是否已赋值
                      * @return UUId 是否已赋值
+                     * 
                      */
                     bool UUIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return Status 帐号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置帐号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
-                     * @param Status 帐号的状态
+                     * @param _status 帐号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

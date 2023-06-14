@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DriverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDriverSize() const;
 
                     /**
                      * 设置driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DriverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
+                     * @param _driverSize driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDriverSize(const std::string& _driverSize);
 
                     /**
                      * 判断参数 DriverSize 是否已赋值
                      * @return DriverSize 是否已赋值
+                     * 
                      */
                     bool DriverSizeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExecutorSize() const;
 
                     /**
                      * 设置executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExecutorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
+                     * @param _executorSize executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExecutorSize(const std::string& _executorSize);
 
                     /**
                      * 判断参数 ExecutorSize 是否已赋值
                      * @return ExecutorSize 是否已赋值
+                     * 
                      */
                     bool ExecutorSizeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorNums 指定executor数量，最小值为1，最大值小于集群规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetExecutorNums() const;
 
                     /**
                      * 设置指定executor数量，最小值为1，最大值小于集群规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExecutorNums 指定executor数量，最小值为1，最大值小于集群规格
+                     * @param _executorNums 指定executor数量，最小值为1，最大值小于集群规格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExecutorNums(const uint64_t& _executorNums);
 
                     /**
                      * 判断参数 ExecutorNums 是否已赋值
                      * @return ExecutorNums 是否已赋值
+                     * 
                      */
                     bool ExecutorNumsHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetExecutorMaxNumbers() const;
 
                     /**
                      * 设置指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExecutorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
+                     * @param _executorMaxNumbers 指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExecutorMaxNumbers(const uint64_t& _executorMaxNumbers);
 
                     /**
                      * 判断参数 ExecutorMaxNumbers 是否已赋值
                      * @return ExecutorMaxNumbers 是否已赋值
+                     * 
                      */
                     bool ExecutorMaxNumbersHasBeenSet() const;
 

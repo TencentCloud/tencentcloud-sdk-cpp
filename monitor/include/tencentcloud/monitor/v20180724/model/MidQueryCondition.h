@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取维度
                      * @return Key 维度
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置维度
-                     * @param Key 维度
+                     * @param _key 维度
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取操作符，支持等于(eq)、不等于(ne)，以及in
                      * @return Operator 操作符，支持等于(eq)、不等于(ne)，以及in
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作符，支持等于(eq)、不等于(ne)，以及in
-                     * @param Operator 操作符，支持等于(eq)、不等于(ne)，以及in
+                     * @param _operator 操作符，支持等于(eq)、不等于(ne)，以及in
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取维度值，当Op是eq、ne时，只使用第一个元素
                      * @return Value 维度值，当Op是eq、ne时，只使用第一个元素
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置维度值，当Op是eq、ne时，只使用第一个元素
-                     * @param Value 维度值，当Op是eq、ne时，只使用第一个元素
+                     * @param _value 维度值，当Op是eq、ne时，只使用第一个元素
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

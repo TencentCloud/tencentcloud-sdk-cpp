@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取设备唯一标识列表
                      * @return DeviceIds 设备唯一标识列表
+                     * 
                      */
                     std::vector<std::string> GetDeviceIds() const;
 
                     /**
                      * 设置设备唯一标识列表
-                     * @param DeviceIds 设备唯一标识列表
+                     * @param _deviceIds 设备唯一标识列表
+                     * 
                      */
                     void SetDeviceIds(const std::vector<std::string>& _deviceIds);
 
                     /**
                      * 判断参数 DeviceIds 是否已赋值
                      * @return DeviceIds 是否已赋值
+                     * 
                      */
                     bool DeviceIdsHasBeenSet() const;
 

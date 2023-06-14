@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterView 集群维度视图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClusterView GetClusterView() const;
 
                     /**
                      * 判断参数 ClusterView 是否已赋值
                      * @return ClusterView 是否已赋值
+                     * 
                      */
                     bool ClusterViewHasBeenSet() const;
 
@@ -65,12 +67,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodesView 节点维度视图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeView> GetNodesView() const;
 
                     /**
                      * 判断参数 NodesView 是否已赋值
                      * @return NodesView 是否已赋值
+                     * 
                      */
                     bool NodesViewHasBeenSet() const;
 
@@ -79,12 +83,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KibanasView Kibana维度视图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KibanaView> GetKibanasView() const;
 
                     /**
                      * 判断参数 KibanasView 是否已赋值
                      * @return KibanasView 是否已赋值
+                     * 
                      */
                     bool KibanasViewHasBeenSet() const;
 

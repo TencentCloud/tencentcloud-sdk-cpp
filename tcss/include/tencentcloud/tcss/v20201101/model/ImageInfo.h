@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像tag
                      * @return ImageTag 镜像tag
+                     * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 设置镜像tag
-                     * @param ImageTag 镜像tag
+                     * @param _imageTag 镜像tag
+                     * 
                      */
                     void SetImageTag(const std::string& _imageTag);
 
                     /**
                      * 判断参数 ImageTag 是否已赋值
                      * @return ImageTag 是否已赋值
+                     * 
                      */
                     bool ImageTagHasBeenSet() const;
 
                     /**
                      * 获取强制扫描
                      * @return Force 强制扫描
+                     * 
                      */
                     std::string GetForce() const;
 
                     /**
                      * 设置强制扫描
-                     * @param Force 强制扫描
+                     * @param _force 强制扫描
+                     * 
                      */
                     void SetForce(const std::string& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 
                     /**
                      * 获取镜像id
                      * @return ImageDigest 镜像id
+                     * 
                      */
                     std::string GetImageDigest() const;
 
                     /**
                      * 设置镜像id
-                     * @param ImageDigest 镜像id
+                     * @param _imageDigest 镜像id
+                     * 
                      */
                     void SetImageDigest(const std::string& _imageDigest);
 
                     /**
                      * 判断参数 ImageDigest 是否已赋值
                      * @return ImageDigest 是否已赋值
+                     * 
                      */
                     bool ImageDigestHasBeenSet() const;
 
                     /**
                      * 获取仓库类型
                      * @return RegistryType 仓库类型
+                     * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
                      * 设置仓库类型
-                     * @param RegistryType 仓库类型
+                     * @param _registryType 仓库类型
+                     * 
                      */
                     void SetRegistryType(const std::string& _registryType);
 
                     /**
                      * 判断参数 RegistryType 是否已赋值
                      * @return RegistryType 是否已赋值
+                     * 
                      */
                     bool RegistryTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像仓库地址
                      * @return ImageRepoAddress 镜像仓库地址
+                     * 
                      */
                     std::string GetImageRepoAddress() const;
 
                     /**
                      * 设置镜像仓库地址
-                     * @param ImageRepoAddress 镜像仓库地址
+                     * @param _imageRepoAddress 镜像仓库地址
+                     * 
                      */
                     void SetImageRepoAddress(const std::string& _imageRepoAddress);
 
                     /**
                      * 判断参数 ImageRepoAddress 是否已赋值
                      * @return ImageRepoAddress 是否已赋值
+                     * 
                      */
                     bool ImageRepoAddressHasBeenSet() const;
 
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

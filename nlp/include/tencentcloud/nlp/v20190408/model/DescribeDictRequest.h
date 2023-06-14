@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义词库ID。
                      * @return DictId 自定义词库ID。
+                     * 
                      */
                     std::string GetDictId() const;
 
                     /**
                      * 设置自定义词库ID。
-                     * @param DictId 自定义词库ID。
+                     * @param _dictId 自定义词库ID。
+                     * 
                      */
                     void SetDictId(const std::string& _dictId);
 
                     /**
                      * 判断参数 DictId 是否已赋值
                      * @return DictId 是否已赋值
+                     * 
                      */
                     bool DictIdHasBeenSet() const;
 
                     /**
                      * 获取自定义词库名称，模糊搜索。
                      * @return Name 自定义词库名称，模糊搜索。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义词库名称，模糊搜索。
-                     * @param Name 自定义词库名称，模糊搜索。
+                     * @param _name 自定义词库名称，模糊搜索。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

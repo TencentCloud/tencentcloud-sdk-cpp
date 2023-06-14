@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取AI模型数量
                      * @return TotalCount AI模型数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取AI模型信息数组
                      * @return Models AI模型信息数组
+                     * 
                      */
                     std::vector<AIModelInfo> GetModels() const;
 
                     /**
                      * 判断参数 Models 是否已赋值
                      * @return Models 是否已赋值
+                     * 
                      */
                     bool ModelsHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取总共额度
                      * @return Total 总共额度
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总共额度
-                     * @param Total 总共额度
+                     * @param _total 总共额度
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取已使用额度
                      * @return Used 已使用额度
+                     * 
                      */
                     int64_t GetUsed() const;
 
                     /**
                      * 设置已使用额度
-                     * @param Used 已使用额度
+                     * @param _used 已使用额度
+                     * 
                      */
                     void SetUsed(const int64_t& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 
                     /**
                      * 获取库存
                      * @return Stock 库存
+                     * 
                      */
                     int64_t GetStock() const;
 
                     /**
                      * 设置库存
-                     * @param Stock 库存
+                     * @param _stock 库存
+                     * 
                      */
                     void SetStock(const int64_t& _stock);
 
                     /**
                      * 判断参数 Stock 是否已赋值
                      * @return Stock 是否已赋值
+                     * 
                      */
                     bool StockHasBeenSet() const;
 
                     /**
                      * 获取用户限额
                      * @return Quota 用户限额
+                     * 
                      */
                     int64_t GetQuota() const;
 
                     /**
                      * 设置用户限额
-                     * @param Quota 用户限额
+                     * @param _quota 用户限额
+                     * 
                      */
                     void SetQuota(const int64_t& _quota);
 
                     /**
                      * 判断参数 Quota 是否已赋值
                      * @return Quota 是否已赋值
+                     * 
                      */
                     bool QuotaHasBeenSet() const;
 

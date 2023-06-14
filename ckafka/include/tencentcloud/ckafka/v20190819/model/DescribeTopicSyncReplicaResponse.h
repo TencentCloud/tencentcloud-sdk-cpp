@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回topic 副本详情
                      * @return Result 返回topic 副本详情
+                     * 
                      */
                     TopicInSyncReplicaResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

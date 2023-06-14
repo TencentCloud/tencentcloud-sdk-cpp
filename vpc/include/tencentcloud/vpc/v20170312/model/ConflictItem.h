@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取冲突资源的ID
                      * @return ConfilctId 冲突资源的ID
+                     * 
                      */
                     std::string GetConfilctId() const;
 
                     /**
                      * 设置冲突资源的ID
-                     * @param ConfilctId 冲突资源的ID
+                     * @param _confilctId 冲突资源的ID
+                     * 
                      */
                     void SetConfilctId(const std::string& _confilctId);
 
                     /**
                      * 判断参数 ConfilctId 是否已赋值
                      * @return ConfilctId 是否已赋值
+                     * 
                      */
                     bool ConfilctIdHasBeenSet() const;
 
                     /**
                      * 获取冲突目的资源
                      * @return DestinationItem 冲突目的资源
+                     * 
                      */
                     std::string GetDestinationItem() const;
 
                     /**
                      * 设置冲突目的资源
-                     * @param DestinationItem 冲突目的资源
+                     * @param _destinationItem 冲突目的资源
+                     * 
                      */
                     void SetDestinationItem(const std::string& _destinationItem);
 
                     /**
                      * 判断参数 DestinationItem 是否已赋值
                      * @return DestinationItem 是否已赋值
+                     * 
                      */
                     bool DestinationItemHasBeenSet() const;
 

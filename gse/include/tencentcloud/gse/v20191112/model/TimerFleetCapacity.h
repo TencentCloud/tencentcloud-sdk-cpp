@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 扩缩容配置服务器舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置扩缩容配置服务器舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 扩缩容配置服务器舰队ID
+                     * @param _fleetId 扩缩容配置服务器舰队ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredInstances 期望实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDesiredInstances() const;
 
                     /**
                      * 设置期望实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DesiredInstances 期望实例数
+                     * @param _desiredInstances 期望实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesiredInstances(const int64_t& _desiredInstances);
 
                     /**
                      * 判断参数 DesiredInstances 是否已赋值
                      * @return DesiredInstances 是否已赋值
+                     * 
                      */
                     bool DesiredInstancesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinSize 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
                      * 设置最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinSize 最小实例数
+                     * @param _minSize 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinSize(const int64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSize 最大实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置最大实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxSize 最大实例数
+                     * @param _maxSize 最大实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalingInterval 伸缩容间隔，单位：分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScalingInterval() const;
 
                     /**
                      * 设置伸缩容间隔，单位：分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScalingInterval 伸缩容间隔，单位：分钟
+                     * @param _scalingInterval 伸缩容间隔，单位：分钟
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScalingInterval(const int64_t& _scalingInterval);
 
                     /**
                      * 判断参数 ScalingInterval 是否已赋值
                      * @return ScalingInterval 是否已赋值
+                     * 
                      */
                     bool ScalingIntervalHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalingType 扩缩容类型（手动1，自动2、未定义0）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScalingType() const;
 
                     /**
                      * 设置扩缩容类型（手动1，自动2、未定义0）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScalingType 扩缩容类型（手动1，自动2、未定义0）
+                     * @param _scalingType 扩缩容类型（手动1，自动2、未定义0）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScalingType(const int64_t& _scalingType);
 
                     /**
                      * 判断参数 ScalingType 是否已赋值
                      * @return ScalingType 是否已赋值
+                     * 
                      */
                     bool ScalingTypeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetConfiguration 基于目标的扩展策略的设置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TargetConfiguration GetTargetConfiguration() const;
 
                     /**
                      * 设置基于目标的扩展策略的设置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetConfiguration 基于目标的扩展策略的设置
+                     * @param _targetConfiguration 基于目标的扩展策略的设置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetConfiguration(const TargetConfiguration& _targetConfiguration);
 
                     /**
                      * 判断参数 TargetConfiguration 是否已赋值
                      * @return TargetConfiguration 是否已赋值
+                     * 
                      */
                     bool TargetConfigurationHasBeenSet() const;
 

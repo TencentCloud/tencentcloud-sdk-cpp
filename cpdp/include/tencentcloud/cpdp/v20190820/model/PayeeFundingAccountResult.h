@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取资金账户ID
                      * @return FundingAccountBindSerialNo 资金账户ID
+                     * 
                      */
                     std::string GetFundingAccountBindSerialNo() const;
 
                     /**
                      * 设置资金账户ID
-                     * @param FundingAccountBindSerialNo 资金账户ID
+                     * @param _fundingAccountBindSerialNo 资金账户ID
+                     * 
                      */
                     void SetFundingAccountBindSerialNo(const std::string& _fundingAccountBindSerialNo);
 
                     /**
                      * 判断参数 FundingAccountBindSerialNo 是否已赋值
                      * @return FundingAccountBindSerialNo 是否已赋值
+                     * 
                      */
                     bool FundingAccountBindSerialNoHasBeenSet() const;
 

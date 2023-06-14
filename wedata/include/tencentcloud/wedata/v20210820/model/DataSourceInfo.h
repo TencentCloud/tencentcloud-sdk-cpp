@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 若数据源列表为绑定数据库，则为db名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置若数据源列表为绑定数据库，则为db名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatabaseName 若数据源列表为绑定数据库，则为db名称
+                     * @param _databaseName 若数据源列表为绑定数据库，则为db名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 数据源描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置数据源描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 数据源描述信息
+                     * @param _description 数据源描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 数据源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetID() const;
 
                     /**
                      * 设置数据源ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ID 数据源ID
+                     * @param _iD 数据源ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetID(const uint64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Instance 数据源引擎的实例ID，如CDB实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstance() const;
 
                     /**
                      * 设置数据源引擎的实例ID，如CDB实例ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Instance 数据源引擎的实例ID，如CDB实例ID
+                     * @param _instance 数据源引擎的实例ID，如CDB实例ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstance(const std::string& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
                      * @return Instance 是否已赋值
+                     * 
                      */
                     bool InstanceHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 数据源名称，在相同SpaceName下，数据源名称不能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置数据源名称，在相同SpaceName下，数据源名称不能为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 数据源名称，在相同SpaceName下，数据源名称不能为空
+                     * @param _name 数据源名称，在相同SpaceName下，数据源名称不能为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 数据源引擎所属区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置数据源引擎所属区域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 数据源引擎所属区域
+                     * @param _region 数据源引擎所属区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 数据源类型:枚举值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置数据源类型:枚举值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 数据源类型:枚举值
+                     * @param _type 数据源类型:枚举值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 数据源所属的集群id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置数据源所属的集群id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 数据源所属的集群id
+                     * @param _clusterId 数据源所属的集群id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 应用ID AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置应用ID AppId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId 应用ID AppId
+                     * @param _appId 应用ID AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizParams 业务侧数据源的配置信息扩展
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizParams() const;
 
                     /**
                      * 设置业务侧数据源的配置信息扩展
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizParams 业务侧数据源的配置信息扩展
+                     * @param _bizParams 业务侧数据源的配置信息扩展
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizParams(const std::string& _bizParams);
 
                     /**
                      * 判断参数 BizParams 是否已赋值
                      * @return BizParams 是否已赋值
+                     * 
                      */
                     bool BizParamsHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 数据源类别：绑定引擎、绑定数据库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置数据源类别：绑定引擎、绑定数据库
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Category 数据源类别：绑定引擎、绑定数据库
+                     * @param _category 数据源类别：绑定引擎、绑定数据库
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Display 数据源展示名，为了可视化查看
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisplay() const;
 
                     /**
                      * 设置数据源展示名，为了可视化查看
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Display 数据源展示名，为了可视化查看
+                     * @param _display 数据源展示名，为了可视化查看
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisplay(const std::string& _display);
 
                     /**
                      * 判断参数 Display 是否已赋值
                      * @return Display 是否已赋值
+                     * 
                      */
                     bool DisplayHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerAccount 数据源责任人账号ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerAccount() const;
 
                     /**
                      * 设置数据源责任人账号ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerAccount 数据源责任人账号ID
+                     * @param _ownerAccount 数据源责任人账号ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerAccount(const std::string& _ownerAccount);
 
                     /**
                      * 判断参数 OwnerAccount 是否已赋值
                      * @return OwnerAccount 是否已赋值
+                     * 
                      */
                     bool OwnerAccountHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Params 数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParams() const;
 
                     /**
                      * 设置数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Params 数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
+                     * @param _params 数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParams(const std::string& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 数据源数据源的可见性，1为可见、0为不可见。默认为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置数据源数据源的可见性，1为可见、0为不可见。默认为1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 数据源数据源的可见性，1为可见、0为不可见。默认为1
+                     * @param _status 数据源数据源的可见性，1为可见、0为不可见。默认为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerAccountName 数据源责任人账号名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerAccountName() const;
 
                     /**
                      * 设置数据源责任人账号名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerAccountName 数据源责任人账号名称
+                     * @param _ownerAccountName 数据源责任人账号名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerAccountName(const std::string& _ownerAccountName);
 
                     /**
                      * 判断参数 OwnerAccountName 是否已赋值
                      * @return OwnerAccountName 是否已赋值
+                     * 
                      */
                     bool OwnerAccountNameHasBeenSet() const;
 
@@ -403,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
@@ -425,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerProjectId 归属项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerProjectId() const;
 
                     /**
                      * 设置归属项目ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerProjectId 归属项目ID
+                     * @param _ownerProjectId 归属项目ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerProjectId(const std::string& _ownerProjectId);
 
                     /**
                      * 判断参数 OwnerProjectId 是否已赋值
                      * @return OwnerProjectId 是否已赋值
+                     * 
                      */
                     bool OwnerProjectIdHasBeenSet() const;
 
@@ -447,20 +501,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerProjectName 归属项目Name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerProjectName() const;
 
                     /**
                      * 设置归属项目Name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerProjectName 归属项目Name
+                     * @param _ownerProjectName 归属项目Name
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerProjectName(const std::string& _ownerProjectName);
 
                     /**
                      * 判断参数 OwnerProjectName 是否已赋值
                      * @return OwnerProjectName 是否已赋值
+                     * 
                      */
                     bool OwnerProjectNameHasBeenSet() const;
 
@@ -469,20 +526,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerProjectIdent 归属项目标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOwnerProjectIdent() const;
 
                     /**
                      * 设置归属项目标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OwnerProjectIdent 归属项目标识
+                     * @param _ownerProjectIdent 归属项目标识
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOwnerProjectIdent(const std::string& _ownerProjectIdent);
 
                     /**
                      * 判断参数 OwnerProjectIdent 是否已赋值
                      * @return OwnerProjectIdent 是否已赋值
+                     * 
                      */
                     bool OwnerProjectIdentHasBeenSet() const;
 
@@ -491,20 +551,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorityProjectName 授权项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthorityProjectName() const;
 
                     /**
                      * 设置授权项目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthorityProjectName 授权项目
+                     * @param _authorityProjectName 授权项目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthorityProjectName(const std::string& _authorityProjectName);
 
                     /**
                      * 判断参数 AuthorityProjectName 是否已赋值
                      * @return AuthorityProjectName 是否已赋值
+                     * 
                      */
                     bool AuthorityProjectNameHasBeenSet() const;
 
@@ -513,20 +576,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorityUserName 授权用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthorityUserName() const;
 
                     /**
                      * 设置授权用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthorityUserName 授权用户
+                     * @param _authorityUserName 授权用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthorityUserName(const std::string& _authorityUserName);
 
                     /**
                      * 判断参数 AuthorityUserName 是否已赋值
                      * @return AuthorityUserName 是否已赋值
+                     * 
                      */
                     bool AuthorityUserNameHasBeenSet() const;
 
@@ -535,20 +601,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Edit 是否有编辑权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEdit() const;
 
                     /**
                      * 设置是否有编辑权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Edit 是否有编辑权限
+                     * @param _edit 是否有编辑权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEdit(const bool& _edit);
 
                     /**
                      * 判断参数 Edit 是否已赋值
                      * @return Edit 是否已赋值
+                     * 
                      */
                     bool EditHasBeenSet() const;
 
@@ -557,20 +626,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Author 是否有授权权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAuthor() const;
 
                     /**
                      * 设置是否有授权权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Author 是否有授权权限
+                     * @param _author 是否有授权权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthor(const bool& _author);
 
                     /**
                      * 判断参数 Author 是否已赋值
                      * @return Author 是否已赋值
+                     * 
                      */
                     bool AuthorHasBeenSet() const;
 
@@ -579,20 +651,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deliver 是否有转交权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDeliver() const;
 
                     /**
                      * 设置是否有转交权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deliver 是否有转交权限
+                     * @param _deliver 是否有转交权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeliver(const bool& _deliver);
 
                     /**
                      * 判断参数 Deliver 是否已赋值
                      * @return Deliver 是否已赋值
+                     * 
                      */
                     bool DeliverHasBeenSet() const;
 
@@ -601,20 +676,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceStatus 数据源状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataSourceStatus() const;
 
                     /**
                      * 设置数据源状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataSourceStatus 数据源状态
+                     * @param _dataSourceStatus 数据源状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataSourceStatus(const std::string& _dataSourceStatus);
 
                     /**
                      * 判断参数 DataSourceStatus 是否已赋值
                      * @return DataSourceStatus 是否已赋值
+                     * 
                      */
                     bool DataSourceStatusHasBeenSet() const;
 
@@ -623,20 +701,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 时间
+                     * @param _createTime 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -645,20 +726,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamsString Params json字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParamsString() const;
 
                     /**
                      * 设置Params json字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParamsString Params json字符串
+                     * @param _paramsString Params json字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParamsString(const std::string& _paramsString);
 
                     /**
                      * 判断参数 ParamsString 是否已赋值
                      * @return ParamsString 是否已赋值
+                     * 
                      */
                     bool ParamsStringHasBeenSet() const;
 
@@ -667,20 +751,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizParamsString BizParams json字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizParamsString() const;
 
                     /**
                      * 设置BizParams json字符串
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizParamsString BizParams json字符串
+                     * @param _bizParamsString BizParams json字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBizParamsString(const std::string& _bizParamsString);
 
                     /**
                      * 判断参数 BizParamsString 是否已赋值
                      * @return BizParamsString 是否已赋值
+                     * 
                      */
                     bool BizParamsStringHasBeenSet() const;
 
@@ -689,20 +776,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetModifiedTime() const;
 
                     /**
                      * 设置修改时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifiedTime 修改时间
+                     * @param _modifiedTime 修改时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifiedTime(const int64_t& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 

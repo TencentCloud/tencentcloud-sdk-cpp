@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 分页后的公共配置项发布历史列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TsfPageConfigReleaseLog GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

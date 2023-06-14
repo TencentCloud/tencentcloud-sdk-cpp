@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取产品ID。
                      * @return ProductId 产品ID。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID。
-                     * @param ProductId 产品ID。
+                     * @param _productId 产品ID。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
                      * @return ForwardAddr 转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
+                     * 
                      */
                     std::string GetForwardAddr() const;
 
                     /**
                      * 设置转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
-                     * @param ForwardAddr 转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
+                     * @param _forwardAddr 转发地址。如果有鉴权Token，则需要自行传入，例如 [{\"forward\":{\"api\":\"http://123.207.117.108:1080/sub.php\",\"token\":\"testtoken\"}}]
+                     * 
                      */
                     void SetForwardAddr(const std::string& _forwardAddr);
 
                     /**
                      * 判断参数 ForwardAddr 是否已赋值
                      * @return ForwardAddr 是否已赋值
+                     * 
                      */
                     bool ForwardAddrHasBeenSet() const;
 
                     /**
                      * 获取1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
                      * @return DataChose 1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
+                     * 
                      */
                     int64_t GetDataChose() const;
 
                     /**
                      * 设置1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
-                     * @param DataChose 1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
+                     * @param _dataChose 1-数据信息转发 2-设备上下线状态转发 3-数据信息转发&设备上下线状态转发
+                     * 
                      */
                     void SetDataChose(const int64_t& _dataChose);
 
                     /**
                      * 判断参数 DataChose 是否已赋值
                      * @return DataChose 是否已赋值
+                     * 
                      */
                     bool DataChoseHasBeenSet() const;
 

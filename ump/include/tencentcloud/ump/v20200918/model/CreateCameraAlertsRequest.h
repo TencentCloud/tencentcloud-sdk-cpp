@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取告警信息列表
                      * @return Alerts 告警信息列表
+                     * 
                      */
                     std::vector<CreateCameraAlertAlert> GetAlerts() const;
 
                     /**
                      * 设置告警信息列表
-                     * @param Alerts 告警信息列表
+                     * @param _alerts 告警信息列表
+                     * 
                      */
                     void SetAlerts(const std::vector<CreateCameraAlertAlert>& _alerts);
 
                     /**
                      * 判断参数 Alerts 是否已赋值
                      * @return Alerts 是否已赋值
+                     * 
                      */
                     bool AlertsHasBeenSet() const;
 

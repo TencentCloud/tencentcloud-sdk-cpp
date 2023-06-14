@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取详情ID
                      * @return Id 详情ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置详情ID
-                     * @param Id 详情ID
+                     * @param _id 详情ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -91,6 +97,7 @@ success  操作成功。
 doing 执行中。
 failed 操作失败。
 success  操作成功。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -99,16 +106,18 @@ success  操作成功。
 doing 执行中。
 failed 操作失败。
 success  操作成功。
-                     * @param Status 执行状态：
+                     * @param _status 执行状态：
 doing 执行中。
 failed 操作失败。
 success  操作成功。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,56 +126,65 @@ success  操作成功。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Reason 失败原因
+                     * @param _reason 失败原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedOn 创建时间
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedOn 创建时间
+                     * @param _createdOn 创建时间
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedOn 更新时间
+                     * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdatedOn 更新时间
+                     * @param _updatedOn 更新时间
+                     * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
 
                     /**
                      * 判断参数 UpdatedOn 是否已赋值
                      * @return UpdatedOn 是否已赋值
+                     * 
                      */
                     bool UpdatedOnHasBeenSet() const;
 

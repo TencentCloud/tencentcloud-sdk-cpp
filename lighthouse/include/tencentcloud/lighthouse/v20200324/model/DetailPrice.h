@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return PriceName 描述计费项目名称，目前取值
 <li>"DiskSpace"代表云硬盘空间收费项。</li>
 <li>"DiskBackupQuota"代表云硬盘备份点配额收费项。</li>
+                     * 
                      */
                     std::string GetPriceName() const;
 
@@ -60,87 +61,101 @@ namespace TencentCloud
                      * 设置描述计费项目名称，目前取值
 <li>"DiskSpace"代表云硬盘空间收费项。</li>
 <li>"DiskBackupQuota"代表云硬盘备份点配额收费项。</li>
-                     * @param PriceName 描述计费项目名称，目前取值
+                     * @param _priceName 描述计费项目名称，目前取值
 <li>"DiskSpace"代表云硬盘空间收费项。</li>
 <li>"DiskBackupQuota"代表云硬盘备份点配额收费项。</li>
+                     * 
                      */
                     void SetPriceName(const std::string& _priceName);
 
                     /**
                      * 判断参数 PriceName 是否已赋值
                      * @return PriceName 是否已赋值
+                     * 
                      */
                     bool PriceNameHasBeenSet() const;
 
                     /**
                      * 获取云硬盘计费项维度单价。
                      * @return OriginUnitPrice 云硬盘计费项维度单价。
+                     * 
                      */
                     double GetOriginUnitPrice() const;
 
                     /**
                      * 设置云硬盘计费项维度单价。
-                     * @param OriginUnitPrice 云硬盘计费项维度单价。
+                     * @param _originUnitPrice 云硬盘计费项维度单价。
+                     * 
                      */
                     void SetOriginUnitPrice(const double& _originUnitPrice);
 
                     /**
                      * 判断参数 OriginUnitPrice 是否已赋值
                      * @return OriginUnitPrice 是否已赋值
+                     * 
                      */
                     bool OriginUnitPriceHasBeenSet() const;
 
                     /**
                      * 获取云硬盘计费项维度总价。
                      * @return OriginalPrice 云硬盘计费项维度总价。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置云硬盘计费项维度总价。
-                     * @param OriginalPrice 云硬盘计费项维度总价。
+                     * @param _originalPrice 云硬盘计费项维度总价。
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取云硬盘在计费项维度折扣。
                      * @return Discount 云硬盘在计费项维度折扣。
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置云硬盘在计费项维度折扣。
-                     * @param Discount 云硬盘在计费项维度折扣。
+                     * @param _discount 云硬盘在计费项维度折扣。
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
                     /**
                      * 获取云硬盘在计费项维度折后总价。
                      * @return DiscountPrice 云硬盘在计费项维度折后总价。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置云硬盘在计费项维度折后总价。
-                     * @param DiscountPrice 云硬盘在计费项维度折后总价。
+                     * @param _discountPrice 云硬盘在计费项维度折后总价。
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 

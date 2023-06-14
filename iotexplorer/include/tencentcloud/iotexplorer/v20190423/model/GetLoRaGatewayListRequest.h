@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取是否是社区网关
                      * @return IsCommunity 是否是社区网关
+                     * 
                      */
                     bool GetIsCommunity() const;
 
                     /**
                      * 设置是否是社区网关
-                     * @param IsCommunity 是否是社区网关
+                     * @param _isCommunity 是否是社区网关
+                     * 
                      */
                     void SetIsCommunity(const bool& _isCommunity);
 
                     /**
                      * 判断参数 IsCommunity 是否已赋值
                      * @return IsCommunity 是否已赋值
+                     * 
                      */
                     bool IsCommunityHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制个数
                      * @return Limit 限制个数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制个数
-                     * @param Limit 限制个数
+                     * @param _limit 限制个数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

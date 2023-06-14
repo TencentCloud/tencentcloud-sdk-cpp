@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取临时证书
                      * @return Credentials 临时证书
+                     * 
                      */
                     Credentials GetCredentials() const;
 
                     /**
                      * 判断参数 Credentials 是否已赋值
                      * @return Credentials 是否已赋值
+                     * 
                      */
                     bool CredentialsHasBeenSet() const;
 
                     /**
                      * 获取临时证书有效的时间，返回 Unix 时间戳，精确到秒
                      * @return ExpiredTime 临时证书有效的时间，返回 Unix 时间戳，精确到秒
+                     * 
                      */
                     uint64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expiration 证书有效的时间，以 iso8601 格式的 UTC 时间表示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpiration() const;
 
                     /**
                      * 判断参数 Expiration 是否已赋值
                      * @return Expiration 是否已赋值
+                     * 
                      */
                     bool ExpirationHasBeenSet() const;
 

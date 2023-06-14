@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取分页序号，从1开始
                      * @return PageNumber 分页序号，从1开始
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置分页序号，从1开始
-                     * @param PageNumber 分页序号，从1开始
+                     * @param _pageNumber 分页序号，从1开始
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每个分页所包含的元素数量，最大为50
                      * @return PageSize 每个分页所包含的元素数量，最大为50
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置每个分页所包含的元素数量，最大为50
-                     * @param PageSize 每个分页所包含的元素数量，最大为50
+                     * @param _pageSize 每个分页所包含的元素数量，最大为50
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取列举过滤条件，相关限制相见MediaFilter
                      * @return MediaFilter 列举过滤条件，相关限制相见MediaFilter
+                     * 
                      */
                     MediaFilter GetMediaFilter() const;
 
                     /**
                      * 设置列举过滤条件，相关限制相见MediaFilter
-                     * @param MediaFilter 列举过滤条件，相关限制相见MediaFilter
+                     * @param _mediaFilter 列举过滤条件，相关限制相见MediaFilter
+                     * 
                      */
                     void SetMediaFilter(const MediaFilter& _mediaFilter);
 
                     /**
                      * 判断参数 MediaFilter 是否已赋值
                      * @return MediaFilter 是否已赋值
+                     * 
                      */
                     bool MediaFilterHasBeenSet() const;
 
                     /**
                      * 获取返回结果排序信息，By字段只支持CreateTime
                      * @return SortBy 返回结果排序信息，By字段只支持CreateTime
+                     * 
                      */
                     SortBy GetSortBy() const;
 
                     /**
                      * 设置返回结果排序信息，By字段只支持CreateTime
-                     * @param SortBy 返回结果排序信息，By字段只支持CreateTime
+                     * @param _sortBy 返回结果排序信息，By字段只支持CreateTime
+                     * 
                      */
                     void SetSortBy(const SortBy& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 

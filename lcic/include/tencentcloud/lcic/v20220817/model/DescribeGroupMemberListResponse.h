@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取符合查询条件总条数
                      * @return Total 符合查询条件总条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberIds 查询成员列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetMemberIds() const;
 
                     /**
                      * 判断参数 MemberIds 是否已赋值
                      * @return MemberIds 是否已赋值
+                     * 
                      */
                     bool MemberIdsHasBeenSet() const;
 

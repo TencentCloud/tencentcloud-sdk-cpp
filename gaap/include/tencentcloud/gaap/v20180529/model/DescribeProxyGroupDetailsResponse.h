@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取通道组详细信息。
                      * @return ProxyGroupDetail 通道组详细信息。
+                     * 
                      */
                     ProxyGroupDetail GetProxyGroupDetail() const;
 
                     /**
                      * 判断参数 ProxyGroupDetail 是否已赋值
                      * @return ProxyGroupDetail 是否已赋值
+                     * 
                      */
                     bool ProxyGroupDetailHasBeenSet() const;
 

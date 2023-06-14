@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取AppId。
                      * @return Owner AppId。
+                     * 
                      */
                     uint64_t GetOwner() const;
 
                     /**
                      * 设置AppId。
-                     * @param Owner AppId。
+                     * @param _owner AppId。
+                     * 
                      */
                     void SetOwner(const uint64_t& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取Uin。
                      * @return UserUin Uin。
+                     * 
                      */
                     std::string GetUserUin() const;
 
                     /**
                      * 设置Uin。
-                     * @param UserUin Uin。
+                     * @param _userUin Uin。
+                     * 
                      */
                     void SetUserUin(const std::string& _userUin);
 
                     /**
                      * 判断参数 UserUin 是否已赋值
                      * @return UserUin 是否已赋值
+                     * 
                      */
                     bool UserUinHasBeenSet() const;
 
                     /**
                      * 获取描述信息。
                      * @return Description 描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
-                     * @param Description 描述信息。
+                     * @param _description 描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreateTime 创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreateTime 创建时间。
+                     * @param _createTime 创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取终端节点服务ID。
                      * @return EndPointServiceId 终端节点服务ID。
+                     * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
                      * 设置终端节点服务ID。
-                     * @param EndPointServiceId 终端节点服务ID。
+                     * @param _endPointServiceId 终端节点服务ID。
+                     * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
 
                     /**
                      * 判断参数 EndPointServiceId 是否已赋值
                      * @return EndPointServiceId 是否已赋值
+                     * 
                      */
                     bool EndPointServiceIdHasBeenSet() const;
 

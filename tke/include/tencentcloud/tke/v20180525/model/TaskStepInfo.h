@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取步骤名称
                      * @return Step 步骤名称
+                     * 
                      */
                     std::string GetStep() const;
 
                     /**
                      * 设置步骤名称
-                     * @param Step 步骤名称
+                     * @param _step 步骤名称
+                     * 
                      */
                     void SetStep(const std::string& _step);
 
                     /**
                      * 判断参数 Step 是否已赋值
                      * @return Step 是否已赋值
+                     * 
                      */
                     bool StepHasBeenSet() const;
 
@@ -75,6 +78,7 @@ pending : 步骤未开始
 running: 步骤执行中
 success: 步骤成功完成
 failed: 步骤失败
+                     * 
                      */
                     std::string GetLifeState() const;
 
@@ -84,17 +88,19 @@ pending : 步骤未开始
 running: 步骤执行中
 success: 步骤成功完成
 failed: 步骤失败
-                     * @param LifeState 生命周期
+                     * @param _lifeState 生命周期
 pending : 步骤未开始
 running: 步骤执行中
 success: 步骤成功完成
 failed: 步骤失败
+                     * 
                      */
                     void SetLifeState(const std::string& _lifeState);
 
                     /**
                      * 判断参数 LifeState 是否已赋值
                      * @return LifeState 是否已赋值
+                     * 
                      */
                     bool LifeStateHasBeenSet() const;
 
@@ -103,20 +109,23 @@ failed: 步骤失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 步骤开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置步骤开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartAt 步骤开始时间
+                     * @param _startAt 步骤开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartAt(const std::string& _startAt);
 
                     /**
                      * 判断参数 StartAt 是否已赋值
                      * @return StartAt 是否已赋值
+                     * 
                      */
                     bool StartAtHasBeenSet() const;
 
@@ -125,20 +134,23 @@ failed: 步骤失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndAt 步骤结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndAt() const;
 
                     /**
                      * 设置步骤结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndAt 步骤结束时间
+                     * @param _endAt 步骤结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndAt(const std::string& _endAt);
 
                     /**
                      * 判断参数 EndAt 是否已赋值
                      * @return EndAt 是否已赋值
+                     * 
                      */
                     bool EndAtHasBeenSet() const;
 
@@ -147,20 +159,23 @@ failed: 步骤失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedMsg 若步骤生命周期为failed,则此字段显示错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailedMsg() const;
 
                     /**
                      * 设置若步骤生命周期为failed,则此字段显示错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailedMsg 若步骤生命周期为failed,则此字段显示错误信息
+                     * @param _failedMsg 若步骤生命周期为failed,则此字段显示错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailedMsg(const std::string& _failedMsg);
 
                     /**
                      * 判断参数 FailedMsg 是否已赋值
                      * @return FailedMsg 是否已赋值
+                     * 
                      */
                     bool FailedMsgHasBeenSet() const;
 

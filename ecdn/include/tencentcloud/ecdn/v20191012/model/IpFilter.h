@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取IP黑白名单开关，on或off。
                      * @return Switch IP黑白名单开关，on或off。
+                     * 
                      */
                     std::string GetSwitch() const;
 
                     /**
                      * 设置IP黑白名单开关，on或off。
-                     * @param Switch IP黑白名单开关，on或off。
+                     * @param _switch IP黑白名单开关，on或off。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterType IP黑白名单类型，whitelist或blacklist。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilterType() const;
 
                     /**
                      * 设置IP黑白名单类型，whitelist或blacklist。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilterType IP黑白名单类型，whitelist或blacklist。
+                     * @param _filterType IP黑白名单类型，whitelist或blacklist。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilterType(const std::string& _filterType);
 
                     /**
                      * 判断参数 FilterType 是否已赋值
                      * @return FilterType 是否已赋值
+                     * 
                      */
                     bool FilterTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Filters IP黑白名单列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFilters() const;
 
                     /**
                      * 设置IP黑白名单列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Filters IP黑白名单列表。
+                     * @param _filters IP黑白名单列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

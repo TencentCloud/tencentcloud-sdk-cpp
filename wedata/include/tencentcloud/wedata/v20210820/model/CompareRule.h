@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 比较条件列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CompareRuleItem> GetItems() const;
 
                     /**
                      * 设置比较条件列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Items 比较条件列表
+                     * @param _items 比较条件列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItems(const std::vector<CompareRuleItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleStep 周期性模板默认周期，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCycleStep() const;
 
                     /**
                      * 设置周期性模板默认周期，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CycleStep 周期性模板默认周期，单位秒
+                     * @param _cycleStep 周期性模板默认周期，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCycleStep(const uint64_t& _cycleStep);
 
                     /**
                      * 判断参数 CycleStep 是否已赋值
                      * @return CycleStep 是否已赋值
+                     * 
                      */
                     bool CycleStepHasBeenSet() const;
 

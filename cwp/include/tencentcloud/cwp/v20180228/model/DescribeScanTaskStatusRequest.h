@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
                      * @return ModuleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * 
                      */
                     std::string GetModuleType() const;
 
                     /**
                      * 设置模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
-                     * @param ModuleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * @param _moduleType 模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线
+                     * 
                      */
                     void SetModuleType(const std::string& _moduleType);
 
                     /**
                      * 判断参数 ModuleType 是否已赋值
                      * @return ModuleType 是否已赋值
+                     * 
                      */
                     bool ModuleTypeHasBeenSet() const;
 

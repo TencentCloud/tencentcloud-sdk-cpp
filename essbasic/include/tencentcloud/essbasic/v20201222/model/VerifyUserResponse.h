@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取电子签平台用户ID
                      * @return UserId 电子签平台用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

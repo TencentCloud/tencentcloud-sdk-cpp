@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取本地镜像漏洞扫描任务ID
                      * @return LocalTaskID 本地镜像漏洞扫描任务ID
+                     * 
                      */
                     int64_t GetLocalTaskID() const;
 
                     /**
                      * 设置本地镜像漏洞扫描任务ID
-                     * @param LocalTaskID 本地镜像漏洞扫描任务ID
+                     * @param _localTaskID 本地镜像漏洞扫描任务ID
+                     * 
                      */
                     void SetLocalTaskID(const int64_t& _localTaskID);
 
                     /**
                      * 判断参数 LocalTaskID 是否已赋值
                      * @return LocalTaskID 是否已赋值
+                     * 
                      */
                     bool LocalTaskIDHasBeenSet() const;
 
                     /**
                      * 获取本地镜像ID，无则全部
                      * @return LocalImageIDs 本地镜像ID，无则全部
+                     * 
                      */
                     std::vector<std::string> GetLocalImageIDs() const;
 
                     /**
                      * 设置本地镜像ID，无则全部
-                     * @param LocalImageIDs 本地镜像ID，无则全部
+                     * @param _localImageIDs 本地镜像ID，无则全部
+                     * 
                      */
                     void SetLocalImageIDs(const std::vector<std::string>& _localImageIDs);
 
                     /**
                      * 判断参数 LocalImageIDs 是否已赋值
                      * @return LocalImageIDs 是否已赋值
+                     * 
                      */
                     bool LocalImageIDsHasBeenSet() const;
 
                     /**
                      * 获取仓库镜像ID，无则全部
                      * @return RegistryImageIDs 仓库镜像ID，无则全部
+                     * 
                      */
                     std::vector<uint64_t> GetRegistryImageIDs() const;
 
                     /**
                      * 设置仓库镜像ID，无则全部
-                     * @param RegistryImageIDs 仓库镜像ID，无则全部
+                     * @param _registryImageIDs 仓库镜像ID，无则全部
+                     * 
                      */
                     void SetRegistryImageIDs(const std::vector<uint64_t>& _registryImageIDs);
 
                     /**
                      * 判断参数 RegistryImageIDs 是否已赋值
                      * @return RegistryImageIDs 是否已赋值
+                     * 
                      */
                     bool RegistryImageIDsHasBeenSet() const;
 
                     /**
                      * 获取仓库镜像漏洞扫描任务ID
                      * @return RegistryTaskID 仓库镜像漏洞扫描任务ID
+                     * 
                      */
                     int64_t GetRegistryTaskID() const;
 
                     /**
                      * 设置仓库镜像漏洞扫描任务ID
-                     * @param RegistryTaskID 仓库镜像漏洞扫描任务ID
+                     * @param _registryTaskID 仓库镜像漏洞扫描任务ID
+                     * 
                      */
                     void SetRegistryTaskID(const int64_t& _registryTaskID);
 
                     /**
                      * 判断参数 RegistryTaskID 是否已赋值
                      * @return RegistryTaskID 是否已赋值
+                     * 
                      */
                     bool RegistryTaskIDHasBeenSet() const;
 

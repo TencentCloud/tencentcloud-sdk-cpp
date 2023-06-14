@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosDataSource cos数据源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CosDataSource GetCosDataSource() const;
 
                     /**
                      * 设置cos数据源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosDataSource cos数据源
+                     * @param _cosDataSource cos数据源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosDataSource(const CosDataSource& _cosDataSource);
 
                     /**
                      * 判断参数 CosDataSource 是否已赋值
                      * @return CosDataSource 是否已赋值
+                     * 
                      */
                     bool CosDataSourceHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystemDataSource 文件系统输入源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FileSystemDataSource GetFileSystemDataSource() const;
 
                     /**
                      * 设置文件系统输入源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSystemDataSource 文件系统输入源
+                     * @param _fileSystemDataSource 文件系统输入源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSystemDataSource(const FileSystemDataSource& _fileSystemDataSource);
 
                     /**
                      * 判断参数 FileSystemDataSource 是否已赋值
                      * @return FileSystemDataSource 是否已赋值
+                     * 
                      */
                     bool FileSystemDataSourceHasBeenSet() const;
 

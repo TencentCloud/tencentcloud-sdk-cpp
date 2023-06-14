@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
                      * @return WaterMarkUrl 水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+                     * 
                      */
                     std::string GetWaterMarkUrl() const;
 
                     /**
                      * 设置水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
-                     * @param WaterMarkUrl 水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+                     * @param _waterMarkUrl 水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+                     * 
                      */
                     void SetWaterMarkUrl(const std::string& _waterMarkUrl);
 
                     /**
                      * 判断参数 WaterMarkUrl 是否已赋值
                      * @return WaterMarkUrl 是否已赋值
+                     * 
                      */
                     bool WaterMarkUrlHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的宽。单位为像素值。
                      * @return WaterMarkWidth 水印在输出时的宽。单位为像素值。
+                     * 
                      */
                     uint64_t GetWaterMarkWidth() const;
 
                     /**
                      * 设置水印在输出时的宽。单位为像素值。
-                     * @param WaterMarkWidth 水印在输出时的宽。单位为像素值。
+                     * @param _waterMarkWidth 水印在输出时的宽。单位为像素值。
+                     * 
                      */
                     void SetWaterMarkWidth(const uint64_t& _waterMarkWidth);
 
                     /**
                      * 判断参数 WaterMarkWidth 是否已赋值
                      * @return WaterMarkWidth 是否已赋值
+                     * 
                      */
                     bool WaterMarkWidthHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的高。单位为像素值。
                      * @return WaterMarkHeight 水印在输出时的高。单位为像素值。
+                     * 
                      */
                     uint64_t GetWaterMarkHeight() const;
 
                     /**
                      * 设置水印在输出时的高。单位为像素值。
-                     * @param WaterMarkHeight 水印在输出时的高。单位为像素值。
+                     * @param _waterMarkHeight 水印在输出时的高。单位为像素值。
+                     * 
                      */
                     void SetWaterMarkHeight(const uint64_t& _waterMarkHeight);
 
                     /**
                      * 判断参数 WaterMarkHeight 是否已赋值
                      * @return WaterMarkHeight 是否已赋值
+                     * 
                      */
                     bool WaterMarkHeightHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的X偏移。单位为像素值。
                      * @return LocationX 水印在输出时的X偏移。单位为像素值。
+                     * 
                      */
                     uint64_t GetLocationX() const;
 
                     /**
                      * 设置水印在输出时的X偏移。单位为像素值。
-                     * @param LocationX 水印在输出时的X偏移。单位为像素值。
+                     * @param _locationX 水印在输出时的X偏移。单位为像素值。
+                     * 
                      */
                     void SetLocationX(const uint64_t& _locationX);
 
                     /**
                      * 判断参数 LocationX 是否已赋值
                      * @return LocationX 是否已赋值
+                     * 
                      */
                     bool LocationXHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的Y偏移。单位为像素值。
                      * @return LocationY 水印在输出时的Y偏移。单位为像素值。
+                     * 
                      */
                     uint64_t GetLocationY() const;
 
                     /**
                      * 设置水印在输出时的Y偏移。单位为像素值。
-                     * @param LocationY 水印在输出时的Y偏移。单位为像素值。
+                     * @param _locationY 水印在输出时的Y偏移。单位为像素值。
+                     * 
                      */
                     void SetLocationY(const uint64_t& _locationY);
 
                     /**
                      * 判断参数 LocationY 是否已赋值
                      * @return LocationY 是否已赋值
+                     * 
                      */
                     bool LocationYHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的层级，不填默认为0。
                      * @return ZOrder 水印在输出时的层级，不填默认为0。
+                     * 
                      */
                     uint64_t GetZOrder() const;
 
                     /**
                      * 设置水印在输出时的层级，不填默认为0。
-                     * @param ZOrder 水印在输出时的层级，不填默认为0。
+                     * @param _zOrder 水印在输出时的层级，不填默认为0。
+                     * 
                      */
                     void SetZOrder(const uint64_t& _zOrder);
 
                     /**
                      * 判断参数 ZOrder 是否已赋值
                      * @return ZOrder 是否已赋值
+                     * 
                      */
                     bool ZOrderHasBeenSet() const;
 

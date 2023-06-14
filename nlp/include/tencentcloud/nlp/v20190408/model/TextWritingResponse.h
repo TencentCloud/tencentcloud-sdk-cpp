@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取续写结果列表。
                      * @return WritingList 续写结果列表。
+                     * 
                      */
                     std::vector<Writing> GetWritingList() const;
 
                     /**
                      * 判断参数 WritingList 是否已赋值
                      * @return WritingList 是否已赋值
+                     * 
                      */
                     bool WritingListHasBeenSet() const;
 

@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取用户Id，和子用户uin相同
                      * @return UserId 用户Id，和子用户uin相同
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id，和子用户uin相同
-                     * @param UserId 用户Id，和子用户uin相同
+                     * @param _userId 用户Id，和子用户uin相同
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -71,20 +74,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDescription 用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserDescription() const;
 
                     /**
                      * 设置用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserDescription 用户描述信息，方便区分不同用户
+                     * @param _userDescription 用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserDescription(const std::string& _userDescription);
 
                     /**
                      * 判断参数 UserDescription 是否已赋值
                      * @return UserDescription 是否已赋值
+                     * 
                      */
                     bool UserDescriptionHasBeenSet() const;
 
@@ -93,56 +99,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicySet 单独给用户绑定的权限集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Policy> GetPolicySet() const;
 
                     /**
                      * 设置单独给用户绑定的权限集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicySet 单独给用户绑定的权限集合
+                     * @param _policySet 单独给用户绑定的权限集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicySet(const std::vector<Policy>& _policySet);
 
                     /**
                      * 判断参数 PolicySet 是否已赋值
                      * @return PolicySet 是否已赋值
+                     * 
                      */
                     bool PolicySetHasBeenSet() const;
 
                     /**
                      * 获取当前用户的创建者
                      * @return Creator 当前用户的创建者
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置当前用户的创建者
-                     * @param Creator 当前用户的创建者
+                     * @param _creator 当前用户的创建者
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
                     /**
                      * 获取创建时间，格式如2021-07-28 16:19:32
                      * @return CreateTime 创建时间，格式如2021-07-28 16:19:32
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，格式如2021-07-28 16:19:32
-                     * @param CreateTime 创建时间，格式如2021-07-28 16:19:32
+                     * @param _createTime 创建时间，格式如2021-07-28 16:19:32
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -151,20 +166,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkGroupSet 关联的工作组集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<WorkGroupMessage> GetWorkGroupSet() const;
 
                     /**
                      * 设置关联的工作组集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WorkGroupSet 关联的工作组集合
+                     * @param _workGroupSet 关联的工作组集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWorkGroupSet(const std::vector<WorkGroupMessage>& _workGroupSet);
 
                     /**
                      * 判断参数 WorkGroupSet 是否已赋值
                      * @return WorkGroupSet 是否已赋值
+                     * 
                      */
                     bool WorkGroupSetHasBeenSet() const;
 
@@ -173,20 +191,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsOwner 是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsOwner() const;
 
                     /**
                      * 设置是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsOwner 是否是主账号
+                     * @param _isOwner 是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsOwner(const bool& _isOwner);
 
                     /**
                      * 判断参数 IsOwner 是否已赋值
                      * @return IsOwner 是否已赋值
+                     * 
                      */
                     bool IsOwnerHasBeenSet() const;
 
@@ -195,20 +216,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserType 用户类型。ADMIN：管理员 COMMON：普通用户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置用户类型。ADMIN：管理员 COMMON：普通用户。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserType 用户类型。ADMIN：管理员 COMMON：普通用户。
+                     * @param _userType 用户类型。ADMIN：管理员 COMMON：普通用户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
@@ -217,20 +241,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAlias 用户别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置用户别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserAlias 用户别名
+                     * @param _userAlias 用户别名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
 
                     /**
                      * 判断参数 UserAlias 是否已赋值
                      * @return UserAlias 是否已赋值
+                     * 
                      */
                     bool UserAliasHasBeenSet() const;
 

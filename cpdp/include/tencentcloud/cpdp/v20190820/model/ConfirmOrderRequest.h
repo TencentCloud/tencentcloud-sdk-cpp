@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取分配给商户的AppId
                      * @return MerchantAppId 分配给商户的AppId
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 设置分配给商户的AppId
-                     * @param MerchantAppId 分配给商户的AppId
+                     * @param _merchantAppId 分配给商户的AppId
+                     * 
                      */
                     void SetMerchantAppId(const std::string& _merchantAppId);
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
                     /**
                      * 获取平台流水号。消费订单发起成功后，返回的平台唯一订单号。
                      * @return OrderNo 平台流水号。消费订单发起成功后，返回的平台唯一订单号。
+                     * 
                      */
                     std::string GetOrderNo() const;
 
                     /**
                      * 设置平台流水号。消费订单发起成功后，返回的平台唯一订单号。
-                     * @param OrderNo 平台流水号。消费订单发起成功后，返回的平台唯一订单号。
+                     * @param _orderNo 平台流水号。消费订单发起成功后，返回的平台唯一订单号。
+                     * 
                      */
                     void SetOrderNo(const std::string& _orderNo);
 
                     /**
                      * 判断参数 OrderNo 是否已赋值
                      * @return OrderNo 是否已赋值
+                     * 
                      */
                     bool OrderNoHasBeenSet() const;
 

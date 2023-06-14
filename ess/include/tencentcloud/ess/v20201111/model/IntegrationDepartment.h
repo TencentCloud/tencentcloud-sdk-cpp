@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeptId 部门ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeptId() const;
 
                     /**
                      * 设置部门ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeptId 部门ID
+                     * @param _deptId 部门ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeptId(const std::string& _deptId);
 
                     /**
                      * 判断参数 DeptId 是否已赋值
                      * @return DeptId 是否已赋值
+                     * 
                      */
                     bool DeptIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeptName 部门名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeptName() const;
 
                     /**
                      * 设置部门名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeptName 部门名
+                     * @param _deptName 部门名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeptName(const std::string& _deptName);
 
                     /**
                      * 判断参数 DeptName 是否已赋值
                      * @return DeptName 是否已赋值
+                     * 
                      */
                     bool DeptNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentDeptId 父部门ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParentDeptId() const;
 
                     /**
                      * 设置父部门ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentDeptId 父部门ID
+                     * @param _parentDeptId 父部门ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentDeptId(const std::string& _parentDeptId);
 
                     /**
                      * 判断参数 ParentDeptId 是否已赋值
                      * @return ParentDeptId 是否已赋值
+                     * 
                      */
                     bool ParentDeptIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeptOpenId 客户系统部门ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeptOpenId() const;
 
                     /**
                      * 设置客户系统部门ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeptOpenId 客户系统部门ID
+                     * @param _deptOpenId 客户系统部门ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeptOpenId(const std::string& _deptOpenId);
 
                     /**
                      * 判断参数 DeptOpenId 是否已赋值
                      * @return DeptOpenId 是否已赋值
+                     * 
                      */
                     bool DeptOpenIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderNo 序列号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOrderNo() const;
 
                     /**
                      * 设置序列号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderNo 序列号
+                     * @param _orderNo 序列号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderNo(const uint64_t& _orderNo);
 
                     /**
                      * 判断参数 OrderNo 是否已赋值
                      * @return OrderNo 是否已赋值
+                     * 
                      */
                     bool OrderNoHasBeenSet() const;
 

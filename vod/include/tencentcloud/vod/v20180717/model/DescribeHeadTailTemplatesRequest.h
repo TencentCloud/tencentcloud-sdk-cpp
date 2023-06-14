@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取片头片尾模板号，数组长度限制：100。
                      * @return Definitions 片头片尾模板号，数组长度限制：100。
+                     * 
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
                      * 设置片头片尾模板号，数组长度限制：100。
-                     * @param Definitions 片头片尾模板号，数组长度限制：100。
+                     * @param _definitions 片头片尾模板号，数组长度限制：100。
+                     * 
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
                     /**
                      * 判断参数 Definitions 是否已赋值
                      * @return Definitions 是否已赋值
+                     * 
                      */
                     bool DefinitionsHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。
-                     * @param Offset 分页偏移量，默认值：0。
+                     * @param _offset 分页偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
                      * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param Limit 返回记录条数，默认值：10，最大值：100。
+                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

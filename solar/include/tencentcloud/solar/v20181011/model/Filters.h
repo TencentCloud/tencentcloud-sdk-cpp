@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取过滤类型, 0: 默认(可见部门+自创) 1: 自创 2: 指定部门(部门在可见范围内)
                      * @return Type 过滤类型, 0: 默认(可见部门+自创) 1: 自创 2: 指定部门(部门在可见范围内)
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置过滤类型, 0: 默认(可见部门+自创) 1: 自创 2: 指定部门(部门在可见范围内)
-                     * @param Type 过滤类型, 0: 默认(可见部门+自创) 1: 自创 2: 指定部门(部门在可见范围内)
+                     * @param _type 过滤类型, 0: 默认(可见部门+自创) 1: 自创 2: 指定部门(部门在可见范围内)
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取指定部门Id, 类型2使用
                      * @return DeptIds 指定部门Id, 类型2使用
+                     * 
                      */
                     std::vector<std::string> GetDeptIds() const;
 
                     /**
                      * 设置指定部门Id, 类型2使用
-                     * @param DeptIds 指定部门Id, 类型2使用
+                     * @param _deptIds 指定部门Id, 类型2使用
+                     * 
                      */
                     void SetDeptIds(const std::vector<std::string>& _deptIds);
 
                     /**
                      * 判断参数 DeptIds 是否已赋值
                      * @return DeptIds 是否已赋值
+                     * 
                      */
                     bool DeptIdsHasBeenSet() const;
 
                     /**
                      * 获取用户Id列表
                      * @return UserIds 用户Id列表
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置用户Id列表
-                     * @param UserIds 用户Id列表
+                     * @param _userIds 用户Id列表
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

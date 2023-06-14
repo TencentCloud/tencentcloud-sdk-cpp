@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取`HAVIP`的`ID`，是`HAVIP`的唯一标识。
                      * @return HaVipId `HAVIP`的`ID`，是`HAVIP`的唯一标识。
+                     * 
                      */
                     std::string GetHaVipId() const;
 
                     /**
                      * 设置`HAVIP`的`ID`，是`HAVIP`的唯一标识。
-                     * @param HaVipId `HAVIP`的`ID`，是`HAVIP`的唯一标识。
+                     * @param _haVipId `HAVIP`的`ID`，是`HAVIP`的唯一标识。
+                     * 
                      */
                     void SetHaVipId(const std::string& _haVipId);
 
                     /**
                      * 判断参数 HaVipId 是否已赋值
                      * @return HaVipId 是否已赋值
+                     * 
                      */
                     bool HaVipIdHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`名称。
                      * @return HaVipName `HAVIP`名称。
+                     * 
                      */
                     std::string GetHaVipName() const;
 
                     /**
                      * 设置`HAVIP`名称。
-                     * @param HaVipName `HAVIP`名称。
+                     * @param _haVipName `HAVIP`名称。
+                     * 
                      */
                     void SetHaVipName(const std::string& _haVipName);
 
                     /**
                      * 判断参数 HaVipName 是否已赋值
                      * @return HaVipName 是否已赋值
+                     * 
                      */
                     bool HaVipNameHasBeenSet() const;
 
                     /**
                      * 获取虚拟IP地址。
                      * @return Vip 虚拟IP地址。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置虚拟IP地址。
-                     * @param Vip 虚拟IP地址。
+                     * @param _vip 虚拟IP地址。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`所在私有网络`ID`。
                      * @return VpcId `HAVIP`所在私有网络`ID`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`HAVIP`所在私有网络`ID`。
-                     * @param VpcId `HAVIP`所在私有网络`ID`。
+                     * @param _vpcId `HAVIP`所在私有网络`ID`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`所在子网`ID`。
                      * @return SubnetId `HAVIP`所在子网`ID`。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置`HAVIP`所在子网`ID`。
-                     * @param SubnetId `HAVIP`所在子网`ID`。
+                     * @param _subnetId `HAVIP`所在子网`ID`。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`关联弹性网卡`ID`。
                      * @return NetworkInterfaceId `HAVIP`关联弹性网卡`ID`。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置`HAVIP`关联弹性网卡`ID`。
-                     * @param NetworkInterfaceId `HAVIP`关联弹性网卡`ID`。
+                     * @param _networkInterfaceId `HAVIP`关联弹性网卡`ID`。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取被绑定的实例`ID`。
                      * @return InstanceId 被绑定的实例`ID`。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置被绑定的实例`ID`。
-                     * @param InstanceId 被绑定的实例`ID`。
+                     * @param _instanceId 被绑定的实例`ID`。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取绑定`EIP`。
                      * @return AddressIp 绑定`EIP`。
+                     * 
                      */
                     std::string GetAddressIp() const;
 
                     /**
                      * 设置绑定`EIP`。
-                     * @param AddressIp 绑定`EIP`。
+                     * @param _addressIp 绑定`EIP`。
+                     * 
                      */
                     void SetAddressIp(const std::string& _addressIp);
 
                     /**
                      * 判断参数 AddressIp 是否已赋值
                      * @return AddressIp 是否已赋值
+                     * 
                      */
                     bool AddressIpHasBeenSet() const;
 
@@ -197,6 +221,7 @@ namespace TencentCloud
                      * @return State 状态：
 <li>`AVAILABLE`：运行中</li>
 <li>`UNBIND`：未绑定</li>
+                     * 
                      */
                     std::string GetState() const;
 
@@ -204,51 +229,59 @@ namespace TencentCloud
                      * 设置状态：
 <li>`AVAILABLE`：运行中</li>
 <li>`UNBIND`：未绑定</li>
-                     * @param State 状态：
+                     * @param _state 状态：
 <li>`AVAILABLE`：运行中</li>
 <li>`UNBIND`：未绑定</li>
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取创建时间。
                      * @return CreatedTime 创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-                     * @param CreatedTime 创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取使用havip的业务标识。
                      * @return Business 使用havip的业务标识。
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置使用havip的业务标识。
-                     * @param Business 使用havip的业务标识。
+                     * @param _business 使用havip的业务标识。
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 

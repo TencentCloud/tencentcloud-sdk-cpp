@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取创建时间戳
                      * @return CreateTime 创建时间戳
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间戳
-                     * @param CreateTime 创建时间戳
+                     * @param _createTime 创建时间戳
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取到期时间戳
                      * @return ExpireTime 到期时间戳
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置到期时间戳
-                     * @param ExpireTime 到期时间戳
+                     * @param _expireTime 到期时间戳
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取资源名称，如应用加固，源码混淆
                      * @return ResourceName 资源名称，如应用加固，源码混淆
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称，如应用加固，源码混淆
-                     * @param ResourceName 资源名称，如应用加固，源码混淆
+                     * @param _resourceName 资源名称，如应用加固，源码混淆
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCode 风险码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskCode() const;
 
                     /**
                      * 设置风险码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskCode 风险码
+                     * @param _riskCode 风险码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskCode(const std::string& _riskCode);
 
                     /**
                      * 判断参数 RiskCode 是否已赋值
                      * @return RiskCode 是否已赋值
+                     * 
                      */
                     bool RiskCodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskValue 风险码对应的风险值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRiskValue() const;
 
                     /**
                      * 设置风险码对应的风险值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskValue 风险码对应的风险值
+                     * @param _riskValue 风险码对应的风险值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskValue(const std::string& _riskValue);
 
                     /**
                      * 判断参数 RiskValue 是否已赋值
                      * @return RiskValue 是否已赋值
+                     * 
                      */
                     bool RiskValueHasBeenSet() const;
 

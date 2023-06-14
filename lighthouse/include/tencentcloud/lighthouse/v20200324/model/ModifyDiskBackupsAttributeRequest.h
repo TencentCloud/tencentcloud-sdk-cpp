@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘备份点ID列表。
                      * @return DiskBackupIds 云硬盘备份点ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskBackupIds() const;
 
                     /**
                      * 设置云硬盘备份点ID列表。
-                     * @param DiskBackupIds 云硬盘备份点ID列表。
+                     * @param _diskBackupIds 云硬盘备份点ID列表。
+                     * 
                      */
                     void SetDiskBackupIds(const std::vector<std::string>& _diskBackupIds);
 
                     /**
                      * 判断参数 DiskBackupIds 是否已赋值
                      * @return DiskBackupIds 是否已赋值
+                     * 
                      */
                     bool DiskBackupIdsHasBeenSet() const;
 
                     /**
                      * 获取云硬盘备份点名称，最大长度90。
                      * @return DiskBackupName 云硬盘备份点名称，最大长度90。
+                     * 
                      */
                     std::string GetDiskBackupName() const;
 
                     /**
                      * 设置云硬盘备份点名称，最大长度90。
-                     * @param DiskBackupName 云硬盘备份点名称，最大长度90。
+                     * @param _diskBackupName 云硬盘备份点名称，最大长度90。
+                     * 
                      */
                     void SetDiskBackupName(const std::string& _diskBackupName);
 
                     /**
                      * 判断参数 DiskBackupName 是否已赋值
                      * @return DiskBackupName 是否已赋值
+                     * 
                      */
                     bool DiskBackupNameHasBeenSet() const;
 

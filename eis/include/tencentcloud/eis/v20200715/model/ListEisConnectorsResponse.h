@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取连接器总数
                      * @return TotalCount 连接器总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取连接器列表
                      * @return Connectors 连接器列表
+                     * 
                      */
                     std::vector<EisConnectorSummary> GetConnectors() const;
 
                     /**
                      * 判断参数 Connectors 是否已赋值
                      * @return Connectors 是否已赋值
+                     * 
                      */
                     bool ConnectorsHasBeenSet() const;
 

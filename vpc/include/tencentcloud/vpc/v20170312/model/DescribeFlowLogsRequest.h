@@ -46,216 +46,252 @@ namespace TencentCloud
                     /**
                      * 获取私用网络ID或者统一ID，建议使用统一ID。
                      * @return VpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私用网络ID或者统一ID，建议使用统一ID。
-                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * @param _vpcId 私用网络ID或者统一ID，建议使用统一ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取流日志唯一ID。
                      * @return FlowLogId 流日志唯一ID。
+                     * 
                      */
                     std::string GetFlowLogId() const;
 
                     /**
                      * 设置流日志唯一ID。
-                     * @param FlowLogId 流日志唯一ID。
+                     * @param _flowLogId 流日志唯一ID。
+                     * 
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
 
                     /**
                      * 判断参数 FlowLogId 是否已赋值
                      * @return FlowLogId 是否已赋值
+                     * 
                      */
                     bool FlowLogIdHasBeenSet() const;
 
                     /**
                      * 获取流日志实例名字。
                      * @return FlowLogName 流日志实例名字。
+                     * 
                      */
                     std::string GetFlowLogName() const;
 
                     /**
                      * 设置流日志实例名字。
-                     * @param FlowLogName 流日志实例名字。
+                     * @param _flowLogName 流日志实例名字。
+                     * 
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
 
                     /**
                      * 判断参数 FlowLogName 是否已赋值
                      * @return FlowLogName 是否已赋值
+                     * 
                      */
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
                      * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
                      * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
-                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * @param _resourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源唯一ID。
                      * @return ResourceId 资源唯一ID。
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源唯一ID。
-                     * @param ResourceId 资源唯一ID。
+                     * @param _resourceId 资源唯一ID。
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取流日志采集类型，ACCEPT|REJECT|ALL。
                      * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 
                      */
                     std::string GetTrafficType() const;
 
                     /**
                      * 设置流日志采集类型，ACCEPT|REJECT|ALL。
-                     * @param TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * @param _trafficType 流日志采集类型，ACCEPT|REJECT|ALL。
+                     * 
                      */
                     void SetTrafficType(const std::string& _trafficType);
 
                     /**
                      * 判断参数 TrafficType 是否已赋值
                      * @return TrafficType 是否已赋值
+                     * 
                      */
                     bool TrafficTypeHasBeenSet() const;
 
                     /**
                      * 获取流日志存储ID。
                      * @return CloudLogId 流日志存储ID。
+                     * 
                      */
                     std::string GetCloudLogId() const;
 
                     /**
                      * 设置流日志存储ID。
-                     * @param CloudLogId 流日志存储ID。
+                     * @param _cloudLogId 流日志存储ID。
+                     * 
                      */
                     void SetCloudLogId(const std::string& _cloudLogId);
 
                     /**
                      * 判断参数 CloudLogId 是否已赋值
                      * @return CloudLogId 是否已赋值
+                     * 
                      */
                     bool CloudLogIdHasBeenSet() const;
 
                     /**
                      * 获取流日志存储ID状态。
                      * @return CloudLogState 流日志存储ID状态。
+                     * 
                      */
                     std::string GetCloudLogState() const;
 
                     /**
                      * 设置流日志存储ID状态。
-                     * @param CloudLogState 流日志存储ID状态。
+                     * @param _cloudLogState 流日志存储ID状态。
+                     * 
                      */
                     void SetCloudLogState(const std::string& _cloudLogState);
 
                     /**
                      * 判断参数 CloudLogState 是否已赋值
                      * @return CloudLogState 是否已赋值
+                     * 
                      */
                     bool CloudLogStateHasBeenSet() const;
 
                     /**
                      * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * 
                      */
                     std::string GetOrderField() const;
 
                     /**
                      * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
-                     * @param OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * @param _orderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * 
                      */
                     void SetOrderField(const std::string& _orderField);
 
                     /**
                      * 判断参数 OrderField 是否已赋值
                      * @return OrderField 是否已赋值
+                     * 
                      */
                     bool OrderFieldHasBeenSet() const;
 
                     /**
                      * 获取升序（asc）还是降序（desc）,默认：desc。
                      * @return OrderDirection 升序（asc）还是降序（desc）,默认：desc。
+                     * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置升序（asc）还是降序（desc）,默认：desc。
-                     * @param OrderDirection 升序（asc）还是降序（desc）,默认：desc。
+                     * @param _orderDirection 升序（asc）还是降序（desc）,默认：desc。
+                     * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
                     /**
                      * 判断参数 OrderDirection 是否已赋值
                      * @return OrderDirection 是否已赋值
+                     * 
                      */
                     bool OrderDirectionHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页行数，默认为10。
                      * @return Limit 每页行数，默认为10。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页行数，默认为10。
-                     * @param Limit 每页行数，默认为10。
+                     * @param _limit 每页行数，默认为10。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -266,6 +302,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
+                     * 
                      */
                     Filter GetFilters() const;
 
@@ -273,33 +310,38 @@ namespace TencentCloud
                      * 设置过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定FlowLogId和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
+                     * 
                      */
                     void SetFilters(const Filter& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取流日志存储ID对应的地域信息。
                      * @return CloudLogRegion 流日志存储ID对应的地域信息。
+                     * 
                      */
                     std::string GetCloudLogRegion() const;
 
                     /**
                      * 设置流日志存储ID对应的地域信息。
-                     * @param CloudLogRegion 流日志存储ID对应的地域信息。
+                     * @param _cloudLogRegion 流日志存储ID对应的地域信息。
+                     * 
                      */
                     void SetCloudLogRegion(const std::string& _cloudLogRegion);
 
                     /**
                      * 判断参数 CloudLogRegion 是否已赋值
                      * @return CloudLogRegion 是否已赋值
+                     * 
                      */
                     bool CloudLogRegionHasBeenSet() const;
 

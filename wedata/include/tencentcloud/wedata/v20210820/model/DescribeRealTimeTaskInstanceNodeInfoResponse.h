@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTimeTaskInstanceNodeInfo 实时任务实例节点相关信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RealTimeTaskInstanceNodeInfo GetRealTimeTaskInstanceNodeInfo() const;
 
                     /**
                      * 判断参数 RealTimeTaskInstanceNodeInfo 是否已赋值
                      * @return RealTimeTaskInstanceNodeInfo 是否已赋值
+                     * 
                      */
                     bool RealTimeTaskInstanceNodeInfoHasBeenSet() const;
 

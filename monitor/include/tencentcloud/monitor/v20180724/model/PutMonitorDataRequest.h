@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取一组指标和数据
                      * @return Metrics 一组指标和数据
+                     * 
                      */
                     std::vector<MetricDatum> GetMetrics() const;
 
                     /**
                      * 设置一组指标和数据
-                     * @param Metrics 一组指标和数据
+                     * @param _metrics 一组指标和数据
+                     * 
                      */
                     void SetMetrics(const std::vector<MetricDatum>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取上报时自行指定的 IP
                      * @return AnnounceIp 上报时自行指定的 IP
+                     * 
                      */
                     std::string GetAnnounceIp() const;
 
                     /**
                      * 设置上报时自行指定的 IP
-                     * @param AnnounceIp 上报时自行指定的 IP
+                     * @param _announceIp 上报时自行指定的 IP
+                     * 
                      */
                     void SetAnnounceIp(const std::string& _announceIp);
 
                     /**
                      * 判断参数 AnnounceIp 是否已赋值
                      * @return AnnounceIp 是否已赋值
+                     * 
                      */
                     bool AnnounceIpHasBeenSet() const;
 
                     /**
                      * 获取上报时自行指定的时间戳
                      * @return AnnounceTimestamp 上报时自行指定的时间戳
+                     * 
                      */
                     uint64_t GetAnnounceTimestamp() const;
 
                     /**
                      * 设置上报时自行指定的时间戳
-                     * @param AnnounceTimestamp 上报时自行指定的时间戳
+                     * @param _announceTimestamp 上报时自行指定的时间戳
+                     * 
                      */
                     void SetAnnounceTimestamp(const uint64_t& _announceTimestamp);
 
                     /**
                      * 判断参数 AnnounceTimestamp 是否已赋值
                      * @return AnnounceTimestamp 是否已赋值
+                     * 
                      */
                     bool AnnounceTimestampHasBeenSet() const;
 
                     /**
                      * 获取上报时自行指定的 IP 或 产品实例ID
                      * @return AnnounceInstance 上报时自行指定的 IP 或 产品实例ID
+                     * 
                      */
                     std::string GetAnnounceInstance() const;
 
                     /**
                      * 设置上报时自行指定的 IP 或 产品实例ID
-                     * @param AnnounceInstance 上报时自行指定的 IP 或 产品实例ID
+                     * @param _announceInstance 上报时自行指定的 IP 或 产品实例ID
+                     * 
                      */
                     void SetAnnounceInstance(const std::string& _announceInstance);
 
                     /**
                      * 判断参数 AnnounceInstance 是否已赋值
                      * @return AnnounceInstance 是否已赋值
+                     * 
                      */
                     bool AnnounceInstanceHasBeenSet() const;
 

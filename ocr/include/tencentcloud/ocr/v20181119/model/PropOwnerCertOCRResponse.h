@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取房地产权利人
                      * @return Owner 房地产权利人
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 
                     /**
                      * 获取共有情况
                      * @return Possession 共有情况
+                     * 
                      */
                     std::string GetPossession() const;
 
                     /**
                      * 判断参数 Possession 是否已赋值
                      * @return Possession 是否已赋值
+                     * 
                      */
                     bool PossessionHasBeenSet() const;
 
                     /**
                      * 获取登记时间
                      * @return RegisterTime 登记时间
+                     * 
                      */
                     std::string GetRegisterTime() const;
 
                     /**
                      * 判断参数 RegisterTime 是否已赋值
                      * @return RegisterTime 是否已赋值
+                     * 
                      */
                     bool RegisterTimeHasBeenSet() const;
 
                     /**
                      * 获取规划用途
                      * @return Purpose 规划用途
+                     * 
                      */
                     std::string GetPurpose() const;
 
                     /**
                      * 判断参数 Purpose 是否已赋值
                      * @return Purpose 是否已赋值
+                     * 
                      */
                     bool PurposeHasBeenSet() const;
 
                     /**
                      * 获取房屋性质
                      * @return Nature 房屋性质
+                     * 
                      */
                     std::string GetNature() const;
 
                     /**
                      * 判断参数 Nature 是否已赋值
                      * @return Nature 是否已赋值
+                     * 
                      */
                     bool NatureHasBeenSet() const;
 
                     /**
                      * 获取房地坐落
                      * @return Location 房地坐落
+                     * 
                      */
                     std::string GetLocation() const;
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

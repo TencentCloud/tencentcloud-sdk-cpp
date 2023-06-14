@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
                      * @return Width 实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
-                     * @param Width 实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
+                     * @param _width 实时录制结果里白板视频宽，取值必须大于等于2，默认为1280
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取实时录制结果里白板视频高，取值必须大于等于2，默认为960
                      * @return Height 实时录制结果里白板视频高，取值必须大于等于2，默认为960
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置实时录制结果里白板视频高，取值必须大于等于2，默认为960
-                     * @param Height 实时录制结果里白板视频高，取值必须大于等于2，默认为960
+                     * @param _height 实时录制结果里白板视频高，取值必须大于等于2，默认为960
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取白板初始化参数，透传到白板 SDK
                      * @return InitParam 白板初始化参数，透传到白板 SDK
+                     * 
                      */
                     std::string GetInitParam() const;
 
                     /**
                      * 设置白板初始化参数，透传到白板 SDK
-                     * @param InitParam 白板初始化参数，透传到白板 SDK
+                     * @param _initParam 白板初始化参数，透传到白板 SDK
+                     * 
                      */
                     void SetInitParam(const std::string& _initParam);
 
                     /**
                      * 判断参数 InitParam 是否已赋值
                      * @return InitParam 是否已赋值
+                     * 
                      */
                     bool InitParamHasBeenSet() const;
 

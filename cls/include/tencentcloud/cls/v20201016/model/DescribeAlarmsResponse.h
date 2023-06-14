@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取告警策略列表。
                      * @return Alarms 告警策略列表。
+                     * 
                      */
                     std::vector<AlarmInfo> GetAlarms() const;
 
                     /**
                      * 判断参数 Alarms 是否已赋值
                      * @return Alarms 是否已赋值
+                     * 
                      */
                     bool AlarmsHasBeenSet() const;
 
                     /**
                      * 获取符合查询条件的告警策略数目。
                      * @return TotalCount 符合查询条件的告警策略数目。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

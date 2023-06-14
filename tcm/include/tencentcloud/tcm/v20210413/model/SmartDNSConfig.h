@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IstioMetaDNSCapture 开启DNS代理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIstioMetaDNSCapture() const;
 
                     /**
                      * 设置开启DNS代理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IstioMetaDNSCapture 开启DNS代理
+                     * @param _istioMetaDNSCapture 开启DNS代理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIstioMetaDNSCapture(const bool& _istioMetaDNSCapture);
 
                     /**
                      * 判断参数 IstioMetaDNSCapture 是否已赋值
                      * @return IstioMetaDNSCapture 是否已赋值
+                     * 
                      */
                     bool IstioMetaDNSCaptureHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IstioMetaDNSAutoAllocate 开启自动地址分配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIstioMetaDNSAutoAllocate() const;
 
                     /**
                      * 设置开启自动地址分配
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IstioMetaDNSAutoAllocate 开启自动地址分配
+                     * @param _istioMetaDNSAutoAllocate 开启自动地址分配
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIstioMetaDNSAutoAllocate(const bool& _istioMetaDNSAutoAllocate);
 
                     /**
                      * 判断参数 IstioMetaDNSAutoAllocate 是否已赋值
                      * @return IstioMetaDNSAutoAllocate 是否已赋值
+                     * 
                      */
                     bool IstioMetaDNSAutoAllocateHasBeenSet() const;
 

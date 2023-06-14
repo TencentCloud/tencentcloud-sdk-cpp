@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取公司管理人列表
                      * @return Managers 公司管理人列表
+                     * 
                      */
                     std::vector<ManagerInfo> GetManagers() const;
 
                     /**
                      * 判断参数 Managers 是否已赋值
                      * @return Managers 是否已赋值
+                     * 
                      */
                     bool ManagersHasBeenSet() const;
 
                     /**
                      * 获取公司管理人总数
                      * @return TotalCount 公司管理人总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

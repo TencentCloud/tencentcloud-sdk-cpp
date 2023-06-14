@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取日志集Id
                      * @return LogSetId 日志集Id
+                     * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置日志集Id
-                     * @param LogSetId 日志集Id
+                     * @param _logSetId 日志集Id
+                     * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
 
                     /**
                      * 判断参数 LogSetId 是否已赋值
                      * @return LogSetId 是否已赋值
+                     * 
                      */
                     bool LogSetIdHasBeenSet() const;
 
                     /**
                      * 获取主题Id
                      * @return TopicId 主题Id
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题Id
-                     * @param TopicId 主题Id
+                     * @param _topicId 主题Id
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取启停状态，可不传，默认启用。0=停用，1=启用
                      * @return Enable 启停状态，可不传，默认启用。0=停用，1=启用
+                     * 
                      */
                     int64_t GetEnable() const;
 
                     /**
                      * 设置启停状态，可不传，默认启用。0=停用，1=启用
-                     * @param Enable 启停状态，可不传，默认启用。0=停用，1=启用
+                     * @param _enable 启停状态，可不传，默认启用。0=停用，1=启用
+                     * 
                      */
                     void SetEnable(const int64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

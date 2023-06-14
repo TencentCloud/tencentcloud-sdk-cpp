@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取期望发起加速的时延阈值
                      * @return RTT 期望发起加速的时延阈值
+                     * 
                      */
                     double GetRTT() const;
 
                     /**
                      * 设置期望发起加速的时延阈值
-                     * @param RTT 期望发起加速的时延阈值
+                     * @param _rTT 期望发起加速的时延阈值
+                     * 
                      */
                     void SetRTT(const double& _rTT);
 
                     /**
                      * 判断参数 RTT 是否已赋值
                      * @return RTT 是否已赋值
+                     * 
                      */
                     bool RTTHasBeenSet() const;
 
                     /**
                      * 获取期望发起加速的丢包率阈值
                      * @return Loss 期望发起加速的丢包率阈值
+                     * 
                      */
                     double GetLoss() const;
 
                     /**
                      * 设置期望发起加速的丢包率阈值
-                     * @param Loss 期望发起加速的丢包率阈值
+                     * @param _loss 期望发起加速的丢包率阈值
+                     * 
                      */
                     void SetLoss(const double& _loss);
 
                     /**
                      * 判断参数 Loss 是否已赋值
                      * @return Loss 是否已赋值
+                     * 
                      */
                     bool LossHasBeenSet() const;
 
                     /**
                      * 获取期望发起加速的抖动阈值
                      * @return Jitter 期望发起加速的抖动阈值
+                     * 
                      */
                     double GetJitter() const;
 
                     /**
                      * 设置期望发起加速的抖动阈值
-                     * @param Jitter 期望发起加速的抖动阈值
+                     * @param _jitter 期望发起加速的抖动阈值
+                     * 
                      */
                     void SetJitter(const double& _jitter);
 
                     /**
                      * 判断参数 Jitter 是否已赋值
                      * @return Jitter 是否已赋值
+                     * 
                      */
                     bool JitterHasBeenSet() const;
 

@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取规则名称 [a-zA-Z\d-\.]*
                      * @return RuleName 规则名称 [a-zA-Z\d-\.]*
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称 [a-zA-Z\d-\.]*
-                     * @param RuleName 规则名称 [a-zA-Z\d-\.]*
+                     * @param _ruleName 规则名称 [a-zA-Z\d-\.]*
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取关联匹配
                      * @return MatchCodeList 关联匹配
+                     * 
                      */
                     std::vector<StringKV> GetMatchCodeList() const;
 
                     /**
                      * 设置关联匹配
-                     * @param MatchCodeList 关联匹配
+                     * @param _matchCodeList 关联匹配
+                     * 
                      */
                     void SetMatchCodeList(const std::vector<StringKV>& _matchCodeList);
 
                     /**
                      * 判断参数 MatchCodeList 是否已赋值
                      * @return MatchCodeList 是否已赋值
+                     * 
                      */
                     bool MatchCodeListHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取规则code
                      * @return RuleCode 规则code
+                     * 
                      */
                     std::string GetRuleCode() const;
 
                     /**
                      * 设置规则code
-                     * @param RuleCode 规则code
+                     * @param _ruleCode 规则code
+                     * 
                      */
                     void SetRuleCode(const std::string& _ruleCode);
 
                     /**
                      * 判断参数 RuleCode 是否已赋值
                      * @return RuleCode 是否已赋值
+                     * 
                      */
                     bool RuleCodeHasBeenSet() const;
 

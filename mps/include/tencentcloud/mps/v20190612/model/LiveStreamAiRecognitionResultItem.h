@@ -67,6 +67,7 @@ namespace TencentCloud
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -78,19 +79,21 @@ namespace TencentCloud
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
-                     * @param Type 结果的类型，取值范围：
+                     * @param _type 结果的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -99,20 +102,23 @@ namespace TencentCloud
 FaceRecognition 时有效。
                      * @return FaceRecognitionResultSet 人脸识别结果，当 Type 为
 FaceRecognition 时有效。
+                     * 
                      */
                     std::vector<LiveStreamFaceRecognitionResult> GetFaceRecognitionResultSet() const;
 
                     /**
                      * 设置人脸识别结果，当 Type 为
 FaceRecognition 时有效。
-                     * @param FaceRecognitionResultSet 人脸识别结果，当 Type 为
+                     * @param _faceRecognitionResultSet 人脸识别结果，当 Type 为
 FaceRecognition 时有效。
+                     * 
                      */
                     void SetFaceRecognitionResultSet(const std::vector<LiveStreamFaceRecognitionResult>& _faceRecognitionResultSet);
 
                     /**
                      * 判断参数 FaceRecognitionResultSet 是否已赋值
                      * @return FaceRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool FaceRecognitionResultSetHasBeenSet() const;
 
@@ -121,20 +127,23 @@ FaceRecognition 时有效。
 AsrWordsRecognition 时有效。
                      * @return AsrWordsRecognitionResultSet 语音关键词识别结果，当 Type 为
 AsrWordsRecognition 时有效。
+                     * 
                      */
                     std::vector<LiveStreamAsrWordsRecognitionResult> GetAsrWordsRecognitionResultSet() const;
 
                     /**
                      * 设置语音关键词识别结果，当 Type 为
 AsrWordsRecognition 时有效。
-                     * @param AsrWordsRecognitionResultSet 语音关键词识别结果，当 Type 为
+                     * @param _asrWordsRecognitionResultSet 语音关键词识别结果，当 Type 为
 AsrWordsRecognition 时有效。
+                     * 
                      */
                     void SetAsrWordsRecognitionResultSet(const std::vector<LiveStreamAsrWordsRecognitionResult>& _asrWordsRecognitionResultSet);
 
                     /**
                      * 判断参数 AsrWordsRecognitionResultSet 是否已赋值
                      * @return AsrWordsRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool AsrWordsRecognitionResultSetHasBeenSet() const;
 
@@ -143,20 +152,23 @@ AsrWordsRecognition 时有效。
 OcrWordsRecognition 时有效。
                      * @return OcrWordsRecognitionResultSet 文本关键词识别结果，当 Type 为
 OcrWordsRecognition 时有效。
+                     * 
                      */
                     std::vector<LiveStreamOcrWordsRecognitionResult> GetOcrWordsRecognitionResultSet() const;
 
                     /**
                      * 设置文本关键词识别结果，当 Type 为
 OcrWordsRecognition 时有效。
-                     * @param OcrWordsRecognitionResultSet 文本关键词识别结果，当 Type 为
+                     * @param _ocrWordsRecognitionResultSet 文本关键词识别结果，当 Type 为
 OcrWordsRecognition 时有效。
+                     * 
                      */
                     void SetOcrWordsRecognitionResultSet(const std::vector<LiveStreamOcrWordsRecognitionResult>& _ocrWordsRecognitionResultSet);
 
                     /**
                      * 判断参数 OcrWordsRecognitionResultSet 是否已赋值
                      * @return OcrWordsRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool OcrWordsRecognitionResultSetHasBeenSet() const;
 
@@ -165,20 +177,23 @@ OcrWordsRecognition 时有效。
 AsrFullTextRecognition 时有效。
                      * @return AsrFullTextRecognitionResultSet 语音全文识别结果，当 Type 为
 AsrFullTextRecognition 时有效。
+                     * 
                      */
                     std::vector<LiveStreamAsrFullTextRecognitionResult> GetAsrFullTextRecognitionResultSet() const;
 
                     /**
                      * 设置语音全文识别结果，当 Type 为
 AsrFullTextRecognition 时有效。
-                     * @param AsrFullTextRecognitionResultSet 语音全文识别结果，当 Type 为
+                     * @param _asrFullTextRecognitionResultSet 语音全文识别结果，当 Type 为
 AsrFullTextRecognition 时有效。
+                     * 
                      */
                     void SetAsrFullTextRecognitionResultSet(const std::vector<LiveStreamAsrFullTextRecognitionResult>& _asrFullTextRecognitionResultSet);
 
                     /**
                      * 判断参数 AsrFullTextRecognitionResultSet 是否已赋值
                      * @return AsrFullTextRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool AsrFullTextRecognitionResultSetHasBeenSet() const;
 
@@ -187,38 +202,44 @@ AsrFullTextRecognition 时有效。
 OcrFullTextRecognition 时有效。
                      * @return OcrFullTextRecognitionResultSet 文本全文识别结果，当 Type 为
 OcrFullTextRecognition 时有效。
+                     * 
                      */
                     std::vector<LiveStreamOcrFullTextRecognitionResult> GetOcrFullTextRecognitionResultSet() const;
 
                     /**
                      * 设置文本全文识别结果，当 Type 为
 OcrFullTextRecognition 时有效。
-                     * @param OcrFullTextRecognitionResultSet 文本全文识别结果，当 Type 为
+                     * @param _ocrFullTextRecognitionResultSet 文本全文识别结果，当 Type 为
 OcrFullTextRecognition 时有效。
+                     * 
                      */
                     void SetOcrFullTextRecognitionResultSet(const std::vector<LiveStreamOcrFullTextRecognitionResult>& _ocrFullTextRecognitionResultSet);
 
                     /**
                      * 判断参数 OcrFullTextRecognitionResultSet 是否已赋值
                      * @return OcrFullTextRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool OcrFullTextRecognitionResultSetHasBeenSet() const;
 
                     /**
                      * 获取翻译结果，当Type 为 TransTextRecognition 时有效。
                      * @return TransTextRecognitionResultSet 翻译结果，当Type 为 TransTextRecognition 时有效。
+                     * 
                      */
                     std::vector<LiveStreamTransTextRecognitionResult> GetTransTextRecognitionResultSet() const;
 
                     /**
                      * 设置翻译结果，当Type 为 TransTextRecognition 时有效。
-                     * @param TransTextRecognitionResultSet 翻译结果，当Type 为 TransTextRecognition 时有效。
+                     * @param _transTextRecognitionResultSet 翻译结果，当Type 为 TransTextRecognition 时有效。
+                     * 
                      */
                     void SetTransTextRecognitionResultSet(const std::vector<LiveStreamTransTextRecognitionResult>& _transTextRecognitionResultSet);
 
                     /**
                      * 判断参数 TransTextRecognitionResultSet 是否已赋值
                      * @return TransTextRecognitionResultSet 是否已赋值
+                     * 
                      */
                     bool TransTextRecognitionResultSetHasBeenSet() const;
 

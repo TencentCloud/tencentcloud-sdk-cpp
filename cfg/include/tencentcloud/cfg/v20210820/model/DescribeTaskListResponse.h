@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return TaskList 无
+                     * 
                      */
                     std::vector<TaskListItem> GetTaskList() const;
 
                     /**
                      * 判断参数 TaskList 是否已赋值
                      * @return TaskList 是否已赋值
+                     * 
                      */
                     bool TaskListHasBeenSet() const;
 
                     /**
                      * 获取列表数量
                      * @return Total 列表数量
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

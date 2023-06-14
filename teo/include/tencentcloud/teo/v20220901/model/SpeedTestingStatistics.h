@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstContentfulPaint 首屏时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFirstContentfulPaint() const;
 
                     /**
                      * 设置首屏时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstContentfulPaint 首屏时间，单位 ms。
+                     * @param _firstContentfulPaint 首屏时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstContentfulPaint(const int64_t& _firstContentfulPaint);
 
                     /**
                      * 判断参数 FirstContentfulPaint 是否已赋值
                      * @return FirstContentfulPaint 是否已赋值
+                     * 
                      */
                     bool FirstContentfulPaintHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstMeaningfulPaint 首屏完全渲染时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFirstMeaningfulPaint() const;
 
                     /**
                      * 设置首屏完全渲染时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstMeaningfulPaint 首屏完全渲染时间，单位 ms。
+                     * @param _firstMeaningfulPaint 首屏完全渲染时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstMeaningfulPaint(const int64_t& _firstMeaningfulPaint);
 
                     /**
                      * 判断参数 FirstMeaningfulPaint 是否已赋值
                      * @return FirstMeaningfulPaint 是否已赋值
+                     * 
                      */
                     bool FirstMeaningfulPaintHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverallDownloadSpeed 整体下载速度，单位 KB/s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOverallDownloadSpeed() const;
 
                     /**
                      * 设置整体下载速度，单位 KB/s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OverallDownloadSpeed 整体下载速度，单位 KB/s。
+                     * @param _overallDownloadSpeed 整体下载速度，单位 KB/s。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOverallDownloadSpeed(const double& _overallDownloadSpeed);
 
                     /**
                      * 判断参数 OverallDownloadSpeed 是否已赋值
                      * @return OverallDownloadSpeed 是否已赋值
+                     * 
                      */
                     bool OverallDownloadSpeedHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenderTime 渲染时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRenderTime() const;
 
                     /**
                      * 设置渲染时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenderTime 渲染时间，单位 ms。
+                     * @param _renderTime 渲染时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenderTime(const int64_t& _renderTime);
 
                     /**
                      * 判断参数 RenderTime 是否已赋值
                      * @return RenderTime 是否已赋值
+                     * 
                      */
                     bool RenderTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentFinishTime 文档完成时间, 单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDocumentFinishTime() const;
 
                     /**
                      * 设置文档完成时间, 单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DocumentFinishTime 文档完成时间, 单位 ms。
+                     * @param _documentFinishTime 文档完成时间, 单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDocumentFinishTime(const int64_t& _documentFinishTime);
 
                     /**
                      * 判断参数 DocumentFinishTime 是否已赋值
                      * @return DocumentFinishTime 是否已赋值
+                     * 
                      */
                     bool DocumentFinishTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcpConnectionTime 基础文档TCP连接时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTcpConnectionTime() const;
 
                     /**
                      * 设置基础文档TCP连接时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TcpConnectionTime 基础文档TCP连接时间，单位 ms。
+                     * @param _tcpConnectionTime 基础文档TCP连接时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTcpConnectionTime(const int64_t& _tcpConnectionTime);
 
                     /**
                      * 判断参数 TcpConnectionTime 是否已赋值
                      * @return TcpConnectionTime 是否已赋值
+                     * 
                      */
                     bool TcpConnectionTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTime 基础文档服务器响应时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResponseTime() const;
 
                     /**
                      * 设置基础文档服务器响应时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseTime 基础文档服务器响应时间，单位 ms。
+                     * @param _responseTime 基础文档服务器响应时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseTime(const int64_t& _responseTime);
 
                     /**
                      * 判断参数 ResponseTime 是否已赋值
                      * @return ResponseTime 是否已赋值
+                     * 
                      */
                     bool ResponseTimeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileDownloadTime 基础文档下载时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFileDownloadTime() const;
 
                     /**
                      * 设置基础文档下载时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileDownloadTime 基础文档下载时间，单位 ms。
+                     * @param _fileDownloadTime 基础文档下载时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileDownloadTime(const int64_t& _fileDownloadTime);
 
                     /**
                      * 判断参数 FileDownloadTime 是否已赋值
                      * @return FileDownloadTime 是否已赋值
+                     * 
                      */
                     bool FileDownloadTimeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadTime 整体性能，测试总时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLoadTime() const;
 
                     /**
                      * 设置整体性能，测试总时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadTime 整体性能，测试总时间，单位 ms。
+                     * @param _loadTime 整体性能，测试总时间，单位 ms。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadTime(const int64_t& _loadTime);
 
                     /**
                      * 判断参数 LoadTime 是否已赋值
                      * @return LoadTime 是否已赋值
+                     * 
                      */
                     bool LoadTimeHasBeenSet() const;
 

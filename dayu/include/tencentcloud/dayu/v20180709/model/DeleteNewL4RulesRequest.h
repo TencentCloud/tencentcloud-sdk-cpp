@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP）
                      * @return Business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取删除接口结构体
                      * @return Rule 删除接口结构体
+                     * 
                      */
                     std::vector<L4DelRule> GetRule() const;
 
                     /**
                      * 设置删除接口结构体
-                     * @param Rule 删除接口结构体
+                     * @param _rule 删除接口结构体
+                     * 
                      */
                     void SetRule(const std::vector<L4DelRule>& _rule);
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 

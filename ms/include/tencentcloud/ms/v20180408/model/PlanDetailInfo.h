@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取默认策略，1为默认，0为非默认
                      * @return IsDefault 默认策略，1为默认，0为非默认
+                     * 
                      */
                     uint64_t GetIsDefault() const;
 
                     /**
                      * 设置默认策略，1为默认，0为非默认
-                     * @param IsDefault 默认策略，1为默认，0为非默认
+                     * @param _isDefault 默认策略，1为默认，0为非默认
+                     * 
                      */
                     void SetIsDefault(const uint64_t& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 
                     /**
                      * 获取策略id
                      * @return PlanId 策略id
+                     * 
                      */
                     uint64_t GetPlanId() const;
 
                     /**
                      * 设置策略id
-                     * @param PlanId 策略id
+                     * @param _planId 策略id
+                     * 
                      */
                     void SetPlanId(const uint64_t& _planId);
 
                     /**
                      * 判断参数 PlanId 是否已赋值
                      * @return PlanId 是否已赋值
+                     * 
                      */
                     bool PlanIdHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return PlanName 策略名称
+                     * 
                      */
                     std::string GetPlanName() const;
 
                     /**
                      * 设置策略名称
-                     * @param PlanName 策略名称
+                     * @param _planName 策略名称
+                     * 
                      */
                     void SetPlanName(const std::string& _planName);
 
                     /**
                      * 判断参数 PlanName 是否已赋值
                      * @return PlanName 是否已赋值
+                     * 
                      */
                     bool PlanNameHasBeenSet() const;
 
                     /**
                      * 获取策略信息
                      * @return PlanInfo 策略信息
+                     * 
                      */
                     PlanInfo GetPlanInfo() const;
 
                     /**
                      * 设置策略信息
-                     * @param PlanInfo 策略信息
+                     * @param _planInfo 策略信息
+                     * 
                      */
                     void SetPlanInfo(const PlanInfo& _planInfo);
 
                     /**
                      * 判断参数 PlanInfo 是否已赋值
                      * @return PlanInfo 是否已赋值
+                     * 
                      */
                     bool PlanInfoHasBeenSet() const;
 

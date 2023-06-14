@@ -50,324 +50,378 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取节点池ID
                      * @return NodePoolId 节点池ID
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置节点池ID
-                     * @param NodePoolId 节点池ID
+                     * @param _nodePoolId 节点池ID
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取最大节点数
                      * @return MaxNodesNum 最大节点数
+                     * 
                      */
                     int64_t GetMaxNodesNum() const;
 
                     /**
                      * 设置最大节点数
-                     * @param MaxNodesNum 最大节点数
+                     * @param _maxNodesNum 最大节点数
+                     * 
                      */
                     void SetMaxNodesNum(const int64_t& _maxNodesNum);
 
                     /**
                      * 判断参数 MaxNodesNum 是否已赋值
                      * @return MaxNodesNum 是否已赋值
+                     * 
                      */
                     bool MaxNodesNumHasBeenSet() const;
 
                     /**
                      * 获取最小节点数
                      * @return MinNodesNum 最小节点数
+                     * 
                      */
                     int64_t GetMinNodesNum() const;
 
                     /**
                      * 设置最小节点数
-                     * @param MinNodesNum 最小节点数
+                     * @param _minNodesNum 最小节点数
+                     * 
                      */
                     void SetMinNodesNum(const int64_t& _minNodesNum);
 
                     /**
                      * 判断参数 MinNodesNum 是否已赋值
                      * @return MinNodesNum 是否已赋值
+                     * 
                      */
                     bool MinNodesNumHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Labels 标签
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置标签
-                     * @param Labels 标签
+                     * @param _labels 标签
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取污点
                      * @return Taints 污点
+                     * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
                      * 设置污点
-                     * @param Taints 污点
+                     * @param _taints 污点
+                     * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
 
                     /**
                      * 判断参数 Taints 是否已赋值
                      * @return Taints 是否已赋值
+                     * 
                      */
                     bool TaintsHasBeenSet() const;
 
                     /**
                      * 获取是否开启伸缩
                      * @return EnableAutoscale 是否开启伸缩
+                     * 
                      */
                     bool GetEnableAutoscale() const;
 
                     /**
                      * 设置是否开启伸缩
-                     * @param EnableAutoscale 是否开启伸缩
+                     * @param _enableAutoscale 是否开启伸缩
+                     * 
                      */
                     void SetEnableAutoscale(const bool& _enableAutoscale);
 
                     /**
                      * 判断参数 EnableAutoscale 是否已赋值
                      * @return EnableAutoscale 是否已赋值
+                     * 
                      */
                     bool EnableAutoscaleHasBeenSet() const;
 
                     /**
                      * 获取操作系统名称
                      * @return OsName 操作系统名称
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统名称
-                     * @param OsName 操作系统名称
+                     * @param _osName 操作系统名称
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
                      * @return OsCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-                     * @param OsCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @param _osCustomizeType 镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
 
                     /**
                      * 判断参数 OsCustomizeType 是否已赋值
                      * @return OsCustomizeType 是否已赋值
+                     * 
                      */
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
                      * 获取GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
                      * @return GPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * 
                      */
                     GPUArgs GetGPUArgs() const;
 
                     /**
                      * 设置GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
-                     * @param GPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * @param _gPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * 
                      */
                     void SetGPUArgs(const GPUArgs& _gPUArgs);
 
                     /**
                      * 判断参数 GPUArgs 是否已赋值
                      * @return GPUArgs 是否已赋值
+                     * 
                      */
                     bool GPUArgsHasBeenSet() const;
 
                     /**
                      * 获取base64编码后的自定义脚本
                      * @return UserScript base64编码后的自定义脚本
+                     * 
                      */
                     std::string GetUserScript() const;
 
                     /**
                      * 设置base64编码后的自定义脚本
-                     * @param UserScript base64编码后的自定义脚本
+                     * @param _userScript base64编码后的自定义脚本
+                     * 
                      */
                     void SetUserScript(const std::string& _userScript);
 
                     /**
                      * 判断参数 UserScript 是否已赋值
                      * @return UserScript 是否已赋值
+                     * 
                      */
                     bool UserScriptHasBeenSet() const;
 
                     /**
                      * 获取更新label和taint时忽略存量节点
                      * @return IgnoreExistedNode 更新label和taint时忽略存量节点
+                     * 
                      */
                     bool GetIgnoreExistedNode() const;
 
                     /**
                      * 设置更新label和taint时忽略存量节点
-                     * @param IgnoreExistedNode 更新label和taint时忽略存量节点
+                     * @param _ignoreExistedNode 更新label和taint时忽略存量节点
+                     * 
                      */
                     void SetIgnoreExistedNode(const bool& _ignoreExistedNode);
 
                     /**
                      * 判断参数 IgnoreExistedNode 是否已赋值
                      * @return IgnoreExistedNode 是否已赋值
+                     * 
                      */
                     bool IgnoreExistedNodeHasBeenSet() const;
 
                     /**
                      * 获取节点自定义参数
                      * @return ExtraArgs 节点自定义参数
+                     * 
                      */
                     InstanceExtraArgs GetExtraArgs() const;
 
                     /**
                      * 设置节点自定义参数
-                     * @param ExtraArgs 节点自定义参数
+                     * @param _extraArgs 节点自定义参数
+                     * 
                      */
                     void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
 
                     /**
                      * 判断参数 ExtraArgs 是否已赋值
                      * @return ExtraArgs 是否已赋值
+                     * 
                      */
                     bool ExtraArgsHasBeenSet() const;
 
                     /**
                      * 获取资源标签
                      * @return Tags 资源标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置资源标签
-                     * @param Tags 资源标签
+                     * @param _tags 资源标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
                      * @return Unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * 
                      */
                     int64_t GetUnschedulable() const;
 
                     /**
                      * 设置设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
-                     * @param Unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * @param _unschedulable 设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.
+                     * 
                      */
                     void SetUnschedulable(const int64_t& _unschedulable);
 
                     /**
                      * 判断参数 Unschedulable 是否已赋值
                      * @return Unschedulable 是否已赋值
+                     * 
                      */
                     bool UnschedulableHasBeenSet() const;
 
                     /**
                      * 获取删除保护开关
                      * @return DeletionProtection 删除保护开关
+                     * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
                      * 设置删除保护开关
-                     * @param DeletionProtection 删除保护开关
+                     * @param _deletionProtection 删除保护开关
+                     * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
 
                     /**
                      * 判断参数 DeletionProtection 是否已赋值
                      * @return DeletionProtection 是否已赋值
+                     * 
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
                      * 获取dockerd --graph 指定值, 默认为 /var/lib/docker
                      * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * 
                      */
                     std::string GetDockerGraphPath() const;
 
                     /**
                      * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
-                     * @param DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * 
                      */
                     void SetDockerGraphPath(const std::string& _dockerGraphPath);
 
                     /**
                      * 判断参数 DockerGraphPath 是否已赋值
                      * @return DockerGraphPath 是否已赋值
+                     * 
                      */
                     bool DockerGraphPathHasBeenSet() const;
 

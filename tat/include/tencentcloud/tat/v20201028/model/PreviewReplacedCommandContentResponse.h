@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取自定义参数替换后的，经Base64编码的命令内容。
                      * @return ReplacedContent 自定义参数替换后的，经Base64编码的命令内容。
+                     * 
                      */
                     std::string GetReplacedContent() const;
 
                     /**
                      * 判断参数 ReplacedContent 是否已赋值
                      * @return ReplacedContent 是否已赋值
+                     * 
                      */
                     bool ReplacedContentHasBeenSet() const;
 

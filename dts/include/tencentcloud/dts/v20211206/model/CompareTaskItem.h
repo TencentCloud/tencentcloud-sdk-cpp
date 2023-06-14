@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobId 任务id
+                     * @param _jobId 任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareTaskId 对比任务 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
                      * 设置对比任务 Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareTaskId 对比任务 Id
+                     * @param _compareTaskId 对比任务 Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
 
                     /**
                      * 判断参数 CompareTaskId 是否已赋值
                      * @return CompareTaskId 是否已赋值
+                     * 
                      */
                     bool CompareTaskIdHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 对比任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置对比任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 对比任务名称
+                     * @param _taskName 对比任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * @param _status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 对比任务配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareObject GetConfig() const;
 
                     /**
                      * 设置对比任务配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Config 对比任务配置
+                     * @param _config 对比任务配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConfig(const CompareObject& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckProcess 对比任务校验详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ProcessProgress GetCheckProcess() const;
 
                     /**
                      * 设置对比任务校验详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckProcess 对比任务校验详情
+                     * @param _checkProcess 对比任务校验详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckProcess(const ProcessProgress& _checkProcess);
 
                     /**
                      * 判断参数 CheckProcess 是否已赋值
                      * @return CheckProcess 是否已赋值
+                     * 
                      */
                     bool CheckProcessHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareProcess 对比任务运行详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ProcessProgress GetCompareProcess() const;
 
                     /**
                      * 设置对比任务运行详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareProcess 对比任务运行详情
+                     * @param _compareProcess 对比任务运行详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareProcess(const ProcessProgress& _compareProcess);
 
                     /**
                      * 判断参数 CompareProcess 是否已赋值
                      * @return CompareProcess 是否已赋值
+                     * 
                      */
                     bool CompareProcessHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConclusion() const;
 
                     /**
                      * 设置对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
+                     * @param _conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConclusion(const std::string& _conclusion);
 
                     /**
                      * 判断参数 Conclusion 是否已赋值
                      * @return Conclusion 是否已赋值
+                     * 
                      */
                     bool ConclusionHasBeenSet() const;
 
@@ -230,20 +254,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedAt 任务创建时间
+                     * @param _createdAt 任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -252,20 +279,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartedAt 任务启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
                      * 设置任务启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartedAt 任务启动时间
+                     * @param _startedAt 任务启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
 
                     /**
                      * 判断参数 StartedAt 是否已赋值
                      * @return StartedAt 是否已赋值
+                     * 
                      */
                     bool StartedAtHasBeenSet() const;
 
@@ -274,20 +304,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedAt 对比结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
                      * 设置对比结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishedAt 对比结束时间
+                     * @param _finishedAt 对比结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
 
                     /**
                      * 判断参数 FinishedAt 是否已赋值
                      * @return FinishedAt 是否已赋值
+                     * 
                      */
                     bool FinishedAtHasBeenSet() const;
 
@@ -296,20 +329,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * @param _method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -318,20 +354,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Options 对比配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareOptions GetOptions() const;
 
                     /**
                      * 设置对比配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Options 对比配置信息
+                     * @param _options 对比配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOptions(const CompareOptions& _options);
 
                     /**
                      * 判断参数 Options 是否已赋值
                      * @return Options 是否已赋值
+                     * 
                      */
                     bool OptionsHasBeenSet() const;
 
@@ -340,20 +379,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 一致性校验提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置一致性校验提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 一致性校验提示信息
+                     * @param _message 一致性校验提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

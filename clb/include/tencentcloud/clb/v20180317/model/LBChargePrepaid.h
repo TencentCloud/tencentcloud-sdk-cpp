@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RenewFlag 续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
+                     * @param _renewFlag 续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Period 购买时长，单位：月
+                     * @param _period 购买时长，单位：月
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

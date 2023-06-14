@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取NodeGroup名称
                      * @return NodeGroupName NodeGroup名称
+                     * 
                      */
                     std::string GetNodeGroupName() const;
 
                     /**
                      * 设置NodeGroup名称
-                     * @param NodeGroupName NodeGroup名称
+                     * @param _nodeGroupName NodeGroup名称
+                     * 
                      */
                     void SetNodeGroupName(const std::string& _nodeGroupName);
 
                     /**
                      * 判断参数 NodeGroupName 是否已赋值
                      * @return NodeGroupName 是否已赋值
+                     * 
                      */
                     bool NodeGroupNameHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeploymentGridList DeploymentGrid数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GridDetail> GetDeploymentGridList() const;
 
                     /**
                      * 设置DeploymentGrid数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeploymentGridList DeploymentGrid数组
+                     * @param _deploymentGridList DeploymentGrid数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeploymentGridList(const std::vector<GridDetail>& _deploymentGridList);
 
                     /**
                      * 判断参数 DeploymentGridList 是否已赋值
                      * @return DeploymentGridList 是否已赋值
+                     * 
                      */
                     bool DeploymentGridListHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatefulSetGridList StatefulSetGrid数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GridDetail> GetStatefulSetGridList() const;
 
                     /**
                      * 设置StatefulSetGrid数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatefulSetGridList StatefulSetGrid数组
+                     * @param _statefulSetGridList StatefulSetGrid数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatefulSetGridList(const std::vector<GridDetail>& _statefulSetGridList);
 
                     /**
                      * 判断参数 StatefulSetGridList 是否已赋值
                      * @return StatefulSetGridList 是否已赋值
+                     * 
                      */
                     bool StatefulSetGridListHasBeenSet() const;
 
@@ -150,20 +165,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protect 是否平台保护
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetProtect() const;
 
                     /**
                      * 设置是否平台保护
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protect 是否平台保护
+                     * @param _protect 是否平台保护
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtect(const bool& _protect);
 
                     /**
                      * 判断参数 Protect 是否已赋值
                      * @return Protect 是否已赋值
+                     * 
                      */
                     bool ProtectHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return BizId 应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID
-                     * @param BizId 应用ID
+                     * @param _bizId 应用ID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取需要送检的所有房间号。多个房间号之间用","分隔。示例："0001,0002,0003"
                      * @return RoomIdString 需要送检的所有房间号。多个房间号之间用","分隔。示例："0001,0002,0003"
+                     * 
                      */
                     std::string GetRoomIdString() const;
 
                     /**
                      * 设置需要送检的所有房间号。多个房间号之间用","分隔。示例："0001,0002,0003"
-                     * @param RoomIdString 需要送检的所有房间号。多个房间号之间用","分隔。示例："0001,0002,0003"
+                     * @param _roomIdString 需要送检的所有房间号。多个房间号之间用","分隔。示例："0001,0002,0003"
+                     * 
                      */
                     void SetRoomIdString(const std::string& _roomIdString);
 
                     /**
                      * 判断参数 RoomIdString 是否已赋值
                      * @return RoomIdString 是否已赋值
+                     * 
                      */
                     bool RoomIdStringHasBeenSet() const;
 
                     /**
                      * 获取符合此正则表达式规则的房间号将被送检。示例：["^6.*"] 表示所有以6开头的房间号将被送检
                      * @return RoomIdRegex 符合此正则表达式规则的房间号将被送检。示例：["^6.*"] 表示所有以6开头的房间号将被送检
+                     * 
                      */
                     std::vector<std::string> GetRoomIdRegex() const;
 
                     /**
                      * 设置符合此正则表达式规则的房间号将被送检。示例：["^6.*"] 表示所有以6开头的房间号将被送检
-                     * @param RoomIdRegex 符合此正则表达式规则的房间号将被送检。示例：["^6.*"] 表示所有以6开头的房间号将被送检
+                     * @param _roomIdRegex 符合此正则表达式规则的房间号将被送检。示例：["^6.*"] 表示所有以6开头的房间号将被送检
+                     * 
                      */
                     void SetRoomIdRegex(const std::vector<std::string>& _roomIdRegex);
 
                     /**
                      * 判断参数 RoomIdRegex 是否已赋值
                      * @return RoomIdRegex 是否已赋值
+                     * 
                      */
                     bool RoomIdRegexHasBeenSet() const;
 

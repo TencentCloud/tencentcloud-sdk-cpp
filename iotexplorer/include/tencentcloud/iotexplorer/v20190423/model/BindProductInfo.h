@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取产品ID。
                      * @return ProductId 产品ID。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID。
-                     * @param ProductId 产品ID。
+                     * @param _productId 产品ID。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取产品名称。
                      * @return ProductName 产品名称。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称。
-                     * @param ProductName 产品名称。
+                     * @param _productName 产品名称。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 产品所属项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置产品所属项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectId 产品所属项目ID。
+                     * @param _projectId 产品所属项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataProtocol 物模型类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDataProtocol() const;
 
                     /**
                      * 设置物模型类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataProtocol 物模型类型。
+                     * @param _dataProtocol 物模型类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataProtocol(const int64_t& _dataProtocol);
 
                     /**
                      * 判断参数 DataProtocol 是否已赋值
                      * @return DataProtocol 是否已赋值
+                     * 
                      */
                     bool DataProtocolHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 产品分组模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置产品分组模板ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CategoryId 产品分组模板ID
+                     * @param _categoryId 产品分组模板ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductType 产品类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProductType() const;
 
                     /**
                      * 设置产品类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductType 产品类型
+                     * @param _productType 产品类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductType(const int64_t& _productType);
 
                     /**
                      * 判断参数 ProductType 是否已赋值
                      * @return ProductType 是否已赋值
+                     * 
                      */
                     bool ProductTypeHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetType 连接类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNetType() const;
 
                     /**
                      * 设置连接类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetType 连接类型
+                     * @param _netType 连接类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetType(const std::string& _netType);
 
                     /**
                      * 判断参数 NetType 是否已赋值
                      * @return NetType 是否已赋值
+                     * 
                      */
                     bool NetTypeHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevStatus 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDevStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DevStatus 状态
+                     * @param _devStatus 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDevStatus(const std::string& _devStatus);
 
                     /**
                      * 判断参数 DevStatus 是否已赋值
                      * @return DevStatus 是否已赋值
+                     * 
                      */
                     bool DevStatusHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductOwnerName 产品拥有者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductOwnerName() const;
 
                     /**
                      * 设置产品拥有者名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductOwnerName 产品拥有者名称
+                     * @param _productOwnerName 产品拥有者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductOwnerName(const std::string& _productOwnerName);
 
                     /**
                      * 判断参数 ProductOwnerName 是否已赋值
                      * @return ProductOwnerName 是否已赋值
+                     * 
                      */
                     bool ProductOwnerNameHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的绑定关系列表。
                      * @return BackendSet 返回的绑定关系列表。
+                     * 
                      */
                     std::vector<L7Backend> GetBackendSet() const;
 
                     /**
                      * 判断参数 BackendSet 是否已赋值
                      * @return BackendSet 是否已赋值
+                     * 
                      */
                     bool BackendSetHasBeenSet() const;
 

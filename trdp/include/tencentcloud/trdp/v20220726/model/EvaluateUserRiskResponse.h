@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvaluationResult 评估结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EvaluationResult GetEvaluationResult() const;
 
                     /**
                      * 判断参数 EvaluationResult 是否已赋值
                      * @return EvaluationResult 是否已赋值
+                     * 
                      */
                     bool EvaluationResultHasBeenSet() const;
 

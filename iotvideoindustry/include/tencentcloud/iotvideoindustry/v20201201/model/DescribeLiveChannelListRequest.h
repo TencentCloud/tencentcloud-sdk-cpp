@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取最大数
                      * @return Limit 最大数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大数
-                     * @param Limit 最大数
+                     * @param _limit 最大数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取直播频道类型，1：固定直播；2：移动直播
                      * @return LiveChannelType 直播频道类型，1：固定直播；2：移动直播
+                     * 
                      */
                     int64_t GetLiveChannelType() const;
 
                     /**
                      * 设置直播频道类型，1：固定直播；2：移动直播
-                     * @param LiveChannelType 直播频道类型，1：固定直播；2：移动直播
+                     * @param _liveChannelType 直播频道类型，1：固定直播；2：移动直播
+                     * 
                      */
                     void SetLiveChannelType(const int64_t& _liveChannelType);
 
                     /**
                      * 判断参数 LiveChannelType 是否已赋值
                      * @return LiveChannelType 是否已赋值
+                     * 
                      */
                     bool LiveChannelTypeHasBeenSet() const;
 
                     /**
                      * 获取直播录制计划ID, null: 直播录制计划为空
                      * @return RecordPlanId 直播录制计划ID, null: 直播录制计划为空
+                     * 
                      */
                     std::string GetRecordPlanId() const;
 
                     /**
                      * 设置直播录制计划ID, null: 直播录制计划为空
-                     * @param RecordPlanId 直播录制计划ID, null: 直播录制计划为空
+                     * @param _recordPlanId 直播录制计划ID, null: 直播录制计划为空
+                     * 
                      */
                     void SetRecordPlanId(const std::string& _recordPlanId);
 
                     /**
                      * 判断参数 RecordPlanId 是否已赋值
                      * @return RecordPlanId 是否已赋值
+                     * 
                      */
                     bool RecordPlanIdHasBeenSet() const;
 
                     /**
                      * 获取频道名称 (支持模糊搜索)
                      * @return LiveChannelName 频道名称 (支持模糊搜索)
+                     * 
                      */
                     std::string GetLiveChannelName() const;
 
                     /**
                      * 设置频道名称 (支持模糊搜索)
-                     * @param LiveChannelName 频道名称 (支持模糊搜索)
+                     * @param _liveChannelName 频道名称 (支持模糊搜索)
+                     * 
                      */
                     void SetLiveChannelName(const std::string& _liveChannelName);
 
                     /**
                      * 判断参数 LiveChannelName 是否已赋值
                      * @return LiveChannelName 是否已赋值
+                     * 
                      */
                     bool LiveChannelNameHasBeenSet() const;
 

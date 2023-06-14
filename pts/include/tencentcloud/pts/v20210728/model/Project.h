@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名
                      * @return Name 项目名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名
-                     * @param Name 项目名
+                     * @param _name 项目名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 项目描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置项目描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 项目描述
+                     * @param _description 项目描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -110,128 +119,149 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TagSpec> GetTags() const;
 
                     /**
                      * 设置标签数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签数组
+                     * @param _tags 标签数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<TagSpec>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取项目状态
                      * @return Status 项目状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置项目状态
-                     * @param Status 项目状态
+                     * @param _status 项目状态
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedAt 创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return UpdatedAt 修改时间
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置修改时间
-                     * @param UpdatedAt 修改时间
+                     * @param _updatedAt 修改时间
+                     * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
                      * 获取App ID
                      * @return AppId App ID
+                     * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置App ID
-                     * @param AppId App ID
+                     * @param _appId App ID
+                     * 
                      */
                     void SetAppId(const int64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return Uin 用户ID
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户ID
-                     * @param Uin 用户ID
+                     * @param _uin 用户ID
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取子用户ID
                      * @return SubAccountUin 子用户ID
+                     * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置子用户ID
-                     * @param SubAccountUin 子用户ID
+                     * @param _subAccountUin 子用户ID
+                     * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
 
                     /**
                      * 判断参数 SubAccountUin 是否已赋值
                      * @return SubAccountUin 是否已赋值
+                     * 
                      */
                     bool SubAccountUinHasBeenSet() const;
 

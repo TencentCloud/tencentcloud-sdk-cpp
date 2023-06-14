@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取Tag列表
                      * @return Tags Tag列表
+                     * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置Tag列表
-                     * @param Tags Tag列表
+                     * @param _tags Tag列表
+                     * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取搜索实例名
                      * @return InstanceName 搜索实例名
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置搜索实例名
-                     * @param InstanceName 搜索实例名
+                     * @param _instanceName 搜索实例名
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取过滤实例ID
                      * @return InstanceIds 过滤实例ID
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置过滤实例ID
-                     * @param InstanceIds 过滤实例ID
+                     * @param _instanceIds 过滤实例ID
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取是否查询官方demo实例
                      * @return DemoInstanceFlag 是否查询官方demo实例
+                     * 
                      */
                     int64_t GetDemoInstanceFlag() const;
 
                     /**
                      * 设置是否查询官方demo实例
-                     * @param DemoInstanceFlag 是否查询官方demo实例
+                     * @param _demoInstanceFlag 是否查询官方demo实例
+                     * 
                      */
                     void SetDemoInstanceFlag(const int64_t& _demoInstanceFlag);
 
                     /**
                      * 判断参数 DemoInstanceFlag 是否已赋值
                      * @return DemoInstanceFlag 是否已赋值
+                     * 
                      */
                     bool DemoInstanceFlagHasBeenSet() const;
 

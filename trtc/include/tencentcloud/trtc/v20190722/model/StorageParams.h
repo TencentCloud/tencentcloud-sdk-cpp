@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
                      * @return CloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * 
                      */
                     CloudStorage GetCloudStorage() const;
 
                     /**
                      * 设置第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
-                     * @param CloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * @param _cloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * 
                      */
                     void SetCloudStorage(const CloudStorage& _cloudStorage);
 
                     /**
                      * 判断参数 CloudStorage 是否已赋值
                      * @return CloudStorage 是否已赋值
+                     * 
                      */
                     bool CloudStorageHasBeenSet() const;
 
                     /**
                      * 获取腾讯云云点播的账号信息。
                      * @return CloudVod 腾讯云云点播的账号信息。
+                     * 
                      */
                     CloudVod GetCloudVod() const;
 
                     /**
                      * 设置腾讯云云点播的账号信息。
-                     * @param CloudVod 腾讯云云点播的账号信息。
+                     * @param _cloudVod 腾讯云云点播的账号信息。
+                     * 
                      */
                     void SetCloudVod(const CloudVod& _cloudVod);
 
                     /**
                      * 判断参数 CloudVod 是否已赋值
                      * @return CloudVod 是否已赋值
+                     * 
                      */
                     bool CloudVodHasBeenSet() const;
 

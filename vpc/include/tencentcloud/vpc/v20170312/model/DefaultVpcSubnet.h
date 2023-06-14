@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取默认VpcId。
                      * @return VpcId 默认VpcId。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置默认VpcId。
-                     * @param VpcId 默认VpcId。
+                     * @param _vpcId 默认VpcId。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取默认SubnetId。
                      * @return SubnetId 默认SubnetId。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置默认SubnetId。
-                     * @param SubnetId 默认SubnetId。
+                     * @param _subnetId 默认SubnetId。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取默认Vpc名字。
                      * @return VpcName 默认Vpc名字。
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置默认Vpc名字。
-                     * @param VpcName 默认Vpc名字。
+                     * @param _vpcName 默认Vpc名字。
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取默认Subnet名字。
                      * @return SubnetName 默认Subnet名字。
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置默认Subnet名字。
-                     * @param SubnetName 默认Subnet名字。
+                     * @param _subnetName 默认Subnet名字。
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
                     /**
                      * 获取默认子网网段。
                      * @return CidrBlock 默认子网网段。
+                     * 
                      */
                     std::string GetCidrBlock() const;
 
                     /**
                      * 设置默认子网网段。
-                     * @param CidrBlock 默认子网网段。
+                     * @param _cidrBlock 默认子网网段。
+                     * 
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
                     /**
                      * 判断参数 CidrBlock 是否已赋值
                      * @return CidrBlock 是否已赋值
+                     * 
                      */
                     bool CidrBlockHasBeenSet() const;
 

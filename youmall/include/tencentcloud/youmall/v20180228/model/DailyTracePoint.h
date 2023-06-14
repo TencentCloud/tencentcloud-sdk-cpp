@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取轨迹日期
                      * @return TraceDate 轨迹日期
+                     * 
                      */
                     std::string GetTraceDate() const;
 
                     /**
                      * 设置轨迹日期
-                     * @param TraceDate 轨迹日期
+                     * @param _traceDate 轨迹日期
+                     * 
                      */
                     void SetTraceDate(const std::string& _traceDate);
 
                     /**
                      * 判断参数 TraceDate 是否已赋值
                      * @return TraceDate 是否已赋值
+                     * 
                      */
                     bool TraceDateHasBeenSet() const;
 
                     /**
                      * 获取轨迹点序列
                      * @return TracePointSet 轨迹点序列
+                     * 
                      */
                     std::vector<PersonTracePoint> GetTracePointSet() const;
 
                     /**
                      * 设置轨迹点序列
-                     * @param TracePointSet 轨迹点序列
+                     * @param _tracePointSet 轨迹点序列
+                     * 
                      */
                     void SetTracePointSet(const std::vector<PersonTracePoint>& _tracePointSet);
 
                     /**
                      * 判断参数 TracePointSet 是否已赋值
                      * @return TracePointSet 是否已赋值
+                     * 
                      */
                     bool TracePointSetHasBeenSet() const;
 

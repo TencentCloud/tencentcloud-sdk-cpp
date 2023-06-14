@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取排行类别(PRO-Topic生产流量/CON-Topic消费流量)
                      * @return RankingType 排行类别(PRO-Topic生产流量/CON-Topic消费流量)
+                     * 
                      */
                     std::string GetRankingType() const;
 
                     /**
                      * 设置排行类别(PRO-Topic生产流量/CON-Topic消费流量)
-                     * @param RankingType 排行类别(PRO-Topic生产流量/CON-Topic消费流量)
+                     * @param _rankingType 排行类别(PRO-Topic生产流量/CON-Topic消费流量)
+                     * 
                      */
                     void SetRankingType(const std::string& _rankingType);
 
                     /**
                      * 判断参数 RankingType 是否已赋值
                      * @return RankingType 是否已赋值
+                     * 
                      */
                     bool RankingTypeHasBeenSet() const;
 
                     /**
                      * 获取排行起始日期
                      * @return BeginDate 排行起始日期
+                     * 
                      */
                     std::string GetBeginDate() const;
 
                     /**
                      * 设置排行起始日期
-                     * @param BeginDate 排行起始日期
+                     * @param _beginDate 排行起始日期
+                     * 
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
                     /**
                      * 判断参数 BeginDate 是否已赋值
                      * @return BeginDate 是否已赋值
+                     * 
                      */
                     bool BeginDateHasBeenSet() const;
 
                     /**
                      * 获取排行结束日期
                      * @return EndDate 排行结束日期
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置排行结束日期
-                     * @param EndDate 排行结束日期
+                     * @param _endDate 排行结束日期
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取路由名称
                      * @return RouteName 路由名称
+                     * 
                      */
                     std::string GetRouteName() const;
 
                     /**
                      * 设置路由名称
-                     * @param RouteName 路由名称
+                     * @param _routeName 路由名称
+                     * 
                      */
                     void SetRouteName(const std::string& _routeName);
 
                     /**
                      * 判断参数 RouteName 是否已赋值
                      * @return RouteName 是否已赋值
+                     * 
                      */
                     bool RouteNameHasBeenSet() const;
 
                     /**
                      * 获取路由备注
                      * @return Descript 路由备注
+                     * 
                      */
                     std::string GetDescript() const;
 
                     /**
                      * 设置路由备注
-                     * @param Descript 路由备注
+                     * @param _descript 路由备注
+                     * 
                      */
                     void SetDescript(const std::string& _descript);
 
                     /**
                      * 判断参数 Descript 是否已赋值
                      * @return Descript 是否已赋值
+                     * 
                      */
                     bool DescriptHasBeenSet() const;
 

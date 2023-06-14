@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取案例名称
                      * @return Name 案例名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置案例名称
-                     * @param Name 案例名称
+                     * @param _name 案例名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取时间格式：如果选择触发时间：2022年6月21，则设置为20220621
                      * @return Dimension 时间格式：如果选择触发时间：2022年6月21，则设置为20220621
+                     * 
                      */
                     std::string GetDimension() const;
 
                     /**
                      * 设置时间格式：如果选择触发时间：2022年6月21，则设置为20220621
-                     * @param Dimension 时间格式：如果选择触发时间：2022年6月21，则设置为20220621
+                     * @param _dimension 时间格式：如果选择触发时间：2022年6月21，则设置为20220621
+                     * 
                      */
                     void SetDimension(const std::string& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

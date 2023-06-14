@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户所属组
                      * @return CloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置用户所属组
-                     * @param CloudStudioSessionTeam 用户所属组
+                     * @param _cloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取工作空间名称
                      * @return Name 工作空间名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置工作空间名称
-                     * @param Name 工作空间名称
+                     * @param _name 工作空间名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取工作空间ID
                      * @return WorkspaceId 工作空间ID
+                     * 
                      */
                     std::string GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间ID
-                     * @param WorkspaceId 工作空间ID
+                     * @param _workspaceId 工作空间ID
+                     * 
                      */
                     void SetWorkspaceId(const std::string& _workspaceId);
 
                     /**
                      * 判断参数 WorkspaceId 是否已赋值
                      * @return WorkspaceId 是否已赋值
+                     * 
                      */
                     bool WorkspaceIdHasBeenSet() const;
 

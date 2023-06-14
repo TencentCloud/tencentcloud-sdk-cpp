@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取高性能计算集群ID
                      * @return HpcClusterId 高性能计算集群ID
+                     * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
                      * 设置高性能计算集群ID
-                     * @param HpcClusterId 高性能计算集群ID
+                     * @param _hpcClusterId 高性能计算集群ID
+                     * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
 
                     /**
                      * 判断参数 HpcClusterId 是否已赋值
                      * @return HpcClusterId 是否已赋值
+                     * 
                      */
                     bool HpcClusterIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 高性能计算集群名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高性能计算集群名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 高性能计算集群名
+                     * @param _name 高性能计算集群名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -91,74 +97,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 高性能计算集群备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置高性能计算集群备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 高性能计算集群备注
+                     * @param _remark 高性能计算集群备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取集群下设备容量
                      * @return CvmQuotaTotal 集群下设备容量
+                     * 
                      */
                     uint64_t GetCvmQuotaTotal() const;
 
                     /**
                      * 设置集群下设备容量
-                     * @param CvmQuotaTotal 集群下设备容量
+                     * @param _cvmQuotaTotal 集群下设备容量
+                     * 
                      */
                     void SetCvmQuotaTotal(const uint64_t& _cvmQuotaTotal);
 
                     /**
                      * 判断参数 CvmQuotaTotal 是否已赋值
                      * @return CvmQuotaTotal 是否已赋值
+                     * 
                      */
                     bool CvmQuotaTotalHasBeenSet() const;
 
                     /**
                      * 获取集群所在可用区
                      * @return Zone 集群所在可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置集群所在可用区
-                     * @param Zone 集群所在可用区
+                     * @param _zone 集群所在可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取集群当前已有设备量
                      * @return CurrentNum 集群当前已有设备量
+                     * 
                      */
                     uint64_t GetCurrentNum() const;
 
                     /**
                      * 设置集群当前已有设备量
-                     * @param CurrentNum 集群当前已有设备量
+                     * @param _currentNum 集群当前已有设备量
+                     * 
                      */
                     void SetCurrentNum(const uint64_t& _currentNum);
 
                     /**
                      * 判断参数 CurrentNum 是否已赋值
                      * @return CurrentNum 是否已赋值
+                     * 
                      */
                     bool CurrentNumHasBeenSet() const;
 
@@ -167,20 +185,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 集群创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置集群创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 集群创建时间
+                     * @param _createTime 集群创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 集群内实例ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置集群内实例ID列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceIds 集群内实例ID列表
+                     * @param _instanceIds 集群内实例ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 云盘类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置云盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskType 云盘类型
+                     * @param _diskType 云盘类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSystem 文件系统(ext3/ext4/xfs)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFileSystem() const;
 
                     /**
                      * 设置文件系统(ext3/ext4/xfs)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSystem 文件系统(ext3/ext4/xfs)
+                     * @param _fileSystem 文件系统(ext3/ext4/xfs)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSystem(const std::string& _fileSystem);
 
                     /**
                      * 判断参数 FileSystem 是否已赋值
                      * @return FileSystem 是否已赋值
+                     * 
                      */
                     bool FileSystemHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 云盘大小(G）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置云盘大小(G）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskSize 云盘大小(G）
+                     * @param _diskSize 云盘大小(G）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoFormatAndMount 是否自动化格式盘并挂载
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoFormatAndMount() const;
 
                     /**
                      * 设置是否自动化格式盘并挂载
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoFormatAndMount 是否自动化格式盘并挂载
+                     * @param _autoFormatAndMount 是否自动化格式盘并挂载
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoFormatAndMount(const bool& _autoFormatAndMount);
 
                     /**
                      * 判断参数 AutoFormatAndMount 是否已赋值
                      * @return AutoFormatAndMount 是否已赋值
+                     * 
                      */
                     bool AutoFormatAndMountHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountTarget 挂载目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMountTarget() const;
 
                     /**
                      * 设置挂载目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MountTarget 挂载目录
+                     * @param _mountTarget 挂载目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMountTarget(const std::string& _mountTarget);
 
                     /**
                      * 判断参数 MountTarget 是否已赋值
                      * @return MountTarget 是否已赋值
+                     * 
                      */
                     bool MountTargetHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskPartition 挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDiskPartition() const;
 
                     /**
                      * 设置挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskPartition 挂载设备名或分区名，当且仅当添加已有节点时需要
+                     * @param _diskPartition 挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskPartition(const std::string& _diskPartition);
 
                     /**
                      * 判断参数 DiskPartition 是否已赋值
                      * @return DiskPartition 是否已赋值
+                     * 
                      */
                     bool DiskPartitionHasBeenSet() const;
 

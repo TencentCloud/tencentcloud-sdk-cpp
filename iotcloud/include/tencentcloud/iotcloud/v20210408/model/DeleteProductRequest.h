@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要删除的产品 ID
                      * @return ProductId 需要删除的产品 ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置需要删除的产品 ID
-                     * @param ProductId 需要删除的产品 ID
+                     * @param _productId 需要删除的产品 ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取删除LoRa产品需要skey
                      * @return Skey 删除LoRa产品需要skey
+                     * 
                      */
                     std::string GetSkey() const;
 
                     /**
                      * 设置删除LoRa产品需要skey
-                     * @param Skey 删除LoRa产品需要skey
+                     * @param _skey 删除LoRa产品需要skey
+                     * 
                      */
                     void SetSkey(const std::string& _skey);
 
                     /**
                      * 判断参数 Skey 是否已赋值
                      * @return Skey 是否已赋值
+                     * 
                      */
                     bool SkeyHasBeenSet() const;
 

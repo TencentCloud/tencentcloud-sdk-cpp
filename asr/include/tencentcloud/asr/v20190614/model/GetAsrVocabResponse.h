@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取热词表名称
                      * @return Name 热词表名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取热词表描述
                      * @return Description 热词表描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取热词表ID
                      * @return VocabId 热词表ID
+                     * 
                      */
                     std::string GetVocabId() const;
 
                     /**
                      * 判断参数 VocabId 是否已赋值
                      * @return VocabId 是否已赋值
+                     * 
                      */
                     bool VocabIdHasBeenSet() const;
 
                     /**
                      * 获取词权重列表
                      * @return WordWeights 词权重列表
+                     * 
                      */
                     std::vector<HotWord> GetWordWeights() const;
 
                     /**
                      * 判断参数 WordWeights 是否已赋值
                      * @return WordWeights 是否已赋值
+                     * 
                      */
                     bool WordWeightsHasBeenSet() const;
 
                     /**
                      * 获取词表创建时间
                      * @return CreateTime 词表创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取词表更新时间
                      * @return UpdateTime 词表更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
                      * @return State 热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

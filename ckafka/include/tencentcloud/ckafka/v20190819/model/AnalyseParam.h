@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取解析格式，JSON，DELIMITER分隔符，REGULAR正则提取，SOURCE处理上层所有结果
                      * @return Format 解析格式，JSON，DELIMITER分隔符，REGULAR正则提取，SOURCE处理上层所有结果
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置解析格式，JSON，DELIMITER分隔符，REGULAR正则提取，SOURCE处理上层所有结果
-                     * @param Format 解析格式，JSON，DELIMITER分隔符，REGULAR正则提取，SOURCE处理上层所有结果
+                     * @param _format 解析格式，JSON，DELIMITER分隔符，REGULAR正则提取，SOURCE处理上层所有结果
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regex 分隔符、正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置分隔符、正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Regex 分隔符、正则表达式
+                     * @param _regex 分隔符、正则表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputValueType 需再次处理的KEY——模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInputValueType() const;
 
                     /**
                      * 设置需再次处理的KEY——模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputValueType 需再次处理的KEY——模式
+                     * @param _inputValueType 需再次处理的KEY——模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInputValueType(const std::string& _inputValueType);
 
                     /**
                      * 判断参数 InputValueType 是否已赋值
                      * @return InputValueType 是否已赋值
+                     * 
                      */
                     bool InputValueTypeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputValue 需再次处理的KEY——KEY表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInputValue() const;
 
                     /**
                      * 设置需再次处理的KEY——KEY表达式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputValue 需再次处理的KEY——KEY表达式
+                     * @param _inputValue 需再次处理的KEY——KEY表达式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInputValue(const std::string& _inputValue);
 
                     /**
                      * 判断参数 InputValue 是否已赋值
                      * @return InputValue 是否已赋值
+                     * 
                      */
                     bool InputValueHasBeenSet() const;
 

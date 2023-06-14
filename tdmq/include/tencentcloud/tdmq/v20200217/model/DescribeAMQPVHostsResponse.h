@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取Vhost 列表
                      * @return VHosts Vhost 列表
+                     * 
                      */
                     std::vector<AMQPVHost> GetVHosts() const;
 
                     /**
                      * 判断参数 VHosts 是否已赋值
                      * @return VHosts 是否已赋值
+                     * 
                      */
                     bool VHostsHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return TotalCount 总条数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

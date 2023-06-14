@@ -48,72 +48,84 @@ namespace TencentCloud
                     /**
                      * 获取输入视频的类型，可以取的值为  File，Stream 两种。
                      * @return InputType 输入视频的类型，可以取的值为  File，Stream 两种。
+                     * 
                      */
                     std::string GetInputType() const;
 
                     /**
                      * 设置输入视频的类型，可以取的值为  File，Stream 两种。
-                     * @param InputType 输入视频的类型，可以取的值为  File，Stream 两种。
+                     * @param _inputType 输入视频的类型，可以取的值为  File，Stream 两种。
+                     * 
                      */
                     void SetInputType(const std::string& _inputType);
 
                     /**
                      * 判断参数 InputType 是否已赋值
                      * @return InputType 是否已赋值
+                     * 
                      */
                     bool InputTypeHasBeenSet() const;
 
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取输入的视频文件信息，当 InputType 为 File 时必填。
                      * @return FileInfos 输入的视频文件信息，当 InputType 为 File 时必填。
+                     * 
                      */
                     std::vector<EditMediaFileInfo> GetFileInfos() const;
 
                     /**
                      * 设置输入的视频文件信息，当 InputType 为 File 时必填。
-                     * @param FileInfos 输入的视频文件信息，当 InputType 为 File 时必填。
+                     * @param _fileInfos 输入的视频文件信息，当 InputType 为 File 时必填。
+                     * 
                      */
                     void SetFileInfos(const std::vector<EditMediaFileInfo>& _fileInfos);
 
                     /**
                      * 判断参数 FileInfos 是否已赋值
                      * @return FileInfos 是否已赋值
+                     * 
                      */
                     bool FileInfosHasBeenSet() const;
 
                     /**
                      * 获取输入的流信息，当 InputType 为 Stream 时必填。
                      * @return StreamInfos 输入的流信息，当 InputType 为 Stream 时必填。
+                     * 
                      */
                     std::vector<EditMediaStreamInfo> GetStreamInfos() const;
 
                     /**
                      * 设置输入的流信息，当 InputType 为 Stream 时必填。
-                     * @param StreamInfos 输入的流信息，当 InputType 为 Stream 时必填。
+                     * @param _streamInfos 输入的流信息，当 InputType 为 Stream 时必填。
+                     * 
                      */
                     void SetStreamInfos(const std::vector<EditMediaStreamInfo>& _streamInfos);
 
                     /**
                      * 判断参数 StreamInfos 是否已赋值
                      * @return StreamInfos 是否已赋值
+                     * 
                      */
                     bool StreamInfosHasBeenSet() const;
 
@@ -124,6 +136,7 @@ namespace TencentCloud
                      * @return Definition 编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
 <li>10：拼接时，以分辨率最高的输入为基准；</li>
 <li>20：拼接时，以码率最高的输入为基准。</li>
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
@@ -131,123 +144,143 @@ namespace TencentCloud
                      * 设置编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
 <li>10：拼接时，以分辨率最高的输入为基准；</li>
 <li>20：拼接时，以码率最高的输入为基准。</li>
-                     * @param Definition 编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
+                     * @param _definition 编辑模板 ID，取值有 10，20，不填代表使用 10 模板。
 <li>10：拼接时，以分辨率最高的输入为基准；</li>
 <li>20：拼接时，以码率最高的输入为基准。</li>
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
                      * @return ProcedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
+                     * 
                      */
                     std::string GetProcedureName() const;
 
                     /**
                      * 设置[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
-                     * @param ProcedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
+                     * @param _procedureName [任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。
+                     * 
                      */
                     void SetProcedureName(const std::string& _procedureName);
 
                     /**
                      * 判断参数 ProcedureName 是否已赋值
                      * @return ProcedureName 是否已赋值
+                     * 
                      */
                     bool ProcedureNameHasBeenSet() const;
 
                     /**
                      * 获取编辑后生成的文件配置。
                      * @return OutputConfig 编辑后生成的文件配置。
+                     * 
                      */
                     EditMediaOutputConfig GetOutputConfig() const;
 
                     /**
                      * 设置编辑后生成的文件配置。
-                     * @param OutputConfig 编辑后生成的文件配置。
+                     * @param _outputConfig 编辑后生成的文件配置。
+                     * 
                      */
                     void SetOutputConfig(const EditMediaOutputConfig& _outputConfig);
 
                     /**
                      * 判断参数 OutputConfig 是否已赋值
                      * @return OutputConfig 是否已赋值
+                     * 
                      */
                     bool OutputConfigHasBeenSet() const;
 
                     /**
                      * 获取标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。
                      * @return SessionContext 标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。
-                     * @param SessionContext 标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。
+                     * @param _sessionContext 标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 
                     /**
                      * 获取任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      * @return TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
                      * 设置任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * @param _tasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
 
                     /**
                      * 判断参数 TasksPriority 是否已赋值
                      * @return TasksPriority 是否已赋值
+                     * 
                      */
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
                      * 获取用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param SessionId 用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param _sessionId 用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取保留字段，特殊用途时使用。
                      * @return ExtInfo 保留字段，特殊用途时使用。
+                     * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
                      * 设置保留字段，特殊用途时使用。
-                     * @param ExtInfo 保留字段，特殊用途时使用。
+                     * @param _extInfo 保留字段，特殊用途时使用。
+                     * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
 
                     /**
                      * 判断参数 ExtInfo 是否已赋值
                      * @return ExtInfo 是否已赋值
+                     * 
                      */
                     bool ExtInfoHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取故障类型ID与对应中文名列表
                      * @return TaskTypeSet 故障类型ID与对应中文名列表
+                     * 
                      */
                     std::vector<TaskType> GetTaskTypeSet() const;
 
                     /**
                      * 判断参数 TaskTypeSet 是否已赋值
                      * @return TaskTypeSet 是否已赋值
+                     * 
                      */
                     bool TaskTypeSetHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取指标名称。
                      * @return Metric 指标名称。
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名称。
-                     * @param Metric 指标名称。
+                     * @param _metric 指标名称。
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取指标单位。
                      * @return Unit 指标单位。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标单位。
-                     * @param Unit 指标单位。
+                     * @param _unit 指标单位。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 指标值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetValues() const;
 
                     /**
                      * 设置指标值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 指标值。
+                     * @param _values 指标值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<int64_t>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 

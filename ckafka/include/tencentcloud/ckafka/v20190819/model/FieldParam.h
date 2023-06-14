@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取解析
                      * @return Analyse 解析
+                     * 
                      */
                     AnalyseParam GetAnalyse() const;
 
                     /**
                      * 设置解析
-                     * @param Analyse 解析
+                     * @param _analyse 解析
+                     * 
                      */
                     void SetAnalyse(const AnalyseParam& _analyse);
 
                     /**
                      * 判断参数 Analyse 是否已赋值
                      * @return Analyse 是否已赋值
+                     * 
                      */
                     bool AnalyseHasBeenSet() const;
 
@@ -72,20 +75,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryAnalyse 二次解析
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SecondaryAnalyseParam GetSecondaryAnalyse() const;
 
                     /**
                      * 设置二次解析
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecondaryAnalyse 二次解析
+                     * @param _secondaryAnalyse 二次解析
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecondaryAnalyse(const SecondaryAnalyseParam& _secondaryAnalyse);
 
                     /**
                      * 判断参数 SecondaryAnalyse 是否已赋值
                      * @return SecondaryAnalyse 是否已赋值
+                     * 
                      */
                     bool SecondaryAnalyseHasBeenSet() const;
 
@@ -94,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SMT 数据处理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SMTParam> GetSMT() const;
 
                     /**
                      * 设置数据处理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SMT 数据处理
+                     * @param _sMT 数据处理
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSMT(const std::vector<SMTParam>& _sMT);
 
                     /**
                      * 判断参数 SMT 是否已赋值
                      * @return SMT 是否已赋值
+                     * 
                      */
                     bool SMTHasBeenSet() const;
 
@@ -116,20 +125,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 测试结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 设置测试结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 测试结果
+                     * @param _result 测试结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::string& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -138,20 +150,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalyseResult 解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SMTParam> GetAnalyseResult() const;
 
                     /**
                      * 设置解析结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnalyseResult 解析结果
+                     * @param _analyseResult 解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnalyseResult(const std::vector<SMTParam>& _analyseResult);
 
                     /**
                      * 判断参数 AnalyseResult 是否已赋值
                      * @return AnalyseResult 是否已赋值
+                     * 
                      */
                     bool AnalyseResultHasBeenSet() const;
 
@@ -160,20 +175,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryAnalyseResult 二次解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<SMTParam> GetSecondaryAnalyseResult() const;
 
                     /**
                      * 设置二次解析结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecondaryAnalyseResult 二次解析结果
+                     * @param _secondaryAnalyseResult 二次解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecondaryAnalyseResult(const std::vector<SMTParam>& _secondaryAnalyseResult);
 
                     /**
                      * 判断参数 SecondaryAnalyseResult 是否已赋值
                      * @return SecondaryAnalyseResult 是否已赋值
+                     * 
                      */
                     bool SecondaryAnalyseResultHasBeenSet() const;
 
@@ -182,20 +200,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalyseJsonResult JSON格式解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAnalyseJsonResult() const;
 
                     /**
                      * 设置JSON格式解析结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AnalyseJsonResult JSON格式解析结果
+                     * @param _analyseJsonResult JSON格式解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAnalyseJsonResult(const std::string& _analyseJsonResult);
 
                     /**
                      * 判断参数 AnalyseJsonResult 是否已赋值
                      * @return AnalyseJsonResult 是否已赋值
+                     * 
                      */
                     bool AnalyseJsonResultHasBeenSet() const;
 
@@ -204,20 +225,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryAnalyseJsonResult JSON格式二次解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecondaryAnalyseJsonResult() const;
 
                     /**
                      * 设置JSON格式二次解析结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecondaryAnalyseJsonResult JSON格式二次解析结果
+                     * @param _secondaryAnalyseJsonResult JSON格式二次解析结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecondaryAnalyseJsonResult(const std::string& _secondaryAnalyseJsonResult);
 
                     /**
                      * 判断参数 SecondaryAnalyseJsonResult 是否已赋值
                      * @return SecondaryAnalyseJsonResult 是否已赋值
+                     * 
                      */
                     bool SecondaryAnalyseJsonResultHasBeenSet() const;
 

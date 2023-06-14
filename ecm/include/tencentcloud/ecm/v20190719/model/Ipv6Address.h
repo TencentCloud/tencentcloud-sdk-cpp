@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取IPv6地址，形如：3402:4e00:20:100:0:8cd9:2a67:71f3
                      * @return Address IPv6地址，形如：3402:4e00:20:100:0:8cd9:2a67:71f3
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置IPv6地址，形如：3402:4e00:20:100:0:8cd9:2a67:71f3
-                     * @param Address IPv6地址，形如：3402:4e00:20:100:0:8cd9:2a67:71f3
+                     * @param _address IPv6地址，形如：3402:4e00:20:100:0:8cd9:2a67:71f3
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取是否是主IP。
                      * @return Primary 是否是主IP。
+                     * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否是主IP。
-                     * @param Primary 是否是主IP。
+                     * @param _primary 是否是主IP。
+                     * 
                      */
                     void SetPrimary(const bool& _primary);
 
                     /**
                      * 判断参数 Primary 是否已赋值
                      * @return Primary 是否已赋值
+                     * 
                      */
                     bool PrimaryHasBeenSet() const;
 
                     /**
                      * 获取EIP实例ID，形如：eip-hxlqja90。
                      * @return AddressId EIP实例ID，形如：eip-hxlqja90。
+                     * 
                      */
                     std::string GetAddressId() const;
 
                     /**
                      * 设置EIP实例ID，形如：eip-hxlqja90。
-                     * @param AddressId EIP实例ID，形如：eip-hxlqja90。
+                     * @param _addressId EIP实例ID，形如：eip-hxlqja90。
+                     * 
                      */
                     void SetAddressId(const std::string& _addressId);
 
                     /**
                      * 判断参数 AddressId 是否已赋值
                      * @return AddressId 是否已赋值
+                     * 
                      */
                     bool AddressIdHasBeenSet() const;
 
                     /**
                      * 获取描述信息。
                      * @return Description 描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
-                     * @param Description 描述信息。
+                     * @param _description 描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取公网IP是否被封堵。
                      * @return IsWanIpBlocked 公网IP是否被封堵。
+                     * 
                      */
                     bool GetIsWanIpBlocked() const;
 
                     /**
                      * 设置公网IP是否被封堵。
-                     * @param IsWanIpBlocked 公网IP是否被封堵。
+                     * @param _isWanIpBlocked 公网IP是否被封堵。
+                     * 
                      */
                     void SetIsWanIpBlocked(const bool& _isWanIpBlocked);
 
                     /**
                      * 判断参数 IsWanIpBlocked 是否已赋值
                      * @return IsWanIpBlocked 是否已赋值
+                     * 
                      */
                     bool IsWanIpBlockedHasBeenSet() const;
 
@@ -147,6 +162,7 @@ PENDING：生产中
 MIGRATING：迁移中
 DELETING：删除中
 AVAILABLE：可用的
+                     * 
                      */
                     std::string GetState() const;
 
@@ -156,17 +172,19 @@ PENDING：生产中
 MIGRATING：迁移中
 DELETING：删除中
 AVAILABLE：可用的
-                     * @param State IPv6地址状态：
+                     * @param _state IPv6地址状态：
 PENDING：生产中
 MIGRATING：迁移中
 DELETING：删除中
 AVAILABLE：可用的
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

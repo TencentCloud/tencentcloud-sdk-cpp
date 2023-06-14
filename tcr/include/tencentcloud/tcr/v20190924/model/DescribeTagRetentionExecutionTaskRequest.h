@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取主实例iD
                      * @return RegistryId 主实例iD
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置主实例iD
-                     * @param RegistryId 主实例iD
+                     * @param _registryId 主实例iD
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取规则Id
                      * @return RetentionId 规则Id
+                     * 
                      */
                     int64_t GetRetentionId() const;
 
                     /**
                      * 设置规则Id
-                     * @param RetentionId 规则Id
+                     * @param _retentionId 规则Id
+                     * 
                      */
                     void SetRetentionId(const int64_t& _retentionId);
 
                     /**
                      * 判断参数 RetentionId 是否已赋值
                      * @return RetentionId 是否已赋值
+                     * 
                      */
                     bool RetentionIdHasBeenSet() const;
 
                     /**
                      * 获取规则执行Id
                      * @return ExecutionId 规则执行Id
+                     * 
                      */
                     int64_t GetExecutionId() const;
 
                     /**
                      * 设置规则执行Id
-                     * @param ExecutionId 规则执行Id
+                     * @param _executionId 规则执行Id
+                     * 
                      */
                     void SetExecutionId(const int64_t& _executionId);
 
                     /**
                      * 判断参数 ExecutionId 是否已赋值
                      * @return ExecutionId 是否已赋值
+                     * 
                      */
                     bool ExecutionIdHasBeenSet() const;
 
                     /**
                      * 获取分页Page
                      * @return Offset 分页Page
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页Page
-                     * @param Offset 分页Page
+                     * @param _offset 分页Page
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页PageSize
                      * @return Limit 分页PageSize
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页PageSize
-                     * @param Limit 分页PageSize
+                     * @param _limit 分页PageSize
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

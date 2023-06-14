@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
                      * @return VpnGatewayIds VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
+                     * 
                      */
                     std::vector<std::string> GetVpnGatewayIds() const;
 
                     /**
                      * 设置VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
-                     * @param VpnGatewayIds VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
+                     * @param _vpnGatewayIds VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
+                     * 
                      */
                     void SetVpnGatewayIds(const std::vector<std::string>& _vpnGatewayIds);
 
                     /**
                      * 判断参数 VpnGatewayIds 是否已赋值
                      * @return VpnGatewayIds 是否已赋值
+                     * 
                      */
                     bool VpnGatewayIdsHasBeenSet() const;
 
@@ -65,38 +68,44 @@ namespace TencentCloud
 0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
                      * @return AutoRenewFlag 自动续费标记 [0, 1, 2]
 0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
+                     * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记 [0, 1, 2]
 0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
-                     * @param AutoRenewFlag 自动续费标记 [0, 1, 2]
+                     * @param _autoRenewFlag 自动续费标记 [0, 1, 2]
 0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
+                     * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
                     /**
                      * 判断参数 AutoRenewFlag 是否已赋值
                      * @return AutoRenewFlag 是否已赋值
+                     * 
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
                      * 获取VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
                      * @return Type VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
-                     * @param Type VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
+                     * @param _type VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

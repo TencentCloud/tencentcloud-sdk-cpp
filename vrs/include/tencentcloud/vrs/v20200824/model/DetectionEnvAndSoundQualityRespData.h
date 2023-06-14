@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioId 音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAudioId() const;
 
                     /**
                      * 设置音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioId 音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回
+                     * @param _audioId 音频ID （用于创建任务接口AudioIds）,环境检测该值为空，仅在音质检测情况下返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioId(const std::string& _audioId);
 
                     /**
                      * 判断参数 AudioId 是否已赋值
                      * @return AudioId 是否已赋值
+                     * 
                      */
                     bool AudioIdHasBeenSet() const;
 
@@ -84,6 +87,7 @@ namespace TencentCloud
 -2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）
 -3 表示语音中噪声较大，不通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDetectionCode() const;
 
@@ -95,19 +99,21 @@ namespace TencentCloud
 -2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）
 -3 表示语音中噪声较大，不通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DetectionCode 检测code 
+                     * @param _detectionCode 检测code 
 
 0 表示当前语音通过
 -1 表示检测失败，需要重试
 -2 表示语音检测不通过，提示用户再重新录制一下（通常漏读，错读，或多读）
 -3 表示语音中噪声较大，不通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetectionCode(const int64_t& _detectionCode);
 
                     /**
                      * 判断参数 DetectionCode 是否已赋值
                      * @return DetectionCode 是否已赋值
+                     * 
                      */
                     bool DetectionCodeHasBeenSet() const;
 
@@ -116,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectionMsg 检测提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDetectionMsg() const;
 
                     /**
                      * 设置检测提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DetectionMsg 检测提示信息
+                     * @param _detectionMsg 检测提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetectionMsg(const std::string& _detectionMsg);
 
                     /**
                      * 判断参数 DetectionMsg 是否已赋值
                      * @return DetectionMsg 是否已赋值
+                     * 
                      */
                     bool DetectionMsgHasBeenSet() const;
 
@@ -138,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectionTip 检测提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Words> GetDetectionTip() const;
 
                     /**
                      * 设置检测提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DetectionTip 检测提示信息
+                     * @param _detectionTip 检测提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetectionTip(const std::vector<Words>& _detectionTip);
 
                     /**
                      * 判断参数 DetectionTip 是否已赋值
                      * @return DetectionTip 是否已赋值
+                     * 
                      */
                     bool DetectionTipHasBeenSet() const;
 

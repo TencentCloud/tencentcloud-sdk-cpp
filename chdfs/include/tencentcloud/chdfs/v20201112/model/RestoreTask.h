@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取回热任务ID
                      * @return RestoreTaskId 回热任务ID
+                     * 
                      */
                     uint64_t GetRestoreTaskId() const;
 
                     /**
                      * 设置回热任务ID
-                     * @param RestoreTaskId 回热任务ID
+                     * @param _restoreTaskId 回热任务ID
+                     * 
                      */
                     void SetRestoreTaskId(const uint64_t& _restoreTaskId);
 
                     /**
                      * 判断参数 RestoreTaskId 是否已赋值
                      * @return RestoreTaskId 是否已赋值
+                     * 
                      */
                     bool RestoreTaskIdHasBeenSet() const;
 
                     /**
                      * 获取回热任务文件路径
                      * @return FilePath 回热任务文件路径
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置回热任务文件路径
-                     * @param FilePath 回热任务文件路径
+                     * @param _filePath 回热任务文件路径
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 
                     /**
                      * 获取回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
                      * @return Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
-                     * @param Type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * @param _type 回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取指定恢复出的临时副本的有效时长（单位天）
                      * @return Days 指定恢复出的临时副本的有效时长（单位天）
+                     * 
                      */
                     uint64_t GetDays() const;
 
                     /**
                      * 设置指定恢复出的临时副本的有效时长（单位天）
-                     * @param Days 指定恢复出的临时副本的有效时长（单位天）
+                     * @param _days 指定恢复出的临时副本的有效时长（单位天）
+                     * 
                      */
                     void SetDays(const uint64_t& _days);
 
                     /**
                      * 判断参数 Days 是否已赋值
                      * @return Days 是否已赋值
+                     * 
                      */
                     bool DaysHasBeenSet() const;
 
                     /**
                      * 获取回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
                      * @return Status 回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
-                     * @param Status 回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
+                     * @param _status 回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取终端节点ID。
                      * @return EndPointId 终端节点ID。
+                     * 
                      */
                     std::string GetEndPointId() const;
 
                     /**
                      * 设置终端节点ID。
-                     * @param EndPointId 终端节点ID。
+                     * @param _endPointId 终端节点ID。
+                     * 
                      */
                     void SetEndPointId(const std::string& _endPointId);
 
                     /**
                      * 判断参数 EndPointId 是否已赋值
                      * @return EndPointId 是否已赋值
+                     * 
                      */
                     bool EndPointIdHasBeenSet() const;
 
                     /**
                      * 获取终端节点名称。
                      * @return EndPointName 终端节点名称。
+                     * 
                      */
                     std::string GetEndPointName() const;
 
                     /**
                      * 设置终端节点名称。
-                     * @param EndPointName 终端节点名称。
+                     * @param _endPointName 终端节点名称。
+                     * 
                      */
                     void SetEndPointName(const std::string& _endPointName);
 
                     /**
                      * 判断参数 EndPointName 是否已赋值
                      * @return EndPointName 是否已赋值
+                     * 
                      */
                     bool EndPointNameHasBeenSet() const;
 
                     /**
                      * 获取安全组ID列表。
                      * @return SecurityGroupIds 安全组ID列表。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置安全组ID列表。
-                     * @param SecurityGroupIds 安全组ID列表。
+                     * @param _securityGroupIds 安全组ID列表。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 

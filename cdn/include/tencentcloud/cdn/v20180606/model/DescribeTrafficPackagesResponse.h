@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取流量包总个数
                      * @return TotalCount 流量包总个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取流量包详情
                      * @return TrafficPackages 流量包详情
+                     * 
                      */
                     std::vector<TrafficPackage> GetTrafficPackages() const;
 
                     /**
                      * 判断参数 TrafficPackages 是否已赋值
                      * @return TrafficPackages 是否已赋值
+                     * 
                      */
                     bool TrafficPackagesHasBeenSet() const;
 
                     /**
                      * 获取即将过期的流量包个数（7天内）
                      * @return ExpiringCount 即将过期的流量包个数（7天内）
+                     * 
                      */
                     int64_t GetExpiringCount() const;
 
                     /**
                      * 判断参数 ExpiringCount 是否已赋值
                      * @return ExpiringCount 是否已赋值
+                     * 
                      */
                     bool ExpiringCountHasBeenSet() const;
 
                     /**
                      * 获取有效流量包个数
                      * @return EnabledCount 有效流量包个数
+                     * 
                      */
                     int64_t GetEnabledCount() const;
 
                     /**
                      * 判断参数 EnabledCount 是否已赋值
                      * @return EnabledCount 是否已赋值
+                     * 
                      */
                     bool EnabledCountHasBeenSet() const;
 
                     /**
                      * 获取付费流量包个数
                      * @return PaidCount 付费流量包个数
+                     * 
                      */
                     int64_t GetPaidCount() const;
 
                     /**
                      * 判断参数 PaidCount 是否已赋值
                      * @return PaidCount 是否已赋值
+                     * 
                      */
                     bool PaidCountHasBeenSet() const;
 

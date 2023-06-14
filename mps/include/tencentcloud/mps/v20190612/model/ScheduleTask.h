@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取编排任务 ID。
                      * @return TaskId 编排任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置编排任务 ID。
-                     * @param TaskId 编排任务 ID。
+                     * @param _taskId 编排任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
                      * @return Status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -81,51 +85,59 @@ namespace TencentCloud
                      * 设置任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-                     * @param Status 任务流状态，取值：
+                     * @param _status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
                      * @return ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
-                     * @param ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * @param _errCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
                      * @return Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
-                     * @param Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * @param _message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -134,20 +146,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InputInfo 媒体处理的目标文件信息。
+                     * @param _inputInfo 媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
@@ -156,20 +171,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 原始视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置原始视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 原始视频的元信息。
+                     * @param _metaData 原始视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
@@ -178,20 +196,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityResultSet 编排任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ActivityResult> GetActivityResultSet() const;
 
                     /**
                      * 设置编排任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityResultSet 编排任务输出。
+                     * @param _activityResultSet 编排任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityResultSet(const std::vector<ActivityResult>& _activityResultSet);
 
                     /**
                      * 判断参数 ActivityResultSet 是否已赋值
                      * @return ActivityResultSet 是否已赋值
+                     * 
                      */
                     bool ActivityResultSetHasBeenSet() const;
 

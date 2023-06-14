@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取API ID。
                      * @return ApiId API ID。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API ID。
-                     * @param ApiId API ID。
+                     * @param _apiId API ID。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
                     /**
                      * 获取API名称。
                      * @return ApiName API名称。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置API名称。
-                     * @param ApiName API名称。
+                     * @param _apiName API名称。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 
                     /**
                      * 获取API类型。
                      * @return ApiType API类型。
+                     * 
                      */
                     std::string GetApiType() const;
 
                     /**
                      * 设置API类型。
-                     * @param ApiType API类型。
+                     * @param _apiType API类型。
+                     * 
                      */
                     void SetApiType(const std::string& _apiType);
 
                     /**
                      * 判断参数 ApiType 是否已赋值
                      * @return ApiType 是否已赋值
+                     * 
                      */
                     bool ApiTypeHasBeenSet() const;
 
                     /**
                      * 获取API路径。
                      * @return Path API路径。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API路径。
-                     * @param Path API路径。
+                     * @param _path API路径。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取API方法。
                      * @return Method API方法。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置API方法。
-                     * @param Method API方法。
+                     * @param _method API方法。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachedOtherPlugin API是否绑定其他插件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAttachedOtherPlugin() const;
 
                     /**
                      * 设置API是否绑定其他插件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachedOtherPlugin API是否绑定其他插件。
+                     * @param _attachedOtherPlugin API是否绑定其他插件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachedOtherPlugin(const bool& _attachedOtherPlugin);
 
                     /**
                      * 判断参数 AttachedOtherPlugin 是否已赋值
                      * @return AttachedOtherPlugin 是否已赋值
+                     * 
                      */
                     bool AttachedOtherPluginHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAttached API是否绑定当前插件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsAttached() const;
 
                     /**
                      * 设置API是否绑定当前插件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsAttached API是否绑定当前插件。
+                     * @param _isAttached API是否绑定当前插件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsAttached(const bool& _isAttached);
 
                     /**
                      * 判断参数 IsAttached 是否已赋值
                      * @return IsAttached 是否已赋值
+                     * 
                      */
                     bool IsAttachedHasBeenSet() const;
 

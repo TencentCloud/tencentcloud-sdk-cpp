@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取关闭独立网关状态
                      * @return Status 关闭独立网关状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

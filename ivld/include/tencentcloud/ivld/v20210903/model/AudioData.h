@@ -53,38 +53,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioInfoSet 音频识别文本结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AudioInfo> GetAudioInfoSet() const;
 
                     /**
                      * 设置音频识别文本结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioInfoSet 音频识别文本结果
+                     * @param _audioInfoSet 音频识别文本结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioInfoSet(const std::vector<AudioInfo>& _audioInfoSet);
 
                     /**
                      * 判断参数 AudioInfoSet 是否已赋值
                      * @return AudioInfoSet 是否已赋值
+                     * 
                      */
                     bool AudioInfoSetHasBeenSet() const;
 
                     /**
                      * 获取音频识别标签数据
                      * @return TextTagSet 音频识别标签数据
+                     * 
                      */
                     MultiLevelTag GetTextTagSet() const;
 
                     /**
                      * 设置音频识别标签数据
-                     * @param TextTagSet 音频识别标签数据
+                     * @param _textTagSet 音频识别标签数据
+                     * 
                      */
                     void SetTextTagSet(const MultiLevelTag& _textTagSet);
 
                     /**
                      * 判断参数 TextTagSet 是否已赋值
                      * @return TextTagSet 是否已赋值
+                     * 
                      */
                     bool TextTagSetHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nameservers DNS 服务器IP地址列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNameservers() const;
 
                     /**
                      * 设置DNS 服务器IP地址列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nameservers DNS 服务器IP地址列表
+                     * @param _nameservers DNS 服务器IP地址列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNameservers(const std::vector<std::string>& _nameservers);
 
                     /**
                      * 判断参数 Nameservers 是否已赋值
                      * @return Nameservers 是否已赋值
+                     * 
                      */
                     bool NameserversHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Searches DNS搜索域列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSearches() const;
 
                     /**
                      * 设置DNS搜索域列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Searches DNS搜索域列表
+                     * @param _searches DNS搜索域列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSearches(const std::vector<std::string>& _searches);
 
                     /**
                      * 判断参数 Searches 是否已赋值
                      * @return Searches 是否已赋值
+                     * 
                      */
                     bool SearchesHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Options 对象选项列表，每个对象由name和value（可选）构成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DNSConfigOption> GetOptions() const;
 
                     /**
                      * 设置对象选项列表，每个对象由name和value（可选）构成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Options 对象选项列表，每个对象由name和value（可选）构成
+                     * @param _options 对象选项列表，每个对象由name和value（可选）构成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOptions(const std::vector<DNSConfigOption>& _options);
 
                     /**
                      * 判断参数 Options 是否已赋值
                      * @return Options 是否已赋值
+                     * 
                      */
                     bool OptionsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取扩缩容类型
                      * @return PolicyType 扩缩容类型
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置扩缩容类型
-                     * @param PolicyType 扩缩容类型
+                     * @param _policyType 扩缩容类型
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
                      * 获取扩缩容阈值
                      * @return PolicyThreshold 扩缩容阈值
+                     * 
                      */
                     uint64_t GetPolicyThreshold() const;
 
                     /**
                      * 设置扩缩容阈值
-                     * @param PolicyThreshold 扩缩容阈值
+                     * @param _policyThreshold 扩缩容阈值
+                     * 
                      */
                     void SetPolicyThreshold(const uint64_t& _policyThreshold);
 
                     /**
                      * 判断参数 PolicyThreshold 是否已赋值
                      * @return PolicyThreshold 是否已赋值
+                     * 
                      */
                     bool PolicyThresholdHasBeenSet() const;
 

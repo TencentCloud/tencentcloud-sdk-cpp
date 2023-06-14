@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取权限规则ID
                      * @return AccessRuleId 权限规则ID
+                     * 
                      */
                     uint64_t GetAccessRuleId() const;
 
                     /**
                      * 设置权限规则ID
-                     * @param AccessRuleId 权限规则ID
+                     * @param _accessRuleId 权限规则ID
+                     * 
                      */
                     void SetAccessRuleId(const uint64_t& _accessRuleId);
 
                     /**
                      * 判断参数 AccessRuleId 是否已赋值
                      * @return AccessRuleId 是否已赋值
+                     * 
                      */
                     bool AccessRuleIdHasBeenSet() const;
 
                     /**
                      * 获取权限规则地址（网段或IP）
                      * @return Address 权限规则地址（网段或IP）
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置权限规则地址（网段或IP）
-                     * @param Address 权限规则地址（网段或IP）
+                     * @param _address 权限规则地址（网段或IP）
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
                     /**
                      * 获取权限规则访问模式（1：只读；2：读写）
                      * @return AccessMode 权限规则访问模式（1：只读；2：读写）
+                     * 
                      */
                     uint64_t GetAccessMode() const;
 
                     /**
                      * 设置权限规则访问模式（1：只读；2：读写）
-                     * @param AccessMode 权限规则访问模式（1：只读；2：读写）
+                     * @param _accessMode 权限规则访问模式（1：只读；2：读写）
+                     * 
                      */
                     void SetAccessMode(const uint64_t& _accessMode);
 
                     /**
                      * 判断参数 AccessMode 是否已赋值
                      * @return AccessMode 是否已赋值
+                     * 
                      */
                     bool AccessModeHasBeenSet() const;
 
                     /**
                      * 获取优先级（取值范围1~100，值越小优先级越高）
                      * @return Priority 优先级（取值范围1~100，值越小优先级越高）
+                     * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 设置优先级（取值范围1~100，值越小优先级越高）
-                     * @param Priority 优先级（取值范围1~100，值越小优先级越高）
+                     * @param _priority 优先级（取值范围1~100，值越小优先级越高）
+                     * 
                      */
                     void SetPriority(const uint64_t& _priority);
 
                     /**
                      * 判断参数 Priority 是否已赋值
                      * @return Priority 是否已赋值
+                     * 
                      */
                     bool PriorityHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

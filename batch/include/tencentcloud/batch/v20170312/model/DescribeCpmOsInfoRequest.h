@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。
                      * @return DeviceClassCode 黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。
+                     * 
                      */
                     std::string GetDeviceClassCode() const;
 
                     /**
                      * 设置黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。
-                     * @param DeviceClassCode 黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。
+                     * @param _deviceClassCode 黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。
+                     * 
                      */
                     void SetDeviceClassCode(const std::string& _deviceClassCode);
 
                     /**
                      * 判断参数 DeviceClassCode 是否已赋值
                      * @return DeviceClassCode 是否已赋值
+                     * 
                      */
                     bool DeviceClassCodeHasBeenSet() const;
 

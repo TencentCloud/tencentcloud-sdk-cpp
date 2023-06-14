@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取日志集ID
                      * @return LogsetId 日志集ID
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
-                     * @param LogsetId 日志集ID
+                     * @param _logsetId 日志集ID
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取日志集名称
                      * @return LogsetName 日志集名称
+                     * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集名称
-                     * @param LogsetName 日志集名称
+                     * @param _logsetName 日志集名称
+                     * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
 
                     /**
                      * 判断参数 LogsetName 是否已赋值
                      * @return LogsetName 是否已赋值
+                     * 
                      */
                     bool LogsetNameHasBeenSet() const;
 
                     /**
                      * 获取日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
                      * @return Tags 日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
-                     * @param Tags 日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
+                     * @param _tags 日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

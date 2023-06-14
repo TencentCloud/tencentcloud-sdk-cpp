@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取参数名
                      * @return Name 参数名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名
-                     * @param Name 参数名
+                     * @param _name 参数名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取修改参数值。入参均以字符串形式传递，例如：小数”0.1“、整数”1000“、枚举”replica“
                      * @return ExpectedValue 修改参数值。入参均以字符串形式传递，例如：小数”0.1“、整数”1000“、枚举”replica“
+                     * 
                      */
                     std::string GetExpectedValue() const;
 
                     /**
                      * 设置修改参数值。入参均以字符串形式传递，例如：小数”0.1“、整数”1000“、枚举”replica“
-                     * @param ExpectedValue 修改参数值。入参均以字符串形式传递，例如：小数”0.1“、整数”1000“、枚举”replica“
+                     * @param _expectedValue 修改参数值。入参均以字符串形式传递，例如：小数”0.1“、整数”1000“、枚举”replica“
+                     * 
                      */
                     void SetExpectedValue(const std::string& _expectedValue);
 
                     /**
                      * 判断参数 ExpectedValue 是否已赋值
                      * @return ExpectedValue 是否已赋值
+                     * 
                      */
                     bool ExpectedValueHasBeenSet() const;
 

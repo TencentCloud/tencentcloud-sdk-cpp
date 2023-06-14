@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取topic名称
                      * @return TopicName topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置topic名称
-                     * @param TopicName topic名称
+                     * @param _topicName topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取分区数
                      * @return PartitionNum 分区数
+                     * 
                      */
                     int64_t GetPartitionNum() const;
 
                     /**
                      * 设置分区数
-                     * @param PartitionNum 分区数
+                     * @param _partitionNum 分区数
+                     * 
                      */
                     void SetPartitionNum(const int64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Note 备注
+                     * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-                     * @param Note 备注
+                     * @param _note 备注
+                     * 
                      */
                     void SetNote(const std::string& _note);
 
                     /**
                      * 判断参数 Note 是否已赋值
                      * @return Note 是否已赋值
+                     * 
                      */
                     bool NoteHasBeenSet() const;
 
                     /**
                      * 获取副本数
                      * @return ReplicaNum 副本数
+                     * 
                      */
                     int64_t GetReplicaNum() const;
 
                     /**
                      * 设置副本数
-                     * @param ReplicaNum 副本数
+                     * @param _replicaNum 副本数
+                     * 
                      */
                     void SetReplicaNum(const int64_t& _replicaNum);
 
                     /**
                      * 判断参数 ReplicaNum 是否已赋值
                      * @return ReplicaNum 是否已赋值
+                     * 
                      */
                     bool ReplicaNumHasBeenSet() const;
 
                     /**
                      * 获取消息删除策略，可以选择delete 或者compact
                      * @return CleanUpPolicy 消息删除策略，可以选择delete 或者compact
+                     * 
                      */
                     std::string GetCleanUpPolicy() const;
 
                     /**
                      * 设置消息删除策略，可以选择delete 或者compact
-                     * @param CleanUpPolicy 消息删除策略，可以选择delete 或者compact
+                     * @param _cleanUpPolicy 消息删除策略，可以选择delete 或者compact
+                     * 
                      */
                     void SetCleanUpPolicy(const std::string& _cleanUpPolicy);
 
                     /**
                      * 判断参数 CleanUpPolicy 是否已赋值
                      * @return CleanUpPolicy 是否已赋值
+                     * 
                      */
                     bool CleanUpPolicyHasBeenSet() const;
 
                     /**
                      * 获取当producer设置request.required.acks为-1时，min.insync.replicas指定replicas的最小数目
                      * @return MinInsyncReplicas 当producer设置request.required.acks为-1时，min.insync.replicas指定replicas的最小数目
+                     * 
                      */
                     int64_t GetMinInsyncReplicas() const;
 
                     /**
                      * 设置当producer设置request.required.acks为-1时，min.insync.replicas指定replicas的最小数目
-                     * @param MinInsyncReplicas 当producer设置request.required.acks为-1时，min.insync.replicas指定replicas的最小数目
+                     * @param _minInsyncReplicas 当producer设置request.required.acks为-1时，min.insync.replicas指定replicas的最小数目
+                     * 
                      */
                     void SetMinInsyncReplicas(const int64_t& _minInsyncReplicas);
 
                     /**
                      * 判断参数 MinInsyncReplicas 是否已赋值
                      * @return MinInsyncReplicas 是否已赋值
+                     * 
                      */
                     bool MinInsyncReplicasHasBeenSet() const;
 
                     /**
                      * 获取是否允许非ISR的副本成为Leader
                      * @return UncleanLeaderElectionEnable 是否允许非ISR的副本成为Leader
+                     * 
                      */
                     bool GetUncleanLeaderElectionEnable() const;
 
                     /**
                      * 设置是否允许非ISR的副本成为Leader
-                     * @param UncleanLeaderElectionEnable 是否允许非ISR的副本成为Leader
+                     * @param _uncleanLeaderElectionEnable 是否允许非ISR的副本成为Leader
+                     * 
                      */
                     void SetUncleanLeaderElectionEnable(const bool& _uncleanLeaderElectionEnable);
 
                     /**
                      * 判断参数 UncleanLeaderElectionEnable 是否已赋值
                      * @return UncleanLeaderElectionEnable 是否已赋值
+                     * 
                      */
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
                      * 获取topic维度的消息保留时间（毫秒）范围1 分钟到90 天
                      * @return RetentionMs topic维度的消息保留时间（毫秒）范围1 分钟到90 天
+                     * 
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
                      * 设置topic维度的消息保留时间（毫秒）范围1 分钟到90 天
-                     * @param RetentionMs topic维度的消息保留时间（毫秒）范围1 分钟到90 天
+                     * @param _retentionMs topic维度的消息保留时间（毫秒）范围1 分钟到90 天
+                     * 
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
 
                     /**
                      * 判断参数 RetentionMs 是否已赋值
                      * @return RetentionMs 是否已赋值
+                     * 
                      */
                     bool RetentionMsHasBeenSet() const;
 
                     /**
                      * 获取topic维度的消息保留大小，范围1 MB到1024 GB
                      * @return RetentionBytes topic维度的消息保留大小，范围1 MB到1024 GB
+                     * 
                      */
                     int64_t GetRetentionBytes() const;
 
                     /**
                      * 设置topic维度的消息保留大小，范围1 MB到1024 GB
-                     * @param RetentionBytes topic维度的消息保留大小，范围1 MB到1024 GB
+                     * @param _retentionBytes topic维度的消息保留大小，范围1 MB到1024 GB
+                     * 
                      */
                     void SetRetentionBytes(const int64_t& _retentionBytes);
 
                     /**
                      * 判断参数 RetentionBytes 是否已赋值
                      * @return RetentionBytes 是否已赋值
+                     * 
                      */
                     bool RetentionBytesHasBeenSet() const;
 
                     /**
                      * 获取Segment分片滚动的时长（毫秒），范围1 到90 天
                      * @return SegmentMs Segment分片滚动的时长（毫秒），范围1 到90 天
+                     * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
                      * 设置Segment分片滚动的时长（毫秒），范围1 到90 天
-                     * @param SegmentMs Segment分片滚动的时长（毫秒），范围1 到90 天
+                     * @param _segmentMs Segment分片滚动的时长（毫秒），范围1 到90 天
+                     * 
                      */
                     void SetSegmentMs(const int64_t& _segmentMs);
 
                     /**
                      * 判断参数 SegmentMs 是否已赋值
                      * @return SegmentMs 是否已赋值
+                     * 
                      */
                     bool SegmentMsHasBeenSet() const;
 
                     /**
                      * 获取批次的消息大小，范围1 KB到12 MB
                      * @return MaxMessageBytes 批次的消息大小，范围1 KB到12 MB
+                     * 
                      */
                     int64_t GetMaxMessageBytes() const;
 
                     /**
                      * 设置批次的消息大小，范围1 KB到12 MB
-                     * @param MaxMessageBytes 批次的消息大小，范围1 KB到12 MB
+                     * @param _maxMessageBytes 批次的消息大小，范围1 KB到12 MB
+                     * 
                      */
                     void SetMaxMessageBytes(const int64_t& _maxMessageBytes);
 
                     /**
                      * 判断参数 MaxMessageBytes 是否已赋值
                      * @return MaxMessageBytes 是否已赋值
+                     * 
                      */
                     bool MaxMessageBytesHasBeenSet() const;
 

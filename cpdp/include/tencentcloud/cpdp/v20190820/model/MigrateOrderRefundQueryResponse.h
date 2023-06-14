@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取请求成功状态
                      * @return IsSuccess 请求成功状态
+                     * 
                      */
                     bool GetIsSuccess() const;
 
                     /**
                      * 判断参数 IsSuccess 是否已赋值
                      * @return IsSuccess 是否已赋值
+                     * 
                      */
                     bool IsSuccessHasBeenSet() const;
 
                     /**
                      * 获取交易流水号
                      * @return TradeSerialNo 交易流水号
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
                     /**
                      * 获取交易备注
                      * @return TradeMsg 交易备注
+                     * 
                      */
                     std::string GetTradeMsg() const;
 
                     /**
                      * 判断参数 TradeMsg 是否已赋值
                      * @return TradeMsg 是否已赋值
+                     * 
                      */
                     bool TradeMsgHasBeenSet() const;
 
                     /**
                      * 获取交易状态：0=交易待处理；1=交易处理中；2=交易处理成功；3=交易失败；4=状态未知
                      * @return TradeStatus 交易状态：0=交易待处理；1=交易处理中；2=交易处理成功；3=交易失败；4=状态未知
+                     * 
                      */
                     int64_t GetTradeStatus() const;
 
                     /**
                      * 判断参数 TradeStatus 是否已赋值
                      * @return TradeStatus 是否已赋值
+                     * 
                      */
                     bool TradeStatusHasBeenSet() const;
 
@@ -96,12 +104,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThirdChannelOrderId 第三方支付机构支付交易号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetThirdChannelOrderId() const;
 
                     /**
                      * 判断参数 ThirdChannelOrderId 是否已赋值
                      * @return ThirdChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ThirdChannelOrderIdHasBeenSet() const;
 

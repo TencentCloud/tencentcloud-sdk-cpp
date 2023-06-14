@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回的人体库信息。
                      * @return GroupInfos 返回的人体库信息。
+                     * 
                      */
                     std::vector<GroupInfo> GetGroupInfos() const;
 
                     /**
                      * 判断参数 GroupInfos 是否已赋值
                      * @return GroupInfos 是否已赋值
+                     * 
                      */
                     bool GroupInfosHasBeenSet() const;
 
                     /**
                      * 获取人体库总数量。
                      * @return GroupNum 人体库总数量。
+                     * 
                      */
                     uint64_t GetGroupNum() const;
 
                     /**
                      * 判断参数 GroupNum 是否已赋值
                      * @return GroupNum 是否已赋值
+                     * 
                      */
                     bool GroupNumHasBeenSet() const;
 

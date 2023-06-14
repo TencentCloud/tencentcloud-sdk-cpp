@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取购买时长，单位：月
                      * @return Period 购买时长，单位：月
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月
-                     * @param Period 购买时长，单位：月
+                     * @param _period 购买时长，单位：月
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

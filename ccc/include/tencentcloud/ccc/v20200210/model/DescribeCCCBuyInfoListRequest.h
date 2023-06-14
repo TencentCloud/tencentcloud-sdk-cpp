@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取应用ID列表，不传时查询所有应用
                      * @return SdkAppIds 应用ID列表，不传时查询所有应用
+                     * 
                      */
                     std::vector<int64_t> GetSdkAppIds() const;
 
                     /**
                      * 设置应用ID列表，不传时查询所有应用
-                     * @param SdkAppIds 应用ID列表，不传时查询所有应用
+                     * @param _sdkAppIds 应用ID列表，不传时查询所有应用
+                     * 
                      */
                     void SetSdkAppIds(const std::vector<int64_t>& _sdkAppIds);
 
                     /**
                      * 判断参数 SdkAppIds 是否已赋值
                      * @return SdkAppIds 是否已赋值
+                     * 
                      */
                     bool SdkAppIdsHasBeenSet() const;
 

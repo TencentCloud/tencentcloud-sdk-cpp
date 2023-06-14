@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return CloudStudioSessionTeam 无
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置无
-                     * @param CloudStudioSessionTeam 无
+                     * @param _cloudStudioSessionTeam 无
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return AgentSpaceDTO 无
+                     * 
                      */
                     AgentSpaceDTO GetAgentSpaceDTO() const;
 
                     /**
                      * 设置无
-                     * @param AgentSpaceDTO 无
+                     * @param _agentSpaceDTO 无
+                     * 
                      */
                     void SetAgentSpaceDTO(const AgentSpaceDTO& _agentSpaceDTO);
 
                     /**
                      * 判断参数 AgentSpaceDTO 是否已赋值
                      * @return AgentSpaceDTO 是否已赋值
+                     * 
                      */
                     bool AgentSpaceDTOHasBeenSet() const;
 

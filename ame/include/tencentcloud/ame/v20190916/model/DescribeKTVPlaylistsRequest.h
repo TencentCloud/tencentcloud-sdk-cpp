@@ -51,6 +51,7 @@ namespace TencentCloud
 ·OfficialRec：官方推荐
 ·Normal：自定义
 当该字段未填时，默认为取OfficialRec
+                     * 
                      */
                     std::string GetType() const;
 
@@ -59,16 +60,18 @@ namespace TencentCloud
 ·OfficialRec：官方推荐
 ·Normal：自定义
 当该字段未填时，默认为取OfficialRec
-                     * @param Type 歌单类型，取值有：
+                     * @param _type 歌单类型，取值有：
 ·OfficialRec：官方推荐
 ·Normal：自定义
 当该字段未填时，默认为取OfficialRec
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 取值范围：Offset + Limit 不超过5000
                      * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000
-                     * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 取值范围：Offset + Limit 不超过5000
                      * @return Limit 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000
-                     * @param Limit 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _limit 分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

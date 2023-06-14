@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取公网计费模式: BANDWIDTH_PREPAID(包年包月), BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时计费)
                      * @return PublicNetworkChargeType 公网计费模式: BANDWIDTH_PREPAID(包年包月), BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时计费)
+                     * 
                      */
                     std::string GetPublicNetworkChargeType() const;
 
                     /**
                      * 设置公网计费模式: BANDWIDTH_PREPAID(包年包月), BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时计费)
-                     * @param PublicNetworkChargeType 公网计费模式: BANDWIDTH_PREPAID(包年包月), BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时计费)
+                     * @param _publicNetworkChargeType 公网计费模式: BANDWIDTH_PREPAID(包年包月), BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时计费)
+                     * 
                      */
                     void SetPublicNetworkChargeType(const std::string& _publicNetworkChargeType);
 
                     /**
                      * 判断参数 PublicNetworkChargeType 是否已赋值
                      * @return PublicNetworkChargeType 是否已赋值
+                     * 
                      */
                     bool PublicNetworkChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取公网带宽, 单位MB
                      * @return PublicNetworkMonthly 公网带宽, 单位MB
+                     * 
                      */
                     int64_t GetPublicNetworkMonthly() const;
 
                     /**
                      * 设置公网带宽, 单位MB
-                     * @param PublicNetworkMonthly 公网带宽, 单位MB
+                     * @param _publicNetworkMonthly 公网带宽, 单位MB
+                     * 
                      */
                     void SetPublicNetworkMonthly(const int64_t& _publicNetworkMonthly);
 
                     /**
                      * 判断参数 PublicNetworkMonthly 是否已赋值
                      * @return PublicNetworkMonthly 是否已赋值
+                     * 
                      */
                     bool PublicNetworkMonthlyHasBeenSet() const;
 

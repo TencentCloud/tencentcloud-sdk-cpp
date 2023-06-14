@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取慢SQL 语句
                      * @return RawQuery 慢SQL 语句
+                     * 
                      */
                     std::string GetRawQuery() const;
 
                     /**
                      * 设置慢SQL 语句
-                     * @param RawQuery 慢SQL 语句
+                     * @param _rawQuery 慢SQL 语句
+                     * 
                      */
                     void SetRawQuery(const std::string& _rawQuery);
 
                     /**
                      * 判断参数 RawQuery 是否已赋值
                      * @return RawQuery 是否已赋值
+                     * 
                      */
                     bool RawQueryHasBeenSet() const;
 
                     /**
                      * 获取慢SQL 查询的数据库
                      * @return DatabaseName 慢SQL 查询的数据库
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置慢SQL 查询的数据库
-                     * @param DatabaseName 慢SQL 查询的数据库
+                     * @param _databaseName 慢SQL 查询的数据库
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取慢SQL执行 耗时
                      * @return Duration 慢SQL执行 耗时
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置慢SQL执行 耗时
-                     * @param Duration 慢SQL执行 耗时
+                     * @param _duration 慢SQL执行 耗时
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取执行慢SQL的客户端
                      * @return ClientAddr 执行慢SQL的客户端
+                     * 
                      */
                     std::string GetClientAddr() const;
 
                     /**
                      * 设置执行慢SQL的客户端
-                     * @param ClientAddr 执行慢SQL的客户端
+                     * @param _clientAddr 执行慢SQL的客户端
+                     * 
                      */
                     void SetClientAddr(const std::string& _clientAddr);
 
                     /**
                      * 判断参数 ClientAddr 是否已赋值
                      * @return ClientAddr 是否已赋值
+                     * 
                      */
                     bool ClientAddrHasBeenSet() const;
 
                     /**
                      * 获取执行慢SQL的用户名
                      * @return UserName 执行慢SQL的用户名
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置执行慢SQL的用户名
-                     * @param UserName 执行慢SQL的用户名
+                     * @param _userName 执行慢SQL的用户名
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取慢SQL执行的开始时间
                      * @return SessionStartTime 慢SQL执行的开始时间
+                     * 
                      */
                     std::string GetSessionStartTime() const;
 
                     /**
                      * 设置慢SQL执行的开始时间
-                     * @param SessionStartTime 慢SQL执行的开始时间
+                     * @param _sessionStartTime 慢SQL执行的开始时间
+                     * 
                      */
                     void SetSessionStartTime(const std::string& _sessionStartTime);
 
                     /**
                      * 判断参数 SessionStartTime 是否已赋值
                      * @return SessionStartTime 是否已赋值
+                     * 
                      */
                     bool SessionStartTimeHasBeenSet() const;
 

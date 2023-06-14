@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。
                      * @return InstanceIds 订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取流程id，可以根据流程id查询创建进度
                      * @return FlowId 流程id，可以根据流程id查询创建进度
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
  查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。
                      * @return DealName 订单号。可以据此调用 DescribeOrders
  查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 

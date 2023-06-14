@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取号码营销监控回应内容
                      * @return ResponseData 号码营销监控回应内容
+                     * 
                      */
                     MHMResponse GetResponseData() const;
 
                     /**
                      * 判断参数 ResponseData 是否已赋值
                      * @return ResponseData 是否已赋值
+                     * 
                      */
                     bool ResponseDataHasBeenSet() const;
 

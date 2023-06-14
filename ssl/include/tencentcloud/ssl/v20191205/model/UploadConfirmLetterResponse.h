@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取证书ID
                      * @return CertificateId 证书ID
+                     * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 判断参数 CertificateId 是否已赋值
                      * @return CertificateId 是否已赋值
+                     * 
                      */
                     bool CertificateIdHasBeenSet() const;
 
                     /**
                      * 获取是否成功
                      * @return IsSuccess 是否成功
+                     * 
                      */
                     bool GetIsSuccess() const;
 
                     /**
                      * 判断参数 IsSuccess 是否已赋值
                      * @return IsSuccess 是否已赋值
+                     * 
                      */
                     bool IsSuccessHasBeenSet() const;
 

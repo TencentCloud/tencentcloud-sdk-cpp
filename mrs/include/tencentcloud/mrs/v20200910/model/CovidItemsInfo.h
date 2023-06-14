@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CovidItems 核酸报告结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CovidItem> GetCovidItems() const;
 
                     /**
                      * 设置核酸报告结论
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CovidItems 核酸报告结论
+                     * @param _covidItems 核酸报告结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCovidItems(const std::vector<CovidItem>& _covidItems);
 
                     /**
                      * 判断参数 CovidItems 是否已赋值
                      * @return CovidItems 是否已赋值
+                     * 
                      */
                     bool CovidItemsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 版本号
+                     * @param _version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取镜像版本数组
                      * @return ImageTags 镜像版本数组
+                     * 
                      */
                     std::vector<DeleteImageTag> GetImageTags() const;
 
                     /**
                      * 设置镜像版本数组
-                     * @param ImageTags 镜像版本数组
+                     * @param _imageTags 镜像版本数组
+                     * 
                      */
                     void SetImageTags(const std::vector<DeleteImageTag>& _imageTags);
 
                     /**
                      * 判断参数 ImageTags 是否已赋值
                      * @return ImageTags 是否已赋值
+                     * 
                      */
                     bool ImageTagsHasBeenSet() const;
 
                     /**
                      * 获取企业: tcr ；个人: personal或者不填
                      * @return RepoType 企业: tcr ；个人: personal或者不填
+                     * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 设置企业: tcr ；个人: personal或者不填
-                     * @param RepoType 企业: tcr ；个人: personal或者不填
+                     * @param _repoType 企业: tcr ；个人: personal或者不填
+                     * 
                      */
                     void SetRepoType(const std::string& _repoType);
 
                     /**
                      * 判断参数 RepoType 是否已赋值
                      * @return RepoType 是否已赋值
+                     * 
                      */
                     bool RepoTypeHasBeenSet() const;
 

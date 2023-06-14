@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取实例名称
                      * @return Name 实例名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例名称
-                     * @param Name 实例名称
+                     * @param _name 实例名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EniIp 弹性网卡模式时，弹性网卡Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEniIp() const;
 
                     /**
                      * 设置弹性网卡模式时，弹性网卡Ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EniIp 弹性网卡模式时，弹性网卡Ip
+                     * @param _eniIp 弹性网卡模式时，弹性网卡Ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEniIp(const std::string& _eniIp);
 
                     /**
                      * 判断参数 EniIp 是否已赋值
                      * @return EniIp 是否已赋值
+                     * 
                      */
                     bool EniIpHasBeenSet() const;
 
                     /**
                      * 获取Normal: 正常运行中; Abnormal: 异常；Waiting：等待中
                      * @return Status Normal: 正常运行中; Abnormal: 异常；Waiting：等待中
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Normal: 正常运行中; Abnormal: 异常；Waiting：等待中
-                     * @param Status Normal: 正常运行中; Abnormal: 异常；Waiting：等待中
+                     * @param _status Normal: 正常运行中; Abnormal: 异常；Waiting：等待中
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 当 status为 Abnormal 的时候，一些额外的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置当 status为 Abnormal 的时候，一些额外的信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 当 status为 Abnormal 的时候，一些额外的信息
+                     * @param _message 当 status为 Abnormal 的时候，一些额外的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置启动时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 启动时间
+                     * @param _startTime 启动时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -153,38 +168,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取重启次数
                      * @return Restarted 重启次数
+                     * 
                      */
                     uint64_t GetRestarted() const;
 
                     /**
                      * 设置重启次数
-                     * @param Restarted 重启次数
+                     * @param _restarted 重启次数
+                     * 
                      */
                     void SetRestarted(const uint64_t& _restarted);
 
                     /**
                      * 判断参数 Restarted 是否已赋值
                      * @return Restarted 是否已赋值
+                     * 
                      */
                     bool RestartedHasBeenSet() const;
 

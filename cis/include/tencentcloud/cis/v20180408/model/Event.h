@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取事件首次出现时间
                      * @return FirstSeen 事件首次出现时间
+                     * 
                      */
                     std::string GetFirstSeen() const;
 
                     /**
                      * 设置事件首次出现时间
-                     * @param FirstSeen 事件首次出现时间
+                     * @param _firstSeen 事件首次出现时间
+                     * 
                      */
                     void SetFirstSeen(const std::string& _firstSeen);
 
                     /**
                      * 判断参数 FirstSeen 是否已赋值
                      * @return FirstSeen 是否已赋值
+                     * 
                      */
                     bool FirstSeenHasBeenSet() const;
 
                     /**
                      * 获取事件上次出现时间
                      * @return LastSeen 事件上次出现时间
+                     * 
                      */
                     std::string GetLastSeen() const;
 
                     /**
                      * 设置事件上次出现时间
-                     * @param LastSeen 事件上次出现时间
+                     * @param _lastSeen 事件上次出现时间
+                     * 
                      */
                     void SetLastSeen(const std::string& _lastSeen);
 
                     /**
                      * 判断参数 LastSeen 是否已赋值
                      * @return LastSeen 是否已赋值
+                     * 
                      */
                     bool LastSeenHasBeenSet() const;
 
                     /**
                      * 获取事件等级
                      * @return Level 事件等级
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置事件等级
-                     * @param Level 事件等级
+                     * @param _level 事件等级
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取事件出现次数
                      * @return Count 事件出现次数
+                     * 
                      */
                     std::string GetCount() const;
 
                     /**
                      * 设置事件出现次数
-                     * @param Count 事件出现次数
+                     * @param _count 事件出现次数
+                     * 
                      */
                     void SetCount(const std::string& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取事件出现原因
                      * @return Reason 事件出现原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置事件出现原因
-                     * @param Reason 事件出现原因
+                     * @param _reason 事件出现原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
                     /**
                      * 获取事件消息
                      * @return Message 事件消息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置事件消息
-                     * @param Message 事件消息
+                     * @param _message 事件消息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

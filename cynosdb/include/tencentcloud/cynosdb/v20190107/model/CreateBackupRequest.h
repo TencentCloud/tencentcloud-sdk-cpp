@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取备份类型, 可选值：logic，逻辑备份；snapshot，物理备份
                      * @return BackupType 备份类型, 可选值：logic，逻辑备份；snapshot，物理备份
+                     * 
                      */
                     std::string GetBackupType() const;
 
                     /**
                      * 设置备份类型, 可选值：logic，逻辑备份；snapshot，物理备份
-                     * @param BackupType 备份类型, 可选值：logic，逻辑备份；snapshot，物理备份
+                     * @param _backupType 备份类型, 可选值：logic，逻辑备份；snapshot，物理备份
+                     * 
                      */
                     void SetBackupType(const std::string& _backupType);
 
                     /**
                      * 判断参数 BackupType 是否已赋值
                      * @return BackupType 是否已赋值
+                     * 
                      */
                     bool BackupTypeHasBeenSet() const;
 
                     /**
                      * 获取备份的库, 只在 BackupType 为 logic 时有效
                      * @return BackupDatabases 备份的库, 只在 BackupType 为 logic 时有效
+                     * 
                      */
                     std::vector<std::string> GetBackupDatabases() const;
 
                     /**
                      * 设置备份的库, 只在 BackupType 为 logic 时有效
-                     * @param BackupDatabases 备份的库, 只在 BackupType 为 logic 时有效
+                     * @param _backupDatabases 备份的库, 只在 BackupType 为 logic 时有效
+                     * 
                      */
                     void SetBackupDatabases(const std::vector<std::string>& _backupDatabases);
 
                     /**
                      * 判断参数 BackupDatabases 是否已赋值
                      * @return BackupDatabases 是否已赋值
+                     * 
                      */
                     bool BackupDatabasesHasBeenSet() const;
 
                     /**
                      * 获取备份的表, 只在 BackupType 为 logic 时有效
                      * @return BackupTables 备份的表, 只在 BackupType 为 logic 时有效
+                     * 
                      */
                     std::vector<DatabaseTables> GetBackupTables() const;
 
                     /**
                      * 设置备份的表, 只在 BackupType 为 logic 时有效
-                     * @param BackupTables 备份的表, 只在 BackupType 为 logic 时有效
+                     * @param _backupTables 备份的表, 只在 BackupType 为 logic 时有效
+                     * 
                      */
                     void SetBackupTables(const std::vector<DatabaseTables>& _backupTables);
 
                     /**
                      * 判断参数 BackupTables 是否已赋值
                      * @return BackupTables 是否已赋值
+                     * 
                      */
                     bool BackupTablesHasBeenSet() const;
 
                     /**
                      * 获取备注名
                      * @return BackupName 备注名
+                     * 
                      */
                     std::string GetBackupName() const;
 
                     /**
                      * 设置备注名
-                     * @param BackupName 备注名
+                     * @param _backupName 备注名
+                     * 
                      */
                     void SetBackupName(const std::string& _backupName);
 
                     /**
                      * 判断参数 BackupName 是否已赋值
                      * @return BackupName 是否已赋值
+                     * 
                      */
                     bool BackupNameHasBeenSet() const;
 

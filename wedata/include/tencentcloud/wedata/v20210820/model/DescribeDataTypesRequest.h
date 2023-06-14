@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据源类型，MYSQL|KAFKA等
                      * @return DatasourceType 数据源类型，MYSQL|KAFKA等
+                     * 
                      */
                     std::string GetDatasourceType() const;
 
                     /**
                      * 设置数据源类型，MYSQL|KAFKA等
-                     * @param DatasourceType 数据源类型，MYSQL|KAFKA等
+                     * @param _datasourceType 数据源类型，MYSQL|KAFKA等
+                     * 
                      */
                     void SetDatasourceType(const std::string& _datasourceType);
 
                     /**
                      * 判断参数 DatasourceType 是否已赋值
                      * @return DatasourceType 是否已赋值
+                     * 
                      */
                     bool DatasourceTypeHasBeenSet() const;
 
                     /**
                      * 获取项目ID。
                      * @return ProjectId 项目ID。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID。
-                     * @param ProjectId 项目ID。
+                     * @param _projectId 项目ID。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

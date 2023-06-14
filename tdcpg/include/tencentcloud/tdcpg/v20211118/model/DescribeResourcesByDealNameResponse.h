@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源ID信息列表
                      * @return ResourceIdInfoSet 资源ID信息列表
+                     * 
                      */
                     std::vector<ResourceIdInfo> GetResourceIdInfoSet() const;
 
                     /**
                      * 判断参数 ResourceIdInfoSet 是否已赋值
                      * @return ResourceIdInfoSet 是否已赋值
+                     * 
                      */
                     bool ResourceIdInfoSetHasBeenSet() const;
 

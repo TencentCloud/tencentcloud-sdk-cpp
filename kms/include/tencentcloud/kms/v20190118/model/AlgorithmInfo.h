@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取算法的标识
                      * @return KeyUsage 算法的标识
+                     * 
                      */
                     std::string GetKeyUsage() const;
 
                     /**
                      * 设置算法的标识
-                     * @param KeyUsage 算法的标识
+                     * @param _keyUsage 算法的标识
+                     * 
                      */
                     void SetKeyUsage(const std::string& _keyUsage);
 
                     /**
                      * 判断参数 KeyUsage 是否已赋值
                      * @return KeyUsage 是否已赋值
+                     * 
                      */
                     bool KeyUsageHasBeenSet() const;
 
                     /**
                      * 获取算法的名称
                      * @return Algorithm 算法的名称
+                     * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
                      * 设置算法的名称
-                     * @param Algorithm 算法的名称
+                     * @param _algorithm 算法的名称
+                     * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
                     /**
                      * 判断参数 Algorithm 是否已赋值
                      * @return Algorithm 是否已赋值
+                     * 
                      */
                     bool AlgorithmHasBeenSet() const;
 

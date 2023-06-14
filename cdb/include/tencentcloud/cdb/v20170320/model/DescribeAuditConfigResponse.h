@@ -48,36 +48,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogExpireDay 审计日志保存时长。目前支持的值包括：[0，7，30，180，365，1095，1825]。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLogExpireDay() const;
 
                     /**
                      * 判断参数 LogExpireDay 是否已赋值
                      * @return LogExpireDay 是否已赋值
+                     * 
                      */
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
                      * 获取审计日志存储类型。目前支持的值包括："storage" - 存储型。
                      * @return LogType 审计日志存储类型。目前支持的值包括："storage" - 存储型。
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取是否正在关闭审计。目前支持的值包括："false"-否，"true"-是
                      * @return IsClosing 是否正在关闭审计。目前支持的值包括："false"-否，"true"-是
+                     * 
                      */
                     std::string GetIsClosing() const;
 
                     /**
                      * 判断参数 IsClosing 是否已赋值
                      * @return IsClosing 是否已赋值
+                     * 
                      */
                     bool IsClosingHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 审计服务开通时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

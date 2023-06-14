@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取成功码
                      * @return Success 成功码
+                     * 
                      */
                     SuccessCode GetSuccess() const;
 
                     /**
                      * 判断参数 Success 是否已赋值
                      * @return Success 是否已赋值
+                     * 
                      */
                     bool SuccessHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取用户组成员总数
                      * @return TotalCount 用户组成员总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取用户组成员列表
                      * @return UserSet 用户组成员列表
+                     * 
                      */
                     std::vector<User> GetUserSet() const;
 
                     /**
                      * 判断参数 UserSet 是否已赋值
                      * @return UserSet 是否已赋值
+                     * 
                      */
                     bool UserSetHasBeenSet() const;
 

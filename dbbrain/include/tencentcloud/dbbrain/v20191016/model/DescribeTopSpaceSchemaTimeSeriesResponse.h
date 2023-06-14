@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的Top库空间统计信息的时序数据列表。
                      * @return TopSpaceSchemaTimeSeries 返回的Top库空间统计信息的时序数据列表。
+                     * 
                      */
                     std::vector<SchemaSpaceTimeSeries> GetTopSpaceSchemaTimeSeries() const;
 
                     /**
                      * 判断参数 TopSpaceSchemaTimeSeries 是否已赋值
                      * @return TopSpaceSchemaTimeSeries 是否已赋值
+                     * 
                      */
                     bool TopSpaceSchemaTimeSeriesHasBeenSet() const;
 

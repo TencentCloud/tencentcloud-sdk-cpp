@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 环境绑定API数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置环境绑定API数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 环境绑定API数量。
+                     * @param _totalCount 环境绑定API数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiIdStatusSet 环境绑定API详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IPStrategyApi> GetApiIdStatusSet() const;
 
                     /**
                      * 设置环境绑定API详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiIdStatusSet 环境绑定API详情。
+                     * @param _apiIdStatusSet 环境绑定API详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiIdStatusSet(const std::vector<IPStrategyApi>& _apiIdStatusSet);
 
                     /**
                      * 判断参数 ApiIdStatusSet 是否已赋值
                      * @return ApiIdStatusSet 是否已赋值
+                     * 
                      */
                     bool ApiIdStatusSetHasBeenSet() const;
 

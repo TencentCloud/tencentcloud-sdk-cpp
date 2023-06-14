@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取凭据名称
                      * @return SecretName 凭据名称
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置凭据名称
-                     * @param SecretName 凭据名称
+                     * @param _secretName 凭据名称
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取凭据的描述信息
                      * @return Description 凭据的描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置凭据的描述信息
-                     * @param Description 凭据的描述信息
+                     * @param _description 凭据的描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取用于加密凭据的KMS KeyId
                      * @return KmsKeyId 用于加密凭据的KMS KeyId
+                     * 
                      */
                     std::string GetKmsKeyId() const;
 
                     /**
                      * 设置用于加密凭据的KMS KeyId
-                     * @param KmsKeyId 用于加密凭据的KMS KeyId
+                     * @param _kmsKeyId 用于加密凭据的KMS KeyId
+                     * 
                      */
                     void SetKmsKeyId(const std::string& _kmsKeyId);
 
                     /**
                      * 判断参数 KmsKeyId 是否已赋值
                      * @return KmsKeyId 是否已赋值
+                     * 
                      */
                     bool KmsKeyIdHasBeenSet() const;
 
                     /**
                      * 获取创建者UIN
                      * @return CreateUin 创建者UIN
+                     * 
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
                      * 设置创建者UIN
-                     * @param CreateUin 创建者UIN
+                     * @param _createUin 创建者UIN
+                     * 
                      */
                     void SetCreateUin(const uint64_t& _createUin);
 
                     /**
                      * 判断参数 CreateUin 是否已赋值
                      * @return CreateUin 是否已赋值
+                     * 
                      */
                     bool CreateUinHasBeenSet() const;
 
                     /**
                      * 获取凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed
                      * @return Status 凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed
-                     * @param Status 凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed
+                     * @param _status 凭据状态：Enabled、Disabled、PendingDelete、Creating、Failed
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取凭据删除日期，对于status为PendingDelete 的有效，unix时间戳
                      * @return DeleteTime 凭据删除日期，对于status为PendingDelete 的有效，unix时间戳
+                     * 
                      */
                     uint64_t GetDeleteTime() const;
 
                     /**
                      * 设置凭据删除日期，对于status为PendingDelete 的有效，unix时间戳
-                     * @param DeleteTime 凭据删除日期，对于status为PendingDelete 的有效，unix时间戳
+                     * @param _deleteTime 凭据删除日期，对于status为PendingDelete 的有效，unix时间戳
+                     * 
                      */
                     void SetDeleteTime(const uint64_t& _deleteTime);
 
                     /**
                      * 判断参数 DeleteTime 是否已赋值
                      * @return DeleteTime 是否已赋值
+                     * 
                      */
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
                      * 获取凭据创建时间，unix时间戳
                      * @return CreateTime 凭据创建时间，unix时间戳
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置凭据创建时间，unix时间戳
-                     * @param CreateTime 凭据创建时间，unix时间戳
+                     * @param _createTime 凭据创建时间，unix时间戳
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥
                      * @return KmsKeyType 用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥
+                     * 
                      */
                     std::string GetKmsKeyType() const;
 
                     /**
                      * 设置用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥
-                     * @param KmsKeyType 用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥
+                     * @param _kmsKeyType 用于加密凭据的KMS CMK类型，DEFAULT 表示SecretsManager 创建的默认密钥， CUSTOMER 表示用户指定的密钥
+                     * 
                      */
                     void SetKmsKeyType(const std::string& _kmsKeyType);
 
                     /**
                      * 判断参数 KmsKeyType 是否已赋值
                      * @return KmsKeyType 是否已赋值
+                     * 
                      */
                     bool KmsKeyTypeHasBeenSet() const;
 
@@ -195,20 +219,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationStatus 1:--开启轮转；0--禁止轮转
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRotationStatus() const;
 
                     /**
                      * 设置1:--开启轮转；0--禁止轮转
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RotationStatus 1:--开启轮转；0--禁止轮转
+                     * @param _rotationStatus 1:--开启轮转；0--禁止轮转
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRotationStatus(const int64_t& _rotationStatus);
 
                     /**
                      * 判断参数 RotationStatus 是否已赋值
                      * @return RotationStatus 是否已赋值
+                     * 
                      */
                     bool RotationStatusHasBeenSet() const;
 
@@ -217,20 +244,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextRotationTime 下一次轮转开始时间，uinx 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNextRotationTime() const;
 
                     /**
                      * 设置下一次轮转开始时间，uinx 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NextRotationTime 下一次轮转开始时间，uinx 时间戳
+                     * @param _nextRotationTime 下一次轮转开始时间，uinx 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNextRotationTime(const uint64_t& _nextRotationTime);
 
                     /**
                      * 判断参数 NextRotationTime 是否已赋值
                      * @return NextRotationTime 是否已赋值
+                     * 
                      */
                     bool NextRotationTimeHasBeenSet() const;
 
@@ -245,6 +275,7 @@ namespace TencentCloud
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSecretType() const;
 
@@ -254,17 +285,19 @@ namespace TencentCloud
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretType 0 -- 用户自定义凭据；
+                     * @param _secretType 0 -- 用户自定义凭据；
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretType(const int64_t& _secretType);
 
                     /**
                      * 判断参数 SecretType 是否已赋值
                      * @return SecretType 是否已赋值
+                     * 
                      */
                     bool SecretTypeHasBeenSet() const;
 
@@ -273,20 +306,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductName 云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
+                     * @param _productName 云产品名称，仅在SecretType为1，即凭据类型为云产品凭据时生效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductName(const std::string& _productName);
 
                     /**
                      * 判断参数 ProductName 是否已赋值
                      * @return ProductName 是否已赋值
+                     * 
                      */
                     bool ProductNameHasBeenSet() const;
 
@@ -295,20 +331,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
+                     * @param _resourceName 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
@@ -317,20 +356,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProjectID() const;
 
                     /**
                      * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProjectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
+                     * @param _projectID 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProjectID(const int64_t& _projectID);
 
                     /**
                      * 判断参数 ProjectID 是否已赋值
                      * @return ProjectID 是否已赋值
+                     * 
                      */
                     bool ProjectIDHasBeenSet() const;
 
@@ -339,20 +381,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAssociatedInstanceIDs() const;
 
                     /**
                      * 设置当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssociatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
+                     * @param _associatedInstanceIDs 当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssociatedInstanceIDs(const std::vector<std::string>& _associatedInstanceIDs);
 
                     /**
                      * 判断参数 AssociatedInstanceIDs 是否已赋值
                      * @return AssociatedInstanceIDs 是否已赋值
+                     * 
                      */
                     bool AssociatedInstanceIDsHasBeenSet() const;
 
@@ -361,20 +406,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTargetUin() const;
 
                     /**
                      * 设置当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
+                     * @param _targetUin 当凭据类型为云API密钥对凭据时，此字段有效，用于表示云API密钥对所属的用户UIN。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetUin(const uint64_t& _targetUin);
 
                     /**
                      * 判断参数 TargetUin 是否已赋值
                      * @return TargetUin 是否已赋值
+                     * 
                      */
                     bool TargetUinHasBeenSet() const;
 
@@ -383,20 +431,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRotationFrequency() const;
 
                     /**
                      * 设置轮转的频率，以天作为单位，在轮转开启状态下生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
+                     * @param _rotationFrequency 轮转的频率，以天作为单位，在轮转开启状态下生效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRotationFrequency(const int64_t& _rotationFrequency);
 
                     /**
                      * 判断参数 RotationFrequency 是否已赋值
                      * @return RotationFrequency 是否已赋值
+                     * 
                      */
                     bool RotationFrequencyHasBeenSet() const;
 
@@ -405,20 +456,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceID 云产品凭据对应的云产品实例 ID 号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceID() const;
 
                     /**
                      * 设置云产品凭据对应的云产品实例 ID 号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceID 云产品凭据对应的云产品实例 ID 号。
+                     * @param _resourceID 云产品凭据对应的云产品实例 ID 号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceID(const std::string& _resourceID);
 
                     /**
                      * 判断参数 ResourceID 是否已赋值
                      * @return ResourceID 是否已赋值
+                     * 
                      */
                     bool ResourceIDHasBeenSet() const;
 
@@ -427,20 +481,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RotationBeginTime 用户指定的轮转开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRotationBeginTime() const;
 
                     /**
                      * 设置用户指定的轮转开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RotationBeginTime 用户指定的轮转开始时间。
+                     * @param _rotationBeginTime 用户指定的轮转开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRotationBeginTime(const std::string& _rotationBeginTime);
 
                     /**
                      * 判断参数 RotationBeginTime 是否已赋值
                      * @return RotationBeginTime 是否已赋值
+                     * 
                      */
                     bool RotationBeginTimeHasBeenSet() const;
 

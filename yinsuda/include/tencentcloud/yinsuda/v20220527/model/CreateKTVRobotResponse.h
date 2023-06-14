@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取机器人Id。
                      * @return RobotId 机器人Id。
+                     * 
                      */
                     std::string GetRobotId() const;
 
                     /**
                      * 判断参数 RobotId 是否已赋值
                      * @return RobotId 是否已赋值
+                     * 
                      */
                     bool RobotIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取待进行拉取的事件通知数，为近似值，约5秒延迟。
                      * @return CountOfEventsToPull 待进行拉取的事件通知数，为近似值，约5秒延迟。
+                     * 
                      */
                     uint64_t GetCountOfEventsToPull() const;
 
                     /**
                      * 判断参数 CountOfEventsToPull 是否已赋值
                      * @return CountOfEventsToPull 是否已赋值
+                     * 
                      */
                     bool CountOfEventsToPullHasBeenSet() const;
 

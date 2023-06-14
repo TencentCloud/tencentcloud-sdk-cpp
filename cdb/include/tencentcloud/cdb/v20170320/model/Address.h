@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip 地址
+                     * @param _vip 地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VPort 端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVPort() const;
 
                     /**
                      * 设置端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VPort 端口
+                     * @param _vPort 端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVPort(const uint64_t& _vPort);
 
                     /**
                      * 判断参数 VPort 是否已赋值
                      * @return VPort 是否已赋值
+                     * 
                      */
                     bool VPortHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqVpcId 私有网络ID
+                     * @param _uniqVpcId 私有网络ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
 
                     /**
                      * 判断参数 UniqVpcId 是否已赋值
                      * @return UniqVpcId 是否已赋值
+                     * 
                      */
                     bool UniqVpcIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnet 私有网络子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUniqSubnet() const;
 
                     /**
                      * 设置私有网络子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UniqSubnet 私有网络子网ID
+                     * @param _uniqSubnet 私有网络子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUniqSubnet(const std::string& _uniqSubnet);
 
                     /**
                      * 判断参数 UniqSubnet 是否已赋值
                      * @return UniqSubnet 是否已赋值
+                     * 
                      */
                     bool UniqSubnetHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 描述
+                     * @param _desc 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 

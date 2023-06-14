@@ -53,6 +53,7 @@ ALL：全部
 MINE：我的域名
 SHARE：共享给我的域名
 RECENT：最近操作过的域名
+                     * 
                      */
                     std::string GetType() const;
 
@@ -62,89 +63,103 @@ ALL：全部
 MINE：我的域名
 SHARE：共享给我的域名
 RECENT：最近操作过的域名
-                     * @param Type 根据域名分组类型获取域名。可取值为 ALL，MINE，SHARE，RECENT。
+                     * @param _type 根据域名分组类型获取域名。可取值为 ALL，MINE，SHARE，RECENT。
 ALL：全部
 MINE：我的域名
 SHARE：共享给我的域名
 RECENT：最近操作过的域名
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。
                      * @return Offset 记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。
-                     * @param Offset 记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。
+                     * @param _offset 记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。
                      * @return Limit 要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。
-                     * @param Limit 要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。
+                     * @param _limit 要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
                      * @return GroupId 根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
+                     * 
                      */
                     std::vector<int64_t> GetGroupId() const;
 
                     /**
                      * 设置根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
-                     * @param GroupId 根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
+                     * @param _groupId 根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。
+                     * 
                      */
                     void SetGroupId(const std::vector<int64_t>& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取根据关键字获取域名。
                      * @return Keyword 根据关键字获取域名。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置根据关键字获取域名。
-                     * @param Keyword 根据关键字获取域名。
+                     * @param _keyword 根据关键字获取域名。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
@@ -161,6 +176,7 @@ STATUS：域名状态
 RECORDS：记录数量
 GRADE：套餐等级
 UPDATED_ON：更新时间
+                     * 
                      */
                     std::string GetSortField() const;
 
@@ -171,36 +187,41 @@ STATUS：域名状态
 RECORDS：记录数量
 GRADE：套餐等级
 UPDATED_ON：更新时间
-                     * @param SortField 排序字段。可取值为 NAME，STATUS，RECORDS，GRADE，UPDATED_ON。
+                     * @param _sortField 排序字段。可取值为 NAME，STATUS，RECORDS，GRADE，UPDATED_ON。
 NAME：域名名称
 STATUS：域名状态
 RECORDS：记录数量
 GRADE：套餐等级
 UPDATED_ON：更新时间
+                     * 
                      */
                     void SetSortField(const std::string& _sortField);
 
                     /**
                      * 判断参数 SortField 是否已赋值
                      * @return SortField 是否已赋值
+                     * 
                      */
                     bool SortFieldHasBeenSet() const;
 
                     /**
                      * 获取排序类型，升序：ASC，降序：DESC。
                      * @return SortType 排序类型，升序：ASC，降序：DESC。
+                     * 
                      */
                     std::string GetSortType() const;
 
                     /**
                      * 设置排序类型，升序：ASC，降序：DESC。
-                     * @param SortType 排序类型，升序：ASC，降序：DESC。
+                     * @param _sortType 排序类型，升序：ASC，降序：DESC。
+                     * 
                      */
                     void SetSortType(const std::string& _sortType);
 
                     /**
                      * 判断参数 SortType 是否已赋值
                      * @return SortType 是否已赋值
+                     * 
                      */
                     bool SortTypeHasBeenSet() const;
 
@@ -215,6 +236,7 @@ ENABLE：正常
 LOCK：锁定
 PAUSE：暂停
 SPAM：封禁
+                     * 
                      */
                     std::vector<std::string> GetStatus() const;
 
@@ -224,143 +246,166 @@ ENABLE：正常
 LOCK：锁定
 PAUSE：暂停
 SPAM：封禁
-                     * @param Status 根据域名状态获取域名。可取值为 ENABLE，LOCK，PAUSE，SPAM。
+                     * @param _status 根据域名状态获取域名。可取值为 ENABLE，LOCK，PAUSE，SPAM。
 ENABLE：正常
 LOCK：锁定
 PAUSE：暂停
 SPAM：封禁
+                     * 
                      */
                     void SetStatus(const std::vector<std::string>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。
                      * @return Package 根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。
+                     * 
                      */
                     std::vector<std::string> GetPackage() const;
 
                     /**
                      * 设置根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。
-                     * @param Package 根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。
+                     * @param _package 根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。
+                     * 
                      */
                     void SetPackage(const std::vector<std::string>& _package);
 
                     /**
                      * 判断参数 Package 是否已赋值
                      * @return Package 是否已赋值
+                     * 
                      */
                     bool PackageHasBeenSet() const;
 
                     /**
                      * 获取根据备注信息获取域名。
                      * @return Remark 根据备注信息获取域名。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置根据备注信息获取域名。
-                     * @param Remark 根据备注信息获取域名。
+                     * @param _remark 根据备注信息获取域名。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。
                      * @return UpdatedAtBegin 要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。
+                     * 
                      */
                     std::string GetUpdatedAtBegin() const;
 
                     /**
                      * 设置要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。
-                     * @param UpdatedAtBegin 要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。
+                     * @param _updatedAtBegin 要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。
+                     * 
                      */
                     void SetUpdatedAtBegin(const std::string& _updatedAtBegin);
 
                     /**
                      * 判断参数 UpdatedAtBegin 是否已赋值
                      * @return UpdatedAtBegin 是否已赋值
+                     * 
                      */
                     bool UpdatedAtBeginHasBeenSet() const;
 
                     /**
                      * 获取要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。
                      * @return UpdatedAtEnd 要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。
+                     * 
                      */
                     std::string GetUpdatedAtEnd() const;
 
                     /**
                      * 设置要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。
-                     * @param UpdatedAtEnd 要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。
+                     * @param _updatedAtEnd 要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。
+                     * 
                      */
                     void SetUpdatedAtEnd(const std::string& _updatedAtEnd);
 
                     /**
                      * 判断参数 UpdatedAtEnd 是否已赋值
                      * @return UpdatedAtEnd 是否已赋值
+                     * 
                      */
                     bool UpdatedAtEndHasBeenSet() const;
 
                     /**
                      * 获取要获取域名的记录数查询区间起点。
                      * @return RecordCountBegin 要获取域名的记录数查询区间起点。
+                     * 
                      */
                     uint64_t GetRecordCountBegin() const;
 
                     /**
                      * 设置要获取域名的记录数查询区间起点。
-                     * @param RecordCountBegin 要获取域名的记录数查询区间起点。
+                     * @param _recordCountBegin 要获取域名的记录数查询区间起点。
+                     * 
                      */
                     void SetRecordCountBegin(const uint64_t& _recordCountBegin);
 
                     /**
                      * 判断参数 RecordCountBegin 是否已赋值
                      * @return RecordCountBegin 是否已赋值
+                     * 
                      */
                     bool RecordCountBeginHasBeenSet() const;
 
                     /**
                      * 获取要获取域名的记录数查询区间终点。
                      * @return RecordCountEnd 要获取域名的记录数查询区间终点。
+                     * 
                      */
                     uint64_t GetRecordCountEnd() const;
 
                     /**
                      * 设置要获取域名的记录数查询区间终点。
-                     * @param RecordCountEnd 要获取域名的记录数查询区间终点。
+                     * @param _recordCountEnd 要获取域名的记录数查询区间终点。
+                     * 
                      */
                     void SetRecordCountEnd(const uint64_t& _recordCountEnd);
 
                     /**
                      * 判断参数 RecordCountEnd 是否已赋值
                      * @return RecordCountEnd 是否已赋值
+                     * 
                      */
                     bool RecordCountEndHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

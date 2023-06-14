@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取spark应用名
                      * @return AppName spark应用名
+                     * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置spark应用名
-                     * @param AppName spark应用名
+                     * @param _appName spark应用名
+                     * 
                      */
                     void SetAppName(const std::string& _appName);
 
                     /**
                      * 判断参数 AppName 是否已赋值
                      * @return AppName 是否已赋值
+                     * 
                      */
                     bool AppNameHasBeenSet() const;
 

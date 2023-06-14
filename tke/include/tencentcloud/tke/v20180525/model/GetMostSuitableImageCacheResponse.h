@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取是否有匹配的镜像缓存
                      * @return Found 是否有匹配的镜像缓存
+                     * 
                      */
                     bool GetFound() const;
 
                     /**
                      * 判断参数 Found 是否已赋值
                      * @return Found 是否已赋值
+                     * 
                      */
                     bool FoundHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageCache 匹配的镜像缓存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageCache GetImageCache() const;
 
                     /**
                      * 判断参数 ImageCache 是否已赋值
                      * @return ImageCache 是否已赋值
+                     * 
                      */
                     bool ImageCacheHasBeenSet() const;
 

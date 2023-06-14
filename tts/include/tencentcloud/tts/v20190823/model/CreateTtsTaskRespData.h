@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务ID，可通过此ID在轮询接口获取合成状态与结果。注意：TaskId数据类型为string
                      * @return TaskId 任务ID，可通过此ID在轮询接口获取合成状态与结果。注意：TaskId数据类型为string
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID，可通过此ID在轮询接口获取合成状态与结果。注意：TaskId数据类型为string
-                     * @param TaskId 任务ID，可通过此ID在轮询接口获取合成状态与结果。注意：TaskId数据类型为string
+                     * @param _taskId 任务ID，可通过此ID在轮询接口获取合成状态与结果。注意：TaskId数据类型为string
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

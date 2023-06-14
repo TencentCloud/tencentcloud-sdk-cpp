@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取宿主机IP
                      * @return HostIp 宿主机IP
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置宿主机IP
-                     * @param HostIp 宿主机IP
+                     * @param _hostIp 宿主机IP
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取云服务类型
                      * @return ServiceType 云服务类型
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置云服务类型
-                     * @param ServiceType 云服务类型
+                     * @param _serviceType 云服务类型
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取宿主机运行状态
                      * @return HostStatus 宿主机运行状态
+                     * 
                      */
                     std::string GetHostStatus() const;
 
                     /**
                      * 设置宿主机运行状态
-                     * @param HostStatus 宿主机运行状态
+                     * @param _hostStatus 宿主机运行状态
+                     * 
                      */
                     void SetHostStatus(const std::string& _hostStatus);
 
                     /**
                      * 判断参数 HostStatus 是否已赋值
                      * @return HostStatus 是否已赋值
+                     * 
                      */
                     bool HostStatusHasBeenSet() const;
 
                     /**
                      * 获取宿主机类型
                      * @return HostType 宿主机类型
+                     * 
                      */
                     std::string GetHostType() const;
 
                     /**
                      * 设置宿主机类型
-                     * @param HostType 宿主机类型
+                     * @param _hostType 宿主机类型
+                     * 
                      */
                     void SetHostType(const std::string& _hostType);
 
                     /**
                      * 判断参数 HostType 是否已赋值
                      * @return HostType 是否已赋值
+                     * 
                      */
                     bool HostTypeHasBeenSet() const;
 
                     /**
                      * 获取cpu可用数
                      * @return CpuAvailable cpu可用数
+                     * 
                      */
                     uint64_t GetCpuAvailable() const;
 
                     /**
                      * 设置cpu可用数
-                     * @param CpuAvailable cpu可用数
+                     * @param _cpuAvailable cpu可用数
+                     * 
                      */
                     void SetCpuAvailable(const uint64_t& _cpuAvailable);
 
                     /**
                      * 判断参数 CpuAvailable 是否已赋值
                      * @return CpuAvailable 是否已赋值
+                     * 
                      */
                     bool CpuAvailableHasBeenSet() const;
 
                     /**
                      * 获取cpu总数
                      * @return CpuTotal cpu总数
+                     * 
                      */
                     uint64_t GetCpuTotal() const;
 
                     /**
                      * 设置cpu总数
-                     * @param CpuTotal cpu总数
+                     * @param _cpuTotal cpu总数
+                     * 
                      */
                     void SetCpuTotal(const uint64_t& _cpuTotal);
 
                     /**
                      * 判断参数 CpuTotal 是否已赋值
                      * @return CpuTotal 是否已赋值
+                     * 
                      */
                     bool CpuTotalHasBeenSet() const;
 
                     /**
                      * 获取内存可用数
                      * @return MemAvailable 内存可用数
+                     * 
                      */
                     uint64_t GetMemAvailable() const;
 
                     /**
                      * 设置内存可用数
-                     * @param MemAvailable 内存可用数
+                     * @param _memAvailable 内存可用数
+                     * 
                      */
                     void SetMemAvailable(const uint64_t& _memAvailable);
 
                     /**
                      * 判断参数 MemAvailable 是否已赋值
                      * @return MemAvailable 是否已赋值
+                     * 
                      */
                     bool MemAvailableHasBeenSet() const;
 
                     /**
                      * 获取内存总数
                      * @return MemTotal 内存总数
+                     * 
                      */
                     uint64_t GetMemTotal() const;
 
                     /**
                      * 设置内存总数
-                     * @param MemTotal 内存总数
+                     * @param _memTotal 内存总数
+                     * 
                      */
                     void SetMemTotal(const uint64_t& _memTotal);
 
                     /**
                      * 判断参数 MemTotal 是否已赋值
                      * @return MemTotal 是否已赋值
+                     * 
                      */
                     bool MemTotalHasBeenSet() const;
 
                     /**
                      * 获取运行时间
                      * @return RunTime 运行时间
+                     * 
                      */
                     std::string GetRunTime() const;
 
                     /**
                      * 设置运行时间
-                     * @param RunTime 运行时间
+                     * @param _runTime 运行时间
+                     * 
                      */
                     void SetRunTime(const std::string& _runTime);
 
                     /**
                      * 判断参数 RunTime 是否已赋值
                      * @return RunTime 是否已赋值
+                     * 
                      */
                     bool RunTimeHasBeenSet() const;
 
                     /**
                      * 获取到期时间
                      * @return ExpireTime 到期时间
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置到期时间
-                     * @param ExpireTime 到期时间
+                     * @param _expireTime 到期时间
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -231,20 +261,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostId 宿主机id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置宿主机id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostId 宿主机id
+                     * @param _hostId 宿主机id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostId(const std::string& _hostId);
 
                     /**
                      * 判断参数 HostId 是否已赋值
                      * @return HostId 是否已赋值
+                     * 
                      */
                     bool HostIdHasBeenSet() const;
 

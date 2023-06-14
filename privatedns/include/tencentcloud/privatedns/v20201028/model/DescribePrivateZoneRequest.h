@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取域名，格式必须是标准的TLD
                      * @return ZoneId 域名，格式必须是标准的TLD
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置域名，格式必须是标准的TLD
-                     * @param ZoneId 域名，格式必须是标准的TLD
+                     * @param _zoneId 域名，格式必须是标准的TLD
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 

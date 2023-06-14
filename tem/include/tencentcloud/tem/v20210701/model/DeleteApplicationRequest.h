@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取服务Id
                      * @return ApplicationId 服务Id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务Id
-                     * @param ApplicationId 服务Id
+                     * @param _applicationId 服务Id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取环境ID
                      * @return EnvironmentId 环境ID
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvironmentId 环境ID
+                     * @param _environmentId 环境ID
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取当服务没有任何运行版本时，是否删除此服务
                      * @return DeleteApplicationIfNoRunningVersion 当服务没有任何运行版本时，是否删除此服务
+                     * 
                      */
                     bool GetDeleteApplicationIfNoRunningVersion() const;
 
                     /**
                      * 设置当服务没有任何运行版本时，是否删除此服务
-                     * @param DeleteApplicationIfNoRunningVersion 当服务没有任何运行版本时，是否删除此服务
+                     * @param _deleteApplicationIfNoRunningVersion 当服务没有任何运行版本时，是否删除此服务
+                     * 
                      */
                     void SetDeleteApplicationIfNoRunningVersion(const bool& _deleteApplicationIfNoRunningVersion);
 
                     /**
                      * 判断参数 DeleteApplicationIfNoRunningVersion 是否已赋值
                      * @return DeleteApplicationIfNoRunningVersion 是否已赋值
+                     * 
                      */
                     bool DeleteApplicationIfNoRunningVersionHasBeenSet() const;
 

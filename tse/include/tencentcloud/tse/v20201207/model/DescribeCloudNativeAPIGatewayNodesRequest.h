@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取云原生API网关实例ID。
                      * @return GatewayId 云原生API网关实例ID。
+                     * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置云原生API网关实例ID。
-                     * @param GatewayId 云原生API网关实例ID。
+                     * @param _gatewayId 云原生API网关实例ID。
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取实例分组id
                      * @return GroupId 实例分组id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置实例分组id
-                     * @param GroupId 实例分组id
+                     * @param _groupId 实例分组id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取翻页获取多少个
                      * @return Limit 翻页获取多少个
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置翻页获取多少个
-                     * @param Limit 翻页获取多少个
+                     * @param _limit 翻页获取多少个
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取翻页从第几个开始获取
                      * @return Offset 翻页从第几个开始获取
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页从第几个开始获取
-                     * @param Offset 翻页从第几个开始获取
+                     * @param _offset 翻页从第几个开始获取
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

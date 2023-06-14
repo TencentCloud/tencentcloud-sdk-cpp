@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月
                      * @return Config 配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月
-                     * @param Config 配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月
+                     * @param _config 配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
                     /**
                      * 获取添加时间
                      * @return CreatedOn 添加时间
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置添加时间
-                     * @param CreatedOn 添加时间
+                     * @param _createdOn 添加时间
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取所属域名 ID
                      * @return DomainId 所属域名 ID
+                     * 
                      */
                     std::string GetDomainId() const;
 
                     /**
                      * 设置所属域名 ID
-                     * @param DomainId 所属域名 ID
+                     * @param _domainId 所属域名 ID
+                     * 
                      */
                     void SetDomainId(const std::string& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取配置 ID
                      * @return Id 配置 ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置配置 ID
-                     * @param Id 配置 ID
+                     * @param _id 配置 ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取快照数量
                      * @return SnapshotCount 快照数量
+                     * 
                      */
                     uint64_t GetSnapshotCount() const;
 
                     /**
                      * 设置快照数量
-                     * @param SnapshotCount 快照数量
+                     * @param _snapshotCount 快照数量
+                     * 
                      */
                     void SetSnapshotCount(const uint64_t& _snapshotCount);
 
                     /**
                      * 判断参数 SnapshotCount 是否已赋值
                      * @return SnapshotCount 是否已赋值
+                     * 
                      */
                     bool SnapshotCountHasBeenSet() const;
 
                     /**
                      * 获取状态：enable-启用，disable-禁用
                      * @return Status 状态：enable-启用，disable-禁用
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态：enable-启用，disable-禁用
-                     * @param Status 状态：enable-启用，disable-禁用
+                     * @param _status 状态：enable-启用，disable-禁用
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdatedOn 更新时间
+                     * 
                      */
                     std::string GetUpdatedOn() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdatedOn 更新时间
+                     * @param _updatedOn 更新时间
+                     * 
                      */
                     void SetUpdatedOn(const std::string& _updatedOn);
 
                     /**
                      * 判断参数 UpdatedOn 是否已赋值
                      * @return UpdatedOn 是否已赋值
+                     * 
                      */
                     bool UpdatedOnHasBeenSet() const;
 

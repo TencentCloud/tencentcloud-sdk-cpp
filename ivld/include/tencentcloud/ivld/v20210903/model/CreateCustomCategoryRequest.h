@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取自定义一级类型
                      * @return L1Category 自定义一级类型
+                     * 
                      */
                     std::string GetL1Category() const;
 
                     /**
                      * 设置自定义一级类型
-                     * @param L1Category 自定义一级类型
+                     * @param _l1Category 自定义一级类型
+                     * 
                      */
                     void SetL1Category(const std::string& _l1Category);
 
                     /**
                      * 判断参数 L1Category 是否已赋值
                      * @return L1Category 是否已赋值
+                     * 
                      */
                     bool L1CategoryHasBeenSet() const;
 
                     /**
                      * 获取自定义二级类型
                      * @return L2Category 自定义二级类型
+                     * 
                      */
                     std::string GetL2Category() const;
 
                     /**
                      * 设置自定义二级类型
-                     * @param L2Category 自定义二级类型
+                     * @param _l2Category 自定义二级类型
+                     * 
                      */
                     void SetL2Category(const std::string& _l2Category);
 
                     /**
                      * 判断参数 L2Category 是否已赋值
                      * @return L2Category 是否已赋值
+                     * 
                      */
                     bool L2CategoryHasBeenSet() const;
 

@@ -52,6 +52,7 @@ namespace TencentCloud
                      * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
 如需填写发件人说明，请按照如下方式： 
 别名 <邮箱地址>
+                     * 
                      */
                     std::string GetFromEmailAddress() const;
 
@@ -59,195 +60,227 @@ namespace TencentCloud
                      * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
 如需填写发件人说明，请按照如下方式： 
 别名 <邮箱地址>
-                     * @param FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+                     * @param _fromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
 如需填写发件人说明，请按照如下方式： 
 别名 <邮箱地址>
+                     * 
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
 
                     /**
                      * 判断参数 FromEmailAddress 是否已赋值
                      * @return FromEmailAddress 是否已赋值
+                     * 
                      */
                     bool FromEmailAddressHasBeenSet() const;
 
                     /**
                      * 获取收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
                      * @return Destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * 
                      */
                     std::vector<std::string> GetDestination() const;
 
                     /**
                      * 设置收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-                     * @param Destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * @param _destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
+                     * 
                      */
                     void SetDestination(const std::vector<std::string>& _destination);
 
                     /**
                      * 判断参数 Destination 是否已赋值
                      * @return Destination 是否已赋值
+                     * 
                      */
                     bool DestinationHasBeenSet() const;
 
                     /**
                      * 获取邮件主题
                      * @return Subject 邮件主题
+                     * 
                      */
                     std::string GetSubject() const;
 
                     /**
                      * 设置邮件主题
-                     * @param Subject 邮件主题
+                     * @param _subject 邮件主题
+                     * 
                      */
                     void SetSubject(const std::string& _subject);
 
                     /**
                      * 判断参数 Subject 是否已赋值
                      * @return Subject 是否已赋值
+                     * 
                      */
                     bool SubjectHasBeenSet() const;
 
                     /**
                      * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * 
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
                      * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
-                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * @param _replyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * 
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
 
                     /**
                      * 判断参数 ReplyToAddresses 是否已赋值
                      * @return ReplyToAddresses 是否已赋值
+                     * 
                      */
                     bool ReplyToAddressesHasBeenSet() const;
 
                     /**
                      * 获取抄送人邮箱地址，最多支持抄送20人。
                      * @return Cc 抄送人邮箱地址，最多支持抄送20人。
+                     * 
                      */
                     std::vector<std::string> GetCc() const;
 
                     /**
                      * 设置抄送人邮箱地址，最多支持抄送20人。
-                     * @param Cc 抄送人邮箱地址，最多支持抄送20人。
+                     * @param _cc 抄送人邮箱地址，最多支持抄送20人。
+                     * 
                      */
                     void SetCc(const std::vector<std::string>& _cc);
 
                     /**
                      * 判断参数 Cc 是否已赋值
                      * @return Cc 是否已赋值
+                     * 
                      */
                     bool CcHasBeenSet() const;
 
                     /**
                      * 获取密送人邮箱地址，最多支持抄送20人。
                      * @return Bcc 密送人邮箱地址，最多支持抄送20人。
+                     * 
                      */
                     std::vector<std::string> GetBcc() const;
 
                     /**
                      * 设置密送人邮箱地址，最多支持抄送20人。
-                     * @param Bcc 密送人邮箱地址，最多支持抄送20人。
+                     * @param _bcc 密送人邮箱地址，最多支持抄送20人。
+                     * 
                      */
                     void SetBcc(const std::vector<std::string>& _bcc);
 
                     /**
                      * 判断参数 Bcc 是否已赋值
                      * @return Bcc 是否已赋值
+                     * 
                      */
                     bool BccHasBeenSet() const;
 
                     /**
                      * 获取使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
                      * @return Template 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
+                     * 
                      */
                     Template GetTemplate() const;
 
                     /**
                      * 设置使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
-                     * @param Template 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
+                     * @param _template 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
+                     * 
                      */
                     void SetTemplate(const Template& _template);
 
                     /**
                      * 判断参数 Template 是否已赋值
                      * @return Template 是否已赋值
+                     * 
                      */
                     bool TemplateHasBeenSet() const;
 
                     /**
                      * 获取已废弃
                      * @return Simple 已废弃
+                     * 
                      */
                     Simple GetSimple() const;
 
                     /**
                      * 设置已废弃
-                     * @param Simple 已废弃
+                     * @param _simple 已废弃
+                     * 
                      */
                     void SetSimple(const Simple& _simple);
 
                     /**
                      * 判断参数 Simple 是否已赋值
                      * @return Simple 是否已赋值
+                     * 
                      */
                     bool SimpleHasBeenSet() const;
 
                     /**
                      * 获取需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
                      * @return Attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * 
                      */
                     std::vector<Attachment> GetAttachments() const;
 
                     /**
                      * 设置需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
-                     * @param Attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * @param _attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * 
                      */
                     void SetAttachments(const std::vector<Attachment>& _attachments);
 
                     /**
                      * 判断参数 Attachments 是否已赋值
                      * @return Attachments 是否已赋值
+                     * 
                      */
                     bool AttachmentsHasBeenSet() const;
 
                     /**
                      * 获取退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
                      * @return Unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * 
                      */
                     std::string GetUnsubscribe() const;
 
                     /**
                      * 设置退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
-                     * @param Unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * @param _unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * 
                      */
                     void SetUnsubscribe(const std::string& _unsubscribe);
 
                     /**
                      * 判断参数 Unsubscribe 是否已赋值
                      * @return Unsubscribe 是否已赋值
+                     * 
                      */
                     bool UnsubscribeHasBeenSet() const;
 
                     /**
                      * 获取邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
                      * @return TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * 
                      */
                     uint64_t GetTriggerType() const;
 
                     /**
                      * 设置邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
-                     * @param TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * @param _triggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * 
                      */
                     void SetTriggerType(const uint64_t& _triggerType);
 
                     /**
                      * 判断参数 TriggerType 是否已赋值
                      * @return TriggerType 是否已赋值
+                     * 
                      */
                     bool TriggerTypeHasBeenSet() const;
 

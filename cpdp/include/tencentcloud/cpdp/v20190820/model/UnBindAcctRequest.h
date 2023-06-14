@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取聚鑫分配的支付主MidasAppId
                      * @return MidasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫分配的支付主MidasAppId
-                     * @param MidasAppId 聚鑫分配的支付主MidasAppId
+                     * @param _midasAppId 聚鑫分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取聚鑫计费SubAppId，代表子商户
                      * @return SubAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置聚鑫计费SubAppId，代表子商户
-                     * @param SubAppId 聚鑫计费SubAppId，代表子商户
+                     * @param _subAppId 聚鑫计费SubAppId，代表子商户
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -83,56 +89,65 @@ namespace TencentCloud
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SettleAcctNo 用于提现
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetSettleAcctNo() const;
 
                     /**
                      * 设置用于提现
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param SettleAcctNo 用于提现
+                     * @param _settleAcctNo 用于提现
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetSettleAcctNo(const std::string& _settleAcctNo);
 
                     /**
                      * 判断参数 SettleAcctNo 是否已赋值
                      * @return SettleAcctNo 是否已赋值
+                     * 
                      */
                     bool SettleAcctNoHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
                      * @return MidasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的安全ID
-                     * @param MidasSecretId 聚鑫分配的安全ID
+                     * @param _midasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取按照聚鑫安全密钥计算的签名
                      * @return MidasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置按照聚鑫安全密钥计算的签名
-                     * @param MidasSignature 按照聚鑫安全密钥计算的签名
+                     * @param _midasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
@@ -145,6 +160,7 @@ AES: aes对称加密，使用AES256-CBC-PCKS7padding
 RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
 AES: aes对称加密，使用AES256-CBC-PCKS7padding
 缺省: RSA
+                     * 
                      */
                     std::string GetEncryptType() const;
 
@@ -153,16 +169,18 @@ AES: aes对称加密，使用AES256-CBC-PCKS7padding
 RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
 AES: aes对称加密，使用AES256-CBC-PCKS7padding
 缺省: RSA
-                     * @param EncryptType 敏感信息加密类型:
+                     * @param _encryptType 敏感信息加密类型:
 RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
 AES: aes对称加密，使用AES256-CBC-PCKS7padding
 缺省: RSA
+                     * 
                      */
                     void SetEncryptType(const std::string& _encryptType);
 
                     /**
                      * 判断参数 EncryptType 是否已赋值
                      * @return EncryptType 是否已赋值
+                     * 
                      */
                     bool EncryptTypeHasBeenSet() const;
 
@@ -177,6 +195,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -186,17 +205,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param MidasEnvironment 环境名:
+                     * @param _midasEnvironment 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus 实例 ID，例如：prom-abcd1234
                      * @return InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Prometheus 实例 ID，例如：prom-abcd1234
-                     * @param InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * @param _instanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取规则名称
                      * @return RuleName 规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
                      * @return Expr 规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
+                     * 
                      */
                     std::string GetExpr() const;
 
                     /**
                      * 设置规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
-                     * @param Expr 规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
+                     * @param _expr 规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
+                     * 
                      */
                     void SetExpr(const std::string& _expr);
 
                     /**
                      * 判断参数 Expr 是否已赋值
                      * @return Expr 是否已赋值
+                     * 
                      */
                     bool ExprHasBeenSet() const;
 
                     /**
                      * 获取告警通知模板 ID 列表
                      * @return Receivers 告警通知模板 ID 列表
+                     * 
                      */
                     std::vector<std::string> GetReceivers() const;
 
                     /**
                      * 设置告警通知模板 ID 列表
-                     * @param Receivers 告警通知模板 ID 列表
+                     * @param _receivers 告警通知模板 ID 列表
+                     * 
                      */
                     void SetReceivers(const std::vector<std::string>& _receivers);
 
                     /**
                      * 判断参数 Receivers 是否已赋值
                      * @return Receivers 是否已赋值
+                     * 
                      */
                     bool ReceiversHasBeenSet() const;
 
@@ -122,6 +134,7 @@ namespace TencentCloud
                      * @return RuleState 规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
+                     * 
                      */
                     int64_t GetRuleState() const;
 
@@ -129,51 +142,59 @@ namespace TencentCloud
                      * 设置规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
-                     * @param RuleState 规则状态码，取值如下：
+                     * @param _ruleState 规则状态码，取值如下：
 <li>2=RuleEnabled</li>
 <li>3=RuleDisabled</li>
+                     * 
                      */
                     void SetRuleState(const int64_t& _ruleState);
 
                     /**
                      * 判断参数 RuleState 是否已赋值
                      * @return RuleState 是否已赋值
+                     * 
                      */
                     bool RuleStateHasBeenSet() const;
 
                     /**
                      * 获取规则报警持续时间
                      * @return Duration 规则报警持续时间
+                     * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置规则报警持续时间
-                     * @param Duration 规则报警持续时间
+                     * @param _duration 规则报警持续时间
+                     * 
                      */
                     void SetDuration(const std::string& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取标签列表
                      * @return Labels 标签列表
+                     * 
                      */
                     std::vector<PrometheusRuleKV> GetLabels() const;
 
                     /**
                      * 设置标签列表
-                     * @param Labels 标签列表
+                     * @param _labels 标签列表
+                     * 
                      */
                     void SetLabels(const std::vector<PrometheusRuleKV>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -184,6 +205,7 @@ namespace TencentCloud
                      * @return Annotations 注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
+                     * 
                      */
                     std::vector<PrometheusRuleKV> GetAnnotations() const;
 
@@ -191,33 +213,38 @@ namespace TencentCloud
                      * 设置注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
-                     * @param Annotations 注释列表。
+                     * @param _annotations 注释列表。
 
 告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
+                     * 
                      */
                     void SetAnnotations(const std::vector<PrometheusRuleKV>& _annotations);
 
                     /**
                      * 判断参数 Annotations 是否已赋值
                      * @return Annotations 是否已赋值
+                     * 
                      */
                     bool AnnotationsHasBeenSet() const;
 
                     /**
                      * 获取报警策略模板分类
                      * @return Type 报警策略模板分类
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置报警策略模板分类
-                     * @param Type 报警策略模板分类
+                     * @param _type 报警策略模板分类
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

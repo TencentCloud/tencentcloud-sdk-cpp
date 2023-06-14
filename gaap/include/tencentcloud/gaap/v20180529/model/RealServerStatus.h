@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取源站ID。
                      * @return RealServerId 源站ID。
+                     * 
                      */
                     std::string GetRealServerId() const;
 
                     /**
                      * 设置源站ID。
-                     * @param RealServerId 源站ID。
+                     * @param _realServerId 源站ID。
+                     * 
                      */
                     void SetRealServerId(const std::string& _realServerId);
 
                     /**
                      * 判断参数 RealServerId 是否已赋值
                      * @return RealServerId 是否已赋值
+                     * 
                      */
                     bool RealServerIdHasBeenSet() const;
 
                     /**
                      * 获取0表示未被绑定 1表示被规则或者监听器绑定。
                      * @return BindStatus 0表示未被绑定 1表示被规则或者监听器绑定。
+                     * 
                      */
                     int64_t GetBindStatus() const;
 
                     /**
                      * 设置0表示未被绑定 1表示被规则或者监听器绑定。
-                     * @param BindStatus 0表示未被绑定 1表示被规则或者监听器绑定。
+                     * @param _bindStatus 0表示未被绑定 1表示被规则或者监听器绑定。
+                     * 
                      */
                     void SetBindStatus(const int64_t& _bindStatus);
 
                     /**
                      * 判断参数 BindStatus 是否已赋值
                      * @return BindStatus 是否已赋值
+                     * 
                      */
                     bool BindStatusHasBeenSet() const;
 
                     /**
                      * 获取绑定此源站的通道ID，没有绑定时为空字符串。
                      * @return ProxyId 绑定此源站的通道ID，没有绑定时为空字符串。
+                     * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置绑定此源站的通道ID，没有绑定时为空字符串。
-                     * @param ProxyId 绑定此源站的通道ID，没有绑定时为空字符串。
+                     * @param _proxyId 绑定此源站的通道ID，没有绑定时为空字符串。
+                     * 
                      */
                     void SetProxyId(const std::string& _proxyId);
 
                     /**
                      * 判断参数 ProxyId 是否已赋值
                      * @return ProxyId 是否已赋值
+                     * 
                      */
                     bool ProxyIdHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 绑定此源站的通道组ID，没有绑定时为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置绑定此源站的通道组ID，没有绑定时为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 绑定此源站的通道组ID，没有绑定时为空字符串。
+                     * @param _groupId 绑定此源站的通道组ID，没有绑定时为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

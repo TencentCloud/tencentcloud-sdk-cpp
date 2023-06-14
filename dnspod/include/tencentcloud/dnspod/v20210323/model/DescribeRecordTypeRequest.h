@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return DomainGrade 域名等级。
 + 旧套餐：D_FREE、D_PLUS、D_EXTRA、D_EXPERT、D_ULTRA 分别对应免费套餐、个人豪华、企业1、企业2、企业3。
 + 新套餐：DP_FREE、DP_PLUS、DP_EXTRA、DP_EXPERT、DP_ULTRA 分别对应新免费、个人专业版、企业创业版、企业标准版、企业旗舰版。
+                     * 
                      */
                     std::string GetDomainGrade() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置域名等级。
 + 旧套餐：D_FREE、D_PLUS、D_EXTRA、D_EXPERT、D_ULTRA 分别对应免费套餐、个人豪华、企业1、企业2、企业3。
 + 新套餐：DP_FREE、DP_PLUS、DP_EXTRA、DP_EXPERT、DP_ULTRA 分别对应新免费、个人专业版、企业创业版、企业标准版、企业旗舰版。
-                     * @param DomainGrade 域名等级。
+                     * @param _domainGrade 域名等级。
 + 旧套餐：D_FREE、D_PLUS、D_EXTRA、D_EXPERT、D_ULTRA 分别对应免费套餐、个人豪华、企业1、企业2、企业3。
 + 新套餐：DP_FREE、DP_PLUS、DP_EXTRA、DP_EXPERT、DP_ULTRA 分别对应新免费、个人专业版、企业创业版、企业标准版、企业旗舰版。
+                     * 
                      */
                     void SetDomainGrade(const std::string& _domainGrade);
 
                     /**
                      * 判断参数 DomainGrade 是否已赋值
                      * @return DomainGrade 是否已赋值
+                     * 
                      */
                     bool DomainGradeHasBeenSet() const;
 

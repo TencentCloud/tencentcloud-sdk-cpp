@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelationId 互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRelationId() const;
 
                     /**
                      * 设置互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelationId 互信主体关系ID
+                     * @param _relationId 互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRelationId(const int64_t& _relationId);
 
                     /**
                      * 判断参数 RelationId 是否已赋值
                      * @return RelationId 是否已赋值
+                     * 
                      */
                     bool RelationIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthName 互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthName() const;
 
                     /**
                      * 设置互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthName 互信主体名称
+                     * @param _authName 互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAuthName(const std::string& _authName);
 
                     /**
                      * 判断参数 AuthName 是否已赋值
                      * @return AuthName 是否已赋值
+                     * 
                      */
                     bool AuthNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manager 主体管理员
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MemberMainInfo GetManager() const;
 
                     /**
                      * 设置主体管理员
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Manager 主体管理员
+                     * @param _manager 主体管理员
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManager(const MemberMainInfo& _manager);
 
                     /**
                      * 判断参数 Manager 是否已赋值
                      * @return Manager 是否已赋值
+                     * 
                      */
                     bool ManagerHasBeenSet() const;
 

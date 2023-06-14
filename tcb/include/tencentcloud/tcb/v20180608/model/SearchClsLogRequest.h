@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取环境唯一ID
                      * @return EnvId 环境唯一ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境唯一ID
-                     * @param EnvId 环境唯一ID
+                     * @param _envId 环境唯一ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取查询起始时间条件
                      * @return StartTime 查询起始时间条件
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间条件
-                     * @param StartTime 查询起始时间条件
+                     * @param _startTime 查询起始时间条件
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间条件
                      * @return EndTime 查询结束时间条件
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间条件
-                     * @param EndTime 查询结束时间条件
+                     * @param _endTime 查询结束时间条件
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044
                      * @return QueryString 查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044
+                     * 
                      */
                     std::string GetQueryString() const;
 
                     /**
                      * 设置查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044
-                     * @param QueryString 查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044
+                     * @param _queryString 查询语句，详情参考 https://cloud.tencent.com/document/product/614/47044
+                     * 
                      */
                     void SetQueryString(const std::string& _queryString);
 
                     /**
                      * 判断参数 QueryString 是否已赋值
                      * @return QueryString 是否已赋值
+                     * 
                      */
                     bool QueryStringHasBeenSet() const;
 
                     /**
                      * 获取单次要返回的日志条数，单次返回的最大条数为100
                      * @return Limit 单次要返回的日志条数，单次返回的最大条数为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次要返回的日志条数，单次返回的最大条数为100
-                     * @param Limit 单次要返回的日志条数，单次返回的最大条数为100
+                     * @param _limit 单次要返回的日志条数，单次返回的最大条数为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围
                      * @return Context 加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围
+                     * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围
-                     * @param Context 加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围
+                     * @param _context 加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围
+                     * 
                      */
                     void SetContext(const std::string& _context);
 
                     /**
                      * 判断参数 Context 是否已赋值
                      * @return Context 是否已赋值
+                     * 
                      */
                     bool ContextHasBeenSet() const;
 
                     /**
                      * 获取按时间排序 asc（升序）或者 desc（降序），默认为 desc
                      * @return Sort 按时间排序 asc（升序）或者 desc（降序），默认为 desc
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置按时间排序 asc（升序）或者 desc（降序），默认为 desc
-                     * @param Sort 按时间排序 asc（升序）或者 desc（降序），默认为 desc
+                     * @param _sort 按时间排序 asc（升序）或者 desc（降序），默认为 desc
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取是否使用Lucene语法，默认为false
                      * @return UseLucene 是否使用Lucene语法，默认为false
+                     * 
                      */
                     bool GetUseLucene() const;
 
                     /**
                      * 设置是否使用Lucene语法，默认为false
-                     * @param UseLucene 是否使用Lucene语法，默认为false
+                     * @param _useLucene 是否使用Lucene语法，默认为false
+                     * 
                      */
                     void SetUseLucene(const bool& _useLucene);
 
                     /**
                      * 判断参数 UseLucene 是否已赋值
                      * @return UseLucene 是否已赋值
+                     * 
                      */
                     bool UseLuceneHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取播放信息列表。
                      * @return DataInfoList 播放信息列表。
+                     * 
                      */
                     std::vector<PlayStatInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 
                     /**
                      * 获取统计的类型，和输入参数保持一致。
                      * @return StatType 统计的类型，和输入参数保持一致。
+                     * 
                      */
                     std::string GetStatType() const;
 
                     /**
                      * 判断参数 StatType 是否已赋值
                      * @return StatType 是否已赋值
+                     * 
                      */
                     bool StatTypeHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取云盘的操作日志列表。
                      * @return DiskOperationLogSet 云盘的操作日志列表。
+                     * 
                      */
                     std::vector<DiskOperationLog> GetDiskOperationLogSet() const;
 
                     /**
                      * 判断参数 DiskOperationLogSet 是否已赋值
                      * @return DiskOperationLogSet 是否已赋值
+                     * 
                      */
                     bool DiskOperationLogSetHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取词库记录数
                      * @return TotalCount 词库记录数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取词库详情
                      * @return Infos 词库详情
+                     * 
                      */
                     std::vector<KeywordsLibInfo> GetInfos() const;
 
                     /**
                      * 判断参数 Infos 是否已赋值
                      * @return Infos 是否已赋值
+                     * 
                      */
                     bool InfosHasBeenSet() const;
 

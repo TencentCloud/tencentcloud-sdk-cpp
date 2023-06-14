@@ -49,36 +49,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 返回最近一次合规检查任务的ID。这个任务为本次所展示数据的来源。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取返回检测项的总数。
                      * @return TotalCount 返回检测项的总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取返回各检测项对应的汇总信息的列表。
                      * @return PolicyItemSummaryList 返回各检测项对应的汇总信息的列表。
+                     * 
                      */
                     std::vector<CompliancePolicyItemSummary> GetPolicyItemSummaryList() const;
 
                     /**
                      * 判断参数 PolicyItemSummaryList 是否已赋值
                      * @return PolicyItemSummaryList 是否已赋值
+                     * 
                      */
                     bool PolicyItemSummaryListHasBeenSet() const;
 

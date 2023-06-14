@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisplayName 昵称，长度限制：64个字符。 默认与用户名相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置昵称，长度限制：64个字符。 默认与用户名相同。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisplayName 昵称，长度限制：64个字符。 默认与用户名相同。
+                     * @param _displayName 昵称，长度限制：64个字符。 默认与用户名相同。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroupId 用户组ID，是用户组全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 设置用户组ID，是用户组全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserGroupId 用户组ID，是用户组全局唯一标识，长度限制：64个字符。
+                     * @param _userGroupId 用户组ID，是用户组全局唯一标识，长度限制：64个字符。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserGroupId(const std::string& _userGroupId);
 
                     /**
                      * 判断参数 UserGroupId 是否已赋值
                      * @return UserGroupId 是否已赋值
+                     * 
                      */
                     bool UserGroupIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 用户组备注。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置用户组备注。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 用户组备注。
+                     * @param _description 用户组备注。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedDate 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedDate() const;
 
                     /**
                      * 设置创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedDate 创建时间。
+                     * @param _createdDate 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedDate(const std::string& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 

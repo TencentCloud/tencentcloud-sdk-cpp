@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取vpc的字符串id，只支持字符串id。
                      * @return VpcId vpc的字符串id，只支持字符串id。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的字符串id，只支持字符串id。
-                     * @param VpcId vpc的字符串id，只支持字符串id。
+                     * @param _vpcId vpc的字符串id，只支持字符串id。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询后端的内网ip，可以是cvm和弹性网卡。
                      * @return PrivateIp 需要查询后端的内网ip，可以是cvm和弹性网卡。
+                     * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置需要查询后端的内网ip，可以是cvm和弹性网卡。
-                     * @param PrivateIp 需要查询后端的内网ip，可以是cvm和弹性网卡。
+                     * @param _privateIp 需要查询后端的内网ip，可以是cvm和弹性网卡。
+                     * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
 
                     /**
                      * 判断参数 PrivateIp 是否已赋值
                      * @return PrivateIp 是否已赋值
+                     * 
                      */
                     bool PrivateIpHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取主机HostID或超级节点UniqueId
                      * @return HostID 主机HostID或超级节点UniqueId
+                     * 
                      */
                     std::string GetHostID() const;
 
                     /**
                      * 设置主机HostID或超级节点UniqueId
-                     * @param HostID 主机HostID或超级节点UniqueId
+                     * @param _hostID 主机HostID或超级节点UniqueId
+                     * 
                      */
                     void SetHostID(const std::string& _hostID);
 
                     /**
                      * 判断参数 HostID 是否已赋值
                      * @return HostID 是否已赋值
+                     * 
                      */
                     bool HostIDHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -106,6 +115,7 @@ Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，
 <li>
 Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
 </li>
+                     * 
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
@@ -114,16 +124,18 @@ Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，
 <li>
 Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
 </li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>
 Status- String - 是否必填：否 -插件运行状态：注入中:INJECTING，注入成功：SUCCESS，注入失败：FAIL，插件超时：TIMEOUT，插件退出：QUIT
 </li>
+                     * 
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

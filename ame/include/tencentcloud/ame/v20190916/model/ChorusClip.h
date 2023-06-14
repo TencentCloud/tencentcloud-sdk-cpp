@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取副歌时间，单位：毫秒
                      * @return StartTime 副歌时间，单位：毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置副歌时间，单位：毫秒
-                     * @param StartTime 副歌时间，单位：毫秒
+                     * @param _startTime 副歌时间，单位：毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取副歌结束时间，单位：毫秒
                      * @return EndTime 副歌结束时间，单位：毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置副歌结束时间，单位：毫秒
-                     * @param EndTime 副歌结束时间，单位：毫秒
+                     * @param _endTime 副歌结束时间，单位：毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

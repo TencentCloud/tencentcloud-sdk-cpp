@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步任务的ID
                      * @return JodId 异步任务的ID
+                     * 
                      */
                     std::string GetJodId() const;
 
                     /**
                      * 判断参数 JodId 是否已赋值
                      * @return JodId 是否已赋值
+                     * 
                      */
                     bool JodIdHasBeenSet() const;
 

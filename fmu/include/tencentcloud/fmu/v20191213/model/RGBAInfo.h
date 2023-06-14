@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取R通道数值。[0,255]。
                      * @return R R通道数值。[0,255]。
+                     * 
                      */
                     int64_t GetR() const;
 
                     /**
                      * 设置R通道数值。[0,255]。
-                     * @param R R通道数值。[0,255]。
+                     * @param _r R通道数值。[0,255]。
+                     * 
                      */
                     void SetR(const int64_t& _r);
 
                     /**
                      * 判断参数 R 是否已赋值
                      * @return R 是否已赋值
+                     * 
                      */
                     bool RHasBeenSet() const;
 
                     /**
                      * 获取G通道数值。[0,255]。
                      * @return G G通道数值。[0,255]。
+                     * 
                      */
                     int64_t GetG() const;
 
                     /**
                      * 设置G通道数值。[0,255]。
-                     * @param G G通道数值。[0,255]。
+                     * @param _g G通道数值。[0,255]。
+                     * 
                      */
                     void SetG(const int64_t& _g);
 
                     /**
                      * 判断参数 G 是否已赋值
                      * @return G 是否已赋值
+                     * 
                      */
                     bool GHasBeenSet() const;
 
                     /**
                      * 获取B通道数值。[0,255]。
                      * @return B B通道数值。[0,255]。
+                     * 
                      */
                     int64_t GetB() const;
 
                     /**
                      * 设置B通道数值。[0,255]。
-                     * @param B B通道数值。[0,255]。
+                     * @param _b B通道数值。[0,255]。
+                     * 
                      */
                     void SetB(const int64_t& _b);
 
                     /**
                      * 判断参数 B 是否已赋值
                      * @return B 是否已赋值
+                     * 
                      */
                     bool BHasBeenSet() const;
 
                     /**
                      * 获取A通道数值。[0,100]。建议取值50。
                      * @return A A通道数值。[0,100]。建议取值50。
+                     * 
                      */
                     int64_t GetA() const;
 
                     /**
                      * 设置A通道数值。[0,100]。建议取值50。
-                     * @param A A通道数值。[0,100]。建议取值50。
+                     * @param _a A通道数值。[0,100]。建议取值50。
+                     * 
                      */
                     void SetA(const int64_t& _a);
 
                     /**
                      * 判断参数 A 是否已赋值
                      * @return A 是否已赋值
+                     * 
                      */
                     bool AHasBeenSet() const;
 

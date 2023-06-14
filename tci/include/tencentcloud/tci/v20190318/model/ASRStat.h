@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取当前音频的平均语速
                      * @return AvgSpeed 当前音频的平均语速
+                     * 
                      */
                     double GetAvgSpeed() const;
 
                     /**
                      * 设置当前音频的平均语速
-                     * @param AvgSpeed 当前音频的平均语速
+                     * @param _avgSpeed 当前音频的平均语速
+                     * 
                      */
                     void SetAvgSpeed(const double& _avgSpeed);
 
                     /**
                      * 判断参数 AvgSpeed 是否已赋值
                      * @return AvgSpeed 是否已赋值
+                     * 
                      */
                     bool AvgSpeedHasBeenSet() const;
 
                     /**
                      * 获取Vad的平均音量
                      * @return AvgVolume Vad的平均音量
+                     * 
                      */
                     double GetAvgVolume() const;
 
                     /**
                      * 设置Vad的平均音量
-                     * @param AvgVolume Vad的平均音量
+                     * @param _avgVolume Vad的平均音量
+                     * 
                      */
                     void SetAvgVolume(const double& _avgVolume);
 
                     /**
                      * 判断参数 AvgVolume 是否已赋值
                      * @return AvgVolume 是否已赋值
+                     * 
                      */
                     bool AvgVolumeHasBeenSet() const;
 
                     /**
                      * 获取Vad的最大音量
                      * @return MaxVolume Vad的最大音量
+                     * 
                      */
                     double GetMaxVolume() const;
 
                     /**
                      * 设置Vad的最大音量
-                     * @param MaxVolume Vad的最大音量
+                     * @param _maxVolume Vad的最大音量
+                     * 
                      */
                     void SetMaxVolume(const double& _maxVolume);
 
                     /**
                      * 判断参数 MaxVolume 是否已赋值
                      * @return MaxVolume 是否已赋值
+                     * 
                      */
                     bool MaxVolumeHasBeenSet() const;
 
                     /**
                      * 获取Vad的最小音量
                      * @return MinVolume Vad的最小音量
+                     * 
                      */
                     double GetMinVolume() const;
 
                     /**
                      * 设置Vad的最小音量
-                     * @param MinVolume Vad的最小音量
+                     * @param _minVolume Vad的最小音量
+                     * 
                      */
                     void SetMinVolume(const double& _minVolume);
 
                     /**
                      * 判断参数 MinVolume 是否已赋值
                      * @return MinVolume 是否已赋值
+                     * 
                      */
                     bool MinVolumeHasBeenSet() const;
 
                     /**
                      * 获取当前音频的非发音时长
                      * @return MuteDuration 当前音频的非发音时长
+                     * 
                      */
                     int64_t GetMuteDuration() const;
 
                     /**
                      * 设置当前音频的非发音时长
-                     * @param MuteDuration 当前音频的非发音时长
+                     * @param _muteDuration 当前音频的非发音时长
+                     * 
                      */
                     void SetMuteDuration(const int64_t& _muteDuration);
 
                     /**
                      * 判断参数 MuteDuration 是否已赋值
                      * @return MuteDuration 是否已赋值
+                     * 
                      */
                     bool MuteDurationHasBeenSet() const;
 
                     /**
                      * 获取当前音频的发音时长
                      * @return SoundDuration 当前音频的发音时长
+                     * 
                      */
                     int64_t GetSoundDuration() const;
 
                     /**
                      * 设置当前音频的发音时长
-                     * @param SoundDuration 当前音频的发音时长
+                     * @param _soundDuration 当前音频的发音时长
+                     * 
                      */
                     void SetSoundDuration(const int64_t& _soundDuration);
 
                     /**
                      * 判断参数 SoundDuration 是否已赋值
                      * @return SoundDuration 是否已赋值
+                     * 
                      */
                     bool SoundDurationHasBeenSet() const;
 
                     /**
                      * 获取当前音频的总时长
                      * @return TotalDuration 当前音频的总时长
+                     * 
                      */
                     int64_t GetTotalDuration() const;
 
                     /**
                      * 设置当前音频的总时长
-                     * @param TotalDuration 当前音频的总时长
+                     * @param _totalDuration 当前音频的总时长
+                     * 
                      */
                     void SetTotalDuration(const int64_t& _totalDuration);
 
                     /**
                      * 判断参数 TotalDuration 是否已赋值
                      * @return TotalDuration 是否已赋值
+                     * 
                      */
                     bool TotalDurationHasBeenSet() const;
 
                     /**
                      * 获取当前音频的句子总数
                      * @return VadNum 当前音频的句子总数
+                     * 
                      */
                     int64_t GetVadNum() const;
 
                     /**
                      * 设置当前音频的句子总数
-                     * @param VadNum 当前音频的句子总数
+                     * @param _vadNum 当前音频的句子总数
+                     * 
                      */
                     void SetVadNum(const int64_t& _vadNum);
 
                     /**
                      * 判断参数 VadNum 是否已赋值
                      * @return VadNum 是否已赋值
+                     * 
                      */
                     bool VadNumHasBeenSet() const;
 
                     /**
                      * 获取当前音频的单词总数
                      * @return WordNum 当前音频的单词总数
+                     * 
                      */
                     int64_t GetWordNum() const;
 
                     /**
                      * 设置当前音频的单词总数
-                     * @param WordNum 当前音频的单词总数
+                     * @param _wordNum 当前音频的单词总数
+                     * 
                      */
                     void SetWordNum(const int64_t& _wordNum);
 
                     /**
                      * 判断参数 WordNum 是否已赋值
                      * @return WordNum 是否已赋值
+                     * 
                      */
                     bool WordNumHasBeenSet() const;
 

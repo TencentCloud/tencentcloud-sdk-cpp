@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取第三方用户类型，例如:  WX_OPENID, WX_SUB_OPENID,WX_PAYER_OPENID
                      * @return ExternalUserType 第三方用户类型，例如:  WX_OPENID, WX_SUB_OPENID,WX_PAYER_OPENID
+                     * 
                      */
                     std::string GetExternalUserType() const;
 
                     /**
                      * 设置第三方用户类型，例如:  WX_OPENID, WX_SUB_OPENID,WX_PAYER_OPENID
-                     * @param ExternalUserType 第三方用户类型，例如:  WX_OPENID, WX_SUB_OPENID,WX_PAYER_OPENID
+                     * @param _externalUserType 第三方用户类型，例如:  WX_OPENID, WX_SUB_OPENID,WX_PAYER_OPENID
+                     * 
                      */
                     void SetExternalUserType(const std::string& _externalUserType);
 
                     /**
                      * 判断参数 ExternalUserType 是否已赋值
                      * @return ExternalUserType 是否已赋值
+                     * 
                      */
                     bool ExternalUserTypeHasBeenSet() const;
 
                     /**
                      * 获取第三方用户ID
                      * @return ExternalUserId 第三方用户ID
+                     * 
                      */
                     std::string GetExternalUserId() const;
 
                     /**
                      * 设置第三方用户ID
-                     * @param ExternalUserId 第三方用户ID
+                     * @param _externalUserId 第三方用户ID
+                     * 
                      */
                     void SetExternalUserId(const std::string& _externalUserId);
 
                     /**
                      * 判断参数 ExternalUserId 是否已赋值
                      * @return ExternalUserId 是否已赋值
+                     * 
                      */
                     bool ExternalUserIdHasBeenSet() const;
 

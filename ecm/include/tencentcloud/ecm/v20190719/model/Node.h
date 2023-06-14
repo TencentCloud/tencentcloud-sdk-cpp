@@ -56,162 +56,189 @@ namespace TencentCloud
                     /**
                      * 获取zone信息。
                      * @return ZoneInfo zone信息。
+                     * 
                      */
                     ZoneInfo GetZoneInfo() const;
 
                     /**
                      * 设置zone信息。
-                     * @param ZoneInfo zone信息。
+                     * @param _zoneInfo zone信息。
+                     * 
                      */
                     void SetZoneInfo(const ZoneInfo& _zoneInfo);
 
                     /**
                      * 判断参数 ZoneInfo 是否已赋值
                      * @return ZoneInfo 是否已赋值
+                     * 
                      */
                     bool ZoneInfoHasBeenSet() const;
 
                     /**
                      * 获取国家信息。
                      * @return Country 国家信息。
+                     * 
                      */
                     Country GetCountry() const;
 
                     /**
                      * 设置国家信息。
-                     * @param Country 国家信息。
+                     * @param _country 国家信息。
+                     * 
                      */
                     void SetCountry(const Country& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
                     /**
                      * 获取区域信息。
                      * @return Area 区域信息。
+                     * 
                      */
                     Area GetArea() const;
 
                     /**
                      * 设置区域信息。
-                     * @param Area 区域信息。
+                     * @param _area 区域信息。
+                     * 
                      */
                     void SetArea(const Area& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取省份信息。
                      * @return Province 省份信息。
+                     * 
                      */
                     Province GetProvince() const;
 
                     /**
                      * 设置省份信息。
-                     * @param Province 省份信息。
+                     * @param _province 省份信息。
+                     * 
                      */
                     void SetProvince(const Province& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取城市信息。
                      * @return City 城市信息。
+                     * 
                      */
                     City GetCity() const;
 
                     /**
                      * 设置城市信息。
-                     * @param City 城市信息。
+                     * @param _city 城市信息。
+                     * 
                      */
                     void SetCity(const City& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
                     /**
                      * 获取Region信息。
                      * @return RegionInfo Region信息。
+                     * 
                      */
                     RegionInfo GetRegionInfo() const;
 
                     /**
                      * 设置Region信息。
-                     * @param RegionInfo Region信息。
+                     * @param _regionInfo Region信息。
+                     * 
                      */
                     void SetRegionInfo(const RegionInfo& _regionInfo);
 
                     /**
                      * 判断参数 RegionInfo 是否已赋值
                      * @return RegionInfo 是否已赋值
+                     * 
                      */
                     bool RegionInfoHasBeenSet() const;
 
                     /**
                      * 获取运营商列表。
                      * @return ISPSet 运营商列表。
+                     * 
                      */
                     std::vector<ISP> GetISPSet() const;
 
                     /**
                      * 设置运营商列表。
-                     * @param ISPSet 运营商列表。
+                     * @param _iSPSet 运营商列表。
+                     * 
                      */
                     void SetISPSet(const std::vector<ISP>& _iSPSet);
 
                     /**
                      * 判断参数 ISPSet 是否已赋值
                      * @return ISPSet 是否已赋值
+                     * 
                      */
                     bool ISPSetHasBeenSet() const;
 
                     /**
                      * 获取运营商数量。
                      * @return ISPNum 运营商数量。
+                     * 
                      */
                     int64_t GetISPNum() const;
 
                     /**
                      * 设置运营商数量。
-                     * @param ISPNum 运营商数量。
+                     * @param _iSPNum 运营商数量。
+                     * 
                      */
                     void SetISPNum(const int64_t& _iSPNum);
 
                     /**
                      * 判断参数 ISPNum 是否已赋值
                      * @return ISPNum 是否已赋值
+                     * 
                      */
                     bool ISPNumHasBeenSet() const;
 
                     /**
                      * 获取节点是否支持LB
                      * @return LBSupported 节点是否支持LB
+                     * 
                      */
                     bool GetLBSupported() const;
 
                     /**
                      * 设置节点是否支持LB
-                     * @param LBSupported 节点是否支持LB
+                     * @param _lBSupported 节点是否支持LB
+                     * 
                      */
                     void SetLBSupported(const bool& _lBSupported);
 
                     /**
                      * 判断参数 LBSupported 是否已赋值
                      * @return LBSupported 是否已赋值
+                     * 
                      */
                     bool LBSupportedHasBeenSet() const;
 

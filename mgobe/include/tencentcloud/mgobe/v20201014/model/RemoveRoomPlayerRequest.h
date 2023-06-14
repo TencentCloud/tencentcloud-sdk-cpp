@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取游戏资源Id。
                      * @return GameId 游戏资源Id。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏资源Id。
-                     * @param GameId 游戏资源Id。
+                     * @param _gameId 游戏资源Id。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取被踢出房间的玩家Id。
                      * @return RemovePlayerId 被踢出房间的玩家Id。
+                     * 
                      */
                     std::string GetRemovePlayerId() const;
 
                     /**
                      * 设置被踢出房间的玩家Id。
-                     * @param RemovePlayerId 被踢出房间的玩家Id。
+                     * @param _removePlayerId 被踢出房间的玩家Id。
+                     * 
                      */
                     void SetRemovePlayerId(const std::string& _removePlayerId);
 
                     /**
                      * 判断参数 RemovePlayerId 是否已赋值
                      * @return RemovePlayerId 是否已赋值
+                     * 
                      */
                     bool RemovePlayerIdHasBeenSet() const;
 

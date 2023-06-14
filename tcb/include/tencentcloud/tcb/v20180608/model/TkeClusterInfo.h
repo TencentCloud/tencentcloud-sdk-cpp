@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 集群的vpcId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置集群的vpcId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 集群的vpcId
+                     * @param _vpcId 集群的vpcId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionClbSubnetId 版本内网CLB所在子网Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionClbSubnetId() const;
 
                     /**
                      * 设置版本内网CLB所在子网Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionClbSubnetId 版本内网CLB所在子网Id
+                     * @param _versionClbSubnetId 版本内网CLB所在子网Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionClbSubnetId(const std::string& _versionClbSubnetId);
 
                     /**
                      * 判断参数 VersionClbSubnetId 是否已赋值
                      * @return VersionClbSubnetId 是否已赋值
+                     * 
                      */
                     bool VersionClbSubnetIdHasBeenSet() const;
 

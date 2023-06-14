@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
@@ -87,6 +90,7 @@ namespace TencentCloud
 <li>10：实例迁移中</li>
 <li>11：只读</li>
 <li>12：重启中</li>
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -104,7 +108,7 @@ namespace TencentCloud
 <li>10：实例迁移中</li>
 <li>11：只读</li>
 <li>12：重启中</li>
-                     * @param Status 实例状态。取值范围：
+                     * @param _status 实例状态。取值范围：
 <li>1：申请中</li>
 <li>2：运行中</li>
 <li>3：受限运行中 (主备切换中)</li>
@@ -117,264 +121,308 @@ namespace TencentCloud
 <li>10：实例迁移中</li>
 <li>11：只读</li>
 <li>12：重启中</li>
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取分页返回，页编号，默认值为第0页
                      * @return Offset 分页返回，页编号，默认值为第0页
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回，页编号，默认值为第0页
-                     * @param Offset 分页返回，页编号，默认值为第0页
+                     * @param _offset 分页返回，页编号，默认值为第0页
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页返回，每页返回的数目，取值为1-100，默认值为100
                      * @return Limit 分页返回，每页返回的数目，取值为1-100，默认值为100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回，每页返回的数目，取值为1-100，默认值为100
-                     * @param Limit 分页返回，每页返回的数目，取值为1-100，默认值为100
+                     * @param _limit 分页返回，每页返回的数目，取值为1-100，默认值为100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl
                      * @return InstanceIdSet 一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl
+                     * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl
-                     * @param InstanceIdSet 一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl
+                     * @param _instanceIdSet 一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl
+                     * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
 
                     /**
                      * 判断参数 InstanceIdSet 是否已赋值
                      * @return InstanceIdSet 是否已赋值
+                     * 
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取付费类型检索 1-包年包月，0-按量计费
                      * @return PayMode 付费类型检索 1-包年包月，0-按量计费
+                     * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置付费类型检索 1-包年包月，0-按量计费
-                     * @param PayMode 付费类型检索 1-包年包月，0-按量计费
+                     * @param _payMode 付费类型检索 1-包年包月，0-按量计费
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
                      * @return VpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
-                     * @param VpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * @param _vpcId 实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
                      * @return SubnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
-                     * @param SubnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * @param _subnetId 实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取实例内网地址列表，格式如：172.1.0.12
                      * @return VipSet 实例内网地址列表，格式如：172.1.0.12
+                     * 
                      */
                     std::vector<std::string> GetVipSet() const;
 
                     /**
                      * 设置实例内网地址列表，格式如：172.1.0.12
-                     * @param VipSet 实例内网地址列表，格式如：172.1.0.12
+                     * @param _vipSet 实例内网地址列表，格式如：172.1.0.12
+                     * 
                      */
                     void SetVipSet(const std::vector<std::string>& _vipSet);
 
                     /**
                      * 判断参数 VipSet 是否已赋值
                      * @return VipSet 是否已赋值
+                     * 
                      */
                     bool VipSetHasBeenSet() const;
 
                     /**
                      * 获取实例名称列表，模糊查询
                      * @return InstanceNameSet 实例名称列表，模糊查询
+                     * 
                      */
                     std::vector<std::string> GetInstanceNameSet() const;
 
                     /**
                      * 设置实例名称列表，模糊查询
-                     * @param InstanceNameSet 实例名称列表，模糊查询
+                     * @param _instanceNameSet 实例名称列表，模糊查询
+                     * 
                      */
                     void SetInstanceNameSet(const std::vector<std::string>& _instanceNameSet);
 
                     /**
                      * 判断参数 InstanceNameSet 是否已赋值
                      * @return InstanceNameSet 是否已赋值
+                     * 
                      */
                     bool InstanceNameSetHasBeenSet() const;
 
                     /**
                      * 获取实例版本代号列表，格式如：2008R2，2012SP3等
                      * @return VersionSet 实例版本代号列表，格式如：2008R2，2012SP3等
+                     * 
                      */
                     std::vector<std::string> GetVersionSet() const;
 
                     /**
                      * 设置实例版本代号列表，格式如：2008R2，2012SP3等
-                     * @param VersionSet 实例版本代号列表，格式如：2008R2，2012SP3等
+                     * @param _versionSet 实例版本代号列表，格式如：2008R2，2012SP3等
+                     * 
                      */
                     void SetVersionSet(const std::vector<std::string>& _versionSet);
 
                     /**
                      * 判断参数 VersionSet 是否已赋值
                      * @return VersionSet 是否已赋值
+                     * 
                      */
                     bool VersionSetHasBeenSet() const;
 
                     /**
                      * 获取实例可用区，格式如：ap-guangzhou-2
                      * @return Zone 实例可用区，格式如：ap-guangzhou-2
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置实例可用区，格式如：ap-guangzhou-2
-                     * @param Zone 实例可用区，格式如：ap-guangzhou-2
+                     * @param _zone 实例可用区，格式如：ap-guangzhou-2
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取实例标签列表
                      * @return TagKeys 实例标签列表
+                     * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
                      * 设置实例标签列表
-                     * @param TagKeys 实例标签列表
+                     * @param _tagKeys 实例标签列表
+                     * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
 
                     /**
                      * 判断参数 TagKeys 是否已赋值
                      * @return TagKeys 是否已赋值
+                     * 
                      */
                     bool TagKeysHasBeenSet() const;
 
                     /**
                      * 获取模糊查询关键字，支持实例id、实例名、内网ip
                      * @return SearchKey 模糊查询关键字，支持实例id、实例名、内网ip
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置模糊查询关键字，支持实例id、实例名、内网ip
-                     * @param SearchKey 模糊查询关键字，支持实例id、实例名、内网ip
+                     * @param _searchKey 模糊查询关键字，支持实例id、实例名、内网ip
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取实例唯一Uid列表
                      * @return UidSet 实例唯一Uid列表
+                     * 
                      */
                     std::vector<std::string> GetUidSet() const;
 
                     /**
                      * 设置实例唯一Uid列表
-                     * @param UidSet 实例唯一Uid列表
+                     * @param _uidSet 实例唯一Uid列表
+                     * 
                      */
                     void SetUidSet(const std::vector<std::string>& _uidSet);
 
                     /**
                      * 判断参数 UidSet 是否已赋值
                      * @return UidSet 是否已赋值
+                     * 
                      */
                     bool UidSetHasBeenSet() const;
 
                     /**
                      * 获取实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
                      * @return InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
-                     * @param InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * @param _instanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

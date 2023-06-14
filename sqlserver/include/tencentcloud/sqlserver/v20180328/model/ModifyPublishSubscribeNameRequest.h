@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取发布订阅ID
                      * @return PublishSubscribeId 发布订阅ID
+                     * 
                      */
                     uint64_t GetPublishSubscribeId() const;
 
                     /**
                      * 设置发布订阅ID
-                     * @param PublishSubscribeId 发布订阅ID
+                     * @param _publishSubscribeId 发布订阅ID
+                     * 
                      */
                     void SetPublishSubscribeId(const uint64_t& _publishSubscribeId);
 
                     /**
                      * 判断参数 PublishSubscribeId 是否已赋值
                      * @return PublishSubscribeId 是否已赋值
+                     * 
                      */
                     bool PublishSubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取待修改的发布订阅名称
                      * @return PublishSubscribeName 待修改的发布订阅名称
+                     * 
                      */
                     std::string GetPublishSubscribeName() const;
 
                     /**
                      * 设置待修改的发布订阅名称
-                     * @param PublishSubscribeName 待修改的发布订阅名称
+                     * @param _publishSubscribeName 待修改的发布订阅名称
+                     * 
                      */
                     void SetPublishSubscribeName(const std::string& _publishSubscribeName);
 
                     /**
                      * 判断参数 PublishSubscribeName 是否已赋值
                      * @return PublishSubscribeName 是否已赋值
+                     * 
                      */
                     bool PublishSubscribeNameHasBeenSet() const;
 

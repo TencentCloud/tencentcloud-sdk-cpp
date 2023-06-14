@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取裁剪区域左上角X坐标值
                      * @return X 裁剪区域左上角X坐标值
+                     * 
                      */
                     int64_t GetX() const;
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
                     /**
                      * 获取裁剪区域左上角Y坐标值
                      * @return Y 裁剪区域左上角Y坐标值
+                     * 
                      */
                     int64_t GetY() const;
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
                     /**
                      * 获取裁剪区域的宽度，单位为像素
                      * @return Width 裁剪区域的宽度，单位为像素
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取裁剪区域的高度，单位为像素
                      * @return Height 裁剪区域的高度，单位为像素
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取原图宽度，单位为像素
                      * @return OriginalWidth 原图宽度，单位为像素
+                     * 
                      */
                     int64_t GetOriginalWidth() const;
 
                     /**
                      * 判断参数 OriginalWidth 是否已赋值
                      * @return OriginalWidth 是否已赋值
+                     * 
                      */
                     bool OriginalWidthHasBeenSet() const;
 
                     /**
                      * 获取原图高度，单位为像素
                      * @return OriginalHeight 原图高度，单位为像素
+                     * 
                      */
                     int64_t GetOriginalHeight() const;
 
                     /**
                      * 判断参数 OriginalHeight 是否已赋值
                      * @return OriginalHeight 是否已赋值
+                     * 
                      */
                     bool OriginalHeightHasBeenSet() const;
 
@@ -134,12 +146,14 @@ namespace TencentCloud
 6：宽高比异常，指Width : Height取值超出[1, 2.5]的范围；
 
 以上是辅助决策的参考建议，可以根据业务需求选择采纳或忽视。
+                     * 
                      */
                     int64_t GetCropResult() const;
 
                     /**
                      * 判断参数 CropResult 是否已赋值
                      * @return CropResult 是否已赋值
+                     * 
                      */
                     bool CropResultHasBeenSet() const;
 

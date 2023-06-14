@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取规则名。
                      * @return RuleName 规则名。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名。
-                     * @param RuleName 规则名。
+                     * @param _ruleName 规则名。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -82,6 +85,7 @@ namespace TencentCloud
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
 <li>alg：Javascript挑战。</li>
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -94,7 +98,7 @@ namespace TencentCloud
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
 <li>alg：Javascript挑战。</li>
-                     * @param Action 处罚动作，取值有：
+                     * @param _action 处罚动作，取值有：
 <li>trans：放行；</li>
 <li>drop：拦截；</li>
 <li>monitor：观察；</li>
@@ -102,12 +106,14 @@ namespace TencentCloud
 <li>redirect：重定向；</li>
 <li>page：指定页面；</li>
 <li>alg：Javascript挑战。</li>
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -118,6 +124,7 @@ namespace TencentCloud
                      * @return RuleStatus 规则状态，取值有：
 <li>on：生效；</li>
 <li>off：失效。</li>
+                     * 
                      */
                     std::string GetRuleStatus() const;
 
@@ -125,51 +132,59 @@ namespace TencentCloud
                      * 设置规则状态，取值有：
 <li>on：生效；</li>
 <li>off：失效。</li>
-                     * @param RuleStatus 规则状态，取值有：
+                     * @param _ruleStatus 规则状态，取值有：
 <li>on：生效；</li>
 <li>off：失效。</li>
+                     * 
                      */
                     void SetRuleStatus(const std::string& _ruleStatus);
 
                     /**
                      * 判断参数 RuleStatus 是否已赋值
                      * @return RuleStatus 是否已赋值
+                     * 
                      */
                     bool RuleStatusHasBeenSet() const;
 
                     /**
                      * 获取自定义规则。
                      * @return AclConditions 自定义规则。
+                     * 
                      */
                     std::vector<AclCondition> GetAclConditions() const;
 
                     /**
                      * 设置自定义规则。
-                     * @param AclConditions 自定义规则。
+                     * @param _aclConditions 自定义规则。
+                     * 
                      */
                     void SetAclConditions(const std::vector<AclCondition>& _aclConditions);
 
                     /**
                      * 判断参数 AclConditions 是否已赋值
                      * @return AclConditions 是否已赋值
+                     * 
                      */
                     bool AclConditionsHasBeenSet() const;
 
                     /**
                      * 获取规则优先级，取值范围0-100。
                      * @return RulePriority 规则优先级，取值范围0-100。
+                     * 
                      */
                     int64_t GetRulePriority() const;
 
                     /**
                      * 设置规则优先级，取值范围0-100。
-                     * @param RulePriority 规则优先级，取值范围0-100。
+                     * @param _rulePriority 规则优先级，取值范围0-100。
+                     * 
                      */
                     void SetRulePriority(const int64_t& _rulePriority);
 
                     /**
                      * 判断参数 RulePriority 是否已赋值
                      * @return RulePriority 是否已赋值
+                     * 
                      */
                     bool RulePriorityHasBeenSet() const;
 
@@ -178,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleID 规则Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleID 规则Id。仅出参使用。
+                     * @param _ruleID 规则Id。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
@@ -200,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间。仅出参使用。
+                     * @param _updateTime 更新时间。仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
@@ -222,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PunishTime ip封禁的惩罚时间，取值范围0-2天。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPunishTime() const;
 
                     /**
                      * 设置ip封禁的惩罚时间，取值范围0-2天。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishTime ip封禁的惩罚时间，取值范围0-2天。默认为0。
+                     * @param _punishTime ip封禁的惩罚时间，取值范围0-2天。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPunishTime(const int64_t& _punishTime);
 
                     /**
                      * 判断参数 PunishTime 是否已赋值
                      * @return PunishTime 是否已赋值
+                     * 
                      */
                     bool PunishTimeHasBeenSet() const;
 
@@ -250,6 +274,7 @@ namespace TencentCloud
 <li>minutes：分；</li>
 <li>hour：小时。</li>默认为second。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPunishTimeUnit() const;
 
@@ -259,17 +284,19 @@ namespace TencentCloud
 <li>minutes：分；</li>
 <li>hour：小时。</li>默认为second。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishTimeUnit ip封禁的惩罚时间单位，取值有：
+                     * @param _punishTimeUnit ip封禁的惩罚时间单位，取值有：
 <li>second：秒；</li>
 <li>minutes：分；</li>
 <li>hour：小时。</li>默认为second。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPunishTimeUnit(const std::string& _punishTimeUnit);
 
                     /**
                      * 判断参数 PunishTimeUnit 是否已赋值
                      * @return PunishTimeUnit 是否已赋值
+                     * 
                      */
                     bool PunishTimeUnitHasBeenSet() const;
 
@@ -278,20 +305,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 自定义返回页面的名称。默认为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义返回页面的名称。默认为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 自定义返回页面的名称。默认为空字符串。
+                     * @param _name 自定义返回页面的名称。默认为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -300,20 +330,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageId 自定义返回页面的实例id。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPageId() const;
 
                     /**
                      * 设置自定义返回页面的实例id。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageId 自定义返回页面的实例id。默认为0。
+                     * @param _pageId 自定义返回页面的实例id。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPageId(const int64_t& _pageId);
 
                     /**
                      * 判断参数 PageId 是否已赋值
                      * @return PageId 是否已赋值
+                     * 
                      */
                     bool PageIdHasBeenSet() const;
 
@@ -322,20 +355,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectUrl 重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRedirectUrl() const;
 
                     /**
                      * 设置重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectUrl 重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
+                     * @param _redirectUrl 重定向时候的地址，必须为本用户接入的站点子域名。默认为空字符串。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectUrl(const std::string& _redirectUrl);
 
                     /**
                      * 判断参数 RedirectUrl 是否已赋值
                      * @return RedirectUrl 是否已赋值
+                     * 
                      */
                     bool RedirectUrlHasBeenSet() const;
 
@@ -344,20 +380,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseCode 重定向时候的返回码。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResponseCode() const;
 
                     /**
                      * 设置重定向时候的返回码。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResponseCode 重定向时候的返回码。默认为0。
+                     * @param _responseCode 重定向时候的返回码。默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResponseCode(const int64_t& _responseCode);
 
                     /**
                      * 判断参数 ResponseCode 是否已赋值
                      * @return ResponseCode 是否已赋值
+                     * 
                      */
                     bool ResponseCodeHasBeenSet() const;
 

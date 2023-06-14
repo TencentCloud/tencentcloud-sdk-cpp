@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return DBInstanceId 实例ID
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param DBInstanceId 实例ID
+                     * @param _dBInstanceId 实例ID
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取查询指定参数详情。ParamName为空或不传，默认返回全部参数列表
                      * @return ParamName 查询指定参数详情。ParamName为空或不传，默认返回全部参数列表
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置查询指定参数详情。ParamName为空或不传，默认返回全部参数列表
-                     * @param ParamName 查询指定参数详情。ParamName为空或不传，默认返回全部参数列表
+                     * @param _paramName 查询指定参数详情。ParamName为空或不传，默认返回全部参数列表
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 

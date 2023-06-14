@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取快照跨地域复制的结果，如果请求下发成功，则返回相应地地域的新快照ID，否则返回Error。
                      * @return SnapshotCopyResultSet 快照跨地域复制的结果，如果请求下发成功，则返回相应地地域的新快照ID，否则返回Error。
+                     * 
                      */
                     std::vector<SnapshotCopyResult> GetSnapshotCopyResultSet() const;
 
                     /**
                      * 判断参数 SnapshotCopyResultSet 是否已赋值
                      * @return SnapshotCopyResultSet 是否已赋值
+                     * 
                      */
                     bool SnapshotCopyResultSetHasBeenSet() const;
 

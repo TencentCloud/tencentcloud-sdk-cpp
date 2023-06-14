@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取直播流播放地址，目前仅支持 HLS 和 FLV 格式。
                      * @return Url 直播流播放地址，目前仅支持 HLS 和 FLV 格式。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置直播流播放地址，目前仅支持 HLS 和 FLV 格式。
-                     * @param Url 直播流播放地址，目前仅支持 HLS 和 FLV 格式。
+                     * @param _url 直播流播放地址，目前仅支持 HLS 和 FLV 格式。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取直播流录制时长，单位为秒，最大值为 7200。
                      * @return StreamRecordDuration 直播流录制时长，单位为秒，最大值为 7200。
+                     * 
                      */
                     uint64_t GetStreamRecordDuration() const;
 
                     /**
                      * 设置直播流录制时长，单位为秒，最大值为 7200。
-                     * @param StreamRecordDuration 直播流录制时长，单位为秒，最大值为 7200。
+                     * @param _streamRecordDuration 直播流录制时长，单位为秒，最大值为 7200。
+                     * 
                      */
                     void SetStreamRecordDuration(const uint64_t& _streamRecordDuration);
 
                     /**
                      * 判断参数 StreamRecordDuration 是否已赋值
                      * @return StreamRecordDuration 是否已赋值
+                     * 
                      */
                     bool StreamRecordDurationHasBeenSet() const;
 

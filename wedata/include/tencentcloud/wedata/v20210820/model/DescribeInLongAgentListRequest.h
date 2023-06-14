@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取WeData项目ID
                      * @return ProjectId WeData项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置WeData项目ID
-                     * @param ProjectId WeData项目ID
+                     * @param _projectId WeData项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取采集器ID
                      * @return AgentId 采集器ID
+                     * 
                      */
                     std::string GetAgentId() const;
 
                     /**
                      * 设置采集器ID
-                     * @param AgentId 采集器ID
+                     * @param _agentId 采集器ID
+                     * 
                      */
                     void SetAgentId(const std::string& _agentId);
 
                     /**
                      * 判断参数 AgentId 是否已赋值
                      * @return AgentId 是否已赋值
+                     * 
                      */
                     bool AgentIdHasBeenSet() const;
 
                     /**
                      * 获取Agent Name
                      * @return AgentName Agent Name
+                     * 
                      */
                     std::string GetAgentName() const;
 
                     /**
                      * 设置Agent Name
-                     * @param AgentName Agent Name
+                     * @param _agentName Agent Name
+                     * 
                      */
                     void SetAgentName(const std::string& _agentName);
 
                     /**
                      * 判断参数 AgentName 是否已赋值
                      * @return AgentName 是否已赋值
+                     * 
                      */
                     bool AgentNameHasBeenSet() const;
 
                     /**
                      * 获取集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
                      * @return AgentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
+                     * 
                      */
                     uint64_t GetAgentType() const;
 
                     /**
                      * 设置集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
-                     * @param AgentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
+                     * @param _agentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
+                     * 
                      */
                     void SetAgentType(const uint64_t& _agentType);
 
                     /**
                      * 判断参数 AgentType 是否已赋值
                      * @return AgentType 是否已赋值
+                     * 
                      */
                     bool AgentTypeHasBeenSet() const;
 
                     /**
                      * 获取Agent状态(running运行中，initializing 操作中，failed心跳异常)
                      * @return Status Agent状态(running运行中，initializing 操作中，failed心跳异常)
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置Agent状态(running运行中，initializing 操作中，failed心跳异常)
-                     * @param Status Agent状态(running运行中，initializing 操作中，failed心跳异常)
+                     * @param _status Agent状态(running运行中，initializing 操作中，failed心跳异常)
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取Vpc Id
                      * @return VpcId Vpc Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Vpc Id
-                     * @param VpcId Vpc Id
+                     * @param _vpcId Vpc Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取分页页码，从1开始，默认：1
                      * @return PageIndex 分页页码，从1开始，默认：1
+                     * 
                      */
                     uint64_t GetPageIndex() const;
 
                     /**
                      * 设置分页页码，从1开始，默认：1
-                     * @param PageIndex 分页页码，从1开始，默认：1
+                     * @param _pageIndex 分页页码，从1开始，默认：1
+                     * 
                      */
                     void SetPageIndex(const uint64_t& _pageIndex);
 
                     /**
                      * 判断参数 PageIndex 是否已赋值
                      * @return PageIndex 是否已赋值
+                     * 
                      */
                     bool PageIndexHasBeenSet() const;
 
                     /**
                      * 获取分页每页记录数，默认10
                      * @return PageSize 分页每页记录数，默认10
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页每页记录数，默认10
-                     * @param PageSize 分页每页记录数，默认10
+                     * @param _pageSize 分页每页记录数，默认10
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）
                      * @return Like 名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）
+                     * 
                      */
                     uint64_t GetLike() const;
 
                     /**
                      * 设置名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）
-                     * @param Like 名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）
+                     * @param _like 名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）
+                     * 
                      */
                     void SetLike(const uint64_t& _like);
 
                     /**
                      * 判断参数 Like 是否已赋值
                      * @return Like 是否已赋值
+                     * 
                      */
                     bool LikeHasBeenSet() const;
 
                     /**
                      * 获取agent类型【多个用逗号分隔】
                      * @return AgentTypes agent类型【多个用逗号分隔】
+                     * 
                      */
                     std::string GetAgentTypes() const;
 
                     /**
                      * 设置agent类型【多个用逗号分隔】
-                     * @param AgentTypes agent类型【多个用逗号分隔】
+                     * @param _agentTypes agent类型【多个用逗号分隔】
+                     * 
                      */
                     void SetAgentTypes(const std::string& _agentTypes);
 
                     /**
                      * 判断参数 AgentTypes 是否已赋值
                      * @return AgentTypes 是否已赋值
+                     * 
                      */
                     bool AgentTypesHasBeenSet() const;
 

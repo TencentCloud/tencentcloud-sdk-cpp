@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取物理机设备类型列表
                      * @return DeviceClassSet 物理机设备类型列表
+                     * 
                      */
                     std::vector<DeviceClass> GetDeviceClassSet() const;
 
                     /**
                      * 判断参数 DeviceClassSet 是否已赋值
                      * @return DeviceClassSet 是否已赋值
+                     * 
                      */
                     bool DeviceClassSetHasBeenSet() const;
 

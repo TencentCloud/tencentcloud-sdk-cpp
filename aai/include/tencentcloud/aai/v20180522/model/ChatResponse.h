@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取聊天输出文本
                      * @return Answer 聊天输出文本
+                     * 
                      */
                     std::string GetAnswer() const;
 
                     /**
                      * 判断参数 Answer 是否已赋值
                      * @return Answer 是否已赋值
+                     * 
                      */
                     bool AnswerHasBeenSet() const;
 

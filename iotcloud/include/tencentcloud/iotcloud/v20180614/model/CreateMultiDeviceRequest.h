@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取产品 ID。创建产品时腾讯云为用户分配全局唯一的 ID
                      * @return ProductId 产品 ID。创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品 ID。创建产品时腾讯云为用户分配全局唯一的 ID
-                     * @param ProductId 产品 ID。创建产品时腾讯云为用户分配全局唯一的 ID
+                     * @param _productId 产品 ID。创建产品时腾讯云为用户分配全局唯一的 ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取批量创建的设备名数组，单次最多创建 100 个设备。命名规则：[a-zA-Z0-9:_-]{1,48}
                      * @return DeviceNames 批量创建的设备名数组，单次最多创建 100 个设备。命名规则：[a-zA-Z0-9:_-]{1,48}
+                     * 
                      */
                     std::vector<std::string> GetDeviceNames() const;
 
                     /**
                      * 设置批量创建的设备名数组，单次最多创建 100 个设备。命名规则：[a-zA-Z0-9:_-]{1,48}
-                     * @param DeviceNames 批量创建的设备名数组，单次最多创建 100 个设备。命名规则：[a-zA-Z0-9:_-]{1,48}
+                     * @param _deviceNames 批量创建的设备名数组，单次最多创建 100 个设备。命名规则：[a-zA-Z0-9:_-]{1,48}
+                     * 
                      */
                     void SetDeviceNames(const std::vector<std::string>& _deviceNames);
 
                     /**
                      * 判断参数 DeviceNames 是否已赋值
                      * @return DeviceNames 是否已赋值
+                     * 
                      */
                     bool DeviceNamesHasBeenSet() const;
 

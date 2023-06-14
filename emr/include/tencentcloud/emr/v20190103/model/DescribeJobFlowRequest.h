@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取流程任务Id，RunJobFlow接口返回的值。
                      * @return JobFlowId 流程任务Id，RunJobFlow接口返回的值。
+                     * 
                      */
                     int64_t GetJobFlowId() const;
 
                     /**
                      * 设置流程任务Id，RunJobFlow接口返回的值。
-                     * @param JobFlowId 流程任务Id，RunJobFlow接口返回的值。
+                     * @param _jobFlowId 流程任务Id，RunJobFlow接口返回的值。
+                     * 
                      */
                     void SetJobFlowId(const int64_t& _jobFlowId);
 
                     /**
                      * 判断参数 JobFlowId 是否已赋值
                      * @return JobFlowId 是否已赋值
+                     * 
                      */
                     bool JobFlowIdHasBeenSet() const;
 

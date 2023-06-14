@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回token
                      * @return Token 返回token
+                     * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 判断参数 Token 是否已赋值
                      * @return Token 是否已赋值
+                     * 
                      */
                     bool TokenHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return ExpireTime 过期时间
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

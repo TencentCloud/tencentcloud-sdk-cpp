@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutOrderNo 外部订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutOrderNo() const;
 
                     /**
                      * 判断参数 OutOrderNo 是否已赋值
                      * @return OutOrderNo 是否已赋值
+                     * 
                      */
                     bool OutOrderNoHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelOrderId 渠道订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
                      * 判断参数 ChannelOrderId 是否已赋值
                      * @return ChannelOrderId 是否已赋值
+                     * 
                      */
                     bool ChannelOrderIdHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalChannelDataType 第三方渠道数据类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalChannelDataType() const;
 
                     /**
                      * 判断参数 ExternalChannelDataType 是否已赋值
                      * @return ExternalChannelDataType 是否已赋值
+                     * 
                      */
                     bool ExternalChannelDataTypeHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 渠道名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalChannelDataList 第三方渠道数据列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CloudExternalChannelData> GetExternalChannelDataList() const;
 
                     /**
                      * 判断参数 ExternalChannelDataList 是否已赋值
                      * @return ExternalChannelDataList 是否已赋值
+                     * 
                      */
                     bool ExternalChannelDataListHasBeenSet() const;
 
@@ -119,12 +129,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAppId 子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
@@ -133,12 +145,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 米大师分配的支付主MidasAppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 

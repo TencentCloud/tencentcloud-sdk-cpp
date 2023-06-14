@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取SQS 队列区域。
                      * @return SQSRegion SQS 队列区域。
+                     * 
                      */
                     std::string GetSQSRegion() const;
 
                     /**
                      * 设置SQS 队列区域。
-                     * @param SQSRegion SQS 队列区域。
+                     * @param _sQSRegion SQS 队列区域。
+                     * 
                      */
                     void SetSQSRegion(const std::string& _sQSRegion);
 
                     /**
                      * 判断参数 SQSRegion 是否已赋值
                      * @return SQSRegion 是否已赋值
+                     * 
                      */
                     bool SQSRegionHasBeenSet() const;
 
                     /**
                      * 获取SQS 队列名称。
                      * @return SQSQueueName SQS 队列名称。
+                     * 
                      */
                     std::string GetSQSQueueName() const;
 
                     /**
                      * 设置SQS 队列名称。
-                     * @param SQSQueueName SQS 队列名称。
+                     * @param _sQSQueueName SQS 队列名称。
+                     * 
                      */
                     void SetSQSQueueName(const std::string& _sQSQueueName);
 
                     /**
                      * 判断参数 SQSQueueName 是否已赋值
                      * @return SQSQueueName 是否已赋值
+                     * 
                      */
                     bool SQSQueueNameHasBeenSet() const;
 
                     /**
                      * 获取读写SQS的秘钥id。
                      * @return S3SecretId 读写SQS的秘钥id。
+                     * 
                      */
                     std::string GetS3SecretId() const;
 
                     /**
                      * 设置读写SQS的秘钥id。
-                     * @param S3SecretId 读写SQS的秘钥id。
+                     * @param _s3SecretId 读写SQS的秘钥id。
+                     * 
                      */
                     void SetS3SecretId(const std::string& _s3SecretId);
 
                     /**
                      * 判断参数 S3SecretId 是否已赋值
                      * @return S3SecretId 是否已赋值
+                     * 
                      */
                     bool S3SecretIdHasBeenSet() const;
 
                     /**
                      * 获取读写SQS的秘钥key。
                      * @return S3SecretKey 读写SQS的秘钥key。
+                     * 
                      */
                     std::string GetS3SecretKey() const;
 
                     /**
                      * 设置读写SQS的秘钥key。
-                     * @param S3SecretKey 读写SQS的秘钥key。
+                     * @param _s3SecretKey 读写SQS的秘钥key。
+                     * 
                      */
                     void SetS3SecretKey(const std::string& _s3SecretKey);
 
                     /**
                      * 判断参数 S3SecretKey 是否已赋值
                      * @return S3SecretKey 是否已赋值
+                     * 
                      */
                     bool S3SecretKeyHasBeenSet() const;
 

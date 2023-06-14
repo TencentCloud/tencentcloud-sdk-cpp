@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return MetricName 指标名
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
-                     * @param MetricName 指标名
+                     * @param _metricName 指标名
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取指标中文名
                      * @return MetricNameCN 指标中文名
+                     * 
                      */
                     std::string GetMetricNameCN() const;
 
                     /**
                      * 设置指标中文名
-                     * @param MetricNameCN 指标中文名
+                     * @param _metricNameCN 指标中文名
+                     * 
                      */
                     void SetMetricNameCN(const std::string& _metricNameCN);
 
                     /**
                      * 判断参数 MetricNameCN 是否已赋值
                      * @return MetricNameCN 是否已赋值
+                     * 
                      */
                     bool MetricNameCNHasBeenSet() const;
 
                     /**
                      * 获取时间序列
                      * @return TimeSerial 时间序列
+                     * 
                      */
                     std::vector<int64_t> GetTimeSerial() const;
 
                     /**
                      * 设置时间序列
-                     * @param TimeSerial 时间序列
+                     * @param _timeSerial 时间序列
+                     * 
                      */
                     void SetTimeSerial(const std::vector<int64_t>& _timeSerial);
 
                     /**
                      * 判断参数 TimeSerial 是否已赋值
                      * @return TimeSerial 是否已赋值
+                     * 
                      */
                     bool TimeSerialHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSerial 数据序列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetDataSerial() const;
 
                     /**
                      * 设置数据序列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataSerial 数据序列
+                     * @param _dataSerial 数据序列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataSerial(const std::vector<double>& _dataSerial);
 
                     /**
                      * 判断参数 DataSerial 是否已赋值
                      * @return DataSerial 是否已赋值
+                     * 
                      */
                     bool DataSerialHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 维度列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置维度列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 维度列表
+                     * @param _tags 维度列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

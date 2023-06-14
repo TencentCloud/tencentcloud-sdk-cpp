@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总个数
                      * @return TotalCount 总个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取计划数组
                      * @return Plans 计划数组
+                     * 
                      */
                     std::vector<LiveRecordPlanItem> GetPlans() const;
 
                     /**
                      * 判断参数 Plans 是否已赋值
                      * @return Plans 是否已赋值
+                     * 
                      */
                     bool PlansHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Theme 文本分类题目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTheme() const;
 
                     /**
                      * 设置文本分类题目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Theme 文本分类题目名称
+                     * @param _theme 文本分类题目名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTheme(const std::string& _theme);
 
                     /**
                      * 判断参数 Theme 是否已赋值
                      * @return Theme 是否已赋值
+                     * 
                      */
                     bool ThemeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassLabelList 一级标签分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TextLabelDistributionDetailInfoFirstClass> GetClassLabelList() const;
 
                     /**
                      * 设置一级标签分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClassLabelList 一级标签分布
+                     * @param _classLabelList 一级标签分布
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClassLabelList(const std::vector<TextLabelDistributionDetailInfoFirstClass>& _classLabelList);
 
                     /**
                      * 判断参数 ClassLabelList 是否已赋值
                      * @return ClassLabelList 是否已赋值
+                     * 
                      */
                     bool ClassLabelListHasBeenSet() const;
 

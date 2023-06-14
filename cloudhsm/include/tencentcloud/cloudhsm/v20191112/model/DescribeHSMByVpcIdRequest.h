@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取VPC标识符
                      * @return VpcId VPC标识符
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC标识符
-                     * @param VpcId VPC标识符
+                     * @param _vpcId VPC标识符
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 

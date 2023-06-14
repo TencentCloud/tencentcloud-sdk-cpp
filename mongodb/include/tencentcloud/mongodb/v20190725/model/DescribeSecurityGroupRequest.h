@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID。例如：cmgo-p8vn****。
                      * @return InstanceId 实例 ID。例如：cmgo-p8vn****。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。例如：cmgo-p8vn****。
-                     * @param InstanceId 实例 ID。例如：cmgo-p8vn****。
+                     * @param _instanceId 实例 ID。例如：cmgo-p8vn****。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

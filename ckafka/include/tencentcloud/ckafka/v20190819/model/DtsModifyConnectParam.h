@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取Dts实例Id【不支持修改】
                      * @return Resource Dts实例Id【不支持修改】
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Dts实例Id【不支持修改】
-                     * @param Resource Dts实例Id【不支持修改】
+                     * @param _resource Dts实例Id【不支持修改】
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取Dts的连接port【不支持修改】
                      * @return Port Dts的连接port【不支持修改】
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Dts的连接port【不支持修改】
-                     * @param Port Dts的连接port【不支持修改】
+                     * @param _port Dts的连接port【不支持修改】
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取Dts消费分组的Id
                      * @return GroupId Dts消费分组的Id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置Dts消费分组的Id
-                     * @param GroupId Dts消费分组的Id
+                     * @param _groupId Dts消费分组的Id
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取Dts消费分组的账号
                      * @return UserName Dts消费分组的账号
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置Dts消费分组的账号
-                     * @param UserName Dts消费分组的账号
+                     * @param _userName Dts消费分组的账号
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取Dts消费分组的密码
                      * @return Password Dts消费分组的密码
+                     * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Dts消费分组的密码
-                     * @param Password Dts消费分组的密码
+                     * @param _password Dts消费分组的密码
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 
                     /**
                      * 获取是否更新到关联的Datahub任务，默认为true
                      * @return IsUpdate 是否更新到关联的Datahub任务，默认为true
+                     * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Datahub任务，默认为true
-                     * @param IsUpdate 是否更新到关联的Datahub任务，默认为true
+                     * @param _isUpdate 是否更新到关联的Datahub任务，默认为true
+                     * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
 
                     /**
                      * 判断参数 IsUpdate 是否已赋值
                      * @return IsUpdate 是否已赋值
+                     * 
                      */
                     bool IsUpdateHasBeenSet() const;
 
                     /**
                      * 获取Dts订阅的topic【不支持修改】
                      * @return Topic Dts订阅的topic【不支持修改】
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Dts订阅的topic【不支持修改】
-                     * @param Topic Dts订阅的topic【不支持修改】
+                     * @param _topic Dts订阅的topic【不支持修改】
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 

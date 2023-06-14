@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取通知ID
                      * @return Id 通知ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置通知ID
-                     * @param Id 通知ID
+                     * @param _id 通知ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取通知开关信息；0：关闭；15开启
                      * @return NoticeType 通知开关信息；0：关闭；15开启
+                     * 
                      */
                     int64_t GetNoticeType() const;
 
                     /**
                      * 设置通知开关信息；0：关闭；15开启
-                     * @param NoticeType 通知开关信息；0：关闭；15开启
+                     * @param _noticeType 通知开关信息；0：关闭；15开启
+                     * 
                      */
                     void SetNoticeType(const int64_t& _noticeType);
 
                     /**
                      * 判断参数 NoticeType 是否已赋值
                      * @return NoticeType 是否已赋值
+                     * 
                      */
                     bool NoticeTypeHasBeenSet() const;
 
                     /**
                      * 获取额度信息
                      * @return LimitInfos 额度信息
+                     * 
                      */
                     std::vector<LimitInfo> GetLimitInfos() const;
 
                     /**
                      * 设置额度信息
-                     * @param LimitInfos 额度信息
+                     * @param _limitInfos 额度信息
+                     * 
                      */
                     void SetLimitInfos(const std::vector<LimitInfo>& _limitInfos);
 
                     /**
                      * 判断参数 LimitInfos 是否已赋值
                      * @return LimitInfos 是否已赋值
+                     * 
                      */
                     bool LimitInfosHasBeenSet() const;
 

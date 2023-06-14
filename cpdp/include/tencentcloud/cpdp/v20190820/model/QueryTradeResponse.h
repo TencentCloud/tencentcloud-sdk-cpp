@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取贸易材料明细查询结果
                      * @return Result 贸易材料明细查询结果
+                     * 
                      */
                     QueryTradeResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

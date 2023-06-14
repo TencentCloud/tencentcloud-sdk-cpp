@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
                      * @return Status 任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
-                     * @param Status 任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
+                     * @param _status 任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务ID，例如msp-jitoh33n
                      * @return TaskId 任务ID，例如msp-jitoh33n
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID，例如msp-jitoh33n
-                     * @param TaskId 任务ID，例如msp-jitoh33n
+                     * @param _taskId 任务ID，例如msp-jitoh33n
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

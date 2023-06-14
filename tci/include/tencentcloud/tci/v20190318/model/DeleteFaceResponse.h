@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取人脸操作结果
                      * @return FaceInfoSet 人脸操作结果
+                     * 
                      */
                     std::vector<FaceInfo> GetFaceInfoSet() const;
 
                     /**
                      * 判断参数 FaceInfoSet 是否已赋值
                      * @return FaceInfoSet 是否已赋值
+                     * 
                      */
                     bool FaceInfoSetHasBeenSet() const;
 

@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
                      * @return ResourceDescription 资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
+                     * 
                      */
                     std::string GetResourceDescription() const;
 
                     /**
                      * 设置资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
-                     * @param ResourceDescription 资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
+                     * @param _resourceDescription 资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)
+                     * 
                      */
                     void SetResourceDescription(const std::string& _resourceDescription);
 
                     /**
                      * 判断参数 ResourceDescription 是否已赋值
                      * @return ResourceDescription 是否已赋值
+                     * 
                      */
                     bool ResourceDescriptionHasBeenSet() const;
 
@@ -72,20 +75,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return APIGWParams apigw参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     APIGWParams GetAPIGWParams() const;
 
                     /**
                      * 设置apigw参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param APIGWParams apigw参数
+                     * @param _aPIGWParams apigw参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAPIGWParams(const APIGWParams& _aPIGWParams);
 
                     /**
                      * 判断参数 APIGWParams 是否已赋值
                      * @return APIGWParams 是否已赋值
+                     * 
                      */
                     bool APIGWParamsHasBeenSet() const;
 
@@ -94,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CkafkaParams ckafka参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CkafkaParams GetCkafkaParams() const;
 
                     /**
                      * 设置ckafka参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CkafkaParams ckafka参数
+                     * @param _ckafkaParams ckafka参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCkafkaParams(const CkafkaParams& _ckafkaParams);
 
                     /**
                      * 判断参数 CkafkaParams 是否已赋值
                      * @return CkafkaParams 是否已赋值
+                     * 
                      */
                     bool CkafkaParamsHasBeenSet() const;
 
@@ -116,20 +125,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DTSParams data transfer service (DTS)参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DTSParams GetDTSParams() const;
 
                     /**
                      * 设置data transfer service (DTS)参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DTSParams data transfer service (DTS)参数
+                     * @param _dTSParams data transfer service (DTS)参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDTSParams(const DTSParams& _dTSParams);
 
                     /**
                      * 判断参数 DTSParams 是否已赋值
                      * @return DTSParams 是否已赋值
+                     * 
                      */
                     bool DTSParamsHasBeenSet() const;
 

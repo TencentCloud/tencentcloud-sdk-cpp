@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 可选值：
 <br><li> Period - 周期执行
 <br><li> Fixed - 定期执行
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置可选值：
 <br><li> Period - 周期执行
 <br><li> Fixed - 定期执行
-                     * @param Type 可选值：
+                     * @param _type 可选值：
 <br><li> Period - 周期执行
 <br><li> Fixed - 定期执行
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
                      * @return Time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+                     * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
-                     * @param Time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+                     * @param _time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+                     * 
                      */
                     void SetTime(const int64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 

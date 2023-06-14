@@ -56,6 +56,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -64,16 +65,18 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 开关，取值有：
+                     * @param _switch 开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -82,20 +85,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntelligenceRuleItems 规则详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IntelligenceRuleItem> GetIntelligenceRuleItems() const;
 
                     /**
                      * 设置规则详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntelligenceRuleItems 规则详情。
+                     * @param _intelligenceRuleItems 规则详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIntelligenceRuleItems(const std::vector<IntelligenceRuleItem>& _intelligenceRuleItems);
 
                     /**
                      * 判断参数 IntelligenceRuleItems 是否已赋值
                      * @return IntelligenceRuleItems 是否已赋值
+                     * 
                      */
                     bool IntelligenceRuleItemsHasBeenSet() const;
 

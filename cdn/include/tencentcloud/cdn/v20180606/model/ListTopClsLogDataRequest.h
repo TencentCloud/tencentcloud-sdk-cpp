@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的日志集ID
                      * @return LogsetId 需要查询的日志集ID
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置需要查询的日志集ID
-                     * @param LogsetId 需要查询的日志集ID
+                     * @param _logsetId 需要查询的日志集ID
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取需要查询的日志主题ID组合，多个以逗号分隔
                      * @return TopicIds 需要查询的日志主题ID组合，多个以逗号分隔
+                     * 
                      */
                     std::string GetTopicIds() const;
 
                     /**
                      * 设置需要查询的日志主题ID组合，多个以逗号分隔
-                     * @param TopicIds 需要查询的日志主题ID组合，多个以逗号分隔
+                     * @param _topicIds 需要查询的日志主题ID组合，多个以逗号分隔
+                     * 
                      */
                     void SetTopicIds(const std::string& _topicIds);
 
                     /**
                      * 判断参数 TopicIds 是否已赋值
                      * @return TopicIds 是否已赋值
+                     * 
                      */
                     bool TopicIdsHasBeenSet() const;
 
                     /**
                      * 获取需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS
                      * @return StartTime 需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS
-                     * @param StartTime 需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS
+                     * @param _startTime 需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS，时间跨度应小于10分钟
                      * @return EndTime 需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS，时间跨度应小于10分钟
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS，时间跨度应小于10分钟
-                     * @param EndTime 需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS，时间跨度应小于10分钟
+                     * @param _endTime 需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS，时间跨度应小于10分钟
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取指定域名查询
                      * @return Domain 指定域名查询
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置指定域名查询
-                     * @param Domain 指定域名查询
+                     * @param _domain 指定域名查询
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
@@ -141,6 +156,7 @@ namespace TencentCloud
 如：
 /files/* 表示所有以/files/开头的请求
 *.jpg 表示所有以.jpg结尾的请求
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -149,70 +165,81 @@ namespace TencentCloud
 如：
 /files/* 表示所有以/files/开头的请求
 *.jpg 表示所有以.jpg结尾的请求
-                     * @param Url 指定访问的URL查询，支持URL开头和结尾使用\*表示通配
+                     * @param _url 指定访问的URL查询，支持URL开头和结尾使用\*表示通配
 如：
 /files/* 表示所有以/files/开头的请求
 *.jpg 表示所有以.jpg结尾的请求
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取接入渠道，cdn或者ecdn，默认值为cdn
                      * @return Channel 接入渠道，cdn或者ecdn，默认值为cdn
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置接入渠道，cdn或者ecdn，默认值为cdn
-                     * @param Channel 接入渠道，cdn或者ecdn，默认值为cdn
+                     * @param _channel 接入渠道，cdn或者ecdn，默认值为cdn
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取要查询的Top条数，最大值为100，默认为10
                      * @return Limit 要查询的Top条数，最大值为100，默认为10
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置要查询的Top条数，最大值为100，默认为10
-                     * @param Limit 要查询的Top条数，最大值为100，默认为10
+                     * @param _limit 要查询的Top条数，最大值为100，默认为10
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取按请求量排序， asc（升序）或者 desc（降序），默认为 desc
                      * @return Sort 按请求量排序， asc（升序）或者 desc（降序），默认为 desc
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置按请求量排序， asc（升序）或者 desc（降序），默认为 desc
-                     * @param Sort 按请求量排序， asc（升序）或者 desc（降序），默认为 desc
+                     * @param _sort 按请求量排序， asc（升序）或者 desc（降序），默认为 desc
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 

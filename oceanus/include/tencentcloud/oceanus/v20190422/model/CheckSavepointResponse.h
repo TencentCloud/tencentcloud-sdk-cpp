@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取资源 id
                      * @return SerialId 资源 id
+                     * 
                      */
                     std::string GetSerialId() const;
 
                     /**
                      * 判断参数 SerialId 是否已赋值
                      * @return SerialId 是否已赋值
+                     * 
                      */
                     bool SerialIdHasBeenSet() const;
 
                     /**
                      * 获取1=可用，2=不可用
                      * @return SavepointStatus 1=可用，2=不可用
+                     * 
                      */
                     int64_t GetSavepointStatus() const;
 
                     /**
                      * 判断参数 SavepointStatus 是否已赋值
                      * @return SavepointStatus 是否已赋值
+                     * 
                      */
                     bool SavepointStatusHasBeenSet() const;
 

@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取集群挂载CFS文件系统选项。
                      * @return CFSOptions 集群挂载CFS文件系统选项。
+                     * 
                      */
                     std::vector<CFSOption> GetCFSOptions() const;
 
                     /**
                      * 设置集群挂载CFS文件系统选项。
-                     * @param CFSOptions 集群挂载CFS文件系统选项。
+                     * @param _cFSOptions 集群挂载CFS文件系统选项。
+                     * 
                      */
                     void SetCFSOptions(const std::vector<CFSOption>& _cFSOptions);
 
                     /**
                      * 判断参数 CFSOptions 是否已赋值
                      * @return CFSOptions 是否已赋值
+                     * 
                      */
                     bool CFSOptionsHasBeenSet() const;
 
                     /**
                      * 获取集群挂载GooseFS文件系统选项。
                      * @return GooseFSOptions 集群挂载GooseFS文件系统选项。
+                     * 
                      */
                     std::vector<GooseFSOption> GetGooseFSOptions() const;
 
                     /**
                      * 设置集群挂载GooseFS文件系统选项。
-                     * @param GooseFSOptions 集群挂载GooseFS文件系统选项。
+                     * @param _gooseFSOptions 集群挂载GooseFS文件系统选项。
+                     * 
                      */
                     void SetGooseFSOptions(const std::vector<GooseFSOption>& _gooseFSOptions);
 
                     /**
                      * 判断参数 GooseFSOptions 是否已赋值
                      * @return GooseFSOptions 是否已赋值
+                     * 
                      */
                     bool GooseFSOptionsHasBeenSet() const;
 
                     /**
                      * 获取集群挂载GooseFSx文件系统选项。
                      * @return GooseFSxOptions 集群挂载GooseFSx文件系统选项。
+                     * 
                      */
                     std::vector<GooseFSxOption> GetGooseFSxOptions() const;
 
                     /**
                      * 设置集群挂载GooseFSx文件系统选项。
-                     * @param GooseFSxOptions 集群挂载GooseFSx文件系统选项。
+                     * @param _gooseFSxOptions 集群挂载GooseFSx文件系统选项。
+                     * 
                      */
                     void SetGooseFSxOptions(const std::vector<GooseFSxOption>& _gooseFSxOptions);
 
                     /**
                      * 判断参数 GooseFSxOptions 是否已赋值
                      * @return GooseFSxOptions 是否已赋值
+                     * 
                      */
                     bool GooseFSxOptionsHasBeenSet() const;
 

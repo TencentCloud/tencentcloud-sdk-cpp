@@ -52,24 +52,28 @@ namespace TencentCloud
 - AUTO: 房间内长时间没有音视频上行及白板操作导致自动停止推流
 - USER_CALL: 主动调用了停止推流接口
 - EXCEPTION: 推流异常结束
+                     * 
                      */
                     std::string GetFinishReason() const;
 
                     /**
                      * 判断参数 FinishReason 是否已赋值
                      * @return FinishReason 是否已赋值
+                     * 
                      */
                     bool FinishReasonHasBeenSet() const;
 
                     /**
                      * 获取需要查询结果的白板推流任务Id
                      * @return TaskId 需要查询结果的白板推流任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -82,96 +86,112 @@ namespace TencentCloud
 - PREPARED: 表示推流正在准备中（进房/启动推流服务等操作）
 - PUSHING: 表示推流已开始
 - STOPPED: 表示推流已停止
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取房间号
                      * @return RoomId 房间号
+                     * 
                      */
                     int64_t GetRoomId() const;
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取白板的群组 Id
                      * @return GroupId 白板的群组 Id
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取推流用户Id
                      * @return PushUserId 推流用户Id
+                     * 
                      */
                     std::string GetPushUserId() const;
 
                     /**
                      * 判断参数 PushUserId 是否已赋值
                      * @return PushUserId 是否已赋值
+                     * 
                      */
                     bool PushUserIdHasBeenSet() const;
 
                     /**
                      * 获取实际开始推流时间，Unix 时间戳，单位秒
                      * @return PushStartTime 实际开始推流时间，Unix 时间戳，单位秒
+                     * 
                      */
                     int64_t GetPushStartTime() const;
 
                     /**
                      * 判断参数 PushStartTime 是否已赋值
                      * @return PushStartTime 是否已赋值
+                     * 
                      */
                     bool PushStartTimeHasBeenSet() const;
 
                     /**
                      * 获取实际停止推流时间，Unix 时间戳，单位秒
                      * @return PushStopTime 实际停止推流时间，Unix 时间戳，单位秒
+                     * 
                      */
                     int64_t GetPushStopTime() const;
 
                     /**
                      * 判断参数 PushStopTime 是否已赋值
                      * @return PushStopTime 是否已赋值
+                     * 
                      */
                     bool PushStopTimeHasBeenSet() const;
 
                     /**
                      * 获取推流过程中出现异常的次数
                      * @return ExceptionCnt 推流过程中出现异常的次数
+                     * 
                      */
                     int64_t GetExceptionCnt() const;
 
                     /**
                      * 判断参数 ExceptionCnt 是否已赋值
                      * @return ExceptionCnt 是否已赋值
+                     * 
                      */
                     bool ExceptionCntHasBeenSet() const;
 
                     /**
                      * 获取白板推流首帧对应的IM时间戳，可用于录制回放时IM聊天消息与白板推流视频进行同步对时。
                      * @return IMSyncTime 白板推流首帧对应的IM时间戳，可用于录制回放时IM聊天消息与白板推流视频进行同步对时。
+                     * 
                      */
                     int64_t GetIMSyncTime() const;
 
                     /**
                      * 判断参数 IMSyncTime 是否已赋值
                      * @return IMSyncTime 是否已赋值
+                     * 
                      */
                     bool IMSyncTimeHasBeenSet() const;
 
@@ -180,12 +200,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Backup 备份推流任务结果信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackup() const;
 
                     /**
                      * 判断参数 Backup 是否已赋值
                      * @return Backup 是否已赋值
+                     * 
                      */
                     bool BackupHasBeenSet() const;
 

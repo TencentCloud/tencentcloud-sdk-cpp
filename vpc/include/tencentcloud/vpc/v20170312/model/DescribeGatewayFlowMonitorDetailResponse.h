@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的对象数。
                      * @return TotalCount 符合条件的对象数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取网关流量监控明细。
                      * @return GatewayFlowMonitorDetailSet 网关流量监控明细。
+                     * 
                      */
                     std::vector<GatewayFlowMonitorDetail> GetGatewayFlowMonitorDetailSet() const;
 
                     /**
                      * 判断参数 GatewayFlowMonitorDetailSet 是否已赋值
                      * @return GatewayFlowMonitorDetailSet 是否已赋值
+                     * 
                      */
                     bool GatewayFlowMonitorDetailSetHasBeenSet() const;
 

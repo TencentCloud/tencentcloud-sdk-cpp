@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取脚本的cos地址，参照格式：https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh查询cos存储桶列表：[存储桶列表](https://console.cloud.tencent.com/cos/bucket)
                      * @return CosFileURI 脚本的cos地址，参照格式：https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh查询cos存储桶列表：[存储桶列表](https://console.cloud.tencent.com/cos/bucket)
+                     * 
                      */
                     std::string GetCosFileURI() const;
 
                     /**
                      * 设置脚本的cos地址，参照格式：https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh查询cos存储桶列表：[存储桶列表](https://console.cloud.tencent.com/cos/bucket)
-                     * @param CosFileURI 脚本的cos地址，参照格式：https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh查询cos存储桶列表：[存储桶列表](https://console.cloud.tencent.com/cos/bucket)
+                     * @param _cosFileURI 脚本的cos地址，参照格式：https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh查询cos存储桶列表：[存储桶列表](https://console.cloud.tencent.com/cos/bucket)
+                     * 
                      */
                     void SetCosFileURI(const std::string& _cosFileURI);
 
                     /**
                      * 判断参数 CosFileURI 是否已赋值
                      * @return CosFileURI 是否已赋值
+                     * 
                      */
                     bool CosFileURIHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>resourceAfter：节点初始化后</li>
 <li>clusterAfter：集群启动后</li>
 <li>clusterBefore：集群启动前</li>
+                     * 
                      */
                     std::string GetExecutionMoment() const;
 
@@ -81,52 +85,60 @@ namespace TencentCloud
 <li>resourceAfter：节点初始化后</li>
 <li>clusterAfter：集群启动后</li>
 <li>clusterBefore：集群启动前</li>
-                     * @param ExecutionMoment 引导脚步执行时机范围
+                     * @param _executionMoment 引导脚步执行时机范围
 <li>resourceAfter：节点初始化后</li>
 <li>clusterAfter：集群启动后</li>
 <li>clusterBefore：集群启动前</li>
+                     * 
                      */
                     void SetExecutionMoment(const std::string& _executionMoment);
 
                     /**
                      * 判断参数 ExecutionMoment 是否已赋值
                      * @return ExecutionMoment 是否已赋值
+                     * 
                      */
                     bool ExecutionMomentHasBeenSet() const;
 
                     /**
                      * 获取执行脚本参数，参数格式请遵循标准Shell规范
                      * @return Args 执行脚本参数，参数格式请遵循标准Shell规范
+                     * 
                      */
                     std::vector<std::string> GetArgs() const;
 
                     /**
                      * 设置执行脚本参数，参数格式请遵循标准Shell规范
-                     * @param Args 执行脚本参数，参数格式请遵循标准Shell规范
+                     * @param _args 执行脚本参数，参数格式请遵循标准Shell规范
+                     * 
                      */
                     void SetArgs(const std::vector<std::string>& _args);
 
                     /**
                      * 判断参数 Args 是否已赋值
                      * @return Args 是否已赋值
+                     * 
                      */
                     bool ArgsHasBeenSet() const;
 
                     /**
                      * 获取脚本文件名
                      * @return CosFileName 脚本文件名
+                     * 
                      */
                     std::string GetCosFileName() const;
 
                     /**
                      * 设置脚本文件名
-                     * @param CosFileName 脚本文件名
+                     * @param _cosFileName 脚本文件名
+                     * 
                      */
                     void SetCosFileName(const std::string& _cosFileName);
 
                     /**
                      * 判断参数 CosFileName 是否已赋值
                      * @return CosFileName 是否已赋值
+                     * 
                      */
                     bool CosFileNameHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取画像洞察任务TAG详细数据列表
                      * @return TaskDetailDataList 画像洞察任务TAG详细数据列表
+                     * 
                      */
                     std::vector<TaskDetailData> GetTaskDetailDataList() const;
 
                     /**
                      * 判断参数 TaskDetailDataList 是否已赋值
                      * @return TaskDetailDataList 是否已赋值
+                     * 
                      */
                     bool TaskDetailDataListHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取员工名
                      * @return DisplayName 员工名
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置员工名
-                     * @param DisplayName 员工名
+                     * @param _displayName 员工名
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取员工手机号
                      * @return Mobile 员工手机号
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置员工手机号
-                     * @param Mobile 员工手机号
+                     * @param _mobile 员工手机号
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return Reason 失败原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
-                     * @param Reason 失败原因
+                     * @param _reason 失败原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

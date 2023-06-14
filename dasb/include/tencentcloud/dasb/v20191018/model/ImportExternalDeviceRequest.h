@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取资产参数列表
                      * @return DeviceSet 资产参数列表
+                     * 
                      */
                     std::vector<ExternalDevice> GetDeviceSet() const;
 
                     /**
                      * 设置资产参数列表
-                     * @param DeviceSet 资产参数列表
+                     * @param _deviceSet 资产参数列表
+                     * 
                      */
                     void SetDeviceSet(const std::vector<ExternalDevice>& _deviceSet);
 
                     /**
                      * 判断参数 DeviceSet 是否已赋值
                      * @return DeviceSet 是否已赋值
+                     * 
                      */
                     bool DeviceSetHasBeenSet() const;
 

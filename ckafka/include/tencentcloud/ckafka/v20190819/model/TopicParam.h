@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取单独售卖Topic的Topic名称
                      * @return Resource 单独售卖Topic的Topic名称
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置单独售卖Topic的Topic名称
-                     * @param Resource 单独售卖Topic的Topic名称
+                     * @param _resource 单独售卖Topic的Topic名称
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOffsetType() const;
 
                     /**
                      * 设置Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OffsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
+                     * @param _offsetType Offset类型，最开始位置earliest，最新位置latest，时间点位置timestamp
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOffsetType(const std::string& _offsetType);
 
                     /**
                      * 判断参数 OffsetType 是否已赋值
                      * @return OffsetType 是否已赋值
+                     * 
                      */
                     bool OffsetTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime Offset类型为timestamp时必传，传时间戳，精确到秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置Offset类型为timestamp时必传，传时间戳，精确到秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime Offset类型为timestamp时必传，传时间戳，精确到秒
+                     * @param _startTime Offset类型为timestamp时必传，传时间戳，精确到秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId Topic的TopicId【出参】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置Topic的TopicId【出参】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TopicId Topic的TopicId【出参】
+                     * @param _topicId Topic的TopicId【出参】
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCompressionType() const;
 
                     /**
                      * 设置写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+                     * @param _compressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompressionType(const std::string& _compressionType);
 
                     /**
                      * 判断参数 CompressionType 是否已赋值
                      * @return CompressionType 是否已赋值
+                     * 
                      */
                     bool CompressionTypeHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetUseAutoCreateTopic() const;
 
                     /**
                      * 设置使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
+                     * @param _useAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUseAutoCreateTopic(const bool& _useAutoCreateTopic);
 
                     /**
                      * 判断参数 UseAutoCreateTopic 是否已赋值
                      * @return UseAutoCreateTopic 是否已赋值
+                     * 
                      */
                     bool UseAutoCreateTopicHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMsgMultiple() const;
 
                     /**
                      * 设置源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+                     * @param _msgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMsgMultiple(const int64_t& _msgMultiple);
 
                     /**
                      * 判断参数 MsgMultiple 是否已赋值
                      * @return MsgMultiple 是否已赋值
+                     * 
                      */
                     bool MsgMultipleHasBeenSet() const;
 

@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，如：kee-6ubhgouj
                      * @return InstanceId 实例 ID，如：kee-6ubhgouj
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，如：kee-6ubhgouj
-                     * @param InstanceId 实例 ID，如：kee-6ubhgouj
+                     * @param _instanceId 实例 ID，如：kee-6ubhgouj
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间。
                      * @return BeginTime 开始时间。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param BeginTime 开始时间。
+                     * @param _beginTime 开始时间。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>
                      * @return MinQueryTime 慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>
+                     * 
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
                      * 设置慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>
-                     * @param MinQueryTime 慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>
+                     * @param _minQueryTime 慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>
+                     * 
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
 
                     /**
                      * 判断参数 MinQueryTime 是否已赋值
                      * @return MinQueryTime 是否已赋值
+                     * 
                      */
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
                      * 获取每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。
                      * @return Limit 每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。
-                     * @param Limit 每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。
+                     * @param _limit 每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
                      * @return Offset 页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
-                     * @param Offset 页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
+                     * @param _offset 页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -49,234 +49,273 @@ namespace TencentCloud
                     /**
                      * 获取路由策略ID
                      * @return RouteId 路由策略ID
+                     * 
                      */
                     std::string GetRouteId() const;
 
                     /**
                      * 设置路由策略ID
-                     * @param RouteId 路由策略ID
+                     * @param _routeId 路由策略ID
+                     * 
                      */
                     void SetRouteId(const std::string& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
                     /**
                      * 获取目的端
                      * @return DestinationCidrBlock 目的端
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置目的端
-                     * @param DestinationCidrBlock 目的端
+                     * @param _destinationCidrBlock 目的端
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT
                      * @return InstanceType 下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT
-                     * @param InstanceType 下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT
+                     * @param _instanceType 下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取下一跳（关联实例）
                      * @return InstanceId 下一跳（关联实例）
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置下一跳（关联实例）
-                     * @param InstanceId 下一跳（关联实例）
+                     * @param _instanceId 下一跳（关联实例）
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取下一跳名称（关联实例名称）
                      * @return InstanceName 下一跳名称（关联实例名称）
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置下一跳名称（关联实例名称）
-                     * @param InstanceName 下一跳名称（关联实例名称）
+                     * @param _instanceName 下一跳名称（关联实例名称）
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取下一跳所属地域（关联实例所属地域）
                      * @return InstanceRegion 下一跳所属地域（关联实例所属地域）
+                     * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置下一跳所属地域（关联实例所属地域）
-                     * @param InstanceRegion 下一跳所属地域（关联实例所属地域）
+                     * @param _instanceRegion 下一跳所属地域（关联实例所属地域）
+                     * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
                      * @return InstanceRegion 是否已赋值
+                     * 
                      */
                     bool InstanceRegionHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取路由是否启用
                      * @return Enabled 路由是否启用
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置路由是否启用
-                     * @param Enabled 路由是否启用
+                     * @param _enabled 路由是否启用
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取关联实例所属UIN（根账号）
                      * @return InstanceUin 关联实例所属UIN（根账号）
+                     * 
                      */
                     std::string GetInstanceUin() const;
 
                     /**
                      * 设置关联实例所属UIN（根账号）
-                     * @param InstanceUin 关联实例所属UIN（根账号）
+                     * @param _instanceUin 关联实例所属UIN（根账号）
+                     * 
                      */
                     void SetInstanceUin(const std::string& _instanceUin);
 
                     /**
                      * 判断参数 InstanceUin 是否已赋值
                      * @return InstanceUin 是否已赋值
+                     * 
                      */
                     bool InstanceUinHasBeenSet() const;
 
                     /**
                      * 获取路由的扩展状态
                      * @return ExtraState 路由的扩展状态
+                     * 
                      */
                     std::string GetExtraState() const;
 
                     /**
                      * 设置路由的扩展状态
-                     * @param ExtraState 路由的扩展状态
+                     * @param _extraState 路由的扩展状态
+                     * 
                      */
                     void SetExtraState(const std::string& _extraState);
 
                     /**
                      * 判断参数 ExtraState 是否已赋值
                      * @return ExtraState 是否已赋值
+                     * 
                      */
                     bool ExtraStateHasBeenSet() const;
 
                     /**
                      * 获取是否动态路由
                      * @return IsBgp 是否动态路由
+                     * 
                      */
                     bool GetIsBgp() const;
 
                     /**
                      * 设置是否动态路由
-                     * @param IsBgp 是否动态路由
+                     * @param _isBgp 是否动态路由
+                     * 
                      */
                     void SetIsBgp(const bool& _isBgp);
 
                     /**
                      * 判断参数 IsBgp 是否已赋值
                      * @return IsBgp 是否已赋值
+                     * 
                      */
                     bool IsBgpHasBeenSet() const;
 
                     /**
                      * 获取路由优先级
                      * @return RoutePriority 路由优先级
+                     * 
                      */
                     uint64_t GetRoutePriority() const;
 
                     /**
                      * 设置路由优先级
-                     * @param RoutePriority 路由优先级
+                     * @param _routePriority 路由优先级
+                     * 
                      */
                     void SetRoutePriority(const uint64_t& _routePriority);
 
                     /**
                      * 判断参数 RoutePriority 是否已赋值
                      * @return RoutePriority 是否已赋值
+                     * 
                      */
                     bool RoutePriorityHasBeenSet() const;
 
                     /**
                      * 获取下一跳扩展名称（关联实例的扩展名称）
                      * @return InstanceExtraName 下一跳扩展名称（关联实例的扩展名称）
+                     * 
                      */
                     std::string GetInstanceExtraName() const;
 
                     /**
                      * 设置下一跳扩展名称（关联实例的扩展名称）
-                     * @param InstanceExtraName 下一跳扩展名称（关联实例的扩展名称）
+                     * @param _instanceExtraName 下一跳扩展名称（关联实例的扩展名称）
+                     * 
                      */
                     void SetInstanceExtraName(const std::string& _instanceExtraName);
 
                     /**
                      * 判断参数 InstanceExtraName 是否已赋值
                      * @return InstanceExtraName 是否已赋值
+                     * 
                      */
                     bool InstanceExtraNameHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * @return InstanceIds 实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
-                     * @param InstanceIds 实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceIds 实例 ID 列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>
                      * @return InstanceType 实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>
+                     * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>
-                     * @param InstanceType 实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>
+                     * @param _instanceType 实例类型。取值范围如下：<ul><li>0：所有实例。</li><li>1：正式实例。</li><li>2：临时实例。</li><li>3：只读实例。</li><li>-1：正式实例、只读、灾备实例。</li></ul>
+                     * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>
                      * @return ClusterType 集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>
+                     * 
                      */
                     int64_t GetClusterType() const;
 
                     /**
                      * 设置集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>
-                     * @param ClusterType 集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>
+                     * @param _clusterType 集群类型，取值范围如下：<ul><li>0：副本集实例。</li><li>1：分片实例。</li><li>-1：所有实例。</li></ul>
+                     * 
                      */
                     void SetClusterType(const int64_t& _clusterType);
 
                     /**
                      * 判断参数 ClusterType 是否已赋值
                      * @return ClusterType 是否已赋值
+                     * 
                      */
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
                      * 获取实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>
                      * @return Status 实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>
+                     * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
                      * 设置实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>
-                     * @param Status 实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>
+                     * @param _status 实例状态，取值范围如下所示：<ul><li>0：待初始化。</li><li>1：流程执行中。</li><li>2：实例有效。</li><li>-2：已隔离（包年包月实例）。</li><li>-3：已隔离（按量计费实例）。</li></ul>
+                     * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -122,6 +134,7 @@ namespace TencentCloud
                      * @return VpcId 私有网络的 ID。
 - 基础网络则无需配置该参数。
 - 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
@@ -129,15 +142,17 @@ namespace TencentCloud
                      * 设置私有网络的 ID。
 - 基础网络则无需配置该参数。
 - 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
-                     * @param VpcId 私有网络的 ID。
+                     * @param _vpcId 私有网络的 ID。
 - 基础网络则无需配置该参数。
 - 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -148,6 +163,7 @@ namespace TencentCloud
                      * @return SubnetId 私有网络的子网ID。
 - 基础网络则无需配置该参数。
 - 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
@@ -155,87 +171,101 @@ namespace TencentCloud
                      * 设置私有网络的子网ID。
 - 基础网络则无需配置该参数。
 - 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
-                     * @param SubnetId 私有网络的子网ID。
+                     * @param _subnetId 私有网络的子网ID。
 - 基础网络则无需配置该参数。
 - 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
                      * @return PayMode 付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
+                     * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
-                     * @param PayMode 付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
+                     * @param _payMode 付费类型，取值范围如下：<ul><li>0：查询按量计费实例。</li><li>1：查询包年包月实例。</li><li>-1：查询按量计费与包年包月实例。</li></ul>
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取单次请求返回的数量。默认值为20，取值范围为[1,100]。
                      * @return Limit 单次请求返回的数量。默认值为20，取值范围为[1,100]。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次请求返回的数量。默认值为20，取值范围为[1,100]。
-                     * @param Limit 单次请求返回的数量。默认值为20，取值范围为[1,100]。
+                     * @param _limit 单次请求返回的数量。默认值为20，取值范围为[1,100]。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值为0。
                      * @return Offset 偏移量，默认值为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值为0。
-                     * @param Offset 偏移量，默认值为0。
+                     * @param _offset 偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
                      * @return OrderBy 配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
-                     * @param OrderBy 配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
+                     * @param _orderBy 配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
@@ -246,6 +276,7 @@ namespace TencentCloud
                      * @return OrderByType 配置返回结果的排序方式。
 - ASC：升序。
 - DESC：降序。
+                     * 
                      */
                     std::string GetOrderByType() const;
 
@@ -253,69 +284,80 @@ namespace TencentCloud
                      * 设置配置返回结果的排序方式。
 - ASC：升序。
 - DESC：降序。
-                     * @param OrderByType 配置返回结果的排序方式。
+                     * @param _orderByType 配置返回结果的排序方式。
 - ASC：升序。
 - DESC：降序。
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
                      * 获取项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
                      * @return ProjectIds 项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
+                     * 
                      */
                     std::vector<uint64_t> GetProjectIds() const;
 
                     /**
                      * 设置项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
-                     * @param ProjectIds 项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
+                     * @param _projectIds 项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
+                     * 
                      */
                     void SetProjectIds(const std::vector<uint64_t>& _projectIds);
 
                     /**
                      * 判断参数 ProjectIds 是否已赋值
                      * @return ProjectIds 是否已赋值
+                     * 
                      */
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
                      * 获取配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
                      * @return SearchKey 配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
-                     * @param SearchKey 配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
+                     * @param _searchKey 配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取标签信息，包含标签键与标签值。
                      * @return Tags 标签信息，包含标签键与标签值。
+                     * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 设置标签信息，包含标签键与标签值。
-                     * @param Tags 标签信息，包含标签键与标签值。
+                     * @param _tags 标签信息，包含标签键与标签值。
+                     * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

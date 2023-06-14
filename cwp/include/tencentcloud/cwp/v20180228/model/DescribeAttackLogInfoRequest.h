@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取日志ID
                      * @return Id 日志ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置日志ID
-                     * @param Id 日志ID
+                     * @param _id 日志ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

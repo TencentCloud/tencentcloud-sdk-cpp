@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取存证名称(长度最大30)
                      * @return EvidenceName 存证名称(长度最大30)
+                     * 
                      */
                     std::string GetEvidenceName() const;
 
                     /**
                      * 设置存证名称(长度最大30)
-                     * @param EvidenceName 存证名称(长度最大30)
+                     * @param _evidenceName 存证名称(长度最大30)
+                     * 
                      */
                     void SetEvidenceName(const std::string& _evidenceName);
 
                     /**
                      * 判断参数 EvidenceName 是否已赋值
                      * @return EvidenceName 是否已赋值
+                     * 
                      */
                     bool EvidenceNameHasBeenSet() const;
 
                     /**
                      * 获取网页链接
                      * @return EvidenceUrl 网页链接
+                     * 
                      */
                     std::string GetEvidenceUrl() const;
 
                     /**
                      * 设置网页链接
-                     * @param EvidenceUrl 网页链接
+                     * @param _evidenceUrl 网页链接
+                     * 
                      */
                     void SetEvidenceUrl(const std::string& _evidenceUrl);
 
                     /**
                      * 判断参数 EvidenceUrl 是否已赋值
                      * @return EvidenceUrl 是否已赋值
+                     * 
                      */
                     bool EvidenceUrlHasBeenSet() const;
 
                     /**
                      * 获取业务ID 透传 长度最大不超过64
                      * @return BusinessId 业务ID 透传 长度最大不超过64
+                     * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置业务ID 透传 长度最大不超过64
-                     * @param BusinessId 业务ID 透传 长度最大不超过64
+                     * @param _businessId 业务ID 透传 长度最大不超过64
+                     * 
                      */
                     void SetBusinessId(const std::string& _businessId);
 
                     /**
                      * 判断参数 BusinessId 是否已赋值
                      * @return BusinessId 是否已赋值
+                     * 
                      */
                     bool BusinessIdHasBeenSet() const;
 
                     /**
                      * 获取算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
                      * @return HashType 算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
+                     * 
                      */
                     uint64_t GetHashType() const;
 
                     /**
                      * 设置算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
-                     * @param HashType 算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
+                     * @param _hashType 算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0
+                     * 
                      */
                     void SetHashType(const uint64_t& _hashType);
 
                     /**
                      * 判断参数 HashType 是否已赋值
                      * @return HashType 是否已赋值
+                     * 
                      */
                     bool HashTypeHasBeenSet() const;
 
                     /**
                      * 获取存证描述
                      * @return EvidenceDescription 存证描述
+                     * 
                      */
                     std::string GetEvidenceDescription() const;
 
                     /**
                      * 设置存证描述
-                     * @param EvidenceDescription 存证描述
+                     * @param _evidenceDescription 存证描述
+                     * 
                      */
                     void SetEvidenceDescription(const std::string& _evidenceDescription);
 
                     /**
                      * 判断参数 EvidenceDescription 是否已赋值
                      * @return EvidenceDescription 是否已赋值
+                     * 
                      */
                     bool EvidenceDescriptionHasBeenSet() const;
 

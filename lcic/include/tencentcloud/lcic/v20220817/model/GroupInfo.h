@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 群组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置群组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 群组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置群组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 群组名称
+                     * @param _groupName 群组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeacherId 群组主讲人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置群组主讲人ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TeacherId 群组主讲人ID
+                     * @param _teacherId 群组主讲人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
@@ -121,6 +130,7 @@ namespace TencentCloud
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGroupType() const;
 
@@ -129,16 +139,18 @@ namespace TencentCloud
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupType 群组类型 
+                     * @param _groupType 群组类型 
 0-基础群组 
 1-组合群组，若为1时会返回子群组ID列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupType(const uint64_t& _groupType);
 
                     /**
                      * 判断参数 GroupType 是否已赋值
                      * @return GroupType 是否已赋值
+                     * 
                      */
                     bool GroupTypeHasBeenSet() const;
 
@@ -147,20 +159,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubGroupIds 子群组ID列表，如有。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubGroupIds() const;
 
                     /**
                      * 设置子群组ID列表，如有。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubGroupIds 子群组ID列表，如有。
+                     * @param _subGroupIds 子群组ID列表，如有。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubGroupIds(const std::string& _subGroupIds);
 
                     /**
                      * 判断参数 SubGroupIds 是否已赋值
                      * @return SubGroupIds 是否已赋值
+                     * 
                      */
                     bool SubGroupIdsHasBeenSet() const;
 

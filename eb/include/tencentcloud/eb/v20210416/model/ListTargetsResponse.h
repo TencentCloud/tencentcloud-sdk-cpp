@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取目标总数
                      * @return TotalCount 目标总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取目标信息
                      * @return Targets 目标信息
+                     * 
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

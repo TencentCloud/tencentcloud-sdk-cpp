@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualHostName 虚拟主机的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVirtualHostName() const;
 
                     /**
                      * 设置虚拟主机的名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VirtualHostName 虚拟主机的名字
+                     * @param _virtualHostName 虚拟主机的名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVirtualHostName(const std::string& _virtualHostName);
 
                     /**
                      * 判断参数 VirtualHostName 是否已赋值
                      * @return VirtualHostName 是否已赋值
+                     * 
                      */
                     bool VirtualHostNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 虚拟主机的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置虚拟主机的描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 虚拟主机的描述
+                     * @param _description 虚拟主机的描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

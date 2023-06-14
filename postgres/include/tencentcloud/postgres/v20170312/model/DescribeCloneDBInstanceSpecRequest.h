@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return DBInstanceId 实例ID。
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param DBInstanceId 实例ID。
+                     * @param _dBInstanceId 实例ID。
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。
                      * @return BackupSetId 基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。
+                     * 
                      */
                     std::string GetBackupSetId() const;
 
                     /**
                      * 设置基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。
-                     * @param BackupSetId 基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。
+                     * @param _backupSetId 基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。
+                     * 
                      */
                     void SetBackupSetId(const std::string& _backupSetId);
 
                     /**
                      * 判断参数 BackupSetId 是否已赋值
                      * @return BackupSetId 是否已赋值
+                     * 
                      */
                     bool BackupSetIdHasBeenSet() const;
 
                     /**
                      * 获取恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。
                      * @return RecoveryTargetTime 恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。
+                     * 
                      */
                     std::string GetRecoveryTargetTime() const;
 
                     /**
                      * 设置恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。
-                     * @param RecoveryTargetTime 恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。
+                     * @param _recoveryTargetTime 恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。
+                     * 
                      */
                     void SetRecoveryTargetTime(const std::string& _recoveryTargetTime);
 
                     /**
                      * 判断参数 RecoveryTargetTime 是否已赋值
                      * @return RecoveryTargetTime 是否已赋值
+                     * 
                      */
                     bool RecoveryTargetTimeHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取置放群组 ID。
                      * @return DeployGroupId 置放群组 ID。
+                     * 
                      */
                     std::string GetDeployGroupId() const;
 
                     /**
                      * 设置置放群组 ID。
-                     * @param DeployGroupId 置放群组 ID。
+                     * @param _deployGroupId 置放群组 ID。
+                     * 
                      */
                     void SetDeployGroupId(const std::string& _deployGroupId);
 
                     /**
                      * 判断参数 DeployGroupId 是否已赋值
                      * @return DeployGroupId 是否已赋值
+                     * 
                      */
                     bool DeployGroupIdHasBeenSet() const;
 
                     /**
                      * 获取置放群组名称。
                      * @return DeployGroupName 置放群组名称。
+                     * 
                      */
                     std::string GetDeployGroupName() const;
 
                     /**
                      * 设置置放群组名称。
-                     * @param DeployGroupName 置放群组名称。
+                     * @param _deployGroupName 置放群组名称。
+                     * 
                      */
                     void SetDeployGroupName(const std::string& _deployGroupName);
 
                     /**
                      * 判断参数 DeployGroupName 是否已赋值
                      * @return DeployGroupName 是否已赋值
+                     * 
                      */
                     bool DeployGroupNameHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
                      * @return Limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-                     * @param Limit 返回数量，默认为20，最大值为100。
+                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

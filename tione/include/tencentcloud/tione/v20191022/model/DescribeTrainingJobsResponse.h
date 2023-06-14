@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取训练任务列表
                      * @return TrainingJobSet 训练任务列表
+                     * 
                      */
                     std::vector<TrainingJobSummary> GetTrainingJobSet() const;
 
                     /**
                      * 判断参数 TrainingJobSet 是否已赋值
                      * @return TrainingJobSet 是否已赋值
+                     * 
                      */
                     bool TrainingJobSetHasBeenSet() const;
 
                     /**
                      * 获取训练任务总数目
                      * @return TotalCount 训练任务总数目
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡监听器 ID。
                      * @return ListenerId 负载均衡监听器 ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器 ID。
-                     * @param ListenerId 负载均衡监听器 ID。
+                     * @param _listenerId 负载均衡监听器 ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取待绑定的云函数列表。
                      * @return FunctionTargets 待绑定的云函数列表。
+                     * 
                      */
                     std::vector<FunctionTarget> GetFunctionTargets() const;
 
                     /**
                      * 设置待绑定的云函数列表。
-                     * @param FunctionTargets 待绑定的云函数列表。
+                     * @param _functionTargets 待绑定的云函数列表。
+                     * 
                      */
                     void SetFunctionTargets(const std::vector<FunctionTarget>& _functionTargets);
 
                     /**
                      * 判断参数 FunctionTargets 是否已赋值
                      * @return FunctionTargets 是否已赋值
+                     * 
                      */
                     bool FunctionTargetsHasBeenSet() const;
 
                     /**
                      * 获取目标转发规则的 ID，当将云函数绑定到七层转发规则时，必须输入此参数或 Domain+Url 参数。
                      * @return LocationId 目标转发规则的 ID，当将云函数绑定到七层转发规则时，必须输入此参数或 Domain+Url 参数。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置目标转发规则的 ID，当将云函数绑定到七层转发规则时，必须输入此参数或 Domain+Url 参数。
-                     * @param LocationId 目标转发规则的 ID，当将云函数绑定到七层转发规则时，必须输入此参数或 Domain+Url 参数。
+                     * @param _locationId 目标转发规则的 ID，当将云函数绑定到七层转发规则时，必须输入此参数或 Domain+Url 参数。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取目标转发规则的域名，若已经输入 LocationId 参数，则本参数不生效。
                      * @return Domain 目标转发规则的域名，若已经输入 LocationId 参数，则本参数不生效。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置目标转发规则的域名，若已经输入 LocationId 参数，则本参数不生效。
-                     * @param Domain 目标转发规则的域名，若已经输入 LocationId 参数，则本参数不生效。
+                     * @param _domain 目标转发规则的域名，若已经输入 LocationId 参数，则本参数不生效。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取目标转发规则的 URL，若已经输入 LocationId 参数，则本参数不生效。
                      * @return Url 目标转发规则的 URL，若已经输入 LocationId 参数，则本参数不生效。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置目标转发规则的 URL，若已经输入 LocationId 参数，则本参数不生效。
-                     * @param Url 目标转发规则的 URL，若已经输入 LocationId 参数，则本参数不生效。
+                     * @param _url 目标转发规则的 URL，若已经输入 LocationId 参数，则本参数不生效。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

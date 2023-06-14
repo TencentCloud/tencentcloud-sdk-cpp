@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取图中检测出的人体框和人体关键点， 包含14个人体关键点的坐标，建议根据人体框置信度筛选出合格的人体；
                      * @return BodyJointsResults 图中检测出的人体框和人体关键点， 包含14个人体关键点的坐标，建议根据人体框置信度筛选出合格的人体；
+                     * 
                      */
                     std::vector<BodyJointsResult> GetBodyJointsResults() const;
 
                     /**
                      * 判断参数 BodyJointsResults 是否已赋值
                      * @return BodyJointsResults 是否已赋值
+                     * 
                      */
                     bool BodyJointsResultsHasBeenSet() const;
 

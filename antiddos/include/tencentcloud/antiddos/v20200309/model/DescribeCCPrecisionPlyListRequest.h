@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
                      * @return Business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
-                     * @param Business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
+                     * @param _business 大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取页起始偏移，取值为(页码-1)*一页条数
                      * @return Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置页起始偏移，取值为(页码-1)*一页条数
-                     * @param Offset 页起始偏移，取值为(页码-1)*一页条数
+                     * @param _offset 页起始偏移，取值为(页码-1)*一页条数
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取一页条数
                      * @return Limit 一页条数
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置一页条数
-                     * @param Limit 一页条数
+                     * @param _limit 一页条数
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取指定特定实例Id
                      * @return InstanceId 指定特定实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定特定实例Id
-                     * @param InstanceId 指定特定实例Id
+                     * @param _instanceId 指定特定实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取IP地址，普通高防IP要传该字段
                      * @return Ip IP地址，普通高防IP要传该字段
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址，普通高防IP要传该字段
-                     * @param Ip IP地址，普通高防IP要传该字段
+                     * @param _ip IP地址，普通高防IP要传该字段
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取域名，普通高防IP要传该字段
                      * @return Domain 域名，普通高防IP要传该字段
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名，普通高防IP要传该字段
-                     * @param Domain 域名，普通高防IP要传该字段
+                     * @param _domain 域名，普通高防IP要传该字段
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取协议，普通高防IP要传该字段
                      * @return Protocol 协议，普通高防IP要传该字段
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，普通高防IP要传该字段
-                     * @param Protocol 协议，普通高防IP要传该字段
+                     * @param _protocol 协议，普通高防IP要传该字段
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 

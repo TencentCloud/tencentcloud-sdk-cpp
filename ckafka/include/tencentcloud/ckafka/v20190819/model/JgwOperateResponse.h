@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取返回的code，0为正常，非0为错误
                      * @return ReturnCode 返回的code，0为正常，非0为错误
+                     * 
                      */
                     std::string GetReturnCode() const;
 
                     /**
                      * 设置返回的code，0为正常，非0为错误
-                     * @param ReturnCode 返回的code，0为正常，非0为错误
+                     * @param _returnCode 返回的code，0为正常，非0为错误
+                     * 
                      */
                     void SetReturnCode(const std::string& _returnCode);
 
                     /**
                      * 判断参数 ReturnCode 是否已赋值
                      * @return ReturnCode 是否已赋值
+                     * 
                      */
                     bool ReturnCodeHasBeenSet() const;
 
                     /**
                      * 获取成功消息
                      * @return ReturnMessage 成功消息
+                     * 
                      */
                     std::string GetReturnMessage() const;
 
                     /**
                      * 设置成功消息
-                     * @param ReturnMessage 成功消息
+                     * @param _returnMessage 成功消息
+                     * 
                      */
                     void SetReturnMessage(const std::string& _returnMessage);
 
                     /**
                      * 判断参数 ReturnMessage 是否已赋值
                      * @return ReturnMessage 是否已赋值
+                     * 
                      */
                     bool ReturnMessageHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 操作型返回的Data数据,可能有flowId等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OperateResponseData GetData() const;
 
                     /**
                      * 设置操作型返回的Data数据,可能有flowId等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 操作型返回的Data数据,可能有flowId等
+                     * @param _data 操作型返回的Data数据,可能有flowId等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const OperateResponseData& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

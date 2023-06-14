@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取房间ID。
                      * @return RoomId 房间ID。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 

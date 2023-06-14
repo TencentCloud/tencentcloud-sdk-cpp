@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取插件可绑定的API列表信息。
                      * @return Result 插件可绑定的API列表信息。
+                     * 
                      */
                     AttachedPluginSummary GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

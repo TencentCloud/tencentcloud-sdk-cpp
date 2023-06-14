@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取推流任务Id
                      * @return TaskId 推流任务Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Backup 备份任务结果参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBackup() const;
 
                     /**
                      * 判断参数 Backup 是否已赋值
                      * @return Backup 是否已赋值
+                     * 
                      */
                     bool BackupHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取标签内容
                      * @return Id 标签内容
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置标签内容
-                     * @param Id 标签内容
+                     * @param _id 标签内容
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取结果的置信度（百分制）
                      * @return Confidence 结果的置信度（百分制）
+                     * 
                      */
                     int64_t GetConfidence() const;
 
                     /**
                      * 设置结果的置信度（百分制）
-                     * @param Confidence 结果的置信度（百分制）
+                     * @param _confidence 结果的置信度（百分制）
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Categorys 分级数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCategorys() const;
 
                     /**
                      * 设置分级数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Categorys 分级数组
+                     * @param _categorys 分级数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategorys(const std::vector<std::string>& _categorys);
 
                     /**
                      * 判断参数 Categorys 是否已赋值
                      * @return Categorys 是否已赋值
+                     * 
                      */
                     bool CategorysHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 标签备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExt() const;
 
                     /**
                      * 设置标签备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ext 标签备注
+                     * @param _ext 标签备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExt(const std::string& _ext);
 
                     /**
                      * 判断参数 Ext 是否已赋值
                      * @return Ext 是否已赋值
+                     * 
                      */
                     bool ExtHasBeenSet() const;
 

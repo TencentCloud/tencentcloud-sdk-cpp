@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const std::string& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域名称
                      * @return RegionName 地域名称
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域简称
                      * @return RegionShortName 地域简称
+                     * 
                      */
                     std::string GetRegionShortName() const;
 
                     /**
                      * 设置地域简称
-                     * @param RegionShortName 地域简称
+                     * @param _regionShortName 地域简称
+                     * 
                      */
                     void SetRegionShortName(const std::string& _regionShortName);
 
                     /**
                      * 判断参数 RegionShortName 是否已赋值
                      * @return RegionShortName 是否已赋值
+                     * 
                      */
                     bool RegionShortNameHasBeenSet() const;
 
                     /**
                      * 获取地域所在大区名称
                      * @return Area 地域所在大区名称
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置地域所在大区名称
-                     * @param Area 地域所在大区名称
+                     * @param _area 地域所在大区名称
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取可用区信息
                      * @return ZoneSet 可用区信息
+                     * 
                      */
                     std::vector<ZoneCapacityConf> GetZoneSet() const;
 
                     /**
                      * 设置可用区信息
-                     * @param ZoneSet 可用区信息
+                     * @param _zoneSet 可用区信息
+                     * 
                      */
                     void SetZoneSet(const std::vector<ZoneCapacityConf>& _zoneSet);
 
                     /**
                      * 判断参数 ZoneSet 是否已赋值
                      * @return ZoneSet 是否已赋值
+                     * 
                      */
                     bool ZoneSetHasBeenSet() const;
 

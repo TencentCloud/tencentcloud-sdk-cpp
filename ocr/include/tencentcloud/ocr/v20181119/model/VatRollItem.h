@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取项目名称
                      * @return Name 项目名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置项目名称
-                     * @param Name 项目名称
+                     * @param _name 项目名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取数量
                      * @return Quantity 数量
+                     * 
                      */
                     std::string GetQuantity() const;
 
                     /**
                      * 设置数量
-                     * @param Quantity 数量
+                     * @param _quantity 数量
+                     * 
                      */
                     void SetQuantity(const std::string& _quantity);
 
                     /**
                      * 判断参数 Quantity 是否已赋值
                      * @return Quantity 是否已赋值
+                     * 
                      */
                     bool QuantityHasBeenSet() const;
 
                     /**
                      * 获取单价
                      * @return Price 单价
+                     * 
                      */
                     std::string GetPrice() const;
 
                     /**
                      * 设置单价
-                     * @param Price 单价
+                     * @param _price 单价
+                     * 
                      */
                     void SetPrice(const std::string& _price);
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
                     /**
                      * 获取金额
                      * @return Total 金额
+                     * 
                      */
                     std::string GetTotal() const;
 
                     /**
                      * 设置金额
-                     * @param Total 金额
+                     * @param _total 金额
+                     * 
                      */
                     void SetTotal(const std::string& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取画像洞察任务ID
                      * @return Id 画像洞察任务ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置画像洞察任务ID
-                     * @param Id 画像洞察任务ID
+                     * @param _id 画像洞察任务ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

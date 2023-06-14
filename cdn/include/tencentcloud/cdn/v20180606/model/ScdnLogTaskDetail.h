@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取scdn域名
                      * @return Domain scdn域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置scdn域名
-                     * @param Domain scdn域名
+                     * @param _domain scdn域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取防护类型
                      * @return Mode 防护类型
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置防护类型
-                     * @param Mode 防护类型
+                     * @param _mode 防护类型
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取查询任务开始时间
                      * @return StartTime 查询任务开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询任务开始时间
-                     * @param StartTime 查询任务开始时间
+                     * @param _startTime 查询任务开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取查询任务结束时间
                      * @return EndTime 查询任务结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询任务结束时间
-                     * @param EndTime 查询任务结束时间
+                     * @param _endTime 查询任务结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
                      * @return CreateTime 任务创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-                     * @param CreateTime 任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -144,6 +159,7 @@ namespace TencentCloud
                      * @return DownloadUrl 日志包下载链接
 成功返回下载链接，其他情况返回'-'
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
@@ -151,15 +167,17 @@ namespace TencentCloud
                      * 设置日志包下载链接
 成功返回下载链接，其他情况返回'-'
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownloadUrl 日志包下载链接
+                     * @param _downloadUrl 日志包下载链接
 成功返回下载链接，其他情况返回'-'
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
@@ -176,6 +194,7 @@ processing->任务正在执行
 done->任务执行成功
 failed->任务执行失败
 no-log->没有日志产生
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -186,36 +205,41 @@ processing->任务正在执行
 done->任务执行成功
 failed->任务执行失败
 no-log->没有日志产生
-                     * @param Status 任务状态
+                     * @param _status 任务状态
 created->任务已经创建
 processing->任务正在执行
 done->任务执行成功
 failed->任务执行失败
 no-log->没有日志产生
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取日志任务唯一id
                      * @return TaskID 日志任务唯一id
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 设置日志任务唯一id
-                     * @param TaskID 日志任务唯一id
+                     * @param _taskID 日志任务唯一id
+                     * 
                      */
                     void SetTaskID(const std::string& _taskID);
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 
@@ -260,6 +284,7 @@ AttackType映射如下:
   custom_policy = "自定义策略"
   ai_engine= 'AI引擎检出'
   malicious_file_upload= '恶意文件上传'
+                     * 
                      */
                     std::string GetAttackType() const;
 
@@ -284,7 +309,7 @@ AttackType映射如下:
   custom_policy = "自定义策略"
   ai_engine= 'AI引擎检出'
   malicious_file_upload= '恶意文件上传'
-                     * @param AttackType 攻击类型, 可以为"all"
+                     * @param _attackType 攻击类型, 可以为"all"
 AttackType映射如下:
   other = '未知类型'
   malicious_scan = "恶意扫描"
@@ -304,12 +329,14 @@ AttackType映射如下:
   custom_policy = "自定义策略"
   ai_engine= 'AI引擎检出'
   malicious_file_upload= '恶意文件上传'
+                     * 
                      */
                     void SetAttackType(const std::string& _attackType);
 
                     /**
                      * 判断参数 AttackType 是否已赋值
                      * @return AttackType 是否已赋值
+                     * 
                      */
                     bool AttackTypeHasBeenSet() const;
 
@@ -322,6 +349,7 @@ DefenceMode映射如下：
 DefenceMode映射如下：
   observe = '观察模式'
   intercept = '防御模式'
+                     * 
                      */
                     std::string GetDefenceMode() const;
 
@@ -330,16 +358,18 @@ DefenceMode映射如下：
 DefenceMode映射如下：
   observe = '观察模式'
   intercept = '防御模式'
-                     * @param DefenceMode 防御模式,可以为"all"
+                     * @param _defenceMode 防御模式,可以为"all"
 DefenceMode映射如下：
   observe = '观察模式'
   intercept = '防御模式'
+                     * 
                      */
                     void SetDefenceMode(const std::string& _defenceMode);
 
                     /**
                      * 判断参数 DefenceMode 是否已赋值
                      * @return DefenceMode 是否已赋值
+                     * 
                      */
                     bool DefenceModeHasBeenSet() const;
 
@@ -348,20 +378,23 @@ DefenceMode映射如下：
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conditions 查询条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnEventLogConditions> GetConditions() const;
 
                     /**
                      * 设置查询条件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Conditions 查询条件
+                     * @param _conditions 查询条件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConditions(const std::vector<ScdnEventLogConditions>& _conditions);
 
                     /**
                      * 判断参数 Conditions 是否已赋值
                      * @return Conditions 是否已赋值
+                     * 
                      */
                     bool ConditionsHasBeenSet() const;
 
@@ -370,20 +403,23 @@ DefenceMode映射如下：
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Area mainland或overseas
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置mainland或overseas
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Area mainland或overseas
+                     * @param _area mainland或overseas
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 

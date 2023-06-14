@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixResult 对比结果， 1为真 2为假
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFixResult() const;
 
                     /**
                      * 设置对比结果， 1为真 2为假
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FixResult 对比结果， 1为真 2为假
+                     * @param _fixResult 对比结果， 1为真 2为假
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFixResult(const uint64_t& _fixResult);
 
                     /**
                      * 判断参数 FixResult 是否已赋值
                      * @return FixResult 是否已赋值
+                     * 
                      */
                     bool FixResultHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultValue 质量sql执行结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultValue() const;
 
                     /**
                      * 设置质量sql执行结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultValue 质量sql执行结果
+                     * @param _resultValue 质量sql执行结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultValue(const std::string& _resultValue);
 
                     /**
                      * 判断参数 ResultValue 是否已赋值
                      * @return ResultValue 是否已赋值
+                     * 
                      */
                     bool ResultValueHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 阈值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ThresholdValue> GetValues() const;
 
                     /**
                      * 设置阈值列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Values 阈值列表
+                     * @param _values 阈值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValues(const std::vector<ThresholdValue>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 比较操作类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置比较操作类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operator 比较操作类型
+                     * @param _operator 比较操作类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareType 比较类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCompareType() const;
 
                     /**
                      * 设置比较类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareType 比较类型
+                     * @param _compareType 比较类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareType(const uint64_t& _compareType);
 
                     /**
                      * 判断参数 CompareType 是否已赋值
                      * @return CompareType 是否已赋值
+                     * 
                      */
                     bool CompareTypeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueComputeType 值比较类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetValueComputeType() const;
 
                     /**
                      * 设置值比较类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueComputeType 值比较类型
+                     * @param _valueComputeType 值比较类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueComputeType(const uint64_t& _valueComputeType);
 
                     /**
                      * 判断参数 ValueComputeType 是否已赋值
                      * @return ValueComputeType 是否已赋值
+                     * 
                      */
                     bool ValueComputeTypeHasBeenSet() const;
 

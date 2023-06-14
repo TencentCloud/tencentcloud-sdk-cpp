@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取互联网公网地址统计信息数量
                      * @return TotalCount 互联网公网地址统计信息数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetAddressStatistics 互联网公网地址统计信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InternetAddressStatistics> GetInternetAddressStatistics() const;
 
                     /**
                      * 判断参数 InternetAddressStatistics 是否已赋值
                      * @return InternetAddressStatistics 是否已赋值
+                     * 
                      */
                     bool InternetAddressStatisticsHasBeenSet() const;
 

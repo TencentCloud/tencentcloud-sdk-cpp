@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 语音关键词识别任务开关，可选值：
 <li>ON：开启语音关键词识别任务；</li>
 <li>OFF：关闭语音关键词识别任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置语音关键词识别任务开关，可选值：
 <li>ON：开启语音关键词识别任务；</li>
 <li>OFF：关闭语音关键词识别任务。</li>
-                     * @param Switch 语音关键词识别任务开关，可选值：
+                     * @param _switch 语音关键词识别任务开关，可选值：
 <li>ON：开启语音关键词识别任务；</li>
 <li>OFF：关闭语音关键词识别任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 标签个数最多 10 个，每个标签长度最多 16 个字符。
                      * @return LabelSet 关键词过滤标签，指定需要返回的关键词的标签。如果未填或者为空，则全部结果都返回。
 标签个数最多 10 个，每个标签长度最多 16 个字符。
+                     * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
                      * 设置关键词过滤标签，指定需要返回的关键词的标签。如果未填或者为空，则全部结果都返回。
 标签个数最多 10 个，每个标签长度最多 16 个字符。
-                     * @param LabelSet 关键词过滤标签，指定需要返回的关键词的标签。如果未填或者为空，则全部结果都返回。
+                     * @param _labelSet 关键词过滤标签，指定需要返回的关键词的标签。如果未填或者为空，则全部结果都返回。
 标签个数最多 10 个，每个标签长度最多 16 个字符。
+                     * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
 
                     /**
                      * 判断参数 LabelSet 是否已赋值
                      * @return LabelSet 是否已赋值
+                     * 
                      */
                     bool LabelSetHasBeenSet() const;
 

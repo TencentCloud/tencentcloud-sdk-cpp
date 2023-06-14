@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取路由id
                      * @return RouteID 路由id
+                     * 
                      */
                     int64_t GetRouteID() const;
 
                     /**
                      * 判断参数 RouteID 是否已赋值
                      * @return RouteID 是否已赋值
+                     * 
                      */
                     bool RouteIDHasBeenSet() const;
 

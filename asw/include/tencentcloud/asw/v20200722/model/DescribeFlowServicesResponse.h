@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取用户的状态机列表
                      * @return FlowServiceSet 用户的状态机列表
+                     * 
                      */
                     std::vector<StateMachine> GetFlowServiceSet() const;
 
                     /**
                      * 判断参数 FlowServiceSet 是否已赋值
                      * @return FlowServiceSet 是否已赋值
+                     * 
                      */
                     bool FlowServiceSetHasBeenSet() const;
 
                     /**
                      * 获取用户的状态机总数
                      * @return TotalCount 用户的状态机总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

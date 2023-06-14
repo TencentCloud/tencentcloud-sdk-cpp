@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr local cidr值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置local cidr值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cidr local cidr值。
+                     * @param _cidr local cidr值。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCidr(const std::string& _cidr);
 
                     /**
                      * 判断参数 Cidr 是否已赋值
                      * @return Cidr 是否已赋值
+                     * 
                      */
                     bool CidrHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishedToVbc 是否发布到了云联网。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPublishedToVbc() const;
 
                     /**
                      * 设置是否发布到了云联网。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublishedToVbc 是否发布到了云联网。
+                     * @param _publishedToVbc 是否发布到了云联网。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublishedToVbc(const bool& _publishedToVbc);
 
                     /**
                      * 判断参数 PublishedToVbc 是否已赋值
                      * @return PublishedToVbc 是否已赋值
+                     * 
                      */
                     bool PublishedToVbcHasBeenSet() const;
 

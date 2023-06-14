@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取发票开具结果
                      * @return Result 发票开具结果
+                     * 
                      */
                     CreateInvoiceResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

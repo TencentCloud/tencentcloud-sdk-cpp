@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取审核模板 ID。
                      * @return Definition 审核模板 ID。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置审核模板 ID。
-                     * @param Definition 审核模板 ID。
+                     * @param _definition 审核模板 ID。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li>pass：建议通过；</li>
 <li>review：建议复审；</li>
 <li>block：建议封禁。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -81,16 +85,18 @@ namespace TencentCloud
 <li>pass：建议通过；</li>
 <li>review：建议复审；</li>
 <li>block：建议封禁。</li>
-                     * @param Suggestion 审核的结果建议，取值范围：
+                     * @param _suggestion 审核的结果建议，取值范围：
 <li>pass：建议通过；</li>
 <li>review：建议复审；</li>
 <li>block：建议封禁。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -123,6 +129,7 @@ Label 表示违禁的标签，取值范围：
 <li>Illegal：违法；</li>
 <li>Abuse：谩骂；</li>
 <li>Moan：娇喘。</li>
+                     * 
                      */
                     std::vector<std::string> GetTypeSet() const;
 
@@ -141,7 +148,7 @@ Label 表示违禁的标签，取值范围：
 <li>Illegal：违法；</li>
 <li>Abuse：谩骂；</li>
 <li>Moan：娇喘。</li>
-                     * @param TypeSet 审核类型，当 Suggestion 为 review 或 block 时有效，格式为：Form.Label。
+                     * @param _typeSet 审核类型，当 Suggestion 为 review 或 block 时有效，格式为：Form.Label。
 Form 表示违禁的形式，取值范围：
 <li>Image：画面上的人物或图标；</li>
 <li>OCR：画面上的文字；</li>
@@ -155,30 +162,35 @@ Label 表示违禁的标签，取值范围：
 <li>Illegal：违法；</li>
 <li>Abuse：谩骂；</li>
 <li>Moan：娇喘。</li>
+                     * 
                      */
                     void SetTypeSet(const std::vector<std::string>& _typeSet);
 
                     /**
                      * 判断参数 TypeSet 是否已赋值
                      * @return TypeSet 是否已赋值
+                     * 
                      */
                     bool TypeSetHasBeenSet() const;
 
                     /**
                      * 获取审核时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return ReviewTime 审核时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetReviewTime() const;
 
                     /**
                      * 设置审核时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param ReviewTime 审核时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _reviewTime 审核时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetReviewTime(const std::string& _reviewTime);
 
                     /**
                      * 判断参数 ReviewTime 是否已赋值
                      * @return ReviewTime 是否已赋值
+                     * 
                      */
                     bool ReviewTimeHasBeenSet() const;
 

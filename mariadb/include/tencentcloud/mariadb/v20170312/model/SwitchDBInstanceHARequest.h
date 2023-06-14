@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例Id，形如 tdsql-ow728lmc
                      * @return InstanceId 实例Id，形如 tdsql-ow728lmc
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id，形如 tdsql-ow728lmc
-                     * @param InstanceId 实例Id，形如 tdsql-ow728lmc
+                     * @param _instanceId 实例Id，形如 tdsql-ow728lmc
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取切换的目标区域，会自动选择该可用区中延迟最低的节点
                      * @return Zone 切换的目标区域，会自动选择该可用区中延迟最低的节点
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置切换的目标区域，会自动选择该可用区中延迟最低的节点
-                     * @param Zone 切换的目标区域，会自动选择该可用区中延迟最低的节点
+                     * @param _zone 切换的目标区域，会自动选择该可用区中延迟最低的节点
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

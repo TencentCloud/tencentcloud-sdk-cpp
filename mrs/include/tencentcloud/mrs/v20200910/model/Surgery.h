@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SurgeryHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SurgeryHistory GetSurgeryHistory() const;
 
                     /**
                      * 设置手术史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SurgeryHistory 手术史
+                     * @param _surgeryHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSurgeryHistory(const SurgeryHistory& _surgeryHistory);
 
                     /**
                      * 判断参数 SurgeryHistory 是否已赋值
                      * @return SurgeryHistory 是否已赋值
+                     * 
                      */
                     bool SurgeryHistoryHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherInfo 其他信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OtherInfo GetOtherInfo() const;
 
                     /**
                      * 设置其他信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OtherInfo 其他信息
+                     * @param _otherInfo 其他信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOtherInfo(const OtherInfo& _otherInfo);
 
                     /**
                      * 判断参数 OtherInfo 是否已赋值
                      * @return OtherInfo 是否已赋值
+                     * 
                      */
                     bool OtherInfoHasBeenSet() const;
 

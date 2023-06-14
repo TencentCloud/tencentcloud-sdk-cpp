@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 时间戳
+                     * @param _time 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const int64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 统计结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RecordStatisticValue GetValue() const;
 
                     /**
                      * 设置统计结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 统计结果
+                     * @param _value 统计结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const RecordStatisticValue& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

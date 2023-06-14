@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取Yaml配置
                      * @return Yaml Yaml配置
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置Yaml配置
-                     * @param Yaml Yaml配置
+                     * @param _yaml Yaml配置
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 

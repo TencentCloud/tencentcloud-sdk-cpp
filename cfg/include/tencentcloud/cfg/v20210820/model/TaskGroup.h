@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取任务动作ID
                      * @return TaskGroupId 任务动作ID
+                     * 
                      */
                     int64_t GetTaskGroupId() const;
 
                     /**
                      * 设置任务动作ID
-                     * @param TaskGroupId 任务动作ID
+                     * @param _taskGroupId 任务动作ID
+                     * 
                      */
                     void SetTaskGroupId(const int64_t& _taskGroupId);
 
                     /**
                      * 判断参数 TaskGroupId 是否已赋值
                      * @return TaskGroupId 是否已赋值
+                     * 
                      */
                     bool TaskGroupIdHasBeenSet() const;
 
                     /**
                      * 获取分组标题
                      * @return TaskGroupTitle 分组标题
+                     * 
                      */
                     std::string GetTaskGroupTitle() const;
 
                     /**
                      * 设置分组标题
-                     * @param TaskGroupTitle 分组标题
+                     * @param _taskGroupTitle 分组标题
+                     * 
                      */
                     void SetTaskGroupTitle(const std::string& _taskGroupTitle);
 
                     /**
                      * 判断参数 TaskGroupTitle 是否已赋值
                      * @return TaskGroupTitle 是否已赋值
+                     * 
                      */
                     bool TaskGroupTitleHasBeenSet() const;
 
@@ -89,164 +95,191 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupDescription 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskGroupDescription() const;
 
                     /**
                      * 设置分组描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskGroupDescription 分组描述
+                     * @param _taskGroupDescription 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskGroupDescription(const std::string& _taskGroupDescription);
 
                     /**
                      * 判断参数 TaskGroupDescription 是否已赋值
                      * @return TaskGroupDescription 是否已赋值
+                     * 
                      */
                     bool TaskGroupDescriptionHasBeenSet() const;
 
                     /**
                      * 获取任务分组顺序
                      * @return TaskGroupOrder 任务分组顺序
+                     * 
                      */
                     int64_t GetTaskGroupOrder() const;
 
                     /**
                      * 设置任务分组顺序
-                     * @param TaskGroupOrder 任务分组顺序
+                     * @param _taskGroupOrder 任务分组顺序
+                     * 
                      */
                     void SetTaskGroupOrder(const int64_t& _taskGroupOrder);
 
                     /**
                      * 判断参数 TaskGroupOrder 是否已赋值
                      * @return TaskGroupOrder 是否已赋值
+                     * 
                      */
                     bool TaskGroupOrderHasBeenSet() const;
 
                     /**
                      * 获取对象类型ID
                      * @return ObjectTypeId 对象类型ID
+                     * 
                      */
                     int64_t GetObjectTypeId() const;
 
                     /**
                      * 设置对象类型ID
-                     * @param ObjectTypeId 对象类型ID
+                     * @param _objectTypeId 对象类型ID
+                     * 
                      */
                     void SetObjectTypeId(const int64_t& _objectTypeId);
 
                     /**
                      * 判断参数 ObjectTypeId 是否已赋值
                      * @return ObjectTypeId 是否已赋值
+                     * 
                      */
                     bool ObjectTypeIdHasBeenSet() const;
 
                     /**
                      * 获取任务分组创建时间
                      * @return TaskGroupCreateTime 任务分组创建时间
+                     * 
                      */
                     std::string GetTaskGroupCreateTime() const;
 
                     /**
                      * 设置任务分组创建时间
-                     * @param TaskGroupCreateTime 任务分组创建时间
+                     * @param _taskGroupCreateTime 任务分组创建时间
+                     * 
                      */
                     void SetTaskGroupCreateTime(const std::string& _taskGroupCreateTime);
 
                     /**
                      * 判断参数 TaskGroupCreateTime 是否已赋值
                      * @return TaskGroupCreateTime 是否已赋值
+                     * 
                      */
                     bool TaskGroupCreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务分组更新时间
                      * @return TaskGroupUpdateTime 任务分组更新时间
+                     * 
                      */
                     std::string GetTaskGroupUpdateTime() const;
 
                     /**
                      * 设置任务分组更新时间
-                     * @param TaskGroupUpdateTime 任务分组更新时间
+                     * @param _taskGroupUpdateTime 任务分组更新时间
+                     * 
                      */
                     void SetTaskGroupUpdateTime(const std::string& _taskGroupUpdateTime);
 
                     /**
                      * 判断参数 TaskGroupUpdateTime 是否已赋值
                      * @return TaskGroupUpdateTime 是否已赋值
+                     * 
                      */
                     bool TaskGroupUpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取动作分组动作列表
                      * @return TaskGroupActions 动作分组动作列表
+                     * 
                      */
                     std::vector<TaskGroupAction> GetTaskGroupActions() const;
 
                     /**
                      * 设置动作分组动作列表
-                     * @param TaskGroupActions 动作分组动作列表
+                     * @param _taskGroupActions 动作分组动作列表
+                     * 
                      */
                     void SetTaskGroupActions(const std::vector<TaskGroupAction>& _taskGroupActions);
 
                     /**
                      * 判断参数 TaskGroupActions 是否已赋值
                      * @return TaskGroupActions 是否已赋值
+                     * 
                      */
                     bool TaskGroupActionsHasBeenSet() const;
 
                     /**
                      * 获取实例列表
                      * @return TaskGroupInstanceList 实例列表
+                     * 
                      */
                     std::vector<std::string> GetTaskGroupInstanceList() const;
 
                     /**
                      * 设置实例列表
-                     * @param TaskGroupInstanceList 实例列表
+                     * @param _taskGroupInstanceList 实例列表
+                     * 
                      */
                     void SetTaskGroupInstanceList(const std::vector<std::string>& _taskGroupInstanceList);
 
                     /**
                      * 判断参数 TaskGroupInstanceList 是否已赋值
                      * @return TaskGroupInstanceList 是否已赋值
+                     * 
                      */
                     bool TaskGroupInstanceListHasBeenSet() const;
 
                     /**
                      * 获取执行模式。1 --- 顺序执行，2 --- 阶段执行
                      * @return TaskGroupMode 执行模式。1 --- 顺序执行，2 --- 阶段执行
+                     * 
                      */
                     int64_t GetTaskGroupMode() const;
 
                     /**
                      * 设置执行模式。1 --- 顺序执行，2 --- 阶段执行
-                     * @param TaskGroupMode 执行模式。1 --- 顺序执行，2 --- 阶段执行
+                     * @param _taskGroupMode 执行模式。1 --- 顺序执行，2 --- 阶段执行
+                     * 
                      */
                     void SetTaskGroupMode(const int64_t& _taskGroupMode);
 
                     /**
                      * 判断参数 TaskGroupMode 是否已赋值
                      * @return TaskGroupMode 是否已赋值
+                     * 
                      */
                     bool TaskGroupModeHasBeenSet() const;
 
                     /**
                      * 获取不参演的实例列表
                      * @return TaskGroupDiscardInstanceList 不参演的实例列表
+                     * 
                      */
                     std::vector<std::string> GetTaskGroupDiscardInstanceList() const;
 
                     /**
                      * 设置不参演的实例列表
-                     * @param TaskGroupDiscardInstanceList 不参演的实例列表
+                     * @param _taskGroupDiscardInstanceList 不参演的实例列表
+                     * 
                      */
                     void SetTaskGroupDiscardInstanceList(const std::vector<std::string>& _taskGroupDiscardInstanceList);
 
                     /**
                      * 判断参数 TaskGroupDiscardInstanceList 是否已赋值
                      * @return TaskGroupDiscardInstanceList 是否已赋值
+                     * 
                      */
                     bool TaskGroupDiscardInstanceListHasBeenSet() const;
 
@@ -255,20 +288,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupSelectedInstanceList 参演实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTaskGroupSelectedInstanceList() const;
 
                     /**
                      * 设置参演实例列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskGroupSelectedInstanceList 参演实例列表
+                     * @param _taskGroupSelectedInstanceList 参演实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskGroupSelectedInstanceList(const std::vector<std::string>& _taskGroupSelectedInstanceList);
 
                     /**
                      * 判断参数 TaskGroupSelectedInstanceList 是否已赋值
                      * @return TaskGroupSelectedInstanceList 是否已赋值
+                     * 
                      */
                     bool TaskGroupSelectedInstanceListHasBeenSet() const;
 
@@ -277,20 +313,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstancesExecuteRule 机器选取规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskGroupInstancesExecuteRules> GetTaskGroupInstancesExecuteRule() const;
 
                     /**
                      * 设置机器选取规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskGroupInstancesExecuteRule 机器选取规则
+                     * @param _taskGroupInstancesExecuteRule 机器选取规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskGroupInstancesExecuteRule(const std::vector<TaskGroupInstancesExecuteRules>& _taskGroupInstancesExecuteRule);
 
                     /**
                      * 判断参数 TaskGroupInstancesExecuteRule 是否已赋值
                      * @return TaskGroupInstancesExecuteRule 是否已赋值
+                     * 
                      */
                     bool TaskGroupInstancesExecuteRuleHasBeenSet() const;
 

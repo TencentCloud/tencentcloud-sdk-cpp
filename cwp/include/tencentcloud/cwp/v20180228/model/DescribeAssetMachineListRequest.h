@@ -76,6 +76,7 @@ namespace TencentCloud
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -96,7 +97,7 @@ namespace TencentCloud
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
 <li>CpuLoad - Int - 是否必填：否 - 
@@ -112,84 +113,98 @@ namespace TencentCloud
 4: 80%～100%</li>
 <li>Quuid：主机Quuid</li>
 <li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc升序 或 desc降序
                      * @return Order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式，asc升序 或 desc降序
-                     * @param Order 排序方式，asc升序 或 desc降序
+                     * @param _order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取可选排序[FirstTime|PartitionCount]
                      * @return By 可选排序[FirstTime|PartitionCount]
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置可选排序[FirstTime|PartitionCount]
-                     * @param By 可选排序[FirstTime|PartitionCount]
+                     * @param _by 可选排序[FirstTime|PartitionCount]
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

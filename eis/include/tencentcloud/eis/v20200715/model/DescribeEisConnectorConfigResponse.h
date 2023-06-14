@@ -394,12 +394,14 @@ namespace TencentCloud
         }
     ]
 }
+                     * 
                      */
                     std::string GetConnectorParameter() const;
 
                     /**
                      * 判断参数 ConnectorParameter 是否已赋值
                      * @return ConnectorParameter 是否已赋值
+                     * 
                      */
                     bool ConnectorParameterHasBeenSet() const;
 

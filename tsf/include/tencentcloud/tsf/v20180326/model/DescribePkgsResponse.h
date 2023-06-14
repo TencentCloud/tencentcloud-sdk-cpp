@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取符合查询程序包信息列表
                      * @return Result 符合查询程序包信息列表
+                     * 
                      */
                     PkgList GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

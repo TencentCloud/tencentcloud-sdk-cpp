@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取指定需要更新描述信息的凭据名。
                      * @return SecretName 指定需要更新描述信息的凭据名。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置指定需要更新描述信息的凭据名。
-                     * @param SecretName 指定需要更新描述信息的凭据名。
+                     * @param _secretName 指定需要更新描述信息的凭据名。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取新的描述信息，最大长度2048个字节。
                      * @return Description 新的描述信息，最大长度2048个字节。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置新的描述信息，最大长度2048个字节。
-                     * @param Description 新的描述信息，最大长度2048个字节。
+                     * @param _description 新的描述信息，最大长度2048个字节。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

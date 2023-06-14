@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取审计规则名称。
                      * @return RuleName 审计规则名称。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置审计规则名称。
-                     * @param RuleName 审计规则名称。
+                     * @param _ruleName 审计规则名称。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取审计规则描述。
                      * @return Description 审计规则描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置审计规则描述。
-                     * @param Description 审计规则描述。
+                     * @param _description 审计规则描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取审计规则过滤条件。若设置了过滤条件，则不会开启全审计。
                      * @return RuleFilters 审计规则过滤条件。若设置了过滤条件，则不会开启全审计。
+                     * 
                      */
                     std::vector<AuditFilter> GetRuleFilters() const;
 
                     /**
                      * 设置审计规则过滤条件。若设置了过滤条件，则不会开启全审计。
-                     * @param RuleFilters 审计规则过滤条件。若设置了过滤条件，则不会开启全审计。
+                     * @param _ruleFilters 审计规则过滤条件。若设置了过滤条件，则不会开启全审计。
+                     * 
                      */
                     void SetRuleFilters(const std::vector<AuditFilter>& _ruleFilters);
 
                     /**
                      * 判断参数 RuleFilters 是否已赋值
                      * @return RuleFilters 是否已赋值
+                     * 
                      */
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
                      * 获取是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。
                      * @return AuditAll 是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。
+                     * 
                      */
                     bool GetAuditAll() const;
 
                     /**
                      * 设置是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。
-                     * @param AuditAll 是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。
+                     * @param _auditAll 是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。
+                     * 
                      */
                     void SetAuditAll(const bool& _auditAll);
 
                     /**
                      * 判断参数 AuditAll 是否已赋值
                      * @return AuditAll 是否已赋值
+                     * 
                      */
                     bool AuditAllHasBeenSet() const;
 

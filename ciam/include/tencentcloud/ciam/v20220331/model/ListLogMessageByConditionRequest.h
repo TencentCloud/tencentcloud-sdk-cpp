@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取用户池ID
                      * @return UserStoreId 用户池ID
+                     * 
                      */
                     std::string GetUserStoreId() const;
 
                     /**
                      * 设置用户池ID
-                     * @param UserStoreId 用户池ID
+                     * @param _userStoreId 用户池ID
+                     * 
                      */
                     void SetUserStoreId(const std::string& _userStoreId);
 
                     /**
                      * 判断参数 UserStoreId 是否已赋值
                      * @return UserStoreId 是否已赋值
+                     * 
                      */
                     bool UserStoreIdHasBeenSet() const;
 
                     /**
                      * 获取分页数据
                      * @return Pageable 分页数据
+                     * 
                      */
                     Pageable GetPageable() const;
 
                     /**
                      * 设置分页数据
-                     * @param Pageable 分页数据
+                     * @param _pageable 分页数据
+                     * 
                      */
                     void SetPageable(const Pageable& _pageable);
 
                     /**
                      * 判断参数 Pageable 是否已赋值
                      * @return Pageable 是否已赋值
+                     * 
                      */
                     bool PageableHasBeenSet() const;
 
                     /**
                      * 获取开始时间，时间戳精确到毫秒
                      * @return StartTime 开始时间，时间戳精确到毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间，时间戳精确到毫秒
-                     * @param StartTime 开始时间，时间戳精确到毫秒
+                     * @param _startTime 开始时间，时间戳精确到毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -105,6 +114,7 @@ namespace TencentCloud
                      * @return Filters Key可选值为events
 
 <li> **events** </li>	Values为["SIGNUP", "USER_UPDATE", "USER_DELETE", "USER_CREATE", "ACCOUNT_LINKING"] 中的一个或多个
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -112,15 +122,17 @@ namespace TencentCloud
                      * 设置Key可选值为events
 
 <li> **events** </li>	Values为["SIGNUP", "USER_UPDATE", "USER_DELETE", "USER_CREATE", "ACCOUNT_LINKING"] 中的一个或多个
-                     * @param Filters Key可选值为events
+                     * @param _filters Key可选值为events
 
 <li> **events** </li>	Values为["SIGNUP", "USER_UPDATE", "USER_DELETE", "USER_CREATE", "ACCOUNT_LINKING"] 中的一个或多个
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

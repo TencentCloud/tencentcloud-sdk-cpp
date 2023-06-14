@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SDKAppId 应用id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSDKAppId() const;
 
                     /**
                      * 设置应用id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SDKAppId 应用id，供TRTC SDK使用
+                     * @param _sDKAppId 应用id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSDKAppId(const int64_t& _sDKAppId);
 
                     /**
                      * 判断参数 SDKAppId 是否已赋值
                      * @return SDKAppId 是否已赋值
+                     * 
                      */
                     bool SDKAppIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 用户id，供TRTC SDK使用
+                     * @param _userId 用户id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserSig 用户id签名，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserSig() const;
 
                     /**
                      * 设置用户id签名，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserSig 用户id签名，供TRTC SDK使用
+                     * @param _userSig 用户id签名，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserSig(const std::string& _userSig);
 
                     /**
                      * 判断参数 UserSig 是否已赋值
                      * @return UserSig 是否已赋值
+                     * 
                      */
                     bool UserSigHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrRoomId 房间id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStrRoomId() const;
 
                     /**
                      * 设置房间id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrRoomId 房间id，供TRTC SDK使用
+                     * @param _strRoomId 房间id，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrRoomId(const std::string& _strRoomId);
 
                     /**
                      * 判断参数 StrRoomId 是否已赋值
                      * @return StrRoomId 是否已赋值
+                     * 
                      */
                     bool StrRoomIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateMapKey 权限票据，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrivateMapKey() const;
 
                     /**
                      * 设置权限票据，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateMapKey 权限票据，供TRTC SDK使用
+                     * @param _privateMapKey 权限票据，供TRTC SDK使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrivateMapKey(const std::string& _privateMapKey);
 
                     /**
                      * 判断参数 PrivateMapKey 是否已赋值
                      * @return PrivateMapKey 是否已赋值
+                     * 
                      */
                     bool PrivateMapKeyHasBeenSet() const;
 

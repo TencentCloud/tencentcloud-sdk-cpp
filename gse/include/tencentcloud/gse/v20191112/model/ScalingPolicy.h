@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FleetId 服务部署ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务部署ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FleetId 服务部署ID
+                     * @param _fleetId 服务部署ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param _status 状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalingAdjustment 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScalingAdjustment() const;
 
                     /**
                      * 设置保留参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScalingAdjustment 保留参数
+                     * @param _scalingAdjustment 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScalingAdjustment(const std::string& _scalingAdjustment);
 
                     /**
                      * 判断参数 ScalingAdjustment 是否已赋值
                      * @return ScalingAdjustment 是否已赋值
+                     * 
                      */
                     bool ScalingAdjustmentHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalingAdjustmentType 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScalingAdjustmentType() const;
 
                     /**
                      * 设置保留参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScalingAdjustmentType 保留参数
+                     * @param _scalingAdjustmentType 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScalingAdjustmentType(const std::string& _scalingAdjustmentType);
 
                     /**
                      * 判断参数 ScalingAdjustmentType 是否已赋值
                      * @return ScalingAdjustmentType 是否已赋值
+                     * 
                      */
                     bool ScalingAdjustmentTypeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComparisonOperator 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetComparisonOperator() const;
 
                     /**
                      * 设置保留参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComparisonOperator 保留参数
+                     * @param _comparisonOperator 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetComparisonOperator(const std::string& _comparisonOperator);
 
                     /**
                      * 判断参数 ComparisonOperator 是否已赋值
                      * @return ComparisonOperator 是否已赋值
+                     * 
                      */
                     bool ComparisonOperatorHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Threshold 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetThreshold() const;
 
                     /**
                      * 设置保留参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Threshold 保留参数
+                     * @param _threshold 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetThreshold(const std::string& _threshold);
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvaluationPeriods 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEvaluationPeriods() const;
 
                     /**
                      * 设置保留参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EvaluationPeriods 保留参数
+                     * @param _evaluationPeriods 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEvaluationPeriods(const std::string& _evaluationPeriods);
 
                     /**
                      * 判断参数 EvaluationPeriods 是否已赋值
                      * @return EvaluationPeriods 是否已赋值
+                     * 
                      */
                     bool EvaluationPeriodsHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置保留参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricName 保留参数
+                     * @param _metricName 保留参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 策略类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolicyType 策略类型
+                     * @param _policyType 策略类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPolicyType(const std::string& _policyType);
 
                     /**
                      * 判断参数 PolicyType 是否已赋值
                      * @return PolicyType 是否已赋值
+                     * 
                      */
                     bool PolicyTypeHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetConfiguration 基于规则的配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TargetConfiguration GetTargetConfiguration() const;
 
                     /**
                      * 设置基于规则的配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetConfiguration 基于规则的配置
+                     * @param _targetConfiguration 基于规则的配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetConfiguration(const TargetConfiguration& _targetConfiguration);
 
                     /**
                      * 判断参数 TargetConfiguration 是否已赋值
                      * @return TargetConfiguration 是否已赋值
+                     * 
                      */
                     bool TargetConfigurationHasBeenSet() const;
 

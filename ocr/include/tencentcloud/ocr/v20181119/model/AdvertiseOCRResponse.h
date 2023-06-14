@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。
                      * @return TextDetections 检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<AdvertiseTextDetection> GetTextDetections() const;
 
                     /**
                      * 判断参数 TextDetections 是否已赋值
                      * @return TextDetections 是否已赋值
+                     * 
                      */
                     bool TextDetectionsHasBeenSet() const;
 

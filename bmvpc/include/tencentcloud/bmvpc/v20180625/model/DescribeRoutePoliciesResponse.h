@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取路由策略数
                      * @return TotalCount 路由策略数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取路由策略列表
                      * @return RoutePolicySet 路由策略列表
+                     * 
                      */
                     std::vector<RoutePolicy> GetRoutePolicySet() const;
 
                     /**
                      * 判断参数 RoutePolicySet 是否已赋值
                      * @return RoutePolicySet 是否已赋值
+                     * 
                      */
                     bool RoutePolicySetHasBeenSet() const;
 

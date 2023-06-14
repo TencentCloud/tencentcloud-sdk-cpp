@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取预支合计费用的原价，单位：元。
                      * @return OriginalFixedPrice 预支合计费用的原价，单位：元。
+                     * 
                      */
                     double GetOriginalFixedPrice() const;
 
                     /**
                      * 设置预支合计费用的原价，单位：元。
-                     * @param OriginalFixedPrice 预支合计费用的原价，单位：元。
+                     * @param _originalFixedPrice 预支合计费用的原价，单位：元。
+                     * 
                      */
                     void SetOriginalFixedPrice(const double& _originalFixedPrice);
 
                     /**
                      * 判断参数 OriginalFixedPrice 是否已赋值
                      * @return OriginalFixedPrice 是否已赋值
+                     * 
                      */
                     bool OriginalFixedPriceHasBeenSet() const;
 
                     /**
                      * 获取预支合计费用的折扣价，单位：元。
                      * @return DiscountFixedPrice 预支合计费用的折扣价，单位：元。
+                     * 
                      */
                     double GetDiscountFixedPrice() const;
 
                     /**
                      * 设置预支合计费用的折扣价，单位：元。
-                     * @param DiscountFixedPrice 预支合计费用的折扣价，单位：元。
+                     * @param _discountFixedPrice 预支合计费用的折扣价，单位：元。
+                     * 
                      */
                     void SetDiscountFixedPrice(const double& _discountFixedPrice);
 
                     /**
                      * 判断参数 DiscountFixedPrice 是否已赋值
                      * @return DiscountFixedPrice 是否已赋值
+                     * 
                      */
                     bool DiscountFixedPriceHasBeenSet() const;
 
                     /**
                      * 获取后续合计费用的原价，单位：元/小时
                      * @return OriginalUsagePrice 后续合计费用的原价，单位：元/小时
+                     * 
                      */
                     double GetOriginalUsagePrice() const;
 
                     /**
                      * 设置后续合计费用的原价，单位：元/小时
-                     * @param OriginalUsagePrice 后续合计费用的原价，单位：元/小时
+                     * @param _originalUsagePrice 后续合计费用的原价，单位：元/小时
+                     * 
                      */
                     void SetOriginalUsagePrice(const double& _originalUsagePrice);
 
                     /**
                      * 判断参数 OriginalUsagePrice 是否已赋值
                      * @return OriginalUsagePrice 是否已赋值
+                     * 
                      */
                     bool OriginalUsagePriceHasBeenSet() const;
 
                     /**
                      * 获取后续合计费用的折扣价，单位：元/小时
                      * @return DiscountUsagePrice 后续合计费用的折扣价，单位：元/小时
+                     * 
                      */
                     double GetDiscountUsagePrice() const;
 
                     /**
                      * 设置后续合计费用的折扣价，单位：元/小时
-                     * @param DiscountUsagePrice 后续合计费用的折扣价，单位：元/小时
+                     * @param _discountUsagePrice 后续合计费用的折扣价，单位：元/小时
+                     * 
                      */
                     void SetDiscountUsagePrice(const double& _discountUsagePrice);
 
                     /**
                      * 判断参数 DiscountUsagePrice 是否已赋值
                      * @return DiscountUsagePrice 是否已赋值
+                     * 
                      */
                     bool DiscountUsagePriceHasBeenSet() const;
 

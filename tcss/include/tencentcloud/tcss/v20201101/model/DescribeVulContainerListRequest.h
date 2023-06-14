@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
@@ -106,6 +115,7 @@ namespace TencentCloud
 <li>OnlyAffectedNewestImage- Bool- 是否必填：否 - 仅展示影响最新版本镜像的漏洞</li>
 <li>ContainerID- string - 是否必填：否 - 容器ID</li>
 <li>ContainerName- String -是否必填: 否 - 容器名称</li>
+                     * 
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
@@ -114,16 +124,18 @@ namespace TencentCloud
 <li>OnlyAffectedNewestImage- Bool- 是否必填：否 - 仅展示影响最新版本镜像的漏洞</li>
 <li>ContainerID- string - 是否必填：否 - 容器ID</li>
 <li>ContainerName- String -是否必填: 否 - 容器名称</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>OnlyAffectedNewestImage- Bool- 是否必填：否 - 仅展示影响最新版本镜像的漏洞</li>
 <li>ContainerID- string - 是否必填：否 - 容器ID</li>
 <li>ContainerName- String -是否必填: 否 - 容器名称</li>
+                     * 
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

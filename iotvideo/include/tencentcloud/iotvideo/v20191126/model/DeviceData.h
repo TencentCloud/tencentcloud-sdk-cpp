@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tid 设备TID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveTime 激活时间 0代表未激活
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetActiveTime() const;
 
                     /**
                      * 设置激活时间 0代表未激活
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActiveTime 激活时间 0代表未激活
+                     * @param _activeTime 激活时间 0代表未激活
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActiveTime(const uint64_t& _activeTime);
 
                     /**
                      * 判断参数 ActiveTime 是否已赋值
                      * @return ActiveTime 是否已赋值
+                     * 
                      */
                     bool ActiveTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disabled 设备是否被禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置设备是否被禁用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Disabled 设备是否被禁用
+                     * @param _disabled 设备是否被禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisabled(const bool& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtaVersion 固件版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOtaVersion() const;
 
                     /**
                      * 设置固件版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OtaVersion 固件版本
+                     * @param _otaVersion 固件版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOtaVersion(const std::string& _otaVersion);
 
                     /**
                      * 判断参数 OtaVersion 是否已赋值
                      * @return OtaVersion 是否已赋值
+                     * 
                      */
                     bool OtaVersionHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Online 设备在线状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置设备在线状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Online 设备在线状态
+                     * @param _online 设备在线状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastOnlineTime 设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLastOnlineTime() const;
 
                     /**
                      * 设置设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastOnlineTime 设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
+                     * @param _lastOnlineTime 设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastOnlineTime(const uint64_t& _lastOnlineTime);
 
                     /**
                      * 判断参数 LastOnlineTime 是否已赋值
                      * @return LastOnlineTime 是否已赋值
+                     * 
                      */
                     bool LastOnlineTimeHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IotModel 物模型json数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIotModel() const;
 
                     /**
                      * 设置物模型json数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IotModel 物模型json数据
+                     * @param _iotModel 物模型json数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIotModel(const std::string& _iotModel);
 
                     /**
                      * 判断参数 IotModel 是否已赋值
                      * @return IotModel 是否已赋值
+                     * 
                      */
                     bool IotModelHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Certificate 设备初始证书信息，base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCertificate() const;
 
                     /**
                      * 设置设备初始证书信息，base64编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Certificate 设备初始证书信息，base64编码
+                     * @param _certificate 设备初始证书信息，base64编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificate(const std::string& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhiteBoxSoUrl 设备私钥下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWhiteBoxSoUrl() const;
 
                     /**
                      * 设置设备私钥下载地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WhiteBoxSoUrl 设备私钥下载地址
+                     * @param _whiteBoxSoUrl 设备私钥下载地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWhiteBoxSoUrl(const std::string& _whiteBoxSoUrl);
 
                     /**
                      * 判断参数 WhiteBoxSoUrl 是否已赋值
                      * @return WhiteBoxSoUrl 是否已赋值
+                     * 
                      */
                     bool WhiteBoxSoUrlHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamStatus 设备推流状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetStreamStatus() const;
 
                     /**
                      * 设置设备推流状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamStatus 设备推流状态
+                     * @param _streamStatus 设备推流状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStreamStatus(const bool& _streamStatus);
 
                     /**
                      * 判断参数 StreamStatus 是否已赋值
                      * @return StreamStatus 是否已赋值
+                     * 
                      */
                     bool StreamStatusHasBeenSet() const;
 

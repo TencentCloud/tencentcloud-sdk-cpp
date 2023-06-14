@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取事件总数量
                      * @return TotalCount 事件总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取系统调用名称列表
                      * @return SyscallNames 系统调用名称列表
+                     * 
                      */
                     std::vector<std::string> GetSyscallNames() const;
 
                     /**
                      * 判断参数 SyscallNames 是否已赋值
                      * @return SyscallNames 是否已赋值
+                     * 
                      */
                     bool SyscallNamesHasBeenSet() const;
 

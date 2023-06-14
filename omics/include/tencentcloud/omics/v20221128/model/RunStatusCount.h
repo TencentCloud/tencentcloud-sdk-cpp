@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取状态。
                      * @return Status 状态。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态。
-                     * @param Status 状态。
+                     * @param _status 状态。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取数量。
                      * @return Count 数量。
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置数量。
-                     * @param Count 数量。
+                     * @param _count 数量。
+                     * 
                      */
                     void SetCount(const uint64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

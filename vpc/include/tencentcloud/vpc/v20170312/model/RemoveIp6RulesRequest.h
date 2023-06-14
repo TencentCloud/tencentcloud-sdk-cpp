@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx
                      * @return Ip6TranslatorId IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     std::string GetIp6TranslatorId() const;
 
                     /**
                      * 设置IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx
-                     * @param Ip6TranslatorId IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx
+                     * @param _ip6TranslatorId IPV6转换规则所属的转换实例唯一ID，形如ip6-xxxxxxxx
+                     * 
                      */
                     void SetIp6TranslatorId(const std::string& _ip6TranslatorId);
 
                     /**
                      * 判断参数 Ip6TranslatorId 是否已赋值
                      * @return Ip6TranslatorId 是否已赋值
+                     * 
                      */
                     bool Ip6TranslatorIdHasBeenSet() const;
 
                     /**
                      * 获取待删除IPV6转换规则，形如rule6-xxxxxxxx
                      * @return Ip6RuleIds 待删除IPV6转换规则，形如rule6-xxxxxxxx
+                     * 
                      */
                     std::vector<std::string> GetIp6RuleIds() const;
 
                     /**
                      * 设置待删除IPV6转换规则，形如rule6-xxxxxxxx
-                     * @param Ip6RuleIds 待删除IPV6转换规则，形如rule6-xxxxxxxx
+                     * @param _ip6RuleIds 待删除IPV6转换规则，形如rule6-xxxxxxxx
+                     * 
                      */
                     void SetIp6RuleIds(const std::vector<std::string>& _ip6RuleIds);
 
                     /**
                      * 判断参数 Ip6RuleIds 是否已赋值
                      * @return Ip6RuleIds 是否已赋值
+                     * 
                      */
                     bool Ip6RuleIdsHasBeenSet() const;
 

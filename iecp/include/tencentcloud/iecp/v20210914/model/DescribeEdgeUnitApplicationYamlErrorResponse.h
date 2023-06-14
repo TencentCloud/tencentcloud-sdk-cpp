@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckPass 是否通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetCheckPass() const;
 
                     /**
                      * 判断参数 CheckPass 是否已赋值
                      * @return CheckPass 是否已赋值
+                     * 
                      */
                     bool CheckPassHasBeenSet() const;
 
@@ -62,24 +64,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrType 错误类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetErrType() const;
 
                     /**
                      * 判断参数 ErrType 是否已赋值
                      * @return ErrType 是否已赋值
+                     * 
                      */
                     bool ErrTypeHasBeenSet() const;
 
                     /**
                      * 获取错误信息
                      * @return ErrInfo 错误信息
+                     * 
                      */
                     std::string GetErrInfo() const;
 
                     /**
                      * 判断参数 ErrInfo 是否已赋值
                      * @return ErrInfo 是否已赋值
+                     * 
                      */
                     bool ErrInfoHasBeenSet() const;
 

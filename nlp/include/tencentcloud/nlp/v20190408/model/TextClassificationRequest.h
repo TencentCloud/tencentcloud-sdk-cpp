@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待分类的文本（仅支持UTF-8格式，不超过10000字）
                      * @return Text 待分类的文本（仅支持UTF-8格式，不超过10000字）
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置待分类的文本（仅支持UTF-8格式，不超过10000字）
-                     * @param Text 待分类的文本（仅支持UTF-8格式，不超过10000字）
+                     * @param _text 待分类的文本（仅支持UTF-8格式，不超过10000字）
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return Flag 领域分类体系（默认取1值）：
 1、通用领域，二分类
 2、新闻领域，五分类。类别数据不一定全部返回，详情见类目映射表（注意：目前五分类已下线不可用）
+                     * 
                      */
                     uint64_t GetFlag() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置领域分类体系（默认取1值）：
 1、通用领域，二分类
 2、新闻领域，五分类。类别数据不一定全部返回，详情见类目映射表（注意：目前五分类已下线不可用）
-                     * @param Flag 领域分类体系（默认取1值）：
+                     * @param _flag 领域分类体系（默认取1值）：
 1、通用领域，二分类
 2、新闻领域，五分类。类别数据不一定全部返回，详情见类目映射表（注意：目前五分类已下线不可用）
+                     * 
                      */
                     void SetFlag(const uint64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 

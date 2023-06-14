@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取第一备机信息
                      * @return First 第一备机信息
+                     * 
                      */
                     SlaveInstanceInfo GetFirst() const;
 
                     /**
                      * 设置第一备机信息
-                     * @param First 第一备机信息
+                     * @param _first 第一备机信息
+                     * 
                      */
                     void SetFirst(const SlaveInstanceInfo& _first);
 
                     /**
                      * 判断参数 First 是否已赋值
                      * @return First 是否已赋值
+                     * 
                      */
                     bool FirstHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Second 第二备机信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SlaveInstanceInfo GetSecond() const;
 
                     /**
                      * 设置第二备机信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Second 第二备机信息
+                     * @param _second 第二备机信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecond(const SlaveInstanceInfo& _second);
 
                     /**
                      * 判断参数 Second 是否已赋值
                      * @return Second 是否已赋值
+                     * 
                      */
                     bool SecondHasBeenSet() const;
 

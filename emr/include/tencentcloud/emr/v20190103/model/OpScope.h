@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceInfoList 操作范围，要操作的服务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ServiceBasicRestartInfo> GetServiceInfoList() const;
 
                     /**
                      * 设置操作范围，要操作的服务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceInfoList 操作范围，要操作的服务信息
+                     * @param _serviceInfoList 操作范围，要操作的服务信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceInfoList(const std::vector<ServiceBasicRestartInfo>& _serviceInfoList);
 
                     /**
                      * 判断参数 ServiceInfoList 是否已赋值
                      * @return ServiceInfoList 是否已赋值
+                     * 
                      */
                     bool ServiceInfoListHasBeenSet() const;
 

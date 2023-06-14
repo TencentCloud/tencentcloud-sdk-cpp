@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Requests 请求次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRequests() const;
 
                     /**
                      * 设置请求次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Requests 请求次数
+                     * @param _requests 请求次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRequests(const int64_t& _requests);
 
                     /**
                      * 判断参数 Requests 是否已赋值
                      * @return Requests 是否已赋值
+                     * 
                      */
                     bool RequestsHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 日期标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置日期标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 日期标签
+                     * @param _index 日期标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::string& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 

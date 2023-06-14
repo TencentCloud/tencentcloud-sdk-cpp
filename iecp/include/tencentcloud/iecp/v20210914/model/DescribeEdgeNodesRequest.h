@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取边缘节点名称模糊搜索串
                      * @return NamePattern 边缘节点名称模糊搜索串
+                     * 
                      */
                     std::string GetNamePattern() const;
 
                     /**
                      * 设置边缘节点名称模糊搜索串
-                     * @param NamePattern 边缘节点名称模糊搜索串
+                     * @param _namePattern 边缘节点名称模糊搜索串
+                     * 
                      */
                     void SetNamePattern(const std::string& _namePattern);
 
                     /**
                      * 判断参数 NamePattern 是否已赋值
                      * @return NamePattern 是否已赋值
+                     * 
                      */
                     bool NamePatternHasBeenSet() const;
 
                     /**
                      * 获取边缘节点名称列表，支持批量查询 ，优先于模糊查询
                      * @return NameMatchedList 边缘节点名称列表，支持批量查询 ，优先于模糊查询
+                     * 
                      */
                     std::vector<std::string> GetNameMatchedList() const;
 
                     /**
                      * 设置边缘节点名称列表，支持批量查询 ，优先于模糊查询
-                     * @param NameMatchedList 边缘节点名称列表，支持批量查询 ，优先于模糊查询
+                     * @param _nameMatchedList 边缘节点名称列表，支持批量查询 ，优先于模糊查询
+                     * 
                      */
                     void SetNameMatchedList(const std::vector<std::string>& _nameMatchedList);
 
                     /**
                      * 判断参数 NameMatchedList 是否已赋值
                      * @return NameMatchedList 是否已赋值
+                     * 
                      */
                     bool NameMatchedListHasBeenSet() const;
 
                     /**
                      * 获取排序信息列表
                      * @return Sort 排序信息列表
+                     * 
                      */
                     std::vector<Sort> GetSort() const;
 
                     /**
                      * 设置排序信息列表
-                     * @param Sort 排序信息列表
+                     * @param _sort 排序信息列表
+                     * 
                      */
                     void SetSort(const std::vector<Sort>& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取页面大小Limit
                      * @return Limit 页面大小Limit
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置页面大小Limit
-                     * @param Limit 页面大小Limit
+                     * @param _limit 页面大小Limit
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取节点类型
                      * @return NodeType 节点类型
+                     * 
                      */
                     int64_t GetNodeType() const;
 
                     /**
                      * 设置节点类型
-                     * @param NodeType 节点类型
+                     * @param _nodeType 节点类型
+                     * 
                      */
                     void SetNodeType(const int64_t& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 

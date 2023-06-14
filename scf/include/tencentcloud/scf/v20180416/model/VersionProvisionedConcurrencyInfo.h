@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取设置的预置并发数。
                      * @return AllocatedProvisionedConcurrencyNum 设置的预置并发数。
+                     * 
                      */
                     uint64_t GetAllocatedProvisionedConcurrencyNum() const;
 
                     /**
                      * 设置设置的预置并发数。
-                     * @param AllocatedProvisionedConcurrencyNum 设置的预置并发数。
+                     * @param _allocatedProvisionedConcurrencyNum 设置的预置并发数。
+                     * 
                      */
                     void SetAllocatedProvisionedConcurrencyNum(const uint64_t& _allocatedProvisionedConcurrencyNum);
 
                     /**
                      * 判断参数 AllocatedProvisionedConcurrencyNum 是否已赋值
                      * @return AllocatedProvisionedConcurrencyNum 是否已赋值
+                     * 
                      */
                     bool AllocatedProvisionedConcurrencyNumHasBeenSet() const;
 
                     /**
                      * 获取当前已完成预置的并发数。
                      * @return AvailableProvisionedConcurrencyNum 当前已完成预置的并发数。
+                     * 
                      */
                     uint64_t GetAvailableProvisionedConcurrencyNum() const;
 
                     /**
                      * 设置当前已完成预置的并发数。
-                     * @param AvailableProvisionedConcurrencyNum 当前已完成预置的并发数。
+                     * @param _availableProvisionedConcurrencyNum 当前已完成预置的并发数。
+                     * 
                      */
                     void SetAvailableProvisionedConcurrencyNum(const uint64_t& _availableProvisionedConcurrencyNum);
 
                     /**
                      * 判断参数 AvailableProvisionedConcurrencyNum 是否已赋值
                      * @return AvailableProvisionedConcurrencyNum 是否已赋值
+                     * 
                      */
                     bool AvailableProvisionedConcurrencyNumHasBeenSet() const;
 
                     /**
                      * 获取预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。
                      * @return Status 预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。
-                     * @param Status 预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。
+                     * @param _status 预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取对预置任务状态Status的说明。
                      * @return StatusReason 对预置任务状态Status的说明。
+                     * 
                      */
                     std::string GetStatusReason() const;
 
                     /**
                      * 设置对预置任务状态Status的说明。
-                     * @param StatusReason 对预置任务状态Status的说明。
+                     * @param _statusReason 对预置任务状态Status的说明。
+                     * 
                      */
                     void SetStatusReason(const std::string& _statusReason);
 
                     /**
                      * 判断参数 StatusReason 是否已赋值
                      * @return StatusReason 是否已赋值
+                     * 
                      */
                     bool StatusReasonHasBeenSet() const;
 
                     /**
                      * 获取函数版本号
                      * @return Qualifier 函数版本号
+                     * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置函数版本号
-                     * @param Qualifier 函数版本号
+                     * @param _qualifier 函数版本号
+                     * 
                      */
                     void SetQualifier(const std::string& _qualifier);
 
                     /**
                      * 判断参数 Qualifier 是否已赋值
                      * @return Qualifier 是否已赋值
+                     * 
                      */
                     bool QualifierHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerActions 预置并发定时任务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TriggerAction> GetTriggerActions() const;
 
                     /**
                      * 设置预置并发定时任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerActions 预置并发定时任务。
+                     * @param _triggerActions 预置并发定时任务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTriggerActions(const std::vector<TriggerAction>& _triggerActions);
 
                     /**
                      * 判断参数 TriggerActions 是否已赋值
                      * @return TriggerActions 是否已赋值
+                     * 
                      */
                     bool TriggerActionsHasBeenSet() const;
 

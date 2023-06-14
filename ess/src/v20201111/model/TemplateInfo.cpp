@@ -40,7 +40,9 @@ TemplateInfo::TemplateInfo() :
     m_organizationIdHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
     m_templateVersionHasBeenSet(false),
-    m_publishedHasBeenSet(false)
+    m_publishedHasBeenSet(false),
+    m_templateSealsHasBeenSet(false),
+    m_sealsHasBeenSet(false)
 {
 }
 
@@ -305,6 +307,46 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_publishedHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateSeals") && !value["TemplateSeals"].IsNull())
+    {
+        if (!value["TemplateSeals"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateSeals` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TemplateSeals"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SealInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_templateSeals.push_back(item);
+        }
+        m_templateSealsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Seals") && !value["Seals"].IsNull())
+    {
+        if (!value["Seals"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Seals` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Seals"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SealInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_seals.push_back(item);
+        }
+        m_sealsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -514,6 +556,36 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Published";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_published, allocator);
+    }
+
+    if (m_templateSealsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateSeals";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_templateSeals.begin(); itr != m_templateSeals.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sealsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seals";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_seals.begin(); itr != m_seals.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -837,5 +909,37 @@ void TemplateInfo::SetPublished(const bool& _published)
 bool TemplateInfo::PublishedHasBeenSet() const
 {
     return m_publishedHasBeenSet;
+}
+
+vector<SealInfo> TemplateInfo::GetTemplateSeals() const
+{
+    return m_templateSeals;
+}
+
+void TemplateInfo::SetTemplateSeals(const vector<SealInfo>& _templateSeals)
+{
+    m_templateSeals = _templateSeals;
+    m_templateSealsHasBeenSet = true;
+}
+
+bool TemplateInfo::TemplateSealsHasBeenSet() const
+{
+    return m_templateSealsHasBeenSet;
+}
+
+vector<SealInfo> TemplateInfo::GetSeals() const
+{
+    return m_seals;
+}
+
+void TemplateInfo::SetSeals(const vector<SealInfo>& _seals)
+{
+    m_seals = _seals;
+    m_sealsHasBeenSet = true;
+}
+
+bool TemplateInfo::SealsHasBeenSet() const
+{
+    return m_sealsHasBeenSet;
 }
 

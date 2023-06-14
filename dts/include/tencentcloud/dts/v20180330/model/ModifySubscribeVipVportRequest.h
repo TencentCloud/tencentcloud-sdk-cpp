@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取数据订阅实例的ID
                      * @return SubscribeId 数据订阅实例的ID
+                     * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
                      * 设置数据订阅实例的ID
-                     * @param SubscribeId 数据订阅实例的ID
+                     * @param _subscribeId 数据订阅实例的ID
+                     * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
 
                     /**
                      * 判断参数 SubscribeId 是否已赋值
                      * @return SubscribeId 是否已赋值
+                     * 
                      */
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取指定目的子网，如果传此参数，DstIp必须在目的子网内
                      * @return DstUniqSubnetId 指定目的子网，如果传此参数，DstIp必须在目的子网内
+                     * 
                      */
                     std::string GetDstUniqSubnetId() const;
 
                     /**
                      * 设置指定目的子网，如果传此参数，DstIp必须在目的子网内
-                     * @param DstUniqSubnetId 指定目的子网，如果传此参数，DstIp必须在目的子网内
+                     * @param _dstUniqSubnetId 指定目的子网，如果传此参数，DstIp必须在目的子网内
+                     * 
                      */
                     void SetDstUniqSubnetId(const std::string& _dstUniqSubnetId);
 
                     /**
                      * 判断参数 DstUniqSubnetId 是否已赋值
                      * @return DstUniqSubnetId 是否已赋值
+                     * 
                      */
                     bool DstUniqSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取目标IP，与DstPort至少传一个
                      * @return DstIp 目标IP，与DstPort至少传一个
+                     * 
                      */
                     std::string GetDstIp() const;
 
                     /**
                      * 设置目标IP，与DstPort至少传一个
-                     * @param DstIp 目标IP，与DstPort至少传一个
+                     * @param _dstIp 目标IP，与DstPort至少传一个
+                     * 
                      */
                     void SetDstIp(const std::string& _dstIp);
 
                     /**
                      * 判断参数 DstIp 是否已赋值
                      * @return DstIp 是否已赋值
+                     * 
                      */
                     bool DstIpHasBeenSet() const;
 
                     /**
                      * 获取目标PORT，支持范围为：[1025-65535]
                      * @return DstPort 目标PORT，支持范围为：[1025-65535]
+                     * 
                      */
                     int64_t GetDstPort() const;
 
                     /**
                      * 设置目标PORT，支持范围为：[1025-65535]
-                     * @param DstPort 目标PORT，支持范围为：[1025-65535]
+                     * @param _dstPort 目标PORT，支持范围为：[1025-65535]
+                     * 
                      */
                     void SetDstPort(const int64_t& _dstPort);
 
                     /**
                      * 判断参数 DstPort 是否已赋值
                      * @return DstPort 是否已赋值
+                     * 
                      */
                     bool DstPortHasBeenSet() const;
 

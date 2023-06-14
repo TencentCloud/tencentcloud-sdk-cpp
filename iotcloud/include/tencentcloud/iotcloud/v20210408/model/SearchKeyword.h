@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取搜索条件的Key
                      * @return Key 搜索条件的Key
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置搜索条件的Key
-                     * @param Key 搜索条件的Key
+                     * @param _key 搜索条件的Key
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取搜索条件的值
                      * @return Value 搜索条件的值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置搜索条件的值
-                     * @param Value 搜索条件的值
+                     * @param _value 搜索条件的值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取（检查项ID+资产ID列表）的列表
                      * @return PolicyAssetSetList （检查项ID+资产ID列表）的列表
+                     * 
                      */
                     std::vector<CompliancePolicyAssetSetItem> GetPolicyAssetSetList() const;
 
                     /**
                      * 设置（检查项ID+资产ID列表）的列表
-                     * @param PolicyAssetSetList （检查项ID+资产ID列表）的列表
+                     * @param _policyAssetSetList （检查项ID+资产ID列表）的列表
+                     * 
                      */
                     void SetPolicyAssetSetList(const std::vector<CompliancePolicyAssetSetItem>& _policyAssetSetList);
 
                     /**
                      * 判断参数 PolicyAssetSetList 是否已赋值
                      * @return PolicyAssetSetList 是否已赋值
+                     * 
                      */
                     bool PolicyAssetSetListHasBeenSet() const;
 

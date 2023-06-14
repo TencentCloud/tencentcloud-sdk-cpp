@@ -49,12 +49,14 @@ namespace TencentCloud
                     /**
                      * 获取Proxy 节点数量。
                      * @return ProxyCount Proxy 节点数量。
+                     * 
                      */
                     int64_t GetProxyCount() const;
 
                     /**
                      * 判断参数 ProxyCount 是否已赋值
                      * @return ProxyCount 是否已赋值
+                     * 
                      */
                     bool ProxyCountHasBeenSet() const;
 
@@ -63,24 +65,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proxy Proxy 节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyNodeInfo> GetProxy() const;
 
                     /**
                      * 判断参数 Proxy 是否已赋值
                      * @return Proxy 是否已赋值
+                     * 
                      */
                     bool ProxyHasBeenSet() const;
 
                     /**
                      * 获取Redis 节点数量。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
                      * @return RedisCount Redis 节点数量。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
+                     * 
                      */
                     int64_t GetRedisCount() const;
 
                     /**
                      * 判断参数 RedisCount 是否已赋值
                      * @return RedisCount 是否已赋值
+                     * 
                      */
                     bool RedisCountHasBeenSet() const;
 
@@ -89,24 +95,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Redis Redis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RedisNodeInfo> GetRedis() const;
 
                     /**
                      * 判断参数 Redis 是否已赋值
                      * @return Redis 是否已赋值
+                     * 
                      */
                     bool RedisHasBeenSet() const;
 
                     /**
                      * 获取Tendis 节点数量。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
                      * @return TendisCount Tendis 节点数量。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
+                     * 
                      */
                     int64_t GetTendisCount() const;
 
                     /**
                      * 判断参数 TendisCount 是否已赋值
                      * @return TendisCount 是否已赋值
+                     * 
                      */
                     bool TendisCountHasBeenSet() const;
 
@@ -115,12 +125,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tendis Tendis 节点信息。该参数仅为产品兼容性而保留，并不具有实际意义，可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceNodeInfo> GetTendis() const;
 
                     /**
                      * 判断参数 Tendis 是否已赋值
                      * @return Tendis 是否已赋值
+                     * 
                      */
                     bool TendisHasBeenSet() const;
 
@@ -129,12 +141,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeeWiDBCount KeewiDB 节点数量。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetKeeWiDBCount() const;
 
                     /**
                      * 判断参数 KeeWiDBCount 是否已赋值
                      * @return KeeWiDBCount 是否已赋值
+                     * 
                      */
                     bool KeeWiDBCountHasBeenSet() const;
 
@@ -143,12 +157,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeeWiDB KeewiDB 节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<InstanceNodeInfo> GetKeeWiDB() const;
 
                     /**
                      * 判断参数 KeeWiDB 是否已赋值
                      * @return KeeWiDB 是否已赋值
+                     * 
                      */
                     bool KeeWiDBHasBeenSet() const;
 

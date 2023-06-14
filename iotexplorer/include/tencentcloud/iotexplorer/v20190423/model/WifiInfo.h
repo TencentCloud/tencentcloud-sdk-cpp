@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取mac地址
                      * @return MAC mac地址
+                     * 
                      */
                     std::string GetMAC() const;
 
                     /**
                      * 设置mac地址
-                     * @param MAC mac地址
+                     * @param _mAC mac地址
+                     * 
                      */
                     void SetMAC(const std::string& _mAC);
 
                     /**
                      * 判断参数 MAC 是否已赋值
                      * @return MAC 是否已赋值
+                     * 
                      */
                     bool MACHasBeenSet() const;
 
                     /**
                      * 获取信号强度
                      * @return RSSI 信号强度
+                     * 
                      */
                     int64_t GetRSSI() const;
 
                     /**
                      * 设置信号强度
-                     * @param RSSI 信号强度
+                     * @param _rSSI 信号强度
+                     * 
                      */
                     void SetRSSI(const int64_t& _rSSI);
 
                     /**
                      * 判断参数 RSSI 是否已赋值
                      * @return RSSI 是否已赋值
+                     * 
                      */
                     bool RSSIHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取musicId对应歌曲状态
                      * @return MusicStatusSet musicId对应歌曲状态
+                     * 
                      */
                     std::vector<MusicStatus> GetMusicStatusSet() const;
 
                     /**
                      * 判断参数 MusicStatusSet 是否已赋值
                      * @return MusicStatusSet 是否已赋值
+                     * 
                      */
                     bool MusicStatusSetHasBeenSet() const;
 

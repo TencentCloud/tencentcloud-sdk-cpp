@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取冻结订单ID
                      * @return OrderId 冻结订单ID
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置冻结订单ID
-                     * @param OrderId 冻结订单ID
+                     * @param _orderId 冻结订单ID
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 

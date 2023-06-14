@@ -47,20 +47,23 @@ namespace TencentCloud
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
                      * @return Image 图片 base64 数据，base64 编码后大小不可超过5M。  
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置图片 base64 数据，base64 编码后大小不可超过5M。  
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Image 图片 base64 数据，base64 编码后大小不可超过5M。  
+                     * @param _image 图片 base64 数据，base64 编码后大小不可超过5M。  
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -75,6 +78,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。  
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -84,17 +88,19 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。  
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。 
+                     * @param _url 图片的 Url 。对应图片 base64 编码后大小不可超过5M。 
 Url、Image必须提供一个，如果都提供，只使用 Url。  
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 
 非腾讯云存储的Url速度和稳定性可能受一定影响。  
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -105,6 +111,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      * @return LocalBodySwitch 人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
 
 注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     * 
                      */
                     bool GetLocalBodySwitch() const;
 
@@ -112,15 +119,17 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      * 设置人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
 
 注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
-                     * @param LocalBodySwitch 人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
+                     * @param _localBodySwitch 人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
 
 注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     * 
                      */
                     void SetLocalBodySwitch(const bool& _localBodySwitch);
 
                     /**
                      * 判断参数 LocalBodySwitch 是否已赋值
                      * @return LocalBodySwitch 是否已赋值
+                     * 
                      */
                     bool LocalBodySwitchHasBeenSet() const;
 

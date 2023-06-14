@@ -61,6 +61,7 @@ namespace TencentCloud
 - 50： [10ms,50ms]。
 - 200：[50ms,200ms]。
 - -1： [200ms,∞]。
+                     * 
                      */
                     int64_t GetLadder() const;
 
@@ -72,55 +73,63 @@ namespace TencentCloud
 - 50： [10ms,50ms]。
 - 200：[50ms,200ms]。
 - -1： [200ms,∞]。
-                     * @param Ladder 指延时分布阶梯，其与延时区间的对应关系如下所示。
+                     * @param _ladder 指延时分布阶梯，其与延时区间的对应关系如下所示。
 - 1：[0ms,1ms]。
 - 5： [1ms,5ms]。
 - 10： [5ms,10ms]。
 - 50： [10ms,50ms]。
 - 200：[50ms,200ms]。
 - -1： [200ms,∞]。
+                     * 
                      */
                     void SetLadder(const int64_t& _ladder);
 
                     /**
                      * 判断参数 Ladder 是否已赋值
                      * @return Ladder 是否已赋值
+                     * 
                      */
                     bool LadderHasBeenSet() const;
 
                     /**
                      * 获取延时处于当前分布阶梯的命令数量，单位：个。
                      * @return Size 延时处于当前分布阶梯的命令数量，单位：个。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置延时处于当前分布阶梯的命令数量，单位：个。
-                     * @param Size 延时处于当前分布阶梯的命令数量，单位：个。
+                     * @param _size 延时处于当前分布阶梯的命令数量，单位：个。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取修改时间。
                      * @return Updatetime 修改时间。
+                     * 
                      */
                     int64_t GetUpdatetime() const;
 
                     /**
                      * 设置修改时间。
-                     * @param Updatetime 修改时间。
+                     * @param _updatetime 修改时间。
+                     * 
                      */
                     void SetUpdatetime(const int64_t& _updatetime);
 
                     /**
                      * 判断参数 Updatetime 是否已赋值
                      * @return Updatetime 是否已赋值
+                     * 
                      */
                     bool UpdatetimeHasBeenSet() const;
 

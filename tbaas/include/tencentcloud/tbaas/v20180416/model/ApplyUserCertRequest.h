@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取模块名，固定字段：cert_mng
                      * @return Module 模块名，固定字段：cert_mng
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名，固定字段：cert_mng
-                     * @param Module 模块名，固定字段：cert_mng
+                     * @param _module 模块名，固定字段：cert_mng
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取操作名，固定字段：cert_apply_for_user
                      * @return Operation 操作名，固定字段：cert_apply_for_user
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作名，固定字段：cert_apply_for_user
-                     * @param Operation 操作名，固定字段：cert_apply_for_user
+                     * @param _operation 操作名，固定字段：cert_apply_for_user
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取区块链网络ID，可在区块链网络详情或列表中获取
                      * @return ClusterId 区块链网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置区块链网络ID，可在区块链网络详情或列表中获取
-                     * @param ClusterId 区块链网络ID，可在区块链网络详情或列表中获取
+                     * @param _clusterId 区块链网络ID，可在区块链网络详情或列表中获取
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取申请证书的组织名称，可以在组织管理列表中获取当前组织的名称
                      * @return GroupName 申请证书的组织名称，可以在组织管理列表中获取当前组织的名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置申请证书的组织名称，可以在组织管理列表中获取当前组织的名称
-                     * @param GroupName 申请证书的组织名称，可以在组织管理列表中获取当前组织的名称
+                     * @param _groupName 申请证书的组织名称，可以在组织管理列表中获取当前组织的名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10
                      * @return UserIdentity 用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10
+                     * 
                      */
                     std::string GetUserIdentity() const;
 
                     /**
                      * 设置用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10
-                     * @param UserIdentity 用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10
+                     * @param _userIdentity 用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10
+                     * 
                      */
                     void SetUserIdentity(const std::string& _userIdentity);
 
                     /**
                      * 判断参数 UserIdentity 是否已赋值
                      * @return UserIdentity 是否已赋值
+                     * 
                      */
                     bool UserIdentityHasBeenSet() const;
 
                     /**
                      * 获取证书申请实体，使用腾讯云账号实名认证的名称
                      * @return Applicant 证书申请实体，使用腾讯云账号实名认证的名称
+                     * 
                      */
                     std::string GetApplicant() const;
 
                     /**
                      * 设置证书申请实体，使用腾讯云账号实名认证的名称
-                     * @param Applicant 证书申请实体，使用腾讯云账号实名认证的名称
+                     * @param _applicant 证书申请实体，使用腾讯云账号实名认证的名称
+                     * 
                      */
                     void SetApplicant(const std::string& _applicant);
 
                     /**
                      * 判断参数 Applicant 是否已赋值
                      * @return Applicant 是否已赋值
+                     * 
                      */
                     bool ApplicantHasBeenSet() const;
 
                     /**
                      * 获取证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码
                      * @return IdentityNum 证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码
+                     * 
                      */
                     std::string GetIdentityNum() const;
 
                     /**
                      * 设置证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码
-                     * @param IdentityNum 证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码
+                     * @param _identityNum 证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码
+                     * 
                      */
                     void SetIdentityNum(const std::string& _identityNum);
 
                     /**
                      * 判断参数 IdentityNum 是否已赋值
                      * @return IdentityNum 是否已赋值
+                     * 
                      */
                     bool IdentityNumHasBeenSet() const;
 
                     /**
                      * 获取csr p10证书文件。需要用户根据文档生成证书的CSR文件
                      * @return CsrData csr p10证书文件。需要用户根据文档生成证书的CSR文件
+                     * 
                      */
                     std::string GetCsrData() const;
 
                     /**
                      * 设置csr p10证书文件。需要用户根据文档生成证书的CSR文件
-                     * @param CsrData csr p10证书文件。需要用户根据文档生成证书的CSR文件
+                     * @param _csrData csr p10证书文件。需要用户根据文档生成证书的CSR文件
+                     * 
                      */
                     void SetCsrData(const std::string& _csrData);
 
                     /**
                      * 判断参数 CsrData 是否已赋值
                      * @return CsrData 是否已赋值
+                     * 
                      */
                     bool CsrDataHasBeenSet() const;
 
                     /**
                      * 获取证书备注信息
                      * @return Notes 证书备注信息
+                     * 
                      */
                     std::string GetNotes() const;
 
                     /**
                      * 设置证书备注信息
-                     * @param Notes 证书备注信息
+                     * @param _notes 证书备注信息
+                     * 
                      */
                     void SetNotes(const std::string& _notes);
 
                     /**
                      * 判断参数 Notes 是否已赋值
                      * @return Notes 是否已赋值
+                     * 
                      */
                     bool NotesHasBeenSet() const;
 

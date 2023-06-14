@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取节点id
                      * @return Id 节点id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置节点id
-                     * @param Id 节点id
+                     * @param _id 节点id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型
                      * @return TaskType 任务类型
+                     * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型
-                     * @param TaskType 任务类型
+                     * @param _taskType 任务类型
+                     * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 

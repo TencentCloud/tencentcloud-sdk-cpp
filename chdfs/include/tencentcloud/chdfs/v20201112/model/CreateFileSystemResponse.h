@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取文件系统
                      * @return FileSystem 文件系统
+                     * 
                      */
                     FileSystem GetFileSystem() const;
 
                     /**
                      * 判断参数 FileSystem 是否已赋值
                      * @return FileSystem 是否已赋值
+                     * 
                      */
                     bool FileSystemHasBeenSet() const;
 

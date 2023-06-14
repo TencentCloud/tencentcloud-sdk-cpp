@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取否允许轮转，true表示开启轮转，false表示禁止轮转。
                      * @return EnableRotation 否允许轮转，true表示开启轮转，false表示禁止轮转。
+                     * 
                      */
                     bool GetEnableRotation() const;
 
                     /**
                      * 判断参数 EnableRotation 是否已赋值
                      * @return EnableRotation 是否已赋值
+                     * 
                      */
                     bool EnableRotationHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Frequency 轮转的频率，以天为单位，默认为1天。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFrequency() const;
 
                     /**
                      * 判断参数 Frequency 是否已赋值
                      * @return Frequency 是否已赋值
+                     * 
                      */
                     bool FrequencyHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestRotateTime 最近一次轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLatestRotateTime() const;
 
                     /**
                      * 判断参数 LatestRotateTime 是否已赋值
                      * @return LatestRotateTime 是否已赋值
+                     * 
                      */
                     bool LatestRotateTimeHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextRotateBeginTime 下一次开始轮转的时间，显式可见的时间字符串，格式 2006-01-02 15:04:05。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNextRotateBeginTime() const;
 
                     /**
                      * 判断参数 NextRotateBeginTime 是否已赋值
                      * @return NextRotateBeginTime 是否已赋值
+                     * 
                      */
                     bool NextRotateBeginTimeHasBeenSet() const;
 

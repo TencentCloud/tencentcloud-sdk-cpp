@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return RollingRestartSwitch 0:关闭滚动重启
 1:开启滚动启动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRollingRestartSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置0:关闭滚动重启
 1:开启滚动启动
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RollingRestartSwitch 0:关闭滚动重启
+                     * @param _rollingRestartSwitch 0:关闭滚动重启
 1:开启滚动启动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRollingRestartSwitch(const int64_t& _rollingRestartSwitch);
 
                     /**
                      * 判断参数 RollingRestartSwitch 是否已赋值
                      * @return RollingRestartSwitch 是否已赋值
+                     * 
                      */
                     bool RollingRestartSwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchSize 滚动重启每批次的重启数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBatchSize() const;
 
                     /**
                      * 设置滚动重启每批次的重启数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchSize 滚动重启每批次的重启数量
+                     * @param _batchSize 滚动重启每批次的重启数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBatchSize(const int64_t& _batchSize);
 
                     /**
                      * 判断参数 BatchSize 是否已赋值
                      * @return BatchSize 是否已赋值
+                     * 
                      */
                     bool BatchSizeHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeWait 滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeWait() const;
 
                     /**
                      * 设置滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeWait 滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
+                     * @param _timeWait 滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeWait(const int64_t& _timeWait);
 
                     /**
                      * 判断参数 TimeWait 是否已赋值
                      * @return TimeWait 是否已赋值
+                     * 
                      */
                     bool TimeWaitHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealOnFail 操作失败处理策略，0:失败阻塞, 1:失败自动跳过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDealOnFail() const;
 
                     /**
                      * 设置操作失败处理策略，0:失败阻塞, 1:失败自动跳过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealOnFail 操作失败处理策略，0:失败阻塞, 1:失败自动跳过
+                     * @param _dealOnFail 操作失败处理策略，0:失败阻塞, 1:失败自动跳过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealOnFail(const int64_t& _dealOnFail);
 
                     /**
                      * 判断参数 DealOnFail 是否已赋值
                      * @return DealOnFail 是否已赋值
+                     * 
                      */
                     bool DealOnFailHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取记录总数。
                      * @return TotalCount 记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取异地登录信息数组。
                      * @return NonLocalLoginPlaces 异地登录信息数组。
+                     * 
                      */
                     std::vector<NonLocalLoginPlace> GetNonLocalLoginPlaces() const;
 
                     /**
                      * 判断参数 NonLocalLoginPlaces 是否已赋值
                      * @return NonLocalLoginPlaces 是否已赋值
+                     * 
                      */
                     bool NonLocalLoginPlacesHasBeenSet() const;
 

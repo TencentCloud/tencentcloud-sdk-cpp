@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取密钥ID
                      * @return SecretId 密钥ID
+                     * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置密钥ID
-                     * @param SecretId 密钥ID
+                     * @param _secretId 密钥ID
+                     * 
                      */
                     void SetSecretId(const std::string& _secretId);
 
                     /**
                      * 判断参数 SecretId 是否已赋值
                      * @return SecretId 是否已赋值
+                     * 
                      */
                     bool SecretIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUsedDate 最后访问日期(有1天延迟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastUsedDate() const;
 
                     /**
                      * 设置最后访问日期(有1天延迟)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastUsedDate 最后访问日期(有1天延迟)
+                     * @param _lastUsedDate 最后访问日期(有1天延迟)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastUsedDate(const std::string& _lastUsedDate);
 
                     /**
                      * 判断参数 LastUsedDate 是否已赋值
                      * @return LastUsedDate 是否已赋值
+                     * 
                      */
                     bool LastUsedDateHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastSecretUsedDate 最后密钥访问日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetLastSecretUsedDate() const;
 
                     /**
                      * 设置最后密钥访问日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastSecretUsedDate 最后密钥访问日期
+                     * @param _lastSecretUsedDate 最后密钥访问日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastSecretUsedDate(const uint64_t& _lastSecretUsedDate);
 
                     /**
                      * 判断参数 LastSecretUsedDate 是否已赋值
                      * @return LastSecretUsedDate 是否已赋值
+                     * 
                      */
                     bool LastSecretUsedDateHasBeenSet() const;
 

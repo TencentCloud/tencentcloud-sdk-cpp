@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取临时token
                      * @return TmpToken 临时token
+                     * 
                      */
                     std::string GetTmpToken() const;
 
                     /**
                      * 判断参数 TmpToken 是否已赋值
                      * @return TmpToken 是否已赋值
+                     * 
                      */
                     bool TmpTokenHasBeenSet() const;
 
                     /**
                      * 获取临时的secretId
                      * @return TmpSecretId 临时的secretId
+                     * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 判断参数 TmpSecretId 是否已赋值
                      * @return TmpSecretId 是否已赋值
+                     * 
                      */
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
                      * 获取临时的secretKey
                      * @return TmpSecretKey 临时的secretKey
+                     * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 判断参数 TmpSecretKey 是否已赋值
                      * @return TmpSecretKey 是否已赋值
+                     * 
                      */
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
                      * 获取存储桶信息
                      * @return Bucket 存储桶信息
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return Region 实例ID
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取chart信息
                      * @return Path chart信息
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取开始时间时间戳
                      * @return StartTime 开始时间时间戳
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取token过期时间时间戳
                      * @return ExpiredTime token过期时间时间戳
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

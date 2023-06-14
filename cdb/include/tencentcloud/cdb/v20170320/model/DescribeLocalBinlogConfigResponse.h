@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取实例binlog保留策略。
                      * @return LocalBinlogConfig 实例binlog保留策略。
+                     * 
                      */
                     LocalBinlogConfig GetLocalBinlogConfig() const;
 
                     /**
                      * 判断参数 LocalBinlogConfig 是否已赋值
                      * @return LocalBinlogConfig 是否已赋值
+                     * 
                      */
                     bool LocalBinlogConfigHasBeenSet() const;
 
                     /**
                      * 获取该地域默认binlog保留策略。
                      * @return LocalBinlogConfigDefault 该地域默认binlog保留策略。
+                     * 
                      */
                     LocalBinlogConfigDefault GetLocalBinlogConfigDefault() const;
 
                     /**
                      * 判断参数 LocalBinlogConfigDefault 是否已赋值
                      * @return LocalBinlogConfigDefault 是否已赋值
+                     * 
                      */
                     bool LocalBinlogConfigDefaultHasBeenSet() const;
 

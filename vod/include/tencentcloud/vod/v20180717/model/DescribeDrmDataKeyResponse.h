@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取密钥列表，包含加密的数据密钥。
                      * @return KeyList 密钥列表，包含加密的数据密钥。
+                     * 
                      */
                     std::vector<SimpleAesEdkPair> GetKeyList() const;
 
                     /**
                      * 判断参数 KeyList 是否已赋值
                      * @return KeyList 是否已赋值
+                     * 
                      */
                     bool KeyListHasBeenSet() const;
 

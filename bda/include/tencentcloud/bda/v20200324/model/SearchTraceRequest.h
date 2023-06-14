@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取希望搜索的人体库ID。
                      * @return GroupId 希望搜索的人体库ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置希望搜索的人体库ID。
-                     * @param GroupId 希望搜索的人体库ID。
+                     * @param _groupId 希望搜索的人体库ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取人体动作轨迹信息。
                      * @return Trace 人体动作轨迹信息。
+                     * 
                      */
                     Trace GetTrace() const;
 
                     /**
                      * 设置人体动作轨迹信息。
-                     * @param Trace 人体动作轨迹信息。
+                     * @param _trace 人体动作轨迹信息。
+                     * 
                      */
                     void SetTrace(const Trace& _trace);
 
                     /**
                      * 判断参数 Trace 是否已赋值
                      * @return Trace 是否已赋值
+                     * 
                      */
                     bool TraceHasBeenSet() const;
 
@@ -86,6 +92,7 @@ namespace TencentCloud
                      * @return MaxPersonNum 单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
+                     * 
                      */
                     uint64_t GetMaxPersonNum() const;
 
@@ -93,15 +100,17 @@ namespace TencentCloud
                      * 设置单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
-                     * @param MaxPersonNum 单张被识别的人体动作轨迹返回的最相似人员数量。
+                     * @param _maxPersonNum 单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
+                     * 
                      */
                     void SetMaxPersonNum(const uint64_t& _maxPersonNum);
 
                     /**
                      * 判断参数 MaxPersonNum 是否已赋值
                      * @return MaxPersonNum 是否已赋值
+                     * 
                      */
                     bool MaxPersonNumHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 默认为0。范围[0, 100.0]。
                      * @return TraceMatchThreshold 出参Score中，只有超过TraceMatchThreshold值的结果才会返回。
 默认为0。范围[0, 100.0]。
+                     * 
                      */
                     double GetTraceMatchThreshold() const;
 
                     /**
                      * 设置出参Score中，只有超过TraceMatchThreshold值的结果才会返回。
 默认为0。范围[0, 100.0]。
-                     * @param TraceMatchThreshold 出参Score中，只有超过TraceMatchThreshold值的结果才会返回。
+                     * @param _traceMatchThreshold 出参Score中，只有超过TraceMatchThreshold值的结果才会返回。
 默认为0。范围[0, 100.0]。
+                     * 
                      */
                     void SetTraceMatchThreshold(const double& _traceMatchThreshold);
 
                     /**
                      * 判断参数 TraceMatchThreshold 是否已赋值
                      * @return TraceMatchThreshold 是否已赋值
+                     * 
                      */
                     bool TraceMatchThresholdHasBeenSet() const;
 

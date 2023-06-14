@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return TotalCount 总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取绑定的API信息
                      * @return BindApiSet 绑定的API信息
+                     * 
                      */
                     std::vector<BindApiInfo> GetBindApiSet() const;
 
                     /**
                      * 设置绑定的API信息
-                     * @param BindApiSet 绑定的API信息
+                     * @param _bindApiSet 绑定的API信息
+                     * 
                      */
                     void SetBindApiSet(const std::vector<BindApiInfo>& _bindApiSet);
 
                     /**
                      * 判断参数 BindApiSet 是否已赋值
                      * @return BindApiSet 是否已赋值
+                     * 
                      */
                     bool BindApiSetHasBeenSet() const;
 

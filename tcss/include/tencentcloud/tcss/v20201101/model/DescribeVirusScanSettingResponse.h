@@ -46,120 +46,140 @@ namespace TencentCloud
                     /**
                      * 获取是否开启定期扫描
                      * @return EnableScan 是否开启定期扫描
+                     * 
                      */
                     bool GetEnableScan() const;
 
                     /**
                      * 判断参数 EnableScan 是否已赋值
                      * @return EnableScan 是否已赋值
+                     * 
                      */
                     bool EnableScanHasBeenSet() const;
 
                     /**
                      * 获取检测周期每隔多少天
                      * @return Cycle 检测周期每隔多少天
+                     * 
                      */
                     uint64_t GetCycle() const;
 
                     /**
                      * 判断参数 Cycle 是否已赋值
                      * @return Cycle 是否已赋值
+                     * 
                      */
                     bool CycleHasBeenSet() const;
 
                     /**
                      * 获取扫描开始时间
                      * @return BeginScanAt 扫描开始时间
+                     * 
                      */
                     std::string GetBeginScanAt() const;
 
                     /**
                      * 判断参数 BeginScanAt 是否已赋值
                      * @return BeginScanAt 是否已赋值
+                     * 
                      */
                     bool BeginScanAtHasBeenSet() const;
 
                     /**
                      * 获取扫描全部路径
                      * @return ScanPathAll 扫描全部路径
+                     * 
                      */
                     bool GetScanPathAll() const;
 
                     /**
                      * 判断参数 ScanPathAll 是否已赋值
                      * @return ScanPathAll 是否已赋值
+                     * 
                      */
                     bool ScanPathAllHasBeenSet() const;
 
                     /**
                      * 获取当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
                      * @return ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
+                     * 
                      */
                     uint64_t GetScanPathType() const;
 
                     /**
                      * 判断参数 ScanPathType 是否已赋值
                      * @return ScanPathType 是否已赋值
+                     * 
                      */
                     bool ScanPathTypeHasBeenSet() const;
 
                     /**
                      * 获取超时时长，单位小时
                      * @return Timeout 超时时长，单位小时
+                     * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
                     /**
                      * 获取扫描范围0容器1主机节点
                      * @return ScanRangeType 扫描范围0容器1主机节点
+                     * 
                      */
                     uint64_t GetScanRangeType() const;
 
                     /**
                      * 判断参数 ScanRangeType 是否已赋值
                      * @return ScanRangeType 是否已赋值
+                     * 
                      */
                     bool ScanRangeTypeHasBeenSet() const;
 
                     /**
                      * 获取true 全选，false 自选
                      * @return ScanRangeAll true 全选，false 自选
+                     * 
                      */
                     bool GetScanRangeAll() const;
 
                     /**
                      * 判断参数 ScanRangeAll 是否已赋值
                      * @return ScanRangeAll 是否已赋值
+                     * 
                      */
                     bool ScanRangeAllHasBeenSet() const;
 
                     /**
                      * 获取自选扫描范围的容器id或者主机id 根据ScanRangeType决定
                      * @return ScanIds 自选扫描范围的容器id或者主机id 根据ScanRangeType决定
+                     * 
                      */
                     std::vector<std::string> GetScanIds() const;
 
                     /**
                      * 判断参数 ScanIds 是否已赋值
                      * @return ScanIds 是否已赋值
+                     * 
                      */
                     bool ScanIdsHasBeenSet() const;
 
                     /**
                      * 获取自选排除或扫描的地址
                      * @return ScanPath 自选排除或扫描的地址
+                     * 
                      */
                     std::vector<std::string> GetScanPath() const;
 
                     /**
                      * 判断参数 ScanPath 是否已赋值
                      * @return ScanPath 是否已赋值
+                     * 
                      */
                     bool ScanPathHasBeenSet() const;
 
@@ -168,12 +188,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClickTimeout 一键检测的超时设置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetClickTimeout() const;
 
                     /**
                      * 判断参数 ClickTimeout 是否已赋值
                      * @return ClickTimeout 是否已赋值
+                     * 
                      */
                     bool ClickTimeoutHasBeenSet() const;
 
@@ -188,12 +210,14 @@ SCAN_PATH_ALL：全部路径
 SCAN_PATH_DEFAULT：默认路径
 SCAN_PATH_USER_DEFINE：用户自定义路径
 
+                     * 
                      */
                     std::string GetScanPathMode() const;
 
                     /**
                      * 判断参数 ScanPathMode 是否已赋值
                      * @return ScanPathMode 是否已赋值
+                     * 
                      */
                     bool ScanPathModeHasBeenSet() const;
 

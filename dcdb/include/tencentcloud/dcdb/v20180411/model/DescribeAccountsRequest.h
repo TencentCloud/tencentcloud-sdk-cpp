@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如：dcdbt-ow728lmc。
                      * @return InstanceId 实例ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，形如：dcdbt-ow728lmc。
-                     * @param InstanceId 实例ID，形如：dcdbt-ow728lmc。
+                     * @param _instanceId 实例ID，形如：dcdbt-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

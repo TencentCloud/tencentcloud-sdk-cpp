@@ -93,6 +93,7 @@ namespace TencentCloud
 - FLEET_STATE_DELETING
 - FLEET_ACTIVATION_FAILED
 - GAME_SESSION_ACTIVATION_TIMEOUT
+                     * 
                      */
                     std::string GetEventCode() const;
 
@@ -120,7 +121,7 @@ namespace TencentCloud
 - FLEET_STATE_DELETING
 - FLEET_ACTIVATION_FAILED
 - GAME_SESSION_ACTIVATION_TIMEOUT
-                     * @param EventCode 事件代码，支持以下的事件代码
+                     * @param _eventCode 事件代码，支持以下的事件代码
 
 - FLEET_CREATED 
 - FLEET_STATE_DOWNLOADING 
@@ -143,48 +144,56 @@ namespace TencentCloud
 - FLEET_STATE_DELETING
 - FLEET_ACTIVATION_FAILED
 - GAME_SESSION_ACTIVATION_TIMEOUT
+                     * 
                      */
                     void SetEventCode(const std::string& _eventCode);
 
                     /**
                      * 判断参数 EventCode 是否已赋值
                      * @return EventCode 是否已赋值
+                     * 
                      */
                     bool EventCodeHasBeenSet() const;
 
                     /**
                      * 获取事件的唯一标识 ID
                      * @return EventId 事件的唯一标识 ID
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件的唯一标识 ID
-                     * @param EventId 事件的唯一标识 ID
+                     * @param _eventId 事件的唯一标识 ID
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取事件的发生时间，UTC 时间格式
                      * @return EventTime 事件的发生时间，UTC 时间格式
+                     * 
                      */
                     std::string GetEventTime() const;
 
                     /**
                      * 设置事件的发生时间，UTC 时间格式
-                     * @param EventTime 事件的发生时间，UTC 时间格式
+                     * @param _eventTime 事件的发生时间，UTC 时间格式
+                     * 
                      */
                     void SetEventTime(const std::string& _eventTime);
 
                     /**
                      * 判断参数 EventTime 是否已赋值
                      * @return EventTime 是否已赋值
+                     * 
                      */
                     bool EventTimeHasBeenSet() const;
 
@@ -193,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 事件的消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置事件的消息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 事件的消息
+                     * @param _message 事件的消息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -215,38 +227,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreSignedLogUrl 事件相关的日志存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPreSignedLogUrl() const;
 
                     /**
                      * 设置事件相关的日志存储路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreSignedLogUrl 事件相关的日志存储路径
+                     * @param _preSignedLogUrl 事件相关的日志存储路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPreSignedLogUrl(const std::string& _preSignedLogUrl);
 
                     /**
                      * 判断参数 PreSignedLogUrl 是否已赋值
                      * @return PreSignedLogUrl 是否已赋值
+                     * 
                      */
                     bool PreSignedLogUrlHasBeenSet() const;
 
                     /**
                      * 获取事件对应的资源对象唯一标识 ID，例如服务器舰队 ID
                      * @return ResourceId 事件对应的资源对象唯一标识 ID，例如服务器舰队 ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置事件对应的资源对象唯一标识 ID，例如服务器舰队 ID
-                     * @param ResourceId 事件对应的资源对象唯一标识 ID，例如服务器舰队 ID
+                     * @param _resourceId 事件对应的资源对象唯一标识 ID，例如服务器舰队 ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

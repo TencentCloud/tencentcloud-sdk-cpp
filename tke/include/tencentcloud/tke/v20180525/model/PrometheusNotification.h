@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取是否启用
                      * @return Enabled 是否启用
+                     * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否启用
-                     * @param Enabled 是否启用
+                     * @param _enabled 是否启用
+                     * 
                      */
                     void SetEnabled(const bool& _enabled);
 
                     /**
                      * 判断参数 Enabled 是否已赋值
                      * @return Enabled 是否已赋值
+                     * 
                      */
                     bool EnabledHasBeenSet() const;
 
                     /**
                      * 获取收敛时间
                      * @return RepeatInterval 收敛时间
+                     * 
                      */
                     std::string GetRepeatInterval() const;
 
                     /**
                      * 设置收敛时间
-                     * @param RepeatInterval 收敛时间
+                     * @param _repeatInterval 收敛时间
+                     * 
                      */
                     void SetRepeatInterval(const std::string& _repeatInterval);
 
                     /**
                      * 判断参数 RepeatInterval 是否已赋值
                      * @return RepeatInterval 是否已赋值
+                     * 
                      */
                     bool RepeatIntervalHasBeenSet() const;
 
                     /**
                      * 获取生效起始时间
                      * @return TimeRangeStart 生效起始时间
+                     * 
                      */
                     std::string GetTimeRangeStart() const;
 
                     /**
                      * 设置生效起始时间
-                     * @param TimeRangeStart 生效起始时间
+                     * @param _timeRangeStart 生效起始时间
+                     * 
                      */
                     void SetTimeRangeStart(const std::string& _timeRangeStart);
 
                     /**
                      * 判断参数 TimeRangeStart 是否已赋值
                      * @return TimeRangeStart 是否已赋值
+                     * 
                      */
                     bool TimeRangeStartHasBeenSet() const;
 
                     /**
                      * 获取生效结束时间
                      * @return TimeRangeEnd 生效结束时间
+                     * 
                      */
                     std::string GetTimeRangeEnd() const;
 
                     /**
                      * 设置生效结束时间
-                     * @param TimeRangeEnd 生效结束时间
+                     * @param _timeRangeEnd 生效结束时间
+                     * 
                      */
                     void SetTimeRangeEnd(const std::string& _timeRangeEnd);
 
                     /**
                      * 判断参数 TimeRangeEnd 是否已赋值
                      * @return TimeRangeEnd 是否已赋值
+                     * 
                      */
                     bool TimeRangeEndHasBeenSet() const;
 
@@ -125,6 +137,7 @@ namespace TencentCloud
                      * @return NotifyWay 告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
 分别代表：短信、邮件、电话、微信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNotifyWay() const;
 
@@ -132,15 +145,17 @@ namespace TencentCloud
                      * 设置告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
 分别代表：短信、邮件、电话、微信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NotifyWay 告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
+                     * @param _notifyWay 告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。
 分别代表：短信、邮件、电话、微信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNotifyWay(const std::vector<std::string>& _notifyWay);
 
                     /**
                      * 判断参数 NotifyWay 是否已赋值
                      * @return NotifyWay 是否已赋值
+                     * 
                      */
                     bool NotifyWayHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverGroups 告警接收组（用户组）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<uint64_t> GetReceiverGroups() const;
 
                     /**
                      * 设置告警接收组（用户组）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiverGroups 告警接收组（用户组）
+                     * @param _receiverGroups 告警接收组（用户组）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReceiverGroups(const std::vector<uint64_t>& _receiverGroups);
 
                     /**
                      * 判断参数 ReceiverGroups 是否已赋值
                      * @return ReceiverGroups 是否已赋值
+                     * 
                      */
                     bool ReceiverGroupsHasBeenSet() const;
 
@@ -173,6 +191,7 @@ namespace TencentCloud
                      * @return PhoneNotifyOrder 电话告警顺序。
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<uint64_t> GetPhoneNotifyOrder() const;
 
@@ -180,15 +199,17 @@ namespace TencentCloud
                      * 设置电话告警顺序。
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneNotifyOrder 电话告警顺序。
+                     * @param _phoneNotifyOrder 电话告警顺序。
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneNotifyOrder(const std::vector<uint64_t>& _phoneNotifyOrder);
 
                     /**
                      * 判断参数 PhoneNotifyOrder 是否已赋值
                      * @return PhoneNotifyOrder 是否已赋值
+                     * 
                      */
                     bool PhoneNotifyOrderHasBeenSet() const;
 
@@ -199,6 +220,7 @@ namespace TencentCloud
                      * @return PhoneCircleTimes 电话告警次数。
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPhoneCircleTimes() const;
 
@@ -206,15 +228,17 @@ namespace TencentCloud
                      * 设置电话告警次数。
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneCircleTimes 电话告警次数。
+                     * @param _phoneCircleTimes 电话告警次数。
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneCircleTimes(const int64_t& _phoneCircleTimes);
 
                     /**
                      * 判断参数 PhoneCircleTimes 是否已赋值
                      * @return PhoneCircleTimes 是否已赋值
+                     * 
                      */
                     bool PhoneCircleTimesHasBeenSet() const;
 
@@ -225,6 +249,7 @@ namespace TencentCloud
                      * @return PhoneInnerInterval 电话告警轮内间隔。单位：秒
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPhoneInnerInterval() const;
 
@@ -232,15 +257,17 @@ namespace TencentCloud
                      * 设置电话告警轮内间隔。单位：秒
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneInnerInterval 电话告警轮内间隔。单位：秒
+                     * @param _phoneInnerInterval 电话告警轮内间隔。单位：秒
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneInnerInterval(const int64_t& _phoneInnerInterval);
 
                     /**
                      * 判断参数 PhoneInnerInterval 是否已赋值
                      * @return PhoneInnerInterval 是否已赋值
+                     * 
                      */
                     bool PhoneInnerIntervalHasBeenSet() const;
 
@@ -251,6 +278,7 @@ namespace TencentCloud
                      * @return PhoneCircleInterval 电话告警轮外间隔。单位：秒
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPhoneCircleInterval() const;
 
@@ -258,15 +286,17 @@ namespace TencentCloud
                      * 设置电话告警轮外间隔。单位：秒
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneCircleInterval 电话告警轮外间隔。单位：秒
+                     * @param _phoneCircleInterval 电话告警轮外间隔。单位：秒
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneCircleInterval(const int64_t& _phoneCircleInterval);
 
                     /**
                      * 判断参数 PhoneCircleInterval 是否已赋值
                      * @return PhoneCircleInterval 是否已赋值
+                     * 
                      */
                     bool PhoneCircleIntervalHasBeenSet() const;
 
@@ -277,6 +307,7 @@ namespace TencentCloud
                      * @return PhoneArriveNotice 电话告警触达通知
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPhoneArriveNotice() const;
 
@@ -284,15 +315,17 @@ namespace TencentCloud
                      * 设置电话告警触达通知
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhoneArriveNotice 电话告警触达通知
+                     * @param _phoneArriveNotice 电话告警触达通知
 注：NotifyWay选择CALL，采用该参数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhoneArriveNotice(const bool& _phoneArriveNotice);
 
                     /**
                      * 判断参数 PhoneArriveNotice 是否已赋值
                      * @return PhoneArriveNotice 是否已赋值
+                     * 
                      */
                     bool PhoneArriveNoticeHasBeenSet() const;
 
@@ -305,6 +338,7 @@ webhook
 amp
 webhook
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -313,16 +347,18 @@ webhook
 amp
 webhook
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 通道类型，默认为amp，支持以下
+                     * @param _type 通道类型，默认为amp，支持以下
 amp
 webhook
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -331,20 +367,23 @@ webhook
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebHook 如果Type为webhook, 则该字段为必填项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebHook() const;
 
                     /**
                      * 设置如果Type为webhook, 则该字段为必填项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebHook 如果Type为webhook, 则该字段为必填项
+                     * @param _webHook 如果Type为webhook, 则该字段为必填项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebHook(const std::string& _webHook);
 
                     /**
                      * 判断参数 WebHook 是否已赋值
                      * @return WebHook 是否已赋值
+                     * 
                      */
                     bool WebHookHasBeenSet() const;
 

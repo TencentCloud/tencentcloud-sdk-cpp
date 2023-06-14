@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取跟踪集名称
                      * @return Name 跟踪集名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取跟踪事件类型（读：Read；写：Write；全部：*）
                      * @return ActionType 跟踪事件类型（读：Read；写：Write；全部：*）
+                     * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 判断参数 ActionType 是否已赋值
                      * @return ActionType 是否已赋值
+                     * 
                      */
                     bool ActionTypeHasBeenSet() const;
 
                     /**
                      * 获取跟踪事件所属产品（如：cos，全部：*）
                      * @return ResourceType 跟踪事件所属产品（如：cos，全部：*）
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取跟踪集状态（未开启：0；开启：1）
                      * @return Status 跟踪集状态（未开启：0；开启：1）
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取跟踪事件接口名列表（全部：[*]）
                      * @return EventNames 跟踪事件接口名列表（全部：[*]）
+                     * 
                      */
                     std::vector<std::string> GetEventNames() const;
 
                     /**
                      * 判断参数 EventNames 是否已赋值
                      * @return EventNames 是否已赋值
+                     * 
                      */
                     bool EventNamesHasBeenSet() const;
 
                     /**
                      * 获取数据投递存储（目前支持 cos、cls）
                      * @return Storage 数据投递存储（目前支持 cos、cls）
+                     * 
                      */
                     Storage GetStorage() const;
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取跟踪集创建时间
                      * @return CreateTime 跟踪集创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -133,12 +147,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackForAllMembers 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTrackForAllMembers() const;
 
                     /**
                      * 判断参数 TrackForAllMembers 是否已赋值
                      * @return TrackForAllMembers 是否已赋值
+                     * 
                      */
                     bool TrackForAllMembersHasBeenSet() const;
 

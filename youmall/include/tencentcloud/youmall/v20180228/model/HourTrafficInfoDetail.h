@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取小时 取值为：0，1，2，3，4，5，6，7，8，9，10，11，12，13，14，15，16，17，18，19，20，21，22，23
                      * @return Hour 小时 取值为：0，1，2，3，4，5，6，7，8，9，10，11，12，13，14，15，16，17，18，19，20，21，22，23
+                     * 
                      */
                     uint64_t GetHour() const;
 
                     /**
                      * 设置小时 取值为：0，1，2，3，4，5，6，7，8，9，10，11，12，13，14，15，16，17，18，19，20，21，22，23
-                     * @param Hour 小时 取值为：0，1，2，3，4，5，6，7，8，9，10，11，12，13，14，15，16，17，18，19，20，21，22，23
+                     * @param _hour 小时 取值为：0，1，2，3，4，5，6，7，8，9，10，11，12，13，14，15，16，17，18，19，20，21，22，23
+                     * 
                      */
                     void SetHour(const uint64_t& _hour);
 
                     /**
                      * 判断参数 Hour 是否已赋值
                      * @return Hour 是否已赋值
+                     * 
                      */
                     bool HourHasBeenSet() const;
 
                     /**
                      * 获取分时客流量
                      * @return HourTrafficTotalCount 分时客流量
+                     * 
                      */
                     uint64_t GetHourTrafficTotalCount() const;
 
                     /**
                      * 设置分时客流量
-                     * @param HourTrafficTotalCount 分时客流量
+                     * @param _hourTrafficTotalCount 分时客流量
+                     * 
                      */
                     void SetHourTrafficTotalCount(const uint64_t& _hourTrafficTotalCount);
 
                     /**
                      * 判断参数 HourTrafficTotalCount 是否已赋值
                      * @return HourTrafficTotalCount 是否已赋值
+                     * 
                      */
                     bool HourTrafficTotalCountHasBeenSet() const;
 

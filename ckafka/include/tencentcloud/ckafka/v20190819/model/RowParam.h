@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取行内容，KEY_VALUE，VALUE
                      * @return RowContent 行内容，KEY_VALUE，VALUE
+                     * 
                      */
                     std::string GetRowContent() const;
 
                     /**
                      * 设置行内容，KEY_VALUE，VALUE
-                     * @param RowContent 行内容，KEY_VALUE，VALUE
+                     * @param _rowContent 行内容，KEY_VALUE，VALUE
+                     * 
                      */
                     void SetRowContent(const std::string& _rowContent);
 
                     /**
                      * 判断参数 RowContent 是否已赋值
                      * @return RowContent 是否已赋值
+                     * 
                      */
                     bool RowContentHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyValueDelimiter key和value间的分隔符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyValueDelimiter() const;
 
                     /**
                      * 设置key和value间的分隔符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyValueDelimiter key和value间的分隔符
+                     * @param _keyValueDelimiter key和value间的分隔符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyValueDelimiter(const std::string& _keyValueDelimiter);
 
                     /**
                      * 判断参数 KeyValueDelimiter 是否已赋值
                      * @return KeyValueDelimiter 是否已赋值
+                     * 
                      */
                     bool KeyValueDelimiterHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EntryDelimiter 元素建的分隔符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEntryDelimiter() const;
 
                     /**
                      * 设置元素建的分隔符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EntryDelimiter 元素建的分隔符
+                     * @param _entryDelimiter 元素建的分隔符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEntryDelimiter(const std::string& _entryDelimiter);
 
                     /**
                      * 判断参数 EntryDelimiter 是否已赋值
                      * @return EntryDelimiter 是否已赋值
+                     * 
                      */
                     bool EntryDelimiterHasBeenSet() const;
 

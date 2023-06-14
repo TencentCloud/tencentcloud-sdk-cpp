@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务ID
                      * @return TaskId 迁移任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置迁移任务ID
-                     * @param TaskId 迁移任务ID
+                     * @param _taskId 迁移任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

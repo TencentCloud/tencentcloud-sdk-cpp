@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取人体框左上角横坐标。
                      * @return X 人体框左上角横坐标。
+                     * 
                      */
                     uint64_t GetX() const;
 
                     /**
                      * 设置人体框左上角横坐标。
-                     * @param X 人体框左上角横坐标。
+                     * @param _x 人体框左上角横坐标。
+                     * 
                      */
                     void SetX(const uint64_t& _x);
 
                     /**
                      * 判断参数 X 是否已赋值
                      * @return X 是否已赋值
+                     * 
                      */
                     bool XHasBeenSet() const;
 
                     /**
                      * 获取人体框左上角纵坐标。
                      * @return Y 人体框左上角纵坐标。
+                     * 
                      */
                     uint64_t GetY() const;
 
                     /**
                      * 设置人体框左上角纵坐标。
-                     * @param Y 人体框左上角纵坐标。
+                     * @param _y 人体框左上角纵坐标。
+                     * 
                      */
                     void SetY(const uint64_t& _y);
 
                     /**
                      * 判断参数 Y 是否已赋值
                      * @return Y 是否已赋值
+                     * 
                      */
                     bool YHasBeenSet() const;
 
                     /**
                      * 获取人体宽度。
                      * @return Width 人体宽度。
+                     * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置人体宽度。
-                     * @param Width 人体宽度。
+                     * @param _width 人体宽度。
+                     * 
                      */
                     void SetWidth(const uint64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取人体高度。
                      * @return Height 人体高度。
+                     * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置人体高度。
-                     * @param Height 人体高度。
+                     * @param _height 人体高度。
+                     * 
                      */
                     void SetHeight(const uint64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 

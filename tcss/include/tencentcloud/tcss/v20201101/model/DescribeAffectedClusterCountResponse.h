@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取严重风险的集群数量
                      * @return SeriousRiskClusterCount 严重风险的集群数量
+                     * 
                      */
                     uint64_t GetSeriousRiskClusterCount() const;
 
                     /**
                      * 判断参数 SeriousRiskClusterCount 是否已赋值
                      * @return SeriousRiskClusterCount 是否已赋值
+                     * 
                      */
                     bool SeriousRiskClusterCountHasBeenSet() const;
 
                     /**
                      * 获取高危风险的集群数量
                      * @return HighRiskClusterCount 高危风险的集群数量
+                     * 
                      */
                     uint64_t GetHighRiskClusterCount() const;
 
                     /**
                      * 判断参数 HighRiskClusterCount 是否已赋值
                      * @return HighRiskClusterCount 是否已赋值
+                     * 
                      */
                     bool HighRiskClusterCountHasBeenSet() const;
 
                     /**
                      * 获取中危风险的集群数量
                      * @return MiddleRiskClusterCount 中危风险的集群数量
+                     * 
                      */
                     uint64_t GetMiddleRiskClusterCount() const;
 
                     /**
                      * 判断参数 MiddleRiskClusterCount 是否已赋值
                      * @return MiddleRiskClusterCount 是否已赋值
+                     * 
                      */
                     bool MiddleRiskClusterCountHasBeenSet() const;
 
                     /**
                      * 获取低危风险的集群数量
                      * @return HintRiskClusterCount 低危风险的集群数量
+                     * 
                      */
                     uint64_t GetHintRiskClusterCount() const;
 
                     /**
                      * 判断参数 HintRiskClusterCount 是否已赋值
                      * @return HintRiskClusterCount 是否已赋值
+                     * 
                      */
                     bool HintRiskClusterCountHasBeenSet() const;
 

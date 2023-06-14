@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag
                      * @return Filter 查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag
+                     * 
                      */
                     std::vector<AssetQueryFilter> GetFilter() const;
 
                     /**
                      * 设置查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag
-                     * @param Filter 查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag
+                     * @param _filter 查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag
+                     * 
                      */
                     void SetFilter(const std::vector<AssetQueryFilter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 
@@ -67,92 +70,107 @@ namespace TencentCloud
 AssetCspmRiskNum,AssetVulNum,AssetEventNum,SsaAssetDiscoverTime
                      * @return Sorter 排序条件，可支持的排序字段：
 AssetCspmRiskNum,AssetVulNum,AssetEventNum,SsaAssetDiscoverTime
+                     * 
                      */
                     std::vector<QuerySort> GetSorter() const;
 
                     /**
                      * 设置排序条件，可支持的排序字段：
 AssetCspmRiskNum,AssetVulNum,AssetEventNum,SsaAssetDiscoverTime
-                     * @param Sorter 排序条件，可支持的排序字段：
+                     * @param _sorter 排序条件，可支持的排序字段：
 AssetCspmRiskNum,AssetVulNum,AssetEventNum,SsaAssetDiscoverTime
+                     * 
                      */
                     void SetSorter(const std::vector<QuerySort>& _sorter);
 
                     /**
                      * 判断参数 Sorter 是否已赋值
                      * @return Sorter 是否已赋值
+                     * 
                      */
                     bool SorterHasBeenSet() const;
 
                     /**
                      * 获取风险标签
                      * @return RiskTags 风险标签
+                     * 
                      */
                     std::vector<std::string> GetRiskTags() const;
 
                     /**
                      * 设置风险标签
-                     * @param RiskTags 风险标签
+                     * @param _riskTags 风险标签
+                     * 
                      */
                     void SetRiskTags(const std::vector<std::string>& _riskTags);
 
                     /**
                      * 判断参数 RiskTags 是否已赋值
                      * @return RiskTags 是否已赋值
+                     * 
                      */
                     bool RiskTagsHasBeenSet() const;
 
                     /**
                      * 获取标签
                      * @return Tags 标签
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签
-                     * @param Tags 标签
+                     * @param _tags 标签
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取页
                      * @return PageIndex 页
+                     * 
                      */
                     uint64_t GetPageIndex() const;
 
                     /**
                      * 设置页
-                     * @param PageIndex 页
+                     * @param _pageIndex 页
+                     * 
                      */
                     void SetPageIndex(const uint64_t& _pageIndex);
 
                     /**
                      * 判断参数 PageIndex 是否已赋值
                      * @return PageIndex 是否已赋值
+                     * 
                      */
                     bool PageIndexHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return PageSize 页大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置页大小
-                     * @param PageSize 页大小
+                     * @param _pageSize 页大小
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

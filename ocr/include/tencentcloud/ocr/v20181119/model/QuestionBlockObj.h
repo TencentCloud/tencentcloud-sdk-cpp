@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取数学试题识别结构化信息数组
                      * @return QuestionArr 数学试题识别结构化信息数组
+                     * 
                      */
                     std::vector<QuestionObj> GetQuestionArr() const;
 
                     /**
                      * 设置数学试题识别结构化信息数组
-                     * @param QuestionArr 数学试题识别结构化信息数组
+                     * @param _questionArr 数学试题识别结构化信息数组
+                     * 
                      */
                     void SetQuestionArr(const std::vector<QuestionObj>& _questionArr);
 
                     /**
                      * 判断参数 QuestionArr 是否已赋值
                      * @return QuestionArr 是否已赋值
+                     * 
                      */
                     bool QuestionArrHasBeenSet() const;
 
                     /**
                      * 获取题目主体区域检测框在图片中的像素坐标
                      * @return QuestionBboxCoord 题目主体区域检测框在图片中的像素坐标
+                     * 
                      */
                     Rect GetQuestionBboxCoord() const;
 
                     /**
                      * 设置题目主体区域检测框在图片中的像素坐标
-                     * @param QuestionBboxCoord 题目主体区域检测框在图片中的像素坐标
+                     * @param _questionBboxCoord 题目主体区域检测框在图片中的像素坐标
+                     * 
                      */
                     void SetQuestionBboxCoord(const Rect& _questionBboxCoord);
 
                     /**
                      * 判断参数 QuestionBboxCoord 是否已赋值
                      * @return QuestionBboxCoord 是否已赋值
+                     * 
                      */
                     bool QuestionBboxCoordHasBeenSet() const;
 

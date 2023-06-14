@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统本地挂载路径。
                      * @return LocalPath 文件系统本地挂载路径。
+                     * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置文件系统本地挂载路径。
-                     * @param LocalPath 文件系统本地挂载路径。
+                     * @param _localPath 文件系统本地挂载路径。
+                     * 
                      */
                     void SetLocalPath(const std::string& _localPath);
 
                     /**
                      * 判断参数 LocalPath 是否已赋值
                      * @return LocalPath 是否已赋值
+                     * 
                      */
                     bool LocalPathHasBeenSet() const;
 
                     /**
                      * 获取文件系统远程挂载ip及路径。
                      * @return RemotePath 文件系统远程挂载ip及路径。
+                     * 
                      */
                     std::string GetRemotePath() const;
 
                     /**
                      * 设置文件系统远程挂载ip及路径。
-                     * @param RemotePath 文件系统远程挂载ip及路径。
+                     * @param _remotePath 文件系统远程挂载ip及路径。
+                     * 
                      */
                     void SetRemotePath(const std::string& _remotePath);
 
                     /**
                      * 判断参数 RemotePath 是否已赋值
                      * @return RemotePath 是否已赋值
+                     * 
                      */
                     bool RemotePathHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 <li>NFS 3.0。
 <li>NFS 4.0。
 <li>TURBO。
+                     * 
                      */
                     std::string GetProtocol() const;
 
@@ -99,34 +106,39 @@ namespace TencentCloud
 <li>NFS 3.0。
 <li>NFS 4.0。
 <li>TURBO。
-                     * @param Protocol 文件系统协议类型，默认值NFS 3.0。
+                     * @param _protocol 文件系统协议类型，默认值NFS 3.0。
 <li>NFS 3.0。
 <li>NFS 4.0。
 <li>TURBO。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
                      * @return StorageType 文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
+                     * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
-                     * @param StorageType 文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
+                     * @param _storageType 文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。
+                     * 
                      */
                     void SetStorageType(const std::string& _storageType);
 
                     /**
                      * 判断参数 StorageType 是否已赋值
                      * @return StorageType 是否已赋值
+                     * 
                      */
                     bool StorageTypeHasBeenSet() const;
 

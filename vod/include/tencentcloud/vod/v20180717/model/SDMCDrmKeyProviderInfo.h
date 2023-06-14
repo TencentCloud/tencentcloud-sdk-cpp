@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取华曦达分配的用户 ID。最大长度为128个字符。
                      * @return Uid 华曦达分配的用户 ID。最大长度为128个字符。
+                     * 
                      */
                     std::string GetUid() const;
 
                     /**
                      * 设置华曦达分配的用户 ID。最大长度为128个字符。
-                     * @param Uid 华曦达分配的用户 ID。最大长度为128个字符。
+                     * @param _uid 华曦达分配的用户 ID。最大长度为128个字符。
+                     * 
                      */
                     void SetUid(const std::string& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
                     /**
                      * 获取华曦达分配的用户密钥 ID。最大长度为128个字符。
                      * @return SecretId 华曦达分配的用户密钥 ID。最大长度为128个字符。
+                     * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置华曦达分配的用户密钥 ID。最大长度为128个字符。
-                     * @param SecretId 华曦达分配的用户密钥 ID。最大长度为128个字符。
+                     * @param _secretId 华曦达分配的用户密钥 ID。最大长度为128个字符。
+                     * 
                      */
                     void SetSecretId(const std::string& _secretId);
 
                     /**
                      * 判断参数 SecretId 是否已赋值
                      * @return SecretId 是否已赋值
+                     * 
                      */
                     bool SecretIdHasBeenSet() const;
 
                     /**
                      * 获取华曦达分配的用户密钥内容。最大长度为128个字符。
                      * @return SecretKey 华曦达分配的用户密钥内容。最大长度为128个字符。
+                     * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置华曦达分配的用户密钥内容。最大长度为128个字符。
-                     * @param SecretKey 华曦达分配的用户密钥内容。最大长度为128个字符。
+                     * @param _secretKey 华曦达分配的用户密钥内容。最大长度为128个字符。
+                     * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
 
                     /**
                      * 判断参数 SecretKey 是否已赋值
                      * @return SecretKey 是否已赋值
+                     * 
                      */
                     bool SecretKeyHasBeenSet() const;
 
                     /**
                      * 获取华曦达分配的 FairPlay 证书地址。该地址需使用 HTTPS 协议，最大长度为1024个字符。
                      * @return FairPlayCertificateUrl 华曦达分配的 FairPlay 证书地址。该地址需使用 HTTPS 协议，最大长度为1024个字符。
+                     * 
                      */
                     std::string GetFairPlayCertificateUrl() const;
 
                     /**
                      * 设置华曦达分配的 FairPlay 证书地址。该地址需使用 HTTPS 协议，最大长度为1024个字符。
-                     * @param FairPlayCertificateUrl 华曦达分配的 FairPlay 证书地址。该地址需使用 HTTPS 协议，最大长度为1024个字符。
+                     * @param _fairPlayCertificateUrl 华曦达分配的 FairPlay 证书地址。该地址需使用 HTTPS 协议，最大长度为1024个字符。
+                     * 
                      */
                     void SetFairPlayCertificateUrl(const std::string& _fairPlayCertificateUrl);
 
                     /**
                      * 判断参数 FairPlayCertificateUrl 是否已赋值
                      * @return FairPlayCertificateUrl 是否已赋值
+                     * 
                      */
                     bool FairPlayCertificateUrlHasBeenSet() const;
 

@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取经过加密算法加密后的base64格式密钥
                      * @return DataKey 经过加密算法加密后的base64格式密钥
+                     * 
                      */
                     std::string GetDataKey() const;
 
                     /**
                      * 判断参数 DataKey 是否已赋值
                      * @return DataKey 是否已赋值
+                     * 
                      */
                     bool DataKeyHasBeenSet() const;
 
                     /**
                      * 获取设备ID
                      * @return DeviceId 设备ID
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Signature 签名字符串
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSignature() const;
 
                     /**
                      * 判断参数 Signature 是否已赋值
                      * @return Signature 是否已赋值
+                     * 
                      */
                     bool SignatureHasBeenSet() const;
 

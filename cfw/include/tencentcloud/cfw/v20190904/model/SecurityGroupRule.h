@@ -61,6 +61,7 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
+                     * 
                      */
                     std::string GetSourceContent() const;
 
@@ -72,37 +73,42 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-                     * @param SourceContent 访问源示例：
+                     * @param _sourceContent 访问源示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
 instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
+                     * 
                      */
                     void SetSourceContent(const std::string& _sourceContent);
 
                     /**
                      * 判断参数 SourceContent 是否已赋值
                      * @return SourceContent 是否已赋值
+                     * 
                      */
                     bool SourceContentHasBeenSet() const;
 
                     /**
                      * 获取访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
                      * @return SourceType 访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
+                     * 
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
-                     * @param SourceType 访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
+                     * @param _sourceType 访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
+                     * 
                      */
                     void SetSourceType(const std::string& _sourceType);
 
                     /**
                      * 判断参数 SourceType 是否已赋值
                      * @return SourceType 是否已赋值
+                     * 
                      */
                     bool SourceTypeHasBeenSet() const;
 
@@ -121,6 +127,7 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
+                     * 
                      */
                     std::string GetDestContent() const;
 
@@ -132,37 +139,42 @@ instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
-                     * @param DestContent 访问目的示例：
+                     * @param _destContent 访问目的示例：
 net：IP/CIDR(192.168.0.2)
 template：参数模板(ipm-dyodhpby)
 instance：资产实例(ins-123456)
 resourcegroup：资产分组(/全部分组/分组1/子分组1)
 tag：资源标签({"Key":"标签key值","Value":"标签Value值"})
 region：地域(ap-gaungzhou)
+                     * 
                      */
                     void SetDestContent(const std::string& _destContent);
 
                     /**
                      * 判断参数 DestContent 是否已赋值
                      * @return DestContent 是否已赋值
+                     * 
                      */
                     bool DestContentHasBeenSet() const;
 
                     /**
                      * 获取访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
                      * @return DestType 访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
+                     * 
                      */
                     std::string GetDestType() const;
 
                     /**
                      * 设置访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
-                     * @param DestType 访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
+                     * @param _destType 访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region
+                     * 
                      */
                     void SetDestType(const std::string& _destType);
 
                     /**
                      * 判断参数 DestType 是否已赋值
                      * @return DestType 是否已赋值
+                     * 
                      */
                     bool DestTypeHasBeenSet() const;
 
@@ -173,6 +185,7 @@ drop：拒绝
                      * @return RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值：
 accept：放行
 drop：拒绝
+                     * 
                      */
                     std::string GetRuleAction() const;
 
@@ -180,51 +193,59 @@ drop：拒绝
                      * 设置访问控制策略中设置的流量通过云防火墙的方式。取值：
 accept：放行
 drop：拒绝
-                     * @param RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值：
+                     * @param _ruleAction 访问控制策略中设置的流量通过云防火墙的方式。取值：
 accept：放行
 drop：拒绝
+                     * 
                      */
                     void SetRuleAction(const std::string& _ruleAction);
 
                     /**
                      * 判断参数 RuleAction 是否已赋值
                      * @return RuleAction 是否已赋值
+                     * 
                      */
                     bool RuleActionHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取规则顺序，-1表示最低，1表示最高
                      * @return OrderIndex 规则顺序，-1表示最低，1表示最高
+                     * 
                      */
                     std::string GetOrderIndex() const;
 
                     /**
                      * 设置规则顺序，-1表示最低，1表示最高
-                     * @param OrderIndex 规则顺序，-1表示最低，1表示最高
+                     * @param _orderIndex 规则顺序，-1表示最低，1表示最高
+                     * 
                      */
                     void SetOrderIndex(const std::string& _orderIndex);
 
                     /**
                      * 判断参数 OrderIndex 是否已赋值
                      * @return OrderIndex 是否已赋值
+                     * 
                      */
                     bool OrderIndexHasBeenSet() const;
 
@@ -233,20 +254,23 @@ drop：拒绝
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议；TCP/UDP/ICMP/ANY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议；TCP/UDP/ICMP/ANY
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 协议；TCP/UDP/ICMP/ANY
+                     * @param _protocol 协议；TCP/UDP/ICMP/ANY
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -259,6 +283,7 @@ drop：拒绝
 -1/-1：全部端口
 80：80端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPort() const;
 
@@ -267,16 +292,18 @@ drop：拒绝
 -1/-1：全部端口
 80：80端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 访问控制策略的端口。取值：
+                     * @param _port 访问控制策略的端口。取值：
 -1/-1：全部端口
 80：80端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -285,56 +312,65 @@ drop：拒绝
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceTemplateId() const;
 
                     /**
                      * 设置端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
+                     * @param _serviceTemplateId 端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceTemplateId(const std::string& _serviceTemplateId);
 
                     /**
                      * 判断参数 ServiceTemplateId 是否已赋值
                      * @return ServiceTemplateId 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取规则对应的唯一id
                      * @return Id 规则对应的唯一id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置规则对应的唯一id
-                     * @param Id 规则对应的唯一id
+                     * @param _id 规则对应的唯一id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取规则状态，true表示启用，false表示禁用
                      * @return Enable 规则状态，true表示启用，false表示禁用
+                     * 
                      */
                     std::string GetEnable() const;
 
                     /**
                      * 设置规则状态，true表示启用，false表示禁用
-                     * @param Enable 规则状态，true表示启用，false表示禁用
+                     * @param _enable 规则状态，true表示启用，false表示禁用
+                     * 
                      */
                     void SetEnable(const std::string& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

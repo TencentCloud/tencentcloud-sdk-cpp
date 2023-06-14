@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间，格式为："2017-07-12 10:29:20"。
                      * @return StartTime 开始时间，格式为："2017-07-12 10:29:20"。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，格式为："2017-07-12 10:29:20"。
-                     * @param StartTime 开始时间，格式为："2017-07-12 10:29:20"。
+                     * @param _startTime 开始时间，格式为："2017-07-12 10:29:20"。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式为："2017-07-12 10:29:20"。
                      * @return EndTime 结束时间，格式为："2017-07-12 10:29:20"。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式为："2017-07-12 10:29:20"。
-                     * @param EndTime 结束时间，格式为："2017-07-12 10:29:20"。
+                     * @param _endTime 结束时间，格式为："2017-07-12 10:29:20"。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
                      * @return Order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
-                     * @param Order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
+                     * @param _order 排序方式。支持值包括："ASC" - 升序，"DESC" - 降序。
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
@@ -124,6 +136,7 @@ namespace TencentCloud
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
@@ -132,34 +145,39 @@ namespace TencentCloud
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
-                     * @param OrderBy 排序字段。支持值包括：
+                     * @param _orderBy 排序字段。支持值包括：
 "timestamp" - 时间戳；
 "affectRows" - 影响行数；
 "execTime" - 执行时间。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取过滤条件。可按设置的过滤条件过滤日志。
                      * @return Filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 
                      */
                     AuditLogFilter GetFilter() const;
 
                     /**
                      * 设置过滤条件。可按设置的过滤条件过滤日志。
-                     * @param Filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * @param _filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 
                      */
                     void SetFilter(const AuditLogFilter& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 

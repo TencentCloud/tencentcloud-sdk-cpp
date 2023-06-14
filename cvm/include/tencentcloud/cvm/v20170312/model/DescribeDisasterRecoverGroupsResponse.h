@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取分散置放群组信息列表。
                      * @return DisasterRecoverGroupSet 分散置放群组信息列表。
+                     * 
                      */
                     std::vector<DisasterRecoverGroup> GetDisasterRecoverGroupSet() const;
 
                     /**
                      * 判断参数 DisasterRecoverGroupSet 是否已赋值
                      * @return DisasterRecoverGroupSet 是否已赋值
+                     * 
                      */
                     bool DisasterRecoverGroupSetHasBeenSet() const;
 
                     /**
                      * 获取用户置放群组总量。
                      * @return TotalCount 用户置放群组总量。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

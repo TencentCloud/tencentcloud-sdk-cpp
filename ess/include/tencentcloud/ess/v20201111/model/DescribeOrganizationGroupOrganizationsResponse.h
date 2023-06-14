@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 查询到的符合条件的成员企业总数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinedTotal 已授权待激活的企业数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetJoinedTotal() const;
 
                     /**
                      * 判断参数 JoinedTotal 是否已赋值
                      * @return JoinedTotal 是否已赋值
+                     * 
                      */
                     bool JoinedTotalHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivedTotal 已加入的企业数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetActivedTotal() const;
 
                     /**
                      * 判断参数 ActivedTotal 是否已赋值
                      * @return ActivedTotal 是否已赋值
+                     * 
                      */
                     bool ActivedTotalHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportUrl 导出文件的url
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExportUrl() const;
 
                     /**
                      * 判断参数 ExportUrl 是否已赋值
                      * @return ExportUrl 是否已赋值
+                     * 
                      */
                     bool ExportUrlHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 成员企业信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GroupOrganization> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

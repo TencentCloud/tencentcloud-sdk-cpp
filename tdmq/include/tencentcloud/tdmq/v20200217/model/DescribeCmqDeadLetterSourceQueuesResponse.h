@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取满足本次条件的队列个数
                      * @return TotalCount 满足本次条件的队列个数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取死信队列源队列
                      * @return QueueSet 死信队列源队列
+                     * 
                      */
                     std::vector<CmqDeadLetterSource> GetQueueSet() const;
 
                     /**
                      * 判断参数 QueueSet 是否已赋值
                      * @return QueueSet 是否已赋值
+                     * 
                      */
                     bool QueueSetHasBeenSet() const;
 

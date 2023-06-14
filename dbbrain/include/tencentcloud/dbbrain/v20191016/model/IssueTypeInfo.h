@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。
                      * @return IssueType 指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。
+                     * 
                      */
                     std::string GetIssueType() const;
 
                     /**
                      * 设置指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。
-                     * @param IssueType 指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。
+                     * @param _issueType 指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。
+                     * 
                      */
                     void SetIssueType(const std::string& _issueType);
 
                     /**
                      * 判断参数 IssueType 是否已赋值
                      * @return IssueType 是否已赋值
+                     * 
                      */
                     bool IssueTypeHasBeenSet() const;
 
                     /**
                      * 获取异常事件。
                      * @return Events 异常事件。
+                     * 
                      */
                     std::vector<EventInfo> GetEvents() const;
 
                     /**
                      * 设置异常事件。
-                     * @param Events 异常事件。
+                     * @param _events 异常事件。
+                     * 
                      */
                     void SetEvents(const std::vector<EventInfo>& _events);
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 
                     /**
                      * 获取异常事件总数。
                      * @return TotalCount 异常事件总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置异常事件总数。
-                     * @param TotalCount 异常事件总数。
+                     * @param _totalCount 异常事件总数。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

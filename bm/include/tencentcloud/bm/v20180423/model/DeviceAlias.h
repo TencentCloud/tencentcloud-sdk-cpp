@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取设备ID
                      * @return InstanceId 设备ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置设备ID
-                     * @param InstanceId 设备ID
+                     * @param _instanceId 设备ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取设备别名
                      * @return Alias 设备别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置设备别名
-                     * @param Alias 设备别名
+                     * @param _alias 设备别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 

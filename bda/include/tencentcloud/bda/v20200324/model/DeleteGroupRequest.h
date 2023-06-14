@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取人体库ID。
                      * @return GroupId 人体库ID。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置人体库ID。
-                     * @param GroupId 人体库ID。
+                     * @param _groupId 人体库ID。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 

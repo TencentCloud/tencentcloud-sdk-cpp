@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
                      * @return NewName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * 
                      */
                     std::string GetNewName() const;
 
                     /**
                      * 设置自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
-                     * @param NewName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * @param _newName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * 
                      */
                     void SetNewName(const std::string& _newName);
 
                     /**
                      * 判断参数 NewName 是否已赋值
                      * @return NewName 是否已赋值
+                     * 
                      */
                     bool NewNameHasBeenSet() const;
 

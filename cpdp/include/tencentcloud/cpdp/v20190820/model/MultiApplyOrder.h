@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutDistributeNo 商户分账单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutDistributeNo() const;
 
                     /**
                      * 设置商户分账单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutDistributeNo 商户分账单号
+                     * @param _outDistributeNo 商户分账单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutDistributeNo(const std::string& _outDistributeNo);
 
                     /**
                      * 判断参数 OutDistributeNo 是否已赋值
                      * @return OutDistributeNo 是否已赋值
+                     * 
                      */
                     bool OutDistributeNoHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DistributeNo 平台分账单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDistributeNo() const;
 
                     /**
                      * 设置平台分账单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DistributeNo 平台分账单号
+                     * @param _distributeNo 平台分账单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDistributeNo(const std::string& _distributeNo);
 
                     /**
                      * 判断参数 DistributeNo 是否已赋值
                      * @return DistributeNo 是否已赋值
+                     * 
                      */
                     bool DistributeNoHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderNo 平台交易订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderNo() const;
 
                     /**
                      * 设置平台交易订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderNo 平台交易订单号
+                     * @param _orderNo 平台交易订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderNo(const std::string& _orderNo);
 
                     /**
                      * 判断参数 OrderNo 是否已赋值
                      * @return OrderNo 是否已赋值
+                     * 
                      */
                     bool OrderNoHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 分账订单状态（0初始1成功2失败3撤销）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置分账订单状态（0初始1成功2失败3撤销）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 分账订单状态（0初始1成功2失败3撤销）
+                     * @param _status 分账订单状态（0初始1成功2失败3撤销）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InDate 入账日期，格式yyyy-MM-dd
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInDate() const;
 
                     /**
                      * 设置入账日期，格式yyyy-MM-dd
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InDate 入账日期，格式yyyy-MM-dd
+                     * @param _inDate 入账日期，格式yyyy-MM-dd
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInDate(const std::string& _inDate);
 
                     /**
                      * 判断参数 InDate 是否已赋值
                      * @return InDate 是否已赋值
+                     * 
                      */
                     bool InDateHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注
+                     * @param _remark 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 分账明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MultiApplyDetail> GetDetails() const;
 
                     /**
                      * 设置分账明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Details 分账明细
+                     * @param _details 分账明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDetails(const std::vector<MultiApplyDetail>& _details);
 
                     /**
                      * 判断参数 Details 是否已赋值
                      * @return Details 是否已赋值
+                     * 
                      */
                     bool DetailsHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
                      * @return VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * @param _vpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 

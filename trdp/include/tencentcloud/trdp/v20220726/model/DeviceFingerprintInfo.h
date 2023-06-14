@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取设备指纹Token
                      * @return DeviceToken 设备指纹Token
+                     * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
                      * 设置设备指纹Token
-                     * @param DeviceToken 设备指纹Token
+                     * @param _deviceToken 设备指纹Token
+                     * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
 
                     /**
                      * 判断参数 DeviceToken 是否已赋值
                      * @return DeviceToken 是否已赋值
+                     * 
                      */
                     bool DeviceTokenHasBeenSet() const;
 
                     /**
                      * 获取设备指纹的客户端SDK对应渠道
                      * @return SdkChannel 设备指纹的客户端SDK对应渠道
+                     * 
                      */
                     std::string GetSdkChannel() const;
 
                     /**
                      * 设置设备指纹的客户端SDK对应渠道
-                     * @param SdkChannel 设备指纹的客户端SDK对应渠道
+                     * @param _sdkChannel 设备指纹的客户端SDK对应渠道
+                     * 
                      */
                     void SetSdkChannel(const std::string& _sdkChannel);
 
                     /**
                      * 判断参数 SdkChannel 是否已赋值
                      * @return SdkChannel 是否已赋值
+                     * 
                      */
                     bool SdkChannelHasBeenSet() const;
 

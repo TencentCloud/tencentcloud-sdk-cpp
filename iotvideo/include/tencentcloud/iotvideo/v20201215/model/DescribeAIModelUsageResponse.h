@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取AI模型资源包总量
                      * @return TotalCount AI模型资源包总量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取AI模型资源包信息数组
                      * @return UsageInfo AI模型资源包信息数组
+                     * 
                      */
                     std::vector<AIModelUsageInfo> GetUsageInfo() const;
 
                     /**
                      * 判断参数 UsageInfo 是否已赋值
                      * @return UsageInfo 是否已赋值
+                     * 
                      */
                     bool UsageInfoHasBeenSet() const;
 

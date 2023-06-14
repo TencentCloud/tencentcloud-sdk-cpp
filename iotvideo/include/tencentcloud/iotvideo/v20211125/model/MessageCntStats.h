@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取统计日期
                      * @return Date 统计日期
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置统计日期
-                     * @param Date 统计日期
+                     * @param _date 统计日期
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpMsgCnt 物模型上行消息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUpMsgCnt() const;
 
                     /**
                      * 设置物模型上行消息数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpMsgCnt 物模型上行消息数
+                     * @param _upMsgCnt 物模型上行消息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpMsgCnt(const uint64_t& _upMsgCnt);
 
                     /**
                      * 判断参数 UpMsgCnt 是否已赋值
                      * @return UpMsgCnt 是否已赋值
+                     * 
                      */
                     bool UpMsgCntHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownMsgCnt 物模型下行消息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDownMsgCnt() const;
 
                     /**
                      * 设置物模型下行消息数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownMsgCnt 物模型下行消息数
+                     * @param _downMsgCnt 物模型下行消息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownMsgCnt(const uint64_t& _downMsgCnt);
 
                     /**
                      * 判断参数 DownMsgCnt 是否已赋值
                      * @return DownMsgCnt 是否已赋值
+                     * 
                      */
                     bool DownMsgCntHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NtpMsgCnt ntp消息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNtpMsgCnt() const;
 
                     /**
                      * 设置ntp消息数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NtpMsgCnt ntp消息数
+                     * @param _ntpMsgCnt ntp消息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNtpMsgCnt(const uint64_t& _ntpMsgCnt);
 
                     /**
                      * 判断参数 NtpMsgCnt 是否已赋值
                      * @return NtpMsgCnt 是否已赋值
+                     * 
                      */
                     bool NtpMsgCntHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取表名
                      * @return Filters 表名
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置表名
-                     * @param Filters 表名
+                     * @param _filters 表名
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取如果是hive这里写rpc，如果是其他类型不传
                      * @return ConnectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * 
                      */
                     std::string GetConnectionType() const;
 
                     /**
                      * 设置如果是hive这里写rpc，如果是其他类型不传
-                     * @param ConnectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * @param _connectionType 如果是hive这里写rpc，如果是其他类型不传
+                     * 
                      */
                     void SetConnectionType(const std::string& _connectionType);
 
                     /**
                      * 判断参数 ConnectionType 是否已赋值
                      * @return ConnectionType 是否已赋值
+                     * 
                      */
                     bool ConnectionTypeHasBeenSet() const;
 
                     /**
                      * 获取数据库源类型
                      * @return Catalog 数据库源类型
+                     * 
                      */
                     std::string GetCatalog() const;
 
                     /**
                      * 设置数据库源类型
-                     * @param Catalog 数据库源类型
+                     * @param _catalog 数据库源类型
+                     * 
                      */
                     void SetCatalog(const std::string& _catalog);
 
                     /**
                      * 判断参数 Catalog 是否已赋值
                      * @return Catalog 是否已赋值
+                     * 
                      */
                     bool CatalogHasBeenSet() const;
 

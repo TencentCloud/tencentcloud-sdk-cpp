@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScrapeJobSet 任务列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusScrapeJob> GetScrapeJobSet() const;
 
                     /**
                      * 判断参数 ScrapeJobSet 是否已赋值
                      * @return ScrapeJobSet 是否已赋值
+                     * 
                      */
                     bool ScrapeJobSetHasBeenSet() const;
 
                     /**
                      * 获取任务总量
                      * @return TotalCount 任务总量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

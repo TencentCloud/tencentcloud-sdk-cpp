@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取开始时间，不得早于当前时间的180天前
                      * @return StartTime 开始时间，不得早于当前时间的180天前
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，不得早于当前时间的180天前
-                     * @param StartTime 开始时间，不得早于当前时间的180天前
+                     * @param _startTime 开始时间，不得早于当前时间的180天前
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页容量，默认为20，最大200
                      * @return Limit 每页容量，默认为20，最大200
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页容量，默认为20，最大200
-                     * @param Limit 每页容量，默认为20，最大200
+                     * @param _limit 每页容量，默认为20，最大200
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

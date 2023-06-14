@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取标准型弹性网卡配额。
                      * @return EniQuantity 标准型弹性网卡配额。
+                     * 
                      */
                     int64_t GetEniQuantity() const;
 
                     /**
                      * 判断参数 EniQuantity 是否已赋值
                      * @return EniQuantity 是否已赋值
+                     * 
                      */
                     bool EniQuantityHasBeenSet() const;
 
                     /**
                      * 获取每个标准型弹性网卡可以分配的IP配额。
                      * @return EniPrivateIpAddressQuantity 每个标准型弹性网卡可以分配的IP配额。
+                     * 
                      */
                     int64_t GetEniPrivateIpAddressQuantity() const;
 
                     /**
                      * 判断参数 EniPrivateIpAddressQuantity 是否已赋值
                      * @return EniPrivateIpAddressQuantity 是否已赋值
+                     * 
                      */
                     bool EniPrivateIpAddressQuantityHasBeenSet() const;
 
@@ -72,12 +76,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendEniQuantity 扩展型网卡配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExtendEniQuantity() const;
 
                     /**
                      * 判断参数 ExtendEniQuantity 是否已赋值
                      * @return ExtendEniQuantity 是否已赋值
+                     * 
                      */
                     bool ExtendEniQuantityHasBeenSet() const;
 
@@ -86,12 +92,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendEniPrivateIpAddressQuantity 每个扩展型弹性网卡可以分配的IP配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetExtendEniPrivateIpAddressQuantity() const;
 
                     /**
                      * 判断参数 ExtendEniPrivateIpAddressQuantity 是否已赋值
                      * @return ExtendEniPrivateIpAddressQuantity 是否已赋值
+                     * 
                      */
                     bool ExtendEniPrivateIpAddressQuantityHasBeenSet() const;
 
@@ -100,12 +108,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubEniQuantity 中继网卡配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSubEniQuantity() const;
 
                     /**
                      * 判断参数 SubEniQuantity 是否已赋值
                      * @return SubEniQuantity 是否已赋值
+                     * 
                      */
                     bool SubEniQuantityHasBeenSet() const;
 
@@ -114,12 +124,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubEniPrivateIpAddressQuantity 每个中继网卡可以分配的IP配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSubEniPrivateIpAddressQuantity() const;
 
                     /**
                      * 判断参数 SubEniPrivateIpAddressQuantity 是否已赋值
                      * @return SubEniPrivateIpAddressQuantity 是否已赋值
+                     * 
                      */
                     bool SubEniPrivateIpAddressQuantityHasBeenSet() const;
 

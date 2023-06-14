@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 对账单下载地址。GET方式访问，返回zip包，解压后为csv格式文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置对账单下载地址。GET方式访问，返回zip包，解压后为csv格式文件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DownloadUrl 对账单下载地址。GET方式访问，返回zip包，解压后为csv格式文件。
+                     * @param _downloadUrl 对账单下载地址。GET方式访问，返回zip包，解压后为csv格式文件。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 

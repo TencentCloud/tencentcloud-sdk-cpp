@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取自学习模型ID
                      * @return ModelId 自学习模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置自学习模型ID
-                     * @param ModelId 自学习模型ID
+                     * @param _modelId 自学习模型ID
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取事件索引名
                      * @return Index 事件索引名
+                     * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置事件索引名
-                     * @param Index 事件索引名
+                     * @param _index 事件索引名
+                     * 
                      */
                     void SetIndex(const std::string& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
                     /**
                      * 获取事件id
                      * @return Id 事件id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置事件id
-                     * @param Id 事件id
+                     * @param _id 事件id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取事件来源
                      * @return Source 事件来源
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置事件来源
-                     * @param Source 事件来源
+                     * @param _source 事件来源
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取事件子类型
                      * @return SubEventType 事件子类型
+                     * 
                      */
                     uint64_t GetSubEventType() const;
 
                     /**
                      * 设置事件子类型
-                     * @param SubEventType 事件子类型
+                     * @param _subEventType 事件子类型
+                     * 
                      */
                     void SetSubEventType(const uint64_t& _subEventType);
 
                     /**
                      * 判断参数 SubEventType 是否已赋值
                      * @return SubEventType 是否已赋值
+                     * 
                      */
                     bool SubEventTypeHasBeenSet() const;
 
                     /**
                      * 获取事件名称
                      * @return Name 事件名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置事件名称
-                     * @param Name 事件名称
+                     * @param _name 事件名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

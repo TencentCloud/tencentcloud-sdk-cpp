@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 操作提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置操作提示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 操作提示
+                     * @param _text 操作提示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operate 操作类型：COPY、LOG、UI、RESULT、List、TAB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置操作类型：COPY、LOG、UI、RESULT、List、TAB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operate 操作类型：COPY、LOG、UI、RESULT、List、TAB
+                     * @param _operate 操作类型：COPY、LOG、UI、RESULT、List、TAB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Supplement 补充信息：如：taskid、sessionid、sparkui等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KVPair> GetSupplement() const;
 
                     /**
                      * 设置补充信息：如：taskid、sessionid、sparkui等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Supplement 补充信息：如：taskid、sessionid、sparkui等
+                     * @param _supplement 补充信息：如：taskid、sessionid、sparkui等
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSupplement(const std::vector<KVPair>& _supplement);
 
                     /**
                      * 判断参数 Supplement 是否已赋值
                      * @return Supplement 是否已赋值
+                     * 
                      */
                     bool SupplementHasBeenSet() const;
 

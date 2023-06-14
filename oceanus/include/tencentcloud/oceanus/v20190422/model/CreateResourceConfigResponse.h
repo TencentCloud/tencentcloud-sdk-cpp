@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取资源版本ID
                      * @return Version 资源版本ID
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

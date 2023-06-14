@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestsPerSecond 最大RPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxRequestsPerSecond() const;
 
                     /**
                      * 设置最大RPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxRequestsPerSecond 最大RPS
+                     * @param _maxRequestsPerSecond 最大RPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond);
 
                     /**
                      * 判断参数 MaxRequestsPerSecond 是否已赋值
                      * @return MaxRequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool MaxRequestsPerSecondHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationSeconds 施压时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDurationSeconds() const;
 
                     /**
                      * 设置施压时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DurationSeconds 施压时间
+                     * @param _durationSeconds 施压时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDurationSeconds(const int64_t& _durationSeconds);
 
                     /**
                      * 判断参数 DurationSeconds 是否已赋值
                      * @return DurationSeconds 是否已赋值
+                     * 
                      */
                     bool DurationSecondsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetVirtualUsers deprecated
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTargetVirtualUsers() const;
 
                     /**
                      * 设置deprecated
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetVirtualUsers deprecated
+                     * @param _targetVirtualUsers deprecated
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetVirtualUsers(const int64_t& _targetVirtualUsers);
 
                     /**
                      * 判断参数 TargetVirtualUsers 是否已赋值
                      * @return TargetVirtualUsers 是否已赋值
+                     * 
                      */
                     bool TargetVirtualUsersHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 资源数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetResources() const;
 
                     /**
                      * 设置资源数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resources 资源数
+                     * @param _resources 资源数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResources(const int64_t& _resources);
 
                     /**
                      * 判断参数 Resources 是否已赋值
                      * @return Resources 是否已赋值
+                     * 
                      */
                     bool ResourcesHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartRequestsPerSecond 起始RPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStartRequestsPerSecond() const;
 
                     /**
                      * 设置起始RPS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartRequestsPerSecond 起始RPS
+                     * @param _startRequestsPerSecond 起始RPS
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartRequestsPerSecond(const int64_t& _startRequestsPerSecond);
 
                     /**
                      * 判断参数 StartRequestsPerSecond 是否已赋值
                      * @return StartRequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool StartRequestsPerSecondHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetRequestsPerSecond 目标RPS，入参无效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTargetRequestsPerSecond() const;
 
                     /**
                      * 设置目标RPS，入参无效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetRequestsPerSecond 目标RPS，入参无效
+                     * @param _targetRequestsPerSecond 目标RPS，入参无效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetRequestsPerSecond(const int64_t& _targetRequestsPerSecond);
 
                     /**
                      * 判断参数 TargetRequestsPerSecond 是否已赋值
                      * @return TargetRequestsPerSecond 是否已赋值
+                     * 
                      */
                     bool TargetRequestsPerSecondHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GracefulStopSeconds 优雅关停的等待时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGracefulStopSeconds() const;
 
                     /**
                      * 设置优雅关停的等待时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GracefulStopSeconds 优雅关停的等待时间
+                     * @param _gracefulStopSeconds 优雅关停的等待时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds);
 
                     /**
                      * 判断参数 GracefulStopSeconds 是否已赋值
                      * @return GracefulStopSeconds 是否已赋值
+                     * 
                      */
                     bool GracefulStopSecondsHasBeenSet() const;
 

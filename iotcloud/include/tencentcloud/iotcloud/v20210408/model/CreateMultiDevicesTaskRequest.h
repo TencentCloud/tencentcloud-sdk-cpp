@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取参数类型 cosfile-文件上传 random-随机创建
                      * @return ParametersType 参数类型 cosfile-文件上传 random-随机创建
+                     * 
                      */
                     std::string GetParametersType() const;
 
                     /**
                      * 设置参数类型 cosfile-文件上传 random-随机创建
-                     * @param ParametersType 参数类型 cosfile-文件上传 random-随机创建
+                     * @param _parametersType 参数类型 cosfile-文件上传 random-随机创建
+                     * 
                      */
                     void SetParametersType(const std::string& _parametersType);
 
                     /**
                      * 判断参数 ParametersType 是否已赋值
                      * @return ParametersType 是否已赋值
+                     * 
                      */
                     bool ParametersTypeHasBeenSet() const;
 
                     /**
                      * 获取文件上传类型时文件名
                      * @return FileName 文件上传类型时文件名
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件上传类型时文件名
-                     * @param FileName 文件上传类型时文件名
+                     * @param _fileName 文件上传类型时文件名
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取文件上传类型时文件大小
                      * @return FileSize 文件上传类型时文件大小
+                     * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
                      * 设置文件上传类型时文件大小
-                     * @param FileSize 文件上传类型时文件大小
+                     * @param _fileSize 文件上传类型时文件大小
+                     * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取随机创建时设备创建个数
                      * @return BatchCount 随机创建时设备创建个数
+                     * 
                      */
                     uint64_t GetBatchCount() const;
 
                     /**
                      * 设置随机创建时设备创建个数
-                     * @param BatchCount 随机创建时设备创建个数
+                     * @param _batchCount 随机创建时设备创建个数
+                     * 
                      */
                     void SetBatchCount(const uint64_t& _batchCount);
 
                     /**
                      * 判断参数 BatchCount 是否已赋值
                      * @return BatchCount 是否已赋值
+                     * 
                      */
                     bool BatchCountHasBeenSet() const;
 
                     /**
                      * 获取文件上传类型时文件md5值
                      * @return Hash 文件上传类型时文件md5值
+                     * 
                      */
                     std::string GetHash() const;
 
                     /**
                      * 设置文件上传类型时文件md5值
-                     * @param Hash 文件上传类型时文件md5值
+                     * @param _hash 文件上传类型时文件md5值
+                     * 
                      */
                     void SetHash(const std::string& _hash);
 
                     /**
                      * 判断参数 Hash 是否已赋值
                      * @return Hash 是否已赋值
+                     * 
                      */
                     bool HashHasBeenSet() const;
 

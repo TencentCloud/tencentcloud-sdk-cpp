@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取数组封装
                      * @return Res 数组封装
+                     * 
                      */
                     std::vector<IpHitItem> GetRes() const;
 
                     /**
                      * 设置数组封装
-                     * @param Res 数组封装
+                     * @param _res 数组封装
+                     * 
                      */
                     void SetRes(const std::vector<IpHitItem>& _res);
 
                     /**
                      * 判断参数 Res 是否已赋值
                      * @return Res 是否已赋值
+                     * 
                      */
                     bool ResHasBeenSet() const;
 
                     /**
                      * 获取总数目
                      * @return TotalCount 总数目
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总数目
-                     * @param TotalCount 总数目
+                     * @param _totalCount 总数目
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

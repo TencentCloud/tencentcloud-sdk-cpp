@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取统计开始日期
                      * @return StatisticsStartDate 统计开始日期
+                     * 
                      */
                     int64_t GetStatisticsStartDate() const;
 
                     /**
                      * 设置统计开始日期
-                     * @param StatisticsStartDate 统计开始日期
+                     * @param _statisticsStartDate 统计开始日期
+                     * 
                      */
                     void SetStatisticsStartDate(const int64_t& _statisticsStartDate);
 
                     /**
                      * 判断参数 StatisticsStartDate 是否已赋值
                      * @return StatisticsStartDate 是否已赋值
+                     * 
                      */
                     bool StatisticsStartDateHasBeenSet() const;
 
                     /**
                      * 获取统计结束日期
                      * @return StatisticsEndDate 统计结束日期
+                     * 
                      */
                     int64_t GetStatisticsEndDate() const;
 
                     /**
                      * 设置统计结束日期
-                     * @param StatisticsEndDate 统计结束日期
+                     * @param _statisticsEndDate 统计结束日期
+                     * 
                      */
                     void SetStatisticsEndDate(const int64_t& _statisticsEndDate);
 
                     /**
                      * 判断参数 StatisticsEndDate 是否已赋值
                      * @return StatisticsEndDate 是否已赋值
+                     * 
                      */
                     bool StatisticsEndDateHasBeenSet() const;
 
                     /**
                      * 获取项目id
                      * @return ProjectId 项目id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目id
-                     * @param ProjectId 项目id
+                     * @param _projectId 项目id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取数据来源id
                      * @return DatasourceId 数据来源id
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据来源id
-                     * @param DatasourceId 数据来源id
+                     * @param _datasourceId 数据来源id
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 

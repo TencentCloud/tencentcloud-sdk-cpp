@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取网关名称
                      * @return GatewayName 网关名称
+                     * 
                      */
                     std::string GetGatewayName() const;
 
                     /**
                      * 判断参数 GatewayName 是否已赋值
                      * @return GatewayName 是否已赋值
+                     * 
                      */
                     bool GatewayNameHasBeenSet() const;
 

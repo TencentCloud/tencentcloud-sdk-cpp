@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实时任务id
                      * @return TaskId 实时任务id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置实时任务id
-                     * @param TaskId 实时任务id
+                     * @param _taskId 实时任务id
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取工程id
                      * @return ProjectId 工程id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置工程id
-                     * @param ProjectId 工程id
+                     * @param _projectId 工程id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

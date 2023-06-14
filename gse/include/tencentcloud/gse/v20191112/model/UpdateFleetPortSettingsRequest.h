@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取服务器舰队 Id
                      * @return FleetId 服务器舰队 Id
+                     * 
                      */
                     std::string GetFleetId() const;
 
                     /**
                      * 设置服务器舰队 Id
-                     * @param FleetId 服务器舰队 Id
+                     * @param _fleetId 服务器舰队 Id
+                     * 
                      */
                     void SetFleetId(const std::string& _fleetId);
 
                     /**
                      * 判断参数 FleetId 是否已赋值
                      * @return FleetId 是否已赋值
+                     * 
                      */
                     bool FleetIdHasBeenSet() const;
 
                     /**
                      * 获取新增安全组
                      * @return InboundPermissionAuthorizations 新增安全组
+                     * 
                      */
                     std::vector<InboundPermissionAuthorization> GetInboundPermissionAuthorizations() const;
 
                     /**
                      * 设置新增安全组
-                     * @param InboundPermissionAuthorizations 新增安全组
+                     * @param _inboundPermissionAuthorizations 新增安全组
+                     * 
                      */
                     void SetInboundPermissionAuthorizations(const std::vector<InboundPermissionAuthorization>& _inboundPermissionAuthorizations);
 
                     /**
                      * 判断参数 InboundPermissionAuthorizations 是否已赋值
                      * @return InboundPermissionAuthorizations 是否已赋值
+                     * 
                      */
                     bool InboundPermissionAuthorizationsHasBeenSet() const;
 
                     /**
                      * 获取移除安全组
                      * @return InboundPermissionRevocations 移除安全组
+                     * 
                      */
                     std::vector<InboundPermissionRevocations> GetInboundPermissionRevocations() const;
 
                     /**
                      * 设置移除安全组
-                     * @param InboundPermissionRevocations 移除安全组
+                     * @param _inboundPermissionRevocations 移除安全组
+                     * 
                      */
                     void SetInboundPermissionRevocations(const std::vector<InboundPermissionRevocations>& _inboundPermissionRevocations);
 
                     /**
                      * 判断参数 InboundPermissionRevocations 是否已赋值
                      * @return InboundPermissionRevocations 是否已赋值
+                     * 
                      */
                     bool InboundPermissionRevocationsHasBeenSet() const;
 

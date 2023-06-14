@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取视频的 ID。
                      * @return FileId 视频的 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置视频的 ID。
-                     * @param FileId 视频的 ID。
+                     * @param _fileId 视频的 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑的起始偏移时间偏移，单位：秒。
                      * @return StartTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
                      * 设置视频剪辑的起始偏移时间偏移，单位：秒。
-                     * @param StartTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
+                     * @param _startTimeOffset 视频剪辑的起始偏移时间偏移，单位：秒。
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑的起始结束时间偏移，单位：秒。
                      * @return EndTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
                      * 设置视频剪辑的起始结束时间偏移，单位：秒。
-                     * @param EndTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
+                     * @param _endTimeOffset 视频剪辑的起始结束时间偏移，单位：秒。
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 

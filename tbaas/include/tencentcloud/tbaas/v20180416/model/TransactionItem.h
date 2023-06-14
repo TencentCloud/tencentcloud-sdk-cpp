@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取交易ID
                      * @return TransactionId 交易ID
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 设置交易ID
-                     * @param TransactionId 交易ID
+                     * @param _transactionId 交易ID
+                     * 
                      */
                     void SetTransactionId(const std::string& _transactionId);
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
                     /**
                      * 获取交易hash
                      * @return TransactionHash 交易hash
+                     * 
                      */
                     std::string GetTransactionHash() const;
 
                     /**
                      * 设置交易hash
-                     * @param TransactionHash 交易hash
+                     * @param _transactionHash 交易hash
+                     * 
                      */
                     void SetTransactionHash(const std::string& _transactionHash);
 
                     /**
                      * 判断参数 TransactionHash 是否已赋值
                      * @return TransactionHash 是否已赋值
+                     * 
                      */
                     bool TransactionHashHasBeenSet() const;
 
                     /**
                      * 获取创建交易的组织名
                      * @return CreateOrgName 创建交易的组织名
+                     * 
                      */
                     std::string GetCreateOrgName() const;
 
                     /**
                      * 设置创建交易的组织名
-                     * @param CreateOrgName 创建交易的组织名
+                     * @param _createOrgName 创建交易的组织名
+                     * 
                      */
                     void SetCreateOrgName(const std::string& _createOrgName);
 
                     /**
                      * 判断参数 CreateOrgName 是否已赋值
                      * @return CreateOrgName 是否已赋值
+                     * 
                      */
                     bool CreateOrgNameHasBeenSet() const;
 
                     /**
                      * 获取交易所在区块号
                      * @return BlockId 交易所在区块号
+                     * 
                      */
                     uint64_t GetBlockId() const;
 
                     /**
                      * 设置交易所在区块号
-                     * @param BlockId 交易所在区块号
+                     * @param _blockId 交易所在区块号
+                     * 
                      */
                     void SetBlockId(const uint64_t& _blockId);
 
                     /**
                      * 判断参数 BlockId 是否已赋值
                      * @return BlockId 是否已赋值
+                     * 
                      */
                     bool BlockIdHasBeenSet() const;
 
                     /**
                      * 获取交易类型（普通交易和配置交易）
                      * @return TransactionType 交易类型（普通交易和配置交易）
+                     * 
                      */
                     std::string GetTransactionType() const;
 
                     /**
                      * 设置交易类型（普通交易和配置交易）
-                     * @param TransactionType 交易类型（普通交易和配置交易）
+                     * @param _transactionType 交易类型（普通交易和配置交易）
+                     * 
                      */
                     void SetTransactionType(const std::string& _transactionType);
 
                     /**
                      * 判断参数 TransactionType 是否已赋值
                      * @return TransactionType 是否已赋值
+                     * 
                      */
                     bool TransactionTypeHasBeenSet() const;
 
                     /**
                      * 获取交易创建时间
                      * @return CreateTime 交易创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置交易创建时间
-                     * @param CreateTime 交易创建时间
+                     * @param _createTime 交易创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取交易所在区块高度
                      * @return BlockHeight 交易所在区块高度
+                     * 
                      */
                     uint64_t GetBlockHeight() const;
 
                     /**
                      * 设置交易所在区块高度
-                     * @param BlockHeight 交易所在区块高度
+                     * @param _blockHeight 交易所在区块高度
+                     * 
                      */
                     void SetBlockHeight(const uint64_t& _blockHeight);
 
                     /**
                      * 判断参数 BlockHeight 是否已赋值
                      * @return BlockHeight 是否已赋值
+                     * 
                      */
                     bool BlockHeightHasBeenSet() const;
 
                     /**
                      * 获取交易状态
                      * @return TransactionStatus 交易状态
+                     * 
                      */
                     std::string GetTransactionStatus() const;
 
                     /**
                      * 设置交易状态
-                     * @param TransactionStatus 交易状态
+                     * @param _transactionStatus 交易状态
+                     * 
                      */
                     void SetTransactionStatus(const std::string& _transactionStatus);
 
                     /**
                      * 判断参数 TransactionStatus 是否已赋值
                      * @return TransactionStatus 是否已赋值
+                     * 
                      */
                     bool TransactionStatusHasBeenSet() const;
 

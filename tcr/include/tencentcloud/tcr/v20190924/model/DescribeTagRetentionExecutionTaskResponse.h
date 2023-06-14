@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取版本保留执行任务列表
                      * @return RetentionTaskList 版本保留执行任务列表
+                     * 
                      */
                     std::vector<RetentionTask> GetRetentionTaskList() const;
 
                     /**
                      * 判断参数 RetentionTaskList 是否已赋值
                      * @return RetentionTaskList 是否已赋值
+                     * 
                      */
                     bool RetentionTaskListHasBeenSet() const;
 
                     /**
                      * 获取版本保留执行任务总数
                      * @return TotalCount 版本保留执行任务总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

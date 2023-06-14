@@ -49,180 +49,210 @@ namespace TencentCloud
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取设备名称
                      * @return DeviceName 设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-                     * @param DeviceName 设备名称
+                     * @param _deviceName 设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取激活时间 0代表未激活
                      * @return ActiveTime 激活时间 0代表未激活
+                     * 
                      */
                     uint64_t GetActiveTime() const;
 
                     /**
                      * 设置激活时间 0代表未激活
-                     * @param ActiveTime 激活时间 0代表未激活
+                     * @param _activeTime 激活时间 0代表未激活
+                     * 
                      */
                     void SetActiveTime(const uint64_t& _activeTime);
 
                     /**
                      * 判断参数 ActiveTime 是否已赋值
                      * @return ActiveTime 是否已赋值
+                     * 
                      */
                     bool ActiveTimeHasBeenSet() const;
 
                     /**
                      * 获取设备是否被禁用
                      * @return Disabled 设备是否被禁用
+                     * 
                      */
                     bool GetDisabled() const;
 
                     /**
                      * 设置设备是否被禁用
-                     * @param Disabled 设备是否被禁用
+                     * @param _disabled 设备是否被禁用
+                     * 
                      */
                     void SetDisabled(const bool& _disabled);
 
                     /**
                      * 判断参数 Disabled 是否已赋值
                      * @return Disabled 是否已赋值
+                     * 
                      */
                     bool DisabledHasBeenSet() const;
 
                     /**
                      * 获取设备推流状态
                      * @return StreamStatus 设备推流状态
+                     * 
                      */
                     bool GetStreamStatus() const;
 
                     /**
                      * 设置设备推流状态
-                     * @param StreamStatus 设备推流状态
+                     * @param _streamStatus 设备推流状态
+                     * 
                      */
                     void SetStreamStatus(const bool& _streamStatus);
 
                     /**
                      * 判断参数 StreamStatus 是否已赋值
                      * @return StreamStatus 是否已赋值
+                     * 
                      */
                     bool StreamStatusHasBeenSet() const;
 
                     /**
                      * 获取固件版本
                      * @return OtaVersion 固件版本
+                     * 
                      */
                     std::string GetOtaVersion() const;
 
                     /**
                      * 设置固件版本
-                     * @param OtaVersion 固件版本
+                     * @param _otaVersion 固件版本
+                     * 
                      */
                     void SetOtaVersion(const std::string& _otaVersion);
 
                     /**
                      * 判断参数 OtaVersion 是否已赋值
                      * @return OtaVersion 是否已赋值
+                     * 
                      */
                     bool OtaVersionHasBeenSet() const;
 
                     /**
                      * 获取设备在线状态
                      * @return Online 设备在线状态
+                     * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
                      * 设置设备在线状态
-                     * @param Online 设备在线状态
+                     * @param _online 设备在线状态
+                     * 
                      */
                     void SetOnline(const uint64_t& _online);
 
                     /**
                      * 判断参数 Online 是否已赋值
                      * @return Online 是否已赋值
+                     * 
                      */
                     bool OnlineHasBeenSet() const;
 
                     /**
                      * 获取设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
                      * @return LastOnlineTime 设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
+                     * 
                      */
                     uint64_t GetLastOnlineTime() const;
 
                     /**
                      * 设置设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
-                     * @param LastOnlineTime 设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
+                     * @param _lastOnlineTime 设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒
+                     * 
                      */
                     void SetLastOnlineTime(const uint64_t& _lastOnlineTime);
 
                     /**
                      * 判断参数 LastOnlineTime 是否已赋值
                      * @return LastOnlineTime 是否已赋值
+                     * 
                      */
                     bool LastOnlineTimeHasBeenSet() const;
 
                     /**
                      * 获取物模型json数据
                      * @return IotModel 物模型json数据
+                     * 
                      */
                     std::string GetIotModel() const;
 
                     /**
                      * 设置物模型json数据
-                     * @param IotModel 物模型json数据
+                     * @param _iotModel 物模型json数据
+                     * 
                      */
                     void SetIotModel(const std::string& _iotModel);
 
                     /**
                      * 判断参数 IotModel 是否已赋值
                      * @return IotModel 是否已赋值
+                     * 
                      */
                     bool IotModelHasBeenSet() const;
 
                     /**
                      * 获取设备固件最新更新时间，UNIX时间戳，单位秒
                      * @return LastUpdateTime 设备固件最新更新时间，UNIX时间戳，单位秒
+                     * 
                      */
                     uint64_t GetLastUpdateTime() const;
 
                     /**
                      * 设置设备固件最新更新时间，UNIX时间戳，单位秒
-                     * @param LastUpdateTime 设备固件最新更新时间，UNIX时间戳，单位秒
+                     * @param _lastUpdateTime 设备固件最新更新时间，UNIX时间戳，单位秒
+                     * 
                      */
                     void SetLastUpdateTime(const uint64_t& _lastUpdateTime);
 
                     /**
                      * 判断参数 LastUpdateTime 是否已赋值
                      * @return LastUpdateTime 是否已赋值
+                     * 
                      */
                     bool LastUpdateTimeHasBeenSet() const;
 

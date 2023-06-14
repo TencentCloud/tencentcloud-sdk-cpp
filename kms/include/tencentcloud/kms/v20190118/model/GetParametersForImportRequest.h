@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。
                      * @return KeyId CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。
+                     * 
                      */
                     std::string GetKeyId() const;
 
                     /**
                      * 设置CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。
-                     * @param KeyId CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。
+                     * @param _keyId CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。
+                     * 
                      */
                     void SetKeyId(const std::string& _keyId);
 
                     /**
                      * 判断参数 KeyId 是否已赋值
                      * @return KeyId 是否已赋值
+                     * 
                      */
                     bool KeyIdHasBeenSet() const;
 
                     /**
                      * 获取指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
                      * @return WrappingAlgorithm 指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
+                     * 
                      */
                     std::string GetWrappingAlgorithm() const;
 
                     /**
                      * 设置指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
-                     * @param WrappingAlgorithm 指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
+                     * @param _wrappingAlgorithm 指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256
+                     * 
                      */
                     void SetWrappingAlgorithm(const std::string& _wrappingAlgorithm);
 
                     /**
                      * 判断参数 WrappingAlgorithm 是否已赋值
                      * @return WrappingAlgorithm 是否已赋值
+                     * 
                      */
                     bool WrappingAlgorithmHasBeenSet() const;
 
                     /**
                      * 获取指定加密密钥材料的类型，目前只支持RSA_2048
                      * @return WrappingKeySpec 指定加密密钥材料的类型，目前只支持RSA_2048
+                     * 
                      */
                     std::string GetWrappingKeySpec() const;
 
                     /**
                      * 设置指定加密密钥材料的类型，目前只支持RSA_2048
-                     * @param WrappingKeySpec 指定加密密钥材料的类型，目前只支持RSA_2048
+                     * @param _wrappingKeySpec 指定加密密钥材料的类型，目前只支持RSA_2048
+                     * 
                      */
                     void SetWrappingKeySpec(const std::string& _wrappingKeySpec);
 
                     /**
                      * 判断参数 WrappingKeySpec 是否已赋值
                      * @return WrappingKeySpec 是否已赋值
+                     * 
                      */
                     bool WrappingKeySpecHasBeenSet() const;
 

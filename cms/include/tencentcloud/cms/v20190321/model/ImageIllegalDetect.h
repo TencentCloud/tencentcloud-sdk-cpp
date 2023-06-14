@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return EvilType 恶意类型
 100：正常 
 20006：涉毒违法
+                     * 
                      */
                     int64_t GetEvilType() const;
 
@@ -60,87 +61,101 @@ namespace TencentCloud
                      * 设置恶意类型
 100：正常 
 20006：涉毒违法
-                     * @param EvilType 恶意类型
+                     * @param _evilType 恶意类型
 100：正常 
 20006：涉毒违法
+                     * 
                      */
                     void SetEvilType(const int64_t& _evilType);
 
                     /**
                      * 判断参数 EvilType 是否已赋值
                      * @return EvilType 是否已赋值
+                     * 
                      */
                     bool EvilTypeHasBeenSet() const;
 
                     /**
                      * 获取处置判定 0：正常 1：可疑
                      * @return HitFlag 处置判定 0：正常 1：可疑
+                     * 
                      */
                     int64_t GetHitFlag() const;
 
                     /**
                      * 设置处置判定 0：正常 1：可疑
-                     * @param HitFlag 处置判定 0：正常 1：可疑
+                     * @param _hitFlag 处置判定 0：正常 1：可疑
+                     * 
                      */
                     void SetHitFlag(const int64_t& _hitFlag);
 
                     /**
                      * 判断参数 HitFlag 是否已赋值
                      * @return HitFlag 是否已赋值
+                     * 
                      */
                     bool HitFlagHasBeenSet() const;
 
                     /**
                      * 获取关键词明细
                      * @return Keywords 关键词明细
+                     * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
                      * 设置关键词明细
-                     * @param Keywords 关键词明细
+                     * @param _keywords 关键词明细
+                     * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
 
                     /**
                      * 判断参数 Keywords 是否已赋值
                      * @return Keywords 是否已赋值
+                     * 
                      */
                     bool KeywordsHasBeenSet() const;
 
                     /**
                      * 获取违法标签：返回违法特征中文描述，如赌桌，枪支
                      * @return Labels 违法标签：返回违法特征中文描述，如赌桌，枪支
+                     * 
                      */
                     std::vector<std::string> GetLabels() const;
 
                     /**
                      * 设置违法标签：返回违法特征中文描述，如赌桌，枪支
-                     * @param Labels 违法标签：返回违法特征中文描述，如赌桌，枪支
+                     * @param _labels 违法标签：返回违法特征中文描述，如赌桌，枪支
+                     * 
                      */
                     void SetLabels(const std::vector<std::string>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取违法分：分值范围 0-100，分数越高违法倾向越明显
                      * @return Score 违法分：分值范围 0-100，分数越高违法倾向越明显
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置违法分：分值范围 0-100，分数越高违法倾向越明显
-                     * @param Score 违法分：分值范围 0-100，分数越高违法倾向越明显
+                     * @param _score 违法分：分值范围 0-100，分数越高违法倾向越明显
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

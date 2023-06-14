@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 进行中的任务taskid（StartRecord接口返回）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordMode 录制类型：1代表单流 2代表混流 3代表单流和混流。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRecordMode() const;
 
                     /**
                      * 判断参数 RecordMode 是否已赋值
                      * @return RecordMode 是否已赋值
+                     * 
                      */
                     bool RecordModeHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeRecordUserIds 指定订阅流白名单或者黑名单。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SubscribeRecordUserIds GetSubscribeRecordUserIds() const;
 
                     /**
                      * 判断参数 SubscribeRecordUserIds 是否已赋值
                      * @return SubscribeRecordUserIds 是否已赋值
+                     * 
                      */
                     bool SubscribeRecordUserIdsHasBeenSet() const;
 

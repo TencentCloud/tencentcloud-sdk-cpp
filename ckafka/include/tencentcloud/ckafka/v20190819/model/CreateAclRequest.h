@@ -45,144 +45,168 @@ namespace TencentCloud
                     /**
                      * 获取实例id信息
                      * @return InstanceId 实例id信息
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id信息
-                     * @param InstanceId 实例id信息
+                     * @param _instanceId 实例id信息
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取Acl资源类型，(2:TOPIC，3:GROUP，4:CLUSTER)
                      * @return ResourceType Acl资源类型，(2:TOPIC，3:GROUP，4:CLUSTER)
+                     * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置Acl资源类型，(2:TOPIC，3:GROUP，4:CLUSTER)
-                     * @param ResourceType Acl资源类型，(2:TOPIC，3:GROUP，4:CLUSTER)
+                     * @param _resourceType Acl资源类型，(2:TOPIC，3:GROUP，4:CLUSTER)
+                     * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取Acl操作方式，(2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTENT_WRITE)
                      * @return Operation Acl操作方式，(2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTENT_WRITE)
+                     * 
                      */
                     int64_t GetOperation() const;
 
                     /**
                      * 设置Acl操作方式，(2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTENT_WRITE)
-                     * @param Operation Acl操作方式，(2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTENT_WRITE)
+                     * @param _operation Acl操作方式，(2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTENT_WRITE)
+                     * 
                      */
                     void SetOperation(const int64_t& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
                      * @return PermissionType 权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * 
                      */
                     int64_t GetPermissionType() const;
 
                     /**
                      * 设置权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
-                     * @param PermissionType 权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * @param _permissionType 权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用
+                     * 
                      */
                     void SetPermissionType(const int64_t& _permissionType);
 
                     /**
                      * 判断参数 PermissionType 是否已赋值
                      * @return PermissionType 是否已赋值
+                     * 
                      */
                     bool PermissionTypeHasBeenSet() const;
 
                     /**
                      * 获取资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称，当resourceType为CLUSTER时，该字段可为空。
                      * @return ResourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称，当resourceType为CLUSTER时，该字段可为空。
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称，当resourceType为CLUSTER时，该字段可为空。
-                     * @param ResourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称，当resourceType为CLUSTER时，该字段可为空。
+                     * @param _resourceName 资源名称，和resourceType相关，如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称，当resourceType为CLUSTER时，该字段可为空。
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
                      * @return Host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-                     * @param Host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
+                     * @param _host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
                      * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
+                     * 
                      */
                     std::string GetPrincipal() const;
 
                     /**
                      * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
-                     * @param Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
+                     * @param _principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入时需要加 User: 前缀,如用户A则传入User:A。
+                     * 
                      */
                     void SetPrincipal(const std::string& _principal);
 
                     /**
                      * 判断参数 Principal 是否已赋值
                      * @return Principal 是否已赋值
+                     * 
                      */
                     bool PrincipalHasBeenSet() const;
 
                     /**
                      * 获取资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
                      * @return ResourceNameList 资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     * 
                      */
                     std::string GetResourceNameList() const;
 
                     /**
                      * 设置资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
-                     * @param ResourceNameList 资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     * @param _resourceNameList 资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。
+                     * 
                      */
                     void SetResourceNameList(const std::string& _resourceNameList);
 
                     /**
                      * 判断参数 ResourceNameList 是否已赋值
                      * @return ResourceNameList 是否已赋值
+                     * 
                      */
                     bool ResourceNameListHasBeenSet() const;
 

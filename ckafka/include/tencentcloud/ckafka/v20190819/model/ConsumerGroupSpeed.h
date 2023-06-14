@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取消费者组名称
                      * @return ConsumerGroupName 消费者组名称
+                     * 
                      */
                     std::string GetConsumerGroupName() const;
 
                     /**
                      * 设置消费者组名称
-                     * @param ConsumerGroupName 消费者组名称
+                     * @param _consumerGroupName 消费者组名称
+                     * 
                      */
                     void SetConsumerGroupName(const std::string& _consumerGroupName);
 
                     /**
                      * 判断参数 ConsumerGroupName 是否已赋值
                      * @return ConsumerGroupName 是否已赋值
+                     * 
                      */
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
                      * 获取消费速度 Count/Minute
                      * @return Speed 消费速度 Count/Minute
+                     * 
                      */
                     uint64_t GetSpeed() const;
 
                     /**
                      * 设置消费速度 Count/Minute
-                     * @param Speed 消费速度 Count/Minute
+                     * @param _speed 消费速度 Count/Minute
+                     * 
                      */
                     void SetSpeed(const uint64_t& _speed);
 
                     /**
                      * 判断参数 Speed 是否已赋值
                      * @return Speed 是否已赋值
+                     * 
                      */
                     bool SpeedHasBeenSet() const;
 

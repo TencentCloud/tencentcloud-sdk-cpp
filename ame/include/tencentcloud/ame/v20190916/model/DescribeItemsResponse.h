@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取当前页歌曲数量
                      * @return Size 当前页歌曲数量
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取总数据条数
                      * @return Total 总数据条数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -85,12 +91,14 @@ namespace TencentCloud
 还有下一页
                      * @return HaveMore 剩余数量（total-offset-size），通过这个值判断是否
 还有下一页
+                     * 
                      */
                     uint64_t GetHaveMore() const;
 
                     /**
                      * 判断参数 HaveMore 是否已赋值
                      * @return HaveMore 是否已赋值
+                     * 
                      */
                     bool HaveMoreHasBeenSet() const;
 
@@ -99,12 +107,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items Items 歌曲列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Item> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

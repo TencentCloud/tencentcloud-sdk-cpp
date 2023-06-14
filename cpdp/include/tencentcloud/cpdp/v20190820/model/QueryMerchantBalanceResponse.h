@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取对接方账户余额查询结果
                      * @return Result 对接方账户余额查询结果
+                     * 
                      */
                     QueryMerchantBalanceResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取用户uin
                      * @return Uin 用户uin
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置用户uin
-                     * @param Uin 用户uin
+                     * @param _uin 用户uin
+                     * 
                      */
                     void SetUin(const uint64_t& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取用户类型 (1:用户  2:用户组)
                      * @return Type 用户类型 (1:用户  2:用户组)
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置用户类型 (1:用户  2:用户组)
-                     * @param Type 用户类型 (1:用户  2:用户组)
+                     * @param _type 用户类型 (1:用户  2:用户组)
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 用户描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置用户描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 用户描述
+                     * @param _desc 用户描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nick 用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNick() const;
 
                     /**
                      * 设置用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Nick 用户昵称
+                     * @param _nick 用户昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNick(const std::string& _nick);
 
                     /**
                      * 判断参数 Nick 是否已赋值
                      * @return Nick 是否已赋值
+                     * 
                      */
                     bool NickHasBeenSet() const;
 
@@ -132,20 +144,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scf 动态获取Scf
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Scf GetScf() const;
 
                     /**
                      * 设置动态获取Scf
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scf 动态获取Scf
+                     * @param _scf 动态获取Scf
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScf(const Scf& _scf);
 
                     /**
                      * 判断参数 Scf 是否已赋值
                      * @return Scf 是否已赋值
+                     * 
                      */
                     bool ScfHasBeenSet() const;
 

@@ -51,18 +51,21 @@ namespace TencentCloud
                     /**
                      * 获取拉取上传任务 ID。
                      * @return TaskId 拉取上传任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置拉取上传任务 ID。
-                     * @param TaskId 拉取上传任务 ID。
+                     * @param _taskId 拉取上传任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
                      * @return Status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -80,15 +84,17 @@ namespace TencentCloud
                      * 设置任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
-                     * @param Status 任务流状态，取值：
+                     * @param _status 任务流状态，取值：
 <li>PROCESSING：处理中；</li>
 <li>FINISH：已完成。</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -101,6 +107,7 @@ namespace TencentCloud
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
+                     * 
                      */
                     int64_t GetErrCode() const;
 
@@ -109,52 +116,60 @@ namespace TencentCloud
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
-                     * @param ErrCode 错误码，0 表示成功，其他值表示失败：
+                     * @param _errCode 错误码，0 表示成功，其他值表示失败：
 <li>40000：输入参数不合法，请检查输入参数；</li>
 <li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>
 <li>70000：内部服务错误，建议重试。</li>
+                     * 
                      */
                     void SetErrCode(const int64_t& _errCode);
 
                     /**
                      * 判断参数 ErrCode 是否已赋值
                      * @return ErrCode 是否已赋值
+                     * 
                      */
                     bool ErrCodeHasBeenSet() const;
 
                     /**
                      * 获取错误信息。
                      * @return Message 错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息。
-                     * @param Message 错误信息。
+                     * @param _message 错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取拉取上传完成后生成的视频 ID。
                      * @return FileId 拉取上传完成后生成的视频 ID。
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置拉取上传完成后生成的视频 ID。
-                     * @param FileId 拉取上传完成后生成的视频 ID。
+                     * @param _fileId 拉取上传完成后生成的视频 ID。
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
@@ -163,146 +178,170 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaBasicInfo 拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaBasicInfo GetMediaBasicInfo() const;
 
                     /**
                      * 设置拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaBasicInfo 拉取上传完成后生成的媒体文件基础信息。
+                     * @param _mediaBasicInfo 拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMediaBasicInfo(const MediaBasicInfo& _mediaBasicInfo);
 
                     /**
                      * 判断参数 MediaBasicInfo 是否已赋值
                      * @return MediaBasicInfo 是否已赋值
+                     * 
                      */
                     bool MediaBasicInfoHasBeenSet() const;
 
                     /**
                      * 获取输出视频的元信息。
                      * @return MetaData 输出视频的元信息。
+                     * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置输出视频的元信息。
-                     * @param MetaData 输出视频的元信息。
+                     * @param _metaData 输出视频的元信息。
+                     * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 
                     /**
                      * 获取拉取上传完成后生成的播放地址。
                      * @return FileUrl 拉取上传完成后生成的播放地址。
+                     * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置拉取上传完成后生成的播放地址。
-                     * @param FileUrl 拉取上传完成后生成的播放地址。
+                     * @param _fileUrl 拉取上传完成后生成的播放地址。
+                     * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
                     /**
                      * 判断参数 FileUrl 是否已赋值
                      * @return FileUrl 是否已赋值
+                     * 
                      */
                     bool FileUrlHasBeenSet() const;
 
                     /**
                      * 获取任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      * @return ProcedureTaskId 任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * 
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
                      * 设置任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
-                     * @param ProcedureTaskId 任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * @param _procedureTaskId 任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * 
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
 
                     /**
                      * 判断参数 ProcedureTaskId 是否已赋值
                      * @return ProcedureTaskId 是否已赋值
+                     * 
                      */
                     bool ProcedureTaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
                      * @return ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * 
                      */
                     std::string GetReviewAudioVideoTaskId() const;
 
                     /**
                      * 设置任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
-                     * @param ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * @param _reviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * 
                      */
                     void SetReviewAudioVideoTaskId(const std::string& _reviewAudioVideoTaskId);
 
                     /**
                      * 判断参数 ReviewAudioVideoTaskId 是否已赋值
                      * @return ReviewAudioVideoTaskId 是否已赋值
+                     * 
                      */
                     bool ReviewAudioVideoTaskIdHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
+                     * @param _sessionContext 来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * @param _sessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取拉取上传进度，取值范围 [0-100] 。
                      * @return Progress 拉取上传进度，取值范围 [0-100] 。
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置拉取上传进度，取值范围 [0-100] 。
-                     * @param Progress 拉取上传进度，取值范围 [0-100] 。
+                     * @param _progress 拉取上传进度，取值范围 [0-100] 。
+                     * 
                      */
                     void SetProgress(const int64_t& _progress);
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

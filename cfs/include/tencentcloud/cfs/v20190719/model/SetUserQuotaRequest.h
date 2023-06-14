@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取文件系统 ID
                      * @return FileSystemId 文件系统 ID
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统 ID
-                     * @param FileSystemId 文件系统 ID
+                     * @param _fileSystemId 文件系统 ID
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取指定配额类型，包括Uid、Gid
                      * @return UserType 指定配额类型，包括Uid、Gid
+                     * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置指定配额类型，包括Uid、Gid
-                     * @param UserType 指定配额类型，包括Uid、Gid
+                     * @param _userType 指定配额类型，包括Uid、Gid
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
                     /**
                      * 获取UID/GID信息
                      * @return UserId UID/GID信息
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置UID/GID信息
-                     * @param UserId UID/GID信息
+                     * @param _userId UID/GID信息
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取容量硬限制，单位GiB
                      * @return CapacityHardLimit 容量硬限制，单位GiB
+                     * 
                      */
                     uint64_t GetCapacityHardLimit() const;
 
                     /**
                      * 设置容量硬限制，单位GiB
-                     * @param CapacityHardLimit 容量硬限制，单位GiB
+                     * @param _capacityHardLimit 容量硬限制，单位GiB
+                     * 
                      */
                     void SetCapacityHardLimit(const uint64_t& _capacityHardLimit);
 
                     /**
                      * 判断参数 CapacityHardLimit 是否已赋值
                      * @return CapacityHardLimit 是否已赋值
+                     * 
                      */
                     bool CapacityHardLimitHasBeenSet() const;
 
                     /**
                      * 获取文件硬限制，单位个
                      * @return FileHardLimit 文件硬限制，单位个
+                     * 
                      */
                     uint64_t GetFileHardLimit() const;
 
                     /**
                      * 设置文件硬限制，单位个
-                     * @param FileHardLimit 文件硬限制，单位个
+                     * @param _fileHardLimit 文件硬限制，单位个
+                     * 
                      */
                     void SetFileHardLimit(const uint64_t& _fileHardLimit);
 
                     /**
                      * 判断参数 FileHardLimit 是否已赋值
                      * @return FileHardLimit 是否已赋值
+                     * 
                      */
                     bool FileHardLimitHasBeenSet() const;
 

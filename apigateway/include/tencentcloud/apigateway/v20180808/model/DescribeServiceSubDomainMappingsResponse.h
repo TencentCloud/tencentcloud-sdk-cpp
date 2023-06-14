@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取自定义路径映射列表。
                      * @return Result 自定义路径映射列表。
+                     * 
                      */
                     ServiceSubDomainMappings GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

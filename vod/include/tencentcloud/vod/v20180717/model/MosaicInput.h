@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return CoordinateOrigin 原点位置，目前仅支持：
 <li>TopLeft：表示坐标原点位于视频图像左上角，马赛克原点为图片或文字的左上角。</li>
 默认值：TopLeft。
+                     * 
                      */
                     std::string GetCoordinateOrigin() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置原点位置，目前仅支持：
 <li>TopLeft：表示坐标原点位于视频图像左上角，马赛克原点为图片或文字的左上角。</li>
 默认值：TopLeft。
-                     * @param CoordinateOrigin 原点位置，目前仅支持：
+                     * @param _coordinateOrigin 原点位置，目前仅支持：
 <li>TopLeft：表示坐标原点位于视频图像左上角，马赛克原点为图片或文字的左上角。</li>
 默认值：TopLeft。
+                     * 
                      */
                     void SetCoordinateOrigin(const std::string& _coordinateOrigin);
 
                     /**
                      * 判断参数 CoordinateOrigin 是否已赋值
                      * @return CoordinateOrigin 是否已赋值
+                     * 
                      */
                     bool CoordinateOriginHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>
 默认值：0px。
+                     * 
                      */
                     std::string GetXPos() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>
 默认值：0px。
-                     * @param XPos 马赛克原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：
+                     * @param _xPos 马赛克原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示马赛克 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>
 默认值：0px。
+                     * 
                      */
                     void SetXPos(const std::string& _xPos);
 
                     /**
                      * 判断参数 XPos 是否已赋值
                      * @return XPos 是否已赋值
+                     * 
                      */
                     bool XPosHasBeenSet() const;
 
@@ -111,6 +117,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>
 默认值：0px。
+                     * 
                      */
                     std::string GetYPos() const;
 
@@ -119,16 +126,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>
 默认值：0px。
-                     * @param YPos 马赛克原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：
+                     * @param _yPos 马赛克原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示马赛克 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>
 默认值：0px。
+                     * 
                      */
                     void SetYPos(const std::string& _yPos);
 
                     /**
                      * 判断参数 YPos 是否已赋值
                      * @return YPos 是否已赋值
+                     * 
                      */
                     bool YPosHasBeenSet() const;
 
@@ -141,6 +150,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>
 默认值：10%。
+                     * 
                      */
                     std::string GetWidth() const;
 
@@ -149,16 +159,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>
 默认值：10%。
-                     * @param Width 马赛克的宽度。支持 %、px 两种格式：
+                     * @param _width 马赛克的宽度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示马赛克 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>
 默认值：10%。
+                     * 
                      */
                     void SetWidth(const std::string& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
@@ -171,6 +183,7 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 Height 单位为像素，如 100px 表示 Height 为 100 像素。</li>
 默认值：10%。
+                     * 
                      */
                     std::string GetHeight() const;
 
@@ -179,16 +192,18 @@ namespace TencentCloud
 <li>当字符串以 % 结尾，表示马赛克 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 Height 单位为像素，如 100px 表示 Height 为 100 像素。</li>
 默认值：10%。
-                     * @param Height 马赛克的高度。支持 %、px 两种格式：
+                     * @param _height 马赛克的高度。支持 %、px 两种格式：
 <li>当字符串以 % 结尾，表示马赛克 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>
 <li>当字符串以 px 结尾，表示马赛克 Height 单位为像素，如 100px 表示 Height 为 100 像素。</li>
 默认值：10%。
+                     * 
                      */
                     void SetHeight(const std::string& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
@@ -201,6 +216,7 @@ namespace TencentCloud
 <li>不填或填0，表示马赛克从画面开始就出现；</li>
 <li>当数值大于0时（假设为 n），表示马赛克从画面开始的第 n 秒出现；</li>
 <li>当数值小于0时（假设为 -n），表示马赛克从离画面结束 n 秒前开始出现。</li>
+                     * 
                      */
                     double GetStartTimeOffset() const;
 
@@ -209,16 +225,18 @@ namespace TencentCloud
 <li>不填或填0，表示马赛克从画面开始就出现；</li>
 <li>当数值大于0时（假设为 n），表示马赛克从画面开始的第 n 秒出现；</li>
 <li>当数值小于0时（假设为 -n），表示马赛克从离画面结束 n 秒前开始出现。</li>
-                     * @param StartTimeOffset 马赛克的起始时间偏移，单位：秒。不填或填0，表示马赛克从画面出现时开始显现。
+                     * @param _startTimeOffset 马赛克的起始时间偏移，单位：秒。不填或填0，表示马赛克从画面出现时开始显现。
 <li>不填或填0，表示马赛克从画面开始就出现；</li>
 <li>当数值大于0时（假设为 n），表示马赛克从画面开始的第 n 秒出现；</li>
 <li>当数值小于0时（假设为 -n），表示马赛克从离画面结束 n 秒前开始出现。</li>
+                     * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
 
                     /**
                      * 判断参数 StartTimeOffset 是否已赋值
                      * @return StartTimeOffset 是否已赋值
+                     * 
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
@@ -231,6 +249,7 @@ namespace TencentCloud
 <li>不填或填0，表示马赛克持续到画面结束；</li>
 <li>当数值大于0时（假设为 n），表示马赛克持续到第 n 秒时消失；</li>
 <li>当数值小于0时（假设为 -n），表示马赛克持续到离画面结束 n 秒前消失。</li>
+                     * 
                      */
                     double GetEndTimeOffset() const;
 
@@ -239,16 +258,18 @@ namespace TencentCloud
 <li>不填或填0，表示马赛克持续到画面结束；</li>
 <li>当数值大于0时（假设为 n），表示马赛克持续到第 n 秒时消失；</li>
 <li>当数值小于0时（假设为 -n），表示马赛克持续到离画面结束 n 秒前消失。</li>
-                     * @param EndTimeOffset 马赛克的结束时间偏移，单位：秒。
+                     * @param _endTimeOffset 马赛克的结束时间偏移，单位：秒。
 <li>不填或填0，表示马赛克持续到画面结束；</li>
 <li>当数值大于0时（假设为 n），表示马赛克持续到第 n 秒时消失；</li>
 <li>当数值小于0时（假设为 -n），表示马赛克持续到离画面结束 n 秒前消失。</li>
+                     * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
 
                     /**
                      * 判断参数 EndTimeOffset 是否已赋值
                      * @return EndTimeOffset 是否已赋值
+                     * 
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 

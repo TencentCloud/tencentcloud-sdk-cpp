@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取指标来源类型，支持 Pods/Resource
                      * @return Type 指标来源类型，支持 Pods/Resource
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置指标来源类型，支持 Pods/Resource
-                     * @param Type 指标来源类型，支持 Pods/Resource
+                     * @param _type 指标来源类型，支持 Pods/Resource
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取使用自定义指标扩进行自动扩缩容
                      * @return Pods 使用自定义指标扩进行自动扩缩容
+                     * 
                      */
                     PodsMetricSource GetPods() const;
 
                     /**
                      * 设置使用自定义指标扩进行自动扩缩容
-                     * @param Pods 使用自定义指标扩进行自动扩缩容
+                     * @param _pods 使用自定义指标扩进行自动扩缩容
+                     * 
                      */
                     void SetPods(const PodsMetricSource& _pods);
 
                     /**
                      * 判断参数 Pods 是否已赋值
                      * @return Pods 是否已赋值
+                     * 
                      */
                     bool PodsHasBeenSet() const;
 
                     /**
                      * 获取使用资源指标扩进行自动扩缩容
                      * @return Resource 使用资源指标扩进行自动扩缩容
+                     * 
                      */
                     ResourceMetricSource GetResource() const;
 
                     /**
                      * 设置使用资源指标扩进行自动扩缩容
-                     * @param Resource 使用资源指标扩进行自动扩缩容
+                     * @param _resource 使用资源指标扩进行自动扩缩容
+                     * 
                      */
                     void SetResource(const ResourceMetricSource& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 

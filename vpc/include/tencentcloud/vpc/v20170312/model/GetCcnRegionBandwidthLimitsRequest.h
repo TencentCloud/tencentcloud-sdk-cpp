@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取CCN实例ID。形如：ccn-f49l6u0z。
                      * @return CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置CCN实例ID。形如：ccn-f49l6u0z。
-                     * @param CcnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * @param _ccnId CCN实例ID。形如：ccn-f49l6u0z。
+                     * 
                      */
                     void SetCcnId(const std::string& _ccnId);
 
                     /**
                      * 判断参数 CcnId 是否已赋值
                      * @return CcnId 是否已赋值
+                     * 
                      */
                     bool CcnIdHasBeenSet() const;
 
@@ -68,6 +71,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li>sregion - String - （过滤条件）源地域，形如：ap-guangzhou。</li>
 <li>dregion - String - （过滤条件）目的地域，形如：ap-shanghai-bm</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -75,87 +79,101 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>sregion - String - （过滤条件）源地域，形如：ap-guangzhou。</li>
 <li>dregion - String - （过滤条件）目的地域，形如：ap-shanghai-bm</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>sregion - String - （过滤条件）源地域，形如：ap-guangzhou。</li>
 <li>dregion - String - （过滤条件）目的地域，形如：ap-shanghai-bm</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
                      * @return SortedBy 排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
+                     * 
                      */
                     std::string GetSortedBy() const;
 
                     /**
                      * 设置排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
-                     * @param SortedBy 排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
+                     * @param _sortedBy 排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
+                     * 
                      */
                     void SetSortedBy(const std::string& _sortedBy);
 
                     /**
                      * 判断参数 SortedBy 是否已赋值
                      * @return SortedBy 是否已赋值
+                     * 
                      */
                     bool SortedByHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量。
                      * @return Limit 返回数量。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量。
-                     * @param Limit 返回数量。
+                     * @param _limit 返回数量。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
                      * @return OrderBy 排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
-                     * @param OrderBy 排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
+                     * @param _orderBy 排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 

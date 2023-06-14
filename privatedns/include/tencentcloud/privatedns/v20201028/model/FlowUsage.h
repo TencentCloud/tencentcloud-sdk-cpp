@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取流量包类型：ZONE 私有域；TRAFFIC 解析流量包
                      * @return FlowType 流量包类型：ZONE 私有域；TRAFFIC 解析流量包
+                     * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置流量包类型：ZONE 私有域；TRAFFIC 解析流量包
-                     * @param FlowType 流量包类型：ZONE 私有域；TRAFFIC 解析流量包
+                     * @param _flowType 流量包类型：ZONE 私有域；TRAFFIC 解析流量包
+                     * 
                      */
                     void SetFlowType(const std::string& _flowType);
 
                     /**
                      * 判断参数 FlowType 是否已赋值
                      * @return FlowType 是否已赋值
+                     * 
                      */
                     bool FlowTypeHasBeenSet() const;
 
                     /**
                      * 获取流量包总额度
                      * @return TotalQuantity 流量包总额度
+                     * 
                      */
                     int64_t GetTotalQuantity() const;
 
                     /**
                      * 设置流量包总额度
-                     * @param TotalQuantity 流量包总额度
+                     * @param _totalQuantity 流量包总额度
+                     * 
                      */
                     void SetTotalQuantity(const int64_t& _totalQuantity);
 
                     /**
                      * 判断参数 TotalQuantity 是否已赋值
                      * @return TotalQuantity 是否已赋值
+                     * 
                      */
                     bool TotalQuantityHasBeenSet() const;
 
                     /**
                      * 获取流量包可用额度
                      * @return AvailableQuantity 流量包可用额度
+                     * 
                      */
                     int64_t GetAvailableQuantity() const;
 
                     /**
                      * 设置流量包可用额度
-                     * @param AvailableQuantity 流量包可用额度
+                     * @param _availableQuantity 流量包可用额度
+                     * 
                      */
                     void SetAvailableQuantity(const int64_t& _availableQuantity);
 
                     /**
                      * 判断参数 AvailableQuantity 是否已赋值
                      * @return AvailableQuantity 是否已赋值
+                     * 
                      */
                     bool AvailableQuantityHasBeenSet() const;
 

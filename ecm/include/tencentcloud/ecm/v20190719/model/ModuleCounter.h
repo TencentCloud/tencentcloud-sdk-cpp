@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取运营商统计信息列表
                      * @return ISPCounterSet 运营商统计信息列表
+                     * 
                      */
                     std::vector<ISPCounter> GetISPCounterSet() const;
 
                     /**
                      * 设置运营商统计信息列表
-                     * @param ISPCounterSet 运营商统计信息列表
+                     * @param _iSPCounterSet 运营商统计信息列表
+                     * 
                      */
                     void SetISPCounterSet(const std::vector<ISPCounter>& _iSPCounterSet);
 
                     /**
                      * 判断参数 ISPCounterSet 是否已赋值
                      * @return ISPCounterSet 是否已赋值
+                     * 
                      */
                     bool ISPCounterSetHasBeenSet() const;
 
                     /**
                      * 获取省份数量
                      * @return ProvinceNum 省份数量
+                     * 
                      */
                     int64_t GetProvinceNum() const;
 
                     /**
                      * 设置省份数量
-                     * @param ProvinceNum 省份数量
+                     * @param _provinceNum 省份数量
+                     * 
                      */
                     void SetProvinceNum(const int64_t& _provinceNum);
 
                     /**
                      * 判断参数 ProvinceNum 是否已赋值
                      * @return ProvinceNum 是否已赋值
+                     * 
                      */
                     bool ProvinceNumHasBeenSet() const;
 
                     /**
                      * 获取城市数量
                      * @return CityNum 城市数量
+                     * 
                      */
                     int64_t GetCityNum() const;
 
                     /**
                      * 设置城市数量
-                     * @param CityNum 城市数量
+                     * @param _cityNum 城市数量
+                     * 
                      */
                     void SetCityNum(const int64_t& _cityNum);
 
                     /**
                      * 判断参数 CityNum 是否已赋值
                      * @return CityNum 是否已赋值
+                     * 
                      */
                     bool CityNumHasBeenSet() const;
 
                     /**
                      * 获取节点数量
                      * @return NodeNum 节点数量
+                     * 
                      */
                     int64_t GetNodeNum() const;
 
                     /**
                      * 设置节点数量
-                     * @param NodeNum 节点数量
+                     * @param _nodeNum 节点数量
+                     * 
                      */
                     void SetNodeNum(const int64_t& _nodeNum);
 
                     /**
                      * 判断参数 NodeNum 是否已赋值
                      * @return NodeNum 是否已赋值
+                     * 
                      */
                     bool NodeNumHasBeenSet() const;
 
                     /**
                      * 获取实例数量
                      * @return InstanceNum 实例数量
+                     * 
                      */
                     int64_t GetInstanceNum() const;
 
                     /**
                      * 设置实例数量
-                     * @param InstanceNum 实例数量
+                     * @param _instanceNum 实例数量
+                     * 
                      */
                     void SetInstanceNum(const int64_t& _instanceNum);
 
                     /**
                      * 判断参数 InstanceNum 是否已赋值
                      * @return InstanceNum 是否已赋值
+                     * 
                      */
                     bool InstanceNumHasBeenSet() const;
 

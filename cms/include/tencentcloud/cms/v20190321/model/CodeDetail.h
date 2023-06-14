@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrCharset 二维码文本的编码格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStrCharset() const;
 
                     /**
                      * 设置二维码文本的编码格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrCharset 二维码文本的编码格式
+                     * @param _strCharset 二维码文本的编码格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrCharset(const std::string& _strCharset);
 
                     /**
                      * 判断参数 StrCharset 是否已赋值
                      * @return StrCharset 是否已赋值
+                     * 
                      */
                     bool StrCharsetHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QrCodePosition 二维码在图片中的位置，由边界点的坐标表示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CodePosition> GetQrCodePosition() const;
 
                     /**
                      * 设置二维码在图片中的位置，由边界点的坐标表示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QrCodePosition 二维码在图片中的位置，由边界点的坐标表示
+                     * @param _qrCodePosition 二维码在图片中的位置，由边界点的坐标表示
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQrCodePosition(const std::vector<CodePosition>& _qrCodePosition);
 
                     /**
                      * 判断参数 QrCodePosition 是否已赋值
                      * @return QrCodePosition 是否已赋值
+                     * 
                      */
                     bool QrCodePositionHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrQrCodeText 二维码的文本内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStrQrCodeText() const;
 
                     /**
                      * 设置二维码的文本内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StrQrCodeText 二维码的文本内容
+                     * @param _strQrCodeText 二维码的文本内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStrQrCodeText(const std::string& _strQrCodeText);
 
                     /**
                      * 判断参数 StrQrCodeText 是否已赋值
                      * @return StrQrCodeText 是否已赋值
+                     * 
                      */
                     bool StrQrCodeTextHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uint32QrCodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUint32QrCodeType() const;
 
                     /**
                      * 设置二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uint32QrCodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
+                     * @param _uint32QrCodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUint32QrCodeType(const int64_t& _uint32QrCodeType);
 
                     /**
                      * 判断参数 Uint32QrCodeType 是否已赋值
                      * @return Uint32QrCodeType 是否已赋值
+                     * 
                      */
                     bool Uint32QrCodeTypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeCharset 二维码文本的编码格式（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeCharset() const;
 
                     /**
                      * 设置二维码文本的编码格式（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeCharset 二维码文本的编码格式（已废弃）
+                     * @param _codeCharset 二维码文本的编码格式（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeCharset(const std::string& _codeCharset);
 
                     /**
                      * 判断参数 CodeCharset 是否已赋值
                      * @return CodeCharset 是否已赋值
+                     * 
                      */
                     bool CodeCharsetHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodePosition 二维码在图片中的位置，由边界点的坐标表示（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<CodePosition> GetCodePosition() const;
 
                     /**
                      * 设置二维码在图片中的位置，由边界点的坐标表示（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodePosition 二维码在图片中的位置，由边界点的坐标表示（已废弃）
+                     * @param _codePosition 二维码在图片中的位置，由边界点的坐标表示（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodePosition(const std::vector<CodePosition>& _codePosition);
 
                     /**
                      * 判断参数 CodePosition 是否已赋值
                      * @return CodePosition 是否已赋值
+                     * 
                      */
                     bool CodePositionHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeText 二维码的文本内容（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodeText() const;
 
                     /**
                      * 设置二维码的文本内容（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeText 二维码的文本内容（已废弃）
+                     * @param _codeText 二维码的文本内容（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeText(const std::string& _codeText);
 
                     /**
                      * 判断参数 CodeText 是否已赋值
                      * @return CodeText 是否已赋值
+                     * 
                      */
                     bool CodeTextHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCodeType() const;
 
                     /**
                      * 设置二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX（已废弃）
+                     * @param _codeType 二维码的类型：1:ONED_BARCODE，2:QRCOD，3:WXCODE，4:PDF417，5:DATAMATRIX（已废弃）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeType(const int64_t& _codeType);
 
                     /**
                      * 判断参数 CodeType 是否已赋值
                      * @return CodeType 是否已赋值
+                     * 
                      */
                     bool CodeTypeHasBeenSet() const;
 

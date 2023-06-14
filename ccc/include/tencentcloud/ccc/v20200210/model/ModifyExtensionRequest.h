@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取TCCC 实例应用 ID
                      * @return SdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TCCC 实例应用 ID
-                     * @param SdkAppId TCCC 实例应用 ID
+                     * @param _sdkAppId TCCC 实例应用 ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分机号
                      * @return ExtensionId 分机号
+                     * 
                      */
                     std::string GetExtensionId() const;
 
                     /**
                      * 设置分机号
-                     * @param ExtensionId 分机号
+                     * @param _extensionId 分机号
+                     * 
                      */
                     void SetExtensionId(const std::string& _extensionId);
 
                     /**
                      * 判断参数 ExtensionId 是否已赋值
                      * @return ExtensionId 是否已赋值
+                     * 
                      */
                     bool ExtensionIdHasBeenSet() const;
 
                     /**
                      * 获取分机名称
                      * @return ExtensionName 分机名称
+                     * 
                      */
                     std::string GetExtensionName() const;
 
                     /**
                      * 设置分机名称
-                     * @param ExtensionName 分机名称
+                     * @param _extensionName 分机名称
+                     * 
                      */
                     void SetExtensionName(const std::string& _extensionName);
 
                     /**
                      * 判断参数 ExtensionName 是否已赋值
                      * @return ExtensionName 是否已赋值
+                     * 
                      */
                     bool ExtensionNameHasBeenSet() const;
 
                     /**
                      * 获取所属技能组列表
                      * @return SkillGroupIds 所属技能组列表
+                     * 
                      */
                     std::vector<int64_t> GetSkillGroupIds() const;
 
                     /**
                      * 设置所属技能组列表
-                     * @param SkillGroupIds 所属技能组列表
+                     * @param _skillGroupIds 所属技能组列表
+                     * 
                      */
                     void SetSkillGroupIds(const std::vector<int64_t>& _skillGroupIds);
 
                     /**
                      * 判断参数 SkillGroupIds 是否已赋值
                      * @return SkillGroupIds 是否已赋值
+                     * 
                      */
                     bool SkillGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取绑定坐席邮箱账号
                      * @return Relation 绑定坐席邮箱账号
+                     * 
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置绑定坐席邮箱账号
-                     * @param Relation 绑定坐席邮箱账号
+                     * @param _relation 绑定坐席邮箱账号
+                     * 
                      */
                     void SetRelation(const std::string& _relation);
 
                     /**
                      * 判断参数 Relation 是否已赋值
                      * @return Relation 是否已赋值
+                     * 
                      */
                     bool RelationHasBeenSet() const;
 

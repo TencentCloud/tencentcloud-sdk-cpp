@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取告警历史
                      * @return Items 告警历史
+                     * 
                      */
                     std::vector<PrometheusAlertHistoryItem> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取总数
                      * @return Total 总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

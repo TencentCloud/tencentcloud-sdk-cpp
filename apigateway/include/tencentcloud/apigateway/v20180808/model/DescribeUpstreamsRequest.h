@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取分页大小
                      * @return Limit 分页大小
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页大小
-                     * @param Limit 分页大小
+                     * @param _limit 分页大小
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页起始位置
                      * @return Offset 分页起始位置
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页起始位置
-                     * @param Offset 分页起始位置
+                     * @param _offset 分页起始位置
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
                      * @return Filters 过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
-                     * @param Filters 过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
+                     * @param _filters 过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

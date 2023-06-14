@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取运行时策略详细信息
                      * @return RuleDetail 运行时策略详细信息
+                     * 
                      */
                     AccessControlRuleInfo GetRuleDetail() const;
 
                     /**
                      * 判断参数 RuleDetail 是否已赋值
                      * @return RuleDetail 是否已赋值
+                     * 
                      */
                     bool RuleDetailHasBeenSet() const;
 

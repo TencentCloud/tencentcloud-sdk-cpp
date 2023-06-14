@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。
                      * @return TotalCount 满足过滤条件的负载均衡实例总数。此数值与入参中的Limit无关。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取返回的负载均衡实例数组。
                      * @return LoadBalancerSet 返回的负载均衡实例数组。
+                     * 
                      */
                     std::vector<LoadBalancer> GetLoadBalancerSet() const;
 
                     /**
                      * 判断参数 LoadBalancerSet 是否已赋值
                      * @return LoadBalancerSet 是否已赋值
+                     * 
                      */
                     bool LoadBalancerSetHasBeenSet() const;
 

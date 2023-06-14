@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取是否启用了专用主节点
                      * @return EnableDedicatedMaster 是否启用了专用主节点
+                     * 
                      */
                     bool GetEnableDedicatedMaster() const;
 
                     /**
                      * 设置是否启用了专用主节点
-                     * @param EnableDedicatedMaster 是否启用了专用主节点
+                     * @param _enableDedicatedMaster 是否启用了专用主节点
+                     * 
                      */
                     void SetEnableDedicatedMaster(const bool& _enableDedicatedMaster);
 
                     /**
                      * 判断参数 EnableDedicatedMaster 是否已赋值
                      * @return EnableDedicatedMaster 是否已赋值
+                     * 
                      */
                     bool EnableDedicatedMasterHasBeenSet() const;
 
                     /**
                      * 获取专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      * @return MasterNodeType 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 
                      */
                     std::string GetMasterNodeType() const;
 
                     /**
                      * 设置专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param MasterNodeType 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param _masterNodeType 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 
                      */
                     void SetMasterNodeType(const std::string& _masterNodeType);
 
                     /**
                      * 判断参数 MasterNodeType 是否已赋值
                      * @return MasterNodeType 是否已赋值
+                     * 
                      */
                     bool MasterNodeTypeHasBeenSet() const;
 
                     /**
                      * 获取专用主节点个数
                      * @return MasterNodeNum 专用主节点个数
+                     * 
                      */
                     uint64_t GetMasterNodeNum() const;
 
                     /**
                      * 设置专用主节点个数
-                     * @param MasterNodeNum 专用主节点个数
+                     * @param _masterNodeNum 专用主节点个数
+                     * 
                      */
                     void SetMasterNodeNum(const uint64_t& _masterNodeNum);
 
                     /**
                      * 判断参数 MasterNodeNum 是否已赋值
                      * @return MasterNodeNum 是否已赋值
+                     * 
                      */
                     bool MasterNodeNumHasBeenSet() const;
 
                     /**
                      * 获取专用主节点CPU核数
                      * @return MasterNodeCpuNum 专用主节点CPU核数
+                     * 
                      */
                     uint64_t GetMasterNodeCpuNum() const;
 
                     /**
                      * 设置专用主节点CPU核数
-                     * @param MasterNodeCpuNum 专用主节点CPU核数
+                     * @param _masterNodeCpuNum 专用主节点CPU核数
+                     * 
                      */
                     void SetMasterNodeCpuNum(const uint64_t& _masterNodeCpuNum);
 
                     /**
                      * 判断参数 MasterNodeCpuNum 是否已赋值
                      * @return MasterNodeCpuNum 是否已赋值
+                     * 
                      */
                     bool MasterNodeCpuNumHasBeenSet() const;
 
                     /**
                      * 获取专用主节点内存大小，单位GB
                      * @return MasterNodeMemSize 专用主节点内存大小，单位GB
+                     * 
                      */
                     uint64_t GetMasterNodeMemSize() const;
 
                     /**
                      * 设置专用主节点内存大小，单位GB
-                     * @param MasterNodeMemSize 专用主节点内存大小，单位GB
+                     * @param _masterNodeMemSize 专用主节点内存大小，单位GB
+                     * 
                      */
                     void SetMasterNodeMemSize(const uint64_t& _masterNodeMemSize);
 
                     /**
                      * 判断参数 MasterNodeMemSize 是否已赋值
                      * @return MasterNodeMemSize 是否已赋值
+                     * 
                      */
                     bool MasterNodeMemSizeHasBeenSet() const;
 
                     /**
                      * 获取专用主节点磁盘大小，单位GB
                      * @return MasterNodeDiskSize 专用主节点磁盘大小，单位GB
+                     * 
                      */
                     uint64_t GetMasterNodeDiskSize() const;
 
                     /**
                      * 设置专用主节点磁盘大小，单位GB
-                     * @param MasterNodeDiskSize 专用主节点磁盘大小，单位GB
+                     * @param _masterNodeDiskSize 专用主节点磁盘大小，单位GB
+                     * 
                      */
                     void SetMasterNodeDiskSize(const uint64_t& _masterNodeDiskSize);
 
                     /**
                      * 判断参数 MasterNodeDiskSize 是否已赋值
                      * @return MasterNodeDiskSize 是否已赋值
+                     * 
                      */
                     bool MasterNodeDiskSizeHasBeenSet() const;
 
                     /**
                      * 获取专用主节点磁盘类型
                      * @return MasterNodeDiskType 专用主节点磁盘类型
+                     * 
                      */
                     std::string GetMasterNodeDiskType() const;
 
                     /**
                      * 设置专用主节点磁盘类型
-                     * @param MasterNodeDiskType 专用主节点磁盘类型
+                     * @param _masterNodeDiskType 专用主节点磁盘类型
+                     * 
                      */
                     void SetMasterNodeDiskType(const std::string& _masterNodeDiskType);
 
                     /**
                      * 判断参数 MasterNodeDiskType 是否已赋值
                      * @return MasterNodeDiskType 是否已赋值
+                     * 
                      */
                     bool MasterNodeDiskTypeHasBeenSet() const;
 

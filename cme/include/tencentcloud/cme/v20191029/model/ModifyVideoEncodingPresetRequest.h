@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取配置 ID。
                      * @return Id 配置 ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置配置 ID。
-                     * @param Id 配置 ID。
+                     * @param _id 配置 ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取更改后的视频编码配置名，不填则不修改。
                      * @return Name 更改后的视频编码配置名，不填则不修改。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置更改后的视频编码配置名，不填则不修改。
-                     * @param Name 更改后的视频编码配置名，不填则不修改。
+                     * @param _name 更改后的视频编码配置名，不填则不修改。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -107,6 +116,7 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     int64_t GetRemoveVideo() const;
 
@@ -115,16 +125,18 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
-                     * @param RemoveVideo 是否去除视频数据，可选值：
+                     * @param _removeVideo 是否去除视频数据，可选值：
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     void SetRemoveVideo(const int64_t& _removeVideo);
 
                     /**
                      * 判断参数 RemoveVideo 是否已赋值
                      * @return RemoveVideo 是否已赋值
+                     * 
                      */
                     bool RemoveVideoHasBeenSet() const;
 
@@ -137,6 +149,7 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     int64_t GetRemoveAudio() const;
 
@@ -145,52 +158,60 @@ namespace TencentCloud
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
-                     * @param RemoveAudio 是否去除音频数据，可选值：
+                     * @param _removeAudio 是否去除音频数据，可选值：
 <li>0：保留；</li>
 <li>1：去除。</li>
 默认值：0。
+                     * 
                      */
                     void SetRemoveAudio(const int64_t& _removeAudio);
 
                     /**
                      * 判断参数 RemoveAudio 是否已赋值
                      * @return RemoveAudio 是否已赋值
+                     * 
                      */
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
                      * 获取更改后的编码配置的视频设置。
                      * @return VideoSetting 更改后的编码配置的视频设置。
+                     * 
                      */
                     VideoEncodingPresetVideoSettingForUpdate GetVideoSetting() const;
 
                     /**
                      * 设置更改后的编码配置的视频设置。
-                     * @param VideoSetting 更改后的编码配置的视频设置。
+                     * @param _videoSetting 更改后的编码配置的视频设置。
+                     * 
                      */
                     void SetVideoSetting(const VideoEncodingPresetVideoSettingForUpdate& _videoSetting);
 
                     /**
                      * 判断参数 VideoSetting 是否已赋值
                      * @return VideoSetting 是否已赋值
+                     * 
                      */
                     bool VideoSettingHasBeenSet() const;
 
                     /**
                      * 获取更改后的编码配置的音频设置。
                      * @return AudioSetting 更改后的编码配置的音频设置。
+                     * 
                      */
                     VideoEncodingPresetAudioSettingForUpdate GetAudioSetting() const;
 
                     /**
                      * 设置更改后的编码配置的音频设置。
-                     * @param AudioSetting 更改后的编码配置的音频设置。
+                     * @param _audioSetting 更改后的编码配置的音频设置。
+                     * 
                      */
                     void SetAudioSetting(const VideoEncodingPresetAudioSettingForUpdate& _audioSetting);
 
                     /**
                      * 判断参数 AudioSetting 是否已赋值
                      * @return AudioSetting 是否已赋值
+                     * 
                      */
                     bool AudioSettingHasBeenSet() const;
 

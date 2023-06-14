@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取企业号码认证请求内容
                      * @return RequestData 企业号码认证请求内容
+                     * 
                      */
                     EPARequest GetRequestData() const;
 
                     /**
                      * 设置企业号码认证请求内容
-                     * @param RequestData 企业号码认证请求内容
+                     * @param _requestData 企业号码认证请求内容
+                     * 
                      */
                     void SetRequestData(const EPARequest& _requestData);
 
                     /**
                      * 判断参数 RequestData 是否已赋值
                      * @return RequestData 是否已赋值
+                     * 
                      */
                     bool RequestDataHasBeenSet() const;
 
                     /**
                      * 获取用于计费的资源ID
                      * @return ResourceId 用于计费的资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置用于计费的资源ID
-                     * @param ResourceId 用于计费的资源ID
+                     * @param _resourceId 用于计费的资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

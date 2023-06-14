@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
                      * @return TagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
+                     * 
                      */
                     std::vector<std::string> GetTagInfos() const;
 
                     /**
                      * 设置标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
-                     * @param TagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
+                     * @param _tagInfos 标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”
+                     * 
                      */
                     void SetTagInfos(const std::vector<std::string>& _tagInfos);
 
                     /**
                      * 判断参数 TagInfos 是否已赋值
                      * @return TagInfos 是否已赋值
+                     * 
                      */
                     bool TagInfosHasBeenSet() const;
 
                     /**
                      * 获取分页大小，默认1000
                      * @return Limit 分页大小，默认1000
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页大小，默认1000
-                     * @param Limit 分页大小，默认1000
+                     * @param _limit 分页大小，默认1000
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页offset，默认0
                      * @return Offset 分页offset，默认0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页offset，默认0
-                     * @param Offset 分页offset，默认0
+                     * @param _offset 分页offset，默认0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

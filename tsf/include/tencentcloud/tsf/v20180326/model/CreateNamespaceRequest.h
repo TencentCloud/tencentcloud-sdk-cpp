@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取命名空间名称
                      * @return NamespaceName 命名空间名称
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间描述
                      * @return NamespaceDesc 命名空间描述
+                     * 
                      */
                     std::string GetNamespaceDesc() const;
 
                     /**
                      * 设置命名空间描述
-                     * @param NamespaceDesc 命名空间描述
+                     * @param _namespaceDesc 命名空间描述
+                     * 
                      */
                     void SetNamespaceDesc(const std::string& _namespaceDesc);
 
                     /**
                      * 判断参数 NamespaceDesc 是否已赋值
                      * @return NamespaceDesc 是否已赋值
+                     * 
                      */
                     bool NamespaceDescHasBeenSet() const;
 
                     /**
                      * 获取命名空间资源类型(默认值为DEF)
                      * @return NamespaceResourceType 命名空间资源类型(默认值为DEF)
+                     * 
                      */
                     std::string GetNamespaceResourceType() const;
 
                     /**
                      * 设置命名空间资源类型(默认值为DEF)
-                     * @param NamespaceResourceType 命名空间资源类型(默认值为DEF)
+                     * @param _namespaceResourceType 命名空间资源类型(默认值为DEF)
+                     * 
                      */
                     void SetNamespaceResourceType(const std::string& _namespaceResourceType);
 
                     /**
                      * 判断参数 NamespaceResourceType 是否已赋值
                      * @return NamespaceResourceType 是否已赋值
+                     * 
                      */
                     bool NamespaceResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
                      * @return NamespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 
                      */
                     std::string GetNamespaceType() const;
 
                     /**
                      * 设置是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
-                     * @param NamespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * @param _namespaceType 是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)
+                     * 
                      */
                     void SetNamespaceType(const std::string& _namespaceType);
 
                     /**
                      * 判断参数 NamespaceType 是否已赋值
                      * @return NamespaceType 是否已赋值
+                     * 
                      */
                     bool NamespaceTypeHasBeenSet() const;
 
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取是否开启高可用
                      * @return IsHaEnable 是否开启高可用
+                     * 
                      */
                     std::string GetIsHaEnable() const;
 
                     /**
                      * 设置是否开启高可用
-                     * @param IsHaEnable 是否开启高可用
+                     * @param _isHaEnable 是否开启高可用
+                     * 
                      */
                     void SetIsHaEnable(const std::string& _isHaEnable);
 
                     /**
                      * 判断参数 IsHaEnable 是否已赋值
                      * @return IsHaEnable 是否已赋值
+                     * 
                      */
                     bool IsHaEnableHasBeenSet() const;
 
                     /**
                      * 获取需要绑定的数据集ID
                      * @return ProgramId 需要绑定的数据集ID
+                     * 
                      */
                     std::string GetProgramId() const;
 
                     /**
                      * 设置需要绑定的数据集ID
-                     * @param ProgramId 需要绑定的数据集ID
+                     * @param _programId 需要绑定的数据集ID
+                     * 
                      */
                     void SetProgramId(const std::string& _programId);
 
                     /**
                      * 判断参数 ProgramId 是否已赋值
                      * @return ProgramId 是否已赋值
+                     * 
                      */
                     bool ProgramIdHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ProgramIdList 无
+                     * 
                      */
                     std::vector<std::string> GetProgramIdList() const;
 
                     /**
                      * 设置无
-                     * @param ProgramIdList 无
+                     * @param _programIdList 无
+                     * 
                      */
                     void SetProgramIdList(const std::vector<std::string>& _programIdList);
 
                     /**
                      * 判断参数 ProgramIdList 是否已赋值
                      * @return ProgramIdList 是否已赋值
+                     * 
                      */
                     bool ProgramIdListHasBeenSet() const;
 

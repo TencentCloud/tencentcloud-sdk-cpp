@@ -49,252 +49,294 @@ namespace TencentCloud
                     /**
                      * 获取cluster id
                      * @return ClusterId cluster id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置cluster id
-                     * @param ClusterId cluster id
+                     * @param _clusterId cluster id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
                      * @return AutoScalingGroupPara AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
+                     * 
                      */
                     std::string GetAutoScalingGroupPara() const;
 
                     /**
                      * 设置AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
-                     * @param AutoScalingGroupPara AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
+                     * @param _autoScalingGroupPara AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
+                     * 
                      */
                     void SetAutoScalingGroupPara(const std::string& _autoScalingGroupPara);
 
                     /**
                      * 判断参数 AutoScalingGroupPara 是否已赋值
                      * @return AutoScalingGroupPara 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupParaHasBeenSet() const;
 
                     /**
                      * 获取LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
                      * @return LaunchConfigurePara LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
+                     * 
                      */
                     std::string GetLaunchConfigurePara() const;
 
                     /**
                      * 设置LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
-                     * @param LaunchConfigurePara LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
+                     * @param _launchConfigurePara LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
+                     * 
                      */
                     void SetLaunchConfigurePara(const std::string& _launchConfigurePara);
 
                     /**
                      * 判断参数 LaunchConfigurePara 是否已赋值
                      * @return LaunchConfigurePara 是否已赋值
+                     * 
                      */
                     bool LaunchConfigureParaHasBeenSet() const;
 
                     /**
                      * 获取InstanceAdvancedSettings 示例参数
                      * @return InstanceAdvancedSettings InstanceAdvancedSettings 示例参数
+                     * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
                      * 设置InstanceAdvancedSettings 示例参数
-                     * @param InstanceAdvancedSettings InstanceAdvancedSettings 示例参数
+                     * @param _instanceAdvancedSettings InstanceAdvancedSettings 示例参数
+                     * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
 
                     /**
                      * 判断参数 InstanceAdvancedSettings 是否已赋值
                      * @return InstanceAdvancedSettings 是否已赋值
+                     * 
                      */
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
                      * 获取是否启用自动伸缩
                      * @return EnableAutoscale 是否启用自动伸缩
+                     * 
                      */
                     bool GetEnableAutoscale() const;
 
                     /**
                      * 设置是否启用自动伸缩
-                     * @param EnableAutoscale 是否启用自动伸缩
+                     * @param _enableAutoscale 是否启用自动伸缩
+                     * 
                      */
                     void SetEnableAutoscale(const bool& _enableAutoscale);
 
                     /**
                      * 判断参数 EnableAutoscale 是否已赋值
                      * @return EnableAutoscale 是否已赋值
+                     * 
                      */
                     bool EnableAutoscaleHasBeenSet() const;
 
                     /**
                      * 获取节点池名称
                      * @return Name 节点池名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置节点池名称
-                     * @param Name 节点池名称
+                     * @param _name 节点池名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取Labels标签
                      * @return Labels Labels标签
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置Labels标签
-                     * @param Labels Labels标签
+                     * @param _labels Labels标签
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取Taints互斥
                      * @return Taints Taints互斥
+                     * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
                      * 设置Taints互斥
-                     * @param Taints Taints互斥
+                     * @param _taints Taints互斥
+                     * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
 
                     /**
                      * 判断参数 Taints 是否已赋值
                      * @return Taints 是否已赋值
+                     * 
                      */
                     bool TaintsHasBeenSet() const;
 
                     /**
                      * 获取节点池纬度运行时类型及版本
                      * @return ContainerRuntime 节点池纬度运行时类型及版本
+                     * 
                      */
                     std::string GetContainerRuntime() const;
 
                     /**
                      * 设置节点池纬度运行时类型及版本
-                     * @param ContainerRuntime 节点池纬度运行时类型及版本
+                     * @param _containerRuntime 节点池纬度运行时类型及版本
+                     * 
                      */
                     void SetContainerRuntime(const std::string& _containerRuntime);
 
                     /**
                      * 判断参数 ContainerRuntime 是否已赋值
                      * @return ContainerRuntime 是否已赋值
+                     * 
                      */
                     bool ContainerRuntimeHasBeenSet() const;
 
                     /**
                      * 获取运行时版本
                      * @return RuntimeVersion 运行时版本
+                     * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
                      * 设置运行时版本
-                     * @param RuntimeVersion 运行时版本
+                     * @param _runtimeVersion 运行时版本
+                     * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
 
                     /**
                      * 判断参数 RuntimeVersion 是否已赋值
                      * @return RuntimeVersion 是否已赋值
+                     * 
                      */
                     bool RuntimeVersionHasBeenSet() const;
 
                     /**
                      * 获取节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
                      * @return NodePoolOs 节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
+                     * 
                      */
                     std::string GetNodePoolOs() const;
 
                     /**
                      * 设置节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
-                     * @param NodePoolOs 节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
+                     * @param _nodePoolOs 节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
+                     * 
                      */
                     void SetNodePoolOs(const std::string& _nodePoolOs);
 
                     /**
                      * 判断参数 NodePoolOs 是否已赋值
                      * @return NodePoolOs 是否已赋值
+                     * 
                      */
                     bool NodePoolOsHasBeenSet() const;
 
                     /**
                      * 获取容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
                      * @return OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
-                     * @param OsCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * @param _osCustomizeType 容器的镜像版本，"DOCKER_CUSTOMIZE"(容器定制版),"GENERAL"(普通版本，默认值)
+                     * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
 
                     /**
                      * 判断参数 OsCustomizeType 是否已赋值
                      * @return OsCustomizeType 是否已赋值
+                     * 
                      */
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
                      * 获取资源标签
                      * @return Tags 资源标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置资源标签
-                     * @param Tags 资源标签
+                     * @param _tags 资源标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取删除保护开关
                      * @return DeletionProtection 删除保护开关
+                     * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
                      * 设置删除保护开关
-                     * @param DeletionProtection 删除保护开关
+                     * @param _deletionProtection 删除保护开关
+                     * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
 
                     /**
                      * 判断参数 DeletionProtection 是否已赋值
                      * @return DeletionProtection 是否已赋值
+                     * 
                      */
                     bool DeletionProtectionHasBeenSet() const;
 

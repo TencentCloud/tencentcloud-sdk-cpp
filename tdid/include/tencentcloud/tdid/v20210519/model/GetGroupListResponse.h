@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取群组数据集合
                      * @return Result 群组数据集合
+                     * 
                      */
                     std::vector<Group> GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

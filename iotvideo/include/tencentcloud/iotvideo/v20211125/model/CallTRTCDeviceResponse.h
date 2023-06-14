@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取TRTC SDK房间参数
                      * @return TRTCParams TRTC SDK房间参数
+                     * 
                      */
                     TRTCParams GetTRTCParams() const;
 
                     /**
                      * 判断参数 TRTCParams 是否已赋值
                      * @return TRTCParams 是否已赋值
+                     * 
                      */
                     bool TRTCParamsHasBeenSet() const;
 

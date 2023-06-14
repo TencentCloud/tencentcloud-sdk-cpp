@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 文本鉴黄任务开关，可选值：
 <li>ON：开启文本鉴黄任务；</li>
 <li>OFF：关闭文本鉴黄任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置文本鉴黄任务开关，可选值：
 <li>ON：开启文本鉴黄任务；</li>
 <li>OFF：关闭文本鉴黄任务。</li>
-                     * @param Switch 文本鉴黄任务开关，可选值：
+                     * @param _switch 文本鉴黄任务开关，可选值：
 <li>ON：开启文本鉴黄任务；</li>
 <li>OFF：关闭文本鉴黄任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
                      * @return BlockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * 
                      */
                     int64_t GetBlockConfidence() const;
 
                     /**
                      * 设置判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
-                     * @param BlockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * @param _blockConfidence 判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。
+                     * 
                      */
                     void SetBlockConfidence(const int64_t& _blockConfidence);
 
                     /**
                      * 判断参数 BlockConfidence 是否已赋值
                      * @return BlockConfidence 是否已赋值
+                     * 
                      */
                     bool BlockConfidenceHasBeenSet() const;
 
                     /**
                      * 获取判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
                      * @return ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * 
                      */
                     int64_t GetReviewConfidence() const;
 
                     /**
                      * 设置判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
-                     * @param ReviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * @param _reviewConfidence 判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。
+                     * 
                      */
                     void SetReviewConfidence(const int64_t& _reviewConfidence);
 
                     /**
                      * 判断参数 ReviewConfidence 是否已赋值
                      * @return ReviewConfidence 是否已赋值
+                     * 
                      */
                     bool ReviewConfidenceHasBeenSet() const;
 

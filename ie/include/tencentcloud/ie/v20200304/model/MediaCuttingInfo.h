@@ -54,54 +54,63 @@ namespace TencentCloud
                     /**
                      * 获取截取时间信息。
                      * @return TimeInfo 截取时间信息。
+                     * 
                      */
                     MediaCuttingTimeInfo GetTimeInfo() const;
 
                     /**
                      * 设置截取时间信息。
-                     * @param TimeInfo 截取时间信息。
+                     * @param _timeInfo 截取时间信息。
+                     * 
                      */
                     void SetTimeInfo(const MediaCuttingTimeInfo& _timeInfo);
 
                     /**
                      * 判断参数 TimeInfo 是否已赋值
                      * @return TimeInfo 是否已赋值
+                     * 
                      */
                     bool TimeInfoHasBeenSet() const;
 
                     /**
                      * 获取输出结果信息。
                      * @return TargetInfo 输出结果信息。
+                     * 
                      */
                     MediaTargetInfo GetTargetInfo() const;
 
                     /**
                      * 设置输出结果信息。
-                     * @param TargetInfo 输出结果信息。
+                     * @param _targetInfo 输出结果信息。
+                     * 
                      */
                     void SetTargetInfo(const MediaTargetInfo& _targetInfo);
 
                     /**
                      * 判断参数 TargetInfo 是否已赋值
                      * @return TargetInfo 是否已赋值
+                     * 
                      */
                     bool TargetInfoHasBeenSet() const;
 
                     /**
                      * 获取截取结果形式信息。
                      * @return OutForm 截取结果形式信息。
+                     * 
                      */
                     MediaCuttingOutForm GetOutForm() const;
 
                     /**
                      * 设置截取结果形式信息。
-                     * @param OutForm 截取结果形式信息。
+                     * @param _outForm 截取结果形式信息。
+                     * 
                      */
                     void SetOutForm(const MediaCuttingOutForm& _outForm);
 
                     /**
                      * 判断参数 OutForm 是否已赋值
                      * @return OutForm 是否已赋值
+                     * 
                      */
                     bool OutFormHasBeenSet() const;
 
@@ -114,6 +123,7 @@ namespace TencentCloud
 <li>NoListFile：不存储结果列表; </li>
 <li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
 <li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
+                     * 
                      */
                     std::string GetResultListSaveType() const;
 
@@ -122,52 +132,60 @@ namespace TencentCloud
 <li>NoListFile：不存储结果列表; </li>
 <li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
 <li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
-                     * @param ResultListSaveType 列表文件形式，存储到用户存储服务中，可选值：
+                     * @param _resultListSaveType 列表文件形式，存储到用户存储服务中，可选值：
 <li>NoListFile：不存储结果列表; </li>
 <li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
 <li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
+                     * 
                      */
                     void SetResultListSaveType(const std::string& _resultListSaveType);
 
                     /**
                      * 判断参数 ResultListSaveType 是否已赋值
                      * @return ResultListSaveType 是否已赋值
+                     * 
                      */
                     bool ResultListSaveTypeHasBeenSet() const;
 
                     /**
                      * 获取水印信息，最多支持 10 个水印。
                      * @return WatermarkInfoSet 水印信息，最多支持 10 个水印。
+                     * 
                      */
                     std::vector<MediaCuttingWatermark> GetWatermarkInfoSet() const;
 
                     /**
                      * 设置水印信息，最多支持 10 个水印。
-                     * @param WatermarkInfoSet 水印信息，最多支持 10 个水印。
+                     * @param _watermarkInfoSet 水印信息，最多支持 10 个水印。
+                     * 
                      */
                     void SetWatermarkInfoSet(const std::vector<MediaCuttingWatermark>& _watermarkInfoSet);
 
                     /**
                      * 判断参数 WatermarkInfoSet 是否已赋值
                      * @return WatermarkInfoSet 是否已赋值
+                     * 
                      */
                     bool WatermarkInfoSetHasBeenSet() const;
 
                     /**
                      * 获取是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
                      * @return DropPureColor 是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     * 
                      */
                     std::string GetDropPureColor() const;
 
                     /**
                      * 设置是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
-                     * @param DropPureColor 是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     * @param _dropPureColor 是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     * 
                      */
                     void SetDropPureColor(const std::string& _dropPureColor);
 
                     /**
                      * 判断参数 DropPureColor 是否已赋值
                      * @return DropPureColor 是否已赋值
+                     * 
                      */
                     bool DropPureColorHasBeenSet() const;
 

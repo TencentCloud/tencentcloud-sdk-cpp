@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取分配 `IPv6` 子网段列表。
                      * @return Ipv6SubnetCidrBlockSet 分配 `IPv6` 子网段列表。
+                     * 
                      */
                     std::vector<Ipv6SubnetCidrBlock> GetIpv6SubnetCidrBlockSet() const;
 
                     /**
                      * 判断参数 Ipv6SubnetCidrBlockSet 是否已赋值
                      * @return Ipv6SubnetCidrBlockSet 是否已赋值
+                     * 
                      */
                     bool Ipv6SubnetCidrBlockSetHasBeenSet() const;
 

@@ -60,7 +60,6 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RewindCmqQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/CmqSubscription.h
-  include/tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateAMQPClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQGroupRequest.h
@@ -69,7 +68,6 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstanceDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQClusterWhiteListInfo.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqTopicResponse.h
-  include/tencentcloud/tdmq/v20200217/model/ModifyAMQPVHostRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceRequest.h
   include/tencentcloud/tdmq/v20200217/model/Topic.h
@@ -367,7 +365,6 @@ set(tdmq_src
   src/v20200217/model/RewindCmqQueueResponse.cpp
   src/v20200217/model/DeleteClusterRequest.cpp
   src/v20200217/model/CmqSubscription.cpp
-  src/v20200217/model/ModifyAMQPVHostResponse.cpp
   src/v20200217/model/DescribeAMQPClusterResponse.cpp
   src/v20200217/model/CreateAMQPClusterRequest.cpp
   src/v20200217/model/DeleteRocketMQGroupRequest.cpp
@@ -376,7 +373,6 @@ set(tdmq_src
   src/v20200217/model/DescribeRocketMQVipInstanceDetailRequest.cpp
   src/v20200217/model/RabbitMQClusterWhiteListInfo.cpp
   src/v20200217/model/DeleteCmqTopicResponse.cpp
-  src/v20200217/model/ModifyAMQPVHostRequest.cpp
   src/v20200217/model/CreateSubscriptionRequest.cpp
   src/v20200217/model/CreateRocketMQNamespaceRequest.cpp
   src/v20200217/model/Topic.cpp

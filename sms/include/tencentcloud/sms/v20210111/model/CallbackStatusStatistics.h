@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取短信回执量统计。
                      * @return CallbackCount 短信回执量统计。
+                     * 
                      */
                     uint64_t GetCallbackCount() const;
 
                     /**
                      * 设置短信回执量统计。
-                     * @param CallbackCount 短信回执量统计。
+                     * @param _callbackCount 短信回执量统计。
+                     * 
                      */
                     void SetCallbackCount(const uint64_t& _callbackCount);
 
                     /**
                      * 判断参数 CallbackCount 是否已赋值
                      * @return CallbackCount 是否已赋值
+                     * 
                      */
                     bool CallbackCountHasBeenSet() const;
 
                     /**
                      * 获取短信提交成功量统计。
                      * @return RequestSuccessCount 短信提交成功量统计。
+                     * 
                      */
                     uint64_t GetRequestSuccessCount() const;
 
                     /**
                      * 设置短信提交成功量统计。
-                     * @param RequestSuccessCount 短信提交成功量统计。
+                     * @param _requestSuccessCount 短信提交成功量统计。
+                     * 
                      */
                     void SetRequestSuccessCount(const uint64_t& _requestSuccessCount);
 
                     /**
                      * 判断参数 RequestSuccessCount 是否已赋值
                      * @return RequestSuccessCount 是否已赋值
+                     * 
                      */
                     bool RequestSuccessCountHasBeenSet() const;
 
                     /**
                      * 获取短信回执失败量统计。
                      * @return CallbackFailCount 短信回执失败量统计。
+                     * 
                      */
                     uint64_t GetCallbackFailCount() const;
 
                     /**
                      * 设置短信回执失败量统计。
-                     * @param CallbackFailCount 短信回执失败量统计。
+                     * @param _callbackFailCount 短信回执失败量统计。
+                     * 
                      */
                     void SetCallbackFailCount(const uint64_t& _callbackFailCount);
 
                     /**
                      * 判断参数 CallbackFailCount 是否已赋值
                      * @return CallbackFailCount 是否已赋值
+                     * 
                      */
                     bool CallbackFailCountHasBeenSet() const;
 
                     /**
                      * 获取短信回执成功量统计。
                      * @return CallbackSuccessCount 短信回执成功量统计。
+                     * 
                      */
                     uint64_t GetCallbackSuccessCount() const;
 
                     /**
                      * 设置短信回执成功量统计。
-                     * @param CallbackSuccessCount 短信回执成功量统计。
+                     * @param _callbackSuccessCount 短信回执成功量统计。
+                     * 
                      */
                     void SetCallbackSuccessCount(const uint64_t& _callbackSuccessCount);
 
                     /**
                      * 判断参数 CallbackSuccessCount 是否已赋值
                      * @return CallbackSuccessCount 是否已赋值
+                     * 
                      */
                     bool CallbackSuccessCountHasBeenSet() const;
 
                     /**
                      * 获取运营商内部错误统计。
                      * @return InternalErrorCount 运营商内部错误统计。
+                     * 
                      */
                     uint64_t GetInternalErrorCount() const;
 
                     /**
                      * 设置运营商内部错误统计。
-                     * @param InternalErrorCount 运营商内部错误统计。
+                     * @param _internalErrorCount 运营商内部错误统计。
+                     * 
                      */
                     void SetInternalErrorCount(const uint64_t& _internalErrorCount);
 
                     /**
                      * 判断参数 InternalErrorCount 是否已赋值
                      * @return InternalErrorCount 是否已赋值
+                     * 
                      */
                     bool InternalErrorCountHasBeenSet() const;
 
                     /**
                      * 获取号码无效或空号统计。
                      * @return InvalidNumberCount 号码无效或空号统计。
+                     * 
                      */
                     uint64_t GetInvalidNumberCount() const;
 
                     /**
                      * 设置号码无效或空号统计。
-                     * @param InvalidNumberCount 号码无效或空号统计。
+                     * @param _invalidNumberCount 号码无效或空号统计。
+                     * 
                      */
                     void SetInvalidNumberCount(const uint64_t& _invalidNumberCount);
 
                     /**
                      * 判断参数 InvalidNumberCount 是否已赋值
                      * @return InvalidNumberCount 是否已赋值
+                     * 
                      */
                     bool InvalidNumberCountHasBeenSet() const;
 
                     /**
                      * 获取停机、关机等错误统计。
                      * @return ShutdownErrorCount 停机、关机等错误统计。
+                     * 
                      */
                     uint64_t GetShutdownErrorCount() const;
 
                     /**
                      * 设置停机、关机等错误统计。
-                     * @param ShutdownErrorCount 停机、关机等错误统计。
+                     * @param _shutdownErrorCount 停机、关机等错误统计。
+                     * 
                      */
                     void SetShutdownErrorCount(const uint64_t& _shutdownErrorCount);
 
                     /**
                      * 判断参数 ShutdownErrorCount 是否已赋值
                      * @return ShutdownErrorCount 是否已赋值
+                     * 
                      */
                     bool ShutdownErrorCountHasBeenSet() const;
 
                     /**
                      * 获取号码拉入黑名单统计。
                      * @return BlackListCount 号码拉入黑名单统计。
+                     * 
                      */
                     uint64_t GetBlackListCount() const;
 
                     /**
                      * 设置号码拉入黑名单统计。
-                     * @param BlackListCount 号码拉入黑名单统计。
+                     * @param _blackListCount 号码拉入黑名单统计。
+                     * 
                      */
                     void SetBlackListCount(const uint64_t& _blackListCount);
 
                     /**
                      * 判断参数 BlackListCount 是否已赋值
                      * @return BlackListCount 是否已赋值
+                     * 
                      */
                     bool BlackListCountHasBeenSet() const;
 
                     /**
                      * 获取运营商频率限制统计。
                      * @return FrequencyLimitCount 运营商频率限制统计。
+                     * 
                      */
                     uint64_t GetFrequencyLimitCount() const;
 
                     /**
                      * 设置运营商频率限制统计。
-                     * @param FrequencyLimitCount 运营商频率限制统计。
+                     * @param _frequencyLimitCount 运营商频率限制统计。
+                     * 
                      */
                     void SetFrequencyLimitCount(const uint64_t& _frequencyLimitCount);
 
                     /**
                      * 判断参数 FrequencyLimitCount 是否已赋值
                      * @return FrequencyLimitCount 是否已赋值
+                     * 
                      */
                     bool FrequencyLimitCountHasBeenSet() const;
 

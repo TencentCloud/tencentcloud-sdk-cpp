@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return RegistryId 实例Id
+                     * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
                      * 设置实例Id
-                     * @param RegistryId 实例Id
+                     * @param _registryId 实例Id
+                     * 
                      */
                     void SetRegistryId(const std::string& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 
                     /**
                      * 获取指定命名空间，不填写默认为查询所有命名空间下镜像仓库
                      * @return NamespaceName 指定命名空间，不填写默认为查询所有命名空间下镜像仓库
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置指定命名空间，不填写默认为查询所有命名空间下镜像仓库
-                     * @param NamespaceName 指定命名空间，不填写默认为查询所有命名空间下镜像仓库
+                     * @param _namespaceName 指定命名空间，不填写默认为查询所有命名空间下镜像仓库
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
                      * 获取指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库
                      * @return RepositoryName 指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库
+                     * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库
-                     * @param RepositoryName 指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库
+                     * @param _repositoryName 指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库
+                     * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
 
                     /**
                      * 判断参数 RepositoryName 是否已赋值
                      * @return RepositoryName 是否已赋值
+                     * 
                      */
                     bool RepositoryNameHasBeenSet() const;
 
                     /**
                      * 获取页数，用于分页
                      * @return Offset 页数，用于分页
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页数，用于分页
-                     * @param Offset 页数，用于分页
+                     * @param _offset 页数，用于分页
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页个数，用于分页
                      * @return Limit 每页个数，用于分页
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页个数，用于分页
-                     * @param Limit 每页个数，用于分页
+                     * @param _limit 每页个数，用于分页
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取基于字段排序，支持的值有-creation_time,-name, -update_time
                      * @return SortBy 基于字段排序，支持的值有-creation_time,-name, -update_time
+                     * 
                      */
                     std::string GetSortBy() const;
 
                     /**
                      * 设置基于字段排序，支持的值有-creation_time,-name, -update_time
-                     * @param SortBy 基于字段排序，支持的值有-creation_time,-name, -update_time
+                     * @param _sortBy 基于字段排序，支持的值有-creation_time,-name, -update_time
+                     * 
                      */
                     void SetSortBy(const std::string& _sortBy);
 
                     /**
                      * 判断参数 SortBy 是否已赋值
                      * @return SortBy 是否已赋值
+                     * 
                      */
                     bool SortByHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 服务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置服务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 服务开始时间
+                     * @param _startTime 服务开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 服务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置服务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 服务结束时间
+                     * @param _endTime 服务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaId 配额ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetQuotaId() const;
 
                     /**
                      * 设置配额ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QuotaId 配额ID
+                     * @param _quotaId 配额ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuotaId(const uint64_t& _quotaId);
 
                     /**
                      * 判断参数 QuotaId 是否已赋值
                      * @return QuotaId 是否已赋值
+                     * 
                      */
                     bool QuotaIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Services 开通服务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetServices() const;
 
                     /**
                      * 设置开通服务
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Services 开通服务
+                     * @param _services 开通服务
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServices(const std::vector<std::string>& _services);
 
                     /**
                      * 判断参数 Services 是否已赋值
                      * @return Services 是否已赋值
+                     * 
                      */
                     bool ServicesHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FactoryQuota 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFactoryQuota() const;
 
                     /**
                      * 设置商户配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FactoryQuota 商户配额
+                     * @param _factoryQuota 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFactoryQuota(const int64_t& _factoryQuota);
 
                     /**
                      * 判断参数 FactoryQuota 是否已赋值
                      * @return FactoryQuota 是否已赋值
+                     * 
                      */
                     bool FactoryQuotaHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemQuota 商品配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetItemQuota() const;
 
                     /**
                      * 设置商品配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemQuota 商品配额
+                     * @param _itemQuota 商品配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemQuota(const int64_t& _itemQuota);
 
                     /**
                      * 判断参数 ItemQuota 是否已赋值
                      * @return ItemQuota 是否已赋值
+                     * 
                      */
                     bool ItemQuotaHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackQuota 溯源码配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTrackQuota() const;
 
                     /**
                      * 设置溯源码配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrackQuota 溯源码配额
+                     * @param _trackQuota 溯源码配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrackQuota(const int64_t& _trackQuota);
 
                     /**
                      * 判断参数 TrackQuota 是否已赋值
                      * @return TrackQuota 是否已赋值
+                     * 
                      */
                     bool TrackQuotaHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SaleQuota 销售码配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSaleQuota() const;
 
                     /**
                      * 设置销售码配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SaleQuota 销售码配额
+                     * @param _saleQuota 销售码配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSaleQuota(const int64_t& _saleQuota);
 
                     /**
                      * 判断参数 SaleQuota 是否已赋值
                      * @return SaleQuota 是否已赋值
+                     * 
                      */
                     bool SaleQuotaHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChainQuota 上链配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChainQuota() const;
 
                     /**
                      * 设置上链配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChainQuota 上链配额
+                     * @param _chainQuota 上链配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChainQuota(const int64_t& _chainQuota);
 
                     /**
                      * 判断参数 ChainQuota 是否已赋值
                      * @return ChainQuota 是否已赋值
+                     * 
                      */
                     bool ChainQuotaHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskQuota 风控配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRiskQuota() const;
 
                     /**
                      * 设置风控配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskQuota 风控配额
+                     * @param _riskQuota 风控配额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRiskQuota(const int64_t& _riskQuota);
 
                     /**
                      * 判断参数 RiskQuota 是否已赋值
                      * @return RiskQuota 是否已赋值
+                     * 
                      */
                     bool RiskQuotaHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackType 溯源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTrackType() const;
 
                     /**
                      * 设置溯源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrackType 溯源类型
+                     * @param _trackType 溯源类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTrackType(const int64_t& _trackType);
 
                     /**
                      * 判断参数 TrackType 是否已赋值
                      * @return TrackType 是否已赋值
+                     * 
                      */
                     bool TrackTypeHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 开通版本 lite:轻量版, basic:基础版, standard:标准版
+                     * @param _version 开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

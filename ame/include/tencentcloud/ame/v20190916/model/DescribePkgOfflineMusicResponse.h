@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取曲库包中不可用歌曲信息
                      * @return OfflineMusicSet 曲库包中不可用歌曲信息
+                     * 
                      */
                     std::vector<OfflineMusicDetail> GetOfflineMusicSet() const;
 
                     /**
                      * 判断参数 OfflineMusicSet 是否已赋值
                      * @return OfflineMusicSet 是否已赋值
+                     * 
                      */
                     bool OfflineMusicSetHasBeenSet() const;
 
                     /**
                      * 获取返回总量
                      * @return TotalCount 返回总量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

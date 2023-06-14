@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取歌曲位置索引。
                      * @return Index 歌曲位置索引。
+                     * 
                      */
                     int64_t GetIndex() const;
 
                     /**
                      * 设置歌曲位置索引。
-                     * @param Index 歌曲位置索引。
+                     * @param _index 歌曲位置索引。
+                     * 
                      */
                     void SetIndex(const int64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 

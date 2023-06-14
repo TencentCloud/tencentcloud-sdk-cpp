@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取起始时间
                      * @return StartTime 起始时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置起始时间
-                     * @param StartTime 起始时间
+                     * @param _startTime 起始时间
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID
-                     * @param EventBusId 事件集ID
+                     * @param _eventBusId 事件集ID
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取聚合字段
                      * @return GroupField 聚合字段
+                     * 
                      */
                     std::string GetGroupField() const;
 
                     /**
                      * 设置聚合字段
-                     * @param GroupField 聚合字段
+                     * @param _groupField 聚合字段
+                     * 
                      */
                     void SetGroupField(const std::string& _groupField);
 
                     /**
                      * 判断参数 GroupField 是否已赋值
                      * @return GroupField 是否已赋值
+                     * 
                      */
                     bool GroupFieldHasBeenSet() const;
 
                     /**
                      * 获取页数
                      * @return Page 页数
+                     * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置页数
-                     * @param Page 页数
+                     * @param _page 页数
+                     * 
                      */
                     void SetPage(const int64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数据大小
                      * @return Limit 每页数据大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页数据大小
-                     * @param Limit 每页数据大小
+                     * @param _limit 每页数据大小
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取筛选条件
                      * @return Filter 筛选条件
+                     * 
                      */
                     std::vector<LogFilter> GetFilter() const;
 
                     /**
                      * 设置筛选条件
-                     * @param Filter 筛选条件
+                     * @param _filter 筛选条件
+                     * 
                      */
                     void SetFilter(const std::vector<LogFilter>& _filter);
 
                     /**
                      * 判断参数 Filter 是否已赋值
                      * @return Filter 是否已赋值
+                     * 
                      */
                     bool FilterHasBeenSet() const;
 

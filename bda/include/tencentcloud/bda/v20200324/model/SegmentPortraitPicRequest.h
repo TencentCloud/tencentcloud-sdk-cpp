@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return Image 图片 base64 数据，base64 编码后大小不可超过5M。
 图片分辨率须小于2000*2000。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetImage() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置图片 base64 数据，base64 编码后大小不可超过5M。
 图片分辨率须小于2000*2000。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Image 图片 base64 数据，base64 编码后大小不可超过5M。
+                     * @param _image 图片 base64 数据，base64 编码后大小不可超过5M。
 图片分辨率须小于2000*2000。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -81,6 +84,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     std::string GetUrl() const;
 
@@ -91,36 +95,41 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
-                     * @param Url 图片的 Url 。
+                     * @param _url 图片的 Url 。
 Url、Image必须提供一个，如果都提供，只使用 Url。
 图片分辨率须小于2000*2000 ，图片 base64 编码后大小不可超过5M。 
 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  
 非腾讯云存储的Url速度和稳定性可能受一定影响。 
 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
                      * @return RspImgType 返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
+                     * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
                      * 设置返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
-                     * @param RspImgType 返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
+                     * @param _rspImgType 返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
+                     * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
 
                     /**
                      * 判断参数 RspImgType 是否已赋值
                      * @return RspImgType 是否已赋值
+                     * 
                      */
                     bool RspImgTypeHasBeenSet() const;
 
@@ -133,6 +142,7 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 
 取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
 两种模式选择一种传入，默认为GEN。
+                     * 
                      */
                     std::string GetScene() const;
 
@@ -141,16 +151,18 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
 
 取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
 两种模式选择一种传入，默认为GEN。
-                     * @param Scene 适用场景类型。
+                     * @param _scene 适用场景类型。
 
 取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
 两种模式选择一种传入，默认为GEN。
+                     * 
                      */
                     void SetScene(const std::string& _scene);
 
                     /**
                      * 判断参数 Scene 是否已赋值
                      * @return Scene 是否已赋值
+                     * 
                      */
                     bool SceneHasBeenSet() const;
 

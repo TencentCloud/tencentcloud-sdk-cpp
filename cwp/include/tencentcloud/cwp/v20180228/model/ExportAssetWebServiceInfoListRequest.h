@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取查询指定Quuid主机的信息
                      * @return Quuid 查询指定Quuid主机的信息
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置查询指定Quuid主机的信息
-                     * @param Quuid 查询指定Quuid主机的信息
+                     * @param _quuid 查询指定Quuid主机的信息
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -90,6 +93,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -108,7 +112,7 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>User- string - 是否必填：否 - 运行用户</li>
 <li>Name- string - 是否必填：否 - Web服务名：
 1:Tomcat
@@ -122,48 +126,56 @@ namespace TencentCloud
 9:IHS
 10:Tengine</li>
 <li>OsType- string - 是否必填：否 - Windows/linux</li>
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc升序 或 desc降序
                      * @return Order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式，asc升序 或 desc降序
-                     * @param Order 排序方式，asc升序 或 desc降序
+                     * @param _order 排序方式，asc升序 或 desc降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取可选排序：[FirstTime|ProcessCount]
                      * @return By 可选排序：[FirstTime|ProcessCount]
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置可选排序：[FirstTime|ProcessCount]
-                     * @param By 可选排序：[FirstTime|ProcessCount]
+                     * @param _by 可选排序：[FirstTime|ProcessCount]
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取偏移量，页码
                      * @return Offset 偏移量，页码
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，页码
-                     * @param Offset 偏移量，页码
+                     * @param _offset 偏移量，页码
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量
                      * @return Limit 每页数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页数量
-                     * @param Limit 每页数量
+                     * @param _limit 每页数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索的字符串
                      * @return MatchCode 搜索的字符串
+                     * 
                      */
                     std::string GetMatchCode() const;
 
                     /**
                      * 设置搜索的字符串
-                     * @param MatchCode 搜索的字符串
+                     * @param _matchCode 搜索的字符串
+                     * 
                      */
                     void SetMatchCode(const std::string& _matchCode);
 
                     /**
                      * 判断参数 MatchCode 是否已赋值
                      * @return MatchCode 是否已赋值
+                     * 
                      */
                     bool MatchCodeHasBeenSet() const;
 

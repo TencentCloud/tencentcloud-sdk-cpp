@@ -56,20 +56,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioAppearSet 关键词在音频文本结果中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TextAppearInfo> GetAudioAppearSet() const;
 
                     /**
                      * 设置关键词在音频文本结果中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AudioAppearSet 关键词在音频文本结果中的出现位置数组
+                     * @param _audioAppearSet 关键词在音频文本结果中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAudioAppearSet(const std::vector<TextAppearInfo>& _audioAppearSet);
 
                     /**
                      * 判断参数 AudioAppearSet 是否已赋值
                      * @return AudioAppearSet 是否已赋值
+                     * 
                      */
                     bool AudioAppearSetHasBeenSet() const;
 
@@ -78,20 +81,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextAppearSet 关键词在可视文本结果中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TextAppearInfo> GetTextAppearSet() const;
 
                     /**
                      * 设置关键词在可视文本结果中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextAppearSet 关键词在可视文本结果中的出现位置数组
+                     * @param _textAppearSet 关键词在可视文本结果中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTextAppearSet(const std::vector<TextAppearInfo>& _textAppearSet);
 
                     /**
                      * 判断参数 TextAppearSet 是否已赋值
                      * @return TextAppearSet 是否已赋值
+                     * 
                      */
                     bool TextAppearSetHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoAppearSet 关键词在视频信息中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VideoAppearInfo> GetVideoAppearSet() const;
 
                     /**
                      * 设置关键词在视频信息中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VideoAppearSet 关键词在视频信息中的出现位置数组
+                     * @param _videoAppearSet 关键词在视频信息中的出现位置数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVideoAppearSet(const std::vector<VideoAppearInfo>& _videoAppearSet);
 
                     /**
                      * 判断参数 VideoAppearSet 是否已赋值
                      * @return VideoAppearSet 是否已赋值
+                     * 
                      */
                     bool VideoAppearSetHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumePath Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVolumePath() const;
 
                     /**
                      * 设置Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VolumePath Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
+                     * @param _volumePath Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVolumePath(const std::string& _volumePath);
 
                     /**
                      * 判断参数 VolumePath 是否已赋值
                      * @return VolumePath 是否已赋值
+                     * 
                      */
                     bool VolumePathHasBeenSet() const;
 

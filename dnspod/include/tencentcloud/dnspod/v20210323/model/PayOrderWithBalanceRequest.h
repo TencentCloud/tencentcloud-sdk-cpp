@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要支付的大订单号数组
                      * @return BigDealIdList 需要支付的大订单号数组
+                     * 
                      */
                     std::vector<std::string> GetBigDealIdList() const;
 
                     /**
                      * 设置需要支付的大订单号数组
-                     * @param BigDealIdList 需要支付的大订单号数组
+                     * @param _bigDealIdList 需要支付的大订单号数组
+                     * 
                      */
                     void SetBigDealIdList(const std::vector<std::string>& _bigDealIdList);
 
                     /**
                      * 判断参数 BigDealIdList 是否已赋值
                      * @return BigDealIdList 是否已赋值
+                     * 
                      */
                     bool BigDealIdListHasBeenSet() const;
 
                     /**
                      * 获取代金券ID数组。可以从控制台查到拥有的代金券
                      * @return VoucherIdList 代金券ID数组。可以从控制台查到拥有的代金券
+                     * 
                      */
                     std::vector<std::string> GetVoucherIdList() const;
 
                     /**
                      * 设置代金券ID数组。可以从控制台查到拥有的代金券
-                     * @param VoucherIdList 代金券ID数组。可以从控制台查到拥有的代金券
+                     * @param _voucherIdList 代金券ID数组。可以从控制台查到拥有的代金券
+                     * 
                      */
                     void SetVoucherIdList(const std::vector<std::string>& _voucherIdList);
 
                     /**
                      * 判断参数 VoucherIdList 是否已赋值
                      * @return VoucherIdList 是否已赋值
+                     * 
                      */
                     bool VoucherIdListHasBeenSet() const;
 

@@ -47,144 +47,168 @@ namespace TencentCloud
                     /**
                      * 获取规则组ID
                      * @return RuleGroupId 规则组ID
+                     * 
                      */
                     uint64_t GetRuleGroupId() const;
 
                     /**
                      * 设置规则组ID
-                     * @param RuleGroupId 规则组ID
+                     * @param _ruleGroupId 规则组ID
+                     * 
                      */
                     void SetRuleGroupId(const uint64_t& _ruleGroupId);
 
                     /**
                      * 判断参数 RuleGroupId 是否已赋值
                      * @return RuleGroupId 是否已赋值
+                     * 
                      */
                     bool RuleGroupIdHasBeenSet() const;
 
                     /**
                      * 获取订阅人信息
                      * @return Receivers 订阅人信息
+                     * 
                      */
                     std::vector<SubscribeReceiver> GetReceivers() const;
 
                     /**
                      * 设置订阅人信息
-                     * @param Receivers 订阅人信息
+                     * @param _receivers 订阅人信息
+                     * 
                      */
                     void SetReceivers(const std::vector<SubscribeReceiver>& _receivers);
 
                     /**
                      * 判断参数 Receivers 是否已赋值
                      * @return Receivers 是否已赋值
+                     * 
                      */
                     bool ReceiversHasBeenSet() const;
 
                     /**
                      * 获取订阅类型
                      * @return SubscribeType 订阅类型
+                     * 
                      */
                     std::vector<uint64_t> GetSubscribeType() const;
 
                     /**
                      * 设置订阅类型
-                     * @param SubscribeType 订阅类型
+                     * @param _subscribeType 订阅类型
+                     * 
                      */
                     void SetSubscribeType(const std::vector<uint64_t>& _subscribeType);
 
                     /**
                      * 判断参数 SubscribeType 是否已赋值
                      * @return SubscribeType 是否已赋值
+                     * 
                      */
                     bool SubscribeTypeHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取数据库Id
                      * @return DatabaseId 数据库Id
+                     * 
                      */
                     std::string GetDatabaseId() const;
 
                     /**
                      * 设置数据库Id
-                     * @param DatabaseId 数据库Id
+                     * @param _databaseId 数据库Id
+                     * 
                      */
                     void SetDatabaseId(const std::string& _databaseId);
 
                     /**
                      * 判断参数 DatabaseId 是否已赋值
                      * @return DatabaseId 是否已赋值
+                     * 
                      */
                     bool DatabaseIdHasBeenSet() const;
 
                     /**
                      * 获取数据源Id
                      * @return DatasourceId 数据源Id
+                     * 
                      */
                     std::string GetDatasourceId() const;
 
                     /**
                      * 设置数据源Id
-                     * @param DatasourceId 数据源Id
+                     * @param _datasourceId 数据源Id
+                     * 
                      */
                     void SetDatasourceId(const std::string& _datasourceId);
 
                     /**
                      * 判断参数 DatasourceId 是否已赋值
                      * @return DatasourceId 是否已赋值
+                     * 
                      */
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
                      * 获取数据表Id
                      * @return TableId 数据表Id
+                     * 
                      */
                     std::string GetTableId() const;
 
                     /**
                      * 设置数据表Id
-                     * @param TableId 数据表Id
+                     * @param _tableId 数据表Id
+                     * 
                      */
                     void SetTableId(const std::string& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 
                     /**
                      * 获取群机器人webhook信息
                      * @return WebHooks 群机器人webhook信息
+                     * 
                      */
                     std::vector<SubscribeWebHook> GetWebHooks() const;
 
                     /**
                      * 设置群机器人webhook信息
-                     * @param WebHooks 群机器人webhook信息
+                     * @param _webHooks 群机器人webhook信息
+                     * 
                      */
                     void SetWebHooks(const std::vector<SubscribeWebHook>& _webHooks);
 
                     /**
                      * 判断参数 WebHooks 是否已赋值
                      * @return WebHooks 是否已赋值
+                     * 
                      */
                     bool WebHooksHasBeenSet() const;
 

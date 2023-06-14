@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。
                      * @return LoopCount 循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。
+                     * 
                      */
                     int64_t GetLoopCount() const;
 
                     /**
                      * 设置循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。
-                     * @param LoopCount 循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。
+                     * @param _loopCount 循环播放次数。LoopCount 和 EndTime 同时只能有一个生效。默认循环播放次数为一次。如果同时设置了 LoopCount 和 EndTime 参数，优先使用 LoopCount 参数。
+                     * 
                      */
                     void SetLoopCount(const int64_t& _loopCount);
 
                     /**
                      * 判断参数 LoopCount 是否已赋值
                      * @return LoopCount 是否已赋值
+                     * 
                      */
                     bool LoopCountHasBeenSet() const;
 
                     /**
                      * 获取结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return EndTime 结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param EndTime 结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _endTime 结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

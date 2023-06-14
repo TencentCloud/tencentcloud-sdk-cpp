@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取镜像分享时间
                      * @return CreatedTime 镜像分享时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置镜像分享时间
-                     * @param CreatedTime 镜像分享时间
+                     * @param _createdTime 镜像分享时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取镜像分享的账户ID
                      * @return AccountId 镜像分享的账户ID
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置镜像分享的账户ID
-                     * @param AccountId 镜像分享的账户ID
+                     * @param _accountId 镜像分享的账户ID
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 

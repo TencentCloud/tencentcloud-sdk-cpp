@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取访问密钥标识
                      * @return AccessKeyId 访问密钥标识
+                     * 
                      */
                     std::string GetAccessKeyId() const;
 
                     /**
                      * 设置访问密钥标识
-                     * @param AccessKeyId 访问密钥标识
+                     * @param _accessKeyId 访问密钥标识
+                     * 
                      */
                     void SetAccessKeyId(const std::string& _accessKeyId);
 
                     /**
                      * 判断参数 AccessKeyId 是否已赋值
                      * @return AccessKeyId 是否已赋值
+                     * 
                      */
                     bool AccessKeyIdHasBeenSet() const;
 
                     /**
                      * 获取密钥状态，激活（Active）或未激活（Inactive）
                      * @return Status 密钥状态，激活（Active）或未激活（Inactive）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置密钥状态，激活（Active）或未激活（Inactive）
-                     * @param Status 密钥状态，激活（Active）或未激活（Inactive）
+                     * @param _status 密钥状态，激活（Active）或未激活（Inactive）
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

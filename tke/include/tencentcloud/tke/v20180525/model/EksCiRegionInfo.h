@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取地域别名，形如gz
                      * @return Alias 地域别名，形如gz
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置地域别名，形如gz
-                     * @param Alias 地域别名，形如gz
+                     * @param _alias 地域别名，形如gz
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取地域名，形如ap-guangzhou
                      * @return RegionName 地域名，形如ap-guangzhou
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名，形如ap-guangzhou
-                     * @param RegionName 地域名，形如ap-guangzhou
+                     * @param _regionName 地域名，形如ap-guangzhou
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取备份文件名称
                      * @return FileName 备份文件名称
+                     * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置备份文件名称
-                     * @param FileName 备份文件名称
+                     * @param _fileName 备份文件名称
+                     * 
                      */
                     void SetFileName(const std::string& _fileName);
 
                     /**
                      * 判断参数 FileName 是否已赋值
                      * @return FileName 是否已赋值
+                     * 
                      */
                     bool FileNameHasBeenSet() const;
 
                     /**
                      * 获取备份文件大小，单位B，如果为0，表示无效
                      * @return FileSize 备份文件大小，单位B，如果为0，表示无效
+                     * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
                      * 设置备份文件大小，单位B，如果为0，表示无效
-                     * @param FileSize 备份文件大小，单位B，如果为0，表示无效
+                     * @param _fileSize 备份文件大小，单位B，如果为0，表示无效
+                     * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
                     /**
                      * 获取备份文件外网下载地址（6小时）
                      * @return DownloadUrl 备份文件外网下载地址（6小时）
+                     * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
                      * 设置备份文件外网下载地址（6小时）
-                     * @param DownloadUrl 备份文件外网下载地址（6小时）
+                     * @param _downloadUrl 备份文件外网下载地址（6小时）
+                     * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
 
                     /**
                      * 判断参数 DownloadUrl 是否已赋值
                      * @return DownloadUrl 是否已赋值
+                     * 
                      */
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取备份文件内网下载地址（6小时）
                      * @return InnerDownloadUrl 备份文件内网下载地址（6小时）
+                     * 
                      */
                     std::string GetInnerDownloadUrl() const;
 
                     /**
                      * 设置备份文件内网下载地址（6小时）
-                     * @param InnerDownloadUrl 备份文件内网下载地址（6小时）
+                     * @param _innerDownloadUrl 备份文件内网下载地址（6小时）
+                     * 
                      */
                     void SetInnerDownloadUrl(const std::string& _innerDownloadUrl);
 
                     /**
                      * 判断参数 InnerDownloadUrl 是否已赋值
                      * @return InnerDownloadUrl 是否已赋值
+                     * 
                      */
                     bool InnerDownloadUrlHasBeenSet() const;
 

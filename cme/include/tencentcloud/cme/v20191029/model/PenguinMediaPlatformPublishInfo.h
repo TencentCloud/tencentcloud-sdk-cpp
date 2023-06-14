@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取视频发布标题。
                      * @return Title 视频发布标题。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置视频发布标题。
-                     * @param Title 视频发布标题。
+                     * @param _title 视频发布标题。
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取视频发布描述信息。
                      * @return Description 视频发布描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置视频发布描述信息。
-                     * @param Description 视频发布描述信息。
+                     * @param _description 视频发布描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取视频标签。
                      * @return Tags 视频标签。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置视频标签。
-                     * @param Tags 视频标签。
+                     * @param _tags 视频标签。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
                      * @return Category 视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
+                     * 
                      */
                     int64_t GetCategory() const;
 
                     /**
                      * 设置视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
-                     * @param Category 视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
+                     * @param _category 视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。
+                     * 
                      */
                     void SetCategory(const int64_t& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 

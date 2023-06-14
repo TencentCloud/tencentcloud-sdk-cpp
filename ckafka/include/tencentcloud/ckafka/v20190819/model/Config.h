@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retention 消息保留时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRetention() const;
 
                     /**
                      * 设置消息保留时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Retention 消息保留时间
+                     * @param _retention 消息保留时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRetention(const int64_t& _retention);
 
                     /**
                      * 判断参数 Retention 是否已赋值
                      * @return Retention 是否已赋值
+                     * 
                      */
                     bool RetentionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinInsyncReplicas 最小同步复制数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMinInsyncReplicas() const;
 
                     /**
                      * 设置最小同步复制数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinInsyncReplicas 最小同步复制数
+                     * @param _minInsyncReplicas 最小同步复制数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinInsyncReplicas(const int64_t& _minInsyncReplicas);
 
                     /**
                      * 判断参数 MinInsyncReplicas 是否已赋值
                      * @return MinInsyncReplicas 是否已赋值
+                     * 
                      */
                     bool MinInsyncReplicasHasBeenSet() const;
 
@@ -97,6 +103,7 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                      * @return CleanUpPolicy 日志清理模式，默认 delete。
 delete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCleanUpPolicy() const;
 
@@ -104,15 +111,17 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
                      * 设置日志清理模式，默认 delete。
 delete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CleanUpPolicy 日志清理模式，默认 delete。
+                     * @param _cleanUpPolicy 日志清理模式，默认 delete。
 delete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCleanUpPolicy(const std::string& _cleanUpPolicy);
 
                     /**
                      * 判断参数 CleanUpPolicy 是否已赋值
                      * @return CleanUpPolicy 是否已赋值
+                     * 
                      */
                     bool CleanUpPolicyHasBeenSet() const;
 
@@ -121,20 +130,23 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentMs Segment 分片滚动的时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
                      * 设置Segment 分片滚动的时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SegmentMs Segment 分片滚动的时长
+                     * @param _segmentMs Segment 分片滚动的时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSegmentMs(const int64_t& _segmentMs);
 
                     /**
                      * 判断参数 SegmentMs 是否已赋值
                      * @return SegmentMs 是否已赋值
+                     * 
                      */
                     bool SegmentMsHasBeenSet() const;
 
@@ -143,20 +155,23 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UncleanLeaderElectionEnable 0表示 false。 1表示 true。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUncleanLeaderElectionEnable() const;
 
                     /**
                      * 设置0表示 false。 1表示 true。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UncleanLeaderElectionEnable 0表示 false。 1表示 true。
+                     * @param _uncleanLeaderElectionEnable 0表示 false。 1表示 true。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
 
                     /**
                      * 判断参数 UncleanLeaderElectionEnable 是否已赋值
                      * @return UncleanLeaderElectionEnable 是否已赋值
+                     * 
                      */
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
@@ -165,20 +180,23 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentBytes Segment 分片滚动的字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSegmentBytes() const;
 
                     /**
                      * 设置Segment 分片滚动的字节数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SegmentBytes Segment 分片滚动的字节数
+                     * @param _segmentBytes Segment 分片滚动的字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSegmentBytes(const int64_t& _segmentBytes);
 
                     /**
                      * 判断参数 SegmentBytes 是否已赋值
                      * @return SegmentBytes 是否已赋值
+                     * 
                      */
                     bool SegmentBytesHasBeenSet() const;
 
@@ -187,20 +205,23 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxMessageBytes 最大消息字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxMessageBytes() const;
 
                     /**
                      * 设置最大消息字节数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxMessageBytes 最大消息字节数
+                     * @param _maxMessageBytes 最大消息字节数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxMessageBytes(const int64_t& _maxMessageBytes);
 
                     /**
                      * 判断参数 MaxMessageBytes 是否已赋值
                      * @return MaxMessageBytes 是否已赋值
+                     * 
                      */
                     bool MaxMessageBytesHasBeenSet() const;
 
@@ -209,20 +230,23 @@ delete：日志按保存时间删除；compact：日志按 key 压缩；compact,
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionBytes 消息保留文件大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRetentionBytes() const;
 
                     /**
                      * 设置消息保留文件大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RetentionBytes 消息保留文件大小
+                     * @param _retentionBytes 消息保留文件大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRetentionBytes(const int64_t& _retentionBytes);
 
                     /**
                      * 判断参数 RetentionBytes 是否已赋值
                      * @return RetentionBytes 是否已赋值
+                     * 
                      */
                     bool RetentionBytesHasBeenSet() const;
 

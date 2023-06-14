@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取Vpc实例ID，例如：vpc-f1xjkw1b。
                      * @return VpcId Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置Vpc实例ID，例如：vpc-f1xjkw1b。
-                     * @param VpcId Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * @param _vpcId Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网实例ID，例如：subnet-bthucmmy。
                      * @return SubnetId 子网实例ID，例如：subnet-bthucmmy。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID，例如：subnet-bthucmmy。
-                     * @param SubnetId 子网实例ID，例如：subnet-bthucmmy。
+                     * @param _subnetId 子网实例ID，例如：subnet-bthucmmy。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取当前已使用的IP总数。
                      * @return Ip 当前已使用的IP总数。
+                     * 
                      */
                     uint64_t GetIp() const;
 
                     /**
                      * 设置当前已使用的IP总数。
-                     * @param Ip 当前已使用的IP总数。
+                     * @param _ip 当前已使用的IP总数。
+                     * 
                      */
                     void SetIp(const uint64_t& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取资源统计信息。
                      * @return ResourceStatisticsItemSet 资源统计信息。
+                     * 
                      */
                     std::vector<ResourceStatisticsItem> GetResourceStatisticsItemSet() const;
 
                     /**
                      * 设置资源统计信息。
-                     * @param ResourceStatisticsItemSet 资源统计信息。
+                     * @param _resourceStatisticsItemSet 资源统计信息。
+                     * 
                      */
                     void SetResourceStatisticsItemSet(const std::vector<ResourceStatisticsItem>& _resourceStatisticsItemSet);
 
                     /**
                      * 判断参数 ResourceStatisticsItemSet 是否已赋值
                      * @return ResourceStatisticsItemSet 是否已赋值
+                     * 
                      */
                     bool ResourceStatisticsItemSetHasBeenSet() const;
 

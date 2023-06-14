@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取私有域ID, zone-xxxxxx
                      * @return ZoneId 私有域ID, zone-xxxxxx
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取私有域名
                      * @return Domain 私有域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

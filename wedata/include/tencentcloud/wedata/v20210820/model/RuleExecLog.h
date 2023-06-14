@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Finished 是否完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetFinished() const;
 
                     /**
                      * 设置是否完成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Finished 是否完成
+                     * @param _finished 是否完成
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinished(const bool& _finished);
 
                     /**
                      * 判断参数 Finished 是否已赋值
                      * @return Finished 是否已赋值
+                     * 
                      */
                     bool FinishedHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Log 内容
+                     * @param _log 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 

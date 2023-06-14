@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
                      * @return AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
-                     * @param AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * @param _accountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
                     /**
                      * 获取密码，密码长度范围为8到64个字符
                      * @return AccountPassword 密码，密码长度范围为8到64个字符
+                     * 
                      */
                     std::string GetAccountPassword() const;
 
                     /**
                      * 设置密码，密码长度范围为8到64个字符
-                     * @param AccountPassword 密码，密码长度范围为8到64个字符
+                     * @param _accountPassword 密码，密码长度范围为8到64个字符
+                     * 
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
                     /**
                      * 判断参数 AccountPassword 是否已赋值
                      * @return AccountPassword 是否已赋值
+                     * 
                      */
                     bool AccountPasswordHasBeenSet() const;
 
                     /**
                      * 获取主机
                      * @return Host 主机
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置主机
-                     * @param Host 主机
+                     * @param _host 主机
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取用户最大连接数，不能大于10240
                      * @return MaxUserConnections 用户最大连接数，不能大于10240
+                     * 
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
                      * 设置用户最大连接数，不能大于10240
-                     * @param MaxUserConnections 用户最大连接数，不能大于10240
+                     * @param _maxUserConnections 用户最大连接数，不能大于10240
+                     * 
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
 
                     /**
                      * 判断参数 MaxUserConnections 是否已赋值
                      * @return MaxUserConnections 是否已赋值
+                     * 
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 

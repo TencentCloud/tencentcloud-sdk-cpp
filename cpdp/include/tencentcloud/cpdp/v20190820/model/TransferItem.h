@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InAcctType STRING(10)，入账类型（02: 会员充值; 03: 资金挂账）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInAcctType() const;
 
                     /**
                      * 设置STRING(10)，入账类型（02: 会员充值; 03: 资金挂账）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InAcctType STRING(10)，入账类型（02: 会员充值; 03: 资金挂账）
+                     * @param _inAcctType STRING(10)，入账类型（02: 会员充值; 03: 资金挂账）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInAcctType(const std::string& _inAcctType);
 
                     /**
                      * 判断参数 InAcctType 是否已赋值
                      * @return InAcctType 是否已赋值
+                     * 
                      */
                     bool InAcctTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranNetMemberCode STRING(32)，交易网会员代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranNetMemberCode() const;
 
                     /**
                      * 设置STRING(32)，交易网会员代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranNetMemberCode STRING(32)，交易网会员代码
+                     * @param _tranNetMemberCode STRING(32)，交易网会员代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranNetMemberCode(const std::string& _tranNetMemberCode);
 
                     /**
                      * 判断参数 TranNetMemberCode 是否已赋值
                      * @return TranNetMemberCode 是否已赋值
+                     * 
                      */
                     bool TranNetMemberCodeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAcctNo STRING(50)，见证子帐户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 设置STRING(50)，见证子帐户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubAcctNo STRING(50)，见证子帐户的帐号
+                     * @param _subAcctNo STRING(50)，见证子帐户的帐号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranAmt STRING(20)，入金金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranAmt() const;
 
                     /**
                      * 设置STRING(20)，入金金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranAmt STRING(20)，入金金额
+                     * @param _tranAmt STRING(20)，入金金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranAmt(const std::string& _tranAmt);
 
                     /**
                      * 判断参数 TranAmt 是否已赋值
                      * @return TranAmt 是否已赋值
+                     * 
                      */
                     bool TranAmtHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InAcctNo STRING(50)，入金账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInAcctNo() const;
 
                     /**
                      * 设置STRING(50)，入金账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InAcctNo STRING(50)，入金账号
+                     * @param _inAcctNo STRING(50)，入金账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInAcctNo(const std::string& _inAcctNo);
 
                     /**
                      * 判断参数 InAcctNo 是否已赋值
                      * @return InAcctNo 是否已赋值
+                     * 
                      */
                     bool InAcctNoHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InAcctName STRING(150)，入金账户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInAcctName() const;
 
                     /**
                      * 设置STRING(150)，入金账户名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InAcctName STRING(150)，入金账户名称
+                     * @param _inAcctName STRING(150)，入金账户名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInAcctName(const std::string& _inAcctName);
 
                     /**
                      * 判断参数 InAcctName 是否已赋值
                      * @return InAcctName 是否已赋值
+                     * 
                      */
                     bool InAcctNameHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ccy STRING(3)，币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCcy() const;
 
                     /**
                      * 设置STRING(3)，币种
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ccy STRING(3)，币种
+                     * @param _ccy STRING(3)，币种
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCcy(const std::string& _ccy);
 
                     /**
                      * 判断参数 Ccy 是否已赋值
                      * @return Ccy 是否已赋值
+                     * 
                      */
                     bool CcyHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountingDate STRING(8)，会计日期（即银行主机记账日期）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountingDate() const;
 
                     /**
                      * 设置STRING(8)，会计日期（即银行主机记账日期）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountingDate STRING(8)，会计日期（即银行主机记账日期）
+                     * @param _accountingDate STRING(8)，会计日期（即银行主机记账日期）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountingDate(const std::string& _accountingDate);
 
                     /**
                      * 判断参数 AccountingDate 是否已赋值
                      * @return AccountingDate 是否已赋值
+                     * 
                      */
                     bool AccountingDateHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BankName STRING(150)，银行名称（付款账户银行名称）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBankName() const;
 
                     /**
                      * 设置STRING(150)，银行名称（付款账户银行名称）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BankName STRING(150)，银行名称（付款账户银行名称）
+                     * @param _bankName STRING(150)，银行名称（付款账户银行名称）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBankName(const std::string& _bankName);
 
                     /**
                      * 判断参数 BankName 是否已赋值
                      * @return BankName 是否已赋值
+                     * 
                      */
                     bool BankNameHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark STRING(300)，转账备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置STRING(300)，转账备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark STRING(300)，转账备注
+                     * @param _remark STRING(300)，转账备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrontSeqNo STRING(52)，见证系统流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrontSeqNo() const;
 
                     /**
                      * 设置STRING(52)，见证系统流水号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrontSeqNo STRING(52)，见证系统流水号
+                     * @param _frontSeqNo STRING(52)，见证系统流水号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrontSeqNo(const std::string& _frontSeqNo);
 
                     /**
                      * 判断参数 FrontSeqNo 是否已赋值
                      * @return FrontSeqNo 是否已赋值
+                     * 
                      */
                     bool FrontSeqNoHasBeenSet() const;
 

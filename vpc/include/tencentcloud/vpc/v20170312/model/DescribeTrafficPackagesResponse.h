@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取按照条件查询出来的流量包数量
                      * @return TotalCount 按照条件查询出来的流量包数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取流量包信息
                      * @return TrafficPackageSet 流量包信息
+                     * 
                      */
                     std::vector<TrafficPackage> GetTrafficPackageSet() const;
 
                     /**
                      * 判断参数 TrafficPackageSet 是否已赋值
                      * @return TrafficPackageSet 是否已赋值
+                     * 
                      */
                     bool TrafficPackageSetHasBeenSet() const;
 

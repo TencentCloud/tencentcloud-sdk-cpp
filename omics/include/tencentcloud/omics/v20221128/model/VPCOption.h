@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取子网可用区。
                      * @return SubnetZone 子网可用区。
+                     * 
                      */
                     std::string GetSubnetZone() const;
 
                     /**
                      * 设置子网可用区。
-                     * @param SubnetZone 子网可用区。
+                     * @param _subnetZone 子网可用区。
+                     * 
                      */
                     void SetSubnetZone(const std::string& _subnetZone);
 
                     /**
                      * 判断参数 SubnetZone 是否已赋值
                      * @return SubnetZone 是否已赋值
+                     * 
                      */
                     bool SubnetZoneHasBeenSet() const;
 
                     /**
                      * 获取私有网络CIDR。
                      * @return VPCCIDRBlock 私有网络CIDR。
+                     * 
                      */
                     std::string GetVPCCIDRBlock() const;
 
                     /**
                      * 设置私有网络CIDR。
-                     * @param VPCCIDRBlock 私有网络CIDR。
+                     * @param _vPCCIDRBlock 私有网络CIDR。
+                     * 
                      */
                     void SetVPCCIDRBlock(const std::string& _vPCCIDRBlock);
 
                     /**
                      * 判断参数 VPCCIDRBlock 是否已赋值
                      * @return VPCCIDRBlock 是否已赋值
+                     * 
                      */
                     bool VPCCIDRBlockHasBeenSet() const;
 
                     /**
                      * 获取子网CIDR。
                      * @return SubnetCIDRBlock 子网CIDR。
+                     * 
                      */
                     std::string GetSubnetCIDRBlock() const;
 
                     /**
                      * 设置子网CIDR。
-                     * @param SubnetCIDRBlock 子网CIDR。
+                     * @param _subnetCIDRBlock 子网CIDR。
+                     * 
                      */
                     void SetSubnetCIDRBlock(const std::string& _subnetCIDRBlock);
 
                     /**
                      * 判断参数 SubnetCIDRBlock 是否已赋值
                      * @return SubnetCIDRBlock 是否已赋值
+                     * 
                      */
                     bool SubnetCIDRBlockHasBeenSet() const;
 

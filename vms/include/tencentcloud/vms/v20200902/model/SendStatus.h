@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取标识本次发送 ID，标识一次下发记录。
                      * @return CallId 标识本次发送 ID，标识一次下发记录。
+                     * 
                      */
                     std::string GetCallId() const;
 
                     /**
                      * 设置标识本次发送 ID，标识一次下发记录。
-                     * @param CallId 标识本次发送 ID，标识一次下发记录。
+                     * @param _callId 标识本次发送 ID，标识一次下发记录。
+                     * 
                      */
                     void SetCallId(const std::string& _callId);
 
                     /**
                      * 判断参数 CallId 是否已赋值
                      * @return CallId 是否已赋值
+                     * 
                      */
                     bool CallIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionContext 用户的 session 内容，腾讯 server 回包中会原样返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置用户的 session 内容，腾讯 server 回包中会原样返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionContext 用户的 session 内容，腾讯 server 回包中会原样返回。
+                     * @param _sessionContext 用户的 session 内容，腾讯 server 回包中会原样返回。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 

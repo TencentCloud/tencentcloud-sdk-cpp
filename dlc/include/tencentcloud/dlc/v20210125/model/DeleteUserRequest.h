@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要删除的用户的Id
                      * @return UserIds 需要删除的用户的Id
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置需要删除的用户的Id
-                     * @param UserIds 需要删除的用户的Id
+                     * @param _userIds 需要删除的用户的Id
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

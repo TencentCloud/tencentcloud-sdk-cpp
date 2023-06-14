@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取重试次数
                      * @return RetryNum 重试次数
+                     * 
                      */
                     int64_t GetRetryNum() const;
 
                     /**
                      * 设置重试次数
-                     * @param RetryNum 重试次数
+                     * @param _retryNum 重试次数
+                     * 
                      */
                     void SetRetryNum(const int64_t& _retryNum);
 
                     /**
                      * 判断参数 RetryNum 是否已赋值
                      * @return RetryNum 是否已赋值
+                     * 
                      */
                     bool RetryNumHasBeenSet() const;
 

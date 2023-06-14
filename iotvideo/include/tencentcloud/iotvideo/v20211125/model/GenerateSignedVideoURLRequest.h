@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取视频播放原始URL地址
                      * @return VideoURL 视频播放原始URL地址
+                     * 
                      */
                     std::string GetVideoURL() const;
 
                     /**
                      * 设置视频播放原始URL地址
-                     * @param VideoURL 视频播放原始URL地址
+                     * @param _videoURL 视频播放原始URL地址
+                     * 
                      */
                     void SetVideoURL(const std::string& _videoURL);
 
                     /**
                      * 判断参数 VideoURL 是否已赋值
                      * @return VideoURL 是否已赋值
+                     * 
                      */
                     bool VideoURLHasBeenSet() const;
 
                     /**
                      * 获取播放链接过期时间
                      * @return ExpireTime 播放链接过期时间
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置播放链接过期时间
-                     * @param ExpireTime 播放链接过期时间
+                     * @param _expireTime 播放链接过期时间
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

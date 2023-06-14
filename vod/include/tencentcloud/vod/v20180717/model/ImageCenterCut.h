@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Type 图片的裁剪模式，可选 Circle 和 Rectangle。
 <li>Circle ： 内切圆裁剪，输出图片半径为 Radius。</li>
 <li>Rectangle ： 矩形裁剪，输出图片宽为 Width ， 高为 Height。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -60,69 +61,80 @@ namespace TencentCloud
                      * 设置图片的裁剪模式，可选 Circle 和 Rectangle。
 <li>Circle ： 内切圆裁剪，输出图片半径为 Radius。</li>
 <li>Rectangle ： 矩形裁剪，输出图片宽为 Width ， 高为 Height。</li>
-                     * @param Type 图片的裁剪模式，可选 Circle 和 Rectangle。
+                     * @param _type 图片的裁剪模式，可选 Circle 和 Rectangle。
 <li>Circle ： 内切圆裁剪，输出图片半径为 Radius。</li>
 <li>Rectangle ： 矩形裁剪，输出图片宽为 Width ， 高为 Height。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取输出图片的宽度，单位为像素，当 Type 取值为 Rectangle 时有效。
                      * @return Width 输出图片的宽度，单位为像素，当 Type 取值为 Rectangle 时有效。
+                     * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置输出图片的宽度，单位为像素，当 Type 取值为 Rectangle 时有效。
-                     * @param Width 输出图片的宽度，单位为像素，当 Type 取值为 Rectangle 时有效。
+                     * @param _width 输出图片的宽度，单位为像素，当 Type 取值为 Rectangle 时有效。
+                     * 
                      */
                     void SetWidth(const int64_t& _width);
 
                     /**
                      * 判断参数 Width 是否已赋值
                      * @return Width 是否已赋值
+                     * 
                      */
                     bool WidthHasBeenSet() const;
 
                     /**
                      * 获取输出图片的高度，单位为像素，当 Type 取值为 Rectangle 时有效。
                      * @return Height 输出图片的高度，单位为像素，当 Type 取值为 Rectangle 时有效。
+                     * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置输出图片的高度，单位为像素，当 Type 取值为 Rectangle 时有效。
-                     * @param Height 输出图片的高度，单位为像素，当 Type 取值为 Rectangle 时有效。
+                     * @param _height 输出图片的高度，单位为像素，当 Type 取值为 Rectangle 时有效。
+                     * 
                      */
                     void SetHeight(const int64_t& _height);
 
                     /**
                      * 判断参数 Height 是否已赋值
                      * @return Height 是否已赋值
+                     * 
                      */
                     bool HeightHasBeenSet() const;
 
                     /**
                      * 获取输出图片的半径，单位为像素，当 Type 取值为 Circle 时有效。
                      * @return Radius 输出图片的半径，单位为像素，当 Type 取值为 Circle 时有效。
+                     * 
                      */
                     int64_t GetRadius() const;
 
                     /**
                      * 设置输出图片的半径，单位为像素，当 Type 取值为 Circle 时有效。
-                     * @param Radius 输出图片的半径，单位为像素，当 Type 取值为 Circle 时有效。
+                     * @param _radius 输出图片的半径，单位为像素，当 Type 取值为 Circle 时有效。
+                     * 
                      */
                     void SetRadius(const int64_t& _radius);
 
                     /**
                      * 判断参数 Radius 是否已赋值
                      * @return Radius 是否已赋值
+                     * 
                      */
                     bool RadiusHasBeenSet() const;
 

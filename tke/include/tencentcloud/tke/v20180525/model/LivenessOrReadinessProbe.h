@@ -55,20 +55,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Probe 探针参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Probe GetProbe() const;
 
                     /**
                      * 设置探针参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Probe 探针参数
+                     * @param _probe 探针参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProbe(const Probe& _probe);
 
                     /**
                      * 判断参数 Probe 是否已赋值
                      * @return Probe 是否已赋值
+                     * 
                      */
                     bool ProbeHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpGet HttpGet检测参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HttpGet GetHttpGet() const;
 
                     /**
                      * 设置HttpGet检测参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpGet HttpGet检测参数
+                     * @param _httpGet HttpGet检测参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttpGet(const HttpGet& _httpGet);
 
                     /**
                      * 判断参数 HttpGet 是否已赋值
                      * @return HttpGet 是否已赋值
+                     * 
                      */
                     bool HttpGetHasBeenSet() const;
 
@@ -99,20 +105,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exec 容器内检测命令参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Exec GetExec() const;
 
                     /**
                      * 设置容器内检测命令参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Exec 容器内检测命令参数
+                     * @param _exec 容器内检测命令参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExec(const Exec& _exec);
 
                     /**
                      * 判断参数 Exec 是否已赋值
                      * @return Exec 是否已赋值
+                     * 
                      */
                     bool ExecHasBeenSet() const;
 
@@ -121,20 +130,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcpSocket TcpSocket检测的端口参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TcpSocket GetTcpSocket() const;
 
                     /**
                      * 设置TcpSocket检测的端口参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TcpSocket TcpSocket检测的端口参数
+                     * @param _tcpSocket TcpSocket检测的端口参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTcpSocket(const TcpSocket& _tcpSocket);
 
                     /**
                      * 判断参数 TcpSocket 是否已赋值
                      * @return TcpSocket 是否已赋值
+                     * 
                      */
                     bool TcpSocketHasBeenSet() const;
 

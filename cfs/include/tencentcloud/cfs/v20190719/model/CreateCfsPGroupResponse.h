@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取权限组名字
                      * @return Name 权限组名字
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取权限组描述信息
                      * @return DescInfo 权限组描述信息
+                     * 
                      */
                     std::string GetDescInfo() const;
 
                     /**
                      * 判断参数 DescInfo 是否已赋值
                      * @return DescInfo 是否已赋值
+                     * 
                      */
                     bool DescInfoHasBeenSet() const;
 
                     /**
                      * 获取已经与该权限组绑定的文件系统个数
                      * @return BindCfsNum 已经与该权限组绑定的文件系统个数
+                     * 
                      */
                     int64_t GetBindCfsNum() const;
 
                     /**
                      * 判断参数 BindCfsNum 是否已赋值
                      * @return BindCfsNum 是否已赋值
+                     * 
                      */
                     bool BindCfsNumHasBeenSet() const;
 
                     /**
                      * 获取权限组创建时间
                      * @return CDate 权限组创建时间
+                     * 
                      */
                     std::string GetCDate() const;
 
                     /**
                      * 判断参数 CDate 是否已赋值
                      * @return CDate 是否已赋值
+                     * 
                      */
                     bool CDateHasBeenSet() const;
 

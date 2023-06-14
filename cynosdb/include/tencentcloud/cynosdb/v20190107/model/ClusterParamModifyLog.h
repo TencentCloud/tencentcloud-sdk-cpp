@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取参数名称
                      * @return ParamName 参数名称
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名称
-                     * @param ParamName 参数名称
+                     * @param _paramName 参数名称
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取当前值
                      * @return CurrentValue 当前值
+                     * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
                      * 设置当前值
-                     * @param CurrentValue 当前值
+                     * @param _currentValue 当前值
+                     * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
                     /**
                      * 判断参数 CurrentValue 是否已赋值
                      * @return CurrentValue 是否已赋值
+                     * 
                      */
                     bool CurrentValueHasBeenSet() const;
 
                     /**
                      * 获取修改后的值
                      * @return UpdateValue 修改后的值
+                     * 
                      */
                     std::string GetUpdateValue() const;
 
                     /**
                      * 设置修改后的值
-                     * @param UpdateValue 修改后的值
+                     * @param _updateValue 修改后的值
+                     * 
                      */
                     void SetUpdateValue(const std::string& _updateValue);
 
                     /**
                      * 判断参数 UpdateValue 是否已赋值
                      * @return UpdateValue 是否已赋值
+                     * 
                      */
                     bool UpdateValueHasBeenSet() const;
 
                     /**
                      * 获取修改状态
                      * @return Status 修改状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置修改状态
-                     * @param Status 修改状态
+                     * @param _status 修改状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return UpdateTime 更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * @param _updateTime 更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

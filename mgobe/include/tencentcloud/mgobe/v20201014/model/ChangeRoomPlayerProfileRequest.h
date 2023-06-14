@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取游戏资源Id。
                      * @return GameId 游戏资源Id。
+                     * 
                      */
                     std::string GetGameId() const;
 
                     /**
                      * 设置游戏资源Id。
-                     * @param GameId 游戏资源Id。
+                     * @param _gameId 游戏资源Id。
+                     * 
                      */
                     void SetGameId(const std::string& _gameId);
 
                     /**
                      * 判断参数 GameId 是否已赋值
                      * @return GameId 是否已赋值
+                     * 
                      */
                     bool GameIdHasBeenSet() const;
 
                     /**
                      * 获取发起修改的玩家Id。
                      * @return PlayerId 发起修改的玩家Id。
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置发起修改的玩家Id。
-                     * @param PlayerId 发起修改的玩家Id。
+                     * @param _playerId 发起修改的玩家Id。
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 
                     /**
                      * 获取需要修改的玩家自定义属性。
                      * @return CustomProfile 需要修改的玩家自定义属性。
+                     * 
                      */
                     std::string GetCustomProfile() const;
 
                     /**
                      * 设置需要修改的玩家自定义属性。
-                     * @param CustomProfile 需要修改的玩家自定义属性。
+                     * @param _customProfile 需要修改的玩家自定义属性。
+                     * 
                      */
                     void SetCustomProfile(const std::string& _customProfile);
 
                     /**
                      * 判断参数 CustomProfile 是否已赋值
                      * @return CustomProfile 是否已赋值
+                     * 
                      */
                     bool CustomProfileHasBeenSet() const;
 

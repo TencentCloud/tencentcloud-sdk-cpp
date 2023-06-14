@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总使用明细数
                      * @return Total 总使用明细数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取资源包明细说明
                      * @return Detail 资源包明细说明
+                     * 
                      */
                     std::vector<PackageDetail> GetDetail() const;
 
                     /**
                      * 判断参数 Detail 是否已赋值
                      * @return Detail 是否已赋值
+                     * 
                      */
                     bool DetailHasBeenSet() const;
 

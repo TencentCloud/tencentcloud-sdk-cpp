@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取用户的手机号
                      * @return PhoneNum 用户的手机号
+                     * 
                      */
                     std::string GetPhoneNum() const;
 
                     /**
                      * 设置用户的手机号
-                     * @param PhoneNum 用户的手机号
+                     * @param _phoneNum 用户的手机号
+                     * 
                      */
                     void SetPhoneNum(const std::string& _phoneNum);
 
                     /**
                      * 判断参数 PhoneNum 是否已赋值
                      * @return PhoneNum 是否已赋值
+                     * 
                      */
                     bool PhoneNumHasBeenSet() const;
 
                     /**
                      * 获取用户的微信OpenID
                      * @return Openid 用户的微信OpenID
+                     * 
                      */
                     std::string GetOpenid() const;
 
                     /**
                      * 设置用户的微信OpenID
-                     * @param Openid 用户的微信OpenID
+                     * @param _openid 用户的微信OpenID
+                     * 
                      */
                     void SetOpenid(const std::string& _openid);
 
                     /**
                      * 判断参数 Openid 是否已赋值
                      * @return Openid 是否已赋值
+                     * 
                      */
                     bool OpenidHasBeenSet() const;
 
                     /**
                      * 获取用户移动设备的客户端IP
                      * @return IP 用户移动设备的客户端IP
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置用户移动设备的客户端IP
-                     * @param IP 用户移动设备的客户端IP
+                     * @param _iP 用户移动设备的客户端IP
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取用户WiFi的BSSID
                      * @return WiFiBssid 用户WiFi的BSSID
+                     * 
                      */
                     std::string GetWiFiBssid() const;
 
                     /**
                      * 设置用户WiFi的BSSID
-                     * @param WiFiBssid 用户WiFi的BSSID
+                     * @param _wiFiBssid 用户WiFi的BSSID
+                     * 
                      */
                     void SetWiFiBssid(const std::string& _wiFiBssid);
 
                     /**
                      * 判断参数 WiFiBssid 是否已赋值
                      * @return WiFiBssid 是否已赋值
+                     * 
                      */
                     bool WiFiBssidHasBeenSet() const;
 
                     /**
                      * 获取用户Android设备的IMEI
                      * @return IMEI 用户Android设备的IMEI
+                     * 
                      */
                     std::string GetIMEI() const;
 
                     /**
                      * 设置用户Android设备的IMEI
-                     * @param IMEI 用户Android设备的IMEI
+                     * @param _iMEI 用户Android设备的IMEI
+                     * 
                      */
                     void SetIMEI(const std::string& _iMEI);
 
                     /**
                      * 判断参数 IMEI 是否已赋值
                      * @return IMEI 是否已赋值
+                     * 
                      */
                     bool IMEIHasBeenSet() const;
 
                     /**
                      * 获取用户Android设备的OAID
                      * @return OAID 用户Android设备的OAID
+                     * 
                      */
                     std::string GetOAID() const;
 
                     /**
                      * 设置用户Android设备的OAID
-                     * @param OAID 用户Android设备的OAID
+                     * @param _oAID 用户Android设备的OAID
+                     * 
                      */
                     void SetOAID(const std::string& _oAID);
 
                     /**
                      * 判断参数 OAID 是否已赋值
                      * @return OAID 是否已赋值
+                     * 
                      */
                     bool OAIDHasBeenSet() const;
 
                     /**
                      * 获取用户iOS设备的IDFA
                      * @return IDFA 用户iOS设备的IDFA
+                     * 
                      */
                     std::string GetIDFA() const;
 
                     /**
                      * 设置用户iOS设备的IDFA
-                     * @param IDFA 用户iOS设备的IDFA
+                     * @param _iDFA 用户iOS设备的IDFA
+                     * 
                      */
                     void SetIDFA(const std::string& _iDFA);
 
                     /**
                      * 判断参数 IDFA 是否已赋值
                      * @return IDFA 是否已赋值
+                     * 
                      */
                     bool IDFAHasBeenSet() const;
 

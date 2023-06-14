@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例列表
                      * @return InstanceSet 实例列表
+                     * 
                      */
                     std::vector<SnapshotInstance> GetInstanceSet() const;
 
                     /**
                      * 判断参数 InstanceSet 是否已赋值
                      * @return InstanceSet 是否已赋值
+                     * 
                      */
                     bool InstanceSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的对象数。
                      * @return TotalCount 符合条件的对象数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

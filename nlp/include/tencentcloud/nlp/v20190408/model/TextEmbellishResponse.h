@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取润色结果列表。
                      * @return EmbellishList 润色结果列表。
+                     * 
                      */
                     std::vector<Embellish> GetEmbellishList() const;
 
                     /**
                      * 判断参数 EmbellishList 是否已赋值
                      * @return EmbellishList 是否已赋值
+                     * 
                      */
                     bool EmbellishListHasBeenSet() const;
 

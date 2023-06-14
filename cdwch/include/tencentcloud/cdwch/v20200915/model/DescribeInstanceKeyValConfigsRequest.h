@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID
                      * @return InstanceId 集群实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例ID
-                     * @param InstanceId 集群实例ID
+                     * @param _instanceId 集群实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取搜索的配置项名称
                      * @return SearchConfigName 搜索的配置项名称
+                     * 
                      */
                     std::string GetSearchConfigName() const;
 
                     /**
                      * 设置搜索的配置项名称
-                     * @param SearchConfigName 搜索的配置项名称
+                     * @param _searchConfigName 搜索的配置项名称
+                     * 
                      */
                     void SetSearchConfigName(const std::string& _searchConfigName);
 
                     /**
                      * 判断参数 SearchConfigName 是否已赋值
                      * @return SearchConfigName 是否已赋值
+                     * 
                      */
                     bool SearchConfigNameHasBeenSet() const;
 

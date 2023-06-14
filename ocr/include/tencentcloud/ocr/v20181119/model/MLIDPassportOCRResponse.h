@@ -46,84 +46,98 @@ namespace TencentCloud
                     /**
                      * 获取护照ID
                      * @return ID 护照ID
+                     * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取姓名
                      * @return Name 姓名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取出生日期
                      * @return DateOfBirth 出生日期
+                     * 
                      */
                     std::string GetDateOfBirth() const;
 
                     /**
                      * 判断参数 DateOfBirth 是否已赋值
                      * @return DateOfBirth 是否已赋值
+                     * 
                      */
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
                      * 获取性别（F女，M男）
                      * @return Sex 性别（F女，M男）
+                     * 
                      */
                     std::string GetSex() const;
 
                     /**
                      * 判断参数 Sex 是否已赋值
                      * @return Sex 是否已赋值
+                     * 
                      */
                     bool SexHasBeenSet() const;
 
                     /**
                      * 获取有效期
                      * @return DateOfExpiration 有效期
+                     * 
                      */
                     std::string GetDateOfExpiration() const;
 
                     /**
                      * 判断参数 DateOfExpiration 是否已赋值
                      * @return DateOfExpiration 是否已赋值
+                     * 
                      */
                     bool DateOfExpirationHasBeenSet() const;
 
                     /**
                      * 获取发行国
                      * @return IssuingCountry 发行国
+                     * 
                      */
                     std::string GetIssuingCountry() const;
 
                     /**
                      * 判断参数 IssuingCountry 是否已赋值
                      * @return IssuingCountry 是否已赋值
+                     * 
                      */
                     bool IssuingCountryHasBeenSet() const;
 
                     /**
                      * 获取国家地区代码
                      * @return Nationality 国家地区代码
+                     * 
                      */
                     std::string GetNationality() const;
 
                     /**
                      * 判断参数 Nationality 是否已赋值
                      * @return Nationality 是否已赋值
+                     * 
                      */
                     bool NationalityHasBeenSet() const;
 
@@ -136,24 +150,28 @@ namespace TencentCloud
 -9103	证照翻拍告警
 -9102	证照复印件告警（包括黑白复印件、彩色复印件）
 -9106       证件遮挡告警
+                     * 
                      */
                     std::vector<int64_t> GetWarn() const;
 
                     /**
                      * 判断参数 Warn 是否已赋值
                      * @return Warn 是否已赋值
+                     * 
                      */
                     bool WarnHasBeenSet() const;
 
                     /**
                      * 获取证件图片
                      * @return Image 证件图片
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
@@ -176,36 +194,42 @@ namespace TencentCloud
         Confidence:0.9996
     }
 }
+                     * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
+                     * 
                      */
                     bool AdvancedInfoHasBeenSet() const;
 
                     /**
                      * 获取最下方第一行 MRZ Code 序列
                      * @return CodeSet 最下方第一行 MRZ Code 序列
+                     * 
                      */
                     std::string GetCodeSet() const;
 
                     /**
                      * 判断参数 CodeSet 是否已赋值
                      * @return CodeSet 是否已赋值
+                     * 
                      */
                     bool CodeSetHasBeenSet() const;
 
                     /**
                      * 获取最下方第二行 MRZ Code 序列
                      * @return CodeCrc 最下方第二行 MRZ Code 序列
+                     * 
                      */
                     std::string GetCodeCrc() const;
 
                     /**
                      * 判断参数 CodeCrc 是否已赋值
                      * @return CodeCrc 是否已赋值
+                     * 
                      */
                     bool CodeCrcHasBeenSet() const;
 
@@ -214,12 +238,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Surname 姓
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSurname() const;
 
                     /**
                      * 判断参数 Surname 是否已赋值
                      * @return Surname 是否已赋值
+                     * 
                      */
                     bool SurnameHasBeenSet() const;
 
@@ -228,12 +254,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GivenName 名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGivenName() const;
 
                     /**
                      * 判断参数 GivenName 是否已赋值
                      * @return GivenName 是否已赋值
+                     * 
                      */
                     bool GivenNameHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取客户的终端用户在IotVideo上的唯一标识id
                      * @return AccessId 客户的终端用户在IotVideo上的唯一标识id
+                     * 
                      */
                     std::string GetAccessId() const;
 
                     /**
                      * 设置客户的终端用户在IotVideo上的唯一标识id
-                     * @param AccessId 客户的终端用户在IotVideo上的唯一标识id
+                     * @param _accessId 客户的终端用户在IotVideo上的唯一标识id
+                     * 
                      */
                     void SetAccessId(const std::string& _accessId);
 
                     /**
                      * 判断参数 AccessId 是否已赋值
                      * @return AccessId 是否已赋值
+                     * 
                      */
                     bool AccessIdHasBeenSet() const;
 
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取IotVideo平台的accessToken
                      * @return AccessToken IotVideo平台的accessToken
+                     * 
                      */
                     std::string GetAccessToken() const;
 
                     /**
                      * 设置IotVideo平台的accessToken
-                     * @param AccessToken IotVideo平台的accessToken
+                     * @param _accessToken IotVideo平台的accessToken
+                     * 
                      */
                     void SetAccessToken(const std::string& _accessToken);
 
                     /**
                      * 判断参数 AccessToken 是否已赋值
                      * @return AccessToken 是否已赋值
+                     * 
                      */
                     bool AccessTokenHasBeenSet() const;
 
                     /**
                      * 获取Token的过期时间，单位秒(UTC时间)
                      * @return ExpireTime Token的过期时间，单位秒(UTC时间)
+                     * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置Token的过期时间，单位秒(UTC时间)
-                     * @param ExpireTime Token的过期时间，单位秒(UTC时间)
+                     * @param _expireTime Token的过期时间，单位秒(UTC时间)
+                     * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

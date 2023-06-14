@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取漏洞防御事件列表
                      * @return List 漏洞防御事件列表
+                     * 
                      */
                     std::vector<VulDefenceEvent> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取总数量
                      * @return TotalCount 总数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

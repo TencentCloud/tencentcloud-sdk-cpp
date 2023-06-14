@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取ipm-xxxxxxxx
                      * @return AddressTemplateId ipm-xxxxxxxx
+                     * 
                      */
                     std::string GetAddressTemplateId() const;
 
                     /**
                      * 设置ipm-xxxxxxxx
-                     * @param AddressTemplateId ipm-xxxxxxxx
+                     * @param _addressTemplateId ipm-xxxxxxxx
+                     * 
                      */
                     void SetAddressTemplateId(const std::string& _addressTemplateId);
 
                     /**
                      * 判断参数 AddressTemplateId 是否已赋值
                      * @return AddressTemplateId 是否已赋值
+                     * 
                      */
                     bool AddressTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取IP模板名称
                      * @return AddressTemplateName IP模板名称
+                     * 
                      */
                     std::string GetAddressTemplateName() const;
 
                     /**
                      * 设置IP模板名称
-                     * @param AddressTemplateName IP模板名称
+                     * @param _addressTemplateName IP模板名称
+                     * 
                      */
                     void SetAddressTemplateName(const std::string& _addressTemplateName);
 
                     /**
                      * 判断参数 AddressTemplateName 是否已赋值
                      * @return AddressTemplateName 是否已赋值
+                     * 
                      */
                     bool AddressTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取废弃字段
                      * @return From 废弃字段
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置废弃字段
-                     * @param From 废弃字段
+                     * @param _from 废弃字段
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取废弃字段
                      * @return To 废弃字段
+                     * 
                      */
                     std::string GetTo() const;
 
                     /**
                      * 设置废弃字段
-                     * @param To 废弃字段
+                     * @param _to 废弃字段
+                     * 
                      */
                     void SetTo(const std::string& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 

@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取规则ID（新增时不填）
                      * @return Id 规则ID（新增时不填）
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置规则ID（新增时不填）
-                     * @param Id 规则ID（新增时不填）
+                     * @param _id 规则ID（新增时不填）
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取客户端ID数组
                      * @return Uuids 客户端ID数组
+                     * 
                      */
                     std::vector<std::string> GetUuids() const;
 
                     /**
                      * 设置客户端ID数组
-                     * @param Uuids 客户端ID数组
+                     * @param _uuids 客户端ID数组
+                     * 
                      */
                     void SetUuids(const std::vector<std::string>& _uuids);
 
                     /**
                      * 判断参数 Uuids 是否已赋值
                      * @return Uuids 是否已赋值
+                     * 
                      */
                     bool UuidsHasBeenSet() const;
 
                     /**
                      * 获取主机IP
                      * @return HostIp 主机IP
+                     * 
                      */
                     std::string GetHostIp() const;
 
                     /**
                      * 设置主机IP
-                     * @param HostIp 主机IP
+                     * @param _hostIp 主机IP
+                     * 
                      */
                     void SetHostIp(const std::string& _hostIp);
 
                     /**
                      * 判断参数 HostIp 是否已赋值
                      * @return HostIp 是否已赋值
+                     * 
                      */
                     bool HostIpHasBeenSet() const;
 
                     /**
                      * 获取规则名称，编辑时不可修改规则名称
                      * @return Name 规则名称，编辑时不可修改规则名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则名称，编辑时不可修改规则名称
-                     * @param Name 规则名称，编辑时不可修改规则名称
+                     * @param _name 规则名称，编辑时不可修改规则名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取危险等级(0:无，1: 高危 2:中危 3: 低危)
                      * @return Level 危险等级(0:无，1: 高危 2:中危 3: 低危)
+                     * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置危险等级(0:无，1: 高危 2:中危 3: 低危)
-                     * @param Level 危险等级(0:无，1: 高危 2:中危 3: 低危)
+                     * @param _level 危险等级(0:无，1: 高危 2:中危 3: 低危)
+                     * 
                      */
                     void SetLevel(const uint64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
                      * @return Rule 正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     * 
                      */
                     std::string GetRule() const;
 
                     /**
                      * 设置正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
-                     * @param Rule 正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     * @param _rule 正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64
+                     * 
                      */
                     void SetRule(const std::string& _rule);
 
                     /**
                      * 判断参数 Rule 是否已赋值
                      * @return Rule 是否已赋值
+                     * 
                      */
                     bool RuleHasBeenSet() const;
 
                     /**
                      * 获取是否全局规则(默认否)：1-全局，0-非全局
                      * @return IsGlobal 是否全局规则(默认否)：1-全局，0-非全局
+                     * 
                      */
                     uint64_t GetIsGlobal() const;
 
                     /**
                      * 设置是否全局规则(默认否)：1-全局，0-非全局
-                     * @param IsGlobal 是否全局规则(默认否)：1-全局，0-非全局
+                     * @param _isGlobal 是否全局规则(默认否)：1-全局，0-非全局
+                     * 
                      */
                     void SetIsGlobal(const uint64_t& _isGlobal);
 
                     /**
                      * 判断参数 IsGlobal 是否已赋值
                      * @return IsGlobal 是否已赋值
+                     * 
                      */
                     bool IsGlobalHasBeenSet() const;
 
                     /**
                      * 获取0=黑名单， 1=白名单
                      * @return White 0=黑名单， 1=白名单
+                     * 
                      */
                     uint64_t GetWhite() const;
 
                     /**
                      * 设置0=黑名单， 1=白名单
-                     * @param White 0=黑名单， 1=白名单
+                     * @param _white 0=黑名单， 1=白名单
+                     * 
                      */
                     void SetWhite(const uint64_t& _white);
 
                     /**
                      * 判断参数 White 是否已赋值
                      * @return White 是否已赋值
+                     * 
                      */
                     bool WhiteHasBeenSet() const;
 
                     /**
                      * 获取事件列表点击“加入白名单”时,需要传EventId 事件的id
                      * @return EventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
+                     * 
                      */
                     uint64_t GetEventId() const;
 
                     /**
                      * 设置事件列表点击“加入白名单”时,需要传EventId 事件的id
-                     * @param EventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
+                     * @param _eventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
+                     * 
                      */
                     void SetEventId(const uint64_t& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取是否处理旧事件为白名单 0=不处理 1=处理
                      * @return DealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
+                     * 
                      */
                     uint64_t GetDealOldEvents() const;
 
                     /**
                      * 设置是否处理旧事件为白名单 0=不处理 1=处理
-                     * @param DealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
+                     * @param _dealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
+                     * 
                      */
                     void SetDealOldEvents(const uint64_t& _dealOldEvents);
 
                     /**
                      * 判断参数 DealOldEvents 是否已赋值
                      * @return DealOldEvents 是否已赋值
+                     * 
                      */
                     bool DealOldEventsHasBeenSet() const;
 

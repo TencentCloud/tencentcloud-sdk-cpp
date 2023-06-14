@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取别称域名名称。
                      * @return AliasName 别称域名名称。
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置别称域名名称。
-                     * @param AliasName 别称域名名称。
+                     * @param _aliasName 别称域名名称。
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取目标域名名称。
                      * @return TargetName 目标域名名称。
+                     * 
                      */
                     std::string GetTargetName() const;
 
                     /**
                      * 设置目标域名名称。
-                     * @param TargetName 目标域名名称。
+                     * @param _targetName 目标域名名称。
+                     * 
                      */
                     void SetTargetName(const std::string& _targetName);
 
                     /**
                      * 判断参数 TargetName 是否已赋值
                      * @return TargetName 是否已赋值
+                     * 
                      */
                     bool TargetNameHasBeenSet() const;
 
@@ -111,6 +120,7 @@ namespace TencentCloud
 <li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -120,17 +130,19 @@ namespace TencentCloud
 <li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
-                     * @param Status 别称域名状态，取值有：
+                     * @param _status 别称域名状态，取值有：
 <li> active：已生效； </li>
 <li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -143,6 +155,7 @@ namespace TencentCloud
 <li> 0：未封禁； </li>
 <li> 11：合规封禁；</li>
 <li> 14：未备案封禁。</li>
+                     * 
                      */
                     int64_t GetForbidMode() const;
 
@@ -151,52 +164,60 @@ namespace TencentCloud
 <li> 0：未封禁； </li>
 <li> 11：合规封禁；</li>
 <li> 14：未备案封禁。</li>
-                     * @param ForbidMode 封禁模式，取值有：
+                     * @param _forbidMode 封禁模式，取值有：
 <li> 0：未封禁； </li>
 <li> 11：合规封禁；</li>
 <li> 14：未备案封禁。</li>
+                     * 
                      */
                     void SetForbidMode(const int64_t& _forbidMode);
 
                     /**
                      * 判断参数 ForbidMode 是否已赋值
                      * @return ForbidMode 是否已赋值
+                     * 
                      */
                     bool ForbidModeHasBeenSet() const;
 
                     /**
                      * 获取别称域名创建时间。
                      * @return CreatedOn 别称域名创建时间。
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置别称域名创建时间。
-                     * @param CreatedOn 别称域名创建时间。
+                     * @param _createdOn 别称域名创建时间。
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取别称域名修改时间。
                      * @return ModifiedOn 别称域名修改时间。
+                     * 
                      */
                     std::string GetModifiedOn() const;
 
                     /**
                      * 设置别称域名修改时间。
-                     * @param ModifiedOn 别称域名修改时间。
+                     * @param _modifiedOn 别称域名修改时间。
+                     * 
                      */
                     void SetModifiedOn(const std::string& _modifiedOn);
 
                     /**
                      * 判断参数 ModifiedOn 是否已赋值
                      * @return ModifiedOn 是否已赋值
+                     * 
                      */
                     bool ModifiedOnHasBeenSet() const;
 

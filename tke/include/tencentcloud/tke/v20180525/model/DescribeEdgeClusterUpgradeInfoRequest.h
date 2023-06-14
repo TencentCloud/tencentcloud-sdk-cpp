@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取要升级到的TKEEdge版本
                      * @return EdgeVersion 要升级到的TKEEdge版本
+                     * 
                      */
                     std::string GetEdgeVersion() const;
 
                     /**
                      * 设置要升级到的TKEEdge版本
-                     * @param EdgeVersion 要升级到的TKEEdge版本
+                     * @param _edgeVersion 要升级到的TKEEdge版本
+                     * 
                      */
                     void SetEdgeVersion(const std::string& _edgeVersion);
 
                     /**
                      * 判断参数 EdgeVersion 是否已赋值
                      * @return EdgeVersion 是否已赋值
+                     * 
                      */
                     bool EdgeVersionHasBeenSet() const;
 

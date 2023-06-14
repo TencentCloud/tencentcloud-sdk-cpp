@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取资源Id
                      * @return ResourceId 资源Id
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源Id
-                     * @param ResourceId 资源Id
+                     * @param _resourceId 资源Id
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

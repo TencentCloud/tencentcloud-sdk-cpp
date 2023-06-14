@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
                      * @return SrcText 需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
+                     * 
                      */
                     std::string GetSrcText() const;
 
                     /**
                      * 设置需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
-                     * @param SrcText 需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
+                     * @param _srcText 需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过500字符）
+                     * 
                      */
                     void SetSrcText(const std::string& _srcText);
 
                     /**
                      * 判断参数 SrcText 是否已赋值
                      * @return SrcText 是否已赋值
+                     * 
                      */
                     bool SrcTextHasBeenSet() const;
 
                     /**
                      * 获取目标句子（以句子数量为单位消耗资源包）
                      * @return TargetText 目标句子（以句子数量为单位消耗资源包）
+                     * 
                      */
                     std::vector<std::string> GetTargetText() const;
 
                     /**
                      * 设置目标句子（以句子数量为单位消耗资源包）
-                     * @param TargetText 目标句子（以句子数量为单位消耗资源包）
+                     * @param _targetText 目标句子（以句子数量为单位消耗资源包）
+                     * 
                      */
                     void SetTargetText(const std::vector<std::string>& _targetText);
 
                     /**
                      * 判断参数 TargetText 是否已赋值
                      * @return TargetText 是否已赋值
+                     * 
                      */
                     bool TargetTextHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDir 主要部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainDir() const;
 
                     /**
                      * 设置主要部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainDir 主要部位
+                     * @param _mainDir 主要部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainDir(const std::string& _mainDir);
 
                     /**
                      * 判断参数 MainDir 是否已赋值
                      * @return MainDir 是否已赋值
+                     * 
                      */
                     bool MainDirHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPart() const;
 
                     /**
                      * 设置部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Part 部位
+                     * @param _part 部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPart(const std::string& _part);
 
                     /**
                      * 判断参数 Part 是否已赋值
                      * @return Part 是否已赋值
+                     * 
                      */
                     bool PartHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryDir 次要部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecondaryDir() const;
 
                     /**
                      * 设置次要部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecondaryDir 次要部位
+                     * @param _secondaryDir 次要部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecondaryDir(const std::string& _secondaryDir);
 
                     /**
                      * 判断参数 SecondaryDir 是否已赋值
                      * @return SecondaryDir 是否已赋值
+                     * 
                      */
                     bool SecondaryDirHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型
+                     * @param _type 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

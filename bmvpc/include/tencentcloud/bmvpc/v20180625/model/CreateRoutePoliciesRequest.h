@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取路由表ID
                      * @return RouteTableId 路由表ID
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表ID
-                     * @param RouteTableId 路由表ID
+                     * @param _routeTableId 路由表ID
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
                      * 获取新增的路由
                      * @return RoutePolicySet 新增的路由
+                     * 
                      */
                     std::vector<RoutePolicy> GetRoutePolicySet() const;
 
                     /**
                      * 设置新增的路由
-                     * @param RoutePolicySet 新增的路由
+                     * @param _routePolicySet 新增的路由
+                     * 
                      */
                     void SetRoutePolicySet(const std::vector<RoutePolicy>& _routePolicySet);
 
                     /**
                      * 判断参数 RoutePolicySet 是否已赋值
                      * @return RoutePolicySet 是否已赋值
+                     * 
                      */
                     bool RoutePolicySetHasBeenSet() const;
 

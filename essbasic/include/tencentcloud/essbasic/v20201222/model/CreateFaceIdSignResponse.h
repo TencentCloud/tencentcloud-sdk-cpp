@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取慧眼API签名
                      * @return Sign 慧眼API签名
+                     * 
                      */
                     std::string GetSign() const;
 
                     /**
                      * 判断参数 Sign 是否已赋值
                      * @return Sign 是否已赋值
+                     * 
                      */
                     bool SignHasBeenSet() const;
 

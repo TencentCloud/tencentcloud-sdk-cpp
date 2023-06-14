@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务状态返回
                      * @return Data 任务状态返回
+                     * 
                      */
                     DescribeTtsTaskStatusRespData GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

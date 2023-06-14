@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取推荐返回的内容信息列表
                      * @return DataList 推荐返回的内容信息列表
+                     * 
                      */
                     std::vector<RecItemData> GetDataList() const;
 
                     /**
                      * 判断参数 DataList 是否已赋值
                      * @return DataList 是否已赋值
+                     * 
                      */
                     bool DataListHasBeenSet() const;
 

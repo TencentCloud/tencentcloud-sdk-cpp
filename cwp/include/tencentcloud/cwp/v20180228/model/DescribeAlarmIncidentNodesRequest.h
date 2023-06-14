@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取机器uuid
                      * @return Uuid 机器uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置机器uuid
-                     * @param Uuid 机器uuid
+                     * @param _uuid 机器uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取告警vid
                      * @return AlarmVid 告警vid
+                     * 
                      */
                     std::string GetAlarmVid() const;
 
                     /**
                      * 设置告警vid
-                     * @param AlarmVid 告警vid
+                     * @param _alarmVid 告警vid
+                     * 
                      */
                     void SetAlarmVid(const std::string& _alarmVid);
 
                     /**
                      * 判断参数 AlarmVid 是否已赋值
                      * @return AlarmVid 是否已赋值
+                     * 
                      */
                     bool AlarmVidHasBeenSet() const;
 
                     /**
                      * 获取告警时间
                      * @return AlarmTime 告警时间
+                     * 
                      */
                     int64_t GetAlarmTime() const;
 
                     /**
                      * 设置告警时间
-                     * @param AlarmTime 告警时间
+                     * @param _alarmTime 告警时间
+                     * 
                      */
                     void SetAlarmTime(const int64_t& _alarmTime);
 
                     /**
                      * 判断参数 AlarmTime 是否已赋值
                      * @return AlarmTime 是否已赋值
+                     * 
                      */
                     bool AlarmTimeHasBeenSet() const;
 
                     /**
                      * 获取告警来源表ID
                      * @return TableId 告警来源表ID
+                     * 
                      */
                     int64_t GetTableId() const;
 
                     /**
                      * 设置告警来源表ID
-                     * @param TableId 告警来源表ID
+                     * @param _tableId 告警来源表ID
+                     * 
                      */
                     void SetTableId(const int64_t& _tableId);
 
                     /**
                      * 判断参数 TableId 是否已赋值
                      * @return TableId 是否已赋值
+                     * 
                      */
                     bool TableIdHasBeenSet() const;
 

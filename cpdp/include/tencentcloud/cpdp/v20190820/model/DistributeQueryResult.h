@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Orders 分账订单列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MultiApplyOrder> GetOrders() const;
 
                     /**
                      * 设置分账订单列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Orders 分账订单列表
+                     * @param _orders 分账订单列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrders(const std::vector<MultiApplyOrder>& _orders);
 
                     /**
                      * 判断参数 Orders 是否已赋值
                      * @return Orders 是否已赋值
+                     * 
                      */
                     bool OrdersHasBeenSet() const;
 

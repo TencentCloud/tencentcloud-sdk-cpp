@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取用户请求的query
                      * @return Query 用户请求的query
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置用户请求的query
-                     * @param Query 用户请求的query
+                     * @param _query 用户请求的query
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 
                     /**
                      * 获取服务的id,  主要用于儿童闲聊接口，比如手Q的openid
                      * @return OpenId 服务的id,  主要用于儿童闲聊接口，比如手Q的openid
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置服务的id,  主要用于儿童闲聊接口，比如手Q的openid
-                     * @param OpenId 服务的id,  主要用于儿童闲聊接口，比如手Q的openid
+                     * @param _openId 服务的id,  主要用于儿童闲聊接口，比如手Q的openid
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
                      * @return Flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     * 
                      */
                     uint64_t GetFlag() const;
 
                     /**
                      * 设置0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
-                     * @param Flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     * @param _flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     * 
                      */
                     void SetFlag(const uint64_t& _flag);
 
                     /**
                      * 判断参数 Flag 是否已赋值
                      * @return Flag 是否已赋值
+                     * 
                      */
                     bool FlagHasBeenSet() const;
 

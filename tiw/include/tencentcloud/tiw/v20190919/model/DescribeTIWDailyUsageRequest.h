@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取互动白板应用SdkAppId
                      * @return SdkAppId 互动白板应用SdkAppId
+                     * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
                      * 设置互动白板应用SdkAppId
-                     * @param SdkAppId 互动白板应用SdkAppId
+                     * @param _sdkAppId 互动白板应用SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 - sp_tiw_ric: 实时录制时长，单位分钟
 
 注意：动态转码以1:8的比例计算文档转码页数，静态转码以1:1的比例计算文档转码页数
+                     * 
                      */
                     std::string GetSubProduct() const;
 
@@ -86,55 +90,63 @@ namespace TencentCloud
 - sp_tiw_ric: 实时录制时长，单位分钟
 
 注意：动态转码以1:8的比例计算文档转码页数，静态转码以1:1的比例计算文档转码页数
-                     * @param SubProduct 需要查询的子产品用量，支持传入以下值
+                     * @param _subProduct 需要查询的子产品用量，支持传入以下值
 - sp_tiw_board: 互动白板时长，单位为分钟
 - sp_tiw_dt: 动态转码页数，单位页
 - sp_tiw_st: 静态转码页数，单位页
 - sp_tiw_ric: 实时录制时长，单位分钟
 
 注意：动态转码以1:8的比例计算文档转码页数，静态转码以1:1的比例计算文档转码页数
+                     * 
                      */
                     void SetSubProduct(const std::string& _subProduct);
 
                     /**
                      * 判断参数 SubProduct 是否已赋值
                      * @return SubProduct 是否已赋值
+                     * 
                      */
                     bool SubProductHasBeenSet() const;
 
                     /**
                      * 获取开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
                      * @return StartTime 开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
-                     * @param StartTime 开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
+                     * @param _startTime 开始时间，格式YYYY-MM-DD，查询结果里包括该天数据
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
                      * @return EndTime 结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
-                     * @param EndTime 结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
+                     * @param _endTime 结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

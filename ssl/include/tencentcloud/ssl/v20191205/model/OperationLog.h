@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取操作证书动作。
                      * @return Action 操作证书动作。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置操作证书动作。
-                     * @param Action 操作证书动作。
+                     * @param _action 操作证书动作。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取操作时间。
                      * @return CreatedOn 操作时间。
+                     * 
                      */
                     std::string GetCreatedOn() const;
 
                     /**
                      * 设置操作时间。
-                     * @param CreatedOn 操作时间。
+                     * @param _createdOn 操作时间。
+                     * 
                      */
                     void SetCreatedOn(const std::string& _createdOn);
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 

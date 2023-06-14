@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取目标IP
                      * @return DstIp 目标IP
+                     * 
                      */
                     std::string GetDstIp() const;
 
                     /**
                      * 设置目标IP
-                     * @param DstIp 目标IP
+                     * @param _dstIp 目标IP
+                     * 
                      */
                     void SetDstIp(const std::string& _dstIp);
 
                     /**
                      * 判断参数 DstIp 是否已赋值
                      * @return DstIp 是否已赋值
+                     * 
                      */
                     bool DstIpHasBeenSet() const;
 
                     /**
                      * 获取目标端口
                      * @return DstPort 目标端口
+                     * 
                      */
                     std::string GetDstPort() const;
 
                     /**
                      * 设置目标端口
-                     * @param DstPort 目标端口
+                     * @param _dstPort 目标端口
+                     * 
                      */
                     void SetDstPort(const std::string& _dstPort);
 
                     /**
                      * 判断参数 DstPort 是否已赋值
                      * @return DstPort 是否已赋值
+                     * 
                      */
                     bool DstPortHasBeenSet() const;
 
                     /**
                      * 获取目标进程
                      * @return ProcessName 目标进程
+                     * 
                      */
                     std::string GetProcessName() const;
 
                     /**
                      * 设置目标进程
-                     * @param ProcessName 目标进程
+                     * @param _processName 目标进程
+                     * 
                      */
                     void SetProcessName(const std::string& _processName);
 
                     /**
                      * 判断参数 ProcessName 是否已赋值
                      * @return ProcessName 是否已赋值
+                     * 
                      */
                     bool ProcessNameHasBeenSet() const;
 
                     /**
                      * 获取镜像id数组，为空代表全部
                      * @return ImageIds 镜像id数组，为空代表全部
+                     * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
                      * 设置镜像id数组，为空代表全部
-                     * @param ImageIds 镜像id数组，为空代表全部
+                     * @param _imageIds 镜像id数组，为空代表全部
+                     * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
 
                     /**
                      * 判断参数 ImageIds 是否已赋值
                      * @return ImageIds 是否已赋值
+                     * 
                      */
                     bool ImageIdsHasBeenSet() const;
 
                     /**
                      * 获取白名单id，如果新建则id为空
                      * @return Id 白名单id，如果新建则id为空
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置白名单id，如果新建则id为空
-                     * @param Id 白名单id，如果新建则id为空
+                     * @param _id 白名单id，如果新建则id为空
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取用户组昵称，长度限制：64个字符。 DisplayName是唯一的。
                      * @return DisplayName 用户组昵称，长度限制：64个字符。 DisplayName是唯一的。
+                     * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置用户组昵称，长度限制：64个字符。 DisplayName是唯一的。
-                     * @param DisplayName 用户组昵称，长度限制：64个字符。 DisplayName是唯一的。
+                     * @param _displayName 用户组昵称，长度限制：64个字符。 DisplayName是唯一的。
+                     * 
                      */
                     void SetDisplayName(const std::string& _displayName);
 
                     /**
                      * 判断参数 DisplayName 是否已赋值
                      * @return DisplayName 是否已赋值
+                     * 
                      */
                     bool DisplayNameHasBeenSet() const;
 
                     /**
                      * 获取用户组备注，长度限制：512个字符。
                      * @return Description 用户组备注，长度限制：512个字符。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置用户组备注，长度限制：512个字符。
-                     * @param Description 用户组备注，长度限制：512个字符。
+                     * @param _description 用户组备注，长度限制：512个字符。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

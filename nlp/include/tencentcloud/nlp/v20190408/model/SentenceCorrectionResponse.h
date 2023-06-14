@@ -49,12 +49,14 @@ namespace TencentCloud
 （注意仅展示错误句子的纠错结果，若句子无错则不展示，若全部待纠错句子都被认为无错，则可能返回数组为空）
                      * @return CorrectionList 纠错结果列表。
 （注意仅展示错误句子的纠错结果，若句子无错则不展示，若全部待纠错句子都被认为无错，则可能返回数组为空）
+                     * 
                      */
                     std::vector<CorrectionItem> GetCorrectionList() const;
 
                     /**
                      * 判断参数 CorrectionList 是否已赋值
                      * @return CorrectionList 是否已赋值
+                     * 
                      */
                     bool CorrectionListHasBeenSet() const;
 

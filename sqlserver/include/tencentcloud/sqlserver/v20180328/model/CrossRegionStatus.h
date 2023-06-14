@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取跨地域备份目标地域
                      * @return CrossRegion 跨地域备份目标地域
+                     * 
                      */
                     std::string GetCrossRegion() const;
 
                     /**
                      * 设置跨地域备份目标地域
-                     * @param CrossRegion 跨地域备份目标地域
+                     * @param _crossRegion 跨地域备份目标地域
+                     * 
                      */
                     void SetCrossRegion(const std::string& _crossRegion);
 
                     /**
                      * 判断参数 CrossRegion 是否已赋值
                      * @return CrossRegion 是否已赋值
+                     * 
                      */
                     bool CrossRegionHasBeenSet() const;
 
                     /**
                      * 获取备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中
                      * @return CrossStatus 备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中
+                     * 
                      */
                     int64_t GetCrossStatus() const;
 
                     /**
                      * 设置备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中
-                     * @param CrossStatus 备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中
+                     * @param _crossStatus 备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中
+                     * 
                      */
                     void SetCrossStatus(const int64_t& _crossStatus);
 
                     /**
                      * 判断参数 CrossStatus 是否已赋值
                      * @return CrossStatus 是否已赋值
+                     * 
                      */
                     bool CrossStatusHasBeenSet() const;
 

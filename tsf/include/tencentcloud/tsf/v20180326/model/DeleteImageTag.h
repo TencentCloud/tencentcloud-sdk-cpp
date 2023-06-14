@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取仓库名，如/tsf/nginx
                      * @return RepoName 仓库名，如/tsf/nginx
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名，如/tsf/nginx
-                     * @param RepoName 仓库名，如/tsf/nginx
+                     * @param _repoName 仓库名，如/tsf/nginx
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 
                     /**
                      * 获取版本号:如V1
                      * @return TagName 版本号:如V1
+                     * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置版本号:如V1
-                     * @param TagName 版本号:如V1
+                     * @param _tagName 版本号:如V1
+                     * 
                      */
                     void SetTagName(const std::string& _tagName);
 
                     /**
                      * 判断参数 TagName 是否已赋值
                      * @return TagName 是否已赋值
+                     * 
                      */
                     bool TagNameHasBeenSet() const;
 

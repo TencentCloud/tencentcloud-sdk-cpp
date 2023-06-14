@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取筛选条件
                      * @return Filters 筛选条件
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置筛选条件
-                     * @param Filters 筛选条件
+                     * @param _filters 筛选条件
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取每页数量
                      * @return Limit 每页数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页数量
-                     * @param Limit 每页数量
+                     * @param _limit 每页数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取页码
                      * @return Page 页码
+                     * 
                      */
                     int64_t GetPage() const;
 
                     /**
                      * 设置页码
-                     * @param Page 页码
+                     * @param _page 页码
+                     * 
                      */
                     void SetPage(const int64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取起始时间
                      * @return StartTime 起始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间
-                     * @param StartTime 起始时间
+                     * @param _startTime 起始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

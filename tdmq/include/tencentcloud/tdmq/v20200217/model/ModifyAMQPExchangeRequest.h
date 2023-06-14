@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取Vhost间名称
                      * @return VHostId Vhost间名称
+                     * 
                      */
                     std::string GetVHostId() const;
 
                     /**
                      * 设置Vhost间名称
-                     * @param VHostId Vhost间名称
+                     * @param _vHostId Vhost间名称
+                     * 
                      */
                     void SetVHostId(const std::string& _vHostId);
 
                     /**
                      * 判断参数 VHostId 是否已赋值
                      * @return VHostId 是否已赋值
+                     * 
                      */
                     bool VHostIdHasBeenSet() const;
 
                     /**
                      * 获取交换机名称
                      * @return Exchange 交换机名称
+                     * 
                      */
                     std::string GetExchange() const;
 
                     /**
                      * 设置交换机名称
-                     * @param Exchange 交换机名称
+                     * @param _exchange 交换机名称
+                     * 
                      */
                     void SetExchange(const std::string& _exchange);
 
                     /**
                      * 判断参数 Exchange 是否已赋值
                      * @return Exchange 是否已赋值
+                     * 
                      */
                     bool ExchangeHasBeenSet() const;
 
                     /**
                      * 获取说明信息，最大128个字符
                      * @return Remark 说明信息，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明信息，最大128个字符
-                     * @param Remark 说明信息，最大128个字符
+                     * @param _remark 说明信息，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

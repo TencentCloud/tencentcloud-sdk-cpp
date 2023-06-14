@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取签名域页数
                      * @return SignOnPage 签名域页数
+                     * 
                      */
                     std::string GetSignOnPage() const;
 
                     /**
                      * 设置签名域页数
-                     * @param SignOnPage 签名域页数
+                     * @param _signOnPage 签名域页数
+                     * 
                      */
                     void SetSignOnPage(const std::string& _signOnPage);
 
                     /**
                      * 判断参数 SignOnPage 是否已赋值
                      * @return SignOnPage 是否已赋值
+                     * 
                      */
                     bool SignOnPageHasBeenSet() const;
 
                     /**
                      * 获取签名域左下角X轴坐标轴
                      * @return SignLocationLBX 签名域左下角X轴坐标轴
+                     * 
                      */
                     std::string GetSignLocationLBX() const;
 
                     /**
                      * 设置签名域左下角X轴坐标轴
-                     * @param SignLocationLBX 签名域左下角X轴坐标轴
+                     * @param _signLocationLBX 签名域左下角X轴坐标轴
+                     * 
                      */
                     void SetSignLocationLBX(const std::string& _signLocationLBX);
 
                     /**
                      * 判断参数 SignLocationLBX 是否已赋值
                      * @return SignLocationLBX 是否已赋值
+                     * 
                      */
                     bool SignLocationLBXHasBeenSet() const;
 
                     /**
                      * 获取签名域左下角Y轴坐标轴
                      * @return SignLocationLBY 签名域左下角Y轴坐标轴
+                     * 
                      */
                     std::string GetSignLocationLBY() const;
 
                     /**
                      * 设置签名域左下角Y轴坐标轴
-                     * @param SignLocationLBY 签名域左下角Y轴坐标轴
+                     * @param _signLocationLBY 签名域左下角Y轴坐标轴
+                     * 
                      */
                     void SetSignLocationLBY(const std::string& _signLocationLBY);
 
                     /**
                      * 判断参数 SignLocationLBY 是否已赋值
                      * @return SignLocationLBY 是否已赋值
+                     * 
                      */
                     bool SignLocationLBYHasBeenSet() const;
 
                     /**
                      * 获取签名域右上角X轴坐标轴
                      * @return SignLocationRUX 签名域右上角X轴坐标轴
+                     * 
                      */
                     std::string GetSignLocationRUX() const;
 
                     /**
                      * 设置签名域右上角X轴坐标轴
-                     * @param SignLocationRUX 签名域右上角X轴坐标轴
+                     * @param _signLocationRUX 签名域右上角X轴坐标轴
+                     * 
                      */
                     void SetSignLocationRUX(const std::string& _signLocationRUX);
 
                     /**
                      * 判断参数 SignLocationRUX 是否已赋值
                      * @return SignLocationRUX 是否已赋值
+                     * 
                      */
                     bool SignLocationRUXHasBeenSet() const;
 
                     /**
                      * 获取签名域右上角Y轴坐标轴
                      * @return SignLocationRUY 签名域右上角Y轴坐标轴
+                     * 
                      */
                     std::string GetSignLocationRUY() const;
 
                     /**
                      * 设置签名域右上角Y轴坐标轴
-                     * @param SignLocationRUY 签名域右上角Y轴坐标轴
+                     * @param _signLocationRUY 签名域右上角Y轴坐标轴
+                     * 
                      */
                     void SetSignLocationRUY(const std::string& _signLocationRUY);
 
                     /**
                      * 判断参数 SignLocationRUY 是否已赋值
                      * @return SignLocationRUY 是否已赋值
+                     * 
                      */
                     bool SignLocationRUYHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取表格组ID
                      * @return TableGroupId 表格组ID
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格组ID
-                     * @param TableGroupId 表格组ID
+                     * @param _tableGroupId 表格组ID
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表格组名称
                      * @return TableGroupName 表格组名称
+                     * 
                      */
                     std::string GetTableGroupName() const;
 
                     /**
                      * 设置表格组名称
-                     * @param TableGroupName 表格组名称
+                     * @param _tableGroupName 表格组名称
+                     * 
                      */
                     void SetTableGroupName(const std::string& _tableGroupName);
 
                     /**
                      * 判断参数 TableGroupName 是否已赋值
                      * @return TableGroupName 是否已赋值
+                     * 
                      */
                     bool TableGroupNameHasBeenSet() const;
 
                     /**
                      * 获取表格组创建时间
                      * @return CreatedTime 表格组创建时间
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置表格组创建时间
-                     * @param CreatedTime 表格组创建时间
+                     * @param _createdTime 表格组创建时间
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取表格组包含的表格数量
                      * @return TableCount 表格组包含的表格数量
+                     * 
                      */
                     uint64_t GetTableCount() const;
 
                     /**
                      * 设置表格组包含的表格数量
-                     * @param TableCount 表格组包含的表格数量
+                     * @param _tableCount 表格组包含的表格数量
+                     * 
                      */
                     void SetTableCount(const uint64_t& _tableCount);
 
                     /**
                      * 判断参数 TableCount 是否已赋值
                      * @return TableCount 是否已赋值
+                     * 
                      */
                     bool TableCountHasBeenSet() const;
 
                     /**
                      * 获取表格组包含的表格存储总量（MB）
                      * @return TotalSize 表格组包含的表格存储总量（MB）
+                     * 
                      */
                     uint64_t GetTotalSize() const;
 
                     /**
                      * 设置表格组包含的表格存储总量（MB）
-                     * @param TotalSize 表格组包含的表格存储总量（MB）
+                     * @param _totalSize 表格组包含的表格存储总量（MB）
+                     * 
                      */
                     void SetTotalSize(const uint64_t& _totalSize);
 
                     /**
                      * 判断参数 TotalSize 是否已赋值
                      * @return TotalSize 是否已赋值
+                     * 
                      */
                     bool TotalSizeHasBeenSet() const;
 
@@ -141,38 +156,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxhBackupExpireDay 表格Txh备份文件多少天后过期删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTxhBackupExpireDay() const;
 
                     /**
                      * 设置表格Txh备份文件多少天后过期删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TxhBackupExpireDay 表格Txh备份文件多少天后过期删除
+                     * @param _txhBackupExpireDay 表格Txh备份文件多少天后过期删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay);
 
                     /**
                      * 判断参数 TxhBackupExpireDay 是否已赋值
                      * @return TxhBackupExpireDay 是否已赋值
+                     * 
                      */
                     bool TxhBackupExpireDayHasBeenSet() const;
 
                     /**
                      * 获取是否开启mysql负载均衡,0未开启 1开启中 2已开启
                      * @return EnableMysql 是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     * 
                      */
                     uint64_t GetEnableMysql() const;
 
                     /**
                      * 设置是否开启mysql负载均衡,0未开启 1开启中 2已开启
-                     * @param EnableMysql 是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     * @param _enableMysql 是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     * 
                      */
                     void SetEnableMysql(const uint64_t& _enableMysql);
 
                     /**
                      * 判断参数 EnableMysql 是否已赋值
                      * @return EnableMysql 是否已赋值
+                     * 
                      */
                     bool EnableMysqlHasBeenSet() const;
 
@@ -181,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MysqlConnIp mysql负载均衡vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMysqlConnIp() const;
 
                     /**
                      * 设置mysql负载均衡vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MysqlConnIp mysql负载均衡vip
+                     * @param _mysqlConnIp mysql负载均衡vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMysqlConnIp(const std::string& _mysqlConnIp);
 
                     /**
                      * 判断参数 MysqlConnIp 是否已赋值
                      * @return MysqlConnIp 是否已赋值
+                     * 
                      */
                     bool MysqlConnIpHasBeenSet() const;
 
@@ -203,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MysqlConnPort mysql负载均衡vport
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMysqlConnPort() const;
 
                     /**
                      * 设置mysql负载均衡vport
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MysqlConnPort mysql负载均衡vport
+                     * @param _mysqlConnPort mysql负载均衡vport
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMysqlConnPort(const uint64_t& _mysqlConnPort);
 
                     /**
                      * 判断参数 MysqlConnPort 是否已赋值
                      * @return MysqlConnPort 是否已赋值
+                     * 
                      */
                     bool MysqlConnPortHasBeenSet() const;
 

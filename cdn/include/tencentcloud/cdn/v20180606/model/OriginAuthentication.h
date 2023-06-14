@@ -58,6 +58,7 @@ on：开启
 off：关闭
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -67,17 +68,19 @@ on：开启
 off：关闭
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 回源鉴权高级配置开关，取值有：
+                     * @param _switch 回源鉴权高级配置开关，取值有：
 on：开启
 off：关闭
 
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -86,20 +89,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeA 鉴权类型A配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OriginAuthenticationTypeA GetTypeA() const;
 
                     /**
                      * 设置鉴权类型A配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TypeA 鉴权类型A配置
+                     * @param _typeA 鉴权类型A配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTypeA(const OriginAuthenticationTypeA& _typeA);
 
                     /**
                      * 判断参数 TypeA 是否已赋值
                      * @return TypeA 是否已赋值
+                     * 
                      */
                     bool TypeAHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 健康检查方法。HTTP：通过 HTTP 接口检查；CMD：通过执行命令检查；TCP：通过建立 TCP 连接检查。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置健康检查方法。HTTP：通过 HTTP 接口检查；CMD：通过执行命令检查；TCP：通过建立 TCP 连接检查。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActionType 健康检查方法。HTTP：通过 HTTP 接口检查；CMD：通过执行命令检查；TCP：通过建立 TCP 连接检查。
+                     * @param _actionType 健康检查方法。HTTP：通过 HTTP 接口检查；CMD：通过执行命令检查；TCP：通过建立 TCP 连接检查。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActionType(const std::string& _actionType);
 
                     /**
                      * 判断参数 ActionType 是否已赋值
                      * @return ActionType 是否已赋值
+                     * 
                      */
                     bool ActionTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialDelaySeconds 容器延时启动健康检查的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInitialDelaySeconds() const;
 
                     /**
                      * 设置容器延时启动健康检查的时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InitialDelaySeconds 容器延时启动健康检查的时间。
+                     * @param _initialDelaySeconds 容器延时启动健康检查的时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInitialDelaySeconds(const uint64_t& _initialDelaySeconds);
 
                     /**
                      * 判断参数 InitialDelaySeconds 是否已赋值
                      * @return InitialDelaySeconds 是否已赋值
+                     * 
                      */
                     bool InitialDelaySecondsHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutSeconds 每次健康检查响应的最大超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTimeoutSeconds() const;
 
                     /**
                      * 设置每次健康检查响应的最大超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeoutSeconds 每次健康检查响应的最大超时时间。
+                     * @param _timeoutSeconds 每次健康检查响应的最大超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeoutSeconds(const uint64_t& _timeoutSeconds);
 
                     /**
                      * 判断参数 TimeoutSeconds 是否已赋值
                      * @return TimeoutSeconds 是否已赋值
+                     * 
                      */
                     bool TimeoutSecondsHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodSeconds 进行健康检查的时间间隔。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPeriodSeconds() const;
 
                     /**
                      * 设置进行健康检查的时间间隔。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeriodSeconds 进行健康检查的时间间隔。
+                     * @param _periodSeconds 进行健康检查的时间间隔。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeriodSeconds(const uint64_t& _periodSeconds);
 
                     /**
                      * 判断参数 PeriodSeconds 是否已赋值
                      * @return PeriodSeconds 是否已赋值
+                     * 
                      */
                     bool PeriodSecondsHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessThreshold 表示后端容器从失败到成功的连续健康检查成功次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSuccessThreshold() const;
 
                     /**
                      * 设置表示后端容器从失败到成功的连续健康检查成功次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuccessThreshold 表示后端容器从失败到成功的连续健康检查成功次数。
+                     * @param _successThreshold 表示后端容器从失败到成功的连续健康检查成功次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccessThreshold(const uint64_t& _successThreshold);
 
                     /**
                      * 判断参数 SuccessThreshold 是否已赋值
                      * @return SuccessThreshold 是否已赋值
+                     * 
                      */
                     bool SuccessThresholdHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureThreshold 表示后端容器从成功到失败的连续健康检查成功次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFailureThreshold() const;
 
                     /**
                      * 设置表示后端容器从成功到失败的连续健康检查成功次数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailureThreshold 表示后端容器从成功到失败的连续健康检查成功次数。
+                     * @param _failureThreshold 表示后端容器从成功到失败的连续健康检查成功次数。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailureThreshold(const uint64_t& _failureThreshold);
 
                     /**
                      * 判断参数 FailureThreshold 是否已赋值
                      * @return FailureThreshold 是否已赋值
+                     * 
                      */
                     bool FailureThresholdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scheme HTTP 健康检查方法使用的检查协议。支持HTTP、HTTPS。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScheme() const;
 
                     /**
                      * 设置HTTP 健康检查方法使用的检查协议。支持HTTP、HTTPS。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scheme HTTP 健康检查方法使用的检查协议。支持HTTP、HTTPS。
+                     * @param _scheme HTTP 健康检查方法使用的检查协议。支持HTTP、HTTPS。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScheme(const std::string& _scheme);
 
                     /**
                      * 判断参数 Scheme 是否已赋值
                      * @return Scheme 是否已赋值
+                     * 
                      */
                     bool SchemeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 健康检查端口，范围 1~65535 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置健康检查端口，范围 1~65535 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 健康检查端口，范围 1~65535 。
+                     * @param _port 健康检查端口，范围 1~65535 。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path HTTP 健康检查接口的请求路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置HTTP 健康检查接口的请求路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path HTTP 健康检查接口的请求路径。
+                     * @param _path HTTP 健康检查接口的请求路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Command 执行命令检查方式，执行的命令。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetCommand() const;
 
                     /**
                      * 设置执行命令检查方式，执行的命令。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Command 执行命令检查方式，执行的命令。
+                     * @param _command 执行命令检查方式，执行的命令。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCommand(const std::vector<std::string>& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
+                     * @param _type TSF_DEFAULT：tsf 默认就绪探针。K8S_NATIVE：k8s 原生探针。不填默认为 k8s 原生探针。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

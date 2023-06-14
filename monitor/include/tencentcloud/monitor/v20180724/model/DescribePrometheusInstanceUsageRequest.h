@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
                      * @return InstanceIds 按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
-                     * @param InstanceIds 按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
+                     * @param _instanceIds 按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartCalcDate 开始时间
+                     * 
                      */
                     std::string GetStartCalcDate() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartCalcDate 开始时间
+                     * @param _startCalcDate 开始时间
+                     * 
                      */
                     void SetStartCalcDate(const std::string& _startCalcDate);
 
                     /**
                      * 判断参数 StartCalcDate 是否已赋值
                      * @return StartCalcDate 是否已赋值
+                     * 
                      */
                     bool StartCalcDateHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndCalcDate 结束时间
+                     * 
                      */
                     std::string GetEndCalcDate() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndCalcDate 结束时间
+                     * @param _endCalcDate 结束时间
+                     * 
                      */
                     void SetEndCalcDate(const std::string& _endCalcDate);
 
                     /**
                      * 判断参数 EndCalcDate 是否已赋值
                      * @return EndCalcDate 是否已赋值
+                     * 
                      */
                     bool EndCalcDateHasBeenSet() const;
 

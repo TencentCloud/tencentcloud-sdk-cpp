@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 服务类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置服务类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 服务类型
+                     * @param _type 服务类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceName 服务名称
+                     * @param _serviceName 服务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterIp 集群内访问vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterIp() const;
 
                     /**
                      * 设置集群内访问vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterIp 集群内访问vip
+                     * @param _clusterIp 集群内访问vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterIp(const std::string& _clusterIp);
 
                     /**
                      * 判断参数 ClusterIp 是否已赋值
                      * @return ClusterIp 是否已赋值
+                     * 
                      */
                     bool ClusterIpHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalIp 集群外方位vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalIp() const;
 
                     /**
                      * 设置集群外方位vip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalIp 集群外方位vip
+                     * @param _externalIp 集群外方位vip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalIp(const std::string& _externalIp);
 
                     /**
                      * 判断参数 ExternalIp 是否已赋值
                      * @return ExternalIp 是否已赋值
+                     * 
                      */
                     bool ExternalIpHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网id
+                     * @param _subnetId 子网id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId vpc id
+                     * @param _vpcId vpc id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalanceId LoadBalance Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLoadBalanceId() const;
 
                     /**
                      * 设置LoadBalance Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadBalanceId LoadBalance Id
+                     * @param _loadBalanceId LoadBalance Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoadBalanceId(const std::string& _loadBalanceId);
 
                     /**
                      * 判断参数 LoadBalanceId 是否已赋值
                      * @return LoadBalanceId 是否已赋值
+                     * 
                      */
                     bool LoadBalanceIdHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Yaml yaml 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetYaml() const;
 
                     /**
                      * 设置yaml 内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Yaml yaml 内容
+                     * @param _yaml yaml 内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetYaml(const std::string& _yaml);
 
                     /**
                      * 判断参数 Yaml 是否已赋值
                      * @return Yaml 是否已赋值
+                     * 
                      */
                     bool YamlHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ports 暴露端口列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetPorts() const;
 
                     /**
                      * 设置暴露端口列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ports 暴露端口列表
+                     * @param _ports 暴露端口列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPorts(const std::vector<int64_t>& _ports);
 
                     /**
                      * 判断参数 Ports 是否已赋值
                      * @return Ports 是否已赋值
+                     * 
                      */
                     bool PortsHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PortMappingItemList 端口映射数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ServicePortMappingItem> GetPortMappingItemList() const;
 
                     /**
                      * 设置端口映射数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PortMappingItemList 端口映射数组
+                     * @param _portMappingItemList 端口映射数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPortMappingItemList(const std::vector<ServicePortMappingItem>& _portMappingItemList);
 
                     /**
                      * 判断参数 PortMappingItemList 是否已赋值
                      * @return PortMappingItemList 是否已赋值
+                     * 
                      */
                     bool PortMappingItemListHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalDomain clb domain
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExternalDomain() const;
 
                     /**
                      * 设置clb domain
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExternalDomain clb domain
+                     * @param _externalDomain clb domain
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExternalDomain(const std::string& _externalDomain);
 
                     /**
                      * 判断参数 ExternalDomain 是否已赋值
                      * @return ExternalDomain 是否已赋值
+                     * 
                      */
                     bool ExternalDomainHasBeenSet() const;
 

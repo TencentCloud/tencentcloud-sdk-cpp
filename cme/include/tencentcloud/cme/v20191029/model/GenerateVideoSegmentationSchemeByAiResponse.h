@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取视频智能拆条任务 Id 。
                      * @return TaskId 视频智能拆条任务 Id 。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

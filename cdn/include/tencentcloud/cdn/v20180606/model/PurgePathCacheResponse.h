@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取刷新任务 ID，同一批次提交的目录共用一个任务 ID
                      * @return TaskId 刷新任务 ID，同一批次提交的目录共用一个任务 ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取单词出现在该音频中的那个句子的时间戳，出现了几次， 就返回对应次数的起始和结束时间戳
                      * @return Value 单词出现在该音频中的那个句子的时间戳，出现了几次， 就返回对应次数的起始和结束时间戳
+                     * 
                      */
                     std::vector<WordTimePair> GetValue() const;
 
                     /**
                      * 设置单词出现在该音频中的那个句子的时间戳，出现了几次， 就返回对应次数的起始和结束时间戳
-                     * @param Value 单词出现在该音频中的那个句子的时间戳，出现了几次， 就返回对应次数的起始和结束时间戳
+                     * @param _value 单词出现在该音频中的那个句子的时间戳，出现了几次， 就返回对应次数的起始和结束时间戳
+                     * 
                      */
                     void SetValue(const std::vector<WordTimePair>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取词汇库中的单词
                      * @return Keyword 词汇库中的单词
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置词汇库中的单词
-                     * @param Keyword 词汇库中的单词
+                     * @param _keyword 词汇库中的单词
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

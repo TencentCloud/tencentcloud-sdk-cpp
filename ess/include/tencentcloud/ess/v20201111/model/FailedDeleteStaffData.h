@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 员工在电子签的userId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置员工在电子签的userId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 员工在电子签的userId
+                     * @param _userId 员工在电子签的userId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -73,38 +76,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 员工在第三方平台的openId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置员工在第三方平台的openId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId 员工在第三方平台的openId
+                     * @param _openId 员工在第三方平台的openId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return Reason 失败原因
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
-                     * @param Reason 失败原因
+                     * @param _reason 失败原因
+                     * 
                      */
                     void SetReason(const std::string& _reason);
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 

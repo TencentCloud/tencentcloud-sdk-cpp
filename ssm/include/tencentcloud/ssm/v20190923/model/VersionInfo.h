@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取版本号。
                      * @return VersionId 版本号。
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本号。
-                     * @param VersionId 版本号。
+                     * @param _versionId 版本号。
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间，unix时间戳。
                      * @return CreateTime 创建时间，unix时间戳。
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，unix时间戳。
-                     * @param CreateTime 创建时间，unix时间戳。
+                     * @param _createTime 创建时间，unix时间戳。
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
                      * @return InstanceIds 云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
-                     * @param InstanceIds 云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
+                     * @param _instanceIds 云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

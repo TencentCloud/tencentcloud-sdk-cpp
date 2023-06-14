@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AmountHasTax 明细金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAmountHasTax() const;
 
                     /**
                      * 设置明细金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AmountHasTax 明细金额
+                     * @param _amountHasTax 明细金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAmountHasTax(const double& _amountHasTax);
 
                     /**
                      * 判断参数 AmountHasTax 是否已赋值
                      * @return AmountHasTax 是否已赋值
+                     * 
                      */
                     bool AmountHasTaxHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Discount 优惠金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置优惠金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Discount 优惠金额
+                     * @param _discount 优惠金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 商品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置商品名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 商品名称
+                     * @param _name 商品名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Models 型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModels() const;
 
                     /**
                      * 设置型号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Models 型号
+                     * @param _models 型号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModels(const std::string& _models);
 
                     /**
                      * 判断参数 Models 是否已赋值
                      * @return Models 是否已赋值
+                     * 
                      */
                     bool ModelsHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total 数量
+                     * @param _total 数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotal(const int64_t& _total);
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 数量单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置数量单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 数量单位
+                     * @param _unit 数量单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnit(const std::string& _unit);
 
                     /**
                      * 判断参数 Unit 是否已赋值
                      * @return Unit 是否已赋值
+                     * 
                      */
                     bool UnitHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 默认“0”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置默认“0”
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 默认“0”
+                     * @param _status 默认“0”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 单价
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPrice() const;
 
                     /**
                      * 设置单价
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Price 单价
+                     * @param _price 单价
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrice(const double& _price);
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaxCode 商品编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaxCode() const;
 
                     /**
                      * 设置商品编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaxCode 商品编码
+                     * @param _taxCode 商品编码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaxCode(const std::string& _taxCode);
 
                     /**
                      * 判断参数 TaxCode 是否已赋值
                      * @return TaxCode 是否已赋值
+                     * 
                      */
                     bool TaxCodeHasBeenSet() const;
 

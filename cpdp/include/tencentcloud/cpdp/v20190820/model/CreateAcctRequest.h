@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取聚鑫平台分配的支付MidasAppId
                      * @return MidasAppId 聚鑫平台分配的支付MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置聚鑫平台分配的支付MidasAppId
-                     * @param MidasAppId 聚鑫平台分配的支付MidasAppId
+                     * @param _midasAppId 聚鑫平台分配的支付MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取业务平台的子商户ID，唯一
                      * @return SubMchId 业务平台的子商户ID，唯一
+                     * 
                      */
                     std::string GetSubMchId() const;
 
                     /**
                      * 设置业务平台的子商户ID，唯一
-                     * @param SubMchId 业务平台的子商户ID，唯一
+                     * @param _subMchId 业务平台的子商户ID，唯一
+                     * 
                      */
                     void SetSubMchId(const std::string& _subMchId);
 
                     /**
                      * 判断参数 SubMchId 是否已赋值
                      * @return SubMchId 是否已赋值
+                     * 
                      */
                     bool SubMchIdHasBeenSet() const;
 
                     /**
                      * 获取子商户名称
                      * @return SubMchName 子商户名称
+                     * 
                      */
                     std::string GetSubMchName() const;
 
                     /**
                      * 设置子商户名称
-                     * @param SubMchName 子商户名称
+                     * @param _subMchName 子商户名称
+                     * 
                      */
                     void SetSubMchName(const std::string& _subMchName);
 
                     /**
                      * 判断参数 SubMchName 是否已赋值
                      * @return SubMchName 是否已赋值
+                     * 
                      */
                     bool SubMchNameHasBeenSet() const;
 
                     /**
                      * 获取子商户地址
                      * @return Address 子商户地址
+                     * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置子商户地址
-                     * @param Address 子商户地址
+                     * @param _address 子商户地址
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -120,20 +132,23 @@ namespace TencentCloud
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return Contact 子商户联系人
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetContact() const;
 
                     /**
                      * 设置子商户联系人
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param Contact 子商户联系人
+                     * @param _contact 子商户联系人
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetContact(const std::string& _contact);
 
                     /**
                      * 判断参数 Contact 是否已赋值
                      * @return Contact 是否已赋值
+                     * 
                      */
                     bool ContactHasBeenSet() const;
 
@@ -142,20 +157,23 @@ namespace TencentCloud
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return Mobile 联系人手机号
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置联系人手机号
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param Mobile 联系人手机号
+                     * @param _mobile 联系人手机号
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 
@@ -164,56 +182,65 @@ namespace TencentCloud
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return Email 邮箱 
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱 
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param Email 邮箱 
+                     * @param _email 邮箱 
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetEmail(const std::string& _email);
 
                     /**
                      * 判断参数 Email 是否已赋值
                      * @return Email 是否已赋值
+                     * 
                      */
                     bool EmailHasBeenSet() const;
 
                     /**
                      * 获取聚鑫分配的安全ID
                      * @return MidasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     std::string GetMidasSecretId() const;
 
                     /**
                      * 设置聚鑫分配的安全ID
-                     * @param MidasSecretId 聚鑫分配的安全ID
+                     * @param _midasSecretId 聚鑫分配的安全ID
+                     * 
                      */
                     void SetMidasSecretId(const std::string& _midasSecretId);
 
                     /**
                      * 判断参数 MidasSecretId 是否已赋值
                      * @return MidasSecretId 是否已赋值
+                     * 
                      */
                     bool MidasSecretIdHasBeenSet() const;
 
                     /**
                      * 获取按照聚鑫安全密钥计算的签名
                      * @return MidasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     std::string GetMidasSignature() const;
 
                     /**
                      * 设置按照聚鑫安全密钥计算的签名
-                     * @param MidasSignature 按照聚鑫安全密钥计算的签名
+                     * @param _midasSignature 按照聚鑫安全密钥计算的签名
+                     * 
                      */
                     void SetMidasSignature(const std::string& _midasSignature);
 
                     /**
                      * 判断参数 MidasSignature 是否已赋值
                      * @return MidasSignature 是否已赋值
+                     * 
                      */
                     bool MidasSignatureHasBeenSet() const;
 
@@ -228,6 +255,7 @@ namespace TencentCloud
 企业: enterprise
 个体工商户: individual
 缺省: enterprise
+                     * 
                      */
                     std::string GetSubMchType() const;
 
@@ -237,35 +265,40 @@ namespace TencentCloud
 企业: enterprise
 个体工商户: individual
 缺省: enterprise
-                     * @param SubMchType 子商户类型：
+                     * @param _subMchType 子商户类型：
 个人: personal
 企业: enterprise
 个体工商户: individual
 缺省: enterprise
+                     * 
                      */
                     void SetSubMchType(const std::string& _subMchType);
 
                     /**
                      * 判断参数 SubMchType 是否已赋值
                      * @return SubMchType 是否已赋值
+                     * 
                      */
                     bool SubMchTypeHasBeenSet() const;
 
                     /**
                      * 获取不填则默认子商户名称
                      * @return ShortName 不填则默认子商户名称
+                     * 
                      */
                     std::string GetShortName() const;
 
                     /**
                      * 设置不填则默认子商户名称
-                     * @param ShortName 不填则默认子商户名称
+                     * @param _shortName 不填则默认子商户名称
+                     * 
                      */
                     void SetShortName(const std::string& _shortName);
 
                     /**
                      * 判断参数 ShortName 是否已赋值
                      * @return ShortName 是否已赋值
+                     * 
                      */
                     bool ShortNameHasBeenSet() const;
 
@@ -278,6 +311,7 @@ merchant: 商户子账户
 general: 普通子账户
 merchant: 商户子账户
 缺省: general
+                     * 
                      */
                     std::string GetSubMerchantMemberType() const;
 
@@ -286,16 +320,18 @@ merchant: 商户子账户
 general: 普通子账户
 merchant: 商户子账户
 缺省: general
-                     * @param SubMerchantMemberType 子商户会员类型：
+                     * @param _subMerchantMemberType 子商户会员类型：
 general: 普通子账户
 merchant: 商户子账户
 缺省: general
+                     * 
                      */
                     void SetSubMerchantMemberType(const std::string& _subMerchantMemberType);
 
                     /**
                      * 判断参数 SubMerchantMemberType 是否已赋值
                      * @return SubMerchantMemberType 是否已赋值
+                     * 
                      */
                     bool SubMerchantMemberTypeHasBeenSet() const;
 
@@ -304,20 +340,23 @@ merchant: 商户子账户
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SubMerchantKey 子商户密钥
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetSubMerchantKey() const;
 
                     /**
                      * 设置子商户密钥
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param SubMerchantKey 子商户密钥
+                     * @param _subMerchantKey 子商户密钥
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetSubMerchantKey(const std::string& _subMerchantKey);
 
                     /**
                      * 判断参数 SubMerchantKey 是否已赋值
                      * @return SubMerchantKey 是否已赋值
+                     * 
                      */
                     bool SubMerchantKeyHasBeenSet() const;
 
@@ -326,20 +365,23 @@ merchant: 商户子账户
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SubMerchantPrivateKey 子商户私钥
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetSubMerchantPrivateKey() const;
 
                     /**
                      * 设置子商户私钥
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param SubMerchantPrivateKey 子商户私钥
+                     * @param _subMerchantPrivateKey 子商户私钥
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetSubMerchantPrivateKey(const std::string& _subMerchantPrivateKey);
 
                     /**
                      * 判断参数 SubMerchantPrivateKey 是否已赋值
                      * @return SubMerchantPrivateKey 是否已赋值
+                     * 
                      */
                     bool SubMerchantPrivateKeyHasBeenSet() const;
 
@@ -352,6 +394,7 @@ AES: aes对称加密，使用AES256-CBC-PCKS7padding
 RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
 AES: aes对称加密，使用AES256-CBC-PCKS7padding
 缺省: RSA
+                     * 
                      */
                     std::string GetEncryptType() const;
 
@@ -360,34 +403,39 @@ AES: aes对称加密，使用AES256-CBC-PCKS7padding
 RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
 AES: aes对称加密，使用AES256-CBC-PCKS7padding
 缺省: RSA
-                     * @param EncryptType 敏感信息加密类型:
+                     * @param _encryptType 敏感信息加密类型:
 RSA: rsa非对称加密，使用RSA-PKCS1-v1_5
 AES: aes对称加密，使用AES256-CBC-PCKS7padding
 缺省: RSA
+                     * 
                      */
                     void SetEncryptType(const std::string& _encryptType);
 
                     /**
                      * 判断参数 EncryptType 是否已赋值
                      * @return EncryptType 是否已赋值
+                     * 
                      */
                     bool EncryptTypeHasBeenSet() const;
 
                     /**
                      * 获取银行生成的子商户账户，已开户的场景需要录入
                      * @return SubAcctNo 银行生成的子商户账户，已开户的场景需要录入
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 设置银行生成的子商户账户，已开户的场景需要录入
-                     * @param SubAcctNo 银行生成的子商户账户，已开户的场景需要录入
+                     * @param _subAcctNo 银行生成的子商户账户，已开户的场景需要录入
+                     * 
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
@@ -402,6 +450,7 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -411,17 +460,19 @@ release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
-                     * @param MidasEnvironment 环境名:
+                     * @param _midasEnvironment 环境名:
 release: 现网环境
 sandbox: 沙箱环境
 development: 开发环境
 缺省: release
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
@@ -430,38 +481,44 @@ development: 开发环境
 企业、个体工商户必输
                      * @return SubMerchantStoreName 店铺名称
 企业、个体工商户必输
+                     * 
                      */
                     std::string GetSubMerchantStoreName() const;
 
                     /**
                      * 设置店铺名称
 企业、个体工商户必输
-                     * @param SubMerchantStoreName 店铺名称
+                     * @param _subMerchantStoreName 店铺名称
 企业、个体工商户必输
+                     * 
                      */
                     void SetSubMerchantStoreName(const std::string& _subMerchantStoreName);
 
                     /**
                      * 判断参数 SubMerchantStoreName 是否已赋值
                      * @return SubMerchantStoreName 是否已赋值
+                     * 
                      */
                     bool SubMerchantStoreNameHasBeenSet() const;
 
                     /**
                      * 获取公司信息
                      * @return OrganizationInfo 公司信息
+                     * 
                      */
                     OrganizationInfo GetOrganizationInfo() const;
 
                     /**
                      * 设置公司信息
-                     * @param OrganizationInfo 公司信息
+                     * @param _organizationInfo 公司信息
+                     * 
                      */
                     void SetOrganizationInfo(const OrganizationInfo& _organizationInfo);
 
                     /**
                      * 判断参数 OrganizationInfo 是否已赋值
                      * @return OrganizationInfo 是否已赋值
+                     * 
                      */
                     bool OrganizationInfoHasBeenSet() const;
 
@@ -484,6 +541,7 @@ development: 开发环境
 52 - 组织机构代码证
 68 - 营业执照 
 73 - 统一社会信用代码
+                     * 
                      */
                     std::string GetSubMerchantIdType() const;
 
@@ -497,7 +555,7 @@ development: 开发环境
 52 - 组织机构代码证
 68 - 营业执照 
 73 - 统一社会信用代码
-                     * @param SubMerchantIdType 子商户证件类型
+                     * @param _subMerchantIdType 子商户证件类型
 1 - 身份证
 3 - 回乡证
 4 - 中国护照
@@ -506,12 +564,14 @@ development: 开发环境
 52 - 组织机构代码证
 68 - 营业执照 
 73 - 统一社会信用代码
+                     * 
                      */
                     void SetSubMerchantIdType(const std::string& _subMerchantIdType);
 
                     /**
                      * 判断参数 SubMerchantIdType 是否已赋值
                      * @return SubMerchantIdType 是否已赋值
+                     * 
                      */
                     bool SubMerchantIdTypeHasBeenSet() const;
 
@@ -520,20 +580,23 @@ development: 开发环境
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return SubMerchantIdCode 子商户证件号码
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     std::string GetSubMerchantIdCode() const;
 
                     /**
                      * 设置子商户证件号码
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
-                     * @param SubMerchantIdCode 子商户证件号码
+                     * @param _subMerchantIdCode 子商户证件号码
 <敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * 
                      */
                     void SetSubMerchantIdCode(const std::string& _subMerchantIdCode);
 
                     /**
                      * 判断参数 SubMerchantIdCode 是否已赋值
                      * @return SubMerchantIdCode 是否已赋值
+                     * 
                      */
                     bool SubMerchantIdCodeHasBeenSet() const;
 

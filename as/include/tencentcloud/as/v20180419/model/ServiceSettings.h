@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取开启监控不健康替换服务。若开启则对于云监控标记为不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
                      * @return ReplaceMonitorUnhealthy 开启监控不健康替换服务。若开启则对于云监控标记为不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * 
                      */
                     bool GetReplaceMonitorUnhealthy() const;
 
                     /**
                      * 设置开启监控不健康替换服务。若开启则对于云监控标记为不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
-                     * @param ReplaceMonitorUnhealthy 开启监控不健康替换服务。若开启则对于云监控标记为不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * @param _replaceMonitorUnhealthy 开启监控不健康替换服务。若开启则对于云监控标记为不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * 
                      */
                     void SetReplaceMonitorUnhealthy(const bool& _replaceMonitorUnhealthy);
 
                     /**
                      * 判断参数 ReplaceMonitorUnhealthy 是否已赋值
                      * @return ReplaceMonitorUnhealthy 是否已赋值
+                     * 
                      */
                     bool ReplaceMonitorUnhealthyHasBeenSet() const;
 
@@ -73,6 +76,7 @@ WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实
 CLASSIC_SCALING：经典方式，使用创建、销毁实例来实现扩缩容； 
 WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实例执行开机操作，若开机后实例数仍低于期望实例数，则创建实例，缩容仍采用销毁实例的方式。用户可以使用StopAutoScalingInstances接口来关闭伸缩组内的实例。监控告警触发的扩容仍将创建实例
 默认取值：CLASSIC_SCALING
+                     * 
                      */
                     std::string GetScalingMode() const;
 
@@ -81,34 +85,39 @@ WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实
 CLASSIC_SCALING：经典方式，使用创建、销毁实例来实现扩缩容； 
 WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实例执行开机操作，若开机后实例数仍低于期望实例数，则创建实例，缩容仍采用销毁实例的方式。用户可以使用StopAutoScalingInstances接口来关闭伸缩组内的实例。监控告警触发的扩容仍将创建实例
 默认取值：CLASSIC_SCALING
-                     * @param ScalingMode 取值范围： 
+                     * @param _scalingMode 取值范围： 
 CLASSIC_SCALING：经典方式，使用创建、销毁实例来实现扩缩容； 
 WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实例执行开机操作，若开机后实例数仍低于期望实例数，则创建实例，缩容仍采用销毁实例的方式。用户可以使用StopAutoScalingInstances接口来关闭伸缩组内的实例。监控告警触发的扩容仍将创建实例
 默认取值：CLASSIC_SCALING
+                     * 
                      */
                     void SetScalingMode(const std::string& _scalingMode);
 
                     /**
                      * 判断参数 ScalingMode 是否已赋值
                      * @return ScalingMode 是否已赋值
+                     * 
                      */
                     bool ScalingModeHasBeenSet() const;
 
                     /**
                      * 获取开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
                      * @return ReplaceLoadBalancerUnhealthy 开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * 
                      */
                     bool GetReplaceLoadBalancerUnhealthy() const;
 
                     /**
                      * 设置开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
-                     * @param ReplaceLoadBalancerUnhealthy 开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * @param _replaceLoadBalancerUnhealthy 开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * 
                      */
                     void SetReplaceLoadBalancerUnhealthy(const bool& _replaceLoadBalancerUnhealthy);
 
                     /**
                      * 判断参数 ReplaceLoadBalancerUnhealthy 是否已赋值
                      * @return ReplaceLoadBalancerUnhealthy 是否已赋值
+                     * 
                      */
                     bool ReplaceLoadBalancerUnhealthyHasBeenSet() const;
 

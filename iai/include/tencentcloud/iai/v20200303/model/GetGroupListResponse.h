@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的人员库信息
                      * @return GroupInfos 返回的人员库信息
+                     * 
                      */
                     std::vector<GroupInfo> GetGroupInfos() const;
 
                     /**
                      * 判断参数 GroupInfos 是否已赋值
                      * @return GroupInfos 是否已赋值
+                     * 
                      */
                     bool GroupInfosHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupNum 人员库总数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGroupNum() const;
 
                     /**
                      * 判断参数 GroupNum 是否已赋值
                      * @return GroupNum 是否已赋值
+                     * 
                      */
                     bool GroupNumHasBeenSet() const;
 

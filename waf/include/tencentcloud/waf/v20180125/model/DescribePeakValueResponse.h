@@ -46,60 +46,70 @@ namespace TencentCloud
                     /**
                      * 获取QPS峰值
                      * @return Access QPS峰值
+                     * 
                      */
                     uint64_t GetAccess() const;
 
                     /**
                      * 判断参数 Access 是否已赋值
                      * @return Access 是否已赋值
+                     * 
                      */
                     bool AccessHasBeenSet() const;
 
                     /**
                      * 获取上行带宽峰值，单位B
                      * @return Up 上行带宽峰值，单位B
+                     * 
                      */
                     uint64_t GetUp() const;
 
                     /**
                      * 判断参数 Up 是否已赋值
                      * @return Up 是否已赋值
+                     * 
                      */
                     bool UpHasBeenSet() const;
 
                     /**
                      * 获取下行带宽峰值，单位B
                      * @return Down 下行带宽峰值，单位B
+                     * 
                      */
                     uint64_t GetDown() const;
 
                     /**
                      * 判断参数 Down 是否已赋值
                      * @return Down 是否已赋值
+                     * 
                      */
                     bool DownHasBeenSet() const;
 
                     /**
                      * 获取Web攻击总数
                      * @return Attack Web攻击总数
+                     * 
                      */
                     uint64_t GetAttack() const;
 
                     /**
                      * 判断参数 Attack 是否已赋值
                      * @return Attack 是否已赋值
+                     * 
                      */
                     bool AttackHasBeenSet() const;
 
                     /**
                      * 获取CC攻击总数
                      * @return Cc CC攻击总数
+                     * 
                      */
                     uint64_t GetCc() const;
 
                     /**
                      * 判断参数 Cc 是否已赋值
                      * @return Cc 是否已赋值
+                     * 
                      */
                     bool CcHasBeenSet() const;
 

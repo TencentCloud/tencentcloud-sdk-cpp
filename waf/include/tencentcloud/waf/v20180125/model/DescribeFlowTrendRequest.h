@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取需要获取流量趋势的域名, all表示所有域名
                      * @return Domain 需要获取流量趋势的域名, all表示所有域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要获取流量趋势的域名, all表示所有域名
-                     * @param Domain 需要获取流量趋势的域名, all表示所有域名
+                     * @param _domain 需要获取流量趋势的域名, all表示所有域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取起始时间戳，精度秒
                      * @return StartTs 起始时间戳，精度秒
+                     * 
                      */
                     int64_t GetStartTs() const;
 
                     /**
                      * 设置起始时间戳，精度秒
-                     * @param StartTs 起始时间戳，精度秒
+                     * @param _startTs 起始时间戳，精度秒
+                     * 
                      */
                     void SetStartTs(const int64_t& _startTs);
 
                     /**
                      * 判断参数 StartTs 是否已赋值
                      * @return StartTs 是否已赋值
+                     * 
                      */
                     bool StartTsHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳，精度秒
                      * @return EndTs 结束时间戳，精度秒
+                     * 
                      */
                     int64_t GetEndTs() const;
 
                     /**
                      * 设置结束时间戳，精度秒
-                     * @param EndTs 结束时间戳，精度秒
+                     * @param _endTs 结束时间戳，精度秒
+                     * 
                      */
                     void SetEndTs(const int64_t& _endTs);
 
                     /**
                      * 判断参数 EndTs 是否已赋值
                      * @return EndTs 是否已赋值
+                     * 
                      */
                     bool EndTsHasBeenSet() const;
 

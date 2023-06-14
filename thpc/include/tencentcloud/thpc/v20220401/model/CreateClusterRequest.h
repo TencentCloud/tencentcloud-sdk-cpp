@@ -53,198 +53,231 @@ namespace TencentCloud
                     /**
                      * 获取集群中实例所在的位置。
                      * @return Placement 集群中实例所在的位置。
+                     * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置集群中实例所在的位置。
-                     * @param Placement 集群中实例所在的位置。
+                     * @param _placement 集群中实例所在的位置。
+                     * 
                      */
                     void SetPlacement(const Placement& _placement);
 
                     /**
                      * 判断参数 Placement 是否已赋值
                      * @return Placement 是否已赋值
+                     * 
                      */
                     bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取指定管理节点。
                      * @return ManagerNode 指定管理节点。
+                     * 
                      */
                     ManagerNode GetManagerNode() const;
 
                     /**
                      * 设置指定管理节点。
-                     * @param ManagerNode 指定管理节点。
+                     * @param _managerNode 指定管理节点。
+                     * 
                      */
                     void SetManagerNode(const ManagerNode& _managerNode);
 
                     /**
                      * 判断参数 ManagerNode 是否已赋值
                      * @return ManagerNode 是否已赋值
+                     * 
                      */
                     bool ManagerNodeHasBeenSet() const;
 
                     /**
                      * 获取指定管理节点的数量。默认取值：1。取值范围：1～2。
                      * @return ManagerNodeCount 指定管理节点的数量。默认取值：1。取值范围：1～2。
+                     * 
                      */
                     int64_t GetManagerNodeCount() const;
 
                     /**
                      * 设置指定管理节点的数量。默认取值：1。取值范围：1～2。
-                     * @param ManagerNodeCount 指定管理节点的数量。默认取值：1。取值范围：1～2。
+                     * @param _managerNodeCount 指定管理节点的数量。默认取值：1。取值范围：1～2。
+                     * 
                      */
                     void SetManagerNodeCount(const int64_t& _managerNodeCount);
 
                     /**
                      * 判断参数 ManagerNodeCount 是否已赋值
                      * @return ManagerNodeCount 是否已赋值
+                     * 
                      */
                     bool ManagerNodeCountHasBeenSet() const;
 
                     /**
                      * 获取指定计算节点。
                      * @return ComputeNode 指定计算节点。
+                     * 
                      */
                     ComputeNode GetComputeNode() const;
 
                     /**
                      * 设置指定计算节点。
-                     * @param ComputeNode 指定计算节点。
+                     * @param _computeNode 指定计算节点。
+                     * 
                      */
                     void SetComputeNode(const ComputeNode& _computeNode);
 
                     /**
                      * 判断参数 ComputeNode 是否已赋值
                      * @return ComputeNode 是否已赋值
+                     * 
                      */
                     bool ComputeNodeHasBeenSet() const;
 
                     /**
                      * 获取指定计算节点的数量。默认取值：0。
                      * @return ComputeNodeCount 指定计算节点的数量。默认取值：0。
+                     * 
                      */
                     int64_t GetComputeNodeCount() const;
 
                     /**
                      * 设置指定计算节点的数量。默认取值：0。
-                     * @param ComputeNodeCount 指定计算节点的数量。默认取值：0。
+                     * @param _computeNodeCount 指定计算节点的数量。默认取值：0。
+                     * 
                      */
                     void SetComputeNodeCount(const int64_t& _computeNodeCount);
 
                     /**
                      * 判断参数 ComputeNodeCount 是否已赋值
                      * @return ComputeNodeCount 是否已赋值
+                     * 
                      */
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
                      * 获取调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
                      * @return SchedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 
                      */
                     std::string GetSchedulerType() const;
 
                     /**
                      * 设置调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @param SchedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * @param _schedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
 
                     /**
                      * 判断参数 SchedulerType 是否已赋值
                      * @return SchedulerType 是否已赋值
+                     * 
                      */
                     bool SchedulerTypeHasBeenSet() const;
 
                     /**
                      * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
                      * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
-                     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
+                     * @param _imageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络相关信息配置。
                      * @return VirtualPrivateCloud 私有网络相关信息配置。
+                     * 
                      */
                     VirtualPrivateCloud GetVirtualPrivateCloud() const;
 
                     /**
                      * 设置私有网络相关信息配置。
-                     * @param VirtualPrivateCloud 私有网络相关信息配置。
+                     * @param _virtualPrivateCloud 私有网络相关信息配置。
+                     * 
                      */
                     void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
 
                     /**
                      * 判断参数 VirtualPrivateCloud 是否已赋值
                      * @return VirtualPrivateCloud 是否已赋值
+                     * 
                      */
                     bool VirtualPrivateCloudHasBeenSet() const;
 
                     /**
                      * 获取集群登录设置。
                      * @return LoginSettings 集群登录设置。
+                     * 
                      */
                     LoginSettings GetLoginSettings() const;
 
                     /**
                      * 设置集群登录设置。
-                     * @param LoginSettings 集群登录设置。
+                     * @param _loginSettings 集群登录设置。
+                     * 
                      */
                     void SetLoginSettings(const LoginSettings& _loginSettings);
 
                     /**
                      * 判断参数 LoginSettings 是否已赋值
                      * @return LoginSettings 是否已赋值
+                     * 
                      */
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
                      * 获取集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
                      * @return SecurityGroupIds 集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
-                     * @param SecurityGroupIds 集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * @param _securityGroupIds 集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 
                      */
                     std::string GetClientToken() const;
 
                     /**
                      * 设置用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
-                     * @param ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * @param _clientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
+                     * 
                      */
                     void SetClientToken(const std::string& _clientToken);
 
                     /**
                      * 判断参数 ClientToken 是否已赋值
                      * @return ClientToken 是否已赋值
+                     * 
                      */
                     bool ClientTokenHasBeenSet() const;
 
@@ -259,6 +292,7 @@ true：发送检查请求，不会创建实例。检查项包括是否填写了�
 如果检查不通过，则返回对应错误码；
 如果检查通过，则返回RequestId.
 false（默认）：发送正常请求，通过检查后直接创建实例
+                     * 
                      */
                     bool GetDryRun() const;
 
@@ -268,17 +302,19 @@ true：发送检查请求，不会创建实例。检查项包括是否填写了�
 如果检查不通过，则返回对应错误码；
 如果检查通过，则返回RequestId.
 false（默认）：发送正常请求，通过检查后直接创建实例
-                     * @param DryRun 是否只预检此次请求。
+                     * @param _dryRun 是否只预检此次请求。
 true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。
 如果检查不通过，则返回对应错误码；
 如果检查通过，则返回RequestId.
 false（默认）：发送正常请求，通过检查后直接创建实例
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 
@@ -287,128 +323,149 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 <li>NIS：NIS域名字服务。
                      * @return AccountType 域名字服务类型。默认取值：NIS。
 <li>NIS：NIS域名字服务。
+                     * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置域名字服务类型。默认取值：NIS。
 <li>NIS：NIS域名字服务。
-                     * @param AccountType 域名字服务类型。默认取值：NIS。
+                     * @param _accountType 域名字服务类型。默认取值：NIS。
 <li>NIS：NIS域名字服务。
+                     * 
                      */
                     void SetAccountType(const std::string& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
                     /**
                      * 获取集群显示名称。
                      * @return ClusterName 集群显示名称。
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群显示名称。
-                     * @param ClusterName 集群显示名称。
+                     * @param _clusterName 集群显示名称。
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 
                     /**
                      * 获取集群存储选项
                      * @return StorageOption 集群存储选项
+                     * 
                      */
                     StorageOption GetStorageOption() const;
 
                     /**
                      * 设置集群存储选项
-                     * @param StorageOption 集群存储选项
+                     * @param _storageOption 集群存储选项
+                     * 
                      */
                     void SetStorageOption(const StorageOption& _storageOption);
 
                     /**
                      * 判断参数 StorageOption 是否已赋值
                      * @return StorageOption 是否已赋值
+                     * 
                      */
                     bool StorageOptionHasBeenSet() const;
 
                     /**
                      * 获取指定登录节点。
                      * @return LoginNode 指定登录节点。
+                     * 
                      */
                     LoginNode GetLoginNode() const;
 
                     /**
                      * 设置指定登录节点。
-                     * @param LoginNode 指定登录节点。
+                     * @param _loginNode 指定登录节点。
+                     * 
                      */
                     void SetLoginNode(const LoginNode& _loginNode);
 
                     /**
                      * 判断参数 LoginNode 是否已赋值
                      * @return LoginNode 是否已赋值
+                     * 
                      */
                     bool LoginNodeHasBeenSet() const;
 
                     /**
                      * 获取指定登录节点的数量。默认取值：0。取值范围：0～10。
                      * @return LoginNodeCount 指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     * 
                      */
                     int64_t GetLoginNodeCount() const;
 
                     /**
                      * 设置指定登录节点的数量。默认取值：0。取值范围：0～10。
-                     * @param LoginNodeCount 指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     * @param _loginNodeCount 指定登录节点的数量。默认取值：0。取值范围：0～10。
+                     * 
                      */
                     void SetLoginNodeCount(const int64_t& _loginNodeCount);
 
                     /**
                      * 判断参数 LoginNodeCount 是否已赋值
                      * @return LoginNodeCount 是否已赋值
+                     * 
                      */
                     bool LoginNodeCountHasBeenSet() const;
 
                     /**
                      * 获取创建集群时同时绑定的标签对说明。
                      * @return Tags 创建集群时同时绑定的标签对说明。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置创建集群时同时绑定的标签对说明。
-                     * @param Tags 创建集群时同时绑定的标签对说明。
+                     * @param _tags 创建集群时同时绑定的标签对说明。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
                      * @return AutoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * 
                      */
                     std::string GetAutoScalingType() const;
 
                     /**
                      * 设置弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
-                     * @param AutoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * @param _autoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * 
                      */
                     void SetAutoScalingType(const std::string& _autoScalingType);
 
                     /**
                      * 判断参数 AutoScalingType 是否已赋值
                      * @return AutoScalingType 是否已赋值
+                     * 
                      */
                     bool AutoScalingTypeHasBeenSet() const;
 

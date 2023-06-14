@@ -52,234 +52,273 @@ namespace TencentCloud
                     /**
                      * 获取资产ID
                      * @return Id 资产ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置资产ID
-                     * @param Id 资产ID
+                     * @param _id 资产ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取实例ID，对应CVM、CDB等实例ID
                      * @return InstanceId 实例ID，对应CVM、CDB等实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，对应CVM、CDB等实例ID
-                     * @param InstanceId 实例ID，对应CVM、CDB等实例ID
+                     * @param _instanceId 实例ID，对应CVM、CDB等实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取资产名
                      * @return Name 资产名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资产名
-                     * @param Name 资产名
+                     * @param _name 资产名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取公网IP
                      * @return PublicIp 公网IP
+                     * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
                      * 设置公网IP
-                     * @param PublicIp 公网IP
+                     * @param _publicIp 公网IP
+                     * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
 
                     /**
                      * 判断参数 PublicIp 是否已赋值
                      * @return PublicIp 是否已赋值
+                     * 
                      */
                     bool PublicIpHasBeenSet() const;
 
                     /**
                      * 获取内网IP
                      * @return PrivateIp 内网IP
+                     * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
                      * 设置内网IP
-                     * @param PrivateIp 内网IP
+                     * @param _privateIp 内网IP
+                     * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
 
                     /**
                      * 判断参数 PrivateIp 是否已赋值
                      * @return PrivateIp 是否已赋值
+                     * 
                      */
                     bool PrivateIpHasBeenSet() const;
 
                     /**
                      * 获取地域编码
                      * @return ApCode 地域编码
+                     * 
                      */
                     std::string GetApCode() const;
 
                     /**
                      * 设置地域编码
-                     * @param ApCode 地域编码
+                     * @param _apCode 地域编码
+                     * 
                      */
                     void SetApCode(const std::string& _apCode);
 
                     /**
                      * 判断参数 ApCode 是否已赋值
                      * @return ApCode 是否已赋值
+                     * 
                      */
                     bool ApCodeHasBeenSet() const;
 
                     /**
                      * 获取操作系统名称
                      * @return OsName 操作系统名称
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 设置操作系统名称
-                     * @param OsName 操作系统名称
+                     * @param _osName 操作系统名称
+                     * 
                      */
                     void SetOsName(const std::string& _osName);
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
                     /**
                      * 获取资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
                      * @return Kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 
                      */
                     uint64_t GetKind() const;
 
                     /**
                      * 设置资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @param Kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * @param _kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 
                      */
                     void SetKind(const uint64_t& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 
                     /**
                      * 获取管理端口
                      * @return Port 管理端口
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置管理端口
-                     * @param Port 管理端口
+                     * @param _port 管理端口
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
                     /**
                      * 获取所属资产组列表
                      * @return GroupSet 所属资产组列表
+                     * 
                      */
                     std::vector<Group> GetGroupSet() const;
 
                     /**
                      * 设置所属资产组列表
-                     * @param GroupSet 所属资产组列表
+                     * @param _groupSet 所属资产组列表
+                     * 
                      */
                     void SetGroupSet(const std::vector<Group>& _groupSet);
 
                     /**
                      * 判断参数 GroupSet 是否已赋值
                      * @return GroupSet 是否已赋值
+                     * 
                      */
                     bool GroupSetHasBeenSet() const;
 
                     /**
                      * 获取资产绑定的账号数
                      * @return AccountCount 资产绑定的账号数
+                     * 
                      */
                     uint64_t GetAccountCount() const;
 
                     /**
                      * 设置资产绑定的账号数
-                     * @param AccountCount 资产绑定的账号数
+                     * @param _accountCount 资产绑定的账号数
+                     * 
                      */
                     void SetAccountCount(const uint64_t& _accountCount);
 
                     /**
                      * 判断参数 AccountCount 是否已赋值
                      * @return AccountCount 是否已赋值
+                     * 
                      */
                     bool AccountCountHasBeenSet() const;
 
                     /**
                      * 获取VPC ID
                      * @return VpcId VPC ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID
-                     * @param VpcId VPC ID
+                     * @param _vpcId VPC ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetId 子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -288,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 堡垒机服务信息，注意没有绑定服务时为null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Resource GetResource() const;
 
                     /**
                      * 设置堡垒机服务信息，注意没有绑定服务时为null
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Resource 堡垒机服务信息，注意没有绑定服务时为null
+                     * @param _resource 堡垒机服务信息，注意没有绑定服务时为null
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResource(const Resource& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
@@ -310,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 资产所属部门
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置资产所属部门
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Department 资产所属部门
+                     * @param _department 资产所属部门
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDepartment(const Department& _department);
 
                     /**
                      * 判断参数 Department 是否已赋值
                      * @return Department 是否已赋值
+                     * 
                      */
                     bool DepartmentHasBeenSet() const;
 

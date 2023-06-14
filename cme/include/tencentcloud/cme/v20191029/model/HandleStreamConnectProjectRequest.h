@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
                      * @return Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
-                     * @param Platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * @param _platform 平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取云转推项目 Id 。
                      * @return ProjectId 云转推项目 Id 。
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置云转推项目 Id 。
-                     * @param ProjectId 云转推项目 Id 。
+                     * @param _projectId 云转推项目 Id 。
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取请参考 [操作类型](#Operation)
                      * @return Operation 请参考 [操作类型](#Operation)
+                     * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置请参考 [操作类型](#Operation)
-                     * @param Operation 请参考 [操作类型](#Operation)
+                     * @param _operation 请参考 [操作类型](#Operation)
+                     * 
                      */
                     void SetOperation(const std::string& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取转推输入源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
                      * @return InputInfo 转推输入源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * 
                      */
                     StreamInputInfo GetInputInfo() const;
 
                     /**
                      * 设置转推输入源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-                     * @param InputInfo 转推输入源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _inputInfo 转推输入源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * 
                      */
                     void SetInputInfo(const StreamInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
@@ -123,6 +135,7 @@ namespace TencentCloud
                      * @return InputEndpoint 主备输入源标识，取值有：
 <li> Main ：主源；</li>
 <li> Backup ：备源。</li>
+                     * 
                      */
                     std::string GetInputEndpoint() const;
 
@@ -130,69 +143,80 @@ namespace TencentCloud
                      * 设置主备输入源标识，取值有：
 <li> Main ：主源；</li>
 <li> Backup ：备源。</li>
-                     * @param InputEndpoint 主备输入源标识，取值有：
+                     * @param _inputEndpoint 主备输入源标识，取值有：
 <li> Main ：主源；</li>
 <li> Backup ：备源。</li>
+                     * 
                      */
                     void SetInputEndpoint(const std::string& _inputEndpoint);
 
                     /**
                      * 判断参数 InputEndpoint 是否已赋值
                      * @return InputEndpoint 是否已赋值
+                     * 
                      */
                     bool InputEndpointHasBeenSet() const;
 
                     /**
                      * 获取转推输出源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
                      * @return OutputInfo 转推输出源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * 
                      */
                     StreamConnectOutput GetOutputInfo() const;
 
                     /**
                      * 设置转推输出源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-                     * @param OutputInfo 转推输出源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _outputInfo 转推输出源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * 
                      */
                     void SetOutputInfo(const StreamConnectOutput& _outputInfo);
 
                     /**
                      * 判断参数 OutputInfo 是否已赋值
                      * @return OutputInfo 是否已赋值
+                     * 
                      */
                     bool OutputInfoHasBeenSet() const;
 
                     /**
                      * 获取云转推当前预计结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。具体操作方式详见 [操作类型](#Operation) 及下文示例。
                      * @return CurrentStopTime 云转推当前预计结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * 
                      */
                     std::string GetCurrentStopTime() const;
 
                     /**
                      * 设置云转推当前预计结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。具体操作方式详见 [操作类型](#Operation) 及下文示例。
-                     * @param CurrentStopTime 云转推当前预计结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * @param _currentStopTime 云转推当前预计结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。具体操作方式详见 [操作类型](#Operation) 及下文示例。
+                     * 
                      */
                     void SetCurrentStopTime(const std::string& _currentStopTime);
 
                     /**
                      * 判断参数 CurrentStopTime 是否已赋值
                      * @return CurrentStopTime 是否已赋值
+                     * 
                      */
                     bool CurrentStopTimeHasBeenSet() const;
 
                     /**
                      * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
                      * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
-                     * @param Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 

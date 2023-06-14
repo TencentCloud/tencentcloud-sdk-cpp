@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取月数
                      * @return MonthNum 月数
+                     * 
                      */
                     uint64_t GetMonthNum() const;
 
                     /**
                      * 设置月数
-                     * @param MonthNum 月数
+                     * @param _monthNum 月数
+                     * 
                      */
                     void SetMonthNum(const uint64_t& _monthNum);
 
                     /**
                      * 判断参数 MonthNum 是否已赋值
                      * @return MonthNum 是否已赋值
+                     * 
                      */
                     bool MonthNumHasBeenSet() const;
 
                     /**
                      * 获取核数最低限量
                      * @return CoresCountLimit 核数最低限量
+                     * 
                      */
                     uint64_t GetCoresCountLimit() const;
 
                     /**
                      * 设置核数最低限量
-                     * @param CoresCountLimit 核数最低限量
+                     * @param _coresCountLimit 核数最低限量
+                     * 
                      */
                     void SetCoresCountLimit(const uint64_t& _coresCountLimit);
 
                     /**
                      * 判断参数 CoresCountLimit 是否已赋值
                      * @return CoresCountLimit 是否已赋值
+                     * 
                      */
                     bool CoresCountLimitHasBeenSet() const;
 
                     /**
                      * 获取专业版折扣
                      * @return ProfessionalDiscount 专业版折扣
+                     * 
                      */
                     uint64_t GetProfessionalDiscount() const;
 
                     /**
                      * 设置专业版折扣
-                     * @param ProfessionalDiscount 专业版折扣
+                     * @param _professionalDiscount 专业版折扣
+                     * 
                      */
                     void SetProfessionalDiscount(const uint64_t& _professionalDiscount);
 
                     /**
                      * 判断参数 ProfessionalDiscount 是否已赋值
                      * @return ProfessionalDiscount 是否已赋值
+                     * 
                      */
                     bool ProfessionalDiscountHasBeenSet() const;
 
                     /**
                      * 获取附赠镜像数
                      * @return ImageAuthorizationNum 附赠镜像数
+                     * 
                      */
                     uint64_t GetImageAuthorizationNum() const;
 
                     /**
                      * 设置附赠镜像数
-                     * @param ImageAuthorizationNum 附赠镜像数
+                     * @param _imageAuthorizationNum 附赠镜像数
+                     * 
                      */
                     void SetImageAuthorizationNum(const uint64_t& _imageAuthorizationNum);
 
                     /**
                      * 判断参数 ImageAuthorizationNum 是否已赋值
                      * @return ImageAuthorizationNum 是否已赋值
+                     * 
                      */
                     bool ImageAuthorizationNumHasBeenSet() const;
 

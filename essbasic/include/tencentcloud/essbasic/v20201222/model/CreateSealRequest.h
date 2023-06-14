@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
@@ -78,6 +81,7 @@ namespace TencentCloud
 5. LEGAL_REPRESENTATIVE - 法定代表人章
 6. SPECIAL_NATIONWIDE_INVOICE - 发票专用章
 7. OTHER-其他
+                     * 
                      */
                     std::string GetSealType() const;
 
@@ -90,7 +94,7 @@ namespace TencentCloud
 5. LEGAL_REPRESENTATIVE - 法定代表人章
 6. SPECIAL_NATIONWIDE_INVOICE - 发票专用章
 7. OTHER-其他
-                     * @param SealType 印章类型：
+                     * @param _sealType 印章类型：
 1. PERSONAL - 个人私章
 2. OFFICIAL - 公章
 3. SPECIAL_FINANCIAL - 财务专用章
@@ -98,120 +102,140 @@ namespace TencentCloud
 5. LEGAL_REPRESENTATIVE - 法定代表人章
 6. SPECIAL_NATIONWIDE_INVOICE - 发票专用章
 7. OTHER-其他
+                     * 
                      */
                     void SetSealType(const std::string& _sealType);
 
                     /**
                      * 判断参数 SealType 是否已赋值
                      * @return SealType 是否已赋值
+                     * 
                      */
                     bool SealTypeHasBeenSet() const;
 
                     /**
                      * 获取印章名称
                      * @return SealName 印章名称
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置印章名称
-                     * @param SealName 印章名称
+                     * @param _sealName 印章名称
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取请求创建印章的客户端IP
                      * @return SourceIp 请求创建印章的客户端IP
+                     * 
                      */
                     std::string GetSourceIp() const;
 
                     /**
                      * 设置请求创建印章的客户端IP
-                     * @param SourceIp 请求创建印章的客户端IP
+                     * @param _sourceIp 请求创建印章的客户端IP
+                     * 
                      */
                     void SetSourceIp(const std::string& _sourceIp);
 
                     /**
                      * 判断参数 SourceIp 是否已赋值
                      * @return SourceIp 是否已赋值
+                     * 
                      */
                     bool SourceIpHasBeenSet() const;
 
                     /**
                      * 获取印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
                      * @return Image 印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     std::string GetImage() const;
 
                     /**
                      * 设置印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
-                     * @param Image 印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
+                     * @param _image 印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     void SetImage(const std::string& _image);
 
                     /**
                      * 判断参数 Image 是否已赋值
                      * @return Image 是否已赋值
+                     * 
                      */
                     bool ImageHasBeenSet() const;
 
                     /**
                      * 获取印章文件图片ID（与Image参数二选一，同时传入参数时优先使用Image参数）
                      * @return FileId 印章文件图片ID（与Image参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置印章文件图片ID（与Image参数二选一，同时传入参数时优先使用Image参数）
-                     * @param FileId 印章文件图片ID（与Image参数二选一，同时传入参数时优先使用Image参数）
+                     * @param _fileId 印章文件图片ID（与Image参数二选一，同时传入参数时优先使用Image参数）
+                     * 
                      */
                     void SetFileId(const std::string& _fileId);
 
                     /**
                      * 判断参数 FileId 是否已赋值
                      * @return FileId 是否已赋值
+                     * 
                      */
                     bool FileIdHasBeenSet() const;
 
                     /**
                      * 获取需要创建印章的用户ID
                      * @return UserId 需要创建印章的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置需要创建印章的用户ID
-                     * @param UserId 需要创建印章的用户ID
+                     * @param _userId 需要创建印章的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取是否是默认印章 true：是，false：否
                      * @return IsDefault 是否是默认印章 true：是，false：否
+                     * 
                      */
                     bool GetIsDefault() const;
 
                     /**
                      * 设置是否是默认印章 true：是，false：否
-                     * @param IsDefault 是否是默认印章 true：是，false：否
+                     * @param _isDefault 是否是默认印章 true：是，false：否
+                     * 
                      */
                     void SetIsDefault(const bool& _isDefault);
 
                     /**
                      * 判断参数 IsDefault 是否已赋值
                      * @return IsDefault 是否已赋值
+                     * 
                      */
                     bool IsDefaultHasBeenSet() const;
 

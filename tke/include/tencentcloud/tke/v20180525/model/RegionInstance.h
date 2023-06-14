@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionName 地域名称
+                     * @param _regionName 地域名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 地域状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置地域状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 地域状态
+                     * @param _status 地域状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureGates 地域特性开关(按照JSON的形式返回所有属性)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFeatureGates() const;
 
                     /**
                      * 设置地域特性开关(按照JSON的形式返回所有属性)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FeatureGates 地域特性开关(按照JSON的形式返回所有属性)
+                     * @param _featureGates 地域特性开关(按照JSON的形式返回所有属性)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFeatureGates(const std::string& _featureGates);
 
                     /**
                      * 判断参数 FeatureGates 是否已赋值
                      * @return FeatureGates 是否已赋值
+                     * 
                      */
                     bool FeatureGatesHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 地域简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置地域简称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 地域简称
+                     * @param _alias 地域简称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 地域白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置地域白名单
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 地域白名单
+                     * @param _remark 地域白名单
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

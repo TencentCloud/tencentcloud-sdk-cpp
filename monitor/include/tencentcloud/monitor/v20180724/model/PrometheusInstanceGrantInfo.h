@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取是否有计费操作权限(1=有，2=无)
                      * @return HasChargeOperation 是否有计费操作权限(1=有，2=无)
+                     * 
                      */
                     int64_t GetHasChargeOperation() const;
 
                     /**
                      * 设置是否有计费操作权限(1=有，2=无)
-                     * @param HasChargeOperation 是否有计费操作权限(1=有，2=无)
+                     * @param _hasChargeOperation 是否有计费操作权限(1=有，2=无)
+                     * 
                      */
                     void SetHasChargeOperation(const int64_t& _hasChargeOperation);
 
                     /**
                      * 判断参数 HasChargeOperation 是否已赋值
                      * @return HasChargeOperation 是否已赋值
+                     * 
                      */
                     bool HasChargeOperationHasBeenSet() const;
 
                     /**
                      * 获取是否显示VPC信息的权限(1=有，2=无)
                      * @return HasVpcDisplay 是否显示VPC信息的权限(1=有，2=无)
+                     * 
                      */
                     int64_t GetHasVpcDisplay() const;
 
                     /**
                      * 设置是否显示VPC信息的权限(1=有，2=无)
-                     * @param HasVpcDisplay 是否显示VPC信息的权限(1=有，2=无)
+                     * @param _hasVpcDisplay 是否显示VPC信息的权限(1=有，2=无)
+                     * 
                      */
                     void SetHasVpcDisplay(const int64_t& _hasVpcDisplay);
 
                     /**
                      * 判断参数 HasVpcDisplay 是否已赋值
                      * @return HasVpcDisplay 是否已赋值
+                     * 
                      */
                     bool HasVpcDisplayHasBeenSet() const;
 
                     /**
                      * 获取是否可修改Grafana的状态(1=有，2=无)
                      * @return HasGrafanaStatusChange 是否可修改Grafana的状态(1=有，2=无)
+                     * 
                      */
                     int64_t GetHasGrafanaStatusChange() const;
 
                     /**
                      * 设置是否可修改Grafana的状态(1=有，2=无)
-                     * @param HasGrafanaStatusChange 是否可修改Grafana的状态(1=有，2=无)
+                     * @param _hasGrafanaStatusChange 是否可修改Grafana的状态(1=有，2=无)
+                     * 
                      */
                     void SetHasGrafanaStatusChange(const int64_t& _hasGrafanaStatusChange);
 
                     /**
                      * 判断参数 HasGrafanaStatusChange 是否已赋值
                      * @return HasGrafanaStatusChange 是否已赋值
+                     * 
                      */
                     bool HasGrafanaStatusChangeHasBeenSet() const;
 
                     /**
                      * 获取是否有管理agent的权限(1=有，2=无)
                      * @return HasAgentManage 是否有管理agent的权限(1=有，2=无)
+                     * 
                      */
                     int64_t GetHasAgentManage() const;
 
                     /**
                      * 设置是否有管理agent的权限(1=有，2=无)
-                     * @param HasAgentManage 是否有管理agent的权限(1=有，2=无)
+                     * @param _hasAgentManage 是否有管理agent的权限(1=有，2=无)
+                     * 
                      */
                     void SetHasAgentManage(const int64_t& _hasAgentManage);
 
                     /**
                      * 判断参数 HasAgentManage 是否已赋值
                      * @return HasAgentManage 是否已赋值
+                     * 
                      */
                     bool HasAgentManageHasBeenSet() const;
 
                     /**
                      * 获取是否有管理TKE集成的权限(1=有，2=无)
                      * @return HasTkeManage 是否有管理TKE集成的权限(1=有，2=无)
+                     * 
                      */
                     int64_t GetHasTkeManage() const;
 
                     /**
                      * 设置是否有管理TKE集成的权限(1=有，2=无)
-                     * @param HasTkeManage 是否有管理TKE集成的权限(1=有，2=无)
+                     * @param _hasTkeManage 是否有管理TKE集成的权限(1=有，2=无)
+                     * 
                      */
                     void SetHasTkeManage(const int64_t& _hasTkeManage);
 
                     /**
                      * 判断参数 HasTkeManage 是否已赋值
                      * @return HasTkeManage 是否已赋值
+                     * 
                      */
                     bool HasTkeManageHasBeenSet() const;
 
                     /**
                      * 获取是否显示API等信息(1=有, 2=无)
                      * @return HasApiOperation 是否显示API等信息(1=有, 2=无)
+                     * 
                      */
                     int64_t GetHasApiOperation() const;
 
                     /**
                      * 设置是否显示API等信息(1=有, 2=无)
-                     * @param HasApiOperation 是否显示API等信息(1=有, 2=无)
+                     * @param _hasApiOperation 是否显示API等信息(1=有, 2=无)
+                     * 
                      */
                     void SetHasApiOperation(const int64_t& _hasApiOperation);
 
                     /**
                      * 判断参数 HasApiOperation 是否已赋值
                      * @return HasApiOperation 是否已赋值
+                     * 
                      */
                     bool HasApiOperationHasBeenSet() const;
 

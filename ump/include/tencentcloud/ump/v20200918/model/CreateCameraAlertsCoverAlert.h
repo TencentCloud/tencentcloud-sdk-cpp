@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取是否遮挡
                      * @return Cover 是否遮挡
+                     * 
                      */
                     bool GetCover() const;
 
                     /**
                      * 设置是否遮挡
-                     * @param Cover 是否遮挡
+                     * @param _cover 是否遮挡
+                     * 
                      */
                     void SetCover(const bool& _cover);
 
                     /**
                      * 判断参数 Cover 是否已赋值
                      * @return Cover 是否已赋值
+                     * 
                      */
                     bool CoverHasBeenSet() const;
 
                     /**
                      * 获取是否移动置信度
                      * @return CoverConfidence 是否移动置信度
+                     * 
                      */
                     double GetCoverConfidence() const;
 
                     /**
                      * 设置是否移动置信度
-                     * @param CoverConfidence 是否移动置信度
+                     * @param _coverConfidence 是否移动置信度
+                     * 
                      */
                     void SetCoverConfidence(const double& _coverConfidence);
 
                     /**
                      * 判断参数 CoverConfidence 是否已赋值
                      * @return CoverConfidence 是否已赋值
+                     * 
                      */
                     bool CoverConfidenceHasBeenSet() const;
 

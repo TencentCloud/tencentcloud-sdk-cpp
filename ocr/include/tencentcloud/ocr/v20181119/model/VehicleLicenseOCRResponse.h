@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrontInfo 行驶证主页正面的识别结果，CardSide 为 FRONT。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextVehicleFront GetFrontInfo() const;
 
                     /**
                      * 判断参数 FrontInfo 是否已赋值
                      * @return FrontInfo 是否已赋值
+                     * 
                      */
                     bool FrontInfoHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackInfo 行驶证副页正面的识别结果，CardSide 为 BACK。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextVehicleBack GetBackInfo() const;
 
                     /**
                      * 判断参数 BackInfo 是否已赋值
                      * @return BackInfo 是否已赋值
+                     * 
                      */
                     bool BackInfoHasBeenSet() const;
 
@@ -84,12 +88,14 @@ namespace TencentCloud
 -9103 翻拍件告警
 -9106 ps告警
 注：告警码可以同时存在多个
+                     * 
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
 
                     /**
                      * 判断参数 RecognizeWarnCode 是否已赋值
                      * @return RecognizeWarnCode 是否已赋值
+                     * 
                      */
                     bool RecognizeWarnCodeHasBeenSet() const;
 
@@ -104,12 +110,14 @@ WARN_DRIVER_LICENSE_COPY_CARD 复印件告警
 WARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警
 WARN_DRIVER_LICENSE_PS_CARD ps告警
 注：告警信息可以同时存在多个
+                     * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
 
                     /**
                      * 判断参数 RecognizeWarnMsg 是否已赋值
                      * @return RecognizeWarnMsg 是否已赋值
+                     * 
                      */
                     bool RecognizeWarnMsgHasBeenSet() const;
 

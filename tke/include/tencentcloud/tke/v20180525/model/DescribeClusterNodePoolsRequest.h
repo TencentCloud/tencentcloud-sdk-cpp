@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取ClusterId（集群id）
                      * @return ClusterId ClusterId（集群id）
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置ClusterId（集群id）
-                     * @param ClusterId ClusterId（集群id）
+                     * @param _clusterId ClusterId（集群id）
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -100,6 +103,7 @@ namespace TencentCloud
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -123,7 +127,7 @@ namespace TencentCloud
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
-                     * @param Filters ·  NodePoolsName
+                     * @param _filters ·  NodePoolsName
     按照【节点池名】进行过滤。
     类型：String
     必选：否
@@ -142,12 +146,14 @@ namespace TencentCloud
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

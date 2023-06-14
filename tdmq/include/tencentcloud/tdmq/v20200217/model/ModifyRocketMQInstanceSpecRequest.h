@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取专享实例ID
                      * @return InstanceId 专享实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置专享实例ID
-                     * @param InstanceId 专享实例ID
+                     * @param _instanceId 专享实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ rocket-vip-basic-1 基础型
 rocket-vip-basic-2 标准型
 rocket-vip-basic-3 高阶Ⅰ型
 rocket-vip-basic-4 高阶Ⅱ型
+                     * 
                      */
                     std::string GetSpecification() const;
 
@@ -80,53 +84,61 @@ rocket-vip-basic-1 基础型
 rocket-vip-basic-2 标准型
 rocket-vip-basic-3 高阶Ⅰ型
 rocket-vip-basic-4 高阶Ⅱ型
-                     * @param Specification 实例规格，
+                     * @param _specification 实例规格，
 rocket-vip-basic-1 基础型
 rocket-vip-basic-2 标准型
 rocket-vip-basic-3 高阶Ⅰ型
 rocket-vip-basic-4 高阶Ⅱ型
+                     * 
                      */
                     void SetSpecification(const std::string& _specification);
 
                     /**
                      * 判断参数 Specification 是否已赋值
                      * @return Specification 是否已赋值
+                     * 
                      */
                     bool SpecificationHasBeenSet() const;
 
                     /**
                      * 获取节点数量
                      * @return NodeCount 节点数量
+                     * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点数量
-                     * @param NodeCount 节点数量
+                     * @param _nodeCount 节点数量
+                     * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取存储空间，GB为单位
                      * @return StorageSize 存储空间，GB为单位
+                     * 
                      */
                     uint64_t GetStorageSize() const;
 
                     /**
                      * 设置存储空间，GB为单位
-                     * @param StorageSize 存储空间，GB为单位
+                     * @param _storageSize 存储空间，GB为单位
+                     * 
                      */
                     void SetStorageSize(const uint64_t& _storageSize);
 
                     /**
                      * 判断参数 StorageSize 是否已赋值
                      * @return StorageSize 是否已赋值
+                     * 
                      */
                     bool StorageSizeHasBeenSet() const;
 

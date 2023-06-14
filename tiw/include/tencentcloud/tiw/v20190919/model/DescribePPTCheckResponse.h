@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取任务的唯一标识Id
                      * @return TaskId 任务的唯一标识Id
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取PPT文件是否正常
                      * @return IsOK PPT文件是否正常
+                     * 
                      */
                     bool GetIsOK() const;
 
                     /**
                      * 判断参数 IsOK 是否已赋值
                      * @return IsOK 是否已赋值
+                     * 
                      */
                     bool IsOKHasBeenSet() const;
 
@@ -73,12 +77,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultUrl 修复后的PPT URL，只有创建任务时参数AutoHandleUnsupportedElement=true，才返回此参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultUrl() const;
 
                     /**
                      * 判断参数 ResultUrl 是否已赋值
                      * @return ResultUrl 是否已赋值
+                     * 
                      */
                     bool ResultUrlHasBeenSet() const;
 
@@ -87,36 +93,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Slides 错误PPT页面列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PPTErrSlide> GetSlides() const;
 
                     /**
                      * 判断参数 Slides 是否已赋值
                      * @return Slides 是否已赋值
+                     * 
                      */
                     bool SlidesHasBeenSet() const;
 
                     /**
                      * 获取任务的当前状态 - QUEUED: 正在排队等待 - PROCESSING: 执行中 - FINISHED: 执行完成	
                      * @return Status 任务的当前状态 - QUEUED: 正在排队等待 - PROCESSING: 执行中 - FINISHED: 执行完成	
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取当前进度,取值范围为0~100
                      * @return Progress 当前进度,取值范围为0~100
+                     * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 判断参数 Progress 是否已赋值
                      * @return Progress 是否已赋值
+                     * 
                      */
                     bool ProgressHasBeenSet() const;
 

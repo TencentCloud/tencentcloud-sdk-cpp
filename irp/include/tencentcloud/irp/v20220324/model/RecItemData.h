@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取推荐的内容id，即用户行为上报中的itemId
                      * @return ItemId 推荐的内容id，即用户行为上报中的itemId
+                     * 
                      */
                     std::string GetItemId() const;
 
                     /**
                      * 设置推荐的内容id，即用户行为上报中的itemId
-                     * @param ItemId 推荐的内容id，即用户行为上报中的itemId
+                     * @param _itemId 推荐的内容id，即用户行为上报中的itemId
+                     * 
                      */
                     void SetItemId(const std::string& _itemId);
 
                     /**
                      * 判断参数 ItemId 是否已赋值
                      * @return ItemId 是否已赋值
+                     * 
                      */
                     bool ItemIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemType 物料子类型，包括如下： 1-图文、2-长视频（横视频）、3-短视频（横视频）、4-小说、5-小视频（竖视频）、6-纯文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetItemType() const;
 
                     /**
                      * 设置物料子类型，包括如下： 1-图文、2-长视频（横视频）、3-短视频（横视频）、4-小说、5-小视频（竖视频）、6-纯文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemType 物料子类型，包括如下： 1-图文、2-长视频（横视频）、3-短视频（横视频）、4-小说、5-小视频（竖视频）、6-纯文本
+                     * @param _itemType 物料子类型，包括如下： 1-图文、2-长视频（横视频）、3-短视频（横视频）、4-小说、5-小视频（竖视频）、6-纯文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItemType(const int64_t& _itemType);
 
                     /**
                      * 判断参数 ItemType 是否已赋值
                      * @return ItemType 是否已赋值
+                     * 
                      */
                     bool ItemTypeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 推荐内容的权重，取值范围[0,1000000]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置推荐内容的权重，取值范围[0,1000000]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Weight 推荐内容的权重，取值范围[0,1000000]
+                     * @param _weight 推荐内容的权重，取值范围[0,1000000]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 推荐预测分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置推荐预测分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 推荐预测分
+                     * @param _score 推荐预测分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keyword 关键词，多个用英文分号分割，和物料上传的keyword一致
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置关键词，多个用英文分号分割，和物料上传的keyword一致
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Keyword 关键词，多个用英文分号分割，和物料上传的keyword一致
+                     * @param _keyword 关键词，多个用英文分号分割，和物料上传的keyword一致
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取层列表
                      * @return Layers 层列表
+                     * 
                      */
                     std::vector<LayerVersionInfo> GetLayers() const;
 
                     /**
                      * 判断参数 Layers 是否已赋值
                      * @return Layers 是否已赋值
+                     * 
                      */
                     bool LayersHasBeenSet() const;
 
                     /**
                      * 获取层总数
                      * @return TotalCount 层总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

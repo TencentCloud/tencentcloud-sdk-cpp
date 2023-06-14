@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取环境变量数组
                      * @return Variables 环境变量数组
+                     * 
                      */
                     std::vector<Variable> GetVariables() const;
 
                     /**
                      * 设置环境变量数组
-                     * @param Variables 环境变量数组
+                     * @param _variables 环境变量数组
+                     * 
                      */
                     void SetVariables(const std::vector<Variable>& _variables);
 
                     /**
                      * 判断参数 Variables 是否已赋值
                      * @return Variables 是否已赋值
+                     * 
                      */
                     bool VariablesHasBeenSet() const;
 

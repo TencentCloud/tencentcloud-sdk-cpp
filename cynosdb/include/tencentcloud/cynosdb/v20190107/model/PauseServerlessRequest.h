@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取是否强制暂停，忽略当前的用户链接  0:不强制  1:强制， 默认为1
                      * @return ForcePause 是否强制暂停，忽略当前的用户链接  0:不强制  1:强制， 默认为1
+                     * 
                      */
                     int64_t GetForcePause() const;
 
                     /**
                      * 设置是否强制暂停，忽略当前的用户链接  0:不强制  1:强制， 默认为1
-                     * @param ForcePause 是否强制暂停，忽略当前的用户链接  0:不强制  1:强制， 默认为1
+                     * @param _forcePause 是否强制暂停，忽略当前的用户链接  0:不强制  1:强制， 默认为1
+                     * 
                      */
                     void SetForcePause(const int64_t& _forcePause);
 
                     /**
                      * 判断参数 ForcePause 是否已赋值
                      * @return ForcePause 是否已赋值
+                     * 
                      */
                     bool ForcePauseHasBeenSet() const;
 

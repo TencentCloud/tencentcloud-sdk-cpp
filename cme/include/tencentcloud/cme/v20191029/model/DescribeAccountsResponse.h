@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合搜索条件的记录总数。
                      * @return TotalCount 符合搜索条件的记录总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取账号信息列表。
                      * @return AccountInfoSet 账号信息列表。
+                     * 
                      */
                     std::vector<AccountInfo> GetAccountInfoSet() const;
 
                     /**
                      * 判断参数 AccountInfoSet 是否已赋值
                      * @return AccountInfoSet 是否已赋值
+                     * 
                      */
                     bool AccountInfoSetHasBeenSet() const;
 

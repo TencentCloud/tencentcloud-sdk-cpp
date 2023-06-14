@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取待处理的json字符串
                      * @return Input 待处理的json字符串
+                     * 
                      */
                     std::string GetInput() const;
 
                     /**
                      * 设置待处理的json字符串
-                     * @param Input 待处理的json字符串
+                     * @param _input 待处理的json字符串
+                     * 
                      */
                     void SetInput(const std::string& _input);
 
                     /**
                      * 判断参数 Input 是否已赋值
                      * @return Input 是否已赋值
+                     * 
                      */
                     bool InputHasBeenSet() const;
 
                     /**
                      * 获取一个转换规则列表
                      * @return Transformations 一个转换规则列表
+                     * 
                      */
                     std::vector<Transformation> GetTransformations() const;
 
                     /**
                      * 设置一个转换规则列表
-                     * @param Transformations 一个转换规则列表
+                     * @param _transformations 一个转换规则列表
+                     * 
                      */
                     void SetTransformations(const std::vector<Transformation>& _transformations);
 
                     /**
                      * 判断参数 Transformations 是否已赋值
                      * @return Transformations 是否已赋值
+                     * 
                      */
                     bool TransformationsHasBeenSet() const;
 

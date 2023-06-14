@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取记录类型 CNAME | A | TXT | MX
                      * @return Type 记录类型 CNAME | A | TXT | MX
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置记录类型 CNAME | A | TXT | MX
-                     * @param Type 记录类型 CNAME | A | TXT | MX
+                     * @param _type 记录类型 CNAME | A | TXT | MX
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return SendDomain 域名
+                     * 
                      */
                     std::string GetSendDomain() const;
 
                     /**
                      * 设置域名
-                     * @param SendDomain 域名
+                     * @param _sendDomain 域名
+                     * 
                      */
                     void SetSendDomain(const std::string& _sendDomain);
 
                     /**
                      * 判断参数 SendDomain 是否已赋值
                      * @return SendDomain 是否已赋值
+                     * 
                      */
                     bool SendDomainHasBeenSet() const;
 
                     /**
                      * 获取需要配置的值
                      * @return ExpectedValue 需要配置的值
+                     * 
                      */
                     std::string GetExpectedValue() const;
 
                     /**
                      * 设置需要配置的值
-                     * @param ExpectedValue 需要配置的值
+                     * @param _expectedValue 需要配置的值
+                     * 
                      */
                     void SetExpectedValue(const std::string& _expectedValue);
 
                     /**
                      * 判断参数 ExpectedValue 是否已赋值
                      * @return ExpectedValue 是否已赋值
+                     * 
                      */
                     bool ExpectedValueHasBeenSet() const;
 
                     /**
                      * 获取腾讯云目前检测到的值
                      * @return CurrentValue 腾讯云目前检测到的值
+                     * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
                      * 设置腾讯云目前检测到的值
-                     * @param CurrentValue 腾讯云目前检测到的值
+                     * @param _currentValue 腾讯云目前检测到的值
+                     * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
                     /**
                      * 判断参数 CurrentValue 是否已赋值
                      * @return CurrentValue 是否已赋值
+                     * 
                      */
                     bool CurrentValueHasBeenSet() const;
 
                     /**
                      * 获取检测是否通过，创建时默认为false
                      * @return Status 检测是否通过，创建时默认为false
+                     * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置检测是否通过，创建时默认为false
-                     * @param Status 检测是否通过，创建时默认为false
+                     * @param _status 检测是否通过，创建时默认为false
+                     * 
                      */
                     void SetStatus(const bool& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

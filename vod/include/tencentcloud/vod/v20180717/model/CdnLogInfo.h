@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。
                      * @return Date 日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。
-                     * @param Date 日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。
+                     * @param _date 日志所属日期， 格式为：yyyy-MM-dd ，如2018-03-01。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
@@ -69,74 +72,86 @@ namespace TencentCloud
 如 2018120101-test.vod2.mqcloud.com。
                      * @return Name 日志名称，格式为：日期小时-域名
 如 2018120101-test.vod2.mqcloud.com。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置日志名称，格式为：日期小时-域名
 如 2018120101-test.vod2.mqcloud.com。
-                     * @param Name 日志名称，格式为：日期小时-域名
+                     * @param _name 日志名称，格式为：日期小时-域名
 如 2018120101-test.vod2.mqcloud.com。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取日志下载链接，24小时内下载有效。
                      * @return Url 日志下载链接，24小时内下载有效。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置日志下载链接，24小时内下载有效。
-                     * @param Url 日志下载链接，24小时内下载有效。
+                     * @param _url 日志下载链接，24小时内下载有效。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return StartTime 日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param StartTime 日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * @param _startTime 日志起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
                      * @return EndTime 日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param EndTime 日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * @param _endTime 日志结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

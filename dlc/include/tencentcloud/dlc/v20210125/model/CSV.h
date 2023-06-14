@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取压缩格式，["Snappy", "Gzip", "None"选一]。
                      * @return CodeCompress 压缩格式，["Snappy", "Gzip", "None"选一]。
+                     * 
                      */
                     std::string GetCodeCompress() const;
 
                     /**
                      * 设置压缩格式，["Snappy", "Gzip", "None"选一]。
-                     * @param CodeCompress 压缩格式，["Snappy", "Gzip", "None"选一]。
+                     * @param _codeCompress 压缩格式，["Snappy", "Gzip", "None"选一]。
+                     * 
                      */
                     void SetCodeCompress(const std::string& _codeCompress);
 
                     /**
                      * 判断参数 CodeCompress 是否已赋值
                      * @return CodeCompress 是否已赋值
+                     * 
                      */
                     bool CodeCompressHasBeenSet() const;
 
                     /**
                      * 获取CSV序列化及反序列化数据结构。
                      * @return CSVSerde CSV序列化及反序列化数据结构。
+                     * 
                      */
                     CSVSerde GetCSVSerde() const;
 
                     /**
                      * 设置CSV序列化及反序列化数据结构。
-                     * @param CSVSerde CSV序列化及反序列化数据结构。
+                     * @param _cSVSerde CSV序列化及反序列化数据结构。
+                     * 
                      */
                     void SetCSVSerde(const CSVSerde& _cSVSerde);
 
                     /**
                      * 判断参数 CSVSerde 是否已赋值
                      * @return CSVSerde 是否已赋值
+                     * 
                      */
                     bool CSVSerdeHasBeenSet() const;
 
                     /**
                      * 获取标题行，默认为0。
                      * @return HeadLines 标题行，默认为0。
+                     * 
                      */
                     int64_t GetHeadLines() const;
 
                     /**
                      * 设置标题行，默认为0。
-                     * @param HeadLines 标题行，默认为0。
+                     * @param _headLines 标题行，默认为0。
+                     * 
                      */
                     void SetHeadLines(const int64_t& _headLines);
 
                     /**
                      * 判断参数 HeadLines 是否已赋值
                      * @return HeadLines 是否已赋值
+                     * 
                      */
                     bool HeadLinesHasBeenSet() const;
 
                     /**
                      * 获取格式，默认值为CSV
                      * @return Format 格式，默认值为CSV
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置格式，默认值为CSV
-                     * @param Format 格式，默认值为CSV
+                     * @param _format 格式，默认值为CSV
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

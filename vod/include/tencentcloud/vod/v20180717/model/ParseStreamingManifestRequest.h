@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取待解析的索引文件内容。
                      * @return MediaManifestContent 待解析的索引文件内容。
+                     * 
                      */
                     std::string GetMediaManifestContent() const;
 
                     /**
                      * 设置待解析的索引文件内容。
-                     * @param MediaManifestContent 待解析的索引文件内容。
+                     * @param _mediaManifestContent 待解析的索引文件内容。
+                     * 
                      */
                     void SetMediaManifestContent(const std::string& _mediaManifestContent);
 
                     /**
                      * 判断参数 MediaManifestContent 是否已赋值
                      * @return MediaManifestContent 是否已赋值
+                     * 
                      */
                     bool MediaManifestContentHasBeenSet() const;
 
@@ -67,6 +70,7 @@ namespace TencentCloud
                      * @return ManifestType 视频索引文件格式。默认 m3u8 格式。
 <li>m3u8</li>
 <li>mpd</li>
+                     * 
                      */
                     std::string GetManifestType() const;
 
@@ -74,15 +78,17 @@ namespace TencentCloud
                      * 设置视频索引文件格式。默认 m3u8 格式。
 <li>m3u8</li>
 <li>mpd</li>
-                     * @param ManifestType 视频索引文件格式。默认 m3u8 格式。
+                     * @param _manifestType 视频索引文件格式。默认 m3u8 格式。
 <li>m3u8</li>
 <li>mpd</li>
+                     * 
                      */
                     void SetManifestType(const std::string& _manifestType);
 
                     /**
                      * 判断参数 ManifestType 是否已赋值
                      * @return ManifestType 是否已赋值
+                     * 
                      */
                     bool ManifestTypeHasBeenSet() const;
 

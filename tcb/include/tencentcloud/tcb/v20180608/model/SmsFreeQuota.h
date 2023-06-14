@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeQuota 免费量总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFreeQuota() const;
 
                     /**
                      * 设置免费量总条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FreeQuota 免费量总条数
+                     * @param _freeQuota 免费量总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFreeQuota(const uint64_t& _freeQuota);
 
                     /**
                      * 判断参数 FreeQuota 是否已赋值
                      * @return FreeQuota 是否已赋值
+                     * 
                      */
                     bool FreeQuotaHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedQuota 共计已使用总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalUsedQuota() const;
 
                     /**
                      * 设置共计已使用总条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalUsedQuota 共计已使用总条数
+                     * @param _totalUsedQuota 共计已使用总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalUsedQuota(const uint64_t& _totalUsedQuota);
 
                     /**
                      * 判断参数 TotalUsedQuota 是否已赋值
                      * @return TotalUsedQuota 是否已赋值
+                     * 
                      */
                     bool TotalUsedQuotaHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleStart 免费周期起点，0000-00-00 00:00:00 形式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCycleStart() const;
 
                     /**
                      * 设置免费周期起点，0000-00-00 00:00:00 形式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CycleStart 免费周期起点，0000-00-00 00:00:00 形式
+                     * @param _cycleStart 免费周期起点，0000-00-00 00:00:00 形式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCycleStart(const std::string& _cycleStart);
 
                     /**
                      * 判断参数 CycleStart 是否已赋值
                      * @return CycleStart 是否已赋值
+                     * 
                      */
                     bool CycleStartHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleEnd 免费周期终点，0000-00-00 00:00:00 形式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCycleEnd() const;
 
                     /**
                      * 设置免费周期终点，0000-00-00 00:00:00 形式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CycleEnd 免费周期终点，0000-00-00 00:00:00 形式
+                     * @param _cycleEnd 免费周期终点，0000-00-00 00:00:00 形式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCycleEnd(const std::string& _cycleEnd);
 
                     /**
                      * 判断参数 CycleEnd 是否已赋值
                      * @return CycleEnd 是否已赋值
+                     * 
                      */
                     bool CycleEndHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TodayUsedQuota 今天已使用总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTodayUsedQuota() const;
 
                     /**
                      * 设置今天已使用总条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TodayUsedQuota 今天已使用总条数
+                     * @param _todayUsedQuota 今天已使用总条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTodayUsedQuota(const uint64_t& _todayUsedQuota);
 
                     /**
                      * 判断参数 TodayUsedQuota 是否已赋值
                      * @return TodayUsedQuota 是否已赋值
+                     * 
                      */
                     bool TodayUsedQuotaHasBeenSet() const;
 

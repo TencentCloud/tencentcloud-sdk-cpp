@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取id
                      * @return AccountId id
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置id
-                     * @param AccountId id
+                     * @param _accountId id
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
                     /**
                      * 获取手机号
                      * @return MobilePhone 手机号
+                     * 
                      */
                     std::string GetMobilePhone() const;
 
                     /**
                      * 设置手机号
-                     * @param MobilePhone 手机号
+                     * @param _mobilePhone 手机号
+                     * 
                      */
                     void SetMobilePhone(const std::string& _mobilePhone);
 
                     /**
                      * 判断参数 MobilePhone 是否已赋值
                      * @return MobilePhone 是否已赋值
+                     * 
                      */
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
                      * 获取id
                      * @return DeviceId id
+                     * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置id
-                     * @param DeviceId id
+                     * @param _deviceId id
+                     * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
                     /**
                      * 判断参数 DeviceId 是否已赋值
                      * @return DeviceId 是否已赋值
+                     * 
                      */
                     bool DeviceIdHasBeenSet() const;
 

@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取作业 SerialId
                      * @return JobId 作业 SerialId
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置作业 SerialId
-                     * @param JobId 作业 SerialId
+                     * @param _jobId 作业 SerialId
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取分页参数，单页总数
                      * @return Limit 分页参数，单页总数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页参数，单页总数
-                     * @param Limit 分页参数，单页总数
+                     * @param _limit 分页参数，单页总数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页参数，偏移量
                      * @return Offset 分页参数，偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页参数，偏移量
-                     * @param Offset 分页参数，偏移量
+                     * @param _offset 分页参数，偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

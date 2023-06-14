@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取工作空间 spaceKey
                      * @return SpaceKey 工作空间 spaceKey
+                     * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
                      * 设置工作空间 spaceKey
-                     * @param SpaceKey 工作空间 spaceKey
+                     * @param _spaceKey 工作空间 spaceKey
+                     * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
 
                     /**
                      * 判断参数 SpaceKey 是否已赋值
                      * @return SpaceKey 是否已赋值
+                     * 
                      */
                     bool SpaceKeyHasBeenSet() const;
 

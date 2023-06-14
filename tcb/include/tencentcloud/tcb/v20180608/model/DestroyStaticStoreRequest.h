@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取cdn域名
                      * @return CdnDomain cdn域名
+                     * 
                      */
                     std::string GetCdnDomain() const;
 
                     /**
                      * 设置cdn域名
-                     * @param CdnDomain cdn域名
+                     * @param _cdnDomain cdn域名
+                     * 
                      */
                     void SetCdnDomain(const std::string& _cdnDomain);
 
                     /**
                      * 判断参数 CdnDomain 是否已赋值
                      * @return CdnDomain 是否已赋值
+                     * 
                      */
                     bool CdnDomainHasBeenSet() const;
 

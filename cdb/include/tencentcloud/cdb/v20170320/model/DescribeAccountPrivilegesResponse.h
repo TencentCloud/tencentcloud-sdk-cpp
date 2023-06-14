@@ -49,48 +49,56 @@ namespace TencentCloud
                     /**
                      * 获取全局权限数组。
                      * @return GlobalPrivileges 全局权限数组。
+                     * 
                      */
                     std::vector<std::string> GetGlobalPrivileges() const;
 
                     /**
                      * 判断参数 GlobalPrivileges 是否已赋值
                      * @return GlobalPrivileges 是否已赋值
+                     * 
                      */
                     bool GlobalPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取数据库权限数组。
                      * @return DatabasePrivileges 数据库权限数组。
+                     * 
                      */
                     std::vector<DatabasePrivilege> GetDatabasePrivileges() const;
 
                     /**
                      * 判断参数 DatabasePrivileges 是否已赋值
                      * @return DatabasePrivileges 是否已赋值
+                     * 
                      */
                     bool DatabasePrivilegesHasBeenSet() const;
 
                     /**
                      * 获取数据库中的表权限数组。
                      * @return TablePrivileges 数据库中的表权限数组。
+                     * 
                      */
                     std::vector<TablePrivilege> GetTablePrivileges() const;
 
                     /**
                      * 判断参数 TablePrivileges 是否已赋值
                      * @return TablePrivileges 是否已赋值
+                     * 
                      */
                     bool TablePrivilegesHasBeenSet() const;
 
                     /**
                      * 获取数据库表中的列权限数组。
                      * @return ColumnPrivileges 数据库表中的列权限数组。
+                     * 
                      */
                     std::vector<ColumnPrivilege> GetColumnPrivileges() const;
 
                     /**
                      * 判断参数 ColumnPrivileges 是否已赋值
                      * @return ColumnPrivileges 是否已赋值
+                     * 
                      */
                     bool ColumnPrivilegesHasBeenSet() const;
 

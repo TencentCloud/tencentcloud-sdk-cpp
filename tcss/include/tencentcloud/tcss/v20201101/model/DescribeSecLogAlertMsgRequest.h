@@ -55,6 +55,7 @@ kafka后台报错字段: kafka_field_wrong
 kafka实例/公网域名不可用: kafka_instance_domain_unavailable
 kafka 用户名密码错误: kafka_user_passwd_wrong
 kafka后台报错字段: kafka_field_wrong
+                     * 
                      */
                     std::vector<std::string> GetType() const;
 
@@ -65,18 +66,20 @@ kafka后台报错字段: kafka_field_wrong
 kafka实例/公网域名不可用: kafka_instance_domain_unavailable
 kafka 用户名密码错误: kafka_user_passwd_wrong
 kafka后台报错字段: kafka_field_wrong
-                     * @param Type 告警类型
+                     * @param _type 告警类型
 日志储量告警: log_reserve_full
 日志存储时间告警: log_save_day_limit
 kafka实例/公网域名不可用: kafka_instance_domain_unavailable
 kafka 用户名密码错误: kafka_user_passwd_wrong
 kafka后台报错字段: kafka_field_wrong
+                     * 
                      */
                     void SetType(const std::vector<std::string>& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

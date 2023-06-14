@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取获取签名信息响应
                      * @return DescribeSignListStatusSet 获取签名信息响应
+                     * 
                      */
                     std::vector<DescribeSignListStatus> GetDescribeSignListStatusSet() const;
 
                     /**
                      * 判断参数 DescribeSignListStatusSet 是否已赋值
                      * @return DescribeSignListStatusSet 是否已赋值
+                     * 
                      */
                     bool DescribeSignListStatusSetHasBeenSet() const;
 

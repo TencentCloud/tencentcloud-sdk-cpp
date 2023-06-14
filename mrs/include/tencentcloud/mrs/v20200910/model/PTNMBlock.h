@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src 原文
+                     * @param _src 原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNMM PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPTNMM() const;
 
                     /**
                      * 设置PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNMM PTNM分期
+                     * @param _pTNMM PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPTNMM(const std::string& _pTNMM);
 
                     /**
                      * 判断参数 PTNMM 是否已赋值
                      * @return PTNMM 是否已赋值
+                     * 
                      */
                     bool PTNMMHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNMN PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPTNMN() const;
 
                     /**
                      * 设置PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNMN PTNM分期
+                     * @param _pTNMN PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPTNMN(const std::string& _pTNMN);
 
                     /**
                      * 判断参数 PTNMN 是否已赋值
                      * @return PTNMN 是否已赋值
+                     * 
                      */
                     bool PTNMNHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PTNMT PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPTNMT() const;
 
                     /**
                      * 设置PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNMT PTNM分期
+                     * @param _pTNMT PTNM分期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPTNMT(const std::string& _pTNMT);
 
                     /**
                      * 判断参数 PTNMT 是否已赋值
                      * @return PTNMT 是否已赋值
+                     * 
                      */
                     bool PTNMTHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取作业流程ID。
                      * @return JobFlowId 作业流程ID。
+                     * 
                      */
                     int64_t GetJobFlowId() const;
 
                     /**
                      * 判断参数 JobFlowId 是否已赋值
                      * @return JobFlowId 是否已赋值
+                     * 
                      */
                     bool JobFlowIdHasBeenSet() const;
 

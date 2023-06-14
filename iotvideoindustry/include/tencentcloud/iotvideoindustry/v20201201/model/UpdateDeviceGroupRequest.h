@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取分组名称
                      * @return GroupName 分组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-                     * @param GroupName 分组名称
+                     * @param _groupName 分组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取分组ID
                      * @return GroupId 分组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取分组描述
                      * @return GroupDescribe 分组描述
+                     * 
                      */
                     std::string GetGroupDescribe() const;
 
                     /**
                      * 设置分组描述
-                     * @param GroupDescribe 分组描述
+                     * @param _groupDescribe 分组描述
+                     * 
                      */
                     void SetGroupDescribe(const std::string& _groupDescribe);
 
                     /**
                      * 判断参数 GroupDescribe 是否已赋值
                      * @return GroupDescribe 是否已赋值
+                     * 
                      */
                     bool GroupDescribeHasBeenSet() const;
 
                     /**
                      * 获取新父分组ID，用于修改分组路径
                      * @return NewParentId 新父分组ID，用于修改分组路径
+                     * 
                      */
                     std::string GetNewParentId() const;
 
                     /**
                      * 设置新父分组ID，用于修改分组路径
-                     * @param NewParentId 新父分组ID，用于修改分组路径
+                     * @param _newParentId 新父分组ID，用于修改分组路径
+                     * 
                      */
                     void SetNewParentId(const std::string& _newParentId);
 
                     /**
                      * 判断参数 NewParentId 是否已赋值
                      * @return NewParentId 是否已赋值
+                     * 
                      */
                     bool NewParentIdHasBeenSet() const;
 

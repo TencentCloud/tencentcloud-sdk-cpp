@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取无
                      * @return Name 无
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置无
-                     * @param Name 无
+                     * @param _name 无
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return ZhName 无
+                     * 
                      */
                     std::string GetZhName() const;
 
                     /**
                      * 设置无
-                     * @param ZhName 无
+                     * @param _zhName 无
+                     * 
                      */
                     void SetZhName(const std::string& _zhName);
 
                     /**
                      * 判断参数 ZhName 是否已赋值
                      * @return ZhName 是否已赋值
+                     * 
                      */
                     bool ZhNameHasBeenSet() const;
 
                     /**
                      * 获取无
                      * @return EnName 无
+                     * 
                      */
                     std::string GetEnName() const;
 
                     /**
                      * 设置无
-                     * @param EnName 无
+                     * @param _enName 无
+                     * 
                      */
                     void SetEnName(const std::string& _enName);
 
                     /**
                      * 判断参数 EnName 是否已赋值
                      * @return EnName 是否已赋值
+                     * 
                      */
                     bool EnNameHasBeenSet() const;
 

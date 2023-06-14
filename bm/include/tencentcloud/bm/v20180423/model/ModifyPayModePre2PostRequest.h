@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取需要修改的设备ID列表
                      * @return InstanceIds 需要修改的设备ID列表
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置需要修改的设备ID列表
-                     * @param InstanceIds 需要修改的设备ID列表
+                     * @param _instanceIds 需要修改的设备ID列表
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取CMK的总数量
                      * @return TotalCount CMK的总数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyMetadatas 返回的属性信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KeyMetadata> GetKeyMetadatas() const;
 
                     /**
                      * 判断参数 KeyMetadatas 是否已赋值
                      * @return KeyMetadatas 是否已赋值
+                     * 
                      */
                     bool KeyMetadatasHasBeenSet() const;
 

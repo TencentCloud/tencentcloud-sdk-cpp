@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取接口总个数
                      * @return TotalCount 接口总个数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取接口列表
                      * @return Content 接口列表
+                     * 
                      */
                     std::vector<ZookeeperServerInterface> GetContent() const;
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
@@ -69,6 +72,7 @@ namespace TencentCloud
 1、 微信企业付款 
 2、 支付宝转账 
 3、 平安银企直联代发转账
+                     * 
                      */
                     int64_t GetTransferType() const;
 
@@ -77,34 +81,39 @@ namespace TencentCloud
 1、 微信企业付款 
 2、 支付宝转账 
 3、 平安银企直联代发转账
-                     * @param TransferType 代发类型：
+                     * @param _transferType 代发类型：
 1、 微信企业付款 
 2、 支付宝转账 
 3、 平安银企直联代发转账
+                     * 
                      */
                     void SetTransferType(const int64_t& _transferType);
 
                     /**
                      * 判断参数 TransferType 是否已赋值
                      * @return TransferType 是否已赋值
+                     * 
                      */
                     bool TransferTypeHasBeenSet() const;
 
                     /**
                      * 获取账单日期，格式yyyy-MM-dd
                      * @return BillDate 账单日期，格式yyyy-MM-dd
+                     * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置账单日期，格式yyyy-MM-dd
-                     * @param BillDate 账单日期，格式yyyy-MM-dd
+                     * @param _billDate 账单日期，格式yyyy-MM-dd
+                     * 
                      */
                     void SetBillDate(const std::string& _billDate);
 
                     /**
                      * 判断参数 BillDate 是否已赋值
                      * @return BillDate 是否已赋值
+                     * 
                      */
                     bool BillDateHasBeenSet() const;
 

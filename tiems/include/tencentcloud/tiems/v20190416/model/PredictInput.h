@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取输入路径，支持 cos 格式路径文件夹或文件
                      * @return InputPath 输入路径，支持 cos 格式路径文件夹或文件
+                     * 
                      */
                     std::string GetInputPath() const;
 
                     /**
                      * 设置输入路径，支持 cos 格式路径文件夹或文件
-                     * @param InputPath 输入路径，支持 cos 格式路径文件夹或文件
+                     * @param _inputPath 输入路径，支持 cos 格式路径文件夹或文件
+                     * 
                      */
                     void SetInputPath(const std::string& _inputPath);
 
                     /**
                      * 判断参数 InputPath 是否已赋值
                      * @return InputPath 是否已赋值
+                     * 
                      */
                     bool InputPathHasBeenSet() const;
 
                     /**
                      * 获取输出路径，支持 cos 格式路径
                      * @return OutputPath 输出路径，支持 cos 格式路径
+                     * 
                      */
                     std::string GetOutputPath() const;
 
                     /**
                      * 设置输出路径，支持 cos 格式路径
-                     * @param OutputPath 输出路径，支持 cos 格式路径
+                     * @param _outputPath 输出路径，支持 cos 格式路径
+                     * 
                      */
                     void SetOutputPath(const std::string& _outputPath);
 
                     /**
                      * 判断参数 OutputPath 是否已赋值
                      * @return OutputPath 是否已赋值
+                     * 
                      */
                     bool OutputPathHasBeenSet() const;
 
                     /**
                      * 获取输入数据格式，目前支持：JSON
                      * @return InputDataFormat 输入数据格式，目前支持：JSON
+                     * 
                      */
                     std::string GetInputDataFormat() const;
 
                     /**
                      * 设置输入数据格式，目前支持：JSON
-                     * @param InputDataFormat 输入数据格式，目前支持：JSON
+                     * @param _inputDataFormat 输入数据格式，目前支持：JSON
+                     * 
                      */
                     void SetInputDataFormat(const std::string& _inputDataFormat);
 
                     /**
                      * 判断参数 InputDataFormat 是否已赋值
                      * @return InputDataFormat 是否已赋值
+                     * 
                      */
                     bool InputDataFormatHasBeenSet() const;
 
                     /**
                      * 获取输出数据格式，目前支持：JSON
                      * @return OutputDataFormat 输出数据格式，目前支持：JSON
+                     * 
                      */
                     std::string GetOutputDataFormat() const;
 
                     /**
                      * 设置输出数据格式，目前支持：JSON
-                     * @param OutputDataFormat 输出数据格式，目前支持：JSON
+                     * @param _outputDataFormat 输出数据格式，目前支持：JSON
+                     * 
                      */
                     void SetOutputDataFormat(const std::string& _outputDataFormat);
 
                     /**
                      * 判断参数 OutputDataFormat 是否已赋值
                      * @return OutputDataFormat 是否已赋值
+                     * 
                      */
                     bool OutputDataFormatHasBeenSet() const;
 
                     /**
                      * 获取预测批大小，默认为 64
                      * @return BatchSize 预测批大小，默认为 64
+                     * 
                      */
                     uint64_t GetBatchSize() const;
 
                     /**
                      * 设置预测批大小，默认为 64
-                     * @param BatchSize 预测批大小，默认为 64
+                     * @param _batchSize 预测批大小，默认为 64
+                     * 
                      */
                     void SetBatchSize(const uint64_t& _batchSize);
 
                     /**
                      * 判断参数 BatchSize 是否已赋值
                      * @return BatchSize 是否已赋值
+                     * 
                      */
                     bool BatchSizeHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignatureName 模型签名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSignatureName() const;
 
                     /**
                      * 设置模型签名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SignatureName 模型签名
+                     * @param _signatureName 模型签名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSignatureName(const std::string& _signatureName);
 
                     /**
                      * 判断参数 SignatureName 是否已赋值
                      * @return SignatureName 是否已赋值
+                     * 
                      */
                     bool SignatureNameHasBeenSet() const;
 

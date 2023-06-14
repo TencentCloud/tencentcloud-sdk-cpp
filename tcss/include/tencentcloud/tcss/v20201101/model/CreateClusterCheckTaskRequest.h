@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取指定要扫描的集群信息
                      * @return ClusterCheckTaskList 指定要扫描的集群信息
+                     * 
                      */
                     std::vector<ClusterCheckTaskItem> GetClusterCheckTaskList() const;
 
                     /**
                      * 设置指定要扫描的集群信息
-                     * @param ClusterCheckTaskList 指定要扫描的集群信息
+                     * @param _clusterCheckTaskList 指定要扫描的集群信息
+                     * 
                      */
                     void SetClusterCheckTaskList(const std::vector<ClusterCheckTaskItem>& _clusterCheckTaskList);
 
                     /**
                      * 判断参数 ClusterCheckTaskList 是否已赋值
                      * @return ClusterCheckTaskList 是否已赋值
+                     * 
                      */
                     bool ClusterCheckTaskListHasBeenSet() const;
 

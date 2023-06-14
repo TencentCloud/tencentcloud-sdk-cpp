@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginProtectionInfo 源站防护信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OriginProtectionInfo> GetOriginProtectionInfo() const;
 
                     /**
                      * 判断参数 OriginProtectionInfo 是否已赋值
                      * @return OriginProtectionInfo 是否已赋值
+                     * 
                      */
                     bool OriginProtectionInfoHasBeenSet() const;
 

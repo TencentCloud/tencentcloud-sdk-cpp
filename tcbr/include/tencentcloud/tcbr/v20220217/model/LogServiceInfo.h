@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取log名
                      * @return LogsetName log名
+                     * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置log名
-                     * @param LogsetName log名
+                     * @param _logsetName log名
+                     * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
 
                     /**
                      * 判断参数 LogsetName 是否已赋值
                      * @return LogsetName 是否已赋值
+                     * 
                      */
                     bool LogsetNameHasBeenSet() const;
 
                     /**
                      * 获取log-id
                      * @return LogsetId log-id
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置log-id
-                     * @param LogsetId log-id
+                     * @param _logsetId log-id
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取topic名
                      * @return TopicName topic名
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置topic名
-                     * @param TopicName topic名
+                     * @param _topicName topic名
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取topic-id
                      * @return TopicId topic-id
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置topic-id
-                     * @param TopicId topic-id
+                     * @param _topicId topic-id
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取cls日志所属地域
                      * @return Region cls日志所属地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置cls日志所属地域
-                     * @param Region cls日志所属地域
+                     * @param _region cls日志所属地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

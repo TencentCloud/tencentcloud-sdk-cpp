@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的对象数。
                      * @return TotalCount 符合条件的对象数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取CCN对象。
                      * @return CcnSet CCN对象。
+                     * 
                      */
                     std::vector<CCN> GetCcnSet() const;
 
                     /**
                      * 判断参数 CcnSet 是否已赋值
                      * @return CcnSet 是否已赋值
+                     * 
                      */
                     bool CcnSetHasBeenSet() const;
 

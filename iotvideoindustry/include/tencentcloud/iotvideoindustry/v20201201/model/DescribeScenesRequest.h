@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取条数限制
                      * @return Limit 条数限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置条数限制
-                     * @param Limit 条数限制
+                     * @param _limit 条数限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移
                      * @return Offset 偏移
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移
-                     * @param Offset 偏移
+                     * @param _offset 偏移
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

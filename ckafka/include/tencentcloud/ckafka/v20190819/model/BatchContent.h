@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取发送的消息体
                      * @return Body 发送的消息体
+                     * 
                      */
                     std::string GetBody() const;
 
                     /**
                      * 设置发送的消息体
-                     * @param Body 发送的消息体
+                     * @param _body 发送的消息体
+                     * 
                      */
                     void SetBody(const std::string& _body);
 
                     /**
                      * 判断参数 Body 是否已赋值
                      * @return Body 是否已赋值
+                     * 
                      */
                     bool BodyHasBeenSet() const;
 
                     /**
                      * 获取发送消息的键名
                      * @return Key 发送消息的键名
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置发送消息的键名
-                     * @param Key 发送消息的键名
+                     * @param _key 发送消息的键名
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 

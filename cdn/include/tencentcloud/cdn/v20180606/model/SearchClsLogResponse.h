@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取查询结果
                      * @return Logs 查询结果
+                     * 
                      */
                     ClsSearchLogs GetLogs() const;
 
                     /**
                      * 判断参数 Logs 是否已赋值
                      * @return Logs 是否已赋值
+                     * 
                      */
                     bool LogsHasBeenSet() const;
 

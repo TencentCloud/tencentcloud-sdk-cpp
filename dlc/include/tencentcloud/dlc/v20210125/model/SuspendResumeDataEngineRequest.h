@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取虚拟集群名称
                      * @return DataEngineName 虚拟集群名称
+                     * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
                      * 设置虚拟集群名称
-                     * @param DataEngineName 虚拟集群名称
+                     * @param _dataEngineName 虚拟集群名称
+                     * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
 
                     /**
                      * 判断参数 DataEngineName 是否已赋值
                      * @return DataEngineName 是否已赋值
+                     * 
                      */
                     bool DataEngineNameHasBeenSet() const;
 
                     /**
                      * 获取操作类型 suspend/resume
                      * @return Operate 操作类型 suspend/resume
+                     * 
                      */
                     std::string GetOperate() const;
 
                     /**
                      * 设置操作类型 suspend/resume
-                     * @param Operate 操作类型 suspend/resume
+                     * @param _operate 操作类型 suspend/resume
+                     * 
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
+                     * 
                      */
                     bool OperateHasBeenSet() const;
 

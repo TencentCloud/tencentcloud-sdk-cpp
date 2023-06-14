@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。
                      * @return ClusterId 集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。
-                     * @param ClusterId 集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。
+                     * @param _clusterId 集群ID，通过[DescribeClusters](https://cloud.tencent.com/document/api/457/31862)接口获取。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群伸缩组ID的列表
                      * @return AutoScalingGroupIds 集群伸缩组ID的列表
+                     * 
                      */
                     std::vector<std::string> GetAutoScalingGroupIds() const;
 
                     /**
                      * 设置集群伸缩组ID的列表
-                     * @param AutoScalingGroupIds 集群伸缩组ID的列表
+                     * @param _autoScalingGroupIds 集群伸缩组ID的列表
+                     * 
                      */
                     void SetAutoScalingGroupIds(const std::vector<std::string>& _autoScalingGroupIds);
 
                     /**
                      * 判断参数 AutoScalingGroupIds 是否已赋值
                      * @return AutoScalingGroupIds 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取是否保留伸缩组中的节点(默认值： false(不保留))
                      * @return KeepInstance 是否保留伸缩组中的节点(默认值： false(不保留))
+                     * 
                      */
                     bool GetKeepInstance() const;
 
                     /**
                      * 设置是否保留伸缩组中的节点(默认值： false(不保留))
-                     * @param KeepInstance 是否保留伸缩组中的节点(默认值： false(不保留))
+                     * @param _keepInstance 是否保留伸缩组中的节点(默认值： false(不保留))
+                     * 
                      */
                     void SetKeepInstance(const bool& _keepInstance);
 
                     /**
                      * 判断参数 KeepInstance 是否已赋值
                      * @return KeepInstance 是否已赋值
+                     * 
                      */
                     bool KeepInstanceHasBeenSet() const;
 

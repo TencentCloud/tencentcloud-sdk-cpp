@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分组名称
                      * @return GroupName 分组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-                     * @param GroupName 分组名称
+                     * @param _groupName 分组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取父分组ID
                      * @return ParentId 父分组ID
+                     * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置父分组ID
-                     * @param ParentId 父分组ID
+                     * @param _parentId 父分组ID
+                     * 
                      */
                     void SetParentId(const std::string& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 
                     /**
                      * 获取分组描述
                      * @return GroupDescribe 分组描述
+                     * 
                      */
                     std::string GetGroupDescribe() const;
 
                     /**
                      * 设置分组描述
-                     * @param GroupDescribe 分组描述
+                     * @param _groupDescribe 分组描述
+                     * 
                      */
                     void SetGroupDescribe(const std::string& _groupDescribe);
 
                     /**
                      * 判断参数 GroupDescribe 是否已赋值
                      * @return GroupDescribe 是否已赋值
+                     * 
                      */
                     bool GroupDescribeHasBeenSet() const;
 

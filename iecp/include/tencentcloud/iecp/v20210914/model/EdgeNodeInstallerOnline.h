@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptName 节点安装脚本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScriptName() const;
 
                     /**
                      * 设置节点安装脚本名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScriptName 节点安装脚本名称
+                     * @param _scriptName 节点安装脚本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScriptName(const std::string& _scriptName);
 
                     /**
                      * 判断参数 ScriptName 是否已赋值
                      * @return ScriptName 是否已赋值
+                     * 
                      */
                     bool ScriptNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptDownloadUrl 节点安装脚本下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScriptDownloadUrl() const;
 
                     /**
                      * 设置节点安装脚本下载链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScriptDownloadUrl 节点安装脚本下载链接
+                     * @param _scriptDownloadUrl 节点安装脚本下载链接
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScriptDownloadUrl(const std::string& _scriptDownloadUrl);
 
                     /**
                      * 判断参数 ScriptDownloadUrl 是否已赋值
                      * @return ScriptDownloadUrl 是否已赋值
+                     * 
                      */
                     bool ScriptDownloadUrlHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Guide 节点安装命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGuide() const;
 
                     /**
                      * 设置节点安装命令
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Guide 节点安装命令
+                     * @param _guide 节点安装命令
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGuide(const std::string& _guide);
 
                     /**
                      * 判断参数 Guide 是否已赋值
                      * @return Guide 是否已赋值
+                     * 
                      */
                     bool GuideHasBeenSet() const;
 

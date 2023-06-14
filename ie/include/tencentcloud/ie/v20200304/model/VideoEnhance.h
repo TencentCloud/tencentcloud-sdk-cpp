@@ -58,72 +58,84 @@ namespace TencentCloud
                     /**
                      * 获取去编码毛刺、伪影参数。
                      * @return ArtifactReduction 去编码毛刺、伪影参数。
+                     * 
                      */
                     ArtifactReduction GetArtifactReduction() const;
 
                     /**
                      * 设置去编码毛刺、伪影参数。
-                     * @param ArtifactReduction 去编码毛刺、伪影参数。
+                     * @param _artifactReduction 去编码毛刺、伪影参数。
+                     * 
                      */
                     void SetArtifactReduction(const ArtifactReduction& _artifactReduction);
 
                     /**
                      * 判断参数 ArtifactReduction 是否已赋值
                      * @return ArtifactReduction 是否已赋值
+                     * 
                      */
                     bool ArtifactReductionHasBeenSet() const;
 
                     /**
                      * 获取去噪声参数。
                      * @return Denoising 去噪声参数。
+                     * 
                      */
                     Denoising GetDenoising() const;
 
                     /**
                      * 设置去噪声参数。
-                     * @param Denoising 去噪声参数。
+                     * @param _denoising 去噪声参数。
+                     * 
                      */
                     void SetDenoising(const Denoising& _denoising);
 
                     /**
                      * 判断参数 Denoising 是否已赋值
                      * @return Denoising 是否已赋值
+                     * 
                      */
                     bool DenoisingHasBeenSet() const;
 
                     /**
                      * 获取颜色增强参数。
                      * @return ColorEnhance 颜色增强参数。
+                     * 
                      */
                     ColorEnhance GetColorEnhance() const;
 
                     /**
                      * 设置颜色增强参数。
-                     * @param ColorEnhance 颜色增强参数。
+                     * @param _colorEnhance 颜色增强参数。
+                     * 
                      */
                     void SetColorEnhance(const ColorEnhance& _colorEnhance);
 
                     /**
                      * 判断参数 ColorEnhance 是否已赋值
                      * @return ColorEnhance 是否已赋值
+                     * 
                      */
                     bool ColorEnhanceHasBeenSet() const;
 
                     /**
                      * 获取细节增强参数。
                      * @return Sharp 细节增强参数。
+                     * 
                      */
                     Sharp GetSharp() const;
 
                     /**
                      * 设置细节增强参数。
-                     * @param Sharp 细节增强参数。
+                     * @param _sharp 细节增强参数。
+                     * 
                      */
                     void SetSharp(const Sharp& _sharp);
 
                     /**
                      * 判断参数 Sharp 是否已赋值
                      * @return Sharp 是否已赋值
+                     * 
                      */
                     bool SharpHasBeenSet() const;
 
@@ -132,38 +144,44 @@ namespace TencentCloud
 注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
                      * @return WdSuperResolution 超分参数，可选项：2，目前仅支持2倍超分。
 注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
+                     * 
                      */
                     int64_t GetWdSuperResolution() const;
 
                     /**
                      * 设置超分参数，可选项：2，目前仅支持2倍超分。
 注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
-                     * @param WdSuperResolution 超分参数，可选项：2，目前仅支持2倍超分。
+                     * @param _wdSuperResolution 超分参数，可选项：2，目前仅支持2倍超分。
 注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
+                     * 
                      */
                     void SetWdSuperResolution(const int64_t& _wdSuperResolution);
 
                     /**
                      * 判断参数 WdSuperResolution 是否已赋值
                      * @return WdSuperResolution 是否已赋值
+                     * 
                      */
                     bool WdSuperResolutionHasBeenSet() const;
 
                     /**
                      * 获取人脸保护信息。
                      * @return FaceProtect 人脸保护信息。
+                     * 
                      */
                     FaceProtect GetFaceProtect() const;
 
                     /**
                      * 设置人脸保护信息。
-                     * @param FaceProtect 人脸保护信息。
+                     * @param _faceProtect 人脸保护信息。
+                     * 
                      */
                     void SetFaceProtect(const FaceProtect& _faceProtect);
 
                     /**
                      * 判断参数 FaceProtect 是否已赋值
                      * @return FaceProtect 是否已赋值
+                     * 
                      */
                     bool FaceProtectHasBeenSet() const;
 
@@ -172,92 +190,107 @@ namespace TencentCloud
 注意：当取值为 0，表示帧率和原始视频保持一致。
                      * @return WdFps 插帧，取值范围：[0, 60]，单位：Hz。
 注意：当取值为 0，表示帧率和原始视频保持一致。
+                     * 
                      */
                     int64_t GetWdFps() const;
 
                     /**
                      * 设置插帧，取值范围：[0, 60]，单位：Hz。
 注意：当取值为 0，表示帧率和原始视频保持一致。
-                     * @param WdFps 插帧，取值范围：[0, 60]，单位：Hz。
+                     * @param _wdFps 插帧，取值范围：[0, 60]，单位：Hz。
 注意：当取值为 0，表示帧率和原始视频保持一致。
+                     * 
                      */
                     void SetWdFps(const int64_t& _wdFps);
 
                     /**
                      * 判断参数 WdFps 是否已赋值
                      * @return WdFps 是否已赋值
+                     * 
                      */
                     bool WdFpsHasBeenSet() const;
 
                     /**
                      * 获取去划痕参数
                      * @return ScratchRepair 去划痕参数
+                     * 
                      */
                     ScratchRepair GetScratchRepair() const;
 
                     /**
                      * 设置去划痕参数
-                     * @param ScratchRepair 去划痕参数
+                     * @param _scratchRepair 去划痕参数
+                     * 
                      */
                     void SetScratchRepair(const ScratchRepair& _scratchRepair);
 
                     /**
                      * 判断参数 ScratchRepair 是否已赋值
                      * @return ScratchRepair 是否已赋值
+                     * 
                      */
                     bool ScratchRepairHasBeenSet() const;
 
                     /**
                      * 获取低光照增强参数
                      * @return LowLightEnhance 低光照增强参数
+                     * 
                      */
                     LowLightEnhance GetLowLightEnhance() const;
 
                     /**
                      * 设置低光照增强参数
-                     * @param LowLightEnhance 低光照增强参数
+                     * @param _lowLightEnhance 低光照增强参数
+                     * 
                      */
                     void SetLowLightEnhance(const LowLightEnhance& _lowLightEnhance);
 
                     /**
                      * 判断参数 LowLightEnhance 是否已赋值
                      * @return LowLightEnhance 是否已赋值
+                     * 
                      */
                     bool LowLightEnhanceHasBeenSet() const;
 
                     /**
                      * 获取视频超分参数
                      * @return VideoSuperResolution 视频超分参数
+                     * 
                      */
                     VideoSuperResolution GetVideoSuperResolution() const;
 
                     /**
                      * 设置视频超分参数
-                     * @param VideoSuperResolution 视频超分参数
+                     * @param _videoSuperResolution 视频超分参数
+                     * 
                      */
                     void SetVideoSuperResolution(const VideoSuperResolution& _videoSuperResolution);
 
                     /**
                      * 判断参数 VideoSuperResolution 是否已赋值
                      * @return VideoSuperResolution 是否已赋值
+                     * 
                      */
                     bool VideoSuperResolutionHasBeenSet() const;
 
                     /**
                      * 获取视频画质修复参数
                      * @return VideoRepair 视频画质修复参数
+                     * 
                      */
                     VideoRepair GetVideoRepair() const;
 
                     /**
                      * 设置视频画质修复参数
-                     * @param VideoRepair 视频画质修复参数
+                     * @param _videoRepair 视频画质修复参数
+                     * 
                      */
                     void SetVideoRepair(const VideoRepair& _videoRepair);
 
                     /**
                      * 判断参数 VideoRepair 是否已赋值
                      * @return VideoRepair 是否已赋值
+                     * 
                      */
                     bool VideoRepairHasBeenSet() const;
 

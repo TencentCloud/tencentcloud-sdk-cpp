@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取客户号
                      * @return CustomerId 客户号
+                     * 
                      */
                     std::string GetCustomerId() const;
 
                     /**
                      * 设置客户号
-                     * @param CustomerId 客户号
+                     * @param _customerId 客户号
+                     * 
                      */
                     void SetCustomerId(const std::string& _customerId);
 
                     /**
                      * 判断参数 CustomerId 是否已赋值
                      * @return CustomerId 是否已赋值
+                     * 
                      */
                     bool CustomerIdHasBeenSet() const;
 
                     /**
                      * 获取客户姓名
                      * @return CustomerName 客户姓名
+                     * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
                      * 设置客户姓名
-                     * @param CustomerName 客户姓名
+                     * @param _customerName 客户姓名
+                     * 
                      */
                     void SetCustomerName(const std::string& _customerName);
 
                     /**
                      * 判断参数 CustomerName 是否已赋值
                      * @return CustomerName 是否已赋值
+                     * 
                      */
                     bool CustomerNameHasBeenSet() const;
 
                     /**
                      * 获取各个险种的结果
                      * @return Results 各个险种的结果
+                     * 
                      */
                     std::vector<InsuranceResult> GetResults() const;
 
                     /**
                      * 设置各个险种的结果
-                     * @param Results 各个险种的结果
+                     * @param _results 各个险种的结果
+                     * 
                      */
                     void SetResults(const std::vector<InsuranceResult>& _results);
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

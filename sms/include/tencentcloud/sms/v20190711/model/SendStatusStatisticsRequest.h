@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
                      * @return StartDateTime 拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
+                     * 
                      */
                     uint64_t GetStartDateTime() const;
 
                     /**
                      * 设置拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
-                     * @param StartDateTime 拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
+                     * @param _startDateTime 拉取起始时间，yyyymmddhh 需要拉取的起始时间，精确到小时。
+                     * 
                      */
                     void SetStartDateTime(const uint64_t& _startDateTime);
 
                     /**
                      * 判断参数 StartDateTime 是否已赋值
                      * @return StartDateTime 是否已赋值
+                     * 
                      */
                     bool StartDateTimeHasBeenSet() const;
 
@@ -65,38 +68,44 @@ namespace TencentCloud
 注：EndDataTime 必须大于 StartDateTime。
                      * @return EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
 注：EndDataTime 必须大于 StartDateTime。
+                     * 
                      */
                     uint64_t GetEndDataTime() const;
 
                     /**
                      * 设置结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
 注：EndDataTime 必须大于 StartDateTime。
-                     * @param EndDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
+                     * @param _endDataTime 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
 注：EndDataTime 必须大于 StartDateTime。
+                     * 
                      */
                     void SetEndDataTime(const uint64_t& _endDataTime);
 
                     /**
                      * 判断参数 EndDataTime 是否已赋值
                      * @return EndDataTime 是否已赋值
+                     * 
                      */
                     bool EndDataTimeHasBeenSet() const;
 
                     /**
                      * 获取短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。
                      * @return SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * 
                      */
                     std::string GetSmsSdkAppid() const;
 
                     /**
                      * 设置短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。
-                     * @param SmsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * @param _smsSdkAppid 短信SdkAppid在 [短信控制台](https://console.cloud.tencent.com/smsv2) 添加应用后生成的实际SdkAppid，示例如1400006666。
+                     * 
                      */
                     void SetSmsSdkAppid(const std::string& _smsSdkAppid);
 
                     /**
                      * 判断参数 SmsSdkAppid 是否已赋值
                      * @return SmsSdkAppid 是否已赋值
+                     * 
                      */
                     bool SmsSdkAppidHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注：目前固定设置为0。
                      * @return Limit 最大上限。
 注：目前固定设置为0。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置最大上限。
 注：目前固定设置为0。
-                     * @param Limit 最大上限。
+                     * @param _limit 最大上限。
 注：目前固定设置为0。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注：目前固定设置为0。
                      * @return Offset 偏移量。
 注：目前固定设置为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
 注：目前固定设置为0。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
 注：目前固定设置为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取总数
                      * @return Count 总数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置总数
-                     * @param Count 总数
+                     * @param _count 总数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取网络状态
                      * @return Infos 网络状态
+                     * 
                      */
                     std::vector<NetworkAndShopInfo> GetInfos() const;
 
                     /**
                      * 设置网络状态
-                     * @param Infos 网络状态
+                     * @param _infos 网络状态
+                     * 
                      */
                     void SetInfos(const std::vector<NetworkAndShopInfo>& _infos);
 
                     /**
                      * 判断参数 Infos 是否已赋值
                      * @return Infos 是否已赋值
+                     * 
                      */
                     bool InfosHasBeenSet() const;
 

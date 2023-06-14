@@ -56,954 +56,1113 @@ namespace TencentCloud
                     /**
                      * 获取API 所在的服务唯一 ID。
                      * @return ServiceId API 所在的服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置API 所在的服务唯一 ID。
-                     * @param ServiceId API 所在的服务唯一 ID。
+                     * @param _serviceId API 所在的服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
                      * @return ServiceType API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
-                     * @param ServiceType API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
+                     * @param _serviceType API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取API 的后端服务超时时间，单位是秒。
                      * @return ServiceTimeout API 的后端服务超时时间，单位是秒。
+                     * 
                      */
                     int64_t GetServiceTimeout() const;
 
                     /**
                      * 设置API 的后端服务超时时间，单位是秒。
-                     * @param ServiceTimeout API 的后端服务超时时间，单位是秒。
+                     * @param _serviceTimeout API 的后端服务超时时间，单位是秒。
+                     * 
                      */
                     void SetServiceTimeout(const int64_t& _serviceTimeout);
 
                     /**
                      * 判断参数 ServiceTimeout 是否已赋值
                      * @return ServiceTimeout 是否已赋值
+                     * 
                      */
                     bool ServiceTimeoutHasBeenSet() const;
 
                     /**
                      * 获取API 的前端请求协议，支持HTTP和WEBSOCKET。
                      * @return Protocol API 的前端请求协议，支持HTTP和WEBSOCKET。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置API 的前端请求协议，支持HTTP和WEBSOCKET。
-                     * @param Protocol API 的前端请求协议，支持HTTP和WEBSOCKET。
+                     * @param _protocol API 的前端请求协议，支持HTTP和WEBSOCKET。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取请求的前端配置。
                      * @return RequestConfig 请求的前端配置。
+                     * 
                      */
                     ApiRequestConfig GetRequestConfig() const;
 
                     /**
                      * 设置请求的前端配置。
-                     * @param RequestConfig 请求的前端配置。
+                     * @param _requestConfig 请求的前端配置。
+                     * 
                      */
                     void SetRequestConfig(const ApiRequestConfig& _requestConfig);
 
                     /**
                      * 判断参数 RequestConfig 是否已赋值
                      * @return RequestConfig 是否已赋值
+                     * 
                      */
                     bool RequestConfigHasBeenSet() const;
 
                     /**
                      * 获取用户自定义的 API 名称。
                      * @return ApiName 用户自定义的 API 名称。
+                     * 
                      */
                     std::string GetApiName() const;
 
                     /**
                      * 设置用户自定义的 API 名称。
-                     * @param ApiName 用户自定义的 API 名称。
+                     * @param _apiName 用户自定义的 API 名称。
+                     * 
                      */
                     void SetApiName(const std::string& _apiName);
 
                     /**
                      * 判断参数 ApiName 是否已赋值
                      * @return ApiName 是否已赋值
+                     * 
                      */
                     bool ApiNameHasBeenSet() const;
 
                     /**
                      * 获取用户自定义的 API 接口描述。
                      * @return ApiDesc 用户自定义的 API 接口描述。
+                     * 
                      */
                     std::string GetApiDesc() const;
 
                     /**
                      * 设置用户自定义的 API 接口描述。
-                     * @param ApiDesc 用户自定义的 API 接口描述。
+                     * @param _apiDesc 用户自定义的 API 接口描述。
+                     * 
                      */
                     void SetApiDesc(const std::string& _apiDesc);
 
                     /**
                      * 判断参数 ApiDesc 是否已赋值
                      * @return ApiDesc 是否已赋值
+                     * 
                      */
                     bool ApiDescHasBeenSet() const;
 
                     /**
                      * 获取API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。
                      * @return ApiType API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。
+                     * 
                      */
                     std::string GetApiType() const;
 
                     /**
                      * 设置API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。
-                     * @param ApiType API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。
+                     * @param _apiType API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。
+                     * 
                      */
                     void SetApiType(const std::string& _apiType);
 
                     /**
                      * 判断参数 ApiType 是否已赋值
                      * @return ApiType 是否已赋值
+                     * 
                      */
                     bool ApiTypeHasBeenSet() const;
 
                     /**
                      * 获取API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。
                      * @return AuthType API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。
+                     * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。
-                     * @param AuthType API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。
+                     * @param _authType API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。
+                     * 
                      */
                     void SetAuthType(const std::string& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取是否开启跨域。
                      * @return EnableCORS 是否开启跨域。
+                     * 
                      */
                     bool GetEnableCORS() const;
 
                     /**
                      * 设置是否开启跨域。
-                     * @param EnableCORS 是否开启跨域。
+                     * @param _enableCORS 是否开启跨域。
+                     * 
                      */
                     void SetEnableCORS(const bool& _enableCORS);
 
                     /**
                      * 判断参数 EnableCORS 是否已赋值
                      * @return EnableCORS 是否已赋值
+                     * 
                      */
                     bool EnableCORSHasBeenSet() const;
 
                     /**
                      * 获取常量参数。
                      * @return ConstantParameters 常量参数。
+                     * 
                      */
                     std::vector<ConstantParameter> GetConstantParameters() const;
 
                     /**
                      * 设置常量参数。
-                     * @param ConstantParameters 常量参数。
+                     * @param _constantParameters 常量参数。
+                     * 
                      */
                     void SetConstantParameters(const std::vector<ConstantParameter>& _constantParameters);
 
                     /**
                      * 判断参数 ConstantParameters 是否已赋值
                      * @return ConstantParameters 是否已赋值
+                     * 
                      */
                     bool ConstantParametersHasBeenSet() const;
 
                     /**
                      * 获取前端请求参数。
                      * @return RequestParameters 前端请求参数。
+                     * 
                      */
                     std::vector<RequestParameter> GetRequestParameters() const;
 
                     /**
                      * 设置前端请求参数。
-                     * @param RequestParameters 前端请求参数。
+                     * @param _requestParameters 前端请求参数。
+                     * 
                      */
                     void SetRequestParameters(const std::vector<RequestParameter>& _requestParameters);
 
                     /**
                      * 判断参数 RequestParameters 是否已赋值
                      * @return RequestParameters 是否已赋值
+                     * 
                      */
                     bool RequestParametersHasBeenSet() const;
 
                     /**
                      * 获取当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。
                      * @return ApiBusinessType 当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。
+                     * 
                      */
                     std::string GetApiBusinessType() const;
 
                     /**
                      * 设置当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。
-                     * @param ApiBusinessType 当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。
+                     * @param _apiBusinessType 当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。
+                     * 
                      */
                     void SetApiBusinessType(const std::string& _apiBusinessType);
 
                     /**
                      * 判断参数 ApiBusinessType 是否已赋值
                      * @return ApiBusinessType 是否已赋值
+                     * 
                      */
                     bool ApiBusinessTypeHasBeenSet() const;
 
                     /**
                      * 获取API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。
                      * @return ServiceMockReturnMessage API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。
+                     * 
                      */
                     std::string GetServiceMockReturnMessage() const;
 
                     /**
                      * 设置API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。
-                     * @param ServiceMockReturnMessage API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。
+                     * @param _serviceMockReturnMessage API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。
+                     * 
                      */
                     void SetServiceMockReturnMessage(const std::string& _serviceMockReturnMessage);
 
                     /**
                      * 判断参数 ServiceMockReturnMessage 是否已赋值
                      * @return ServiceMockReturnMessage 是否已赋值
+                     * 
                      */
                     bool ServiceMockReturnMessageHasBeenSet() const;
 
                     /**
                      * 获取API绑定微服务服务列表。
                      * @return MicroServices API绑定微服务服务列表。
+                     * 
                      */
                     std::vector<MicroServiceReq> GetMicroServices() const;
 
                     /**
                      * 设置API绑定微服务服务列表。
-                     * @param MicroServices API绑定微服务服务列表。
+                     * @param _microServices API绑定微服务服务列表。
+                     * 
                      */
                     void SetMicroServices(const std::vector<MicroServiceReq>& _microServices);
 
                     /**
                      * 判断参数 MicroServices 是否已赋值
                      * @return MicroServices 是否已赋值
+                     * 
                      */
                     bool MicroServicesHasBeenSet() const;
 
                     /**
                      * 获取微服务的负载均衡配置。
                      * @return ServiceTsfLoadBalanceConf 微服务的负载均衡配置。
+                     * 
                      */
                     TsfLoadBalanceConfResp GetServiceTsfLoadBalanceConf() const;
 
                     /**
                      * 设置微服务的负载均衡配置。
-                     * @param ServiceTsfLoadBalanceConf 微服务的负载均衡配置。
+                     * @param _serviceTsfLoadBalanceConf 微服务的负载均衡配置。
+                     * 
                      */
                     void SetServiceTsfLoadBalanceConf(const TsfLoadBalanceConfResp& _serviceTsfLoadBalanceConf);
 
                     /**
                      * 判断参数 ServiceTsfLoadBalanceConf 是否已赋值
                      * @return ServiceTsfLoadBalanceConf 是否已赋值
+                     * 
                      */
                     bool ServiceTsfLoadBalanceConfHasBeenSet() const;
 
                     /**
                      * 获取微服务的健康检查配置。
                      * @return ServiceTsfHealthCheckConf 微服务的健康检查配置。
+                     * 
                      */
                     HealthCheckConf GetServiceTsfHealthCheckConf() const;
 
                     /**
                      * 设置微服务的健康检查配置。
-                     * @param ServiceTsfHealthCheckConf 微服务的健康检查配置。
+                     * @param _serviceTsfHealthCheckConf 微服务的健康检查配置。
+                     * 
                      */
                     void SetServiceTsfHealthCheckConf(const HealthCheckConf& _serviceTsfHealthCheckConf);
 
                     /**
                      * 判断参数 ServiceTsfHealthCheckConf 是否已赋值
                      * @return ServiceTsfHealthCheckConf 是否已赋值
+                     * 
                      */
                     bool ServiceTsfHealthCheckConfHasBeenSet() const;
 
                     /**
                      * 获取target类型后端资源信息。（内测阶段）
                      * @return TargetServices target类型后端资源信息。（内测阶段）
+                     * 
                      */
                     std::vector<TargetServicesReq> GetTargetServices() const;
 
                     /**
                      * 设置target类型后端资源信息。（内测阶段）
-                     * @param TargetServices target类型后端资源信息。（内测阶段）
+                     * @param _targetServices target类型后端资源信息。（内测阶段）
+                     * 
                      */
                     void SetTargetServices(const std::vector<TargetServicesReq>& _targetServices);
 
                     /**
                      * 判断参数 TargetServices 是否已赋值
                      * @return TargetServices 是否已赋值
+                     * 
                      */
                     bool TargetServicesHasBeenSet() const;
 
                     /**
                      * 获取target类型负载均衡配置。（内测阶段）
                      * @return TargetServicesLoadBalanceConf target类型负载均衡配置。（内测阶段）
+                     * 
                      */
                     int64_t GetTargetServicesLoadBalanceConf() const;
 
                     /**
                      * 设置target类型负载均衡配置。（内测阶段）
-                     * @param TargetServicesLoadBalanceConf target类型负载均衡配置。（内测阶段）
+                     * @param _targetServicesLoadBalanceConf target类型负载均衡配置。（内测阶段）
+                     * 
                      */
                     void SetTargetServicesLoadBalanceConf(const int64_t& _targetServicesLoadBalanceConf);
 
                     /**
                      * 判断参数 TargetServicesLoadBalanceConf 是否已赋值
                      * @return TargetServicesLoadBalanceConf 是否已赋值
+                     * 
                      */
                     bool TargetServicesLoadBalanceConfHasBeenSet() const;
 
                     /**
                      * 获取target健康检查配置。（内测阶段）
                      * @return TargetServicesHealthCheckConf target健康检查配置。（内测阶段）
+                     * 
                      */
                     HealthCheckConf GetTargetServicesHealthCheckConf() const;
 
                     /**
                      * 设置target健康检查配置。（内测阶段）
-                     * @param TargetServicesHealthCheckConf target健康检查配置。（内测阶段）
+                     * @param _targetServicesHealthCheckConf target健康检查配置。（内测阶段）
+                     * 
                      */
                     void SetTargetServicesHealthCheckConf(const HealthCheckConf& _targetServicesHealthCheckConf);
 
                     /**
                      * 判断参数 TargetServicesHealthCheckConf 是否已赋值
                      * @return TargetServicesHealthCheckConf 是否已赋值
+                     * 
                      */
                     bool TargetServicesHealthCheckConfHasBeenSet() const;
 
                     /**
                      * 获取scf 函数名称。当后端类型是SCF时生效。
                      * @return ServiceScfFunctionName scf 函数名称。当后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceScfFunctionName() const;
 
                     /**
                      * 设置scf 函数名称。当后端类型是SCF时生效。
-                     * @param ServiceScfFunctionName scf 函数名称。当后端类型是SCF时生效。
+                     * @param _serviceScfFunctionName scf 函数名称。当后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceScfFunctionName(const std::string& _serviceScfFunctionName);
 
                     /**
                      * 判断参数 ServiceScfFunctionName 是否已赋值
                      * @return ServiceScfFunctionName 是否已赋值
+                     * 
                      */
                     bool ServiceScfFunctionNameHasBeenSet() const;
 
                     /**
                      * 获取scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketRegisterFunctionName scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketRegisterFunctionName() const;
 
                     /**
                      * 设置scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketRegisterFunctionName scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketRegisterFunctionName scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketRegisterFunctionName(const std::string& _serviceWebsocketRegisterFunctionName);
 
                     /**
                      * 判断参数 ServiceWebsocketRegisterFunctionName 是否已赋值
                      * @return ServiceWebsocketRegisterFunctionName 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketRegisterFunctionNameHasBeenSet() const;
 
                     /**
                      * 获取scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketCleanupFunctionName scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketCleanupFunctionName() const;
 
                     /**
                      * 设置scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketCleanupFunctionName scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketCleanupFunctionName scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketCleanupFunctionName(const std::string& _serviceWebsocketCleanupFunctionName);
 
                     /**
                      * 判断参数 ServiceWebsocketCleanupFunctionName 是否已赋值
                      * @return ServiceWebsocketCleanupFunctionName 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketCleanupFunctionNameHasBeenSet() const;
 
                     /**
                      * 获取scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketTransportFunctionName scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketTransportFunctionName() const;
 
                     /**
                      * 设置scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketTransportFunctionName scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketTransportFunctionName scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketTransportFunctionName(const std::string& _serviceWebsocketTransportFunctionName);
 
                     /**
                      * 判断参数 ServiceWebsocketTransportFunctionName 是否已赋值
                      * @return ServiceWebsocketTransportFunctionName 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketTransportFunctionNameHasBeenSet() const;
 
                     /**
                      * 获取scf 函数命名空间。当后端类型是SCF时生效。
                      * @return ServiceScfFunctionNamespace scf 函数命名空间。当后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceScfFunctionNamespace() const;
 
                     /**
                      * 设置scf 函数命名空间。当后端类型是SCF时生效。
-                     * @param ServiceScfFunctionNamespace scf 函数命名空间。当后端类型是SCF时生效。
+                     * @param _serviceScfFunctionNamespace scf 函数命名空间。当后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceScfFunctionNamespace(const std::string& _serviceScfFunctionNamespace);
 
                     /**
                      * 判断参数 ServiceScfFunctionNamespace 是否已赋值
                      * @return ServiceScfFunctionNamespace 是否已赋值
+                     * 
                      */
                     bool ServiceScfFunctionNamespaceHasBeenSet() const;
 
                     /**
                      * 获取scf函数版本。当后端类型是SCF时生效。
                      * @return ServiceScfFunctionQualifier scf函数版本。当后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceScfFunctionQualifier() const;
 
                     /**
                      * 设置scf函数版本。当后端类型是SCF时生效。
-                     * @param ServiceScfFunctionQualifier scf函数版本。当后端类型是SCF时生效。
+                     * @param _serviceScfFunctionQualifier scf函数版本。当后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceScfFunctionQualifier(const std::string& _serviceScfFunctionQualifier);
 
                     /**
                      * 判断参数 ServiceScfFunctionQualifier 是否已赋值
                      * @return ServiceScfFunctionQualifier 是否已赋值
+                     * 
                      */
                     bool ServiceScfFunctionQualifierHasBeenSet() const;
 
                     /**
                      * 获取scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketRegisterFunctionNamespace scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketRegisterFunctionNamespace() const;
 
                     /**
                      * 设置scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketRegisterFunctionNamespace scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketRegisterFunctionNamespace scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketRegisterFunctionNamespace(const std::string& _serviceWebsocketRegisterFunctionNamespace);
 
                     /**
                      * 判断参数 ServiceWebsocketRegisterFunctionNamespace 是否已赋值
                      * @return ServiceWebsocketRegisterFunctionNamespace 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketRegisterFunctionNamespaceHasBeenSet() const;
 
                     /**
                      * 获取scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketRegisterFunctionQualifier scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketRegisterFunctionQualifier() const;
 
                     /**
                      * 设置scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketRegisterFunctionQualifier scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketRegisterFunctionQualifier scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketRegisterFunctionQualifier(const std::string& _serviceWebsocketRegisterFunctionQualifier);
 
                     /**
                      * 判断参数 ServiceWebsocketRegisterFunctionQualifier 是否已赋值
                      * @return ServiceWebsocketRegisterFunctionQualifier 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketRegisterFunctionQualifierHasBeenSet() const;
 
                     /**
                      * 获取scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketTransportFunctionNamespace scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketTransportFunctionNamespace() const;
 
                     /**
                      * 设置scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketTransportFunctionNamespace scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketTransportFunctionNamespace scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketTransportFunctionNamespace(const std::string& _serviceWebsocketTransportFunctionNamespace);
 
                     /**
                      * 判断参数 ServiceWebsocketTransportFunctionNamespace 是否已赋值
                      * @return ServiceWebsocketTransportFunctionNamespace 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketTransportFunctionNamespaceHasBeenSet() const;
 
                     /**
                      * 获取scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketTransportFunctionQualifier scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketTransportFunctionQualifier() const;
 
                     /**
                      * 设置scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketTransportFunctionQualifier scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketTransportFunctionQualifier scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketTransportFunctionQualifier(const std::string& _serviceWebsocketTransportFunctionQualifier);
 
                     /**
                      * 判断参数 ServiceWebsocketTransportFunctionQualifier 是否已赋值
                      * @return ServiceWebsocketTransportFunctionQualifier 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketTransportFunctionQualifierHasBeenSet() const;
 
                     /**
                      * 获取scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketCleanupFunctionNamespace scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketCleanupFunctionNamespace() const;
 
                     /**
                      * 设置scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketCleanupFunctionNamespace scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketCleanupFunctionNamespace scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketCleanupFunctionNamespace(const std::string& _serviceWebsocketCleanupFunctionNamespace);
 
                     /**
                      * 判断参数 ServiceWebsocketCleanupFunctionNamespace 是否已赋值
                      * @return ServiceWebsocketCleanupFunctionNamespace 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketCleanupFunctionNamespaceHasBeenSet() const;
 
                     /**
                      * 获取scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
                      * @return ServiceWebsocketCleanupFunctionQualifier scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     std::string GetServiceWebsocketCleanupFunctionQualifier() const;
 
                     /**
                      * 设置scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
-                     * @param ServiceWebsocketCleanupFunctionQualifier scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * @param _serviceWebsocketCleanupFunctionQualifier scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceWebsocketCleanupFunctionQualifier(const std::string& _serviceWebsocketCleanupFunctionQualifier);
 
                     /**
                      * 判断参数 ServiceWebsocketCleanupFunctionQualifier 是否已赋值
                      * @return ServiceWebsocketCleanupFunctionQualifier 是否已赋值
+                     * 
                      */
                     bool ServiceWebsocketCleanupFunctionQualifierHasBeenSet() const;
 
                     /**
                      * 获取是否开启响应集成。当后端类型是SCF时生效。
                      * @return ServiceScfIsIntegratedResponse 是否开启响应集成。当后端类型是SCF时生效。
+                     * 
                      */
                     bool GetServiceScfIsIntegratedResponse() const;
 
                     /**
                      * 设置是否开启响应集成。当后端类型是SCF时生效。
-                     * @param ServiceScfIsIntegratedResponse 是否开启响应集成。当后端类型是SCF时生效。
+                     * @param _serviceScfIsIntegratedResponse 是否开启响应集成。当后端类型是SCF时生效。
+                     * 
                      */
                     void SetServiceScfIsIntegratedResponse(const bool& _serviceScfIsIntegratedResponse);
 
                     /**
                      * 判断参数 ServiceScfIsIntegratedResponse 是否已赋值
                      * @return ServiceScfIsIntegratedResponse 是否已赋值
+                     * 
                      */
                     bool ServiceScfIsIntegratedResponseHasBeenSet() const;
 
                     /**
                      * 获取开始调试后计费。（云市场预留字段）
                      * @return IsDebugAfterCharge 开始调试后计费。（云市场预留字段）
+                     * 
                      */
                     bool GetIsDebugAfterCharge() const;
 
                     /**
                      * 设置开始调试后计费。（云市场预留字段）
-                     * @param IsDebugAfterCharge 开始调试后计费。（云市场预留字段）
+                     * @param _isDebugAfterCharge 开始调试后计费。（云市场预留字段）
+                     * 
                      */
                     void SetIsDebugAfterCharge(const bool& _isDebugAfterCharge);
 
                     /**
                      * 判断参数 IsDebugAfterCharge 是否已赋值
                      * @return IsDebugAfterCharge 是否已赋值
+                     * 
                      */
                     bool IsDebugAfterChargeHasBeenSet() const;
 
                     /**
                      * 获取是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。
                      * @return IsDeleteResponseErrorCodes 是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。
+                     * 
                      */
                     bool GetIsDeleteResponseErrorCodes() const;
 
                     /**
                      * 设置是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。
-                     * @param IsDeleteResponseErrorCodes 是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。
+                     * @param _isDeleteResponseErrorCodes 是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。
+                     * 
                      */
                     void SetIsDeleteResponseErrorCodes(const bool& _isDeleteResponseErrorCodes);
 
                     /**
                      * 判断参数 IsDeleteResponseErrorCodes 是否已赋值
                      * @return IsDeleteResponseErrorCodes 是否已赋值
+                     * 
                      */
                     bool IsDeleteResponseErrorCodesHasBeenSet() const;
 
                     /**
                      * 获取返回类型。
                      * @return ResponseType 返回类型。
+                     * 
                      */
                     std::string GetResponseType() const;
 
                     /**
                      * 设置返回类型。
-                     * @param ResponseType 返回类型。
+                     * @param _responseType 返回类型。
+                     * 
                      */
                     void SetResponseType(const std::string& _responseType);
 
                     /**
                      * 判断参数 ResponseType 是否已赋值
                      * @return ResponseType 是否已赋值
+                     * 
                      */
                     bool ResponseTypeHasBeenSet() const;
 
                     /**
                      * 获取自定义响应配置成功响应示例。
                      * @return ResponseSuccessExample 自定义响应配置成功响应示例。
+                     * 
                      */
                     std::string GetResponseSuccessExample() const;
 
                     /**
                      * 设置自定义响应配置成功响应示例。
-                     * @param ResponseSuccessExample 自定义响应配置成功响应示例。
+                     * @param _responseSuccessExample 自定义响应配置成功响应示例。
+                     * 
                      */
                     void SetResponseSuccessExample(const std::string& _responseSuccessExample);
 
                     /**
                      * 判断参数 ResponseSuccessExample 是否已赋值
                      * @return ResponseSuccessExample 是否已赋值
+                     * 
                      */
                     bool ResponseSuccessExampleHasBeenSet() const;
 
                     /**
                      * 获取自定义响应配置失败响应示例。
                      * @return ResponseFailExample 自定义响应配置失败响应示例。
+                     * 
                      */
                     std::string GetResponseFailExample() const;
 
                     /**
                      * 设置自定义响应配置失败响应示例。
-                     * @param ResponseFailExample 自定义响应配置失败响应示例。
+                     * @param _responseFailExample 自定义响应配置失败响应示例。
+                     * 
                      */
                     void SetResponseFailExample(const std::string& _responseFailExample);
 
                     /**
                      * 判断参数 ResponseFailExample 是否已赋值
                      * @return ResponseFailExample 是否已赋值
+                     * 
                      */
                     bool ResponseFailExampleHasBeenSet() const;
 
                     /**
                      * 获取API 的后端服务配置。
                      * @return ServiceConfig API 的后端服务配置。
+                     * 
                      */
                     ServiceConfig GetServiceConfig() const;
 
                     /**
                      * 设置API 的后端服务配置。
-                     * @param ServiceConfig API 的后端服务配置。
+                     * @param _serviceConfig API 的后端服务配置。
+                     * 
                      */
                     void SetServiceConfig(const ServiceConfig& _serviceConfig);
 
                     /**
                      * 判断参数 ServiceConfig 是否已赋值
                      * @return ServiceConfig 是否已赋值
+                     * 
                      */
                     bool ServiceConfigHasBeenSet() const;
 
                     /**
                      * 获取关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。
                      * @return AuthRelationApiId 关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。
+                     * 
                      */
                     std::string GetAuthRelationApiId() const;
 
                     /**
                      * 设置关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。
-                     * @param AuthRelationApiId 关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。
+                     * @param _authRelationApiId 关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。
+                     * 
                      */
                     void SetAuthRelationApiId(const std::string& _authRelationApiId);
 
                     /**
                      * 判断参数 AuthRelationApiId 是否已赋值
                      * @return AuthRelationApiId 是否已赋值
+                     * 
                      */
                     bool AuthRelationApiIdHasBeenSet() const;
 
                     /**
                      * 获取API的后端服务参数。
                      * @return ServiceParameters API的后端服务参数。
+                     * 
                      */
                     std::vector<ServiceParameter> GetServiceParameters() const;
 
                     /**
                      * 设置API的后端服务参数。
-                     * @param ServiceParameters API的后端服务参数。
+                     * @param _serviceParameters API的后端服务参数。
+                     * 
                      */
                     void SetServiceParameters(const std::vector<ServiceParameter>& _serviceParameters);
 
                     /**
                      * 判断参数 ServiceParameters 是否已赋值
                      * @return ServiceParameters 是否已赋值
+                     * 
                      */
                     bool ServiceParametersHasBeenSet() const;
 
                     /**
                      * 获取oauth配置。当AuthType是OAUTH时生效。
                      * @return OauthConfig oauth配置。当AuthType是OAUTH时生效。
+                     * 
                      */
                     OauthConfig GetOauthConfig() const;
 
                     /**
                      * 设置oauth配置。当AuthType是OAUTH时生效。
-                     * @param OauthConfig oauth配置。当AuthType是OAUTH时生效。
+                     * @param _oauthConfig oauth配置。当AuthType是OAUTH时生效。
+                     * 
                      */
                     void SetOauthConfig(const OauthConfig& _oauthConfig);
 
                     /**
                      * 判断参数 OauthConfig 是否已赋值
                      * @return OauthConfig 是否已赋值
+                     * 
                      */
                     bool OauthConfigHasBeenSet() const;
 
                     /**
                      * 获取用户自定义错误码配置。
                      * @return ResponseErrorCodes 用户自定义错误码配置。
+                     * 
                      */
                     std::vector<ResponseErrorCodeReq> GetResponseErrorCodes() const;
 
                     /**
                      * 设置用户自定义错误码配置。
-                     * @param ResponseErrorCodes 用户自定义错误码配置。
+                     * @param _responseErrorCodes 用户自定义错误码配置。
+                     * 
                      */
                     void SetResponseErrorCodes(const std::vector<ResponseErrorCodeReq>& _responseErrorCodes);
 
                     /**
                      * 判断参数 ResponseErrorCodes 是否已赋值
                      * @return ResponseErrorCodes 是否已赋值
+                     * 
                      */
                     bool ResponseErrorCodesHasBeenSet() const;
 
                     /**
                      * 获取tsf serverless 命名空间ID。（内测中）
                      * @return TargetNamespaceId tsf serverless 命名空间ID。（内测中）
+                     * 
                      */
                     std::string GetTargetNamespaceId() const;
 
                     /**
                      * 设置tsf serverless 命名空间ID。（内测中）
-                     * @param TargetNamespaceId tsf serverless 命名空间ID。（内测中）
+                     * @param _targetNamespaceId tsf serverless 命名空间ID。（内测中）
+                     * 
                      */
                     void SetTargetNamespaceId(const std::string& _targetNamespaceId);
 
                     /**
                      * 判断参数 TargetNamespaceId 是否已赋值
                      * @return TargetNamespaceId 是否已赋值
+                     * 
                      */
                     bool TargetNamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取用户类型。
                      * @return UserType 用户类型。
+                     * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置用户类型。
-                     * @param UserType 用户类型。
+                     * @param _userType 用户类型。
+                     * 
                      */
                     void SetUserType(const std::string& _userType);
 
                     /**
                      * 判断参数 UserType 是否已赋值
                      * @return UserType 是否已赋值
+                     * 
                      */
                     bool UserTypeHasBeenSet() const;
 
                     /**
                      * 获取是否打开Base64编码，只有后端是scf时才会生效。
                      * @return IsBase64Encoded 是否打开Base64编码，只有后端是scf时才会生效。
+                     * 
                      */
                     bool GetIsBase64Encoded() const;
 
                     /**
                      * 设置是否打开Base64编码，只有后端是scf时才会生效。
-                     * @param IsBase64Encoded 是否打开Base64编码，只有后端是scf时才会生效。
+                     * @param _isBase64Encoded 是否打开Base64编码，只有后端是scf时才会生效。
+                     * 
                      */
                     void SetIsBase64Encoded(const bool& _isBase64Encoded);
 
                     /**
                      * 判断参数 IsBase64Encoded 是否已赋值
                      * @return IsBase64Encoded 是否已赋值
+                     * 
                      */
                     bool IsBase64EncodedHasBeenSet() const;
 
                     /**
                      * 获取事件总线ID。
                      * @return EventBusId 事件总线ID。
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件总线ID。
-                     * @param EventBusId 事件总线ID。
+                     * @param _eventBusId 事件总线ID。
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
                      * @return ServiceScfFunctionType scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     * 
                      */
                     std::string GetServiceScfFunctionType() const;
 
                     /**
                      * 设置scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
-                     * @param ServiceScfFunctionType scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     * @param _serviceScfFunctionType scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     * 
                      */
                     void SetServiceScfFunctionType(const std::string& _serviceScfFunctionType);
 
                     /**
                      * 判断参数 ServiceScfFunctionType 是否已赋值
                      * @return ServiceScfFunctionType 是否已赋值
+                     * 
                      */
                     bool ServiceScfFunctionTypeHasBeenSet() const;
 
                     /**
                      * 获取EIAM应用类型。
                      * @return EIAMAppType EIAM应用类型。
+                     * 
                      */
                     std::string GetEIAMAppType() const;
 
                     /**
                      * 设置EIAM应用类型。
-                     * @param EIAMAppType EIAM应用类型。
+                     * @param _eIAMAppType EIAM应用类型。
+                     * 
                      */
                     void SetEIAMAppType(const std::string& _eIAMAppType);
 
                     /**
                      * 判断参数 EIAMAppType 是否已赋值
                      * @return EIAMAppType 是否已赋值
+                     * 
                      */
                     bool EIAMAppTypeHasBeenSet() const;
 
                     /**
                      * 获取EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
                      * @return EIAMAuthType EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     * 
                      */
                     std::string GetEIAMAuthType() const;
 
                     /**
                      * 设置EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
-                     * @param EIAMAuthType EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     * @param _eIAMAuthType EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。
+                     * 
                      */
                     void SetEIAMAuthType(const std::string& _eIAMAuthType);
 
                     /**
                      * 判断参数 EIAMAuthType 是否已赋值
                      * @return EIAMAuthType 是否已赋值
+                     * 
                      */
                     bool EIAMAuthTypeHasBeenSet() const;
 
                     /**
                      * 获取EIAM应用Token 有效时间，单位为秒，默认为7200秒。
                      * @return TokenTimeout EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     * 
                      */
                     int64_t GetTokenTimeout() const;
 
                     /**
                      * 设置EIAM应用Token 有效时间，单位为秒，默认为7200秒。
-                     * @param TokenTimeout EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     * @param _tokenTimeout EIAM应用Token 有效时间，单位为秒，默认为7200秒。
+                     * 
                      */
                     void SetTokenTimeout(const int64_t& _tokenTimeout);
 
                     /**
                      * 判断参数 TokenTimeout 是否已赋值
                      * @return TokenTimeout 是否已赋值
+                     * 
                      */
                     bool TokenTimeoutHasBeenSet() const;
 
                     /**
                      * 获取EIAM应用ID。
                      * @return EIAMAppId EIAM应用ID。
+                     * 
                      */
                     std::string GetEIAMAppId() const;
 
                     /**
                      * 设置EIAM应用ID。
-                     * @param EIAMAppId EIAM应用ID。
+                     * @param _eIAMAppId EIAM应用ID。
+                     * 
                      */
                     void SetEIAMAppId(const std::string& _eIAMAppId);
 
                     /**
                      * 判断参数 EIAMAppId 是否已赋值
                      * @return EIAMAppId 是否已赋值
+                     * 
                      */
                     bool EIAMAppIdHasBeenSet() const;
 
                     /**
                      * 获取资源的Owner
                      * @return Owner 资源的Owner
+                     * 
                      */
                     std::string GetOwner() const;
 
                     /**
                      * 设置资源的Owner
-                     * @param Owner 资源的Owner
+                     * @param _owner 资源的Owner
+                     * 
                      */
                     void SetOwner(const std::string& _owner);
 
                     /**
                      * 判断参数 Owner 是否已赋值
                      * @return Owner 是否已赋值
+                     * 
                      */
                     bool OwnerHasBeenSet() const;
 

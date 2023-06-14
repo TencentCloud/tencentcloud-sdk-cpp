@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取存储类型（目前支持 cos、cls）
                      * @return StorageType 存储类型（目前支持 cos、cls）
+                     * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置存储类型（目前支持 cos、cls）
-                     * @param StorageType 存储类型（目前支持 cos、cls）
+                     * @param _storageType 存储类型（目前支持 cos、cls）
+                     * 
                      */
                     void SetStorageType(const std::string& _storageType);
 
                     /**
                      * 判断参数 StorageType 是否已赋值
                      * @return StorageType 是否已赋值
+                     * 
                      */
                     bool StorageTypeHasBeenSet() const;
 
                     /**
                      * 获取存储所在地域
                      * @return StorageRegion 存储所在地域
+                     * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
                      * 设置存储所在地域
-                     * @param StorageRegion 存储所在地域
+                     * @param _storageRegion 存储所在地域
+                     * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
 
                     /**
                      * 判断参数 StorageRegion 是否已赋值
                      * @return StorageRegion 是否已赋值
+                     * 
                      */
                     bool StorageRegionHasBeenSet() const;
 
                     /**
                      * 获取存储名称(cos：存储名称为用户自定义的存储桶名称，不包含"-APPID"，仅支持小写字母、数字以及中划线"-"的组合，不能超过50字符，且不支持中划线"-"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)
                      * @return StorageName 存储名称(cos：存储名称为用户自定义的存储桶名称，不包含"-APPID"，仅支持小写字母、数字以及中划线"-"的组合，不能超过50字符，且不支持中划线"-"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)
+                     * 
                      */
                     std::string GetStorageName() const;
 
                     /**
                      * 设置存储名称(cos：存储名称为用户自定义的存储桶名称，不包含"-APPID"，仅支持小写字母、数字以及中划线"-"的组合，不能超过50字符，且不支持中划线"-"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)
-                     * @param StorageName 存储名称(cos：存储名称为用户自定义的存储桶名称，不包含"-APPID"，仅支持小写字母、数字以及中划线"-"的组合，不能超过50字符，且不支持中划线"-"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)
+                     * @param _storageName 存储名称(cos：存储名称为用户自定义的存储桶名称，不包含"-APPID"，仅支持小写字母、数字以及中划线"-"的组合，不能超过50字符，且不支持中划线"-"开头或结尾； cls：存储名称为日志主题id，字符长度为1-50个字符)
+                     * 
                      */
                     void SetStorageName(const std::string& _storageName);
 
                     /**
                      * 判断参数 StorageName 是否已赋值
                      * @return StorageName 是否已赋值
+                     * 
                      */
                     bool StorageNameHasBeenSet() const;
 
                     /**
                      * 获取存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符
                      * @return StoragePrefix 存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符
+                     * 
                      */
                     std::string GetStoragePrefix() const;
 
                     /**
                      * 设置存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符
-                     * @param StoragePrefix 存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符
+                     * @param _storagePrefix 存储目录前缀，cos日志文件前缀仅支持字母和数字的组合，3-40个字符
+                     * 
                      */
                     void SetStoragePrefix(const std::string& _storagePrefix);
 
                     /**
                      * 判断参数 StoragePrefix 是否已赋值
                      * @return StoragePrefix 是否已赋值
+                     * 
                      */
                     bool StoragePrefixHasBeenSet() const;
 

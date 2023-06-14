@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取自定义人物Id
                      * @return PersonId 自定义人物Id
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取已删除的人物图片Id
                      * @return ImageId 已删除的人物图片Id
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 

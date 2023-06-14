@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取资源Id
                      * @return InstanceId 资源Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源Id
-                     * @param InstanceId 资源Id
+                     * @param _instanceId 资源Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
                      * @return OldIpType 当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
+                     * 
                      */
                     std::string GetOldIpType() const;
 
                     /**
                      * 设置当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
-                     * @param OldIpType 当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
+                     * @param _oldIpType 当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
+                     * 
                      */
                     void SetOldIpType(const std::string& _oldIpType);
 
                     /**
                      * 判断参数 OldIpType 是否已赋值
                      * @return OldIpType 是否已赋值
+                     * 
                      */
                     bool OldIpTypeHasBeenSet() const;
 
                     /**
                      * 获取当前配置的Ip段，包含ip与掩码
                      * @return OldIp 当前配置的Ip段，包含ip与掩码
+                     * 
                      */
                     IpSegment GetOldIp() const;
 
                     /**
                      * 设置当前配置的Ip段，包含ip与掩码
-                     * @param OldIp 当前配置的Ip段，包含ip与掩码
+                     * @param _oldIp 当前配置的Ip段，包含ip与掩码
+                     * 
                      */
                     void SetOldIp(const IpSegment& _oldIp);
 
                     /**
                      * 判断参数 OldIp 是否已赋值
                      * @return OldIp 是否已赋值
+                     * 
                      */
                     bool OldIpHasBeenSet() const;
 
                     /**
                      * 获取修改后黑白名单类型，取值black时黑名单，取值white时白名单
                      * @return NewIpType 修改后黑白名单类型，取值black时黑名单，取值white时白名单
+                     * 
                      */
                     std::string GetNewIpType() const;
 
                     /**
                      * 设置修改后黑白名单类型，取值black时黑名单，取值white时白名单
-                     * @param NewIpType 修改后黑白名单类型，取值black时黑名单，取值white时白名单
+                     * @param _newIpType 修改后黑白名单类型，取值black时黑名单，取值white时白名单
+                     * 
                      */
                     void SetNewIpType(const std::string& _newIpType);
 
                     /**
                      * 判断参数 NewIpType 是否已赋值
                      * @return NewIpType 是否已赋值
+                     * 
                      */
                     bool NewIpTypeHasBeenSet() const;
 
                     /**
                      * 获取当前配置的Ip段，包含ip与掩码
                      * @return NewIp 当前配置的Ip段，包含ip与掩码
+                     * 
                      */
                     IpSegment GetNewIp() const;
 
                     /**
                      * 设置当前配置的Ip段，包含ip与掩码
-                     * @param NewIp 当前配置的Ip段，包含ip与掩码
+                     * @param _newIp 当前配置的Ip段，包含ip与掩码
+                     * 
                      */
                     void SetNewIp(const IpSegment& _newIp);
 
                     /**
                      * 判断参数 NewIp 是否已赋值
                      * @return NewIp 是否已赋值
+                     * 
                      */
                     bool NewIpHasBeenSet() const;
 

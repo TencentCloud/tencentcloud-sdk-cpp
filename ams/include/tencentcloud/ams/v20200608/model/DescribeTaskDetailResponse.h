@@ -53,12 +53,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -67,12 +69,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 审核时传入的数据Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 
@@ -83,12 +87,14 @@ namespace TencentCloud
                      * @return BizType 业务类型，用于调用识别策略模板；
 （暂未发布功能，敬请期待）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 
@@ -97,12 +103,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -121,12 +129,14 @@ RUNNING 进行中
 ERROR 出错
 CANCELLED 已取消
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -135,12 +145,14 @@ CANCELLED 已取消
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -155,12 +167,14 @@ Pass 建议通过；
 Reveiw 建议复审；
 Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -171,12 +185,14 @@ Block 建议屏蔽；
                      * @return Labels 智能审核服务对于内容违规类型的判断，详见返回值列表
 如：Label：Porn（色情）；
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskLabel> GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -185,12 +201,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaInfo 传入媒体的解码信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaInfo GetMediaInfo() const;
 
                     /**
                      * 判断参数 MediaInfo 是否已赋值
                      * @return MediaInfo 是否已赋值
+                     * 
                      */
                     bool MediaInfoHasBeenSet() const;
 
@@ -199,12 +217,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 审核任务的信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InputInfo GetInputInfo() const;
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
@@ -213,12 +233,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 审核任务的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -227,12 +249,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 审核任务的更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
@@ -241,12 +265,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TryInSeconds 在N秒后重试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTryInSeconds() const;
 
                     /**
                      * 判断参数 TryInSeconds 是否已赋值
                      * @return TryInSeconds 是否已赋值
+                     * 
                      */
                     bool TryInSecondsHasBeenSet() const;
 
@@ -255,12 +281,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioSegments 视频/音频审核中的音频结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
 
                     /**
                      * 判断参数 AudioSegments 是否已赋值
                      * @return AudioSegments 是否已赋值
+                     * 
                      */
                     bool AudioSegmentsHasBeenSet() const;
 
@@ -269,12 +297,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSegments 视频审核中的图片结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImageSegments> GetImageSegments() const;
 
                     /**
                      * 判断参数 ImageSegments 是否已赋值
                      * @return ImageSegments 是否已赋值
+                     * 
                      */
                     bool ImageSegmentsHasBeenSet() const;
 
@@ -283,12 +313,14 @@ Block 建议屏蔽；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioText 音频识别总文本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAudioText() const;
 
                     /**
                      * 判断参数 AudioText 是否已赋值
                      * @return AudioText 是否已赋值
+                     * 
                      */
                     bool AudioTextHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取ISO 3166-2 国家/地区简写，详情请参考[ISO 3166-2](https://zh.m.wikipedia.org/zh-hans/ISO_3166-2)。
                      * @return Alpha2 ISO 3166-2 国家/地区简写，详情请参考[ISO 3166-2](https://zh.m.wikipedia.org/zh-hans/ISO_3166-2)。
+                     * 
                      */
                     std::string GetAlpha2() const;
 
                     /**
                      * 设置ISO 3166-2 国家/地区简写，详情请参考[ISO 3166-2](https://zh.m.wikipedia.org/zh-hans/ISO_3166-2)。
-                     * @param Alpha2 ISO 3166-2 国家/地区简写，详情请参考[ISO 3166-2](https://zh.m.wikipedia.org/zh-hans/ISO_3166-2)。
+                     * @param _alpha2 ISO 3166-2 国家/地区简写，详情请参考[ISO 3166-2](https://zh.m.wikipedia.org/zh-hans/ISO_3166-2)。
+                     * 
                      */
                     void SetAlpha2(const std::string& _alpha2);
 
                     /**
                      * 判断参数 Alpha2 是否已赋值
                      * @return Alpha2 是否已赋值
+                     * 
                      */
                     bool Alpha2HasBeenSet() const;
 
                     /**
                      * 获取整体拨测用时，单位ms。
                      * @return LoadTime 整体拨测用时，单位ms。
+                     * 
                      */
                     int64_t GetLoadTime() const;
 
                     /**
                      * 设置整体拨测用时，单位ms。
-                     * @param LoadTime 整体拨测用时，单位ms。
+                     * @param _loadTime 整体拨测用时，单位ms。
+                     * 
                      */
                     void SetLoadTime(const int64_t& _loadTime);
 
                     /**
                      * 判断参数 LoadTime 是否已赋值
                      * @return LoadTime 是否已赋值
+                     * 
                      */
                     bool LoadTimeHasBeenSet() const;
 

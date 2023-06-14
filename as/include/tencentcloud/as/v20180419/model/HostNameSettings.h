@@ -57,6 +57,7 @@ namespace TencentCloud
 <br><li> 不支持 Windows 实例。
 <br><li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostName() const;
 
@@ -66,17 +67,19 @@ namespace TencentCloud
 <br><li> 不支持 Windows 实例。
 <br><li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostName 云服务器的主机名。
+                     * @param _hostName 云服务器的主机名。
 <br><li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。
 <br><li> 不支持 Windows 实例。
 <br><li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostName(const std::string& _hostName);
 
                     /**
                      * 判断参数 HostName 是否已赋值
                      * @return HostName 是否已赋值
+                     * 
                      */
                     bool HostNameHasBeenSet() const;
 
@@ -89,6 +92,7 @@ namespace TencentCloud
 <br><li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。
 <br><li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostNameStyle() const;
 
@@ -97,16 +101,18 @@ namespace TencentCloud
 <br><li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。
 <br><li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostNameStyle 云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。
+                     * @param _hostNameStyle 云服务器主机名的风格，取值范围包括 ORIGINAL 和  UNIQUE，默认为 ORIGINAL。
 <br><li> ORIGINAL，AS 直接将入参中所填的 HostName 传递给 CVM，CVM 可能会对 HostName 追加序列号，伸缩组中实例的 HostName 会出现冲突的情况。
 <br><li> UNIQUE，入参所填的 HostName 相当于主机名前缀，AS 和 CVM 会对其进行拓展，伸缩组中实例的 HostName 可以保证唯一。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostNameStyle(const std::string& _hostNameStyle);
 
                     /**
                      * 判断参数 HostNameStyle 是否已赋值
                      * @return HostNameStyle 是否已赋值
+                     * 
                      */
                     bool HostNameStyleHasBeenSet() const;
 

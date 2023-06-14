@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
                      * @return Status 状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
-                     * @param Status 状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
+                     * @param _status 状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取管理人姓名
                      * @return ManagerFirstName 管理人姓名
+                     * 
                      */
                     std::string GetManagerFirstName() const;
 
                     /**
                      * 设置管理人姓名
-                     * @param ManagerFirstName 管理人姓名
+                     * @param _managerFirstName 管理人姓名
+                     * 
                      */
                     void SetManagerFirstName(const std::string& _managerFirstName);
 
                     /**
                      * 判断参数 ManagerFirstName 是否已赋值
                      * @return ManagerFirstName 是否已赋值
+                     * 
                      */
                     bool ManagerFirstNameHasBeenSet() const;
 
                     /**
                      * 获取管理人姓名
                      * @return ManagerLastName 管理人姓名
+                     * 
                      */
                     std::string GetManagerLastName() const;
 
                     /**
                      * 设置管理人姓名
-                     * @param ManagerLastName 管理人姓名
+                     * @param _managerLastName 管理人姓名
+                     * 
                      */
                     void SetManagerLastName(const std::string& _managerLastName);
 
                     /**
                      * 判断参数 ManagerLastName 是否已赋值
                      * @return ManagerLastName 是否已赋值
+                     * 
                      */
                     bool ManagerLastNameHasBeenSet() const;
 
                     /**
                      * 获取管理人职位
                      * @return ManagerPosition 管理人职位
+                     * 
                      */
                     std::string GetManagerPosition() const;
 
                     /**
                      * 设置管理人职位
-                     * @param ManagerPosition 管理人职位
+                     * @param _managerPosition 管理人职位
+                     * 
                      */
                     void SetManagerPosition(const std::string& _managerPosition);
 
                     /**
                      * 判断参数 ManagerPosition 是否已赋值
                      * @return ManagerPosition 是否已赋值
+                     * 
                      */
                     bool ManagerPositionHasBeenSet() const;
 
                     /**
                      * 获取管理人电话
                      * @return ManagerPhone 管理人电话
+                     * 
                      */
                     std::string GetManagerPhone() const;
 
                     /**
                      * 设置管理人电话
-                     * @param ManagerPhone 管理人电话
+                     * @param _managerPhone 管理人电话
+                     * 
                      */
                     void SetManagerPhone(const std::string& _managerPhone);
 
                     /**
                      * 判断参数 ManagerPhone 是否已赋值
                      * @return ManagerPhone 是否已赋值
+                     * 
                      */
                     bool ManagerPhoneHasBeenSet() const;
 
                     /**
                      * 获取管理人邮箱
                      * @return ManagerMail 管理人邮箱
+                     * 
                      */
                     std::string GetManagerMail() const;
 
                     /**
                      * 设置管理人邮箱
-                     * @param ManagerMail 管理人邮箱
+                     * @param _managerMail 管理人邮箱
+                     * 
                      */
                     void SetManagerMail(const std::string& _managerMail);
 
                     /**
                      * 判断参数 ManagerMail 是否已赋值
                      * @return ManagerMail 是否已赋值
+                     * 
                      */
                     bool ManagerMailHasBeenSet() const;
 
                     /**
                      * 获取管理人所属部门
                      * @return ManagerDepartment 管理人所属部门
+                     * 
                      */
                     std::string GetManagerDepartment() const;
 
                     /**
                      * 设置管理人所属部门
-                     * @param ManagerDepartment 管理人所属部门
+                     * @param _managerDepartment 管理人所属部门
+                     * 
                      */
                     void SetManagerDepartment(const std::string& _managerDepartment);
 
                     /**
                      * 判断参数 ManagerDepartment 是否已赋值
                      * @return ManagerDepartment 是否已赋值
+                     * 
                      */
                     bool ManagerDepartmentHasBeenSet() const;
 
@@ -178,74 +199,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取管理人域名数量
                      * @return DomainCount 管理人域名数量
+                     * 
                      */
                     int64_t GetDomainCount() const;
 
                     /**
                      * 设置管理人域名数量
-                     * @param DomainCount 管理人域名数量
+                     * @param _domainCount 管理人域名数量
+                     * 
                      */
                     void SetDomainCount(const int64_t& _domainCount);
 
                     /**
                      * 判断参数 DomainCount 是否已赋值
                      * @return DomainCount 是否已赋值
+                     * 
                      */
                     bool DomainCountHasBeenSet() const;
 
                     /**
                      * 获取管理人证书数量
                      * @return CertCount 管理人证书数量
+                     * 
                      */
                     int64_t GetCertCount() const;
 
                     /**
                      * 设置管理人证书数量
-                     * @param CertCount 管理人证书数量
+                     * @param _certCount 管理人证书数量
+                     * 
                      */
                     void SetCertCount(const int64_t& _certCount);
 
                     /**
                      * 判断参数 CertCount 是否已赋值
                      * @return CertCount 是否已赋值
+                     * 
                      */
                     bool CertCountHasBeenSet() const;
 
                     /**
                      * 获取管理人ID
                      * @return ManagerId 管理人ID
+                     * 
                      */
                     int64_t GetManagerId() const;
 
                     /**
                      * 设置管理人ID
-                     * @param ManagerId 管理人ID
+                     * @param _managerId 管理人ID
+                     * 
                      */
                     void SetManagerId(const int64_t& _managerId);
 
                     /**
                      * 判断参数 ManagerId 是否已赋值
                      * @return ManagerId 是否已赋值
+                     * 
                      */
                     bool ManagerIdHasBeenSet() const;
 
@@ -254,20 +287,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 审核有效到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置审核有效到期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 审核有效到期时间
+                     * @param _expireTime 审核有效到期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 
@@ -276,20 +312,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitAuditTime 最近一次提交审核时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubmitAuditTime() const;
 
                     /**
                      * 设置最近一次提交审核时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubmitAuditTime 最近一次提交审核时间
+                     * @param _submitAuditTime 最近一次提交审核时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubmitAuditTime(const std::string& _submitAuditTime);
 
                     /**
                      * 判断参数 SubmitAuditTime 是否已赋值
                      * @return SubmitAuditTime 是否已赋值
+                     * 
                      */
                     bool SubmitAuditTimeHasBeenSet() const;
 
@@ -298,20 +337,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyTime 审核通过时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVerifyTime() const;
 
                     /**
                      * 设置审核通过时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VerifyTime 审核通过时间
+                     * @param _verifyTime 审核通过时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVerifyTime(const std::string& _verifyTime);
 
                     /**
                      * 判断参数 VerifyTime 是否已赋值
                      * @return VerifyTime 是否已赋值
+                     * 
                      */
                     bool VerifyTimeHasBeenSet() const;
 
@@ -320,20 +362,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusInfo 具体审核状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ManagerStatusInfo> GetStatusInfo() const;
 
                     /**
                      * 设置具体审核状态信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatusInfo 具体审核状态信息
+                     * @param _statusInfo 具体审核状态信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatusInfo(const std::vector<ManagerStatusInfo>& _statusInfo);
 
                     /**
                      * 判断参数 StatusInfo 是否已赋值
                      * @return StatusInfo 是否已赋值
+                     * 
                      */
                     bool StatusInfoHasBeenSet() const;
 

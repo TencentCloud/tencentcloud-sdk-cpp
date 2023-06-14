@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。
                      * @return AddressIds 标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 
                      */
                     std::vector<std::string> GetAddressIds() const;
 
                     /**
                      * 设置标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。
-                     * @param AddressIds 标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。
+                     * @param _addressIds 标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。
+                     * 
                      */
                     void SetAddressIds(const std::vector<std::string>& _addressIds);
 
                     /**
                      * 判断参数 AddressIds 是否已赋值
                      * @return AddressIds 是否已赋值
+                     * 
                      */
                     bool AddressIdsHasBeenSet() const;
 

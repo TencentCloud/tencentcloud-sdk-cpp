@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取漏洞种类ID。
                      * @return VulId 漏洞种类ID。
+                     * 
                      */
                     uint64_t GetVulId() const;
 
                     /**
                      * 判断参数 VulId 是否已赋值
                      * @return VulId 是否已赋值
+                     * 
                      */
                     bool VulIdHasBeenSet() const;
 
                     /**
                      * 获取漏洞名称。
                      * @return VulName 漏洞名称。
+                     * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 判断参数 VulName 是否已赋值
                      * @return VulName 是否已赋值
+                     * 
                      */
                     bool VulNameHasBeenSet() const;
 
                     /**
                      * 获取漏洞等级。
                      * @return VulLevel 漏洞等级。
+                     * 
                      */
                     std::string GetVulLevel() const;
 
                     /**
                      * 判断参数 VulLevel 是否已赋值
                      * @return VulLevel 是否已赋值
+                     * 
                      */
                     bool VulLevelHasBeenSet() const;
 
                     /**
                      * 获取漏洞类型。
                      * @return VulType 漏洞类型。
+                     * 
                      */
                     std::string GetVulType() const;
 
                     /**
                      * 判断参数 VulType 是否已赋值
                      * @return VulType 是否已赋值
+                     * 
                      */
                     bool VulTypeHasBeenSet() const;
 
                     /**
                      * 获取漏洞描述。
                      * @return Description 漏洞描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取修复方案。
                      * @return RepairPlan 修复方案。
+                     * 
                      */
                     std::string GetRepairPlan() const;
 
                     /**
                      * 判断参数 RepairPlan 是否已赋值
                      * @return RepairPlan 是否已赋值
+                     * 
                      */
                     bool RepairPlanHasBeenSet() const;
 
                     /**
                      * 获取漏洞CVE。
                      * @return CveId 漏洞CVE。
+                     * 
                      */
                     std::string GetCveId() const;
 
                     /**
                      * 判断参数 CveId 是否已赋值
                      * @return CveId 是否已赋值
+                     * 
                      */
                     bool CveIdHasBeenSet() const;
 
                     /**
                      * 获取参考链接。
                      * @return Reference 参考链接。
+                     * 
                      */
                     std::string GetReference() const;
 
                     /**
                      * 判断参数 Reference 是否已赋值
                      * @return Reference 是否已赋值
+                     * 
                      */
                     bool ReferenceHasBeenSet() const;
 

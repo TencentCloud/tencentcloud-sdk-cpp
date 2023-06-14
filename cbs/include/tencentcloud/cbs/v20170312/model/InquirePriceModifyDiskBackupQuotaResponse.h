@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取描述了修改云硬盘备份点之后的云盘价格。
                      * @return DiskPrice 描述了修改云硬盘备份点之后的云盘价格。
+                     * 
                      */
                     Price GetDiskPrice() const;
 
                     /**
                      * 判断参数 DiskPrice 是否已赋值
                      * @return DiskPrice 是否已赋值
+                     * 
                      */
                     bool DiskPriceHasBeenSet() const;
 

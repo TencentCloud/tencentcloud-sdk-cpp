@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取转账类型
                      * @return TransferType 转账类型
+                     * 
                      */
                     int64_t GetTransferType() const;
 
                     /**
                      * 设置转账类型
-                     * @param TransferType 转账类型
+                     * @param _transferType 转账类型
+                     * 
                      */
                     void SetTransferType(const int64_t& _transferType);
 
                     /**
                      * 判断参数 TransferType 是否已赋值
                      * @return TransferType 是否已赋值
+                     * 
                      */
                     bool TransferTypeHasBeenSet() const;
 
                     /**
                      * 获取交易流水流水号，唯一
                      * @return TradeSerialNo 交易流水流水号，唯一
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 设置交易流水流水号，唯一
-                     * @param TradeSerialNo 交易流水流水号，唯一
+                     * @param _tradeSerialNo 交易流水流水号，唯一
+                     * 
                      */
                     void SetTradeSerialNo(const std::string& _tradeSerialNo);
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
                     /**
                      * 获取订单号，与TradeSerialNo不能同时为空
                      * @return OrderId 订单号，与TradeSerialNo不能同时为空
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号，与TradeSerialNo不能同时为空
-                     * @param OrderId 订单号，与TradeSerialNo不能同时为空
+                     * @param _orderId 订单号，与TradeSerialNo不能同时为空
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 

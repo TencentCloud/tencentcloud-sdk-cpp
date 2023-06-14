@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取峰值在线成员人数。
                      * @return PeakMemberNumber 峰值在线成员人数。
+                     * 
                      */
                     uint64_t GetPeakMemberNumber() const;
 
                     /**
                      * 判断参数 PeakMemberNumber 是否已赋值
                      * @return PeakMemberNumber 是否已赋值
+                     * 
                      */
                     bool PeakMemberNumberHasBeenSet() const;
 
                     /**
                      * 获取累计在线人数。
                      * @return MemberNumber 累计在线人数。
+                     * 
                      */
                     uint64_t GetMemberNumber() const;
 
                     /**
                      * 判断参数 MemberNumber 是否已赋值
                      * @return MemberNumber 是否已赋值
+                     * 
                      */
                     bool MemberNumberHasBeenSet() const;
 
                     /**
                      * 获取记录总数。包含进入房间或者应到未到的。
                      * @return Total 记录总数。包含进入房间或者应到未到的。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取成员记录列表。
                      * @return MemberRecords 成员记录列表。
+                     * 
                      */
                     std::vector<MemberRecord> GetMemberRecords() const;
 
                     /**
                      * 判断参数 MemberRecords 是否已赋值
                      * @return MemberRecords 是否已赋值
+                     * 
                      */
                     bool MemberRecordsHasBeenSet() const;
 
@@ -97,12 +105,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealStartTime 秒级unix时间戳，实际房间开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRealStartTime() const;
 
                     /**
                      * 判断参数 RealStartTime 是否已赋值
                      * @return RealStartTime 是否已赋值
+                     * 
                      */
                     bool RealStartTimeHasBeenSet() const;
 
@@ -111,36 +121,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealEndTime 秒级unix时间戳，实际房间结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRealEndTime() const;
 
                     /**
                      * 判断参数 RealEndTime 是否已赋值
                      * @return RealEndTime 是否已赋值
+                     * 
                      */
                     bool RealEndTimeHasBeenSet() const;
 
                     /**
                      * 获取房间消息总数。
                      * @return MessageCount 房间消息总数。
+                     * 
                      */
                     uint64_t GetMessageCount() const;
 
                     /**
                      * 判断参数 MessageCount 是否已赋值
                      * @return MessageCount 是否已赋值
+                     * 
                      */
                     bool MessageCountHasBeenSet() const;
 
                     /**
                      * 获取房间连麦总数。
                      * @return MicCount 房间连麦总数。
+                     * 
                      */
                     uint64_t GetMicCount() const;
 
                     /**
                      * 判断参数 MicCount 是否已赋值
                      * @return MicCount 是否已赋值
+                     * 
                      */
                     bool MicCountHasBeenSet() const;
 

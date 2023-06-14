@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllAction 任务的所有操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAllAction() const;
 
                     /**
                      * 设置任务的所有操作列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllAction 任务的所有操作列表
+                     * @param _allAction 任务的所有操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllAction(const std::vector<std::string>& _allAction);
 
                     /**
                      * 判断参数 AllAction 是否已赋值
                      * @return AllAction 是否已赋值
+                     * 
                      */
                     bool AllActionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowedAction 任务在当前状态下允许的操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAllowedAction() const;
 
                     /**
                      * 设置任务在当前状态下允许的操作列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllowedAction 任务在当前状态下允许的操作列表
+                     * @param _allowedAction 任务在当前状态下允许的操作列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllowedAction(const std::vector<std::string>& _allowedAction);
 
                     /**
                      * 判断参数 AllowedAction 是否已赋值
                      * @return AllowedAction 是否已赋值
+                     * 
                      */
                     bool AllowedActionHasBeenSet() const;
 

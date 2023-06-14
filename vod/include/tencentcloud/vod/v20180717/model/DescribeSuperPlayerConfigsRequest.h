@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
-                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param _subAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取播放器配置名字过滤条件，数组长度限制：100。
                      * @return Names 播放器配置名字过滤条件，数组长度限制：100。
+                     * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置播放器配置名字过滤条件，数组长度限制：100。
-                     * @param Names 播放器配置名字过滤条件，数组长度限制：100。
+                     * @param _names 播放器配置名字过滤条件，数组长度限制：100。
+                     * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
 
                     /**
                      * 判断参数 Names 是否已赋值
                      * @return Names 是否已赋值
+                     * 
                      */
                     bool NamesHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量，默认值：0。
                      * @return Offset 分页偏移量，默认值：0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量，默认值：0。
-                     * @param Offset 分页偏移量，默认值：0。
+                     * @param _offset 分页偏移量，默认值：0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
                      * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param Limit 返回记录条数，默认值：10，最大值：100。
+                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -121,6 +133,7 @@ namespace TencentCloud
                      * @return Type 播放器配置类型过滤条件，可选值：
 <li>Preset：系统预置配置；</li>
 <li>Custom：用户自定义配置。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -128,15 +141,17 @@ namespace TencentCloud
                      * 设置播放器配置类型过滤条件，可选值：
 <li>Preset：系统预置配置；</li>
 <li>Custom：用户自定义配置。</li>
-                     * @param Type 播放器配置类型过滤条件，可选值：
+                     * @param _type 播放器配置类型过滤条件，可选值：
 <li>Preset：系统预置配置；</li>
 <li>Custom：用户自定义配置。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

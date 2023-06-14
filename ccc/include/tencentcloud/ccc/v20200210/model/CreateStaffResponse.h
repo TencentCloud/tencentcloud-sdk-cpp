@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorStaffList 错误坐席列表及错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ErrStaffItem> GetErrorStaffList() const;
 
                     /**
                      * 判断参数 ErrorStaffList 是否已赋值
                      * @return ErrorStaffList 是否已赋值
+                     * 
                      */
                     bool ErrorStaffListHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取权限组 ID
                      * @return PGroupId 权限组 ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 设置权限组 ID
-                     * @param PGroupId 权限组 ID
+                     * @param _pGroupId 权限组 ID
+                     * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线
                      * @return Name 权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线
-                     * @param Name 权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线
+                     * @param _name 权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取权限组描述信息，1-255个字符
                      * @return DescInfo 权限组描述信息，1-255个字符
+                     * 
                      */
                     std::string GetDescInfo() const;
 
                     /**
                      * 设置权限组描述信息，1-255个字符
-                     * @param DescInfo 权限组描述信息，1-255个字符
+                     * @param _descInfo 权限组描述信息，1-255个字符
+                     * 
                      */
                     void SetDescInfo(const std::string& _descInfo);
 
                     /**
                      * 判断参数 DescInfo 是否已赋值
                      * @return DescInfo 是否已赋值
+                     * 
                      */
                     bool DescInfoHasBeenSet() const;
 

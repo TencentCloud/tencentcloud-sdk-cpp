@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamName 参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParamName 参数名
+                     * @param _paramName 参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 原参数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置原参数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldValue 原参数值
+                     * @param _oldValue 原参数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldValue(const std::string& _oldValue);
 
                     /**
                      * 判断参数 OldValue 是否已赋值
                      * @return OldValue 是否已赋值
+                     * 
                      */
                     bool OldValueHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewValue 本次修改期望参数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置本次修改期望参数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NewValue 本次修改期望参数值
+                     * @param _newValue 本次修改期望参数值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 后台参数修改开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置后台参数修改开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifyTime 后台参数修改开始时间
+                     * @param _modifyTime 后台参数修改开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EffectiveTime 后台参数生效开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEffectiveTime() const;
 
                     /**
                      * 设置后台参数生效开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EffectiveTime 后台参数生效开始时间
+                     * @param _effectiveTime 后台参数生效开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEffectiveTime(const std::string& _effectiveTime);
 
                     /**
                      * 判断参数 EffectiveTime 是否已赋值
                      * @return EffectiveTime 是否已赋值
+                     * 
                      */
                     bool EffectiveTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 修改状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置修改状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param State 修改状态
+                     * @param _state 修改状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作者（一般为用户sub UIN）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者（一般为用户sub UIN）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operator 操作者（一般为用户sub UIN）
+                     * @param _operator 操作者（一般为用户sub UIN）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventLog 时间日志。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventLog() const;
 
                     /**
                      * 设置时间日志。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventLog 时间日志。
+                     * @param _eventLog 时间日志。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventLog(const std::string& _eventLog);
 
                     /**
                      * 判断参数 EventLog 是否已赋值
                      * @return EventLog 是否已赋值
+                     * 
                      */
                     bool EventLogHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取设备信息列表
                      * @return DeviceInfos 设备信息列表
+                     * 
                      */
                     std::vector<DeviceBaseInfo> GetDeviceInfos() const;
 
                     /**
                      * 判断参数 DeviceInfos 是否已赋值
                      * @return DeviceInfos 是否已赋值
+                     * 
                      */
                     bool DeviceInfosHasBeenSet() const;
 
                     /**
                      * 获取设备总记录条数
                      * @return Length 设备总记录条数
+                     * 
                      */
                     int64_t GetLength() const;
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
+                     * 
                      */
                     bool LengthHasBeenSet() const;
 
                     /**
                      * 获取总页数
                      * @return TotalPage 总页数
+                     * 
                      */
                     int64_t GetTotalPage() const;
 
                     /**
                      * 判断参数 TotalPage 是否已赋值
                      * @return TotalPage 是否已赋值
+                     * 
                      */
                     bool TotalPageHasBeenSet() const;
 

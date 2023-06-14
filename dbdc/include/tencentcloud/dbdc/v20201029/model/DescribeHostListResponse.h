@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取主机总数
                      * @return TotalCount 主机总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取主机详情
                      * @return Hosts 主机详情
+                     * 
                      */
                     std::vector<HostDetail> GetHosts() const;
 
                     /**
                      * 判断参数 Hosts 是否已赋值
                      * @return Hosts 是否已赋值
+                     * 
                      */
                     bool HostsHasBeenSet() const;
 

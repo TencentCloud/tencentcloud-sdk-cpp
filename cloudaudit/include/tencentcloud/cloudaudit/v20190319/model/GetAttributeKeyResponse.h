@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取AttributeKey的有效取值范围
                      * @return AttributeKeyDetails AttributeKey的有效取值范围
+                     * 
                      */
                     std::vector<AttributeKeyDetail> GetAttributeKeyDetails() const;
 
                     /**
                      * 判断参数 AttributeKeyDetails 是否已赋值
                      * @return AttributeKeyDetails 是否已赋值
+                     * 
                      */
                     bool AttributeKeyDetailsHasBeenSet() const;
 

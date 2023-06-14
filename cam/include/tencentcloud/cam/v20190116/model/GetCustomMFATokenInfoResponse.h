@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取自定义多因子验证Token对应的帐号Id
                      * @return Uin 自定义多因子验证Token对应的帐号Id
+                     * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 

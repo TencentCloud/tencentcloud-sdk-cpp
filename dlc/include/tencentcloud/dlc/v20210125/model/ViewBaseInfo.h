@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取该视图所属数据库名字
                      * @return DatabaseName 该视图所属数据库名字
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置该视图所属数据库名字
-                     * @param DatabaseName 该视图所属数据库名字
+                     * @param _databaseName 该视图所属数据库名字
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取视图名称
                      * @return ViewName 视图名称
+                     * 
                      */
                     std::string GetViewName() const;
 
                     /**
                      * 设置视图名称
-                     * @param ViewName 视图名称
+                     * @param _viewName 视图名称
+                     * 
                      */
                     void SetViewName(const std::string& _viewName);
 
                     /**
                      * 判断参数 ViewName 是否已赋值
                      * @return ViewName 是否已赋值
+                     * 
                      */
                     bool ViewNameHasBeenSet() const;
 
                     /**
                      * 获取视图创建人昵称
                      * @return UserAlias 视图创建人昵称
+                     * 
                      */
                     std::string GetUserAlias() const;
 
                     /**
                      * 设置视图创建人昵称
-                     * @param UserAlias 视图创建人昵称
+                     * @param _userAlias 视图创建人昵称
+                     * 
                      */
                     void SetUserAlias(const std::string& _userAlias);
 
                     /**
                      * 判断参数 UserAlias 是否已赋值
                      * @return UserAlias 是否已赋值
+                     * 
                      */
                     bool UserAliasHasBeenSet() const;
 
                     /**
                      * 获取视图创建人ID
                      * @return UserSubUin 视图创建人ID
+                     * 
                      */
                     std::string GetUserSubUin() const;
 
                     /**
                      * 设置视图创建人ID
-                     * @param UserSubUin 视图创建人ID
+                     * @param _userSubUin 视图创建人ID
+                     * 
                      */
                     void SetUserSubUin(const std::string& _userSubUin);
 
                     /**
                      * 判断参数 UserSubUin 是否已赋值
                      * @return UserSubUin 是否已赋值
+                     * 
                      */
                     bool UserSubUinHasBeenSet() const;
 

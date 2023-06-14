@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID
                      * @return ClusterId 集群实例ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群实例ID
-                     * @param ClusterId 集群实例ID
+                     * @param _clusterId 集群实例ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取新建节点参数
                      * @return RunInstancesForNode 新建节点参数
+                     * 
                      */
                     std::vector<RunInstancesForNode> GetRunInstancesForNode() const;
 
                     /**
                      * 设置新建节点参数
-                     * @param RunInstancesForNode 新建节点参数
+                     * @param _runInstancesForNode 新建节点参数
+                     * 
                      */
                     void SetRunInstancesForNode(const std::vector<RunInstancesForNode>& _runInstancesForNode);
 
                     /**
                      * 判断参数 RunInstancesForNode 是否已赋值
                      * @return RunInstancesForNode 是否已赋值
+                     * 
                      */
                     bool RunInstancesForNodeHasBeenSet() const;
 
                     /**
                      * 获取添加已有节点相关参数
                      * @return ExistedInstancesForNode 添加已有节点相关参数
+                     * 
                      */
                     std::vector<ExistedInstancesForNode> GetExistedInstancesForNode() const;
 
                     /**
                      * 设置添加已有节点相关参数
-                     * @param ExistedInstancesForNode 添加已有节点相关参数
+                     * @param _existedInstancesForNode 添加已有节点相关参数
+                     * 
                      */
                     void SetExistedInstancesForNode(const std::vector<ExistedInstancesForNode>& _existedInstancesForNode);
 
                     /**
                      * 判断参数 ExistedInstancesForNode 是否已赋值
                      * @return ExistedInstancesForNode 是否已赋值
+                     * 
                      */
                     bool ExistedInstancesForNodeHasBeenSet() const;
 
                     /**
                      * 获取实例高级设置
                      * @return InstanceAdvancedSettings 实例高级设置
+                     * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
                      * 设置实例高级设置
-                     * @param InstanceAdvancedSettings 实例高级设置
+                     * @param _instanceAdvancedSettings 实例高级设置
+                     * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
 
                     /**
                      * 判断参数 InstanceAdvancedSettings 是否已赋值
                      * @return InstanceAdvancedSettings 是否已赋值
+                     * 
                      */
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
                      * 获取集群master组件自定义参数
                      * @return ExtraArgs 集群master组件自定义参数
+                     * 
                      */
                     ClusterExtraArgs GetExtraArgs() const;
 
                     /**
                      * 设置集群master组件自定义参数
-                     * @param ExtraArgs 集群master组件自定义参数
+                     * @param _extraArgs 集群master组件自定义参数
+                     * 
                      */
                     void SetExtraArgs(const ClusterExtraArgs& _extraArgs);
 
                     /**
                      * 判断参数 ExtraArgs 是否已赋值
                      * @return ExtraArgs 是否已赋值
+                     * 
                      */
                     bool ExtraArgsHasBeenSet() const;
 

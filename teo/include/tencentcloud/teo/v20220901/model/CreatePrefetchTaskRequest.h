@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -66,56 +69,65 @@ namespace TencentCloud
 http://www.example.com/example.txt。
                      * @return Targets 要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+                     * 
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
                      * 设置要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
-                     * @param Targets 要预热的资源列表，每个元素格式类似如下:
+                     * @param _targets 要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+                     * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
                     /**
                      * 获取是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
                      * @return EncodeUrl 是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
+                     * 
                      */
                     bool GetEncodeUrl() const;
 
                     /**
                      * 设置是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
-                     * @param EncodeUrl 是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
+                     * @param _encodeUrl 是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
+                     * 
                      */
                     void SetEncodeUrl(const bool& _encodeUrl);
 
                     /**
                      * 判断参数 EncodeUrl 是否已赋值
                      * @return EncodeUrl 是否已赋值
+                     * 
                      */
                     bool EncodeUrlHasBeenSet() const;
 
                     /**
                      * 获取附带的http头部信息。
                      * @return Headers 附带的http头部信息。
+                     * 
                      */
                     std::vector<Header> GetHeaders() const;
 
                     /**
                      * 设置附带的http头部信息。
-                     * @param Headers 附带的http头部信息。
+                     * @param _headers 附带的http头部信息。
+                     * 
                      */
                     void SetHeaders(const std::vector<Header>& _headers);
 
                     /**
                      * 判断参数 Headers 是否已赋值
                      * @return Headers 是否已赋值
+                     * 
                      */
                     bool HeadersHasBeenSet() const;
 

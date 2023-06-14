@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取是否扫描全部镜像
                      * @return All 是否扫描全部镜像
+                     * 
                      */
                     bool GetAll() const;
 
                     /**
                      * 设置是否扫描全部镜像
-                     * @param All 是否扫描全部镜像
+                     * @param _all 是否扫描全部镜像
+                     * 
                      */
                     void SetAll(const bool& _all);
 
                     /**
                      * 判断参数 All 是否已赋值
                      * @return All 是否已赋值
+                     * 
                      */
                     bool AllHasBeenSet() const;
 
                     /**
                      * 获取扫描的镜像列表
                      * @return Images 扫描的镜像列表
+                     * 
                      */
                     std::vector<ImageInfo> GetImages() const;
 
                     /**
                      * 设置扫描的镜像列表
-                     * @param Images 扫描的镜像列表
+                     * @param _images 扫描的镜像列表
+                     * 
                      */
                     void SetImages(const std::vector<ImageInfo>& _images);
 
                     /**
                      * 判断参数 Images 是否已赋值
                      * @return Images 是否已赋值
+                     * 
                      */
                     bool ImagesHasBeenSet() const;
 
                     /**
                      * 获取扫描的镜像列表
                      * @return Id 扫描的镜像列表
+                     * 
                      */
                     std::vector<uint64_t> GetId() const;
 
                     /**
                      * 设置扫描的镜像列表
-                     * @param Id 扫描的镜像列表
+                     * @param _id 扫描的镜像列表
+                     * 
                      */
                     void SetId(const std::vector<uint64_t>& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
+                     * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
                      * 设置过滤条件
-                     * @param Filters 过滤条件
+                     * @param _filters 过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取不要扫描的镜像列表，与Filters配合使用
                      * @return ExcludeImageList 不要扫描的镜像列表，与Filters配合使用
+                     * 
                      */
                     std::vector<uint64_t> GetExcludeImageList() const;
 
                     /**
                      * 设置不要扫描的镜像列表，与Filters配合使用
-                     * @param ExcludeImageList 不要扫描的镜像列表，与Filters配合使用
+                     * @param _excludeImageList 不要扫描的镜像列表，与Filters配合使用
+                     * 
                      */
                     void SetExcludeImageList(const std::vector<uint64_t>& _excludeImageList);
 
                     /**
                      * 判断参数 ExcludeImageList 是否已赋值
                      * @return ExcludeImageList 是否已赋值
+                     * 
                      */
                     bool ExcludeImageListHasBeenSet() const;
 
                     /**
                      * 获取是否仅扫描各repository最新版本的镜像
                      * @return OnlyScanLatest 是否仅扫描各repository最新版本的镜像
+                     * 
                      */
                     bool GetOnlyScanLatest() const;
 
                     /**
                      * 设置是否仅扫描各repository最新版本的镜像
-                     * @param OnlyScanLatest 是否仅扫描各repository最新版本的镜像
+                     * @param _onlyScanLatest 是否仅扫描各repository最新版本的镜像
+                     * 
                      */
                     void SetOnlyScanLatest(const bool& _onlyScanLatest);
 
                     /**
                      * 判断参数 OnlyScanLatest 是否已赋值
                      * @return OnlyScanLatest 是否已赋值
+                     * 
                      */
                     bool OnlyScanLatestHasBeenSet() const;
 

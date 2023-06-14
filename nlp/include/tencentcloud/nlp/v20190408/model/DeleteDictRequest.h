@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的自定义词库ID。
                      * @return DictId 要删除的自定义词库ID。
+                     * 
                      */
                     std::string GetDictId() const;
 
                     /**
                      * 设置要删除的自定义词库ID。
-                     * @param DictId 要删除的自定义词库ID。
+                     * @param _dictId 要删除的自定义词库ID。
+                     * 
                      */
                     void SetDictId(const std::string& _dictId);
 
                     /**
                      * 判断参数 DictId 是否已赋值
                      * @return DictId 是否已赋值
+                     * 
                      */
                     bool DictIdHasBeenSet() const;
 

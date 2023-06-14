@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerHttpsPort 内网访问https端口。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInnerHttpsPort() const;
 
                     /**
                      * 设置内网访问https端口。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerHttpsPort 内网访问https端口。
+                     * @param _innerHttpsPort 内网访问https端口。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerHttpsPort(const int64_t& _innerHttpsPort);
 
                     /**
                      * 判断参数 InnerHttpsPort 是否已赋值
                      * @return InnerHttpsPort 是否已赋值
+                     * 
                      */
                     bool InnerHttpsPortHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceDesc 用户自定义的服务描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceDesc() const;
 
                     /**
                      * 设置用户自定义的服务描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceDesc 用户自定义的服务描述。
+                     * @param _serviceDesc 用户自定义的服务描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceDesc(const std::string& _serviceDesc);
 
                     /**
                      * 判断参数 ServiceDesc 是否已赋值
                      * @return ServiceDesc 是否已赋值
+                     * 
                      */
                     bool ServiceDescHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 服务的前端请求类型。如http、https 或者 http&https。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置服务的前端请求类型。如http、https 或者 http&https。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 服务的前端请求类型。如http、https 或者 http&https。
+                     * @param _protocol 服务的前端请求类型。如http、https 或者 http&https。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiedTime 最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
                      * 设置最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModifiedTime 最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _modifiedTime 最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
 
                     /**
                      * 判断参数 ModifiedTime 是否已赋值
                      * @return ModifiedTime 是否已赋值
+                     * 
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetTypes 服务支持的网络类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetNetTypes() const;
 
                     /**
                      * 设置服务支持的网络类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetTypes 服务支持的网络类型。
+                     * @param _netTypes 服务支持的网络类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetTypes(const std::vector<std::string>& _netTypes);
 
                     /**
                      * 判断参数 NetTypes 是否已赋值
                      * @return NetTypes 是否已赋值
+                     * 
                      */
                     bool NetTypesHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExclusiveSetName 独占集群名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExclusiveSetName() const;
 
                     /**
                      * 设置独占集群名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExclusiveSetName 独占集群名称。
+                     * @param _exclusiveSetName 独占集群名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExclusiveSetName(const std::string& _exclusiveSetName);
 
                     /**
                      * 判断参数 ExclusiveSetName 是否已赋值
                      * @return ExclusiveSetName 是否已赋值
+                     * 
                      */
                     bool ExclusiveSetNameHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 服务唯一 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置服务唯一 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceId 服务唯一 ID。
+                     * @param _serviceId 服务唯一 ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpVersion IP版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIpVersion() const;
 
                     /**
                      * 设置IP版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpVersion IP版本。
+                     * @param _ipVersion IP版本。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIpVersion(const std::string& _ipVersion);
 
                     /**
                      * 判断参数 IpVersion 是否已赋值
                      * @return IpVersion 是否已赋值
+                     * 
                      */
                     bool IpVersionHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableEnvironments 已经发布的环境列表。如test、prepub、release。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAvailableEnvironments() const;
 
                     /**
                      * 设置已经发布的环境列表。如test、prepub、release。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AvailableEnvironments 已经发布的环境列表。如test、prepub、release。
+                     * @param _availableEnvironments 已经发布的环境列表。如test、prepub、release。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAvailableEnvironments(const std::vector<std::string>& _availableEnvironments);
 
                     /**
                      * 判断参数 AvailableEnvironments 是否已赋值
                      * @return AvailableEnvironments 是否已赋值
+                     * 
                      */
                     bool AvailableEnvironmentsHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 用户自定义的服务名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置用户自定义的服务名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceName 用户自定义的服务名称。
+                     * @param _serviceName 用户自定义的服务名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
@@ -272,20 +302,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OuterSubDomain 系统为该服务分配的外网域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOuterSubDomain() const;
 
                     /**
                      * 设置系统为该服务分配的外网域名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OuterSubDomain 系统为该服务分配的外网域名。
+                     * @param _outerSubDomain 系统为该服务分配的外网域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOuterSubDomain(const std::string& _outerSubDomain);
 
                     /**
                      * 判断参数 OuterSubDomain 是否已赋值
                      * @return OuterSubDomain 是否已赋值
+                     * 
                      */
                     bool OuterSubDomainHasBeenSet() const;
 
@@ -294,20 +327,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+                     * @param _createdTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -316,20 +352,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerHttpPort 内网访问http端口。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInnerHttpPort() const;
 
                     /**
                      * 设置内网访问http端口。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerHttpPort 内网访问http端口。
+                     * @param _innerHttpPort 内网访问http端口。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerHttpPort(const uint64_t& _innerHttpPort);
 
                     /**
                      * 判断参数 InnerHttpPort 是否已赋值
                      * @return InnerHttpPort 是否已赋值
+                     * 
                      */
                     bool InnerHttpPortHasBeenSet() const;
 
@@ -338,20 +377,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InnerSubDomain 系统为该服务自动分配的内网域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInnerSubDomain() const;
 
                     /**
                      * 设置系统为该服务自动分配的内网域名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InnerSubDomain 系统为该服务自动分配的内网域名。
+                     * @param _innerSubDomain 系统为该服务自动分配的内网域名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInnerSubDomain(const std::string& _innerSubDomain);
 
                     /**
                      * 判断参数 InnerSubDomain 是否已赋值
                      * @return InnerSubDomain 是否已赋值
+                     * 
                      */
                     bool InnerSubDomainHasBeenSet() const;
 
@@ -360,20 +402,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeIsolateStatus 服务的计费状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTradeIsolateStatus() const;
 
                     /**
                      * 设置服务的计费状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TradeIsolateStatus 服务的计费状态。
+                     * @param _tradeIsolateStatus 服务的计费状态。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTradeIsolateStatus(const int64_t& _tradeIsolateStatus);
 
                     /**
                      * 判断参数 TradeIsolateStatus 是否已赋值
                      * @return TradeIsolateStatus 是否已赋值
+                     * 
                      */
                     bool TradeIsolateStatusHasBeenSet() const;
 
@@ -382,20 +427,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 服务绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置服务绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 服务绑定的标签
+                     * @param _tags 服务绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -404,20 +452,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 独享实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置独享实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceId 独享实例
+                     * @param _instanceId 独享实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -426,20 +477,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetType 集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSetType() const;
 
                     /**
                      * 设置集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SetType 集群类型
+                     * @param _setType 集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSetType(const std::string& _setType);
 
                     /**
                      * 判断参数 SetType 是否已赋值
                      * @return SetType 是否已赋值
+                     * 
                      */
                     bool SetTypeHasBeenSet() const;
 
@@ -448,20 +502,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeploymentType 服务部署的集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDeploymentType() const;
 
                     /**
                      * 设置服务部署的集群类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeploymentType 服务部署的集群类型
+                     * @param _deploymentType 服务部署的集群类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeploymentType(const std::string& _deploymentType);
 
                     /**
                      * 判断参数 DeploymentType 是否已赋值
                      * @return DeploymentType 是否已赋值
+                     * 
                      */
                     bool DeploymentTypeHasBeenSet() const;
 

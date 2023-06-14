@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic 投递kafka的topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置投递kafka的topic
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Topic 投递kafka的topic
+                     * @param _topic 投递kafka的topic
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 采集日志的path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPath() const;
 
                     /**
                      * 设置采集日志的path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 采集日志的path
+                     * @param _path 采集日志的path
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::vector<std::string>& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -99,6 +105,7 @@ custom, 选了custom那么CustomRule就要填入具体的自定义值
 time，按时间分行
 custom, 选了custom那么CustomRule就要填入具体的自定义值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLineRule() const;
 
@@ -107,16 +114,18 @@ custom, 选了custom那么CustomRule就要填入具体的自定义值
 time，按时间分行
 custom, 选了custom那么CustomRule就要填入具体的自定义值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LineRule default，默认换行符分行
+                     * @param _lineRule default，默认换行符分行
 time，按时间分行
 custom, 选了custom那么CustomRule就要填入具体的自定义值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLineRule(const std::string& _lineRule);
 
                     /**
                      * 判断参数 LineRule 是否已赋值
                      * @return LineRule 是否已赋值
+                     * 
                      */
                     bool LineRuleHasBeenSet() const;
 
@@ -125,20 +134,23 @@ custom, 选了custom那么CustomRule就要填入具体的自定义值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRule 自定义的分行值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCustomRule() const;
 
                     /**
                      * 设置自定义的分行值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CustomRule 自定义的分行值
+                     * @param _customRule 自定义的分行值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCustomRule(const std::string& _customRule);
 
                     /**
                      * 判断参数 CustomRule 是否已赋值
                      * @return CustomRule 是否已赋值
+                     * 
                      */
                     bool CustomRuleHasBeenSet() const;
 

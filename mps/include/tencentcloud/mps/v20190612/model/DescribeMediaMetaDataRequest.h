@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取需要获取元信息的文件输入信息。
                      * @return InputInfo 需要获取元信息的文件输入信息。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置需要获取元信息的文件输入信息。
-                     * @param InputInfo 需要获取元信息的文件输入信息。
+                     * @param _inputInfo 需要获取元信息的文件输入信息。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 

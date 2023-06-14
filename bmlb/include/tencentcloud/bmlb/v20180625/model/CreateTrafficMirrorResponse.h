@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像实例ID
                      * @return TrafficMirrorId 流量镜像实例ID
+                     * 
                      */
                     std::string GetTrafficMirrorId() const;
 
                     /**
                      * 判断参数 TrafficMirrorId 是否已赋值
                      * @return TrafficMirrorId 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdHasBeenSet() const;
 

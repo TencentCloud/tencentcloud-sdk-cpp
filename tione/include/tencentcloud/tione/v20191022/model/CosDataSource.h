@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket cos桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置cos桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket cos桶
+                     * @param _bucket cos桶
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyPrefix cos文件key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKeyPrefix() const;
 
                     /**
                      * 设置cos文件key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyPrefix cos文件key
+                     * @param _keyPrefix cos文件key
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyPrefix(const std::string& _keyPrefix);
 
                     /**
                      * 判断参数 KeyPrefix 是否已赋值
                      * @return KeyPrefix 是否已赋值
+                     * 
                      */
                     bool KeyPrefixHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDistributionType 分布式数据下载方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataDistributionType() const;
 
                     /**
                      * 设置分布式数据下载方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataDistributionType 分布式数据下载方式
+                     * @param _dataDistributionType 分布式数据下载方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataDistributionType(const std::string& _dataDistributionType);
 
                     /**
                      * 判断参数 DataDistributionType 是否已赋值
                      * @return DataDistributionType 是否已赋值
+                     * 
                      */
                     bool DataDistributionTypeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataType 数据类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置数据类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataType 数据类型
+                     * @param _dataType 数据类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDataType(const std::string& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 

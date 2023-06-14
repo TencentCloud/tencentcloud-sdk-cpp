@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
                      * @return Key 玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
-                     * @param Key 玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * @param _key 玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符
                      * @return Value 玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符
-                     * @param Value 玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符
+                     * @param _value 玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

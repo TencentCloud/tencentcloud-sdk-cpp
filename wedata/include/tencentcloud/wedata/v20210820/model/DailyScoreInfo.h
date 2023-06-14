@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticsDate 统计日期 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatisticsDate() const;
 
                     /**
                      * 设置统计日期 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatisticsDate 统计日期 时间戳
+                     * @param _statisticsDate 统计日期 时间戳
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatisticsDate(const int64_t& _statisticsDate);
 
                     /**
                      * 判断参数 StatisticsDate 是否已赋值
                      * @return StatisticsDate 是否已赋值
+                     * 
                      */
                     bool StatisticsDateHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 评分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置评分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 评分
+                     * @param _score 评分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 

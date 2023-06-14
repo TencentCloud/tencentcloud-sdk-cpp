@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return BizId 应用ID
+                     * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
                      * 设置应用ID
-                     * @param BizId 应用ID
+                     * @param _bizId 应用ID
+                     * 
                      */
                     void SetBizId(const uint64_t& _bizId);
 
                     /**
                      * 判断参数 BizId 是否已赋值
                      * @return BizId 是否已赋值
+                     * 
                      */
                     bool BizIdHasBeenSet() const;
 
                     /**
                      * 获取数据开始时间，格式为 年-月-日，如: 2018-07-13
                      * @return StartDate 数据开始时间，格式为 年-月-日，如: 2018-07-13
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置数据开始时间，格式为 年-月-日，如: 2018-07-13
-                     * @param StartDate 数据开始时间，格式为 年-月-日，如: 2018-07-13
+                     * @param _startDate 数据开始时间，格式为 年-月-日，如: 2018-07-13
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取数据结束时间，格式为 年-月-日，如: 2018-07-13
                      * @return EndDate 数据结束时间，格式为 年-月-日，如: 2018-07-13
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置数据结束时间，格式为 年-月-日，如: 2018-07-13
-                     * @param EndDate 数据结束时间，格式为 年-月-日，如: 2018-07-13
+                     * @param _endDate 数据结束时间，格式为 年-月-日，如: 2018-07-13
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 

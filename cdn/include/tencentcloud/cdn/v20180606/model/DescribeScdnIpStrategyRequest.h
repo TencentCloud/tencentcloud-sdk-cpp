@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取分页起始地址
                      * @return Offset 分页起始地址
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页起始地址
-                     * @param Offset 分页起始地址
+                     * @param _offset 分页起始地址
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取列表分页记录条数，最大1000
                      * @return Limit 列表分页记录条数，最大1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置列表分页记录条数，最大1000
-                     * @param Limit 列表分页记录条数，最大1000
+                     * @param _limit 列表分页记录条数，最大1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询条件过滤器
                      * @return Filters 查询条件过滤器
+                     * 
                      */
                     std::vector<ScdnIpStrategyFilter> GetFilters() const;
 
                     /**
                      * 设置查询条件过滤器
-                     * @param Filters 查询条件过滤器
+                     * @param _filters 查询条件过滤器
+                     * 
                      */
                     void SetFilters(const std::vector<ScdnIpStrategyFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取指定查询返回结果的排序字段，支持domain，update_time
                      * @return Order 指定查询返回结果的排序字段，支持domain，update_time
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置指定查询返回结果的排序字段，支持domain，update_time
-                     * @param Order 指定查询返回结果的排序字段，支持domain，update_time
+                     * @param _order 指定查询返回结果的排序字段，支持domain，update_time
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序方式，支持asc，desc
                      * @return Sequence 排序方式，支持asc，desc
+                     * 
                      */
                     std::string GetSequence() const;
 
                     /**
                      * 设置排序方式，支持asc，desc
-                     * @param Sequence 排序方式，支持asc，desc
+                     * @param _sequence 排序方式，支持asc，desc
+                     * 
                      */
                     void SetSequence(const std::string& _sequence);
 
                     /**
                      * 判断参数 Sequence 是否已赋值
                      * @return Sequence 是否已赋值
+                     * 
                      */
                     bool SequenceHasBeenSet() const;
 

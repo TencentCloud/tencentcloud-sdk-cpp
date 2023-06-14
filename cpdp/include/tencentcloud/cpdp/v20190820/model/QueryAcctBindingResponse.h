@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总行数
                      * @return TotalCount 总行数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取银行卡信息列表
                      * @return BankCardItems 银行卡信息列表
+                     * 
                      */
                     std::vector<BankCardItem> GetBankCardItems() const;
 
                     /**
                      * 判断参数 BankCardItems 是否已赋值
                      * @return BankCardItems 是否已赋值
+                     * 
                      */
                     bool BankCardItemsHasBeenSet() const;
 

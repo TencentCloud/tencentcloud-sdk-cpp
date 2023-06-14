@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取视频防盗链播放URL
                      * @return SignedVideoURL 视频防盗链播放URL
+                     * 
                      */
                     std::string GetSignedVideoURL() const;
 
                     /**
                      * 判断参数 SignedVideoURL 是否已赋值
                      * @return SignedVideoURL 是否已赋值
+                     * 
                      */
                     bool SignedVideoURLHasBeenSet() const;
 

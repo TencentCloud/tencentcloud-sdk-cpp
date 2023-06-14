@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取任务开始时间
                      * @return BeginTime 任务开始时间
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置任务开始时间
-                     * @param BeginTime 任务开始时间
+                     * @param _beginTime 任务开始时间
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取任务周期 小时维度
                      * @return IntervalTime 任务周期 小时维度
+                     * 
                      */
                     uint64_t GetIntervalTime() const;
 
                     /**
                      * 设置任务周期 小时维度
-                     * @param IntervalTime 任务周期 小时维度
+                     * @param _intervalTime 任务周期 小时维度
+                     * 
                      */
                     void SetIntervalTime(const uint64_t& _intervalTime);
 
                     /**
                      * 判断参数 IntervalTime 是否已赋值
                      * @return IntervalTime 是否已赋值
+                     * 
                      */
                     bool IntervalTimeHasBeenSet() const;
 
                     /**
                      * 获取是否终止周期，用于任务更新 0否1是
                      * @return TermCycle 是否终止周期，用于任务更新 0否1是
+                     * 
                      */
                     uint64_t GetTermCycle() const;
 
                     /**
                      * 设置是否终止周期，用于任务更新 0否1是
-                     * @param TermCycle 是否终止周期，用于任务更新 0否1是
+                     * @param _termCycle 是否终止周期，用于任务更新 0否1是
+                     * 
                      */
                     void SetTermCycle(const uint64_t& _termCycle);
 
                     /**
                      * 判断参数 TermCycle 是否已赋值
                      * @return TermCycle 是否已赋值
+                     * 
                      */
                     bool TermCycleHasBeenSet() const;
 

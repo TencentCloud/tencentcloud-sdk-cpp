@@ -55,6 +55,7 @@ hq: 针对高清晰度视频超分;
 lq: 针对低清晰度有较多噪声视频的超分;
 hq: 针对高清晰度视频超分;
 默认取值：lq。
+                     * 
                      */
                     std::string GetType() const;
 
@@ -63,16 +64,18 @@ hq: 针对高清晰度视频超分;
 lq: 针对低清晰度有较多噪声视频的超分;
 hq: 针对高清晰度视频超分;
 默认取值：lq。
-                     * @param Type 超分视频类型：可选值：lq,hq
+                     * @param _type 超分视频类型：可选值：lq,hq
 lq: 针对低清晰度有较多噪声视频的超分;
 hq: 针对高清晰度视频超分;
 默认取值：lq。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -81,20 +84,23 @@ hq: 针对高清晰度视频超分;
 注意：当前只支持两倍超分。
                      * @return Size 超分倍数，可选值：2。
 注意：当前只支持两倍超分。
+                     * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置超分倍数，可选值：2。
 注意：当前只支持两倍超分。
-                     * @param Size 超分倍数，可选值：2。
+                     * @param _size 超分倍数，可选值：2。
 注意：当前只支持两倍超分。
+                     * 
                      */
                     void SetSize(const int64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 

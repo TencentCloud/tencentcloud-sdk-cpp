@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取清洗阈值策略列表总数
                      * @return Total 清洗阈值策略列表总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取清洗阈值策略列表详情
                      * @return ThresholdList 清洗阈值策略列表详情
+                     * 
                      */
                     std::vector<CCThresholdPolicy> GetThresholdList() const;
 
                     /**
                      * 判断参数 ThresholdList 是否已赋值
                      * @return ThresholdList 是否已赋值
+                     * 
                      */
                     bool ThresholdListHasBeenSet() const;
 

@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取用户自定义脚本名
                      * @return Alias 用户自定义脚本名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置用户自定义脚本名
-                     * @param Alias 用户自定义脚本名
+                     * @param _alias 用户自定义脚本名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取AppId
                      * @return AppId AppId
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置AppId
-                     * @param AppId AppId
+                     * @param _appId AppId
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取脚本自增ID
                      * @return AutoId 脚本自增ID
+                     * 
                      */
                     uint64_t GetAutoId() const;
 
                     /**
                      * 设置脚本自增ID
-                     * @param AutoId 脚本自增ID
+                     * @param _autoId 脚本自增ID
+                     * 
                      */
                     void SetAutoId(const uint64_t& _autoId);
 
                     /**
                      * 判断参数 AutoId 是否已赋值
                      * @return AutoId 是否已赋值
+                     * 
                      */
                     bool AutoIdHasBeenSet() const;
 
                     /**
                      * 获取脚本ID
                      * @return CmdId 脚本ID
+                     * 
                      */
                     std::string GetCmdId() const;
 
                     /**
                      * 设置脚本ID
-                     * @param CmdId 脚本ID
+                     * @param _cmdId 脚本ID
+                     * 
                      */
                     void SetCmdId(const std::string& _cmdId);
 
                     /**
                      * 判断参数 CmdId 是否已赋值
                      * @return CmdId 是否已赋值
+                     * 
                      */
                     bool CmdIdHasBeenSet() const;
 
                     /**
                      * 获取脚本内容
                      * @return Content 脚本内容
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置脚本内容
-                     * @param Content 脚本内容
+                     * @param _content 脚本内容
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
                      * 获取命令适用的操作系统类型
                      * @return OsType 命令适用的操作系统类型
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置命令适用的操作系统类型
-                     * @param OsType 命令适用的操作系统类型
+                     * @param _osType 命令适用的操作系统类型
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取资源实例ID
                      * @return InstanceId 资源实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置资源实例ID
-                     * @param InstanceId 资源实例ID
+                     * @param _instanceId 资源实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取访问限速配置，填写参数时配置ID请为空
                      * @return DDoSSpeedLimitConfig 访问限速配置，填写参数时配置ID请为空
+                     * 
                      */
                     DDoSSpeedLimitConfig GetDDoSSpeedLimitConfig() const;
 
                     /**
                      * 设置访问限速配置，填写参数时配置ID请为空
-                     * @param DDoSSpeedLimitConfig 访问限速配置，填写参数时配置ID请为空
+                     * @param _dDoSSpeedLimitConfig 访问限速配置，填写参数时配置ID请为空
+                     * 
                      */
                     void SetDDoSSpeedLimitConfig(const DDoSSpeedLimitConfig& _dDoSSpeedLimitConfig);
 
                     /**
                      * 判断参数 DDoSSpeedLimitConfig 是否已赋值
                      * @return DDoSSpeedLimitConfig 是否已赋值
+                     * 
                      */
                     bool DDoSSpeedLimitConfigHasBeenSet() const;
 

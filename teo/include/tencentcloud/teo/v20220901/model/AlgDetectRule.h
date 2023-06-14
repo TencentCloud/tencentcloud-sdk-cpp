@@ -52,72 +52,84 @@ namespace TencentCloud
                     /**
                      * 获取规则id。
                      * @return RuleID 规则id。
+                     * 
                      */
                     int64_t GetRuleID() const;
 
                     /**
                      * 设置规则id。
-                     * @param RuleID 规则id。
+                     * @param _ruleID 规则id。
+                     * 
                      */
                     void SetRuleID(const int64_t& _ruleID);
 
                     /**
                      * 判断参数 RuleID 是否已赋值
                      * @return RuleID 是否已赋值
+                     * 
                      */
                     bool RuleIDHasBeenSet() const;
 
                     /**
                      * 获取规则名。
                      * @return RuleName 规则名。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名。
-                     * @param RuleName 规则名。
+                     * @param _ruleName 规则名。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则开关。
                      * @return Switch 规则开关。
+                     * 
                      */
                     std::string GetSwitch() const;
 
                     /**
                      * 设置规则开关。
-                     * @param Switch 规则开关。
+                     * @param _switch 规则开关。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取自定义规则。
                      * @return AlgConditions 自定义规则。
+                     * 
                      */
                     std::vector<AclCondition> GetAlgConditions() const;
 
                     /**
                      * 设置自定义规则。
-                     * @param AlgConditions 自定义规则。
+                     * @param _algConditions 自定义规则。
+                     * 
                      */
                     void SetAlgConditions(const std::vector<AclCondition>& _algConditions);
 
                     /**
                      * 判断参数 AlgConditions 是否已赋值
                      * @return AlgConditions 是否已赋值
+                     * 
                      */
                     bool AlgConditionsHasBeenSet() const;
 
@@ -126,56 +138,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlgDetectSession Cookie校验和会话行为分析。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AlgDetectSession GetAlgDetectSession() const;
 
                     /**
                      * 设置Cookie校验和会话行为分析。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlgDetectSession Cookie校验和会话行为分析。
+                     * @param _algDetectSession Cookie校验和会话行为分析。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlgDetectSession(const AlgDetectSession& _algDetectSession);
 
                     /**
                      * 判断参数 AlgDetectSession 是否已赋值
                      * @return AlgDetectSession 是否已赋值
+                     * 
                      */
                     bool AlgDetectSessionHasBeenSet() const;
 
                     /**
                      * 获取客户端行为校验。
                      * @return AlgDetectJS 客户端行为校验。
+                     * 
                      */
                     std::vector<AlgDetectJS> GetAlgDetectJS() const;
 
                     /**
                      * 设置客户端行为校验。
-                     * @param AlgDetectJS 客户端行为校验。
+                     * @param _algDetectJS 客户端行为校验。
+                     * 
                      */
                     void SetAlgDetectJS(const std::vector<AlgDetectJS>& _algDetectJS);
 
                     /**
                      * 判断参数 AlgDetectJS 是否已赋值
                      * @return AlgDetectJS 是否已赋值
+                     * 
                      */
                     bool AlgDetectJSHasBeenSet() const;
 
                     /**
                      * 获取更新时间。仅出参使用。
                      * @return UpdateTime 更新时间。仅出参使用。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。仅出参使用。
-                     * @param UpdateTime 更新时间。仅出参使用。
+                     * @param _updateTime 更新时间。仅出参使用。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

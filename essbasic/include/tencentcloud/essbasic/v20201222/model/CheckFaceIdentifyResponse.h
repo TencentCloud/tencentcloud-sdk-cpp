@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取核身结果; 0:通过,1:不通过
                      * @return Result 核身结果; 0:通过,1:不通过
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取核身结果描述
                      * @return Description 核身结果描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取渠道名
                      * @return ChannelName 渠道名
+                     * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -84,24 +90,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifiedOn 认证通过时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetVerifiedOn() const;
 
                     /**
                      * 判断参数 VerifiedOn 是否已赋值
                      * @return VerifiedOn 是否已赋值
+                     * 
                      */
                     bool VerifiedOnHasBeenSet() const;
 
                     /**
                      * 获取核身流水号
                      * @return SerialNumber 核身流水号
+                     * 
                      */
                     std::string GetSerialNumber() const;
 
                     /**
                      * 判断参数 SerialNumber 是否已赋值
                      * @return SerialNumber 是否已赋值
+                     * 
                      */
                     bool SerialNumberHasBeenSet() const;
 
@@ -110,12 +120,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyServerIp 渠道核身服务器IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVerifyServerIp() const;
 
                     /**
                      * 判断参数 VerifyServerIp 是否已赋值
                      * @return VerifyServerIp 是否已赋值
+                     * 
                      */
                     bool VerifyServerIpHasBeenSet() const;
 
@@ -124,12 +136,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhotoFileName 核身照片文件名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhotoFileName() const;
 
                     /**
                      * 判断参数 PhotoFileName 是否已赋值
                      * @return PhotoFileName 是否已赋值
+                     * 
                      */
                     bool PhotoFileNameHasBeenSet() const;
 
@@ -138,12 +152,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhotoFileData 核身照片内容base64(文件格式见文件名后缀,一般为jpg)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhotoFileData() const;
 
                     /**
                      * 判断参数 PhotoFileData 是否已赋值
                      * @return PhotoFileData 是否已赋值
+                     * 
                      */
                     bool PhotoFileDataHasBeenSet() const;
 

@@ -51,12 +51,14 @@ namespace TencentCloud
                      * @return FailedResources 失败资源信息。
 创建并绑定标签成功时，返回的FailedResources为空。
 创建并绑定标签失败或部分失败时，返回的FailedResources会显示失败资源的详细信息。
+                     * 
                      */
                     std::vector<FailedResource> GetFailedResources() const;
 
                     /**
                      * 判断参数 FailedResources 是否已赋值
                      * @return FailedResources 是否已赋值
+                     * 
                      */
                     bool FailedResourcesHasBeenSet() const;
 

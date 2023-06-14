@@ -59,6 +59,7 @@ namespace TencentCloud
 • 图片像素：大于50*50像素，否则影响识别效果； 
 • 长宽比：长边：短边<5； 
 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
@@ -71,7 +72,7 @@ namespace TencentCloud
 • 图片像素：大于50*50像素，否则影响识别效果； 
 • 长宽比：长边：短边<5； 
 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
-                     * @param ImageUrl 图片URL地址。 
+                     * @param _imageUrl 图片URL地址。 
 图片限制： 
 • 图片格式：PNG、JPG、JPEG。 
 • 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 
@@ -79,12 +80,14 @@ namespace TencentCloud
 • 图片像素：大于50*50像素，否则影响识别效果； 
 • 长宽比：长边：短边<5； 
 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。
+                     * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 
@@ -93,20 +96,23 @@ namespace TencentCloud
 **注意：图片需要base64编码，并且要去掉编码头部。**
                      * @return ImageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
 **注意：图片需要base64编码，并且要去掉编码头部。**
+                     * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
                      * 设置图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
 **注意：图片需要base64编码，并且要去掉编码头部。**
-                     * @param ImageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
+                     * @param _imageBase64 图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。
 **注意：图片需要base64编码，并且要去掉编码头部。**
+                     * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
 
                     /**
                      * 判断参数 ImageBase64 是否已赋值
                      * @return ImageBase64 是否已赋值
+                     * 
                      */
                     bool ImageBase64HasBeenSet() const;
 

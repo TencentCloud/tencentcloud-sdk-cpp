@@ -56,20 +56,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaseGroup 代理基本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseGroupInfo GetBaseGroup() const;
 
                     /**
                      * 设置代理基本信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BaseGroup 代理基本信息
+                     * @param _baseGroup 代理基本信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBaseGroup(const BaseGroupInfo& _baseGroup);
 
                     /**
                      * 判断参数 BaseGroup 是否已赋值
                      * @return BaseGroup 是否已赋值
+                     * 
                      */
                     bool BaseGroupHasBeenSet() const;
 
@@ -78,20 +81,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 代理地址信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Address> GetAddress() const;
 
                     /**
                      * 设置代理地址信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Address 代理地址信息
+                     * @param _address 代理地址信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddress(const std::vector<Address>& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionPoolInfo 代理连接池信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ConnectionPoolInfo GetConnectionPoolInfo() const;
 
                     /**
                      * 设置代理连接池信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConnectionPoolInfo 代理连接池信息
+                     * @param _connectionPoolInfo 代理连接池信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConnectionPoolInfo(const ConnectionPoolInfo& _connectionPoolInfo);
 
                     /**
                      * 判断参数 ConnectionPoolInfo 是否已赋值
                      * @return ConnectionPoolInfo 是否已赋值
+                     * 
                      */
                     bool ConnectionPoolInfoHasBeenSet() const;
 
@@ -122,20 +131,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyNode 代理节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProxyNodeInfo> GetProxyNode() const;
 
                     /**
                      * 设置代理节点信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyNode 代理节点信息
+                     * @param _proxyNode 代理节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyNode(const std::vector<ProxyNodeInfo>& _proxyNode);
 
                     /**
                      * 判断参数 ProxyNode 是否已赋值
                      * @return ProxyNode 是否已赋值
+                     * 
                      */
                     bool ProxyNodeHasBeenSet() const;
 
@@ -144,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RWInstInfo 代理路由信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RWInfos GetRWInstInfo() const;
 
                     /**
                      * 设置代理路由信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RWInstInfo 代理路由信息
+                     * @param _rWInstInfo 代理路由信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRWInstInfo(const RWInfos& _rWInstInfo);
 
                     /**
                      * 判断参数 RWInstInfo 是否已赋值
                      * @return RWInstInfo 是否已赋值
+                     * 
                      */
                     bool RWInstInfoHasBeenSet() const;
 

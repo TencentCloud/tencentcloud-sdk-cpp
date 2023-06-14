@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取品牌名字
                      * @return BrandName 品牌名字
+                     * 
                      */
                     std::string GetBrandName() const;
 
                     /**
                      * 设置品牌名字
-                     * @param BrandName 品牌名字
+                     * @param _brandName 品牌名字
+                     * 
                      */
                     void SetBrandName(const std::string& _brandName);
 
                     /**
                      * 判断参数 BrandName 是否已赋值
                      * @return BrandName 是否已赋值
+                     * 
                      */
                     bool BrandNameHasBeenSet() const;
 
                     /**
                      * 获取商标证明
                      * @return BrandCertificateName 商标证明
+                     * 
                      */
                     std::string GetBrandCertificateName() const;
 
                     /**
                      * 设置商标证明
-                     * @param BrandCertificateName 商标证明
+                     * @param _brandCertificateName 商标证明
+                     * 
                      */
                     void SetBrandCertificateName(const std::string& _brandCertificateName);
 
                     /**
                      * 判断参数 BrandCertificateName 是否已赋值
                      * @return BrandCertificateName 是否已赋值
+                     * 
                      */
                     bool BrandCertificateNameHasBeenSet() const;
 
                     /**
                      * 获取商标转让证明
                      * @return TransferName 商标转让证明
+                     * 
                      */
                     std::string GetTransferName() const;
 
                     /**
                      * 设置商标转让证明
-                     * @param TransferName 商标转让证明
+                     * @param _transferName 商标转让证明
+                     * 
                      */
                     void SetTransferName(const std::string& _transferName);
 
                     /**
                      * 判断参数 TransferName 是否已赋值
                      * @return TransferName 是否已赋值
+                     * 
                      */
                     bool TransferNameHasBeenSet() const;
 
                     /**
                      * 获取授权书
                      * @return AuthorizationName 授权书
+                     * 
                      */
                     std::string GetAuthorizationName() const;
 
                     /**
                      * 设置授权书
-                     * @param AuthorizationName 授权书
+                     * @param _authorizationName 授权书
+                     * 
                      */
                     void SetAuthorizationName(const std::string& _authorizationName);
 
                     /**
                      * 判断参数 AuthorizationName 是否已赋值
                      * @return AuthorizationName 是否已赋值
+                     * 
                      */
                     bool AuthorizationNameHasBeenSet() const;
 

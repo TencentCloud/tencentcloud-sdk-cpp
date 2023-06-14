@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取返回值。0为成功，非0为失败。
                      * @return ErrorCode 返回值。0为成功，非0为失败。
+                     * 
                      */
                     int64_t GetErrorCode() const;
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
                      * 获取模型ID
                      * @return ModelId 模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 

@@ -56,6 +56,7 @@ namespace TencentCloud
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
+                     * 
                      */
                     uint64_t GetAlarmType() const;
 
@@ -64,52 +65,60 @@ namespace TencentCloud
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
-                     * @param AlarmType 告警阈值类型，取值[
+                     * @param _alarmType 告警阈值类型，取值[
 1(入流量告警阈值)
 2(攻击清洗流量告警阈值)
 ]
+                     * 
                      */
                     void SetAlarmType(const uint64_t& _alarmType);
 
                     /**
                      * 判断参数 AlarmType 是否已赋值
                      * @return AlarmType 是否已赋值
+                     * 
                      */
                     bool AlarmTypeHasBeenSet() const;
 
                     /**
                      * 获取告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；
                      * @return AlarmThreshold 告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；
+                     * 
                      */
                     uint64_t GetAlarmThreshold() const;
 
                     /**
                      * 设置告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；
-                     * @param AlarmThreshold 告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；
+                     * @param _alarmThreshold 告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；
+                     * 
                      */
                     void SetAlarmThreshold(const uint64_t& _alarmThreshold);
 
                     /**
                      * 判断参数 AlarmThreshold 是否已赋值
                      * @return AlarmThreshold 是否已赋值
+                     * 
                      */
                     bool AlarmThresholdHasBeenSet() const;
 
                     /**
                      * 获取告警阈值所属的资源实例
                      * @return InstanceDetailList 告警阈值所属的资源实例
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetailList() const;
 
                     /**
                      * 设置告警阈值所属的资源实例
-                     * @param InstanceDetailList 告警阈值所属的资源实例
+                     * @param _instanceDetailList 告警阈值所属的资源实例
+                     * 
                      */
                     void SetInstanceDetailList(const std::vector<InstanceRelation>& _instanceDetailList);
 
                     /**
                      * 判断参数 InstanceDetailList 是否已赋值
                      * @return InstanceDetailList 是否已赋值
+                     * 
                      */
                     bool InstanceDetailListHasBeenSet() const;
 

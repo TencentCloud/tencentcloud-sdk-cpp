@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取列名
                      * @return Name 列名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置列名
-                     * @param Name 列名
+                     * @param _name 列名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 列值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置列值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 列值
+                     * @param _value 列值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

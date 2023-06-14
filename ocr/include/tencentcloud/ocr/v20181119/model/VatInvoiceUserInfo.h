@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取纳税人识别号
                      * @return TaxId 纳税人识别号
+                     * 
                      */
                     std::string GetTaxId() const;
 
                     /**
                      * 设置纳税人识别号
-                     * @param TaxId 纳税人识别号
+                     * @param _taxId 纳税人识别号
+                     * 
                      */
                     void SetTaxId(const std::string& _taxId);
 
                     /**
                      * 判断参数 TaxId 是否已赋值
                      * @return TaxId 是否已赋值
+                     * 
                      */
                     bool TaxIdHasBeenSet() const;
 
                     /**
                      * 获取地 址、电 话
                      * @return AddrTel 地 址、电 话
+                     * 
                      */
                     std::string GetAddrTel() const;
 
                     /**
                      * 设置地 址、电 话
-                     * @param AddrTel 地 址、电 话
+                     * @param _addrTel 地 址、电 话
+                     * 
                      */
                     void SetAddrTel(const std::string& _addrTel);
 
                     /**
                      * 判断参数 AddrTel 是否已赋值
                      * @return AddrTel 是否已赋值
+                     * 
                      */
                     bool AddrTelHasBeenSet() const;
 
                     /**
                      * 获取开户行及账号
                      * @return FinancialAccount 开户行及账号
+                     * 
                      */
                     std::string GetFinancialAccount() const;
 
                     /**
                      * 设置开户行及账号
-                     * @param FinancialAccount 开户行及账号
+                     * @param _financialAccount 开户行及账号
+                     * 
                      */
                     void SetFinancialAccount(const std::string& _financialAccount);
 
                     /**
                      * 判断参数 FinancialAccount 是否已赋值
                      * @return FinancialAccount 是否已赋值
+                     * 
                      */
                     bool FinancialAccountHasBeenSet() const;
 

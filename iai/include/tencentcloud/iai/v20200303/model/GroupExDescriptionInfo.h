@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取人员库自定义描述字段Index，从0开始
                      * @return GroupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+                     * 
                      */
                     uint64_t GetGroupExDescriptionIndex() const;
 
                     /**
                      * 设置人员库自定义描述字段Index，从0开始
-                     * @param GroupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+                     * @param _groupExDescriptionIndex 人员库自定义描述字段Index，从0开始
+                     * 
                      */
                     void SetGroupExDescriptionIndex(const uint64_t& _groupExDescriptionIndex);
 
                     /**
                      * 判断参数 GroupExDescriptionIndex 是否已赋值
                      * @return GroupExDescriptionIndex 是否已赋值
+                     * 
                      */
                     bool GroupExDescriptionIndexHasBeenSet() const;
 
                     /**
                      * 获取需要更新的人员库自定义描述字段内容
                      * @return GroupExDescription 需要更新的人员库自定义描述字段内容
+                     * 
                      */
                     std::string GetGroupExDescription() const;
 
                     /**
                      * 设置需要更新的人员库自定义描述字段内容
-                     * @param GroupExDescription 需要更新的人员库自定义描述字段内容
+                     * @param _groupExDescription 需要更新的人员库自定义描述字段内容
+                     * 
                      */
                     void SetGroupExDescription(const std::string& _groupExDescription);
 
                     /**
                      * 判断参数 GroupExDescription 是否已赋值
                      * @return GroupExDescription 是否已赋值
+                     * 
                      */
                     bool GroupExDescriptionHasBeenSet() const;
 

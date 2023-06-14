@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取开始时间，格式为：2017-07-12 10:29:20。
                      * @return StartTime 开始时间，格式为：2017-07-12 10:29:20。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，格式为：2017-07-12 10:29:20。
-                     * @param StartTime 开始时间，格式为：2017-07-12 10:29:20。
+                     * @param _startTime 开始时间，格式为：2017-07-12 10:29:20。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取要查询的数据库名前缀。
                      * @return SearchDatabase 要查询的数据库名前缀。
+                     * 
                      */
                     std::string GetSearchDatabase() const;
 
                     /**
                      * 设置要查询的数据库名前缀。
-                     * @param SearchDatabase 要查询的数据库名前缀。
+                     * @param _searchDatabase 要查询的数据库名前缀。
+                     * 
                      */
                     void SetSearchDatabase(const std::string& _searchDatabase);
 
                     /**
                      * 判断参数 SearchDatabase 是否已赋值
                      * @return SearchDatabase 是否已赋值
+                     * 
                      */
                     bool SearchDatabaseHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量。
                      * @return Offset 分页偏移量。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量。
-                     * @param Offset 分页偏移量。
+                     * @param _offset 分页偏移量。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页大小，最小值为1，最大值为2000。
                      * @return Limit 分页大小，最小值为1，最大值为2000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页大小，最小值为1，最大值为2000。
-                     * @param Limit 分页大小，最小值为1，最大值为2000。
+                     * @param _limit 分页大小，最小值为1，最大值为2000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

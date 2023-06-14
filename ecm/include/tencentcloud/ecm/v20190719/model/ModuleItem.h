@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取节点实例统计信息
                      * @return NodeInstanceNum 节点实例统计信息
+                     * 
                      */
                     NodeInstanceNum GetNodeInstanceNum() const;
 
                     /**
                      * 设置节点实例统计信息
-                     * @param NodeInstanceNum 节点实例统计信息
+                     * @param _nodeInstanceNum 节点实例统计信息
+                     * 
                      */
                     void SetNodeInstanceNum(const NodeInstanceNum& _nodeInstanceNum);
 
                     /**
                      * 判断参数 NodeInstanceNum 是否已赋值
                      * @return NodeInstanceNum 是否已赋值
+                     * 
                      */
                     bool NodeInstanceNumHasBeenSet() const;
 
                     /**
                      * 获取模块信息
                      * @return Module 模块信息
+                     * 
                      */
                     Module GetModule() const;
 
                     /**
                      * 设置模块信息
-                     * @param Module 模块信息
+                     * @param _module 模块信息
+                     * 
                      */
                     void SetModule(const Module& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 

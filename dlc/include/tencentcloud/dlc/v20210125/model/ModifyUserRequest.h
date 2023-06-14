@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取用户Id，和CAM侧Uin匹配
                      * @return UserId 用户Id，和CAM侧Uin匹配
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id，和CAM侧Uin匹配
-                     * @param UserId 用户Id，和CAM侧Uin匹配
+                     * @param _userId 用户Id，和CAM侧Uin匹配
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户描述
                      * @return UserDescription 用户描述
+                     * 
                      */
                     std::string GetUserDescription() const;
 
                     /**
                      * 设置用户描述
-                     * @param UserDescription 用户描述
+                     * @param _userDescription 用户描述
+                     * 
                      */
                     void SetUserDescription(const std::string& _userDescription);
 
                     /**
                      * 判断参数 UserDescription 是否已赋值
                      * @return UserDescription 是否已赋值
+                     * 
                      */
                     bool UserDescriptionHasBeenSet() const;
 

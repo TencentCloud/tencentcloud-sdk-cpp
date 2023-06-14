@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取任务id
                      * @return TaskId 任务id
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务id
-                     * @param TaskId 任务id
+                     * @param _taskId 任务id
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取任务创始时间
                      * @return CreateTime 任务创始时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创始时间
-                     * @param CreateTime 任务创始时间
+                     * @param _createTime 任务创始时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务状态，1待处理，2处理中，3已完成
                      * @return State 任务状态，1待处理，2处理中，3已完成
+                     * 
                      */
                     int64_t GetState() const;
 
                     /**
                      * 设置任务状态，1待处理，2处理中，3已完成
-                     * @param State 任务状态，1待处理，2处理中，3已完成
+                     * @param _state 任务状态，1待处理，2处理中，3已完成
+                     * 
                      */
                     void SetState(const int64_t& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

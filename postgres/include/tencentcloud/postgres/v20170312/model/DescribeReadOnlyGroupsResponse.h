@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取只读组列表
                      * @return ReadOnlyGroupList 只读组列表
+                     * 
                      */
                     std::vector<ReadOnlyGroup> GetReadOnlyGroupList() const;
 
                     /**
                      * 判断参数 ReadOnlyGroupList 是否已赋值
                      * @return ReadOnlyGroupList 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupListHasBeenSet() const;
 

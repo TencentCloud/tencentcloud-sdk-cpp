@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定凭据的名称。
                      * @return SecretName 指定凭据的名称。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置指定凭据的名称。
-                     * @param SecretName 指定凭据的名称。
+                     * @param _secretName 指定凭据的名称。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。
                      * @return VersionId 指定对应凭据的版本号。
 对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置指定对应凭据的版本号。
 对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。
-                     * @param VersionId 指定对应凭据的版本号。
+                     * @param _versionId 指定对应凭据的版本号。
 对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 

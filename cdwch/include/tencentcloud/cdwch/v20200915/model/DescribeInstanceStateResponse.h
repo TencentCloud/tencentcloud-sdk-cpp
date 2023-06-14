@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取集群状态，例如：Serving
                      * @return InstanceState 集群状态，例如：Serving
+                     * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
                      * 判断参数 InstanceState 是否已赋值
                      * @return InstanceState 是否已赋值
+                     * 
                      */
                     bool InstanceStateHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowCreateTime 集群操作创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowCreateTime() const;
 
                     /**
                      * 判断参数 FlowCreateTime 是否已赋值
                      * @return FlowCreateTime 是否已赋值
+                     * 
                      */
                     bool FlowCreateTimeHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 集群操作名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowProgress 集群操作进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetFlowProgress() const;
 
                     /**
                      * 判断参数 FlowProgress 是否已赋值
                      * @return FlowProgress 是否已赋值
+                     * 
                      */
                     bool FlowProgressHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStateDesc 集群状态描述，例如：运行中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceStateDesc() const;
 
                     /**
                      * 判断参数 InstanceStateDesc 是否已赋值
                      * @return InstanceStateDesc 是否已赋值
+                     * 
                      */
                     bool InstanceStateDescHasBeenSet() const;
 
@@ -116,12 +126,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowMsg() const;
 
                     /**
                      * 判断参数 FlowMsg 是否已赋值
                      * @return FlowMsg 是否已赋值
+                     * 
                      */
                     bool FlowMsgHasBeenSet() const;
 

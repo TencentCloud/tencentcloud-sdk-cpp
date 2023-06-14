@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取国家字段信息
                      * @return Country 国家字段信息
+                     * 
                      */
                     bool GetCountry() const;
 
                     /**
                      * 设置国家字段信息
-                     * @param Country 国家字段信息
+                     * @param _country 国家字段信息
+                     * 
                      */
                     void SetCountry(const bool& _country);
 
                     /**
                      * 判断参数 Country 是否已赋值
                      * @return Country 是否已赋值
+                     * 
                      */
                     bool CountryHasBeenSet() const;
 
                     /**
                      * 获取省、州、郡一级行政区域字段信息
                      * @return Province 省、州、郡一级行政区域字段信息
+                     * 
                      */
                     bool GetProvince() const;
 
                     /**
                      * 设置省、州、郡一级行政区域字段信息
-                     * @param Province 省、州、郡一级行政区域字段信息
+                     * @param _province 省、州、郡一级行政区域字段信息
+                     * 
                      */
                     void SetProvince(const bool& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取市一级行政区域字段信息
                      * @return City 市一级行政区域字段信息
+                     * 
                      */
                     bool GetCity() const;
 
                     /**
                      * 设置市一级行政区域字段信息
-                     * @param City 市一级行政区域字段信息
+                     * @param _city 市一级行政区域字段信息
+                     * 
                      */
                     void SetCity(const bool& _city);
 
                     /**
                      * 判断参数 City 是否已赋值
                      * @return City 是否已赋值
+                     * 
                      */
                     bool CityHasBeenSet() const;
 
                     /**
                      * 获取市内区域字段信息
                      * @return Region 市内区域字段信息
+                     * 
                      */
                     bool GetRegion() const;
 
                     /**
                      * 设置市内区域字段信息
-                     * @param Region 市内区域字段信息
+                     * @param _region 市内区域字段信息
+                     * 
                      */
                     void SetRegion(const bool& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取接入运营商字段信息
                      * @return Isp 接入运营商字段信息
+                     * 
                      */
                     bool GetIsp() const;
 
                     /**
                      * 设置接入运营商字段信息
-                     * @param Isp 接入运营商字段信息
+                     * @param _isp 接入运营商字段信息
+                     * 
                      */
                     void SetIsp(const bool& _isp);
 
                     /**
                      * 判断参数 Isp 是否已赋值
                      * @return Isp 是否已赋值
+                     * 
                      */
                     bool IspHasBeenSet() const;
 
                     /**
                      * 获取骨干运营商字段信息
                      * @return AsName 骨干运营商字段信息
+                     * 
                      */
                     bool GetAsName() const;
 
                     /**
                      * 设置骨干运营商字段信息
-                     * @param AsName 骨干运营商字段信息
+                     * @param _asName 骨干运营商字段信息
+                     * 
                      */
                     void SetAsName(const bool& _asName);
 
                     /**
                      * 判断参数 AsName 是否已赋值
                      * @return AsName 是否已赋值
+                     * 
                      */
                     bool AsNameHasBeenSet() const;
 
                     /**
                      * 获取骨干As号
                      * @return AsId 骨干As号
+                     * 
                      */
                     bool GetAsId() const;
 
                     /**
                      * 设置骨干As号
-                     * @param AsId 骨干As号
+                     * @param _asId 骨干As号
+                     * 
                      */
                     void SetAsId(const bool& _asId);
 
                     /**
                      * 判断参数 AsId 是否已赋值
                      * @return AsId 是否已赋值
+                     * 
                      */
                     bool AsIdHasBeenSet() const;
 
                     /**
                      * 获取注释字段
                      * @return Comment 注释字段
+                     * 
                      */
                     bool GetComment() const;
 
                     /**
                      * 设置注释字段
-                     * @param Comment 注释字段
+                     * @param _comment 注释字段
+                     * 
                      */
                     void SetComment(const bool& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 

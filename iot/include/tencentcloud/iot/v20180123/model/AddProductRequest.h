@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符
                      * @return Name 产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符
-                     * @param Name 产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符
+                     * @param _name 产品名称，同一区域产品名称需唯一，支持中文、英文字母、中划线和下划线，长度不超过31个字符，中文占两个字符
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取产品描述
                      * @return Description 产品描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置产品描述
-                     * @param Description 产品描述
+                     * @param _description 产品描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取数据模版
                      * @return DataTemplate 数据模版
+                     * 
                      */
                     std::vector<DataTemplate> GetDataTemplate() const;
 
                     /**
                      * 设置数据模版
-                     * @param DataTemplate 数据模版
+                     * @param _dataTemplate 数据模版
+                     * 
                      */
                     void SetDataTemplate(const std::vector<DataTemplate>& _dataTemplate);
 
                     /**
                      * 判断参数 DataTemplate 是否已赋值
                      * @return DataTemplate 是否已赋值
+                     * 
                      */
                     bool DataTemplateHasBeenSet() const;
 
                     /**
                      * 获取产品版本（native表示基础版，template表示高级版，默认值为template）
                      * @return DataProtocol 产品版本（native表示基础版，template表示高级版，默认值为template）
+                     * 
                      */
                     std::string GetDataProtocol() const;
 
                     /**
                      * 设置产品版本（native表示基础版，template表示高级版，默认值为template）
-                     * @param DataProtocol 产品版本（native表示基础版，template表示高级版，默认值为template）
+                     * @param _dataProtocol 产品版本（native表示基础版，template表示高级版，默认值为template）
+                     * 
                      */
                     void SetDataProtocol(const std::string& _dataProtocol);
 
                     /**
                      * 判断参数 DataProtocol 是否已赋值
                      * @return DataProtocol 是否已赋值
+                     * 
                      */
                     bool DataProtocolHasBeenSet() const;
 
                     /**
                      * 获取设备认证方式（1：动态令牌，2：签名直连鉴权）
                      * @return AuthType 设备认证方式（1：动态令牌，2：签名直连鉴权）
+                     * 
                      */
                     uint64_t GetAuthType() const;
 
                     /**
                      * 设置设备认证方式（1：动态令牌，2：签名直连鉴权）
-                     * @param AuthType 设备认证方式（1：动态令牌，2：签名直连鉴权）
+                     * @param _authType 设备认证方式（1：动态令牌，2：签名直连鉴权）
+                     * 
                      */
                     void SetAuthType(const uint64_t& _authType);
 
                     /**
                      * 判断参数 AuthType 是否已赋值
                      * @return AuthType 是否已赋值
+                     * 
                      */
                     bool AuthTypeHasBeenSet() const;
 
                     /**
                      * 获取通信方式（other/wifi/cellular/nb-iot）
                      * @return CommProtocol 通信方式（other/wifi/cellular/nb-iot）
+                     * 
                      */
                     std::string GetCommProtocol() const;
 
                     /**
                      * 设置通信方式（other/wifi/cellular/nb-iot）
-                     * @param CommProtocol 通信方式（other/wifi/cellular/nb-iot）
+                     * @param _commProtocol 通信方式（other/wifi/cellular/nb-iot）
+                     * 
                      */
                     void SetCommProtocol(const std::string& _commProtocol);
 
                     /**
                      * 判断参数 CommProtocol 是否已赋值
                      * @return CommProtocol 是否已赋值
+                     * 
                      */
                     bool CommProtocolHasBeenSet() const;
 
                     /**
                      * 获取产品的设备类型（device: 直连设备；sub_device：子设备；gateway：网关设备）
                      * @return DeviceType 产品的设备类型（device: 直连设备；sub_device：子设备；gateway：网关设备）
+                     * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置产品的设备类型（device: 直连设备；sub_device：子设备；gateway：网关设备）
-                     * @param DeviceType 产品的设备类型（device: 直连设备；sub_device：子设备；gateway：网关设备）
+                     * @param _deviceType 产品的设备类型（device: 直连设备；sub_device：子设备；gateway：网关设备）
+                     * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取套餐单价原价。
                      * @return OriginalBundlePrice 套餐单价原价。
+                     * 
                      */
                     double GetOriginalBundlePrice() const;
 
                     /**
                      * 设置套餐单价原价。
-                     * @param OriginalBundlePrice 套餐单价原价。
+                     * @param _originalBundlePrice 套餐单价原价。
+                     * 
                      */
                     void SetOriginalBundlePrice(const double& _originalBundlePrice);
 
                     /**
                      * 判断参数 OriginalBundlePrice 是否已赋值
                      * @return OriginalBundlePrice 是否已赋值
+                     * 
                      */
                     bool OriginalBundlePriceHasBeenSet() const;
 
                     /**
                      * 获取原价。
                      * @return OriginalPrice 原价。
+                     * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置原价。
-                     * @param OriginalPrice 原价。
+                     * @param _originalPrice 原价。
+                     * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取折扣。
                      * @return Discount 折扣。
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置折扣。
-                     * @param Discount 折扣。
+                     * @param _discount 折扣。
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
                     /**
                      * 获取折后价。
                      * @return DiscountPrice 折后价。
+                     * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置折后价。
-                     * @param DiscountPrice 折后价。
+                     * @param _discountPrice 折后价。
+                     * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
 
                     /**
                      * 判断参数 DiscountPrice 是否已赋值
                      * @return DiscountPrice 是否已赋值
+                     * 
                      */
                     bool DiscountPriceHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Currency 价格货币单位。取值范围CNY:人民币。USD:美元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置价格货币单位。取值范围CNY:人民币。USD:美元。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Currency 价格货币单位。取值范围CNY:人民币。USD:美元。
+                     * @param _currency 价格货币单位。取值范围CNY:人民币。USD:美元。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrency(const std::string& _currency);
 
                     /**
                      * 判断参数 Currency 是否已赋值
                      * @return Currency 是否已赋值
+                     * 
                      */
                     bool CurrencyHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID。
                      * @return LoadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID。
-                     * @param LoadBalancerId 负载均衡实例ID。
+                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取HTTPS:443监听器的ID。
                      * @return ListenerId HTTPS:443监听器的ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置HTTPS:443监听器的ID。
-                     * @param ListenerId HTTPS:443监听器的ID。
+                     * @param _listenerId HTTPS:443监听器的ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
                      * @return Domains HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
-                     * @param Domains HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
+                     * @param _domains HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
                     /**
                      * 获取重定向状态码，可取值301,302,307。
                      * @return RewriteCodes 重定向状态码，可取值301,302,307。
+                     * 
                      */
                     std::vector<int64_t> GetRewriteCodes() const;
 
                     /**
                      * 设置重定向状态码，可取值301,302,307。
-                     * @param RewriteCodes 重定向状态码，可取值301,302,307。
+                     * @param _rewriteCodes 重定向状态码，可取值301,302,307。
+                     * 
                      */
                     void SetRewriteCodes(const std::vector<int64_t>& _rewriteCodes);
 
                     /**
                      * 判断参数 RewriteCodes 是否已赋值
                      * @return RewriteCodes 是否已赋值
+                     * 
                      */
                     bool RewriteCodesHasBeenSet() const;
 
                     /**
                      * 获取重定向是否携带匹配的URL。
                      * @return TakeUrls 重定向是否携带匹配的URL。
+                     * 
                      */
                     std::vector<bool> GetTakeUrls() const;
 
                     /**
                      * 设置重定向是否携带匹配的URL。
-                     * @param TakeUrls 重定向是否携带匹配的URL。
+                     * @param _takeUrls 重定向是否携带匹配的URL。
+                     * 
                      */
                     void SetTakeUrls(const std::vector<bool>& _takeUrls);
 
                     /**
                      * 判断参数 TakeUrls 是否已赋值
                      * @return TakeUrls 是否已赋值
+                     * 
                      */
                     bool TakeUrlsHasBeenSet() const;
 

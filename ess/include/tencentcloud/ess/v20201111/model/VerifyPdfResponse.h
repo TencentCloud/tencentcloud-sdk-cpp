@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取验签结果，1-文件未被篡改，全部签名在腾讯电子签完成； 2-文件未被篡改，部分签名在腾讯电子签完成；3-文件被篡改；4-异常：文件内没有签名域；5-异常：文件签名格式错误
                      * @return VerifyResult 验签结果，1-文件未被篡改，全部签名在腾讯电子签完成； 2-文件未被篡改，部分签名在腾讯电子签完成；3-文件被篡改；4-异常：文件内没有签名域；5-异常：文件签名格式错误
+                     * 
                      */
                     int64_t GetVerifyResult() const;
 
                     /**
                      * 判断参数 VerifyResult 是否已赋值
                      * @return VerifyResult 是否已赋值
+                     * 
                      */
                     bool VerifyResultHasBeenSet() const;
 
                     /**
                      * 获取验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
                      * @return PdfVerifyResults 验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误
+                     * 
                      */
                     std::vector<PdfVerifyResult> GetPdfVerifyResults() const;
 
                     /**
                      * 判断参数 PdfVerifyResults 是否已赋值
                      * @return PdfVerifyResults 是否已赋值
+                     * 
                      */
                     bool PdfVerifyResultsHasBeenSet() const;
 
                     /**
                      * 获取验签序列号
                      * @return VerifySerialNo 验签序列号
+                     * 
                      */
                     std::string GetVerifySerialNo() const;
 
                     /**
                      * 判断参数 VerifySerialNo 是否已赋值
                      * @return VerifySerialNo 是否已赋值
+                     * 
                      */
                     bool VerifySerialNoHasBeenSet() const;
 

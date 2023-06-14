@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实名认证状态：0未实名，1已实名
                      * @return IsTenPayMasked 实名认证状态：0未实名，1已实名
+                     * 
                      */
                     std::string GetIsTenPayMasked() const;
 
                     /**
                      * 判断参数 IsTenPayMasked 是否已赋值
                      * @return IsTenPayMasked 是否已赋值
+                     * 
                      */
                     bool IsTenPayMaskedHasBeenSet() const;
 
                     /**
                      * 获取实名认证类型：0个人，1企业
                      * @return IsAuthenticated 实名认证类型：0个人，1企业
+                     * 
                      */
                     std::string GetIsAuthenticated() const;
 
                     /**
                      * 判断参数 IsAuthenticated 是否已赋值
                      * @return IsAuthenticated 是否已赋值
+                     * 
                      */
                     bool IsAuthenticatedHasBeenSet() const;
 
                     /**
                      * 获取认证类型，个人0，企业1
                      * @return Type 认证类型，个人0，企业1
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

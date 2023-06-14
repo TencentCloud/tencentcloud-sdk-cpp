@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取ES聚合条件JSON
                      * @return Query ES聚合条件JSON
+                     * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置ES聚合条件JSON
-                     * @param Query ES聚合条件JSON
+                     * @param _query ES聚合条件JSON
+                     * 
                      */
                     void SetQuery(const std::string& _query);
 
                     /**
                      * 判断参数 Query 是否已赋值
                      * @return Query 是否已赋值
+                     * 
                      */
                     bool QueryHasBeenSet() const;
 

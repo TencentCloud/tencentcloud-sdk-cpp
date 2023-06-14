@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID 。
                      * @return InstanceId 实例 ID 。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID 。
-                     * @param InstanceId 实例 ID 。
+                     * @param _instanceId 实例 ID 。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取时间段天数，截止日期为当日，默认为7天。
                      * @return RangeDays 时间段天数，截止日期为当日，默认为7天。
+                     * 
                      */
                     int64_t GetRangeDays() const;
 
                     /**
                      * 设置时间段天数，截止日期为当日，默认为7天。
-                     * @param RangeDays 时间段天数，截止日期为当日，默认为7天。
+                     * @param _rangeDays 时间段天数，截止日期为当日，默认为7天。
+                     * 
                      */
                     void SetRangeDays(const int64_t& _rangeDays);
 
                     /**
                      * 判断参数 RangeDays 是否已赋值
                      * @return RangeDays 是否已赋值
+                     * 
                      */
                     bool RangeDaysHasBeenSet() const;
 
                     /**
                      * 获取服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
                      * @return Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
-                     * @param Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * @param _product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

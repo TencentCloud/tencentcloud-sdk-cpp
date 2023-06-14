@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否支持从可用区
                      * @return IsSupportSlaveZone 是否支持从可用区
+                     * 
                      */
                     std::string GetIsSupportSlaveZone() const;
 
                     /**
                      * 设置是否支持从可用区
-                     * @param IsSupportSlaveZone 是否支持从可用区
+                     * @param _isSupportSlaveZone 是否支持从可用区
+                     * 
                      */
                     void SetIsSupportSlaveZone(const std::string& _isSupportSlaveZone);
 
                     /**
                      * 判断参数 IsSupportSlaveZone 是否已赋值
                      * @return IsSupportSlaveZone 是否已赋值
+                     * 
                      */
                     bool IsSupportSlaveZoneHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonsupportSlaveZoneReason 不支持从可用区的原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNonsupportSlaveZoneReason() const;
 
                     /**
                      * 设置不支持从可用区的原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NonsupportSlaveZoneReason 不支持从可用区的原因
+                     * @param _nonsupportSlaveZoneReason 不支持从可用区的原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNonsupportSlaveZoneReason(const std::string& _nonsupportSlaveZoneReason);
 
                     /**
                      * 判断参数 NonsupportSlaveZoneReason 是否已赋值
                      * @return NonsupportSlaveZoneReason 是否已赋值
+                     * 
                      */
                     bool NonsupportSlaveZoneReasonHasBeenSet() const;
 
                     /**
                      * 获取是否支持RO实例
                      * @return IsSupportRo 是否支持RO实例
+                     * 
                      */
                     std::string GetIsSupportRo() const;
 
                     /**
                      * 设置是否支持RO实例
-                     * @param IsSupportRo 是否支持RO实例
+                     * @param _isSupportRo 是否支持RO实例
+                     * 
                      */
                     void SetIsSupportRo(const std::string& _isSupportRo);
 
                     /**
                      * 判断参数 IsSupportRo 是否已赋值
                      * @return IsSupportRo 是否已赋值
+                     * 
                      */
                     bool IsSupportRoHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonsupportRoReason 不支持RO实例的原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNonsupportRoReason() const;
 
                     /**
                      * 设置不支持RO实例的原因
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NonsupportRoReason 不支持RO实例的原因
+                     * @param _nonsupportRoReason 不支持RO实例的原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNonsupportRoReason(const std::string& _nonsupportRoReason);
 
                     /**
                      * 判断参数 NonsupportRoReason 是否已赋值
                      * @return NonsupportRoReason 是否已赋值
+                     * 
                      */
                     bool NonsupportRoReasonHasBeenSet() const;
 

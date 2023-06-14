@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取私有网络的唯一ID。
                      * @return VpcId 私有网络的唯一ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络的唯一ID。
-                     * @param VpcId 私有网络的唯一ID。
+                     * @param _vpcId 私有网络的唯一ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网唯一ID。
                      * @return SubnetId 子网唯一ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网唯一ID。
-                     * @param SubnetId 子网唯一ID。
+                     * @param _subnetId 子网唯一ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取需要注册的IP列表。
                      * @return Ips 需要注册的IP列表。
+                     * 
                      */
                     std::vector<std::string> GetIps() const;
 
                     /**
                      * 设置需要注册的IP列表。
-                     * @param Ips 需要注册的IP列表。
+                     * @param _ips 需要注册的IP列表。
+                     * 
                      */
                     void SetIps(const std::vector<std::string>& _ips);
 
                     /**
                      * 判断参数 Ips 是否已赋值
                      * @return Ips 是否已赋值
+                     * 
                      */
                     bool IpsHasBeenSet() const;
 

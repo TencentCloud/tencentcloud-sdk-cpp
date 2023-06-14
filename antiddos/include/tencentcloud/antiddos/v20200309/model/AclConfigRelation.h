@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取acl策略
                      * @return AclConfig acl策略
+                     * 
                      */
                     AclConfig GetAclConfig() const;
 
                     /**
                      * 设置acl策略
-                     * @param AclConfig acl策略
+                     * @param _aclConfig acl策略
+                     * 
                      */
                     void SetAclConfig(const AclConfig& _aclConfig);
 
                     /**
                      * 判断参数 AclConfig 是否已赋值
                      * @return AclConfig 是否已赋值
+                     * 
                      */
                     bool AclConfigHasBeenSet() const;
 
                     /**
                      * 获取实例列表
                      * @return InstanceDetailList 实例列表
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetailList() const;
 
                     /**
                      * 设置实例列表
-                     * @param InstanceDetailList 实例列表
+                     * @param _instanceDetailList 实例列表
+                     * 
                      */
                     void SetInstanceDetailList(const std::vector<InstanceRelation>& _instanceDetailList);
 
                     /**
                      * 判断参数 InstanceDetailList 是否已赋值
                      * @return InstanceDetailList 是否已赋值
+                     * 
                      */
                     bool InstanceDetailListHasBeenSet() const;
 

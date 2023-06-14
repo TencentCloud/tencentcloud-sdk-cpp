@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取任务 ID。
                      * @return TaskId 任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务 ID。
-                     * @param TaskId 任务 ID。
+                     * @param _taskId 任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 <li> WorkflowTask：工作流处理任务；</li>
 <li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
+                     * 
                      */
                     std::string GetTaskType() const;
 
@@ -81,88 +85,102 @@ namespace TencentCloud
 <li> WorkflowTask：工作流处理任务；</li>
 <li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
-                     * @param TaskType 任务类型，包含：
+                     * @param _taskType 任务类型，包含：
 <li> WorkflowTask：工作流处理任务；</li>
 <li> EditMediaTask：视频编辑任务；</li>
 <li> LiveProcessTask：直播处理任务。</li>
+                     * 
                      */
                     void SetTaskType(const std::string& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      * @return CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @param CreateTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _createTime 任务创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未开始，该字段为：0000-00-00T00:00:00Z。
                      * @return BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未开始，该字段为：0000-00-00T00:00:00Z。
+                     * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 设置任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未开始，该字段为：0000-00-00T00:00:00Z。
-                     * @param BeginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未开始，该字段为：0000-00-00T00:00:00Z。
+                     * @param _beginProcessTime 任务开始执行时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未开始，该字段为：0000-00-00T00:00:00Z。
+                     * 
                      */
                     void SetBeginProcessTime(const std::string& _beginProcessTime);
 
                     /**
                      * 判断参数 BeginProcessTime 是否已赋值
                      * @return BeginProcessTime 是否已赋值
+                     * 
                      */
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
                      * 获取任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未完成，该字段为：0000-00-00T00:00:00Z。
                      * @return FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未完成，该字段为：0000-00-00T00:00:00Z。
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未完成，该字段为：0000-00-00T00:00:00Z。
-                     * @param FinishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未完成，该字段为：0000-00-00T00:00:00Z。
+                     * @param _finishTime 任务结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。若任务尚未完成，该字段为：0000-00-00T00:00:00Z。
+                     * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取子任务类型。
                      * @return SubTaskTypes 子任务类型。
+                     * 
                      */
                     std::vector<std::string> GetSubTaskTypes() const;
 
                     /**
                      * 设置子任务类型。
-                     * @param SubTaskTypes 子任务类型。
+                     * @param _subTaskTypes 子任务类型。
+                     * 
                      */
                     void SetSubTaskTypes(const std::vector<std::string>& _subTaskTypes);
 
                     /**
                      * 判断参数 SubTaskTypes 是否已赋值
                      * @return SubTaskTypes 是否已赋值
+                     * 
                      */
                     bool SubTaskTypesHasBeenSet() const;
 

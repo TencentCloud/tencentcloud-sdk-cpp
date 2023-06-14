@@ -60,132 +60,154 @@ FINISH：已完成。
 WAITING：等待中；
 PROCESSING：处理中；
 FINISH：已完成。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务开始执行的时间，采用 ISO 日期格式。
                      * @return BeginProcessTime 任务开始执行的时间，采用 ISO 日期格式。
+                     * 
                      */
                     std::string GetBeginProcessTime() const;
 
                     /**
                      * 判断参数 BeginProcessTime 是否已赋值
                      * @return BeginProcessTime 是否已赋值
+                     * 
                      */
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
                      * 获取任务执行完毕的时间，采用 ISO 日期格式。
                      * @return FinishTime 任务执行完毕的时间，采用 ISO 日期格式。
+                     * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 判断参数 FinishTime 是否已赋值
                      * @return FinishTime 是否已赋值
+                     * 
                      */
                     bool FinishTimeHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核智能画面鉴黄任务的查询结果。
                      * @return PornResult 视频内容审核智能画面鉴黄任务的查询结果。
+                     * 
                      */
                     VodPornReviewResult GetPornResult() const;
 
                     /**
                      * 判断参数 PornResult 是否已赋值
                      * @return PornResult 是否已赋值
+                     * 
                      */
                     bool PornResultHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核智能画面鉴恐任务的查询结果。
                      * @return TerrorismResult 视频内容审核智能画面鉴恐任务的查询结果。
+                     * 
                      */
                     VodTerrorismReviewResult GetTerrorismResult() const;
 
                     /**
                      * 判断参数 TerrorismResult 是否已赋值
                      * @return TerrorismResult 是否已赋值
+                     * 
                      */
                     bool TerrorismResultHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核智能画面鉴政任务的查询结果。
                      * @return PoliticalResult 视频内容审核智能画面鉴政任务的查询结果。
+                     * 
                      */
                     VodPoliticalReviewResult GetPoliticalResult() const;
 
                     /**
                      * 判断参数 PoliticalResult 是否已赋值
                      * @return PoliticalResult 是否已赋值
+                     * 
                      */
                     bool PoliticalResultHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核 Ocr 文字鉴政任务的查询结果。
                      * @return PoliticalOcrResult 视频内容审核 Ocr 文字鉴政任务的查询结果。
+                     * 
                      */
                     VodPoliticalOcrReviewResult GetPoliticalOcrResult() const;
 
                     /**
                      * 判断参数 PoliticalOcrResult 是否已赋值
                      * @return PoliticalOcrResult 是否已赋值
+                     * 
                      */
                     bool PoliticalOcrResultHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核 Asr 文字鉴黄任务的查询结果。
                      * @return PornAsrResult 视频内容审核 Asr 文字鉴黄任务的查询结果。
+                     * 
                      */
                     VodPornAsrReviewResult GetPornAsrResult() const;
 
                     /**
                      * 判断参数 PornAsrResult 是否已赋值
                      * @return PornAsrResult 是否已赋值
+                     * 
                      */
                     bool PornAsrResultHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核 Asr 文字鉴政任务的查询结果。
                      * @return PoliticalAsrResult 视频内容审核 Asr 文字鉴政任务的查询结果。
+                     * 
                      */
                     VodPoliticalAsrReviewResult GetPoliticalAsrResult() const;
 
                     /**
                      * 判断参数 PoliticalAsrResult 是否已赋值
                      * @return PoliticalAsrResult 是否已赋值
+                     * 
                      */
                     bool PoliticalAsrResultHasBeenSet() const;
 
                     /**
                      * 获取视频内容审核 Ocr 文字鉴黄任务的查询结果。
                      * @return PornOcrResult 视频内容审核 Ocr 文字鉴黄任务的查询结果。
+                     * 
                      */
                     VodPornOcrResult GetPornOcrResult() const;
 
                     /**
                      * 判断参数 PornOcrResult 是否已赋值
                      * @return PornOcrResult 是否已赋值
+                     * 
                      */
                     bool PornOcrResultHasBeenSet() const;
 
                     /**
                      * 获取原始视频的元信息。
                      * @return MetaData 原始视频的元信息。
+                     * 
                      */
                     VodMetaData GetMetaData() const;
 
                     /**
                      * 判断参数 MetaData 是否已赋值
                      * @return MetaData 是否已赋值
+                     * 
                      */
                     bool MetaDataHasBeenSet() const;
 

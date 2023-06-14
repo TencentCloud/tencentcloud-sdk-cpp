@@ -50,198 +50,231 @@ namespace TencentCloud
                     /**
                      * 获取专用集群id
                      * @return DedicatedClusterId 专用集群id
+                     * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置专用集群id
-                     * @param DedicatedClusterId 专用集群id
+                     * @param _dedicatedClusterId 专用集群id
+                     * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
 
                     /**
                      * 判断参数 DedicatedClusterId 是否已赋值
                      * @return DedicatedClusterId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
                     /**
                      * 获取专用集群类型id（移到下一层级，已经废弃，后续将删除）
                      * @return DedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     std::string GetDedicatedClusterTypeId() const;
 
                     /**
                      * 设置专用集群类型id（移到下一层级，已经废弃，后续将删除）
-                     * @param DedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
+                     * @param _dedicatedClusterTypeId 专用集群类型id（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     void SetDedicatedClusterTypeId(const std::string& _dedicatedClusterTypeId);
 
                     /**
                      * 判断参数 DedicatedClusterTypeId 是否已赋值
                      * @return DedicatedClusterTypeId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterTypeIdHasBeenSet() const;
 
                     /**
                      * 获取支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     std::vector<std::string> GetSupportedStorageType() const;
 
                     /**
                      * 设置支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
-                     * @param SupportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
+                     * @param _supportedStorageType 支持的存储类型列表（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     void SetSupportedStorageType(const std::vector<std::string>& _supportedStorageType);
 
                     /**
                      * 判断参数 SupportedStorageType 是否已赋值
                      * @return SupportedStorageType 是否已赋值
+                     * 
                      */
                     bool SupportedStorageTypeHasBeenSet() const;
 
                     /**
                      * 获取支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     std::vector<int64_t> GetSupportedUplinkSpeed() const;
 
                     /**
                      * 设置支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
-                     * @param SupportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
+                     * @param _supportedUplinkSpeed 支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     void SetSupportedUplinkSpeed(const std::vector<int64_t>& _supportedUplinkSpeed);
 
                     /**
                      * 判断参数 SupportedUplinkSpeed 是否已赋值
                      * @return SupportedUplinkSpeed 是否已赋值
+                     * 
                      */
                     bool SupportedUplinkSpeedHasBeenSet() const;
 
                     /**
                      * 获取支持的实例族列表（移到下一层级，已经废弃，后续将删除）
                      * @return SupportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     std::vector<std::string> GetSupportedInstanceFamily() const;
 
                     /**
                      * 设置支持的实例族列表（移到下一层级，已经废弃，后续将删除）
-                     * @param SupportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
+                     * @param _supportedInstanceFamily 支持的实例族列表（移到下一层级，已经废弃，后续将删除）
+                     * 
                      */
                     void SetSupportedInstanceFamily(const std::vector<std::string>& _supportedInstanceFamily);
 
                     /**
                      * 判断参数 SupportedInstanceFamily 是否已赋值
                      * @return SupportedInstanceFamily 是否已赋值
+                     * 
                      */
                     bool SupportedInstanceFamilyHasBeenSet() const;
 
                     /**
                      * 获取地板承重要求(KG)
                      * @return Weight 地板承重要求(KG)
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置地板承重要求(KG)
-                     * @param Weight 地板承重要求(KG)
+                     * @param _weight 地板承重要求(KG)
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 
                     /**
                      * 获取功率要求(KW)
                      * @return PowerDraw 功率要求(KW)
+                     * 
                      */
                     double GetPowerDraw() const;
 
                     /**
                      * 设置功率要求(KW)
-                     * @param PowerDraw 功率要求(KW)
+                     * @param _powerDraw 功率要求(KW)
+                     * 
                      */
                     void SetPowerDraw(const double& _powerDraw);
 
                     /**
                      * 判断参数 PowerDraw 是否已赋值
                      * @return PowerDraw 是否已赋值
+                     * 
                      */
                     bool PowerDrawHasBeenSet() const;
 
                     /**
                      * 获取订单状态
                      * @return OrderStatus 订单状态
+                     * 
                      */
                     std::string GetOrderStatus() const;
 
                     /**
                      * 设置订单状态
-                     * @param OrderStatus 订单状态
+                     * @param _orderStatus 订单状态
+                     * 
                      */
                     void SetOrderStatus(const std::string& _orderStatus);
 
                     /**
                      * 判断参数 OrderStatus 是否已赋值
                      * @return OrderStatus 是否已赋值
+                     * 
                      */
                     bool OrderStatusHasBeenSet() const;
 
                     /**
                      * 获取订单创建的时间
                      * @return CreateTime 订单创建的时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置订单创建的时间
-                     * @param CreateTime 订单创建的时间
+                     * @param _createTime 订单创建的时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取大订单ID
                      * @return DedicatedClusterOrderId 大订单ID
+                     * 
                      */
                     std::string GetDedicatedClusterOrderId() const;
 
                     /**
                      * 设置大订单ID
-                     * @param DedicatedClusterOrderId 大订单ID
+                     * @param _dedicatedClusterOrderId 大订单ID
+                     * 
                      */
                     void SetDedicatedClusterOrderId(const std::string& _dedicatedClusterOrderId);
 
                     /**
                      * 判断参数 DedicatedClusterOrderId 是否已赋值
                      * @return DedicatedClusterOrderId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterOrderIdHasBeenSet() const;
 
                     /**
                      * 获取订单类型，创建CREATE或扩容EXTEND
                      * @return Action 订单类型，创建CREATE或扩容EXTEND
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置订单类型，创建CREATE或扩容EXTEND
-                     * @param Action 订单类型，创建CREATE或扩容EXTEND
+                     * @param _action 订单类型，创建CREATE或扩容EXTEND
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -250,20 +283,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterOrderItems 子订单详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DedicatedClusterOrderItem> GetDedicatedClusterOrderItems() const;
 
                     /**
                      * 设置子订单详情列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DedicatedClusterOrderItems 子订单详情列表
+                     * @param _dedicatedClusterOrderItems 子订单详情列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDedicatedClusterOrderItems(const std::vector<DedicatedClusterOrderItem>& _dedicatedClusterOrderItems);
 
                     /**
                      * 判断参数 DedicatedClusterOrderItems 是否已赋值
                      * @return DedicatedClusterOrderItems 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterOrderItemsHasBeenSet() const;
 
@@ -272,20 +308,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu cpu值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置cpu值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cpu cpu值
+                     * @param _cpu cpu值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
@@ -294,20 +333,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem mem值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMem() const;
 
                     /**
                      * 设置mem值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mem mem值
+                     * @param _mem mem值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMem(const int64_t& _mem);
 
                     /**
                      * 判断参数 Mem 是否已赋值
                      * @return Mem 是否已赋值
+                     * 
                      */
                     bool MemHasBeenSet() const;
 
@@ -316,20 +358,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu gpu值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGpu() const;
 
                     /**
                      * 设置gpu值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gpu gpu值
+                     * @param _gpu gpu值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGpu(const int64_t& _gpu);
 
                     /**
                      * 判断参数 Gpu 是否已赋值
                      * @return Gpu 是否已赋值
+                     * 
                      */
                     bool GpuHasBeenSet() const;
 
@@ -338,20 +383,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayStatus 0代表未支付，1代表已支付
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPayStatus() const;
 
                     /**
                      * 设置0代表未支付，1代表已支付
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayStatus 0代表未支付，1代表已支付
+                     * @param _payStatus 0代表未支付，1代表已支付
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayStatus(const int64_t& _payStatus);
 
                     /**
                      * 判断参数 PayStatus 是否已赋值
                      * @return PayStatus 是否已赋值
+                     * 
                      */
                     bool PayStatusHasBeenSet() const;
 
@@ -360,20 +408,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayType 支付方式，一次性、按月、按年
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayType() const;
 
                     /**
                      * 设置支付方式，一次性、按月、按年
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayType 支付方式，一次性、按月、按年
+                     * @param _payType 支付方式，一次性、按月、按年
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayType(const std::string& _payType);
 
                     /**
                      * 判断参数 PayType 是否已赋值
                      * @return PayType 是否已赋值
+                     * 
                      */
                     bool PayTypeHasBeenSet() const;
 
@@ -382,20 +433,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 购买时长的单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置购买时长的单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeUnit 购买时长的单位
+                     * @param _timeUnit 购买时长的单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
@@ -404,20 +458,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 购买时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置购买时长
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeSpan 购买时长
+                     * @param _timeSpan 购买时长
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
@@ -426,20 +483,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderType 订单类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderType() const;
 
                     /**
                      * 设置订单类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderType 订单类型
+                     * @param _orderType 订单类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderType(const std::string& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 

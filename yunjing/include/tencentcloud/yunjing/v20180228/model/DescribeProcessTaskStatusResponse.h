@@ -54,12 +54,14 @@ namespace TencentCloud
 <li>AGENT_OFFLINE：云镜客户端离线</li>
 <li>COLLECTING：进程获取中</li>
 <li>FAILED：进程获取失败</li>
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

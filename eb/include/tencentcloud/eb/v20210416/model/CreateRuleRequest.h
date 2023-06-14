@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
                      * @return EventPattern 参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     * 
                      */
                     std::string GetEventPattern() const;
 
                     /**
                      * 设置参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
-                     * @param EventPattern 参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     * @param _eventPattern 参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     * 
                      */
                     void SetEventPattern(const std::string& _eventPattern);
 
                     /**
                      * 判断参数 EventPattern 是否已赋值
                      * @return EventPattern 是否已赋值
+                     * 
                      */
                     bool EventPatternHasBeenSet() const;
 
                     /**
                      * 获取事件集ID。
                      * @return EventBusId 事件集ID。
+                     * 
                      */
                     std::string GetEventBusId() const;
 
                     /**
                      * 设置事件集ID。
-                     * @param EventBusId 事件集ID。
+                     * @param _eventBusId 事件集ID。
+                     * 
                      */
                     void SetEventBusId(const std::string& _eventBusId);
 
                     /**
                      * 判断参数 EventBusId 是否已赋值
                      * @return EventBusId 是否已赋值
+                     * 
                      */
                     bool EventBusIdHasBeenSet() const;
 
                     /**
                      * 获取事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
                      * @return RuleName 事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
-                     * @param RuleName 事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
+                     * @param _ruleName 事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取使能开关。
                      * @return Enable 使能开关。
+                     * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置使能开关。
-                     * @param Enable 使能开关。
+                     * @param _enable 使能开关。
+                     * 
                      */
                     void SetEnable(const bool& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 
                     /**
                      * 获取事件集描述，不限字符类型，200字符描述以内
                      * @return Description 事件集描述，不限字符类型，200字符描述以内
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置事件集描述，不限字符类型，200字符描述以内
-                     * @param Description 事件集描述，不限字符类型，200字符描述以内
+                     * @param _description 事件集描述，不限字符类型，200字符描述以内
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

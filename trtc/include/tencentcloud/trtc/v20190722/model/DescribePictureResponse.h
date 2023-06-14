@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回的图片记录数
                      * @return Total 返回的图片记录数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取图片信息列表
                      * @return PictureInfo 图片信息列表
+                     * 
                      */
                     std::vector<PictureInfo> GetPictureInfo() const;
 
                     /**
                      * 判断参数 PictureInfo 是否已赋值
                      * @return PictureInfo 是否已赋值
+                     * 
                      */
                     bool PictureInfoHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取子策略Id
                      * @return RuleId 子策略Id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置子策略Id
-                     * @param RuleId 子策略Id
+                     * @param _ruleId 子策略Id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
                      * @return RuleMode 策略模式,  RULE_MODE_RELEASE: 放行
    RULE_MODE_ALERT: 告警
    RULE_MODE_HOLDUP:拦截
+                     * 
                      */
                     std::string GetRuleMode() const;
 
@@ -78,33 +82,38 @@ namespace TencentCloud
                      * 设置策略模式,  RULE_MODE_RELEASE: 放行
    RULE_MODE_ALERT: 告警
    RULE_MODE_HOLDUP:拦截
-                     * @param RuleMode 策略模式,  RULE_MODE_RELEASE: 放行
+                     * @param _ruleMode 策略模式,  RULE_MODE_RELEASE: 放行
    RULE_MODE_ALERT: 告警
    RULE_MODE_HOLDUP:拦截
+                     * 
                      */
                     void SetRuleMode(const std::string& _ruleMode);
 
                     /**
                      * 判断参数 RuleMode 是否已赋值
                      * @return RuleMode 是否已赋值
+                     * 
                      */
                     bool RuleModeHasBeenSet() const;
 
                     /**
                      * 获取子策略状态，true为开启，false为关闭
                      * @return IsEnable 子策略状态，true为开启，false为关闭
+                     * 
                      */
                     bool GetIsEnable() const;
 
                     /**
                      * 设置子策略状态，true为开启，false为关闭
-                     * @param IsEnable 子策略状态，true为开启，false为关闭
+                     * @param _isEnable 子策略状态，true为开启，false为关闭
+                     * 
                      */
                     void SetIsEnable(const bool& _isEnable);
 
                     /**
                      * 判断参数 IsEnable 是否已赋值
                      * @return IsEnable 是否已赋值
+                     * 
                      */
                     bool IsEnableHasBeenSet() const;
 
@@ -117,6 +126,7 @@ CHANGE_USRCFG：篡改用户配置
 CHANGE_CRONTAB：篡改计划任务
 CHANGE_SYS_BIN：篡改系统程序
 CHANGE_USRCFG：篡改用户配置
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -125,16 +135,18 @@ CHANGE_USRCFG：篡改用户配置
 CHANGE_CRONTAB：篡改计划任务
 CHANGE_SYS_BIN：篡改系统程序
 CHANGE_USRCFG：篡改用户配置
-                     * @param RuleType 子策略检测的入侵行为类型
+                     * @param _ruleType 子策略检测的入侵行为类型
 CHANGE_CRONTAB：篡改计划任务
 CHANGE_SYS_BIN：篡改系统程序
 CHANGE_USRCFG：篡改用户配置
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 

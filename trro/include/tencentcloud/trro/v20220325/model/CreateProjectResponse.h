@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取项目ID，长度为16位
                      * @return ProjectId 项目ID，长度为16位
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

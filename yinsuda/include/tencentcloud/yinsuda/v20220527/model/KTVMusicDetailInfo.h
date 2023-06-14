@@ -52,126 +52,147 @@ namespace TencentCloud
                     /**
                      * 获取歌曲基础信息。
                      * @return KTVMusicBaseInfo 歌曲基础信息。
+                     * 
                      */
                     KTVMusicBaseInfo GetKTVMusicBaseInfo() const;
 
                     /**
                      * 设置歌曲基础信息。
-                     * @param KTVMusicBaseInfo 歌曲基础信息。
+                     * @param _kTVMusicBaseInfo 歌曲基础信息。
+                     * 
                      */
                     void SetKTVMusicBaseInfo(const KTVMusicBaseInfo& _kTVMusicBaseInfo);
 
                     /**
                      * 判断参数 KTVMusicBaseInfo 是否已赋值
                      * @return KTVMusicBaseInfo 是否已赋值
+                     * 
                      */
                     bool KTVMusicBaseInfoHasBeenSet() const;
 
                     /**
                      * 获取播放凭证。
                      * @return PlayToken 播放凭证。
+                     * 
                      */
                     std::string GetPlayToken() const;
 
                     /**
                      * 设置播放凭证。
-                     * @param PlayToken 播放凭证。
+                     * @param _playToken 播放凭证。
+                     * 
                      */
                     void SetPlayToken(const std::string& _playToken);
 
                     /**
                      * 判断参数 PlayToken 是否已赋值
                      * @return PlayToken 是否已赋值
+                     * 
                      */
                     bool PlayTokenHasBeenSet() const;
 
                     /**
                      * 获取歌词下载链接。
                      * @return LyricsUrl 歌词下载链接。
+                     * 
                      */
                     std::string GetLyricsUrl() const;
 
                     /**
                      * 设置歌词下载链接。
-                     * @param LyricsUrl 歌词下载链接。
+                     * @param _lyricsUrl 歌词下载链接。
+                     * 
                      */
                     void SetLyricsUrl(const std::string& _lyricsUrl);
 
                     /**
                      * 判断参数 LyricsUrl 是否已赋值
                      * @return LyricsUrl 是否已赋值
+                     * 
                      */
                     bool LyricsUrlHasBeenSet() const;
 
                     /**
                      * 获取音高数据下载链接。
                      * @return MidiUrl 音高数据下载链接。
+                     * 
                      */
                     std::string GetMidiUrl() const;
 
                     /**
                      * 设置音高数据下载链接。
-                     * @param MidiUrl 音高数据下载链接。
+                     * @param _midiUrl 音高数据下载链接。
+                     * 
                      */
                     void SetMidiUrl(const std::string& _midiUrl);
 
                     /**
                      * 判断参数 MidiUrl 是否已赋值
                      * @return MidiUrl 是否已赋值
+                     * 
                      */
                     bool MidiUrlHasBeenSet() const;
 
                     /**
                      * 获取副歌片段信息。
                      * @return ChorusClipSet 副歌片段信息。
+                     * 
                      */
                     std::vector<ChorusClip> GetChorusClipSet() const;
 
                     /**
                      * 设置副歌片段信息。
-                     * @param ChorusClipSet 副歌片段信息。
+                     * @param _chorusClipSet 副歌片段信息。
+                     * 
                      */
                     void SetChorusClipSet(const std::vector<ChorusClip>& _chorusClipSet);
 
                     /**
                      * 判断参数 ChorusClipSet 是否已赋值
                      * @return ChorusClipSet 是否已赋值
+                     * 
                      */
                     bool ChorusClipSetHasBeenSet() const;
 
                     /**
                      * 获取前奏间隔。
                      * @return PreludeInterval 前奏间隔。
+                     * 
                      */
                     int64_t GetPreludeInterval() const;
 
                     /**
                      * 设置前奏间隔。
-                     * @param PreludeInterval 前奏间隔。
+                     * @param _preludeInterval 前奏间隔。
+                     * 
                      */
                     void SetPreludeInterval(const int64_t& _preludeInterval);
 
                     /**
                      * 判断参数 PreludeInterval 是否已赋值
                      * @return PreludeInterval 是否已赋值
+                     * 
                      */
                     bool PreludeIntervalHasBeenSet() const;
 
                     /**
                      * 获取歌曲流派列表。
                      * @return GenreSet 歌曲流派列表。
+                     * 
                      */
                     std::vector<std::string> GetGenreSet() const;
 
                     /**
                      * 设置歌曲流派列表。
-                     * @param GenreSet 歌曲流派列表。
+                     * @param _genreSet 歌曲流派列表。
+                     * 
                      */
                     void SetGenreSet(const std::vector<std::string>& _genreSet);
 
                     /**
                      * 判断参数 GenreSet 是否已赋值
                      * @return GenreSet 是否已赋值
+                     * 
                      */
                     bool GenreSetHasBeenSet() const;
 
@@ -180,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BPMInfo 节拍信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     KTVBPMInfo GetBPMInfo() const;
 
                     /**
                      * 设置节拍信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BPMInfo 节拍信息。
+                     * @param _bPMInfo 节拍信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBPMInfo(const KTVBPMInfo& _bPMInfo);
 
                     /**
                      * 判断参数 BPMInfo 是否已赋值
                      * @return BPMInfo 是否已赋值
+                     * 
                      */
                     bool BPMInfoHasBeenSet() const;
 

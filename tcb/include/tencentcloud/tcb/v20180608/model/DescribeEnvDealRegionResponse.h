@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取下单region
                      * @return Region 下单region
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取下单zone
                      * @return Zone 下单zone
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取下单regionId
                      * @return RegionId 下单regionId
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取下单zoneId
                      * @return ZoneId 下单zoneId
+                     * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 

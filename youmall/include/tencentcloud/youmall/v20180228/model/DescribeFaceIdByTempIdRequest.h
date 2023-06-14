@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
                      * @return CompanyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 设置优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
-                     * @param CompanyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * @param _companyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     void SetCompanyId(const std::string& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
                      * @return ShopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 设置优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
-                     * @param ShopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
+                     * @param _shopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     void SetShopId(const int64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取临时id
                      * @return TempId 临时id
+                     * 
                      */
                     std::string GetTempId() const;
 
                     /**
                      * 设置临时id
-                     * @param TempId 临时id
+                     * @param _tempId 临时id
+                     * 
                      */
                     void SetTempId(const std::string& _tempId);
 
                     /**
                      * 判断参数 TempId 是否已赋值
                      * @return TempId 是否已赋值
+                     * 
                      */
                     bool TempIdHasBeenSet() const;
 
                     /**
                      * 获取摄像头id
                      * @return CameraId 摄像头id
+                     * 
                      */
                     int64_t GetCameraId() const;
 
                     /**
                      * 设置摄像头id
-                     * @param CameraId 摄像头id
+                     * @param _cameraId 摄像头id
+                     * 
                      */
                     void SetCameraId(const int64_t& _cameraId);
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
                     /**
                      * 获取pos机id
                      * @return PosId pos机id
+                     * 
                      */
                     std::string GetPosId() const;
 
                     /**
                      * 设置pos机id
-                     * @param PosId pos机id
+                     * @param _posId pos机id
+                     * 
                      */
                     void SetPosId(const std::string& _posId);
 
                     /**
                      * 判断参数 PosId 是否已赋值
                      * @return PosId 是否已赋值
+                     * 
                      */
                     bool PosIdHasBeenSet() const;
 
                     /**
                      * 获取图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
                      * @return PictureExpires 图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
+                     * 
                      */
                     int64_t GetPictureExpires() const;
 
                     /**
                      * 设置图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
-                     * @param PictureExpires 图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
+                     * @param _pictureExpires 图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）
+                     * 
                      */
                     void SetPictureExpires(const int64_t& _pictureExpires);
 
                     /**
                      * 判断参数 PictureExpires 是否已赋值
                      * @return PictureExpires 是否已赋值
+                     * 
                      */
                     bool PictureExpiresHasBeenSet() const;
 

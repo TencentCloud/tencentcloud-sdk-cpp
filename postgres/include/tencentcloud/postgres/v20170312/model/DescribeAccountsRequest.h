@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如postgres-6fego161
                      * @return DBInstanceId 实例ID，形如postgres-6fego161
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如postgres-6fego161
-                     * @param DBInstanceId 实例ID，形如postgres-6fego161
+                     * @param _dBInstanceId 实例ID，形如postgres-6fego161
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取分页返回，每页最大返回数目，默认10，取值范围为1-100
                      * @return Limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回，每页最大返回数目，默认10，取值范围为1-100
-                     * @param Limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * @param _limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，从0开始。
                      * @return Offset 数据偏移量，从0开始。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，从0开始。
-                     * @param Offset 数据偏移量，从0开始。
+                     * @param _offset 数据偏移量，从0开始。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
                      * @return OrderBy 返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
-                     * @param OrderBy 返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
+                     * @param _orderBy 返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
                      * @return OrderByType 返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
-                     * @param OrderByType 返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+                     * @param _orderByType 返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

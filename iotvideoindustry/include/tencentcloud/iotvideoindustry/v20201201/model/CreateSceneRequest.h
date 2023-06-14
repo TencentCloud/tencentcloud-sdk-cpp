@@ -47,108 +47,126 @@ namespace TencentCloud
                     /**
                      * 获取场景名称
                      * @return SceneName 场景名称
+                     * 
                      */
                     std::string GetSceneName() const;
 
                     /**
                      * 设置场景名称
-                     * @param SceneName 场景名称
+                     * @param _sceneName 场景名称
+                     * 
                      */
                     void SetSceneName(const std::string& _sceneName);
 
                     /**
                      * 判断参数 SceneName 是否已赋值
                      * @return SceneName 是否已赋值
+                     * 
                      */
                     bool SceneNameHasBeenSet() const;
 
                     /**
                      * 获取场景触发规则
                      * @return SceneTrigger 场景触发规则
+                     * 
                      */
                     std::string GetSceneTrigger() const;
 
                     /**
                      * 设置场景触发规则
-                     * @param SceneTrigger 场景触发规则
+                     * @param _sceneTrigger 场景触发规则
+                     * 
                      */
                     void SetSceneTrigger(const std::string& _sceneTrigger);
 
                     /**
                      * 判断参数 SceneTrigger 是否已赋值
                      * @return SceneTrigger 是否已赋值
+                     * 
                      */
                     bool SceneTriggerHasBeenSet() const;
 
                     /**
                      * 获取录制时长 (秒)
                      * @return RecordDuration 录制时长 (秒)
+                     * 
                      */
                     int64_t GetRecordDuration() const;
 
                     /**
                      * 设置录制时长 (秒)
-                     * @param RecordDuration 录制时长 (秒)
+                     * @param _recordDuration 录制时长 (秒)
+                     * 
                      */
                     void SetRecordDuration(const int64_t& _recordDuration);
 
                     /**
                      * 判断参数 RecordDuration 是否已赋值
                      * @return RecordDuration 是否已赋值
+                     * 
                      */
                     bool RecordDurationHasBeenSet() const;
 
                     /**
                      * 获取录像存储时长(天)
                      * @return StoreDuration 录像存储时长(天)
+                     * 
                      */
                     int64_t GetStoreDuration() const;
 
                     /**
                      * 设置录像存储时长(天)
-                     * @param StoreDuration 录像存储时长(天)
+                     * @param _storeDuration 录像存储时长(天)
+                     * 
                      */
                     void SetStoreDuration(const int64_t& _storeDuration);
 
                     /**
                      * 判断参数 StoreDuration 是否已赋值
                      * @return StoreDuration 是否已赋值
+                     * 
                      */
                     bool StoreDurationHasBeenSet() const;
 
                     /**
                      * 获取设备列表(不推荐使用)
                      * @return Devices 设备列表(不推荐使用)
+                     * 
                      */
                     std::vector<DeviceItem> GetDevices() const;
 
                     /**
                      * 设置设备列表(不推荐使用)
-                     * @param Devices 设备列表(不推荐使用)
+                     * @param _devices 设备列表(不推荐使用)
+                     * 
                      */
                     void SetDevices(const std::vector<DeviceItem>& _devices);
 
                     /**
                      * 判断参数 Devices 是否已赋值
                      * @return Devices 是否已赋值
+                     * 
                      */
                     bool DevicesHasBeenSet() const;
 
                     /**
                      * 获取通道列表
                      * @return Channels 通道列表
+                     * 
                      */
                     std::vector<ChannelItem> GetChannels() const;
 
                     /**
                      * 设置通道列表
-                     * @param Channels 通道列表
+                     * @param _channels 通道列表
+                     * 
                      */
                     void SetChannels(const std::vector<ChannelItem>& _channels);
 
                     /**
                      * 判断参数 Channels 是否已赋值
                      * @return Channels 是否已赋值
+                     * 
                      */
                     bool ChannelsHasBeenSet() const;
 

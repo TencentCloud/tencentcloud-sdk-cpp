@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置标签名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 标签名称
+                     * @param _name 标签名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 置信分：0～100，数值越大表示置信度越高
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScore() const;
 
                     /**
                      * 设置置信分：0～100，数值越大表示置信度越高
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 置信分：0～100，数值越大表示置信度越高
+                     * @param _score 置信分：0～100，数值越大表示置信度越高
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const int64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 标签位置信息，若模型无位置信息，则可能为零值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Location GetLocation() const;
 
                     /**
                      * 设置标签位置信息，若模型无位置信息，则可能为零值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Location 标签位置信息，若模型无位置信息，则可能为零值
+                     * @param _location 标签位置信息，若模型无位置信息，则可能为零值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocation(const Location& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 

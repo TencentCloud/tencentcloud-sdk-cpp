@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取流ID。
                      * @return FlowId 流ID。
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置流ID。
-                     * @param FlowId 流ID。
+                     * @param _flowId 流ID。
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取输入id数组，如果输入输出数组都为空，则代表全量查询。
                      * @return InputIds 输入id数组，如果输入输出数组都为空，则代表全量查询。
+                     * 
                      */
                     std::vector<std::string> GetInputIds() const;
 
                     /**
                      * 设置输入id数组，如果输入输出数组都为空，则代表全量查询。
-                     * @param InputIds 输入id数组，如果输入输出数组都为空，则代表全量查询。
+                     * @param _inputIds 输入id数组，如果输入输出数组都为空，则代表全量查询。
+                     * 
                      */
                     void SetInputIds(const std::vector<std::string>& _inputIds);
 
                     /**
                      * 判断参数 InputIds 是否已赋值
                      * @return InputIds 是否已赋值
+                     * 
                      */
                     bool InputIdsHasBeenSet() const;
 
                     /**
                      * 获取输出id数组，如果输入输出数组都为空，则代表全量查询。
                      * @return OutputIds 输出id数组，如果输入输出数组都为空，则代表全量查询。
+                     * 
                      */
                     std::vector<std::string> GetOutputIds() const;
 
                     /**
                      * 设置输出id数组，如果输入输出数组都为空，则代表全量查询。
-                     * @param OutputIds 输出id数组，如果输入输出数组都为空，则代表全量查询。
+                     * @param _outputIds 输出id数组，如果输入输出数组都为空，则代表全量查询。
+                     * 
                      */
                     void SetOutputIds(const std::vector<std::string>& _outputIds);
 
                     /**
                      * 判断参数 OutputIds 是否已赋值
                      * @return OutputIds 是否已赋值
+                     * 
                      */
                     bool OutputIdsHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取识别到的人员所在的库id
                      * @return LibraryIds 识别到的人员所在的库id
+                     * 
                      */
                     std::string GetLibraryIds() const;
 
                     /**
                      * 设置识别到的人员所在的库id
-                     * @param LibraryIds 识别到的人员所在的库id
+                     * @param _libraryIds 识别到的人员所在的库id
+                     * 
                      */
                     void SetLibraryIds(const std::string& _libraryIds);
 
                     /**
                      * 判断参数 LibraryIds 是否已赋值
                      * @return LibraryIds 是否已赋值
+                     * 
                      */
                     bool LibraryIdsHasBeenSet() const;
 
                     /**
                      * 获取识别到的人员id
                      * @return PersonId 识别到的人员id
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置识别到的人员id
-                     * @param PersonId 识别到的人员id
+                     * @param _personId 识别到的人员id
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 

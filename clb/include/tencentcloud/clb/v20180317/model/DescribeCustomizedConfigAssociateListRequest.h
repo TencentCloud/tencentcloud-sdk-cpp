@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取配置ID
                      * @return UconfigId 配置ID
+                     * 
                      */
                     std::string GetUconfigId() const;
 
                     /**
                      * 设置配置ID
-                     * @param UconfigId 配置ID
+                     * @param _uconfigId 配置ID
+                     * 
                      */
                     void SetUconfigId(const std::string& _uconfigId);
 
                     /**
                      * 判断参数 UconfigId 是否已赋值
                      * @return UconfigId 是否已赋值
+                     * 
                      */
                     bool UconfigIdHasBeenSet() const;
 
                     /**
                      * 获取拉取绑定关系列表开始位置，默认值 0
                      * @return Offset 拉取绑定关系列表开始位置，默认值 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置拉取绑定关系列表开始位置，默认值 0
-                     * @param Offset 拉取绑定关系列表开始位置，默认值 0
+                     * @param _offset 拉取绑定关系列表开始位置，默认值 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取拉取绑定关系列表数目，默认值 20
                      * @return Limit 拉取绑定关系列表数目，默认值 20
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置拉取绑定关系列表数目，默认值 20
-                     * @param Limit 拉取绑定关系列表数目，默认值 20
+                     * @param _limit 拉取绑定关系列表数目，默认值 20
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索域名
                      * @return Domain 搜索域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置搜索域名
-                     * @param Domain 搜索域名
+                     * @param _domain 搜索域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

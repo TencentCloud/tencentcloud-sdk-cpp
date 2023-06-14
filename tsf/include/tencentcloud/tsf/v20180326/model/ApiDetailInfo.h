@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiId API ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiId API ID
+                     * @param _apiId API ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiId(const std::string& _apiId);
 
                     /**
                      * 判断参数 ApiId 是否已赋值
                      * @return ApiId 是否已赋值
+                     * 
                      */
                     bool ApiIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceId 命名空间ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceName 命名空间名称
+                     * @param _namespaceName 命名空间名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
 
                     /**
                      * 判断参数 NamespaceName 是否已赋值
                      * @return NamespaceName 是否已赋值
+                     * 
                      */
                     bool NamespaceNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicroserviceId 服务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
                      * 设置服务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MicroserviceId 服务ID
+                     * @param _microserviceId 服务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMicroserviceId(const std::string& _microserviceId);
 
                     /**
                      * 判断参数 MicroserviceId 是否已赋值
                      * @return MicroserviceId 是否已赋值
+                     * 
                      */
                     bool MicroserviceIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicroserviceName 服务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMicroserviceName() const;
 
                     /**
                      * 设置服务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MicroserviceName 服务名称
+                     * @param _microserviceName 服务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMicroserviceName(const std::string& _microserviceName);
 
                     /**
                      * 判断参数 MicroserviceName 是否已赋值
                      * @return MicroserviceName 是否已赋值
+                     * 
                      */
                     bool MicroserviceNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path API 请求路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置API 请求路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path API 请求路径
+                     * @param _path API 请求路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathMapping Api 映射路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPathMapping() const;
 
                     /**
                      * 设置Api 映射路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathMapping Api 映射路径
+                     * @param _pathMapping Api 映射路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPathMapping(const std::string& _pathMapping);
 
                     /**
                      * 判断参数 PathMapping 是否已赋值
                      * @return PathMapping 是否已赋值
+                     * 
                      */
                     bool PathMappingHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方法
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 请求方法
+                     * @param _method 请求方法
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 所属分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置所属分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 所属分组ID
+                     * @param _groupId 所属分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsableStatus 是否禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsableStatus() const;
 
                     /**
                      * 设置是否禁用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UsableStatus 是否禁用
+                     * @param _usableStatus 是否禁用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsableStatus(const std::string& _usableStatus);
 
                     /**
                      * 判断参数 UsableStatus 是否已赋值
                      * @return UsableStatus 是否已赋值
+                     * 
                      */
                     bool UsableStatusHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseStatus 发布状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReleaseStatus() const;
 
                     /**
                      * 设置发布状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReleaseStatus 发布状态
+                     * @param _releaseStatus 发布状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReleaseStatus(const std::string& _releaseStatus);
 
                     /**
                      * 判断参数 ReleaseStatus 是否已赋值
                      * @return ReleaseStatus 是否已赋值
+                     * 
                      */
                     bool ReleaseStatusHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitStatus 开启限流
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRateLimitStatus() const;
 
                     /**
                      * 设置开启限流
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RateLimitStatus 开启限流
+                     * @param _rateLimitStatus 开启限流
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRateLimitStatus(const std::string& _rateLimitStatus);
 
                     /**
                      * 判断参数 RateLimitStatus 是否已赋值
                      * @return RateLimitStatus 是否已赋值
+                     * 
                      */
                     bool RateLimitStatusHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MockStatus 是否开启mock
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMockStatus() const;
 
                     /**
                      * 设置是否开启mock
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MockStatus 是否开启mock
+                     * @param _mockStatus 是否开启mock
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMockStatus(const std::string& _mockStatus);
 
                     /**
                      * 判断参数 MockStatus 是否已赋值
                      * @return MockStatus 是否已赋值
+                     * 
                      */
                     bool MockStatusHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedTime 创建时间
+                     * @param _createdTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedTime 更新时间
+                     * @param _updatedTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleasedTime 发布时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReleasedTime() const;
 
                     /**
                      * 设置发布时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReleasedTime 发布时间
+                     * @param _releasedTime 发布时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReleasedTime(const std::string& _releasedTime);
 
                     /**
                      * 判断参数 ReleasedTime 是否已赋值
                      * @return ReleasedTime 是否已赋值
+                     * 
                      */
                     bool ReleasedTimeHasBeenSet() const;
 
@@ -403,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 所属分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置所属分组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 所属分组名称
+                     * @param _groupName 所属分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -425,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout API 超时，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置API 超时，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timeout API 超时，单位毫秒
+                     * @param _timeout API 超时，单位毫秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeout(const int64_t& _timeout);
 
                     /**
                      * 判断参数 Timeout 是否已赋值
                      * @return Timeout 是否已赋值
+                     * 
                      */
                     bool TimeoutHasBeenSet() const;
 
@@ -447,20 +501,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host Api所在服务host
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置Api所在服务host
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Host Api所在服务host
+                     * @param _host Api所在服务host
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
@@ -469,20 +526,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiType API类型。 ms ： 微服务API； external :外部服务Api
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiType() const;
 
                     /**
                      * 设置API类型。 ms ： 微服务API； external :外部服务Api
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiType API类型。 ms ： 微服务API； external :外部服务Api
+                     * @param _apiType API类型。 ms ： 微服务API； external :外部服务Api
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiType(const std::string& _apiType);
 
                     /**
                      * 判断参数 ApiType 是否已赋值
                      * @return ApiType 是否已赋值
+                     * 
                      */
                     bool ApiTypeHasBeenSet() const;
 
@@ -491,20 +551,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description Api描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置Api描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description Api描述信息
+                     * @param _description Api描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -513,20 +576,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiMatchType API路径匹配类型。normal：普通API；wildcard：通配API。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApiMatchType() const;
 
                     /**
                      * 设置API路径匹配类型。normal：普通API；wildcard：通配API。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApiMatchType API路径匹配类型。normal：普通API；wildcard：通配API。
+                     * @param _apiMatchType API路径匹配类型。normal：普通API；wildcard：通配API。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApiMatchType(const std::string& _apiMatchType);
 
                     /**
                      * 判断参数 ApiMatchType 是否已赋值
                      * @return ApiMatchType 是否已赋值
+                     * 
                      */
                     bool ApiMatchTypeHasBeenSet() const;
 
@@ -535,20 +601,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RpcExt RPC 额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRpcExt() const;
 
                     /**
                      * 设置RPC 额外信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RpcExt RPC 额外信息
+                     * @param _rpcExt RPC 额外信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRpcExt(const std::string& _rpcExt);
 
                     /**
                      * 判断参数 RpcExt 是否已赋值
                      * @return RpcExt 是否已赋值
+                     * 
                      */
                     bool RpcExtHasBeenSet() const;
 
@@ -557,20 +626,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayDeployGroupId 部署组id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGatewayDeployGroupId() const;
 
                     /**
                      * 设置部署组id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GatewayDeployGroupId 部署组id
+                     * @param _gatewayDeployGroupId 部署组id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
 
                     /**
                      * 判断参数 GatewayDeployGroupId 是否已赋值
                      * @return GatewayDeployGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayDeployGroupIdHasBeenSet() const;
 
@@ -579,20 +651,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 md5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置md5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Md5 md5
+                     * @param _md5 md5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 
@@ -601,20 +676,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RpcType RPC 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRpcType() const;
 
                     /**
                      * 设置RPC 类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RpcType RPC 类型
+                     * @param _rpcType RPC 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRpcType(const std::string& _rpcType);
 
                     /**
                      * 判断参数 RpcType 是否已赋值
                      * @return RpcType 是否已赋值
+                     * 
                      */
                     bool RpcTypeHasBeenSet() const;
 

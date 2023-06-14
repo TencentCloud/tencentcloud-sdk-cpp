@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取主账号Uin
                      * @return Uin 主账号Uin
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置主账号Uin
-                     * @param Uin 主账号Uin
+                     * @param _uin 主账号Uin
+                     * 
                      */
                     void SetUin(const std::string& _uin);
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取主账号名称
                      * @return Account 主账号名称
+                     * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置主账号名称
-                     * @param Account 主账号名称
+                     * @param _account 主账号名称
+                     * 
                      */
                     void SetAccount(const std::string& _account);
 
                     /**
                      * 判断参数 Account 是否已赋值
                      * @return Account 是否已赋值
+                     * 
                      */
                     bool AccountHasBeenSet() const;
 
                     /**
                      * 获取用户昵称
                      * @return Nickname 用户昵称
+                     * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置用户昵称
-                     * @param Nickname 用户昵称
+                     * @param _nickname 用户昵称
+                     * 
                      */
                     void SetNickname(const std::string& _nickname);
 
                     /**
                      * 判断参数 Nickname 是否已赋值
                      * @return Nickname 是否已赋值
+                     * 
                      */
                     bool NicknameHasBeenSet() const;
 

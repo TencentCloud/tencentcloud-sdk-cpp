@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取厂商名称
                      * @return Manufacturer 厂商名称
+                     * 
                      */
                     std::string GetManufacturer() const;
 
                     /**
                      * 设置厂商名称
-                     * @param Manufacturer 厂商名称
+                     * @param _manufacturer 厂商名称
+                     * 
                      */
                     void SetManufacturer(const std::string& _manufacturer);
 
                     /**
                      * 判断参数 Manufacturer 是否已赋值
                      * @return Manufacturer 是否已赋值
+                     * 
                      */
                     bool ManufacturerHasBeenSet() const;
 
                     /**
                      * 获取此厂商旗下的设备信息列表
                      * @return HsmTypes 此厂商旗下的设备信息列表
+                     * 
                      */
                     std::vector<HsmInfo> GetHsmTypes() const;
 
                     /**
                      * 设置此厂商旗下的设备信息列表
-                     * @param HsmTypes 此厂商旗下的设备信息列表
+                     * @param _hsmTypes 此厂商旗下的设备信息列表
+                     * 
                      */
                     void SetHsmTypes(const std::vector<HsmInfo>& _hsmTypes);
 
                     /**
                      * 判断参数 HsmTypes 是否已赋值
                      * @return HsmTypes 是否已赋值
+                     * 
                      */
                     bool HsmTypesHasBeenSet() const;
 

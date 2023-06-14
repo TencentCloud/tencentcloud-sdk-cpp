@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取插件个数。
                      * @return TotalCount 插件个数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置插件个数。
-                     * @param TotalCount 插件个数。
+                     * @param _totalCount 插件个数。
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取插件详情。
                      * @return PluginSet 插件详情。
+                     * 
                      */
                     std::vector<Plugin> GetPluginSet() const;
 
                     /**
                      * 设置插件详情。
-                     * @param PluginSet 插件详情。
+                     * @param _pluginSet 插件详情。
+                     * 
                      */
                     void SetPluginSet(const std::vector<Plugin>& _pluginSet);
 
                     /**
                      * 判断参数 PluginSet 是否已赋值
                      * @return PluginSet 是否已赋值
+                     * 
                      */
                     bool PluginSetHasBeenSet() const;
 

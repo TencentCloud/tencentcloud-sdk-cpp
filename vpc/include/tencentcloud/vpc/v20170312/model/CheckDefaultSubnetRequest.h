@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
                      * @return Zone 子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
-                     * @param Zone 子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
+                     * @param _zone 子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 

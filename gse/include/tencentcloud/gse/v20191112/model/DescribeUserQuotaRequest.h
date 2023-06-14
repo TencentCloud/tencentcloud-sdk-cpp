@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取资源类型
                      * @return ResourceType 资源类型
+                     * 
                      */
                     uint64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型
-                     * @param ResourceType 资源类型
+                     * @param _resourceType 资源类型
+                     * 
                      */
                     void SetResourceType(const uint64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 

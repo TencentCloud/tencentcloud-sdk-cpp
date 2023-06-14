@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取业务类型，目前支持安全组：securitygroup。
                      * @return BusinessType 业务类型，目前支持安全组：securitygroup。
+                     * 
                      */
                     std::string GetBusinessType() const;
 
                     /**
                      * 设置业务类型，目前支持安全组：securitygroup。
-                     * @param BusinessType 业务类型，目前支持安全组：securitygroup。
+                     * @param _businessType 业务类型，目前支持安全组：securitygroup。
+                     * 
                      */
                     void SetBusinessType(const std::string& _businessType);
 
                     /**
                      * 判断参数 BusinessType 是否已赋值
                      * @return BusinessType 是否已赋值
+                     * 
                      */
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
                      * 获取实例Id。
                      * @return InstanceId 实例Id。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id。
-                     * @param InstanceId 实例Id。
+                     * @param _instanceId 实例Id。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取开始日期，格式%Y-%m-%d %H:%M:%S。
                      * @return StartDate 开始日期，格式%Y-%m-%d %H:%M:%S。
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始日期，格式%Y-%m-%d %H:%M:%S。
-                     * @param StartDate 开始日期，格式%Y-%m-%d %H:%M:%S。
+                     * @param _startDate 开始日期，格式%Y-%m-%d %H:%M:%S。
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
                     /**
                      * 获取结束日期，格式%Y-%m-%d %H:%M:%S。
                      * @return EndDate 结束日期，格式%Y-%m-%d %H:%M:%S。
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束日期，格式%Y-%m-%d %H:%M:%S。
-                     * @param EndDate 结束日期，格式%Y-%m-%d %H:%M:%S。
+                     * @param _endDate 结束日期，格式%Y-%m-%d %H:%M:%S。
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大为100。
                      * @return Limit 返回数量，默认为20，最大为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大为100。
-                     * @param Limit 返回数量，默认为20，最大为100。
+                     * @param _limit 返回数量，默认为20，最大为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

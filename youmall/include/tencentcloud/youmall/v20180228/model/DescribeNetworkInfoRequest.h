@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取请求时间戳
                      * @return Time 请求时间戳
+                     * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置请求时间戳
-                     * @param Time 请求时间戳
+                     * @param _time 请求时间戳
+                     * 
                      */
                     void SetTime(const int64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
                      * @return CompanyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 设置优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
-                     * @param CompanyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * @param _companyId 优mall集团id，通过"指定身份标识获取客户门店列表"接口获取
+                     * 
                      */
                     void SetCompanyId(const std::string& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取，不填则拉取集团全部店铺当前
                      * @return ShopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取，不填则拉取集团全部店铺当前
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 设置优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取，不填则拉取集团全部店铺当前
-                     * @param ShopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取，不填则拉取集团全部店铺当前
+                     * @param _shopId 优mall店铺id，通过"指定身份标识获取客户门店列表"接口获取，不填则拉取集团全部店铺当前
+                     * 
                      */
                     void SetShopId(const int64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 

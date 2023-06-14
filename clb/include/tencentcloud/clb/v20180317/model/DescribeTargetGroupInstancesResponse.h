@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取本次查询的结果数量。
                      * @return TotalCount 本次查询的结果数量。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取绑定的服务器信息。
                      * @return TargetGroupInstanceSet 绑定的服务器信息。
+                     * 
                      */
                     std::vector<TargetGroupBackend> GetTargetGroupInstanceSet() const;
 
                     /**
                      * 判断参数 TargetGroupInstanceSet 是否已赋值
                      * @return TargetGroupInstanceSet 是否已赋值
+                     * 
                      */
                     bool TargetGroupInstanceSetHasBeenSet() const;
 
                     /**
                      * 获取实际统计数量，不受Limit、Offset、CAM的影响。
                      * @return RealCount 实际统计数量，不受Limit、Offset、CAM的影响。
+                     * 
                      */
                     uint64_t GetRealCount() const;
 
                     /**
                      * 判断参数 RealCount 是否已赋值
                      * @return RealCount 是否已赋值
+                     * 
                      */
                     bool RealCountHasBeenSet() const;
 

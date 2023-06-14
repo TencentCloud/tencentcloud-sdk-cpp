@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，
                      * @return ResourceType Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，
+                     * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，
-                     * @param ResourceType Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，
+                     * @param _resourceType Acl资源类型，（0:UNKNOWN，1:ANY，2:TOPIC，3:GROUP，4:CLUSTER，5:TRANSACTIONAL_ID）当前只有TOPIC，
+                     * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
                      * @return ResourceName 资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
-                     * @param ResourceName 资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     * @param _resourceName 资源名称，和resourceType相关如当resourceType为TOPIC时，则该字段表示topic名称，当resourceType为GROUP时，该字段表示group名称
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPrincipal() const;
 
                     /**
                      * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
+                     * @param _principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPrincipal(const std::string& _principal);
 
                     /**
                      * 判断参数 Principal 是否已赋值
                      * @return Principal 是否已赋值
+                     * 
                      */
                     bool PrincipalHasBeenSet() const;
 
@@ -109,56 +118,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Host 默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持
+                     * @param _host 默认为*，表示任何host都可以访问，当前ckafka不支持host为*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 
                     /**
                      * 获取Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)
                      * @return Operation Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)
+                     * 
                      */
                     int64_t GetOperation() const;
 
                     /**
                      * 设置Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)
-                     * @param Operation Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)
+                     * @param _operation Acl操作方式(0:UNKNOWN，1:ANY，2:ALL，3:READ，4:WRITE，5:CREATE，6:DELETE，7:ALTER，8:DESCRIBE，9:CLUSTER_ACTION，10:DESCRIBE_CONFIGS，11:ALTER_CONFIGS，12:IDEMPOTEN_WRITE)
+                     * 
                      */
                     void SetOperation(const int64_t& _operation);
 
                     /**
                      * 判断参数 Operation 是否已赋值
                      * @return Operation 是否已赋值
+                     * 
                      */
                     bool OperationHasBeenSet() const;
 
                     /**
                      * 获取权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)
                      * @return PermissionType 权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)
+                     * 
                      */
                     int64_t GetPermissionType() const;
 
                     /**
                      * 设置权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)
-                     * @param PermissionType 权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)
+                     * @param _permissionType 权限类型(0:UNKNOWN，1:ANY，2:DENY，3:ALLOW)
+                     * 
                      */
                     void SetPermissionType(const int64_t& _permissionType);
 
                     /**
                      * 判断参数 PermissionType 是否已赋值
                      * @return PermissionType 是否已赋值
+                     * 
                      */
                     bool PermissionTypeHasBeenSet() const;
 

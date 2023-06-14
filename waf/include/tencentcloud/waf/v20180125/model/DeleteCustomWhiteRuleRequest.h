@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取删除的域名
                      * @return Domain 删除的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置删除的域名
-                     * @param Domain 删除的域名
+                     * @param _domain 删除的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取删除的规则ID
                      * @return RuleId 删除的规则ID
+                     * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
                      * 设置删除的规则ID
-                     * @param RuleId 删除的规则ID
+                     * @param _ruleId 删除的规则ID
+                     * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 

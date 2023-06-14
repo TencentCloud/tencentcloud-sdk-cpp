@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessVpcSet 内网接入信息的列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AccessVpc> GetAccessVpcSet() const;
 
                     /**
                      * 判断参数 AccessVpcSet 是否已赋值
                      * @return AccessVpcSet 是否已赋值
+                     * 
                      */
                     bool AccessVpcSetHasBeenSet() const;
 
                     /**
                      * 获取内网接入总数
                      * @return TotalCount 内网接入总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

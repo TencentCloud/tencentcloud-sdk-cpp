@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取网站防护目录地址
                      * @return ProtectDirAddr 网站防护目录地址
+                     * 
                      */
                     std::string GetProtectDirAddr() const;
 
                     /**
                      * 设置网站防护目录地址
-                     * @param ProtectDirAddr 网站防护目录地址
+                     * @param _protectDirAddr 网站防护目录地址
+                     * 
                      */
                     void SetProtectDirAddr(const std::string& _protectDirAddr);
 
                     /**
                      * 判断参数 ProtectDirAddr 是否已赋值
                      * @return ProtectDirAddr 是否已赋值
+                     * 
                      */
                     bool ProtectDirAddrHasBeenSet() const;
 
                     /**
                      * 获取网站防护目录名称
                      * @return ProtectDirName 网站防护目录名称
+                     * 
                      */
                     std::string GetProtectDirName() const;
 
                     /**
                      * 设置网站防护目录名称
-                     * @param ProtectDirName 网站防护目录名称
+                     * @param _protectDirName 网站防护目录名称
+                     * 
                      */
                     void SetProtectDirName(const std::string& _protectDirName);
 
                     /**
                      * 判断参数 ProtectDirName 是否已赋值
                      * @return ProtectDirName 是否已赋值
+                     * 
                      */
                     bool ProtectDirNameHasBeenSet() const;
 
                     /**
                      * 获取防护文件类型,分号分割 ;
                      * @return ProtectFileType 防护文件类型,分号分割 ;
+                     * 
                      */
                     std::string GetProtectFileType() const;
 
                     /**
                      * 设置防护文件类型,分号分割 ;
-                     * @param ProtectFileType 防护文件类型,分号分割 ;
+                     * @param _protectFileType 防护文件类型,分号分割 ;
+                     * 
                      */
                     void SetProtectFileType(const std::string& _protectFileType);
 
                     /**
                      * 判断参数 ProtectFileType 是否已赋值
                      * @return ProtectFileType 是否已赋值
+                     * 
                      */
                     bool ProtectFileTypeHasBeenSet() const;
 
                     /**
                      * 获取防护机器列表信息
                      * @return HostConfig 防护机器列表信息
+                     * 
                      */
                     std::vector<ProtectHostConfig> GetHostConfig() const;
 
                     /**
                      * 设置防护机器列表信息
-                     * @param HostConfig 防护机器列表信息
+                     * @param _hostConfig 防护机器列表信息
+                     * 
                      */
                     void SetHostConfig(const std::vector<ProtectHostConfig>& _hostConfig);
 
                     /**
                      * 判断参数 HostConfig 是否已赋值
                      * @return HostConfig 是否已赋值
+                     * 
                      */
                     bool HostConfigHasBeenSet() const;
 

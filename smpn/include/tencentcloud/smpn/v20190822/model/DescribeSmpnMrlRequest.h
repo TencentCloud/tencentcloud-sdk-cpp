@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取恶意标记等级请求内容
                      * @return RequestData 恶意标记等级请求内容
+                     * 
                      */
                     MRLRequest GetRequestData() const;
 
                     /**
                      * 设置恶意标记等级请求内容
-                     * @param RequestData 恶意标记等级请求内容
+                     * @param _requestData 恶意标记等级请求内容
+                     * 
                      */
                     void SetRequestData(const MRLRequest& _requestData);
 
                     /**
                      * 判断参数 RequestData 是否已赋值
                      * @return RequestData 是否已赋值
+                     * 
                      */
                     bool RequestDataHasBeenSet() const;
 
                     /**
                      * 获取用于计费的资源ID
                      * @return ResourceId 用于计费的资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置用于计费的资源ID
-                     * @param ResourceId 用于计费的资源ID
+                     * @param _resourceId 用于计费的资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 

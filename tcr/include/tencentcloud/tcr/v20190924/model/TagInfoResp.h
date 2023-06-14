@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取Tag的总数
                      * @return TagCount Tag的总数
+                     * 
                      */
                     int64_t GetTagCount() const;
 
                     /**
                      * 设置Tag的总数
-                     * @param TagCount Tag的总数
+                     * @param _tagCount Tag的总数
+                     * 
                      */
                     void SetTagCount(const int64_t& _tagCount);
 
                     /**
                      * 判断参数 TagCount 是否已赋值
                      * @return TagCount 是否已赋值
+                     * 
                      */
                     bool TagCountHasBeenSet() const;
 
                     /**
                      * 获取TagInfo列表
                      * @return TagInfo TagInfo列表
+                     * 
                      */
                     std::vector<TagInfo> GetTagInfo() const;
 
                     /**
                      * 设置TagInfo列表
-                     * @param TagInfo TagInfo列表
+                     * @param _tagInfo TagInfo列表
+                     * 
                      */
                     void SetTagInfo(const std::vector<TagInfo>& _tagInfo);
 
                     /**
                      * 判断参数 TagInfo 是否已赋值
                      * @return TagInfo 是否已赋值
+                     * 
                      */
                     bool TagInfoHasBeenSet() const;
 
                     /**
                      * 获取Server
                      * @return Server Server
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置Server
-                     * @param Server Server
+                     * @param _server Server
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
                     /**
                      * 获取仓库名称
                      * @return RepoName 仓库名称
+                     * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置仓库名称
-                     * @param RepoName 仓库名称
+                     * @param _repoName 仓库名称
+                     * 
                      */
                     void SetRepoName(const std::string& _repoName);
 
                     /**
                      * 判断参数 RepoName 是否已赋值
                      * @return RepoName 是否已赋值
+                     * 
                      */
                     bool RepoNameHasBeenSet() const;
 

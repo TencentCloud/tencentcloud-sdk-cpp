@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Agent 管理命令
                      * @return Command Agent 管理命令
+                     * 
                      */
                     ManagementCommand GetCommand() const;
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 

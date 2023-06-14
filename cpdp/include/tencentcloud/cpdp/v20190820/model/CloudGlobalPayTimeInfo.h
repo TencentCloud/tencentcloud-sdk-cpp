@@ -51,20 +51,23 @@ namespace TencentCloud
 不指定时默认为当前时间。
                      * @return StartTimestamp 订单开始时间。
 不指定时默认为当前时间。
+                     * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
                      * 设置订单开始时间。
 不指定时默认为当前时间。
-                     * @param StartTimestamp 订单开始时间。
+                     * @param _startTimestamp 订单开始时间。
 不指定时默认为当前时间。
+                     * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
 
                     /**
                      * 判断参数 StartTimestamp 是否已赋值
                      * @return StartTimestamp 是否已赋值
+                     * 
                      */
                     bool StartTimestampHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 逾期将会拒绝下单。不指定时默认为当前时间的7天后结束。
                      * @return ExpireTimestamp 订单结束时间。
 逾期将会拒绝下单。不指定时默认为当前时间的7天后结束。
+                     * 
                      */
                     int64_t GetExpireTimestamp() const;
 
                     /**
                      * 设置订单结束时间。
 逾期将会拒绝下单。不指定时默认为当前时间的7天后结束。
-                     * @param ExpireTimestamp 订单结束时间。
+                     * @param _expireTimestamp 订单结束时间。
 逾期将会拒绝下单。不指定时默认为当前时间的7天后结束。
+                     * 
                      */
                     void SetExpireTimestamp(const int64_t& _expireTimestamp);
 
                     /**
                      * 判断参数 ExpireTimestamp 是否已赋值
                      * @return ExpireTimestamp 是否已赋值
+                     * 
                      */
                     bool ExpireTimestampHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 不指定时默认为28800，表示北京时间（东八区）。
                      * @return TimeOffset 时区。
 不指定时默认为28800，表示北京时间（东八区）。
+                     * 
                      */
                     int64_t GetTimeOffset() const;
 
                     /**
                      * 设置时区。
 不指定时默认为28800，表示北京时间（东八区）。
-                     * @param TimeOffset 时区。
+                     * @param _timeOffset 时区。
 不指定时默认为28800，表示北京时间（东八区）。
+                     * 
                      */
                     void SetTimeOffset(const int64_t& _timeOffset);
 
                     /**
                      * 判断参数 TimeOffset 是否已赋值
                      * @return TimeOffset 是否已赋值
+                     * 
                      */
                     bool TimeOffsetHasBeenSet() const;
 

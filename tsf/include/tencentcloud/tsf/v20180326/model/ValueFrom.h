@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldRef k8s env 的 FieldRef
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FieldRef GetFieldRef() const;
 
                     /**
                      * 设置k8s env 的 FieldRef
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FieldRef k8s env 的 FieldRef
+                     * @param _fieldRef k8s env 的 FieldRef
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFieldRef(const FieldRef& _fieldRef);
 
                     /**
                      * 判断参数 FieldRef 是否已赋值
                      * @return FieldRef 是否已赋值
+                     * 
                      */
                     bool FieldRefHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceFieldRef k8s env 的 ResourceFieldRef
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ResourceFieldRef GetResourceFieldRef() const;
 
                     /**
                      * 设置k8s env 的 ResourceFieldRef
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceFieldRef k8s env 的 ResourceFieldRef
+                     * @param _resourceFieldRef k8s env 的 ResourceFieldRef
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceFieldRef(const ResourceFieldRef& _resourceFieldRef);
 
                     /**
                      * 判断参数 ResourceFieldRef 是否已赋值
                      * @return ResourceFieldRef 是否已赋值
+                     * 
                      */
                     bool ResourceFieldRefHasBeenSet() const;
 

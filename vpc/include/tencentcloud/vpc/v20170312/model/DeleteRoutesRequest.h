@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取路由表实例ID。
                      * @return RouteTableId 路由表实例ID。
+                     * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表实例ID。
-                     * @param RouteTableId 路由表实例ID。
+                     * @param _routeTableId 路由表实例ID。
+                     * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
 
                     /**
                      * 判断参数 RouteTableId 是否已赋值
                      * @return RouteTableId 是否已赋值
+                     * 
                      */
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
                      * 获取路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。
                      * @return Routes 路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。
+                     * 
                      */
                     std::vector<Route> GetRoutes() const;
 
                     /**
                      * 设置路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。
-                     * @param Routes 路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。
+                     * @param _routes 路由策略对象，删除路由策略时，仅需使用Route的RouteId字段。
+                     * 
                      */
                     void SetRoutes(const std::vector<Route>& _routes);
 
                     /**
                      * 判断参数 Routes 是否已赋值
                      * @return Routes 是否已赋值
+                     * 
                      */
                     bool RoutesHasBeenSet() const;
 

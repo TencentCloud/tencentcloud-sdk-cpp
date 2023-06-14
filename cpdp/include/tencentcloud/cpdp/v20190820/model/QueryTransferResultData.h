@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取平台交易流水号
                      * @return TradeSerialNo 平台交易流水号
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 设置平台交易流水号
-                     * @param TradeSerialNo 平台交易流水号
+                     * @param _tradeSerialNo 平台交易流水号
+                     * 
                      */
                     void SetTradeSerialNo(const std::string& _tradeSerialNo);
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
                     /**
                      * 获取订单号
                      * @return OrderId 订单号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -97,6 +103,7 @@ namespace TencentCloud
 3 交易失败 
 4 未知渠道异常 
 99 未知系统异常
+                     * 
                      */
                     int64_t GetTradeStatus() const;
 
@@ -108,19 +115,21 @@ namespace TencentCloud
 3 交易失败 
 4 未知渠道异常 
 99 未知系统异常
-                     * @param TradeStatus 交易状态。
+                     * @param _tradeStatus 交易状态。
 0 处理中  
 1 提交成功 
 2 交易成功 
 3 交易失败 
 4 未知渠道异常 
 99 未知系统异常
+                     * 
                      */
                     void SetTradeStatus(const int64_t& _tradeStatus);
 
                     /**
                      * 判断参数 TradeStatus 是否已赋值
                      * @return TradeStatus 是否已赋值
+                     * 
                      */
                     bool TradeStatusHasBeenSet() const;
 
@@ -129,20 +138,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 业务备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置业务备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 业务备注
+                     * @param _remark 业务备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的负载均衡实例 ID数组，数组大小最大支持20。
                      * @return LoadBalancerIds 要删除的负载均衡实例 ID数组，数组大小最大支持20。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置要删除的负载均衡实例 ID数组，数组大小最大支持20。
-                     * @param LoadBalancerIds 要删除的负载均衡实例 ID数组，数组大小最大支持20。
+                     * @param _loadBalancerIds 要删除的负载均衡实例 ID数组，数组大小最大支持20。
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 

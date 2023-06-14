@@ -54,108 +54,126 @@ namespace TencentCloud
                     /**
                      * 获取暴露漏洞数量
                      * @return LeakNum 暴露漏洞数量
+                     * 
                      */
                     uint64_t GetLeakNum() const;
 
                     /**
                      * 设置暴露漏洞数量
-                     * @param LeakNum 暴露漏洞数量
+                     * @param _leakNum 暴露漏洞数量
+                     * 
                      */
                     void SetLeakNum(const uint64_t& _leakNum);
 
                     /**
                      * 判断参数 LeakNum 是否已赋值
                      * @return LeakNum 是否已赋值
+                     * 
                      */
                     bool LeakNumHasBeenSet() const;
 
                     /**
                      * 获取防护ip数量
                      * @return IPNum 防护ip数量
+                     * 
                      */
                     uint64_t GetIPNum() const;
 
                     /**
                      * 设置防护ip数量
-                     * @param IPNum 防护ip数量
+                     * @param _iPNum 防护ip数量
+                     * 
                      */
                     void SetIPNum(const uint64_t& _iPNum);
 
                     /**
                      * 判断参数 IPNum 是否已赋值
                      * @return IPNum 是否已赋值
+                     * 
                      */
                     bool IPNumHasBeenSet() const;
 
                     /**
                      * 获取暴露端口数量
                      * @return PortNum 暴露端口数量
+                     * 
                      */
                     uint64_t GetPortNum() const;
 
                     /**
                      * 设置暴露端口数量
-                     * @param PortNum 暴露端口数量
+                     * @param _portNum 暴露端口数量
+                     * 
                      */
                     void SetPortNum(const uint64_t& _portNum);
 
                     /**
                      * 判断参数 PortNum 是否已赋值
                      * @return PortNum 是否已赋值
+                     * 
                      */
                     bool PortNumHasBeenSet() const;
 
                     /**
                      * 获取是否开启防护
                      * @return IPStatus 是否开启防护
+                     * 
                      */
                     bool GetIPStatus() const;
 
                     /**
                      * 设置是否开启防护
-                     * @param IPStatus 是否开启防护
+                     * @param _iPStatus 是否开启防护
+                     * 
                      */
                     void SetIPStatus(const bool& _iPStatus);
 
                     /**
                      * 判断参数 IPStatus 是否已赋值
                      * @return IPStatus 是否已赋值
+                     * 
                      */
                     bool IPStatusHasBeenSet() const;
 
                     /**
                      * 获取是否拦截攻击
                      * @return IdpStatus 是否拦截攻击
+                     * 
                      */
                     bool GetIdpStatus() const;
 
                     /**
                      * 设置是否拦截攻击
-                     * @param IdpStatus 是否拦截攻击
+                     * @param _idpStatus 是否拦截攻击
+                     * 
                      */
                     void SetIdpStatus(const bool& _idpStatus);
 
                     /**
                      * 判断参数 IdpStatus 是否已赋值
                      * @return IdpStatus 是否已赋值
+                     * 
                      */
                     bool IdpStatusHasBeenSet() const;
 
                     /**
                      * 获取是否禁封端口
                      * @return BanStatus 是否禁封端口
+                     * 
                      */
                     bool GetBanStatus() const;
 
                     /**
                      * 设置是否禁封端口
-                     * @param BanStatus 是否禁封端口
+                     * @param _banStatus 是否禁封端口
+                     * 
                      */
                     void SetBanStatus(const bool& _banStatus);
 
                     /**
                      * 判断参数 BanStatus 是否已赋值
                      * @return BanStatus 是否已赋值
+                     * 
                      */
                     bool BanStatusHasBeenSet() const;
 

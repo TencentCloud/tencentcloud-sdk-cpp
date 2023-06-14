@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseDesc 发布时的备注信息填写。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReleaseDesc() const;
 
                     /**
                      * 设置发布时的备注信息填写。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReleaseDesc 发布时的备注信息填写。
+                     * @param _releaseDesc 发布时的备注信息填写。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReleaseDesc(const std::string& _releaseDesc);
 
                     /**
                      * 判断参数 ReleaseDesc 是否已赋值
                      * @return ReleaseDesc 是否已赋值
+                     * 
                      */
                     bool ReleaseDescHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseVersion 发布的版本id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReleaseVersion() const;
 
                     /**
                      * 设置发布的版本id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReleaseVersion 发布的版本id。
+                     * @param _releaseVersion 发布的版本id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReleaseVersion(const std::string& _releaseVersion);
 
                     /**
                      * 判断参数 ReleaseVersion 是否已赋值
                      * @return ReleaseVersion 是否已赋值
+                     * 
                      */
                     bool ReleaseVersionHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取条件任务结果(succ/fail)
                      * @return Result 条件任务结果(succ/fail)
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

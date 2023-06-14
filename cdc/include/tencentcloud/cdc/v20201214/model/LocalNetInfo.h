@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 协议
+                     * @param _protocol 协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 网络id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置网络id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcId 网络id
+                     * @param _vpcId 网络id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BGPRoute 路由信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBGPRoute() const;
 
                     /**
                      * 设置路由信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BGPRoute 路由信息
+                     * @param _bGPRoute 路由信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBGPRoute(const std::string& _bGPRoute);
 
                     /**
                      * 判断参数 BGPRoute 是否已赋值
                      * @return BGPRoute 是否已赋值
+                     * 
                      */
                     bool BGPRouteHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalIp 本地IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLocalIp() const;
 
                     /**
                      * 设置本地IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalIp 本地IP
+                     * @param _localIp 本地IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocalIp(const std::string& _localIp);
 
                     /**
                      * 判断参数 LocalIp 是否已赋值
                      * @return LocalIp 是否已赋值
+                     * 
                      */
                     bool LocalIpHasBeenSet() const;
 

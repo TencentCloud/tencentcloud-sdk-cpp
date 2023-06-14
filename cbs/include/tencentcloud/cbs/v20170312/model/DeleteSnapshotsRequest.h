@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。
                      * @return SnapshotIds 要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
                      * 设置要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。
-                     * @param SnapshotIds 要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * @param _snapshotIds 要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。
+                     * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
 
                     /**
                      * 判断参数 SnapshotIds 是否已赋值
                      * @return SnapshotIds 是否已赋值
+                     * 
                      */
                     bool SnapshotIdsHasBeenSet() const;
 
                     /**
                      * 获取是否强制删除快照关联的镜像
                      * @return DeleteBindImages 是否强制删除快照关联的镜像
+                     * 
                      */
                     bool GetDeleteBindImages() const;
 
                     /**
                      * 设置是否强制删除快照关联的镜像
-                     * @param DeleteBindImages 是否强制删除快照关联的镜像
+                     * @param _deleteBindImages 是否强制删除快照关联的镜像
+                     * 
                      */
                     void SetDeleteBindImages(const bool& _deleteBindImages);
 
                     /**
                      * 判断参数 DeleteBindImages 是否已赋值
                      * @return DeleteBindImages 是否已赋值
+                     * 
                      */
                     bool DeleteBindImagesHasBeenSet() const;
 

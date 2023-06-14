@@ -51,20 +51,23 @@ namespace TencentCloud
 “-1”：不一致
                      * @return RegNum “0“：一致
 “-1”：不一致
+                     * 
                      */
                     std::string GetRegNum() const;
 
                     /**
                      * 设置“0“：一致
 “-1”：不一致
-                     * @param RegNum “0“：一致
+                     * @param _regNum “0“：一致
 “-1”：不一致
+                     * 
                      */
                     void SetRegNum(const std::string& _regNum);
 
                     /**
                      * 判断参数 RegNum 是否已赋值
                      * @return RegNum 是否已赋值
+                     * 
                      */
                     bool RegNumHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
                      * @return Name “0“：一致
 “-1”：不一致
 “”：不验真
+                     * 
                      */
                     std::string GetName() const;
 
@@ -82,15 +86,17 @@ namespace TencentCloud
                      * 设置“0“：一致
 “-1”：不一致
 “”：不验真
-                     * @param Name “0“：一致
+                     * @param _name “0“：一致
 “-1”：不一致
 “”：不验真
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -101,6 +107,7 @@ namespace TencentCloud
                      * @return Address “0“：一致
 “-1”：不一致
 “”：不验真
+                     * 
                      */
                     std::string GetAddress() const;
 
@@ -108,15 +115,17 @@ namespace TencentCloud
                      * 设置“0“：一致
 “-1”：不一致
 “”：不验真
-                     * @param Address “0“：一致
+                     * @param _address “0“：一致
 “-1”：不一致
 “”：不验真
+                     * 
                      */
                     void SetAddress(const std::string& _address);
 
                     /**
                      * 判断参数 Address 是否已赋值
                      * @return Address 是否已赋值
+                     * 
                      */
                     bool AddressHasBeenSet() const;
 

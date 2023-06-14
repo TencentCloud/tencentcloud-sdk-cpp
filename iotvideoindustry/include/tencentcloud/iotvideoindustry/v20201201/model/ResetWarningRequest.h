@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取告警ID
                      * @return Id 告警ID
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置告警ID
-                     * @param Id 告警ID
+                     * @param _id 告警ID
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取Es中告警ID
                      * @return Index Es中告警ID
+                     * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置Es中告警ID
-                     * @param Index Es中告警ID
+                     * @param _index Es中告警ID
+                     * 
                      */
                     void SetIndex(const std::string& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 

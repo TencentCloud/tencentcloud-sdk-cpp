@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取语音字幕数组
                      * @return SubtitleItems 语音字幕数组
+                     * 
                      */
                     std::vector<SubtitleItem> GetSubtitleItems() const;
 
                     /**
                      * 设置语音字幕数组
-                     * @param SubtitleItems 语音字幕数组
+                     * @param _subtitleItems 语音字幕数组
+                     * 
                      */
                     void SetSubtitleItems(const std::vector<SubtitleItem>& _subtitleItems);
 
                     /**
                      * 判断参数 SubtitleItems 是否已赋值
                      * @return SubtitleItems 是否已赋值
+                     * 
                      */
                     bool SubtitleItemsHasBeenSet() const;
 

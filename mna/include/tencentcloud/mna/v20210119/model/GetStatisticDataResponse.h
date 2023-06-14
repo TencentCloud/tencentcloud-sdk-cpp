@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取文件地址url
                      * @return FilePath 文件地址url
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 

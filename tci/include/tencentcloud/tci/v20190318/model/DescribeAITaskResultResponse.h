@@ -49,60 +49,70 @@ namespace TencentCloud
                     /**
                      * 获取音频分析结果
                      * @return AudioResult 音频分析结果
+                     * 
                      */
                     StandardAudioResult GetAudioResult() const;
 
                     /**
                      * 判断参数 AudioResult 是否已赋值
                      * @return AudioResult 是否已赋值
+                     * 
                      */
                     bool AudioResultHasBeenSet() const;
 
                     /**
                      * 获取图像分析结果
                      * @return ImageResult 图像分析结果
+                     * 
                      */
                     StandardImageResult GetImageResult() const;
 
                     /**
                      * 判断参数 ImageResult 是否已赋值
                      * @return ImageResult 是否已赋值
+                     * 
                      */
                     bool ImageResultHasBeenSet() const;
 
                     /**
                      * 获取视频分析结果
                      * @return VideoResult 视频分析结果
+                     * 
                      */
                     StandardVideoResult GetVideoResult() const;
 
                     /**
                      * 判断参数 VideoResult 是否已赋值
                      * @return VideoResult 是否已赋值
+                     * 
                      */
                     bool VideoResultHasBeenSet() const;
 
                     /**
                      * 获取任务状态
                      * @return Status 任务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
                      * @return TaskId 任务唯一id。在URL方式时提交请求后会返回一个jobid，后续查询该url的结果时使用这个jobid进行查询。
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

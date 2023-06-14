@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取粒度数据
                      * @return Data 粒度数据
+                     * 
                      */
                     std::vector<TimestampData> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取粒度
                      * @return Interval 粒度
+                     * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 

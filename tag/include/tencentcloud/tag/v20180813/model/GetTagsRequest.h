@@ -47,20 +47,23 @@ namespace TencentCloud
 如果是第一次请求，设置为空。
                      * @return PaginationToken 从上一页的响应中获取的下一页的Token值。
 如果是第一次请求，设置为空。
+                     * 
                      */
                     std::string GetPaginationToken() const;
 
                     /**
                      * 设置从上一页的响应中获取的下一页的Token值。
 如果是第一次请求，设置为空。
-                     * @param PaginationToken 从上一页的响应中获取的下一页的Token值。
+                     * @param _paginationToken 从上一页的响应中获取的下一页的Token值。
 如果是第一次请求，设置为空。
+                     * 
                      */
                     void SetPaginationToken(const std::string& _paginationToken);
 
                     /**
                      * 判断参数 PaginationToken 是否已赋值
                      * @return PaginationToken 是否已赋值
+                     * 
                      */
                     bool PaginationTokenHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 缺省值：50。
                      * @return MaxResults 每一页返回的数据最大条数，最大1000。
 缺省值：50。
+                     * 
                      */
                     uint64_t GetMaxResults() const;
 
                     /**
                      * 设置每一页返回的数据最大条数，最大1000。
 缺省值：50。
-                     * @param MaxResults 每一页返回的数据最大条数，最大1000。
+                     * @param _maxResults 每一页返回的数据最大条数，最大1000。
 缺省值：50。
+                     * 
                      */
                     void SetMaxResults(const uint64_t& _maxResults);
 
                     /**
                      * 判断参数 MaxResults 是否已赋值
                      * @return MaxResults 是否已赋值
+                     * 
                      */
                     bool MaxResultsHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
                      * @return TagKeys 标签键。
 返回所有标签键列表对应的标签。
 最大长度：20
+                     * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
@@ -100,15 +107,17 @@ namespace TencentCloud
                      * 设置标签键。
 返回所有标签键列表对应的标签。
 最大长度：20
-                     * @param TagKeys 标签键。
+                     * @param _tagKeys 标签键。
 返回所有标签键列表对应的标签。
 最大长度：20
+                     * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
 
                     /**
                      * 判断参数 TagKeys 是否已赋值
                      * @return TagKeys 是否已赋值
+                     * 
                      */
                     bool TagKeysHasBeenSet() const;
 

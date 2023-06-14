@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取服务地址
                      * @return Server 服务地址
+                     * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置服务地址
-                     * @param Server 服务地址
+                     * @param _server 服务地址
+                     * 
                      */
                     void SetServer(const std::string& _server);
 
                     /**
                      * 判断参数 Server 是否已赋值
                      * @return Server 是否已赋值
+                     * 
                      */
                     bool ServerHasBeenSet() const;
 
                     /**
                      * 获取对应服务器路径
                      * @return ServerPath 对应服务器路径
+                     * 
                      */
                     std::string GetServerPath() const;
 
                     /**
                      * 设置对应服务器路径
-                     * @param ServerPath 对应服务器路径
+                     * @param _serverPath 对应服务器路径
+                     * 
                      */
                     void SetServerPath(const std::string& _serverPath);
 
                     /**
                      * 判断参数 ServerPath 是否已赋值
                      * @return ServerPath 是否已赋值
+                     * 
                      */
                     bool ServerPathHasBeenSet() const;
 
                     /**
                      * 获取对应本地路径
                      * @return Path 对应本地路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置对应本地路径
-                     * @param Path 对应本地路径
+                     * @param _path 对应本地路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 

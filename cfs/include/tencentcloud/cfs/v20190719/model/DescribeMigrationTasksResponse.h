@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取迁移任务的数量
                      * @return TotalCount 迁移任务的数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取迁移任务详情
                      * @return MigrationTasks 迁移任务详情
+                     * 
                      */
                     std::vector<MigrationTaskInfo> GetMigrationTasks() const;
 
                     /**
                      * 判断参数 MigrationTasks 是否已赋值
                      * @return MigrationTasks 是否已赋值
+                     * 
                      */
                     bool MigrationTasksHasBeenSet() const;
 

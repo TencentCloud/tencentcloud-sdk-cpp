@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extra 额外参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtra() const;
 
                     /**
                      * 判断参数 Extra 是否已赋值
                      * @return Extra 是否已赋值
+                     * 
                      */
                     bool ExtraHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 结果数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ApplyEmbedTokenInfo GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg 结果描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 

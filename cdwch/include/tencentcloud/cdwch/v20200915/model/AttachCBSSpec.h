@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取节点磁盘类型，例如“CLOUD_SSD”\"CLOUD_PREMIUM"
                      * @return DiskType 节点磁盘类型，例如“CLOUD_SSD”\"CLOUD_PREMIUM"
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置节点磁盘类型，例如“CLOUD_SSD”\"CLOUD_PREMIUM"
-                     * @param DiskType 节点磁盘类型，例如“CLOUD_SSD”\"CLOUD_PREMIUM"
+                     * @param _diskType 节点磁盘类型，例如“CLOUD_SSD”\"CLOUD_PREMIUM"
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取磁盘容量，单位G
                      * @return DiskSize 磁盘容量，单位G
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置磁盘容量，单位G
-                     * @param DiskSize 磁盘容量，单位G
+                     * @param _diskSize 磁盘容量，单位G
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
                     /**
                      * 获取磁盘总数
                      * @return DiskCount 磁盘总数
+                     * 
                      */
                     int64_t GetDiskCount() const;
 
                     /**
                      * 设置磁盘总数
-                     * @param DiskCount 磁盘总数
+                     * @param _diskCount 磁盘总数
+                     * 
                      */
                     void SetDiskCount(const int64_t& _diskCount);
 
                     /**
                      * 判断参数 DiskCount 是否已赋值
                      * @return DiskCount 是否已赋值
+                     * 
                      */
                     bool DiskCountHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return DiskDesc 描述
+                     * 
                      */
                     std::string GetDiskDesc() const;
 
                     /**
                      * 设置描述
-                     * @param DiskDesc 描述
+                     * @param _diskDesc 描述
+                     * 
                      */
                     void SetDiskDesc(const std::string& _diskDesc);
 
                     /**
                      * 判断参数 DiskDesc 是否已赋值
                      * @return DiskDesc 是否已赋值
+                     * 
                      */
                     bool DiskDescHasBeenSet() const;
 

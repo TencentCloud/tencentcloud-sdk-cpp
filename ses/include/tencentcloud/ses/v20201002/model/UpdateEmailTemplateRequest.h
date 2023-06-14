@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取模板内容
                      * @return TemplateContent 模板内容
+                     * 
                      */
                     TemplateContent GetTemplateContent() const;
 
                     /**
                      * 设置模板内容
-                     * @param TemplateContent 模板内容
+                     * @param _templateContent 模板内容
+                     * 
                      */
                     void SetTemplateContent(const TemplateContent& _templateContent);
 
                     /**
                      * 判断参数 TemplateContent 是否已赋值
                      * @return TemplateContent 是否已赋值
+                     * 
                      */
                     bool TemplateContentHasBeenSet() const;
 
                     /**
                      * 获取模板ID
                      * @return TemplateID 模板ID
+                     * 
                      */
                     uint64_t GetTemplateID() const;
 
                     /**
                      * 设置模板ID
-                     * @param TemplateID 模板ID
+                     * @param _templateID 模板ID
+                     * 
                      */
                     void SetTemplateID(const uint64_t& _templateID);
 
                     /**
                      * 判断参数 TemplateID 是否已赋值
                      * @return TemplateID 是否已赋值
+                     * 
                      */
                     bool TemplateIDHasBeenSet() const;
 
                     /**
                      * 获取模板名字
                      * @return TemplateName 模板名字
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模板名字
-                     * @param TemplateName 模板名字
+                     * @param _templateName 模板名字
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 

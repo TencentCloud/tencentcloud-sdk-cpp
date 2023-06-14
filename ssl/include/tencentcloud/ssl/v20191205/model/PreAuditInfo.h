@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPeriod 证书总年限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalPeriod() const;
 
                     /**
                      * 设置证书总年限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalPeriod 证书总年限
+                     * @param _totalPeriod 证书总年限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalPeriod(const int64_t& _totalPeriod);
 
                     /**
                      * 判断参数 TotalPeriod 是否已赋值
                      * @return TotalPeriod 是否已赋值
+                     * 
                      */
                     bool TotalPeriodHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NowPeriod 证书当前年限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNowPeriod() const;
 
                     /**
                      * 设置证书当前年限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NowPeriod 证书当前年限
+                     * @param _nowPeriod 证书当前年限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNowPeriod(const int64_t& _nowPeriod);
 
                     /**
                      * 判断参数 NowPeriod 是否已赋值
                      * @return NowPeriod 是否已赋值
+                     * 
                      */
                     bool NowPeriodHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagerId 证书预审核管理人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetManagerId() const;
 
                     /**
                      * 设置证书预审核管理人ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ManagerId 证书预审核管理人ID
+                     * @param _managerId 证书预审核管理人ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetManagerId(const std::string& _managerId);
 
                     /**
                      * 判断参数 ManagerId 是否已赋值
                      * @return ManagerId 是否已赋值
+                     * 
                      */
                     bool ManagerIdHasBeenSet() const;
 

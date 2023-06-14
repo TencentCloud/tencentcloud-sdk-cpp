@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取句子错误纠正信息
                      * @return Suggestions 句子错误纠正信息
+                     * 
                      */
                     std::vector<SentenceSuggest> GetSuggestions() const;
 
                     /**
                      * 设置句子错误纠正信息
-                     * @param Suggestions 句子错误纠正信息
+                     * @param _suggestions 句子错误纠正信息
+                     * 
                      */
                     void SetSuggestions(const std::vector<SentenceSuggest>& _suggestions);
 
                     /**
                      * 判断参数 Suggestions 是否已赋值
                      * @return Suggestions 是否已赋值
+                     * 
                      */
                     bool SuggestionsHasBeenSet() const;
 
                     /**
                      * 获取句子信息
                      * @return Sentence 句子信息
+                     * 
                      */
                     SentenceItem GetSentence() const;
 
                     /**
                      * 设置句子信息
-                     * @param Sentence 句子信息
+                     * @param _sentence 句子信息
+                     * 
                      */
                     void SetSentence(const SentenceItem& _sentence);
 
                     /**
                      * 判断参数 Sentence 是否已赋值
                      * @return Sentence 是否已赋值
+                     * 
                      */
                     bool SentenceHasBeenSet() const;
 

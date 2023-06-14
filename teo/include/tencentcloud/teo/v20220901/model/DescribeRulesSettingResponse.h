@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取规则引擎可应用匹配请求的设置列表及其详细建议配置信息。
                      * @return Actions 规则引擎可应用匹配请求的设置列表及其详细建议配置信息。
+                     * 
                      */
                     std::vector<RulesSettingAction> GetActions() const;
 
                     /**
                      * 判断参数 Actions 是否已赋值
                      * @return Actions 是否已赋值
+                     * 
                      */
                     bool ActionsHasBeenSet() const;
 

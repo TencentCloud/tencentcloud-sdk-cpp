@@ -55,198 +55,231 @@ namespace TencentCloud
                     /**
                      * 获取输入名称，可填大小写、数字和下划线，长度为[1, 32]。
                      * @return InputName 输入名称，可填大小写、数字和下划线，长度为[1, 32]。
+                     * 
                      */
                     std::string GetInputName() const;
 
                     /**
                      * 设置输入名称，可填大小写、数字和下划线，长度为[1, 32]。
-                     * @param InputName 输入名称，可填大小写、数字和下划线，长度为[1, 32]。
+                     * @param _inputName 输入名称，可填大小写、数字和下划线，长度为[1, 32]。
+                     * 
                      */
                     void SetInputName(const std::string& _inputName);
 
                     /**
                      * 判断参数 InputName 是否已赋值
                      * @return InputName 是否已赋值
+                     * 
                      */
                     bool InputNameHasBeenSet() const;
 
                     /**
                      * 获取输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
                      * @return Protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
-                     * @param Protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL]。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取输入描述，长度为[0, 255]。
                      * @return Description 输入描述，长度为[0, 255]。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置输入描述，长度为[0, 255]。
-                     * @param Description 输入描述，长度为[0, 255]。
+                     * @param _description 输入描述，长度为[0, 255]。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取输入的IP白名单，格式为CIDR。
                      * @return AllowIpList 输入的IP白名单，格式为CIDR。
+                     * 
                      */
                     std::vector<std::string> GetAllowIpList() const;
 
                     /**
                      * 设置输入的IP白名单，格式为CIDR。
-                     * @param AllowIpList 输入的IP白名单，格式为CIDR。
+                     * @param _allowIpList 输入的IP白名单，格式为CIDR。
+                     * 
                      */
                     void SetAllowIpList(const std::vector<std::string>& _allowIpList);
 
                     /**
                      * 判断参数 AllowIpList 是否已赋值
                      * @return AllowIpList 是否已赋值
+                     * 
                      */
                     bool AllowIpListHasBeenSet() const;
 
                     /**
                      * 获取输入的SRT配置信息。
                      * @return SRTSettings 输入的SRT配置信息。
+                     * 
                      */
                     CreateInputSRTSettings GetSRTSettings() const;
 
                     /**
                      * 设置输入的SRT配置信息。
-                     * @param SRTSettings 输入的SRT配置信息。
+                     * @param _sRTSettings 输入的SRT配置信息。
+                     * 
                      */
                     void SetSRTSettings(const CreateInputSRTSettings& _sRTSettings);
 
                     /**
                      * 判断参数 SRTSettings 是否已赋值
                      * @return SRTSettings 是否已赋值
+                     * 
                      */
                     bool SRTSettingsHasBeenSet() const;
 
                     /**
                      * 获取输入的RTP配置信息。
                      * @return RTPSettings 输入的RTP配置信息。
+                     * 
                      */
                     CreateInputRTPSettings GetRTPSettings() const;
 
                     /**
                      * 设置输入的RTP配置信息。
-                     * @param RTPSettings 输入的RTP配置信息。
+                     * @param _rTPSettings 输入的RTP配置信息。
+                     * 
                      */
                     void SetRTPSettings(const CreateInputRTPSettings& _rTPSettings);
 
                     /**
                      * 判断参数 RTPSettings 是否已赋值
                      * @return RTPSettings 是否已赋值
+                     * 
                      */
                     bool RTPSettingsHasBeenSet() const;
 
                     /**
                      * 获取输入的主备开关，可选[OPEN|CLOSE]，默认为CLOSE。
                      * @return FailOver 输入的主备开关，可选[OPEN|CLOSE]，默认为CLOSE。
+                     * 
                      */
                     std::string GetFailOver() const;
 
                     /**
                      * 设置输入的主备开关，可选[OPEN|CLOSE]，默认为CLOSE。
-                     * @param FailOver 输入的主备开关，可选[OPEN|CLOSE]，默认为CLOSE。
+                     * @param _failOver 输入的主备开关，可选[OPEN|CLOSE]，默认为CLOSE。
+                     * 
                      */
                     void SetFailOver(const std::string& _failOver);
 
                     /**
                      * 判断参数 FailOver 是否已赋值
                      * @return FailOver 是否已赋值
+                     * 
                      */
                     bool FailOverHasBeenSet() const;
 
                     /**
                      * 获取输入的RTMP_PULL配置信息。
                      * @return RTMPPullSettings 输入的RTMP_PULL配置信息。
+                     * 
                      */
                     CreateInputRTMPPullSettings GetRTMPPullSettings() const;
 
                     /**
                      * 设置输入的RTMP_PULL配置信息。
-                     * @param RTMPPullSettings 输入的RTMP_PULL配置信息。
+                     * @param _rTMPPullSettings 输入的RTMP_PULL配置信息。
+                     * 
                      */
                     void SetRTMPPullSettings(const CreateInputRTMPPullSettings& _rTMPPullSettings);
 
                     /**
                      * 判断参数 RTMPPullSettings 是否已赋值
                      * @return RTMPPullSettings 是否已赋值
+                     * 
                      */
                     bool RTMPPullSettingsHasBeenSet() const;
 
                     /**
                      * 获取输入的RTSP_PULL配置信息。
                      * @return RTSPPullSettings 输入的RTSP_PULL配置信息。
+                     * 
                      */
                     CreateInputRTSPPullSettings GetRTSPPullSettings() const;
 
                     /**
                      * 设置输入的RTSP_PULL配置信息。
-                     * @param RTSPPullSettings 输入的RTSP_PULL配置信息。
+                     * @param _rTSPPullSettings 输入的RTSP_PULL配置信息。
+                     * 
                      */
                     void SetRTSPPullSettings(const CreateInputRTSPPullSettings& _rTSPPullSettings);
 
                     /**
                      * 判断参数 RTSPPullSettings 是否已赋值
                      * @return RTSPPullSettings 是否已赋值
+                     * 
                      */
                     bool RTSPPullSettingsHasBeenSet() const;
 
                     /**
                      * 获取输入的HLS_PULL配置信息。
                      * @return HLSPullSettings 输入的HLS_PULL配置信息。
+                     * 
                      */
                     CreateInputHLSPullSettings GetHLSPullSettings() const;
 
                     /**
                      * 设置输入的HLS_PULL配置信息。
-                     * @param HLSPullSettings 输入的HLS_PULL配置信息。
+                     * @param _hLSPullSettings 输入的HLS_PULL配置信息。
+                     * 
                      */
                     void SetHLSPullSettings(const CreateInputHLSPullSettings& _hLSPullSettings);
 
                     /**
                      * 判断参数 HLSPullSettings 是否已赋值
                      * @return HLSPullSettings 是否已赋值
+                     * 
                      */
                     bool HLSPullSettingsHasBeenSet() const;
 
                     /**
                      * 获取延播平滑吐流配置信息。
                      * @return ResilientStream 延播平滑吐流配置信息。
+                     * 
                      */
                     ResilientStreamConf GetResilientStream() const;
 
                     /**
                      * 设置延播平滑吐流配置信息。
-                     * @param ResilientStream 延播平滑吐流配置信息。
+                     * @param _resilientStream 延播平滑吐流配置信息。
+                     * 
                      */
                     void SetResilientStream(const ResilientStreamConf& _resilientStream);
 
                     /**
                      * 判断参数 ResilientStream 是否已赋值
                      * @return ResilientStream 是否已赋值
+                     * 
                      */
                     bool ResilientStreamHasBeenSet() const;
 

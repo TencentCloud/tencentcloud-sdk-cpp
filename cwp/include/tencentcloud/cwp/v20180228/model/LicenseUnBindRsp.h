@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取QUUID 云服务器uuid,轻量服务器uuid,边缘计算 uuid
                      * @return Quuid QUUID 云服务器uuid,轻量服务器uuid,边缘计算 uuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置QUUID 云服务器uuid,轻量服务器uuid,边缘计算 uuid
-                     * @param Quuid QUUID 云服务器uuid,轻量服务器uuid,边缘计算 uuid
+                     * @param _quuid QUUID 云服务器uuid,轻量服务器uuid,边缘计算 uuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return ErrMsg 失败原因
+                     * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置失败原因
-                     * @param ErrMsg 失败原因
+                     * @param _errMsg 失败原因
+                     * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
 
                     /**
                      * 判断参数 ErrMsg 是否已赋值
                      * @return ErrMsg 是否已赋值
+                     * 
                      */
                     bool ErrMsgHasBeenSet() const;
 

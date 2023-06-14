@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FundSummaryAcctNo STRING(50)，资金汇总账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFundSummaryAcctNo() const;
 
                     /**
                      * 设置STRING(50)，资金汇总账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FundSummaryAcctNo STRING(50)，资金汇总账号
+                     * @param _fundSummaryAcctNo STRING(50)，资金汇总账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFundSummaryAcctNo(const std::string& _fundSummaryAcctNo);
 
                     /**
                      * 判断参数 FundSummaryAcctNo 是否已赋值
                      * @return FundSummaryAcctNo 是否已赋值
+                     * 
                      */
                     bool FundSummaryAcctNoHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAcctNo STRING(50)，见证子账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubAcctNo() const;
 
                     /**
                      * 设置STRING(50)，见证子账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubAcctNo STRING(50)，见证子账户的账号
+                     * @param _subAcctNo STRING(50)，见证子账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubAcctNo(const std::string& _subAcctNo);
 
                     /**
                      * 判断参数 SubAcctNo 是否已赋值
                      * @return SubAcctNo 是否已赋值
+                     * 
                      */
                     bool SubAcctNoHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranNetMemberCode STRING(32)，交易网会员代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTranNetMemberCode() const;
 
                     /**
                      * 设置STRING(32)，交易网会员代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TranNetMemberCode STRING(32)，交易网会员代码
+                     * @param _tranNetMemberCode STRING(32)，交易网会员代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTranNetMemberCode(const std::string& _tranNetMemberCode);
 
                     /**
                      * 判断参数 TranNetMemberCode 是否已赋值
                      * @return TranNetMemberCode 是否已赋值
+                     * 
                      */
                     bool TranNetMemberCodeHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberName STRING(150)，会员名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberName() const;
 
                     /**
                      * 设置STRING(150)，会员名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberName STRING(150)，会员名称
+                     * @param _memberName STRING(150)，会员名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberName(const std::string& _memberName);
 
                     /**
                      * 判断参数 MemberName 是否已赋值
                      * @return MemberName 是否已赋值
+                     * 
                      */
                     bool MemberNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberGlobalType STRING(5)，会员证件类型（详情见“常见问题”）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberGlobalType() const;
 
                     /**
                      * 设置STRING(5)，会员证件类型（详情见“常见问题”）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberGlobalType STRING(5)，会员证件类型（详情见“常见问题”）
+                     * @param _memberGlobalType STRING(5)，会员证件类型（详情见“常见问题”）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberGlobalType(const std::string& _memberGlobalType);
 
                     /**
                      * 判断参数 MemberGlobalType 是否已赋值
                      * @return MemberGlobalType 是否已赋值
+                     * 
                      */
                     bool MemberGlobalTypeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberGlobalId STRING(32)，会员证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberGlobalId() const;
 
                     /**
                      * 设置STRING(32)，会员证件号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberGlobalId STRING(32)，会员证件号码
+                     * @param _memberGlobalId STRING(32)，会员证件号码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberGlobalId(const std::string& _memberGlobalId);
 
                     /**
                      * 判断参数 MemberGlobalId 是否已赋值
                      * @return MemberGlobalId 是否已赋值
+                     * 
                      */
                     bool MemberGlobalIdHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberAcctNo STRING(50)，会员绑定账户的账号（提现的银行卡）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMemberAcctNo() const;
 
                     /**
                      * 设置STRING(50)，会员绑定账户的账号（提现的银行卡）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemberAcctNo STRING(50)，会员绑定账户的账号（提现的银行卡）
+                     * @param _memberAcctNo STRING(50)，会员绑定账户的账号（提现的银行卡）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemberAcctNo(const std::string& _memberAcctNo);
 
                     /**
                      * 判断参数 MemberAcctNo 是否已赋值
                      * @return MemberAcctNo 是否已赋值
+                     * 
                      */
                     bool MemberAcctNoHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BankType STRING(10)，会员绑定账户的本他行类型（1: 本行; 2: 他行）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBankType() const;
 
                     /**
                      * 设置STRING(10)，会员绑定账户的本他行类型（1: 本行; 2: 他行）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BankType STRING(10)，会员绑定账户的本他行类型（1: 本行; 2: 他行）
+                     * @param _bankType STRING(10)，会员绑定账户的本他行类型（1: 本行; 2: 他行）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBankType(const std::string& _bankType);
 
                     /**
                      * 判断参数 BankType 是否已赋值
                      * @return BankType 是否已赋值
+                     * 
                      */
                     bool BankTypeHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AcctOpenBranchName STRING(150)，会员绑定账户的开户行名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAcctOpenBranchName() const;
 
                     /**
                      * 设置STRING(150)，会员绑定账户的开户行名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AcctOpenBranchName STRING(150)，会员绑定账户的开户行名称
+                     * @param _acctOpenBranchName STRING(150)，会员绑定账户的开户行名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAcctOpenBranchName(const std::string& _acctOpenBranchName);
 
                     /**
                      * 判断参数 AcctOpenBranchName 是否已赋值
                      * @return AcctOpenBranchName 是否已赋值
+                     * 
                      */
                     bool AcctOpenBranchNameHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CnapsBranchId STRING(20)，会员绑定账户的开户行的联行号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCnapsBranchId() const;
 
                     /**
                      * 设置STRING(20)，会员绑定账户的开户行的联行号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CnapsBranchId STRING(20)，会员绑定账户的开户行的联行号
+                     * @param _cnapsBranchId STRING(20)，会员绑定账户的开户行的联行号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCnapsBranchId(const std::string& _cnapsBranchId);
 
                     /**
                      * 判断参数 CnapsBranchId 是否已赋值
                      * @return CnapsBranchId 是否已赋值
+                     * 
                      */
                     bool CnapsBranchIdHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EiconBankBranchId STRING(20)，会员绑定账户的开户行的超级网银行号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEiconBankBranchId() const;
 
                     /**
                      * 设置STRING(20)，会员绑定账户的开户行的超级网银行号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EiconBankBranchId STRING(20)，会员绑定账户的开户行的超级网银行号
+                     * @param _eiconBankBranchId STRING(20)，会员绑定账户的开户行的超级网银行号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEiconBankBranchId(const std::string& _eiconBankBranchId);
 
                     /**
                      * 判断参数 EiconBankBranchId 是否已赋值
                      * @return EiconBankBranchId 是否已赋值
+                     * 
                      */
                     bool EiconBankBranchIdHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobile STRING(30)，会员的手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置STRING(30)，会员的手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mobile STRING(30)，会员的手机号
+                     * @param _mobile STRING(30)，会员的手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMobile(const std::string& _mobile);
 
                     /**
                      * 判断参数 Mobile 是否已赋值
                      * @return Mobile 是否已赋值
+                     * 
                      */
                     bool MobileHasBeenSet() const;
 

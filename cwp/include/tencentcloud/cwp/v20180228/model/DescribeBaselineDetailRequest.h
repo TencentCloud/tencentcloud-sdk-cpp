@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取基线id
                      * @return BaselineId 基线id
+                     * 
                      */
                     uint64_t GetBaselineId() const;
 
                     /**
                      * 设置基线id
-                     * @param BaselineId 基线id
+                     * @param _baselineId 基线id
+                     * 
                      */
                     void SetBaselineId(const uint64_t& _baselineId);
 
                     /**
                      * 判断参数 BaselineId 是否已赋值
                      * @return BaselineId 是否已赋值
+                     * 
                      */
                     bool BaselineIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取检查结果。true为可以创建默认子网，false为不可以创建默认子网。
                      * @return Result 检查结果。true为可以创建默认子网，false为不可以创建默认子网。
+                     * 
                      */
                     bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

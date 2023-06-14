@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取查询框架，必选
                      * @return Instance 查询框架，必选
+                     * 
                      */
                     SearchConditionInstance GetInstance() const;
 
                     /**
                      * 设置查询框架，必选
-                     * @param Instance 查询框架，必选
+                     * @param _instance 查询框架，必选
+                     * 
                      */
                     void SetInstance(const SearchConditionInstance& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
                      * @return Instance 是否已赋值
+                     * 
                      */
                     bool InstanceHasBeenSet() const;
 
                     /**
                      * 获取查询关键字（任务Id精确匹配，任务名称模糊匹配），可选
                      * @return Keyword 查询关键字（任务Id精确匹配，任务名称模糊匹配），可选
+                     * 
                      */
                     std::string GetKeyword() const;
 
                     /**
                      * 设置查询关键字（任务Id精确匹配，任务名称模糊匹配），可选
-                     * @param Keyword 查询关键字（任务Id精确匹配，任务名称模糊匹配），可选
+                     * @param _keyword 查询关键字（任务Id精确匹配，任务名称模糊匹配），可选
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 
                     /**
                      * 获取排序顺序（asc，desc）
                      * @return Sort 排序顺序（asc，desc）
+                     * 
                      */
                     std::string GetSort() const;
 
                     /**
                      * 设置排序顺序（asc，desc）
-                     * @param Sort 排序顺序（asc，desc）
+                     * @param _sort 排序顺序（asc，desc）
+                     * 
                      */
                     void SetSort(const std::string& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
                     /**
                      * 获取排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）
                      * @return SortCol 排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）
+                     * 
                      */
                     std::string GetSortCol() const;
 
                     /**
                      * 设置排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）
-                     * @param SortCol 排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）
+                     * @param _sortCol 排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）
+                     * 
                      */
                     void SetSortCol(const std::string& _sortCol);
 
                     /**
                      * 判断参数 SortCol 是否已赋值
                      * @return SortCol 是否已赋值
+                     * 
                      */
                     bool SortColHasBeenSet() const;
 

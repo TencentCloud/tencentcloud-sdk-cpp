@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return StartTime 起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
-                     * @param StartTime 起始时间点，接口查询支持两种时间格式：
+                     * @param _startTime 起始时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 起始和结束时间跨度不支持超过31天。支持最近31天的数据查询
+                     * 
                      */
                     std::string GetEndTime() const;
 
@@ -85,34 +89,39 @@ namespace TencentCloud
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 起始和结束时间跨度不支持超过31天。支持最近31天的数据查询
-                     * @param EndTime 结束时间点，接口查询支持两种时间格式：
+                     * @param _endTime 结束时间点，接口查询支持两种时间格式：
 1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
 2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。
 起始和结束时间跨度不支持超过31天。支持最近31天的数据查询
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取直播域名，若不填，表示总体数据。
                      * @return Domains 直播域名，若不填，表示总体数据。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置直播域名，若不填，表示总体数据。
-                     * @param Domains 直播域名，若不填，表示总体数据。
+                     * @param _domains 直播域名，若不填，表示总体数据。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
@@ -125,6 +134,7 @@ namespace TencentCloud
 5：5分钟粒度，（跨度不支持超过1天），
 1440：天粒度（跨度不支持超过一个月）。
 默认值：5。
+                     * 
                      */
                     uint64_t GetGranularity() const;
 
@@ -133,16 +143,18 @@ namespace TencentCloud
 5：5分钟粒度，（跨度不支持超过1天），
 1440：天粒度（跨度不支持超过一个月）。
 默认值：5。
-                     * @param Granularity 数据粒度，支持如下粒度：
+                     * @param _granularity 数据粒度，支持如下粒度：
 5：5分钟粒度，（跨度不支持超过1天），
 1440：天粒度（跨度不支持超过一个月）。
 默认值：5。
+                     * 
                      */
                     void SetGranularity(const uint64_t& _granularity);
 
                     /**
                      * 判断参数 Granularity 是否已赋值
                      * @return Granularity 是否已赋值
+                     * 
                      */
                     bool GranularityHasBeenSet() const;
 

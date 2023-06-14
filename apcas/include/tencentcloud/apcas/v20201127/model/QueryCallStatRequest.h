@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取请求类型 1:人群特征洞察统计 2:购车意向预测统计
                      * @return Type 请求类型 1:人群特征洞察统计 2:购车意向预测统计
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置请求类型 1:人群特征洞察统计 2:购车意向预测统计
-                     * @param Type 请求类型 1:人群特征洞察统计 2:购车意向预测统计
+                     * @param _type 请求类型 1:人群特征洞察统计 2:购车意向预测统计
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取开始时间戳（毫秒）
                      * @return StartTime 开始时间戳（毫秒）
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间戳（毫秒）
-                     * @param StartTime 开始时间戳（毫秒）
+                     * @param _startTime 开始时间戳（毫秒）
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳（毫秒）
                      * @return EndTime 结束时间戳（毫秒）
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间戳（毫秒）
-                     * @param EndTime 结束时间戳（毫秒）
+                     * @param _endTime 结束时间戳（毫秒）
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

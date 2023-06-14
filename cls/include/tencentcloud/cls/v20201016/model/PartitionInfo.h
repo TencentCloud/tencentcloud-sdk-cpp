@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取分区ID
                      * @return PartitionId 分区ID
+                     * 
                      */
                     int64_t GetPartitionId() const;
 
                     /**
                      * 设置分区ID
-                     * @param PartitionId 分区ID
+                     * @param _partitionId 分区ID
+                     * 
                      */
                     void SetPartitionId(const int64_t& _partitionId);
 
                     /**
                      * 判断参数 PartitionId 是否已赋值
                      * @return PartitionId 是否已赋值
+                     * 
                      */
                     bool PartitionIdHasBeenSet() const;
 
                     /**
                      * 获取分区的状态（readwrite或者是readonly）
                      * @return Status 分区的状态（readwrite或者是readonly）
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置分区的状态（readwrite或者是readonly）
-                     * @param Status 分区的状态（readwrite或者是readonly）
+                     * @param _status 分区的状态（readwrite或者是readonly）
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取分区哈希键起始key
                      * @return InclusiveBeginKey 分区哈希键起始key
+                     * 
                      */
                     std::string GetInclusiveBeginKey() const;
 
                     /**
                      * 设置分区哈希键起始key
-                     * @param InclusiveBeginKey 分区哈希键起始key
+                     * @param _inclusiveBeginKey 分区哈希键起始key
+                     * 
                      */
                     void SetInclusiveBeginKey(const std::string& _inclusiveBeginKey);
 
                     /**
                      * 判断参数 InclusiveBeginKey 是否已赋值
                      * @return InclusiveBeginKey 是否已赋值
+                     * 
                      */
                     bool InclusiveBeginKeyHasBeenSet() const;
 
                     /**
                      * 获取分区哈希键结束key
                      * @return ExclusiveEndKey 分区哈希键结束key
+                     * 
                      */
                     std::string GetExclusiveEndKey() const;
 
                     /**
                      * 设置分区哈希键结束key
-                     * @param ExclusiveEndKey 分区哈希键结束key
+                     * @param _exclusiveEndKey 分区哈希键结束key
+                     * 
                      */
                     void SetExclusiveEndKey(const std::string& _exclusiveEndKey);
 
                     /**
                      * 判断参数 ExclusiveEndKey 是否已赋值
                      * @return ExclusiveEndKey 是否已赋值
+                     * 
                      */
                     bool ExclusiveEndKeyHasBeenSet() const;
 
                     /**
                      * 获取分区创建时间
                      * @return CreateTime 分区创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置分区创建时间
-                     * @param CreateTime 分区创建时间
+                     * @param _createTime 分区创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastWriteTime 只读分区数据停止写入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLastWriteTime() const;
 
                     /**
                      * 设置只读分区数据停止写入时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastWriteTime 只读分区数据停止写入时间
+                     * @param _lastWriteTime 只读分区数据停止写入时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastWriteTime(const std::string& _lastWriteTime);
 
                     /**
                      * 判断参数 LastWriteTime 是否已赋值
                      * @return LastWriteTime 是否已赋值
+                     * 
                      */
                     bool LastWriteTimeHasBeenSet() const;
 

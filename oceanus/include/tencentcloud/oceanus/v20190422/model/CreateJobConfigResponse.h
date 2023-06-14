@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取作业配置版本号
                      * @return Version 作业配置版本号
+                     * 
                      */
                     uint64_t GetVersion() const;
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 

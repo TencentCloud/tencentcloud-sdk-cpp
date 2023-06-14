@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取`HAVIP`唯一`ID`，形如：`havip-9o233uri`。
                      * @return HaVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * 
                      */
                     std::string GetHaVipId() const;
 
                     /**
                      * 设置`HAVIP`唯一`ID`，形如：`havip-9o233uri`。
-                     * @param HaVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * @param _haVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * 
                      */
                     void SetHaVipId(const std::string& _haVipId);
 
                     /**
                      * 判断参数 HaVipId 是否已赋值
                      * @return HaVipId 是否已赋值
+                     * 
                      */
                     bool HaVipIdHasBeenSet() const;
 
                     /**
                      * 获取`HAVIP`名称，可任意命名，但不得超过60个字符。
                      * @return HaVipName `HAVIP`名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetHaVipName() const;
 
                     /**
                      * 设置`HAVIP`名称，可任意命名，但不得超过60个字符。
-                     * @param HaVipName `HAVIP`名称，可任意命名，但不得超过60个字符。
+                     * @param _haVipName `HAVIP`名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetHaVipName(const std::string& _haVipName);
 
                     /**
                      * 判断参数 HaVipName 是否已赋值
                      * @return HaVipName 是否已赋值
+                     * 
                      */
                     bool HaVipNameHasBeenSet() const;
 

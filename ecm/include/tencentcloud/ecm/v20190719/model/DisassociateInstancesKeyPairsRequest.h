@@ -49,6 +49,7 @@ namespace TencentCloud
                      * @return InstanceIds 可以通过以下方式获取可用的实例ID：
 通过登录控制台查询实例ID。
 通过调用接口 DescribeInstances ，取返回信息中的 InstanceId 获取实例ID。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
@@ -56,15 +57,17 @@ namespace TencentCloud
                      * 设置可以通过以下方式获取可用的实例ID：
 通过登录控制台查询实例ID。
 通过调用接口 DescribeInstances ，取返回信息中的 InstanceId 获取实例ID。
-                     * @param InstanceIds 可以通过以下方式获取可用的实例ID：
+                     * @param _instanceIds 可以通过以下方式获取可用的实例ID：
 通过登录控制台查询实例ID。
 通过调用接口 DescribeInstances ，取返回信息中的 InstanceId 获取实例ID。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
 可以通过以下方式获取可用的密钥ID：
 通过登录控制台查询密钥ID。
 通过调用接口 DescribeKeyPairs ，取返回信息中的 KeyId 获取密钥对ID。
+                     * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
@@ -88,17 +92,19 @@ namespace TencentCloud
 可以通过以下方式获取可用的密钥ID：
 通过登录控制台查询密钥ID。
 通过调用接口 DescribeKeyPairs ，取返回信息中的 KeyId 获取密钥对ID。
-                     * @param KeyIds 密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：skey-11112222。
+                     * @param _keyIds 密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：skey-11112222。
 
 可以通过以下方式获取可用的密钥ID：
 通过登录控制台查询密钥ID。
 通过调用接口 DescribeKeyPairs ，取返回信息中的 KeyId 获取密钥对ID。
+                     * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
 
                     /**
                      * 判断参数 KeyIds 是否已赋值
                      * @return KeyIds 是否已赋值
+                     * 
                      */
                     bool KeyIdsHasBeenSet() const;
 
@@ -113,6 +119,7 @@ TRUE：表示在正常关机失败后进行强制关机。
 FALSE：表示在正常关机失败后不进行强制关机。
 
 默认取值：FALSE。
+                     * 
                      */
                     bool GetForceStop() const;
 
@@ -122,17 +129,19 @@ TRUE：表示在正常关机失败后进行强制关机。
 FALSE：表示在正常关机失败后不进行强制关机。
 
 默认取值：FALSE。
-                     * @param ForceStop 是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：
+                     * @param _forceStop 是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：
 TRUE：表示在正常关机失败后进行强制关机。
 FALSE：表示在正常关机失败后不进行强制关机。
 
 默认取值：FALSE。
+                     * 
                      */
                     void SetForceStop(const bool& _forceStop);
 
                     /**
                      * 判断参数 ForceStop 是否已赋值
                      * @return ForceStop 是否已赋值
+                     * 
                      */
                     bool ForceStopHasBeenSet() const;
 

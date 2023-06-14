@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取环境名
                      * @return EnvironmentName 环境名
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置环境名
-                     * @param EnvironmentName 环境名
+                     * @param _environmentName 环境名
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取限流值
                      * @return Quota 限流值
+                     * 
                      */
                     int64_t GetQuota() const;
 
                     /**
                      * 设置限流值
-                     * @param Quota 限流值
+                     * @param _quota 限流值
+                     * 
                      */
                     void SetQuota(const int64_t& _quota);
 
                     /**
                      * 判断参数 Quota 是否已赋值
                      * @return Quota 是否已赋值
+                     * 
                      */
                     bool QuotaHasBeenSet() const;
 

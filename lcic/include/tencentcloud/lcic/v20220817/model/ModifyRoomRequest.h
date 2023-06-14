@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取房间ID。
                      * @return RoomId 房间ID。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间ID。
-                     * @param RoomId 房间ID。
+                     * @param _roomId 房间ID。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取低代码互动课堂的SdkAppId
                      * @return SdkAppId 低代码互动课堂的SdkAppId
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId
-                     * @param SdkAppId 低代码互动课堂的SdkAppId
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取预定的房间开始时间，unix时间戳。直播开始后不允许修改。
                      * @return StartTime 预定的房间开始时间，unix时间戳。直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置预定的房间开始时间，unix时间戳。直播开始后不允许修改。
-                     * @param StartTime 预定的房间开始时间，unix时间戳。直播开始后不允许修改。
+                     * @param _startTime 预定的房间开始时间，unix时间戳。直播开始后不允许修改。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取预定的房间结束时间，unix时间戳。直播开始后不允许修改。
                      * @return EndTime 预定的房间结束时间，unix时间戳。直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置预定的房间结束时间，unix时间戳。直播开始后不允许修改。
-                     * @param EndTime 预定的房间结束时间，unix时间戳。直播开始后不允许修改。
+                     * @param _endTime 预定的房间结束时间，unix时间戳。直播开始后不允许修改。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取老师ID。直播开始后不允许修改。
                      * @return TeacherId 老师ID。直播开始后不允许修改。
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置老师ID。直播开始后不允许修改。
-                     * @param TeacherId 老师ID。直播开始后不允许修改。
+                     * @param _teacherId 老师ID。直播开始后不允许修改。
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
                     /**
                      * 获取房间名称。
                      * @return Name 房间名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置房间名称。
-                     * @param Name 房间名称。
+                     * @param _name 房间名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -161,6 +179,7 @@ namespace TencentCloud
 2 高清
 3 全高清
 直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetResolution() const;
 
@@ -170,17 +189,19 @@ namespace TencentCloud
 2 高清
 3 全高清
 直播开始后不允许修改。
-                     * @param Resolution 分辨率。可以有如下取值：
+                     * @param _resolution 分辨率。可以有如下取值：
 1 标清
 2 高清
 3 全高清
 直播开始后不允许修改。
+                     * 
                      */
                     void SetResolution(const uint64_t& _resolution);
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
@@ -189,20 +210,23 @@ namespace TencentCloud
 直播开始后不允许修改。
                      * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
 直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
                      * 设置最大连麦人数（不包括老师）。取值范围[0, 17)
 直播开始后不允许修改。
-                     * @param MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
+                     * @param _maxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
 直播开始后不允许修改。
+                     * 
                      */
                     void SetMaxMicNumber(const uint64_t& _maxMicNumber);
 
                     /**
                      * 判断参数 MaxMicNumber 是否已赋值
                      * @return MaxMicNumber 是否已赋值
+                     * 
                      */
                     bool MaxMicNumberHasBeenSet() const;
 
@@ -215,6 +239,7 @@ namespace TencentCloud
 0 不自动连麦（默认值）
 1 自动连麦
 直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetAutoMic() const;
 
@@ -223,16 +248,18 @@ namespace TencentCloud
 0 不自动连麦（默认值）
 1 自动连麦
 直播开始后不允许修改。
-                     * @param AutoMic 进入房间时是否自动连麦。可以有以下取值：
+                     * @param _autoMic 进入房间时是否自动连麦。可以有以下取值：
 0 不自动连麦（默认值）
 1 自动连麦
 直播开始后不允许修改。
+                     * 
                      */
                     void SetAutoMic(const uint64_t& _autoMic);
 
                     /**
                      * 判断参数 AutoMic 是否已赋值
                      * @return AutoMic 是否已赋值
+                     * 
                      */
                     bool AutoMicHasBeenSet() const;
 
@@ -245,6 +272,7 @@ namespace TencentCloud
 0 不开启高音质（默认值）
 1 开启高音质
 直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetAudioQuality() const;
 
@@ -253,16 +281,18 @@ namespace TencentCloud
 0 不开启高音质（默认值）
 1 开启高音质
 直播开始后不允许修改。
-                     * @param AudioQuality 高音质模式。可以有以下取值：
+                     * @param _audioQuality 高音质模式。可以有以下取值：
 0 不开启高音质（默认值）
 1 开启高音质
 直播开始后不允许修改。
+                     * 
                      */
                     void SetAudioQuality(const uint64_t& _audioQuality);
 
                     /**
                      * 判断参数 AudioQuality 是否已赋值
                      * @return AudioQuality 是否已赋值
+                     * 
                      */
                     bool AudioQualityHasBeenSet() const;
 
@@ -277,6 +307,7 @@ videodoc 文档+视频
 video 纯视频
 coteaching 双师
 直播开始后不允许修改。
+                     * 
                      */
                     std::string GetSubType() const;
 
@@ -286,17 +317,19 @@ videodoc 文档+视频
 video 纯视频
 coteaching 双师
 直播开始后不允许修改。
-                     * @param SubType 房间子类型，可以有以下取值：
+                     * @param _subType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
 coteaching 双师
 直播开始后不允许修改。
+                     * 
                      */
                     void SetSubType(const std::string& _subType);
 
                     /**
                      * 判断参数 SubType 是否已赋值
                      * @return SubType 是否已赋值
+                     * 
                      */
                     bool SubTypeHasBeenSet() const;
 
@@ -309,6 +342,7 @@ coteaching 双师
 0 不禁止录制（默认值）
 1 禁止录制
 直播开始后不允许修改。
+                     * 
                      */
                     uint64_t GetDisableRecord() const;
 
@@ -317,70 +351,81 @@ coteaching 双师
 0 不禁止录制（默认值）
 1 禁止录制
 直播开始后不允许修改。
-                     * @param DisableRecord 禁止录制。可以有以下取值：
+                     * @param _disableRecord 禁止录制。可以有以下取值：
 0 不禁止录制（默认值）
 1 禁止录制
 直播开始后不允许修改。
+                     * 
                      */
                     void SetDisableRecord(const uint64_t& _disableRecord);
 
                     /**
                      * 判断参数 DisableRecord 是否已赋值
                      * @return DisableRecord 是否已赋值
+                     * 
                      */
                     bool DisableRecordHasBeenSet() const;
 
                     /**
                      * 获取助教Id列表。直播开始后不允许修改。
                      * @return Assistants 助教Id列表。直播开始后不允许修改。
+                     * 
                      */
                     std::vector<std::string> GetAssistants() const;
 
                     /**
                      * 设置助教Id列表。直播开始后不允许修改。
-                     * @param Assistants 助教Id列表。直播开始后不允许修改。
+                     * @param _assistants 助教Id列表。直播开始后不允许修改。
+                     * 
                      */
                     void SetAssistants(const std::vector<std::string>& _assistants);
 
                     /**
                      * 判断参数 Assistants 是否已赋值
                      * @return Assistants 是否已赋值
+                     * 
                      */
                     bool AssistantsHasBeenSet() const;
 
                     /**
                      * 获取房间绑定的群组ID
                      * @return GroupId 房间绑定的群组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置房间绑定的群组ID
-                     * @param GroupId 房间绑定的群组ID
+                     * @param _groupId 房间绑定的群组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取打开学生麦克风/摄像头的授权开关
                      * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 
                      */
                     uint64_t GetEnableDirectControl() const;
 
                     /**
                      * 设置打开学生麦克风/摄像头的授权开关
-                     * @param EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * @param _enableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 
                      */
                     void SetEnableDirectControl(const uint64_t& _enableDirectControl);
 
                     /**
                      * 判断参数 EnableDirectControl 是否已赋值
                      * @return EnableDirectControl 是否已赋值
+                     * 
                      */
                     bool EnableDirectControlHasBeenSet() const;
 

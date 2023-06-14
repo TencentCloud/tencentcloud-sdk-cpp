@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取快照 ID, 可通过 DescribeSnapshots 查询。
                      * @return SnapshotId 快照 ID, 可通过 DescribeSnapshots 查询。
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置快照 ID, 可通过 DescribeSnapshots 查询。
-                     * @param SnapshotId 快照 ID, 可通过 DescribeSnapshots 查询。
+                     * @param _snapshotId 快照 ID, 可通过 DescribeSnapshots 查询。
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取新的快照名称，最长为 60 个字符。
                      * @return SnapshotName 新的快照名称，最长为 60 个字符。
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置新的快照名称，最长为 60 个字符。
-                     * @param SnapshotName 新的快照名称，最长为 60 个字符。
+                     * @param _snapshotName 新的快照名称，最长为 60 个字符。
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 

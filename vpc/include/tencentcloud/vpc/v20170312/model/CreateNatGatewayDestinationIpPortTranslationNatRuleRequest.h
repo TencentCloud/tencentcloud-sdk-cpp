@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关的ID，形如：`nat-df45454`。
                      * @return NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关的ID，形如：`nat-df45454`。
-                     * @param NatGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * @param _natGatewayId NAT网关的ID，形如：`nat-df45454`。
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关的端口转换规则。
                      * @return DestinationIpPortTranslationNatRules NAT网关的端口转换规则。
+                     * 
                      */
                     std::vector<DestinationIpPortTranslationNatRule> GetDestinationIpPortTranslationNatRules() const;
 
                     /**
                      * 设置NAT网关的端口转换规则。
-                     * @param DestinationIpPortTranslationNatRules NAT网关的端口转换规则。
+                     * @param _destinationIpPortTranslationNatRules NAT网关的端口转换规则。
+                     * 
                      */
                     void SetDestinationIpPortTranslationNatRules(const std::vector<DestinationIpPortTranslationNatRule>& _destinationIpPortTranslationNatRules);
 
                     /**
                      * 判断参数 DestinationIpPortTranslationNatRules 是否已赋值
                      * @return DestinationIpPortTranslationNatRules 是否已赋值
+                     * 
                      */
                     bool DestinationIpPortTranslationNatRulesHasBeenSet() const;
 

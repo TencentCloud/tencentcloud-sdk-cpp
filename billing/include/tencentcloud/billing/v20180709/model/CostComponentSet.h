@@ -49,216 +49,252 @@ namespace TencentCloud
                     /**
                      * 获取组件类型名称
                      * @return ComponentCodeName 组件类型名称
+                     * 
                      */
                     std::string GetComponentCodeName() const;
 
                     /**
                      * 设置组件类型名称
-                     * @param ComponentCodeName 组件类型名称
+                     * @param _componentCodeName 组件类型名称
+                     * 
                      */
                     void SetComponentCodeName(const std::string& _componentCodeName);
 
                     /**
                      * 判断参数 ComponentCodeName 是否已赋值
                      * @return ComponentCodeName 是否已赋值
+                     * 
                      */
                     bool ComponentCodeNameHasBeenSet() const;
 
                     /**
                      * 获取组件名称
                      * @return ItemCodeName 组件名称
+                     * 
                      */
                     std::string GetItemCodeName() const;
 
                     /**
                      * 设置组件名称
-                     * @param ItemCodeName 组件名称
+                     * @param _itemCodeName 组件名称
+                     * 
                      */
                     void SetItemCodeName(const std::string& _itemCodeName);
 
                     /**
                      * 判断参数 ItemCodeName 是否已赋值
                      * @return ItemCodeName 是否已赋值
+                     * 
                      */
                     bool ItemCodeNameHasBeenSet() const;
 
                     /**
                      * 获取刊例价
                      * @return SinglePrice 刊例价
+                     * 
                      */
                     std::string GetSinglePrice() const;
 
                     /**
                      * 设置刊例价
-                     * @param SinglePrice 刊例价
+                     * @param _singlePrice 刊例价
+                     * 
                      */
                     void SetSinglePrice(const std::string& _singlePrice);
 
                     /**
                      * 判断参数 SinglePrice 是否已赋值
                      * @return SinglePrice 是否已赋值
+                     * 
                      */
                     bool SinglePriceHasBeenSet() const;
 
                     /**
                      * 获取刊例价单位
                      * @return PriceUnit 刊例价单位
+                     * 
                      */
                     std::string GetPriceUnit() const;
 
                     /**
                      * 设置刊例价单位
-                     * @param PriceUnit 刊例价单位
+                     * @param _priceUnit 刊例价单位
+                     * 
                      */
                     void SetPriceUnit(const std::string& _priceUnit);
 
                     /**
                      * 判断参数 PriceUnit 是否已赋值
                      * @return PriceUnit 是否已赋值
+                     * 
                      */
                     bool PriceUnitHasBeenSet() const;
 
                     /**
                      * 获取用量
                      * @return UsedAmount 用量
+                     * 
                      */
                     std::string GetUsedAmount() const;
 
                     /**
                      * 设置用量
-                     * @param UsedAmount 用量
+                     * @param _usedAmount 用量
+                     * 
                      */
                     void SetUsedAmount(const std::string& _usedAmount);
 
                     /**
                      * 判断参数 UsedAmount 是否已赋值
                      * @return UsedAmount 是否已赋值
+                     * 
                      */
                     bool UsedAmountHasBeenSet() const;
 
                     /**
                      * 获取用量单位
                      * @return UsedAmountUnit 用量单位
+                     * 
                      */
                     std::string GetUsedAmountUnit() const;
 
                     /**
                      * 设置用量单位
-                     * @param UsedAmountUnit 用量单位
+                     * @param _usedAmountUnit 用量单位
+                     * 
                      */
                     void SetUsedAmountUnit(const std::string& _usedAmountUnit);
 
                     /**
                      * 判断参数 UsedAmountUnit 是否已赋值
                      * @return UsedAmountUnit 是否已赋值
+                     * 
                      */
                     bool UsedAmountUnitHasBeenSet() const;
 
                     /**
                      * 获取原价
                      * @return Cost 原价
+                     * 
                      */
                     std::string GetCost() const;
 
                     /**
                      * 设置原价
-                     * @param Cost 原价
+                     * @param _cost 原价
+                     * 
                      */
                     void SetCost(const std::string& _cost);
 
                     /**
                      * 判断参数 Cost 是否已赋值
                      * @return Cost 是否已赋值
+                     * 
                      */
                     bool CostHasBeenSet() const;
 
                     /**
                      * 获取折扣
                      * @return Discount 折扣
+                     * 
                      */
                     std::string GetDiscount() const;
 
                     /**
                      * 设置折扣
-                     * @param Discount 折扣
+                     * @param _discount 折扣
+                     * 
                      */
                     void SetDiscount(const std::string& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
                     /**
                      * 获取折后价
                      * @return RealCost 折后价
+                     * 
                      */
                     std::string GetRealCost() const;
 
                     /**
                      * 设置折后价
-                     * @param RealCost 折后价
+                     * @param _realCost 折后价
+                     * 
                      */
                     void SetRealCost(const std::string& _realCost);
 
                     /**
                      * 判断参数 RealCost 是否已赋值
                      * @return RealCost 是否已赋值
+                     * 
                      */
                     bool RealCostHasBeenSet() const;
 
                     /**
                      * 获取代金券支付金额
                      * @return VoucherPayAmount 代金券支付金额
+                     * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
                      * 设置代金券支付金额
-                     * @param VoucherPayAmount 代金券支付金额
+                     * @param _voucherPayAmount 代金券支付金额
+                     * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
 
                     /**
                      * 判断参数 VoucherPayAmount 是否已赋值
                      * @return VoucherPayAmount 是否已赋值
+                     * 
                      */
                     bool VoucherPayAmountHasBeenSet() const;
 
                     /**
                      * 获取现金支付金额
                      * @return CashPayAmount 现金支付金额
+                     * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
                      * 设置现金支付金额
-                     * @param CashPayAmount 现金支付金额
+                     * @param _cashPayAmount 现金支付金额
+                     * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
 
                     /**
                      * 判断参数 CashPayAmount 是否已赋值
                      * @return CashPayAmount 是否已赋值
+                     * 
                      */
                     bool CashPayAmountHasBeenSet() const;
 
                     /**
                      * 获取赠送金支付金额
                      * @return IncentivePayAmount 赠送金支付金额
+                     * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
                      * 设置赠送金支付金额
-                     * @param IncentivePayAmount 赠送金支付金额
+                     * @param _incentivePayAmount 赠送金支付金额
+                     * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
 
                     /**
                      * 判断参数 IncentivePayAmount 是否已赋值
                      * @return IncentivePayAmount 是否已赋值
+                     * 
                      */
                     bool IncentivePayAmountHasBeenSet() const;
 

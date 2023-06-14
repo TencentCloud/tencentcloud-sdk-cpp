@@ -81,6 +81,7 @@ namespace TencentCloud
 14 - phone_sha256：SHA256加密的手机号
 15 - phone_sm3：国密SM3加密的手机号
 1000 - 客户自定义id
+                     * 
                      */
                     int64_t GetUserIdType() const;
 
@@ -102,7 +103,7 @@ namespace TencentCloud
 14 - phone_sha256：SHA256加密的手机号
 15 - phone_sm3：国密SM3加密的手机号
 1000 - 客户自定义id
-                     * @param UserIdType 用户ID类型：
+                     * @param _userIdType 用户ID类型：
 1 - qq
 2 - qq_md5：md5后的qq
 3 - imei：设备imei（安卓10之后不会再授权imei，安卓10之后的imei映射关系可能拿不到，故安卓10之后的设备建议用oaid）
@@ -119,30 +120,35 @@ namespace TencentCloud
 14 - phone_sha256：SHA256加密的手机号
 15 - phone_sm3：国密SM3加密的手机号
 1000 - 客户自定义id
+                     * 
                      */
                     void SetUserIdType(const int64_t& _userIdType);
 
                     /**
                      * 判断参数 UserIdType 是否已赋值
                      * @return UserIdType 是否已赋值
+                     * 
                      */
                     bool UserIdTypeHasBeenSet() const;
 
                     /**
                      * 获取用户id
                      * @return UserId 用户id
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户id
-                     * @param UserId 用户id
+                     * @param _userId 用户id
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

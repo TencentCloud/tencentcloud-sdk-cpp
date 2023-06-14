@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取String(22)，商户号（签约客户号）
                      * @return MrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     std::string GetMrchCode() const;
 
                     /**
                      * 设置String(22)，商户号（签约客户号）
-                     * @param MrchCode String(22)，商户号（签约客户号）
+                     * @param _mrchCode String(22)，商户号（签约客户号）
+                     * 
                      */
                     void SetMrchCode(const std::string& _mrchCode);
 
                     /**
                      * 判断参数 MrchCode 是否已赋值
                      * @return MrchCode 是否已赋值
+                     * 
                      */
                     bool MrchCodeHasBeenSet() const;
 
                     /**
                      * 获取STRING(52)，原交易流水号（小额鉴权交易请求时的CnsmrSeqNo值）
                      * @return OldTranSeqNo STRING(52)，原交易流水号（小额鉴权交易请求时的CnsmrSeqNo值）
+                     * 
                      */
                     std::string GetOldTranSeqNo() const;
 
                     /**
                      * 设置STRING(52)，原交易流水号（小额鉴权交易请求时的CnsmrSeqNo值）
-                     * @param OldTranSeqNo STRING(52)，原交易流水号（小额鉴权交易请求时的CnsmrSeqNo值）
+                     * @param _oldTranSeqNo STRING(52)，原交易流水号（小额鉴权交易请求时的CnsmrSeqNo值）
+                     * 
                      */
                     void SetOldTranSeqNo(const std::string& _oldTranSeqNo);
 
                     /**
                      * 判断参数 OldTranSeqNo 是否已赋值
                      * @return OldTranSeqNo 是否已赋值
+                     * 
                      */
                     bool OldTranSeqNoHasBeenSet() const;
 
                     /**
                      * 获取STRING(8)，交易日期（格式：20190101）
                      * @return TranDate STRING(8)，交易日期（格式：20190101）
+                     * 
                      */
                     std::string GetTranDate() const;
 
                     /**
                      * 设置STRING(8)，交易日期（格式：20190101）
-                     * @param TranDate STRING(8)，交易日期（格式：20190101）
+                     * @param _tranDate STRING(8)，交易日期（格式：20190101）
+                     * 
                      */
                     void SetTranDate(const std::string& _tranDate);
 
                     /**
                      * 判断参数 TranDate 是否已赋值
                      * @return TranDate 是否已赋值
+                     * 
                      */
                     bool TranDateHasBeenSet() const;
 
                     /**
                      * 获取STRING(1027)，保留域
                      * @return ReservedMsg STRING(1027)，保留域
+                     * 
                      */
                     std::string GetReservedMsg() const;
 
                     /**
                      * 设置STRING(1027)，保留域
-                     * @param ReservedMsg STRING(1027)，保留域
+                     * @param _reservedMsg STRING(1027)，保留域
+                     * 
                      */
                     void SetReservedMsg(const std::string& _reservedMsg);
 
                     /**
                      * 判断参数 ReservedMsg 是否已赋值
                      * @return ReservedMsg 是否已赋值
+                     * 
                      */
                     bool ReservedMsgHasBeenSet() const;
 
                     /**
                      * 获取STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
                      * @return Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
-                     * @param Profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * @param _profile STRING(12)，接入环境，默认接入沙箱环境。接入正式环境填"prod"
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

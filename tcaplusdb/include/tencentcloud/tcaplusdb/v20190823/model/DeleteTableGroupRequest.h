@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取表格组所属的集群ID
                      * @return ClusterId 表格组所属的集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表格组所属的集群ID
-                     * @param ClusterId 表格组所属的集群ID
+                     * @param _clusterId 表格组所属的集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取表格组ID
                      * @return TableGroupId 表格组ID
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格组ID
-                     * @param TableGroupId 表格组ID
+                     * @param _tableGroupId 表格组ID
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 

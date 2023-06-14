@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取账号组ID。
                      * @return AccountGroupId 账号组ID。
+                     * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
                      * 设置账号组ID。
-                     * @param AccountGroupId 账号组ID。
+                     * @param _accountGroupId 账号组ID。
+                     * 
                      */
                     void SetAccountGroupId(const std::string& _accountGroupId);
 
                     /**
                      * 判断参数 AccountGroupId 是否已赋值
                      * @return AccountGroupId 是否已赋值
+                     * 
                      */
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
                      * 获取账号组名。未传入该参数时，表示不进行修改。
                      * @return GroupName 账号组名。未传入该参数时，表示不进行修改。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置账号组名。未传入该参数时，表示不进行修改。
-                     * @param GroupName 账号组名。未传入该参数时，表示不进行修改。
+                     * @param _groupName 账号组名。未传入该参数时，表示不进行修改。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取描述，未传入该参数时，表示不进行修改。
                      * @return Description 描述，未传入该参数时，表示不进行修改。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述，未传入该参数时，表示不进行修改。
-                     * @param Description 描述，未传入该参数时，表示不进行修改。
+                     * @param _description 描述，未传入该参数时，表示不进行修改。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

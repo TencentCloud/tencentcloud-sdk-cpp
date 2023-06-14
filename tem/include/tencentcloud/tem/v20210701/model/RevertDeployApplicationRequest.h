@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要回滚的服务id
                      * @return ApplicationId 需要回滚的服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置需要回滚的服务id
-                     * @param ApplicationId 需要回滚的服务id
+                     * @param _applicationId 需要回滚的服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取需要回滚的服务所在环境id
                      * @return EnvironmentId 需要回滚的服务所在环境id
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置需要回滚的服务所在环境id
-                     * @param EnvironmentId 需要回滚的服务所在环境id
+                     * @param _environmentId 需要回滚的服务所在环境id
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 

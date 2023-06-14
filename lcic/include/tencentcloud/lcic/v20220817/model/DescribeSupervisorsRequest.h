@@ -47,56 +47,65 @@ namespace TencentCloud
 
                      * @return SdkAppId 低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码互动课堂的SdkAppId。
 
-                     * @param SdkAppId 低代码互动课堂的SdkAppId。
+                     * @param _sdkAppId 低代码互动课堂的SdkAppId。
 
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取每页数据量，最大100。 不填默认20.
                      * @return Limit 每页数据量，最大100。 不填默认20.
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数据量，最大100。 不填默认20.
-                     * @param Limit 每页数据量，最大100。 不填默认20.
+                     * @param _limit 每页数据量，最大100。 不填默认20.
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数，从1开始递增，不填默认为1。
                      * @return Page 分页查询当前页数，从1开始递增，不填默认为1。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置分页查询当前页数，从1开始递增，不填默认为1。
-                     * @param Page 分页查询当前页数，从1开始递增，不填默认为1。
+                     * @param _page 分页查询当前页数，从1开始递增，不填默认为1。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 

@@ -50,180 +50,210 @@ namespace TencentCloud
                     /**
                      * 获取素材Id
                      * @return MaterialId 素材Id
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置素材Id
-                     * @param MaterialId 素材Id
+                     * @param _materialId 素材Id
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取素材状态
                      * @return MaterialStatus 素材状态
+                     * 
                      */
                     int64_t GetMaterialStatus() const;
 
                     /**
                      * 设置素材状态
-                     * @param MaterialStatus 素材状态
+                     * @param _materialStatus 素材状态
+                     * 
                      */
                     void SetMaterialStatus(const int64_t& _materialStatus);
 
                     /**
                      * 判断参数 MaterialStatus 是否已赋值
                      * @return MaterialStatus 是否已赋值
+                     * 
                      */
                     bool MaterialStatusHasBeenSet() const;
 
                     /**
                      * 获取脸型参数P图
                      * @return BlendParamPtu 脸型参数P图
+                     * 
                      */
                     int64_t GetBlendParamPtu() const;
 
                     /**
                      * 设置脸型参数P图
-                     * @param BlendParamPtu 脸型参数P图
+                     * @param _blendParamPtu 脸型参数P图
+                     * 
                      */
                     void SetBlendParamPtu(const int64_t& _blendParamPtu);
 
                     /**
                      * 判断参数 BlendParamPtu 是否已赋值
                      * @return BlendParamPtu 是否已赋值
+                     * 
                      */
                     bool BlendParamPtuHasBeenSet() const;
 
                     /**
                      * 获取五官参数P图
                      * @return PositionParamPtu 五官参数P图
+                     * 
                      */
                     int64_t GetPositionParamPtu() const;
 
                     /**
                      * 设置五官参数P图
-                     * @param PositionParamPtu 五官参数P图
+                     * @param _positionParamPtu 五官参数P图
+                     * 
                      */
                     void SetPositionParamPtu(const int64_t& _positionParamPtu);
 
                     /**
                      * 判断参数 PositionParamPtu 是否已赋值
                      * @return PositionParamPtu 是否已赋值
+                     * 
                      */
                     bool PositionParamPtuHasBeenSet() const;
 
                     /**
                      * 获取脸型参数优图
                      * @return BlendParamYoutu 脸型参数优图
+                     * 
                      */
                     int64_t GetBlendParamYoutu() const;
 
                     /**
                      * 设置脸型参数优图
-                     * @param BlendParamYoutu 脸型参数优图
+                     * @param _blendParamYoutu 脸型参数优图
+                     * 
                      */
                     void SetBlendParamYoutu(const int64_t& _blendParamYoutu);
 
                     /**
                      * 判断参数 BlendParamYoutu 是否已赋值
                      * @return BlendParamYoutu 是否已赋值
+                     * 
                      */
                     bool BlendParamYoutuHasBeenSet() const;
 
                     /**
                      * 获取五官参数优图
                      * @return PositionParamYoutu 五官参数优图
+                     * 
                      */
                     int64_t GetPositionParamYoutu() const;
 
                     /**
                      * 设置五官参数优图
-                     * @param PositionParamYoutu 五官参数优图
+                     * @param _positionParamYoutu 五官参数优图
+                     * 
                      */
                     void SetPositionParamYoutu(const int64_t& _positionParamYoutu);
 
                     /**
                      * 判断参数 PositionParamYoutu 是否已赋值
                      * @return PositionParamYoutu 是否已赋值
+                     * 
                      */
                     bool PositionParamYoutuHasBeenSet() const;
 
                     /**
                      * 获取素材COS地址
                      * @return Url 素材COS地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置素材COS地址
-                     * @param Url 素材COS地址
+                     * @param _url 素材COS地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return UpdateTime 修改时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param UpdateTime 修改时间
+                     * @param _updateTime 修改时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取人脸信息
                      * @return MaterialFaceList 人脸信息
+                     * 
                      */
                     std::vector<MaterialFaceList> GetMaterialFaceList() const;
 
                     /**
                      * 设置人脸信息
-                     * @param MaterialFaceList 人脸信息
+                     * @param _materialFaceList 人脸信息
+                     * 
                      */
                     void SetMaterialFaceList(const std::vector<MaterialFaceList>& _materialFaceList);
 
                     /**
                      * 判断参数 MaterialFaceList 是否已赋值
                      * @return MaterialFaceList 是否已赋值
+                     * 
                      */
                     bool MaterialFaceListHasBeenSet() const;
 

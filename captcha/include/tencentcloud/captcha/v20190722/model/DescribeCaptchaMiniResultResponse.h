@@ -66,12 +66,14 @@ namespace TencentCloud
 26     system internal error     系统内部错误
 31 	   UnauthorizedOperation.Unauthorized	无有效套餐包/账户已欠费
 100   param err     参数校验错误
+                     * 
                      */
                     int64_t GetCaptchaCode() const;
 
                     /**
                      * 判断参数 CaptchaCode 是否已赋值
                      * @return CaptchaCode 是否已赋值
+                     * 
                      */
                     bool CaptchaCodeHasBeenSet() const;
 
@@ -80,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 状态描述及验证错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCaptchaMsg() const;
 
                     /**
                      * 判断参数 CaptchaMsg 是否已赋值
                      * @return CaptchaMsg 是否已赋值
+                     * 
                      */
                     bool CaptchaMsgHasBeenSet() const;
 

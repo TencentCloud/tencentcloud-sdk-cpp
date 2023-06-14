@@ -62,180 +62,210 @@ namespace TencentCloud
                     /**
                      * 获取实例所属项目ID。
                      * @return ProjectId 实例所属项目ID。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置实例所属项目ID。
-                     * @param ProjectId 实例所属项目ID。
+                     * @param _projectId 实例所属项目ID。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取启动配置ID。
                      * @return LaunchConfigurationId 启动配置ID。
+                     * 
                      */
                     std::string GetLaunchConfigurationId() const;
 
                     /**
                      * 设置启动配置ID。
-                     * @param LaunchConfigurationId 启动配置ID。
+                     * @param _launchConfigurationId 启动配置ID。
+                     * 
                      */
                     void SetLaunchConfigurationId(const std::string& _launchConfigurationId);
 
                     /**
                      * 判断参数 LaunchConfigurationId 是否已赋值
                      * @return LaunchConfigurationId 是否已赋值
+                     * 
                      */
                     bool LaunchConfigurationIdHasBeenSet() const;
 
                     /**
                      * 获取启动配置名称。
                      * @return LaunchConfigurationName 启动配置名称。
+                     * 
                      */
                     std::string GetLaunchConfigurationName() const;
 
                     /**
                      * 设置启动配置名称。
-                     * @param LaunchConfigurationName 启动配置名称。
+                     * @param _launchConfigurationName 启动配置名称。
+                     * 
                      */
                     void SetLaunchConfigurationName(const std::string& _launchConfigurationName);
 
                     /**
                      * 判断参数 LaunchConfigurationName 是否已赋值
                      * @return LaunchConfigurationName 是否已赋值
+                     * 
                      */
                     bool LaunchConfigurationNameHasBeenSet() const;
 
                     /**
                      * 获取实例机型。
                      * @return InstanceType 实例机型。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例机型。
-                     * @param InstanceType 实例机型。
+                     * @param _instanceType 实例机型。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
                      * 获取实例系统盘配置信息。
                      * @return SystemDisk 实例系统盘配置信息。
+                     * 
                      */
                     SystemDisk GetSystemDisk() const;
 
                     /**
                      * 设置实例系统盘配置信息。
-                     * @param SystemDisk 实例系统盘配置信息。
+                     * @param _systemDisk 实例系统盘配置信息。
+                     * 
                      */
                     void SetSystemDisk(const SystemDisk& _systemDisk);
 
                     /**
                      * 判断参数 SystemDisk 是否已赋值
                      * @return SystemDisk 是否已赋值
+                     * 
                      */
                     bool SystemDiskHasBeenSet() const;
 
                     /**
                      * 获取实例数据盘配置信息。
                      * @return DataDisks 实例数据盘配置信息。
+                     * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
                      * 设置实例数据盘配置信息。
-                     * @param DataDisks 实例数据盘配置信息。
+                     * @param _dataDisks 实例数据盘配置信息。
+                     * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
 
                     /**
                      * 判断参数 DataDisks 是否已赋值
                      * @return DataDisks 是否已赋值
+                     * 
                      */
                     bool DataDisksHasBeenSet() const;
 
                     /**
                      * 获取实例登录设置。
                      * @return LoginSettings 实例登录设置。
+                     * 
                      */
                     LimitedLoginSettings GetLoginSettings() const;
 
                     /**
                      * 设置实例登录设置。
-                     * @param LoginSettings 实例登录设置。
+                     * @param _loginSettings 实例登录设置。
+                     * 
                      */
                     void SetLoginSettings(const LimitedLoginSettings& _loginSettings);
 
                     /**
                      * 判断参数 LoginSettings 是否已赋值
                      * @return LoginSettings 是否已赋值
+                     * 
                      */
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
                      * 获取公网带宽相关信息设置。
                      * @return InternetAccessible 公网带宽相关信息设置。
+                     * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
                      * 设置公网带宽相关信息设置。
-                     * @param InternetAccessible 公网带宽相关信息设置。
+                     * @param _internetAccessible 公网带宽相关信息设置。
+                     * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
 
                     /**
                      * 判断参数 InternetAccessible 是否已赋值
                      * @return InternetAccessible 是否已赋值
+                     * 
                      */
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
                      * 获取实例所属安全组。
                      * @return SecurityGroupIds 实例所属安全组。
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
                      * 设置实例所属安全组。
-                     * @param SecurityGroupIds 实例所属安全组。
+                     * @param _securityGroupIds 实例所属安全组。
+                     * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
                     /**
                      * 判断参数 SecurityGroupIds 是否已赋值
                      * @return SecurityGroupIds 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
                      * 获取启动配置关联的伸缩组。
                      * @return AutoScalingGroupAbstractSet 启动配置关联的伸缩组。
+                     * 
                      */
                     std::vector<AutoScalingGroupAbstract> GetAutoScalingGroupAbstractSet() const;
 
                     /**
                      * 设置启动配置关联的伸缩组。
-                     * @param AutoScalingGroupAbstractSet 启动配置关联的伸缩组。
+                     * @param _autoScalingGroupAbstractSet 启动配置关联的伸缩组。
+                     * 
                      */
                     void SetAutoScalingGroupAbstractSet(const std::vector<AutoScalingGroupAbstract>& _autoScalingGroupAbstractSet);
 
                     /**
                      * 判断参数 AutoScalingGroupAbstractSet 是否已赋值
                      * @return AutoScalingGroupAbstractSet 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupAbstractSetHasBeenSet() const;
 
@@ -244,92 +274,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserData 自定义数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserData() const;
 
                     /**
                      * 设置自定义数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserData 自定义数据。
+                     * @param _userData 自定义数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserData(const std::string& _userData);
 
                     /**
                      * 判断参数 UserData 是否已赋值
                      * @return UserData 是否已赋值
+                     * 
                      */
                     bool UserDataHasBeenSet() const;
 
                     /**
                      * 获取启动配置创建时间。
                      * @return CreatedTime 启动配置创建时间。
+                     * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置启动配置创建时间。
-                     * @param CreatedTime 启动配置创建时间。
+                     * @param _createdTime 启动配置创建时间。
+                     * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
                     /**
                      * 判断参数 CreatedTime 是否已赋值
                      * @return CreatedTime 是否已赋值
+                     * 
                      */
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
                      * 获取实例的增强服务启用情况与其设置。
                      * @return EnhancedService 实例的增强服务启用情况与其设置。
+                     * 
                      */
                     EnhancedService GetEnhancedService() const;
 
                     /**
                      * 设置实例的增强服务启用情况与其设置。
-                     * @param EnhancedService 实例的增强服务启用情况与其设置。
+                     * @param _enhancedService 实例的增强服务启用情况与其设置。
+                     * 
                      */
                     void SetEnhancedService(const EnhancedService& _enhancedService);
 
                     /**
                      * 判断参数 EnhancedService 是否已赋值
                      * @return EnhancedService 是否已赋值
+                     * 
                      */
                     bool EnhancedServiceHasBeenSet() const;
 
                     /**
                      * 获取镜像ID。
                      * @return ImageId 镜像ID。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像ID。
-                     * @param ImageId 镜像ID。
+                     * @param _imageId 镜像ID。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
                      * @return LaunchConfigurationStatus 启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
+                     * 
                      */
                     std::string GetLaunchConfigurationStatus() const;
 
                     /**
                      * 设置启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
-                     * @param LaunchConfigurationStatus 启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
+                     * @param _launchConfigurationStatus 启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
+                     * 
                      */
                     void SetLaunchConfigurationStatus(const std::string& _launchConfigurationStatus);
 
                     /**
                      * 判断参数 LaunchConfigurationStatus 是否已赋值
                      * @return LaunchConfigurationStatus 是否已赋值
+                     * 
                      */
                     bool LaunchConfigurationStatusHasBeenSet() const;
 
@@ -340,6 +385,7 @@ namespace TencentCloud
                      * @return InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
 <br><li>POSTPAID_BY_HOUR：按小时后付费
 <br><li>SPOTPAID：竞价付费
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
@@ -347,15 +393,17 @@ namespace TencentCloud
                      * 设置实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
 <br><li>POSTPAID_BY_HOUR：按小时后付费
 <br><li>SPOTPAID：竞价付费
-                     * @param InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
+                     * @param _instanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
 <br><li>POSTPAID_BY_HOUR：按小时后付费
 <br><li>SPOTPAID：竞价付费
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
@@ -364,56 +412,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InstanceMarketOptionsRequest GetInstanceMarketOptions() const;
 
                     /**
                      * 设置实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+                     * @param _instanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& _instanceMarketOptions);
 
                     /**
                      * 判断参数 InstanceMarketOptions 是否已赋值
                      * @return InstanceMarketOptions 是否已赋值
+                     * 
                      */
                     bool InstanceMarketOptionsHasBeenSet() const;
 
                     /**
                      * 获取实例机型列表。
                      * @return InstanceTypes 实例机型列表。
+                     * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
                      * 设置实例机型列表。
-                     * @param InstanceTypes 实例机型列表。
+                     * @param _instanceTypes 实例机型列表。
+                     * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
 
                     /**
                      * 判断参数 InstanceTypes 是否已赋值
                      * @return InstanceTypes 是否已赋值
+                     * 
                      */
                     bool InstanceTypesHasBeenSet() const;
 
                     /**
                      * 获取实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
                      * @return InstanceTags 实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
+                     * 
                      */
                     std::vector<InstanceTag> GetInstanceTags() const;
 
                     /**
                      * 设置实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
-                     * @param InstanceTags 实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
+                     * @param _instanceTags 实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
+                     * 
                      */
                     void SetInstanceTags(const std::vector<InstanceTag>& _instanceTags);
 
                     /**
                      * 判断参数 InstanceTags 是否已赋值
                      * @return InstanceTags 是否已赋值
+                     * 
                      */
                     bool InstanceTagsHasBeenSet() const;
 
@@ -422,146 +479,170 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签列表。
+                     * @param _tags 标签列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取版本号。
                      * @return VersionNumber 版本号。
+                     * 
                      */
                     int64_t GetVersionNumber() const;
 
                     /**
                      * 设置版本号。
-                     * @param VersionNumber 版本号。
+                     * @param _versionNumber 版本号。
+                     * 
                      */
                     void SetVersionNumber(const int64_t& _versionNumber);
 
                     /**
                      * 判断参数 VersionNumber 是否已赋值
                      * @return VersionNumber 是否已赋值
+                     * 
                      */
                     bool VersionNumberHasBeenSet() const;
 
                     /**
                      * 获取更新时间。
                      * @return UpdatedTime 更新时间。
+                     * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间。
-                     * @param UpdatedTime 更新时间。
+                     * @param _updatedTime 更新时间。
+                     * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
 
                     /**
                      * 判断参数 UpdatedTime 是否已赋值
                      * @return UpdatedTime 是否已赋值
+                     * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
                      * 获取CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
                      * @return CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 
                      */
                     std::string GetCamRoleName() const;
 
                     /**
                      * 设置CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @param CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * @param _camRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 
                      */
                     void SetCamRoleName(const std::string& _camRoleName);
 
                     /**
                      * 判断参数 CamRoleName 是否已赋值
                      * @return CamRoleName 是否已赋值
+                     * 
                      */
                     bool CamRoleNameHasBeenSet() const;
 
                     /**
                      * 获取上次操作时，InstanceTypesCheckPolicy 取值。
                      * @return LastOperationInstanceTypesCheckPolicy 上次操作时，InstanceTypesCheckPolicy 取值。
+                     * 
                      */
                     std::string GetLastOperationInstanceTypesCheckPolicy() const;
 
                     /**
                      * 设置上次操作时，InstanceTypesCheckPolicy 取值。
-                     * @param LastOperationInstanceTypesCheckPolicy 上次操作时，InstanceTypesCheckPolicy 取值。
+                     * @param _lastOperationInstanceTypesCheckPolicy 上次操作时，InstanceTypesCheckPolicy 取值。
+                     * 
                      */
                     void SetLastOperationInstanceTypesCheckPolicy(const std::string& _lastOperationInstanceTypesCheckPolicy);
 
                     /**
                      * 判断参数 LastOperationInstanceTypesCheckPolicy 是否已赋值
                      * @return LastOperationInstanceTypesCheckPolicy 是否已赋值
+                     * 
                      */
                     bool LastOperationInstanceTypesCheckPolicyHasBeenSet() const;
 
                     /**
                      * 获取云服务器主机名（HostName）的相关设置。
                      * @return HostNameSettings 云服务器主机名（HostName）的相关设置。
+                     * 
                      */
                     HostNameSettings GetHostNameSettings() const;
 
                     /**
                      * 设置云服务器主机名（HostName）的相关设置。
-                     * @param HostNameSettings 云服务器主机名（HostName）的相关设置。
+                     * @param _hostNameSettings 云服务器主机名（HostName）的相关设置。
+                     * 
                      */
                     void SetHostNameSettings(const HostNameSettings& _hostNameSettings);
 
                     /**
                      * 判断参数 HostNameSettings 是否已赋值
                      * @return HostNameSettings 是否已赋值
+                     * 
                      */
                     bool HostNameSettingsHasBeenSet() const;
 
                     /**
                      * 获取云服务器实例名（InstanceName）的相关设置。
                      * @return InstanceNameSettings 云服务器实例名（InstanceName）的相关设置。
+                     * 
                      */
                     InstanceNameSettings GetInstanceNameSettings() const;
 
                     /**
                      * 设置云服务器实例名（InstanceName）的相关设置。
-                     * @param InstanceNameSettings 云服务器实例名（InstanceName）的相关设置。
+                     * @param _instanceNameSettings 云服务器实例名（InstanceName）的相关设置。
+                     * 
                      */
                     void SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings);
 
                     /**
                      * 判断参数 InstanceNameSettings 是否已赋值
                      * @return InstanceNameSettings 是否已赋值
+                     * 
                      */
                     bool InstanceNameSettingsHasBeenSet() const;
 
                     /**
                      * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
                      * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * @param _instanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
 
                     /**
                      * 判断参数 InstanceChargePrepaid 是否已赋值
                      * @return InstanceChargePrepaid 是否已赋值
+                     * 
                      */
                     bool InstanceChargePrepaidHasBeenSet() const;
 
@@ -572,6 +653,7 @@ namespace TencentCloud
                      * @return DiskTypePolicy 云盘类型选择策略。取值范围：
 <br><li>ORIGINAL：使用设置的云盘类型
 <br><li>AUTOMATIC：自动选择当前可用区下可用的云盘类型
+                     * 
                      */
                     std::string GetDiskTypePolicy() const;
 
@@ -579,15 +661,17 @@ namespace TencentCloud
                      * 设置云盘类型选择策略。取值范围：
 <br><li>ORIGINAL：使用设置的云盘类型
 <br><li>AUTOMATIC：自动选择当前可用区下可用的云盘类型
-                     * @param DiskTypePolicy 云盘类型选择策略。取值范围：
+                     * @param _diskTypePolicy 云盘类型选择策略。取值范围：
 <br><li>ORIGINAL：使用设置的云盘类型
 <br><li>AUTOMATIC：自动选择当前可用区下可用的云盘类型
+                     * 
                      */
                     void SetDiskTypePolicy(const std::string& _diskTypePolicy);
 
                     /**
                      * 判断参数 DiskTypePolicy 是否已赋值
                      * @return DiskTypePolicy 是否已赋值
+                     * 
                      */
                     bool DiskTypePolicyHasBeenSet() const;
 
@@ -596,38 +680,44 @@ namespace TencentCloud
 注意：此字段默认为空。
                      * @return HpcClusterId 高性能计算集群ID。<br>
 注意：此字段默认为空。
+                     * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
                      * 设置高性能计算集群ID。<br>
 注意：此字段默认为空。
-                     * @param HpcClusterId 高性能计算集群ID。<br>
+                     * @param _hpcClusterId 高性能计算集群ID。<br>
 注意：此字段默认为空。
+                     * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
 
                     /**
                      * 判断参数 HpcClusterId 是否已赋值
                      * @return HpcClusterId 是否已赋值
+                     * 
                      */
                     bool HpcClusterIdHasBeenSet() const;
 
                     /**
                      * 获取IPv6公网带宽相关信息设置。
                      * @return IPv6InternetAccessible IPv6公网带宽相关信息设置。
+                     * 
                      */
                     IPv6InternetAccessible GetIPv6InternetAccessible() const;
 
                     /**
                      * 设置IPv6公网带宽相关信息设置。
-                     * @param IPv6InternetAccessible IPv6公网带宽相关信息设置。
+                     * @param _iPv6InternetAccessible IPv6公网带宽相关信息设置。
+                     * 
                      */
                     void SetIPv6InternetAccessible(const IPv6InternetAccessible& _iPv6InternetAccessible);
 
                     /**
                      * 判断参数 IPv6InternetAccessible 是否已赋值
                      * @return IPv6InternetAccessible 是否已赋值
+                     * 
                      */
                     bool IPv6InternetAccessibleHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 分组名称
+                     * @param _groupName 分组名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ParentId 父分组ID
+                     * @param _parentId 父分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParentId(const std::string& _parentId);
 
                     /**
                      * 判断参数 ParentId 是否已赋值
                      * @return ParentId 是否已赋值
+                     * 
                      */
                     bool ParentIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupId 分组ID
+                     * @param _groupId 分组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupPath 分组路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupPath() const;
 
                     /**
                      * 设置分组路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupPath 分组路径
+                     * @param _groupPath 分组路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupPath(const std::string& _groupPath);
 
                     /**
                      * 判断参数 GroupPath 是否已赋值
                      * @return GroupPath 是否已赋值
+                     * 
                      */
                     bool GroupPathHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupDescribe 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupDescribe() const;
 
                     /**
                      * 设置分组描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupDescribe 分组描述
+                     * @param _groupDescribe 分组描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupDescribe(const std::string& _groupDescribe);
 
                     /**
                      * 判断参数 GroupDescribe 是否已赋值
                      * @return GroupDescribe 是否已赋值
+                     * 
                      */
                     bool GroupDescribeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceNum 分组绑定设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDeviceNum() const;
 
                     /**
                      * 设置分组绑定设备数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeviceNum 分组绑定设备数
+                     * @param _deviceNum 分组绑定设备数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeviceNum(const int64_t& _deviceNum);
 
                     /**
                      * 判断参数 DeviceNum 是否已赋值
                      * @return DeviceNum 是否已赋值
+                     * 
                      */
                     bool DeviceNumHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubGroupNum 子分组数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSubGroupNum() const;
 
                     /**
                      * 设置子分组数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubGroupNum 子分组数量
+                     * @param _subGroupNum 子分组数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubGroupNum(const int64_t& _subGroupNum);
 
                     /**
                      * 判断参数 SubGroupNum 是否已赋值
                      * @return SubGroupNum 是否已赋值
+                     * 
                      */
                     bool SubGroupNumHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInformation 分组附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置分组附加信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraInformation 分组附加信息
+                     * @param _extraInformation 分组附加信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
 
                     /**
                      * 判断参数 ExtraInformation 是否已赋值
                      * @return ExtraInformation 是否已赋值
+                     * 
                      */
                     bool ExtraInformationHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupType 分组类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupType() const;
 
                     /**
                      * 设置分组类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupType 分组类型
+                     * @param _groupType 分组类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupType(const std::string& _groupType);
 
                     /**
                      * 判断参数 GroupType 是否已赋值
                      * @return GroupType 是否已赋值
+                     * 
                      */
                     bool GroupTypeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupStatus 分组状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGroupStatus() const;
 
                     /**
                      * 设置分组状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupStatus 分组状态
+                     * @param _groupStatus 分组状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupStatus(const int64_t& _groupStatus);
 
                     /**
                      * 判断参数 GroupStatus 是否已赋值
                      * @return GroupStatus 是否已赋值
+                     * 
                      */
                     bool GroupStatusHasBeenSet() const;
 

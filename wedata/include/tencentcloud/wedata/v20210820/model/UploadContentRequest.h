@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取脚本上传信息
                      * @return ScriptRequestInfo 脚本上传信息
+                     * 
                      */
                     ScriptRequestInfo GetScriptRequestInfo() const;
 
                     /**
                      * 设置脚本上传信息
-                     * @param ScriptRequestInfo 脚本上传信息
+                     * @param _scriptRequestInfo 脚本上传信息
+                     * 
                      */
                     void SetScriptRequestInfo(const ScriptRequestInfo& _scriptRequestInfo);
 
                     /**
                      * 判断参数 ScriptRequestInfo 是否已赋值
                      * @return ScriptRequestInfo 是否已赋值
+                     * 
                      */
                     bool ScriptRequestInfoHasBeenSet() const;
 

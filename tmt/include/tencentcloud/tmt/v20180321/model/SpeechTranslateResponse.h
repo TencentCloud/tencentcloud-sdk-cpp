@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取请求的SessionUuid直接返回
                      * @return SessionUuid 请求的SessionUuid直接返回
+                     * 
                      */
                     std::string GetSessionUuid() const;
 
                     /**
                      * 判断参数 SessionUuid 是否已赋值
                      * @return SessionUuid 是否已赋值
+                     * 
                      */
                     bool SessionUuidHasBeenSet() const;
 
                     /**
                      * 获取语音识别状态 1-进行中 0-完成
                      * @return RecognizeStatus 语音识别状态 1-进行中 0-完成
+                     * 
                      */
                     int64_t GetRecognizeStatus() const;
 
                     /**
                      * 判断参数 RecognizeStatus 是否已赋值
                      * @return RecognizeStatus 是否已赋值
+                     * 
                      */
                     bool RecognizeStatusHasBeenSet() const;
 
                     /**
                      * 获取识别出的原文
                      * @return SourceText 识别出的原文
+                     * 
                      */
                     std::string GetSourceText() const;
 
                     /**
                      * 判断参数 SourceText 是否已赋值
                      * @return SourceText 是否已赋值
+                     * 
                      */
                     bool SourceTextHasBeenSet() const;
 
                     /**
                      * 获取翻译出的译文
                      * @return TargetText 翻译出的译文
+                     * 
                      */
                     std::string GetTargetText() const;
 
                     /**
                      * 判断参数 TargetText 是否已赋值
                      * @return TargetText 是否已赋值
+                     * 
                      */
                     bool TargetTextHasBeenSet() const;
 
                     /**
                      * 获取第几个语音分片
                      * @return Seq 第几个语音分片
+                     * 
                      */
                     int64_t GetSeq() const;
 
                     /**
                      * 判断参数 Seq 是否已赋值
                      * @return Seq 是否已赋值
+                     * 
                      */
                     bool SeqHasBeenSet() const;
 
                     /**
                      * 获取原语言
                      * @return Source 原语言
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
                     /**
                      * 获取目标语言
                      * @return Target 目标语言
+                     * 
                      */
                     std::string GetTarget() const;
 
                     /**
                      * 判断参数 Target 是否已赋值
                      * @return Target 是否已赋值
+                     * 
                      */
                     bool TargetHasBeenSet() const;
 
                     /**
                      * 获取当请求的Mode参数填写bvad是，启动VadSeq。此时Seq会被设置为后台vad（静音检测）后的新序号，而VadSeq代表客户端原始Seq值
                      * @return VadSeq 当请求的Mode参数填写bvad是，启动VadSeq。此时Seq会被设置为后台vad（静音检测）后的新序号，而VadSeq代表客户端原始Seq值
+                     * 
                      */
                     int64_t GetVadSeq() const;
 
                     /**
                      * 判断参数 VadSeq 是否已赋值
                      * @return VadSeq 是否已赋值
+                     * 
                      */
                     bool VadSeqHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。
                      * @return DrmType DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。
+                     * 
                      */
                     std::string GetDrmType() const;
 
                     /**
                      * 设置DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。
-                     * @param DrmType DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。
+                     * @param _drmType DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。
+                     * 
                      */
                     void SetDrmType(const std::string& _drmType);
 
                     /**
                      * 判断参数 DrmType 是否已赋值
                      * @return DrmType 是否已赋值
+                     * 
                      */
                     bool DrmTypeHasBeenSet() const;
 
                     /**
                      * 获取Base64编码的终端设备License Request数据。
                      * @return LicenseRequest Base64编码的终端设备License Request数据。
+                     * 
                      */
                     std::string GetLicenseRequest() const;
 
                     /**
                      * 设置Base64编码的终端设备License Request数据。
-                     * @param LicenseRequest Base64编码的终端设备License Request数据。
+                     * @param _licenseRequest Base64编码的终端设备License Request数据。
+                     * 
                      */
                     void SetLicenseRequest(const std::string& _licenseRequest);
 
                     /**
                      * 判断参数 LicenseRequest 是否已赋值
                      * @return LicenseRequest 是否已赋值
+                     * 
                      */
                     bool LicenseRequestHasBeenSet() const;
 
                     /**
                      * 获取内容类型，接口取值：VodVideo,LiveVideo。
                      * @return ContentType 内容类型，接口取值：VodVideo,LiveVideo。
+                     * 
                      */
                     std::string GetContentType() const;
 
                     /**
                      * 设置内容类型，接口取值：VodVideo,LiveVideo。
-                     * @param ContentType 内容类型，接口取值：VodVideo,LiveVideo。
+                     * @param _contentType 内容类型，接口取值：VodVideo,LiveVideo。
+                     * 
                      */
                     void SetContentType(const std::string& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 
@@ -102,38 +111,44 @@ namespace TencentCloud
 该值为空时，默认授权所有track播放。
                      * @return Tracks 授权播放的Track列表。
 该值为空时，默认授权所有track播放。
+                     * 
                      */
                     std::vector<std::string> GetTracks() const;
 
                     /**
                      * 设置授权播放的Track列表。
 该值为空时，默认授权所有track播放。
-                     * @param Tracks 授权播放的Track列表。
+                     * @param _tracks 授权播放的Track列表。
 该值为空时，默认授权所有track播放。
+                     * 
                      */
                     void SetTracks(const std::vector<std::string>& _tracks);
 
                     /**
                      * 判断参数 Tracks 是否已赋值
                      * @return Tracks 是否已赋值
+                     * 
                      */
                     bool TracksHasBeenSet() const;
 
                     /**
                      * 获取播放策略参数。
                      * @return PlaybackPolicy 播放策略参数。
+                     * 
                      */
                     PlaybackPolicy GetPlaybackPolicy() const;
 
                     /**
                      * 设置播放策略参数。
-                     * @param PlaybackPolicy 播放策略参数。
+                     * @param _playbackPolicy 播放策略参数。
+                     * 
                      */
                     void SetPlaybackPolicy(const PlaybackPolicy& _playbackPolicy);
 
                     /**
                      * 判断参数 PlaybackPolicy 是否已赋值
                      * @return PlaybackPolicy 是否已赋值
+                     * 
                      */
                     bool PlaybackPolicyHasBeenSet() const;
 

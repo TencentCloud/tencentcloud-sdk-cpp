@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportTaskId 导出任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetExportTaskId() const;
 
                     /**
                      * 设置导出任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExportTaskId 导出任务id
+                     * @param _exportTaskId 导出任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetExportTaskId(const uint64_t& _exportTaskId);
 
                     /**
                      * 判断参数 ExportTaskId 是否已赋值
                      * @return ExportTaskId 是否已赋值
+                     * 
                      */
                     bool ExportTaskIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 导出任务类型(1.全部,2.触发行,3.通过行)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
                      * 设置导出任务类型(1.全部,2.触发行,3.通过行)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskType 导出任务类型(1.全部,2.触发行,3.通过行)
+                     * @param _taskType 导出任务类型(1.全部,2.触发行,3.通过行)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorId 任务创建人 id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetOperatorId() const;
 
                     /**
                      * 设置任务创建人 id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatorId 任务创建人 id
+                     * @param _operatorId 任务创建人 id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatorId(const uint64_t& _operatorId);
 
                     /**
                      * 判断参数 OperatorId 是否已赋值
                      * @return OperatorId 是否已赋值
+                     * 
                      */
                     bool OperatorIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorName 任务创建人昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperatorName() const;
 
                     /**
                      * 设置任务创建人昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperatorName 任务创建人昵称
+                     * @param _operatorName 任务创建人昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperatorName(const std::string& _operatorName);
 
                     /**
                      * 判断参数 OperatorName 是否已赋值
                      * @return OperatorName 是否已赋值
+                     * 
                      */
                     bool OperatorNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 任务创建时间
+                     * @param _createTime 任务创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 导出状态(1.已提交 2.导出中 3.导出成功 4.导出失败)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置导出状态(1.已提交 2.导出中 3.导出成功 4.导出失败)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 导出状态(1.已提交 2.导出中 3.导出成功 4.导出失败)
+                     * @param _status 导出状态(1.已提交 2.导出中 3.导出成功 4.导出失败)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerTaskId 调度任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchedulerTaskId() const;
 
                     /**
                      * 设置调度任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchedulerTaskId 调度任务id
+                     * @param _schedulerTaskId 调度任务id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchedulerTaskId(const std::string& _schedulerTaskId);
 
                     /**
                      * 判断参数 SchedulerTaskId 是否已赋值
                      * @return SchedulerTaskId 是否已赋值
+                     * 
                      */
                     bool SchedulerTaskIdHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerCurRunDate 调度时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSchedulerCurRunDate() const;
 
                     /**
                      * 设置调度时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchedulerCurRunDate 调度时间
+                     * @param _schedulerCurRunDate 调度时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSchedulerCurRunDate(const std::string& _schedulerCurRunDate);
 
                     /**
                      * 判断参数 SchedulerCurRunDate 是否已赋值
                      * @return SchedulerCurRunDate 是否已赋值
+                     * 
                      */
                     bool SchedulerCurRunDateHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilePath 文件相对路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件相对路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FilePath 文件相对路径
+                     * @param _filePath 文件相对路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFilePath(const std::string& _filePath);
 
                     /**
                      * 判断参数 FilePath 是否已赋值
                      * @return FilePath 是否已赋值
+                     * 
                      */
                     bool FilePathHasBeenSet() const;
 

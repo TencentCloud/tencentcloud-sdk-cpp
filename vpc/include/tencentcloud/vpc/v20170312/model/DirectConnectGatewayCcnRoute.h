@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取路由ID。
                      * @return RouteId 路由ID。
+                     * 
                      */
                     std::string GetRouteId() const;
 
                     /**
                      * 设置路由ID。
-                     * @param RouteId 路由ID。
+                     * @param _routeId 路由ID。
+                     * 
                      */
                     void SetRouteId(const std::string& _routeId);
 
                     /**
                      * 判断参数 RouteId 是否已赋值
                      * @return RouteId 是否已赋值
+                     * 
                      */
                     bool RouteIdHasBeenSet() const;
 
                     /**
                      * 获取IDC网段。
                      * @return DestinationCidrBlock IDC网段。
+                     * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置IDC网段。
-                     * @param DestinationCidrBlock IDC网段。
+                     * @param _destinationCidrBlock IDC网段。
+                     * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
                     /**
                      * 判断参数 DestinationCidrBlock 是否已赋值
                      * @return DestinationCidrBlock 是否已赋值
+                     * 
                      */
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
                      * 获取`BGP`的`AS-Path`属性。
                      * @return ASPath `BGP`的`AS-Path`属性。
+                     * 
                      */
                     std::vector<std::string> GetASPath() const;
 
                     /**
                      * 设置`BGP`的`AS-Path`属性。
-                     * @param ASPath `BGP`的`AS-Path`属性。
+                     * @param _aSPath `BGP`的`AS-Path`属性。
+                     * 
                      */
                     void SetASPath(const std::vector<std::string>& _aSPath);
 
                     /**
                      * 判断参数 ASPath 是否已赋值
                      * @return ASPath 是否已赋值
+                     * 
                      */
                     bool ASPathHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Description 备注
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-                     * @param Description 备注
+                     * @param _description 备注
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取最后更新时间
                      * @return UpdateTime 最后更新时间
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-                     * @param UpdateTime 最后更新时间
+                     * @param _updateTime 最后更新时间
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

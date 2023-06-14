@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取促销活动内容
                      * @return List 促销活动内容
+                     * 
                      */
                     std::vector<PromotionActivityContent> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 

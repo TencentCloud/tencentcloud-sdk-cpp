@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取子域名数量
                      * @return SubdomainCount 子域名数量
+                     * 
                      */
                     uint64_t GetSubdomainCount() const;
 
                     /**
                      * 设置子域名数量
-                     * @param SubdomainCount 子域名数量
+                     * @param _subdomainCount 子域名数量
+                     * 
                      */
                     void SetSubdomainCount(const uint64_t& _subdomainCount);
 
                     /**
                      * 判断参数 SubdomainCount 是否已赋值
                      * @return SubdomainCount 是否已赋值
+                     * 
                      */
                     bool SubdomainCountHasBeenSet() const;
 
                     /**
                      * 获取列表返回的记录数
                      * @return ListCount 列表返回的记录数
+                     * 
                      */
                     uint64_t GetListCount() const;
 
                     /**
                      * 设置列表返回的记录数
-                     * @param ListCount 列表返回的记录数
+                     * @param _listCount 列表返回的记录数
+                     * 
                      */
                     void SetListCount(const uint64_t& _listCount);
 
                     /**
                      * 判断参数 ListCount 是否已赋值
                      * @return ListCount 是否已赋值
+                     * 
                      */
                     bool ListCountHasBeenSet() const;
 
                     /**
                      * 获取总的记录数
                      * @return TotalCount 总的记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总的记录数
-                     * @param TotalCount 总的记录数
+                     * @param _totalCount 总的记录数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

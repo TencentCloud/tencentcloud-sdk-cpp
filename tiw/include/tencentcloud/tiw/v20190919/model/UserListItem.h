@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取房间内的用户ID
                      * @return UserId 房间内的用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置房间内的用户ID
-                     * @param UserId 房间内的用户ID
+                     * @param _userId 房间内的用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
                      * @return StartTime 用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
-                     * @param StartTime 用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
+                     * @param _startTime 用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
                      * @return EndTime 用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
-                     * @param EndTime 用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
+                     * @param _endTime 用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

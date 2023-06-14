@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取备份文件解密密钥。
                      * @return DecryptionKey 备份文件解密密钥。
+                     * 
                      */
                     std::string GetDecryptionKey() const;
 
                     /**
                      * 判断参数 DecryptionKey 是否已赋值
                      * @return DecryptionKey 是否已赋值
+                     * 
                      */
                     bool DecryptionKeyHasBeenSet() const;
 

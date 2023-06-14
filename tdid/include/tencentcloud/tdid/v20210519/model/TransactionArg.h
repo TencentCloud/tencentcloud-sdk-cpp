@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取凭证did
                      * @return InvokerTDid 凭证did
+                     * 
                      */
                     std::string GetInvokerTDid() const;
 
                     /**
                      * 设置凭证did
-                     * @param InvokerTDid 凭证did
+                     * @param _invokerTDid 凭证did
+                     * 
                      */
                     void SetInvokerTDid(const std::string& _invokerTDid);
 
                     /**
                      * 判断参数 InvokerTDid 是否已赋值
                      * @return InvokerTDid 是否已赋值
+                     * 
                      */
                     bool InvokerTDidHasBeenSet() const;
 

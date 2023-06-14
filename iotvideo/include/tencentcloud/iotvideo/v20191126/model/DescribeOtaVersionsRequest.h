@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量
-                     * @param Offset 分页偏移量
+                     * @param _offset 分页偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页数量，0<取值范围<=100
                      * @return Limit 每页数量，0<取值范围<=100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数量，0<取值范围<=100
-                     * @param Limit 每页数量，0<取值范围<=100
+                     * @param _limit 每页数量，0<取值范围<=100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取产品ID，为空时查询客户所有产品的版本信息
                      * @return ProductId 产品ID，为空时查询客户所有产品的版本信息
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID，为空时查询客户所有产品的版本信息
-                     * @param ProductId 产品ID，为空时查询客户所有产品的版本信息
+                     * @param _productId 产品ID，为空时查询客户所有产品的版本信息
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取版本号，支持模糊匹配
                      * @return OtaVersion 版本号，支持模糊匹配
+                     * 
                      */
                     std::string GetOtaVersion() const;
 
                     /**
                      * 设置版本号，支持模糊匹配
-                     * @param OtaVersion 版本号，支持模糊匹配
+                     * @param _otaVersion 版本号，支持模糊匹配
+                     * 
                      */
                     void SetOtaVersion(const std::string& _otaVersion);
 
                     /**
                      * 判断参数 OtaVersion 是否已赋值
                      * @return OtaVersion 是否已赋值
+                     * 
                      */
                     bool OtaVersionHasBeenSet() const;
 
                     /**
                      * 获取版本类型 1未发布 2测试发布 3正式发布 4禁用
                      * @return PubStatus 版本类型 1未发布 2测试发布 3正式发布 4禁用
+                     * 
                      */
                     uint64_t GetPubStatus() const;
 
                     /**
                      * 设置版本类型 1未发布 2测试发布 3正式发布 4禁用
-                     * @param PubStatus 版本类型 1未发布 2测试发布 3正式发布 4禁用
+                     * @param _pubStatus 版本类型 1未发布 2测试发布 3正式发布 4禁用
+                     * 
                      */
                     void SetPubStatus(const uint64_t& _pubStatus);
 
                     /**
                      * 判断参数 PubStatus 是否已赋值
                      * @return PubStatus 是否已赋值
+                     * 
                      */
                     bool PubStatusHasBeenSet() const;
 

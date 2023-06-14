@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取时间，格式：yyyy-mm-dd HH:MM:SS。
                      * @return Time 时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置时间，格式：yyyy-mm-dd HH:MM:SS。
-                     * @param Time 时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * @param _time 时间，格式：yyyy-mm-dd HH:MM:SS。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取次数。
                      * @return Numbers 次数。
+                     * 
                      */
                     uint64_t GetNumbers() const;
 
                     /**
                      * 设置次数。
-                     * @param Numbers 次数。
+                     * @param _numbers 次数。
+                     * 
                      */
                     void SetNumbers(const uint64_t& _numbers);
 
                     /**
                      * 判断参数 Numbers 是否已赋值
                      * @return Numbers 是否已赋值
+                     * 
                      */
                     bool NumbersHasBeenSet() const;
 
                     /**
                      * 获取占比。
                      * @return Percentage 占比。
+                     * 
                      */
                     double GetPercentage() const;
 
                     /**
                      * 设置占比。
-                     * @param Percentage 占比。
+                     * @param _percentage 占比。
+                     * 
                      */
                     void SetPercentage(const double& _percentage);
 
                     /**
                      * 判断参数 Percentage 是否已赋值
                      * @return Percentage 是否已赋值
+                     * 
                      */
                     bool PercentageHasBeenSet() const;
 

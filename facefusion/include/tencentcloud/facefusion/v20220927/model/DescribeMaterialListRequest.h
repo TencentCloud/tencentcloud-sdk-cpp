@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取活动Id
                      * @return ActivityId 活动Id
+                     * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置活动Id
-                     * @param ActivityId 活动Id
+                     * @param _activityId 活动Id
+                     * 
                      */
                     void SetActivityId(const std::string& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
                     /**
                      * 获取素材Id
                      * @return MaterialId 素材Id
+                     * 
                      */
                     std::string GetMaterialId() const;
 
                     /**
                      * 设置素材Id
-                     * @param MaterialId 素材Id
+                     * @param _materialId 素材Id
+                     * 
                      */
                     void SetMaterialId(const std::string& _materialId);
 
                     /**
                      * 判断参数 MaterialId 是否已赋值
                      * @return MaterialId 是否已赋值
+                     * 
                      */
                     bool MaterialIdHasBeenSet() const;
 
                     /**
                      * 获取每次拉取条数
                      * @return Limit 每次拉取条数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每次拉取条数
-                     * @param Limit 每次拉取条数
+                     * @param _limit 每次拉取条数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

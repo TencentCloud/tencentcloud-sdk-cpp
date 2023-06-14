@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 描述
+                     * @param _text 描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Organ 器官
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Organ> GetOrgan() const;
 
                     /**
                      * 设置器官
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Organ 器官
+                     * @param _organ 器官
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgan(const std::vector<Organ>& _organ);
 
                     /**
                      * 判断参数 Organ 是否已赋值
                      * @return Organ 是否已赋值
+                     * 
                      */
                     bool OrganHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tuber 结节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TuberInfo> GetTuber() const;
 
                     /**
                      * 设置结节
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tuber 结节
+                     * @param _tuber 结节
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTuber(const std::vector<TuberInfo>& _tuber);
 
                     /**
                      * 判断参数 Tuber 是否已赋值
                      * @return Tuber 是否已赋值
+                     * 
                      */
                     bool TuberHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Coord> GetCoords() const;
 
                     /**
                      * 设置坐标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Coords 坐标
+                     * @param _coords 坐标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCoords(const std::vector<Coord>& _coords);
 
                     /**
                      * 判断参数 Coords 是否已赋值
                      * @return Coords 是否已赋值
+                     * 
                      */
                     bool CoordsHasBeenSet() const;
 

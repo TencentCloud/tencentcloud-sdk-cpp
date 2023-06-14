@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取ECM 地域
                      * @return EcmRegion ECM 地域
+                     * 
                      */
                     std::string GetEcmRegion() const;
 
                     /**
                      * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * @param _ecmRegion ECM 地域
+                     * 
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
                     /**
                      * 判断参数 EcmRegion 是否已赋值
                      * @return EcmRegion 是否已赋值
+                     * 
                      */
                     bool EcmRegionHasBeenSet() const;
 
                     /**
                      * 获取EIP数量。默认值：1。
                      * @return AddressCount EIP数量。默认值：1。
+                     * 
                      */
                     uint64_t GetAddressCount() const;
 
                     /**
                      * 设置EIP数量。默认值：1。
-                     * @param AddressCount EIP数量。默认值：1。
+                     * @param _addressCount EIP数量。默认值：1。
+                     * 
                      */
                     void SetAddressCount(const uint64_t& _addressCount);
 
                     /**
                      * 判断参数 AddressCount 是否已赋值
                      * @return AddressCount 是否已赋值
+                     * 
                      */
                     bool AddressCountHasBeenSet() const;
 
@@ -86,6 +92,7 @@ CUCC：中国联通
                      * @return InternetServiceProvider CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
+                     * 
                      */
                     std::string GetInternetServiceProvider() const;
 
@@ -93,105 +100,122 @@ CUCC：中国联通
                      * 设置CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
-                     * @param InternetServiceProvider CMCC：中国移动
+                     * @param _internetServiceProvider CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
+                     * 
                      */
                     void SetInternetServiceProvider(const std::string& _internetServiceProvider);
 
                     /**
                      * 判断参数 InternetServiceProvider 是否已赋值
                      * @return InternetServiceProvider 是否已赋值
+                     * 
                      */
                     bool InternetServiceProviderHasBeenSet() const;
 
                     /**
                      * 获取1 Mbps 至 5000 Mbps，默认值：1 Mbps。
                      * @return InternetMaxBandwidthOut 1 Mbps 至 5000 Mbps，默认值：1 Mbps。
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置1 Mbps 至 5000 Mbps，默认值：1 Mbps。
-                     * @param InternetMaxBandwidthOut 1 Mbps 至 5000 Mbps，默认值：1 Mbps。
+                     * @param _internetMaxBandwidthOut 1 Mbps 至 5000 Mbps，默认值：1 Mbps。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取需要关联的标签列表。
                      * @return Tags 需要关联的标签列表。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置需要关联的标签列表。
-                     * @param Tags 需要关联的标签列表。
+                     * @param _tags 需要关联的标签列表。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取要绑定的实例 ID。
                      * @return InstanceId 要绑定的实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置要绑定的实例 ID。
-                     * @param InstanceId 要绑定的实例 ID。
+                     * @param _instanceId 要绑定的实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。
                      * @return NetworkInterfaceId 要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。
+                     * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
                      * 设置要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。
-                     * @param NetworkInterfaceId 要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。
+                     * @param _networkInterfaceId 要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。
+                     * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
 
                     /**
                      * 判断参数 NetworkInterfaceId 是否已赋值
                      * @return NetworkInterfaceId 是否已赋值
+                     * 
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
                      * 获取要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。
                      * @return PrivateIpAddress 要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。
+                     * 
                      */
                     std::string GetPrivateIpAddress() const;
 
                     /**
                      * 设置要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。
-                     * @param PrivateIpAddress 要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。
+                     * @param _privateIpAddress 要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。
+                     * 
                      */
                     void SetPrivateIpAddress(const std::string& _privateIpAddress);
 
                     /**
                      * 判断参数 PrivateIpAddress 是否已赋值
                      * @return PrivateIpAddress 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressHasBeenSet() const;
 

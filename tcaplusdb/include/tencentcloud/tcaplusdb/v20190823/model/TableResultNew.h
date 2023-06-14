@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableInstanceId 表格实例ID，形如：tcaplus-3be64cbb
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableInstanceId() const;
 
                     /**
                      * 设置表格实例ID，形如：tcaplus-3be64cbb
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableInstanceId 表格实例ID，形如：tcaplus-3be64cbb
+                     * @param _tableInstanceId 表格实例ID，形如：tcaplus-3be64cbb
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableInstanceId(const std::string& _tableInstanceId);
 
                     /**
                      * 判断参数 TableInstanceId 是否已赋值
                      * @return TableInstanceId 是否已赋值
+                     * 
                      */
                     bool TableInstanceIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID，对于创建单任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID，对于创建单任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID，对于创建单任务的接口有效
+                     * @param _taskId 任务ID，对于创建单任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表格名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 表格名称
+                     * @param _tableName 表格名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableType 表格数据结构类型，如：`GENERIC`或`LIST`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableType() const;
 
                     /**
                      * 设置表格数据结构类型，如：`GENERIC`或`LIST`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableType 表格数据结构类型，如：`GENERIC`或`LIST`
+                     * @param _tableType 表格数据结构类型，如：`GENERIC`或`LIST`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableType(const std::string& _tableType);
 
                     /**
                      * 判断参数 TableType 是否已赋值
                      * @return TableType 是否已赋值
+                     * 
                      */
                     bool TableTypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableIdlType 表数据描述语言（IDL）类型，如：`PROTO`或`TDR`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableIdlType() const;
 
                     /**
                      * 设置表数据描述语言（IDL）类型，如：`PROTO`或`TDR`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableIdlType 表数据描述语言（IDL）类型，如：`PROTO`或`TDR`
+                     * @param _tableIdlType 表数据描述语言（IDL）类型，如：`PROTO`或`TDR`
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableIdlType(const std::string& _tableIdlType);
 
                     /**
                      * 判断参数 TableIdlType 是否已赋值
                      * @return TableIdlType 是否已赋值
+                     * 
                      */
                     bool TableIdlTypeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableGroupId 表格所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置表格所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableGroupId 表格所属表格组ID
+                     * @param _tableGroupId 表格所属表格组ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Error 错误信息
+                     * @param _error 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetError(const ErrorInfo& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskIds 任务ID列表，对于创建多任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
                      * 设置任务ID列表，对于创建多任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskIds 任务ID列表，对于创建多任务的接口有效
+                     * @param _taskIds 任务ID列表，对于创建多任务的接口有效
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
 
                     /**
                      * 判断参数 TaskIds 是否已赋值
                      * @return TaskIds 是否已赋值
+                     * 
                      */
                     bool TaskIdsHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 腾讯云申请审核单Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置腾讯云申请审核单Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationId 腾讯云申请审核单Id
+                     * @param _applicationId 腾讯云申请审核单Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 

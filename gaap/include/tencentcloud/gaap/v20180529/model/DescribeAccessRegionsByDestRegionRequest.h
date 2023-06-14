@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值
                      * @return DestRegion 源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值
+                     * 
                      */
                     std::string GetDestRegion() const;
 
                     /**
                      * 设置源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值
-                     * @param DestRegion 源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值
+                     * @param _destRegion 源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值
+                     * 
                      */
                     void SetDestRegion(const std::string& _destRegion);
 
                     /**
                      * 判断参数 DestRegion 是否已赋值
                      * @return DestRegion 是否已赋值
+                     * 
                      */
                     bool DestRegionHasBeenSet() const;
 
                     /**
                      * 获取IP版本，可取值：IPv4、IPv6，默认值IPv4
                      * @return IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * 
                      */
                     std::string GetIPAddressVersion() const;
 
                     /**
                      * 设置IP版本，可取值：IPv4、IPv6，默认值IPv4
-                     * @param IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * @param _iPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * 
                      */
                     void SetIPAddressVersion(const std::string& _iPAddressVersion);
 
                     /**
                      * 判断参数 IPAddressVersion 是否已赋值
                      * @return IPAddressVersion 是否已赋值
+                     * 
                      */
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
                      * 获取通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
                      * @return PackageType 通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     * 
                      */
                     std::string GetPackageType() const;
 
                     /**
                      * 设置通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
-                     * @param PackageType 通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     * @param _packageType 通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 

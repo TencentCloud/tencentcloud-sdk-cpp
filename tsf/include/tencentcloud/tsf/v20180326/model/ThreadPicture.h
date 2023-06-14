@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取总线程数
                      * @return ThreadCount 总线程数
+                     * 
                      */
                     std::vector<CurvePoint> GetThreadCount() const;
 
                     /**
                      * 设置总线程数
-                     * @param ThreadCount 总线程数
+                     * @param _threadCount 总线程数
+                     * 
                      */
                     void SetThreadCount(const std::vector<CurvePoint>& _threadCount);
 
                     /**
                      * 判断参数 ThreadCount 是否已赋值
                      * @return ThreadCount 是否已赋值
+                     * 
                      */
                     bool ThreadCountHasBeenSet() const;
 
                     /**
                      * 获取活跃线程数
                      * @return ThreadActive 活跃线程数
+                     * 
                      */
                     std::vector<CurvePoint> GetThreadActive() const;
 
                     /**
                      * 设置活跃线程数
-                     * @param ThreadActive 活跃线程数
+                     * @param _threadActive 活跃线程数
+                     * 
                      */
                     void SetThreadActive(const std::vector<CurvePoint>& _threadActive);
 
                     /**
                      * 判断参数 ThreadActive 是否已赋值
                      * @return ThreadActive 是否已赋值
+                     * 
                      */
                     bool ThreadActiveHasBeenSet() const;
 
                     /**
                      * 获取守护线程数
                      * @return DeamonThreadCount 守护线程数
+                     * 
                      */
                     std::vector<CurvePoint> GetDeamonThreadCount() const;
 
                     /**
                      * 设置守护线程数
-                     * @param DeamonThreadCount 守护线程数
+                     * @param _deamonThreadCount 守护线程数
+                     * 
                      */
                     void SetDeamonThreadCount(const std::vector<CurvePoint>& _deamonThreadCount);
 
                     /**
                      * 判断参数 DeamonThreadCount 是否已赋值
                      * @return DeamonThreadCount 是否已赋值
+                     * 
                      */
                     bool DeamonThreadCountHasBeenSet() const;
 

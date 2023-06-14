@@ -49,6 +49,7 @@ N取值范围：0~9
                      * @return ResourceList 资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。
 N取值范围：0~9
+                     * 
                      */
                     std::vector<std::string> GetResourceList() const;
 
@@ -56,15 +57,17 @@ N取值范围：0~9
                      * 设置资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。
 N取值范围：0~9
-                     * @param ResourceList 资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息
+                     * @param _resourceList 资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。
 N取值范围：0~9
+                     * 
                      */
                     void SetResourceList(const std::vector<std::string>& _resourceList);
 
                     /**
                      * 判断参数 ResourceList 是否已赋值
                      * @return ResourceList 是否已赋值
+                     * 
                      */
                     bool ResourceListHasBeenSet() const;
 
@@ -73,20 +76,23 @@ N取值范围：0~9
 取值范围：0~9
                      * @return TagKeys 标签键。
 取值范围：0~9
+                     * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
                      * 设置标签键。
 取值范围：0~9
-                     * @param TagKeys 标签键。
+                     * @param _tagKeys 标签键。
 取值范围：0~9
+                     * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
 
                     /**
                      * 判断参数 TagKeys 是否已赋值
                      * @return TagKeys 是否已赋值
+                     * 
                      */
                     bool TagKeysHasBeenSet() const;
 

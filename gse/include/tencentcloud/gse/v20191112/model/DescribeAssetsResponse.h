@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取生成包总数
                      * @return TotalCount 生成包总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取生成包列表
                      * @return Assets 生成包列表
+                     * 
                      */
                     std::vector<Asset> GetAssets() const;
 
                     /**
                      * 判断参数 Assets 是否已赋值
                      * @return Assets 是否已赋值
+                     * 
                      */
                     bool AssetsHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取EventId。
                      * @return EventId EventId。
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置EventId。
-                     * @param EventId EventId。
+                     * @param _eventId EventId。
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。
                      * @return FlowIds Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。
+                     * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。
-                     * @param FlowIds Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。
+                     * @param _flowIds Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。
+                     * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
                     /**
                      * 判断参数 FlowIds 是否已赋值
                      * @return FlowIds 是否已赋值
+                     * 
                      */
                     bool FlowIdsHasBeenSet() const;
 

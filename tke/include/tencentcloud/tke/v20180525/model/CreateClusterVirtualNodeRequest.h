@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取虚拟节点所属节点池
                      * @return NodePoolId 虚拟节点所属节点池
+                     * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置虚拟节点所属节点池
-                     * @param NodePoolId 虚拟节点所属节点池
+                     * @param _nodePoolId 虚拟节点所属节点池
+                     * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
 
                     /**
                      * 判断参数 NodePoolId 是否已赋值
                      * @return NodePoolId 是否已赋值
+                     * 
                      */
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
                      * 获取虚拟节点所属子网
                      * @return SubnetId 虚拟节点所属子网
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置虚拟节点所属子网
-                     * @param SubnetId 虚拟节点所属子网
+                     * @param _subnetId 虚拟节点所属子网
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取虚拟节点子网ID列表，和参数SubnetId互斥
                      * @return SubnetIds 虚拟节点子网ID列表，和参数SubnetId互斥
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置虚拟节点子网ID列表，和参数SubnetId互斥
-                     * @param SubnetIds 虚拟节点子网ID列表，和参数SubnetId互斥
+                     * @param _subnetIds 虚拟节点子网ID列表，和参数SubnetId互斥
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取虚拟节点列表
                      * @return VirtualNodes 虚拟节点列表
+                     * 
                      */
                     std::vector<VirtualNodeSpec> GetVirtualNodes() const;
 
                     /**
                      * 设置虚拟节点列表
-                     * @param VirtualNodes 虚拟节点列表
+                     * @param _virtualNodes 虚拟节点列表
+                     * 
                      */
                     void SetVirtualNodes(const std::vector<VirtualNodeSpec>& _virtualNodes);
 
                     /**
                      * 判断参数 VirtualNodes 是否已赋值
                      * @return VirtualNodes 是否已赋值
+                     * 
                      */
                     bool VirtualNodesHasBeenSet() const;
 

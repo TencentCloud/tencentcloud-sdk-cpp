@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 负载均衡监听器 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerId 负载均衡监听器 ID
+                     * @param _listenerId 负载均衡监听器 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 监听器协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Protocol 监听器协议
+                     * @param _protocol 监听器协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 监听器端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听器端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 监听器端口
+                     * @param _port 监听器端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheck 监听器的健康检查信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HealthCheck GetHealthCheck() const;
 
                     /**
                      * 设置监听器的健康检查信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HealthCheck 监听器的健康检查信息
+                     * @param _healthCheck 监听器的健康检查信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHealthCheck(const HealthCheck& _healthCheck);
 
                     /**
                      * 判断参数 HealthCheck 是否已赋值
                      * @return HealthCheck 是否已赋值
+                     * 
                      */
                     bool HealthCheckHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scheduler 请求的调度方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScheduler() const;
 
                     /**
                      * 设置请求的调度方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scheduler 请求的调度方式
+                     * @param _scheduler 请求的调度方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScheduler(const std::string& _scheduler);
 
                     /**
                      * 判断参数 Scheduler 是否已赋值
                      * @return Scheduler 是否已赋值
+                     * 
                      */
                     bool SchedulerHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionExpireTime 会话保持时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
                      * 设置会话保持时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionExpireTime 会话保持时间
+                     * @param _sessionExpireTime 会话保持时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
 
                     /**
                      * 判断参数 SessionExpireTime 是否已赋值
                      * @return SessionExpireTime 是否已赋值
+                     * 
                      */
                     bool SessionExpireTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerName 监听器的名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetListenerName() const;
 
                     /**
                      * 设置监听器的名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ListenerName 监听器的名称
+                     * @param _listenerName 监听器的名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetListenerName(const std::string& _listenerName);
 
                     /**
                      * 判断参数 ListenerName 是否已赋值
                      * @return ListenerName 是否已赋值
+                     * 
                      */
                     bool ListenerNameHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 监听器的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置监听器的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 监听器的创建时间
+                     * @param _createTime 监听器的创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionType 监听器的会话类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSessionType() const;
 
                     /**
                      * 设置监听器的会话类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionType 监听器的会话类型
+                     * @param _sessionType 监听器的会话类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionType(const std::string& _sessionType);
 
                     /**
                      * 判断参数 SessionType 是否已赋值
                      * @return SessionType 是否已赋值
+                     * 
                      */
                     bool SessionTypeHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndPort 端口段结束端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEndPort() const;
 
                     /**
                      * 设置端口段结束端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndPort 端口段结束端口
+                     * @param _endPort 端口段结束端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndPort(const int64_t& _endPort);
 
                     /**
                      * 判断参数 EndPort 是否已赋值
                      * @return EndPort 是否已赋值
+                     * 
                      */
                     bool EndPortHasBeenSet() const;
 

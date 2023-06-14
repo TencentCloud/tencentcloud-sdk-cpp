@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取慢日志总数
                      * @return Count 慢日志总数
+                     * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowLogs 慢日志详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSlowLogs() const;
 
                     /**
                      * 判断参数 SlowLogs 是否已赋值
                      * @return SlowLogs 是否已赋值
+                     * 
                      */
                     bool SlowLogsHasBeenSet() const;
 

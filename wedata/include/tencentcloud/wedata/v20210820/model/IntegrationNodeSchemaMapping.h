@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取源schema id
                      * @return SourceSchemaId 源schema id
+                     * 
                      */
                     std::string GetSourceSchemaId() const;
 
                     /**
                      * 设置源schema id
-                     * @param SourceSchemaId 源schema id
+                     * @param _sourceSchemaId 源schema id
+                     * 
                      */
                     void SetSourceSchemaId(const std::string& _sourceSchemaId);
 
                     /**
                      * 判断参数 SourceSchemaId 是否已赋值
                      * @return SourceSchemaId 是否已赋值
+                     * 
                      */
                     bool SourceSchemaIdHasBeenSet() const;
 
                     /**
                      * 获取目标schema id
                      * @return SinkSchemaId 目标schema id
+                     * 
                      */
                     std::string GetSinkSchemaId() const;
 
                     /**
                      * 设置目标schema id
-                     * @param SinkSchemaId 目标schema id
+                     * @param _sinkSchemaId 目标schema id
+                     * 
                      */
                     void SetSinkSchemaId(const std::string& _sinkSchemaId);
 
                     /**
                      * 判断参数 SinkSchemaId 是否已赋值
                      * @return SinkSchemaId 是否已赋值
+                     * 
                      */
                     bool SinkSchemaIdHasBeenSet() const;
 

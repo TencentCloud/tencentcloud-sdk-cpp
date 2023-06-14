@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取主题名称
                      * @return Topic 主题名称
+                     * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置主题名称
-                     * @param Topic 主题名称
+                     * @param _topic 主题名称
+                     * 
                      */
                     void SetTopic(const std::string& _topic);
 
                     /**
                      * 判断参数 Topic 是否已赋值
                      * @return Topic 是否已赋值
+                     * 
                      */
                     bool TopicHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 该主题分区数组，其中每个元素为一个 json object
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GroupOffsetPartition> GetPartitions() const;
 
                     /**
                      * 设置该主题分区数组，其中每个元素为一个 json object
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Partitions 该主题分区数组，其中每个元素为一个 json object
+                     * @param _partitions 该主题分区数组，其中每个元素为一个 json object
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPartitions(const std::vector<GroupOffsetPartition>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 

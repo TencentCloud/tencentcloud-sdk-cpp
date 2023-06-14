@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取通知渠道组名称
                      * @return Name 通知渠道组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置通知渠道组名称
-                     * @param Name 通知渠道组名称
+                     * @param _name 通知渠道组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取通知渠道组ID
                      * @return AlarmNoticeId 通知渠道组ID
+                     * 
                      */
                     std::string GetAlarmNoticeId() const;
 
                     /**
                      * 设置通知渠道组ID
-                     * @param AlarmNoticeId 通知渠道组ID
+                     * @param _alarmNoticeId 通知渠道组ID
+                     * 
                      */
                     void SetAlarmNoticeId(const std::string& _alarmNoticeId);
 
                     /**
                      * 判断参数 AlarmNoticeId 是否已赋值
                      * @return AlarmNoticeId 是否已赋值
+                     * 
                      */
                     bool AlarmNoticeIdHasBeenSet() const;
 

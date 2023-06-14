@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取记录ID
                      * @return ID 记录ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置记录ID
-                     * @param ID 记录ID
+                     * @param _iD 记录ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取镜像ID
                      * @return ImageID 镜像ID
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 设置镜像ID
-                     * @param ImageID 镜像ID
+                     * @param _imageID 镜像ID
+                     * 
                      */
                     void SetImageID(const std::string& _imageID);
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名称
-                     * @param ImageName 镜像名称
+                     * @param _imageName 镜像名称
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像大小
                      * @return ImageSize 镜像大小
+                     * 
                      */
                     int64_t GetImageSize() const;
 
                     /**
                      * 设置镜像大小
-                     * @param ImageSize 镜像大小
+                     * @param _imageSize 镜像大小
+                     * 
                      */
                     void SetImageSize(const int64_t& _imageSize);
 
                     /**
                      * 判断参数 ImageSize 是否已赋值
                      * @return ImageSize 是否已赋值
+                     * 
                      */
                     bool ImageSizeHasBeenSet() const;
 
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 

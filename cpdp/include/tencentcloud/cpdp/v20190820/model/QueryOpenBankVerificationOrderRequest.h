@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取云企付渠道商户号。外部接入平台入驻云企付平台后下发。
                      * @return ChannelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置云企付渠道商户号。外部接入平台入驻云企付平台后下发。
-                     * @param ChannelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * @param _channelMerchantId 云企付渠道商户号。外部接入平台入驻云企付平台后下发。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取云企付渠道核销订单号。与OutVerificationId不能同时为空。
                      * @return ChannelVerificationId 云企付渠道核销订单号。与OutVerificationId不能同时为空。
+                     * 
                      */
                     std::string GetChannelVerificationId() const;
 
                     /**
                      * 设置云企付渠道核销订单号。与OutVerificationId不能同时为空。
-                     * @param ChannelVerificationId 云企付渠道核销订单号。与OutVerificationId不能同时为空。
+                     * @param _channelVerificationId 云企付渠道核销订单号。与OutVerificationId不能同时为空。
+                     * 
                      */
                     void SetChannelVerificationId(const std::string& _channelVerificationId);
 
                     /**
                      * 判断参数 ChannelVerificationId 是否已赋值
                      * @return ChannelVerificationId 是否已赋值
+                     * 
                      */
                     bool ChannelVerificationIdHasBeenSet() const;
 
                     /**
                      * 获取外部核销申请订单号。与ChannelVerificationId不能同时为空。
                      * @return OutVerificationId 外部核销申请订单号。与ChannelVerificationId不能同时为空。
+                     * 
                      */
                     std::string GetOutVerificationId() const;
 
                     /**
                      * 设置外部核销申请订单号。与ChannelVerificationId不能同时为空。
-                     * @param OutVerificationId 外部核销申请订单号。与ChannelVerificationId不能同时为空。
+                     * @param _outVerificationId 外部核销申请订单号。与ChannelVerificationId不能同时为空。
+                     * 
                      */
                     void SetOutVerificationId(const std::string& _outVerificationId);
 
                     /**
                      * 判断参数 OutVerificationId 是否已赋值
                      * @return OutVerificationId 是否已赋值
+                     * 
                      */
                     bool OutVerificationIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -113,16 +123,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

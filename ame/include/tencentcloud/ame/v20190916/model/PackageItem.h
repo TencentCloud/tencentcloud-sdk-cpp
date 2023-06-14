@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取订单id
                      * @return OrderId 订单id
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单id
-                     * @param OrderId 订单id
+                     * @param _orderId 订单id
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取歌曲名
                      * @return TrackName 歌曲名
+                     * 
                      */
                     std::string GetTrackName() const;
 
                     /**
                      * 设置歌曲名
-                     * @param TrackName 歌曲名
+                     * @param _trackName 歌曲名
+                     * 
                      */
                     void SetTrackName(const std::string& _trackName);
 
                     /**
                      * 判断参数 TrackName 是否已赋值
                      * @return TrackName 是否已赋值
+                     * 
                      */
                     bool TrackNameHasBeenSet() const;
 
                     /**
                      * 获取歌曲ID
                      * @return ItemID 歌曲ID
+                     * 
                      */
                     std::string GetItemID() const;
 
                     /**
                      * 设置歌曲ID
-                     * @param ItemID 歌曲ID
+                     * @param _itemID 歌曲ID
+                     * 
                      */
                     void SetItemID(const std::string& _itemID);
 
                     /**
                      * 判断参数 ItemID 是否已赋值
                      * @return ItemID 是否已赋值
+                     * 
                      */
                     bool ItemIDHasBeenSet() const;
 
                     /**
                      * 获取专辑图片
                      * @return Img 专辑图片
+                     * 
                      */
                     std::string GetImg() const;
 
                     /**
                      * 设置专辑图片
-                     * @param Img 专辑图片
+                     * @param _img 专辑图片
+                     * 
                      */
                     void SetImg(const std::string& _img);
 
                     /**
                      * 判断参数 Img 是否已赋值
                      * @return Img 是否已赋值
+                     * 
                      */
                     bool ImgHasBeenSet() const;
 
                     /**
                      * 获取歌手名
                      * @return ArtistName 歌手名
+                     * 
                      */
                     std::string GetArtistName() const;
 
                     /**
                      * 设置歌手名
-                     * @param ArtistName 歌手名
+                     * @param _artistName 歌手名
+                     * 
                      */
                     void SetArtistName(const std::string& _artistName);
 
                     /**
                      * 判断参数 ArtistName 是否已赋值
                      * @return ArtistName 是否已赋值
+                     * 
                      */
                     bool ArtistNameHasBeenSet() const;
 
                     /**
                      * 获取歌曲时长
                      * @return Duration 歌曲时长
+                     * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置歌曲时长
-                     * @param Duration 歌曲时长
+                     * @param _duration 歌曲时长
+                     * 
                      */
                     void SetDuration(const std::string& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取授权区域，global: 全球 CN: 中国
                      * @return AuthorizedArea 授权区域，global: 全球 CN: 中国
+                     * 
                      */
                     std::string GetAuthorizedArea() const;
 
                     /**
                      * 设置授权区域，global: 全球 CN: 中国
-                     * @param AuthorizedArea 授权区域，global: 全球 CN: 中国
+                     * @param _authorizedArea 授权区域，global: 全球 CN: 中国
+                     * 
                      */
                     void SetAuthorizedArea(const std::string& _authorizedArea);
 
                     /**
                      * 判断参数 AuthorizedArea 是否已赋值
                      * @return AuthorizedArea 是否已赋值
+                     * 
                      */
                     bool AuthorizedAreaHasBeenSet() const;
 
                     /**
                      * 获取标签数组
                      * @return Tags 标签数组
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签数组
-                     * @param Tags 标签数组
+                     * @param _tags 标签数组
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

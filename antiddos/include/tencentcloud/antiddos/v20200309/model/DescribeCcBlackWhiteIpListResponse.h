@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取CC四层黑白名单策略列表总数
                      * @return Total CC四层黑白名单策略列表总数
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取CC四层黑白名单策略列表详情
                      * @return CcBlackWhiteIpList CC四层黑白名单策略列表详情
+                     * 
                      */
                     std::vector<CcBlackWhiteIpPolicy> GetCcBlackWhiteIpList() const;
 
                     /**
                      * 判断参数 CcBlackWhiteIpList 是否已赋值
                      * @return CcBlackWhiteIpList 是否已赋值
+                     * 
                      */
                     bool CcBlackWhiteIpListHasBeenSet() const;
 

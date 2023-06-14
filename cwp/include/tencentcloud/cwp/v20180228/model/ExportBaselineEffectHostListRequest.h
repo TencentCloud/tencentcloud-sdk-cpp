@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取基线id
                      * @return BaselineId 基线id
+                     * 
                      */
                     uint64_t GetBaselineId() const;
 
                     /**
                      * 设置基线id
-                     * @param BaselineId 基线id
+                     * @param _baselineId 基线id
+                     * 
                      */
                     void SetBaselineId(const uint64_t& _baselineId);
 
                     /**
                      * 判断参数 BaselineId 是否已赋值
                      * @return BaselineId 是否已赋值
+                     * 
                      */
                     bool BaselineIdHasBeenSet() const;
 
@@ -66,74 +69,86 @@ namespace TencentCloud
 <li>AliasName- String- 主机别名</li>
                      * @return Filters 筛选条件
 <li>AliasName- String- 主机别名</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置筛选条件
 <li>AliasName- String- 主机别名</li>
-                     * @param Filters 筛选条件
+                     * @param _filters 筛选条件
 <li>AliasName- String- 主机别名</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取策略id
                      * @return StrategyId 策略id
+                     * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置策略id
-                     * @param StrategyId 策略id
+                     * @param _strategyId 策略id
+                     * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
 
                     /**
                      * 判断参数 StrategyId 是否已赋值
                      * @return StrategyId 是否已赋值
+                     * 
                      */
                     bool StrategyIdHasBeenSet() const;
 
                     /**
                      * 获取主机uuid数组
                      * @return UuidList 主机uuid数组
+                     * 
                      */
                     std::vector<std::string> GetUuidList() const;
 
                     /**
                      * 设置主机uuid数组
-                     * @param UuidList 主机uuid数组
+                     * @param _uuidList 主机uuid数组
+                     * 
                      */
                     void SetUuidList(const std::vector<std::string>& _uuidList);
 
                     /**
                      * 判断参数 UuidList 是否已赋值
                      * @return UuidList 是否已赋值
+                     * 
                      */
                     bool UuidListHasBeenSet() const;
 
                     /**
                      * 获取基线名称
                      * @return BaselineName 基线名称
+                     * 
                      */
                     std::string GetBaselineName() const;
 
                     /**
                      * 设置基线名称
-                     * @param BaselineName 基线名称
+                     * @param _baselineName 基线名称
+                     * 
                      */
                     void SetBaselineName(const std::string& _baselineName);
 
                     /**
                      * 判断参数 BaselineName 是否已赋值
                      * @return BaselineName 是否已赋值
+                     * 
                      */
                     bool BaselineNameHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取IP地址
                      * @return Ip IP地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-                     * @param Ip IP地址
+                     * @param _ip IP地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取IP类型，取值[black(黑IP)，white(白IP)]
                      * @return Type IP类型，取值[black(黑IP)，white(白IP)]
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置IP类型，取值[black(黑IP)，white(白IP)]
-                     * @param Type IP类型，取值[black(黑IP)，white(白IP)]
+                     * @param _type IP类型，取值[black(黑IP)，white(白IP)]
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取黑白IP所属的实例
                      * @return InstanceDetailList 黑白IP所属的实例
+                     * 
                      */
                     std::vector<InstanceRelation> GetInstanceDetailList() const;
 
                     /**
                      * 设置黑白IP所属的实例
-                     * @param InstanceDetailList 黑白IP所属的实例
+                     * @param _instanceDetailList 黑白IP所属的实例
+                     * 
                      */
                     void SetInstanceDetailList(const std::vector<InstanceRelation>& _instanceDetailList);
 
                     /**
                      * 判断参数 InstanceDetailList 是否已赋值
                      * @return InstanceDetailList 是否已赋值
+                     * 
                      */
                     bool InstanceDetailListHasBeenSet() const;
 
                     /**
                      * 获取ip掩码，0表示32位完整ip
                      * @return Mask ip掩码，0表示32位完整ip
+                     * 
                      */
                     uint64_t GetMask() const;
 
                     /**
                      * 设置ip掩码，0表示32位完整ip
-                     * @param Mask ip掩码，0表示32位完整ip
+                     * @param _mask ip掩码，0表示32位完整ip
+                     * 
                      */
                     void SetMask(const uint64_t& _mask);
 
                     /**
                      * 判断参数 Mask 是否已赋值
                      * @return Mask 是否已赋值
+                     * 
                      */
                     bool MaskHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

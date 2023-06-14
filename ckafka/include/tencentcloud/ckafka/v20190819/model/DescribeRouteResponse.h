@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取返回的路由信息结果集
                      * @return Result 返回的路由信息结果集
+                     * 
                      */
                     RouteResponse GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

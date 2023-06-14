@@ -55,6 +55,7 @@ namespace TencentCloud
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
+                     * 
                      */
                     uint64_t GetSampleRate() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
-                     * @param SampleRate 音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
+                     * @param _sampleRate 音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
+                     * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 
@@ -83,6 +86,7 @@ namespace TencentCloud
                      * @return Channel 声道数枚举值:
 1：单声道;
 2：双声道（默认）。
+                     * 
                      */
                     uint64_t GetChannel() const;
 
@@ -90,33 +94,38 @@ namespace TencentCloud
                      * 设置声道数枚举值:
 1：单声道;
 2：双声道（默认）。
-                     * @param Channel 声道数枚举值:
+                     * @param _channel 声道数枚举值:
 1：单声道;
 2：双声道（默认）。
+                     * 
                      */
                     void SetChannel(const uint64_t& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取音频码率: 取值范围[32000, 128000] ，单位bps，默认64000bps。
                      * @return BitRate 音频码率: 取值范围[32000, 128000] ，单位bps，默认64000bps。
+                     * 
                      */
                     uint64_t GetBitRate() const;
 
                     /**
                      * 设置音频码率: 取值范围[32000, 128000] ，单位bps，默认64000bps。
-                     * @param BitRate 音频码率: 取值范围[32000, 128000] ，单位bps，默认64000bps。
+                     * @param _bitRate 音频码率: 取值范围[32000, 128000] ，单位bps，默认64000bps。
+                     * 
                      */
                     void SetBitRate(const uint64_t& _bitRate);
 
                     /**
                      * 判断参数 BitRate 是否已赋值
                      * @return BitRate 是否已赋值
+                     * 
                      */
                     bool BitRateHasBeenSet() const;
 

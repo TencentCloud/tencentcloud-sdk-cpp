@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取集群ID。
                      * @return ClusterId 集群ID。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID。
-                     * @param ClusterId 集群ID。
+                     * @param _clusterId 集群ID。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取集群活动ID。
                      * @return ActivityId 集群活动ID。
+                     * 
                      */
                     std::string GetActivityId() const;
 
                     /**
                      * 设置集群活动ID。
-                     * @param ActivityId 集群活动ID。
+                     * @param _activityId 集群活动ID。
+                     * 
                      */
                     void SetActivityId(const std::string& _activityId);
 
                     /**
                      * 判断参数 ActivityId 是否已赋值
                      * @return ActivityId 是否已赋值
+                     * 
                      */
                     bool ActivityIdHasBeenSet() const;
 
@@ -88,38 +94,44 @@ namespace TencentCloud
 
                      * @return ActivityType 集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
 
+                     * 
                      */
                     std::string GetActivityType() const;
 
                     /**
                      * 设置集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
 
-                     * @param ActivityType 集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
+                     * @param _activityType 集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
 
+                     * 
                      */
                     void SetActivityType(const std::string& _activityType);
 
                     /**
                      * 判断参数 ActivityType 是否已赋值
                      * @return ActivityType 是否已赋值
+                     * 
                      */
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
                      * 获取集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败
                      * @return ActivityStatus 集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败
+                     * 
                      */
                     std::string GetActivityStatus() const;
 
                     /**
                      * 设置集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败
-                     * @param ActivityStatus 集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败
+                     * @param _activityStatus 集群活动状态。取值范围：<br><li>PENDING：等待运行<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>PARTIALLY_SUCCESSFUL：活动部分成功<br><li>FAILED：活动失败
+                     * 
                      */
                     void SetActivityStatus(const std::string& _activityStatus);
 
                     /**
                      * 判断参数 ActivityStatus 是否已赋值
                      * @return ActivityStatus 是否已赋值
+                     * 
                      */
                     bool ActivityStatusHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityStatusCode 集群活动状态码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetActivityStatusCode() const;
 
                     /**
                      * 设置集群活动状态码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ActivityStatusCode 集群活动状态码。
+                     * @param _activityStatusCode 集群活动状态码。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActivityStatusCode(const std::string& _activityStatusCode);
 
                     /**
                      * 判断参数 ActivityStatusCode 是否已赋值
                      * @return ActivityStatusCode 是否已赋值
+                     * 
                      */
                     bool ActivityStatusCodeHasBeenSet() const;
 
@@ -150,74 +165,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultDetail 集群活动结果详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResultDetail() const;
 
                     /**
                      * 设置集群活动结果详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResultDetail 集群活动结果详情。
+                     * @param _resultDetail 集群活动结果详情。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResultDetail(const std::string& _resultDetail);
 
                     /**
                      * 判断参数 ResultDetail 是否已赋值
                      * @return ResultDetail 是否已赋值
+                     * 
                      */
                     bool ResultDetailHasBeenSet() const;
 
                     /**
                      * 获取集群活动起因。
                      * @return Cause 集群活动起因。
+                     * 
                      */
                     std::string GetCause() const;
 
                     /**
                      * 设置集群活动起因。
-                     * @param Cause 集群活动起因。
+                     * @param _cause 集群活动起因。
+                     * 
                      */
                     void SetCause(const std::string& _cause);
 
                     /**
                      * 判断参数 Cause 是否已赋值
                      * @return Cause 是否已赋值
+                     * 
                      */
                     bool CauseHasBeenSet() const;
 
                     /**
                      * 获取集群活动描述。
                      * @return Description 集群活动描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置集群活动描述。
-                     * @param Description 集群活动描述。
+                     * @param _description 集群活动描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取集群活动相关节点活动集合。
                      * @return RelatedNodeActivitySet 集群活动相关节点活动集合。
+                     * 
                      */
                     std::vector<NodeActivity> GetRelatedNodeActivitySet() const;
 
                     /**
                      * 设置集群活动相关节点活动集合。
-                     * @param RelatedNodeActivitySet 集群活动相关节点活动集合。
+                     * @param _relatedNodeActivitySet 集群活动相关节点活动集合。
+                     * 
                      */
                     void SetRelatedNodeActivitySet(const std::vector<NodeActivity>& _relatedNodeActivitySet);
 
                     /**
                      * 判断参数 RelatedNodeActivitySet 是否已赋值
                      * @return RelatedNodeActivitySet 是否已赋值
+                     * 
                      */
                     bool RelatedNodeActivitySetHasBeenSet() const;
 
@@ -226,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 集群活动开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置集群活动开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 集群活动开始时间。
+                     * @param _startTime 集群活动开始时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -248,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 集群活动结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置集群活动结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 集群活动结束时间。
+                     * @param _endTime 集群活动结束时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

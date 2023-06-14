@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取异步请求接口返回的任务流程号。
                      * @return FlowId 异步请求接口返回的任务流程号。
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置异步请求接口返回的任务流程号。
-                     * @param FlowId 异步请求接口返回的任务流程号。
+                     * @param _flowId 异步请求接口返回的任务流程号。
+                     * 
                      */
                     void SetFlowId(const int64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

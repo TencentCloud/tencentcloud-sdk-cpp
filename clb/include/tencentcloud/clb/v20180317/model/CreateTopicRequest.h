@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取日志主题的名称。
                      * @return TopicName 日志主题的名称。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题的名称。
-                     * @param TopicName 日志主题的名称。
+                     * @param _topicName 日志主题的名称。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
                      * @return PartitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 
                      */
                     uint64_t GetPartitionCount() const;
 
                     /**
                      * 设置主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
-                     * @param PartitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * @param _partitionCount 主题分区Partition的数量，不传参默认创建1个，最大创建允许10个，分裂/合并操作会改变分区数量，整体上限50个。
+                     * 
                      */
                     void SetPartitionCount(const uint64_t& _partitionCount);
 
                     /**
                      * 判断参数 PartitionCount 是否已赋值
                      * @return PartitionCount 是否已赋值
+                     * 
                      */
                     bool PartitionCountHasBeenSet() const;
 
                     /**
                      * 获取日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
                      * @return TopicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 
                      */
                     std::string GetTopicType() const;
 
                     /**
                      * 设置日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
-                     * @param TopicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * @param _topicType 日志类型，ACCESS：访问日志，HEALTH：健康检查日志，默认ACCESS。
+                     * 
                      */
                     void SetTopicType(const std::string& _topicType);
 
                     /**
                      * 判断参数 TopicType 是否已赋值
                      * @return TopicType 是否已赋值
+                     * 
                      */
                     bool TopicTypeHasBeenSet() const;
 
                     /**
                      * 获取日志集的保存周期，单位：天，默认30天。
                      * @return Period 日志集的保存周期，单位：天，默认30天。
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置日志集的保存周期，单位：天，默认30天。
-                     * @param Period 日志集的保存周期，单位：天，默认30天。
+                     * @param _period 日志集的保存周期，单位：天，默认30天。
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
                      * @return StorageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
-                     * @param StorageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * @param _storageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * 
                      */
                     void SetStorageType(const std::string& _storageType);
 
                     /**
                      * 判断参数 StorageType 是否已赋值
                      * @return StorageType 是否已赋值
+                     * 
                      */
                     bool StorageTypeHasBeenSet() const;
 

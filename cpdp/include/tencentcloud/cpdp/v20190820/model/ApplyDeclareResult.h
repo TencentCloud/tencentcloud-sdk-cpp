@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取错误码
                      * @return Code 错误码
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码
-                     * @param Code 错误码
+                     * @param _code 错误码
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取提交申报材料数据
                      * @return Data 提交申报材料数据
+                     * 
                      */
                     ApplyDeclareData GetData() const;
 
                     /**
                      * 设置提交申报材料数据
-                     * @param Data 提交申报材料数据
+                     * @param _data 提交申报材料数据
+                     * 
                      */
                     void SetData(const ApplyDeclareData& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

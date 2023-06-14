@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 名称
+                     * @param _name 名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NFS NFS的挂载方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CloudBaseRunNfsVolumeSource GetNFS() const;
 
                     /**
                      * 设置NFS的挂载方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NFS NFS的挂载方式
+                     * @param _nFS NFS的挂载方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNFS(const CloudBaseRunNfsVolumeSource& _nFS);
 
                     /**
                      * 判断参数 NFS 是否已赋值
                      * @return NFS 是否已赋值
+                     * 
                      */
                     bool NFSHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName secret名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SecretName secret名称
+                     * @param _secretName secret名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetEnableEmptyDirVolume() const;
 
                     /**
                      * 设置是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
+                     * @param _enableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume);
 
                     /**
                      * 判断参数 EnableEmptyDirVolume 是否已赋值
                      * @return EnableEmptyDirVolume 是否已赋值
+                     * 
                      */
                     bool EnableEmptyDirVolumeHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmptyDir emptydir数据卷详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CloudBaseRunEmptyDirVolumeSource GetEmptyDir() const;
 
                     /**
                      * 设置emptydir数据卷详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EmptyDir emptydir数据卷详细信息
+                     * @param _emptyDir emptydir数据卷详细信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEmptyDir(const CloudBaseRunEmptyDirVolumeSource& _emptyDir);
 
                     /**
                      * 判断参数 EmptyDir 是否已赋值
                      * @return EmptyDir 是否已赋值
+                     * 
                      */
                     bool EmptyDirHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostPath 主机路径挂载信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CloudBaseRunServiceVolumeHostPath GetHostPath() const;
 
                     /**
                      * 设置主机路径挂载信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostPath 主机路径挂载信息
+                     * @param _hostPath 主机路径挂载信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostPath(const CloudBaseRunServiceVolumeHostPath& _hostPath);
 
                     /**
                      * 判断参数 HostPath 是否已赋值
                      * @return HostPath 是否已赋值
+                     * 
                      */
                     bool HostPathHasBeenSet() const;
 

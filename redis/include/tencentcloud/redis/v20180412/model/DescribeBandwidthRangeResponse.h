@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取标准带宽。指购买实例时，系统为每个节点分配的带宽。
                      * @return BaseBandwidth 标准带宽。指购买实例时，系统为每个节点分配的带宽。
+                     * 
                      */
                     int64_t GetBaseBandwidth() const;
 
                     /**
                      * 判断参数 BaseBandwidth 是否已赋值
                      * @return BaseBandwidth 是否已赋值
+                     * 
                      */
                     bool BaseBandwidthHasBeenSet() const;
 
                     /**
                      * 获取指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。<ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>
                      * @return AddBandwidth 指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。<ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>
+                     * 
                      */
                     int64_t GetAddBandwidth() const;
 
                     /**
                      * 判断参数 AddBandwidth 是否已赋值
                      * @return AddBandwidth 是否已赋值
+                     * 
                      */
                     bool AddBandwidthHasBeenSet() const;
 
                     /**
                      * 获取附加带宽设置下限。
                      * @return MinAddBandwidth 附加带宽设置下限。
+                     * 
                      */
                     int64_t GetMinAddBandwidth() const;
 
                     /**
                      * 判断参数 MinAddBandwidth 是否已赋值
                      * @return MinAddBandwidth 是否已赋值
+                     * 
                      */
                     bool MinAddBandwidthHasBeenSet() const;
 
                     /**
                      * 获取附加带宽设置上限。
                      * @return MaxAddBandwidth 附加带宽设置上限。
+                     * 
                      */
                     int64_t GetMaxAddBandwidth() const;
 
                     /**
                      * 判断参数 MaxAddBandwidth 是否已赋值
                      * @return MaxAddBandwidth 是否已赋值
+                     * 
                      */
                     bool MaxAddBandwidthHasBeenSet() const;
 

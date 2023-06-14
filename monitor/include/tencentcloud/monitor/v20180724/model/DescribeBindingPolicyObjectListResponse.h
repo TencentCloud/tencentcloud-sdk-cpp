@@ -50,36 +50,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 绑定的对象实例列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DescribeBindingPolicyObjectListInstance> GetList() const;
 
                     /**
                      * 判断参数 List 是否已赋值
                      * @return List 是否已赋值
+                     * 
                      */
                     bool ListHasBeenSet() const;
 
                     /**
                      * 获取绑定的对象实例总数
                      * @return Total 绑定的对象实例总数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取未屏蔽的对象实例数
                      * @return NoShieldedSum 未屏蔽的对象实例数
+                     * 
                      */
                     int64_t GetNoShieldedSum() const;
 
                     /**
                      * 判断参数 NoShieldedSum 是否已赋值
                      * @return NoShieldedSum 是否已赋值
+                     * 
                      */
                     bool NoShieldedSumHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceGroup 绑定的实例分组信息，没有绑定实例分组则为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeBindingPolicyObjectListInstanceGroup GetInstanceGroup() const;
 
                     /**
                      * 判断参数 InstanceGroup 是否已赋值
                      * @return InstanceGroup 是否已赋值
+                     * 
                      */
                     bool InstanceGroupHasBeenSet() const;
 

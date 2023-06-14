@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取房间标识。
                      * @return RoomId 房间标识。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间标识。
-                     * @param RoomId 房间标识。
+                     * @param _roomId 房间标识。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取直播会员结束时间。
                      * @return LiveVipEndTime 直播会员结束时间。
+                     * 
                      */
                     std::string GetLiveVipEndTime() const;
 
                     /**
                      * 设置直播会员结束时间。
-                     * @param LiveVipEndTime 直播会员结束时间。
+                     * @param _liveVipEndTime 直播会员结束时间。
+                     * 
                      */
                     void SetLiveVipEndTime(const std::string& _liveVipEndTime);
 
                     /**
                      * 判断参数 LiveVipEndTime 是否已赋值
                      * @return LiveVipEndTime 是否已赋值
+                     * 
                      */
                     bool LiveVipEndTimeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 <li>Valid：生效</li><li>Invalid：无效</li>
                      * @return LiveVipStatus 会员生效状态
 <li>Valid：生效</li><li>Invalid：无效</li>
+                     * 
                      */
                     std::string GetLiveVipStatus() const;
 
                     /**
                      * 设置会员生效状态
 <li>Valid：生效</li><li>Invalid：无效</li>
-                     * @param LiveVipStatus 会员生效状态
+                     * @param _liveVipStatus 会员生效状态
 <li>Valid：生效</li><li>Invalid：无效</li>
+                     * 
                      */
                     void SetLiveVipStatus(const std::string& _liveVipStatus);
 
                     /**
                      * 判断参数 LiveVipStatus 是否已赋值
                      * @return LiveVipStatus 是否已赋值
+                     * 
                      */
                     bool LiveVipStatusHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 是否开启 POST 请求上传文件限制，平台默认为限制为32MB，取值有：
 <li>on：开启限制；</li>
 <li>off：关闭限制。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置是否开启 POST 请求上传文件限制，平台默认为限制为32MB，取值有：
 <li>on：开启限制；</li>
 <li>off：关闭限制。</li>
-                     * @param Switch 是否开启 POST 请求上传文件限制，平台默认为限制为32MB，取值有：
+                     * @param _switch 是否开启 POST 请求上传文件限制，平台默认为限制为32MB，取值有：
 <li>on：开启限制；</li>
 <li>off：关闭限制。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSize 最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxSize 最大限制，取值在1MB和500MB之间。单位字节。
+                     * @param _maxSize 最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 

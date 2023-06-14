@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取保留字段，特殊用途时使用。
                      * @return ExtInfo 保留字段，特殊用途时使用。
+                     * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
                      * 设置保留字段，特殊用途时使用。
-                     * @param ExtInfo 保留字段，特殊用途时使用。
+                     * @param _extInfo 保留字段，特殊用途时使用。
+                     * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
 
                     /**
                      * 判断参数 ExtInfo 是否已赋值
                      * @return ExtInfo 是否已赋值
+                     * 
                      */
                     bool ExtInfoHasBeenSet() const;
 
                     /**
                      * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
                      * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
                      * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * @param _subAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
+                     * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 

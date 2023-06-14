@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Options 校验配置参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareOptions GetOptions() const;
 
                     /**
                      * 设置校验配置参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Options 校验配置参数
+                     * @param _options 校验配置参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOptions(const CompareOptions& _options);
 
                     /**
                      * 判断参数 Options 是否已赋值
                      * @return Options 是否已赋值
+                     * 
                      */
                     bool OptionsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Objects 一致性校验对比对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     CompareObject GetObjects() const;
 
                     /**
                      * 设置一致性校验对比对象
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Objects 一致性校验对比对象
+                     * @param _objects 一致性校验对比对象
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjects(const CompareObject& _objects);
 
                     /**
                      * 判断参数 Objects 是否已赋值
                      * @return Objects 是否已赋值
+                     * 
                      */
                     bool ObjectsHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conclusion 对比结论: same,different
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConclusion() const;
 
                     /**
                      * 设置对比结论: same,different
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Conclusion 对比结论: same,different
+                     * @param _conclusion 对比结论: same,different
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConclusion(const std::string& _conclusion);
 
                     /**
                      * 判断参数 Conclusion 是否已赋值
                      * @return Conclusion 是否已赋值
+                     * 
                      */
                     bool ConclusionHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态: success,failed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态: success,failed
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 任务状态: success,failed
+                     * @param _status 任务状态: success,failed
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTables 总的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalTables() const;
 
                     /**
                      * 设置总的表数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalTables 总的表数量
+                     * @param _totalTables 总的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalTables(const uint64_t& _totalTables);
 
                     /**
                      * 判断参数 TotalTables 是否已赋值
                      * @return TotalTables 是否已赋值
+                     * 
                      */
                     bool TotalTablesHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckedTables 已校验的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCheckedTables() const;
 
                     /**
                      * 设置已校验的表数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckedTables 已校验的表数量
+                     * @param _checkedTables 已校验的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCheckedTables(const uint64_t& _checkedTables);
 
                     /**
                      * 判断参数 CheckedTables 是否已赋值
                      * @return CheckedTables 是否已赋值
+                     * 
                      */
                     bool CheckedTablesHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferentTables 不一致的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDifferentTables() const;
 
                     /**
                      * 设置不一致的表数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DifferentTables 不一致的表数量
+                     * @param _differentTables 不一致的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDifferentTables(const uint64_t& _differentTables);
 
                     /**
                      * 判断参数 DifferentTables 是否已赋值
                      * @return DifferentTables 是否已赋值
+                     * 
                      */
                     bool DifferentTablesHasBeenSet() const;
 
@@ -207,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkippedTables 跳过校验的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSkippedTables() const;
 
                     /**
                      * 设置跳过校验的表数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkippedTables 跳过校验的表数量
+                     * @param _skippedTables 跳过校验的表数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkippedTables(const uint64_t& _skippedTables);
 
                     /**
                      * 判断参数 SkippedTables 是否已赋值
                      * @return SkippedTables 是否已赋值
+                     * 
                      */
                     bool SkippedTablesHasBeenSet() const;
 
@@ -229,20 +253,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NearlyTableCount 预估表总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetNearlyTableCount() const;
 
                     /**
                      * 设置预估表总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NearlyTableCount 预估表总数
+                     * @param _nearlyTableCount 预估表总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNearlyTableCount(const uint64_t& _nearlyTableCount);
 
                     /**
                      * 判断参数 NearlyTableCount 是否已赋值
                      * @return NearlyTableCount 是否已赋值
+                     * 
                      */
                     bool NearlyTableCountHasBeenSet() const;
 
@@ -251,20 +278,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferentRows 不一致的数据行数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDifferentRows() const;
 
                     /**
                      * 设置不一致的数据行数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DifferentRows 不一致的数据行数量
+                     * @param _differentRows 不一致的数据行数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDifferentRows(const uint64_t& _differentRows);
 
                     /**
                      * 判断参数 DifferentRows 是否已赋值
                      * @return DifferentRows 是否已赋值
+                     * 
                      */
                     bool DifferentRowsHasBeenSet() const;
 
@@ -273,20 +303,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSrcSampleRows() const;
 
                     /**
                      * 设置源库行数，当对比类型为**行数对比**时此项有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SrcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
+                     * @param _srcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrcSampleRows(const uint64_t& _srcSampleRows);
 
                     /**
                      * 判断参数 SrcSampleRows 是否已赋值
                      * @return SrcSampleRows 是否已赋值
+                     * 
                      */
                     bool SrcSampleRowsHasBeenSet() const;
 
@@ -295,20 +328,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDstSampleRows() const;
 
                     /**
                      * 设置目标库行数，当对比类型为**行数对比**时此项有意义
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
+                     * @param _dstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDstSampleRows(const uint64_t& _dstSampleRows);
 
                     /**
                      * 判断参数 DstSampleRows 是否已赋值
                      * @return DstSampleRows 是否已赋值
+                     * 
                      */
                     bool DstSampleRowsHasBeenSet() const;
 
@@ -317,20 +353,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartedAt 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
                      * 设置开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartedAt 开始时间
+                     * @param _startedAt 开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
 
                     /**
                      * 判断参数 StartedAt 是否已赋值
                      * @return StartedAt 是否已赋值
+                     * 
                      */
                     bool StartedAtHasBeenSet() const;
 
@@ -339,20 +378,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedAt 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
                      * 设置结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinishedAt 结束时间
+                     * @param _finishedAt 结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
 
                     /**
                      * 判断参数 FinishedAt 是否已赋值
                      * @return FinishedAt 是否已赋值
+                     * 
                      */
                     bool FinishedAtHasBeenSet() const;
 

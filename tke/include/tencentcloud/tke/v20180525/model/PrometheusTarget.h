@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取抓取目标的URL
                      * @return Url 抓取目标的URL
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置抓取目标的URL
-                     * @param Url 抓取目标的URL
+                     * @param _url 抓取目标的URL
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -74,6 +77,7 @@ unknown = 未知
 up = 健康
 down = 不健康
 unknown = 未知
+                     * 
                      */
                     std::string GetState() const;
 
@@ -82,88 +86,102 @@ unknown = 未知
 up = 健康
 down = 不健康
 unknown = 未知
-                     * @param State target当前状态,当前支持
+                     * @param _state target当前状态,当前支持
 up = 健康
 down = 不健康
 unknown = 未知
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 
                     /**
                      * 获取target的元label
                      * @return Labels target的元label
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置target的元label
-                     * @param Labels target的元label
+                     * @param _labels target的元label
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取上一次抓取的时间
                      * @return LastScrape 上一次抓取的时间
+                     * 
                      */
                     std::string GetLastScrape() const;
 
                     /**
                      * 设置上一次抓取的时间
-                     * @param LastScrape 上一次抓取的时间
+                     * @param _lastScrape 上一次抓取的时间
+                     * 
                      */
                     void SetLastScrape(const std::string& _lastScrape);
 
                     /**
                      * 判断参数 LastScrape 是否已赋值
                      * @return LastScrape 是否已赋值
+                     * 
                      */
                     bool LastScrapeHasBeenSet() const;
 
                     /**
                      * 获取上一次抓取的耗时，单位是s
                      * @return ScrapeDuration 上一次抓取的耗时，单位是s
+                     * 
                      */
                     double GetScrapeDuration() const;
 
                     /**
                      * 设置上一次抓取的耗时，单位是s
-                     * @param ScrapeDuration 上一次抓取的耗时，单位是s
+                     * @param _scrapeDuration 上一次抓取的耗时，单位是s
+                     * 
                      */
                     void SetScrapeDuration(const double& _scrapeDuration);
 
                     /**
                      * 判断参数 ScrapeDuration 是否已赋值
                      * @return ScrapeDuration 是否已赋值
+                     * 
                      */
                     bool ScrapeDurationHasBeenSet() const;
 
                     /**
                      * 获取上一次抓取如果错误，该字段存储错误信息
                      * @return Error 上一次抓取如果错误，该字段存储错误信息
+                     * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置上一次抓取如果错误，该字段存储错误信息
-                     * @param Error 上一次抓取如果错误，该字段存储错误信息
+                     * @param _error 上一次抓取如果错误，该字段存储错误信息
+                     * 
                      */
                     void SetError(const std::string& _error);
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
+                     * 
                      */
                     bool ErrorHasBeenSet() const;
 

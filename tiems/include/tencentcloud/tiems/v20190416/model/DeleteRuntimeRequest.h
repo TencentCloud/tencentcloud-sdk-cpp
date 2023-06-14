@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取要删除的Runtime名
                      * @return Runtime 要删除的Runtime名
+                     * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置要删除的Runtime名
-                     * @param Runtime 要删除的Runtime名
+                     * @param _runtime 要删除的Runtime名
+                     * 
                      */
                     void SetRuntime(const std::string& _runtime);
 
                     /**
                      * 判断参数 Runtime 是否已赋值
                      * @return Runtime 是否已赋值
+                     * 
                      */
                     bool RuntimeHasBeenSet() const;
 

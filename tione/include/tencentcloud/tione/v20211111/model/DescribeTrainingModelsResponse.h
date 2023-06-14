@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取模型列表
                      * @return TrainingModels 模型列表
+                     * 
                      */
                     std::vector<TrainingModelDTO> GetTrainingModels() const;
 
                     /**
                      * 判断参数 TrainingModels 是否已赋值
                      * @return TrainingModels 是否已赋值
+                     * 
                      */
                     bool TrainingModelsHasBeenSet() const;
 
                     /**
                      * 获取模型总数
                      * @return TotalCount 模型总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

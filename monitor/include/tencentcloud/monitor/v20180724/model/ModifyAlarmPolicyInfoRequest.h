@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取模块名，这里填“monitor”
                      * @return Module 模块名，这里填“monitor”
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名，这里填“monitor”
-                     * @param Module 模块名，这里填“monitor”
+                     * @param _module 模块名，这里填“monitor”
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取告警策略 ID
                      * @return PolicyId 告警策略 ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置告警策略 ID
-                     * @param PolicyId 告警策略 ID
+                     * @param _policyId 告警策略 ID
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取要修改的字段 NAME=策略名称 REMARK=策略备注
                      * @return Key 要修改的字段 NAME=策略名称 REMARK=策略备注
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置要修改的字段 NAME=策略名称 REMARK=策略备注
-                     * @param Key 要修改的字段 NAME=策略名称 REMARK=策略备注
+                     * @param _key 要修改的字段 NAME=策略名称 REMARK=策略备注
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取修改后的值
                      * @return Value 修改后的值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置修改后的值
-                     * @param Value 修改后的值
+                     * @param _value 修改后的值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取图片水印地址，仅当 ImageTemplate.ImageContent 非空，该字段有效。
                      * @return ImageUrl 图片水印地址，仅当 ImageTemplate.ImageContent 非空，该字段有效。
+                     * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 判断参数 ImageUrl 是否已赋值
                      * @return ImageUrl 是否已赋值
+                     * 
                      */
                     bool ImageUrlHasBeenSet() const;
 

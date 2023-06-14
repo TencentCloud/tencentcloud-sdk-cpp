@@ -50,6 +50,7 @@ read-only-group-id：按照只读组ID过滤，类型为string。
                      * @return Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-master-instance-id：按照主实例过滤，类型为string。
 read-only-group-id：按照只读组ID过滤，类型为string。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -57,87 +58,101 @@ read-only-group-id：按照只读组ID过滤，类型为string。
                      * 设置按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-master-instance-id：按照主实例过滤，类型为string。
 read-only-group-id：按照只读组ID过滤，类型为string。
-                     * @param Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+                     * @param _filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-master-instance-id：按照主实例过滤，类型为string。
 read-only-group-id：按照只读组ID过滤，类型为string。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取查询每一页的条数，默认为10
                      * @return PageSize 查询每一页的条数，默认为10
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置查询每一页的条数，默认为10
-                     * @param PageSize 查询每一页的条数，默认为10
+                     * @param _pageSize 查询每一页的条数，默认为10
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取查询的页码，默认为1
                      * @return PageNumber 查询的页码，默认为1
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置查询的页码，默认为1
-                     * @param PageNumber 查询的页码，默认为1
+                     * @param _pageNumber 查询的页码，默认为1
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取查询排序依据，目前支持:ROGroupId,CreateTime,Name
                      * @return OrderBy 查询排序依据，目前支持:ROGroupId,CreateTime,Name
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置查询排序依据，目前支持:ROGroupId,CreateTime,Name
-                     * @param OrderBy 查询排序依据，目前支持:ROGroupId,CreateTime,Name
+                     * @param _orderBy 查询排序依据，目前支持:ROGroupId,CreateTime,Name
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取查询排序依据类型，目前支持:desc,asc
                      * @return OrderByType 查询排序依据类型，目前支持:desc,asc
+                     * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置查询排序依据类型，目前支持:desc,asc
-                     * @param OrderByType 查询排序依据类型，目前支持:desc,asc
+                     * @param _orderByType 查询排序依据类型，目前支持:desc,asc
+                     * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

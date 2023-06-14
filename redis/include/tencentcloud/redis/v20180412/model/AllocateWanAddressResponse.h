@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取异步流程ID
                      * @return FlowId 异步流程ID
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取开通外网的状态
                      * @return WanStatus 开通外网的状态
+                     * 
                      */
                     std::string GetWanStatus() const;
 
                     /**
                      * 判断参数 WanStatus 是否已赋值
                      * @return WanStatus 是否已赋值
+                     * 
                      */
                     bool WanStatusHasBeenSet() const;
 

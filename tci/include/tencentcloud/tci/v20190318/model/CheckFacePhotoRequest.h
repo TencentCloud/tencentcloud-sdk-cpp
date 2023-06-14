@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取输入分析对象内容
                      * @return FileContent 输入分析对象内容
+                     * 
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置输入分析对象内容
-                     * @param FileContent 输入分析对象内容
+                     * @param _fileContent 输入分析对象内容
+                     * 
                      */
                     void SetFileContent(const std::string& _fileContent);
 
                     /**
                      * 判断参数 FileContent 是否已赋值
                      * @return FileContent 是否已赋值
+                     * 
                      */
                     bool FileContentHasBeenSet() const;
 
                     /**
                      * 获取输入分析对象类型，picture_url:图片地址
                      * @return FileType 输入分析对象类型，picture_url:图片地址
+                     * 
                      */
                     std::string GetFileType() const;
 
                     /**
                      * 设置输入分析对象类型，picture_url:图片地址
-                     * @param FileType 输入分析对象类型，picture_url:图片地址
+                     * @param _fileType 输入分析对象类型，picture_url:图片地址
+                     * 
                      */
                     void SetFileType(const std::string& _fileType);
 
                     /**
                      * 判断参数 FileType 是否已赋值
                      * @return FileType 是否已赋值
+                     * 
                      */
                     bool FileTypeHasBeenSet() const;
 

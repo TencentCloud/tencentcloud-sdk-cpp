@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取事件规则
                      * @return Description 事件规则
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置事件规则
-                     * @param Description 事件规则
+                     * @param _description 事件规则
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取解决方案
                      * @return Solution 解决方案
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方案
-                     * @param Solution 解决方案
+                     * @param _solution 解决方案
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
@@ -88,74 +94,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 事件备注信息
+                     * @param _remark 事件备注信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取命中规则详细信息
                      * @return MatchRule 命中规则详细信息
+                     * 
                      */
                     AbnormalProcessChildRuleInfo GetMatchRule() const;
 
                     /**
                      * 设置命中规则详细信息
-                     * @param MatchRule 命中规则详细信息
+                     * @param _matchRule 命中规则详细信息
+                     * 
                      */
                     void SetMatchRule(const AbnormalProcessChildRuleInfo& _matchRule);
 
                     /**
                      * 判断参数 MatchRule 是否已赋值
                      * @return MatchRule 是否已赋值
+                     * 
                      */
                     bool MatchRuleHasBeenSet() const;
 
                     /**
                      * 获取命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      * @return RuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
-                     * @param RuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @param _ruleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取命中规则的id
                      * @return RuleId 命中规则的id
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置命中规则的id
-                     * @param RuleId 命中规则的id
+                     * @param _ruleId 命中规则的id
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -164,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OperationTime 事件最后一次处理的时间
+                     * @param _operationTime 事件最后一次处理的时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
 
                     /**
                      * 判断参数 OperationTime 是否已赋值
                      * @return OperationTime 是否已赋值
+                     * 
                      */
                     bool OperationTimeHasBeenSet() const;
 
@@ -186,20 +207,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * @param _groupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 

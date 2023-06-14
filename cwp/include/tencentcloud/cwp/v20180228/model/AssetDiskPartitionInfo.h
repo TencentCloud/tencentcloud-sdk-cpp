@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取分区名
                      * @return Name 分区名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分区名
-                     * @param Name 分区名
+                     * @param _name 分区名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取分区大小：单位G
                      * @return Size 分区大小：单位G
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置分区大小：单位G
-                     * @param Size 分区大小：单位G
+                     * @param _size 分区大小：单位G
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取分区使用率
                      * @return Percent 分区使用率
+                     * 
                      */
                     double GetPercent() const;
 
                     /**
                      * 设置分区使用率
-                     * @param Percent 分区使用率
+                     * @param _percent 分区使用率
+                     * 
                      */
                     void SetPercent(const double& _percent);
 
                     /**
                      * 判断参数 Percent 是否已赋值
                      * @return Percent 是否已赋值
+                     * 
                      */
                     bool PercentHasBeenSet() const;
 
                     /**
                      * 获取文件系统类型
                      * @return Type 文件系统类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置文件系统类型
-                     * @param Type 文件系统类型
+                     * @param _type 文件系统类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取挂载目录
                      * @return Path 挂载目录
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置挂载目录
-                     * @param Path 挂载目录
+                     * @param _path 挂载目录
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取已使用空间：单位G
                      * @return Used 已使用空间：单位G
+                     * 
                      */
                     uint64_t GetUsed() const;
 
                     /**
                      * 设置已使用空间：单位G
-                     * @param Used 已使用空间：单位G
+                     * @param _used 已使用空间：单位G
+                     * 
                      */
                     void SetUsed(const uint64_t& _used);
 
                     /**
                      * 判断参数 Used 是否已赋值
                      * @return Used 是否已赋值
+                     * 
                      */
                     bool UsedHasBeenSet() const;
 

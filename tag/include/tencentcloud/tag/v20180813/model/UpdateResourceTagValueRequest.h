@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取资源关联的标签键
                      * @return TagKey 资源关联的标签键
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置资源关联的标签键
-                     * @param TagKey 资源关联的标签键
+                     * @param _tagKey 资源关联的标签键
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取修改后的标签值
                      * @return TagValue 修改后的标签值
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置修改后的标签值
-                     * @param TagValue 修改后的标签值
+                     * @param _tagValue 修改后的标签值
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 
                     /**
                      * 获取[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
                      * @return Resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
-                     * @param Resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * @param _resource [ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 

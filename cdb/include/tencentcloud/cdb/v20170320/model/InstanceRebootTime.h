@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
                      * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+                     * @param _instanceId 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取预期重启时间
                      * @return TimeInSeconds 预期重启时间
+                     * 
                      */
                     int64_t GetTimeInSeconds() const;
 
                     /**
                      * 设置预期重启时间
-                     * @param TimeInSeconds 预期重启时间
+                     * @param _timeInSeconds 预期重启时间
+                     * 
                      */
                     void SetTimeInSeconds(const int64_t& _timeInSeconds);
 
                     /**
                      * 判断参数 TimeInSeconds 是否已赋值
                      * @return TimeInSeconds 是否已赋值
+                     * 
                      */
                     bool TimeInSecondsHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取审计规则模版ID。
                      * @return RuleTemplateIds 审计规则模版ID。
+                     * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
                      * 设置审计规则模版ID。
-                     * @param RuleTemplateIds 审计规则模版ID。
+                     * @param _ruleTemplateIds 审计规则模版ID。
+                     * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
 
                     /**
                      * 判断参数 RuleTemplateIds 是否已赋值
                      * @return RuleTemplateIds 是否已赋值
+                     * 
                      */
                     bool RuleTemplateIdsHasBeenSet() const;
 
                     /**
                      * 获取修改后的审计规则。
                      * @return RuleFilters 修改后的审计规则。
+                     * 
                      */
                     std::vector<RuleFilters> GetRuleFilters() const;
 
                     /**
                      * 设置修改后的审计规则。
-                     * @param RuleFilters 修改后的审计规则。
+                     * @param _ruleFilters 修改后的审计规则。
+                     * 
                      */
                     void SetRuleFilters(const std::vector<RuleFilters>& _ruleFilters);
 
                     /**
                      * 判断参数 RuleFilters 是否已赋值
                      * @return RuleFilters 是否已赋值
+                     * 
                      */
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
                      * 获取修改后的规则模版名称。
                      * @return RuleTemplateName 修改后的规则模版名称。
+                     * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
                      * 设置修改后的规则模版名称。
-                     * @param RuleTemplateName 修改后的规则模版名称。
+                     * @param _ruleTemplateName 修改后的规则模版名称。
+                     * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
 
                     /**
                      * 判断参数 RuleTemplateName 是否已赋值
                      * @return RuleTemplateName 是否已赋值
+                     * 
                      */
                     bool RuleTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取修改后的规则模版描述。
                      * @return Description 修改后的规则模版描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置修改后的规则模版描述。
-                     * @param Description 修改后的规则模版描述。
+                     * @param _description 修改后的规则模版描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

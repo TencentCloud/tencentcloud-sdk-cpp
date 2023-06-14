@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取节点数量
                      * @return NodeNum 节点数量
+                     * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
                      * 设置节点数量
-                     * @param NodeNum 节点数量
+                     * @param _nodeNum 节点数量
+                     * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
 
                     /**
                      * 判断参数 NodeNum 是否已赋值
                      * @return NodeNum 是否已赋值
+                     * 
                      */
                     bool NodeNumHasBeenSet() const;
 
                     /**
                      * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
                      * @return NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param NodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * @param _nodeType 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
@@ -92,6 +98,7 @@ namespace TencentCloud
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
 默认值为hotData
+                     * 
                      */
                     std::string GetType() const;
 
@@ -100,52 +107,60 @@ namespace TencentCloud
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
 默认值为hotData
-                     * @param Type 节点类型<li>hotData: 热数据节点</li>
+                     * @param _type 节点类型<li>hotData: 热数据节点</li>
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
 默认值为hotData
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
                      * @return DiskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
-                     * @param DiskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * @param _diskType 节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取节点磁盘容量（单位GB）
                      * @return DiskSize 节点磁盘容量（单位GB）
+                     * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
                      * 设置节点磁盘容量（单位GB）
-                     * @param DiskSize 节点磁盘容量（单位GB）
+                     * @param _diskSize 节点磁盘容量（单位GB）
+                     * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 
@@ -154,56 +169,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalDiskInfo 节点本地盘信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     LocalDiskInfo GetLocalDiskInfo() const;
 
                     /**
                      * 设置节点本地盘信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalDiskInfo 节点本地盘信息
+                     * @param _localDiskInfo 节点本地盘信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLocalDiskInfo(const LocalDiskInfo& _localDiskInfo);
 
                     /**
                      * 判断参数 LocalDiskInfo 是否已赋值
                      * @return LocalDiskInfo 是否已赋值
+                     * 
                      */
                     bool LocalDiskInfoHasBeenSet() const;
 
                     /**
                      * 获取节点磁盘块数
                      * @return DiskCount 节点磁盘块数
+                     * 
                      */
                     uint64_t GetDiskCount() const;
 
                     /**
                      * 设置节点磁盘块数
-                     * @param DiskCount 节点磁盘块数
+                     * @param _diskCount 节点磁盘块数
+                     * 
                      */
                     void SetDiskCount(const uint64_t& _diskCount);
 
                     /**
                      * 判断参数 DiskCount 是否已赋值
                      * @return DiskCount 是否已赋值
+                     * 
                      */
                     bool DiskCountHasBeenSet() const;
 
                     /**
                      * 获取节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
                      * @return DiskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * 
                      */
                     uint64_t GetDiskEncrypt() const;
 
                     /**
                      * 设置节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
-                     * @param DiskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * @param _diskEncrypt 节点磁盘是否加密 0: 不加密，1: 加密；默认不加密
+                     * 
                      */
                     void SetDiskEncrypt(const uint64_t& _diskEncrypt);
 
                     /**
                      * 判断参数 DiskEncrypt 是否已赋值
                      * @return DiskEncrypt 是否已赋值
+                     * 
                      */
                     bool DiskEncryptHasBeenSet() const;
 
@@ -212,20 +236,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuNum cpu数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCpuNum() const;
 
                     /**
                      * 设置cpu数目
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CpuNum cpu数目
+                     * @param _cpuNum cpu数目
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpuNum(const uint64_t& _cpuNum);
 
                     /**
                      * 判断参数 CpuNum 是否已赋值
                      * @return CpuNum 是否已赋值
+                     * 
                      */
                     bool CpuNumHasBeenSet() const;
 
@@ -234,20 +261,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemSize 内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
                      * 设置内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MemSize 内存大小，单位GB
+                     * @param _memSize 内存大小，单位GB
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemSize(const int64_t& _memSize);
 
                     /**
                      * 判断参数 MemSize 是否已赋值
                      * @return MemSize 是否已赋值
+                     * 
                      */
                     bool MemSizeHasBeenSet() const;
 
@@ -256,20 +286,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskEnhance /
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDiskEnhance() const;
 
                     /**
                      * 设置/
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskEnhance /
+                     * @param _diskEnhance /
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiskEnhance(const int64_t& _diskEnhance);
 
                     /**
                      * 判断参数 DiskEnhance 是否已赋值
                      * @return DiskEnhance 是否已赋值
+                     * 
                      */
                     bool DiskEnhanceHasBeenSet() const;
 

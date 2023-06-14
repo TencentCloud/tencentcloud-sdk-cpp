@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取描述信息
                      * @return Description 描述信息
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-                     * @param Description 描述信息
+                     * @param _description 描述信息
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取LoRa网关Id
                      * @return GatewayId LoRa网关Id
+                     * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置LoRa网关Id
-                     * @param GatewayId LoRa网关Id
+                     * @param _gatewayId LoRa网关Id
+                     * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
 
                     /**
                      * 判断参数 GatewayId 是否已赋值
                      * @return GatewayId 是否已赋值
+                     * 
                      */
                     bool GatewayIdHasBeenSet() const;
 
                     /**
                      * 获取LoRa网关位置坐标
                      * @return Location LoRa网关位置坐标
+                     * 
                      */
                     LoRaGatewayLocation GetLocation() const;
 
                     /**
                      * 设置LoRa网关位置坐标
-                     * @param Location LoRa网关位置坐标
+                     * @param _location LoRa网关位置坐标
+                     * 
                      */
                     void SetLocation(const LoRaGatewayLocation& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取LoRa网关名称
                      * @return Name LoRa网关名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置LoRa网关名称
-                     * @param Name LoRa网关名称
+                     * @param _name LoRa网关名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取是否公开可见
                      * @return IsPublic 是否公开可见
+                     * 
                      */
                     bool GetIsPublic() const;
 
                     /**
                      * 设置是否公开可见
-                     * @param IsPublic 是否公开可见
+                     * @param _isPublic 是否公开可见
+                     * 
                      */
                     void SetIsPublic(const bool& _isPublic);
 
                     /**
                      * 判断参数 IsPublic 是否已赋值
                      * @return IsPublic 是否已赋值
+                     * 
                      */
                     bool IsPublicHasBeenSet() const;
 
                     /**
                      * 获取位置信息
                      * @return Position 位置信息
+                     * 
                      */
                     std::string GetPosition() const;
 
                     /**
                      * 设置位置信息
-                     * @param Position 位置信息
+                     * @param _position 位置信息
+                     * 
                      */
                     void SetPosition(const std::string& _position);
 
                     /**
                      * 判断参数 Position 是否已赋值
                      * @return Position 是否已赋值
+                     * 
                      */
                     bool PositionHasBeenSet() const;
 
                     /**
                      * 获取位置详情
                      * @return PositionDetails 位置详情
+                     * 
                      */
                     std::string GetPositionDetails() const;
 
                     /**
                      * 设置位置详情
-                     * @param PositionDetails 位置详情
+                     * @param _positionDetails 位置详情
+                     * 
                      */
                     void SetPositionDetails(const std::string& _positionDetails);
 
                     /**
                      * 判断参数 PositionDetails 是否已赋值
                      * @return PositionDetails 是否已赋值
+                     * 
                      */
                     bool PositionDetailsHasBeenSet() const;
 
                     /**
                      * 获取频点ID
                      * @return FrequencyId 频点ID
+                     * 
                      */
                     std::string GetFrequencyId() const;
 
                     /**
                      * 设置频点ID
-                     * @param FrequencyId 频点ID
+                     * @param _frequencyId 频点ID
+                     * 
                      */
                     void SetFrequencyId(const std::string& _frequencyId);
 
                     /**
                      * 判断参数 FrequencyId 是否已赋值
                      * @return FrequencyId 是否已赋值
+                     * 
                      */
                     bool FrequencyIdHasBeenSet() const;
 

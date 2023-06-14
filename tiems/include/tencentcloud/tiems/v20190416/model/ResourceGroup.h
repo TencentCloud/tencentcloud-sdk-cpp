@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取资源组 Id
                      * @return Id 资源组 Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源组 Id
-                     * @param Id 资源组 Id
+                     * @param _id 资源组 Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -87,38 +93,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cluster 集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCluster() const;
 
                     /**
                      * 设置集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cluster 集群
+                     * @param _cluster 集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCluster(const std::string& _cluster);
 
                     /**
                      * 判断参数 Cluster 是否已赋值
                      * @return Cluster 是否已赋值
+                     * 
                      */
                     bool ClusterHasBeenSet() const;
 
                     /**
                      * 获取资源组名称
                      * @return Name 资源组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源组名称
-                     * @param Name 资源组名称
+                     * @param _name 资源组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -127,56 +139,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 资源组描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置资源组描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 资源组描述
+                     * @param _description 资源组描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return Created 创建时间
+                     * 
                      */
                     std::string GetCreated() const;
 
                     /**
                      * 设置创建时间
-                     * @param Created 创建时间
+                     * @param _created 创建时间
+                     * 
                      */
                     void SetCreated(const std::string& _created);
 
                     /**
                      * 判断参数 Created 是否已赋值
                      * @return Created 是否已赋值
+                     * 
                      */
                     bool CreatedHasBeenSet() const;
 
                     /**
                      * 获取更新时间
                      * @return Updated 更新时间
+                     * 
                      */
                     std::string GetUpdated() const;
 
                     /**
                      * 设置更新时间
-                     * @param Updated 更新时间
+                     * @param _updated 更新时间
+                     * 
                      */
                     void SetUpdated(const std::string& _updated);
 
                     /**
                      * 判断参数 Updated 是否已赋值
                      * @return Updated 是否已赋值
+                     * 
                      */
                     bool UpdatedHasBeenSet() const;
 
@@ -185,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 资源组主机数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
                      * 设置资源组主机数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceCount 资源组主机数量
+                     * @param _instanceCount 资源组主机数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
 
                     /**
                      * 判断参数 InstanceCount 是否已赋值
                      * @return InstanceCount 是否已赋值
+                     * 
                      */
                     bool InstanceCountHasBeenSet() const;
 
@@ -207,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCount 使用资源组的服务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetServiceCount() const;
 
                     /**
                      * 设置使用资源组的服务数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceCount 使用资源组的服务数量
+                     * @param _serviceCount 使用资源组的服务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceCount(const uint64_t& _serviceCount);
 
                     /**
                      * 判断参数 ServiceCount 是否已赋值
                      * @return ServiceCount 是否已赋值
+                     * 
                      */
                     bool ServiceCountHasBeenSet() const;
 
@@ -229,20 +256,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobCount 使用资源组的任务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetJobCount() const;
 
                     /**
                      * 设置使用资源组的任务数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobCount 使用资源组的任务数量
+                     * @param _jobCount 使用资源组的任务数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetJobCount(const uint64_t& _jobCount);
 
                     /**
                      * 判断参数 JobCount 是否已赋值
                      * @return JobCount 是否已赋值
+                     * 
                      */
                     bool JobCountHasBeenSet() const;
 
@@ -251,20 +281,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Public 资源组是否为公共资源组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetPublic() const;
 
                     /**
                      * 设置资源组是否为公共资源组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Public 资源组是否为公共资源组
+                     * @param _public 资源组是否为公共资源组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublic(const bool& _public);
 
                     /**
                      * 判断参数 Public 是否已赋值
                      * @return Public 是否已赋值
+                     * 
                      */
                     bool PublicHasBeenSet() const;
 
@@ -273,20 +306,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 机器类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置机器类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 机器类型
+                     * @param _instanceType 机器类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 
@@ -295,20 +331,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源组状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置资源组状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 资源组状态
+                     * @param _status 资源组状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -317,20 +356,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu 显卡总张数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
                      * 设置显卡总张数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Gpu 显卡总张数
+                     * @param _gpu 显卡总张数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGpu(const uint64_t& _gpu);
 
                     /**
                      * 判断参数 Gpu 是否已赋值
                      * @return Gpu 是否已赋值
+                     * 
                      */
                     bool GpuHasBeenSet() const;
 
@@ -339,20 +381,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu 处理器总核数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置处理器总核数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cpu 处理器总核数
+                     * @param _cpu 处理器总核数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCpu(const uint64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
@@ -361,20 +406,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存总量，单位为G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存总量，单位为G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Memory 内存总量，单位为G
+                     * @param _memory 内存总量，单位为G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMemory(const uint64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
@@ -383,20 +431,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Zone 可用区
+                     * @param _zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
@@ -405,20 +456,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GpuType Gpu类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetGpuType() const;
 
                     /**
                      * 设置Gpu类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GpuType Gpu类型
+                     * @param _gpuType Gpu类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGpuType(const std::vector<std::string>& _gpuType);
 
                     /**
                      * 判断参数 GpuType 是否已赋值
                      * @return GpuType 是否已赋值
+                     * 
                      */
                     bool GpuTypeHasBeenSet() const;
 
@@ -427,20 +481,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasPrepaid 该资源组下是否有预付费资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHasPrepaid() const;
 
                     /**
                      * 设置该资源组下是否有预付费资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HasPrepaid 该资源组下是否有预付费资源
+                     * @param _hasPrepaid 该资源组下是否有预付费资源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHasPrepaid(const bool& _hasPrepaid);
 
                     /**
                      * 判断参数 HasPrepaid 是否已赋值
                      * @return HasPrepaid 是否已赋值
+                     * 
                      */
                     bool HasPrepaidHasBeenSet() const;
 
@@ -449,20 +506,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 资源组是否允许预付费或后付费模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置资源组是否允许预付费或后付费模式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PayMode 资源组是否允许预付费或后付费模式
+                     * @param _payMode 资源组是否允许预付费或后付费模式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPayMode(const std::string& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 

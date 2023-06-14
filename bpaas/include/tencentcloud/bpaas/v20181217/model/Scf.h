@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取Scf函数地域id
                      * @return ScfRegion Scf函数地域id
+                     * 
                      */
                     std::string GetScfRegion() const;
 
                     /**
                      * 设置Scf函数地域id
-                     * @param ScfRegion Scf函数地域id
+                     * @param _scfRegion Scf函数地域id
+                     * 
                      */
                     void SetScfRegion(const std::string& _scfRegion);
 
                     /**
                      * 判断参数 ScfRegion 是否已赋值
                      * @return ScfRegion 是否已赋值
+                     * 
                      */
                     bool ScfRegionHasBeenSet() const;
 
                     /**
                      * 获取Scf函数地域
                      * @return ScfRegionName Scf函数地域
+                     * 
                      */
                     std::string GetScfRegionName() const;
 
                     /**
                      * 设置Scf函数地域
-                     * @param ScfRegionName Scf函数地域
+                     * @param _scfRegionName Scf函数地域
+                     * 
                      */
                     void SetScfRegionName(const std::string& _scfRegionName);
 
                     /**
                      * 判断参数 ScfRegionName 是否已赋值
                      * @return ScfRegionName 是否已赋值
+                     * 
                      */
                     bool ScfRegionNameHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScfName Scf函数名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScfName() const;
 
                     /**
                      * 设置Scf函数名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ScfName Scf函数名称
+                     * @param _scfName Scf函数名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScfName(const std::string& _scfName);
 
                     /**
                      * 判断参数 ScfName 是否已赋值
                      * @return ScfName 是否已赋值
+                     * 
                      */
                     bool ScfNameHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Params Scf函数入参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScfParam> GetParams() const;
 
                     /**
                      * 设置Scf函数入参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Params Scf函数入参
+                     * @param _params Scf函数入参
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParams(const std::vector<ScfParam>& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 

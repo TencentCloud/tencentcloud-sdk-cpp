@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取对账单日期
                      * @return BillDate 对账单日期
+                     * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置对账单日期
-                     * @param BillDate 对账单日期
+                     * @param _billDate 对账单日期
+                     * 
                      */
                     void SetBillDate(const std::string& _billDate);
 
                     /**
                      * 判断参数 BillDate 是否已赋值
                      * @return BillDate 是否已赋值
+                     * 
                      */
                     bool BillDateHasBeenSet() const;
 
                     /**
                      * 获取对账单类型：FREEZE, SETTLEMENT,PAYMENT
                      * @return BillType 对账单类型：FREEZE, SETTLEMENT,PAYMENT
+                     * 
                      */
                     std::string GetBillType() const;
 
                     /**
                      * 设置对账单类型：FREEZE, SETTLEMENT,PAYMENT
-                     * @param BillType 对账单类型：FREEZE, SETTLEMENT,PAYMENT
+                     * @param _billType 对账单类型：FREEZE, SETTLEMENT,PAYMENT
+                     * 
                      */
                     void SetBillType(const std::string& _billType);
 
                     /**
                      * 判断参数 BillType 是否已赋值
                      * @return BillType 是否已赋值
+                     * 
                      */
                     bool BillTypeHasBeenSet() const;
 
                     /**
                      * 获取服务商ID，如不填则查询平台级别对账单文件
                      * @return ServiceProviderId 服务商ID，如不填则查询平台级别对账单文件
+                     * 
                      */
                     std::string GetServiceProviderId() const;
 
                     /**
                      * 设置服务商ID，如不填则查询平台级别对账单文件
-                     * @param ServiceProviderId 服务商ID，如不填则查询平台级别对账单文件
+                     * @param _serviceProviderId 服务商ID，如不填则查询平台级别对账单文件
+                     * 
                      */
                     void SetServiceProviderId(const std::string& _serviceProviderId);
 
                     /**
                      * 判断参数 ServiceProviderId 是否已赋值
                      * @return ServiceProviderId 是否已赋值
+                     * 
                      */
                     bool ServiceProviderIdHasBeenSet() const;
 
@@ -107,6 +116,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -116,17 +126,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

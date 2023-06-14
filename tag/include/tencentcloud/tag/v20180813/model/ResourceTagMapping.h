@@ -52,38 +52,44 @@ namespace TencentCloud
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
                      * @return Resource 资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
+                     * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
-                     * @param Resource 资源六段式。腾讯云使用资源六段式描述一个资源。
+                     * @param _resource 资源六段式。腾讯云使用资源六段式描述一个资源。
 例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。
+                     * 
                      */
                     void SetResource(const std::string& _resource);
 
                     /**
                      * 判断参数 Resource 是否已赋值
                      * @return Resource 是否已赋值
+                     * 
                      */
                     bool ResourceHasBeenSet() const;
 
                     /**
                      * 获取资源关联的标签列表
                      * @return Tags 资源关联的标签列表
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置资源关联的标签列表
-                     * @param Tags 资源关联的标签列表
+                     * @param _tags 资源关联的标签列表
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取批次
                      * @return CodeBatch 批次
+                     * 
                      */
                     CodeBatch GetCodeBatch() const;
 
                     /**
                      * 判断参数 CodeBatch 是否已赋值
                      * @return CodeBatch 是否已赋值
+                     * 
                      */
                     bool CodeBatchHasBeenSet() const;
 

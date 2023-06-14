@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * @param _operator 调用方用户信息，userId 必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取签署流程编号
                      * @return FlowId 签署流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置签署流程编号
-                     * @param FlowId 签署流程编号
+                     * @param _flowId 签署流程编号
+                     * 
                      */
                     void SetFlowId(const std::string& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取补充签署人信息
                      * @return Approvers 补充签署人信息
+                     * 
                      */
                     std::vector<FillApproverInfo> GetApprovers() const;
 
                     /**
                      * 设置补充签署人信息
-                     * @param Approvers 补充签署人信息
+                     * @param _approvers 补充签署人信息
+                     * 
                      */
                     void SetApprovers(const std::vector<FillApproverInfo>& _approvers);
 
                     /**
                      * 判断参数 Approvers 是否已赋值
                      * @return Approvers 是否已赋值
+                     * 
                      */
                     bool ApproversHasBeenSet() const;
 
                     /**
                      * 获取企微消息中的发起人
                      * @return Initiator 企微消息中的发起人
+                     * 
                      */
                     std::string GetInitiator() const;
 
                     /**
                      * 设置企微消息中的发起人
-                     * @param Initiator 企微消息中的发起人
+                     * @param _initiator 企微消息中的发起人
+                     * 
                      */
                     void SetInitiator(const std::string& _initiator);
 
                     /**
                      * 判断参数 Initiator 是否已赋值
                      * @return Initiator 是否已赋值
+                     * 
                      */
                     bool InitiatorHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 本次识别任务的唯一身份ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUrl 本次识别任务的操作URL，有效期自生成之时起共24小时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperateUrl() const;
 
                     /**
                      * 判断参数 OperateUrl 是否已赋值
                      * @return OperateUrl 是否已赋值
+                     * 
                      */
                     bool OperateUrlHasBeenSet() const;
 

@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      * @return ZoneId 站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
-                     * @param ZoneId 站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @param _zoneId 站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取子域名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      * @return Entity 子域名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 
                      */
                     std::string GetEntity() const;
 
                     /**
                      * 设置子域名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
-                     * @param Entity 子域名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @param _entity 子域名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 
                      */
                     void SetEntity(const std::string& _entity);
 
                     /**
                      * 判断参数 Entity 是否已赋值
                      * @return Entity 是否已赋值
+                     * 
                      */
                     bool EntityHasBeenSet() const;
 
@@ -88,6 +94,7 @@ namespace TencentCloud
                      * @return Switch 总开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>不填默认为上次的配置。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -95,15 +102,17 @@ namespace TencentCloud
                      * 设置总开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>不填默认为上次的配置。
-                     * @param Switch 总开关，取值有：
+                     * @param _switch 总开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>不填默认为上次的配置。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -120,6 +129,7 @@ namespace TencentCloud
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>不填默认为上次的配置。
+                     * 
                      */
                     std::string GetLevel() const;
 
@@ -130,18 +140,20 @@ namespace TencentCloud
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>不填默认为上次的配置。
-                     * @param Level 规则等级，取值有：
+                     * @param _level 规则等级，取值有：
 <li> loose：宽松；</li>
 <li> normal：正常；</li>
 <li> strict：严格；</li>
 <li> stricter：超严格；</li>
 <li> custom：自定义。</li>不填默认为上次的配置。
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -152,6 +164,7 @@ namespace TencentCloud
                      * @return Mode 处置方式，取值有：
 <li> block：阻断；</li>
 <li> observe：观察。</li>不填默认为上次的配置。
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -159,87 +172,101 @@ namespace TencentCloud
                      * 设置处置方式，取值有：
 <li> block：阻断；</li>
 <li> observe：观察。</li>不填默认为上次的配置。
-                     * @param Mode 处置方式，取值有：
+                     * @param _mode 处置方式，取值有：
 <li> block：阻断；</li>
 <li> observe：观察。</li>不填默认为上次的配置。
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取托管规则。不填默认为上次的配置。
                      * @return WafRules 托管规则。不填默认为上次的配置。
+                     * 
                      */
                     WafRule GetWafRules() const;
 
                     /**
                      * 设置托管规则。不填默认为上次的配置。
-                     * @param WafRules 托管规则。不填默认为上次的配置。
+                     * @param _wafRules 托管规则。不填默认为上次的配置。
+                     * 
                      */
                     void SetWafRules(const WafRule& _wafRules);
 
                     /**
                      * 判断参数 WafRules 是否已赋值
                      * @return WafRules 是否已赋值
+                     * 
                      */
                     bool WafRulesHasBeenSet() const;
 
                     /**
                      * 获取AI引擎模式。不填默认为上次的配置。
                      * @return AiRule AI引擎模式。不填默认为上次的配置。
+                     * 
                      */
                     AiRule GetAiRule() const;
 
                     /**
                      * 设置AI引擎模式。不填默认为上次的配置。
-                     * @param AiRule AI引擎模式。不填默认为上次的配置。
+                     * @param _aiRule AI引擎模式。不填默认为上次的配置。
+                     * 
                      */
                     void SetAiRule(const AiRule& _aiRule);
 
                     /**
                      * 判断参数 AiRule 是否已赋值
                      * @return AiRule 是否已赋值
+                     * 
                      */
                     bool AiRuleHasBeenSet() const;
 
                     /**
                      * 获取托管规则等级组。不填默认为上次的配置。
                      * @return WafGroups 托管规则等级组。不填默认为上次的配置。
+                     * 
                      */
                     std::vector<WafGroup> GetWafGroups() const;
 
                     /**
                      * 设置托管规则等级组。不填默认为上次的配置。
-                     * @param WafGroups 托管规则等级组。不填默认为上次的配置。
+                     * @param _wafGroups 托管规则等级组。不填默认为上次的配置。
+                     * 
                      */
                     void SetWafGroups(const std::vector<WafGroup>& _wafGroups);
 
                     /**
                      * 判断参数 WafGroups 是否已赋值
                      * @return WafGroups 是否已赋值
+                     * 
                      */
                     bool WafGroupsHasBeenSet() const;
 
                     /**
                      * 获取模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
                      * @return TemplateId 模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
-                     * @param TemplateId 模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     * @param _templateId 模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

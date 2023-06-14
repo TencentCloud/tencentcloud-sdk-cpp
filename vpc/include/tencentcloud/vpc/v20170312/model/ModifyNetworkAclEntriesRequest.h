@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取网络ACL实例ID。例如：acl-12345678。
                      * @return NetworkAclId 网络ACL实例ID。例如：acl-12345678。
+                     * 
                      */
                     std::string GetNetworkAclId() const;
 
                     /**
                      * 设置网络ACL实例ID。例如：acl-12345678。
-                     * @param NetworkAclId 网络ACL实例ID。例如：acl-12345678。
+                     * @param _networkAclId 网络ACL实例ID。例如：acl-12345678。
+                     * 
                      */
                     void SetNetworkAclId(const std::string& _networkAclId);
 
                     /**
                      * 判断参数 NetworkAclId 是否已赋值
                      * @return NetworkAclId 是否已赋值
+                     * 
                      */
                     bool NetworkAclIdHasBeenSet() const;
 
                     /**
                      * 获取网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
                      * @return NetworkAclEntrySet 网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * 
                      */
                     NetworkAclEntrySet GetNetworkAclEntrySet() const;
 
                     /**
                      * 设置网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
-                     * @param NetworkAclEntrySet 网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * @param _networkAclEntrySet 网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * 
                      */
                     void SetNetworkAclEntrySet(const NetworkAclEntrySet& _networkAclEntrySet);
 
                     /**
                      * 判断参数 NetworkAclEntrySet 是否已赋值
                      * @return NetworkAclEntrySet 是否已赋值
+                     * 
                      */
                     bool NetworkAclEntrySetHasBeenSet() const;
 
                     /**
                      * 获取网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
                      * @return NetworkAclQuintupleSet 网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * 
                      */
                     NetworkAclQuintupleEntries GetNetworkAclQuintupleSet() const;
 
                     /**
                      * 设置网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
-                     * @param NetworkAclQuintupleSet 网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * @param _networkAclQuintupleSet 网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * 
                      */
                     void SetNetworkAclQuintupleSet(const NetworkAclQuintupleEntries& _networkAclQuintupleSet);
 
                     /**
                      * 判断参数 NetworkAclQuintupleSet 是否已赋值
                      * @return NetworkAclQuintupleSet 是否已赋值
+                     * 
                      */
                     bool NetworkAclQuintupleSetHasBeenSet() const;
 

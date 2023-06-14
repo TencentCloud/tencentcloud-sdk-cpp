@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取监听器 ID
                      * @return ListenerId 监听器 ID
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器 ID
-                     * @param ListenerId 监听器 ID
+                     * @param _listenerId 监听器 ID
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取监听器的协议
                      * @return Protocol 监听器的协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置监听器的协议
-                     * @param Protocol 监听器的协议
+                     * @param _protocol 监听器的协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取监听器的端口
                      * @return Port 监听器的端口
+                     * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置监听器的端口
-                     * @param Port 监听器的端口
+                     * @param _port 监听器的端口
+                     * 
                      */
                     void SetPort(const int64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -107,20 +116,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RuleTargets> GetRules() const;
 
                     /**
                      * 设置监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rules 监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
+                     * @param _rules 监听器下的规则信息（仅适用于HTTP/HTTPS监听器）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRules(const std::vector<RuleTargets>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
@@ -129,20 +141,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Backend> GetTargets() const;
 
                     /**
                      * 设置监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
+                     * @param _targets 监听器上绑定的后端服务列表（仅适用于TCP/UDP/TCP_SSL监听器）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargets(const std::vector<Backend>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 
@@ -151,20 +166,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEndPort() const;
 
                     /**
                      * 设置若支持端口段，则为端口段结束端口；若不支持端口段，则为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
+                     * @param _endPort 若支持端口段，则为端口段结束端口；若不支持端口段，则为0
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndPort(const int64_t& _endPort);
 
                     /**
                      * 判断参数 EndPort 是否已赋值
                      * @return EndPort 是否已赋值
+                     * 
                      */
                     bool EndPortHasBeenSet() const;
 

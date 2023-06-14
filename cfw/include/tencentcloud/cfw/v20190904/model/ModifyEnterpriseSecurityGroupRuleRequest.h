@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取规则的uuid，可通过查询规则列表获取
                      * @return RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * 
                      */
                     uint64_t GetRuleUuid() const;
 
                     /**
                      * 设置规则的uuid，可通过查询规则列表获取
-                     * @param RuleUuid 规则的uuid，可通过查询规则列表获取
+                     * @param _ruleUuid 规则的uuid，可通过查询规则列表获取
+                     * 
                      */
                     void SetRuleUuid(const uint64_t& _ruleUuid);
 
                     /**
                      * 判断参数 RuleUuid 是否已赋值
                      * @return RuleUuid 是否已赋值
+                     * 
                      */
                     bool RuleUuidHasBeenSet() const;
 
                     /**
                      * 获取修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
                      * @return ModifyType 修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
+                     * 
                      */
                     uint64_t GetModifyType() const;
 
                     /**
                      * 设置修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
-                     * @param ModifyType 修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
+                     * @param _modifyType 修改类型，0：修改规则内容；1：修改单条规则开关状态；2：修改所有规则开关状态
+                     * 
                      */
                     void SetModifyType(const uint64_t& _modifyType);
 
                     /**
                      * 判断参数 ModifyType 是否已赋值
                      * @return ModifyType 是否已赋值
+                     * 
                      */
                     bool ModifyTypeHasBeenSet() const;
 
                     /**
                      * 获取编辑后的企业安全组规则数据；修改规则状态不用填该字段
                      * @return Data 编辑后的企业安全组规则数据；修改规则状态不用填该字段
+                     * 
                      */
                     SecurityGroupRule GetData() const;
 
                     /**
                      * 设置编辑后的企业安全组规则数据；修改规则状态不用填该字段
-                     * @param Data 编辑后的企业安全组规则数据；修改规则状态不用填该字段
+                     * @param _data 编辑后的企业安全组规则数据；修改规则状态不用填该字段
+                     * 
                      */
                     void SetData(const SecurityGroupRule& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
                     /**
                      * 获取0是关闭,1是开启
                      * @return Enable 0是关闭,1是开启
+                     * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置0是关闭,1是开启
-                     * @param Enable 0是关闭,1是开启
+                     * @param _enable 0是关闭,1是开启
+                     * 
                      */
                     void SetEnable(const uint64_t& _enable);
 
                     /**
                      * 判断参数 Enable 是否已赋值
                      * @return Enable 是否已赋值
+                     * 
                      */
                     bool EnableHasBeenSet() const;
 

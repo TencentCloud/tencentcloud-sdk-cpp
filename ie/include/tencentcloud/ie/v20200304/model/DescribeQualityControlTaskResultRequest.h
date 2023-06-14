@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取质检任务 ID
                      * @return TaskId 质检任务 ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置质检任务 ID
-                     * @param TaskId 质检任务 ID
+                     * @param _taskId 质检任务 ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

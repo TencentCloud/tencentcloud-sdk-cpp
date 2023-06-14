@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取盘查组id，可在“盘查组概览”功能中获取。
                      * @return GroupId 盘查组id，可在“盘查组概览”功能中获取。
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置盘查组id，可在“盘查组概览”功能中获取。
-                     * @param GroupId 盘查组id，可在“盘查组概览”功能中获取。
+                     * @param _groupId 盘查组id，可在“盘查组概览”功能中获取。
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取节点id，可在“数据接入管理”中获取。
                      * @return NodeId 节点id，可在“数据接入管理”中获取。
+                     * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点id，可在“数据接入管理”中获取。
-                     * @param NodeId 节点id，可在“数据接入管理”中获取。
+                     * @param _nodeId 节点id，可在“数据接入管理”中获取。
+                     * 
                      */
                     void SetNodeId(const std::string& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
                      * @return Records 节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
+                     * 
                      */
                     std::string GetRecords() const;
 
                     /**
                      * 设置节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
-                     * @param Records 节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
+                     * @param _records 节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
+                     * 
                      */
                     void SetRecords(const std::string& _records);
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 

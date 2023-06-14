@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取规则的唯一表示Key
                      * @return Result 规则的唯一表示Key
+                     * 
                      */
                     int64_t GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

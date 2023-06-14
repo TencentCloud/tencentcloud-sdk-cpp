@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      * @return MaxReplicas 最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * 
                      */
                     uint64_t GetMaxReplicas() const;
 
                     /**
                      * 设置最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
-                     * @param MaxReplicas 最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * @param _maxReplicas 最大副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * 
                      */
                     void SetMaxReplicas(const uint64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
+                     * 
                      */
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
                      * 获取最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
                      * @return MinReplicas 最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * 
                      */
                     uint64_t GetMinReplicas() const;
 
                     /**
                      * 设置最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
-                     * @param MinReplicas 最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * @param _minReplicas 最小副本数，ScaleMode 为 MANUAL 时辞会此值会被置为 StartReplicas 取值
+                     * 
                      */
                     void SetMinReplicas(const uint64_t& _minReplicas);
 
                     /**
                      * 判断参数 MinReplicas 是否已赋值
                      * @return MinReplicas 是否已赋值
+                     * 
                      */
                     bool MinReplicasHasBeenSet() const;
 
                     /**
                      * 获取起始副本数
                      * @return StartReplicas 起始副本数
+                     * 
                      */
                     uint64_t GetStartReplicas() const;
 
                     /**
                      * 设置起始副本数
-                     * @param StartReplicas 起始副本数
+                     * @param _startReplicas 起始副本数
+                     * 
                      */
                     void SetStartReplicas(const uint64_t& _startReplicas);
 
                     /**
                      * 判断参数 StartReplicas 是否已赋值
                      * @return StartReplicas 是否已赋值
+                     * 
                      */
                     bool StartReplicasHasBeenSet() const;
 
                     /**
                      * 获取扩缩容指标，选择自动扩缩容时至少需要选择一个指标，支持CPU-UTIL、MEMORY-UTIL
                      * @return HpaMetrics 扩缩容指标，选择自动扩缩容时至少需要选择一个指标，支持CPU-UTIL、MEMORY-UTIL
+                     * 
                      */
                     std::vector<Option> GetHpaMetrics() const;
 
                     /**
                      * 设置扩缩容指标，选择自动扩缩容时至少需要选择一个指标，支持CPU-UTIL、MEMORY-UTIL
-                     * @param HpaMetrics 扩缩容指标，选择自动扩缩容时至少需要选择一个指标，支持CPU-UTIL、MEMORY-UTIL
+                     * @param _hpaMetrics 扩缩容指标，选择自动扩缩容时至少需要选择一个指标，支持CPU-UTIL、MEMORY-UTIL
+                     * 
                      */
                     void SetHpaMetrics(const std::vector<Option>& _hpaMetrics);
 
                     /**
                      * 判断参数 HpaMetrics 是否已赋值
                      * @return HpaMetrics 是否已赋值
+                     * 
                      */
                     bool HpaMetricsHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取缩略图访问地址
                      * @return ThumbnailURL 缩略图访问地址
+                     * 
                      */
                     std::string GetThumbnailURL() const;
 
                     /**
                      * 判断参数 ThumbnailURL 是否已赋值
                      * @return ThumbnailURL 是否已赋值
+                     * 
                      */
                     bool ThumbnailURLHasBeenSet() const;
 

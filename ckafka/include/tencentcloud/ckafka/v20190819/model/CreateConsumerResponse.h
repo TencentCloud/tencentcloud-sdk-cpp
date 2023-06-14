@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取创建group描述
                      * @return Result 创建group描述
+                     * 
                      */
                     JgwOperateResponse GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

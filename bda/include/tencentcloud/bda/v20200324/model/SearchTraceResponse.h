@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取识别出的最相似候选人。
                      * @return Candidates 识别出的最相似候选人。
+                     * 
                      */
                     std::vector<Candidate> GetCandidates() const;
 
                     /**
                      * 判断参数 Candidates 是否已赋值
                      * @return Candidates 是否已赋值
+                     * 
                      */
                     bool CandidatesHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
                      * @return InputRetCode 输入的人体动作轨迹图片中的合法性校验结果。
 只有为0时结果才有意义。
 -1001: 输入图片不合法。-1002: 输入图片不能构成动作轨迹。
+                     * 
                      */
                     int64_t GetInputRetCode() const;
 
                     /**
                      * 判断参数 InputRetCode 是否已赋值
                      * @return InputRetCode 是否已赋值
+                     * 
                      */
                     bool InputRetCodeHasBeenSet() const;
 
@@ -77,24 +81,28 @@ namespace TencentCloud
 -1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。
                      * @return InputRetCodeDetails 输入的人体动作轨迹图片中的合法性校验结果详情。 
 -1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。
+                     * 
                      */
                     std::vector<int64_t> GetInputRetCodeDetails() const;
 
                     /**
                      * 判断参数 InputRetCodeDetails 是否已赋值
                      * @return InputRetCodeDetails 是否已赋值
+                     * 
                      */
                     bool InputRetCodeDetailsHasBeenSet() const;
 
                     /**
                      * 获取人体识别所用的算法模型版本。
                      * @return BodyModelVersion 人体识别所用的算法模型版本。
+                     * 
                      */
                     std::string GetBodyModelVersion() const;
 
                     /**
                      * 判断参数 BodyModelVersion 是否已赋值
                      * @return BodyModelVersion 是否已赋值
+                     * 
                      */
                     bool BodyModelVersionHasBeenSet() const;
 

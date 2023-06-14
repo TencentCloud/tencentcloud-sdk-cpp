@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取用户所属组
                      * @return CloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     std::string GetCloudStudioSessionTeam() const;
 
                     /**
                      * 设置用户所属组
-                     * @param CloudStudioSessionTeam 用户所属组
+                     * @param _cloudStudioSessionTeam 用户所属组
+                     * 
                      */
                     void SetCloudStudioSessionTeam(const std::string& _cloudStudioSessionTeam);
 
                     /**
                      * 判断参数 CloudStudioSessionTeam 是否已赋值
                      * @return CloudStudioSessionTeam 是否已赋值
+                     * 
                      */
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
                      * 获取工作空间ID
                      * @return WorkspaceId 工作空间ID
+                     * 
                      */
                     int64_t GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间ID
-                     * @param WorkspaceId 工作空间ID
+                     * @param _workspaceId 工作空间ID
+                     * 
                      */
                     void SetWorkspaceId(const int64_t& _workspaceId);
 
                     /**
                      * 判断参数 WorkspaceId 是否已赋值
                      * @return WorkspaceId 是否已赋值
+                     * 
                      */
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
                      * 获取工作空间名称
                      * @return Name 工作空间名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置工作空间名称
-                     * @param Name 工作空间名称
+                     * @param _name 工作空间名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取工作空间描述
                      * @return Description 工作空间描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置工作空间描述
-                     * @param Description 工作空间描述
+                     * @param _description 工作空间描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取xxx
                      * @return PriceId xxx
+                     * 
                      */
                     int64_t GetPriceId() const;
 
                     /**
                      * 设置xxx
-                     * @param PriceId xxx
+                     * @param _priceId xxx
+                     * 
                      */
                     void SetPriceId(const int64_t& _priceId);
 
                     /**
                      * 判断参数 PriceId 是否已赋值
                      * @return PriceId 是否已赋值
+                     * 
                      */
                     bool PriceIdHasBeenSet() const;
 

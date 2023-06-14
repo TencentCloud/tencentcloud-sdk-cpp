@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取最小副本数
                      * @return MinReplicas 最小副本数
+                     * 
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
                      * 设置最小副本数
-                     * @param MinReplicas 最小副本数
+                     * @param _minReplicas 最小副本数
+                     * 
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
 
                     /**
                      * 判断参数 MinReplicas 是否已赋值
                      * @return MinReplicas 是否已赋值
+                     * 
                      */
                     bool MinReplicasHasBeenSet() const;
 
                     /**
                      * 获取最大副本数
                      * @return MaxReplicas 最大副本数
+                     * 
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
                      * 设置最大副本数
-                     * @param MaxReplicas 最大副本数
+                     * @param _maxReplicas 最大副本数
+                     * 
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
 
                     /**
                      * 判断参数 MaxReplicas 是否已赋值
                      * @return MaxReplicas 是否已赋值
+                     * 
                      */
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
                      * 获取用于计算副本数的指标
                      * @return Metrics 用于计算副本数的指标
+                     * 
                      */
                     std::vector<MetricSpec> GetMetrics() const;
 
                     /**
                      * 设置用于计算副本数的指标
-                     * @param Metrics 用于计算副本数的指标
+                     * @param _metrics 用于计算副本数的指标
+                     * 
                      */
                     void SetMetrics(const std::vector<MetricSpec>& _metrics);
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 

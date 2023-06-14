@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询开始日期，格式为YYYY-MM-DD。
                      * @return StartTime 查询开始日期，格式为YYYY-MM-DD。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询开始日期，格式为YYYY-MM-DD。
-                     * @param StartTime 查询开始日期，格式为YYYY-MM-DD。
+                     * @param _startTime 查询开始日期，格式为YYYY-MM-DD。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -65,38 +68,44 @@ namespace TencentCloud
 单次查询统计区间最多不能超过31天。
                      * @return EndTime 查询结束日期，格式为YYYY-MM-DD。
 单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束日期，格式为YYYY-MM-DD。
 单次查询统计区间最多不能超过31天。
-                     * @param EndTime 查询结束日期，格式为YYYY-MM-DD。
+                     * @param _endTime 查询结束日期，格式为YYYY-MM-DD。
 单次查询统计区间最多不能超过31天。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。
                      * @return SdkAppId 应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。
-                     * @param SdkAppId 应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。
+                     * @param _sdkAppId 应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 

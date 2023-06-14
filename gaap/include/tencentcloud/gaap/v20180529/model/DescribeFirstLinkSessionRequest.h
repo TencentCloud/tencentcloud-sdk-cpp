@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取单次加速唯一会话Id
                      * @return SessionId 单次加速唯一会话Id
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置单次加速唯一会话Id
-                     * @param SessionId 单次加速唯一会话Id
+                     * @param _sessionId 单次加速唯一会话Id
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

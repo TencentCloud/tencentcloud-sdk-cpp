@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取米大师分配的支付主MidasAppId，根应用Id。
                      * @return MidasAppId 米大师分配的支付主MidasAppId，根应用Id。
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置米大师分配的支付主MidasAppId，根应用Id。
-                     * @param MidasAppId 米大师分配的支付主MidasAppId，根应用Id。
+                     * @param _midasAppId 米大师分配的支付主MidasAppId，根应用Id。
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取父应用Id。
                      * @return ParentAppId 父应用Id。
+                     * 
                      */
                     std::string GetParentAppId() const;
 
                     /**
                      * 设置父应用Id。
-                     * @param ParentAppId 父应用Id。
+                     * @param _parentAppId 父应用Id。
+                     * 
                      */
                     void SetParentAppId(const std::string& _parentAppId);
 
                     /**
                      * 判断参数 ParentAppId 是否已赋值
                      * @return ParentAppId 是否已赋值
+                     * 
                      */
                     bool ParentAppIdHasBeenSet() const;
 
                     /**
                      * 获取子商户名。
                      * @return SubMchName 子商户名。
+                     * 
                      */
                     std::string GetSubMchName() const;
 
                     /**
                      * 设置子商户名。
-                     * @param SubMchName 子商户名。
+                     * @param _subMchName 子商户名。
+                     * 
                      */
                     void SetSubMchName(const std::string& _subMchName);
 
                     /**
                      * 判断参数 SubMchName 是否已赋值
                      * @return SubMchName 是否已赋值
+                     * 
                      */
                     bool SubMchNameHasBeenSet() const;
 
                     /**
                      * 获取子商户描述。
                      * @return SubMchDescription 子商户描述。
+                     * 
                      */
                     std::string GetSubMchDescription() const;
 
                     /**
                      * 设置子商户描述。
-                     * @param SubMchDescription 子商户描述。
+                     * @param _subMchDescription 子商户描述。
+                     * 
                      */
                     void SetSubMchDescription(const std::string& _subMchDescription);
 
                     /**
                      * 判断参数 SubMchDescription 是否已赋值
                      * @return SubMchDescription 是否已赋值
+                     * 
                      */
                     bool SubMchDescriptionHasBeenSet() const;
 
@@ -123,6 +135,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -131,70 +144,81 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param MidasEnvironment 环境类型
+                     * @param _midasEnvironment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取子应用Id，为空则自动创建子应用id。
                      * @return SubAppId 子应用Id，为空则自动创建子应用id。
+                     * 
                      */
                     std::string GetSubAppId() const;
 
                     /**
                      * 设置子应用Id，为空则自动创建子应用id。
-                     * @param SubAppId 子应用Id，为空则自动创建子应用id。
+                     * @param _subAppId 子应用Id，为空则自动创建子应用id。
+                     * 
                      */
                     void SetSubAppId(const std::string& _subAppId);
 
                     /**
                      * 判断参数 SubAppId 是否已赋值
                      * @return SubAppId 是否已赋值
+                     * 
                      */
                     bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取子商户名缩写。
                      * @return SubMchShortName 子商户名缩写。
+                     * 
                      */
                     std::string GetSubMchShortName() const;
 
                     /**
                      * 设置子商户名缩写。
-                     * @param SubMchShortName 子商户名缩写。
+                     * @param _subMchShortName 子商户名缩写。
+                     * 
                      */
                     void SetSubMchShortName(const std::string& _subMchShortName);
 
                     /**
                      * 判断参数 SubMchShortName 是否已赋值
                      * @return SubMchShortName 是否已赋值
+                     * 
                      */
                     bool SubMchShortNameHasBeenSet() const;
 
                     /**
                      * 获取业务平台自定义的子商户Id，唯一。
                      * @return OutSubMerchantId 业务平台自定义的子商户Id，唯一。
+                     * 
                      */
                     std::string GetOutSubMerchantId() const;
 
                     /**
                      * 设置业务平台自定义的子商户Id，唯一。
-                     * @param OutSubMerchantId 业务平台自定义的子商户Id，唯一。
+                     * @param _outSubMerchantId 业务平台自定义的子商户Id，唯一。
+                     * 
                      */
                     void SetOutSubMerchantId(const std::string& _outSubMerchantId);
 
                     /**
                      * 判断参数 OutSubMerchantId 是否已赋值
                      * @return OutSubMerchantId 是否已赋值
+                     * 
                      */
                     bool OutSubMerchantIdHasBeenSet() const;
 

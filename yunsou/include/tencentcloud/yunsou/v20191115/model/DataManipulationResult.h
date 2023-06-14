@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取应用ID
                      * @return AppId 应用ID
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置应用ID
-                     * @param AppId 应用ID
+                     * @param _appId 应用ID
+                     * 
                      */
                     void SetAppId(const uint64_t& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取序号
                      * @return Seq 序号
+                     * 
                      */
                     int64_t GetSeq() const;
 
                     /**
                      * 设置序号
-                     * @param Seq 序号
+                     * @param _seq 序号
+                     * 
                      */
                     void SetSeq(const int64_t& _seq);
 
                     /**
                      * 判断参数 Seq 是否已赋值
                      * @return Seq 是否已赋值
+                     * 
                      */
                     bool SeqHasBeenSet() const;
 
                     /**
                      * 获取结果
                      * @return TotalResult 结果
+                     * 
                      */
                     std::string GetTotalResult() const;
 
                     /**
                      * 设置结果
-                     * @param TotalResult 结果
+                     * @param _totalResult 结果
+                     * 
                      */
                     void SetTotalResult(const std::string& _totalResult);
 
                     /**
                      * 判断参数 TotalResult 是否已赋值
                      * @return TotalResult 是否已赋值
+                     * 
                      */
                     bool TotalResultHasBeenSet() const;
 
@@ -106,20 +115,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 操作结果明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataManipulationResultItem> GetResult() const;
 
                     /**
                      * 设置操作结果明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result 操作结果明细
+                     * @param _result 操作结果明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResult(const std::vector<DataManipulationResultItem>& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -128,20 +140,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorResult 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorResult() const;
 
                     /**
                      * 设置异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorResult 异常信息
+                     * @param _errorResult 异常信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorResult(const std::string& _errorResult);
 
                     /**
                      * 判断参数 ErrorResult 是否已赋值
                      * @return ErrorResult 是否已赋值
+                     * 
                      */
                     bool ErrorResultHasBeenSet() const;
 

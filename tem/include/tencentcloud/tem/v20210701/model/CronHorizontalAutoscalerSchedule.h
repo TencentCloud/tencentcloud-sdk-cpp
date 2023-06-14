@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return StartAt 触发事件，小时分钟，用:分割
 例如
 00:00（零点零分触发）
+                     * 
                      */
                     std::string GetStartAt() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置触发事件，小时分钟，用:分割
 例如
 00:00（零点零分触发）
-                     * @param StartAt 触发事件，小时分钟，用:分割
+                     * @param _startAt 触发事件，小时分钟，用:分割
 例如
 00:00（零点零分触发）
+                     * 
                      */
                     void SetStartAt(const std::string& _startAt);
 
                     /**
                      * 判断参数 StartAt 是否已赋值
                      * @return StartAt 是否已赋值
+                     * 
                      */
                     bool StartAtHasBeenSet() const;
 
@@ -77,20 +80,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetReplicas 目标实例数（不大于50）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTargetReplicas() const;
 
                     /**
                      * 设置目标实例数（不大于50）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TargetReplicas 目标实例数（不大于50）
+                     * @param _targetReplicas 目标实例数（不大于50）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargetReplicas(const int64_t& _targetReplicas);
 
                     /**
                      * 判断参数 TargetReplicas 是否已赋值
                      * @return TargetReplicas 是否已赋值
+                     * 
                      */
                     bool TargetReplicasHasBeenSet() const;
 

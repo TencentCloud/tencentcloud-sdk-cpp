@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取印章名称，最大长度不超过50字符
                      * @return SealName 印章名称，最大长度不超过50字符
+                     * 
                      */
                     std::string GetSealName() const;
 
                     /**
                      * 设置印章名称，最大长度不超过50字符
-                     * @param SealName 印章名称，最大长度不超过50字符
+                     * @param _sealName 印章名称，最大长度不超过50字符
+                     * 
                      */
                     void SetSealName(const std::string& _sealName);
 
                     /**
                      * 判断参数 SealName 是否已赋值
                      * @return SealName 是否已赋值
+                     * 
                      */
                     bool SealNameHasBeenSet() const;
 
                     /**
                      * 获取印章图片base64，大小不超过10M（原始图片不超过7.6M）
                      * @return SealImage 印章图片base64，大小不超过10M（原始图片不超过7.6M）
+                     * 
                      */
                     std::string GetSealImage() const;
 
                     /**
                      * 设置印章图片base64，大小不超过10M（原始图片不超过7.6M）
-                     * @param SealImage 印章图片base64，大小不超过10M（原始图片不超过7.6M）
+                     * @param _sealImage 印章图片base64，大小不超过10M（原始图片不超过7.6M）
+                     * 
                      */
                     void SetSealImage(const std::string& _sealImage);
 
                     /**
                      * 判断参数 SealImage 是否已赋值
                      * @return SealImage 是否已赋值
+                     * 
                      */
                     bool SealImageHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * @param _operator 操作者的信息
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

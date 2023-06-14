@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取加速地域。
                      * @return AccessRegion 加速地域。
+                     * 
                      */
                     std::string GetAccessRegion() const;
 
                     /**
                      * 设置加速地域。
-                     * @param AccessRegion 加速地域。
+                     * @param _accessRegion 加速地域。
+                     * 
                      */
                     void SetAccessRegion(const std::string& _accessRegion);
 
                     /**
                      * 判断参数 AccessRegion 是否已赋值
                      * @return AccessRegion 是否已赋值
+                     * 
                      */
                     bool AccessRegionHasBeenSet() const;
 
                     /**
                      * 获取通道带宽上限，单位：Mbps。
                      * @return Bandwidth 通道带宽上限，单位：Mbps。
+                     * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置通道带宽上限，单位：Mbps。
-                     * @param Bandwidth 通道带宽上限，单位：Mbps。
+                     * @param _bandwidth 通道带宽上限，单位：Mbps。
+                     * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
                     /**
                      * 获取通道并发量上限，表示同时在线的连接数，单位：万。
                      * @return Concurrent 通道并发量上限，表示同时在线的连接数，单位：万。
+                     * 
                      */
                     uint64_t GetConcurrent() const;
 
                     /**
                      * 设置通道并发量上限，表示同时在线的连接数，单位：万。
-                     * @param Concurrent 通道并发量上限，表示同时在线的连接数，单位：万。
+                     * @param _concurrent 通道并发量上限，表示同时在线的连接数，单位：万。
+                     * 
                      */
                     void SetConcurrent(const uint64_t& _concurrent);
 
                     /**
                      * 判断参数 Concurrent 是否已赋值
                      * @return Concurrent 是否已赋值
+                     * 
                      */
                     bool ConcurrentHasBeenSet() const;
 
                     /**
                      * 获取网络类型，可取值：normal、cn2，默认值为normal
                      * @return NetworkType 网络类型，可取值：normal、cn2，默认值为normal
+                     * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
                      * 设置网络类型，可取值：normal、cn2，默认值为normal
-                     * @param NetworkType 网络类型，可取值：normal、cn2，默认值为normal
+                     * @param _networkType 网络类型，可取值：normal、cn2，默认值为normal
+                     * 
                      */
                     void SetNetworkType(const std::string& _networkType);
 
                     /**
                      * 判断参数 NetworkType 是否已赋值
                      * @return NetworkType 是否已赋值
+                     * 
                      */
                     bool NetworkTypeHasBeenSet() const;
 

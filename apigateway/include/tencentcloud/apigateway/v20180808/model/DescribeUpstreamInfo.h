@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取查询总数
                      * @return TotalCount 查询总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置查询总数
-                     * @param TotalCount 查询总数
+                     * @param _totalCount 查询总数
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取查询列表
                      * @return UpstreamSet 查询列表
+                     * 
                      */
                     std::vector<UpstreamInfo> GetUpstreamSet() const;
 
                     /**
                      * 设置查询列表
-                     * @param UpstreamSet 查询列表
+                     * @param _upstreamSet 查询列表
+                     * 
                      */
                     void SetUpstreamSet(const std::vector<UpstreamInfo>& _upstreamSet);
 
                     /**
                      * 判断参数 UpstreamSet 是否已赋值
                      * @return UpstreamSet 是否已赋值
+                     * 
                      */
                     bool UpstreamSetHasBeenSet() const;
 

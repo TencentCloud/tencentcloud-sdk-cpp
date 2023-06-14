@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取盐值
                      * @return SaltValue 盐值
+                     * 
                      */
                     std::string GetSaltValue() const;
 
                     /**
                      * 设置盐值
-                     * @param SaltValue 盐值
+                     * @param _saltValue 盐值
+                     * 
                      */
                     void SetSaltValue(const std::string& _saltValue);
 
                     /**
                      * 判断参数 SaltValue 是否已赋值
                      * @return SaltValue 是否已赋值
+                     * 
                      */
                     bool SaltValueHasBeenSet() const;
 
                     /**
                      * 获取盐值位置
                      * @return SaltLocation 盐值位置
+                     * 
                      */
                     SaltLocation GetSaltLocation() const;
 
                     /**
                      * 设置盐值位置
-                     * @param SaltLocation 盐值位置
+                     * @param _saltLocation 盐值位置
+                     * 
                      */
                     void SetSaltLocation(const SaltLocation& _saltLocation);
 
                     /**
                      * 判断参数 SaltLocation 是否已赋值
                      * @return SaltLocation 是否已赋值
+                     * 
                      */
                     bool SaltLocationHasBeenSet() const;
 

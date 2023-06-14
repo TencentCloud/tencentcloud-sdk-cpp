@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsLoadBalance 是否开启负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsLoadBalance() const;
 
                     /**
                      * 设置是否开启负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsLoadBalance 是否开启负载均衡。
+                     * @param _isLoadBalance 是否开启负载均衡。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsLoadBalance(const bool& _isLoadBalance);
 
                     /**
                      * 判断参数 IsLoadBalance 是否已赋值
                      * @return IsLoadBalance 是否已赋值
+                     * 
                      */
                     bool IsLoadBalanceHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 负载均衡方式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置负载均衡方式。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Method 负载均衡方式。
+                     * @param _method 负载均衡方式。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionStickRequired 是否开启会话保持。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetSessionStickRequired() const;
 
                     /**
                      * 设置是否开启会话保持。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionStickRequired 是否开启会话保持。
+                     * @param _sessionStickRequired 是否开启会话保持。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionStickRequired(const bool& _sessionStickRequired);
 
                     /**
                      * 判断参数 SessionStickRequired 是否已赋值
                      * @return SessionStickRequired 是否已赋值
+                     * 
                      */
                     bool SessionStickRequiredHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionStickTimeout 会话保持超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSessionStickTimeout() const;
 
                     /**
                      * 设置会话保持超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionStickTimeout 会话保持超时时间。
+                     * @param _sessionStickTimeout 会话保持超时时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionStickTimeout(const int64_t& _sessionStickTimeout);
 
                     /**
                      * 判断参数 SessionStickTimeout 是否已赋值
                      * @return SessionStickTimeout 是否已赋值
+                     * 
                      */
                     bool SessionStickTimeoutHasBeenSet() const;
 

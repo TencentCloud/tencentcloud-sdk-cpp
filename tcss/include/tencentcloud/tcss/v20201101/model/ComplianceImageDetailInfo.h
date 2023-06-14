@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取镜像在主机上的ID。
                      * @return ImageId 镜像在主机上的ID。
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像在主机上的ID。
-                     * @param ImageId 镜像在主机上的ID。
+                     * @param _imageId 镜像在主机上的ID。
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取镜像的名称。
                      * @return ImageName 镜像的名称。
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像的名称。
-                     * @param ImageName 镜像的名称。
+                     * @param _imageName 镜像的名称。
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取镜像的Tag。
                      * @return ImageTag 镜像的Tag。
+                     * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 设置镜像的Tag。
-                     * @param ImageTag 镜像的Tag。
+                     * @param _imageTag 镜像的Tag。
+                     * 
                      */
                     void SetImageTag(const std::string& _imageTag);
 
                     /**
                      * 判断参数 ImageTag 是否已赋值
                      * @return ImageTag 是否已赋值
+                     * 
                      */
                     bool ImageTagHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repository 镜像所在远程仓库的路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRepository() const;
 
                     /**
                      * 设置镜像所在远程仓库的路径。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Repository 镜像所在远程仓库的路径。
+                     * @param _repository 镜像所在远程仓库的路径。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRepository(const std::string& _repository);
 
                     /**
                      * 判断参数 Repository 是否已赋值
                      * @return Repository 是否已赋值
+                     * 
                      */
                     bool RepositoryHasBeenSet() const;
 

@@ -47,84 +47,98 @@ namespace TencentCloud
                     /**
                      * 获取集团id
                      * @return CompanyId 集团id
+                     * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取店铺id
                      * @return ShopId 店铺id
+                     * 
                      */
                     int64_t GetShopId() const;
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
                     /**
                      * 获取摄像机id
                      * @return CameraId 摄像机id
+                     * 
                      */
                     int64_t GetCameraId() const;
 
                     /**
                      * 判断参数 CameraId 是否已赋值
                      * @return CameraId 是否已赋值
+                     * 
                      */
                     bool CameraIdHasBeenSet() const;
 
                     /**
                      * 获取pos机id
                      * @return PosId pos机id
+                     * 
                      */
                     std::string GetPosId() const;
 
                     /**
                      * 判断参数 PosId 是否已赋值
                      * @return PosId 是否已赋值
+                     * 
                      */
                     bool PosIdHasBeenSet() const;
 
                     /**
                      * 获取请求的临时id
                      * @return TempId 请求的临时id
+                     * 
                      */
                     std::string GetTempId() const;
 
                     /**
                      * 判断参数 TempId 是否已赋值
                      * @return TempId 是否已赋值
+                     * 
                      */
                     bool TempIdHasBeenSet() const;
 
                     /**
                      * 获取临时id对应的face id
                      * @return FaceId 临时id对应的face id
+                     * 
                      */
                     int64_t GetFaceId() const;
 
                     /**
                      * 判断参数 FaceId 是否已赋值
                      * @return FaceId 是否已赋值
+                     * 
                      */
                     bool FaceIdHasBeenSet() const;
 
                     /**
                      * 获取顾客属性信息
                      * @return PersonInfo 顾客属性信息
+                     * 
                      */
                     PersonInfo GetPersonInfo() const;
 
                     /**
                      * 判断参数 PersonInfo 是否已赋值
                      * @return PersonInfo 是否已赋值
+                     * 
                      */
                     bool PersonInfoHasBeenSet() const;
 

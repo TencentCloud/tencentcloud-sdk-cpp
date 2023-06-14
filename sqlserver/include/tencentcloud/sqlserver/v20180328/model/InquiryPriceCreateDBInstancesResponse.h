@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取未打折前价格，其值除以100表示多少钱。例如10010表示100.10元
                      * @return OriginalPrice 未打折前价格，其值除以100表示多少钱。例如10010表示100.10元
+                     * 
                      */
                     int64_t GetOriginalPrice() const;
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
                      * 获取实际需要支付的价格，其值除以100表示多少钱。例如10010表示100.10元
                      * @return Price 实际需要支付的价格，其值除以100表示多少钱。例如10010表示100.10元
+                     * 
                      */
                     int64_t GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 

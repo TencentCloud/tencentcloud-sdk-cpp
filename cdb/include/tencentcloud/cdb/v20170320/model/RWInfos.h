@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstCount 代理实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInstCount() const;
 
                     /**
                      * 设置代理实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstCount 代理实例数量
+                     * @param _instCount 代理实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstCount(const uint64_t& _instCount);
 
                     /**
                      * 判断参数 InstCount 是否已赋值
                      * @return InstCount 是否已赋值
+                     * 
                      */
                     bool InstCountHasBeenSet() const;
 
@@ -76,6 +79,7 @@ namespace TencentCloud
                      * @return WeightMode 权重分配模式；
 系统自动分配："system"， 自定义："custom"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWeightMode() const;
 
@@ -83,15 +87,17 @@ namespace TencentCloud
                      * 设置权重分配模式；
 系统自动分配："system"， 自定义："custom"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WeightMode 权重分配模式；
+                     * @param _weightMode 权重分配模式；
 系统自动分配："system"， 自定义："custom"
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
 
                     /**
                      * 判断参数 WeightMode 是否已赋值
                      * @return WeightMode 是否已赋值
+                     * 
                      */
                     bool WeightModeHasBeenSet() const;
 
@@ -100,20 +106,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsKickOut 是否开启延迟剔除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsKickOut() const;
 
                     /**
                      * 设置是否开启延迟剔除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsKickOut 是否开启延迟剔除
+                     * @param _isKickOut 是否开启延迟剔除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsKickOut(const bool& _isKickOut);
 
                     /**
                      * 判断参数 IsKickOut 是否已赋值
                      * @return IsKickOut 是否已赋值
+                     * 
                      */
                     bool IsKickOutHasBeenSet() const;
 
@@ -122,20 +131,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinCount 最小保留数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMinCount() const;
 
                     /**
                      * 设置最小保留数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MinCount 最小保留数
+                     * @param _minCount 最小保留数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMinCount(const uint64_t& _minCount);
 
                     /**
                      * 判断参数 MinCount 是否已赋值
                      * @return MinCount 是否已赋值
+                     * 
                      */
                     bool MinCountHasBeenSet() const;
 
@@ -144,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDelay 延迟剔除阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxDelay() const;
 
                     /**
                      * 设置延迟剔除阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxDelay 延迟剔除阈值
+                     * @param _maxDelay 延迟剔除阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxDelay(const uint64_t& _maxDelay);
 
                     /**
                      * 判断参数 MaxDelay 是否已赋值
                      * @return MaxDelay 是否已赋值
+                     * 
                      */
                     bool MaxDelayHasBeenSet() const;
 
@@ -166,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailOver 是否开启故障转移
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetFailOver() const;
 
                     /**
                      * 设置是否开启故障转移
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailOver 是否开启故障转移
+                     * @param _failOver 是否开启故障转移
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailOver(const bool& _failOver);
 
                     /**
                      * 判断参数 FailOver 是否已赋值
                      * @return FailOver 是否已赋值
+                     * 
                      */
                     bool FailOverHasBeenSet() const;
 
@@ -188,20 +206,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoAddRo 是否自动添加RO
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAutoAddRo() const;
 
                     /**
                      * 设置是否自动添加RO
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AutoAddRo 是否自动添加RO
+                     * @param _autoAddRo 是否自动添加RO
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAutoAddRo(const bool& _autoAddRo);
 
                     /**
                      * 判断参数 AutoAddRo 是否已赋值
                      * @return AutoAddRo 是否已赋值
+                     * 
                      */
                     bool AutoAddRoHasBeenSet() const;
 
@@ -210,20 +231,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RWInstInfo 代理实例信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RWInstanceInfo> GetRWInstInfo() const;
 
                     /**
                      * 设置代理实例信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RWInstInfo 代理实例信息
+                     * @param _rWInstInfo 代理实例信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRWInstInfo(const std::vector<RWInstanceInfo>& _rWInstInfo);
 
                     /**
                      * 判断参数 RWInstInfo 是否已赋值
                      * @return RWInstInfo 是否已赋值
+                     * 
                      */
                     bool RWInstInfoHasBeenSet() const;
 

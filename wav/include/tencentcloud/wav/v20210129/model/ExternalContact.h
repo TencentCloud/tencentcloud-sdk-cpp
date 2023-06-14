@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取外部联系人的userId
                      * @return ExternalUserId 外部联系人的userId
+                     * 
                      */
                     std::string GetExternalUserId() const;
 
                     /**
                      * 设置外部联系人的userId
-                     * @param ExternalUserId 外部联系人的userId
+                     * @param _externalUserId 外部联系人的userId
+                     * 
                      */
                     void SetExternalUserId(const std::string& _externalUserId);
 
                     /**
                      * 判断参数 ExternalUserId 是否已赋值
                      * @return ExternalUserId 是否已赋值
+                     * 
                      */
                     bool ExternalUserIdHasBeenSet() const;
 
                     /**
                      * 获取外部联系人性别 0-未知 1-男性 2-女性
                      * @return Gender 外部联系人性别 0-未知 1-男性 2-女性
+                     * 
                      */
                     int64_t GetGender() const;
 
                     /**
                      * 设置外部联系人性别 0-未知 1-男性 2-女性
-                     * @param Gender 外部联系人性别 0-未知 1-男性 2-女性
+                     * @param _gender 外部联系人性别 0-未知 1-男性 2-女性
+                     * 
                      */
                     void SetGender(const int64_t& _gender);
 
                     /**
                      * 判断参数 Gender 是否已赋值
                      * @return Gender 是否已赋值
+                     * 
                      */
                     bool GenderHasBeenSet() const;
 
                     /**
                      * 获取外部联系人的名称
                      * @return Name 外部联系人的名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置外部联系人的名称
-                     * @param Name 外部联系人的名称
+                     * @param _name 外部联系人的名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取外部联系人的类型，1表示该外部联系人是微信用户，2表示该外部联系人是企业微信用户
                      * @return Type 外部联系人的类型，1表示该外部联系人是微信用户，2表示该外部联系人是企业微信用户
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置外部联系人的类型，1表示该外部联系人是微信用户，2表示该外部联系人是企业微信用户
-                     * @param Type 外部联系人的类型，1表示该外部联系人是微信用户，2表示该外部联系人是企业微信用户
+                     * @param _type 外部联系人的类型，1表示该外部联系人是微信用户，2表示该外部联系人是企业微信用户
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -123,20 +135,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnionId 外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUnionId() const;
 
                     /**
                      * 设置外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnionId 外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。
+                     * @param _unionId 外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnionId(const std::string& _unionId);
 
                     /**
                      * 判断参数 UnionId 是否已赋值
                      * @return UnionId 是否已赋值
+                     * 
                      */
                     bool UnionIdHasBeenSet() const;
 
@@ -145,20 +160,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 外部联系人联系电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置外部联系人联系电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phone 外部联系人联系电话
+                     * @param _phone 外部联系人联系电话
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 

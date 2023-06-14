@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneSetting 站点配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ZoneSetting GetZoneSetting() const;
 
                     /**
                      * 判断参数 ZoneSetting 是否已赋值
                      * @return ZoneSetting 是否已赋值
+                     * 
                      */
                     bool ZoneSettingHasBeenSet() const;
 

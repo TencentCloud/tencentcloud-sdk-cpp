@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 值
+                     * @param _value 值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SingleMeasurement 单次计量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSingleMeasurement() const;
 
                     /**
                      * 设置单次计量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SingleMeasurement 单次计量
+                     * @param _singleMeasurement 单次计量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSingleMeasurement(const std::string& _singleMeasurement);
 
                     /**
                      * 判断参数 SingleMeasurement 是否已赋值
                      * @return SingleMeasurement 是否已赋值
+                     * 
                      */
                     bool SingleMeasurementHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Frequency 频次
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFrequency() const;
 
                     /**
                      * 设置频次
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Frequency 频次
+                     * @param _frequency 频次
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrequency(const std::string& _frequency);
 
                     /**
                      * 判断参数 Frequency 是否已赋值
                      * @return Frequency 是否已赋值
+                     * 
                      */
                     bool FrequencyHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrugDeliveryRoute 给药途径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDrugDeliveryRoute() const;
 
                     /**
                      * 设置给药途径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DrugDeliveryRoute 给药途径
+                     * @param _drugDeliveryRoute 给药途径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDrugDeliveryRoute(const std::string& _drugDeliveryRoute);
 
                     /**
                      * 判断参数 DrugDeliveryRoute 是否已赋值
                      * @return DrugDeliveryRoute 是否已赋值
+                     * 
                      */
                     bool DrugDeliveryRouteHasBeenSet() const;
 

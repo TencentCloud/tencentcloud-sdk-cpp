@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
                      * @return OperationType bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
+                     * 
                      */
                     std::string GetOperationType() const;
 
                     /**
                      * 设置bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
-                     * @param OperationType bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
+                     * @param _operationType bind：绑定eip；unbind：解绑eip；newAdd：新增防火墙弹性公网ip
+                     * 
                      */
                     void SetOperationType(const std::string& _operationType);
 
                     /**
                      * 判断参数 OperationType 是否已赋值
                      * @return OperationType 是否已赋值
+                     * 
                      */
                     bool OperationTypeHasBeenSet() const;
 
                     /**
                      * 获取防火墙实例id
                      * @return CfwInstance 防火墙实例id
+                     * 
                      */
                     std::string GetCfwInstance() const;
 
                     /**
                      * 设置防火墙实例id
-                     * @param CfwInstance 防火墙实例id
+                     * @param _cfwInstance 防火墙实例id
+                     * 
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
 
                     /**
                      * 判断参数 CfwInstance 是否已赋值
                      * @return CfwInstance 是否已赋值
+                     * 
                      */
                     bool CfwInstanceHasBeenSet() const;
 
                     /**
                      * 获取当OperationType 为bind或unbind操作时，使用该字段。
                      * @return EipList 当OperationType 为bind或unbind操作时，使用该字段。
+                     * 
                      */
                     std::vector<std::string> GetEipList() const;
 
                     /**
                      * 设置当OperationType 为bind或unbind操作时，使用该字段。
-                     * @param EipList 当OperationType 为bind或unbind操作时，使用该字段。
+                     * @param _eipList 当OperationType 为bind或unbind操作时，使用该字段。
+                     * 
                      */
                     void SetEipList(const std::vector<std::string>& _eipList);
 
                     /**
                      * 判断参数 EipList 是否已赋值
                      * @return EipList 是否已赋值
+                     * 
                      */
                     bool EipListHasBeenSet() const;
 

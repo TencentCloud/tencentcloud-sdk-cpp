@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取地域名
                      * @return Region 地域名
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域名
-                     * @param Region 地域名
+                     * @param _region 地域名
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return Dimensions 实例的维度信息，格式为
 {"unInstanceId":"ins-00jvv9mo"}。不同云产品的维度信息不同，详见
 [指标维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+                     * 
                      */
                     std::string GetDimensions() const;
 
@@ -96,33 +103,38 @@ namespace TencentCloud
                      * 设置实例的维度信息，格式为
 {"unInstanceId":"ins-00jvv9mo"}。不同云产品的维度信息不同，详见
 [指标维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
-                     * @param Dimensions 实例的维度信息，格式为
+                     * @param _dimensions 实例的维度信息，格式为
 {"unInstanceId":"ins-00jvv9mo"}。不同云产品的维度信息不同，详见
 [指标维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+                     * 
                      */
                     void SetDimensions(const std::string& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 
                     /**
                      * 获取事件维度信息
                      * @return EventDimensions 事件维度信息
+                     * 
                      */
                     std::string GetEventDimensions() const;
 
                     /**
                      * 设置事件维度信息
-                     * @param EventDimensions 事件维度信息
+                     * @param _eventDimensions 事件维度信息
+                     * 
                      */
                     void SetEventDimensions(const std::string& _eventDimensions);
 
                     /**
                      * 判断参数 EventDimensions 是否已赋值
                      * @return EventDimensions 是否已赋值
+                     * 
                      */
                     bool EventDimensionsHasBeenSet() const;
 

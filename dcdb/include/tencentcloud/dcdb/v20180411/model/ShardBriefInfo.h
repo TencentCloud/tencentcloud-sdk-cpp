@@ -50,252 +50,294 @@ namespace TencentCloud
                     /**
                      * 获取分片SerialId
                      * @return ShardSerialId 分片SerialId
+                     * 
                      */
                     std::string GetShardSerialId() const;
 
                     /**
                      * 设置分片SerialId
-                     * @param ShardSerialId 分片SerialId
+                     * @param _shardSerialId 分片SerialId
+                     * 
                      */
                     void SetShardSerialId(const std::string& _shardSerialId);
 
                     /**
                      * 判断参数 ShardSerialId 是否已赋值
                      * @return ShardSerialId 是否已赋值
+                     * 
                      */
                     bool ShardSerialIdHasBeenSet() const;
 
                     /**
                      * 获取分片ID，形如shard-7vg1o339
                      * @return ShardInstanceId 分片ID，形如shard-7vg1o339
+                     * 
                      */
                     std::string GetShardInstanceId() const;
 
                     /**
                      * 设置分片ID，形如shard-7vg1o339
-                     * @param ShardInstanceId 分片ID，形如shard-7vg1o339
+                     * @param _shardInstanceId 分片ID，形如shard-7vg1o339
+                     * 
                      */
                     void SetShardInstanceId(const std::string& _shardInstanceId);
 
                     /**
                      * 判断参数 ShardInstanceId 是否已赋值
                      * @return ShardInstanceId 是否已赋值
+                     * 
                      */
                     bool ShardInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取分片运行状态
                      * @return Status 分片运行状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置分片运行状态
-                     * @param Status 分片运行状态
+                     * @param _status 分片运行状态
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取分片运行状态描述
                      * @return StatusDesc 分片运行状态描述
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置分片运行状态描述
-                     * @param StatusDesc 分片运行状态描述
+                     * @param _statusDesc 分片运行状态描述
+                     * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
                     /**
                      * 获取分片创建时间
                      * @return CreateTime 分片创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置分片创建时间
-                     * @param CreateTime 分片创建时间
+                     * @param _createTime 分片创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取分片内存大小，单位GB
                      * @return Memory 分片内存大小，单位GB
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置分片内存大小，单位GB
-                     * @param Memory 分片内存大小，单位GB
+                     * @param _memory 分片内存大小，单位GB
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取分片磁盘大小，单位GB
                      * @return Storage 分片磁盘大小，单位GB
+                     * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置分片磁盘大小，单位GB
-                     * @param Storage 分片磁盘大小，单位GB
+                     * @param _storage 分片磁盘大小，单位GB
+                     * 
                      */
                     void SetStorage(const int64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取分片日志磁盘空间大小，单位GB
                      * @return LogDisk 分片日志磁盘空间大小，单位GB
+                     * 
                      */
                     int64_t GetLogDisk() const;
 
                     /**
                      * 设置分片日志磁盘空间大小，单位GB
-                     * @param LogDisk 分片日志磁盘空间大小，单位GB
+                     * @param _logDisk 分片日志磁盘空间大小，单位GB
+                     * 
                      */
                     void SetLogDisk(const int64_t& _logDisk);
 
                     /**
                      * 判断参数 LogDisk 是否已赋值
                      * @return LogDisk 是否已赋值
+                     * 
                      */
                     bool LogDiskHasBeenSet() const;
 
                     /**
                      * 获取分片节点个数
                      * @return NodeCount 分片节点个数
+                     * 
                      */
                     int64_t GetNodeCount() const;
 
                     /**
                      * 设置分片节点个数
-                     * @param NodeCount 分片节点个数
+                     * @param _nodeCount 分片节点个数
+                     * 
                      */
                     void SetNodeCount(const int64_t& _nodeCount);
 
                     /**
                      * 判断参数 NodeCount 是否已赋值
                      * @return NodeCount 是否已赋值
+                     * 
                      */
                     bool NodeCountHasBeenSet() const;
 
                     /**
                      * 获取分片磁盘空间使用率
                      * @return StorageUsage 分片磁盘空间使用率
+                     * 
                      */
                     double GetStorageUsage() const;
 
                     /**
                      * 设置分片磁盘空间使用率
-                     * @param StorageUsage 分片磁盘空间使用率
+                     * @param _storageUsage 分片磁盘空间使用率
+                     * 
                      */
                     void SetStorageUsage(const double& _storageUsage);
 
                     /**
                      * 判断参数 StorageUsage 是否已赋值
                      * @return StorageUsage 是否已赋值
+                     * 
                      */
                     bool StorageUsageHasBeenSet() const;
 
                     /**
                      * 获取分片Proxy版本信息
                      * @return ProxyVersion 分片Proxy版本信息
+                     * 
                      */
                     std::string GetProxyVersion() const;
 
                     /**
                      * 设置分片Proxy版本信息
-                     * @param ProxyVersion 分片Proxy版本信息
+                     * @param _proxyVersion 分片Proxy版本信息
+                     * 
                      */
                     void SetProxyVersion(const std::string& _proxyVersion);
 
                     /**
                      * 判断参数 ProxyVersion 是否已赋值
                      * @return ProxyVersion 是否已赋值
+                     * 
                      */
                     bool ProxyVersionHasBeenSet() const;
 
                     /**
                      * 获取分片主DB可用区
                      * @return ShardMasterZone 分片主DB可用区
+                     * 
                      */
                     std::string GetShardMasterZone() const;
 
                     /**
                      * 设置分片主DB可用区
-                     * @param ShardMasterZone 分片主DB可用区
+                     * @param _shardMasterZone 分片主DB可用区
+                     * 
                      */
                     void SetShardMasterZone(const std::string& _shardMasterZone);
 
                     /**
                      * 判断参数 ShardMasterZone 是否已赋值
                      * @return ShardMasterZone 是否已赋值
+                     * 
                      */
                     bool ShardMasterZoneHasBeenSet() const;
 
                     /**
                      * 获取分片从DB可用区
                      * @return ShardSlaveZones 分片从DB可用区
+                     * 
                      */
                     std::vector<std::string> GetShardSlaveZones() const;
 
                     /**
                      * 设置分片从DB可用区
-                     * @param ShardSlaveZones 分片从DB可用区
+                     * @param _shardSlaveZones 分片从DB可用区
+                     * 
                      */
                     void SetShardSlaveZones(const std::vector<std::string>& _shardSlaveZones);
 
                     /**
                      * 判断参数 ShardSlaveZones 是否已赋值
                      * @return ShardSlaveZones 是否已赋值
+                     * 
                      */
                     bool ShardSlaveZonesHasBeenSet() const;
 
                     /**
                      * 获取分片Cpu核数
                      * @return Cpu 分片Cpu核数
+                     * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置分片Cpu核数
-                     * @param Cpu 分片Cpu核数
+                     * @param _cpu 分片Cpu核数
+                     * 
                      */
                     void SetCpu(const int64_t& _cpu);
 
                     /**
                      * 判断参数 Cpu 是否已赋值
                      * @return Cpu 是否已赋值
+                     * 
                      */
                     bool CpuHasBeenSet() const;
 
@@ -304,20 +346,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodesInfo DB节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeInfo> GetNodesInfo() const;
 
                     /**
                      * 设置DB节点信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodesInfo DB节点信息
+                     * @param _nodesInfo DB节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodesInfo(const std::vector<NodeInfo>& _nodesInfo);
 
                     /**
                      * 判断参数 NodesInfo 是否已赋值
                      * @return NodesInfo 是否已赋值
+                     * 
                      */
                     bool NodesInfoHasBeenSet() const;
 

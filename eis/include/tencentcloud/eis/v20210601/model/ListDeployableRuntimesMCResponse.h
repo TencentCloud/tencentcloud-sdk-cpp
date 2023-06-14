@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取运行时列表
                      * @return Runtimes 运行时列表
+                     * 
                      */
                     std::vector<AbstractRuntimeMC> GetRuntimes() const;
 
                     /**
                      * 判断参数 Runtimes 是否已赋值
                      * @return Runtimes 是否已赋值
+                     * 
                      */
                     bool RuntimesHasBeenSet() const;
 

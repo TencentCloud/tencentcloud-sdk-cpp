@@ -50,6 +50,7 @@ Underwrite 结构化+核保
                      * @return ServiceType 服务类型
 Structured 仅结构化
 Underwrite 结构化+核保
+                     * 
                      */
                     std::string GetServiceType() const;
 
@@ -57,51 +58,59 @@ Underwrite 结构化+核保
                      * 设置服务类型
 Structured 仅结构化
 Underwrite 结构化+核保
-                     * @param ServiceType 服务类型
+                     * @param _serviceType 服务类型
 Structured 仅结构化
 Underwrite 结构化+核保
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息
                      * @return TaskInfos 创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息
+                     * 
                      */
                     std::vector<CreateStructureTaskInfo> GetTaskInfos() const;
 
                     /**
                      * 设置创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息
-                     * @param TaskInfos 创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息
+                     * @param _taskInfos 创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息
+                     * 
                      */
                     void SetTaskInfos(const std::vector<CreateStructureTaskInfo>& _taskInfos);
 
                     /**
                      * 判断参数 TaskInfos 是否已赋值
                      * @return TaskInfos 是否已赋值
+                     * 
                      */
                     bool TaskInfosHasBeenSet() const;
 
                     /**
                      * 获取保单号
                      * @return PolicyId 保单号
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置保单号
-                     * @param PolicyId 保单号
+                     * @param _policyId 保单号
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
@@ -112,6 +121,7 @@ Manual 手动
                      * @return TriggerType 核保触发方式
 Auto 自动
 Manual 手动
+                     * 
                      */
                     std::string GetTriggerType() const;
 
@@ -119,15 +129,17 @@ Manual 手动
                      * 设置核保触发方式
 Auto 自动
 Manual 手动
-                     * @param TriggerType 核保触发方式
+                     * @param _triggerType 核保触发方式
 Auto 自动
 Manual 手动
+                     * 
                      */
                     void SetTriggerType(const std::string& _triggerType);
 
                     /**
                      * 判断参数 TriggerType 是否已赋值
                      * @return TriggerType 是否已赋值
+                     * 
                      */
                     bool TriggerTypeHasBeenSet() const;
 
@@ -140,6 +152,7 @@ AccidentInsurance：意外险
 CriticalDiseaseInsurance:重疾险
 LifeInsurance：寿险
 AccidentInsurance：意外险
+                     * 
                      */
                     std::vector<std::string> GetInsuranceTypes() const;
 
@@ -148,34 +161,39 @@ AccidentInsurance：意外险
 CriticalDiseaseInsurance:重疾险
 LifeInsurance：寿险
 AccidentInsurance：意外险
-                     * @param InsuranceTypes 险种，如果是体检报告类型，此参数是必填，类型说明如下：
+                     * @param _insuranceTypes 险种，如果是体检报告类型，此参数是必填，类型说明如下：
 CriticalDiseaseInsurance:重疾险
 LifeInsurance：寿险
 AccidentInsurance：意外险
+                     * 
                      */
                     void SetInsuranceTypes(const std::vector<std::string>& _insuranceTypes);
 
                     /**
                      * 判断参数 InsuranceTypes 是否已赋值
                      * @return InsuranceTypes 是否已赋值
+                     * 
                      */
                     bool InsuranceTypesHasBeenSet() const;
 
                     /**
                      * 获取回调地址，接收Post请求传送结果
                      * @return CallbackUrl 回调地址，接收Post请求传送结果
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置回调地址，接收Post请求传送结果
-                     * @param CallbackUrl 回调地址，接收Post请求传送结果
+                     * @param _callbackUrl 回调地址，接收Post请求传送结果
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 

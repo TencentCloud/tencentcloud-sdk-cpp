@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取该区域空闲机器数量
                      * @return Idle 该区域空闲机器数量
+                     * 
                      */
                     uint64_t GetIdle() const;
 
                     /**
                      * 设置该区域空闲机器数量
-                     * @param Idle 该区域空闲机器数量
+                     * @param _idle 该区域空闲机器数量
+                     * 
                      */
                     void SetIdle(const uint64_t& _idle);
 
                     /**
                      * 判断参数 Idle 是否已赋值
                      * @return Idle 是否已赋值
+                     * 
                      */
                     bool IdleHasBeenSet() const;
 
                     /**
                      * 获取区域
                      * @return Region 区域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置区域
-                     * @param Region 区域
+                     * @param _region 区域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点类型。zh表示中国区，en表示国际区。默认中国区。
                      * @return WebsiteType 站点类型。zh表示中国区，en表示国际区。默认中国区。
+                     * 
                      */
                     std::string GetWebsiteType() const;
 
                     /**
                      * 设置站点类型。zh表示中国区，en表示国际区。默认中国区。
-                     * @param WebsiteType 站点类型。zh表示中国区，en表示国际区。默认中国区。
+                     * @param _websiteType 站点类型。zh表示中国区，en表示国际区。默认中国区。
+                     * 
                      */
                     void SetWebsiteType(const std::string& _websiteType);
 
                     /**
                      * 判断参数 WebsiteType 是否已赋值
                      * @return WebsiteType 是否已赋值
+                     * 
                      */
                     bool WebsiteTypeHasBeenSet() const;
 

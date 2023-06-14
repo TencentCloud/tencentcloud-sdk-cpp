@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取集群实例ID
                      * @return InstanceId 集群实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群实例ID
-                     * @param InstanceId 集群实例ID
+                     * @param _instanceId 集群实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ namespace TencentCloud
 <li>2, 搜索慢日志</li>
 <li>3, 索引慢日志</li>
 <li>4, GC日志</li>
+                     * 
                      */
                     uint64_t GetLogType() const;
 
@@ -80,107 +84,124 @@ namespace TencentCloud
 <li>2, 搜索慢日志</li>
 <li>3, 索引慢日志</li>
 <li>4, GC日志</li>
-                     * @param LogType 日志类型，默认值为1
+                     * @param _logType 日志类型，默认值为1
 <li>1, 主日志</li>
 <li>2, 搜索慢日志</li>
 <li>3, 索引慢日志</li>
 <li>4, GC日志</li>
+                     * 
                      */
                     void SetLogType(const uint64_t& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 
                     /**
                      * 获取搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
                      * @return SearchKey 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
-                     * @param SearchKey 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
+                     * @param _searchKey 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      * @return StartTime 日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
-                     * @param StartTime 日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * @param _startTime 日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
                      * @return EndTime 日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
-                     * @param EndTime 日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * @param _endTime 日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页起始值, 默认值为0
                      * @return Offset 分页起始值, 默认值为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页起始值, 默认值为0
-                     * @param Offset 分页起始值, 默认值为0
+                     * @param _offset 分页起始值, 默认值为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页大小，默认值为100，最大值100
                      * @return Limit 分页大小，默认值为100，最大值100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页大小，默认值为100，最大值100
-                     * @param Limit 分页大小，默认值为100，最大值100
+                     * @param _limit 分页大小，默认值为100，最大值100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -191,6 +212,7 @@ namespace TencentCloud
                      * @return OrderByType 时间排序方式，默认值为0
 <li>0, 降序</li>
 <li>1, 升序</li>
+                     * 
                      */
                     uint64_t GetOrderByType() const;
 
@@ -198,15 +220,17 @@ namespace TencentCloud
                      * 设置时间排序方式，默认值为0
 <li>0, 降序</li>
 <li>1, 升序</li>
-                     * @param OrderByType 时间排序方式，默认值为0
+                     * @param _orderByType 时间排序方式，默认值为0
 <li>0, 降序</li>
 <li>1, 升序</li>
+                     * 
                      */
                     void SetOrderByType(const uint64_t& _orderByType);
 
                     /**
                      * 判断参数 OrderByType 是否已赋值
                      * @return OrderByType 是否已赋值
+                     * 
                      */
                     bool OrderByTypeHasBeenSet() const;
 

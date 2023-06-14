@@ -50,216 +50,252 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组活动 ID
                      * @return Id 伸缩组活动 ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置伸缩组活动 ID
-                     * @param Id 伸缩组活动 ID
+                     * @param _id 伸缩组活动 ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取关联的伸缩组 ID
                      * @return RsgAsGroupId 关联的伸缩组 ID
+                     * 
                      */
                     std::string GetRsgAsGroupId() const;
 
                     /**
                      * 设置关联的伸缩组 ID
-                     * @param RsgAsGroupId 关联的伸缩组 ID
+                     * @param _rsgAsGroupId 关联的伸缩组 ID
+                     * 
                      */
                     void SetRsgAsGroupId(const std::string& _rsgAsGroupId);
 
                     /**
                      * 判断参数 RsgAsGroupId 是否已赋值
                      * @return RsgAsGroupId 是否已赋值
+                     * 
                      */
                     bool RsgAsGroupIdHasBeenSet() const;
 
                     /**
                      * 获取活动类型
                      * @return ActivityType 活动类型
+                     * 
                      */
                     std::string GetActivityType() const;
 
                     /**
                      * 设置活动类型
-                     * @param ActivityType 活动类型
+                     * @param _activityType 活动类型
+                     * 
                      */
                     void SetActivityType(const std::string& _activityType);
 
                     /**
                      * 判断参数 ActivityType 是否已赋值
                      * @return ActivityType 是否已赋值
+                     * 
                      */
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
                      * 获取状态的编码
                      * @return StatusCode 状态的编码
+                     * 
                      */
                     std::string GetStatusCode() const;
 
                     /**
                      * 设置状态的编码
-                     * @param StatusCode 状态的编码
+                     * @param _statusCode 状态的编码
+                     * 
                      */
                     void SetStatusCode(const std::string& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
                     /**
                      * 获取状态的消息
                      * @return StatusMessage 状态的消息
+                     * 
                      */
                     std::string GetStatusMessage() const;
 
                     /**
                      * 设置状态的消息
-                     * @param StatusMessage 状态的消息
+                     * @param _statusMessage 状态的消息
+                     * 
                      */
                     void SetStatusMessage(const std::string& _statusMessage);
 
                     /**
                      * 判断参数 StatusMessage 是否已赋值
                      * @return StatusMessage 是否已赋值
+                     * 
                      */
                     bool StatusMessageHasBeenSet() const;
 
                     /**
                      * 获取活动原因
                      * @return Cause 活动原因
+                     * 
                      */
                     std::string GetCause() const;
 
                     /**
                      * 设置活动原因
-                     * @param Cause 活动原因
+                     * @param _cause 活动原因
+                     * 
                      */
                     void SetCause(const std::string& _cause);
 
                     /**
                      * 判断参数 Cause 是否已赋值
                      * @return Cause 是否已赋值
+                     * 
                      */
                     bool CauseHasBeenSet() const;
 
                     /**
                      * 获取活动描述
                      * @return Description 活动描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置活动描述
-                     * @param Description 活动描述
+                     * @param _description 活动描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取活动开始时间
                      * @return StartTime 活动开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置活动开始时间
-                     * @param StartTime 活动开始时间
+                     * @param _startTime 活动开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取活动结束时间
                      * @return EndTime 活动结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置活动结束时间
-                     * @param EndTime 活动结束时间
+                     * @param _endTime 活动结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取活动创建时间
                      * @return CreateTime 活动创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置活动创建时间
-                     * @param CreateTime 活动创建时间
+                     * @param _createTime 活动创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取活动相关联的节点
                      * @return RsgAsActivityRelatedInstance 活动相关联的节点
+                     * 
                      */
                     std::vector<RsgAsActivityRelatedInstance> GetRsgAsActivityRelatedInstance() const;
 
                     /**
                      * 设置活动相关联的节点
-                     * @param RsgAsActivityRelatedInstance 活动相关联的节点
+                     * @param _rsgAsActivityRelatedInstance 活动相关联的节点
+                     * 
                      */
                     void SetRsgAsActivityRelatedInstance(const std::vector<RsgAsActivityRelatedInstance>& _rsgAsActivityRelatedInstance);
 
                     /**
                      * 判断参数 RsgAsActivityRelatedInstance 是否已赋值
                      * @return RsgAsActivityRelatedInstance 是否已赋值
+                     * 
                      */
                     bool RsgAsActivityRelatedInstanceHasBeenSet() const;
 
                     /**
                      * 获取简略的状态消息
                      * @return StatusMessageSimplified 简略的状态消息
+                     * 
                      */
                     std::string GetStatusMessageSimplified() const;
 
                     /**
                      * 设置简略的状态消息
-                     * @param StatusMessageSimplified 简略的状态消息
+                     * @param _statusMessageSimplified 简略的状态消息
+                     * 
                      */
                     void SetStatusMessageSimplified(const std::string& _statusMessageSimplified);
 
                     /**
                      * 判断参数 StatusMessageSimplified 是否已赋值
                      * @return StatusMessageSimplified 是否已赋值
+                     * 
                      */
                     bool StatusMessageSimplifiedHasBeenSet() const;
 

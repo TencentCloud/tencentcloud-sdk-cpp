@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步任务 ID，可用于查询任务进度。
                      * @return AsyncRequestId 异步任务 ID，可用于查询任务进度。
+                     * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
                      * 判断参数 AsyncRequestId 是否已赋值
                      * @return AsyncRequestId 是否已赋值
+                     * 
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 

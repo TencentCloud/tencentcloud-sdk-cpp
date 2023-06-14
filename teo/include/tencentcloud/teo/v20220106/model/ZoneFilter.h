@@ -57,6 +57,7 @@ namespace TencentCloud
 <li> status：站点状态；</li>
 <li> tagKey：标签键；</li>
 <li> tagValue: 标签值。</li>
+                     * 
                      */
                     std::string GetName() const;
 
@@ -66,53 +67,61 @@ namespace TencentCloud
 <li> status：站点状态；</li>
 <li> tagKey：标签键；</li>
 <li> tagValue: 标签值。</li>
-                     * @param Name 过滤字段名，支持的列表如下：
+                     * @param _name 过滤字段名，支持的列表如下：
 <li> name：站点名；</li>
 <li> status：站点状态；</li>
 <li> tagKey：标签键；</li>
 <li> tagValue: 标签值。</li>
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取过滤字段值。
                      * @return Values 过滤字段值。
+                     * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤字段值。
-                     * @param Values 过滤字段值。
+                     * @param _values 过滤字段值。
+                     * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
                     /**
                      * 判断参数 Values 是否已赋值
                      * @return Values 是否已赋值
+                     * 
                      */
                     bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
                      * @return Fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
+                     * 
                      */
                     bool GetFuzzy() const;
 
                     /**
                      * 设置是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
-                     * @param Fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
+                     * @param _fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
+                     * 
                      */
                     void SetFuzzy(const bool& _fuzzy);
 
                     /**
                      * 判断参数 Fuzzy 是否已赋值
                      * @return Fuzzy 是否已赋值
+                     * 
                      */
                     bool FuzzyHasBeenSet() const;
 

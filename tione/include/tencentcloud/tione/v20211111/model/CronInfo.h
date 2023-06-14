@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取cron配置
                      * @return CronConfig cron配置
+                     * 
                      */
                     std::string GetCronConfig() const;
 
                     /**
                      * 设置cron配置
-                     * @param CronConfig cron配置
+                     * @param _cronConfig cron配置
+                     * 
                      */
                     void SetCronConfig(const std::string& _cronConfig);
 
                     /**
                      * 判断参数 CronConfig 是否已赋值
                      * @return CronConfig 是否已赋值
+                     * 
                      */
                     bool CronConfigHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 周期开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置周期开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 周期开始时间
+                     * @param _startTime 周期开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 周期结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置周期结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 周期结束时间
+                     * @param _endTime 周期结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取画布任务信息
                      * @return TasksList 画布任务信息
+                     * 
                      */
                     std::vector<TaskCanvasInfo> GetTasksList() const;
 
                     /**
                      * 设置画布任务信息
-                     * @param TasksList 画布任务信息
+                     * @param _tasksList 画布任务信息
+                     * 
                      */
                     void SetTasksList(const std::vector<TaskCanvasInfo>& _tasksList);
 
                     /**
                      * 判断参数 TasksList 是否已赋值
                      * @return TasksList 是否已赋值
+                     * 
                      */
                     bool TasksListHasBeenSet() const;
 
                     /**
                      * 获取画布任务链接信息
                      * @return LinksList 画布任务链接信息
+                     * 
                      */
                     std::vector<TaskLinkInfo> GetLinksList() const;
 
                     /**
                      * 设置画布任务链接信息
-                     * @param LinksList 画布任务链接信息
+                     * @param _linksList 画布任务链接信息
+                     * 
                      */
                     void SetLinksList(const std::vector<TaskLinkInfo>& _linksList);
 
                     /**
                      * 判断参数 LinksList 是否已赋值
                      * @return LinksList 是否已赋值
+                     * 
                      */
                     bool LinksListHasBeenSet() const;
 

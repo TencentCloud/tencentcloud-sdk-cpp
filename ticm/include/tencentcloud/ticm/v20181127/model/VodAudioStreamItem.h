@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 音频流的码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置音频流的码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bitrate 音频流的码率，单位：bps。
+                     * @param _bitrate 音频流的码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SamplingRate 音频流的采样率，单位：hz。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSamplingRate() const;
 
                     /**
                      * 设置音频流的采样率，单位：hz。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SamplingRate 音频流的采样率，单位：hz。
+                     * @param _samplingRate 音频流的采样率，单位：hz。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSamplingRate(const int64_t& _samplingRate);
 
                     /**
                      * 判断参数 SamplingRate 是否已赋值
                      * @return SamplingRate 是否已赋值
+                     * 
                      */
                     bool SamplingRateHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 音频流的编码格式，例如 aac。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置音频流的编码格式，例如 aac。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Codec 音频流的编码格式，例如 aac。
+                     * @param _codec 音频流的编码格式，例如 aac。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 

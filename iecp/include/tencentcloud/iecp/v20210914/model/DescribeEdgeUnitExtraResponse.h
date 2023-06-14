@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取APIServer类型
                      * @return APIServerType APIServer类型
+                     * 
                      */
                     std::string GetAPIServerType() const;
 
                     /**
                      * 判断参数 APIServerType 是否已赋值
                      * @return APIServerType 是否已赋值
+                     * 
                      */
                     bool APIServerTypeHasBeenSet() const;
 
                     /**
                      * 获取域名URL
                      * @return APIServerURL 域名URL
+                     * 
                      */
                     std::string GetAPIServerURL() const;
 
                     /**
                      * 判断参数 APIServerURL 是否已赋值
                      * @return APIServerURL 是否已赋值
+                     * 
                      */
                     bool APIServerURLHasBeenSet() const;
 
                     /**
                      * 获取域名URL对应的端口
                      * @return APIServerURLPort 域名URL对应的端口
+                     * 
                      */
                     std::string GetAPIServerURLPort() const;
 
                     /**
                      * 判断参数 APIServerURLPort 是否已赋值
                      * @return APIServerURLPort 是否已赋值
+                     * 
                      */
                     bool APIServerURLPortHasBeenSet() const;
 
                     /**
                      * 获取域名URL对应的端口
                      * @return APIServerResolveIP 域名URL对应的端口
+                     * 
                      */
                     std::string GetAPIServerResolveIP() const;
 
                     /**
                      * 判断参数 APIServerResolveIP 是否已赋值
                      * @return APIServerResolveIP 是否已赋值
+                     * 
                      */
                     bool APIServerResolveIPHasBeenSet() const;
 
                     /**
                      * 获取对外可访问的IP
                      * @return APIServerExposeAddress 对外可访问的IP
+                     * 
                      */
                     std::string GetAPIServerExposeAddress() const;
 
                     /**
                      * 判断参数 APIServerExposeAddress 是否已赋值
                      * @return APIServerExposeAddress 是否已赋值
+                     * 
                      */
                     bool APIServerExposeAddressHasBeenSet() const;
 
                     /**
                      * 获取是否开启监控
                      * @return IsCreatePrometheus 是否开启监控
+                     * 
                      */
                     bool GetIsCreatePrometheus() const;
 
                     /**
                      * 判断参数 IsCreatePrometheus 是否已赋值
                      * @return IsCreatePrometheus 是否已赋值
+                     * 
                      */
                     bool IsCreatePrometheusHasBeenSet() const;
 

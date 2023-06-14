@@ -49,24 +49,28 @@ namespace TencentCloud
 链接不是永久链接，有效期5分钟后链接失效。
                      * @return FileUrls 文件URL信息；
 链接不是永久链接，有效期5分钟后链接失效。
+                     * 
                      */
                     std::vector<FileUrl> GetFileUrls() const;
 
                     /**
                      * 判断参数 FileUrls 是否已赋值
                      * @return FileUrls 是否已赋值
+                     * 
                      */
                     bool FileUrlsHasBeenSet() const;
 
                     /**
                      * 获取URL数量
                      * @return TotalCount URL数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取SSL-VPN 客户端配置。
                      * @return SslClientConfigsSet SSL-VPN 客户端配置。
+                     * 
                      */
                     std::string GetSslClientConfigsSet() const;
 
                     /**
                      * 判断参数 SslClientConfigsSet 是否已赋值
                      * @return SslClientConfigsSet 是否已赋值
+                     * 
                      */
                     bool SslClientConfigsSetHasBeenSet() const;
 
                     /**
                      * 获取SSL-VPN 客户端配置。
                      * @return SslClientConfig SSL-VPN 客户端配置。
+                     * 
                      */
                     std::vector<SslClientConfig> GetSslClientConfig() const;
 
                     /**
                      * 判断参数 SslClientConfig 是否已赋值
                      * @return SslClientConfig 是否已赋值
+                     * 
                      */
                     bool SslClientConfigHasBeenSet() const;
 
                     /**
                      * 获取是否鉴权成功 只有传入SamlToken 才生效，1为成功，0为失败。
                      * @return Authenticated 是否鉴权成功 只有传入SamlToken 才生效，1为成功，0为失败。
+                     * 
                      */
                     uint64_t GetAuthenticated() const;
 
                     /**
                      * 判断参数 Authenticated 是否已赋值
                      * @return Authenticated 是否已赋值
+                     * 
                      */
                     bool AuthenticatedHasBeenSet() const;
 

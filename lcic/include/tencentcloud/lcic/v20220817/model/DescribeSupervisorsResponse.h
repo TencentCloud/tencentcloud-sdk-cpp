@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取数据总量
                      * @return Total 数据总量
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取分页查询当前页数
                      * @return Page 分页查询当前页数
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取当前页数据量
                      * @return Limit 当前页数据量
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取巡课列表
                      * @return UserIds 巡课列表
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 

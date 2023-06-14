@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取数据订阅实例的ID
                      * @return SubscribeId 数据订阅实例的ID
+                     * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
                      * 设置数据订阅实例的ID
-                     * @param SubscribeId 数据订阅实例的ID
+                     * @param _subscribeId 数据订阅实例的ID
+                     * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
 
                     /**
                      * 判断参数 SubscribeId 是否已赋值
                      * @return SubscribeId 是否已赋值
+                     * 
                      */
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取数据订阅实例的名称，长度限制为[1,60]
                      * @return SubscribeName 数据订阅实例的名称，长度限制为[1,60]
+                     * 
                      */
                     std::string GetSubscribeName() const;
 
                     /**
                      * 设置数据订阅实例的名称，长度限制为[1,60]
-                     * @param SubscribeName 数据订阅实例的名称，长度限制为[1,60]
+                     * @param _subscribeName 数据订阅实例的名称，长度限制为[1,60]
+                     * 
                      */
                     void SetSubscribeName(const std::string& _subscribeName);
 
                     /**
                      * 判断参数 SubscribeName 是否已赋值
                      * @return SubscribeName 是否已赋值
+                     * 
                      */
                     bool SubscribeNameHasBeenSet() const;
 

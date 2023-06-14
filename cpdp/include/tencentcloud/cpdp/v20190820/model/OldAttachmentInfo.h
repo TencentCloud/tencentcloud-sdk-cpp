@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachmentAmount 附加项金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAttachmentAmount() const;
 
                     /**
                      * 设置附加项金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachmentAmount 附加项金额
+                     * @param _attachmentAmount 附加项金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachmentAmount(const int64_t& _attachmentAmount);
 
                     /**
                      * 判断参数 AttachmentAmount 是否已赋值
                      * @return AttachmentAmount 是否已赋值
+                     * 
                      */
                     bool AttachmentAmountHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachmentType 附加项类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttachmentType() const;
 
                     /**
                      * 设置附加项类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachmentType 附加项类型
+                     * @param _attachmentType 附加项类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachmentType(const std::string& _attachmentType);
 
                     /**
                      * 判断参数 AttachmentType 是否已赋值
                      * @return AttachmentType 是否已赋值
+                     * 
                      */
                     bool AttachmentTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachmentName 附加项名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttachmentName() const;
 
                     /**
                      * 设置附加项名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachmentName 附加项名称
+                     * @param _attachmentName 附加项名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachmentName(const std::string& _attachmentName);
 
                     /**
                      * 判断参数 AttachmentName 是否已赋值
                      * @return AttachmentName 是否已赋值
+                     * 
                      */
                     bool AttachmentNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachmentCode 附加项编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttachmentCode() const;
 
                     /**
                      * 设置附加项编号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttachmentCode 附加项编号
+                     * @param _attachmentCode 附加项编号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttachmentCode(const std::string& _attachmentCode);
 
                     /**
                      * 判断参数 AttachmentCode 是否已赋值
                      * @return AttachmentCode 是否已赋值
+                     * 
                      */
                     bool AttachmentCodeHasBeenSet() const;
 

@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 人脸识别任务开关，可选值：
 <li>ON：开启智能人脸识别任务；</li>
 <li>OFF：关闭智能人脸识别任务。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,33 +61,38 @@ namespace TencentCloud
                      * 设置人脸识别任务开关，可选值：
 <li>ON：开启智能人脸识别任务；</li>
 <li>OFF：关闭智能人脸识别任务。</li>
-                     * @param Switch 人脸识别任务开关，可选值：
+                     * @param _switch 人脸识别任务开关，可选值：
 <li>ON：开启智能人脸识别任务；</li>
 <li>OFF：关闭智能人脸识别任务。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
                      * @return Score 人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
-                     * @param Score 人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
+                     * @param _score 人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -99,6 +105,7 @@ namespace TencentCloud
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
 <li>politician：相关人物。</li>
+                     * 
                      */
                     std::vector<std::string> GetDefaultLibraryLabelSet() const;
 
@@ -107,16 +114,18 @@ namespace TencentCloud
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
 <li>politician：相关人物。</li>
-                     * @param DefaultLibraryLabelSet 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
+                     * @param _defaultLibraryLabelSet 默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：
 <li>entertainment：娱乐明星；</li>
 <li>sport：体育明星；</li>
 <li>politician：相关人物。</li>
+                     * 
                      */
                     void SetDefaultLibraryLabelSet(const std::vector<std::string>& _defaultLibraryLabelSet);
 
                     /**
                      * 判断参数 DefaultLibraryLabelSet 是否已赋值
                      * @return DefaultLibraryLabelSet 是否已赋值
+                     * 
                      */
                     bool DefaultLibraryLabelSetHasBeenSet() const;
 
@@ -125,20 +134,23 @@ namespace TencentCloud
 标签个数最多 100 个，每个标签长度最多 16 个字符。
                      * @return UserDefineLibraryLabelSet 用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
 标签个数最多 100 个，每个标签长度最多 16 个字符。
+                     * 
                      */
                     std::vector<std::string> GetUserDefineLibraryLabelSet() const;
 
                     /**
                      * 设置用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
 标签个数最多 100 个，每个标签长度最多 16 个字符。
-                     * @param UserDefineLibraryLabelSet 用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
+                     * @param _userDefineLibraryLabelSet 用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。
 标签个数最多 100 个，每个标签长度最多 16 个字符。
+                     * 
                      */
                     void SetUserDefineLibraryLabelSet(const std::vector<std::string>& _userDefineLibraryLabelSet);
 
                     /**
                      * 判断参数 UserDefineLibraryLabelSet 是否已赋值
                      * @return UserDefineLibraryLabelSet 是否已赋值
+                     * 
                      */
                     bool UserDefineLibraryLabelSetHasBeenSet() const;
 
@@ -151,6 +163,7 @@ namespace TencentCloud
 <li>Default：使用默认人物库；</li>
 <li>UserDefine：使用用户自定义人物库。</li>
 <li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * 
                      */
                     std::string GetFaceLibrary() const;
 
@@ -159,16 +172,18 @@ namespace TencentCloud
 <li>Default：使用默认人物库；</li>
 <li>UserDefine：使用用户自定义人物库。</li>
 <li>All：同时使用默认人物库和用户自定义人物库。</li>
-                     * @param FaceLibrary 人物库选择，可选值：
+                     * @param _faceLibrary 人物库选择，可选值：
 <li>Default：使用默认人物库；</li>
 <li>UserDefine：使用用户自定义人物库。</li>
 <li>All：同时使用默认人物库和用户自定义人物库。</li>
+                     * 
                      */
                     void SetFaceLibrary(const std::string& _faceLibrary);
 
                     /**
                      * 判断参数 FaceLibrary 是否已赋值
                      * @return FaceLibrary 是否已赋值
+                     * 
                      */
                     bool FaceLibraryHasBeenSet() const;
 

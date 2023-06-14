@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 参数名
+                     * @param _name 参数名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 参数类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参数类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 参数类型
+                     * @param _type 参数类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Usage 参数描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUsage() const;
 
                     /**
                      * 设置参数描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Usage 参数描述
+                     * @param _usage 参数描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUsage(const std::string& _usage);
 
                     /**
                      * 判断参数 Usage 是否已赋值
                      * @return Usage 是否已赋值
+                     * 
                      */
                     bool UsageHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 参数默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置参数默认值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Default 参数默认值
+                     * @param _default 参数默认值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefault(const std::string& _default);
 
                     /**
                      * 判断参数 Default 是否已赋值
                      * @return Default 是否已赋值
+                     * 
                      */
                     bool DefaultHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Constraint 参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConstraint() const;
 
                     /**
                      * 设置参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Constraint 参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
+                     * @param _constraint 参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConstraint(const std::string& _constraint);
 
                     /**
                      * 判断参数 Constraint 是否已赋值
                      * @return Constraint 是否已赋值
+                     * 
                      */
                     bool ConstraintHasBeenSet() const;
 

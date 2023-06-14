@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取CPT ID
                      * @return CptId CPT ID
+                     * 
                      */
                     uint64_t GetCptId() const;
 
                     /**
                      * 设置CPT ID
-                     * @param CptId CPT ID
+                     * @param _cptId CPT ID
+                     * 
                      */
                     void SetCptId(const uint64_t& _cptId);
 
                     /**
                      * 判断参数 CptId 是否已赋值
                      * @return CptId 是否已赋值
+                     * 
                      */
                     bool CptIdHasBeenSet() const;
 
                     /**
                      * 获取签发者 did
                      * @return Issuer 签发者 did
+                     * 
                      */
                     std::string GetIssuer() const;
 
                     /**
                      * 设置签发者 did
-                     * @param Issuer 签发者 did
+                     * @param _issuer 签发者 did
+                     * 
                      */
                     void SetIssuer(const std::string& _issuer);
 
                     /**
                      * 判断参数 Issuer 是否已赋值
                      * @return Issuer 是否已赋值
+                     * 
                      */
                     bool IssuerHasBeenSet() const;
 
                     /**
                      * 获取过期时间
                      * @return ExpirationDate 过期时间
+                     * 
                      */
                     std::string GetExpirationDate() const;
 
                     /**
                      * 设置过期时间
-                     * @param ExpirationDate 过期时间
+                     * @param _expirationDate 过期时间
+                     * 
                      */
                     void SetExpirationDate(const std::string& _expirationDate);
 
                     /**
                      * 判断参数 ExpirationDate 是否已赋值
                      * @return ExpirationDate 是否已赋值
+                     * 
                      */
                     bool ExpirationDateHasBeenSet() const;
 
                     /**
                      * 获取声明
                      * @return ClaimJson 声明
+                     * 
                      */
                     std::string GetClaimJson() const;
 
                     /**
                      * 设置声明
-                     * @param ClaimJson 声明
+                     * @param _claimJson 声明
+                     * 
                      */
                     void SetClaimJson(const std::string& _claimJson);
 
                     /**
                      * 判断参数 ClaimJson 是否已赋值
                      * @return ClaimJson 是否已赋值
+                     * 
                      */
                     bool ClaimJsonHasBeenSet() const;
 

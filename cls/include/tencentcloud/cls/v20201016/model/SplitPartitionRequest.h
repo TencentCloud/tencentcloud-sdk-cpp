@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取日志主题ID
                      * @return TopicId 日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-                     * @param TopicId 日志主题ID
+                     * @param _topicId 日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取待分裂分区ID
                      * @return PartitionId 待分裂分区ID
+                     * 
                      */
                     int64_t GetPartitionId() const;
 
                     /**
                      * 设置待分裂分区ID
-                     * @param PartitionId 待分裂分区ID
+                     * @param _partitionId 待分裂分区ID
+                     * 
                      */
                     void SetPartitionId(const int64_t& _partitionId);
 
                     /**
                      * 判断参数 PartitionId 是否已赋值
                      * @return PartitionId 是否已赋值
+                     * 
                      */
                     bool PartitionIdHasBeenSet() const;
 
                     /**
                      * 获取分区切分的哈希key的位置，只在Number=2时有意义
                      * @return SplitKey 分区切分的哈希key的位置，只在Number=2时有意义
+                     * 
                      */
                     std::string GetSplitKey() const;
 
                     /**
                      * 设置分区切分的哈希key的位置，只在Number=2时有意义
-                     * @param SplitKey 分区切分的哈希key的位置，只在Number=2时有意义
+                     * @param _splitKey 分区切分的哈希key的位置，只在Number=2时有意义
+                     * 
                      */
                     void SetSplitKey(const std::string& _splitKey);
 
                     /**
                      * 判断参数 SplitKey 是否已赋值
                      * @return SplitKey 是否已赋值
+                     * 
                      */
                     bool SplitKeyHasBeenSet() const;
 
                     /**
                      * 获取分区分裂个数(可选)，默认等于2
                      * @return Number 分区分裂个数(可选)，默认等于2
+                     * 
                      */
                     int64_t GetNumber() const;
 
                     /**
                      * 设置分区分裂个数(可选)，默认等于2
-                     * @param Number 分区分裂个数(可选)，默认等于2
+                     * @param _number 分区分裂个数(可选)，默认等于2
+                     * 
                      */
                     void SetNumber(const int64_t& _number);
 
                     /**
                      * 判断参数 Number 是否已赋值
                      * @return Number 是否已赋值
+                     * 
                      */
                     bool NumberHasBeenSet() const;
 

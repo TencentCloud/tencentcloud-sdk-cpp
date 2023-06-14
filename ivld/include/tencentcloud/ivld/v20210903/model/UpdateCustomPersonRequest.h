@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取待更新的自定义人物Id
                      * @return PersonId 待更新的自定义人物Id
+                     * 
                      */
                     std::string GetPersonId() const;
 
                     /**
                      * 设置待更新的自定义人物Id
-                     * @param PersonId 待更新的自定义人物Id
+                     * @param _personId 待更新的自定义人物Id
+                     * 
                      */
                     void SetPersonId(const std::string& _personId);
 
                     /**
                      * 判断参数 PersonId 是否已赋值
                      * @return PersonId 是否已赋值
+                     * 
                      */
                     bool PersonIdHasBeenSet() const;
 
                     /**
                      * 获取更新后的自定义人物名称，如为空则不更新
                      * @return Name 更新后的自定义人物名称，如为空则不更新
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置更新后的自定义人物名称，如为空则不更新
-                     * @param Name 更新后的自定义人物名称，如为空则不更新
+                     * @param _name 更新后的自定义人物名称，如为空则不更新
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取更新后的自定义人物简介，如为空则不更新
                      * @return BasicInfo 更新后的自定义人物简介，如为空则不更新
+                     * 
                      */
                     std::string GetBasicInfo() const;
 
                     /**
                      * 设置更新后的自定义人物简介，如为空则不更新
-                     * @param BasicInfo 更新后的自定义人物简介，如为空则不更新
+                     * @param _basicInfo 更新后的自定义人物简介，如为空则不更新
+                     * 
                      */
                     void SetBasicInfo(const std::string& _basicInfo);
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 
                     /**
                      * 获取更新后的分类信息，如为空则不更新
                      * @return CategoryId 更新后的分类信息，如为空则不更新
+                     * 
                      */
                     std::string GetCategoryId() const;
 
                     /**
                      * 设置更新后的分类信息，如为空则不更新
-                     * @param CategoryId 更新后的分类信息，如为空则不更新
+                     * @param _categoryId 更新后的分类信息，如为空则不更新
+                     * 
                      */
                     void SetCategoryId(const std::string& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
+                     * 
                      */
                     bool CategoryIdHasBeenSet() const;
 

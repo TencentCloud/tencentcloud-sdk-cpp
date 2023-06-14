@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取配置内容
                      * @return Config 配置内容
+                     * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置配置内容
-                     * @param Config 配置内容
+                     * @param _config 配置内容
+                     * 
                      */
                     void SetConfig(const std::string& _config);
 
                     /**
                      * 判断参数 Config 是否已赋值
                      * @return Config 是否已赋值
+                     * 
                      */
                     bool ConfigHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 用于出参，如果该配置来至模板，则为模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置用于出参，如果该配置来至模板，则为模板id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TemplateId 用于出参，如果该配置来至模板，则为模板id
+                     * @param _templateId 用于出参，如果该配置来至模板，则为模板id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -110,20 +119,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Targets 目标数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Targets GetTargets() const;
 
                     /**
                      * 设置目标数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Targets 目标数
+                     * @param _targets 目标数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTargets(const Targets& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

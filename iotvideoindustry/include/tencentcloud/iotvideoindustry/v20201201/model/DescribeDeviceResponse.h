@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取设备详情信息
                      * @return Device 设备详情信息
+                     * 
                      */
                     AllDeviceInfo GetDevice() const;
 
                     /**
                      * 判断参数 Device 是否已赋值
                      * @return Device 是否已赋值
+                     * 
                      */
                     bool DeviceHasBeenSet() const;
 

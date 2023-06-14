@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 媒资音频文件大小，单位为Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
                      * 设置媒资音频文件大小，单位为Byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FileSize 媒资音频文件大小，单位为Byte
+                     * @param _fileSize 媒资音频文件大小，单位为Byte
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
                      * @return FileSize 是否已赋值
+                     * 
                      */
                     bool FileSizeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MD5 媒资音频文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置媒资音频文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MD5 媒资音频文件MD5
+                     * @param _mD5 媒资音频文件MD5
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMD5(const std::string& _mD5);
 
                     /**
                      * 判断参数 MD5 是否已赋值
                      * @return MD5 是否已赋值
+                     * 
                      */
                     bool MD5HasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 媒资音频时长，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置媒资音频时长，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Duration 媒资音频时长，单位为秒
+                     * @param _duration 媒资音频时长，单位为秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleRate 媒资音频采样率，单位为khz
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetSampleRate() const;
 
                     /**
                      * 设置媒资音频采样率，单位为khz
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SampleRate 媒资音频采样率，单位为khz
+                     * @param _sampleRate 媒资音频采样率，单位为khz
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSampleRate(const double& _sampleRate);
 
                     /**
                      * 判断参数 SampleRate 是否已赋值
                      * @return SampleRate 是否已赋值
+                     * 
                      */
                     bool SampleRateHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BitRate 媒资音频码率，单位为kbps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBitRate() const;
 
                     /**
                      * 设置媒资音频码率，单位为kbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BitRate 媒资音频码率，单位为kbps
+                     * @param _bitRate 媒资音频码率，单位为kbps
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBitRate(const int64_t& _bitRate);
 
                     /**
                      * 判断参数 BitRate 是否已赋值
                      * @return BitRate 是否已赋值
+                     * 
                      */
                     bool BitRateHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 媒资音频文件格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置媒资音频文件格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Format 媒资音频文件格式
+                     * @param _format 媒资音频文件格式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFormat(const std::string& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 

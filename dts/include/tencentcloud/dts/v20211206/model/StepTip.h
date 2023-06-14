@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 错误码
+                     * @param _code 错误码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 错误信息
+                     * @param _message 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Solution 解决方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Solution 解决方式
+                     * @param _solution 解决方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HelpDoc 帮助文档
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHelpDoc() const;
 
                     /**
                      * 设置帮助文档
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HelpDoc 帮助文档
+                     * @param _helpDoc 帮助文档
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHelpDoc(const std::string& _helpDoc);
 
                     /**
                      * 判断参数 HelpDoc 是否已赋值
                      * @return HelpDoc 是否已赋值
+                     * 
                      */
                     bool HelpDocHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkipInfo 当前步骤跳过信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSkipInfo() const;
 
                     /**
                      * 设置当前步骤跳过信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SkipInfo 当前步骤跳过信息
+                     * @param _skipInfo 当前步骤跳过信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSkipInfo(const std::string& _skipInfo);
 
                     /**
                      * 判断参数 SkipInfo 是否已赋值
                      * @return SkipInfo 是否已赋值
+                     * 
                      */
                     bool SkipInfoHasBeenSet() const;
 

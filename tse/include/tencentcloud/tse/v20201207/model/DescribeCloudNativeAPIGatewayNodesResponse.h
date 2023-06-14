@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取获取云原生网关节点列表结果。
                      * @return Result 获取云原生网关节点列表结果。
+                     * 
                      */
                     DescribeCloudNativeAPIGatewayNodesResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取账号下域名ID
                      * @return AccountDomainId 账号下域名ID
+                     * 
                      */
                     int64_t GetAccountDomainId() const;
 
                     /**
                      * 设置账号下域名ID
-                     * @param AccountDomainId 账号下域名ID
+                     * @param _accountDomainId 账号下域名ID
+                     * 
                      */
                     void SetAccountDomainId(const int64_t& _accountDomainId);
 
                     /**
                      * 判断参数 AccountDomainId 是否已赋值
                      * @return AccountDomainId 是否已赋值
+                     * 
                      */
                     bool AccountDomainIdHasBeenSet() const;
 
                     /**
                      * 获取更新后的tag，多个以逗号隔开
                      * @return Tags 更新后的tag，多个以逗号隔开
+                     * 
                      */
                     std::string GetTags() const;
 
                     /**
                      * 设置更新后的tag，多个以逗号隔开
-                     * @param Tags 更新后的tag，多个以逗号隔开
+                     * @param _tags 更新后的tag，多个以逗号隔开
+                     * 
                      */
                     void SetTags(const std::string& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

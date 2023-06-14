@@ -47,198 +47,231 @@ namespace TencentCloud
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取模板唯一标识，查询单个模板时使用
                      * @return TemplateId 模板唯一标识，查询单个模板时使用
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板唯一标识，查询单个模板时使用
-                     * @param TemplateId 模板唯一标识，查询单个模板时使用
+                     * @param _templateId 模板唯一标识，查询单个模板时使用
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
                      * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 
                      */
                     int64_t GetContentType() const;
 
                     /**
                      * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @param _contentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 
                      */
                     void SetContentType(const int64_t& _contentType);
 
                     /**
                      * 判断参数 ContentType 是否已赋值
                      * @return ContentType 是否已赋值
+                     * 
                      */
                     bool ContentTypeHasBeenSet() const;
 
                     /**
                      * 获取查询个数，默认20，最大100；在查询列表的时候有效
                      * @return Limit 查询个数，默认20，最大100；在查询列表的时候有效
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置查询个数，默认20，最大100；在查询列表的时候有效
-                     * @param Limit 查询个数，默认20，最大100；在查询列表的时候有效
+                     * @param _limit 查询个数，默认20，最大100；在查询列表的时候有效
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询偏移位置，默认0；在查询列表的时候有效
                      * @return Offset 查询偏移位置，默认0；在查询列表的时候有效
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置查询偏移位置，默认0；在查询列表的时候有效
-                     * @param Offset 查询偏移位置，默认0；在查询列表的时候有效
+                     * @param _offset 查询偏移位置，默认0；在查询列表的时候有效
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      * @return QueryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * 
                      */
                     bool GetQueryAllComponents() const;
 
                     /**
                      * 设置是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
-                     * @param QueryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * @param _queryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * 
                      */
                     void SetQueryAllComponents(const bool& _queryAllComponents);
 
                     /**
                      * 判断参数 QueryAllComponents 是否已赋值
                      * @return QueryAllComponents 是否已赋值
+                     * 
                      */
                     bool QueryAllComponentsHasBeenSet() const;
 
                     /**
                      * 获取模糊搜索模板名称，最大长度200
                      * @return TemplateName 模糊搜索模板名称，最大长度200
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置模糊搜索模板名称，最大长度200
-                     * @param TemplateName 模糊搜索模板名称，最大长度200
+                     * @param _templateName 模糊搜索模板名称，最大长度200
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取是否获取模板预览链接
                      * @return WithPreviewUrl 是否获取模板预览链接
+                     * 
                      */
                     bool GetWithPreviewUrl() const;
 
                     /**
                      * 设置是否获取模板预览链接
-                     * @param WithPreviewUrl 是否获取模板预览链接
+                     * @param _withPreviewUrl 是否获取模板预览链接
+                     * 
                      */
                     void SetWithPreviewUrl(const bool& _withPreviewUrl);
 
                     /**
                      * 判断参数 WithPreviewUrl 是否已赋值
                      * @return WithPreviewUrl 是否已赋值
+                     * 
                      */
                     bool WithPreviewUrlHasBeenSet() const;
 
                     /**
                      * 获取是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
                      * @return WithPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * 
                      */
                     bool GetWithPdfUrl() const;
 
                     /**
                      * 设置是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
-                     * @param WithPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * @param _withPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * 
                      */
                     void SetWithPdfUrl(const bool& _withPdfUrl);
 
                     /**
                      * 判断参数 WithPdfUrl 是否已赋值
                      * @return WithPdfUrl 是否已赋值
+                     * 
                      */
                     bool WithPdfUrlHasBeenSet() const;
 
                     /**
                      * 获取对应第三方应用平台企业的模板ID
                      * @return ChannelTemplateId 对应第三方应用平台企业的模板ID
+                     * 
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
                      * 设置对应第三方应用平台企业的模板ID
-                     * @param ChannelTemplateId 对应第三方应用平台企业的模板ID
+                     * @param _channelTemplateId 对应第三方应用平台企业的模板ID
+                     * 
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
                     /**
                      * 判断参数 ChannelTemplateId 是否已赋值
                      * @return ChannelTemplateId 是否已赋值
+                     * 
                      */
                     bool ChannelTemplateIdHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * @param _operator 操作者的信息
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

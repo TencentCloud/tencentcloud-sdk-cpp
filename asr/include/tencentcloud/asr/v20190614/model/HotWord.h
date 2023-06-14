@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取热词
                      * @return Word 热词
+                     * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置热词
-                     * @param Word 热词
+                     * @param _word 热词
+                     * 
                      */
                     void SetWord(const std::string& _word);
 
                     /**
                      * 判断参数 Word 是否已赋值
                      * @return Word 是否已赋值
+                     * 
                      */
                     bool WordHasBeenSet() const;
 
                     /**
                      * 获取权重
                      * @return Weight 权重
+                     * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重
-                     * @param Weight 权重
+                     * @param _weight 权重
+                     * 
                      */
                     void SetWeight(const int64_t& _weight);
 
                     /**
                      * 判断参数 Weight 是否已赋值
                      * @return Weight 是否已赋值
+                     * 
                      */
                     bool WeightHasBeenSet() const;
 

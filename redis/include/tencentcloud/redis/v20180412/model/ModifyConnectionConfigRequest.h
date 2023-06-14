@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例的ID，长度在12-36之间。
                      * @return InstanceId 实例的ID，长度在12-36之间。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例的ID，长度在12-36之间。
-                     * @param InstanceId 实例的ID，长度在12-36之间。
+                     * @param _instanceId 实例的ID，长度在12-36之间。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取附加带宽，大于0，单位MB。
                      * @return Bandwidth 附加带宽，大于0，单位MB。
+                     * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置附加带宽，大于0，单位MB。
-                     * @param Bandwidth 附加带宽，大于0，单位MB。
+                     * @param _bandwidth 附加带宽，大于0，单位MB。
+                     * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
 
                     /**
                      * 判断参数 Bandwidth 是否已赋值
                      * @return Bandwidth 是否已赋值
+                     * 
                      */
                     bool BandwidthHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return ClientLimit 单分片的总连接数。
 未开启副本只读时，下限为10000，上限为40000；
 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+                     * 
                      */
                     int64_t GetClientLimit() const;
 
@@ -92,15 +99,17 @@ namespace TencentCloud
                      * 设置单分片的总连接数。
 未开启副本只读时，下限为10000，上限为40000；
 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
-                     * @param ClientLimit 单分片的总连接数。
+                     * @param _clientLimit 单分片的总连接数。
 未开启副本只读时，下限为10000，上限为40000；
 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。
+                     * 
                      */
                     void SetClientLimit(const int64_t& _clientLimit);
 
                     /**
                      * 判断参数 ClientLimit 是否已赋值
                      * @return ClientLimit 是否已赋值
+                     * 
                      */
                     bool ClientLimitHasBeenSet() const;
 

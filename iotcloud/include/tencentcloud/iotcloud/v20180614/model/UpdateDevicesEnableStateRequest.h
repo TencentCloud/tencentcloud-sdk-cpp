@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取设备所属产品id
                      * @return ProductID 设备所属产品id
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置设备所属产品id
-                     * @param ProductID 设备所属产品id
+                     * @param _productID 设备所属产品id
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取设备名称集合
                      * @return DeviceNames 设备名称集合
+                     * 
                      */
                     std::vector<std::string> GetDeviceNames() const;
 
                     /**
                      * 设置设备名称集合
-                     * @param DeviceNames 设备名称集合
+                     * @param _deviceNames 设备名称集合
+                     * 
                      */
                     void SetDeviceNames(const std::vector<std::string>& _deviceNames);
 
                     /**
                      * 判断参数 DeviceNames 是否已赋值
                      * @return DeviceNames 是否已赋值
+                     * 
                      */
                     bool DeviceNamesHasBeenSet() const;
 
                     /**
                      * 获取要设置的设备状态，1为启用，0为禁用
                      * @return Status 要设置的设备状态，1为启用，0为禁用
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置要设置的设备状态，1为启用，0为禁用
-                     * @param Status 要设置的设备状态，1为启用，0为禁用
+                     * @param _status 要设置的设备状态，1为启用，0为禁用
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

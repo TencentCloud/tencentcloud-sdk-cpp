@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取执行时间
                      * @return ExecuteTime 执行时间
+                     * 
                      */
                     std::string GetExecuteTime() const;
 
                     /**
                      * 设置执行时间
-                     * @param ExecuteTime 执行时间
+                     * @param _executeTime 执行时间
+                     * 
                      */
                     void SetExecuteTime(const std::string& _executeTime);
 
                     /**
                      * 判断参数 ExecuteTime 是否已赋值
                      * @return ExecuteTime 是否已赋值
+                     * 
                      */
                     bool ExecuteTimeHasBeenSet() const;
 
                     /**
                      * 获取慢查询耗时（毫秒）
                      * @return Duration 慢查询耗时（毫秒）
+                     * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置慢查询耗时（毫秒）
-                     * @param Duration 慢查询耗时（毫秒）
+                     * @param _duration 慢查询耗时（毫秒）
+                     * 
                      */
                     void SetDuration(const int64_t& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取命令
                      * @return Command 命令
+                     * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置命令
-                     * @param Command 命令
+                     * @param _command 命令
+                     * 
                      */
                     void SetCommand(const std::string& _command);
 
                     /**
                      * 判断参数 Command 是否已赋值
                      * @return Command 是否已赋值
+                     * 
                      */
                     bool CommandHasBeenSet() const;
 
                     /**
                      * 获取详细命令行信息
                      * @return CommandLine 详细命令行信息
+                     * 
                      */
                     std::string GetCommandLine() const;
 
                     /**
                      * 设置详细命令行信息
-                     * @param CommandLine 详细命令行信息
+                     * @param _commandLine 详细命令行信息
+                     * 
                      */
                     void SetCommandLine(const std::string& _commandLine);
 
                     /**
                      * 判断参数 CommandLine 是否已赋值
                      * @return CommandLine 是否已赋值
+                     * 
                      */
                     bool CommandLineHasBeenSet() const;
 
                     /**
                      * 获取节点ID
                      * @return Node 节点ID
+                     * 
                      */
                     std::string GetNode() const;
 
                     /**
                      * 设置节点ID
-                     * @param Node 节点ID
+                     * @param _node 节点ID
+                     * 
                      */
                     void SetNode(const std::string& _node);
 
                     /**
                      * 判断参数 Node 是否已赋值
                      * @return Node 是否已赋值
+                     * 
                      */
                     bool NodeHasBeenSet() const;
 

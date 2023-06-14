@@ -62,6 +62,7 @@ ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 
 ASSET_K8S, K8S资产
+                     * 
                      */
                     std::string GetAssetType() const;
 
@@ -75,7 +76,7 @@ ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 
 ASSET_K8S, K8S资产
-                     * @param AssetType 资产类型。仅查询与指定资产类型相关的检测项。
+                     * @param _assetType 资产类型。仅查询与指定资产类型相关的检测项。
 
 ASSET_CONTAINER, 容器
 
@@ -84,48 +85,56 @@ ASSET_IMAGE, 镜像
 ASSET_HOST, 主机
 
 ASSET_K8S, K8S资产
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
                     /**
                      * 获取起始偏移量，默认为0。
                      * @return Offset 起始偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置起始偏移量，默认为0。
-                     * @param Offset 起始偏移量，默认为0。
+                     * @param _offset 起始偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100。
                      * @return Limit 需要返回的数量，默认为10，最大值为100。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100。
-                     * @param Limit 需要返回的数量，默认为10，最大值为100。
+                     * @param _limit 需要返回的数量，默认为10，最大值为100。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -138,6 +147,7 @@ Name 可取值：ItemType, StandardId,  RiskLevel。
 Name - String
 Name 可取值：ItemType, StandardId,  RiskLevel。
 当为K8S资产时，还可取ClusterName。
+                     * 
                      */
                     std::vector<ComplianceFilters> GetFilters() const;
 
@@ -146,16 +156,18 @@ Name 可取值：ItemType, StandardId,  RiskLevel。
 Name - String
 Name 可取值：ItemType, StandardId,  RiskLevel。
 当为K8S资产时，还可取ClusterName。
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 Name - String
 Name 可取值：ItemType, StandardId,  RiskLevel。
 当为K8S资产时，还可取ClusterName。
+                     * 
                      */
                     void SetFilters(const std::vector<ComplianceFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

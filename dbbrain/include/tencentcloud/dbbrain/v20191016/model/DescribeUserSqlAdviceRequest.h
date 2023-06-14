@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取SQL语句。
                      * @return SqlText SQL语句。
+                     * 
                      */
                     std::string GetSqlText() const;
 
                     /**
                      * 设置SQL语句。
-                     * @param SqlText SQL语句。
+                     * @param _sqlText SQL语句。
+                     * 
                      */
                     void SetSqlText(const std::string& _sqlText);
 
                     /**
                      * 判断参数 SqlText 是否已赋值
                      * @return SqlText 是否已赋值
+                     * 
                      */
                     bool SqlTextHasBeenSet() const;
 
                     /**
                      * 获取库名。
                      * @return Schema 库名。
+                     * 
                      */
                     std::string GetSchema() const;
 
                     /**
                      * 设置库名。
-                     * @param Schema 库名。
+                     * @param _schema 库名。
+                     * 
                      */
                     void SetSchema(const std::string& _schema);
 
                     /**
                      * 判断参数 Schema 是否已赋值
                      * @return Schema 是否已赋值
+                     * 
                      */
                     bool SchemaHasBeenSet() const;
 

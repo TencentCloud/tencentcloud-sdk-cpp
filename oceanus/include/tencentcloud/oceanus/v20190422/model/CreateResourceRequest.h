@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取资源位置
                      * @return ResourceLoc 资源位置
+                     * 
                      */
                     ResourceLoc GetResourceLoc() const;
 
                     /**
                      * 设置资源位置
-                     * @param ResourceLoc 资源位置
+                     * @param _resourceLoc 资源位置
+                     * 
                      */
                     void SetResourceLoc(const ResourceLoc& _resourceLoc);
 
                     /**
                      * 判断参数 ResourceLoc 是否已赋值
                      * @return ResourceLoc 是否已赋值
+                     * 
                      */
                     bool ResourceLocHasBeenSet() const;
 
                     /**
                      * 获取资源类型。目前只支持 JAR，取值为 1
                      * @return ResourceType 资源类型。目前只支持 JAR，取值为 1
+                     * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
                      * 设置资源类型。目前只支持 JAR，取值为 1
-                     * @param ResourceType 资源类型。目前只支持 JAR，取值为 1
+                     * @param _resourceType 资源类型。目前只支持 JAR，取值为 1
+                     * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源描述
                      * @return Remark 资源描述
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置资源描述
-                     * @param Remark 资源描述
+                     * @param _remark 资源描述
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取资源名称
                      * @return Name 资源名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名称
-                     * @param Name 资源名称
+                     * @param _name 资源名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取资源版本描述
                      * @return ResourceConfigRemark 资源版本描述
+                     * 
                      */
                     std::string GetResourceConfigRemark() const;
 
                     /**
                      * 设置资源版本描述
-                     * @param ResourceConfigRemark 资源版本描述
+                     * @param _resourceConfigRemark 资源版本描述
+                     * 
                      */
                     void SetResourceConfigRemark(const std::string& _resourceConfigRemark);
 
                     /**
                      * 判断参数 ResourceConfigRemark 是否已赋值
                      * @return ResourceConfigRemark 是否已赋值
+                     * 
                      */
                     bool ResourceConfigRemarkHasBeenSet() const;
 
                     /**
                      * 获取目录ID
                      * @return FolderId 目录ID
+                     * 
                      */
                     std::string GetFolderId() const;
 
                     /**
                      * 设置目录ID
-                     * @param FolderId 目录ID
+                     * @param _folderId 目录ID
+                     * 
                      */
                     void SetFolderId(const std::string& _folderId);
 
                     /**
                      * 判断参数 FolderId 是否已赋值
                      * @return FolderId 是否已赋值
+                     * 
                      */
                     bool FolderIdHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

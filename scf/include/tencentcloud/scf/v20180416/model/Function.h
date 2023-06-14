@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取修改时间
                      * @return ModTime 修改时间
+                     * 
                      */
                     std::string GetModTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModTime 修改时间
+                     * @param _modTime 修改时间
+                     * 
                      */
                     void SetModTime(const std::string& _modTime);
 
                     /**
                      * 判断参数 ModTime 是否已赋值
                      * @return ModTime 是否已赋值
+                     * 
                      */
                     bool ModTimeHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return AddTime 创建时间
+                     * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param AddTime 创建时间
+                     * @param _addTime 创建时间
+                     * 
                      */
                     void SetAddTime(const std::string& _addTime);
 
                     /**
                      * 判断参数 AddTime 是否已赋值
                      * @return AddTime 是否已赋值
+                     * 
                      */
                     bool AddTimeHasBeenSet() const;
 
@@ -89,182 +95,212 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 运行时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行时
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Runtime 运行时
+                     * @param _runtime 运行时
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuntime(const std::string& _runtime);
 
                     /**
                      * 判断参数 Runtime 是否已赋值
                      * @return Runtime 是否已赋值
+                     * 
                      */
                     bool RuntimeHasBeenSet() const;
 
                     /**
                      * 获取函数名称
                      * @return FunctionName 函数名称
+                     * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置函数名称
-                     * @param FunctionName 函数名称
+                     * @param _functionName 函数名称
+                     * 
                      */
                     void SetFunctionName(const std::string& _functionName);
 
                     /**
                      * 判断参数 FunctionName 是否已赋值
                      * @return FunctionName 是否已赋值
+                     * 
                      */
                     bool FunctionNameHasBeenSet() const;
 
                     /**
                      * 获取函数ID
                      * @return FunctionId 函数ID
+                     * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
                      * 设置函数ID
-                     * @param FunctionId 函数ID
+                     * @param _functionId 函数ID
+                     * 
                      */
                     void SetFunctionId(const std::string& _functionId);
 
                     /**
                      * 判断参数 FunctionId 是否已赋值
                      * @return FunctionId 是否已赋值
+                     * 
                      */
                     bool FunctionIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
                      * @return Status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
-                     * @param Status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * @param _status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取函数状态详情
                      * @return StatusDesc 函数状态详情
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置函数状态详情
-                     * @param StatusDesc 函数状态详情
+                     * @param _statusDesc 函数状态详情
+                     * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
                     /**
                      * 获取函数描述
                      * @return Description 函数描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置函数描述
-                     * @param Description 函数描述
+                     * @param _description 函数描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取函数标签
                      * @return Tags 函数标签
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置函数标签
-                     * @param Tags 函数标签
+                     * @param _tags 函数标签
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取函数类型，取值为 HTTP 或者 Event
                      * @return Type 函数类型，取值为 HTTP 或者 Event
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置函数类型，取值为 HTTP 或者 Event
-                     * @param Type 函数类型，取值为 HTTP 或者 Event
+                     * @param _type 函数类型，取值为 HTTP 或者 Event
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取函数状态失败原因
                      * @return StatusReasons 函数状态失败原因
+                     * 
                      */
                     std::vector<StatusReason> GetStatusReasons() const;
 
                     /**
                      * 设置函数状态失败原因
-                     * @param StatusReasons 函数状态失败原因
+                     * @param _statusReasons 函数状态失败原因
+                     * 
                      */
                     void SetStatusReasons(const std::vector<StatusReason>& _statusReasons);
 
                     /**
                      * 判断参数 StatusReasons 是否已赋值
                      * @return StatusReasons 是否已赋值
+                     * 
                      */
                     bool StatusReasonsHasBeenSet() const;
 
@@ -273,20 +309,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalProvisionedConcurrencyMem 函数所有版本预置并发内存总和
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalProvisionedConcurrencyMem() const;
 
                     /**
                      * 设置函数所有版本预置并发内存总和
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalProvisionedConcurrencyMem 函数所有版本预置并发内存总和
+                     * @param _totalProvisionedConcurrencyMem 函数所有版本预置并发内存总和
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalProvisionedConcurrencyMem(const uint64_t& _totalProvisionedConcurrencyMem);
 
                     /**
                      * 判断参数 TotalProvisionedConcurrencyMem 是否已赋值
                      * @return TotalProvisionedConcurrencyMem 是否已赋值
+                     * 
                      */
                     bool TotalProvisionedConcurrencyMemHasBeenSet() const;
 
@@ -295,56 +334,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReservedConcurrencyMem 函数并发保留内存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetReservedConcurrencyMem() const;
 
                     /**
                      * 设置函数并发保留内存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReservedConcurrencyMem 函数并发保留内存
+                     * @param _reservedConcurrencyMem 函数并发保留内存
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReservedConcurrencyMem(const uint64_t& _reservedConcurrencyMem);
 
                     /**
                      * 判断参数 ReservedConcurrencyMem 是否已赋值
                      * @return ReservedConcurrencyMem 是否已赋值
+                     * 
                      */
                     bool ReservedConcurrencyMemHasBeenSet() const;
 
                     /**
                      * 获取函数异步属性，取值 TRUE 或者 FALSE
                      * @return AsyncRunEnable 函数异步属性，取值 TRUE 或者 FALSE
+                     * 
                      */
                     std::string GetAsyncRunEnable() const;
 
                     /**
                      * 设置函数异步属性，取值 TRUE 或者 FALSE
-                     * @param AsyncRunEnable 函数异步属性，取值 TRUE 或者 FALSE
+                     * @param _asyncRunEnable 函数异步属性，取值 TRUE 或者 FALSE
+                     * 
                      */
                     void SetAsyncRunEnable(const std::string& _asyncRunEnable);
 
                     /**
                      * 判断参数 AsyncRunEnable 是否已赋值
                      * @return AsyncRunEnable 是否已赋值
+                     * 
                      */
                     bool AsyncRunEnableHasBeenSet() const;
 
                     /**
                      * 获取异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
                      * @return TraceEnable 异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     * 
                      */
                     std::string GetTraceEnable() const;
 
                     /**
                      * 设置异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
-                     * @param TraceEnable 异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     * @param _traceEnable 异步函数是否开启调用追踪，取值 TRUE 或者 FALSE
+                     * 
                      */
                     void SetTraceEnable(const std::string& _traceEnable);
 
                     /**
                      * 判断参数 TraceEnable 是否已赋值
                      * @return TraceEnable 是否已赋值
+                     * 
                      */
                     bool TraceEnableHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取服务商ID
                      * @return ServiceProviderId 服务商ID
+                     * 
                      */
                     std::string GetServiceProviderId() const;
 
                     /**
                      * 设置服务商ID
-                     * @param ServiceProviderId 服务商ID
+                     * @param _serviceProviderId 服务商ID
+                     * 
                      */
                     void SetServiceProviderId(const std::string& _serviceProviderId);
 
                     /**
                      * 判断参数 ServiceProviderId 是否已赋值
                      * @return ServiceProviderId 是否已赋值
+                     * 
                      */
                     bool ServiceProviderIdHasBeenSet() const;
 
@@ -71,6 +74,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -80,17 +84,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

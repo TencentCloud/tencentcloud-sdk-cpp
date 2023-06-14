@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取搜索关键词
                      * @return KeyWord 搜索关键词
+                     * 
                      */
                     std::string GetKeyWord() const;
 
                     /**
                      * 设置搜索关键词
-                     * @param KeyWord 搜索关键词
+                     * @param _keyWord 搜索关键词
+                     * 
                      */
                     void SetKeyWord(const std::string& _keyWord);
 
                     /**
                      * 判断参数 KeyWord 是否已赋值
                      * @return KeyWord 是否已赋值
+                     * 
                      */
                     bool KeyWordHasBeenSet() const;
 
@@ -66,38 +69,44 @@ namespace TencentCloud
 取值范围：Offset + Limit 不超过5000。
                      * @return Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000。
-                     * @param Offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _offset 分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
 取值范围：Offset + Limit 不超过5000。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
                      * @return Limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
-                     * @param Limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * @param _limit 分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -110,6 +119,7 @@ namespace TencentCloud
 <li> Sort.Field 可选 CreateTime</li>
 <li> Sort.Order 可选 Desc </li>
 <li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * 
                      */
                     SortBy GetSort() const;
 
@@ -118,16 +128,18 @@ namespace TencentCloud
 <li> Sort.Field 可选 CreateTime</li>
 <li> Sort.Order 可选 Desc </li>
 <li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     * @param Sort 排序方式。默认按照匹配度排序
+                     * @param _sort 排序方式。默认按照匹配度排序
 <li> Sort.Field 可选 CreateTime</li>
 <li> Sort.Order 可选 Desc </li>
 <li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * 
                      */
                     void SetSort(const SortBy& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 <li>数组长度限制：10。</li>
                      * @return TagIds 标签 ID 集合，匹配集合指定所有 ID 。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     std::vector<std::string> GetTagIds() const;
 
                     /**
                      * 设置标签 ID 集合，匹配集合指定所有 ID 。
 <li>数组长度限制：10。</li>
-                     * @param TagIds 标签 ID 集合，匹配集合指定所有 ID 。
+                     * @param _tagIds 标签 ID 集合，匹配集合指定所有 ID 。
 <li>数组长度限制：10。</li>
+                     * 
                      */
                     void SetTagIds(const std::vector<std::string>& _tagIds);
 
                     /**
                      * 判断参数 TagIds 是否已赋值
                      * @return TagIds 是否已赋值
+                     * 
                      */
                     bool TagIdsHasBeenSet() const;
 

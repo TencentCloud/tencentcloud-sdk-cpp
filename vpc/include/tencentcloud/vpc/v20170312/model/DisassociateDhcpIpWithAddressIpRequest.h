@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。
                      * @return DhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。
+                     * 
                      */
                     std::string GetDhcpIpId() const;
 
                     /**
                      * 设置`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。
-                     * @param DhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。
+                     * @param _dhcpIpId `DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。
+                     * 
                      */
                     void SetDhcpIpId(const std::string& _dhcpIpId);
 
                     /**
                      * 判断参数 DhcpIpId 是否已赋值
                      * @return DhcpIpId 是否已赋值
+                     * 
                      */
                     bool DhcpIpIdHasBeenSet() const;
 

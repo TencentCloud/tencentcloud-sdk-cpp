@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例或只读组要绑定的安全组列表
                      * @return SecurityGroupIdSet 实例或只读组要绑定的安全组列表
+                     * 
                      */
                     std::vector<std::string> GetSecurityGroupIdSet() const;
 
                     /**
                      * 设置实例或只读组要绑定的安全组列表
-                     * @param SecurityGroupIdSet 实例或只读组要绑定的安全组列表
+                     * @param _securityGroupIdSet 实例或只读组要绑定的安全组列表
+                     * 
                      */
                     void SetSecurityGroupIdSet(const std::vector<std::string>& _securityGroupIdSet);
 
                     /**
                      * 判断参数 SecurityGroupIdSet 是否已赋值
                      * @return SecurityGroupIdSet 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdSetHasBeenSet() const;
 
                     /**
                      * 获取实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId
                      * @return DBInstanceId 实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId
-                     * @param DBInstanceId 实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId
+                     * @param _dBInstanceId 实例ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果都传，忽略ReadOnlyGroupId
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId
                      * @return ReadOnlyGroupId 只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId
-                     * @param ReadOnlyGroupId 只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId
+                     * @param _readOnlyGroupId 只读组ID，DBInstanceId和ReadOnlyGroupId至少传一个；如果要修改只读组关联的安全组，只传ReadOnlyGroupId
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 

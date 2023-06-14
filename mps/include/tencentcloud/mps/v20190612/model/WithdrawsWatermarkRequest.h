@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取输入媒体文件存储信息。
                      * @return InputInfo 输入媒体文件存储信息。
+                     * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
                      * 设置输入媒体文件存储信息。
-                     * @param InputInfo 输入媒体文件存储信息。
+                     * @param _inputInfo 输入媒体文件存储信息。
+                     * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
                     /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
                      * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
                      * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
 
                     /**
                      * 判断参数 TaskNotifyConfig 是否已赋值
                      * @return TaskNotifyConfig 是否已赋值
+                     * 
                      */
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
                      * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
                      * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
                     /**
                      * 判断参数 SessionContext 是否已赋值
                      * @return SessionContext 是否已赋值
+                     * 
                      */
                     bool SessionContextHasBeenSet() const;
 

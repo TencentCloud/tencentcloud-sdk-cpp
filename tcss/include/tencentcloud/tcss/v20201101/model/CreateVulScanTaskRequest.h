@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取本地镜像扫描范围类型。ALL:全部本地镜像，NOT_SCAN：全部已授权未扫描本地镜像，IMAGEIDS:自选本地镜像ID
                      * @return LocalImageScanType 本地镜像扫描范围类型。ALL:全部本地镜像，NOT_SCAN：全部已授权未扫描本地镜像，IMAGEIDS:自选本地镜像ID
+                     * 
                      */
                     std::string GetLocalImageScanType() const;
 
                     /**
                      * 设置本地镜像扫描范围类型。ALL:全部本地镜像，NOT_SCAN：全部已授权未扫描本地镜像，IMAGEIDS:自选本地镜像ID
-                     * @param LocalImageScanType 本地镜像扫描范围类型。ALL:全部本地镜像，NOT_SCAN：全部已授权未扫描本地镜像，IMAGEIDS:自选本地镜像ID
+                     * @param _localImageScanType 本地镜像扫描范围类型。ALL:全部本地镜像，NOT_SCAN：全部已授权未扫描本地镜像，IMAGEIDS:自选本地镜像ID
+                     * 
                      */
                     void SetLocalImageScanType(const std::string& _localImageScanType);
 
                     /**
                      * 判断参数 LocalImageScanType 是否已赋值
                      * @return LocalImageScanType 是否已赋值
+                     * 
                      */
                     bool LocalImageScanTypeHasBeenSet() const;
 
                     /**
                      * 获取根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。
                      * @return LocalImageIDs 根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。
+                     * 
                      */
                     std::vector<std::string> GetLocalImageIDs() const;
 
                     /**
                      * 设置根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。
-                     * @param LocalImageIDs 根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。
+                     * @param _localImageIDs 根据已授权的本地镜像IDs扫描，优先权高于根据满足条件的已授权的本地镜像。
+                     * 
                      */
                     void SetLocalImageIDs(const std::vector<std::string>& _localImageIDs);
 
                     /**
                      * 判断参数 LocalImageIDs 是否已赋值
                      * @return LocalImageIDs 是否已赋值
+                     * 
                      */
                     bool LocalImageIDsHasBeenSet() const;
 
                     /**
                      * 获取仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID
                      * @return RegistryImageScanType 仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID
+                     * 
                      */
                     std::string GetRegistryImageScanType() const;
 
                     /**
                      * 设置仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID
-                     * @param RegistryImageScanType 仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID
+                     * @param _registryImageScanType 仓库镜像扫描范围类型。ALL:全部仓库镜像，NOT_SCAN：全部已授权未扫描仓库镜像，IMAGEIDS:自选仓库镜像ID
+                     * 
                      */
                     void SetRegistryImageScanType(const std::string& _registryImageScanType);
 
                     /**
                      * 判断参数 RegistryImageScanType 是否已赋值
                      * @return RegistryImageScanType 是否已赋值
+                     * 
                      */
                     bool RegistryImageScanTypeHasBeenSet() const;
 
                     /**
                      * 获取根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。
                      * @return RegistryImageIDs 根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。
+                     * 
                      */
                     std::vector<uint64_t> GetRegistryImageIDs() const;
 
                     /**
                      * 设置根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。
-                     * @param RegistryImageIDs 根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。
+                     * @param _registryImageIDs 根据已授权的仓库镜像IDs扫描，优先权高于根据满足条件的已授权的仓库镜像。
+                     * 
                      */
                     void SetRegistryImageIDs(const std::vector<uint64_t>& _registryImageIDs);
 
                     /**
                      * 判断参数 RegistryImageIDs 是否已赋值
                      * @return RegistryImageIDs 是否已赋值
+                     * 
                      */
                     bool RegistryImageIDsHasBeenSet() const;
 
                     /**
                      * 获取本地镜像重新漏洞扫描时的任务ID
                      * @return LocalTaskID 本地镜像重新漏洞扫描时的任务ID
+                     * 
                      */
                     int64_t GetLocalTaskID() const;
 
                     /**
                      * 设置本地镜像重新漏洞扫描时的任务ID
-                     * @param LocalTaskID 本地镜像重新漏洞扫描时的任务ID
+                     * @param _localTaskID 本地镜像重新漏洞扫描时的任务ID
+                     * 
                      */
                     void SetLocalTaskID(const int64_t& _localTaskID);
 
                     /**
                      * 判断参数 LocalTaskID 是否已赋值
                      * @return LocalTaskID 是否已赋值
+                     * 
                      */
                     bool LocalTaskIDHasBeenSet() const;
 
                     /**
                      * 获取仓库镜像重新漏洞扫描时的任务ID
                      * @return RegistryTaskID 仓库镜像重新漏洞扫描时的任务ID
+                     * 
                      */
                     int64_t GetRegistryTaskID() const;
 
                     /**
                      * 设置仓库镜像重新漏洞扫描时的任务ID
-                     * @param RegistryTaskID 仓库镜像重新漏洞扫描时的任务ID
+                     * @param _registryTaskID 仓库镜像重新漏洞扫描时的任务ID
+                     * 
                      */
                     void SetRegistryTaskID(const int64_t& _registryTaskID);
 
                     /**
                      * 判断参数 RegistryTaskID 是否已赋值
                      * @return RegistryTaskID 是否已赋值
+                     * 
                      */
                     bool RegistryTaskIDHasBeenSet() const;
 

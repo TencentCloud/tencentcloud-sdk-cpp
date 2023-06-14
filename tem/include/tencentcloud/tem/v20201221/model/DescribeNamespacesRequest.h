@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取分页limit
                      * @return Limit 分页limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页limit
-                     * @param Limit 分页limit
+                     * @param _limit 分页limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页下标
                      * @return Offset 分页下标
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页下标
-                     * @param Offset 分页下标
+                     * @param _offset 分页下标
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取来源source
                      * @return SourceChannel 来源source
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源source
-                     * @param SourceChannel 来源source
+                     * @param _sourceChannel 来源source
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 

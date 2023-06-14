@@ -53,12 +53,14 @@ namespace TencentCloud
 1 - 封堵状态
 2 - 正常状态
 3 - 攻击状态
+                     * 
                      */
                     std::vector<KeyValue> GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 
@@ -67,12 +69,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBData 域名化资产的名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KeyValue> GetCLBData() const;
 
                     /**
                      * 判断参数 CLBData 是否已赋值
                      * @return CLBData 是否已赋值
+                     * 
                      */
                     bool CLBDataHasBeenSet() const;
 

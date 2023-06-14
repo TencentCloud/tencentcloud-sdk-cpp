@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取区域ID。
                      * @return RegionId 区域ID。
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置区域ID。
-                     * @param RegionId 区域ID。
+                     * @param _regionId 区域ID。
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取子区域ID列表
                      * @return SubRegionIdList 子区域ID列表
+                     * 
                      */
                     std::vector<int64_t> GetSubRegionIdList() const;
 
                     /**
                      * 设置子区域ID列表
-                     * @param SubRegionIdList 子区域ID列表
+                     * @param _subRegionIdList 子区域ID列表
+                     * 
                      */
                     void SetSubRegionIdList(const std::vector<int64_t>& _subRegionIdList);
 
                     /**
                      * 判断参数 SubRegionIdList 是否已赋值
                      * @return SubRegionIdList 是否已赋值
+                     * 
                      */
                     bool SubRegionIdListHasBeenSet() const;
 

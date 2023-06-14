@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取文本内容。
                      * @return Text 文本内容。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文本内容。
-                     * @param Text 文本内容。
+                     * @param _text 文本内容。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取非对称公钥
                      * @return PublicKey 非对称公钥
+                     * 
                      */
                     std::string GetPublicKey() const;
 
                     /**
                      * 判断参数 PublicKey 是否已赋值
                      * @return PublicKey 是否已赋值
+                     * 
                      */
                     bool PublicKeyHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取主机账号ID
                      * @return Id 主机账号ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置主机账号ID
-                     * @param Id 主机账号ID
+                     * @param _id 主机账号ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取主机账号私钥，最新长度128字节，最大长度8192字节
                      * @return PrivateKey 主机账号私钥，最新长度128字节，最大长度8192字节
+                     * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
                      * 设置主机账号私钥，最新长度128字节，最大长度8192字节
-                     * @param PrivateKey 主机账号私钥，最新长度128字节，最大长度8192字节
+                     * @param _privateKey 主机账号私钥，最新长度128字节，最大长度8192字节
+                     * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
 
                     /**
                      * 判断参数 PrivateKey 是否已赋值
                      * @return PrivateKey 是否已赋值
+                     * 
                      */
                     bool PrivateKeyHasBeenSet() const;
 
                     /**
                      * 获取主机账号私钥口令，最大长度256字节
                      * @return PrivateKeyPassword 主机账号私钥口令，最大长度256字节
+                     * 
                      */
                     std::string GetPrivateKeyPassword() const;
 
                     /**
                      * 设置主机账号私钥口令，最大长度256字节
-                     * @param PrivateKeyPassword 主机账号私钥口令，最大长度256字节
+                     * @param _privateKeyPassword 主机账号私钥口令，最大长度256字节
+                     * 
                      */
                     void SetPrivateKeyPassword(const std::string& _privateKeyPassword);
 
                     /**
                      * 判断参数 PrivateKeyPassword 是否已赋值
                      * @return PrivateKeyPassword 是否已赋值
+                     * 
                      */
                     bool PrivateKeyPasswordHasBeenSet() const;
 

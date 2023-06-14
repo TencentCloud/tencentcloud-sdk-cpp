@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FakeURLId 仿冒网址id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFakeURLId() const;
 
                     /**
                      * 设置仿冒网址id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FakeURLId 仿冒网址id
+                     * @param _fakeURLId 仿冒网址id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFakeURLId(const int64_t& _fakeURLId);
 
                     /**
                      * 判断参数 FakeURLId 是否已赋值
                      * @return FakeURLId 是否已赋值
+                     * 
                      */
                     bool FakeURLIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrandName 品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBrandName() const;
 
                     /**
                      * 设置品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BrandName 品牌名称
+                     * @param _brandName 品牌名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBrandName(const std::string& _brandName);
 
                     /**
                      * 判断参数 BrandName 是否已赋值
                      * @return BrandName 是否已赋值
+                     * 
                      */
                     bool BrandNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origin 仿冒来源：0-系统检测 1-人工举报
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOrigin() const;
 
                     /**
                      * 设置仿冒来源：0-系统检测 1-人工举报
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Origin 仿冒来源：0-系统检测 1-人工举报
+                     * @param _origin 仿冒来源：0-系统检测 1-人工举报
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrigin(const int64_t& _origin);
 
                     /**
                      * 判断参数 Origin 是否已赋值
                      * @return Origin 是否已赋值
+                     * 
                      */
                     bool OriginHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FakeURL 仿冒网址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFakeURL() const;
 
                     /**
                      * 设置仿冒网址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FakeURL 仿冒网址
+                     * @param _fakeURL 仿冒网址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFakeURL(const std::string& _fakeURL);
 
                     /**
                      * 判断参数 FakeURL 是否已赋值
                      * @return FakeURL 是否已赋值
+                     * 
                      */
                     bool FakeURLHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FakeDomain 仿冒域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFakeDomain() const;
 
                     /**
                      * 设置仿冒域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FakeDomain 仿冒域名
+                     * @param _fakeDomain 仿冒域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFakeDomain(const std::string& _fakeDomain);
 
                     /**
                      * 判断参数 FakeDomain 是否已赋值
                      * @return FakeDomain 是否已赋值
+                     * 
                      */
                     bool FakeDomainHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Heat 热度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHeat() const;
 
                     /**
                      * 设置热度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Heat 热度
+                     * @param _heat 热度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeat(const int64_t& _heat);
 
                     /**
                      * 判断参数 Heat 是否已赋值
                      * @return Heat 是否已赋值
+                     * 
                      */
                     bool HeatHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockStatus 协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBlockStatus() const;
 
                     /**
                      * 设置协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BlockStatus 协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
+                     * @param _blockStatus 协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBlockStatus(const int64_t& _blockStatus);
 
                     /**
                      * 判断参数 BlockStatus 是否已赋值
                      * @return BlockStatus 是否已赋值
+                     * 
                      */
                     bool BlockStatusHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockNote 协助处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBlockNote() const;
 
                     /**
                      * 设置协助处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BlockNote 协助处置状态说明
+                     * @param _blockNote 协助处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBlockNote(const std::string& _blockNote);
 
                     /**
                      * 判断参数 BlockNote 是否已赋值
                      * @return BlockNote 是否已赋值
+                     * 
                      */
                     bool BlockNoteHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineStatus 关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOfflineStatus() const;
 
                     /**
                      * 设置关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OfflineStatus 关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架
+                     * @param _offlineStatus 关停状态：0-未关停 1-关停中 2-关停成功 3-关停失败 4-重复上架
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOfflineStatus(const int64_t& _offlineStatus);
 
                     /**
                      * 判断参数 OfflineStatus 是否已赋值
                      * @return OfflineStatus 是否已赋值
+                     * 
                      */
                     bool OfflineStatusHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineNote 关停状态说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOfflineNote() const;
 
                     /**
                      * 设置关停状态说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OfflineNote 关停状态说明
+                     * @param _offlineNote 关停状态说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOfflineNote(const std::string& _offlineNote);
 
                     /**
                      * 判断参数 OfflineNote 是否已赋值
                      * @return OfflineNote 是否已赋值
+                     * 
                      */
                     bool OfflineNoteHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP ip地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置ip地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IP ip地址
+                     * @param _iP ip地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPLocation ip地理位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIPLocation() const;
 
                     /**
                      * 设置ip地理位置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IPLocation ip地理位置
+                     * @param _iPLocation ip地理位置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIPLocation(const std::string& _iPLocation);
 
                     /**
                      * 判断参数 IPLocation 是否已赋值
                      * @return IPLocation 是否已赋值
+                     * 
                      */
                     bool IPLocationHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCompany 网站所属单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebCompany() const;
 
                     /**
                      * 设置网站所属单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebCompany 网站所属单位
+                     * @param _webCompany 网站所属单位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebCompany(const std::string& _webCompany);
 
                     /**
                      * 判断参数 WebCompany 是否已赋值
                      * @return WebCompany 是否已赋值
+                     * 
                      */
                     bool WebCompanyHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebAttribute 网站性质
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebAttribute() const;
 
                     /**
                      * 设置网站性质
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebAttribute 网站性质
+                     * @param _webAttribute 网站性质
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebAttribute(const std::string& _webAttribute);
 
                     /**
                      * 判断参数 WebAttribute 是否已赋值
                      * @return WebAttribute 是否已赋值
+                     * 
                      */
                     bool WebAttributeHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebName 网站名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebName() const;
 
                     /**
                      * 设置网站名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebName 网站名称
+                     * @param _webName 网站名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebName(const std::string& _webName);
 
                     /**
                      * 判断参数 WebName 是否已赋值
                      * @return WebName 是否已赋值
+                     * 
                      */
                     bool WebNameHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebICP 备案号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebICP() const;
 
                     /**
                      * 设置备案号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebICP 备案号
+                     * @param _webICP 备案号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebICP(const std::string& _webICP);
 
                     /**
                      * 判断参数 WebICP 是否已赋值
                      * @return WebICP 是否已赋值
+                     * 
                      */
                     bool WebICPHasBeenSet() const;
 
@@ -403,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCreateTime 网站创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebCreateTime() const;
 
                     /**
                      * 设置网站创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebCreateTime 网站创建时间
+                     * @param _webCreateTime 网站创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebCreateTime(const std::string& _webCreateTime);
 
                     /**
                      * 判断参数 WebCreateTime 是否已赋值
                      * @return WebCreateTime 是否已赋值
+                     * 
                      */
                     bool WebCreateTimeHasBeenSet() const;
 
@@ -425,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebExpireTime 网站过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebExpireTime() const;
 
                     /**
                      * 设置网站过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebExpireTime 网站过期时间
+                     * @param _webExpireTime 网站过期时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebExpireTime(const std::string& _webExpireTime);
 
                     /**
                      * 判断参数 WebExpireTime 是否已赋值
                      * @return WebExpireTime 是否已赋值
+                     * 
                      */
                     bool WebExpireTimeHasBeenSet() const;
 
@@ -447,20 +501,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 新增时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInsertTime() const;
 
                     /**
                      * 设置新增时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InsertTime 新增时间
+                     * @param _insertTime 新增时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInsertTime(const std::string& _insertTime);
 
                     /**
                      * 判断参数 InsertTime 是否已赋值
                      * @return InsertTime 是否已赋值
+                     * 
                      */
                     bool InsertTimeHasBeenSet() const;
 
@@ -469,20 +526,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificationStatus 资质证明状态：0-不可用 1-可用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCertificationStatus() const;
 
                     /**
                      * 设置资质证明状态：0-不可用 1-可用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertificationStatus 资质证明状态：0-不可用 1-可用
+                     * @param _certificationStatus 资质证明状态：0-不可用 1-可用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertificationStatus(const int64_t& _certificationStatus);
 
                     /**
                      * 判断参数 CertificationStatus 是否已赋值
                      * @return CertificationStatus 是否已赋值
+                     * 
                      */
                     bool CertificationStatusHasBeenSet() const;
 
@@ -491,20 +551,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Snapshot 网址截图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSnapshot() const;
 
                     /**
                      * 设置网址截图
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Snapshot 网址截图
+                     * @param _snapshot 网址截图
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSnapshot(const std::string& _snapshot);
 
                     /**
                      * 判断参数 Snapshot 是否已赋值
                      * @return Snapshot 是否已赋值
+                     * 
                      */
                     bool SnapshotHasBeenSet() const;
 
@@ -513,20 +576,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountStatus 账户资源状态：0-不可用 1-可用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAccountStatus() const;
 
                     /**
                      * 设置账户资源状态：0-不可用 1-可用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountStatus 账户资源状态：0-不可用 1-可用
+                     * @param _accountStatus 账户资源状态：0-不可用 1-可用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountStatus(const int64_t& _accountStatus);
 
                     /**
                      * 判断参数 AccountStatus 是否已赋值
                      * @return AccountStatus 是否已赋值
+                     * 
                      */
                     bool AccountStatusHasBeenSet() const;
 

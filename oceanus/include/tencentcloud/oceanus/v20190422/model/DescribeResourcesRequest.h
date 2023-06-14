@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
                      * @return ResourceIds 需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
-                     * @param ResourceIds 需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
+                     * @param _resourceIds 需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取偏移量，仅当设置 Limit 参数时有效
                      * @return Offset 偏移量，仅当设置 Limit 参数时有效
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，仅当设置 Limit 参数时有效
-                     * @param Offset 偏移量，仅当设置 Limit 参数时有效
+                     * @param _offset 偏移量，仅当设置 Limit 参数时有效
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取条数限制。如果不填，默认返回 20 条
                      * @return Limit 条数限制。如果不填，默认返回 20 条
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置条数限制。如果不填，默认返回 20 条
-                     * @param Limit 条数限制。如果不填，默认返回 20 条
+                     * @param _limit 条数限制。如果不填，默认返回 20 条
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -102,38 +111,44 @@ namespace TencentCloud
 <p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
                      * @return Filters <li><strong>ResourceName</strong></li>
 <p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置<li><strong>ResourceName</strong></li>
 <p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
-                     * @param Filters <li><strong>ResourceName</strong></li>
+                     * @param _filters <li><strong>ResourceName</strong></li>
 <p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取工作空间 SerialId
                      * @return WorkSpaceId 工作空间 SerialId
+                     * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
                      * 设置工作空间 SerialId
-                     * @param WorkSpaceId 工作空间 SerialId
+                     * @param _workSpaceId 工作空间 SerialId
+                     * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
 
                     /**
                      * 判断参数 WorkSpaceId 是否已赋值
                      * @return WorkSpaceId 是否已赋值
+                     * 
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 

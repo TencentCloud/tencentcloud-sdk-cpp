@@ -61,6 +61,7 @@ PAYING:付款中
 PAYED:完成付款渠道调用
 SUCCEED:已成功
 FAILED:已失败
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -72,37 +73,42 @@ PAYING:付款中
 PAYED:完成付款渠道调用
 SUCCEED:已成功
 FAILED:已失败
-                     * @param Status 状态
+                     * @param _status 状态
 ACCEPTED:已受理
 ACCOUNTED:已记账
 PAYING:付款中
 PAYED:完成付款渠道调用
 SUCCEED:已成功
 FAILED:已失败
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取状态描述
                      * @return StatusDesc 状态描述
+                     * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置状态描述
-                     * @param StatusDesc 状态描述
+                     * @param _statusDesc 状态描述
+                     * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
                     /**
                      * 判断参数 StatusDesc 是否已赋值
                      * @return StatusDesc 是否已赋值
+                     * 
                      */
                     bool StatusDescHasBeenSet() const;
 
@@ -111,20 +117,23 @@ FAILED:已失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 失败原因。当Status为FAILED时，改字段为失败的原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置失败原因。当Status为FAILED时，改字段为失败的原因。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailReason 失败原因。当Status为FAILED时，改字段为失败的原因。
+                     * @param _failReason 失败原因。当Status为FAILED时，改字段为失败的原因。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailReason(const std::string& _failReason);
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 

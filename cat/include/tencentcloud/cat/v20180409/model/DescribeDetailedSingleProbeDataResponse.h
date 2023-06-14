@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取单次详情数据
                      * @return DataSet 单次详情数据
+                     * 
                      */
                     std::vector<DetailedSingleDataDefine> GetDataSet() const;
 
                     /**
                      * 判断参数 DataSet 是否已赋值
                      * @return DataSet 是否已赋值
+                     * 
                      */
                     bool DataSetHasBeenSet() const;
 
                     /**
                      * 获取符合条件的数据总数
                      * @return TotalNumber 符合条件的数据总数
+                     * 
                      */
                     int64_t GetTotalNumber() const;
 
                     /**
                      * 判断参数 TotalNumber 是否已赋值
                      * @return TotalNumber 是否已赋值
+                     * 
                      */
                     bool TotalNumberHasBeenSet() const;
 

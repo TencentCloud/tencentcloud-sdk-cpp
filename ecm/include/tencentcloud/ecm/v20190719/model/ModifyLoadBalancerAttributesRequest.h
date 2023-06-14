@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡的唯一ID
                      * @return LoadBalancerId 负载均衡的唯一ID
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡的唯一ID
-                     * @param LoadBalancerId 负载均衡的唯一ID
+                     * @param _loadBalancerId 负载均衡的唯一ID
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例名称
                      * @return LoadBalancerName 负载均衡实例名称
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡实例名称
-                     * @param LoadBalancerName 负载均衡实例名称
+                     * @param _loadBalancerName 负载均衡实例名称
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取网络计费及带宽相关参数
                      * @return InternetChargeInfo 网络计费及带宽相关参数
+                     * 
                      */
                     LoadBalancerInternetAccessible GetInternetChargeInfo() const;
 
                     /**
                      * 设置网络计费及带宽相关参数
-                     * @param InternetChargeInfo 网络计费及带宽相关参数
+                     * @param _internetChargeInfo 网络计费及带宽相关参数
+                     * 
                      */
                     void SetInternetChargeInfo(const LoadBalancerInternetAccessible& _internetChargeInfo);
 
                     /**
                      * 判断参数 InternetChargeInfo 是否已赋值
                      * @return InternetChargeInfo 是否已赋值
+                     * 
                      */
                     bool InternetChargeInfoHasBeenSet() const;
 
                     /**
                      * 获取Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
                      * @return LoadBalancerPassToTarget Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     * 
                      */
                     bool GetLoadBalancerPassToTarget() const;
 
                     /**
                      * 设置Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
-                     * @param LoadBalancerPassToTarget Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     * @param _loadBalancerPassToTarget Target是否放通来自ELB的流量。开启放通（true）：只验证ELB上的安全组；不开启放通（false）：需同时验证ELB和后端实例上的安全组。
+                     * 
                      */
                     void SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTarget);
 
                     /**
                      * 判断参数 LoadBalancerPassToTarget 是否已赋值
                      * @return LoadBalancerPassToTarget 是否已赋值
+                     * 
                      */
                     bool LoadBalancerPassToTargetHasBeenSet() const;
 

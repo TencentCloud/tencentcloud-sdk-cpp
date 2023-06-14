@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取子应用名称，长度限制：40个字符。
                      * @return Name 子应用名称，长度限制：40个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置子应用名称，长度限制：40个字符。
-                     * @param Name 子应用名称，长度限制：40个字符。
+                     * @param _name 子应用名称，长度限制：40个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取子应用简介，长度限制： 300个字符。
                      * @return Description 子应用简介，长度限制： 300个字符。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置子应用简介，长度限制： 300个字符。
-                     * @param Description 子应用简介，长度限制： 300个字符。
+                     * @param _description 子应用简介，长度限制： 300个字符。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

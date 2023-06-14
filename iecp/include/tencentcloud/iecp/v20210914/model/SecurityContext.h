@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取是否开启特权模式
                      * @return Privilege 是否开启特权模式
+                     * 
                      */
                     bool GetPrivilege() const;
 
                     /**
                      * 设置是否开启特权模式
-                     * @param Privilege 是否开启特权模式
+                     * @param _privilege 是否开启特权模式
+                     * 
                      */
                     void SetPrivilege(const bool& _privilege);
 
                     /**
                      * 判断参数 Privilege 是否已赋值
                      * @return Privilege 是否已赋值
+                     * 
                      */
                     bool PrivilegeHasBeenSet() const;
 
                     /**
                      * 获取目录/Proc挂载方式
                      * @return ProcMount 目录/Proc挂载方式
+                     * 
                      */
                     std::string GetProcMount() const;
 
                     /**
                      * 设置目录/Proc挂载方式
-                     * @param ProcMount 目录/Proc挂载方式
+                     * @param _procMount 目录/Proc挂载方式
+                     * 
                      */
                     void SetProcMount(const std::string& _procMount);
 
                     /**
                      * 判断参数 ProcMount 是否已赋值
                      * @return ProcMount 是否已赋值
+                     * 
                      */
                     bool ProcMountHasBeenSet() const;
 
                     /**
                      * 获取安全配置
                      * @return Capabilities 安全配置
+                     * 
                      */
                     SecurityCapabilities GetCapabilities() const;
 
                     /**
                      * 设置安全配置
-                     * @param Capabilities 安全配置
+                     * @param _capabilities 安全配置
+                     * 
                      */
                     void SetCapabilities(const SecurityCapabilities& _capabilities);
 
                     /**
                      * 判断参数 Capabilities 是否已赋值
                      * @return Capabilities 是否已赋值
+                     * 
                      */
                     bool CapabilitiesHasBeenSet() const;
 

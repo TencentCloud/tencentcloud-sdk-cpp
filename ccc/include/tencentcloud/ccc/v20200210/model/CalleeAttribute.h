@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取被叫号码
                      * @return Callee 被叫号码
+                     * 
                      */
                     std::string GetCallee() const;
 
                     /**
                      * 设置被叫号码
-                     * @param Callee 被叫号码
+                     * @param _callee 被叫号码
+                     * 
                      */
                     void SetCallee(const std::string& _callee);
 
                     /**
                      * 判断参数 Callee 是否已赋值
                      * @return Callee 是否已赋值
+                     * 
                      */
                     bool CalleeHasBeenSet() const;
 
                     /**
                      * 获取随路数据
                      * @return UUI 随路数据
+                     * 
                      */
                     std::string GetUUI() const;
 
                     /**
                      * 设置随路数据
-                     * @param UUI 随路数据
+                     * @param _uUI 随路数据
+                     * 
                      */
                     void SetUUI(const std::string& _uUI);
 
                     /**
                      * 判断参数 UUI 是否已赋值
                      * @return UUI 是否已赋值
+                     * 
                      */
                     bool UUIHasBeenSet() const;
 
                     /**
                      * 获取参数
                      * @return Variables 参数
+                     * 
                      */
                     std::vector<Variable> GetVariables() const;
 
                     /**
                      * 设置参数
-                     * @param Variables 参数
+                     * @param _variables 参数
+                     * 
                      */
                     void SetVariables(const std::vector<Variable>& _variables);
 
                     /**
                      * 判断参数 Variables 是否已赋值
                      * @return Variables 是否已赋值
+                     * 
                      */
                     bool VariablesHasBeenSet() const;
 

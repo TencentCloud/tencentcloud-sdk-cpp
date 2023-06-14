@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取会话ID列表
                      * @return SessionId 会话ID列表
+                     * 
                      */
                     std::vector<int64_t> GetSessionId() const;
 
                     /**
                      * 设置会话ID列表
-                     * @param SessionId 会话ID列表
+                     * @param _sessionId 会话ID列表
+                     * 
                      */
                     void SetSessionId(const std::vector<int64_t>& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取分片ID，与ShardSerialId设置一个
                      * @return ShardId 分片ID，与ShardSerialId设置一个
+                     * 
                      */
                     std::string GetShardId() const;
 
                     /**
                      * 设置分片ID，与ShardSerialId设置一个
-                     * @param ShardId 分片ID，与ShardSerialId设置一个
+                     * @param _shardId 分片ID，与ShardSerialId设置一个
+                     * 
                      */
                     void SetShardId(const std::string& _shardId);
 
                     /**
                      * 判断参数 ShardId 是否已赋值
                      * @return ShardId 是否已赋值
+                     * 
                      */
                     bool ShardIdHasBeenSet() const;
 
                     /**
                      * 获取分片序列ID，与ShardId设置一个
                      * @return ShardSerialId 分片序列ID，与ShardId设置一个
+                     * 
                      */
                     std::string GetShardSerialId() const;
 
                     /**
                      * 设置分片序列ID，与ShardId设置一个
-                     * @param ShardSerialId 分片序列ID，与ShardId设置一个
+                     * @param _shardSerialId 分片序列ID，与ShardId设置一个
+                     * 
                      */
                     void SetShardSerialId(const std::string& _shardSerialId);
 
                     /**
                      * 判断参数 ShardSerialId 是否已赋值
                      * @return ShardSerialId 是否已赋值
+                     * 
                      */
                     bool ShardSerialIdHasBeenSet() const;
 

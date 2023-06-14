@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Active 活跃的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetActive() const;
 
                     /**
                      * 设置活跃的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Active 活跃的服务器实例数
+                     * @param _active 活跃的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetActive(const uint64_t& _active);
 
                     /**
                      * 判断参数 Active 是否已赋值
                      * @return Active 是否已赋值
+                     * 
                      */
                     bool ActiveHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desired 期望的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDesired() const;
 
                     /**
                      * 设置期望的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desired 期望的服务器实例数
+                     * @param _desired 期望的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesired(const uint64_t& _desired);
 
                     /**
                      * 判断参数 Desired 是否已赋值
                      * @return Desired 是否已赋值
+                     * 
                      */
                     bool DesiredHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Idle 空闲的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetIdle() const;
 
                     /**
                      * 设置空闲的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Idle 空闲的服务器实例数
+                     * @param _idle 空闲的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIdle(const uint64_t& _idle);
 
                     /**
                      * 判断参数 Idle 是否已赋值
                      * @return Idle 是否已赋值
+                     * 
                      */
                     bool IdleHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxiNum 服务器实例数最大限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMaxiNum() const;
 
                     /**
                      * 设置服务器实例数最大限制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxiNum 服务器实例数最大限制
+                     * @param _maxiNum 服务器实例数最大限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMaxiNum(const uint64_t& _maxiNum);
 
                     /**
                      * 判断参数 MaxiNum 是否已赋值
                      * @return MaxiNum 是否已赋值
+                     * 
                      */
                     bool MaxiNumHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniNum 服务器实例数最小限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetMiniNum() const;
 
                     /**
                      * 设置服务器实例数最小限制
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MiniNum 服务器实例数最小限制
+                     * @param _miniNum 服务器实例数最小限制
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMiniNum(const uint64_t& _miniNum);
 
                     /**
                      * 判断参数 MiniNum 是否已赋值
                      * @return MiniNum 是否已赋值
+                     * 
                      */
                     bool MiniNumHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pending 已开始创建，但未激活的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPending() const;
 
                     /**
                      * 设置已开始创建，但未激活的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pending 已开始创建，但未激活的服务器实例数
+                     * @param _pending 已开始创建，但未激活的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPending(const uint64_t& _pending);
 
                     /**
                      * 判断参数 Pending 是否已赋值
                      * @return Pending 是否已赋值
+                     * 
                      */
                     bool PendingHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Terminating 结束中的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTerminating() const;
 
                     /**
                      * 设置结束中的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Terminating 结束中的服务器实例数
+                     * @param _terminating 结束中的服务器实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTerminating(const uint64_t& _terminating);
 
                     /**
                      * 判断参数 Terminating 是否已赋值
                      * @return Terminating 是否已赋值
+                     * 
                      */
                     bool TerminatingHasBeenSet() const;
 

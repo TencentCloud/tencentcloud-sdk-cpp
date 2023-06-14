@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing
                      * @return Region 地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing
-                     * @param Region 地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing
+                     * @param _region 地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）
                      * @return RegionName 地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）
+                     * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）
-                     * @param RegionName 地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）
+                     * @param _regionName 地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）
+                     * 
                      */
                     void SetRegionName(const std::string& _regionName);
 
                     /**
                      * 判断参数 RegionName 是否已赋值
                      * @return RegionName 是否已赋值
+                     * 
                      */
                     bool RegionNameHasBeenSet() const;
 
                     /**
                      * 获取地域ID
                      * @return RegionId 地域ID
+                     * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-                     * @param RegionId 地域ID
+                     * @param _regionId 地域ID
+                     * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取地域代码，如 gz，sh，bj
                      * @return RegionCode 地域代码，如 gz，sh，bj
+                     * 
                      */
                     std::string GetRegionCode() const;
 
                     /**
                      * 设置地域代码，如 gz，sh，bj
-                     * @param RegionCode 地域代码，如 gz，sh，bj
+                     * @param _regionCode 地域代码，如 gz，sh，bj
+                     * 
                      */
                     void SetRegionCode(const std::string& _regionCode);
 
                     /**
                      * 判断参数 RegionCode 是否已赋值
                      * @return RegionCode 是否已赋值
+                     * 
                      */
                     bool RegionCodeHasBeenSet() const;
 

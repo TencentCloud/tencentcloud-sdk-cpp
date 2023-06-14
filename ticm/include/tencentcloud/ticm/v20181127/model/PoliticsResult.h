@@ -60,6 +60,7 @@ namespace TencentCloud
 -2表示引擎错误，
 -1400表示图片解码失败，
 -1401表示图片不符合规范。
+                     * 
                      */
                     int64_t GetCode() const;
 
@@ -70,36 +71,41 @@ namespace TencentCloud
 -2表示引擎错误，
 -1400表示图片解码失败，
 -1401表示图片不符合规范。
-                     * @param Code 该识别场景的错误码：
+                     * @param _code 该识别场景的错误码：
 0表示成功，
 -1表示系统错误，
 -2表示引擎错误，
 -1400表示图片解码失败，
 -1401表示图片不符合规范。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取错误码描述信息。
                      * @return Msg 错误码描述信息。
+                     * 
                      */
                     std::string GetMsg() const;
 
                     /**
                      * 设置错误码描述信息。
-                     * @param Msg 错误码描述信息。
+                     * @param _msg 错误码描述信息。
+                     * 
                      */
                     void SetMsg(const std::string& _msg);
 
                     /**
                      * 判断参数 Msg 是否已赋值
                      * @return Msg 是否已赋值
+                     * 
                      */
                     bool MsgHasBeenSet() const;
 
@@ -112,6 +118,7 @@ BLOCK：违规
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -120,16 +127,18 @@ BLOCK：违规
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
-                     * @param Suggestion 识别场景的审核结论：
+                     * @param _suggestion 识别场景的审核结论：
 PASS：正常
 REVIEW：疑似
 BLOCK：违规
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -152,6 +161,7 @@ Type为FACE时：
 0到55，Suggestion建议为PASS
 55到60，Suggestion建议为REVIEW
 60到100，Suggestion建议为BLOCK
+                     * 
                      */
                     int64_t GetConfidence() const;
 
@@ -165,7 +175,7 @@ Type为FACE时：
 0到55，Suggestion建议为PASS
 55到60，Suggestion建议为REVIEW
 60到100，Suggestion建议为BLOCK
-                     * @param Confidence 图像涉政的分数，0-100之间，分数越高涉政几率越大。
+                     * @param _confidence 图像涉政的分数，0-100之间，分数越高涉政几率越大。
 Type为DNA时：
 0到75，Suggestion建议为PASS
 75到90，Suggestion建议为REVIEW
@@ -174,66 +184,77 @@ Type为FACE时：
 0到55，Suggestion建议为PASS
 55到60，Suggestion建议为REVIEW
 60到100，Suggestion建议为BLOCK
+                     * 
                      */
                     void SetConfidence(const int64_t& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。
                      * @return FaceResults Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。
+                     * 
                      */
                     std::vector<FaceResult> GetFaceResults() const;
 
                     /**
                      * 设置Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。
-                     * @param FaceResults Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。
+                     * @param _faceResults Type取值为‘FACE’时，人脸识别的结果列表。基于图片中实际检测到的人脸数，返回数组最大值不超过5个。
+                     * 
                      */
                     void SetFaceResults(const std::vector<FaceResult>& _faceResults);
 
                     /**
                      * 判断参数 FaceResults 是否已赋值
                      * @return FaceResults 是否已赋值
+                     * 
                      */
                     bool FaceResultsHasBeenSet() const;
 
                     /**
                      * 获取取值'DNA' 或‘FACE’。DNA表示结论和置信度来自图像指纹，FACE表示结论和置信度来自人脸识别。
                      * @return Type 取值'DNA' 或‘FACE’。DNA表示结论和置信度来自图像指纹，FACE表示结论和置信度来自人脸识别。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置取值'DNA' 或‘FACE’。DNA表示结论和置信度来自图像指纹，FACE表示结论和置信度来自人脸识别。
-                     * @param Type 取值'DNA' 或‘FACE’。DNA表示结论和置信度来自图像指纹，FACE表示结论和置信度来自人脸识别。
+                     * @param _type 取值'DNA' 或‘FACE’。DNA表示结论和置信度来自图像指纹，FACE表示结论和置信度来自人脸识别。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取鉴政识别返回的详细标签后期开放。
                      * @return AdvancedInfo 鉴政识别返回的详细标签后期开放。
+                     * 
                      */
                     std::string GetAdvancedInfo() const;
 
                     /**
                      * 设置鉴政识别返回的详细标签后期开放。
-                     * @param AdvancedInfo 鉴政识别返回的详细标签后期开放。
+                     * @param _advancedInfo 鉴政识别返回的详细标签后期开放。
+                     * 
                      */
                     void SetAdvancedInfo(const std::string& _advancedInfo);
 
                     /**
                      * 判断参数 AdvancedInfo 是否已赋值
                      * @return AdvancedInfo 是否已赋值
+                     * 
                      */
                     bool AdvancedInfoHasBeenSet() const;
 

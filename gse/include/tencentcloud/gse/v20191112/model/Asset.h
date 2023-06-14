@@ -50,234 +50,273 @@ namespace TencentCloud
                     /**
                      * 获取生成包ID
                      * @return AssetId 生成包ID
+                     * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置生成包ID
-                     * @param AssetId 生成包ID
+                     * @param _assetId 生成包ID
+                     * 
                      */
                     void SetAssetId(const std::string& _assetId);
 
                     /**
                      * 判断参数 AssetId 是否已赋值
                      * @return AssetId 是否已赋值
+                     * 
                      */
                     bool AssetIdHasBeenSet() const;
 
                     /**
                      * 获取生成包名字，最小长度为1，最大长度为64
                      * @return AssetName 生成包名字，最小长度为1，最大长度为64
+                     * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置生成包名字，最小长度为1，最大长度为64
-                     * @param AssetName 生成包名字，最小长度为1，最大长度为64
+                     * @param _assetName 生成包名字，最小长度为1，最大长度为64
+                     * 
                      */
                     void SetAssetName(const std::string& _assetName);
 
                     /**
                      * 判断参数 AssetName 是否已赋值
                      * @return AssetName 是否已赋值
+                     * 
                      */
                     bool AssetNameHasBeenSet() const;
 
                     /**
                      * 获取生成包版本，最小长度为1，最大长度为64
                      * @return AssetVersion 生成包版本，最小长度为1，最大长度为64
+                     * 
                      */
                     std::string GetAssetVersion() const;
 
                     /**
                      * 设置生成包版本，最小长度为1，最大长度为64
-                     * @param AssetVersion 生成包版本，最小长度为1，最大长度为64
+                     * @param _assetVersion 生成包版本，最小长度为1，最大长度为64
+                     * 
                      */
                     void SetAssetVersion(const std::string& _assetVersion);
 
                     /**
                      * 判断参数 AssetVersion 是否已赋值
                      * @return AssetVersion 是否已赋值
+                     * 
                      */
                     bool AssetVersionHasBeenSet() const;
 
                     /**
                      * 获取生成包可运行的操作系统，暂时只支持CentOS7.16
                      * @return OperateSystem 生成包可运行的操作系统，暂时只支持CentOS7.16
+                     * 
                      */
                     std::string GetOperateSystem() const;
 
                     /**
                      * 设置生成包可运行的操作系统，暂时只支持CentOS7.16
-                     * @param OperateSystem 生成包可运行的操作系统，暂时只支持CentOS7.16
+                     * @param _operateSystem 生成包可运行的操作系统，暂时只支持CentOS7.16
+                     * 
                      */
                     void SetOperateSystem(const std::string& _operateSystem);
 
                     /**
                      * 判断参数 OperateSystem 是否已赋值
                      * @return OperateSystem 是否已赋值
+                     * 
                      */
                     bool OperateSystemHasBeenSet() const;
 
                     /**
                      * 获取生成包状态，0代表上传中，1代表上传失败，2代表上传成功
                      * @return Stauts 生成包状态，0代表上传中，1代表上传失败，2代表上传成功
+                     * 
                      */
                     int64_t GetStauts() const;
 
                     /**
                      * 设置生成包状态，0代表上传中，1代表上传失败，2代表上传成功
-                     * @param Stauts 生成包状态，0代表上传中，1代表上传失败，2代表上传成功
+                     * @param _stauts 生成包状态，0代表上传中，1代表上传失败，2代表上传成功
+                     * 
                      */
                     void SetStauts(const int64_t& _stauts);
 
                     /**
                      * 判断参数 Stauts 是否已赋值
                      * @return Stauts 是否已赋值
+                     * 
                      */
                     bool StautsHasBeenSet() const;
 
                     /**
                      * 获取生成包大小
                      * @return Size 生成包大小
+                     * 
                      */
                     std::string GetSize() const;
 
                     /**
                      * 设置生成包大小
-                     * @param Size 生成包大小
+                     * @param _size 生成包大小
+                     * 
                      */
                     void SetSize(const std::string& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取生成包创建时间
                      * @return CreateTime 生成包创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置生成包创建时间
-                     * @param CreateTime 生成包创建时间
+                     * @param _createTime 生成包创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取生成包绑定的Fleet个数，最小值为0
                      * @return BindFleetNum 生成包绑定的Fleet个数，最小值为0
+                     * 
                      */
                     int64_t GetBindFleetNum() const;
 
                     /**
                      * 设置生成包绑定的Fleet个数，最小值为0
-                     * @param BindFleetNum 生成包绑定的Fleet个数，最小值为0
+                     * @param _bindFleetNum 生成包绑定的Fleet个数，最小值为0
+                     * 
                      */
                     void SetBindFleetNum(const int64_t& _bindFleetNum);
 
                     /**
                      * 判断参数 BindFleetNum 是否已赋值
                      * @return BindFleetNum 是否已赋值
+                     * 
                      */
                     bool BindFleetNumHasBeenSet() const;
 
                     /**
                      * 获取生成包的全局唯一资源标识符
                      * @return AssetArn 生成包的全局唯一资源标识符
+                     * 
                      */
                     std::string GetAssetArn() const;
 
                     /**
                      * 设置生成包的全局唯一资源标识符
-                     * @param AssetArn 生成包的全局唯一资源标识符
+                     * @param _assetArn 生成包的全局唯一资源标识符
+                     * 
                      */
                     void SetAssetArn(const std::string& _assetArn);
 
                     /**
                      * 判断参数 AssetArn 是否已赋值
                      * @return AssetArn 是否已赋值
+                     * 
                      */
                     bool AssetArnHasBeenSet() const;
 
                     /**
                      * 获取生成包支持的操作系统镜像id
                      * @return ImageId 生成包支持的操作系统镜像id
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置生成包支持的操作系统镜像id
-                     * @param ImageId 生成包支持的操作系统镜像id
+                     * @param _imageId 生成包支持的操作系统镜像id
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取生成包支持的操作系统类型
                      * @return OsType 生成包支持的操作系统类型
+                     * 
                      */
                     std::string GetOsType() const;
 
                     /**
                      * 设置生成包支持的操作系统类型
-                     * @param OsType 生成包支持的操作系统类型
+                     * @param _osType 生成包支持的操作系统类型
+                     * 
                      */
                     void SetOsType(const std::string& _osType);
 
                     /**
                      * 判断参数 OsType 是否已赋值
                      * @return OsType 是否已赋值
+                     * 
                      */
                     bool OsTypeHasBeenSet() const;
 
                     /**
                      * 获取生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
                      * @return ResourceType 生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
-                     * @param ResourceType 生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     * @param _resourceType 生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
                      * @return SharingStatus 镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     * 
                      */
                     std::string GetSharingStatus() const;
 
                     /**
                      * 设置镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
-                     * @param SharingStatus 镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     * @param _sharingStatus 镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位
+                     * 
                      */
                     void SetSharingStatus(const std::string& _sharingStatus);
 
                     /**
                      * 判断参数 SharingStatus 是否已赋值
                      * @return SharingStatus 是否已赋值
+                     * 
                      */
                     bool SharingStatusHasBeenSet() const;
 
@@ -286,20 +325,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签列表，最大长度50组
+                     * @param _tags 标签列表，最大长度50组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

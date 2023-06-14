@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取音量布局SEI
                      * @return LayoutVolume 音量布局SEI
+                     * 
                      */
                     McuLayoutVolume GetLayoutVolume() const;
 
                     /**
                      * 设置音量布局SEI
-                     * @param LayoutVolume 音量布局SEI
+                     * @param _layoutVolume 音量布局SEI
+                     * 
                      */
                     void SetLayoutVolume(const McuLayoutVolume& _layoutVolume);
 
                     /**
                      * 判断参数 LayoutVolume 是否已赋值
                      * @return LayoutVolume 是否已赋值
+                     * 
                      */
                     bool LayoutVolumeHasBeenSet() const;
 
                     /**
                      * 获取透传SEI
                      * @return PassThrough 透传SEI
+                     * 
                      */
                     McuPassThrough GetPassThrough() const;
 
                     /**
                      * 设置透传SEI
-                     * @param PassThrough 透传SEI
+                     * @param _passThrough 透传SEI
+                     * 
                      */
                     void SetPassThrough(const McuPassThrough& _passThrough);
 
                     /**
                      * 判断参数 PassThrough 是否已赋值
                      * @return PassThrough 是否已赋值
+                     * 
                      */
                     bool PassThroughHasBeenSet() const;
 

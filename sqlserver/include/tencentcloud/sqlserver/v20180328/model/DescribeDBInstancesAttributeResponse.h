@@ -46,96 +46,112 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取定期备份状态 enable-开启，disable-关闭
                      * @return RegularBackupEnable 定期备份状态 enable-开启，disable-关闭
+                     * 
                      */
                     std::string GetRegularBackupEnable() const;
 
                     /**
                      * 判断参数 RegularBackupEnable 是否已赋值
                      * @return RegularBackupEnable 是否已赋值
+                     * 
                      */
                     bool RegularBackupEnableHasBeenSet() const;
 
                     /**
                      * 获取定期备份保留天数 [90 - 3650]天
                      * @return RegularBackupSaveDays 定期备份保留天数 [90 - 3650]天
+                     * 
                      */
                     uint64_t GetRegularBackupSaveDays() const;
 
                     /**
                      * 判断参数 RegularBackupSaveDays 是否已赋值
                      * @return RegularBackupSaveDays 是否已赋值
+                     * 
                      */
                     bool RegularBackupSaveDaysHasBeenSet() const;
 
                     /**
                      * 获取定期备份策略 years-每年，quarters-每季度，months-每月
                      * @return RegularBackupStrategy 定期备份策略 years-每年，quarters-每季度，months-每月
+                     * 
                      */
                     std::string GetRegularBackupStrategy() const;
 
                     /**
                      * 判断参数 RegularBackupStrategy 是否已赋值
                      * @return RegularBackupStrategy 是否已赋值
+                     * 
                      */
                     bool RegularBackupStrategyHasBeenSet() const;
 
                     /**
                      * 获取定期备份保留个数
                      * @return RegularBackupCounts 定期备份保留个数
+                     * 
                      */
                     uint64_t GetRegularBackupCounts() const;
 
                     /**
                      * 判断参数 RegularBackupCounts 是否已赋值
                      * @return RegularBackupCounts 是否已赋值
+                     * 
                      */
                     bool RegularBackupCountsHasBeenSet() const;
 
                     /**
                      * 获取定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
                      * @return RegularBackupStartTime 定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
+                     * 
                      */
                     std::string GetRegularBackupStartTime() const;
 
                     /**
                      * 判断参数 RegularBackupStartTime 是否已赋值
                      * @return RegularBackupStartTime 是否已赋值
+                     * 
                      */
                     bool RegularBackupStartTimeHasBeenSet() const;
 
                     /**
                      * 获取阻塞进程阈值，单位毫秒
                      * @return BlockedThreshold 阻塞进程阈值，单位毫秒
+                     * 
                      */
                     int64_t GetBlockedThreshold() const;
 
                     /**
                      * 判断参数 BlockedThreshold 是否已赋值
                      * @return BlockedThreshold 是否已赋值
+                     * 
                      */
                     bool BlockedThresholdHasBeenSet() const;
 
                     /**
                      * 获取慢SQL、阻塞、死锁扩展事件文件保留时长
                      * @return EventSaveDays 慢SQL、阻塞、死锁扩展事件文件保留时长
+                     * 
                      */
                     int64_t GetEventSaveDays() const;
 
                     /**
                      * 判断参数 EventSaveDays 是否已赋值
                      * @return EventSaveDays 是否已赋值
+                     * 
                      */
                     bool EventSaveDaysHasBeenSet() const;
 

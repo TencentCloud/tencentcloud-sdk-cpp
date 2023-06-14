@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Col 列名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCol() const;
 
                     /**
                      * 设置列名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Col 列名
+                     * @param _col 列名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCol(const std::string& _col);
 
                     /**
                      * 判断参数 Col 是否已赋值
                      * @return Col 是否已赋值
+                     * 
                      */
                     bool ColHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Order 排序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置排序
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Order 排序
+                     * @param _order 排序
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

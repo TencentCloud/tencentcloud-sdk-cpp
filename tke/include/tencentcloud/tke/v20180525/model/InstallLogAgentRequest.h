@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取TKE集群ID
                      * @return ClusterId TKE集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置TKE集群ID
-                     * @param ClusterId TKE集群ID
+                     * @param _clusterId TKE集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取kubelet根目录
                      * @return KubeletRootDir kubelet根目录
+                     * 
                      */
                     std::string GetKubeletRootDir() const;
 
                     /**
                      * 设置kubelet根目录
-                     * @param KubeletRootDir kubelet根目录
+                     * @param _kubeletRootDir kubelet根目录
+                     * 
                      */
                     void SetKubeletRootDir(const std::string& _kubeletRootDir);
 
                     /**
                      * 判断参数 KubeletRootDir 是否已赋值
                      * @return KubeletRootDir 是否已赋值
+                     * 
                      */
                     bool KubeletRootDirHasBeenSet() const;
 

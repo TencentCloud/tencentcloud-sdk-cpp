@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取订单名
                      * @return DealName 订单名
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置订单名
-                     * @param DealName 订单名
+                     * @param _dealName 订单名
+                     * 
                      */
                     void SetDealName(const std::string& _dealName);
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 
                     /**
                      * 获取所属用户
                      * @return OwnerUin 所属用户
+                     * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
                      * 设置所属用户
-                     * @param OwnerUin 所属用户
+                     * @param _ownerUin 所属用户
+                     * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
 
                     /**
                      * 判断参数 OwnerUin 是否已赋值
                      * @return OwnerUin 是否已赋值
+                     * 
                      */
                     bool OwnerUinHasBeenSet() const;
 
                     /**
                      * 获取订单涉及多少个实例
                      * @return Count 订单涉及多少个实例
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置订单涉及多少个实例
-                     * @param Count 订单涉及多少个实例
+                     * @param _count 订单涉及多少个实例
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取付费模式。1-预付费；0-后付费
                      * @return PayMode 付费模式。1-预付费；0-后付费
+                     * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置付费模式。1-预付费；0-后付费
-                     * @param PayMode 付费模式。1-预付费；0-后付费
+                     * @param _payMode 付费模式。1-预付费；0-后付费
+                     * 
                      */
                     void SetPayMode(const int64_t& _payMode);
 
                     /**
                      * 判断参数 PayMode 是否已赋值
                      * @return PayMode 是否已赋值
+                     * 
                      */
                     bool PayModeHasBeenSet() const;
 
                     /**
                      * 获取异步任务流程ID
                      * @return FlowId 异步任务流程ID
+                     * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置异步任务流程ID
-                     * @param FlowId 异步任务流程ID
+                     * @param _flowId 异步任务流程ID
+                     * 
                      */
                     void SetFlowId(const int64_t& _flowId);
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取实例ID数组
                      * @return DBInstanceIdSet 实例ID数组
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 设置实例ID数组
-                     * @param DBInstanceIdSet 实例ID数组
+                     * @param _dBInstanceIdSet 实例ID数组
+                     * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 

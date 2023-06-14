@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取账号ID。
                      * @return AccountId 账号ID。
+                     * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置账号ID。
-                     * @param AccountId 账号ID。
+                     * @param _accountId 账号ID。
+                     * 
                      */
                     void SetAccountId(const std::string& _accountId);
 
                     /**
                      * 判断参数 AccountId 是否已赋值
                      * @return AccountId 是否已赋值
+                     * 
                      */
                     bool AccountIdHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountName 账号名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountName 账号名。
+                     * @param _accountName 账号名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccountName(const std::string& _accountName);
 
                     /**
                      * 判断参数 AccountName 是否已赋值
                      * @return AccountName 是否已赋值
+                     * 
                      */
                     bool AccountNameHasBeenSet() const;
 
@@ -92,20 +98,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserList 用户信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LinkUserInfo> GetUserList() const;
 
                     /**
                      * 设置用户信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserList 用户信息列表。
+                     * @param _userList 用户信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserList(const std::vector<LinkUserInfo>& _userList);
 
                     /**
                      * 判断参数 UserList 是否已赋值
                      * @return UserList 是否已赋值
+                     * 
                      */
                     bool UserListHasBeenSet() const;
 
@@ -114,20 +123,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述。
+                     * @param _description 描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -136,20 +148,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedDate 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedDate() const;
 
                     /**
                      * 设置创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedDate 创建时间。
+                     * @param _createdDate 创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedDate(const std::string& _createdDate);
 
                     /**
                      * 判断参数 CreatedDate 是否已赋值
                      * @return CreatedDate 是否已赋值
+                     * 
                      */
                     bool CreatedDateHasBeenSet() const;
 

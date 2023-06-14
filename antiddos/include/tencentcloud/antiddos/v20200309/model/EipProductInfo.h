@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取IP地址
                      * @return Ip IP地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-                     * @param Ip IP地址
+                     * @param _ip IP地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
@@ -87,6 +90,7 @@ fpc（金融产品），
 gaap（GAAP产品）, 
 other(托管IP)
 ]
+                     * 
                      */
                     std::string GetBizType() const;
 
@@ -102,7 +106,7 @@ fpc（金融产品），
 gaap（GAAP产品）, 
 other(托管IP)
 ]
-                     * @param BizType 云产品类型，取值[
+                     * @param _bizType 云产品类型，取值[
 public（CVM产品），
 bm（黑石产品），
 eni（弹性网卡），
@@ -113,48 +117,56 @@ fpc（金融产品），
 gaap（GAAP产品）, 
 other(托管IP)
 ]
+                     * 
                      */
                     void SetBizType(const std::string& _bizType);
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 
                     /**
                      * 获取云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
                      * @return DeviceType 云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
+                     * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
-                     * @param DeviceType 云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
+                     * @param _deviceType 云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]
+                     * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
 
                     /**
                      * 判断参数 DeviceType 是否已赋值
                      * @return DeviceType 是否已赋值
+                     * 
                      */
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
                      * 获取IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为""
                      * @return InstanceId IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为""
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为""
-                     * @param InstanceId IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为""
+                     * @param _instanceId IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为""
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
@@ -163,20 +175,23 @@ other(托管IP)
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名化资产对应的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名化资产对应的域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名化资产对应的域名
+                     * @param _domain 域名化资产对应的域名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取云硬盘ID列表。
                      * @return DiskIds 云硬盘ID列表。
+                     * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
                      * 设置云硬盘ID列表。
-                     * @param DiskIds 云硬盘ID列表。
+                     * @param _diskIds 云硬盘ID列表。
+                     * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
 
                     /**
                      * 判断参数 DiskIds 是否已赋值
                      * @return DiskIds 是否已赋值
+                     * 
                      */
                     bool DiskIdsHasBeenSet() const;
 
                     /**
                      * 获取续费标识。
                      * @return RenewFlag 续费标识。
+                     * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置续费标识。
-                     * @param RenewFlag 续费标识。
+                     * @param _renewFlag 续费标识。
+                     * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
 
                     /**
                      * 判断参数 RenewFlag 是否已赋值
                      * @return RenewFlag 是否已赋值
+                     * 
                      */
                     bool RenewFlagHasBeenSet() const;
 

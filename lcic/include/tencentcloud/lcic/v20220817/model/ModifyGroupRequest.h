@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取需要修改的群组ID
                      * @return GroupId 需要修改的群组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置需要修改的群组ID
-                     * @param GroupId 需要修改的群组ID
+                     * @param _groupId 需要修改的群组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取低代码平台应用ID
                      * @return SdkAppId 低代码平台应用ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码平台应用ID
-                     * @param SdkAppId 低代码平台应用ID
+                     * @param _sdkAppId 低代码平台应用ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取默认绑定主讲老师ID
                      * @return TeacherId 默认绑定主讲老师ID
+                     * 
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置默认绑定主讲老师ID
-                     * @param TeacherId 默认绑定主讲老师ID
+                     * @param _teacherId 默认绑定主讲老师ID
+                     * 
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
                     /**
                      * 判断参数 TeacherId 是否已赋值
                      * @return TeacherId 是否已赋值
+                     * 
                      */
                     bool TeacherIdHasBeenSet() const;
 
                     /**
                      * 获取待修改的群组名称
                      * @return GroupName 待修改的群组名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置待修改的群组名称
-                     * @param GroupName 待修改的群组名称
+                     * @param _groupName 待修改的群组名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 

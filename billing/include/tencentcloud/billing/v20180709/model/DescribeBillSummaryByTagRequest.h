@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      * @return BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * @param _beginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
                      * @return EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * @param _endTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分账标签键，用户自定义
                      * @return TagKey 分账标签键，用户自定义
+                     * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置分账标签键，用户自定义
-                     * @param TagKey 分账标签键，用户自定义
+                     * @param _tagKey 分账标签键，用户自定义
+                     * 
                      */
                     void SetTagKey(const std::string& _tagKey);
 
                     /**
                      * 判断参数 TagKey 是否已赋值
                      * @return TagKey 是否已赋值
+                     * 
                      */
                     bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取查询账单数据的用户UIN
                      * @return PayerUin 查询账单数据的用户UIN
+                     * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
                      * 设置查询账单数据的用户UIN
-                     * @param PayerUin 查询账单数据的用户UIN
+                     * @param _payerUin 查询账单数据的用户UIN
+                     * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
 
                     /**
                      * 判断参数 PayerUin 是否已赋值
                      * @return PayerUin 是否已赋值
+                     * 
                      */
                     bool PayerUinHasBeenSet() const;
 
                     /**
                      * 获取分账标签值
                      * @return TagValue 分账标签值
+                     * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置分账标签值
-                     * @param TagValue 分账标签值
+                     * @param _tagValue 分账标签值
+                     * 
                      */
                     void SetTagValue(const std::string& _tagValue);
 
                     /**
                      * 判断参数 TagValue 是否已赋值
                      * @return TagValue 是否已赋值
+                     * 
                      */
                     bool TagValueHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取是否开启全路径缓存，on或off。
                      * @return FullUrlCache 是否开启全路径缓存，on或off。
+                     * 
                      */
                     std::string GetFullUrlCache() const;
 
                     /**
                      * 设置是否开启全路径缓存，on或off。
-                     * @param FullUrlCache 是否开启全路径缓存，on或off。
+                     * @param _fullUrlCache 是否开启全路径缓存，on或off。
+                     * 
                      */
                     void SetFullUrlCache(const std::string& _fullUrlCache);
 
                     /**
                      * 判断参数 FullUrlCache 是否已赋值
                      * @return FullUrlCache 是否已赋值
+                     * 
                      */
                     bool FullUrlCacheHasBeenSet() const;
 

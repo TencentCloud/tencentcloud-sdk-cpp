@@ -45,288 +45,336 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡器ID数组
                      * @return LoadBalancerIds 负载均衡器ID数组
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置负载均衡器ID数组
-                     * @param LoadBalancerIds 负载均衡器ID数组
+                     * @param _loadBalancerIds 负载均衡器ID数组
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
                      * 获取负载均衡的类型 : open表示公网LB类型，internal表示内网LB类型
                      * @return LoadBalancerType 负载均衡的类型 : open表示公网LB类型，internal表示内网LB类型
+                     * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
                      * 设置负载均衡的类型 : open表示公网LB类型，internal表示内网LB类型
-                     * @param LoadBalancerType 负载均衡的类型 : open表示公网LB类型，internal表示内网LB类型
+                     * @param _loadBalancerType 负载均衡的类型 : open表示公网LB类型，internal表示内网LB类型
+                     * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
 
                     /**
                      * 判断参数 LoadBalancerType 是否已赋值
                      * @return LoadBalancerType 是否已赋值
+                     * 
                      */
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
                      * 获取负载均衡器名称
                      * @return LoadBalancerName 负载均衡器名称
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡器名称
-                     * @param LoadBalancerName 负载均衡器名称
+                     * @param _loadBalancerName 负载均衡器名称
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段
                      * @return Domain 负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段
-                     * @param Domain 负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段
+                     * @param _domain 负载均衡域名。规则：1-60个小写英文字母、数字、点号“.”或连接线“-”。内网类型的负载均衡不能配置该字段
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取负载均衡获得的公网IP地址,支持多个
                      * @return LoadBalancerVips 负载均衡获得的公网IP地址,支持多个
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerVips() const;
 
                     /**
                      * 设置负载均衡获得的公网IP地址,支持多个
-                     * @param LoadBalancerVips 负载均衡获得的公网IP地址,支持多个
+                     * @param _loadBalancerVips 负载均衡获得的公网IP地址,支持多个
+                     * 
                      */
                     void SetLoadBalancerVips(const std::vector<std::string>& _loadBalancerVips);
 
                     /**
                      * 判断参数 LoadBalancerVips 是否已赋值
                      * @return LoadBalancerVips 是否已赋值
+                     * 
                      */
                     bool LoadBalancerVipsHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认为0
                      * @return Offset 数据偏移量，默认为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认为0
-                     * @param Offset 数据偏移量，默认为0
+                     * @param _offset 数据偏移量，默认为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数据长度，默认为20
                      * @return Limit 返回数据长度，默认为20
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数据长度，默认为20
-                     * @param Limit 返回数据长度，默认为20
+                     * @param _limit 返回数据长度，默认为20
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取模糊查找名称、域名、VIP
                      * @return SearchKey 模糊查找名称、域名、VIP
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置模糊查找名称、域名、VIP
-                     * @param SearchKey 模糊查找名称、域名、VIP
+                     * @param _searchKey 模糊查找名称、域名、VIP
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取排序字段，支持：loadBalancerName,createTime,domain,loadBalancerType
                      * @return OrderBy 排序字段，支持：loadBalancerName,createTime,domain,loadBalancerType
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序字段，支持：loadBalancerName,createTime,domain,loadBalancerType
-                     * @param OrderBy 排序字段，支持：loadBalancerName,createTime,domain,loadBalancerType
+                     * @param _orderBy 排序字段，支持：loadBalancerName,createTime,domain,loadBalancerType
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取1倒序，0顺序，默认顺序
                      * @return OrderType 1倒序，0顺序，默认顺序
+                     * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
                      * 设置1倒序，0顺序，默认顺序
-                     * @param OrderType 1倒序，0顺序，默认顺序
+                     * @param _orderType 1倒序，0顺序，默认顺序
+                     * 
                      */
                     void SetOrderType(const int64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾
                      * @return Exclusive 是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾
+                     * 
                      */
                     uint64_t GetExclusive() const;
 
                     /**
                      * 设置是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾
-                     * @param Exclusive 是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾
+                     * @param _exclusive 是否筛选独占集群，0表示非独占集群，1表示四层独占集群，2表示七层独占集群，3表示四层和七层独占集群，4表示共享容灾
+                     * 
                      */
                     void SetExclusive(const uint64_t& _exclusive);
 
                     /**
                      * 判断参数 Exclusive 是否已赋值
                      * @return Exclusive 是否已赋值
+                     * 
                      */
                     bool ExclusiveHasBeenSet() const;
 
                     /**
                      * 获取该负载均衡对应的tgw集群（fullnat,tunnel,dnat）
                      * @return TgwSetType 该负载均衡对应的tgw集群（fullnat,tunnel,dnat）
+                     * 
                      */
                     std::string GetTgwSetType() const;
 
                     /**
                      * 设置该负载均衡对应的tgw集群（fullnat,tunnel,dnat）
-                     * @param TgwSetType 该负载均衡对应的tgw集群（fullnat,tunnel,dnat）
+                     * @param _tgwSetType 该负载均衡对应的tgw集群（fullnat,tunnel,dnat）
+                     * 
                      */
                     void SetTgwSetType(const std::string& _tgwSetType);
 
                     /**
                      * 判断参数 TgwSetType 是否已赋值
                      * @return TgwSetType 是否已赋值
+                     * 
                      */
                     bool TgwSetTypeHasBeenSet() const;
 
                     /**
                      * 获取该负载均衡对应的所在的私有网络ID
                      * @return VpcId 该负载均衡对应的所在的私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置该负载均衡对应的所在的私有网络ID
-                     * @param VpcId 该负载均衡对应的所在的私有网络ID
+                     * @param _vpcId 该负载均衡对应的所在的私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取'CONFLIST' 查询带confId的LB列表，'CONFID' 查询某个confId绑定的LB列表
                      * @return QueryType 'CONFLIST' 查询带confId的LB列表，'CONFID' 查询某个confId绑定的LB列表
+                     * 
                      */
                     std::string GetQueryType() const;
 
                     /**
                      * 设置'CONFLIST' 查询带confId的LB列表，'CONFID' 查询某个confId绑定的LB列表
-                     * @param QueryType 'CONFLIST' 查询带confId的LB列表，'CONFID' 查询某个confId绑定的LB列表
+                     * @param _queryType 'CONFLIST' 查询带confId的LB列表，'CONFID' 查询某个confId绑定的LB列表
+                     * 
                      */
                     void SetQueryType(const std::string& _queryType);
 
                     /**
                      * 判断参数 QueryType 是否已赋值
                      * @return QueryType 是否已赋值
+                     * 
                      */
                     bool QueryTypeHasBeenSet() const;
 
                     /**
                      * 获取个性化配置ID
                      * @return ConfId 个性化配置ID
+                     * 
                      */
                     std::string GetConfId() const;
 
                     /**
                      * 设置个性化配置ID
-                     * @param ConfId 个性化配置ID
+                     * @param _confId 个性化配置ID
+                     * 
                      */
                     void SetConfId(const std::string& _confId);
 
                     /**
                      * 判断参数 ConfId 是否已赋值
                      * @return ConfId 是否已赋值
+                     * 
                      */
                     bool ConfIdHasBeenSet() const;
 

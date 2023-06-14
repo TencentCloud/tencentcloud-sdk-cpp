@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取日志采集配置的json表达
                      * @return LogConfig 日志采集配置的json表达
+                     * 
                      */
                     std::string GetLogConfig() const;
 
                     /**
                      * 设置日志采集配置的json表达
-                     * @param LogConfig 日志采集配置的json表达
+                     * @param _logConfig 日志采集配置的json表达
+                     * 
                      */
                     void SetLogConfig(const std::string& _logConfig);
 
                     /**
                      * 判断参数 LogConfig 是否已赋值
                      * @return LogConfig 是否已赋值
+                     * 
                      */
                     bool LogConfigHasBeenSet() const;
 
                     /**
                      * 获取CLS日志集ID
                      * @return LogsetId CLS日志集ID
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置CLS日志集ID
-                     * @param LogsetId CLS日志集ID
+                     * @param _logsetId CLS日志集ID
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 

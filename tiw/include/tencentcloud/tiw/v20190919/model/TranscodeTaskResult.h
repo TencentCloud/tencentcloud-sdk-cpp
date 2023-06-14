@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取转码结果地址
                      * @return ResultUrl 转码结果地址
+                     * 
                      */
                     std::string GetResultUrl() const;
 
                     /**
                      * 设置转码结果地址
-                     * @param ResultUrl 转码结果地址
+                     * @param _resultUrl 转码结果地址
+                     * 
                      */
                     void SetResultUrl(const std::string& _resultUrl);
 
                     /**
                      * 判断参数 ResultUrl 是否已赋值
                      * @return ResultUrl 是否已赋值
+                     * 
                      */
                     bool ResultUrlHasBeenSet() const;
 
                     /**
                      * 获取分辨率
                      * @return Resolution 分辨率
+                     * 
                      */
                     std::string GetResolution() const;
 
                     /**
                      * 设置分辨率
-                     * @param Resolution 分辨率
+                     * @param _resolution 分辨率
+                     * 
                      */
                     void SetResolution(const std::string& _resolution);
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
                     /**
                      * 获取标题（一般为文件名）
                      * @return Title 标题（一般为文件名）
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置标题（一般为文件名）
-                     * @param Title 标题（一般为文件名）
+                     * @param _title 标题（一般为文件名）
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取转码页数
                      * @return Pages 转码页数
+                     * 
                      */
                     int64_t GetPages() const;
 
                     /**
                      * 设置转码页数
-                     * @param Pages 转码页数
+                     * @param _pages 转码页数
+                     * 
                      */
                     void SetPages(const int64_t& _pages);
 
                     /**
                      * 判断参数 Pages 是否已赋值
                      * @return Pages 是否已赋值
+                     * 
                      */
                     bool PagesHasBeenSet() const;
 
@@ -127,6 +139,7 @@ http://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推
 http://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推
 
 如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串
+                     * 
                      */
                     std::string GetThumbnailUrl() const;
 
@@ -135,88 +148,102 @@ http://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推
 http://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推
 
 如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串
-                     * @param ThumbnailUrl 缩略图URL前缀，比如，该URL前缀为http://example.com/g0jb42ps49vtebjshilb/，那么动态PPT第1页的缩略图URL为
+                     * @param _thumbnailUrl 缩略图URL前缀，比如，该URL前缀为http://example.com/g0jb42ps49vtebjshilb/，那么动态PPT第1页的缩略图URL为
 http://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推
 
 如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串
+                     * 
                      */
                     void SetThumbnailUrl(const std::string& _thumbnailUrl);
 
                     /**
                      * 判断参数 ThumbnailUrl 是否已赋值
                      * @return ThumbnailUrl 是否已赋值
+                     * 
                      */
                     bool ThumbnailUrlHasBeenSet() const;
 
                     /**
                      * 获取动态转码缩略图生成分辨率
                      * @return ThumbnailResolution 动态转码缩略图生成分辨率
+                     * 
                      */
                     std::string GetThumbnailResolution() const;
 
                     /**
                      * 设置动态转码缩略图生成分辨率
-                     * @param ThumbnailResolution 动态转码缩略图生成分辨率
+                     * @param _thumbnailResolution 动态转码缩略图生成分辨率
+                     * 
                      */
                     void SetThumbnailResolution(const std::string& _thumbnailResolution);
 
                     /**
                      * 判断参数 ThumbnailResolution 是否已赋值
                      * @return ThumbnailResolution 是否已赋值
+                     * 
                      */
                     bool ThumbnailResolutionHasBeenSet() const;
 
                     /**
                      * 获取转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串
                      * @return CompressFileUrl 转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串
+                     * 
                      */
                     std::string GetCompressFileUrl() const;
 
                     /**
                      * 设置转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串
-                     * @param CompressFileUrl 转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串
+                     * @param _compressFileUrl 转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串
+                     * 
                      */
                     void SetCompressFileUrl(const std::string& _compressFileUrl);
 
                     /**
                      * 判断参数 CompressFileUrl 是否已赋值
                      * @return CompressFileUrl 是否已赋值
+                     * 
                      */
                     bool CompressFileUrlHasBeenSet() const;
 
                     /**
                      * 获取任务失败错误码
                      * @return ErrorCode 任务失败错误码
+                     * 
                      */
                     int64_t GetErrorCode() const;
 
                     /**
                      * 设置任务失败错误码
-                     * @param ErrorCode 任务失败错误码
+                     * @param _errorCode 任务失败错误码
+                     * 
                      */
                     void SetErrorCode(const int64_t& _errorCode);
 
                     /**
                      * 判断参数 ErrorCode 是否已赋值
                      * @return ErrorCode 是否已赋值
+                     * 
                      */
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
                      * 获取任务失败错误信息
                      * @return ErrorMsg 任务失败错误信息
+                     * 
                      */
                     std::string GetErrorMsg() const;
 
                     /**
                      * 设置任务失败错误信息
-                     * @param ErrorMsg 任务失败错误信息
+                     * @param _errorMsg 任务失败错误信息
+                     * 
                      */
                     void SetErrorMsg(const std::string& _errorMsg);
 
                     /**
                      * 判断参数 ErrorMsg 是否已赋值
                      * @return ErrorMsg 是否已赋值
+                     * 
                      */
                     bool ErrorMsgHasBeenSet() const;
 

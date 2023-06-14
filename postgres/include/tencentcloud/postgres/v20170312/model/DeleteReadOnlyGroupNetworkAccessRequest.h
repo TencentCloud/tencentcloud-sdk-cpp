@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取RO组ID，形如：pgro-4t9c6g7k。
                      * @return ReadOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置RO组ID，形如：pgro-4t9c6g7k。
-                     * @param ReadOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * @param _readOnlyGroupId RO组ID，形如：pgro-4t9c6g7k。
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取私有网络统一 ID，若是基础网络则传"0"。
                      * @return VpcId 私有网络统一 ID，若是基础网络则传"0"。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络统一 ID，若是基础网络则传"0"。
-                     * @param VpcId 私有网络统一 ID，若是基础网络则传"0"。
+                     * @param _vpcId 私有网络统一 ID，若是基础网络则传"0"。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID，若是基础网络则传"0"。
                      * @return SubnetId 子网ID，若是基础网络则传"0"。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID，若是基础网络则传"0"。
-                     * @param SubnetId 子网ID，若是基础网络则传"0"。
+                     * @param _subnetId 子网ID，若是基础网络则传"0"。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取目标VIP地址。
                      * @return Vip 目标VIP地址。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置目标VIP地址。
-                     * @param Vip 目标VIP地址。
+                     * @param _vip 目标VIP地址。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 

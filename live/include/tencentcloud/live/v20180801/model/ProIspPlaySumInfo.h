@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取省份/运营商/国家或地区。
                      * @return Name 省份/运营商/国家或地区。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置省份/运营商/国家或地区。
-                     * @param Name 省份/运营商/国家或地区。
+                     * @param _name 省份/运营商/国家或地区。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取总流量，单位: MB。
                      * @return TotalFlux 总流量，单位: MB。
+                     * 
                      */
                     double GetTotalFlux() const;
 
                     /**
                      * 设置总流量，单位: MB。
-                     * @param TotalFlux 总流量，单位: MB。
+                     * @param _totalFlux 总流量，单位: MB。
+                     * 
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
                     /**
                      * 判断参数 TotalFlux 是否已赋值
                      * @return TotalFlux 是否已赋值
+                     * 
                      */
                     bool TotalFluxHasBeenSet() const;
 
                     /**
                      * 获取总请求数。
                      * @return TotalRequest 总请求数。
+                     * 
                      */
                     uint64_t GetTotalRequest() const;
 
                     /**
                      * 设置总请求数。
-                     * @param TotalRequest 总请求数。
+                     * @param _totalRequest 总请求数。
+                     * 
                      */
                     void SetTotalRequest(const uint64_t& _totalRequest);
 
                     /**
                      * 判断参数 TotalRequest 是否已赋值
                      * @return TotalRequest 是否已赋值
+                     * 
                      */
                     bool TotalRequestHasBeenSet() const;
 
                     /**
                      * 获取平均下载流量，单位: MB/s。
                      * @return AvgFluxPerSecond 平均下载流量，单位: MB/s。
+                     * 
                      */
                     double GetAvgFluxPerSecond() const;
 
                     /**
                      * 设置平均下载流量，单位: MB/s。
-                     * @param AvgFluxPerSecond 平均下载流量，单位: MB/s。
+                     * @param _avgFluxPerSecond 平均下载流量，单位: MB/s。
+                     * 
                      */
                     void SetAvgFluxPerSecond(const double& _avgFluxPerSecond);
 
                     /**
                      * 判断参数 AvgFluxPerSecond 是否已赋值
                      * @return AvgFluxPerSecond 是否已赋值
+                     * 
                      */
                     bool AvgFluxPerSecondHasBeenSet() const;
 

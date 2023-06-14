@@ -49,36 +49,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordInfo 录制信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RecordInfo> GetRecordInfo() const;
 
                     /**
                      * 判断参数 RecordInfo 是否已赋值
                      * @return RecordInfo 是否已赋值
+                     * 
                      */
                     bool RecordInfoHasBeenSet() const;
 
                     /**
                      * 获取录制类型：1代表单流 2代表混流 3代表单流和混流。
                      * @return RecordMode 录制类型：1代表单流 2代表混流 3代表单流和混流。
+                     * 
                      */
                     uint64_t GetRecordMode() const;
 
                     /**
                      * 判断参数 RecordMode 是否已赋值
                      * @return RecordMode 是否已赋值
+                     * 
                      */
                     bool RecordModeHasBeenSet() const;
 
                     /**
                      * 获取房间ID。
                      * @return RoomId 房间ID。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 

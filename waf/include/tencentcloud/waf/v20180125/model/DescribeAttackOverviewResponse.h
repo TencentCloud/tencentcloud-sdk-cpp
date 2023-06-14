@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取访问请求总数
                      * @return AccessCount 访问请求总数
+                     * 
                      */
                     uint64_t GetAccessCount() const;
 
                     /**
                      * 判断参数 AccessCount 是否已赋值
                      * @return AccessCount 是否已赋值
+                     * 
                      */
                     bool AccessCountHasBeenSet() const;
 
                     /**
                      * 获取Web攻击总数
                      * @return AttackCount Web攻击总数
+                     * 
                      */
                     uint64_t GetAttackCount() const;
 
                     /**
                      * 判断参数 AttackCount 是否已赋值
                      * @return AttackCount 是否已赋值
+                     * 
                      */
                     bool AttackCountHasBeenSet() const;
 
                     /**
                      * 获取访问控制总数
                      * @return ACLCount 访问控制总数
+                     * 
                      */
                     uint64_t GetACLCount() const;
 
                     /**
                      * 判断参数 ACLCount 是否已赋值
                      * @return ACLCount 是否已赋值
+                     * 
                      */
                     bool ACLCountHasBeenSet() const;
 
                     /**
                      * 获取CC攻击总数
                      * @return CCCount CC攻击总数
+                     * 
                      */
                     uint64_t GetCCCount() const;
 
                     /**
                      * 判断参数 CCCount 是否已赋值
                      * @return CCCount 是否已赋值
+                     * 
                      */
                     bool CCCountHasBeenSet() const;
 
                     /**
                      * 获取Bot攻击总数
                      * @return BotCount Bot攻击总数
+                     * 
                      */
                     uint64_t GetBotCount() const;
 
                     /**
                      * 判断参数 BotCount 是否已赋值
                      * @return BotCount 是否已赋值
+                     * 
                      */
                     bool BotCountHasBeenSet() const;
 
                     /**
                      * 获取api资产总数
                      * @return ApiAssetsCount api资产总数
+                     * 
                      */
                     uint64_t GetApiAssetsCount() const;
 
                     /**
                      * 判断参数 ApiAssetsCount 是否已赋值
                      * @return ApiAssetsCount 是否已赋值
+                     * 
                      */
                     bool ApiAssetsCountHasBeenSet() const;
 

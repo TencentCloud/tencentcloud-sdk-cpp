@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取参与者列表
                      * @return Approvers 参与者列表
+                     * 
                      */
                     std::vector<CatalogApprovers> GetApprovers() const;
 
                     /**
                      * 判断参数 Approvers 是否已赋值
                      * @return Approvers 是否已赋值
+                     * 
                      */
                     bool ApproversHasBeenSet() const;
 

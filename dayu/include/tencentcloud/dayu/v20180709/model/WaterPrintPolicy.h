@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取TCP端口段，例如["2000-3000","3500-4000"]
                      * @return TcpPortList TCP端口段，例如["2000-3000","3500-4000"]
+                     * 
                      */
                     std::vector<std::string> GetTcpPortList() const;
 
                     /**
                      * 设置TCP端口段，例如["2000-3000","3500-4000"]
-                     * @param TcpPortList TCP端口段，例如["2000-3000","3500-4000"]
+                     * @param _tcpPortList TCP端口段，例如["2000-3000","3500-4000"]
+                     * 
                      */
                     void SetTcpPortList(const std::vector<std::string>& _tcpPortList);
 
                     /**
                      * 判断参数 TcpPortList 是否已赋值
                      * @return TcpPortList 是否已赋值
+                     * 
                      */
                     bool TcpPortListHasBeenSet() const;
 
                     /**
                      * 获取UDP端口段，例如["2000-3000","3500-4000"]
                      * @return UdpPortList UDP端口段，例如["2000-3000","3500-4000"]
+                     * 
                      */
                     std::vector<std::string> GetUdpPortList() const;
 
                     /**
                      * 设置UDP端口段，例如["2000-3000","3500-4000"]
-                     * @param UdpPortList UDP端口段，例如["2000-3000","3500-4000"]
+                     * @param _udpPortList UDP端口段，例如["2000-3000","3500-4000"]
+                     * 
                      */
                     void SetUdpPortList(const std::vector<std::string>& _udpPortList);
 
                     /**
                      * 判断参数 UdpPortList 是否已赋值
                      * @return UdpPortList 是否已赋值
+                     * 
                      */
                     bool UdpPortListHasBeenSet() const;
 
                     /**
                      * 获取水印偏移量，取值范围[0, 100)
                      * @return Offset 水印偏移量，取值范围[0, 100)
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置水印偏移量，取值范围[0, 100)
-                     * @param Offset 水印偏移量，取值范围[0, 100)
+                     * @param _offset 水印偏移量，取值范围[0, 100)
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取是否自动剥离，取值[0（不自动剥离），1（自动剥离）]
                      * @return RemoveSwitch 是否自动剥离，取值[0（不自动剥离），1（自动剥离）]
+                     * 
                      */
                     uint64_t GetRemoveSwitch() const;
 
                     /**
                      * 设置是否自动剥离，取值[0（不自动剥离），1（自动剥离）]
-                     * @param RemoveSwitch 是否自动剥离，取值[0（不自动剥离），1（自动剥离）]
+                     * @param _removeSwitch 是否自动剥离，取值[0（不自动剥离），1（自动剥离）]
+                     * 
                      */
                     void SetRemoveSwitch(const uint64_t& _removeSwitch);
 
                     /**
                      * 判断参数 RemoveSwitch 是否已赋值
                      * @return RemoveSwitch 是否已赋值
+                     * 
                      */
                     bool RemoveSwitchHasBeenSet() const;
 
                     /**
                      * 获取是否开启，取值[0（没有开启），1（已开启）]
                      * @return OpenStatus 是否开启，取值[0（没有开启），1（已开启）]
+                     * 
                      */
                     uint64_t GetOpenStatus() const;
 
                     /**
                      * 设置是否开启，取值[0（没有开启），1（已开启）]
-                     * @param OpenStatus 是否开启，取值[0（没有开启），1（已开启）]
+                     * @param _openStatus 是否开启，取值[0（没有开启），1（已开启）]
+                     * 
                      */
                     void SetOpenStatus(const uint64_t& _openStatus);
 
                     /**
                      * 判断参数 OpenStatus 是否已赋值
                      * @return OpenStatus 是否已赋值
+                     * 
                      */
                     bool OpenStatusHasBeenSet() const;
 

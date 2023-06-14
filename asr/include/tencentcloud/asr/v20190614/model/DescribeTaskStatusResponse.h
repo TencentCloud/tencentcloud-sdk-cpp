@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取录音文件识别的请求返回结果。
                      * @return Data 录音文件识别的请求返回结果。
+                     * 
                      */
                     TaskStatus GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

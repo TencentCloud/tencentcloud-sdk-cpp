@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取起始时间。
                      * @return MuteBtm 起始时间。
+                     * 
                      */
                     int64_t GetMuteBtm() const;
 
                     /**
                      * 设置起始时间。
-                     * @param MuteBtm 起始时间。
+                     * @param _muteBtm 起始时间。
+                     * 
                      */
                     void SetMuteBtm(const int64_t& _muteBtm);
 
                     /**
                      * 判断参数 MuteBtm 是否已赋值
                      * @return MuteBtm 是否已赋值
+                     * 
                      */
                     bool MuteBtmHasBeenSet() const;
 
                     /**
                      * 获取终止时间。
                      * @return MuteEtm 终止时间。
+                     * 
                      */
                     int64_t GetMuteEtm() const;
 
                     /**
                      * 设置终止时间。
-                     * @param MuteEtm 终止时间。
+                     * @param _muteEtm 终止时间。
+                     * 
                      */
                     void SetMuteEtm(const int64_t& _muteEtm);
 
                     /**
                      * 判断参数 MuteEtm 是否已赋值
                      * @return MuteEtm 是否已赋值
+                     * 
                      */
                     bool MuteEtmHasBeenSet() const;
 

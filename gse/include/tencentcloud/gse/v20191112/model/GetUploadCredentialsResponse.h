@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取上传文件授权信息Auth
                      * @return BucketAuth 上传文件授权信息Auth
+                     * 
                      */
                     std::string GetBucketAuth() const;
 
                     /**
                      * 判断参数 BucketAuth 是否已赋值
                      * @return BucketAuth 是否已赋值
+                     * 
                      */
                     bool BucketAuthHasBeenSet() const;
 
                     /**
                      * 获取Bucket名字
                      * @return BucketName Bucket名字
+                     * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 判断参数 BucketName 是否已赋值
                      * @return BucketName 是否已赋值
+                     * 
                      */
                     bool BucketNameHasBeenSet() const;
 
                     /**
                      * 获取生成包所在地域
                      * @return AssetRegion 生成包所在地域
+                     * 
                      */
                     std::string GetAssetRegion() const;
 
                     /**
                      * 判断参数 AssetRegion 是否已赋值
                      * @return AssetRegion 是否已赋值
+                     * 
                      */
                     bool AssetRegionHasBeenSet() const;
 

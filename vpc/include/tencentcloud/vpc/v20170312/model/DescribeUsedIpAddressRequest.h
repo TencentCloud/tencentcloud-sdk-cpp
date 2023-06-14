@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取VPC实例ID。
                      * @return VpcId VPC实例ID。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。
-                     * @param VpcId VPC实例ID。
+                     * @param _vpcId VPC实例ID。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网实例ID。
                      * @return SubnetId 子网实例ID。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID。
-                     * @param SubnetId 子网实例ID。
+                     * @param _subnetId 子网实例ID。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取查询是否占用的ip列表
                      * @return IpAddresses 查询是否占用的ip列表
+                     * 
                      */
                     std::vector<std::string> GetIpAddresses() const;
 
                     /**
                      * 设置查询是否占用的ip列表
-                     * @param IpAddresses 查询是否占用的ip列表
+                     * @param _ipAddresses 查询是否占用的ip列表
+                     * 
                      */
                     void SetIpAddresses(const std::vector<std::string>& _ipAddresses);
 
                     /**
                      * 判断参数 IpAddresses 是否已赋值
                      * @return IpAddresses 是否已赋值
+                     * 
                      */
                     bool IpAddressesHasBeenSet() const;
 
                     /**
                      * 获取偏移量。
                      * @return Offset 偏移量。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * @param _offset 偏移量。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取请求对象个数。
                      * @return Limit 请求对象个数。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置请求对象个数。
-                     * @param Limit 请求对象个数。
+                     * @param _limit 请求对象个数。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

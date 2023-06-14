@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取机器人标识
                      * @return BotId 机器人标识
+                     * 
                      */
                     std::string GetBotId() const;
 
                     /**
                      * 设置机器人标识
-                     * @param BotId 机器人标识
+                     * @param _botId 机器人标识
+                     * 
                      */
                     void SetBotId(const std::string& _botId);
 
                     /**
                      * 判断参数 BotId 是否已赋值
                      * @return BotId 是否已赋值
+                     * 
                      */
                     bool BotIdHasBeenSet() const;
 
                     /**
                      * 获取子账户id，每个终端对应一个
                      * @return UserId 子账户id，每个终端对应一个
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置子账户id，每个终端对应一个
-                     * @param UserId 子账户id，每个终端对应一个
+                     * @param _userId 子账户id，每个终端对应一个
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
                      * @return BotVersion 机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
+                     * 
                      */
                     std::string GetBotVersion() const;
 
                     /**
                      * 设置机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
-                     * @param BotVersion 机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
+                     * @param _botVersion 机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
+                     * 
                      */
                     void SetBotVersion(const std::string& _botVersion);
 
                     /**
                      * 判断参数 BotVersion 是否已赋值
                      * @return BotVersion 是否已赋值
+                     * 
                      */
                     bool BotVersionHasBeenSet() const;
 
                     /**
                      * 获取机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
                      * @return BotEnv 机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
+                     * 
                      */
                     std::string GetBotEnv() const;
 
                     /**
                      * 设置机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
-                     * @param BotEnv 机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
+                     * @param _botEnv 机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev
+                     * 
                      */
                     void SetBotEnv(const std::string& _botEnv);
 
                     /**
                      * 判断参数 BotEnv 是否已赋值
                      * @return BotEnv 是否已赋值
+                     * 
                      */
                     bool BotEnvHasBeenSet() const;
 

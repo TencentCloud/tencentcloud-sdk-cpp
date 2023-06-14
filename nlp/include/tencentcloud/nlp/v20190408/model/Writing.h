@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取续写的文本。
                      * @return TargetText 续写的文本。
+                     * 
                      */
                     std::string GetTargetText() const;
 
                     /**
                      * 设置续写的文本。
-                     * @param TargetText 续写的文本。
+                     * @param _targetText 续写的文本。
+                     * 
                      */
                     void SetTargetText(const std::string& _targetText);
 
                     /**
                      * 判断参数 TargetText 是否已赋值
                      * @return TargetText 是否已赋值
+                     * 
                      */
                     bool TargetTextHasBeenSet() const;
 
                     /**
                      * 获取续写的前缀。
                      * @return PrefixText 续写的前缀。
+                     * 
                      */
                     std::string GetPrefixText() const;
 
                     /**
                      * 设置续写的前缀。
-                     * @param PrefixText 续写的前缀。
+                     * @param _prefixText 续写的前缀。
+                     * 
                      */
                     void SetPrefixText(const std::string& _prefixText);
 
                     /**
                      * 判断参数 PrefixText 是否已赋值
                      * @return PrefixText 是否已赋值
+                     * 
                      */
                     bool PrefixTextHasBeenSet() const;
 

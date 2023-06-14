@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取机器人总数。
                      * @return TotalCount 机器人总数。
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取机器人信息集合。
                      * @return KTVRobotInfoSet 机器人信息集合。
+                     * 
                      */
                     std::vector<KTVRobotInfo> GetKTVRobotInfoSet() const;
 
                     /**
                      * 判断参数 KTVRobotInfoSet 是否已赋值
                      * @return KTVRobotInfoSet 是否已赋值
+                     * 
                      */
                     bool KTVRobotInfoSetHasBeenSet() const;
 

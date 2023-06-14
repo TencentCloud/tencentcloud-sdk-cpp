@@ -45,162 +45,189 @@ namespace TencentCloud
                     /**
                      * 获取实例唯一id
                      * @return InstanceId 实例唯一id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例唯一id
-                     * @param InstanceId 实例唯一id
+                     * @param _instanceId 实例唯一id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
                      * @return VipType 路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
+                     * 
                      */
                     int64_t GetVipType() const;
 
                     /**
                      * 设置路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
-                     * @param VipType 路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
+                     * @param _vipType 路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
+                     * 
                      */
                     void SetVipType(const int64_t& _vipType);
 
                     /**
                      * 判断参数 VipType 是否已赋值
                      * @return VipType 是否已赋值
+                     * 
                      */
                     bool VipTypeHasBeenSet() const;
 
                     /**
                      * 获取vpc网络Id
                      * @return VpcId vpc网络Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc网络Id
-                     * @param VpcId vpc网络Id
+                     * @param _vpcId vpc网络Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取vpc子网id
                      * @return SubnetId vpc子网id
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置vpc子网id
-                     * @param SubnetId vpc子网id
+                     * @param _subnetId vpc子网id
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取访问类型
                      * @return AccessType 访问类型
+                     * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
                      * 设置访问类型
-                     * @param AccessType 访问类型
+                     * @param _accessType 访问类型
+                     * 
                      */
                     void SetAccessType(const int64_t& _accessType);
 
                     /**
                      * 判断参数 AccessType 是否已赋值
                      * @return AccessType 是否已赋值
+                     * 
                      */
                     bool AccessTypeHasBeenSet() const;
 
                     /**
                      * 获取是否需要权限管理
                      * @return AuthFlag 是否需要权限管理
+                     * 
                      */
                     int64_t GetAuthFlag() const;
 
                     /**
                      * 设置是否需要权限管理
-                     * @param AuthFlag 是否需要权限管理
+                     * @param _authFlag 是否需要权限管理
+                     * 
                      */
                     void SetAuthFlag(const int64_t& _authFlag);
 
                     /**
                      * 判断参数 AuthFlag 是否已赋值
                      * @return AuthFlag 是否已赋值
+                     * 
                      */
                     bool AuthFlagHasBeenSet() const;
 
                     /**
                      * 获取调用方appId
                      * @return CallerAppid 调用方appId
+                     * 
                      */
                     int64_t GetCallerAppid() const;
 
                     /**
                      * 设置调用方appId
-                     * @param CallerAppid 调用方appId
+                     * @param _callerAppid 调用方appId
+                     * 
                      */
                     void SetCallerAppid(const int64_t& _callerAppid);
 
                     /**
                      * 判断参数 CallerAppid 是否已赋值
                      * @return CallerAppid 是否已赋值
+                     * 
                      */
                     bool CallerAppidHasBeenSet() const;
 
                     /**
                      * 获取公网带宽
                      * @return PublicNetwork 公网带宽
+                     * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
                      * 设置公网带宽
-                     * @param PublicNetwork 公网带宽
+                     * @param _publicNetwork 公网带宽
+                     * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
 
                     /**
                      * 判断参数 PublicNetwork 是否已赋值
                      * @return PublicNetwork 是否已赋值
+                     * 
                      */
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
                      * 获取vip地址
                      * @return Ip vip地址
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置vip地址
-                     * @param Ip vip地址
+                     * @param _ip vip地址
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 

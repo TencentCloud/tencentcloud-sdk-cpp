@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取区域动线，形如 x-x-x-x-x，其中 x 为区域 ID
                      * @return Zones 区域动线，形如 x-x-x-x-x，其中 x 为区域 ID
+                     * 
                      */
                     std::string GetZones() const;
 
                     /**
                      * 设置区域动线，形如 x-x-x-x-x，其中 x 为区域 ID
-                     * @param Zones 区域动线，形如 x-x-x-x-x，其中 x 为区域 ID
+                     * @param _zones 区域动线，形如 x-x-x-x-x，其中 x 为区域 ID
+                     * 
                      */
                     void SetZones(const std::string& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
+                     * 
                      */
                     bool ZonesHasBeenSet() const;
 
                     /**
                      * 获取该动线出现次数
                      * @return Count 该动线出现次数
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该动线出现次数
-                     * @param Count 该动线出现次数
+                     * @param _count 该动线出现次数
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
                     /**
                      * 获取该动线平均停留时间（秒）
                      * @return AvgStayTime 该动线平均停留时间（秒）
+                     * 
                      */
                     int64_t GetAvgStayTime() const;
 
                     /**
                      * 设置该动线平均停留时间（秒）
-                     * @param AvgStayTime 该动线平均停留时间（秒）
+                     * @param _avgStayTime 该动线平均停留时间（秒）
+                     * 
                      */
                     void SetAvgStayTime(const int64_t& _avgStayTime);
 
                     /**
                      * 判断参数 AvgStayTime 是否已赋值
                      * @return AvgStayTime 是否已赋值
+                     * 
                      */
                     bool AvgStayTimeHasBeenSet() const;
 

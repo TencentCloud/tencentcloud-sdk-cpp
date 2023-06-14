@@ -75,6 +75,7 @@ namespace TencentCloud
 运行时安全-高危系统调用：RUNTIME_SYSCALL
 运行时安全-反弹Shell：RUNTIME_REVERSE_SHELL
 运行时安全-木马：RUNTIME_VIRUS
+                     * 
                      */
                     std::string GetType() const;
 
@@ -93,7 +94,7 @@ namespace TencentCloud
 运行时安全-高危系统调用：RUNTIME_SYSCALL
 运行时安全-反弹Shell：RUNTIME_REVERSE_SHELL
 运行时安全-木马：RUNTIME_VIRUS
-                     * @param Type 告警事件类型：
+                     * @param _type 告警事件类型：
 镜像仓库安全-木马：IMG_REG_VIRUS
 镜像仓库安全-漏洞：IMG_REG_VUL
 镜像仓库安全-敏感信息：IMG_REG_RISK
@@ -107,12 +108,14 @@ namespace TencentCloud
 运行时安全-高危系统调用：RUNTIME_SYSCALL
 运行时安全-反弹Shell：RUNTIME_REVERSE_SHELL
 运行时安全-木马：RUNTIME_VIRUS
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -123,6 +126,7 @@ namespace TencentCloud
                      * @return Switch 开关状态：
 打开：ON
 关闭：OFF
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -130,51 +134,59 @@ namespace TencentCloud
                      * 设置开关状态：
 打开：ON
 关闭：OFF
-                     * @param Switch 开关状态：
+                     * @param _switch 开关状态：
 打开：ON
 关闭：OFF
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取告警开始时间，格式: HH:mm
                      * @return BeginTime 告警开始时间，格式: HH:mm
+                     * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置告警开始时间，格式: HH:mm
-                     * @param BeginTime 告警开始时间，格式: HH:mm
+                     * @param _beginTime 告警开始时间，格式: HH:mm
+                     * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
                     /**
                      * 判断参数 BeginTime 是否已赋值
                      * @return BeginTime 是否已赋值
+                     * 
                      */
                     bool BeginTimeHasBeenSet() const;
 
                     /**
                      * 获取告警结束时间，格式: HH:mm
                      * @return EndTime 告警结束时间，格式: HH:mm
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置告警结束时间，格式: HH:mm
-                     * @param EndTime 告警结束时间，格式: HH:mm
+                     * @param _endTime 告警结束时间，格式: HH:mm
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -187,6 +199,7 @@ namespace TencentCloud
 控制开关分为高、中、低，则二进制位分别为：第1位:低，第2位:中，第3位:高，0表示关闭、1表示打开。
 如：高危和中危打开告警，低危关闭告警，则二进制值为：110
 告警类型不区分等级控制，则传1。
+                     * 
                      */
                     std::string GetControlBits() const;
 
@@ -195,16 +208,18 @@ namespace TencentCloud
 控制开关分为高、中、低，则二进制位分别为：第1位:低，第2位:中，第3位:高，0表示关闭、1表示打开。
 如：高危和中危打开告警，低危关闭告警，则二进制值为：110
 告警类型不区分等级控制，则传1。
-                     * @param ControlBits 告警等级策略控制，二进制位每位代表一个含义，值以字符串类型传递
+                     * @param _controlBits 告警等级策略控制，二进制位每位代表一个含义，值以字符串类型传递
 控制开关分为高、中、低，则二进制位分别为：第1位:低，第2位:中，第3位:高，0表示关闭、1表示打开。
 如：高危和中危打开告警，低危关闭告警，则二进制值为：110
 告警类型不区分等级控制，则传1。
+                     * 
                      */
                     void SetControlBits(const std::string& _controlBits);
 
                     /**
                      * 判断参数 ControlBits 是否已赋值
                      * @return ControlBits 是否已赋值
+                     * 
                      */
                     bool ControlBitsHasBeenSet() const;
 

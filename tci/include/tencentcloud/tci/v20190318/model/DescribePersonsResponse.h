@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取人员列表
                      * @return PersonSet 人员列表
+                     * 
                      */
                     std::vector<Person> GetPersonSet() const;
 
                     /**
                      * 判断参数 PersonSet 是否已赋值
                      * @return PersonSet 是否已赋值
+                     * 
                      */
                     bool PersonSetHasBeenSet() const;
 
                     /**
                      * 获取人员总数
                      * @return TotalCount 人员总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

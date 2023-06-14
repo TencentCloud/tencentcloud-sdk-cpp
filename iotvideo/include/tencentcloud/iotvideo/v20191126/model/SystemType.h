@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Android 安卓系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OsData> GetAndroid() const;
 
                     /**
                      * 设置安卓系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Android 安卓系统
+                     * @param _android 安卓系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAndroid(const std::vector<OsData>& _android);
 
                     /**
                      * 判断参数 Android 是否已赋值
                      * @return Android 是否已赋值
+                     * 
                      */
                     bool AndroidHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Linux linux系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OsData> GetLinux() const;
 
                     /**
                      * 设置linux系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Linux linux系统
+                     * @param _linux linux系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLinux(const std::vector<OsData>& _linux);
 
                     /**
                      * 判断参数 Linux 是否已赋值
                      * @return Linux 是否已赋值
+                     * 
                      */
                     bool LinuxHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiteOs LiteOs系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OsData> GetLiteOs() const;
 
                     /**
                      * 设置LiteOs系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LiteOs LiteOs系统
+                     * @param _liteOs LiteOs系统
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLiteOs(const std::vector<OsData>& _liteOs);
 
                     /**
                      * 判断参数 LiteOs 是否已赋值
                      * @return LiteOs 是否已赋值
+                     * 
                      */
                     bool LiteOsHasBeenSet() const;
 

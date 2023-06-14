@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取对象唯一id
                      * @return UniqueId 对象唯一id
+                     * 
                      */
                     std::string GetUniqueId() const;
 
                     /**
                      * 设置对象唯一id
-                     * @param UniqueId 对象唯一id
+                     * @param _uniqueId 对象唯一id
+                     * 
                      */
                     void SetUniqueId(const std::string& _uniqueId);
 
                     /**
                      * 判断参数 UniqueId 是否已赋值
                      * @return UniqueId 是否已赋值
+                     * 
                      */
                     bool UniqueIdHasBeenSet() const;
 
                     /**
                      * 获取表示对象实例的维度集合，jsonObj字符串
                      * @return Dimensions 表示对象实例的维度集合，jsonObj字符串
+                     * 
                      */
                     std::string GetDimensions() const;
 
                     /**
                      * 设置表示对象实例的维度集合，jsonObj字符串
-                     * @param Dimensions 表示对象实例的维度集合，jsonObj字符串
+                     * @param _dimensions 表示对象实例的维度集合，jsonObj字符串
+                     * 
                      */
                     void SetDimensions(const std::string& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 
                     /**
                      * 获取对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
                      * @return IsShielded 对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
+                     * 
                      */
                     int64_t GetIsShielded() const;
 
                     /**
                      * 设置对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
-                     * @param IsShielded 对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
+                     * @param _isShielded 对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽
+                     * 
                      */
                     void SetIsShielded(const int64_t& _isShielded);
 
                     /**
                      * 判断参数 IsShielded 是否已赋值
                      * @return IsShielded 是否已赋值
+                     * 
                      */
                     bool IsShieldedHasBeenSet() const;
 
                     /**
                      * 获取对象所在的地域
                      * @return Region 对象所在的地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置对象所在的地域
-                     * @param Region 对象所在的地域
+                     * @param _region 对象所在的地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 

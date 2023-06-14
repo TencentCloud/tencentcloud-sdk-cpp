@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleTime 采样时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetSampleTime() const;
 
                     /**
                      * 设置采样时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SampleTime 采样时间
+                     * @param _sampleTime 采样时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSampleTime(const BaseItem& _sampleTime);
 
                     /**
                      * 判断参数 SampleTime 是否已赋值
                      * @return SampleTime 是否已赋值
+                     * 
                      */
                     bool SampleTimeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TestTime 检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetTestTime() const;
 
                     /**
                      * 设置检测时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TestTime 检测时间
+                     * @param _testTime 检测时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTestTime(const BaseItem& _testTime);
 
                     /**
                      * 判断参数 TestTime 是否已赋值
                      * @return TestTime 是否已赋值
+                     * 
                      */
                     bool TestTimeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TestOrganization 检测机构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetTestOrganization() const;
 
                     /**
                      * 设置检测机构
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TestOrganization 检测机构
+                     * @param _testOrganization 检测机构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTestOrganization(const BaseItem& _testOrganization);
 
                     /**
                      * 判断参数 TestOrganization 是否已赋值
                      * @return TestOrganization 是否已赋值
+                     * 
                      */
                     bool TestOrganizationHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TestResult 检测结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetTestResult() const;
 
                     /**
                      * 设置检测结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TestResult 检测结果
+                     * @param _testResult 检测结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTestResult(const BaseItem& _testResult);
 
                     /**
                      * 判断参数 TestResult 是否已赋值
                      * @return TestResult 是否已赋值
+                     * 
                      */
                     bool TestResultHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodeColor 健康码颜色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BaseItem GetCodeColor() const;
 
                     /**
                      * 设置健康码颜色
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeColor 健康码颜色
+                     * @param _codeColor 健康码颜色
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodeColor(const BaseItem& _codeColor);
 
                     /**
                      * 判断参数 CodeColor 是否已赋值
                      * @return CodeColor 是否已赋值
+                     * 
                      */
                     bool CodeColorHasBeenSet() const;
 

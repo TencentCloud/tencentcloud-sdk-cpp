@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取CPU型号列表
                      * @return CpuInfoSet CPU型号列表
+                     * 
                      */
                     std::vector<CpuInfo> GetCpuInfoSet() const;
 
                     /**
                      * 判断参数 CpuInfoSet 是否已赋值
                      * @return CpuInfoSet 是否已赋值
+                     * 
                      */
                     bool CpuInfoSetHasBeenSet() const;
 
                     /**
                      * 获取内存的取值，单位为G
                      * @return MemSet 内存的取值，单位为G
+                     * 
                      */
                     std::vector<uint64_t> GetMemSet() const;
 
                     /**
                      * 判断参数 MemSet 是否已赋值
                      * @return MemSet 是否已赋值
+                     * 
                      */
                     bool MemSetHasBeenSet() const;
 
                     /**
                      * 获取硬盘型号列表
                      * @return DiskInfoSet 硬盘型号列表
+                     * 
                      */
                     std::vector<DiskInfo> GetDiskInfoSet() const;
 
                     /**
                      * 判断参数 DiskInfoSet 是否已赋值
                      * @return DiskInfoSet 是否已赋值
+                     * 
                      */
                     bool DiskInfoSetHasBeenSet() const;
 

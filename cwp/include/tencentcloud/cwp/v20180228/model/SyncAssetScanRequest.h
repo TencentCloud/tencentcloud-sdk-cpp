@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取是否同步：true-是 false-否；默认false
                      * @return Sync 是否同步：true-是 false-否；默认false
+                     * 
                      */
                     bool GetSync() const;
 
                     /**
                      * 设置是否同步：true-是 false-否；默认false
-                     * @param Sync 是否同步：true-是 false-否；默认false
+                     * @param _sync 是否同步：true-是 false-否；默认false
+                     * 
                      */
                     void SetSync(const bool& _sync);
 
                     /**
                      * 判断参数 Sync 是否已赋值
                      * @return Sync 是否已赋值
+                     * 
                      */
                     bool SyncHasBeenSet() const;
 

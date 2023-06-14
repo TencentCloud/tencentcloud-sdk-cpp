@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取任务总数
                      * @return TotalCount 任务总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置任务总数
-                     * @param TotalCount 任务总数
+                     * @param _totalCount 任务总数
+                     * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskList Datahub任务信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DatahubTaskInfo> GetTaskList() const;
 
                     /**
                      * 设置Datahub任务信息列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskList Datahub任务信息列表
+                     * @param _taskList Datahub任务信息列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskList(const std::vector<DatahubTaskInfo>& _taskList);
 
                     /**
                      * 判断参数 TaskList 是否已赋值
                      * @return TaskList 是否已赋值
+                     * 
                      */
                     bool TaskListHasBeenSet() const;
 

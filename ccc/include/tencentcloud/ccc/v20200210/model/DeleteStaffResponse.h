@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineStaffList 无法删除的状态为在线的客服列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetOnlineStaffList() const;
 
                     /**
                      * 判断参数 OnlineStaffList 是否已赋值
                      * @return OnlineStaffList 是否已赋值
+                     * 
                      */
                     bool OnlineStaffListHasBeenSet() const;
 

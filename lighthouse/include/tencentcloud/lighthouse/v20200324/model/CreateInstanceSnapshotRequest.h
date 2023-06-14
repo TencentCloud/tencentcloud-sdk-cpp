@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要创建快照的实例 ID。
                      * @return InstanceId 需要创建快照的实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置需要创建快照的实例 ID。
-                     * @param InstanceId 需要创建快照的实例 ID。
+                     * @param _instanceId 需要创建快照的实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取快照名称，最长为 60 个字符。
                      * @return SnapshotName 快照名称，最长为 60 个字符。
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置快照名称，最长为 60 个字符。
-                     * @param SnapshotName 快照名称，最长为 60 个字符。
+                     * @param _snapshotName 快照名称，最长为 60 个字符。
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 

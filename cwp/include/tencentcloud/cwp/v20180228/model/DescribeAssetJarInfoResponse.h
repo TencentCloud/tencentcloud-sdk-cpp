@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取Jar包详情
                      * @return Jar Jar包详情
+                     * 
                      */
                     AssetJarDetail GetJar() const;
 
                     /**
                      * 判断参数 Jar 是否已赋值
                      * @return Jar 是否已赋值
+                     * 
                      */
                     bool JarHasBeenSet() const;
 

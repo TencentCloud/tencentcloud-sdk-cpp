@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例 ID。
                      * @return LoadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例 ID。
-                     * @param LoadBalancerId 负载均衡实例 ID。
+                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取要批量修改权重的列表。
                      * @return ModifyList 要批量修改权重的列表。
+                     * 
                      */
                     std::vector<RsWeightRule> GetModifyList() const;
 
                     /**
                      * 设置要批量修改权重的列表。
-                     * @param ModifyList 要批量修改权重的列表。
+                     * @param _modifyList 要批量修改权重的列表。
+                     * 
                      */
                     void SetModifyList(const std::vector<RsWeightRule>& _modifyList);
 
                     /**
                      * 判断参数 ModifyList 是否已赋值
                      * @return ModifyList 是否已赋值
+                     * 
                      */
                     bool ModifyListHasBeenSet() const;
 

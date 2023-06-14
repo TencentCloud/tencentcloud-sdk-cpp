@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间
                      * @return StartTimeStr 开始时间
+                     * 
                      */
                     std::string GetStartTimeStr() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTimeStr 开始时间
+                     * @param _startTimeStr 开始时间
+                     * 
                      */
                     void SetStartTimeStr(const std::string& _startTimeStr);
 
                     /**
                      * 判断参数 StartTimeStr 是否已赋值
                      * @return StartTimeStr 是否已赋值
+                     * 
                      */
                     bool StartTimeStrHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTimeStr 结束时间
+                     * 
                      */
                     std::string GetEndTimeStr() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTimeStr 结束时间
+                     * @param _endTimeStr 结束时间
+                     * 
                      */
                     void SetEndTimeStr(const std::string& _endTimeStr);
 
                     /**
                      * 判断参数 EndTimeStr 是否已赋值
                      * @return EndTimeStr 是否已赋值
+                     * 
                      */
                     bool EndTimeStrHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 分钟：“1”
 小时：“2”
 天：“3”
+                     * 
                      */
                     std::string GetDimension() const;
 
@@ -95,16 +102,18 @@ namespace TencentCloud
 分钟：“1”
 小时：“2”
 天：“3”
-                     * @param Dimension 查询粒度
+                     * @param _dimension 查询粒度
 分钟：“1”
 小时：“2”
 天：“3”
+                     * 
                      */
                     void SetDimension(const std::string& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 

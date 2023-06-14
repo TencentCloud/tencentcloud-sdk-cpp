@@ -57,6 +57,7 @@ namespace TencentCloud
 <li> 200：任务完成;</li>
 <li> 100：任务进行中；</li>
 <li> 503: 任务失败。</li>
+                     * 
                      */
                     int64_t GetStatusCode() const;
 
@@ -65,52 +66,60 @@ namespace TencentCloud
 <li> 200：任务完成;</li>
 <li> 100：任务进行中；</li>
 <li> 503: 任务失败。</li>
-                     * @param StatusCode 任务状态，取值有：
+                     * @param _statusCode 任务状态，取值有：
 <li> 200：任务完成;</li>
 <li> 100：任务进行中；</li>
 <li> 503: 任务失败。</li>
+                     * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 
                     /**
                      * 获取拨测任务 ID。
                      * @return TestId 拨测任务 ID。
+                     * 
                      */
                     std::string GetTestId() const;
 
                     /**
                      * 设置拨测任务 ID。
-                     * @param TestId 拨测任务 ID。
+                     * @param _testId 拨测任务 ID。
+                     * 
                      */
                     void SetTestId(const std::string& _testId);
 
                     /**
                      * 判断参数 TestId 是否已赋值
                      * @return TestId 是否已赋值
+                     * 
                      */
                     bool TestIdHasBeenSet() const;
 
                     /**
                      * 获取拨测任务配置。
                      * @return SpeedTestingConfig 拨测任务配置。
+                     * 
                      */
                     SpeedTestingConfig GetSpeedTestingConfig() const;
 
                     /**
                      * 设置拨测任务配置。
-                     * @param SpeedTestingConfig 拨测任务配置。
+                     * @param _speedTestingConfig 拨测任务配置。
+                     * 
                      */
                     void SetSpeedTestingConfig(const SpeedTestingConfig& _speedTestingConfig);
 
                     /**
                      * 判断参数 SpeedTestingConfig 是否已赋值
                      * @return SpeedTestingConfig 是否已赋值
+                     * 
                      */
                     bool SpeedTestingConfigHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeedTestingStatistics 拨测任务统计结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SpeedTestingStatistics GetSpeedTestingStatistics() const;
 
                     /**
                      * 设置拨测任务统计结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpeedTestingStatistics 拨测任务统计结果。
+                     * @param _speedTestingStatistics 拨测任务统计结果。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpeedTestingStatistics(const SpeedTestingStatistics& _speedTestingStatistics);
 
                     /**
                      * 判断参数 SpeedTestingStatistics 是否已赋值
                      * @return SpeedTestingStatistics 是否已赋值
+                     * 
                      */
                     bool SpeedTestingStatisticsHasBeenSet() const;
 

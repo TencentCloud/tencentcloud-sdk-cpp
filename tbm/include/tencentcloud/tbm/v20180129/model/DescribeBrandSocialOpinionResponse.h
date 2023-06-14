@@ -47,48 +47,56 @@ namespace TencentCloud
                     /**
                      * 获取文章总数
                      * @return ArticleCount 文章总数
+                     * 
                      */
                     uint64_t GetArticleCount() const;
 
                     /**
                      * 判断参数 ArticleCount 是否已赋值
                      * @return ArticleCount 是否已赋值
+                     * 
                      */
                     bool ArticleCountHasBeenSet() const;
 
                     /**
                      * 获取来源统计总数
                      * @return FromCount 来源统计总数
+                     * 
                      */
                     uint64_t GetFromCount() const;
 
                     /**
                      * 判断参数 FromCount 是否已赋值
                      * @return FromCount 是否已赋值
+                     * 
                      */
                     bool FromCountHasBeenSet() const;
 
                     /**
                      * 获取疑似负面报道总数
                      * @return AdverseCount 疑似负面报道总数
+                     * 
                      */
                     uint64_t GetAdverseCount() const;
 
                     /**
                      * 判断参数 AdverseCount 是否已赋值
                      * @return AdverseCount 是否已赋值
+                     * 
                      */
                     bool AdverseCountHasBeenSet() const;
 
                     /**
                      * 获取文章列表详情
                      * @return ArticleSet 文章列表详情
+                     * 
                      */
                     std::vector<BrandReportArticle> GetArticleSet() const;
 
                     /**
                      * 判断参数 ArticleSet 是否已赋值
                      * @return ArticleSet 是否已赋值
+                     * 
                      */
                     bool ArticleSetHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取动作组所关联的实例对象
                      * @return TaskGroupInstances 动作组所关联的实例对象
+                     * 
                      */
                     std::vector<std::string> GetTaskGroupInstances() const;
 
                     /**
                      * 设置动作组所关联的实例对象
-                     * @param TaskGroupInstances 动作组所关联的实例对象
+                     * @param _taskGroupInstances 动作组所关联的实例对象
+                     * 
                      */
                     void SetTaskGroupInstances(const std::vector<std::string>& _taskGroupInstances);
 
                     /**
                      * 判断参数 TaskGroupInstances 是否已赋值
                      * @return TaskGroupInstances 是否已赋值
+                     * 
                      */
                     bool TaskGroupInstancesHasBeenSet() const;
 
                     /**
                      * 获取动作组标题，不填默认取经验中的动作组名称
                      * @return TaskGroupTitle 动作组标题，不填默认取经验中的动作组名称
+                     * 
                      */
                     std::string GetTaskGroupTitle() const;
 
                     /**
                      * 设置动作组标题，不填默认取经验中的动作组名称
-                     * @param TaskGroupTitle 动作组标题，不填默认取经验中的动作组名称
+                     * @param _taskGroupTitle 动作组标题，不填默认取经验中的动作组名称
+                     * 
                      */
                     void SetTaskGroupTitle(const std::string& _taskGroupTitle);
 
                     /**
                      * 判断参数 TaskGroupTitle 是否已赋值
                      * @return TaskGroupTitle 是否已赋值
+                     * 
                      */
                     bool TaskGroupTitleHasBeenSet() const;
 
                     /**
                      * 获取动作组描述，不填默认取经验中的动作组描述
                      * @return TaskGroupDescription 动作组描述，不填默认取经验中的动作组描述
+                     * 
                      */
                     std::string GetTaskGroupDescription() const;
 
                     /**
                      * 设置动作组描述，不填默认取经验中的动作组描述
-                     * @param TaskGroupDescription 动作组描述，不填默认取经验中的动作组描述
+                     * @param _taskGroupDescription 动作组描述，不填默认取经验中的动作组描述
+                     * 
                      */
                     void SetTaskGroupDescription(const std::string& _taskGroupDescription);
 
                     /**
                      * 判断参数 TaskGroupDescription 是否已赋值
                      * @return TaskGroupDescription 是否已赋值
+                     * 
                      */
                     bool TaskGroupDescriptionHasBeenSet() const;
 
                     /**
                      * 获取动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式
                      * @return TaskGroupMode 动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式
+                     * 
                      */
                     uint64_t GetTaskGroupMode() const;
 
                     /**
                      * 设置动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式
-                     * @param TaskGroupMode 动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式
+                     * @param _taskGroupMode 动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式
+                     * 
                      */
                     void SetTaskGroupMode(const uint64_t& _taskGroupMode);
 
                     /**
                      * 判断参数 TaskGroupMode 是否已赋值
                      * @return TaskGroupMode 是否已赋值
+                     * 
                      */
                     bool TaskGroupModeHasBeenSet() const;
 
                     /**
                      * 获取动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作
                      * @return TaskGroupActionsConfig 动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作
+                     * 
                      */
                     std::vector<TaskGroupActionConfig> GetTaskGroupActionsConfig() const;
 
                     /**
                      * 设置动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作
-                     * @param TaskGroupActionsConfig 动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作
+                     * @param _taskGroupActionsConfig 动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作
+                     * 
                      */
                     void SetTaskGroupActionsConfig(const std::vector<TaskGroupActionConfig>& _taskGroupActionsConfig);
 
                     /**
                      * 判断参数 TaskGroupActionsConfig 是否已赋值
                      * @return TaskGroupActionsConfig 是否已赋值
+                     * 
                      */
                     bool TaskGroupActionsConfigHasBeenSet() const;
 

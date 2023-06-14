@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取话单记录总数
                      * @return TotalCount 话单记录总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取话单记录
                      * @return TelCdrs 话单记录
+                     * 
                      */
                     std::vector<TelCdrInfo> GetTelCdrs() const;
 
                     /**
                      * 判断参数 TelCdrs 是否已赋值
                      * @return TelCdrs 是否已赋值
+                     * 
                      */
                     bool TelCdrsHasBeenSet() const;
 

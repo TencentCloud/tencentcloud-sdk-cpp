@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取更新进度状态,doing更新中，success更新成功，failed失败
                      * @return Status 更新进度状态,doing更新中，success更新成功，failed失败
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Err 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErr() const;
 
                     /**
                      * 判断参数 Err 是否已赋值
                      * @return Err 是否已赋值
+                     * 
                      */
                     bool ErrHasBeenSet() const;
 

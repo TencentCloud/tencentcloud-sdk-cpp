@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取外部账本ID
                      * @return OutAccountBookId 外部账本ID
+                     * 
                      */
                     std::string GetOutAccountBookId() const;
 
                     /**
                      * 设置外部账本ID
-                     * @param OutAccountBookId 外部账本ID
+                     * @param _outAccountBookId 外部账本ID
+                     * 
                      */
                     void SetOutAccountBookId(const std::string& _outAccountBookId);
 
                     /**
                      * 判断参数 OutAccountBookId 是否已赋值
                      * @return OutAccountBookId 是否已赋值
+                     * 
                      */
                     bool OutAccountBookIdHasBeenSet() const;
 
                     /**
                      * 获取渠道商户ID
                      * @return ChannelMerchantId 渠道商户ID
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户ID
-                     * @param ChannelMerchantId 渠道商户ID
+                     * @param _channelMerchantId 渠道商户ID
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户ID
                      * @return ChannelSubMerchantId 渠道子商户ID
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户ID
-                     * @param ChannelSubMerchantId 渠道子商户ID
+                     * @param _channelSubMerchantId 渠道子商户ID
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     std::string GetChannelName() const;
 
@@ -113,16 +123,18 @@ __ALIPAY__: 支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-                     * @param ChannelName 渠道名称。目前只支持支付宝
+                     * @param _channelName 渠道名称。目前只支持支付宝
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
+                     * 
                      */
                     void SetChannelName(const std::string& _channelName);
 
                     /**
                      * 判断参数 ChannelName 是否已赋值
                      * @return ChannelName 是否已赋值
+                     * 
                      */
                     bool ChannelNameHasBeenSet() const;
 
@@ -135,6 +147,7 @@ __SAFT_ISV__: 安心发支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 __SAFT_ISV__: 安心发支付
+                     * 
                      */
                     std::string GetPaymentMethod() const;
 
@@ -143,16 +156,18 @@ __SAFT_ISV__: 安心发支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 __SAFT_ISV__: 安心发支付
-                     * @param PaymentMethod 支付方式。目前只支持安心发支付
+                     * @param _paymentMethod 支付方式。目前只支持安心发支付
 __EBANK_PAYMENT__: ebank支付
 __OPENBANK_PAYMENT__: openbank支付
 __SAFT_ISV__: 安心发支付
+                     * 
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
                     /**
                      * 判断参数 PaymentMethod 是否已赋值
                      * @return PaymentMethod 是否已赋值
+                     * 
                      */
                     bool PaymentMethodHasBeenSet() const;
 
@@ -165,6 +180,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -173,16 +189,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型。
+                     * @param _environment 环境类型。
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

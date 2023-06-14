@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取物理机绑定的EIP列表
                      * @return EipRsList 物理机绑定的EIP列表
+                     * 
                      */
                     std::vector<EipRsMap> GetEipRsList() const;
 
                     /**
                      * 设置物理机绑定的EIP列表
-                     * @param EipRsList 物理机绑定的EIP列表
+                     * @param _eipRsList 物理机绑定的EIP列表
+                     * 
                      */
                     void SetEipRsList(const std::vector<EipRsMap>& _eipRsList);
 
                     /**
                      * 判断参数 EipRsList 是否已赋值
                      * @return EipRsList 是否已赋值
+                     * 
                      */
                     bool EipRsListHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取实体id
                      * @return Id 实体id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置实体id
-                     * @param Id 实体id
+                     * @param _id 实体id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取实体名称
                      * @return Name 实体名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实体名称
-                     * @param Name 实体名称
+                     * @param _name 实体名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取实体order
                      * @return Order 实体order
+                     * 
                      */
                     int64_t GetOrder() const;
 
                     /**
                      * 设置实体order
-                     * @param Order 实体order
+                     * @param _order 实体order
+                     * 
                      */
                     void SetOrder(const int64_t& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取实体流行度
                      * @return Popular 实体流行度
+                     * 
                      */
                     int64_t GetPopular() const;
 
                     /**
                      * 设置实体流行度
-                     * @param Popular 实体流行度
+                     * @param _popular 实体流行度
+                     * 
                      */
                     void SetPopular(const int64_t& _popular);
 
                     /**
                      * 判断参数 Popular 是否已赋值
                      * @return Popular 是否已赋值
+                     * 
                      */
                     bool PopularHasBeenSet() const;
 

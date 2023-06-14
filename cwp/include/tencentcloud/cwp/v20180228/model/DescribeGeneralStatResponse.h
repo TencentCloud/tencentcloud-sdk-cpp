@@ -46,132 +46,154 @@ namespace TencentCloud
                     /**
                      * 获取云主机总数
                      * @return MachinesAll 云主机总数
+                     * 
                      */
                     uint64_t GetMachinesAll() const;
 
                     /**
                      * 判断参数 MachinesAll 是否已赋值
                      * @return MachinesAll 是否已赋值
+                     * 
                      */
                     bool MachinesAllHasBeenSet() const;
 
                     /**
                      * 获取云主机没有安装主机安全客户端的总数
                      * @return MachinesUninstalled 云主机没有安装主机安全客户端的总数
+                     * 
                      */
                     uint64_t GetMachinesUninstalled() const;
 
                     /**
                      * 判断参数 MachinesUninstalled 是否已赋值
                      * @return MachinesUninstalled 是否已赋值
+                     * 
                      */
                     bool MachinesUninstalledHasBeenSet() const;
 
                     /**
                      * 获取主机安全客户端总数的总数
                      * @return AgentsAll 主机安全客户端总数的总数
+                     * 
                      */
                     uint64_t GetAgentsAll() const;
 
                     /**
                      * 判断参数 AgentsAll 是否已赋值
                      * @return AgentsAll 是否已赋值
+                     * 
                      */
                     bool AgentsAllHasBeenSet() const;
 
                     /**
                      * 获取主机安全客户端在线的总数
                      * @return AgentsOnline 主机安全客户端在线的总数
+                     * 
                      */
                     uint64_t GetAgentsOnline() const;
 
                     /**
                      * 判断参数 AgentsOnline 是否已赋值
                      * @return AgentsOnline 是否已赋值
+                     * 
                      */
                     bool AgentsOnlineHasBeenSet() const;
 
                     /**
                      * 获取主机安全客户端 离线+关机 的总数
                      * @return AgentsOffline 主机安全客户端 离线+关机 的总数
+                     * 
                      */
                     uint64_t GetAgentsOffline() const;
 
                     /**
                      * 判断参数 AgentsOffline 是否已赋值
                      * @return AgentsOffline 是否已赋值
+                     * 
                      */
                     bool AgentsOfflineHasBeenSet() const;
 
                     /**
                      * 获取主机安全客户端专业版的总数
                      * @return AgentsPro 主机安全客户端专业版的总数
+                     * 
                      */
                     uint64_t GetAgentsPro() const;
 
                     /**
                      * 判断参数 AgentsPro 是否已赋值
                      * @return AgentsPro 是否已赋值
+                     * 
                      */
                     bool AgentsProHasBeenSet() const;
 
                     /**
                      * 获取主机安全客户端基础版的总数
                      * @return AgentsBasic 主机安全客户端基础版的总数
+                     * 
                      */
                     uint64_t GetAgentsBasic() const;
 
                     /**
                      * 判断参数 AgentsBasic 是否已赋值
                      * @return AgentsBasic 是否已赋值
+                     * 
                      */
                     bool AgentsBasicHasBeenSet() const;
 
                     /**
                      * 获取7天内到期的预付费专业版总数
                      * @return AgentsProExpireWithInSevenDays 7天内到期的预付费专业版总数
+                     * 
                      */
                     uint64_t GetAgentsProExpireWithInSevenDays() const;
 
                     /**
                      * 判断参数 AgentsProExpireWithInSevenDays 是否已赋值
                      * @return AgentsProExpireWithInSevenDays 是否已赋值
+                     * 
                      */
                     bool AgentsProExpireWithInSevenDaysHasBeenSet() const;
 
                     /**
                      * 获取风险主机总数
                      * @return RiskMachine 风险主机总数
+                     * 
                      */
                     uint64_t GetRiskMachine() const;
 
                     /**
                      * 判断参数 RiskMachine 是否已赋值
                      * @return RiskMachine 是否已赋值
+                     * 
                      */
                     bool RiskMachineHasBeenSet() const;
 
                     /**
                      * 获取已关机总数
                      * @return Shutdown 已关机总数
+                     * 
                      */
                     uint64_t GetShutdown() const;
 
                     /**
                      * 判断参数 Shutdown 是否已赋值
                      * @return Shutdown 是否已赋值
+                     * 
                      */
                     bool ShutdownHasBeenSet() const;
 
                     /**
                      * 获取已离线总数
                      * @return Offline 已离线总数
+                     * 
                      */
                     uint64_t GetOffline() const;
 
                     /**
                      * 判断参数 Offline 是否已赋值
                      * @return Offline 是否已赋值
+                     * 
                      */
                     bool OfflineHasBeenSet() const;
 
@@ -180,12 +202,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlagshipMachineCnt 旗舰版主机数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetFlagshipMachineCnt() const;
 
                     /**
                      * 判断参数 FlagshipMachineCnt 是否已赋值
                      * @return FlagshipMachineCnt 是否已赋值
+                     * 
                      */
                     bool FlagshipMachineCntHasBeenSet() const;
 
@@ -194,12 +218,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectDays 保护天数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetProtectDays() const;
 
                     /**
                      * 判断参数 ProtectDays 是否已赋值
                      * @return ProtectDays 是否已赋值
+                     * 
                      */
                     bool ProtectDaysHasBeenSet() const;
 
@@ -208,12 +234,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddedOnTheFifteen 15天内新增的主机数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetAddedOnTheFifteen() const;
 
                     /**
                      * 判断参数 AddedOnTheFifteen 是否已赋值
                      * @return AddedOnTheFifteen 是否已赋值
+                     * 
                      */
                     bool AddedOnTheFifteenHasBeenSet() const;
 

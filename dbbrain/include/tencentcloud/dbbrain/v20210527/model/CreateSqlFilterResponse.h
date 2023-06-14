@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取限流任务ID。
                      * @return FilterId 限流任务ID。
+                     * 
                      */
                     int64_t GetFilterId() const;
 
                     /**
                      * 判断参数 FilterId 是否已赋值
                      * @return FilterId 是否已赋值
+                     * 
                      */
                     bool FilterIdHasBeenSet() const;
 

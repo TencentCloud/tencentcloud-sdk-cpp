@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取联系人id。
                      * @return Id 联系人id。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置联系人id。
-                     * @param Id 联系人id。
+                     * @param _id 联系人id。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取联系人姓名。
                      * @return Name 联系人姓名。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置联系人姓名。
-                     * @param Name 联系人姓名。
+                     * @param _name 联系人姓名。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取联系人绑定的邮箱。
                      * @return Mail 联系人绑定的邮箱。
+                     * 
                      */
                     std::string GetMail() const;
 
                     /**
                      * 设置联系人绑定的邮箱。
-                     * @param Mail 联系人绑定的邮箱。
+                     * @param _mail 联系人绑定的邮箱。
+                     * 
                      */
                     void SetMail(const std::string& _mail);
 
                     /**
                      * 判断参数 Mail 是否已赋值
                      * @return Mail 是否已赋值
+                     * 
                      */
                     bool MailHasBeenSet() const;
 

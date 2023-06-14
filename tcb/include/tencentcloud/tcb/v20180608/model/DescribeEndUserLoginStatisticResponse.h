@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginStatistics 环境终端用户新增与登录统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoginStatistic> GetLoginStatistics() const;
 
                     /**
                      * 判断参数 LoginStatistics 是否已赋值
                      * @return LoginStatistics 是否已赋值
+                     * 
                      */
                     bool LoginStatisticsHasBeenSet() const;
 

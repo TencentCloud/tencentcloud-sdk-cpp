@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取仓库唯一id
                      * @return RegistryId 仓库唯一id
+                     * 
                      */
                     int64_t GetRegistryId() const;
 
                     /**
                      * 设置仓库唯一id
-                     * @param RegistryId 仓库唯一id
+                     * @param _registryId 仓库唯一id
+                     * 
                      */
                     void SetRegistryId(const int64_t& _registryId);
 
                     /**
                      * 判断参数 RegistryId 是否已赋值
                      * @return RegistryId 是否已赋值
+                     * 
                      */
                     bool RegistryIdHasBeenSet() const;
 

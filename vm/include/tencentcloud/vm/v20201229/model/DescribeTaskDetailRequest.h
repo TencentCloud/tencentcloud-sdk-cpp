@@ -47,38 +47,44 @@ namespace TencentCloud
 <br>备注：查询接口单次最大查询量为**20条每次**。
                      * @return TaskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 <br>备注：查询接口单次最大查询量为**20条每次**。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 <br>备注：查询接口单次最大查询量为**20条每次**。
-                     * @param TaskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
+                     * @param _taskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 <br>备注：查询接口单次最大查询量为**20条每次**。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
                      * @return ShowAllSegments 该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
+                     * 
                      */
                     bool GetShowAllSegments() const;
 
                     /**
                      * 设置该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
-                     * @param ShowAllSegments 该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
+                     * @param _showAllSegments 该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
+                     * 
                      */
                     void SetShowAllSegments(const bool& _showAllSegments);
 
                     /**
                      * 判断参数 ShowAllSegments 是否已赋值
                      * @return ShowAllSegments 是否已赋值
+                     * 
                      */
                     bool ShowAllSegmentsHasBeenSet() const;
 

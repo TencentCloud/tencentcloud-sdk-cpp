@@ -57,6 +57,7 @@ SUCCESS: 开通成功
 FAILED: 开通失败
 PROCESSING: 开通中 
 注意：若返回开通中，需要再次调用费率配置结果查询接口，查询结果。
+                     * 
                      */
                     std::string GetDealStatus() const;
 
@@ -66,17 +67,19 @@ SUCCESS: 开通成功
 FAILED: 开通失败
 PROCESSING: 开通中 
 注意：若返回开通中，需要再次调用费率配置结果查询接口，查询结果。
-                     * @param DealStatus 处理状态 
+                     * @param _dealStatus 处理状态 
 SUCCESS: 开通成功 
 FAILED: 开通失败
 PROCESSING: 开通中 
 注意：若返回开通中，需要再次调用费率配置结果查询接口，查询结果。
+                     * 
                      */
                     void SetDealStatus(const std::string& _dealStatus);
 
                     /**
                      * 判断参数 DealStatus 是否已赋值
                      * @return DealStatus 是否已赋值
+                     * 
                      */
                     bool DealStatusHasBeenSet() const;
 
@@ -85,38 +88,44 @@ PROCESSING: 开通中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealMessage 处理描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealMessage() const;
 
                     /**
                      * 设置处理描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealMessage 处理描述
+                     * @param _dealMessage 处理描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealMessage(const std::string& _dealMessage);
 
                     /**
                      * 判断参数 DealMessage 是否已赋值
                      * @return DealMessage 是否已赋值
+                     * 
                      */
                     bool DealMessageHasBeenSet() const;
 
                     /**
                      * 获取渠道产品费率序列号
                      * @return ChannelProductFeeNo 渠道产品费率序列号
+                     * 
                      */
                     std::string GetChannelProductFeeNo() const;
 
                     /**
                      * 设置渠道产品费率序列号
-                     * @param ChannelProductFeeNo 渠道产品费率序列号
+                     * @param _channelProductFeeNo 渠道产品费率序列号
+                     * 
                      */
                     void SetChannelProductFeeNo(const std::string& _channelProductFeeNo);
 
                     /**
                      * 判断参数 ChannelProductFeeNo 是否已赋值
                      * @return ChannelProductFeeNo 是否已赋值
+                     * 
                      */
                     bool ChannelProductFeeNoHasBeenSet() const;
 

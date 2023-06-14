@@ -49,12 +49,14 @@ namespace TencentCloud
                     /**
                      * 获取集群信息
                      * @return ClusterInfo 集群信息
+                     * 
                      */
                     PulsarProClusterInfo GetClusterInfo() const;
 
                     /**
                      * 判断参数 ClusterInfo 是否已赋值
                      * @return ClusterInfo 是否已赋值
+                     * 
                      */
                     bool ClusterInfoHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkAccessPointInfos 集群网络接入点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PulsarNetworkAccessPointInfo> GetNetworkAccessPointInfos() const;
 
                     /**
                      * 判断参数 NetworkAccessPointInfos 是否已赋值
                      * @return NetworkAccessPointInfos 是否已赋值
+                     * 
                      */
                     bool NetworkAccessPointInfosHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterSpecInfo 集群规格信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PulsarProClusterSpecInfo GetClusterSpecInfo() const;
 
                     /**
                      * 判断参数 ClusterSpecInfo 是否已赋值
                      * @return ClusterSpecInfo 是否已赋值
+                     * 
                      */
                     bool ClusterSpecInfoHasBeenSet() const;
 

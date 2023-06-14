@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取指定域名查询
                      * @return Domain 指定域名查询
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置指定域名查询
-                     * @param Domain 指定域名查询
+                     * @param _domain 指定域名查询
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取开始时间，如 2019-09-04 00:00:00
                      * @return StartTime 开始时间，如 2019-09-04 00:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，如 2019-09-04 00:00:00
-                     * @param StartTime 开始时间，如 2019-09-04 00:00:00
+                     * @param _startTime 开始时间，如 2019-09-04 00:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间，如 2019-09-04 12:00:00
                      * @return EndTime 结束时间，如 2019-09-04 12:00:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，如 2019-09-04 12:00:00
-                     * @param EndTime 结束时间，如 2019-09-04 12:00:00
+                     * @param _endTime 结束时间，如 2019-09-04 12:00:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取分页查询偏移量，默认为 0
                      * @return Offset 分页查询偏移量，默认为 0
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量，默认为 0
-                     * @param Offset 分页查询偏移量，默认为 0
+                     * @param _offset 分页查询偏移量，默认为 0
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目，默认为 100，最大为 1000
                      * @return Limit 分页查询限制数目，默认为 100，最大为 1000
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目，默认为 100，最大为 1000
-                     * @param Limit 分页查询限制数目，默认为 100，最大为 1000
+                     * @param _limit 分页查询限制数目，默认为 100，最大为 1000
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -143,6 +158,7 @@ mainland：获取境内加速日志包下载链接
 overseas：获取境外加速日志包下载链接
 global：同时获取境内、境外加速日志包下载链接（分开打包）
 不指定时默认为 mainland
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -152,17 +168,19 @@ mainland：获取境内加速日志包下载链接
 overseas：获取境外加速日志包下载链接
 global：同时获取境内、境外加速日志包下载链接（分开打包）
 不指定时默认为 mainland
-                     * @param Area 指定区域下载日志
+                     * @param _area 指定区域下载日志
 mainland：获取境内加速日志包下载链接
 overseas：获取境外加速日志包下载链接
 global：同时获取境内、境外加速日志包下载链接（分开打包）
 不指定时默认为 mainland
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
@@ -171,20 +189,23 @@ global：同时获取境内、境外加速日志包下载链接（分开打包�
 access：访问日志
                      * @return LogType 指定下载日志的类型，目前仅支持访问日志（access）。
 access：访问日志
+                     * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置指定下载日志的类型，目前仅支持访问日志（access）。
 access：访问日志
-                     * @param LogType 指定下载日志的类型，目前仅支持访问日志（access）。
+                     * @param _logType 指定下载日志的类型，目前仅支持访问日志（access）。
 access：访问日志
+                     * 
                      */
                     void SetLogType(const std::string& _logType);
 
                     /**
                      * 判断参数 LogType 是否已赋值
                      * @return LogType 是否已赋值
+                     * 
                      */
                     bool LogTypeHasBeenSet() const;
 

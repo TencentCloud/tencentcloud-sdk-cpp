@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取规则名称，[a-zA-Z0-9-\.]* 长度128
                      * @return RuleName 规则名称，[a-zA-Z0-9-\.]* 长度128
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称，[a-zA-Z0-9-\.]* 长度128
-                     * @param RuleName 规则名称，[a-zA-Z0-9-\.]* 长度128
+                     * @param _ruleName 规则名称，[a-zA-Z0-9-\.]* 长度128
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则脚本，长度65535
                      * @return RuleScript 规则脚本，长度65535
+                     * 
                      */
                     std::string GetRuleScript() const;
 
                     /**
                      * 设置规则脚本，长度65535
-                     * @param RuleScript 规则脚本，长度65535
+                     * @param _ruleScript 规则脚本，长度65535
+                     * 
                      */
                     void SetRuleScript(const std::string& _ruleScript);
 
                     /**
                      * 判断参数 RuleScript 是否已赋值
                      * @return RuleScript 是否已赋值
+                     * 
                      */
                     bool RuleScriptHasBeenSet() const;
 
                     /**
                      * 获取规则描述，最长1024
                      * @return RuleDesc 规则描述，最长1024
+                     * 
                      */
                     std::string GetRuleDesc() const;
 
                     /**
                      * 设置规则描述，最长1024
-                     * @param RuleDesc 规则描述，最长1024
+                     * @param _ruleDesc 规则描述，最长1024
+                     * 
                      */
                     void SetRuleDesc(const std::string& _ruleDesc);
 
                     /**
                      * 判断参数 RuleDesc 是否已赋值
                      * @return RuleDesc 是否已赋值
+                     * 
                      */
                     bool RuleDescHasBeenSet() const;
 
                     /**
                      * 获取标签，key-value结构的数组，最多关联50组标签
                      * @return Tags 标签，key-value结构的数组，最多关联50组标签
+                     * 
                      */
                     std::vector<StringKV> GetTags() const;
 
                     /**
                      * 设置标签，key-value结构的数组，最多关联50组标签
-                     * @param Tags 标签，key-value结构的数组，最多关联50组标签
+                     * @param _tags 标签，key-value结构的数组，最多关联50组标签
+                     * 
                      */
                     void SetTags(const std::vector<StringKV>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

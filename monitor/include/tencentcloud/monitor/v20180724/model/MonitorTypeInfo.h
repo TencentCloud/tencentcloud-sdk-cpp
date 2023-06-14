@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取监控类型ID
                      * @return Id 监控类型ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置监控类型ID
-                     * @param Id 监控类型ID
+                     * @param _id 监控类型ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取监控类型
                      * @return Name 监控类型
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置监控类型
-                     * @param Name 监控类型
+                     * @param _name 监控类型
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取排列顺序
                      * @return SortId 排列顺序
+                     * 
                      */
                     int64_t GetSortId() const;
 
                     /**
                      * 设置排列顺序
-                     * @param SortId 排列顺序
+                     * @param _sortId 排列顺序
+                     * 
                      */
                     void SetSortId(const int64_t& _sortId);
 
                     /**
                      * 判断参数 SortId 是否已赋值
                      * @return SortId 是否已赋值
+                     * 
                      */
                     bool SortIdHasBeenSet() const;
 

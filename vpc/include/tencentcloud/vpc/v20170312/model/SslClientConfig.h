@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取客户端配置
                      * @return SslVpnClientConfiguration 客户端配置
+                     * 
                      */
                     std::string GetSslVpnClientConfiguration() const;
 
                     /**
                      * 设置客户端配置
-                     * @param SslVpnClientConfiguration 客户端配置
+                     * @param _sslVpnClientConfiguration 客户端配置
+                     * 
                      */
                     void SetSslVpnClientConfiguration(const std::string& _sslVpnClientConfiguration);
 
                     /**
                      * 判断参数 SslVpnClientConfiguration 是否已赋值
                      * @return SslVpnClientConfiguration 是否已赋值
+                     * 
                      */
                     bool SslVpnClientConfigurationHasBeenSet() const;
 
                     /**
                      * 获取更证书
                      * @return SslVpnRootCert 更证书
+                     * 
                      */
                     std::string GetSslVpnRootCert() const;
 
                     /**
                      * 设置更证书
-                     * @param SslVpnRootCert 更证书
+                     * @param _sslVpnRootCert 更证书
+                     * 
                      */
                     void SetSslVpnRootCert(const std::string& _sslVpnRootCert);
 
                     /**
                      * 判断参数 SslVpnRootCert 是否已赋值
                      * @return SslVpnRootCert 是否已赋值
+                     * 
                      */
                     bool SslVpnRootCertHasBeenSet() const;
 
                     /**
                      * 获取客户端密钥
                      * @return SslVpnKey 客户端密钥
+                     * 
                      */
                     std::string GetSslVpnKey() const;
 
                     /**
                      * 设置客户端密钥
-                     * @param SslVpnKey 客户端密钥
+                     * @param _sslVpnKey 客户端密钥
+                     * 
                      */
                     void SetSslVpnKey(const std::string& _sslVpnKey);
 
                     /**
                      * 判断参数 SslVpnKey 是否已赋值
                      * @return SslVpnKey 是否已赋值
+                     * 
                      */
                     bool SslVpnKeyHasBeenSet() const;
 
                     /**
                      * 获取客户端证书
                      * @return SslVpnCert 客户端证书
+                     * 
                      */
                     std::string GetSslVpnCert() const;
 
                     /**
                      * 设置客户端证书
-                     * @param SslVpnCert 客户端证书
+                     * @param _sslVpnCert 客户端证书
+                     * 
                      */
                     void SetSslVpnCert(const std::string& _sslVpnCert);
 
                     /**
                      * 判断参数 SslVpnCert 是否已赋值
                      * @return SslVpnCert 是否已赋值
+                     * 
                      */
                     bool SslVpnCertHasBeenSet() const;
 
                     /**
                      * 获取SSL-VPN-CLIENT 实例ID。
                      * @return SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * 
                      */
                     std::string GetSslVpnClientId() const;
 
                     /**
                      * 设置SSL-VPN-CLIENT 实例ID。
-                     * @param SslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * @param _sslVpnClientId SSL-VPN-CLIENT 实例ID。
+                     * 
                      */
                     void SetSslVpnClientId(const std::string& _sslVpnClientId);
 
                     /**
                      * 判断参数 SslVpnClientId 是否已赋值
                      * @return SslVpnClientId 是否已赋值
+                     * 
                      */
                     bool SslVpnClientIdHasBeenSet() const;
 

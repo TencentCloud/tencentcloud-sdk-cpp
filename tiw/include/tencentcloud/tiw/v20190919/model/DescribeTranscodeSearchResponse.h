@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取转码任务搜索结果集合
                      * @return TranscodeTaskSet 转码任务搜索结果集合
+                     * 
                      */
                     std::vector<TranscodeTaskSearchResult> GetTranscodeTaskSet() const;
 
                     /**
                      * 判断参数 TranscodeTaskSet 是否已赋值
                      * @return TranscodeTaskSet 是否已赋值
+                     * 
                      */
                     bool TranscodeTaskSetHasBeenSet() const;
 
                     /**
                      * 获取转码总任务数
                      * @return TotalCount 转码总任务数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

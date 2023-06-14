@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境（命名空间）数组，每次最多删除20个。
                      * @return EnvironmentIds 环境（命名空间）数组，每次最多删除20个。
+                     * 
                      */
                     std::vector<std::string> GetEnvironmentIds() const;
 
                     /**
                      * 设置环境（命名空间）数组，每次最多删除20个。
-                     * @param EnvironmentIds 环境（命名空间）数组，每次最多删除20个。
+                     * @param _environmentIds 环境（命名空间）数组，每次最多删除20个。
+                     * 
                      */
                     void SetEnvironmentIds(const std::vector<std::string>& _environmentIds);
 
                     /**
                      * 判断参数 EnvironmentIds 是否已赋值
                      * @return EnvironmentIds 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdsHasBeenSet() const;
 
                     /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置Pulsar 集群的ID
-                     * @param ClusterId Pulsar 集群的ID
+                     * @param _clusterId Pulsar 集群的ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取需要删除的规则域名
                      * @return Domain 需要删除的规则域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要删除的规则域名
-                     * @param Domain 需要删除的规则域名
+                     * @param _domain 需要删除的规则域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取需要删除的白名单规则
                      * @return Ids 需要删除的白名单规则
+                     * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
                      * 设置需要删除的白名单规则
-                     * @param Ids 需要删除的白名单规则
+                     * @param _ids 需要删除的白名单规则
+                     * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
 
                     /**
                      * 判断参数 Ids 是否已赋值
                      * @return Ids 是否已赋值
+                     * 
                      */
                     bool IdsHasBeenSet() const;
 

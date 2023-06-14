@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取字段名称
                      * @return Name 字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名称
-                     * @param Name 字段名称
+                     * @param _name 字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取字段类型
                      * @return Type 字段类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置字段类型
-                     * @param Type 字段类型
+                     * @param _type 字段类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取字段描述
                      * @return Comment 字段描述
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置字段描述
-                     * @param Comment 字段描述
+                     * @param _comment 字段描述
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
                     /**
                      * 获取分区类型
                      * @return PartitionType 分区类型
+                     * 
                      */
                     std::string GetPartitionType() const;
 
                     /**
                      * 设置分区类型
-                     * @param PartitionType 分区类型
+                     * @param _partitionType 分区类型
+                     * 
                      */
                     void SetPartitionType(const std::string& _partitionType);
 
                     /**
                      * 判断参数 PartitionType 是否已赋值
                      * @return PartitionType 是否已赋值
+                     * 
                      */
                     bool PartitionTypeHasBeenSet() const;
 
                     /**
                      * 获取分区格式
                      * @return PartitionFormat 分区格式
+                     * 
                      */
                     std::string GetPartitionFormat() const;
 
                     /**
                      * 设置分区格式
-                     * @param PartitionFormat 分区格式
+                     * @param _partitionFormat 分区格式
+                     * 
                      */
                     void SetPartitionFormat(const std::string& _partitionFormat);
 
                     /**
                      * 判断参数 PartitionFormat 是否已赋值
                      * @return PartitionFormat 是否已赋值
+                     * 
                      */
                     bool PartitionFormatHasBeenSet() const;
 
                     /**
                      * 获取分区分隔数
                      * @return PartitionDot 分区分隔数
+                     * 
                      */
                     int64_t GetPartitionDot() const;
 
                     /**
                      * 设置分区分隔数
-                     * @param PartitionDot 分区分隔数
+                     * @param _partitionDot 分区分隔数
+                     * 
                      */
                     void SetPartitionDot(const int64_t& _partitionDot);
 
                     /**
                      * 判断参数 PartitionDot 是否已赋值
                      * @return PartitionDot 是否已赋值
+                     * 
                      */
                     bool PartitionDotHasBeenSet() const;
 
                     /**
                      * 获取分区转换策略
                      * @return Transform 分区转换策略
+                     * 
                      */
                     std::string GetTransform() const;
 
                     /**
                      * 设置分区转换策略
-                     * @param Transform 分区转换策略
+                     * @param _transform 分区转换策略
+                     * 
                      */
                     void SetTransform(const std::string& _transform);
 
                     /**
                      * 判断参数 Transform 是否已赋值
                      * @return Transform 是否已赋值
+                     * 
                      */
                     bool TransformHasBeenSet() const;
 
                     /**
                      * 获取策略参数
                      * @return TransformArgs 策略参数
+                     * 
                      */
                     std::vector<std::string> GetTransformArgs() const;
 
                     /**
                      * 设置策略参数
-                     * @param TransformArgs 策略参数
+                     * @param _transformArgs 策略参数
+                     * 
                      */
                     void SetTransformArgs(const std::vector<std::string>& _transformArgs);
 
                     /**
                      * 判断参数 TransformArgs 是否已赋值
                      * @return TransformArgs 是否已赋值
+                     * 
                      */
                     bool TransformArgsHasBeenSet() const;
 

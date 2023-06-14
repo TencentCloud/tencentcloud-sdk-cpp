@@ -51,54 +51,63 @@ namespace TencentCloud
                     /**
                      * 获取实体关系查询返回关系的object
                      * @return Object 实体关系查询返回关系的object
+                     * 
                      */
                     std::vector<EntityRelationObject> GetObject() const;
 
                     /**
                      * 设置实体关系查询返回关系的object
-                     * @param Object 实体关系查询返回关系的object
+                     * @param _object 实体关系查询返回关系的object
+                     * 
                      */
                     void SetObject(const std::vector<EntityRelationObject>& _object);
 
                     /**
                      * 判断参数 Object 是否已赋值
                      * @return Object 是否已赋值
+                     * 
                      */
                     bool ObjectHasBeenSet() const;
 
                     /**
                      * 获取实体关系查询返回关系的subject
                      * @return Subject 实体关系查询返回关系的subject
+                     * 
                      */
                     std::vector<EntityRelationSubject> GetSubject() const;
 
                     /**
                      * 设置实体关系查询返回关系的subject
-                     * @param Subject 实体关系查询返回关系的subject
+                     * @param _subject 实体关系查询返回关系的subject
+                     * 
                      */
                     void SetSubject(const std::vector<EntityRelationSubject>& _subject);
 
                     /**
                      * 判断参数 Subject 是否已赋值
                      * @return Subject 是否已赋值
+                     * 
                      */
                     bool SubjectHasBeenSet() const;
 
                     /**
                      * 获取实体关系查询返回的关系名称
                      * @return Relation 实体关系查询返回的关系名称
+                     * 
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置实体关系查询返回的关系名称
-                     * @param Relation 实体关系查询返回的关系名称
+                     * @param _relation 实体关系查询返回的关系名称
+                     * 
                      */
                     void SetRelation(const std::string& _relation);
 
                     /**
                      * 判断参数 Relation 是否已赋值
                      * @return Relation 是否已赋值
+                     * 
                      */
                     bool RelationHasBeenSet() const;
 

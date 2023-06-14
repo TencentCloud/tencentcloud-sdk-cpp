@@ -55,6 +55,7 @@ off：关闭
 on：开启，平台默认为32MB
 off：关闭
 
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,34 +64,39 @@ off：关闭
 on：开启，平台默认为32MB
 off：关闭
 
-                     * @param Switch POST请求上传文件流式传输最大限制配置开关，取值有：
+                     * @param _switch POST请求上传文件流式传输最大限制配置开关，取值有：
 on：开启，平台默认为32MB
 off：关闭
 
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
                     /**
                      * 获取最大限制，取值在1MB和200MB之间。
                      * @return MaxSize 最大限制，取值在1MB和200MB之间。
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置最大限制，取值在1MB和200MB之间。
-                     * @param MaxSize 最大限制，取值在1MB和200MB之间。
+                     * @param _maxSize 最大限制，取值在1MB和200MB之间。
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 

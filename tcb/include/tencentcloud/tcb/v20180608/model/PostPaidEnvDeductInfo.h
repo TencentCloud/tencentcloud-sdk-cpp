@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 资源方
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置资源方
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResourceType 资源方
+                     * @param _resourceType 资源方
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
+                     * 
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 指标名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetricName 指标名
+                     * @param _metricName 指标名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResQuota 按量计费详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetResQuota() const;
 
                     /**
                      * 设置按量计费详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResQuota 按量计费详情
+                     * @param _resQuota 按量计费详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResQuota(const double& _resQuota);
 
                     /**
                      * 判断参数 ResQuota 是否已赋值
                      * @return ResQuota 是否已赋值
+                     * 
                      */
                     bool ResQuotaHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgQuota 资源包抵扣详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetPkgQuota() const;
 
                     /**
                      * 设置资源包抵扣详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PkgQuota 资源包抵扣详情
+                     * @param _pkgQuota 资源包抵扣详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPkgQuota(const double& _pkgQuota);
 
                     /**
                      * 判断参数 PkgQuota 是否已赋值
                      * @return PkgQuota 是否已赋值
+                     * 
                      */
                     bool PkgQuotaHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeQuota 免费额度抵扣详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetFreeQuota() const;
 
                     /**
                      * 设置免费额度抵扣详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FreeQuota 免费额度抵扣详情
+                     * @param _freeQuota 免费额度抵扣详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFreeQuota(const double& _freeQuota);
 
                     /**
                      * 判断参数 FreeQuota 是否已赋值
                      * @return FreeQuota 是否已赋值
+                     * 
                      */
                     bool FreeQuotaHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 

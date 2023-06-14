@@ -51,12 +51,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopTypeData WAF 攻击类型统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnTypeData> GetTopTypeData() const;
 
                     /**
                      * 判断参数 TopTypeData 是否已赋值
                      * @return TopTypeData 是否已赋值
+                     * 
                      */
                     bool TopTypeDataHasBeenSet() const;
 
@@ -65,24 +67,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopIpData TOP 攻击源 IP 统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnTopData> GetTopIpData() const;
 
                     /**
                      * 判断参数 TopIpData 是否已赋值
                      * @return TopIpData 是否已赋值
+                     * 
                      */
                     bool TopIpDataHasBeenSet() const;
 
                     /**
                      * 获取查询的SCDN类型，当前仅支持 waf
                      * @return Mode 查询的SCDN类型，当前仅支持 waf
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopUrlData TOP URL 统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnTopUrlData> GetTopUrlData() const;
 
                     /**
                      * 判断参数 TopUrlData 是否已赋值
                      * @return TopUrlData 是否已赋值
+                     * 
                      */
                     bool TopUrlDataHasBeenSet() const;
 

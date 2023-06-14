@@ -48,56 +48,65 @@ namespace TencentCloud
 <li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：是 </li>
                      * @return Filters 过滤条件，Filters.Values的上限为5。详细的过滤条件如下：
 <li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：是 </li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，Filters.Values的上限为5。详细的过滤条件如下：
 <li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：是 </li>
-                     * @param Filters 过滤条件，Filters.Values的上限为5。详细的过滤条件如下：
+                     * @param _filters 过滤条件，Filters.Values的上限为5。详细的过滤条件如下：
 <li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：是 </li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取分页查询偏移量。默认值：0。
                      * @return Offset 分页查询偏移量。默认值：0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询偏移量。默认值：0。
-                     * @param Offset 分页查询偏移量。默认值：0。
+                     * @param _offset 分页查询偏移量。默认值：0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询限制数目。默认值：20，最大值：100。
                      * @return Limit 分页查询限制数目。默认值：20，最大值：100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询限制数目。默认值：20，最大值：100。
-                     * @param Limit 分页查询限制数目。默认值：20，最大值：100。
+                     * @param _limit 分页查询限制数目。默认值：20，最大值：100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

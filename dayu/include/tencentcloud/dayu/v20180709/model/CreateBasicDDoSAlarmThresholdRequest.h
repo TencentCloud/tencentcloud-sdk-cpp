@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（basic表示DDoS基础防护）
                      * @return Business 大禹子产品代号（basic表示DDoS基础防护）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（basic表示DDoS基础防护）
-                     * @param Business 大禹子产品代号（basic表示DDoS基础防护）
+                     * @param _business 大禹子产品代号（basic表示DDoS基础防护）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取=get表示读取告警阈值；=set表示设置告警阈值；
                      * @return Method =get表示读取告警阈值；=set表示设置告警阈值；
+                     * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置=get表示读取告警阈值；=set表示设置告警阈值；
-                     * @param Method =get表示读取告警阈值；=set表示设置告警阈值；
+                     * @param _method =get表示读取告警阈值；=set表示设置告警阈值；
+                     * 
                      */
                     void SetMethod(const std::string& _method);
 
                     /**
                      * 判断参数 Method 是否已赋值
                      * @return Method 是否已赋值
+                     * 
                      */
                     bool MethodHasBeenSet() const;
 
                     /**
                      * 获取可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；
                      * @return AlarmType 可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；
+                     * 
                      */
                     uint64_t GetAlarmType() const;
 
                     /**
                      * 设置可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；
-                     * @param AlarmType 可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；
+                     * @param _alarmType 可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；
+                     * 
                      */
                     void SetAlarmType(const uint64_t& _alarmType);
 
                     /**
                      * 判断参数 AlarmType 是否已赋值
                      * @return AlarmType 是否已赋值
+                     * 
                      */
                     bool AlarmTypeHasBeenSet() const;
 
                     /**
                      * 获取可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；
                      * @return AlarmThreshold 可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；
+                     * 
                      */
                     uint64_t GetAlarmThreshold() const;
 
                     /**
                      * 设置可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；
-                     * @param AlarmThreshold 可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；
+                     * @param _alarmThreshold 可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；
+                     * 
                      */
                     void SetAlarmThreshold(const uint64_t& _alarmThreshold);
 
                     /**
                      * 判断参数 AlarmThreshold 是否已赋值
                      * @return AlarmThreshold 是否已赋值
+                     * 
                      */
                     bool AlarmThresholdHasBeenSet() const;
 

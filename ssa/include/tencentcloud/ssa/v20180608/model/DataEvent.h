@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldIdMd5 Md5值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOldIdMd5() const;
 
                     /**
                      * 设置Md5值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OldIdMd5 Md5值
+                     * @param _oldIdMd5 Md5值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOldIdMd5(const std::string& _oldIdMd5);
 
                     /**
                      * 判断参数 OldIdMd5 是否已赋值
                      * @return OldIdMd5 是否已赋值
+                     * 
                      */
                     bool OldIdMd5HasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventName 事件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEventName() const;
 
                     /**
                      * 设置事件名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventName 事件名称
+                     * @param _eventName 事件名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventType1 事件类型一级分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEventType1() const;
 
                     /**
                      * 设置事件类型一级分类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventType1 事件类型一级分类
+                     * @param _eventType1 事件类型一级分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventType1(const int64_t& _eventType1);
 
                     /**
                      * 判断参数 EventType1 是否已赋值
                      * @return EventType1 是否已赋值
+                     * 
                      */
                     bool EventType1HasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventType2 事件类型二级分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetEventType2() const;
 
                     /**
                      * 设置事件类型二级分类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventType2 事件类型二级分类
+                     * @param _eventType2 事件类型二级分类
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEventType2(const int64_t& _eventType2);
 
                     /**
                      * 判断参数 EventType2 是否已赋值
                      * @return EventType2 是否已赋值
+                     * 
                      */
                     bool EventType2HasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 事件等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置事件等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 事件等级
+                     * @param _level 事件等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 处理状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置处理状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 处理状态
+                     * @param _status 处理状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcIp 源ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSrcIp() const;
 
                     /**
                      * 设置源ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SrcIp 源ip
+                     * @param _srcIp 源ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSrcIp(const std::string& _srcIp);
 
                     /**
                      * 判断参数 SrcIp 是否已赋值
                      * @return SrcIp 是否已赋值
+                     * 
                      */
                     bool SrcIpHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstIp 目的ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDstIp() const;
 
                     /**
                      * 设置目的ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DstIp 目的ip
+                     * @param _dstIp 目的ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDstIp(const std::string& _dstIp);
 
                     /**
                      * 判断参数 DstIp 是否已赋值
                      * @return DstIp 是否已赋值
+                     * 
                      */
                     bool DstIpHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 事件发生时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置事件发生时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 事件发生时间
+                     * @param _time 事件发生时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dstport 目的端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDstport() const;
 
                     /**
                      * 设置目的端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Dstport 目的端口
+                     * @param _dstport 目的端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDstport(const int64_t& _dstport);
 
                     /**
                      * 判断参数 Dstport 是否已赋值
                      * @return Dstport 是否已赋值
+                     * 
                      */
                     bool DstportHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetIp 资产ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetIp() const;
 
                     /**
                      * 设置资产ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetIp 资产ip
+                     * @param _assetIp 资产ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetIp(const std::string& _assetIp);
 
                     /**
                      * 判断参数 AssetIp 是否已赋值
                      * @return AssetIp 是否已赋值
+                     * 
                      */
                     bool AssetIpHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetName() const;
 
                     /**
                      * 设置资产名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetName 资产名称
+                     * @param _assetName 资产名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetName(const std::string& _assetName);
 
                     /**
                      * 判断参数 AssetName 是否已赋值
                      * @return AssetName 是否已赋值
+                     * 
                      */
                     bool AssetNameHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaEventUniqid 安全事件唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSsaEventUniqid() const;
 
                     /**
                      * 设置安全事件唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SsaEventUniqid 安全事件唯一标识符
+                     * @param _ssaEventUniqid 安全事件唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSsaEventUniqid(const std::string& _ssaEventUniqid);
 
                     /**
                      * 判断参数 SsaEventUniqid 是否已赋值
                      * @return SsaEventUniqid 是否已赋值
+                     * 
                      */
                     bool SsaEventUniqidHasBeenSet() const;
 
@@ -337,20 +376,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetId 资产id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetId() const;
 
                     /**
                      * 设置资产id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetId 资产id
+                     * @param _assetId 资产id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetId(const std::string& _assetId);
 
                     /**
                      * 判断参数 AssetId 是否已赋值
                      * @return AssetId 是否已赋值
+                     * 
                      */
                     bool AssetIdHasBeenSet() const;
 
@@ -359,20 +401,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source 事件来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置事件来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Source 事件来源
+                     * @param _source 事件来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
+                     * 
                      */
                     bool SourceHasBeenSet() const;
 
@@ -381,20 +426,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Index 索引
+                     * @param _index 索引
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIndex(const std::string& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 
@@ -403,20 +451,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 索引中的唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置索引中的唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 索引中的唯一标识符
+                     * @param _id 索引中的唯一标识符
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -425,20 +476,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAssetDeleted 受影响资产是否已下线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsAssetDeleted() const;
 
                     /**
                      * 设置受影响资产是否已下线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsAssetDeleted 受影响资产是否已下线
+                     * @param _isAssetDeleted 受影响资产是否已下线
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsAssetDeleted(const std::string& _isAssetDeleted);
 
                     /**
                      * 判断参数 IsAssetDeleted 是否已赋值
                      * @return IsAssetDeleted 是否已赋值
+                     * 
                      */
                     bool IsAssetDeletedHasBeenSet() const;
 
@@ -447,20 +501,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaSrcCountry 源ip所属地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSsaSrcCountry() const;
 
                     /**
                      * 设置源ip所属地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SsaSrcCountry 源ip所属地
+                     * @param _ssaSrcCountry 源ip所属地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSsaSrcCountry(const std::string& _ssaSrcCountry);
 
                     /**
                      * 判断参数 SsaSrcCountry 是否已赋值
                      * @return SsaSrcCountry 是否已赋值
+                     * 
                      */
                     bool SsaSrcCountryHasBeenSet() const;
 
@@ -469,20 +526,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaDstCountry 目的ip所属地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSsaDstCountry() const;
 
                     /**
                      * 设置目的ip所属地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SsaDstCountry 目的ip所属地
+                     * @param _ssaDstCountry 目的ip所属地
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSsaDstCountry(const std::string& _ssaDstCountry);
 
                     /**
                      * 判断参数 SsaDstCountry 是否已赋值
                      * @return SsaDstCountry 是否已赋值
+                     * 
                      */
                     bool SsaDstCountryHasBeenSet() const;
 
@@ -491,20 +551,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaDescription 木马类型的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSsaDescription() const;
 
                     /**
                      * 设置木马类型的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SsaDescription 木马类型的描述信息
+                     * @param _ssaDescription 木马类型的描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSsaDescription(const std::string& _ssaDescription);
 
                     /**
                      * 判断参数 SsaDescription 是否已赋值
                      * @return SsaDescription 是否已赋值
+                     * 
                      */
                     bool SsaDescriptionHasBeenSet() const;
 
@@ -513,38 +576,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaAttackChain 供给链类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSsaAttackChain() const;
 
                     /**
                      * 设置供给链类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SsaAttackChain 供给链类型
+                     * @param _ssaAttackChain 供给链类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSsaAttackChain(const std::string& _ssaAttackChain);
 
                     /**
                      * 判断参数 SsaAttackChain 是否已赋值
                      * @return SsaAttackChain 是否已赋值
+                     * 
                      */
                     bool SsaAttackChainHasBeenSet() const;
 
                     /**
                      * 获取受影响组件
                      * @return RuleComponents 受影响组件
+                     * 
                      */
                     std::string GetRuleComponents() const;
 
                     /**
                      * 设置受影响组件
-                     * @param RuleComponents 受影响组件
+                     * @param _ruleComponents 受影响组件
+                     * 
                      */
                     void SetRuleComponents(const std::string& _ruleComponents);
 
                     /**
                      * 判断参数 RuleComponents 是否已赋值
                      * @return RuleComponents 是否已赋值
+                     * 
                      */
                     bool RuleComponentsHasBeenSet() const;
 
@@ -553,20 +622,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetIpAll 资产ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAssetIpAll() const;
 
                     /**
                      * 设置资产ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetIpAll 资产ip
+                     * @param _assetIpAll 资产ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetIpAll(const std::vector<std::string>& _assetIpAll);
 
                     /**
                      * 判断参数 AssetIpAll 是否已赋值
                      * @return AssetIpAll 是否已赋值
+                     * 
                      */
                     bool AssetIpAllHasBeenSet() const;
 
@@ -575,20 +647,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetType 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAssetType() const;
 
                     /**
                      * 设置资产类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AssetType 资产类型
+                     * @param _assetType 资产类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAssetType(const std::string& _assetType);
 
                     /**
                      * 判断参数 AssetType 是否已赋值
                      * @return AssetType 是否已赋值
+                     * 
                      */
                     bool AssetTypeHasBeenSet() const;
 
@@ -597,38 +672,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddresses cvm类型资产的公网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置cvm类型资产的公网ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIpAddresses cvm类型资产的公网ip
+                     * @param _publicIpAddresses cvm类型资产的公网ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
                     /**
                      * 判断参数 PublicIpAddresses 是否已赋值
                      * @return PublicIpAddresses 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取cvm类型资产的内网ip
                      * @return PrivateIpAddresses cvm类型资产的内网ip
+                     * 
                      */
                     std::vector<std::string> GetPrivateIpAddresses() const;
 
                     /**
                      * 设置cvm类型资产的内网ip
-                     * @param PrivateIpAddresses cvm类型资产的内网ip
+                     * @param _privateIpAddresses cvm类型资产的内网ip
+                     * 
                      */
                     void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
 
                     /**
                      * 判断参数 PrivateIpAddresses 是否已赋值
                      * @return PrivateIpAddresses 是否已赋值
+                     * 
                      */
                     bool PrivateIpAddressesHasBeenSet() const;
 
@@ -637,20 +718,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoarResponseStatus 事件响应状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSoarResponseStatus() const;
 
                     /**
                      * 设置事件响应状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoarResponseStatus 事件响应状态
+                     * @param _soarResponseStatus 事件响应状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoarResponseStatus(const int64_t& _soarResponseStatus);
 
                     /**
                      * 判断参数 SoarResponseStatus 是否已赋值
                      * @return SoarResponseStatus 是否已赋值
+                     * 
                      */
                     bool SoarResponseStatusHasBeenSet() const;
 
@@ -659,20 +743,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoarResponseTime 事件最近响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSoarResponseTime() const;
 
                     /**
                      * 设置事件最近响应时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoarResponseTime 事件最近响应时间
+                     * @param _soarResponseTime 事件最近响应时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoarResponseTime(const int64_t& _soarResponseTime);
 
                     /**
                      * 判断参数 SoarResponseTime 是否已赋值
                      * @return SoarResponseTime 是否已赋值
+                     * 
                      */
                     bool SoarResponseTimeHasBeenSet() const;
 
@@ -681,20 +768,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoarSuggestStatus 事件建议处理状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSoarSuggestStatus() const;
 
                     /**
                      * 设置事件建议处理状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoarSuggestStatus 事件建议处理状态
+                     * @param _soarSuggestStatus 事件建议处理状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoarSuggestStatus(const int64_t& _soarSuggestStatus);
 
                     /**
                      * 判断参数 SoarSuggestStatus 是否已赋值
                      * @return SoarSuggestStatus 是否已赋值
+                     * 
                      */
                     bool SoarSuggestStatusHasBeenSet() const;
 
@@ -703,20 +793,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoarPlaybookType 事件剧本类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSoarPlaybookType() const;
 
                     /**
                      * 设置事件剧本类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoarPlaybookType 事件剧本类型
+                     * @param _soarPlaybookType 事件剧本类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoarPlaybookType(const std::string& _soarPlaybookType);
 
                     /**
                      * 判断参数 SoarPlaybookType 是否已赋值
                      * @return SoarPlaybookType 是否已赋值
+                     * 
                      */
                     bool SoarPlaybookTypeHasBeenSet() const;
 
@@ -725,20 +818,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoarRunId 剧本任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSoarRunId() const;
 
                     /**
                      * 设置剧本任务Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SoarRunId 剧本任务Id
+                     * @param _soarRunId 剧本任务Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSoarRunId(const std::string& _soarRunId);
 
                     /**
                      * 判断参数 SoarRunId 是否已赋值
                      * @return SoarRunId 是否已赋值
+                     * 
                      */
                     bool SoarRunIdHasBeenSet() const;
 
@@ -747,20 +843,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SsaEventId 事件Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSsaEventId() const;
 
                     /**
                      * 设置事件Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SsaEventId 事件Id
+                     * @param _ssaEventId 事件Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSsaEventId(const std::string& _ssaEventId);
 
                     /**
                      * 判断参数 SsaEventId 是否已赋值
                      * @return SsaEventId 是否已赋值
+                     * 
                      */
                     bool SsaEventIdHasBeenSet() const;
 
@@ -769,20 +868,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewCfwEvent 是否新接入的云防事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsNewCfwEvent() const;
 
                     /**
                      * 设置是否新接入的云防事件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsNewCfwEvent 是否新接入的云防事件
+                     * @param _isNewCfwEvent 是否新接入的云防事件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsNewCfwEvent(const bool& _isNewCfwEvent);
 
                     /**
                      * 判断参数 IsNewCfwEvent 是否已赋值
                      * @return IsNewCfwEvent 是否已赋值
+                     * 
                      */
                     bool IsNewCfwEventHasBeenSet() const;
 
@@ -791,20 +893,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Direction 出入站方向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDirection() const;
 
                     /**
                      * 设置出入站方向
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Direction 出入站方向
+                     * @param _direction 出入站方向
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDirection(const std::string& _direction);
 
                     /**
                      * 判断参数 Direction 是否已赋值
                      * @return Direction 是否已赋值
+                     * 
                      */
                     bool DirectionHasBeenSet() const;
 

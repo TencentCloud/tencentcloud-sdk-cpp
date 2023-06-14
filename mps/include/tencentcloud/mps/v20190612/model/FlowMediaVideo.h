@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取帧率。
                      * @return Fps 帧率。
+                     * 
                      */
                     int64_t GetFps() const;
 
                     /**
                      * 设置帧率。
-                     * @param Fps 帧率。
+                     * @param _fps 帧率。
+                     * 
                      */
                     void SetFps(const int64_t& _fps);
 
                     /**
                      * 判断参数 Fps 是否已赋值
                      * @return Fps 是否已赋值
+                     * 
                      */
                     bool FpsHasBeenSet() const;
 
                     /**
                      * 获取码率，单位是bps。
                      * @return Rate 码率，单位是bps。
+                     * 
                      */
                     int64_t GetRate() const;
 
                     /**
                      * 设置码率，单位是bps。
-                     * @param Rate 码率，单位是bps。
+                     * @param _rate 码率，单位是bps。
+                     * 
                      */
                     void SetRate(const int64_t& _rate);
 
                     /**
                      * 判断参数 Rate 是否已赋值
                      * @return Rate 是否已赋值
+                     * 
                      */
                     bool RateHasBeenSet() const;
 
                     /**
                      * 获取视频Pid。
                      * @return Pid 视频Pid。
+                     * 
                      */
                     int64_t GetPid() const;
 
                     /**
                      * 设置视频Pid。
-                     * @param Pid 视频Pid。
+                     * @param _pid 视频Pid。
+                     * 
                      */
                     void SetPid(const int64_t& _pid);
 
                     /**
                      * 判断参数 Pid 是否已赋值
                      * @return Pid 是否已赋值
+                     * 
                      */
                     bool PidHasBeenSet() const;
 
                     /**
                      * 获取标志同一次推流。
                      * @return SessionId 标志同一次推流。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置标志同一次推流。
-                     * @param SessionId 标志同一次推流。
+                     * @param _sessionId 标志同一次推流。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

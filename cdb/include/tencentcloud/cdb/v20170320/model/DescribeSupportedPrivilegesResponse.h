@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取实例支持的全局权限。
                      * @return GlobalSupportedPrivileges 实例支持的全局权限。
+                     * 
                      */
                     std::vector<std::string> GetGlobalSupportedPrivileges() const;
 
                     /**
                      * 判断参数 GlobalSupportedPrivileges 是否已赋值
                      * @return GlobalSupportedPrivileges 是否已赋值
+                     * 
                      */
                     bool GlobalSupportedPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取实例支持的数据库权限。
                      * @return DatabaseSupportedPrivileges 实例支持的数据库权限。
+                     * 
                      */
                     std::vector<std::string> GetDatabaseSupportedPrivileges() const;
 
                     /**
                      * 判断参数 DatabaseSupportedPrivileges 是否已赋值
                      * @return DatabaseSupportedPrivileges 是否已赋值
+                     * 
                      */
                     bool DatabaseSupportedPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取实例支持的数据库表权限。
                      * @return TableSupportedPrivileges 实例支持的数据库表权限。
+                     * 
                      */
                     std::vector<std::string> GetTableSupportedPrivileges() const;
 
                     /**
                      * 判断参数 TableSupportedPrivileges 是否已赋值
                      * @return TableSupportedPrivileges 是否已赋值
+                     * 
                      */
                     bool TableSupportedPrivilegesHasBeenSet() const;
 
                     /**
                      * 获取实例支持的数据库列权限。
                      * @return ColumnSupportedPrivileges 实例支持的数据库列权限。
+                     * 
                      */
                     std::vector<std::string> GetColumnSupportedPrivileges() const;
 
                     /**
                      * 判断参数 ColumnSupportedPrivileges 是否已赋值
                      * @return ColumnSupportedPrivileges 是否已赋值
+                     * 
                      */
                     bool ColumnSupportedPrivilegesHasBeenSet() const;
 

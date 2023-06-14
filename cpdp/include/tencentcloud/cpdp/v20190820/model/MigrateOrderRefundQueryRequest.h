@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道
                      * @return PayChannel 支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道
+                     * 
                      */
                     std::string GetPayChannel() const;
 
                     /**
                      * 设置支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道
-                     * @param PayChannel 支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道
+                     * @param _payChannel 支付渠道，ALIPAY对应支付宝渠道；UNIONPAY对应银联渠道
+                     * 
                      */
                     void SetPayChannel(const std::string& _payChannel);
 
                     /**
                      * 判断参数 PayChannel 是否已赋值
                      * @return PayChannel 是否已赋值
+                     * 
                      */
                     bool PayChannelHasBeenSet() const;
 
                     /**
                      * 获取退款订单号，最长64位，仅支持数字、 字母
                      * @return RefundOrderId 退款订单号，最长64位，仅支持数字、 字母
+                     * 
                      */
                     std::string GetRefundOrderId() const;
 
                     /**
                      * 设置退款订单号，最长64位，仅支持数字、 字母
-                     * @param RefundOrderId 退款订单号，最长64位，仅支持数字、 字母
+                     * @param _refundOrderId 退款订单号，最长64位，仅支持数字、 字母
+                     * 
                      */
                     void SetRefundOrderId(const std::string& _refundOrderId);
 
                     /**
                      * 判断参数 RefundOrderId 是否已赋值
                      * @return RefundOrderId 是否已赋值
+                     * 
                      */
                     bool RefundOrderIdHasBeenSet() const;
 
                     /**
                      * 获取退款流水号
                      * @return TradeSerialNo 退款流水号
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 设置退款流水号
-                     * @param TradeSerialNo 退款流水号
+                     * @param _tradeSerialNo 退款流水号
+                     * 
                      */
                     void SetTradeSerialNo(const std::string& _tradeSerialNo);
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填 sandbox。
                      * @return Profile 接入环境。沙箱环境填 sandbox。
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填 sandbox。
-                     * @param Profile 接入环境。沙箱环境填 sandbox。
+                     * @param _profile 接入环境。沙箱环境填 sandbox。
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
                      * 设置0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
+                     * @param _accessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAccessType(const int64_t& _accessType);
 
                     /**
                      * 判断参数 AccessType 是否已赋值
                      * @return AccessType 是否已赋值
+                     * 
                      */
                     bool AccessTypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolPorts 容器端口映射
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProtocolPort> GetProtocolPorts() const;
 
                     /**
                      * 设置容器端口映射
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProtocolPorts 容器端口映射
+                     * @param _protocolPorts 容器端口映射
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProtocolPorts(const std::vector<ProtocolPort>& _protocolPorts);
 
                     /**
                      * 判断参数 ProtocolPorts 是否已赋值
                      * @return ProtocolPorts 是否已赋值
+                     * 
                      */
                     bool ProtocolPortsHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetId 子网ID
+                     * @param _subnetId 子网ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisableService 是否创建 k8s service，默认为 false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDisableService() const;
 
                     /**
                      * 设置是否创建 k8s service，默认为 false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisableService 是否创建 k8s service，默认为 false
+                     * @param _disableService 是否创建 k8s service，默认为 false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDisableService(const bool& _disableService);
 
                     /**
                      * 判断参数 DisableService 是否已赋值
                      * @return DisableService 是否已赋值
+                     * 
                      */
                     bool DisableServiceHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadlessService service 是否为 headless 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetHeadlessService() const;
 
                     /**
                      * 设置service 是否为 headless 类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeadlessService service 是否为 headless 类型
+                     * @param _headlessService service 是否为 headless 类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHeadlessService(const bool& _headlessService);
 
                     /**
                      * 判断参数 HeadlessService 是否已赋值
                      * @return HeadlessService 是否已赋值
+                     * 
                      */
                     bool HeadlessServiceHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAllowDeleteService() const;
 
                     /**
                      * 设置当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+                     * @param _allowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllowDeleteService(const bool& _allowDeleteService);
 
                     /**
                      * 判断参数 AllowDeleteService 是否已赋值
                      * @return AllowDeleteService 是否已赋值
+                     * 
                      */
                     bool AllowDeleteServiceHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetOpenSessionAffinity() const;
 
                     /**
                      * 设置开启SessionAffinity，true为开启，false为不开启，默认为false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
+                     * @param _openSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpenSessionAffinity(const bool& _openSessionAffinity);
 
                     /**
                      * 判断参数 OpenSessionAffinity 是否已赋值
                      * @return OpenSessionAffinity 是否已赋值
+                     * 
                      */
                     bool OpenSessionAffinityHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSessionAffinityTimeoutSeconds() const;
 
                     /**
                      * 设置SessionAffinity会话时间，默认10800
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
+                     * @param _sessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSessionAffinityTimeoutSeconds(const int64_t& _sessionAffinityTimeoutSeconds);
 
                     /**
                      * 判断参数 SessionAffinityTimeoutSeconds 是否已赋值
                      * @return SessionAffinityTimeoutSeconds 是否已赋值
+                     * 
                      */
                     bool SessionAffinityTimeoutSecondsHasBeenSet() const;
 

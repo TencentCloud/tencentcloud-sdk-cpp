@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取返回区块json字符串
                      * @return BlockJson 返回区块json字符串
+                     * 
                      */
                     std::string GetBlockJson() const;
 
                     /**
                      * 判断参数 BlockJson 是否已赋值
                      * @return BlockJson 是否已赋值
+                     * 
                      */
                     bool BlockJsonHasBeenSet() const;
 

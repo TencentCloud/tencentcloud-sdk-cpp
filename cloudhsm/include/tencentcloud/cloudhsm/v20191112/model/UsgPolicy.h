@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip cidr格式地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置cidr格式地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ip cidr格式地址
+                     * @param _ip cidr格式地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 安全组id代表的地址集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置安全组id代表的地址集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 安全组id代表的地址集合
+                     * @param _id 安全组id代表的地址集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddressModule 地址组id代表的地址集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAddressModule() const;
 
                     /**
                      * 设置地址组id代表的地址集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddressModule 地址组id代表的地址集合
+                     * @param _addressModule 地址组id代表的地址集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddressModule(const std::string& _addressModule);
 
                     /**
                      * 判断参数 AddressModule 是否已赋值
                      * @return AddressModule 是否已赋值
+                     * 
                      */
                     bool AddressModuleHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Proto 协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProto() const;
 
                     /**
                      * 设置协议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Proto 协议
+                     * @param _proto 协议
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProto(const std::string& _proto);
 
                     /**
                      * 判断参数 Proto 是否已赋值
                      * @return Proto 是否已赋值
+                     * 
                      */
                     bool ProtoHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置端口
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Port 端口
+                     * @param _port 端口
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPort(const std::string& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceModule 服务组id代表的协议和端口集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceModule() const;
 
                     /**
                      * 设置服务组id代表的协议和端口集合
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceModule 服务组id代表的协议和端口集合
+                     * @param _serviceModule 服务组id代表的协议和端口集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceModule(const std::string& _serviceModule);
 
                     /**
                      * 判断参数 ServiceModule 是否已赋值
                      * @return ServiceModule 是否已赋值
+                     * 
                      */
                     bool ServiceModuleHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置备注
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 备注
+                     * @param _desc 备注
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 匹配后行为:ACCEPT/DROP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置匹配后行为:ACCEPT/DROP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 匹配后行为:ACCEPT/DROP
+                     * @param _action 匹配后行为:ACCEPT/DROP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 

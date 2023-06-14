@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取期望回滚的时间点
                      * @return ExpectTime 期望回滚的时间点
+                     * 
                      */
                     std::string GetExpectTime() const;
 
                     /**
                      * 设置期望回滚的时间点
-                     * @param ExpectTime 期望回滚的时间点
+                     * @param _expectTime 期望回滚的时间点
+                     * 
                      */
                     void SetExpectTime(const std::string& _expectTime);
 
                     /**
                      * 判断参数 ExpectTime 是否已赋值
                      * @return ExpectTime 是否已赋值
+                     * 
                      */
                     bool ExpectTimeHasBeenSet() const;
 
                     /**
                      * 获取回滚时间点的允许误差范围
                      * @return ExpectTimeThresh 回滚时间点的允许误差范围
+                     * 
                      */
                     uint64_t GetExpectTimeThresh() const;
 
                     /**
                      * 设置回滚时间点的允许误差范围
-                     * @param ExpectTimeThresh 回滚时间点的允许误差范围
+                     * @param _expectTimeThresh 回滚时间点的允许误差范围
+                     * 
                      */
                     void SetExpectTimeThresh(const uint64_t& _expectTimeThresh);
 
                     /**
                      * 判断参数 ExpectTimeThresh 是否已赋值
                      * @return ExpectTimeThresh 是否已赋值
+                     * 
                      */
                     bool ExpectTimeThreshHasBeenSet() const;
 

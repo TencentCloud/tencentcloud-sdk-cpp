@@ -51,72 +51,84 @@ namespace TencentCloud
                     /**
                      * 获取命名空间id
                      * @return EnvironmentId 命名空间id
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置命名空间id
-                     * @param EnvironmentId 命名空间id
+                     * @param _environmentId 命名空间id
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间名称
                      * @return EnvironmentName 命名空间名称
+                     * 
                      */
                     std::string GetEnvironmentName() const;
 
                     /**
                      * 设置命名空间名称
-                     * @param EnvironmentName 命名空间名称
+                     * @param _environmentName 命名空间名称
+                     * 
                      */
                     void SetEnvironmentName(const std::string& _environmentName);
 
                     /**
                      * 判断参数 EnvironmentName 是否已赋值
                      * @return EnvironmentName 是否已赋值
+                     * 
                      */
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
                      * 获取TCB envId | EKS clusterId
                      * @return ClusterId TCB envId | EKS clusterId
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置TCB envId | EKS clusterId
-                     * @param ClusterId TCB envId | EKS clusterId
+                     * @param _clusterId TCB envId | EKS clusterId
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取环境状态
                      * @return ClusterStatus 环境状态
+                     * 
                      */
                     std::string GetClusterStatus() const;
 
                     /**
                      * 设置环境状态
-                     * @param ClusterStatus 环境状态
+                     * @param _clusterStatus 环境状态
+                     * 
                      */
                     void SetClusterStatus(const std::string& _clusterStatus);
 
                     /**
                      * 判断参数 ClusterStatus 是否已赋值
                      * @return ClusterStatus 是否已赋值
+                     * 
                      */
                     bool ClusterStatusHasBeenSet() const;
 
@@ -125,20 +137,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentStartingStatus 环境启动状态（不在启动中为null）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TemEnvironmentStartingStatus GetEnvironmentStartingStatus() const;
 
                     /**
                      * 设置环境启动状态（不在启动中为null）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvironmentStartingStatus 环境启动状态（不在启动中为null）
+                     * @param _environmentStartingStatus 环境启动状态（不在启动中为null）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvironmentStartingStatus(const TemEnvironmentStartingStatus& _environmentStartingStatus);
 
                     /**
                      * 判断参数 EnvironmentStartingStatus 是否已赋值
                      * @return EnvironmentStartingStatus 是否已赋值
+                     * 
                      */
                     bool EnvironmentStartingStatusHasBeenSet() const;
 
@@ -147,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentStoppingStatus 环境停止状态（不在停止中为null）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TemEnvironmentStoppingStatus GetEnvironmentStoppingStatus() const;
 
                     /**
                      * 设置环境停止状态（不在停止中为null）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnvironmentStoppingStatus 环境停止状态（不在停止中为null）
+                     * @param _environmentStoppingStatus 环境停止状态（不在停止中为null）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEnvironmentStoppingStatus(const TemEnvironmentStoppingStatus& _environmentStoppingStatus);
 
                     /**
                      * 判断参数 EnvironmentStoppingStatus 是否已赋值
                      * @return EnvironmentStoppingStatus 是否已赋值
+                     * 
                      */
                     bool EnvironmentStoppingStatusHasBeenSet() const;
 

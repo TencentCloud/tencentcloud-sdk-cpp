@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取客户端ip。
                      * @return ClientIp 客户端ip。
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置客户端ip。
-                     * @param ClientIp 客户端ip。
+                     * @param _clientIp 客户端ip。
+                     * 
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取规则类型。
                      * @return RuleType 规则类型。
+                     * 
                      */
                     std::string GetRuleType() const;
 
                     /**
                      * 设置规则类型。
-                     * @param RuleType 规则类型。
+                     * @param _ruleType 规则类型。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRuleId() const;
 
                     /**
                      * 设置规则id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 规则id。
+                     * @param _ruleId 规则id。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 规则描述。
+                     * @param _description 规则描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -133,6 +145,7 @@ namespace TencentCloud
                      * @return IpStatus 封禁状态，取值有：
 <li>block ：封禁 ；</li>
 <li>allow ：放行 。</li>
+                     * 
                      */
                     std::string GetIpStatus() const;
 
@@ -140,51 +153,59 @@ namespace TencentCloud
                      * 设置封禁状态，取值有：
 <li>block ：封禁 ；</li>
 <li>allow ：放行 。</li>
-                     * @param IpStatus 封禁状态，取值有：
+                     * @param _ipStatus 封禁状态，取值有：
 <li>block ：封禁 ；</li>
 <li>allow ：放行 。</li>
+                     * 
                      */
                     void SetIpStatus(const std::string& _ipStatus);
 
                     /**
                      * 判断参数 IpStatus 是否已赋值
                      * @return IpStatus 是否已赋值
+                     * 
                      */
                     bool IpStatusHasBeenSet() const;
 
                     /**
                      * 获取封禁时间，采用unix秒级时间戳。
                      * @return BlockTime 封禁时间，采用unix秒级时间戳。
+                     * 
                      */
                     int64_t GetBlockTime() const;
 
                     /**
                      * 设置封禁时间，采用unix秒级时间戳。
-                     * @param BlockTime 封禁时间，采用unix秒级时间戳。
+                     * @param _blockTime 封禁时间，采用unix秒级时间戳。
+                     * 
                      */
                     void SetBlockTime(const int64_t& _blockTime);
 
                     /**
                      * 判断参数 BlockTime 是否已赋值
                      * @return BlockTime 是否已赋值
+                     * 
                      */
                     bool BlockTimeHasBeenSet() const;
 
                     /**
                      * 获取每条数据的唯一标识id。
                      * @return Id 每条数据的唯一标识id。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置每条数据的唯一标识id。
-                     * @param Id 每条数据的唯一标识id。
+                     * @param _id 每条数据的唯一标识id。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

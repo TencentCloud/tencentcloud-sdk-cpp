@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取分区
                      * @return Partitions 分区
+                     * 
                      */
                     std::vector<DMSPartition> GetPartitions() const;
 
                     /**
                      * 设置分区
-                     * @param Partitions 分区
+                     * @param _partitions 分区
+                     * 
                      */
                     void SetPartitions(const std::vector<DMSPartition>& _partitions);
 
                     /**
                      * 判断参数 Partitions 是否已赋值
                      * @return Partitions 是否已赋值
+                     * 
                      */
                     bool PartitionsHasBeenSet() const;
 

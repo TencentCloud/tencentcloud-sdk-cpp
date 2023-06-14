@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TKERouteENINonStaticIP TKE共享网卡非固定IP模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTKERouteENINonStaticIP() const;
 
                     /**
                      * 设置TKE共享网卡非固定IP模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TKERouteENINonStaticIP TKE共享网卡非固定IP模式可支持的Pod数量
+                     * @param _tKERouteENINonStaticIP TKE共享网卡非固定IP模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTKERouteENINonStaticIP(const int64_t& _tKERouteENINonStaticIP);
 
                     /**
                      * 判断参数 TKERouteENINonStaticIP 是否已赋值
                      * @return TKERouteENINonStaticIP 是否已赋值
+                     * 
                      */
                     bool TKERouteENINonStaticIPHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TKERouteENIStaticIP TKE共享网卡固定IP模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTKERouteENIStaticIP() const;
 
                     /**
                      * 设置TKE共享网卡固定IP模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TKERouteENIStaticIP TKE共享网卡固定IP模式可支持的Pod数量
+                     * @param _tKERouteENIStaticIP TKE共享网卡固定IP模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTKERouteENIStaticIP(const int64_t& _tKERouteENIStaticIP);
 
                     /**
                      * 判断参数 TKERouteENIStaticIP 是否已赋值
                      * @return TKERouteENIStaticIP 是否已赋值
+                     * 
                      */
                     bool TKERouteENIStaticIPHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TKEDirectENI TKE独立网卡模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTKEDirectENI() const;
 
                     /**
                      * 设置TKE独立网卡模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TKEDirectENI TKE独立网卡模式可支持的Pod数量
+                     * @param _tKEDirectENI TKE独立网卡模式可支持的Pod数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTKEDirectENI(const int64_t& _tKEDirectENI);
 
                     /**
                      * 判断参数 TKEDirectENI 是否已赋值
                      * @return TKEDirectENI 是否已赋值
+                     * 
                      */
                     bool TKEDirectENIHasBeenSet() const;
 

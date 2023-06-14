@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取应用的用量信息数组。
                      * @return Usages 应用的用量信息数组。
+                     * 
                      */
                     std::vector<OneSdkAppIdTranscodeTimeUsagesInfo> GetUsages() const;
 
                     /**
                      * 判断参数 Usages 是否已赋值
                      * @return Usages 是否已赋值
+                     * 
                      */
                     bool UsagesHasBeenSet() const;
 

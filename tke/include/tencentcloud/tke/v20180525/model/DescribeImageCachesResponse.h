@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取镜像缓存总数
                      * @return TotalCount 镜像缓存总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取镜像缓存信息列表
                      * @return ImageCaches 镜像缓存信息列表
+                     * 
                      */
                     std::vector<ImageCache> GetImageCaches() const;
 
                     /**
                      * 判断参数 ImageCaches 是否已赋值
                      * @return ImageCaches 是否已赋值
+                     * 
                      */
                     bool ImageCachesHasBeenSet() const;
 

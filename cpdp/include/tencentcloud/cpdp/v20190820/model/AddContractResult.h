@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContractId 合同主键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContractId() const;
 
                     /**
                      * 设置合同主键
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContractId 合同主键
+                     * @param _contractId 合同主键
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContractId(const std::string& _contractId);
 
                     /**
                      * 判断参数 ContractId 是否已赋值
                      * @return ContractId 是否已赋值
+                     * 
                      */
                     bool ContractIdHasBeenSet() const;
 

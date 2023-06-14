@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取专线网关对象。
                      * @return DirectConnectGateway 专线网关对象。
+                     * 
                      */
                     DirectConnectGateway GetDirectConnectGateway() const;
 
                     /**
                      * 判断参数 DirectConnectGateway 是否已赋值
                      * @return DirectConnectGateway 是否已赋值
+                     * 
                      */
                     bool DirectConnectGatewayHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationIds 机构节点拥有访问权限的应用 id 列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetApplicationIds() const;
 
                     /**
                      * 判断参数 ApplicationIds 是否已赋值
                      * @return ApplicationIds 是否已赋值
+                     * 
                      */
                     bool ApplicationIdsHasBeenSet() const;
 

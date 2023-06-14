@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取流程创建者信息
                      * @return Creator 流程创建者信息
+                     * 
                      */
                     Caller GetCreator() const;
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
                     /**
                      * 获取流程编号
                      * @return FlowId 流程编号
+                     * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取流程名称
                      * @return FlowName 流程名称
+                     * 
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 判断参数 FlowName 是否已赋值
                      * @return FlowName 是否已赋值
+                     * 
                      */
                     bool FlowNameHasBeenSet() const;
 
                     /**
                      * 获取流程描述
                      * @return FlowDescription 流程描述
+                     * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 判断参数 FlowDescription 是否已赋值
                      * @return FlowDescription 是否已赋值
+                     * 
                      */
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
                      * 获取流程的类型: ”劳务合同“,”租赁合同“,”销售合同“,”其他“
                      * @return FlowType 流程的类型: ”劳务合同“,”租赁合同“,”销售合同“,”其他“
+                     * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 判断参数 FlowType 是否已赋值
                      * @return FlowType 是否已赋值
+                     * 
                      */
                     bool FlowTypeHasBeenSet() const;
 
@@ -123,72 +133,84 @@ namespace TencentCloud
 5-已过期；
 6-已销毁
 7-签署完成未归档
+                     * 
                      */
                     int64_t GetFlowStatus() const;
 
                     /**
                      * 判断参数 FlowStatus 是否已赋值
                      * @return FlowStatus 是否已赋值
+                     * 
                      */
                     bool FlowStatusHasBeenSet() const;
 
                     /**
                      * 获取流程创建时间
                      * @return CreatedOn 流程创建时间
+                     * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 判断参数 CreatedOn 是否已赋值
                      * @return CreatedOn 是否已赋值
+                     * 
                      */
                     bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取流程完成时间
                      * @return UpdatedOn 流程完成时间
+                     * 
                      */
                     int64_t GetUpdatedOn() const;
 
                     /**
                      * 判断参数 UpdatedOn 是否已赋值
                      * @return UpdatedOn 是否已赋值
+                     * 
                      */
                     bool UpdatedOnHasBeenSet() const;
 
                     /**
                      * 获取流程截止日期
                      * @return Deadline 流程截止日期
+                     * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 判断参数 Deadline 是否已赋值
                      * @return Deadline 是否已赋值
+                     * 
                      */
                     bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取回调地址
                      * @return CallbackUrl 回调地址
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取流程中止原因
                      * @return FlowMessage 流程中止原因
+                     * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
                      * 判断参数 FlowMessage 是否已赋值
                      * @return FlowMessage 是否已赋值
+                     * 
                      */
                     bool FlowMessageHasBeenSet() const;
 

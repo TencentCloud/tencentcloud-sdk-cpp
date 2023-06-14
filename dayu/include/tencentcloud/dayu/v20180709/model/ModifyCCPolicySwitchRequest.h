@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
                      * @return Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源ID
                      * @return Id 资源ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源ID
-                     * @param Id 资源ID
+                     * @param _id 资源ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取策略ID
                      * @return SetId 策略ID
+                     * 
                      */
                     std::string GetSetId() const;
 
                     /**
                      * 设置策略ID
-                     * @param SetId 策略ID
+                     * @param _setId 策略ID
+                     * 
                      */
                     void SetSetId(const std::string& _setId);
 
                     /**
                      * 判断参数 SetId 是否已赋值
                      * @return SetId 是否已赋值
+                     * 
                      */
                     bool SetIdHasBeenSet() const;
 
                     /**
                      * 获取开关状态
                      * @return Switch 开关状态
+                     * 
                      */
                     uint64_t GetSwitch() const;
 
                     /**
                      * 设置开关状态
-                     * @param Switch 开关状态
+                     * @param _switch 开关状态
+                     * 
                      */
                     void SetSwitch(const uint64_t& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 

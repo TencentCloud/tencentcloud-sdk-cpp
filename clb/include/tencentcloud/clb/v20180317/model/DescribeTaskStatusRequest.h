@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取请求ID，即接口返回的 RequestId 参数。
                      * @return TaskId 请求ID，即接口返回的 RequestId 参数。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置请求ID，即接口返回的 RequestId 参数。
-                     * @param TaskId 请求ID，即接口返回的 RequestId 参数。
+                     * @param _taskId 请求ID，即接口返回的 RequestId 参数。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 注意：参数TaskId和DealName必须传一个。
                      * @return DealName 订单ID。
 注意：参数TaskId和DealName必须传一个。
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置订单ID。
 注意：参数TaskId和DealName必须传一个。
-                     * @param DealName 订单ID。
+                     * @param _dealName 订单ID。
 注意：参数TaskId和DealName必须传一个。
+                     * 
                      */
                     void SetDealName(const std::string& _dealName);
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 

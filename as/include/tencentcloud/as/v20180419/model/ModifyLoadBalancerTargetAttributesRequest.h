@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取伸缩组ID
                      * @return AutoScalingGroupId 伸缩组ID
+                     * 
                      */
                     std::string GetAutoScalingGroupId() const;
 
                     /**
                      * 设置伸缩组ID
-                     * @param AutoScalingGroupId 伸缩组ID
+                     * @param _autoScalingGroupId 伸缩组ID
+                     * 
                      */
                     void SetAutoScalingGroupId(const std::string& _autoScalingGroupId);
 
                     /**
                      * 判断参数 AutoScalingGroupId 是否已赋值
                      * @return AutoScalingGroupId 是否已赋值
+                     * 
                      */
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
                      * 获取需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
                      * @return ForwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
+                     * 
                      */
                     std::vector<ForwardLoadBalancer> GetForwardLoadBalancers() const;
 
                     /**
                      * 设置需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
-                     * @param ForwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
+                     * @param _forwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
+                     * 
                      */
                     void SetForwardLoadBalancers(const std::vector<ForwardLoadBalancer>& _forwardLoadBalancers);
 
                     /**
                      * 判断参数 ForwardLoadBalancers 是否已赋值
                      * @return ForwardLoadBalancers 是否已赋值
+                     * 
                      */
                     bool ForwardLoadBalancersHasBeenSet() const;
 

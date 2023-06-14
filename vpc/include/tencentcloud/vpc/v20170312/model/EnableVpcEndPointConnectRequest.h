@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取终端节点服务ID。
                      * @return EndPointServiceId 终端节点服务ID。
+                     * 
                      */
                     std::string GetEndPointServiceId() const;
 
                     /**
                      * 设置终端节点服务ID。
-                     * @param EndPointServiceId 终端节点服务ID。
+                     * @param _endPointServiceId 终端节点服务ID。
+                     * 
                      */
                     void SetEndPointServiceId(const std::string& _endPointServiceId);
 
                     /**
                      * 判断参数 EndPointServiceId 是否已赋值
                      * @return EndPointServiceId 是否已赋值
+                     * 
                      */
                     bool EndPointServiceIdHasBeenSet() const;
 
                     /**
                      * 获取终端节点ID。
                      * @return EndPointId 终端节点ID。
+                     * 
                      */
                     std::vector<std::string> GetEndPointId() const;
 
                     /**
                      * 设置终端节点ID。
-                     * @param EndPointId 终端节点ID。
+                     * @param _endPointId 终端节点ID。
+                     * 
                      */
                     void SetEndPointId(const std::vector<std::string>& _endPointId);
 
                     /**
                      * 判断参数 EndPointId 是否已赋值
                      * @return EndPointId 是否已赋值
+                     * 
                      */
                     bool EndPointIdHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 <li> true：自动接受。</li> <li> false：不自动接受。</li>
                      * @return AcceptFlag 是否接受终端节点连接请求。
 <li> true：自动接受。</li> <li> false：不自动接受。</li>
+                     * 
                      */
                     bool GetAcceptFlag() const;
 
                     /**
                      * 设置是否接受终端节点连接请求。
 <li> true：自动接受。</li> <li> false：不自动接受。</li>
-                     * @param AcceptFlag 是否接受终端节点连接请求。
+                     * @param _acceptFlag 是否接受终端节点连接请求。
 <li> true：自动接受。</li> <li> false：不自动接受。</li>
+                     * 
                      */
                     void SetAcceptFlag(const bool& _acceptFlag);
 
                     /**
                      * 判断参数 AcceptFlag 是否已赋值
                      * @return AcceptFlag 是否已赋值
+                     * 
                      */
                     bool AcceptFlagHasBeenSet() const;
 

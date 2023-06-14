@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取框架信息列表
                      * @return FrameworkInfos 框架信息列表
+                     * 
                      */
                     std::vector<FrameworkInfo> GetFrameworkInfos() const;
 
                     /**
                      * 判断参数 FrameworkInfos 是否已赋值
                      * @return FrameworkInfos 是否已赋值
+                     * 
                      */
                     bool FrameworkInfosHasBeenSet() const;
 

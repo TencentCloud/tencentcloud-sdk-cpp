@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取group名称
                      * @return GroupName group名称
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置group名称
-                     * @param GroupName group名称
+                     * @param _groupName group名称
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
                      * @return TopicName topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
-                     * @param TopicName topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
+                     * @param _topicName topic名称，TopicName、TopicNameList 需要显示指定一个存在的topic名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取topic名称数组
                      * @return TopicNameList topic名称数组
+                     * 
                      */
                     std::vector<std::string> GetTopicNameList() const;
 
                     /**
                      * 设置topic名称数组
-                     * @param TopicNameList topic名称数组
+                     * @param _topicNameList topic名称数组
+                     * 
                      */
                     void SetTopicNameList(const std::vector<std::string>& _topicNameList);
 
                     /**
                      * 判断参数 TopicNameList 是否已赋值
                      * @return TopicNameList 是否已赋值
+                     * 
                      */
                     bool TopicNameListHasBeenSet() const;
 

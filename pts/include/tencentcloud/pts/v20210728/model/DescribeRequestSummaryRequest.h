@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取压测任务ID
                      * @return JobId 压测任务ID
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置压测任务ID
-                     * @param JobId 压测任务ID
+                     * @param _jobId 压测任务ID
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取压测场景ID
                      * @return ScenarioId 压测场景ID
+                     * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置压测场景ID
-                     * @param ScenarioId 压测场景ID
+                     * @param _scenarioId 压测场景ID
+                     * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
 
                     /**
                      * 判断参数 ScenarioId 是否已赋值
                      * @return ScenarioId 是否已赋值
+                     * 
                      */
                     bool ScenarioIdHasBeenSet() const;
 
                     /**
                      * 获取压测项目ID
                      * @return ProjectId 压测项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置压测项目ID
-                     * @param ProjectId 压测项目ID
+                     * @param _projectId 压测项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 

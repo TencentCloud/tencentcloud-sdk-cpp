@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取网关部署组ID
                      * @return GatewayDeployGroupId 网关部署组ID
+                     * 
                      */
                     std::string GetGatewayDeployGroupId() const;
 
                     /**
                      * 设置网关部署组ID
-                     * @param GatewayDeployGroupId 网关部署组ID
+                     * @param _gatewayDeployGroupId 网关部署组ID
+                     * 
                      */
                     void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
 
                     /**
                      * 判断参数 GatewayDeployGroupId 是否已赋值
                      * @return GatewayDeployGroupId 是否已赋值
+                     * 
                      */
                     bool GatewayDeployGroupIdHasBeenSet() const;
 
                     /**
                      * 获取搜索关键字，支持分组名称或API Path
                      * @return SearchWord 搜索关键字，支持分组名称或API Path
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置搜索关键字，支持分组名称或API Path
-                     * @param SearchWord 搜索关键字，支持分组名称或API Path
+                     * @param _searchWord 搜索关键字，支持分组名称或API Path
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 

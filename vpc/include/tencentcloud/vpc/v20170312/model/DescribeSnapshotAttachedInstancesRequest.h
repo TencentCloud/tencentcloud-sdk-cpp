@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取快照策略Id。
                      * @return SnapshotPolicyId 快照策略Id。
+                     * 
                      */
                     std::string GetSnapshotPolicyId() const;
 
                     /**
                      * 设置快照策略Id。
-                     * @param SnapshotPolicyId 快照策略Id。
+                     * @param _snapshotPolicyId 快照策略Id。
+                     * 
                      */
                     void SetSnapshotPolicyId(const std::string& _snapshotPolicyId);
 
                     /**
                      * 判断参数 SnapshotPolicyId 是否已赋值
                      * @return SnapshotPolicyId 是否已赋值
+                     * 
                      */
                     bool SnapshotPolicyIdHasBeenSet() const;
 
@@ -70,6 +73,7 @@ namespace TencentCloud
 支持的过滤条件如下：
 <li>instance-id：实例ID。</li>
 <li>instance-region：实例所在地域。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -78,52 +82,60 @@ namespace TencentCloud
 支持的过滤条件如下：
 <li>instance-id：实例ID。</li>
 <li>instance-region：实例所在地域。</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 支持的过滤条件如下：
 <li>instance-id：实例ID。</li>
 <li>instance-region：实例所在地域。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大为200。
                      * @return Limit 返回数量，默认为20，最大为200。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大为200。
-                     * @param Limit 返回数量，默认为20，最大为200。
+                     * @param _limit 返回数量，默认为20，最大为200。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

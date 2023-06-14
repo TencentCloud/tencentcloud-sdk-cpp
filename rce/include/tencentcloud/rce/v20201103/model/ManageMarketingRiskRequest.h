@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取业务入参
                      * @return BusinessSecurityData 业务入参
+                     * 
                      */
                     InputManageMarketingRisk GetBusinessSecurityData() const;
 
                     /**
                      * 设置业务入参
-                     * @param BusinessSecurityData 业务入参
+                     * @param _businessSecurityData 业务入参
+                     * 
                      */
                     void SetBusinessSecurityData(const InputManageMarketingRisk& _businessSecurityData);
 
                     /**
                      * 判断参数 BusinessSecurityData 是否已赋值
                      * @return BusinessSecurityData 是否已赋值
+                     * 
                      */
                     bool BusinessSecurityDataHasBeenSet() const;
 
                     /**
                      * 获取业务入参
                      * @return BusinessCryptoData 业务入参
+                     * 
                      */
                     InputCryptoManageMarketingRisk GetBusinessCryptoData() const;
 
                     /**
                      * 设置业务入参
-                     * @param BusinessCryptoData 业务入参
+                     * @param _businessCryptoData 业务入参
+                     * 
                      */
                     void SetBusinessCryptoData(const InputCryptoManageMarketingRisk& _businessCryptoData);
 
                     /**
                      * 判断参数 BusinessCryptoData 是否已赋值
                      * @return BusinessCryptoData 是否已赋值
+                     * 
                      */
                     bool BusinessCryptoDataHasBeenSet() const;
 

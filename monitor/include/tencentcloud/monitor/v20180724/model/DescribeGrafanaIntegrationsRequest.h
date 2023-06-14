@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取集成 ID
                      * @return IntegrationId 集成 ID
+                     * 
                      */
                     std::string GetIntegrationId() const;
 
                     /**
                      * 设置集成 ID
-                     * @param IntegrationId 集成 ID
+                     * @param _integrationId 集成 ID
+                     * 
                      */
                     void SetIntegrationId(const std::string& _integrationId);
 
                     /**
                      * 判断参数 IntegrationId 是否已赋值
                      * @return IntegrationId 是否已赋值
+                     * 
                      */
                     bool IntegrationIdHasBeenSet() const;
 
                     /**
                      * 获取类型
                      * @return Kind 类型
+                     * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置类型
-                     * @param Kind 类型
+                     * @param _kind 类型
+                     * 
                      */
                     void SetKind(const std::string& _kind);
 
                     /**
                      * 判断参数 Kind 是否已赋值
                      * @return Kind 是否已赋值
+                     * 
                      */
                     bool KindHasBeenSet() const;
 

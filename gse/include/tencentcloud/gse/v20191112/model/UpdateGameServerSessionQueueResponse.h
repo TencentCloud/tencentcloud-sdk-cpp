@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取部署服务组对象
                      * @return GameServerSessionQueue 部署服务组对象
+                     * 
                      */
                     GameServerSessionQueue GetGameServerSessionQueue() const;
 
                     /**
                      * 判断参数 GameServerSessionQueue 是否已赋值
                      * @return GameServerSessionQueue 是否已赋值
+                     * 
                      */
                     bool GameServerSessionQueueHasBeenSet() const;
 

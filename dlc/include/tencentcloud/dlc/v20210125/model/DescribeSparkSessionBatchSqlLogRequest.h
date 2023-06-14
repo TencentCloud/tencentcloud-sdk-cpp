@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取SparkSQL唯一标识
                      * @return BatchId SparkSQL唯一标识
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置SparkSQL唯一标识
-                     * @param BatchId SparkSQL唯一标识
+                     * @param _batchId SparkSQL唯一标识
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 

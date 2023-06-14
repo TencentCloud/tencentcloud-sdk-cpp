@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取交易执行状态码
                      * @return TxValidationCode 交易执行状态码
+                     * 
                      */
                     int64_t GetTxValidationCode() const;
 
                     /**
                      * 判断参数 TxValidationCode 是否已赋值
                      * @return TxValidationCode 是否已赋值
+                     * 
                      */
                     bool TxValidationCodeHasBeenSet() const;
 
                     /**
                      * 获取交易执行消息
                      * @return TxValidationMsg 交易执行消息
+                     * 
                      */
                     std::string GetTxValidationMsg() const;
 
                     /**
                      * 判断参数 TxValidationMsg 是否已赋值
                      * @return TxValidationMsg 是否已赋值
+                     * 
                      */
                     bool TxValidationMsgHasBeenSet() const;
 
                     /**
                      * 获取交易所在区块ID
                      * @return BlockId 交易所在区块ID
+                     * 
                      */
                     int64_t GetBlockId() const;
 
                     /**
                      * 判断参数 BlockId 是否已赋值
                      * @return BlockId 是否已赋值
+                     * 
                      */
                     bool BlockIdHasBeenSet() const;
 

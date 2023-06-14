@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取伪攻击链类型
                      * @return EventTableListStruct 伪攻击链类型
+                     * 
                      */
                     std::vector<UnHandleEventDetail> GetEventTableListStruct() const;
 
                     /**
                      * 设置伪攻击链类型
-                     * @param EventTableListStruct 伪攻击链类型
+                     * @param _eventTableListStruct 伪攻击链类型
+                     * 
                      */
                     void SetEventTableListStruct(const std::vector<UnHandleEventDetail>& _eventTableListStruct);
 
                     /**
                      * 判断参数 EventTableListStruct 是否已赋值
                      * @return EventTableListStruct 是否已赋值
+                     * 
                      */
                     bool EventTableListStructHasBeenSet() const;
 
                     /**
                      * 获取1 是  0否
                      * @return BaseLineUser 1 是  0否
+                     * 
                      */
                     uint64_t GetBaseLineUser() const;
 
                     /**
                      * 设置1 是  0否
-                     * @param BaseLineUser 1 是  0否
+                     * @param _baseLineUser 1 是  0否
+                     * 
                      */
                     void SetBaseLineUser(const uint64_t& _baseLineUser);
 
                     /**
                      * 判断参数 BaseLineUser 是否已赋值
                      * @return BaseLineUser 是否已赋值
+                     * 
                      */
                     bool BaseLineUserHasBeenSet() const;
 
                     /**
                      * 获取1 打开 0 关闭
                      * @return BaseLineInSwitch 1 打开 0 关闭
+                     * 
                      */
                     uint64_t GetBaseLineInSwitch() const;
 
                     /**
                      * 设置1 打开 0 关闭
-                     * @param BaseLineInSwitch 1 打开 0 关闭
+                     * @param _baseLineInSwitch 1 打开 0 关闭
+                     * 
                      */
                     void SetBaseLineInSwitch(const uint64_t& _baseLineInSwitch);
 
                     /**
                      * 判断参数 BaseLineInSwitch 是否已赋值
                      * @return BaseLineInSwitch 是否已赋值
+                     * 
                      */
                     bool BaseLineInSwitchHasBeenSet() const;
 
                     /**
                      * 获取1 打开 0 关闭
                      * @return BaseLineOutSwitch 1 打开 0 关闭
+                     * 
                      */
                     uint64_t GetBaseLineOutSwitch() const;
 
                     /**
                      * 设置1 打开 0 关闭
-                     * @param BaseLineOutSwitch 1 打开 0 关闭
+                     * @param _baseLineOutSwitch 1 打开 0 关闭
+                     * 
                      */
                     void SetBaseLineOutSwitch(const uint64_t& _baseLineOutSwitch);
 
                     /**
                      * 判断参数 BaseLineOutSwitch 是否已赋值
                      * @return BaseLineOutSwitch 是否已赋值
+                     * 
                      */
                     bool BaseLineOutSwitchHasBeenSet() const;
 
@@ -124,20 +136,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcFwCount vpc间防火墙实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVpcFwCount() const;
 
                     /**
                      * 设置vpc间防火墙实例数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VpcFwCount vpc间防火墙实例数量
+                     * @param _vpcFwCount vpc间防火墙实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVpcFwCount(const uint64_t& _vpcFwCount);
 
                     /**
                      * 判断参数 VpcFwCount 是否已赋值
                      * @return VpcFwCount 是否已赋值
+                     * 
                      */
                     bool VpcFwCountHasBeenSet() const;
 

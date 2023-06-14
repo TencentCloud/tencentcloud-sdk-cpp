@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取订单号。
                      * @return DealName 订单号。
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 
                     /**
                      * 获取冻结流水号。
                      * @return BillId 冻结流水号。
+                     * 
                      */
                     std::string GetBillId() const;
 
                     /**
                      * 判断参数 BillId 是否已赋值
                      * @return BillId 是否已赋值
+                     * 
                      */
                     bool BillIdHasBeenSet() const;
 

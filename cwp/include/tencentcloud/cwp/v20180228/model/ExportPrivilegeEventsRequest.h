@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取过滤参数
                      * @return Filters 过滤参数
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤参数
-                     * @param Filters 过滤参数
+                     * @param _filters 过滤参数
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

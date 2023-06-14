@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取收单系统分配的开放ID
                      * @return OpenId 收单系统分配的开放ID
+                     * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * @param _openId 收单系统分配的开放ID
+                     * 
                      */
                     void SetOpenId(const std::string& _openId);
 
                     /**
                      * 判断参数 OpenId 是否已赋值
                      * @return OpenId 是否已赋值
+                     * 
                      */
                     bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取收单系统分配的密钥
                      * @return OpenKey 收单系统分配的密钥
+                     * 
                      */
                     std::string GetOpenKey() const;
 
                     /**
                      * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * @param _openKey 收单系统分配的密钥
+                     * 
                      */
                     void SetOpenKey(const std::string& _openKey);
 
                     /**
                      * 判断参数 OpenKey 是否已赋值
                      * @return OpenKey 是否已赋值
+                     * 
                      */
                     bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取清算日期（YYYYMMDD，今天传昨天的日期，每日下午1点后出前一日的账单）
                      * @return Day 清算日期（YYYYMMDD，今天传昨天的日期，每日下午1点后出前一日的账单）
+                     * 
                      */
                     std::string GetDay() const;
 
                     /**
                      * 设置清算日期（YYYYMMDD，今天传昨天的日期，每日下午1点后出前一日的账单）
-                     * @param Day 清算日期（YYYYMMDD，今天传昨天的日期，每日下午1点后出前一日的账单）
+                     * @param _day 清算日期（YYYYMMDD，今天传昨天的日期，每日下午1点后出前一日的账单）
+                     * 
                      */
                     void SetDay(const std::string& _day);
 
                     /**
                      * 判断参数 Day 是否已赋值
                      * @return Day 是否已赋值
+                     * 
                      */
                     bool DayHasBeenSet() const;
 

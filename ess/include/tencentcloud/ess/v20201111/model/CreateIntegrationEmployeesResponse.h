@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取创建员工的结果
                      * @return CreateEmployeeResult 创建员工的结果
+                     * 
                      */
                     CreateStaffResult GetCreateEmployeeResult() const;
 
                     /**
                      * 判断参数 CreateEmployeeResult 是否已赋值
                      * @return CreateEmployeeResult 是否已赋值
+                     * 
                      */
                     bool CreateEmployeeResultHasBeenSet() const;
 

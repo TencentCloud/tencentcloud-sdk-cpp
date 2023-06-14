@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取游戏服务器会话放置
                      * @return GameServerSessionPlacement 游戏服务器会话放置
+                     * 
                      */
                     GameServerSessionPlacement GetGameServerSessionPlacement() const;
 
                     /**
                      * 判断参数 GameServerSessionPlacement 是否已赋值
                      * @return GameServerSessionPlacement 是否已赋值
+                     * 
                      */
                     bool GameServerSessionPlacementHasBeenSet() const;
 

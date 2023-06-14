@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取脚本ID
                      * @return CmdId 脚本ID
+                     * 
                      */
                     std::string GetCmdId() const;
 
                     /**
                      * 判断参数 CmdId 是否已赋值
                      * @return CmdId 是否已赋值
+                     * 
                      */
                     bool CmdIdHasBeenSet() const;
 

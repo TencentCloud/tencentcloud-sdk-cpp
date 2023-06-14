@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取企业成员UserId
                      * @return UserId 企业成员UserId
+                     * 
                      */
                     uint64_t GetUserId() const;
 
                     /**
                      * 设置企业成员UserId
-                     * @param UserId 企业成员UserId
+                     * @param _userId 企业成员UserId
+                     * 
                      */
                     void SetUserId(const uint64_t& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 企业成员在SaaS名片内填写的姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置企业成员在SaaS名片内填写的姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserName 企业成员在SaaS名片内填写的姓名
+                     * @param _userName 企业成员在SaaS名片内填写的姓名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserOpenId 企业成员在企微原生通讯录内的id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserOpenId() const;
 
                     /**
                      * 设置企业成员在企微原生通讯录内的id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserOpenId 企业成员在企微原生通讯录内的id
+                     * @param _userOpenId 企业成员在企微原生通讯录内的id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserOpenId(const std::string& _userOpenId);
 
                     /**
                      * 判断参数 UserOpenId 是否已赋值
                      * @return UserOpenId 是否已赋值
+                     * 
                      */
                     bool UserOpenIdHasBeenSet() const;
 
@@ -113,20 +122,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealerId 成员所属经销商id，可为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetDealerId() const;
 
                     /**
                      * 设置成员所属经销商id，可为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealerId 成员所属经销商id，可为空
+                     * @param _dealerId 成员所属经销商id，可为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealerId(const uint64_t& _dealerId);
 
                     /**
                      * 判断参数 DealerId 是否已赋值
                      * @return DealerId 是否已赋值
+                     * 
                      */
                     bool DealerIdHasBeenSet() const;
 
@@ -135,20 +147,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShopId 成员所属门店id，可为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetShopId() const;
 
                     /**
                      * 设置成员所属门店id，可为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShopId 成员所属门店id，可为空
+                     * @param _shopId 成员所属门店id，可为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShopId(const uint64_t& _shopId);
 
                     /**
                      * 判断参数 ShopId 是否已赋值
                      * @return ShopId 是否已赋值
+                     * 
                      */
                     bool ShopIdHasBeenSet() const;
 
@@ -157,20 +172,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 企业成员手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置企业成员手机号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phone 企业成员手机号
+                     * @param _phone 企业成员手机号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPhone(const std::string& _phone);
 
                     /**
                      * 判断参数 Phone 是否已赋值
                      * @return Phone 是否已赋值
+                     * 
                      */
                     bool PhoneHasBeenSet() const;
 
@@ -179,20 +197,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgIds 成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgIds() const;
 
                     /**
                      * 设置成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgIds 成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割
+                     * @param _orgIds 成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrgIds(const std::string& _orgIds);
 
                     /**
                      * 判断参数 OrgIds 是否已赋值
                      * @return OrgIds 是否已赋值
+                     * 
                      */
                     bool OrgIdsHasBeenSet() const;
 
@@ -201,20 +222,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainDepartment 主部门，仅当应用对主部门有查看权限时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMainDepartment() const;
 
                     /**
                      * 设置主部门，仅当应用对主部门有查看权限时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MainDepartment 主部门，仅当应用对主部门有查看权限时返回
+                     * @param _mainDepartment 主部门，仅当应用对主部门有查看权限时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMainDepartment(const std::string& _mainDepartment);
 
                     /**
                      * 判断参数 MainDepartment 是否已赋值
                      * @return MainDepartment 是否已赋值
+                     * 
                      */
                     bool MainDepartmentHasBeenSet() const;
 
@@ -223,38 +247,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsLeaderInDept 是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsLeaderInDept() const;
 
                     /**
                      * 设置是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsLeaderInDept 是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是
+                     * @param _isLeaderInDept 是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsLeaderInDept(const std::string& _isLeaderInDept);
 
                     /**
                      * 判断参数 IsLeaderInDept 是否已赋值
                      * @return IsLeaderInDept 是否已赋值
+                     * 
                      */
                     bool IsLeaderInDeptHasBeenSet() const;
 
                     /**
                      * 获取激活状态: 0=已激活，1=已禁用，-1=退出企业"
                      * @return Status 激活状态: 0=已激活，1=已禁用，-1=退出企业"
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置激活状态: 0=已激活，1=已禁用，-1=退出企业"
-                     * @param Status 激活状态: 0=已激活，1=已禁用，-1=退出企业"
+                     * @param _status 激活状态: 0=已激活，1=已禁用，-1=退出企业"
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

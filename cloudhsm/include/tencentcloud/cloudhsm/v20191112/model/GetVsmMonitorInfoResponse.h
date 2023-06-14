@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取VSM监控信息
                      * @return MonitorInfo VSM监控信息
+                     * 
                      */
                     std::vector<std::string> GetMonitorInfo() const;
 
                     /**
                      * 判断参数 MonitorInfo 是否已赋值
                      * @return MonitorInfo 是否已赋值
+                     * 
                      */
                     bool MonitorInfoHasBeenSet() const;
 

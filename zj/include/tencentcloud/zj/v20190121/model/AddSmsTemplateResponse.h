@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取短信模板创建接口返回
                      * @return Data 短信模板创建接口返回
+                     * 
                      */
                     AddSmsTemplateDataStruct GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

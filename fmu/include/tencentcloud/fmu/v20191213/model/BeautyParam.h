@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取美白程度，取值范围[0,100]。0不美白，100代表最高程度。默认值30。
                      * @return WhitenLevel 美白程度，取值范围[0,100]。0不美白，100代表最高程度。默认值30。
+                     * 
                      */
                     uint64_t GetWhitenLevel() const;
 
                     /**
                      * 设置美白程度，取值范围[0,100]。0不美白，100代表最高程度。默认值30。
-                     * @param WhitenLevel 美白程度，取值范围[0,100]。0不美白，100代表最高程度。默认值30。
+                     * @param _whitenLevel 美白程度，取值范围[0,100]。0不美白，100代表最高程度。默认值30。
+                     * 
                      */
                     void SetWhitenLevel(const uint64_t& _whitenLevel);
 
                     /**
                      * 判断参数 WhitenLevel 是否已赋值
                      * @return WhitenLevel 是否已赋值
+                     * 
                      */
                     bool WhitenLevelHasBeenSet() const;
 
                     /**
                      * 获取磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值30。
                      * @return SmoothingLevel 磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值30。
+                     * 
                      */
                     uint64_t GetSmoothingLevel() const;
 
                     /**
                      * 设置磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值30。
-                     * @param SmoothingLevel 磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值30。
+                     * @param _smoothingLevel 磨皮程度，取值范围[0,100]。0不磨皮，100代表最高程度。默认值30。
+                     * 
                      */
                     void SetSmoothingLevel(const uint64_t& _smoothingLevel);
 
                     /**
                      * 判断参数 SmoothingLevel 是否已赋值
                      * @return SmoothingLevel 是否已赋值
+                     * 
                      */
                     bool SmoothingLevelHasBeenSet() const;
 
                     /**
                      * 获取大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。
                      * @return EyeEnlargeLevel 大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。
+                     * 
                      */
                     uint64_t GetEyeEnlargeLevel() const;
 
                     /**
                      * 设置大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。
-                     * @param EyeEnlargeLevel 大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。
+                     * @param _eyeEnlargeLevel 大眼程度，取值范围[0,100]。0不大眼，100代表最高程度。默认值70。
+                     * 
                      */
                     void SetEyeEnlargeLevel(const uint64_t& _eyeEnlargeLevel);
 
                     /**
                      * 判断参数 EyeEnlargeLevel 是否已赋值
                      * @return EyeEnlargeLevel 是否已赋值
+                     * 
                      */
                     bool EyeEnlargeLevelHasBeenSet() const;
 
                     /**
                      * 获取瘦脸程度，取值范围[0,100]。0不瘦脸，100代表最高程度。默认值70。
                      * @return FaceShrinkLevel 瘦脸程度，取值范围[0,100]。0不瘦脸，100代表最高程度。默认值70。
+                     * 
                      */
                     uint64_t GetFaceShrinkLevel() const;
 
                     /**
                      * 设置瘦脸程度，取值范围[0,100]。0不瘦脸，100代表最高程度。默认值70。
-                     * @param FaceShrinkLevel 瘦脸程度，取值范围[0,100]。0不瘦脸，100代表最高程度。默认值70。
+                     * @param _faceShrinkLevel 瘦脸程度，取值范围[0,100]。0不瘦脸，100代表最高程度。默认值70。
+                     * 
                      */
                     void SetFaceShrinkLevel(const uint64_t& _faceShrinkLevel);
 
                     /**
                      * 判断参数 FaceShrinkLevel 是否已赋值
                      * @return FaceShrinkLevel 是否已赋值
+                     * 
                      */
                     bool FaceShrinkLevelHasBeenSet() const;
 

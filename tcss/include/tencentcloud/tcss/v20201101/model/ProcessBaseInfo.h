@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessStartUser 进程启动用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessStartUser() const;
 
                     /**
                      * 设置进程启动用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessStartUser 进程启动用户
+                     * @param _processStartUser 进程启动用户
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessStartUser(const std::string& _processStartUser);
 
                     /**
                      * 判断参数 ProcessStartUser 是否已赋值
                      * @return ProcessStartUser 是否已赋值
+                     * 
                      */
                     bool ProcessStartUserHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessUserGroup 进程用户组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessUserGroup() const;
 
                     /**
                      * 设置进程用户组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessUserGroup 进程用户组
+                     * @param _processUserGroup 进程用户组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessUserGroup(const std::string& _processUserGroup);
 
                     /**
                      * 判断参数 ProcessUserGroup 是否已赋值
                      * @return ProcessUserGroup 是否已赋值
+                     * 
                      */
                     bool ProcessUserGroupHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessPath 进程路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessPath() const;
 
                     /**
                      * 设置进程路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessPath 进程路径
+                     * @param _processPath 进程路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessPath(const std::string& _processPath);
 
                     /**
                      * 判断参数 ProcessPath 是否已赋值
                      * @return ProcessPath 是否已赋值
+                     * 
                      */
                     bool ProcessPathHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessParam 进程命令行参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProcessParam() const;
 
                     /**
                      * 设置进程命令行参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProcessParam 进程命令行参数
+                     * @param _processParam 进程命令行参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProcessParam(const std::string& _processParam);
 
                     /**
                      * 判断参数 ProcessParam 是否已赋值
                      * @return ProcessParam 是否已赋值
+                     * 
                      */
                     bool ProcessParamHasBeenSet() const;
 

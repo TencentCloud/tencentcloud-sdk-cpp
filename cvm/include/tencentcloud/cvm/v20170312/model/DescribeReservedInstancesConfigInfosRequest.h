@@ -80,6 +80,7 @@ duration
 计量单位：秒
 必选：否
 可选项：31536000 (1年)
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -102,7 +103,7 @@ duration
 计量单位：秒
 必选：否
 可选项：31536000 (1年)
-                     * @param Filters zone
+                     * @param _filters zone
 按照预留实例计费可购买的可用区进行过滤。形如：ap-guangzhou-1。
 类型：String
 必选：否
@@ -120,12 +121,14 @@ duration
 计量单位：秒
 必选：否
 可选项：31536000 (1年)
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

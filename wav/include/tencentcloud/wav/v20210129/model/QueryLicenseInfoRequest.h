@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取license编号
                      * @return License license编号
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置license编号
-                     * @param License license编号
+                     * @param _license license编号
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 

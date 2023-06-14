@@ -63,6 +63,7 @@ namespace TencentCloud
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
+                     * 
                      */
                     std::string GetEventType() const;
 
@@ -75,7 +76,7 @@ namespace TencentCloud
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
-                     * @param EventType 事件类型
+                     * @param _eventType 事件类型
    ESCAPE_CGROUPS：利用cgroup机制逃逸
    ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
    ESCAPE_DOCKER_API：访问Docker API接口逃逸
@@ -83,138 +84,161 @@ namespace TencentCloud
    MOUNT_SENSITIVE_PTAH：敏感路径挂载
    PRIVILEGE_CONTAINER_START：特权容器
    PRIVILEGE：程序提权逃逸
+                     * 
                      */
                     void SetEventType(const std::string& _eventType);
 
                     /**
                      * 判断参数 EventType 是否已赋值
                      * @return EventType 是否已赋值
+                     * 
                      */
                     bool EventTypeHasBeenSet() const;
 
                     /**
                      * 获取容器名
                      * @return ContainerName 容器名
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名
-                     * @param ContainerName 容器名
+                     * @param _containerName 容器名
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
                     /**
                      * 获取镜像名
                      * @return ImageName 镜像名
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置镜像名
-                     * @param ImageName 镜像名
+                     * @param _imageName 镜像名
+                     * 
                      */
                     void SetImageName(const std::string& _imageName);
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      * @return Status 状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
-                     * @param Status 状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * @param _status 状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取事件记录的唯一id
                      * @return EventId 事件记录的唯一id
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件记录的唯一id
-                     * @param EventId 事件记录的唯一id
+                     * @param _eventId 事件记录的唯一id
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return NodeName 节点名称
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
                     /**
                      * 获取pod(实例)的名字
                      * @return PodName pod(实例)的名字
+                     * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置pod(实例)的名字
-                     * @param PodName pod(实例)的名字
+                     * @param _podName pod(实例)的名字
+                     * 
                      */
                     void SetPodName(const std::string& _podName);
 
                     /**
                      * 判断参数 PodName 是否已赋值
                      * @return PodName 是否已赋值
+                     * 
                      */
                     bool PodNameHasBeenSet() const;
 
                     /**
                      * 获取生成时间
                      * @return FoundTime 生成时间
+                     * 
                      */
                     std::string GetFoundTime() const;
 
                     /**
                      * 设置生成时间
-                     * @param FoundTime 生成时间
+                     * @param _foundTime 生成时间
+                     * 
                      */
                     void SetFoundTime(const std::string& _foundTime);
 
                     /**
                      * 判断参数 FoundTime 是否已赋值
                      * @return FoundTime 是否已赋值
+                     * 
                      */
                     bool FoundTimeHasBeenSet() const;
 
@@ -233,6 +257,7 @@ MountNamespace逃逸、
 程序提权逃逸、
 特权容器启动逃逸、
 敏感路径挂载
+                     * 
                      */
                     std::string GetEventName() const;
 
@@ -244,127 +269,147 @@ MountNamespace逃逸、
 程序提权逃逸、
 特权容器启动逃逸、
 敏感路径挂载
-                     * @param EventName 事件名字，
+                     * @param _eventName 事件名字，
 宿主机文件访问逃逸、
 Syscall逃逸、
 MountNamespace逃逸、
 程序提权逃逸、
 特权容器启动逃逸、
 敏感路径挂载
+                     * 
                      */
                     void SetEventName(const std::string& _eventName);
 
                     /**
                      * 判断参数 EventName 是否已赋值
                      * @return EventName 是否已赋值
+                     * 
                      */
                     bool EventNameHasBeenSet() const;
 
                     /**
                      * 获取镜像id，用于跳转
                      * @return ImageId 镜像id，用于跳转
+                     * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像id，用于跳转
-                     * @param ImageId 镜像id，用于跳转
+                     * @param _imageId 镜像id，用于跳转
+                     * 
                      */
                     void SetImageId(const std::string& _imageId);
 
                     /**
                      * 判断参数 ImageId 是否已赋值
                      * @return ImageId 是否已赋值
+                     * 
                      */
                     bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取容器id，用于跳转
                      * @return ContainerId 容器id，用于跳转
+                     * 
                      */
                     std::string GetContainerId() const;
 
                     /**
                      * 设置容器id，用于跳转
-                     * @param ContainerId 容器id，用于跳转
+                     * @param _containerId 容器id，用于跳转
+                     * 
                      */
                     void SetContainerId(const std::string& _containerId);
 
                     /**
                      * 判断参数 ContainerId 是否已赋值
                      * @return ContainerId 是否已赋值
+                     * 
                      */
                     bool ContainerIdHasBeenSet() const;
 
                     /**
                      * 获取事件解决方案
                      * @return Solution 事件解决方案
+                     * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置事件解决方案
-                     * @param Solution 事件解决方案
+                     * @param _solution 事件解决方案
+                     * 
                      */
                     void SetSolution(const std::string& _solution);
 
                     /**
                      * 判断参数 Solution 是否已赋值
                      * @return Solution 是否已赋值
+                     * 
                      */
                     bool SolutionHasBeenSet() const;
 
                     /**
                      * 获取事件描述
                      * @return Description 事件描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置事件描述
-                     * @param Description 事件描述
+                     * @param _description 事件描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取事件数量
                      * @return EventCount 事件数量
+                     * 
                      */
                     int64_t GetEventCount() const;
 
                     /**
                      * 设置事件数量
-                     * @param EventCount 事件数量
+                     * @param _eventCount 事件数量
+                     * 
                      */
                     void SetEventCount(const int64_t& _eventCount);
 
                     /**
                      * 判断参数 EventCount 是否已赋值
                      * @return EventCount 是否已赋值
+                     * 
                      */
                     bool EventCountHasBeenSet() const;
 
                     /**
                      * 获取最近生成时间
                      * @return LatestFoundTime 最近生成时间
+                     * 
                      */
                     std::string GetLatestFoundTime() const;
 
                     /**
                      * 设置最近生成时间
-                     * @param LatestFoundTime 最近生成时间
+                     * @param _latestFoundTime 最近生成时间
+                     * 
                      */
                     void SetLatestFoundTime(const std::string& _latestFoundTime);
 
                     /**
                      * 判断参数 LatestFoundTime 是否已赋值
                      * @return LatestFoundTime 是否已赋值
+                     * 
                      */
                     bool LatestFoundTimeHasBeenSet() const;
 
@@ -373,20 +418,23 @@ MountNamespace逃逸、
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeIP 节点IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNodeIP() const;
 
                     /**
                      * 设置节点IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeIP 节点IP
+                     * @param _nodeIP 节点IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNodeIP(const std::string& _nodeIP);
 
                     /**
                      * 判断参数 NodeIP 是否已赋值
                      * @return NodeIP 是否已赋值
+                     * 
                      */
                     bool NodeIPHasBeenSet() const;
 
@@ -395,20 +443,23 @@ MountNamespace逃逸、
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostID 主机IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHostID() const;
 
                     /**
                      * 设置主机IP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostID 主机IP
+                     * @param _hostID 主机IP
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHostID(const std::string& _hostID);
 
                     /**
                      * 判断参数 HostID 是否已赋值
                      * @return HostID 是否已赋值
+                     * 
                      */
                     bool HostIDHasBeenSet() const;
 
@@ -429,6 +480,7 @@ MountNamespace逃逸、
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerNetStatus() const;
 
@@ -441,7 +493,7 @@ MountNamespace逃逸、
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerNetStatus 网络状态
+                     * @param _containerNetStatus 网络状态
 未隔离  	NORMAL
 已隔离		ISOLATED
 隔离中		ISOLATING
@@ -449,12 +501,14 @@ MountNamespace逃逸、
 解除隔离中  RESTORING
 解除隔离失败 RESTORE_FAILED
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerNetStatus(const std::string& _containerNetStatus);
 
                     /**
                      * 判断参数 ContainerNetStatus 是否已赋值
                      * @return ContainerNetStatus 是否已赋值
+                     * 
                      */
                     bool ContainerNetStatusHasBeenSet() const;
 
@@ -477,6 +531,7 @@ MountNamespace逃逸、
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerNetSubStatus() const;
 
@@ -490,7 +545,7 @@ MountNamespace逃逸、
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerNetSubStatus 容器子状态
+                     * @param _containerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 "NODE_DESTROYED"      //节点已销毁
 "CONTAINER_EXITED"    //容器已退出
@@ -499,12 +554,14 @@ MountNamespace逃逸、
 "RESOURCE_LIMIT"      //隔离操作资源超限
 "UNKNOW"              // 原因未知
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
 
                     /**
                      * 判断参数 ContainerNetSubStatus 是否已赋值
                      * @return ContainerNetSubStatus 是否已赋值
+                     * 
                      */
                     bool ContainerNetSubStatusHasBeenSet() const;
 
@@ -513,20 +570,23 @@ MountNamespace逃逸、
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerIsolateOperationSrc 容器隔离操作来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
 
                     /**
                      * 设置容器隔离操作来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerIsolateOperationSrc 容器隔离操作来源
+                     * @param _containerIsolateOperationSrc 容器隔离操作来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
 
                     /**
                      * 判断参数 ContainerIsolateOperationSrc 是否已赋值
                      * @return ContainerIsolateOperationSrc 是否已赋值
+                     * 
                      */
                     bool ContainerIsolateOperationSrcHasBeenSet() const;
 
@@ -547,6 +607,7 @@ MountNamespace逃逸、
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
+                     * 
                      */
                     std::string GetContainerStatus() const;
 
@@ -559,7 +620,7 @@ MountNamespace逃逸、
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-                     * @param ContainerStatus 容器状态
+                     * @param _containerStatus 容器状态
 正在运行: RUNNING
 暂停: PAUSED
 停止: STOPPED
@@ -567,156 +628,182 @@ MountNamespace逃逸、
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
+                     * 
                      */
                     void SetContainerStatus(const std::string& _containerStatus);
 
                     /**
                      * 判断参数 ContainerStatus 是否已赋值
                      * @return ContainerStatus 是否已赋值
+                     * 
                      */
                     bool ContainerStatusHasBeenSet() const;
 
                     /**
                      * 获取节点所属集群ID
                      * @return ClusterID 节点所属集群ID
+                     * 
                      */
                     std::string GetClusterID() const;
 
                     /**
                      * 设置节点所属集群ID
-                     * @param ClusterID 节点所属集群ID
+                     * @param _clusterID 节点所属集群ID
+                     * 
                      */
                     void SetClusterID(const std::string& _clusterID);
 
                     /**
                      * 判断参数 ClusterID 是否已赋值
                      * @return ClusterID 是否已赋值
+                     * 
                      */
                     bool ClusterIDHasBeenSet() const;
 
                     /**
                      * 获取节点类型：NORMAL普通节点、SUPER超级节点
                      * @return NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型：NORMAL普通节点、SUPER超级节点
-                     * @param NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * @param _nodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * 
                      */
                     void SetNodeType(const std::string& _nodeType);
 
                     /**
                      * 判断参数 NodeType 是否已赋值
                      * @return NodeType 是否已赋值
+                     * 
                      */
                     bool NodeTypeHasBeenSet() const;
 
                     /**
                      * 获取pod ip
                      * @return PodIP pod ip
+                     * 
                      */
                     std::string GetPodIP() const;
 
                     /**
                      * 设置pod ip
-                     * @param PodIP pod ip
+                     * @param _podIP pod ip
+                     * 
                      */
                     void SetPodIP(const std::string& _podIP);
 
                     /**
                      * 判断参数 PodIP 是否已赋值
                      * @return PodIP 是否已赋值
+                     * 
                      */
                     bool PodIPHasBeenSet() const;
 
                     /**
                      * 获取节点唯一id
                      * @return NodeUniqueID 节点唯一id
+                     * 
                      */
                     std::string GetNodeUniqueID() const;
 
                     /**
                      * 设置节点唯一id
-                     * @param NodeUniqueID 节点唯一id
+                     * @param _nodeUniqueID 节点唯一id
+                     * 
                      */
                     void SetNodeUniqueID(const std::string& _nodeUniqueID);
 
                     /**
                      * 判断参数 NodeUniqueID 是否已赋值
                      * @return NodeUniqueID 是否已赋值
+                     * 
                      */
                     bool NodeUniqueIDHasBeenSet() const;
 
                     /**
                      * 获取节点公网ip
                      * @return PublicIP 节点公网ip
+                     * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
                      * 设置节点公网ip
-                     * @param PublicIP 节点公网ip
+                     * @param _publicIP 节点公网ip
+                     * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
 
                     /**
                      * 判断参数 PublicIP 是否已赋值
                      * @return PublicIP 是否已赋值
+                     * 
                      */
                     bool PublicIPHasBeenSet() const;
 
                     /**
                      * 获取节点id
                      * @return NodeID 节点id
+                     * 
                      */
                     std::string GetNodeID() const;
 
                     /**
                      * 设置节点id
-                     * @param NodeID 节点id
+                     * @param _nodeID 节点id
+                     * 
                      */
                     void SetNodeID(const std::string& _nodeID);
 
                     /**
                      * 判断参数 NodeID 是否已赋值
                      * @return NodeID 是否已赋值
+                     * 
                      */
                     bool NodeIDHasBeenSet() const;
 
                     /**
                      * 获取节点内网ip
                      * @return HostIP 节点内网ip
+                     * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置节点内网ip
-                     * @param HostIP 节点内网ip
+                     * @param _hostIP 节点内网ip
+                     * 
                      */
                     void SetHostIP(const std::string& _hostIP);
 
                     /**
                      * 判断参数 HostIP 是否已赋值
                      * @return HostIP 是否已赋值
+                     * 
                      */
                     bool HostIPHasBeenSet() const;
 
                     /**
                      * 获取集群名称
                      * @return ClusterName 集群名称
+                     * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-                     * @param ClusterName 集群名称
+                     * @param _clusterName 集群名称
+                     * 
                      */
                     void SetClusterName(const std::string& _clusterName);
 
                     /**
                      * 判断参数 ClusterName 是否已赋值
                      * @return ClusterName 是否已赋值
+                     * 
                      */
                     bool ClusterNameHasBeenSet() const;
 

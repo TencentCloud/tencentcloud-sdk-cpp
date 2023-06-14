@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取群组ID
                      * @return GroupId 群组ID
+                     * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置群组ID
-                     * @param GroupId 群组ID
+                     * @param _groupId 群组ID
+                     * 
                      */
                     void SetGroupId(const std::string& _groupId);
 
                     /**
                      * 判断参数 GroupId 是否已赋值
                      * @return GroupId 是否已赋值
+                     * 
                      */
                     bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取低代码平台应用ID
                      * @return SdkAppId 低代码平台应用ID
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置低代码平台应用ID
-                     * @param SdkAppId 低代码平台应用ID
+                     * @param _sdkAppId 低代码平台应用ID
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取分页值，默认1
                      * @return Page 分页值，默认1
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置分页值，默认1
-                     * @param Page 分页值，默认1
+                     * @param _page 分页值，默认1
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页数据量，默认20，最大1000
                      * @return Limit 每页数据量，默认20，最大1000
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页数据量，默认20，最大1000
-                     * @param Limit 每页数据量，默认20，最大1000
+                     * @param _limit 每页数据量，默认20，最大1000
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

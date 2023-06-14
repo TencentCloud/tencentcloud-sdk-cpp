@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取一条记录的Key-Value数组
                      * @return Record 一条记录的Key-Value数组
+                     * 
                      */
                     std::vector<KeyValue> GetRecord() const;
 
                     /**
                      * 设置一条记录的Key-Value数组
-                     * @param Record 一条记录的Key-Value数组
+                     * @param _record 一条记录的Key-Value数组
+                     * 
                      */
                     void SetRecord(const std::vector<KeyValue>& _record);
 
                     /**
                      * 判断参数 Record 是否已赋值
                      * @return Record 是否已赋值
+                     * 
                      */
                     bool RecordHasBeenSet() const;
 

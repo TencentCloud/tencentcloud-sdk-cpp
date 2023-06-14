@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取日志集ID
                      * @return LogsetId 日志集ID
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
-                     * @param LogsetId 日志集ID
+                     * @param _logsetId 日志集ID
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 

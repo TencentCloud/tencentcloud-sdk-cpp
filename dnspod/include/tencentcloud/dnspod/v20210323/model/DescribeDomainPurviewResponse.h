@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取域名权限列表
                      * @return PurviewList 域名权限列表
+                     * 
                      */
                     std::vector<PurviewInfo> GetPurviewList() const;
 
                     /**
                      * 判断参数 PurviewList 是否已赋值
                      * @return PurviewList 是否已赋值
+                     * 
                      */
                     bool PurviewListHasBeenSet() const;
 

@@ -55,6 +55,7 @@ PROCESSING:上传中
 SUCCESS：上传成功
 FAILED：上传失败
 PROCESSING:上传中
+                     * 
                      */
                     std::string GetUploadStatus() const;
 
@@ -63,16 +64,18 @@ PROCESSING:上传中
 SUCCESS：上传成功
 FAILED：上传失败
 PROCESSING:上传中
-                     * @param UploadStatus 上传状态
+                     * @param _uploadStatus 上传状态
 SUCCESS：上传成功
 FAILED：上传失败
 PROCESSING:上传中
+                     * 
                      */
                     void SetUploadStatus(const std::string& _uploadStatus);
 
                     /**
                      * 判断参数 UploadStatus 是否已赋值
                      * @return UploadStatus 是否已赋值
+                     * 
                      */
                     bool UploadStatusHasBeenSet() const;
 
@@ -81,38 +84,44 @@ PROCESSING:上传中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadMessage 上传描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUploadMessage() const;
 
                     /**
                      * 设置上传描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UploadMessage 上传描述
+                     * @param _uploadMessage 上传描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUploadMessage(const std::string& _uploadMessage);
 
                     /**
                      * 判断参数 UploadMessage 是否已赋值
                      * @return UploadMessage 是否已赋值
+                     * 
                      */
                     bool UploadMessageHasBeenSet() const;
 
                     /**
                      * 获取渠道上传流水号
                      * @return ChannelApplyId 渠道上传流水号
+                     * 
                      */
                     std::string GetChannelApplyId() const;
 
                     /**
                      * 设置渠道上传流水号
-                     * @param ChannelApplyId 渠道上传流水号
+                     * @param _channelApplyId 渠道上传流水号
+                     * 
                      */
                     void SetChannelApplyId(const std::string& _channelApplyId);
 
                     /**
                      * 判断参数 ChannelApplyId 是否已赋值
                      * @return ChannelApplyId 是否已赋值
+                     * 
                      */
                     bool ChannelApplyIdHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取边缘节点ID
                      * @return NodeId 边缘节点ID
+                     * 
                      */
                     uint64_t GetNodeId() const;
 
                     /**
                      * 设置边缘节点ID
-                     * @param NodeId 边缘节点ID
+                     * @param _nodeId 边缘节点ID
+                     * 
                      */
                     void SetNodeId(const uint64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取节点信息
                      * @return NodeInfo 节点信息
+                     * 
                      */
                     DracoNodeInfo GetNodeInfo() const;
 
                     /**
                      * 设置节点信息
-                     * @param NodeInfo 节点信息
+                     * @param _nodeInfo 节点信息
+                     * 
                      */
                     void SetNodeInfo(const DracoNodeInfo& _nodeInfo);
 
                     /**
                      * 判断参数 NodeInfo 是否已赋值
                      * @return NodeInfo 是否已赋值
+                     * 
                      */
                     bool NodeInfoHasBeenSet() const;
 
                     /**
                      * 获取是否重置draco设备
                      * @return IsReset 是否重置draco设备
+                     * 
                      */
                     bool GetIsReset() const;
 
                     /**
                      * 设置是否重置draco设备
-                     * @param IsReset 是否重置draco设备
+                     * @param _isReset 是否重置draco设备
+                     * 
                      */
                     void SetIsReset(const bool& _isReset);
 
                     /**
                      * 判断参数 IsReset 是否已赋值
                      * @return IsReset 是否已赋值
+                     * 
                      */
                     bool IsResetHasBeenSet() const;
 

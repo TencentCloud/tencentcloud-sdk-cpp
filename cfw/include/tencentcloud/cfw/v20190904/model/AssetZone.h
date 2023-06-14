@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取地域
                      * @return Zone 地域
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置地域
-                     * @param Zone 地域
+                     * @param _zone 地域
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取地域英文
                      * @return ZoneEng 地域英文
+                     * 
                      */
                     std::string GetZoneEng() const;
 
                     /**
                      * 设置地域英文
-                     * @param ZoneEng 地域英文
+                     * @param _zoneEng 地域英文
+                     * 
                      */
                     void SetZoneEng(const std::string& _zoneEng);
 
                     /**
                      * 判断参数 ZoneEng 是否已赋值
                      * @return ZoneEng 是否已赋值
+                     * 
                      */
                     bool ZoneEngHasBeenSet() const;
 

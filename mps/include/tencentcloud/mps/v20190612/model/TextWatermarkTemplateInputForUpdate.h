@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return FontType 字体类型，目前可以支持两种：
 <li>simkai.ttf：可以支持中文和英文；</li>
 <li>arial.ttf：仅支持英文。</li>
+                     * 
                      */
                     std::string GetFontType() const;
 
@@ -60,51 +61,59 @@ namespace TencentCloud
                      * 设置字体类型，目前可以支持两种：
 <li>simkai.ttf：可以支持中文和英文；</li>
 <li>arial.ttf：仅支持英文。</li>
-                     * @param FontType 字体类型，目前可以支持两种：
+                     * @param _fontType 字体类型，目前可以支持两种：
 <li>simkai.ttf：可以支持中文和英文；</li>
 <li>arial.ttf：仅支持英文。</li>
+                     * 
                      */
                     void SetFontType(const std::string& _fontType);
 
                     /**
                      * 判断参数 FontType 是否已赋值
                      * @return FontType 是否已赋值
+                     * 
                      */
                     bool FontTypeHasBeenSet() const;
 
                     /**
                      * 获取字体大小，格式：Npx，N 为数值。
                      * @return FontSize 字体大小，格式：Npx，N 为数值。
+                     * 
                      */
                     std::string GetFontSize() const;
 
                     /**
                      * 设置字体大小，格式：Npx，N 为数值。
-                     * @param FontSize 字体大小，格式：Npx，N 为数值。
+                     * @param _fontSize 字体大小，格式：Npx，N 为数值。
+                     * 
                      */
                     void SetFontSize(const std::string& _fontSize);
 
                     /**
                      * 判断参数 FontSize 是否已赋值
                      * @return FontSize 是否已赋值
+                     * 
                      */
                     bool FontSizeHasBeenSet() const;
 
                     /**
                      * 获取字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
                      * @return FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
+                     * 
                      */
                     std::string GetFontColor() const;
 
                     /**
                      * 设置字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
-                     * @param FontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
+                     * @param _fontColor 字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。
+                     * 
                      */
                     void SetFontColor(const std::string& _fontColor);
 
                     /**
                      * 判断参数 FontColor 是否已赋值
                      * @return FontColor 是否已赋值
+                     * 
                      */
                     bool FontColorHasBeenSet() const;
 
@@ -115,6 +124,7 @@ namespace TencentCloud
                      * @return FontAlpha 文字透明度，取值范围：(0, 1]
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
+                     * 
                      */
                     double GetFontAlpha() const;
 
@@ -122,15 +132,17 @@ namespace TencentCloud
                      * 设置文字透明度，取值范围：(0, 1]
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
-                     * @param FontAlpha 文字透明度，取值范围：(0, 1]
+                     * @param _fontAlpha 文字透明度，取值范围：(0, 1]
 <li>0：完全透明</li>
 <li>1：完全不透明</li>
+                     * 
                      */
                     void SetFontAlpha(const double& _fontAlpha);
 
                     /**
                      * 判断参数 FontAlpha 是否已赋值
                      * @return FontAlpha 是否已赋值
+                     * 
                      */
                     bool FontAlphaHasBeenSet() const;
 

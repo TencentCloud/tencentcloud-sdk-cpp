@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Notification 全局告警通知渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     PrometheusNotificationItem GetNotification() const;
 
                     /**
                      * 判断参数 Notification 是否已赋值
                      * @return Notification 是否已赋值
+                     * 
                      */
                     bool NotificationHasBeenSet() const;
 

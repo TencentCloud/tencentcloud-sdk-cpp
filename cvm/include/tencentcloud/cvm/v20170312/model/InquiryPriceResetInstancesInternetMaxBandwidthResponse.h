@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取该参数表示带宽调整为对应大小之后的价格。
                      * @return Price 该参数表示带宽调整为对应大小之后的价格。
+                     * 
                      */
                     Price GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 模型ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetModelId() const;
 
                     /**
                      * 设置模型ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelId 模型ID
+                     * @param _modelId 模型ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelId(const uint64_t& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFound 是否正常返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsFound() const;
 
                     /**
                      * 设置是否正常返回结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsFound 是否正常返回结果
+                     * @param _isFound 是否正常返回结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsFound(const int64_t& _isFound);
 
                     /**
                      * 判断参数 IsFound 是否已赋值
                      * @return IsFound 是否已赋值
+                     * 
                      */
                     bool IsFoundHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Score 返回分值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetScore() const;
 
                     /**
                      * 设置返回分值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 返回分值
+                     * @param _score 返回分值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetScore(const double& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelType 模型类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetModelType() const;
 
                     /**
                      * 设置模型类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelType 模型类型
+                     * @param _modelType 模型类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelType(const uint64_t& _modelType);
 
                     /**
                      * 判断参数 ModelType 是否已赋值
                      * @return ModelType 是否已赋值
+                     * 
                      */
                     bool ModelTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uid 入参Uid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUid() const;
 
                     /**
                      * 设置入参Uid
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uid 入参Uid
+                     * @param _uid 入参Uid
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUid(const std::string& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 

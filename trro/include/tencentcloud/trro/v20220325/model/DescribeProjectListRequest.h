@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取每页返回的最大项目数量，不填默认为10
                      * @return PageSize 每页返回的最大项目数量，不填默认为10
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置每页返回的最大项目数量，不填默认为10
-                     * @param PageSize 每页返回的最大项目数量，不填默认为10
+                     * @param _pageSize 每页返回的最大项目数量，不填默认为10
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取当前页码，不填默认为1（首页）
                      * @return PageNumber 当前页码，不填默认为1（首页）
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置当前页码，不填默认为1（首页）
-                     * @param PageNumber 当前页码，不填默认为1（首页）
+                     * @param _pageNumber 当前页码，不填默认为1（首页）
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 

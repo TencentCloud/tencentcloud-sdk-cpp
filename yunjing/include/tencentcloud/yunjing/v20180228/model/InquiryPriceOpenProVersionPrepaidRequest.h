@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取预付费模式(包年包月)参数设置。
                      * @return ChargePrepaid 预付费模式(包年包月)参数设置。
+                     * 
                      */
                     ChargePrepaid GetChargePrepaid() const;
 
                     /**
                      * 设置预付费模式(包年包月)参数设置。
-                     * @param ChargePrepaid 预付费模式(包年包月)参数设置。
+                     * @param _chargePrepaid 预付费模式(包年包月)参数设置。
+                     * 
                      */
                     void SetChargePrepaid(const ChargePrepaid& _chargePrepaid);
 
                     /**
                      * 判断参数 ChargePrepaid 是否已赋值
                      * @return ChargePrepaid 是否已赋值
+                     * 
                      */
                     bool ChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取需要开通专业版机器列表数组。
                      * @return Machines 需要开通专业版机器列表数组。
+                     * 
                      */
                     std::vector<ProVersionMachine> GetMachines() const;
 
                     /**
                      * 设置需要开通专业版机器列表数组。
-                     * @param Machines 需要开通专业版机器列表数组。
+                     * @param _machines 需要开通专业版机器列表数组。
+                     * 
                      */
                     void SetMachines(const std::vector<ProVersionMachine>& _machines);
 
                     /**
                      * 判断参数 Machines 是否已赋值
                      * @return Machines 是否已赋值
+                     * 
                      */
                     bool MachinesHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取源端路径
                      * @return SourcePath 源端路径
+                     * 
                      */
                     std::string GetSourcePath() const;
 
                     /**
                      * 设置源端路径
-                     * @param SourcePath 源端路径
+                     * @param _sourcePath 源端路径
+                     * 
                      */
                     void SetSourcePath(const std::string& _sourcePath);
 
                     /**
                      * 判断参数 SourcePath 是否已赋值
                      * @return SourcePath 是否已赋值
+                     * 
                      */
                     bool SourcePathHasBeenSet() const;
 
                     /**
                      * 获取目的端路径
                      * @return DestinationPath 目的端路径
+                     * 
                      */
                     std::string GetDestinationPath() const;
 
                     /**
                      * 设置目的端路径
-                     * @param DestinationPath 目的端路径
+                     * @param _destinationPath 目的端路径
+                     * 
                      */
                     void SetDestinationPath(const std::string& _destinationPath);
 
                     /**
                      * 判断参数 DestinationPath 是否已赋值
                      * @return DestinationPath 是否已赋值
+                     * 
                      */
                     bool DestinationPathHasBeenSet() const;
 
@@ -88,20 +94,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputMappingOption 输出映射选项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     OutputMappingOption GetOutputMappingOption() const;
 
                     /**
                      * 设置输出映射选项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputMappingOption 输出映射选项
+                     * @param _outputMappingOption 输出映射选项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputMappingOption(const OutputMappingOption& _outputMappingOption);
 
                     /**
                      * 判断参数 OutputMappingOption 是否已赋值
                      * @return OutputMappingOption 是否已赋值
+                     * 
                      */
                     bool OutputMappingOptionHasBeenSet() const;
 

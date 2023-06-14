@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AmountHasTax 含税金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAmountHasTax() const;
 
                     /**
                      * 设置含税金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AmountHasTax 含税金额
+                     * @param _amountHasTax 含税金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAmountHasTax(const double& _amountHasTax);
 
                     /**
                      * 判断参数 AmountHasTax 是否已赋值
                      * @return AmountHasTax 是否已赋值
+                     * 
                      */
                     bool AmountHasTaxHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Discount 优惠金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetDiscount() const;
 
                     /**
                      * 设置优惠金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Discount 优惠金额
+                     * @param _discount 优惠金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
                      * @return Discount 是否已赋值
+                     * 
                      */
                     bool DiscountHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SellerName 销方名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSellerName() const;
 
                     /**
                      * 设置销方名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SellerName 销方名称
+                     * @param _sellerName 销方名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSellerName(const std::string& _sellerName);
 
                     /**
                      * 判断参数 SellerName 是否已赋值
                      * @return SellerName 是否已赋值
+                     * 
                      */
                     bool SellerNameHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvoiceType 发票类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInvoiceType() const;
 
                     /**
                      * 设置发票类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InvoiceType 发票类型
+                     * @param _invoiceType 发票类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInvoiceType(const int64_t& _invoiceType);
 
                     /**
                      * 判断参数 InvoiceType 是否已赋值
                      * @return InvoiceType 是否已赋值
+                     * 
                      */
                     bool InvoiceTypeHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 默认“”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置默认“”
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 默认“”
+                     * @param _name 默认“”
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amount 支付金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetAmount() const;
 
                     /**
                      * 设置支付金额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Amount 支付金额
+                     * @param _amount 支付金额
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAmount(const double& _amount);
 
                     /**
                      * 判断参数 Amount 是否已赋值
                      * @return Amount 是否已赋值
+                     * 
                      */
                     bool AmountHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderDate 下单日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderDate() const;
 
                     /**
                      * 设置下单日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderDate 下单日期
+                     * @param _orderDate 下单日期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderDate(const std::string& _orderDate);
 
                     /**
                      * 判断参数 OrderDate 是否已赋值
                      * @return OrderDate 是否已赋值
+                     * 
                      */
                     bool OrderDateHasBeenSet() const;
 
@@ -206,20 +227,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
@@ -228,20 +252,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoreNo 门店号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStoreNo() const;
 
                     /**
                      * 设置门店号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StoreNo 门店号
+                     * @param _storeNo 门店号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStoreNo(const std::string& _storeNo);
 
                     /**
                      * 判断参数 StoreNo 是否已赋值
                      * @return StoreNo 是否已赋值
+                     * 
                      */
                     bool StoreNoHasBeenSet() const;
 
@@ -250,20 +277,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OrderItem> GetItems() const;
 
                     /**
                      * 设置明细
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Items 明细
+                     * @param _items 明细
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetItems(const std::vector<OrderItem>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

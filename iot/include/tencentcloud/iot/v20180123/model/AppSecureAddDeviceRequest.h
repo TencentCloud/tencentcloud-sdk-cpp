@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取访问Token
                      * @return AccessToken 访问Token
+                     * 
                      */
                     std::string GetAccessToken() const;
 
                     /**
                      * 设置访问Token
-                     * @param AccessToken 访问Token
+                     * @param _accessToken 访问Token
+                     * 
                      */
                     void SetAccessToken(const std::string& _accessToken);
 
                     /**
                      * 判断参数 AccessToken 是否已赋值
                      * @return AccessToken 是否已赋值
+                     * 
                      */
                     bool AccessTokenHasBeenSet() const;
 
                     /**
                      * 获取设备签名
                      * @return DeviceSignature 设备签名
+                     * 
                      */
                     std::string GetDeviceSignature() const;
 
                     /**
                      * 设置设备签名
-                     * @param DeviceSignature 设备签名
+                     * @param _deviceSignature 设备签名
+                     * 
                      */
                     void SetDeviceSignature(const std::string& _deviceSignature);
 
                     /**
                      * 判断参数 DeviceSignature 是否已赋值
                      * @return DeviceSignature 是否已赋值
+                     * 
                      */
                     bool DeviceSignatureHasBeenSet() const;
 

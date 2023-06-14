@@ -50,252 +50,294 @@ namespace TencentCloud
                     /**
                      * 获取只读组ID
                      * @return ReadOnlyGroupId 只读组ID
+                     * 
                      */
                     std::string GetReadOnlyGroupId() const;
 
                     /**
                      * 设置只读组ID
-                     * @param ReadOnlyGroupId 只读组ID
+                     * @param _readOnlyGroupId 只读组ID
+                     * 
                      */
                     void SetReadOnlyGroupId(const std::string& _readOnlyGroupId);
 
                     /**
                      * 判断参数 ReadOnlyGroupId 是否已赋值
                      * @return ReadOnlyGroupId 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
                      * 获取只读组名称
                      * @return ReadOnlyGroupName 只读组名称
+                     * 
                      */
                     std::string GetReadOnlyGroupName() const;
 
                     /**
                      * 设置只读组名称
-                     * @param ReadOnlyGroupName 只读组名称
+                     * @param _readOnlyGroupName 只读组名称
+                     * 
                      */
                     void SetReadOnlyGroupName(const std::string& _readOnlyGroupName);
 
                     /**
                      * 判断参数 ReadOnlyGroupName 是否已赋值
                      * @return ReadOnlyGroupName 是否已赋值
+                     * 
                      */
                     bool ReadOnlyGroupNameHasBeenSet() const;
 
                     /**
                      * 获取只读组的地域ID，与主实例相同
                      * @return RegionId 只读组的地域ID，与主实例相同
+                     * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置只读组的地域ID，与主实例相同
-                     * @param RegionId 只读组的地域ID，与主实例相同
+                     * @param _regionId 只读组的地域ID，与主实例相同
+                     * 
                      */
                     void SetRegionId(const std::string& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取只读组的可用区ID，与主实例相同
                      * @return ZoneId 只读组的可用区ID，与主实例相同
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置只读组的可用区ID，与主实例相同
-                     * @param ZoneId 只读组的可用区ID，与主实例相同
+                     * @param _zoneId 只读组的可用区ID，与主实例相同
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能
                      * @return IsOfflineDelay 是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能
+                     * 
                      */
                     int64_t GetIsOfflineDelay() const;
 
                     /**
                      * 设置是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能
-                     * @param IsOfflineDelay 是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能
+                     * @param _isOfflineDelay 是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能
+                     * 
                      */
                     void SetIsOfflineDelay(const int64_t& _isOfflineDelay);
 
                     /**
                      * 判断参数 IsOfflineDelay 是否已赋值
                      * @return IsOfflineDelay 是否已赋值
+                     * 
                      */
                     bool IsOfflineDelayHasBeenSet() const;
 
                     /**
                      * 获取启动超时剔除功能后，使用的超时阈值
                      * @return ReadOnlyMaxDelayTime 启动超时剔除功能后，使用的超时阈值
+                     * 
                      */
                     int64_t GetReadOnlyMaxDelayTime() const;
 
                     /**
                      * 设置启动超时剔除功能后，使用的超时阈值
-                     * @param ReadOnlyMaxDelayTime 启动超时剔除功能后，使用的超时阈值
+                     * @param _readOnlyMaxDelayTime 启动超时剔除功能后，使用的超时阈值
+                     * 
                      */
                     void SetReadOnlyMaxDelayTime(const int64_t& _readOnlyMaxDelayTime);
 
                     /**
                      * 判断参数 ReadOnlyMaxDelayTime 是否已赋值
                      * @return ReadOnlyMaxDelayTime 是否已赋值
+                     * 
                      */
                     bool ReadOnlyMaxDelayTimeHasBeenSet() const;
 
                     /**
                      * 获取启动超时剔除功能后，只读组至少保留的只读副本数
                      * @return MinReadOnlyInGroup 启动超时剔除功能后，只读组至少保留的只读副本数
+                     * 
                      */
                     int64_t GetMinReadOnlyInGroup() const;
 
                     /**
                      * 设置启动超时剔除功能后，只读组至少保留的只读副本数
-                     * @param MinReadOnlyInGroup 启动超时剔除功能后，只读组至少保留的只读副本数
+                     * @param _minReadOnlyInGroup 启动超时剔除功能后，只读组至少保留的只读副本数
+                     * 
                      */
                     void SetMinReadOnlyInGroup(const int64_t& _minReadOnlyInGroup);
 
                     /**
                      * 判断参数 MinReadOnlyInGroup 是否已赋值
                      * @return MinReadOnlyInGroup 是否已赋值
+                     * 
                      */
                     bool MinReadOnlyInGroupHasBeenSet() const;
 
                     /**
                      * 获取只读组vip
                      * @return Vip 只读组vip
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置只读组vip
-                     * @param Vip 只读组vip
+                     * @param _vip 只读组vip
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
                     /**
                      * 获取只读组vport
                      * @return Vport 只读组vport
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置只读组vport
-                     * @param Vport 只读组vport
+                     * @param _vport 只读组vport
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 
                     /**
                      * 获取只读组私有网络ID
                      * @return VpcId 只读组私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置只读组私有网络ID
-                     * @param VpcId 只读组私有网络ID
+                     * @param _vpcId 只读组私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取只读组私有网络子网ID
                      * @return SubnetId 只读组私有网络子网ID
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置只读组私有网络子网ID
-                     * @param SubnetId 只读组私有网络子网ID
+                     * @param _subnetId 只读组私有网络子网ID
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取只读组状态: 1-申请成功运行中，5-申请中
                      * @return Status 只读组状态: 1-申请成功运行中，5-申请中
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置只读组状态: 1-申请成功运行中，5-申请中
-                     * @param Status 只读组状态: 1-申请成功运行中，5-申请中
+                     * @param _status 只读组状态: 1-申请成功运行中，5-申请中
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取主实例ID，形如mssql-sgeshe3th
                      * @return MasterInstanceId 主实例ID，形如mssql-sgeshe3th
+                     * 
                      */
                     std::string GetMasterInstanceId() const;
 
                     /**
                      * 设置主实例ID，形如mssql-sgeshe3th
-                     * @param MasterInstanceId 主实例ID，形如mssql-sgeshe3th
+                     * @param _masterInstanceId 主实例ID，形如mssql-sgeshe3th
+                     * 
                      */
                     void SetMasterInstanceId(const std::string& _masterInstanceId);
 
                     /**
                      * 判断参数 MasterInstanceId 是否已赋值
                      * @return MasterInstanceId 是否已赋值
+                     * 
                      */
                     bool MasterInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取只读实例副本集合
                      * @return ReadOnlyInstanceSet 只读实例副本集合
+                     * 
                      */
                     std::vector<ReadOnlyInstance> GetReadOnlyInstanceSet() const;
 
                     /**
                      * 设置只读实例副本集合
-                     * @param ReadOnlyInstanceSet 只读实例副本集合
+                     * @param _readOnlyInstanceSet 只读实例副本集合
+                     * 
                      */
                     void SetReadOnlyInstanceSet(const std::vector<ReadOnlyInstance>& _readOnlyInstanceSet);
 
                     /**
                      * 判断参数 ReadOnlyInstanceSet 是否已赋值
                      * @return ReadOnlyInstanceSet 是否已赋值
+                     * 
                      */
                     bool ReadOnlyInstanceSetHasBeenSet() const;
 

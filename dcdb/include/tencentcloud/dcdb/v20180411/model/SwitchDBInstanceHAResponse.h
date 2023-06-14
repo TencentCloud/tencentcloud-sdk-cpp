@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步流程Id
                      * @return FlowId 异步流程Id
+                     * 
                      */
                     uint64_t GetFlowId() const;
 
                     /**
                      * 判断参数 FlowId 是否已赋值
                      * @return FlowId 是否已赋值
+                     * 
                      */
                     bool FlowIdHasBeenSet() const;
 

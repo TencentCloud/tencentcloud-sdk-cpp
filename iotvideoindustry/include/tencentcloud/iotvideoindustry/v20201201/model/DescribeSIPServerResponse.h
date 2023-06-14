@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取SIP服务器相关配置项
                      * @return Data SIP服务器相关配置项
+                     * 
                      */
                     ServerConfiguration GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

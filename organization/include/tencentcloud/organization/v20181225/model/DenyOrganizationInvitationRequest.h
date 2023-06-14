@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取邀请ID
                      * @return Id 邀请ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置邀请ID
-                     * @param Id 邀请ID
+                     * @param _id 邀请ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

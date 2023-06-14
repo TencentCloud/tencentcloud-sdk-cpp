@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取参数名
                      * @return ParamName 参数名
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名
-                     * @param ParamName 参数名
+                     * @param _paramName 参数名
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取参数类型：multi
                      * @return ValueType 参数类型：multi
+                     * 
                      */
                     std::string GetValueType() const;
 
                     /**
                      * 设置参数类型：multi
-                     * @param ValueType 参数类型：multi
+                     * @param _valueType 参数类型：multi
+                     * 
                      */
                     void SetValueType(const std::string& _valueType);
 
                     /**
                      * 判断参数 ValueType 是否已赋值
                      * @return ValueType 是否已赋值
+                     * 
                      */
                     bool ValueTypeHasBeenSet() const;
 
                     /**
                      * 获取修改后是否需要重启：true，false
                      * @return NeedRestart 修改后是否需要重启：true，false
+                     * 
                      */
                     std::string GetNeedRestart() const;
 
                     /**
                      * 设置修改后是否需要重启：true，false
-                     * @param NeedRestart 修改后是否需要重启：true，false
+                     * @param _needRestart 修改后是否需要重启：true，false
+                     * 
                      */
                     void SetNeedRestart(const std::string& _needRestart);
 
                     /**
                      * 判断参数 NeedRestart 是否已赋值
                      * @return NeedRestart 是否已赋值
+                     * 
                      */
                     bool NeedRestartHasBeenSet() const;
 
                     /**
                      * 获取参数默认值
                      * @return DefaultValue 参数默认值
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置参数默认值
-                     * @param DefaultValue 参数默认值
+                     * @param _defaultValue 参数默认值
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 
                     /**
                      * 获取当前运行参数值
                      * @return CurrentValue 当前运行参数值
+                     * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
                      * 设置当前运行参数值
-                     * @param CurrentValue 当前运行参数值
+                     * @param _currentValue 当前运行参数值
+                     * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
                     /**
                      * 判断参数 CurrentValue 是否已赋值
                      * @return CurrentValue 是否已赋值
+                     * 
                      */
                     bool CurrentValueHasBeenSet() const;
 
                     /**
                      * 获取参数说明
                      * @return Tips 参数说明
+                     * 
                      */
                     std::string GetTips() const;
 
                     /**
                      * 设置参数说明
-                     * @param Tips 参数说明
+                     * @param _tips 参数说明
+                     * 
                      */
                     void SetTips(const std::string& _tips);
 
                     /**
                      * 判断参数 Tips 是否已赋值
                      * @return Tips 是否已赋值
+                     * 
                      */
                     bool TipsHasBeenSet() const;
 
                     /**
                      * 获取参数说明
                      * @return EnumValue 参数说明
+                     * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数说明
-                     * @param EnumValue 参数说明
+                     * @param _enumValue 参数说明
+                     * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
 
                     /**
                      * 判断参数 EnumValue 是否已赋值
                      * @return EnumValue 是否已赋值
+                     * 
                      */
                     bool EnumValueHasBeenSet() const;
 
                     /**
                      * 获取参数状态, 1: 修改中， 2：修改完成
                      * @return Status 参数状态, 1: 修改中， 2：修改完成
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置参数状态, 1: 修改中， 2：修改完成
-                     * @param Status 参数状态, 1: 修改中， 2：修改完成
+                     * @param _status 参数状态, 1: 修改中， 2：修改完成
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

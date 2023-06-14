@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareType 比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCompareType() const;
 
                     /**
                      * 设置比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CompareType 比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
+                     * @param _compareType 比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCompareType(const uint64_t& _compareType);
 
                     /**
                      * 判断参数 CompareType 是否已赋值
                      * @return CompareType 是否已赋值
+                     * 
                      */
                     bool CompareTypeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 比较操作类型 <  <=  ==  =>  >
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置比较操作类型 <  <=  ==  =>  >
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operator 比较操作类型 <  <=  ==  =>  >
+                     * @param _operator 比较操作类型 <  <=  ==  =>  >
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOperator(const std::string& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueComputeType 质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetValueComputeType() const;
 
                     /**
                      * 设置质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueComputeType 质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
+                     * @param _valueComputeType 质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueComputeType(const uint64_t& _valueComputeType);
 
                     /**
                      * 判断参数 ValueComputeType 是否已赋值
                      * @return ValueComputeType 是否已赋值
+                     * 
                      */
                     bool ValueComputeTypeHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueList 比较阈值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ThresholdValue> GetValueList() const;
 
                     /**
                      * 设置比较阈值列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ValueList 比较阈值列表
+                     * @param _valueList 比较阈值列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValueList(const std::vector<ThresholdValue>& _valueList);
 
                     /**
                      * 判断参数 ValueList 是否已赋值
                      * @return ValueList 是否已赋值
+                     * 
                      */
                     bool ValueListHasBeenSet() const;
 

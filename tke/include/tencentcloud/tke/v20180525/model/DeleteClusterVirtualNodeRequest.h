@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取虚拟节点列表
                      * @return NodeNames 虚拟节点列表
+                     * 
                      */
                     std::vector<std::string> GetNodeNames() const;
 
                     /**
                      * 设置虚拟节点列表
-                     * @param NodeNames 虚拟节点列表
+                     * @param _nodeNames 虚拟节点列表
+                     * 
                      */
                     void SetNodeNames(const std::vector<std::string>& _nodeNames);
 
                     /**
                      * 判断参数 NodeNames 是否已赋值
                      * @return NodeNames 是否已赋值
+                     * 
                      */
                     bool NodeNamesHasBeenSet() const;
 
                     /**
                      * 获取是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除
                      * @return Force 是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * 
                      */
                     bool GetForce() const;
 
                     /**
                      * 设置是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除
-                     * @param Force 是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * @param _force 是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除
+                     * 
                      */
                     void SetForce(const bool& _force);
 
                     /**
                      * 判断参数 Force 是否已赋值
                      * @return Force 是否已赋值
+                     * 
                      */
                     bool ForceHasBeenSet() const;
 

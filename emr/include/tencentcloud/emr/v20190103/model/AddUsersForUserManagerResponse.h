@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessUserList 添加成功的用户列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetSuccessUserList() const;
 
                     /**
                      * 判断参数 SuccessUserList 是否已赋值
                      * @return SuccessUserList 是否已赋值
+                     * 
                      */
                     bool SuccessUserListHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedUserList 添加失败的用户列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetFailedUserList() const;
 
                     /**
                      * 判断参数 FailedUserList 是否已赋值
                      * @return FailedUserList 是否已赋值
+                     * 
                      */
                     bool FailedUserListHasBeenSet() const;
 

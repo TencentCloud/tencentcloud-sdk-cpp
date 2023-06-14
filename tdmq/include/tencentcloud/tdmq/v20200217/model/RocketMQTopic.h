@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取主题名称
                      * @return Name 主题名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置主题名称
-                     * @param Name 主题名称
+                     * @param _name 主题名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
                      * @return Type 主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
-                     * @param Type 主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     * @param _type 主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取订阅组数量
                      * @return GroupNum 订阅组数量
+                     * 
                      */
                     uint64_t GetGroupNum() const;
 
                     /**
                      * 设置订阅组数量
-                     * @param GroupNum 订阅组数量
+                     * @param _groupNum 订阅组数量
+                     * 
                      */
                     void SetGroupNum(const uint64_t& _groupNum);
 
                     /**
                      * 判断参数 GroupNum 是否已赋值
                      * @return GroupNum 是否已赋值
+                     * 
                      */
                     bool GroupNumHasBeenSet() const;
 
@@ -105,74 +114,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 说明
+                     * @param _remark 说明
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取读写分区数
                      * @return PartitionNum 读写分区数
+                     * 
                      */
                     uint64_t GetPartitionNum() const;
 
                     /**
                      * 设置读写分区数
-                     * @param PartitionNum 读写分区数
+                     * @param _partitionNum 读写分区数
+                     * 
                      */
                     void SetPartitionNum(const uint64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 
                     /**
                      * 获取创建时间，以毫秒为单位
                      * @return CreateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
-                     * @param CreateTime 创建时间，以毫秒为单位
+                     * @param _createTime 创建时间，以毫秒为单位
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取创建时间，以毫秒为单位
                      * @return UpdateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置创建时间，以毫秒为单位
-                     * @param UpdateTime 创建时间，以毫秒为单位
+                     * @param _updateTime 创建时间，以毫秒为单位
+                     * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

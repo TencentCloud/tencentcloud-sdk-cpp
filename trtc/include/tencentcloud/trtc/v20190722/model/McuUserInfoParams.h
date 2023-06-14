@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取用户参数。
                      * @return UserInfo 用户参数。
+                     * 
                      */
                     MixUserInfo GetUserInfo() const;
 
                     /**
                      * 设置用户参数。
-                     * @param UserInfo 用户参数。
+                     * @param _userInfo 用户参数。
+                     * 
                      */
                     void SetUserInfo(const MixUserInfo& _userInfo);
 
                     /**
                      * 判断参数 UserInfo 是否已赋值
                      * @return UserInfo 是否已赋值
+                     * 
                      */
                     bool UserInfoHasBeenSet() const;
 

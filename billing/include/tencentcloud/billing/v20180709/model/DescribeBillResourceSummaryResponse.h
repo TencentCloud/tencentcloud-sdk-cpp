@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取资源汇总列表
                      * @return ResourceSummarySet 资源汇总列表
+                     * 
                      */
                     std::vector<BillResourceSummary> GetResourceSummarySet() const;
 
                     /**
                      * 判断参数 ResourceSummarySet 是否已赋值
                      * @return ResourceSummarySet 是否已赋值
+                     * 
                      */
                     bool ResourceSummarySetHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 资源汇总列表总数，入参NeedRecordNum为0时不返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 

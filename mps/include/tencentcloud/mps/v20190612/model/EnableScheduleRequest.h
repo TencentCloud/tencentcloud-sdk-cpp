@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取编排唯一标识。
                      * @return ScheduleId 编排唯一标识。
+                     * 
                      */
                     int64_t GetScheduleId() const;
 
                     /**
                      * 设置编排唯一标识。
-                     * @param ScheduleId 编排唯一标识。
+                     * @param _scheduleId 编排唯一标识。
+                     * 
                      */
                     void SetScheduleId(const int64_t& _scheduleId);
 
                     /**
                      * 判断参数 ScheduleId 是否已赋值
                      * @return ScheduleId 是否已赋值
+                     * 
                      */
                     bool ScheduleIdHasBeenSet() const;
 

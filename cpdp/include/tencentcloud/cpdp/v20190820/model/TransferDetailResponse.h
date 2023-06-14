@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return MerchantDetailNo 商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
+                     * 
                      */
                     std::string GetMerchantDetailNo() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
-                     * @param MerchantDetailNo 商家明细单号。
+                     * @param _merchantDetailNo 商家明细单号。
 商户系统内部的商家明细单号
 示例值：plfk2020042013
+                     * 
                      */
                     void SetMerchantDetailNo(const std::string& _merchantDetailNo);
 
                     /**
                      * 判断参数 MerchantDetailNo 是否已赋值
                      * @return MerchantDetailNo 是否已赋值
+                     * 
                      */
                     bool MerchantDetailNoHasBeenSet() const;
 
@@ -79,6 +82,7 @@ namespace TencentCloud
                      * @return DetailId 微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     std::string GetDetailId() const;
 
@@ -86,15 +90,17 @@ namespace TencentCloud
                      * 设置微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
-                     * @param DetailId 微信明细单号。
+                     * @param _detailId 微信明细单号。
 微信区分明细单返回的唯一标识。
 示例值：1030000071100999991182020050700019480001
+                     * 
                      */
                     void SetDetailId(const std::string& _detailId);
 
                     /**
                      * 判断参数 DetailId 是否已赋值
                      * @return DetailId 是否已赋值
+                     * 
                      */
                     bool DetailIdHasBeenSet() const;
 
@@ -109,6 +115,7 @@ PROCESSING：转账中，正在处理，结果未明；
 SUCCESS：转账成功；
 FAIL：转账失败，需要确认失败原因以后，再决定是否重新发起地该笔明细的转账。
 示例值：SUCCESS
+                     * 
                      */
                     std::string GetDetailStatus() const;
 
@@ -118,17 +125,19 @@ PROCESSING：转账中，正在处理，结果未明；
 SUCCESS：转账成功；
 FAIL：转账失败，需要确认失败原因以后，再决定是否重新发起地该笔明细的转账。
 示例值：SUCCESS
-                     * @param DetailStatus 明细状态。
+                     * @param _detailStatus 明细状态。
 PROCESSING：转账中，正在处理，结果未明；
 SUCCESS：转账成功；
 FAIL：转账失败，需要确认失败原因以后，再决定是否重新发起地该笔明细的转账。
 示例值：SUCCESS
+                     * 
                      */
                     void SetDetailStatus(const std::string& _detailStatus);
 
                     /**
                      * 判断参数 DetailStatus 是否已赋值
                      * @return DetailStatus 是否已赋值
+                     * 
                      */
                     bool DetailStatusHasBeenSet() const;
 

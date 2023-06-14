@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取返回EIP信息数组
                      * @return EipSet 返回EIP信息数组
+                     * 
                      */
                     std::vector<EipInfo> GetEipSet() const;
 
                     /**
                      * 判断参数 EipSet 是否已赋值
                      * @return EipSet 是否已赋值
+                     * 
                      */
                     bool EipSetHasBeenSet() const;
 
                     /**
                      * 获取返回EIP数量
                      * @return TotalCount 返回EIP数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

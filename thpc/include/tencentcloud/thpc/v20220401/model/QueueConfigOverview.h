@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取队列名称。
                      * @return QueueName 队列名称。
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置队列名称。
-                     * @param QueueName 队列名称。
+                     * @param _queueName 队列名称。
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 
                     /**
                      * 获取队列中弹性节点数量最小值。取值范围0～200。
                      * @return MinSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
                      * 设置队列中弹性节点数量最小值。取值范围0～200。
-                     * @param MinSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * @param _minSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * 
                      */
                     void SetMinSize(const int64_t& _minSize);
 
                     /**
                      * 判断参数 MinSize 是否已赋值
                      * @return MinSize 是否已赋值
+                     * 
                      */
                     bool MinSizeHasBeenSet() const;
 
                     /**
                      * 获取队列中弹性节点数量最大值。取值范围0～200。
                      * @return MaxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置队列中弹性节点数量最大值。取值范围0～200。
-                     * @param MaxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * @param _maxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
 
                     /**
                      * 判断参数 MaxSize 是否已赋值
                      * @return MaxSize 是否已赋值
+                     * 
                      */
                     bool MaxSizeHasBeenSet() const;
 
                     /**
                      * 获取是否开启自动扩容。
                      * @return EnableAutoExpansion 是否开启自动扩容。
+                     * 
                      */
                     bool GetEnableAutoExpansion() const;
 
                     /**
                      * 设置是否开启自动扩容。
-                     * @param EnableAutoExpansion 是否开启自动扩容。
+                     * @param _enableAutoExpansion 是否开启自动扩容。
+                     * 
                      */
                     void SetEnableAutoExpansion(const bool& _enableAutoExpansion);
 
                     /**
                      * 判断参数 EnableAutoExpansion 是否已赋值
                      * @return EnableAutoExpansion 是否已赋值
+                     * 
                      */
                     bool EnableAutoExpansionHasBeenSet() const;
 
                     /**
                      * 获取是否开启自动缩容。
                      * @return EnableAutoShrink 是否开启自动缩容。
+                     * 
                      */
                     bool GetEnableAutoShrink() const;
 
                     /**
                      * 设置是否开启自动缩容。
-                     * @param EnableAutoShrink 是否开启自动缩容。
+                     * @param _enableAutoShrink 是否开启自动缩容。
+                     * 
                      */
                     void SetEnableAutoShrink(const bool& _enableAutoShrink);
 
                     /**
                      * 判断参数 EnableAutoShrink 是否已赋值
                      * @return EnableAutoShrink 是否已赋值
+                     * 
                      */
                     bool EnableAutoShrinkHasBeenSet() const;
 
                     /**
                      * 获取扩容节点配置信息。
                      * @return ExpansionNodeConfigs 扩容节点配置信息。
+                     * 
                      */
                     std::vector<ExpansionNodeConfigOverview> GetExpansionNodeConfigs() const;
 
                     /**
                      * 设置扩容节点配置信息。
-                     * @param ExpansionNodeConfigs 扩容节点配置信息。
+                     * @param _expansionNodeConfigs 扩容节点配置信息。
+                     * 
                      */
                     void SetExpansionNodeConfigs(const std::vector<ExpansionNodeConfigOverview>& _expansionNodeConfigs);
 
                     /**
                      * 判断参数 ExpansionNodeConfigs 是否已赋值
                      * @return ExpansionNodeConfigs 是否已赋值
+                     * 
                      */
                     bool ExpansionNodeConfigsHasBeenSet() const;
 

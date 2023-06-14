@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取文字水印内容。
                      * @return Text 文字水印内容。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文字水印内容。
-                     * @param Text 文字水印内容。
+                     * @param _text 文字水印内容。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的宽。单位为像素值。
                      * @return WaterMarkWidth 水印在输出时的宽。单位为像素值。
+                     * 
                      */
                     uint64_t GetWaterMarkWidth() const;
 
                     /**
                      * 设置水印在输出时的宽。单位为像素值。
-                     * @param WaterMarkWidth 水印在输出时的宽。单位为像素值。
+                     * @param _waterMarkWidth 水印在输出时的宽。单位为像素值。
+                     * 
                      */
                     void SetWaterMarkWidth(const uint64_t& _waterMarkWidth);
 
                     /**
                      * 判断参数 WaterMarkWidth 是否已赋值
                      * @return WaterMarkWidth 是否已赋值
+                     * 
                      */
                     bool WaterMarkWidthHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的高。单位为像素值。
                      * @return WaterMarkHeight 水印在输出时的高。单位为像素值。
+                     * 
                      */
                     uint64_t GetWaterMarkHeight() const;
 
                     /**
                      * 设置水印在输出时的高。单位为像素值。
-                     * @param WaterMarkHeight 水印在输出时的高。单位为像素值。
+                     * @param _waterMarkHeight 水印在输出时的高。单位为像素值。
+                     * 
                      */
                     void SetWaterMarkHeight(const uint64_t& _waterMarkHeight);
 
                     /**
                      * 判断参数 WaterMarkHeight 是否已赋值
                      * @return WaterMarkHeight 是否已赋值
+                     * 
                      */
                     bool WaterMarkHeightHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的X偏移。单位为像素值。
                      * @return LocationX 水印在输出时的X偏移。单位为像素值。
+                     * 
                      */
                     uint64_t GetLocationX() const;
 
                     /**
                      * 设置水印在输出时的X偏移。单位为像素值。
-                     * @param LocationX 水印在输出时的X偏移。单位为像素值。
+                     * @param _locationX 水印在输出时的X偏移。单位为像素值。
+                     * 
                      */
                     void SetLocationX(const uint64_t& _locationX);
 
                     /**
                      * 判断参数 LocationX 是否已赋值
                      * @return LocationX 是否已赋值
+                     * 
                      */
                     bool LocationXHasBeenSet() const;
 
                     /**
                      * 获取水印在输出时的Y偏移。单位为像素值。
                      * @return LocationY 水印在输出时的Y偏移。单位为像素值。
+                     * 
                      */
                     uint64_t GetLocationY() const;
 
                     /**
                      * 设置水印在输出时的Y偏移。单位为像素值。
-                     * @param LocationY 水印在输出时的Y偏移。单位为像素值。
+                     * @param _locationY 水印在输出时的Y偏移。单位为像素值。
+                     * 
                      */
                     void SetLocationY(const uint64_t& _locationY);
 
                     /**
                      * 判断参数 LocationY 是否已赋值
                      * @return LocationY 是否已赋值
+                     * 
                      */
                     bool LocationYHasBeenSet() const;
 
                     /**
                      * 获取字体大小
                      * @return FontSize 字体大小
+                     * 
                      */
                     uint64_t GetFontSize() const;
 
                     /**
                      * 设置字体大小
-                     * @param FontSize 字体大小
+                     * @param _fontSize 字体大小
+                     * 
                      */
                     void SetFontSize(const uint64_t& _fontSize);
 
                     /**
                      * 判断参数 FontSize 是否已赋值
                      * @return FontSize 是否已赋值
+                     * 
                      */
                     bool FontSizeHasBeenSet() const;
 
                     /**
                      * 获取字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
                      * @return FontColor 字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
+                     * 
                      */
                     std::string GetFontColor() const;
 
                     /**
                      * 设置字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-                     * @param FontColor 字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
+                     * @param _fontColor 字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
+                     * 
                      */
                     void SetFontColor(const std::string& _fontColor);
 
                     /**
                      * 判断参数 FontColor 是否已赋值
                      * @return FontColor 是否已赋值
+                     * 
                      */
                     bool FontColorHasBeenSet() const;
 
                     /**
                      * 获取字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
                      * @return BackGroundColor 字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
+                     * 
                      */
                     std::string GetBackGroundColor() const;
 
                     /**
                      * 设置字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-                     * @param BackGroundColor 字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
+                     * @param _backGroundColor 字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
+                     * 
                      */
                     void SetBackGroundColor(const std::string& _backGroundColor);
 
                     /**
                      * 判断参数 BackGroundColor 是否已赋值
                      * @return BackGroundColor 是否已赋值
+                     * 
                      */
                     bool BackGroundColorHasBeenSet() const;
 

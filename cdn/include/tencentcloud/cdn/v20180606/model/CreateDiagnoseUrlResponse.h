@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取系统生成的诊断链接，一个诊断链接最多可访问10次，有效期为24h。
                      * @return DiagnoseLink 系统生成的诊断链接，一个诊断链接最多可访问10次，有效期为24h。
+                     * 
                      */
                     std::string GetDiagnoseLink() const;
 
                     /**
                      * 判断参数 DiagnoseLink 是否已赋值
                      * @return DiagnoseLink 是否已赋值
+                     * 
                      */
                     bool DiagnoseLinkHasBeenSet() const;
 

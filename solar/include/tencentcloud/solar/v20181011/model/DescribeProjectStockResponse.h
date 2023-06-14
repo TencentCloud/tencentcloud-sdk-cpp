@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取项目库存列表
                      * @return ProjectStocks 项目库存列表
+                     * 
                      */
                     std::vector<ProjectStock> GetProjectStocks() const;
 
                     /**
                      * 判断参数 ProjectStocks 是否已赋值
                      * @return ProjectStocks 是否已赋值
+                     * 
                      */
                     bool ProjectStocksHasBeenSet() const;
 

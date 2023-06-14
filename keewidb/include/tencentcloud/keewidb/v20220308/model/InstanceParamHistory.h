@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取参数名称
                      * @return ParamName 参数名称
+                     * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名称
-                     * @param ParamName 参数名称
+                     * @param _paramName 参数名称
+                     * 
                      */
                     void SetParamName(const std::string& _paramName);
 
                     /**
                      * 判断参数 ParamName 是否已赋值
                      * @return ParamName 是否已赋值
+                     * 
                      */
                     bool ParamNameHasBeenSet() const;
 
                     /**
                      * 获取修改前值
                      * @return PreValue 修改前值
+                     * 
                      */
                     std::string GetPreValue() const;
 
                     /**
                      * 设置修改前值
-                     * @param PreValue 修改前值
+                     * @param _preValue 修改前值
+                     * 
                      */
                     void SetPreValue(const std::string& _preValue);
 
                     /**
                      * 判断参数 PreValue 是否已赋值
                      * @return PreValue 是否已赋值
+                     * 
                      */
                     bool PreValueHasBeenSet() const;
 
                     /**
                      * 获取修改后值
                      * @return NewValue 修改后值
+                     * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置修改后值
-                     * @param NewValue 修改后值
+                     * @param _newValue 修改后值
+                     * 
                      */
                     void SetNewValue(const std::string& _newValue);
 
                     /**
                      * 判断参数 NewValue 是否已赋值
                      * @return NewValue 是否已赋值
+                     * 
                      */
                     bool NewValueHasBeenSet() const;
 
                     /**
                      * 获取状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
                      * @return Status 状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
-                     * @param Status 状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
+                     * @param _status 状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取修改时间
                      * @return ModifyTime 修改时间
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * @param _modifyTime 修改时间
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

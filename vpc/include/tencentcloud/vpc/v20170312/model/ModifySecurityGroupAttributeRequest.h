@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
                      * @return SecurityGroupId 安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
-                     * @param SecurityGroupId 安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * @param _securityGroupId 安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
 
                     /**
                      * 判断参数 SecurityGroupId 是否已赋值
                      * @return SecurityGroupId 是否已赋值
+                     * 
                      */
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
                      * 获取安全组名称，可任意命名，但不得超过60个字符。
                      * @return GroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置安全组名称，可任意命名，但不得超过60个字符。
-                     * @param GroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * @param _groupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 
                      */
                     void SetGroupName(const std::string& _groupName);
 
                     /**
                      * 判断参数 GroupName 是否已赋值
                      * @return GroupName 是否已赋值
+                     * 
                      */
                     bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取安全组备注，最多100个字符。
                      * @return GroupDescription 安全组备注，最多100个字符。
+                     * 
                      */
                     std::string GetGroupDescription() const;
 
                     /**
                      * 设置安全组备注，最多100个字符。
-                     * @param GroupDescription 安全组备注，最多100个字符。
+                     * @param _groupDescription 安全组备注，最多100个字符。
+                     * 
                      */
                     void SetGroupDescription(const std::string& _groupDescription);
 
                     /**
                      * 判断参数 GroupDescription 是否已赋值
                      * @return GroupDescription 是否已赋值
+                     * 
                      */
                     bool GroupDescriptionHasBeenSet() const;
 

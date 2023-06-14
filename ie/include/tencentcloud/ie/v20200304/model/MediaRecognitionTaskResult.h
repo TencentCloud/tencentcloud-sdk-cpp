@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameTagResults 帧标签识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     FrameTagResult GetFrameTagResults() const;
 
                     /**
                      * 设置帧标签识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameTagResults 帧标签识别结果
+                     * @param _frameTagResults 帧标签识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFrameTagResults(const FrameTagResult& _frameTagResults);
 
                     /**
                      * 判断参数 FrameTagResults 是否已赋值
                      * @return FrameTagResults 是否已赋值
+                     * 
                      */
                     bool FrameTagResultsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubtitleResults 语音字幕识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     SubtitleResult GetSubtitleResults() const;
 
                     /**
                      * 设置语音字幕识别结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubtitleResults 语音字幕识别结果
+                     * @param _subtitleResults 语音字幕识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubtitleResults(const SubtitleResult& _subtitleResults);
 
                     /**
                      * 判断参数 SubtitleResults 是否已赋值
                      * @return SubtitleResults 是否已赋值
+                     * 
                      */
                     bool SubtitleResultsHasBeenSet() const;
 

@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyResults 已更新的申请单列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApplyResult> GetApplyResults() const;
 
                     /**
                      * 判断参数 ApplyResults 是否已赋值
                      * @return ApplyResults 是否已赋值
+                     * 
                      */
                     bool ApplyResultsHasBeenSet() const;
 
                     /**
                      * 获取更新数量
                      * @return TotalCount 更新数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

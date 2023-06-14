@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取实例的磁盘大小，单位GB
                      * @return Storage 实例的磁盘大小，单位GB
+                     * 
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置实例的磁盘大小，单位GB
-                     * @param Storage 实例的磁盘大小，单位GB
+                     * @param _storage 实例的磁盘大小，单位GB
+                     * 
                      */
                     void SetStorage(const int64_t& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 
                     /**
                      * 获取实例的内存大小，单位GB
                      * @return Memory 实例的内存大小，单位GB
+                     * 
                      */
                     int64_t GetMemory() const;
 
                     /**
                      * 设置实例的内存大小，单位GB
-                     * @param Memory 实例的内存大小，单位GB
+                     * @param _memory 实例的内存大小，单位GB
+                     * 
                      */
                     void SetMemory(const int64_t& _memory);
 
                     /**
                      * 判断参数 Memory 是否已赋值
                      * @return Memory 是否已赋值
+                     * 
                      */
                     bool MemoryHasBeenSet() const;
 
                     /**
                      * 获取实例ID，形如postgres-hez4fh0v
                      * @return DBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID，形如postgres-hez4fh0v
-                     * @param DBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取【废弃参数，不再生效】，实例计费类型。
                      * @return InstanceChargeType 【废弃参数，不再生效】，实例计费类型。
+                     * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置【废弃参数，不再生效】，实例计费类型。
-                     * @param InstanceChargeType 【废弃参数，不再生效】，实例计费类型。
+                     * @param _instanceChargeType 【废弃参数，不再生效】，实例计费类型。
+                     * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 

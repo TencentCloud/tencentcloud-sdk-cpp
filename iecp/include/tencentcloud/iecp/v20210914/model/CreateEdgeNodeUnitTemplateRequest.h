@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取NodeUnit模板名称
                      * @return Name NodeUnit模板名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置NodeUnit模板名称
-                     * @param Name NodeUnit模板名称
+                     * @param _name NodeUnit模板名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取命名空间，默认default
                      * @return Namespace 命名空间，默认default
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间，默认default
-                     * @param Namespace 命名空间，默认default
+                     * @param _namespace 命名空间，默认default
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取包含的节点列表
                      * @return Nodes 包含的节点列表
+                     * 
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
                      * 设置包含的节点列表
-                     * @param Nodes 包含的节点列表
+                     * @param _nodes 包含的节点列表
+                     * 
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
 
                     /**
                      * 判断参数 Nodes 是否已赋值
                      * @return Nodes 是否已赋值
+                     * 
                      */
                     bool NodesHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

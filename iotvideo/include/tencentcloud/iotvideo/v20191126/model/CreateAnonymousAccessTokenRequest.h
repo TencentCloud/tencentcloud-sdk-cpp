@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取Token的TTL(time to alive)分钟数,最大值1440(即24小时)
                      * @return TtlMinutes Token的TTL(time to alive)分钟数,最大值1440(即24小时)
+                     * 
                      */
                     int64_t GetTtlMinutes() const;
 
                     /**
                      * 设置Token的TTL(time to alive)分钟数,最大值1440(即24小时)
-                     * @param TtlMinutes Token的TTL(time to alive)分钟数,最大值1440(即24小时)
+                     * @param _ttlMinutes Token的TTL(time to alive)分钟数,最大值1440(即24小时)
+                     * 
                      */
                     void SetTtlMinutes(const int64_t& _ttlMinutes);
 
                     /**
                      * 判断参数 TtlMinutes 是否已赋值
                      * @return TtlMinutes 是否已赋值
+                     * 
                      */
                     bool TtlMinutesHasBeenSet() const;
 
                     /**
                      * 获取设备ID。创建Token时, 此参数为必须项
                      * @return Tid 设备ID。创建Token时, 此参数为必须项
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备ID。创建Token时, 此参数为必须项
-                     * @param Tid 设备ID。创建Token时, 此参数为必须项
+                     * @param _tid 设备ID。创建Token时, 此参数为必须项
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
                     /**
                      * 获取旧的AccessToken。续期Token时，此参数为必须
                      * @return OldAccessToken 旧的AccessToken。续期Token时，此参数为必须
+                     * 
                      */
                     std::string GetOldAccessToken() const;
 
                     /**
                      * 设置旧的AccessToken。续期Token时，此参数为必须
-                     * @param OldAccessToken 旧的AccessToken。续期Token时，此参数为必须
+                     * @param _oldAccessToken 旧的AccessToken。续期Token时，此参数为必须
+                     * 
                      */
                     void SetOldAccessToken(const std::string& _oldAccessToken);
 
                     /**
                      * 判断参数 OldAccessToken 是否已赋值
                      * @return OldAccessToken 是否已赋值
+                     * 
                      */
                     bool OldAccessTokenHasBeenSet() const;
 

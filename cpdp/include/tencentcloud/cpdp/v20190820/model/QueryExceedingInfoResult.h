@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取记录总数。
                      * @return Count 记录总数。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置记录总数。
-                     * @param Count 记录总数。
+                     * @param _count 记录总数。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 
@@ -70,20 +73,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 超额信息数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<QueryExceedingInfoData> GetData() const;
 
                     /**
                      * 设置超额信息数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Data 超额信息数据。
+                     * @param _data 超额信息数据。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetData(const std::vector<QueryExceedingInfoData>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

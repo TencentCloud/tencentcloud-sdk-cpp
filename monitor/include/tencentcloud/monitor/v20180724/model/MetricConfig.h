@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取允许使用的运算符
                      * @return Operator 允许使用的运算符
+                     * 
                      */
                     std::vector<std::string> GetOperator() const;
 
                     /**
                      * 设置允许使用的运算符
-                     * @param Operator 允许使用的运算符
+                     * @param _operator 允许使用的运算符
+                     * 
                      */
                     void SetOperator(const std::vector<std::string>& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取允许配置的数据周期，以秒为单位
                      * @return Period 允许配置的数据周期，以秒为单位
+                     * 
                      */
                     std::vector<int64_t> GetPeriod() const;
 
                     /**
                      * 设置允许配置的数据周期，以秒为单位
-                     * @param Period 允许配置的数据周期，以秒为单位
+                     * @param _period 允许配置的数据周期，以秒为单位
+                     * 
                      */
                     void SetPeriod(const std::vector<int64_t>& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取允许配置的持续周期个数
                      * @return ContinuePeriod 允许配置的持续周期个数
+                     * 
                      */
                     std::vector<int64_t> GetContinuePeriod() const;
 
                     /**
                      * 设置允许配置的持续周期个数
-                     * @param ContinuePeriod 允许配置的持续周期个数
+                     * @param _continuePeriod 允许配置的持续周期个数
+                     * 
                      */
                     void SetContinuePeriod(const std::vector<int64_t>& _continuePeriod);
 
                     /**
                      * 判断参数 ContinuePeriod 是否已赋值
                      * @return ContinuePeriod 是否已赋值
+                     * 
                      */
                     bool ContinuePeriodHasBeenSet() const;
 

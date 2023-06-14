@@ -50,126 +50,147 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Desc 描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-                     * @param Desc 描述
+                     * @param _desc 描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
                     /**
                      * 获取路径
                      * @return Path 路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置路径
-                     * @param Path 路径
+                     * @param _path 路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取版本
                      * @return Version 版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本
-                     * @param Version 版本
+                     * @param _version 版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取大小
                      * @return Size 大小
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置大小
-                     * @param Size 大小
+                     * @param _size 大小
+                     * 
                      */
                     void SetSize(const uint64_t& _size);
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
                     /**
                      * 获取依赖进程
                      * @return Processes 依赖进程
+                     * 
                      */
                     std::string GetProcesses() const;
 
                     /**
                      * 设置依赖进程
-                     * @param Processes 依赖进程
+                     * @param _processes 依赖进程
+                     * 
                      */
                     void SetProcesses(const std::string& _processes);
 
                     /**
                      * 判断参数 Processes 是否已赋值
                      * @return Processes 是否已赋值
+                     * 
                      */
                     bool ProcessesHasBeenSet() const;
 
                     /**
                      * 获取被依赖模块
                      * @return Modules 被依赖模块
+                     * 
                      */
                     std::string GetModules() const;
 
                     /**
                      * 设置被依赖模块
-                     * @param Modules 被依赖模块
+                     * @param _modules 被依赖模块
+                     * 
                      */
                     void SetModules(const std::string& _modules);
 
                     /**
                      * 判断参数 Modules 是否已赋值
                      * @return Modules 是否已赋值
+                     * 
                      */
                     bool ModulesHasBeenSet() const;
 
@@ -178,20 +199,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Params 参数信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AssetCoreModuleParam> GetParams() const;
 
                     /**
                      * 设置参数信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Params 参数信息
+                     * @param _params 参数信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetParams(const std::vector<AssetCoreModuleParam>& _params);
 
                     /**
                      * 判断参数 Params 是否已赋值
                      * @return Params 是否已赋值
+                     * 
                      */
                     bool ParamsHasBeenSet() const;
 
@@ -200,20 +224,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 数据更新时间
+                     * @param _updateTime 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

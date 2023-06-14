@@ -56,6 +56,7 @@ off：关闭
                      * @return Switch Scdn waf配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -63,15 +64,17 @@ off：关闭
                      * 设置Scdn waf配置开关，取值有：
 on：开启
 off：关闭
-                     * @param Switch Scdn waf配置开关，取值有：
+                     * @param _switch Scdn waf配置开关，取值有：
 on：开启
 off：关闭
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -80,20 +83,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode intercept|observe，默认intercept
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置intercept|observe，默认intercept
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode intercept|observe，默认intercept
+                     * @param _mode intercept|observe，默认intercept
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -102,20 +108,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorPage 重定向的错误页面
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ScdnErrorPage GetErrorPage() const;
 
                     /**
                      * 设置重定向的错误页面
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ErrorPage 重定向的错误页面
+                     * @param _errorPage 重定向的错误页面
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetErrorPage(const ScdnErrorPage& _errorPage);
 
                     /**
                      * 判断参数 ErrorPage 是否已赋值
                      * @return ErrorPage 是否已赋值
+                     * 
                      */
                     bool ErrorPageHasBeenSet() const;
 
@@ -128,6 +137,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetWebShellSwitch() const;
 
@@ -136,16 +146,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WebShellSwitch webshell拦截配置开关，取值有：
+                     * @param _webShellSwitch webshell拦截配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWebShellSwitch(const std::string& _webShellSwitch);
 
                     /**
                      * 判断参数 WebShellSwitch 是否已赋值
                      * @return WebShellSwitch 是否已赋值
+                     * 
                      */
                     bool WebShellSwitchHasBeenSet() const;
 
@@ -154,20 +166,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 类型拦截规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ScdnWafRule> GetRules() const;
 
                     /**
                      * 设置类型拦截规则
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rules 类型拦截规则
+                     * @param _rules 类型拦截规则
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRules(const std::vector<ScdnWafRule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
@@ -176,20 +191,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level waf规则等级，可取100|200|300
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置waf规则等级，可取100|200|300
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level waf规则等级，可取100|200|300
+                     * @param _level waf规则等级，可取100|200|300
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const int64_t& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
@@ -202,6 +220,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<WafSubRuleStatus> GetSubRuleSwitch() const;
 
@@ -210,16 +229,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubRuleSwitch waf子规则配置开关，取值有：
+                     * @param _subRuleSwitch waf子规则配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubRuleSwitch(const std::vector<WafSubRuleStatus>& _subRuleSwitch);
 
                     /**
                      * 判断参数 SubRuleSwitch 是否已赋值
                      * @return SubRuleSwitch 是否已赋值
+                     * 
                      */
                     bool SubRuleSwitchHasBeenSet() const;
 

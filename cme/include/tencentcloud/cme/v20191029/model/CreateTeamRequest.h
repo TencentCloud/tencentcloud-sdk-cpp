@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取平台名称，指定访问的平台。
                      * @return Platform 平台名称，指定访问的平台。
+                     * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台名称，指定访问的平台。
-                     * @param Platform 平台名称，指定访问的平台。
+                     * @param _platform 平台名称，指定访问的平台。
+                     * 
                      */
                     void SetPlatform(const std::string& _platform);
 
                     /**
                      * 判断参数 Platform 是否已赋值
                      * @return Platform 是否已赋值
+                     * 
                      */
                     bool PlatformHasBeenSet() const;
 
                     /**
                      * 获取团队名称，限30个字符。
                      * @return Name 团队名称，限30个字符。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置团队名称，限30个字符。
-                     * @param Name 团队名称，限30个字符。
+                     * @param _name 团队名称，限30个字符。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取团队所有者，指定用户 ID。
                      * @return OwnerId 团队所有者，指定用户 ID。
+                     * 
                      */
                     std::string GetOwnerId() const;
 
                     /**
                      * 设置团队所有者，指定用户 ID。
-                     * @param OwnerId 团队所有者，指定用户 ID。
+                     * @param _ownerId 团队所有者，指定用户 ID。
+                     * 
                      */
                     void SetOwnerId(const std::string& _ownerId);
 
                     /**
                      * 判断参数 OwnerId 是否已赋值
                      * @return OwnerId 是否已赋值
+                     * 
                      */
                     bool OwnerIdHasBeenSet() const;
 
                     /**
                      * 获取团队所有者的备注，限30个字符。
                      * @return OwnerRemark 团队所有者的备注，限30个字符。
+                     * 
                      */
                     std::string GetOwnerRemark() const;
 
                     /**
                      * 设置团队所有者的备注，限30个字符。
-                     * @param OwnerRemark 团队所有者的备注，限30个字符。
+                     * @param _ownerRemark 团队所有者的备注，限30个字符。
+                     * 
                      */
                     void SetOwnerRemark(const std::string& _ownerRemark);
 
                     /**
                      * 判断参数 OwnerRemark 是否已赋值
                      * @return OwnerRemark 是否已赋值
+                     * 
                      */
                     bool OwnerRemarkHasBeenSet() const;
 
                     /**
                      * 获取自定义团队 ID。创建后不可修改，限20个英文字符及"-"。同时不能以 cmetid_开头。不填会生成默认团队 ID。
                      * @return TeamId 自定义团队 ID。创建后不可修改，限20个英文字符及"-"。同时不能以 cmetid_开头。不填会生成默认团队 ID。
+                     * 
                      */
                     std::string GetTeamId() const;
 
                     /**
                      * 设置自定义团队 ID。创建后不可修改，限20个英文字符及"-"。同时不能以 cmetid_开头。不填会生成默认团队 ID。
-                     * @param TeamId 自定义团队 ID。创建后不可修改，限20个英文字符及"-"。同时不能以 cmetid_开头。不填会生成默认团队 ID。
+                     * @param _teamId 自定义团队 ID。创建后不可修改，限20个英文字符及"-"。同时不能以 cmetid_开头。不填会生成默认团队 ID。
+                     * 
                      */
                     void SetTeamId(const std::string& _teamId);
 
                     /**
                      * 判断参数 TeamId 是否已赋值
                      * @return TeamId 是否已赋值
+                     * 
                      */
                     bool TeamIdHasBeenSet() const;
 

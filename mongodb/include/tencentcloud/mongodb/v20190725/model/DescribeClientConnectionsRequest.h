@@ -47,56 +47,65 @@ namespace TencentCloud
 
                      * @return InstanceId 指定待查询的实例ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
 
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定待查询的实例ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
 
-                     * @param InstanceId 指定待查询的实例ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceId 指定待查询的实例ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
 
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。
                      * @return Limit 单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。
-                     * @param Limit 单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。
+                     * @param _limit 单次请求返回的数量。最小值为1，最大值为1000，默认值为1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认值为0。Offset=Limit*(页码-1)。
                      * @return Offset 偏移量，默认值为0。Offset=Limit*(页码-1)。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认值为0。Offset=Limit*(页码-1)。
-                     * @param Offset 偏移量，默认值为0。Offset=Limit*(页码-1)。
+                     * @param _offset 偏移量，默认值为0。Offset=Limit*(页码-1)。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 

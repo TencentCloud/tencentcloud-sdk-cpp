@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取频道ID
                      * @return LiveChannelId 频道ID
+                     * 
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
                      * 设置频道ID
-                     * @param LiveChannelId 频道ID
+                     * @param _liveChannelId 频道ID
+                     * 
                      */
                     void SetLiveChannelId(const std::string& _liveChannelId);
 
                     /**
                      * 判断参数 LiveChannelId 是否已赋值
                      * @return LiveChannelId 是否已赋值
+                     * 
                      */
                     bool LiveChannelIdHasBeenSet() const;
 
                     /**
                      * 获取过期时间 秒级unix时间戳
                      * @return ExpireTime 过期时间 秒级unix时间戳
+                     * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间 秒级unix时间戳
-                     * @param ExpireTime 过期时间 秒级unix时间戳
+                     * @param _expireTime 过期时间 秒级unix时间戳
+                     * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

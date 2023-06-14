@@ -52,18 +52,21 @@ namespace TencentCloud
                     /**
                      * 获取三级标签名
                      * @return Name 三级标签名
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置三级标签名
-                     * @param Name 三级标签名
+                     * @param _name 三级标签名
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -72,20 +75,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppearIndexPairSet 三级标签出现信息索引数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AppearIndexPair> GetAppearIndexPairSet() const;
 
                     /**
                      * 设置三级标签出现信息索引数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppearIndexPairSet 三级标签出现信息索引数组
+                     * @param _appearIndexPairSet 三级标签出现信息索引数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppearIndexPairSet(const std::vector<AppearIndexPair>& _appearIndexPairSet);
 
                     /**
                      * 判断参数 AppearIndexPairSet 是否已赋值
                      * @return AppearIndexPairSet 是否已赋值
+                     * 
                      */
                     bool AppearIndexPairSetHasBeenSet() const;
 
@@ -94,20 +100,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstAppear 三级标签首次出现信息，可选值为[1,3]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFirstAppear() const;
 
                     /**
                      * 设置三级标签首次出现信息，可选值为[1,3]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FirstAppear 三级标签首次出现信息，可选值为[1,3]
+                     * @param _firstAppear 三级标签首次出现信息，可选值为[1,3]
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFirstAppear(const int64_t& _firstAppear);
 
                     /**
                      * 判断参数 FirstAppear 是否已赋值
                      * @return FirstAppear 是否已赋值
+                     * 
                      */
                     bool FirstAppearHasBeenSet() const;
 

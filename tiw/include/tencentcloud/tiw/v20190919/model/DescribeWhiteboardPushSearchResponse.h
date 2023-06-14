@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取推流任务搜索结果集合
                      * @return WhiteboardPushTaskSet 推流任务搜索结果集合
+                     * 
                      */
                     std::vector<WhiteboardPushTaskSearchResult> GetWhiteboardPushTaskSet() const;
 
                     /**
                      * 判断参数 WhiteboardPushTaskSet 是否已赋值
                      * @return WhiteboardPushTaskSet 是否已赋值
+                     * 
                      */
                     bool WhiteboardPushTaskSetHasBeenSet() const;
 
                     /**
                      * 获取推流总任务数
                      * @return TotalCount 推流总任务数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

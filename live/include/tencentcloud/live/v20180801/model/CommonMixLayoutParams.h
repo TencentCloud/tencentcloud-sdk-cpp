@@ -55,6 +55,7 @@ namespace TencentCloud
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
 注意：不同输入，该值不可重复
+                     * 
                      */
                     int64_t GetImageLayer() const;
 
@@ -63,16 +64,18 @@ namespace TencentCloud
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
 注意：不同输入，该值不可重复
-                     * @param ImageLayer 输入图层。取值范围[1，16]。
+                     * @param _imageLayer 输入图层。取值范围[1，16]。
 1)背景流（即大主播画面或画布）的 image_layer 填1。
 2)纯音频混流，该参数也需填。
 注意：不同输入，该值不可重复
+                     * 
                      */
                     void SetImageLayer(const int64_t& _imageLayer);
 
                     /**
                      * 判断参数 ImageLayer 是否已赋值
                      * @return ImageLayer 是否已赋值
+                     * 
                      */
                     bool ImageLayerHasBeenSet() const;
 
@@ -91,6 +94,7 @@ namespace TencentCloud
 3表示输入流为画布。 
 4表示输入流为音频。
 5表示输入流为纯视频。
+                     * 
                      */
                     int64_t GetInputType() const;
 
@@ -102,19 +106,21 @@ namespace TencentCloud
 3表示输入流为画布。 
 4表示输入流为音频。
 5表示输入流为纯视频。
-                     * @param InputType 输入类型。取值范围[0，5]。
+                     * @param _inputType 输入类型。取值范围[0，5]。
 不填默认为0。
 0表示输入流为音视频。
 2表示输入流为图片。
 3表示输入流为画布。 
 4表示输入流为音频。
 5表示输入流为纯视频。
+                     * 
                      */
                     void SetInputType(const int64_t& _inputType);
 
                     /**
                      * 判断参数 InputType 是否已赋值
                      * @return InputType 是否已赋值
+                     * 
                      */
                     bool InputTypeHasBeenSet() const;
 
@@ -129,6 +135,7 @@ namespace TencentCloud
 百分比：[0.01，0.99]
 不填默认为输入流的高度。
 使用百分比时，期望输出为（百分比 * 背景高）。
+                     * 
                      */
                     double GetImageHeight() const;
 
@@ -138,17 +145,19 @@ namespace TencentCloud
 百分比：[0.01，0.99]
 不填默认为输入流的高度。
 使用百分比时，期望输出为（百分比 * 背景高）。
-                     * @param ImageHeight 输入画面在输出时的高度。取值范围：
+                     * @param _imageHeight 输入画面在输出时的高度。取值范围：
 像素：[0，2000]
 百分比：[0.01，0.99]
 不填默认为输入流的高度。
 使用百分比时，期望输出为（百分比 * 背景高）。
+                     * 
                      */
                     void SetImageHeight(const double& _imageHeight);
 
                     /**
                      * 判断参数 ImageHeight 是否已赋值
                      * @return ImageHeight 是否已赋值
+                     * 
                      */
                     bool ImageHeightHasBeenSet() const;
 
@@ -163,6 +172,7 @@ namespace TencentCloud
 百分比：[0.01，0.99]
 不填默认为输入流的宽度。
 使用百分比时，期望输出为（百分比 * 背景宽）。
+                     * 
                      */
                     double GetImageWidth() const;
 
@@ -172,17 +182,19 @@ namespace TencentCloud
 百分比：[0.01，0.99]
 不填默认为输入流的宽度。
 使用百分比时，期望输出为（百分比 * 背景宽）。
-                     * @param ImageWidth 输入画面在输出时的宽度。取值范围：
+                     * @param _imageWidth 输入画面在输出时的宽度。取值范围：
 像素：[0，2000]
 百分比：[0.01，0.99]
 不填默认为输入流的宽度。
 使用百分比时，期望输出为（百分比 * 背景宽）。
+                     * 
                      */
                     void SetImageWidth(const double& _imageWidth);
 
                     /**
                      * 判断参数 ImageWidth 是否已赋值
                      * @return ImageWidth 是否已赋值
+                     * 
                      */
                     bool ImageWidthHasBeenSet() const;
 
@@ -199,6 +211,7 @@ namespace TencentCloud
 不填默认为0。
 相对于大主播背景画面左上角的横向偏移。 
 使用百分比时，期望输出为（百分比 * 背景宽）。
+                     * 
                      */
                     double GetLocationX() const;
 
@@ -209,18 +222,20 @@ namespace TencentCloud
 不填默认为0。
 相对于大主播背景画面左上角的横向偏移。 
 使用百分比时，期望输出为（百分比 * 背景宽）。
-                     * @param LocationX 输入在输出画面的X偏移。取值范围：
+                     * @param _locationX 输入在输出画面的X偏移。取值范围：
 像素：[0，2000]
 百分比：[0.01，0.99]
 不填默认为0。
 相对于大主播背景画面左上角的横向偏移。 
 使用百分比时，期望输出为（百分比 * 背景宽）。
+                     * 
                      */
                     void SetLocationX(const double& _locationX);
 
                     /**
                      * 判断参数 LocationX 是否已赋值
                      * @return LocationX 是否已赋值
+                     * 
                      */
                     bool LocationXHasBeenSet() const;
 
@@ -237,6 +252,7 @@ namespace TencentCloud
 不填默认为0。
 相对于大主播背景画面左上角的纵向偏移。 
 使用百分比时，期望输出为（百分比 * 背景宽）
+                     * 
                      */
                     double GetLocationY() const;
 
@@ -247,18 +263,20 @@ namespace TencentCloud
 不填默认为0。
 相对于大主播背景画面左上角的纵向偏移。 
 使用百分比时，期望输出为（百分比 * 背景宽）
-                     * @param LocationY 输入在输出画面的Y偏移。取值范围：
+                     * @param _locationY 输入在输出画面的Y偏移。取值范围：
 像素：[0，2000]
 百分比：[0.01，0.99]
 不填默认为0。
 相对于大主播背景画面左上角的纵向偏移。 
 使用百分比时，期望输出为（百分比 * 背景宽）
+                     * 
                      */
                     void SetLocationY(const double& _locationY);
 
                     /**
                      * 判断参数 LocationY 是否已赋值
                      * @return LocationY 是否已赋值
+                     * 
                      */
                     bool LocationYHasBeenSet() const;
 
@@ -281,6 +299,7 @@ namespace TencentCloud
 黑色：0x000000。
 白色：0xFFFFFF。
 灰色：0x999999。
+                     * 
                      */
                     std::string GetColor() const;
 
@@ -294,7 +313,7 @@ namespace TencentCloud
 黑色：0x000000。
 白色：0xFFFFFF。
 灰色：0x999999。
-                     * @param Color 当InputType为3(画布)时，该值表示画布的颜色。
+                     * @param _color 当InputType为3(画布)时，该值表示画布的颜色。
 常用的颜色有：
 红色：0xcc0033。
 黄色：0xcc9900。
@@ -303,30 +322,35 @@ namespace TencentCloud
 黑色：0x000000。
 白色：0xFFFFFF。
 灰色：0x999999。
+                     * 
                      */
                     void SetColor(const std::string& _color);
 
                     /**
                      * 判断参数 Color 是否已赋值
                      * @return Color 是否已赋值
+                     * 
                      */
                     bool ColorHasBeenSet() const;
 
                     /**
                      * 获取当InputType为2(图片)时，该值是水印ID。
                      * @return WatermarkId 当InputType为2(图片)时，该值是水印ID。
+                     * 
                      */
                     int64_t GetWatermarkId() const;
 
                     /**
                      * 设置当InputType为2(图片)时，该值是水印ID。
-                     * @param WatermarkId 当InputType为2(图片)时，该值是水印ID。
+                     * @param _watermarkId 当InputType为2(图片)时，该值是水印ID。
+                     * 
                      */
                     void SetWatermarkId(const int64_t& _watermarkId);
 
                     /**
                      * 判断参数 WatermarkId 是否已赋值
                      * @return WatermarkId 是否已赋值
+                     * 
                      */
                     bool WatermarkIdHasBeenSet() const;
 

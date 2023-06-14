@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取此次任务ID。
                      * @return JobId 此次任务ID。
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取失败的任务列表及原因。
                      * @return FailedList 失败的任务列表及原因。
+                     * 
                      */
                     std::vector<FailReason> GetFailedList() const;
 
                     /**
                      * 判断参数 FailedList 是否已赋值
                      * @return FailedList 是否已赋值
+                     * 
                      */
                     bool FailedListHasBeenSet() const;
 

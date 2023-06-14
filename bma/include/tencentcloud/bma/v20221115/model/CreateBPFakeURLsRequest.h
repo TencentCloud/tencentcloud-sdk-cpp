@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取批量模板
                      * @return FakeURLs 批量模板
+                     * 
                      */
                     std::string GetFakeURLs() const;
 
                     /**
                      * 设置批量模板
-                     * @param FakeURLs 批量模板
+                     * @param _fakeURLs 批量模板
+                     * 
                      */
                     void SetFakeURLs(const std::string& _fakeURLs);
 
                     /**
                      * 判断参数 FakeURLs 是否已赋值
                      * @return FakeURLs 是否已赋值
+                     * 
                      */
                     bool FakeURLsHasBeenSet() const;
 

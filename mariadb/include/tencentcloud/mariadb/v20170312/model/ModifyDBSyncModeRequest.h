@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待修改同步模式的实例ID。形如：tdsql-ow728lmc。
                      * @return InstanceId 待修改同步模式的实例ID。形如：tdsql-ow728lmc。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置待修改同步模式的实例ID。形如：tdsql-ow728lmc。
-                     * @param InstanceId 待修改同步模式的实例ID。形如：tdsql-ow728lmc。
+                     * @param _instanceId 待修改同步模式的实例ID。形如：tdsql-ow728lmc。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取同步模式：0 异步，1 强同步， 2 强同步可退化
                      * @return SyncMode 同步模式：0 异步，1 强同步， 2 强同步可退化
+                     * 
                      */
                     int64_t GetSyncMode() const;
 
                     /**
                      * 设置同步模式：0 异步，1 强同步， 2 强同步可退化
-                     * @param SyncMode 同步模式：0 异步，1 强同步， 2 强同步可退化
+                     * @param _syncMode 同步模式：0 异步，1 强同步， 2 强同步可退化
+                     * 
                      */
                     void SetSyncMode(const int64_t& _syncMode);
 
                     /**
                      * 判断参数 SyncMode 是否已赋值
                      * @return SyncMode 是否已赋值
+                     * 
                      */
                     bool SyncModeHasBeenSet() const;
 

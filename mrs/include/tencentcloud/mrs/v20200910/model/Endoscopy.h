@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BiopsyPart 活检部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     BiopsyPart GetBiopsyPart() const;
 
                     /**
                      * 设置活检部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BiopsyPart 活检部位
+                     * @param _biopsyPart 活检部位
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBiopsyPart(const BiopsyPart& _biopsyPart);
 
                     /**
                      * 判断参数 BiopsyPart 是否已赋值
                      * @return BiopsyPart 是否已赋值
+                     * 
                      */
                     bool BiopsyPartHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 可见描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     EndoscopyDesc GetDesc() const;
 
                     /**
                      * 设置可见描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 可见描述
+                     * @param _desc 可见描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const EndoscopyDesc& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Summary GetSummary() const;
 
                     /**
                      * 设置结论
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Summary 结论
+                     * @param _summary 结论
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSummary(const Summary& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 

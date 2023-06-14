@@ -48,108 +48,126 @@ namespace TencentCloud
                     /**
                      * 获取专用集群id
                      * @return DedicatedClusterId 专用集群id
+                     * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置专用集群id
-                     * @param DedicatedClusterId 专用集群id
+                     * @param _dedicatedClusterId 专用集群id
+                     * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
 
                     /**
                      * 判断参数 DedicatedClusterId 是否已赋值
                      * @return DedicatedClusterId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
                     /**
                      * 获取order关联的专用集群类型数组
                      * @return DedicatedClusterTypes order关联的专用集群类型数组
+                     * 
                      */
                     std::vector<DedicatedClusterTypeInfo> GetDedicatedClusterTypes() const;
 
                     /**
                      * 设置order关联的专用集群类型数组
-                     * @param DedicatedClusterTypes order关联的专用集群类型数组
+                     * @param _dedicatedClusterTypes order关联的专用集群类型数组
+                     * 
                      */
                     void SetDedicatedClusterTypes(const std::vector<DedicatedClusterTypeInfo>& _dedicatedClusterTypes);
 
                     /**
                      * 判断参数 DedicatedClusterTypes 是否已赋值
                      * @return DedicatedClusterTypes 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterTypesHasBeenSet() const;
 
                     /**
                      * 获取order关联的cos存储信息
                      * @return CosInfo order关联的cos存储信息
+                     * 
                      */
                     CosInfo GetCosInfo() const;
 
                     /**
                      * 设置order关联的cos存储信息
-                     * @param CosInfo order关联的cos存储信息
+                     * @param _cosInfo order关联的cos存储信息
+                     * 
                      */
                     void SetCosInfo(const CosInfo& _cosInfo);
 
                     /**
                      * 判断参数 CosInfo 是否已赋值
                      * @return CosInfo 是否已赋值
+                     * 
                      */
                     bool CosInfoHasBeenSet() const;
 
                     /**
                      * 获取order关联的cbs存储信息
                      * @return CbsInfo order关联的cbs存储信息
+                     * 
                      */
                     CbsInfo GetCbsInfo() const;
 
                     /**
                      * 设置order关联的cbs存储信息
-                     * @param CbsInfo order关联的cbs存储信息
+                     * @param _cbsInfo order关联的cbs存储信息
+                     * 
                      */
                     void SetCbsInfo(const CbsInfo& _cbsInfo);
 
                     /**
                      * 判断参数 CbsInfo 是否已赋值
                      * @return CbsInfo 是否已赋值
+                     * 
                      */
                     bool CbsInfoHasBeenSet() const;
 
                     /**
                      * 获取购买来源，默认为cloudApi
                      * @return PurchaseSource 购买来源，默认为cloudApi
+                     * 
                      */
                     std::string GetPurchaseSource() const;
 
                     /**
                      * 设置购买来源，默认为cloudApi
-                     * @param PurchaseSource 购买来源，默认为cloudApi
+                     * @param _purchaseSource 购买来源，默认为cloudApi
+                     * 
                      */
                     void SetPurchaseSource(const std::string& _purchaseSource);
 
                     /**
                      * 判断参数 PurchaseSource 是否已赋值
                      * @return PurchaseSource 是否已赋值
+                     * 
                      */
                     bool PurchaseSourceHasBeenSet() const;
 
                     /**
                      * 获取当调用API接口提交订单时，需要提交DedicatedClusterOrderId
                      * @return DedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId
+                     * 
                      */
                     std::string GetDedicatedClusterOrderId() const;
 
                     /**
                      * 设置当调用API接口提交订单时，需要提交DedicatedClusterOrderId
-                     * @param DedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId
+                     * @param _dedicatedClusterOrderId 当调用API接口提交订单时，需要提交DedicatedClusterOrderId
+                     * 
                      */
                     void SetDedicatedClusterOrderId(const std::string& _dedicatedClusterOrderId);
 
                     /**
                      * 判断参数 DedicatedClusterOrderId 是否已赋值
                      * @return DedicatedClusterOrderId 是否已赋值
+                     * 
                      */
                     bool DedicatedClusterOrderIdHasBeenSet() const;
 

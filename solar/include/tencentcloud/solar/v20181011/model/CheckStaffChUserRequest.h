@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取员工ID
                      * @return UserId 员工ID
+                     * 
                      */
                     std::vector<std::string> GetUserId() const;
 
                     /**
                      * 设置员工ID
-                     * @param UserId 员工ID
+                     * @param _userId 员工ID
+                     * 
                      */
                     void SetUserId(const std::vector<std::string>& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取渠道状态：checkpass审核通过, checkreject审核拒绝, enableoperate启用, stopoperate停用
                      * @return OperateType 渠道状态：checkpass审核通过, checkreject审核拒绝, enableoperate启用, stopoperate停用
+                     * 
                      */
                     std::string GetOperateType() const;
 
                     /**
                      * 设置渠道状态：checkpass审核通过, checkreject审核拒绝, enableoperate启用, stopoperate停用
-                     * @param OperateType 渠道状态：checkpass审核通过, checkreject审核拒绝, enableoperate启用, stopoperate停用
+                     * @param _operateType 渠道状态：checkpass审核通过, checkreject审核拒绝, enableoperate启用, stopoperate停用
+                     * 
                      */
                     void SetOperateType(const std::string& _operateType);
 
                     /**
                      * 判断参数 OperateType 是否已赋值
                      * @return OperateType 是否已赋值
+                     * 
                      */
                     bool OperateTypeHasBeenSet() const;
 

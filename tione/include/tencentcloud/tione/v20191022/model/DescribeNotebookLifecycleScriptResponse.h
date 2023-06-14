@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取生命周期脚本名称
                      * @return NotebookLifecycleScriptsName 生命周期脚本名称
+                     * 
                      */
                     std::string GetNotebookLifecycleScriptsName() const;
 
                     /**
                      * 判断参数 NotebookLifecycleScriptsName 是否已赋值
                      * @return NotebookLifecycleScriptsName 是否已赋值
+                     * 
                      */
                     bool NotebookLifecycleScriptsNameHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateScript 创建脚本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateScript() const;
 
                     /**
                      * 判断参数 CreateScript 是否已赋值
                      * @return CreateScript 是否已赋值
+                     * 
                      */
                     bool CreateScriptHasBeenSet() const;
 
@@ -74,36 +78,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartScript 启动脚本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartScript() const;
 
                     /**
                      * 判断参数 StartScript 是否已赋值
                      * @return StartScript 是否已赋值
+                     * 
                      */
                     bool StartScriptHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreationTime 创建时间
+                     * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
                     /**
                      * 获取最后修改时间
                      * @return LastModifiedTime 最后修改时间
+                     * 
                      */
                     std::string GetLastModifiedTime() const;
 
                     /**
                      * 判断参数 LastModifiedTime 是否已赋值
                      * @return LastModifiedTime 是否已赋值
+                     * 
                      */
                     bool LastModifiedTimeHasBeenSet() const;
 

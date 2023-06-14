@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取环境Id
                      * @return EnvId 环境Id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境Id
-                     * @param EnvId 环境Id
+                     * @param _envId 环境Id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise
                      * @return PackageType 套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise
+                     * 
                      */
                     std::string GetPackageType() const;
 
                     /**
                      * 设置套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise
-                     * @param PackageType 套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise
+                     * @param _packageType 套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise
+                     * 
                      */
                     void SetPackageType(const std::string& _packageType);
 
                     /**
                      * 判断参数 PackageType 是否已赋值
                      * @return PackageType 是否已赋值
+                     * 
                      */
                     bool PackageTypeHasBeenSet() const;
 
                     /**
                      * 获取VPC Id
                      * @return VpcId VPC Id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC Id
-                     * @param VpcId VPC Id
+                     * @param _vpcId VPC Id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取环境创建时间
                      * @return CreateTime 环境创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置环境创建时间
-                     * @param CreateTime 环境创建时间
+                     * @param _createTime 环境创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取环境别名
                      * @return Alias 环境别名
+                     * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置环境别名
-                     * @param Alias 环境别名
+                     * @param _alias 环境别名
+                     * 
                      */
                     void SetAlias(const std::string& _alias);
 
                     /**
                      * 判断参数 Alias 是否已赋值
                      * @return Alias 是否已赋值
+                     * 
                      */
                     bool AliasHasBeenSet() const;
 
                     /**
                      * 获取环境状态
                      * @return Status 环境状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置环境状态
-                     * @param Status 环境状态
+                     * @param _status 环境状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取环境地域
                      * @return Region 环境地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置环境地域
-                     * @param Region 环境地域
+                     * @param _region 环境地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取环境类型 tcbr ｜ run
                      * @return EnvType 环境类型 tcbr ｜ run
+                     * 
                      */
                     std::string GetEnvType() const;
 
                     /**
                      * 设置环境类型 tcbr ｜ run
-                     * @param EnvType 环境类型 tcbr ｜ run
+                     * @param _envType 环境类型 tcbr ｜ run
+                     * 
                      */
                     void SetEnvType(const std::string& _envType);
 
                     /**
                      * 判断参数 EnvType 是否已赋值
                      * @return EnvType 是否已赋值
+                     * 
                      */
                     bool EnvTypeHasBeenSet() const;
 
                     /**
                      * 获取子网id
                      * @return SubnetIds 子网id
+                     * 
                      */
                     std::string GetSubnetIds() const;
 
                     /**
                      * 设置子网id
-                     * @param SubnetIds 子网id
+                     * @param _subnetIds 子网id
+                     * 
                      */
                     void SetSubnetIds(const std::string& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 

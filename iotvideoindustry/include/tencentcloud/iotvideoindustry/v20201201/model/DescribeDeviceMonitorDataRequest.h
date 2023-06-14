@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取开始时间戳
                      * @return StartTime 开始时间戳
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间戳
-                     * @param StartTime 开始时间戳
+                     * @param _startTime 开始时间戳
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳
                      * @return EndTime 结束时间戳
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间戳
-                     * @param EndTime 结束时间戳
+                     * @param _endTime 结束时间戳
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取类型 支持 OnlineChannels/OnlineDevices/RecordingChannels
                      * @return Type 类型 支持 OnlineChannels/OnlineDevices/RecordingChannels
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型 支持 OnlineChannels/OnlineDevices/RecordingChannels
-                     * @param Type 类型 支持 OnlineChannels/OnlineDevices/RecordingChannels
+                     * @param _type 类型 支持 OnlineChannels/OnlineDevices/RecordingChannels
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取时间粒度 目前只支持 1h
                      * @return TimesSpec 时间粒度 目前只支持 1h
+                     * 
                      */
                     std::string GetTimesSpec() const;
 
                     /**
                      * 设置时间粒度 目前只支持 1h
-                     * @param TimesSpec 时间粒度 目前只支持 1h
+                     * @param _timesSpec 时间粒度 目前只支持 1h
+                     * 
                      */
                     void SetTimesSpec(const std::string& _timesSpec);
 
                     /**
                      * 判断参数 TimesSpec 是否已赋值
                      * @return TimesSpec 是否已赋值
+                     * 
                      */
                     bool TimesSpecHasBeenSet() const;
 

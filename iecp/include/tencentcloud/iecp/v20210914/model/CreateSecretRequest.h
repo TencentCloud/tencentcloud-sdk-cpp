@@ -47,126 +47,147 @@ namespace TencentCloud
                     /**
                      * 获取单元ID
                      * @return EdgeUnitID 单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitID() const;
 
                     /**
                      * 设置单元ID
-                     * @param EdgeUnitID 单元ID
+                     * @param _edgeUnitID 单元ID
+                     * 
                      */
                     void SetEdgeUnitID(const uint64_t& _edgeUnitID);
 
                     /**
                      * 判断参数 EdgeUnitID 是否已赋值
                      * @return EdgeUnitID 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIDHasBeenSet() const;
 
                     /**
                      * 获取secret名
                      * @return SecretName secret名
+                     * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名
-                     * @param SecretName secret名
+                     * @param _secretName secret名
+                     * 
                      */
                     void SetSecretName(const std::string& _secretName);
 
                     /**
                      * 判断参数 SecretName 是否已赋值
                      * @return SecretName 是否已赋值
+                     * 
                      */
                     bool SecretNameHasBeenSet() const;
 
                     /**
                      * 获取命名空间（默认:default）
                      * @return SecretNamespace 命名空间（默认:default）
+                     * 
                      */
                     std::string GetSecretNamespace() const;
 
                     /**
                      * 设置命名空间（默认:default）
-                     * @param SecretNamespace 命名空间（默认:default）
+                     * @param _secretNamespace 命名空间（默认:default）
+                     * 
                      */
                     void SetSecretNamespace(const std::string& _secretNamespace);
 
                     /**
                      * 判断参数 SecretNamespace 是否已赋值
                      * @return SecretNamespace 是否已赋值
+                     * 
                      */
                     bool SecretNamespaceHasBeenSet() const;
 
                     /**
                      * 获取secret类型(取值范围:DockerConfigJson,Opaque 默认Opaque)
                      * @return SecretType secret类型(取值范围:DockerConfigJson,Opaque 默认Opaque)
+                     * 
                      */
                     std::string GetSecretType() const;
 
                     /**
                      * 设置secret类型(取值范围:DockerConfigJson,Opaque 默认Opaque)
-                     * @param SecretType secret类型(取值范围:DockerConfigJson,Opaque 默认Opaque)
+                     * @param _secretType secret类型(取值范围:DockerConfigJson,Opaque 默认Opaque)
+                     * 
                      */
                     void SetSecretType(const std::string& _secretType);
 
                     /**
                      * 判断参数 SecretType 是否已赋值
                      * @return SecretType 是否已赋值
+                     * 
                      */
                     bool SecretTypeHasBeenSet() const;
 
                     /**
                      * 获取DockerConfig的序列化base64编码后的字符串
                      * @return DockerConfigJson DockerConfig的序列化base64编码后的字符串
+                     * 
                      */
                     std::string GetDockerConfigJson() const;
 
                     /**
                      * 设置DockerConfig的序列化base64编码后的字符串
-                     * @param DockerConfigJson DockerConfig的序列化base64编码后的字符串
+                     * @param _dockerConfigJson DockerConfig的序列化base64编码后的字符串
+                     * 
                      */
                     void SetDockerConfigJson(const std::string& _dockerConfigJson);
 
                     /**
                      * 判断参数 DockerConfigJson 是否已赋值
                      * @return DockerConfigJson 是否已赋值
+                     * 
                      */
                     bool DockerConfigJsonHasBeenSet() const;
 
                     /**
                      * 获取Opaque类型的Secret内容
                      * @return CloudData Opaque类型的Secret内容
+                     * 
                      */
                     std::vector<KeyValueObj> GetCloudData() const;
 
                     /**
                      * 设置Opaque类型的Secret内容
-                     * @param CloudData Opaque类型的Secret内容
+                     * @param _cloudData Opaque类型的Secret内容
+                     * 
                      */
                     void SetCloudData(const std::vector<KeyValueObj>& _cloudData);
 
                     /**
                      * 判断参数 CloudData 是否已赋值
                      * @return CloudData 是否已赋值
+                     * 
                      */
                     bool CloudDataHasBeenSet() const;
 
                     /**
                      * 获取DockerConfig配置
                      * @return DockerConfig DockerConfig配置
+                     * 
                      */
                     DockerConfig GetDockerConfig() const;
 
                     /**
                      * 设置DockerConfig配置
-                     * @param DockerConfig DockerConfig配置
+                     * @param _dockerConfig DockerConfig配置
+                     * 
                      */
                     void SetDockerConfig(const DockerConfig& _dockerConfig);
 
                     /**
                      * 判断参数 DockerConfig 是否已赋值
                      * @return DockerConfig 是否已赋值
+                     * 
                      */
                     bool DockerConfigHasBeenSet() const;
 

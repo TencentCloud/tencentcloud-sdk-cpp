@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用户SdkAppId（如：1400xxxxxx）
                      * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置用户SdkAppId（如：1400xxxxxx）
-                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * @param _sdkAppId 用户SdkAppId（如：1400xxxxxx）
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 注意：支持查询14天内的数据。
                      * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
 注意：支持查询14天内的数据。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
 注意：支持查询14天内的数据。
-                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+                     * @param _startTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
 注意：支持查询14天内的数据。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -87,20 +93,23 @@ namespace TencentCloud
 注意：按天统计，结束时间大于前一天，否则查询数据为空（如：需查询20号数据，结束时间需晚于20号0点）。
                      * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
 注意：按天统计，结束时间大于前一天，否则查询数据为空（如：需查询20号数据，结束时间需晚于20号0点）。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
 注意：按天统计，结束时间大于前一天，否则查询数据为空（如：需查询20号数据，结束时间需晚于20号0点）。
-                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
+                     * @param _endTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
 注意：按天统计，结束时间大于前一天，否则查询数据为空（如：需查询20号数据，结束时间需晚于20号0点）。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取流量镜像实例ID数组，可以批量删除，每次删除上限为20
                      * @return TrafficMirrorIds 流量镜像实例ID数组，可以批量删除，每次删除上限为20
+                     * 
                      */
                     std::vector<std::string> GetTrafficMirrorIds() const;
 
                     /**
                      * 设置流量镜像实例ID数组，可以批量删除，每次删除上限为20
-                     * @param TrafficMirrorIds 流量镜像实例ID数组，可以批量删除，每次删除上限为20
+                     * @param _trafficMirrorIds 流量镜像实例ID数组，可以批量删除，每次删除上限为20
+                     * 
                      */
                     void SetTrafficMirrorIds(const std::vector<std::string>& _trafficMirrorIds);
 
                     /**
                      * 判断参数 TrafficMirrorIds 是否已赋值
                      * @return TrafficMirrorIds 是否已赋值
+                     * 
                      */
                     bool TrafficMirrorIdsHasBeenSet() const;
 

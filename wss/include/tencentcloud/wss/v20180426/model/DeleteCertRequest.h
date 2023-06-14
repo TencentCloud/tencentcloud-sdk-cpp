@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取证书 ID，即通过 GetList 拿到的证书列表的 ID 字段。
                      * @return Id 证书 ID，即通过 GetList 拿到的证书列表的 ID 字段。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置证书 ID，即通过 GetList 拿到的证书列表的 ID 字段。
-                     * @param Id 证书 ID，即通过 GetList 拿到的证书列表的 ID 字段。
+                     * @param _id 证书 ID，即通过 GetList 拿到的证书列表的 ID 字段。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取模块名称，应填 ssl。
                      * @return ModuleType 模块名称，应填 ssl。
+                     * 
                      */
                     std::string GetModuleType() const;
 
                     /**
                      * 设置模块名称，应填 ssl。
-                     * @param ModuleType 模块名称，应填 ssl。
+                     * @param _moduleType 模块名称，应填 ssl。
+                     * 
                      */
                     void SetModuleType(const std::string& _moduleType);
 
                     /**
                      * 判断参数 ModuleType 是否已赋值
                      * @return ModuleType 是否已赋值
+                     * 
                      */
                     bool ModuleTypeHasBeenSet() const;
 

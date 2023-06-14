@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgId 企业组织ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOrgId() const;
 
                     /**
                      * 判断参数 OrgId 是否已赋值
                      * @return OrgId 是否已赋值
+                     * 
                      */
                     bool OrgIdHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostUin 创建者UIN。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetHostUin() const;
 
                     /**
                      * 判断参数 HostUin 是否已赋值
                      * @return HostUin 是否已赋值
+                     * 
                      */
                     bool HostUinHasBeenSet() const;
 
@@ -77,12 +81,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickName 创建者昵称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNickName() const;
 
                     /**
                      * 判断参数 NickName 是否已赋值
                      * @return NickName 是否已赋值
+                     * 
                      */
                     bool NickNameHasBeenSet() const;
 
@@ -91,12 +97,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgType 企业组织类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetOrgType() const;
 
                     /**
                      * 判断参数 OrgType 是否已赋值
                      * @return OrgType 是否已赋值
+                     * 
                      */
                     bool OrgTypeHasBeenSet() const;
 
@@ -105,12 +113,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsManager 是否组织管理员。是：true ，否：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsManager() const;
 
                     /**
                      * 判断参数 IsManager 是否已赋值
                      * @return IsManager 是否已赋值
+                     * 
                      */
                     bool IsManagerHasBeenSet() const;
 
@@ -119,12 +129,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPolicyType 策略类型。财务管理：Financial
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgPolicyType() const;
 
                     /**
                      * 判断参数 OrgPolicyType 是否已赋值
                      * @return OrgPolicyType 是否已赋值
+                     * 
                      */
                     bool OrgPolicyTypeHasBeenSet() const;
 
@@ -133,12 +145,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPolicyName 策略名。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOrgPolicyName() const;
 
                     /**
                      * 判断参数 OrgPolicyName 是否已赋值
                      * @return OrgPolicyName 是否已赋值
+                     * 
                      */
                     bool OrgPolicyNameHasBeenSet() const;
 
@@ -147,12 +161,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrgPermission 成员财务权限列表。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<OrgPermission> GetOrgPermission() const;
 
                     /**
                      * 判断参数 OrgPermission 是否已赋值
                      * @return OrgPermission 是否已赋值
+                     * 
                      */
                     bool OrgPermissionHasBeenSet() const;
 
@@ -161,12 +177,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RootNodeId 组织根节点ID。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRootNodeId() const;
 
                     /**
                      * 判断参数 RootNodeId 是否已赋值
                      * @return RootNodeId 是否已赋值
+                     * 
                      */
                     bool RootNodeIdHasBeenSet() const;
 
@@ -175,12 +193,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 组织创建时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -189,12 +209,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinTime 成员加入时间。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetJoinTime() const;
 
                     /**
                      * 判断参数 JoinTime 是否已赋值
                      * @return JoinTime 是否已赋值
+                     * 
                      */
                     bool JoinTimeHasBeenSet() const;
 
@@ -203,12 +225,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAllowQuit 成员是否允许退出。允许：Allow，不允许：Denied
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIsAllowQuit() const;
 
                     /**
                      * 判断参数 IsAllowQuit 是否已赋值
                      * @return IsAllowQuit 是否已赋值
+                     * 
                      */
                     bool IsAllowQuitHasBeenSet() const;
 
@@ -217,12 +241,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayUin 代付者Uin。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayUin() const;
 
                     /**
                      * 判断参数 PayUin 是否已赋值
                      * @return PayUin 是否已赋值
+                     * 
                      */
                     bool PayUinHasBeenSet() const;
 
@@ -231,12 +257,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayName 代付者名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayName() const;
 
                     /**
                      * 判断参数 PayName 是否已赋值
                      * @return PayName 是否已赋值
+                     * 
                      */
                     bool PayNameHasBeenSet() const;
 
@@ -245,12 +273,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAssignManager 是否可信服务管理员。是：true，否：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsAssignManager() const;
 
                     /**
                      * 判断参数 IsAssignManager 是否已赋值
                      * @return IsAssignManager 是否已赋值
+                     * 
                      */
                     bool IsAssignManagerHasBeenSet() const;
 
@@ -259,12 +289,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAuthManager 是否实名主体管理员。是：true，否：false
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetIsAuthManager() const;
 
                     /**
                      * 判断参数 IsAuthManager 是否已赋值
                      * @return IsAuthManager 是否已赋值
+                     * 
                      */
                     bool IsAuthManagerHasBeenSet() const;
 

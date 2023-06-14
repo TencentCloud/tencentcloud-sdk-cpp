@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取用户组ID
                      * @return Id 用户组ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置用户组ID
-                     * @param Id 用户组ID
+                     * @param _id 用户组ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户
                      * @return Bound true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户
+                     * 
                      */
                     bool GetBound() const;
 
                     /**
                      * 设置true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户
-                     * @param Bound true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户
+                     * @param _bound true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户
+                     * 
                      */
                     void SetBound(const bool& _bound);
 
                     /**
                      * 判断参数 Bound 是否已赋值
                      * @return Bound 是否已赋值
+                     * 
                      */
                     bool BoundHasBeenSet() const;
 
                     /**
                      * 获取用户名或用户姓名，最长64个字符，模糊查询
                      * @return Name 用户名或用户姓名，最长64个字符，模糊查询
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户名或用户姓名，最长64个字符，模糊查询
-                     * @param Name 用户名或用户姓名，最长64个字符，模糊查询
+                     * @param _name 用户名或用户姓名，最长64个字符，模糊查询
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取分页偏移位置，默认值为0
                      * @return Offset 分页偏移位置，默认值为0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移位置，默认值为0
-                     * @param Offset 分页偏移位置，默认值为0
+                     * @param _offset 分页偏移位置，默认值为0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页条目数量，默认20, 最大500
                      * @return Limit 每页条目数量，默认20, 最大500
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页条目数量，默认20, 最大500
-                     * @param Limit 每页条目数量，默认20, 最大500
+                     * @param _limit 每页条目数量，默认20, 最大500
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取所属部门ID
                      * @return DepartmentId 所属部门ID
+                     * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置所属部门ID
-                     * @param DepartmentId 所属部门ID
+                     * @param _departmentId 所属部门ID
+                     * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
 
                     /**
                      * 判断参数 DepartmentId 是否已赋值
                      * @return DepartmentId 是否已赋值
+                     * 
                      */
                     bool DepartmentIdHasBeenSet() const;
 

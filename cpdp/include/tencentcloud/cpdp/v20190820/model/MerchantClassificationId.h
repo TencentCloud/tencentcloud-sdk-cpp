@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取分类编号
                      * @return Code 分类编号
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置分类编号
-                     * @param Code 分类编号
+                     * @param _code 分类编号
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取分类名称
                      * @return Name 分类名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分类名称
-                     * @param Name 分类名称
+                     * @param _name 分类名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取父级编号（0为一级编号，大于0为父级分类编号）
                      * @return Parent 父级编号（0为一级编号，大于0为父级分类编号）
+                     * 
                      */
                     std::string GetParent() const;
 
                     /**
                      * 设置父级编号（0为一级编号，大于0为父级分类编号）
-                     * @param Parent 父级编号（0为一级编号，大于0为父级分类编号）
+                     * @param _parent 父级编号（0为一级编号，大于0为父级分类编号）
+                     * 
                      */
                     void SetParent(const std::string& _parent);
 
                     /**
                      * 判断参数 Parent 是否已赋值
                      * @return Parent 是否已赋值
+                     * 
                      */
                     bool ParentHasBeenSet() const;
 

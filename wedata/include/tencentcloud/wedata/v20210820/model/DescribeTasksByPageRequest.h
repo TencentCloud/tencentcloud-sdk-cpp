@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取项目Id
                      * @return ProjectId 项目Id
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目Id
-                     * @param ProjectId 项目Id
+                     * @param _projectId 项目Id
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取工作流ID
                      * @return WorkflowId 工作流ID
+                     * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
                      * 设置工作流ID
-                     * @param WorkflowId 工作流ID
+                     * @param _workflowId 工作流ID
+                     * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
 
                     /**
                      * 判断参数 WorkflowId 是否已赋值
                      * @return WorkflowId 是否已赋值
+                     * 
                      */
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
                      * 获取页码，默认1
                      * @return PageNumber 页码，默认1
+                     * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置页码，默认1
-                     * @param PageNumber 页码，默认1
+                     * @param _pageNumber 页码，默认1
+                     * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取页大小，默认10
                      * @return PageSize 页大小，默认10
+                     * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置页大小，默认10
-                     * @param PageSize 页大小，默认10
+                     * @param _pageSize 页大小，默认10
+                     * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResumeTime 定时拉起时间：如：周一8点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetResumeTime() const;
 
                     /**
                      * 设置定时拉起时间：如：周一8点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ResumeTime 定时拉起时间：如：周一8点
+                     * @param _resumeTime 定时拉起时间：如：周一8点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResumeTime(const std::string& _resumeTime);
 
                     /**
                      * 判断参数 ResumeTime 是否已赋值
                      * @return ResumeTime 是否已赋值
+                     * 
                      */
                     bool ResumeTimeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuspendTime 定时挂起时间：如：周一20点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuspendTime() const;
 
                     /**
                      * 设置定时挂起时间：如：周一20点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuspendTime 定时挂起时间：如：周一20点
+                     * @param _suspendTime 定时挂起时间：如：周一20点
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuspendTime(const std::string& _suspendTime);
 
                     /**
                      * 判断参数 SuspendTime 是否已赋值
                      * @return SuspendTime 是否已赋值
+                     * 
                      */
                     bool SuspendTimeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuspendStrategy 挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuspendStrategy() const;
 
                     /**
                      * 设置挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuspendStrategy 挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
+                     * @param _suspendStrategy 挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuspendStrategy(const int64_t& _suspendStrategy);
 
                     /**
                      * 判断参数 SuspendStrategy 是否已赋值
                      * @return SuspendStrategy 是否已赋值
+                     * 
                      */
                     bool SuspendStrategyHasBeenSet() const;
 

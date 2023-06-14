@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return DBInstanceId 实例ID
+                     * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param DBInstanceId 实例ID
+                     * @param _dBInstanceId 实例ID
+                     * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
 
                     /**
                      * 判断参数 DBInstanceId 是否已赋值
                      * @return DBInstanceId 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取待修改参数及期望值
                      * @return ParamList 待修改参数及期望值
+                     * 
                      */
                     std::vector<ParamEntry> GetParamList() const;
 
                     /**
                      * 设置待修改参数及期望值
-                     * @param ParamList 待修改参数及期望值
+                     * @param _paramList 待修改参数及期望值
+                     * 
                      */
                     void SetParamList(const std::vector<ParamEntry>& _paramList);
 
                     /**
                      * 判断参数 ParamList 是否已赋值
                      * @return ParamList 是否已赋值
+                     * 
                      */
                     bool ParamListHasBeenSet() const;
 

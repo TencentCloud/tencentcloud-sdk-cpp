@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取模型ID
                      * @return ModelId 模型ID
+                     * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置模型ID
-                     * @param ModelId 模型ID
+                     * @param _modelId 模型ID
+                     * 
                      */
                     void SetModelId(const std::string& _modelId);
 
                     /**
                      * 判断参数 ModelId 是否已赋值
                      * @return ModelId 是否已赋值
+                     * 
                      */
                     bool ModelIdHasBeenSet() const;
 
                     /**
                      * 获取申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
                      * @return Status 申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
-                     * @param Status 申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
+                     * @param _status 申请状态：1-已申请；2-已取消；3-已拒绝；4-已通过
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取偏移量，Offset从0开始
                      * @return Offset 偏移量，Offset从0开始
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，Offset从0开始
-                     * @param Offset 偏移量，Offset从0开始
+                     * @param _offset 偏移量，Offset从0开始
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页的大小，最大100
                      * @return Limit 分页的大小，最大100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页的大小，最大100
-                     * @param Limit 分页的大小，最大100
+                     * @param _limit 分页的大小，最大100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

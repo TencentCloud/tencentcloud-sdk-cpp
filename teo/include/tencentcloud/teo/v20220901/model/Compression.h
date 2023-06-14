@@ -53,6 +53,7 @@ namespace TencentCloud
                      * @return Switch 智能压缩配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -60,15 +61,17 @@ namespace TencentCloud
                      * 设置智能压缩配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-                     * @param Switch 智能压缩配置开关，取值有：
+                     * @param _switch 智能压缩配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAlgorithms() const;
 
@@ -89,16 +93,18 @@ namespace TencentCloud
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Algorithms 支持的压缩算法列表，取值有：
+                     * @param _algorithms 支持的压缩算法列表，取值有：
 <li>brotli：brotli算法；</li>
 <li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAlgorithms(const std::vector<std::string>& _algorithms);
 
                     /**
                      * 判断参数 Algorithms 是否已赋值
                      * @return Algorithms 是否已赋值
+                     * 
                      */
                     bool AlgorithmsHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取米大师分配的支付主MidasAppId
                      * @return MidasAppId 米大师分配的支付主MidasAppId
+                     * 
                      */
                     std::string GetMidasAppId() const;
 
                     /**
                      * 设置米大师分配的支付主MidasAppId
-                     * @param MidasAppId 米大师分配的支付主MidasAppId
+                     * @param _midasAppId 米大师分配的支付主MidasAppId
+                     * 
                      */
                     void SetMidasAppId(const std::string& _midasAppId);
 
                     /**
                      * 判断参数 MidasAppId 是否已赋值
                      * @return MidasAppId 是否已赋值
+                     * 
                      */
                     bool MidasAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户Id，长度不小于5位，仅支持字母和数字的组合
                      * @return UserId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id，长度不小于5位，仅支持字母和数字的组合
-                     * @param UserId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * @param _userId 用户Id，长度不小于5位，仅支持字母和数字的组合
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
                     /**
                      * 获取退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
                      * @return RefundId 退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * 
                      */
                     std::string GetRefundId() const;
 
                     /**
                      * 设置退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
-                     * @param RefundId 退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * @param _refundId 退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合
+                     * 
                      */
                     void SetRefundId(const std::string& _refundId);
 
                     /**
                      * 判断参数 RefundId 是否已赋值
                      * @return RefundId 是否已赋值
+                     * 
                      */
                     bool RefundIdHasBeenSet() const;
 
@@ -105,6 +114,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetMidasEnvironment() const;
 
@@ -113,16 +123,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param MidasEnvironment 环境类型
+                     * @param _midasEnvironment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetMidasEnvironment(const std::string& _midasEnvironment);
 
                     /**
                      * 判断参数 MidasEnvironment 是否已赋值
                      * @return MidasEnvironment 是否已赋值
+                     * 
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 

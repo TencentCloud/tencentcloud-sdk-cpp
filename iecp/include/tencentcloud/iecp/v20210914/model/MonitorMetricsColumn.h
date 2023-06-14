@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取数据名称
                      * @return ColumnName 数据名称
+                     * 
                      */
                     std::string GetColumnName() const;
 
                     /**
                      * 设置数据名称
-                     * @param ColumnName 数据名称
+                     * @param _columnName 数据名称
+                     * 
                      */
                     void SetColumnName(const std::string& _columnName);
 
                     /**
                      * 判断参数 ColumnName 是否已赋值
                      * @return ColumnName 是否已赋值
+                     * 
                      */
                     bool ColumnNameHasBeenSet() const;
 
@@ -69,92 +72,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnData 数据内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetColumnData() const;
 
                     /**
                      * 设置数据内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColumnData 数据内容
+                     * @param _columnData 数据内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColumnData(const std::vector<std::string>& _columnData);
 
                     /**
                      * 判断参数 ColumnData 是否已赋值
                      * @return ColumnData 是否已赋值
+                     * 
                      */
                     bool ColumnDataHasBeenSet() const;
 
                     /**
                      * 获取数据所属，查询Workload类型时有值
                      * @return ColumnBelong 数据所属，查询Workload类型时有值
+                     * 
                      */
                     std::string GetColumnBelong() const;
 
                     /**
                      * 设置数据所属，查询Workload类型时有值
-                     * @param ColumnBelong 数据所属，查询Workload类型时有值
+                     * @param _columnBelong 数据所属，查询Workload类型时有值
+                     * 
                      */
                     void SetColumnBelong(const std::string& _columnBelong);
 
                     /**
                      * 判断参数 ColumnBelong 是否已赋值
                      * @return ColumnBelong 是否已赋值
+                     * 
                      */
                     bool ColumnBelongHasBeenSet() const;
 
                     /**
                      * 获取最大值
                      * @return MaxValue 最大值
+                     * 
                      */
                     double GetMaxValue() const;
 
                     /**
                      * 设置最大值
-                     * @param MaxValue 最大值
+                     * @param _maxValue 最大值
+                     * 
                      */
                     void SetMaxValue(const double& _maxValue);
 
                     /**
                      * 判断参数 MaxValue 是否已赋值
                      * @return MaxValue 是否已赋值
+                     * 
                      */
                     bool MaxValueHasBeenSet() const;
 
                     /**
                      * 获取最小值
                      * @return MinValue 最小值
+                     * 
                      */
                     double GetMinValue() const;
 
                     /**
                      * 设置最小值
-                     * @param MinValue 最小值
+                     * @param _minValue 最小值
+                     * 
                      */
                     void SetMinValue(const double& _minValue);
 
                     /**
                      * 判断参数 MinValue 是否已赋值
                      * @return MinValue 是否已赋值
+                     * 
                      */
                     bool MinValueHasBeenSet() const;
 
                     /**
                      * 获取平均值
                      * @return AvgValue 平均值
+                     * 
                      */
                     double GetAvgValue() const;
 
                     /**
                      * 设置平均值
-                     * @param AvgValue 平均值
+                     * @param _avgValue 平均值
+                     * 
                      */
                     void SetAvgValue(const double& _avgValue);
 
                     /**
                      * 判断参数 AvgValue 是否已赋值
                      * @return AvgValue 是否已赋值
+                     * 
                      */
                     bool AvgValueHasBeenSet() const;
 
@@ -163,20 +181,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnTime 时间戳数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetColumnTime() const;
 
                     /**
                      * 设置时间戳数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ColumnTime 时间戳数组
+                     * @param _columnTime 时间戳数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetColumnTime(const int64_t& _columnTime);
 
                     /**
                      * 判断参数 ColumnTime 是否已赋值
                      * @return ColumnTime 是否已赋值
+                     * 
                      */
                     bool ColumnTimeHasBeenSet() const;
 

@@ -58,6 +58,7 @@ namespace TencentCloud
 2-IMEI；
 3-IDFA；
 100-SSID类型
+                     * 
                      */
                     int64_t GetAccountType() const;
 
@@ -67,35 +68,40 @@ namespace TencentCloud
 2-IMEI；
 3-IDFA；
 100-SSID类型
-                     * @param AccountType 用户账号类型：
+                     * @param _accountType 用户账号类型：
 1-手机号；
 2-IMEI；
 3-IDFA；
 100-SSID类型
+                     * 
                      */
                     void SetAccountType(const int64_t& _accountType);
 
                     /**
                      * 判断参数 AccountType 是否已赋值
                      * @return AccountType 是否已赋值
+                     * 
                      */
                     bool AccountTypeHasBeenSet() const;
 
                     /**
                      * 获取通用账号信息，当AccountType为1、2、3、100时必填
                      * @return UniversalAccount 通用账号信息，当AccountType为1、2、3、100时必填
+                     * 
                      */
                     UniversalAccountInfo GetUniversalAccount() const;
 
                     /**
                      * 设置通用账号信息，当AccountType为1、2、3、100时必填
-                     * @param UniversalAccount 通用账号信息，当AccountType为1、2、3、100时必填
+                     * @param _universalAccount 通用账号信息，当AccountType为1、2、3、100时必填
+                     * 
                      */
                     void SetUniversalAccount(const UniversalAccountInfo& _universalAccount);
 
                     /**
                      * 判断参数 UniversalAccount 是否已赋值
                      * @return UniversalAccount 是否已赋值
+                     * 
                      */
                     bool UniversalAccountHasBeenSet() const;
 

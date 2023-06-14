@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置状态码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 状态码
+                     * @param _code 状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCode(const int64_t& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置提示信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 提示信息
+                     * @param _message 提示信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId 任务ID
+                     * @param _taskId 任务ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskId(const int64_t& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskOrderId 当前完成或正在完成的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskOrderId() const;
 
                     /**
                      * 设置当前完成或正在完成的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskOrderId 当前完成或正在完成的任务订单ID
+                     * @param _taskOrderId 当前完成或正在完成的任务订单ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskOrderId(const std::string& _taskOrderId);
 
                     /**
                      * 判断参数 TaskOrderId 是否已赋值
                      * @return TaskOrderId 是否已赋值
+                     * 
                      */
                     bool TaskOrderIdHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCode 当前任务订单状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskCode() const;
 
                     /**
                      * 设置当前任务订单状态码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskCode 当前任务订单状态码
+                     * @param _taskCode 当前任务订单状态码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskCode(const int64_t& _taskCode);
 
                     /**
                      * 判断参数 TaskCode 是否已赋值
                      * @return TaskCode 是否已赋值
+                     * 
                      */
                     bool TaskCodeHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCoinNumber 获得积分数/成长值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskCoinNumber() const;
 
                     /**
                      * 设置获得积分数/成长值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskCoinNumber 获得积分数/成长值
+                     * @param _taskCoinNumber 获得积分数/成长值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskCoinNumber(const int64_t& _taskCoinNumber);
 
                     /**
                      * 判断参数 TaskCoinNumber 是否已赋值
                      * @return TaskCoinNumber 是否已赋值
+                     * 
                      */
                     bool TaskCoinNumberHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 任务类型后台代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型后台代码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskType 任务类型后台代码
+                     * @param _taskType 任务类型后台代码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskType(const int64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCoin 当前积分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalCoin() const;
 
                     /**
                      * 设置当前积分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCoin 当前积分
+                     * @param _totalCoin 当前积分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCoin(const int64_t& _totalCoin);
 
                     /**
                      * 判断参数 TotalCoin 是否已赋值
                      * @return TotalCoin 是否已赋值
+                     * 
                      */
                     bool TotalCoinHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attach 用户透传的代码块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAttach() const;
 
                     /**
                      * 设置用户透传的代码块
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Attach 用户透传的代码块
+                     * @param _attach 用户透传的代码块
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAttach(const std::string& _attach);
 
                     /**
                      * 判断参数 Attach 是否已赋值
                      * @return Attach 是否已赋值
+                     * 
                      */
                     bool AttachHasBeenSet() const;
 
@@ -249,20 +276,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DoneTimes 计次任务当前完成次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDoneTimes() const;
 
                     /**
                      * 设置计次任务当前完成次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DoneTimes 计次任务当前完成次数
+                     * @param _doneTimes 计次任务当前完成次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDoneTimes(const int64_t& _doneTimes);
 
                     /**
                      * 判断参数 DoneTimes 是否已赋值
                      * @return DoneTimes 是否已赋值
+                     * 
                      */
                     bool DoneTimesHasBeenSet() const;
 
@@ -271,20 +301,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTimes 计次任务当前所需完成次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalTimes() const;
 
                     /**
                      * 设置计次任务当前所需完成次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalTimes 计次任务当前所需完成次数
+                     * @param _totalTimes 计次任务当前所需完成次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalTimes(const int64_t& _totalTimes);
 
                     /**
                      * 判断参数 TotalTimes 是否已赋值
                      * @return TotalTimes 是否已赋值
+                     * 
                      */
                     bool TotalTimesHasBeenSet() const;
 
@@ -293,20 +326,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskName 任务名称
+                     * @param _taskName 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTaskName(const std::string& _taskName);
 
                     /**
                      * 判断参数 TaskName 是否已赋值
                      * @return TaskName 是否已赋值
+                     * 
                      */
                     bool TaskNameHasBeenSet() const;
 
@@ -315,20 +351,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GrowScore 当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGrowScore() const;
 
                     /**
                      * 设置当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GrowScore 当前成长值
+                     * @param _growScore 当前成长值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetGrowScore(const int64_t& _growScore);
 
                     /**
                      * 判断参数 GrowScore 是否已赋值
                      * @return GrowScore 是否已赋值
+                     * 
                      */
                     bool GrowScoreHasBeenSet() const;
 

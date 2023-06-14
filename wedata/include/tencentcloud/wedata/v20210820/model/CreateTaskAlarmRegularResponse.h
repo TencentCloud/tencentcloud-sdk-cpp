@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取告警ID
                      * @return AlarmId 告警ID
+                     * 
                      */
                     int64_t GetAlarmId() const;
 
                     /**
                      * 判断参数 AlarmId 是否已赋值
                      * @return AlarmId 是否已赋值
+                     * 
                      */
                     bool AlarmIdHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取查询的账号id
                      * @return Uin 查询的账号id
+                     * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 判断参数 Uin 是否已赋值
                      * @return Uin 是否已赋值
+                     * 
                      */
                     bool UinHasBeenSet() const;
 
                     /**
                      * 获取1线上计费，2线下计费
                      * @return BillType 1线上计费，2线下计费
+                     * 
                      */
                     uint64_t GetBillType() const;
 
                     /**
                      * 判断参数 BillType 是否已赋值
                      * @return BillType 是否已赋值
+                     * 
                      */
                     bool BillTypeHasBeenSet() const;
 
                     /**
                      * 获取0未定义，1按套餐预付费，2按量后付费
                      * @return BillMode 0未定义，1按套餐预付费，2按量后付费
+                     * 
                      */
                     uint64_t GetBillMode() const;
 
                     /**
                      * 判断参数 BillMode 是否已赋值
                      * @return BillMode 是否已赋值
+                     * 
                      */
                     bool BillModeHasBeenSet() const;
 

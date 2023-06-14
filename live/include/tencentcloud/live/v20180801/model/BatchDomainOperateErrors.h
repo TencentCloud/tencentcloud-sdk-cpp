@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取操作失败的域名。
                      * @return DomainName 操作失败的域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置操作失败的域名。
-                     * @param DomainName 操作失败的域名。
+                     * @param _domainName 操作失败的域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
                     /**
                      * 获取API3.0错误码。
                      * @return Code API3.0错误码。
+                     * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置API3.0错误码。
-                     * @param Code API3.0错误码。
+                     * @param _code API3.0错误码。
+                     * 
                      */
                     void SetCode(const std::string& _code);
 
                     /**
                      * 判断参数 Code 是否已赋值
                      * @return Code 是否已赋值
+                     * 
                      */
                     bool CodeHasBeenSet() const;
 
                     /**
                      * 获取API3.0错误信息。
                      * @return Message API3.0错误信息。
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置API3.0错误信息。
-                     * @param Message API3.0错误信息。
+                     * @param _message API3.0错误信息。
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 

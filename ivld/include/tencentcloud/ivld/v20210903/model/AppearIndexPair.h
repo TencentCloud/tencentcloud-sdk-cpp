@@ -60,36 +60,42 @@ AppearIndex可选值定义如下：
                     /**
                      * 获取出现信息，取值范围为[1，3]
                      * @return AppearIndex 出现信息，取值范围为[1，3]
+                     * 
                      */
                     int64_t GetAppearIndex() const;
 
                     /**
                      * 设置出现信息，取值范围为[1，3]
-                     * @param AppearIndex 出现信息，取值范围为[1，3]
+                     * @param _appearIndex 出现信息，取值范围为[1，3]
+                     * 
                      */
                     void SetAppearIndex(const int64_t& _appearIndex);
 
                     /**
                      * 判断参数 AppearIndex 是否已赋值
                      * @return AppearIndex 是否已赋值
+                     * 
                      */
                     bool AppearIndexHasBeenSet() const;
 
                     /**
                      * 获取AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术
                      * @return Index AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术
+                     * 
                      */
                     int64_t GetIndex() const;
 
                     /**
                      * 设置AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术
-                     * @param Index AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术
+                     * @param _index AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术
+                     * 
                      */
                     void SetIndex(const int64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
                      * @return Index 是否已赋值
+                     * 
                      */
                     bool IndexHasBeenSet() const;
 

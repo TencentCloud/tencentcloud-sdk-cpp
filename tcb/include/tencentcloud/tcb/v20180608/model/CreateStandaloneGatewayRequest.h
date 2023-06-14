@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取网关名
                      * @return GatewayAlias 网关名
+                     * 
                      */
                     std::string GetGatewayAlias() const;
 
                     /**
                      * 设置网关名
-                     * @param GatewayAlias 网关名
+                     * @param _gatewayAlias 网关名
+                     * 
                      */
                     void SetGatewayAlias(const std::string& _gatewayAlias);
 
                     /**
                      * 判断参数 GatewayAlias 是否已赋值
                      * @return GatewayAlias 是否已赋值
+                     * 
                      */
                     bool GatewayAliasHasBeenSet() const;
 
                     /**
                      * 获取私有网络ID
                      * @return VpcId 私有网络ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-                     * @param VpcId 私有网络ID
+                     * @param _vpcId 私有网络ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
                      * @return SubnetIds 子网ID
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网ID
-                     * @param SubnetIds 子网ID
+                     * @param _subnetIds 子网ID
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取网关描述
                      * @return GatewayDesc 网关描述
+                     * 
                      */
                     std::string GetGatewayDesc() const;
 
                     /**
                      * 设置网关描述
-                     * @param GatewayDesc 网关描述
+                     * @param _gatewayDesc 网关描述
+                     * 
                      */
                     void SetGatewayDesc(const std::string& _gatewayDesc);
 
                     /**
                      * 判断参数 GatewayDesc 是否已赋值
                      * @return GatewayDesc 是否已赋值
+                     * 
                      */
                     bool GatewayDescHasBeenSet() const;
 
                     /**
                      * 获取网关套餐版本
                      * @return PackageVersion 网关套餐版本
+                     * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置网关套餐版本
-                     * @param PackageVersion 网关套餐版本
+                     * @param _packageVersion 网关套餐版本
+                     * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
 
                     /**
                      * 判断参数 PackageVersion 是否已赋值
                      * @return PackageVersion 是否已赋值
+                     * 
                      */
                     bool PackageVersionHasBeenSet() const;
 

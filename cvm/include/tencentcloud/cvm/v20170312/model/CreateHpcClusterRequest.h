@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取可用区。
                      * @return Zone 可用区。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-                     * @param Zone 可用区。
+                     * @param _zone 可用区。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取高性能计算集群名称。
                      * @return Name 高性能计算集群名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置高性能计算集群名称。
-                     * @param Name 高性能计算集群名称。
+                     * @param _name 高性能计算集群名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取高性能计算集群备注。
                      * @return Remark 高性能计算集群备注。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置高性能计算集群备注。
-                     * @param Remark 高性能计算集群备注。
+                     * @param _remark 高性能计算集群备注。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

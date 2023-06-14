@@ -62,6 +62,7 @@ namespace TencentCloud
 <li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
 <li>ClusterName - string  - 是否必填: 否 -集群名称</li>
 <li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * 
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
@@ -75,7 +76,7 @@ namespace TencentCloud
 <li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
 <li>ClusterName - string  - 是否必填: 否 -集群名称</li>
 <li>ClusterID - string  - 是否必填: 否 -集群ID</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li>
 <li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>
 <li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
@@ -84,66 +85,77 @@ namespace TencentCloud
 <li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
 <li>ClusterName - string  - 是否必填: 否 -集群名称</li>
 <li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * 
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序方式
                      * @return Order 排序方式
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式
-                     * @param Order 排序方式
+                     * @param _order 排序方式
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
@@ -154,6 +166,7 @@ AlarmCount: 告警数量
                      * @return By 排序字段
 LatestFoundTime: 最近生成时间
 AlarmCount: 告警数量
+                     * 
                      */
                     std::string GetBy() const;
 
@@ -161,15 +174,17 @@ AlarmCount: 告警数量
                      * 设置排序字段
 LatestFoundTime: 最近生成时间
 AlarmCount: 告警数量
-                     * @param By 排序字段
+                     * @param _by 排序字段
 LatestFoundTime: 最近生成时间
 AlarmCount: 告警数量
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

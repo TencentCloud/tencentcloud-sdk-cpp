@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取数据库详情
                      * @return Database 数据库详情
+                     * 
                      */
                     AssetDatabaseDetail GetDatabase() const;
 
                     /**
                      * 判断参数 Database 是否已赋值
                      * @return Database 是否已赋值
+                     * 
                      */
                     bool DatabaseHasBeenSet() const;
 

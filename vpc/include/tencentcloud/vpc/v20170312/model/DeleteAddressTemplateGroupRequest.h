@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取IP地址模板集合实例ID，例如：ipmg-90cex8mq。
                      * @return AddressTemplateGroupId IP地址模板集合实例ID，例如：ipmg-90cex8mq。
+                     * 
                      */
                     std::string GetAddressTemplateGroupId() const;
 
                     /**
                      * 设置IP地址模板集合实例ID，例如：ipmg-90cex8mq。
-                     * @param AddressTemplateGroupId IP地址模板集合实例ID，例如：ipmg-90cex8mq。
+                     * @param _addressTemplateGroupId IP地址模板集合实例ID，例如：ipmg-90cex8mq。
+                     * 
                      */
                     void SetAddressTemplateGroupId(const std::string& _addressTemplateGroupId);
 
                     /**
                      * 判断参数 AddressTemplateGroupId 是否已赋值
                      * @return AddressTemplateGroupId 是否已赋值
+                     * 
                      */
                     bool AddressTemplateGroupIdHasBeenSet() const;
 

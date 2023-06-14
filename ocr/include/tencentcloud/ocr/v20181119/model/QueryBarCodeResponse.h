@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取条码
                      * @return BarCode 条码
+                     * 
                      */
                     std::string GetBarCode() const;
 
                     /**
                      * 判断参数 BarCode 是否已赋值
                      * @return BarCode 是否已赋值
+                     * 
                      */
                     bool BarCodeHasBeenSet() const;
 
                     /**
                      * 获取条码信息数组
                      * @return ProductDataRecords 条码信息数组
+                     * 
                      */
                     std::vector<ProductDataRecord> GetProductDataRecords() const;
 
                     /**
                      * 判断参数 ProductDataRecords 是否已赋值
                      * @return ProductDataRecords 是否已赋值
+                     * 
                      */
                     bool ProductDataRecordsHasBeenSet() const;
 

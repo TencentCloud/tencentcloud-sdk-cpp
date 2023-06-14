@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取告警事件列表
                      * @return Events 告警事件列表
+                     * 
                      */
                     std::vector<AlarmEvent> GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 

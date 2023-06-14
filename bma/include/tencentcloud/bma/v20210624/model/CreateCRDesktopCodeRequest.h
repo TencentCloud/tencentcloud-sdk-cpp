@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取xxx
                      * @return TortId xxx
+                     * 
                      */
                     int64_t GetTortId() const;
 
                     /**
                      * 设置xxx
-                     * @param TortId xxx
+                     * @param _tortId xxx
+                     * 
                      */
                     void SetTortId(const int64_t& _tortId);
 
                     /**
                      * 判断参数 TortId 是否已赋值
                      * @return TortId 是否已赋值
+                     * 
                      */
                     bool TortIdHasBeenSet() const;
 
                     /**
                      * 获取xxx
                      * @return DesktopCode xxx
+                     * 
                      */
                     std::string GetDesktopCode() const;
 
                     /**
                      * 设置xxx
-                     * @param DesktopCode xxx
+                     * @param _desktopCode xxx
+                     * 
                      */
                     void SetDesktopCode(const std::string& _desktopCode);
 
                     /**
                      * 判断参数 DesktopCode 是否已赋值
                      * @return DesktopCode 是否已赋值
+                     * 
                      */
                     bool DesktopCodeHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取表格所属集群id
                      * @return ClusterId 表格所属集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置表格所属集群id
-                     * @param ClusterId 表格所属集群id
+                     * @param _clusterId 表格所属集群id
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取删除的快照列表
                      * @return SelectedTables 删除的快照列表
+                     * 
                      */
                     std::vector<SnapshotInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置删除的快照列表
-                     * @param SelectedTables 删除的快照列表
+                     * @param _selectedTables 删除的快照列表
+                     * 
                      */
                     void SetSelectedTables(const std::vector<SnapshotInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 

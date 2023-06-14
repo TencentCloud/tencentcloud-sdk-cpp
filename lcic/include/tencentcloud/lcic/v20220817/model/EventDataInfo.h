@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoomId 事件发生的房间号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置事件发生的房间号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoomId 事件发生的房间号。
+                     * @param _roomId 事件发生的房间号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 事件发生的用户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置事件发生的用户。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserId 事件发生的用户。
+                     * @param _userId 事件发生的用户。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 

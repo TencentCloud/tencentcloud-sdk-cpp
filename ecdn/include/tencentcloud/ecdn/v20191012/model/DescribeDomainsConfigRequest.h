@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取分页查询的偏移地址，默认0。
                      * @return Offset 分页查询的偏移地址，默认0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页查询的偏移地址，默认0。
-                     * @param Offset 分页查询的偏移地址，默认0。
+                     * @param _offset 分页查询的偏移地址，默认0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页查询的域名个数，默认100。
                      * @return Limit 分页查询的域名个数，默认100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询的域名个数，默认100。
-                     * @param Limit 分页查询的域名个数，默认100。
+                     * @param _limit 分页查询的域名个数，默认100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取查询条件过滤器。
                      * @return Filters 查询条件过滤器。
+                     * 
                      */
                     std::vector<DomainFilter> GetFilters() const;
 
                     /**
                      * 设置查询条件过滤器。
-                     * @param Filters 查询条件过滤器。
+                     * @param _filters 查询条件过滤器。
+                     * 
                      */
                     void SetFilters(const std::vector<DomainFilter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取查询结果排序规则。
                      * @return Sort 查询结果排序规则。
+                     * 
                      */
                     Sort GetSort() const;
 
                     /**
                      * 设置查询结果排序规则。
-                     * @param Sort 查询结果排序规则。
+                     * @param _sort 查询结果排序规则。
+                     * 
                      */
                     void SetSort(const Sort& _sort);
 
                     /**
                      * 判断参数 Sort 是否已赋值
                      * @return Sort 是否已赋值
+                     * 
                      */
                     bool SortHasBeenSet() const;
 

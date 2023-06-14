@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取域名别名
                      * @return DomainAlias 域名别名
+                     * 
                      */
                     std::string GetDomainAlias() const;
 
                     /**
                      * 设置域名别名
-                     * @param DomainAlias 域名别名
+                     * @param _domainAlias 域名别名
+                     * 
                      */
                     void SetDomainAlias(const std::string& _domainAlias);
 
                     /**
                      * 判断参数 DomainAlias 是否已赋值
                      * @return DomainAlias 是否已赋值
+                     * 
                      */
                     bool DomainAliasHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * @return DomainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 
                      */
                     int64_t GetDomainId() const;
 
                     /**
                      * 设置域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param DomainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param _domainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 
                      */
                     void SetDomainId(const int64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 

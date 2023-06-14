@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取描述了cdh实例相关的价格信息
                      * @return HostPrice 描述了cdh实例相关的价格信息
+                     * 
                      */
                     ItemPrice GetHostPrice() const;
 
                     /**
                      * 设置描述了cdh实例相关的价格信息
-                     * @param HostPrice 描述了cdh实例相关的价格信息
+                     * @param _hostPrice 描述了cdh实例相关的价格信息
+                     * 
                      */
                     void SetHostPrice(const ItemPrice& _hostPrice);
 
                     /**
                      * 判断参数 HostPrice 是否已赋值
                      * @return HostPrice 是否已赋值
+                     * 
                      */
                     bool HostPriceHasBeenSet() const;
 

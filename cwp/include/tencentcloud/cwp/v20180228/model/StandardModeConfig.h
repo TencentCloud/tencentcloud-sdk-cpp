@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取阻断时长，单位：秒
                      * @return Ttl 阻断时长，单位：秒
+                     * 
                      */
                     uint64_t GetTtl() const;
 
                     /**
                      * 设置阻断时长，单位：秒
-                     * @param Ttl 阻断时长，单位：秒
+                     * @param _ttl 阻断时长，单位：秒
+                     * 
                      */
                     void SetTtl(const uint64_t& _ttl);
 
                     /**
                      * 判断参数 Ttl 是否已赋值
                      * @return Ttl 是否已赋值
+                     * 
                      */
                     bool TtlHasBeenSet() const;
 

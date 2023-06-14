@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取文件校验目录。
                      * @return IdentifyPath 文件校验目录。
+                     * 
                      */
                     std::string GetIdentifyPath() const;
 
                     /**
                      * 设置文件校验目录。
-                     * @param IdentifyPath 文件校验目录。
+                     * @param _identifyPath 文件校验目录。
+                     * 
                      */
                     void SetIdentifyPath(const std::string& _identifyPath);
 
                     /**
                      * 判断参数 IdentifyPath 是否已赋值
                      * @return IdentifyPath 是否已赋值
+                     * 
                      */
                     bool IdentifyPathHasBeenSet() const;
 
                     /**
                      * 获取文件校验内容。
                      * @return IdentifyContent 文件校验内容。
+                     * 
                      */
                     std::string GetIdentifyContent() const;
 
                     /**
                      * 设置文件校验内容。
-                     * @param IdentifyContent 文件校验内容。
+                     * @param _identifyContent 文件校验内容。
+                     * 
                      */
                     void SetIdentifyContent(const std::string& _identifyContent);
 
                     /**
                      * 判断参数 IdentifyContent 是否已赋值
                      * @return IdentifyContent 是否已赋值
+                     * 
                      */
                     bool IdentifyContentHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频配置。
                      * @return VideoSetting 视频配置。
+                     * 
                      */
                     MediaCastVideoSetting GetVideoSetting() const;
 
                     /**
                      * 设置视频配置。
-                     * @param VideoSetting 视频配置。
+                     * @param _videoSetting 视频配置。
+                     * 
                      */
                     void SetVideoSetting(const MediaCastVideoSetting& _videoSetting);
 
                     /**
                      * 判断参数 VideoSetting 是否已赋值
                      * @return VideoSetting 是否已赋值
+                     * 
                      */
                     bool VideoSettingHasBeenSet() const;
 

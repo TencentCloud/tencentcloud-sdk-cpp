@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取进入房间时间
                      * @return StartTime 进入房间时间
+                     * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置进入房间时间
-                     * @param StartTime 进入房间时间
+                     * @param _startTime 进入房间时间
+                     * 
                      */
                     void SetStartTime(const int64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取退出房间时间
                      * @return EndTime 退出房间时间
+                     * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置退出房间时间
-                     * @param EndTime 退出房间时间
+                     * @param _endTime 退出房间时间
+                     * 
                      */
                     void SetEndTime(const int64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

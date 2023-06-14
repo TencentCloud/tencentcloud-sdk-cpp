@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取实时线程列表。
                      * @return ProcessList 实时线程列表。
+                     * 
                      */
                     std::vector<MySqlProcess> GetProcessList() const;
 
                     /**
                      * 判断参数 ProcessList 是否已赋值
                      * @return ProcessList 是否已赋值
+                     * 
                      */
                     bool ProcessListHasBeenSet() const;
 

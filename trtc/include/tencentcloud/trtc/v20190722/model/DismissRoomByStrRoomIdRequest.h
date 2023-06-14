@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取TRTC的SDKAppId。
                      * @return SdkAppId TRTC的SDKAppId。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置TRTC的SDKAppId。
-                     * @param SdkAppId TRTC的SDKAppId。
+                     * @param _sdkAppId TRTC的SDKAppId。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取房间号。
                      * @return RoomId 房间号。
+                     * 
                      */
                     std::string GetRoomId() const;
 
                     /**
                      * 设置房间号。
-                     * @param RoomId 房间号。
+                     * @param _roomId 房间号。
+                     * 
                      */
                     void SetRoomId(const std::string& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 

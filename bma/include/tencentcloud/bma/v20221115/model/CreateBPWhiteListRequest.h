@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取企业Id
                      * @return CompanyId 企业Id
+                     * 
                      */
                     int64_t GetCompanyId() const;
 
                     /**
                      * 设置企业Id
-                     * @param CompanyId 企业Id
+                     * @param _companyId 企业Id
+                     * 
                      */
                     void SetCompanyId(const int64_t& _companyId);
 
                     /**
                      * 判断参数 CompanyId 是否已赋值
                      * @return CompanyId 是否已赋值
+                     * 
                      */
                     bool CompanyIdHasBeenSet() const;
 
                     /**
                      * 获取白名单类型：0-网站 1-应用 2-公众号 3-小程
                      * @return WhiteListType 白名单类型：0-网站 1-应用 2-公众号 3-小程
+                     * 
                      */
                     int64_t GetWhiteListType() const;
 
                     /**
                      * 设置白名单类型：0-网站 1-应用 2-公众号 3-小程
-                     * @param WhiteListType 白名单类型：0-网站 1-应用 2-公众号 3-小程
+                     * @param _whiteListType 白名单类型：0-网站 1-应用 2-公众号 3-小程
+                     * 
                      */
                     void SetWhiteListType(const int64_t& _whiteListType);
 
                     /**
                      * 判断参数 WhiteListType 是否已赋值
                      * @return WhiteListType 是否已赋值
+                     * 
                      */
                     bool WhiteListTypeHasBeenSet() const;
 
                     /**
                      * 获取白名单名称
                      * @return WhiteLists 白名单名称
+                     * 
                      */
                     std::vector<std::string> GetWhiteLists() const;
 
                     /**
                      * 设置白名单名称
-                     * @param WhiteLists 白名单名称
+                     * @param _whiteLists 白名单名称
+                     * 
                      */
                     void SetWhiteLists(const std::vector<std::string>& _whiteLists);
 
                     /**
                      * 判断参数 WhiteLists 是否已赋值
                      * @return WhiteLists 是否已赋值
+                     * 
                      */
                     bool WhiteListsHasBeenSet() const;
 

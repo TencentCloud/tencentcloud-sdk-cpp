@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取恶意请求事件Id
                      * @return Id 恶意请求事件Id
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置恶意请求事件Id
-                     * @param Id 恶意请求事件Id
+                     * @param _id 恶意请求事件Id
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

@@ -46,108 +46,126 @@ namespace TencentCloud
                     /**
                      * 获取订阅实例ID。
                      * @return SubscribeId 订阅实例ID。
+                     * 
                      */
                     std::string GetSubscribeId() const;
 
                     /**
                      * 设置订阅实例ID。
-                     * @param SubscribeId 订阅实例ID。
+                     * @param _subscribeId 订阅实例ID。
+                     * 
                      */
                     void SetSubscribeId(const std::string& _subscribeId);
 
                     /**
                      * 判断参数 SubscribeId 是否已赋值
                      * @return SubscribeId 是否已赋值
+                     * 
                      */
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
                      * 获取数据库实例ID
                      * @return InstanceId 数据库实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置数据库实例ID
-                     * @param InstanceId 数据库实例ID
+                     * @param _instanceId 数据库实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅
                      * @return SubscribeObjectType 数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅
+                     * 
                      */
                     int64_t GetSubscribeObjectType() const;
 
                     /**
                      * 设置数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅
-                     * @param SubscribeObjectType 数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅
+                     * @param _subscribeObjectType 数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅
+                     * 
                      */
                     void SetSubscribeObjectType(const int64_t& _subscribeObjectType);
 
                     /**
                      * 判断参数 SubscribeObjectType 是否已赋值
                      * @return SubscribeObjectType 是否已赋值
+                     * 
                      */
                     bool SubscribeObjectTypeHasBeenSet() const;
 
                     /**
                      * 获取订阅对象
                      * @return Objects 订阅对象
+                     * 
                      */
                     SubscribeObject GetObjects() const;
 
                     /**
                      * 设置订阅对象
-                     * @param Objects 订阅对象
+                     * @param _objects 订阅对象
+                     * 
                      */
                     void SetObjects(const SubscribeObject& _objects);
 
                     /**
                      * 判断参数 Objects 是否已赋值
                      * @return Objects 是否已赋值
+                     * 
                      */
                     bool ObjectsHasBeenSet() const;
 
                     /**
                      * 获取数据订阅服务所在子网。默认为数据库实例所在的子网内。
                      * @return UniqSubnetId 数据订阅服务所在子网。默认为数据库实例所在的子网内。
+                     * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置数据订阅服务所在子网。默认为数据库实例所在的子网内。
-                     * @param UniqSubnetId 数据订阅服务所在子网。默认为数据库实例所在的子网内。
+                     * @param _uniqSubnetId 数据订阅服务所在子网。默认为数据库实例所在的子网内。
+                     * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
 
                     /**
                      * 判断参数 UniqSubnetId 是否已赋值
                      * @return UniqSubnetId 是否已赋值
+                     * 
                      */
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取订阅服务端口；默认为7507
                      * @return Vport 订阅服务端口；默认为7507
+                     * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置订阅服务端口；默认为7507
-                     * @param Vport 订阅服务端口；默认为7507
+                     * @param _vport 订阅服务端口；默认为7507
+                     * 
                      */
                     void SetVport(const int64_t& _vport);
 
                     /**
                      * 判断参数 Vport 是否已赋值
                      * @return Vport 是否已赋值
+                     * 
                      */
                     bool VportHasBeenSet() const;
 

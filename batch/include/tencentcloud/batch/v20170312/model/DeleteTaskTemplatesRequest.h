@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取用于删除任务模板信息
                      * @return TaskTemplateIds 用于删除任务模板信息
+                     * 
                      */
                     std::vector<std::string> GetTaskTemplateIds() const;
 
                     /**
                      * 设置用于删除任务模板信息
-                     * @param TaskTemplateIds 用于删除任务模板信息
+                     * @param _taskTemplateIds 用于删除任务模板信息
+                     * 
                      */
                     void SetTaskTemplateIds(const std::vector<std::string>& _taskTemplateIds);
 
                     /**
                      * 判断参数 TaskTemplateIds 是否已赋值
                      * @return TaskTemplateIds 是否已赋值
+                     * 
                      */
                     bool TaskTemplateIdsHasBeenSet() const;
 

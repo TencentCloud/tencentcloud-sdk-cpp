@@ -49,144 +49,168 @@ namespace TencentCloud
                     /**
                      * 获取统计周期，可取值1，10，30，60，单位秒
                      * @return Period 统计周期，可取值1，10，30，60，单位秒
+                     * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置统计周期，可取值1，10，30，60，单位秒
-                     * @param Period 统计周期，可取值1，10，30，60，单位秒
+                     * @param _period 统计周期，可取值1，10，30，60，单位秒
+                     * 
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取请求数，取值1~20000
                      * @return RequestNum 请求数，取值1~20000
+                     * 
                      */
                     uint64_t GetRequestNum() const;
 
                     /**
                      * 设置请求数，取值1~20000
-                     * @param RequestNum 请求数，取值1~20000
+                     * @param _requestNum 请求数，取值1~20000
+                     * 
                      */
                     void SetRequestNum(const uint64_t& _requestNum);
 
                     /**
                      * 判断参数 RequestNum 是否已赋值
                      * @return RequestNum 是否已赋值
+                     * 
                      */
                     bool RequestNumHasBeenSet() const;
 
                     /**
                      * 获取频率限制策略方式，可取值alg表示验证码，drop表示丢弃
                      * @return Action 频率限制策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置频率限制策略方式，可取值alg表示验证码，drop表示丢弃
-                     * @param Action 频率限制策略方式，可取值alg表示验证码，drop表示丢弃
+                     * @param _action 频率限制策略方式，可取值alg表示验证码，drop表示丢弃
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取频率限制策略时长，可取值1~86400，单位秒
                      * @return ExecuteDuration 频率限制策略时长，可取值1~86400，单位秒
+                     * 
                      */
                     uint64_t GetExecuteDuration() const;
 
                     /**
                      * 设置频率限制策略时长，可取值1~86400，单位秒
-                     * @param ExecuteDuration 频率限制策略时长，可取值1~86400，单位秒
+                     * @param _executeDuration 频率限制策略时长，可取值1~86400，单位秒
+                     * 
                      */
                     void SetExecuteDuration(const uint64_t& _executeDuration);
 
                     /**
                      * 判断参数 ExecuteDuration 是否已赋值
                      * @return ExecuteDuration 是否已赋值
+                     * 
                      */
                     bool ExecuteDurationHasBeenSet() const;
 
                     /**
                      * 获取策略项比对方式，可取值include表示包含，equal表示等于
                      * @return Mode 策略项比对方式，可取值include表示包含，equal表示等于
+                     * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置策略项比对方式，可取值include表示包含，equal表示等于
-                     * @param Mode 策略项比对方式，可取值include表示包含，equal表示等于
+                     * @param _mode 策略项比对方式，可取值include表示包含，equal表示等于
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取Uri，三个策略项仅可填其中之一
                      * @return Uri Uri，三个策略项仅可填其中之一
+                     * 
                      */
                     std::string GetUri() const;
 
                     /**
                      * 设置Uri，三个策略项仅可填其中之一
-                     * @param Uri Uri，三个策略项仅可填其中之一
+                     * @param _uri Uri，三个策略项仅可填其中之一
+                     * 
                      */
                     void SetUri(const std::string& _uri);
 
                     /**
                      * 判断参数 Uri 是否已赋值
                      * @return Uri 是否已赋值
+                     * 
                      */
                     bool UriHasBeenSet() const;
 
                     /**
                      * 获取User-Agent，三个策略项仅可填其中之一
                      * @return UserAgent User-Agent，三个策略项仅可填其中之一
+                     * 
                      */
                     std::string GetUserAgent() const;
 
                     /**
                      * 设置User-Agent，三个策略项仅可填其中之一
-                     * @param UserAgent User-Agent，三个策略项仅可填其中之一
+                     * @param _userAgent User-Agent，三个策略项仅可填其中之一
+                     * 
                      */
                     void SetUserAgent(const std::string& _userAgent);
 
                     /**
                      * 判断参数 UserAgent 是否已赋值
                      * @return UserAgent 是否已赋值
+                     * 
                      */
                     bool UserAgentHasBeenSet() const;
 
                     /**
                      * 获取Cookie，三个策略项仅可填其中之一
                      * @return Cookie Cookie，三个策略项仅可填其中之一
+                     * 
                      */
                     std::string GetCookie() const;
 
                     /**
                      * 设置Cookie，三个策略项仅可填其中之一
-                     * @param Cookie Cookie，三个策略项仅可填其中之一
+                     * @param _cookie Cookie，三个策略项仅可填其中之一
+                     * 
                      */
                     void SetCookie(const std::string& _cookie);
 
                     /**
                      * 判断参数 Cookie 是否已赋值
                      * @return Cookie 是否已赋值
+                     * 
                      */
                     bool CookieHasBeenSet() const;
 

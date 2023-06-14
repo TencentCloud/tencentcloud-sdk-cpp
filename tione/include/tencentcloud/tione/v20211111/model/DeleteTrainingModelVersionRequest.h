@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取模型版本ID
                      * @return TrainingModelVersionId 模型版本ID
+                     * 
                      */
                     std::string GetTrainingModelVersionId() const;
 
                     /**
                      * 设置模型版本ID
-                     * @param TrainingModelVersionId 模型版本ID
+                     * @param _trainingModelVersionId 模型版本ID
+                     * 
                      */
                     void SetTrainingModelVersionId(const std::string& _trainingModelVersionId);
 
                     /**
                      * 判断参数 TrainingModelVersionId 是否已赋值
                      * @return TrainingModelVersionId 是否已赋值
+                     * 
                      */
                     bool TrainingModelVersionIdHasBeenSet() const;
 
                     /**
                      * 获取是否同步清理cos
                      * @return EnableDeleteCos 是否同步清理cos
+                     * 
                      */
                     bool GetEnableDeleteCos() const;
 
                     /**
                      * 设置是否同步清理cos
-                     * @param EnableDeleteCos 是否同步清理cos
+                     * @param _enableDeleteCos 是否同步清理cos
+                     * 
                      */
                     void SetEnableDeleteCos(const bool& _enableDeleteCos);
 
                     /**
                      * 判断参数 EnableDeleteCos 是否已赋值
                      * @return EnableDeleteCos 是否已赋值
+                     * 
                      */
                     bool EnableDeleteCosHasBeenSet() const;
 

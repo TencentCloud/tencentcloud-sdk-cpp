@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取数据集ID
                      * @return DatasetId 数据集ID
+                     * 
                      */
                     std::string GetDatasetId() const;
 
                     /**
                      * 设置数据集ID
-                     * @param DatasetId 数据集ID
+                     * @param _datasetId 数据集ID
+                     * 
                      */
                     void SetDatasetId(const std::string& _datasetId);
 
                     /**
                      * 判断参数 DatasetId 是否已赋值
                      * @return DatasetId 是否已赋值
+                     * 
                      */
                     bool DatasetIdHasBeenSet() const;
 
                     /**
                      * 获取偏移值
                      * @return Offset 偏移值
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移值
-                     * @param Offset 偏移值
+                     * @param _offset 偏移值
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回数据条数，默认20，目前最大支持2000条数据
                      * @return Limit 返回数据条数，默认20，目前最大支持2000条数据
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数据条数，默认20，目前最大支持2000条数据
-                     * @param Limit 返回数据条数，默认20，目前最大支持2000条数据
+                     * @param _limit 返回数据条数，默认20，目前最大支持2000条数据
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

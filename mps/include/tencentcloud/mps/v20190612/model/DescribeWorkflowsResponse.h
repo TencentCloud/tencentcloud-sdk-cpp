@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合过滤条件的记录总数。
                      * @return TotalCount 符合过滤条件的记录总数。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取工作流信息数组。
                      * @return WorkflowInfoSet 工作流信息数组。
+                     * 
                      */
                     std::vector<WorkflowInfo> GetWorkflowInfoSet() const;
 
                     /**
                      * 判断参数 WorkflowInfoSet 是否已赋值
                      * @return WorkflowInfoSet 是否已赋值
+                     * 
                      */
                     bool WorkflowInfoSetHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取权限组ID
                      * @return PGroupId 权限组ID
+                     * 
                      */
                     std::string GetPGroupId() const;
 
                     /**
                      * 设置权限组ID
-                     * @param PGroupId 权限组ID
+                     * @param _pGroupId 权限组ID
+                     * 
                      */
                     void SetPGroupId(const std::string& _pGroupId);
 
                     /**
                      * 判断参数 PGroupId 是否已赋值
                      * @return PGroupId 是否已赋值
+                     * 
                      */
                     bool PGroupIdHasBeenSet() const;
 
                     /**
                      * 获取权限组名称
                      * @return Name 权限组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置权限组名称
-                     * @param Name 权限组名称
+                     * @param _name 权限组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述信息
                      * @return DescInfo 描述信息
+                     * 
                      */
                     std::string GetDescInfo() const;
 
                     /**
                      * 设置描述信息
-                     * @param DescInfo 描述信息
+                     * @param _descInfo 描述信息
+                     * 
                      */
                     void SetDescInfo(const std::string& _descInfo);
 
                     /**
                      * 判断参数 DescInfo 是否已赋值
                      * @return DescInfo 是否已赋值
+                     * 
                      */
                     bool DescInfoHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CDate 创建时间
+                     * 
                      */
                     std::string GetCDate() const;
 
                     /**
                      * 设置创建时间
-                     * @param CDate 创建时间
+                     * @param _cDate 创建时间
+                     * 
                      */
                     void SetCDate(const std::string& _cDate);
 
                     /**
                      * 判断参数 CDate 是否已赋值
                      * @return CDate 是否已赋值
+                     * 
                      */
                     bool CDateHasBeenSet() const;
 
                     /**
                      * 获取关联文件系统个数
                      * @return BindCfsNum 关联文件系统个数
+                     * 
                      */
                     int64_t GetBindCfsNum() const;
 
                     /**
                      * 设置关联文件系统个数
-                     * @param BindCfsNum 关联文件系统个数
+                     * @param _bindCfsNum 关联文件系统个数
+                     * 
                      */
                     void SetBindCfsNum(const int64_t& _bindCfsNum);
 
                     /**
                      * 判断参数 BindCfsNum 是否已赋值
                      * @return BindCfsNum 是否已赋值
+                     * 
                      */
                     bool BindCfsNumHasBeenSet() const;
 

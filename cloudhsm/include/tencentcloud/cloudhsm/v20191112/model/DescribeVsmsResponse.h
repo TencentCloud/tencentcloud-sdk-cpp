@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取获取实例的总个数
                      * @return TotalCount 获取实例的总个数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VsmList 资源信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ResourceInfo> GetVsmList() const;
 
                     /**
                      * 判断参数 VsmList 是否已赋值
                      * @return VsmList 是否已赋值
+                     * 
                      */
                     bool VsmListHasBeenSet() const;
 

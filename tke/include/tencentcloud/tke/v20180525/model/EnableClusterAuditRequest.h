@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取CLS日志集ID
                      * @return LogsetId CLS日志集ID
+                     * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置CLS日志集ID
-                     * @param LogsetId CLS日志集ID
+                     * @param _logsetId CLS日志集ID
+                     * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
 
                     /**
                      * 判断参数 LogsetId 是否已赋值
                      * @return LogsetId 是否已赋值
+                     * 
                      */
                     bool LogsetIdHasBeenSet() const;
 
                     /**
                      * 获取CLS日志主题ID
                      * @return TopicId CLS日志主题ID
+                     * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置CLS日志主题ID
-                     * @param TopicId CLS日志主题ID
+                     * @param _topicId CLS日志主题ID
+                     * 
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
+                     * 
                      */
                     bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取topic所在region，默认为集群当前region
                      * @return TopicRegion topic所在region，默认为集群当前region
+                     * 
                      */
                     std::string GetTopicRegion() const;
 
                     /**
                      * 设置topic所在region，默认为集群当前region
-                     * @param TopicRegion topic所在region，默认为集群当前region
+                     * @param _topicRegion topic所在region，默认为集群当前region
+                     * 
                      */
                     void SetTopicRegion(const std::string& _topicRegion);
 
                     /**
                      * 判断参数 TopicRegion 是否已赋值
                      * @return TopicRegion 是否已赋值
+                     * 
                      */
                     bool TopicRegionHasBeenSet() const;
 

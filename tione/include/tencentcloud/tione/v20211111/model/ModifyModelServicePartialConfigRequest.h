@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取在线推理服务Id，需已存在
                      * @return ServiceId 在线推理服务Id，需已存在
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置在线推理服务Id，需已存在
-                     * @param ServiceId 在线推理服务Id，需已存在
+                     * @param _serviceId 在线推理服务Id，需已存在
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取更新后服务不重启，定时停止的配置
                      * @return ScheduledAction 更新后服务不重启，定时停止的配置
+                     * 
                      */
                     ScheduledAction GetScheduledAction() const;
 
                     /**
                      * 设置更新后服务不重启，定时停止的配置
-                     * @param ScheduledAction 更新后服务不重启，定时停止的配置
+                     * @param _scheduledAction 更新后服务不重启，定时停止的配置
+                     * 
                      */
                     void SetScheduledAction(const ScheduledAction& _scheduledAction);
 
                     /**
                      * 判断参数 ScheduledAction 是否已赋值
                      * @return ScheduledAction 是否已赋值
+                     * 
                      */
                     bool ScheduledActionHasBeenSet() const;
 
                     /**
                      * 获取更新后服务不重启，服务对应限流限频配置
                      * @return ServiceLimit 更新后服务不重启，服务对应限流限频配置
+                     * 
                      */
                     ServiceLimit GetServiceLimit() const;
 
                     /**
                      * 设置更新后服务不重启，服务对应限流限频配置
-                     * @param ServiceLimit 更新后服务不重启，服务对应限流限频配置
+                     * @param _serviceLimit 更新后服务不重启，服务对应限流限频配置
+                     * 
                      */
                     void SetServiceLimit(const ServiceLimit& _serviceLimit);
 
                     /**
                      * 判断参数 ServiceLimit 是否已赋值
                      * @return ServiceLimit 是否已赋值
+                     * 
                      */
                     bool ServiceLimitHasBeenSet() const;
 

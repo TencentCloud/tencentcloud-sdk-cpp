@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取多个权限规则ID，上限为10
                      * @return AccessRuleIds 多个权限规则ID，上限为10
+                     * 
                      */
                     std::vector<uint64_t> GetAccessRuleIds() const;
 
                     /**
                      * 设置多个权限规则ID，上限为10
-                     * @param AccessRuleIds 多个权限规则ID，上限为10
+                     * @param _accessRuleIds 多个权限规则ID，上限为10
+                     * 
                      */
                     void SetAccessRuleIds(const std::vector<uint64_t>& _accessRuleIds);
 
                     /**
                      * 判断参数 AccessRuleIds 是否已赋值
                      * @return AccessRuleIds 是否已赋值
+                     * 
                      */
                     bool AccessRuleIdsHasBeenSet() const;
 

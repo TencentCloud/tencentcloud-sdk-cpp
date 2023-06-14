@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取站点的url列表
                      * @return Urls 站点的url列表
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置站点的url列表
-                     * @param Urls 站点的url列表
+                     * @param _urls 站点的url列表
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 

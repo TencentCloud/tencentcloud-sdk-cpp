@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取商户号
                      * @return MerchantId 商户号
+                     * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户号
-                     * @param MerchantId 商户号
+                     * @param _merchantId 商户号
+                     * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
                     /**
                      * 判断参数 MerchantId 是否已赋值
                      * @return MerchantId 是否已赋值
+                     * 
                      */
                     bool MerchantIdHasBeenSet() const;
 
                     /**
                      * 获取申请商户号的appid或者商户号绑定的appid
                      * @return MerchantAppId 申请商户号的appid或者商户号绑定的appid
+                     * 
                      */
                     std::string GetMerchantAppId() const;
 
                     /**
                      * 设置申请商户号的appid或者商户号绑定的appid
-                     * @param MerchantAppId 申请商户号的appid或者商户号绑定的appid
+                     * @param _merchantAppId 申请商户号的appid或者商户号绑定的appid
+                     * 
                      */
                     void SetMerchantAppId(const std::string& _merchantAppId);
 
                     /**
                      * 判断参数 MerchantAppId 是否已赋值
                      * @return MerchantAppId 是否已赋值
+                     * 
                      */
                     bool MerchantAppIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ namespace TencentCloud
                      * @return TransferType 1、 微信企业付款 
 2、 支付宝转账 
 3、 平安银企直联代发转账
+                     * 
                      */
                     int64_t GetTransferType() const;
 
@@ -92,69 +99,80 @@ namespace TencentCloud
                      * 设置1、 微信企业付款 
 2、 支付宝转账 
 3、 平安银企直联代发转账
-                     * @param TransferType 1、 微信企业付款 
+                     * @param _transferType 1、 微信企业付款 
 2、 支付宝转账 
 3、 平安银企直联代发转账
+                     * 
                      */
                     void SetTransferType(const int64_t& _transferType);
 
                     /**
                      * 判断参数 TransferType 是否已赋值
                      * @return TransferType 是否已赋值
+                     * 
                      */
                     bool TransferTypeHasBeenSet() const;
 
                     /**
                      * 获取交易流水流水号（与 OrderId 不能同时为空）
                      * @return TradeSerialNo 交易流水流水号（与 OrderId 不能同时为空）
+                     * 
                      */
                     std::string GetTradeSerialNo() const;
 
                     /**
                      * 设置交易流水流水号（与 OrderId 不能同时为空）
-                     * @param TradeSerialNo 交易流水流水号（与 OrderId 不能同时为空）
+                     * @param _tradeSerialNo 交易流水流水号（与 OrderId 不能同时为空）
+                     * 
                      */
                     void SetTradeSerialNo(const std::string& _tradeSerialNo);
 
                     /**
                      * 判断参数 TradeSerialNo 是否已赋值
                      * @return TradeSerialNo 是否已赋值
+                     * 
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
                     /**
                      * 获取订单号（与 TradeSerialNo 不能同时为空）
                      * @return OrderId 订单号（与 TradeSerialNo 不能同时为空）
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号（与 TradeSerialNo 不能同时为空）
-                     * @param OrderId 订单号（与 TradeSerialNo 不能同时为空）
+                     * @param _orderId 订单号（与 TradeSerialNo 不能同时为空）
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取接入环境。沙箱环境填sandbox。
                      * @return Profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     std::string GetProfile() const;
 
                     /**
                      * 设置接入环境。沙箱环境填sandbox。
-                     * @param Profile 接入环境。沙箱环境填sandbox。
+                     * @param _profile 接入环境。沙箱环境填sandbox。
+                     * 
                      */
                     void SetProfile(const std::string& _profile);
 
                     /**
                      * 判断参数 Profile 是否已赋值
                      * @return Profile 是否已赋值
+                     * 
                      */
                     bool ProfileHasBeenSet() const;
 

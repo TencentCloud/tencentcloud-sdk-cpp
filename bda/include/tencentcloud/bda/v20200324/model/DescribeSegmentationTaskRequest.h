@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取在提交分割任务成功时返回的任务标识ID。
                      * @return TaskID 在提交分割任务成功时返回的任务标识ID。
+                     * 
                      */
                     std::string GetTaskID() const;
 
                     /**
                      * 设置在提交分割任务成功时返回的任务标识ID。
-                     * @param TaskID 在提交分割任务成功时返回的任务标识ID。
+                     * @param _taskID 在提交分割任务成功时返回的任务标识ID。
+                     * 
                      */
                     void SetTaskID(const std::string& _taskID);
 
                     /**
                      * 判断参数 TaskID 是否已赋值
                      * @return TaskID 是否已赋值
+                     * 
                      */
                     bool TaskIDHasBeenSet() const;
 

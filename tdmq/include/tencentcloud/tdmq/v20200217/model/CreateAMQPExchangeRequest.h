@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取交换机名称，3-64个字符，只能包含字母、数字、“-”及“_”
                      * @return Exchange 交换机名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     std::string GetExchange() const;
 
                     /**
                      * 设置交换机名称，3-64个字符，只能包含字母、数字、“-”及“_”
-                     * @param Exchange 交换机名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * @param _exchange 交换机名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     void SetExchange(const std::string& _exchange);
 
                     /**
                      * 判断参数 Exchange 是否已赋值
                      * @return Exchange 是否已赋值
+                     * 
                      */
                     bool ExchangeHasBeenSet() const;
 
                     /**
                      * 获取交换机所在的vhost，目前支持在单个vhost下创建主题
                      * @return VHosts 交换机所在的vhost，目前支持在单个vhost下创建主题
+                     * 
                      */
                     std::vector<std::string> GetVHosts() const;
 
                     /**
                      * 设置交换机所在的vhost，目前支持在单个vhost下创建主题
-                     * @param VHosts 交换机所在的vhost，目前支持在单个vhost下创建主题
+                     * @param _vHosts 交换机所在的vhost，目前支持在单个vhost下创建主题
+                     * 
                      */
                     void SetVHosts(const std::vector<std::string>& _vHosts);
 
                     /**
                      * 判断参数 VHosts 是否已赋值
                      * @return VHosts 是否已赋值
+                     * 
                      */
                     bool VHostsHasBeenSet() const;
 
                     /**
                      * 获取交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
                      * @return Type 交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
-                     * @param Type 交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
+                     * @param _type 交换机类型，可选值为Direct, Fanout, Topic, x-delayed-message
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取交换机说明，最大128个字符
                      * @return Remark 交换机说明，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置交换机说明，最大128个字符
-                     * @param Remark 交换机说明，最大128个字符
+                     * @param _remark 交换机说明，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
                     /**
                      * 获取备用交换机名称
                      * @return AlternateExchange 备用交换机名称
+                     * 
                      */
                     std::string GetAlternateExchange() const;
 
                     /**
                      * 设置备用交换机名称
-                     * @param AlternateExchange 备用交换机名称
+                     * @param _alternateExchange 备用交换机名称
+                     * 
                      */
                     void SetAlternateExchange(const std::string& _alternateExchange);
 
                     /**
                      * 判断参数 AlternateExchange 是否已赋值
                      * @return AlternateExchange 是否已赋值
+                     * 
                      */
                     bool AlternateExchangeHasBeenSet() const;
 
                     /**
                      * 获取延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
                      * @return DelayedType 延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     * 
                      */
                     std::string GetDelayedType() const;
 
                     /**
                      * 设置延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
-                     * @param DelayedType 延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     * @param _delayedType 延迟交换机类型，可选值为Direct, Fanout, Topic, 不允许为x-delayed-message
+                     * 
                      */
                     void SetDelayedType(const std::string& _delayedType);
 
                     /**
                      * 判断参数 DelayedType 是否已赋值
                      * @return DelayedType 是否已赋值
+                     * 
                      */
                     bool DelayedTypeHasBeenSet() const;
 

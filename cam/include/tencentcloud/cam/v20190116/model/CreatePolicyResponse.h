@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取新增策略ID
                      * @return PolicyId 新增策略ID
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 

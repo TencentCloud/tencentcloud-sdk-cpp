@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return InstanceId 实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * @param _instanceId 实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取主题名称
                      * @return TopicName 主题名称
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-                     * @param TopicName 主题名称
+                     * @param _topicName 主题名称
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取主题分区个数
                      * @return PartitionNum 主题分区个数
+                     * 
                      */
                     int64_t GetPartitionNum() const;
 
                     /**
                      * 设置主题分区个数
-                     * @param PartitionNum 主题分区个数
+                     * @param _partitionNum 主题分区个数
+                     * 
                      */
                     void SetPartitionNum(const int64_t& _partitionNum);
 
                     /**
                      * 判断参数 PartitionNum 是否已赋值
                      * @return PartitionNum 是否已赋值
+                     * 
                      */
                     bool PartitionNumHasBeenSet() const;
 

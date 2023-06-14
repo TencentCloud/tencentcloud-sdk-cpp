@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取汇总日期:yyyy-MM-dd
                      * @return SummaryDate 汇总日期:yyyy-MM-dd
+                     * 
                      */
                     std::string GetSummaryDate() const;
 
                     /**
                      * 设置汇总日期:yyyy-MM-dd
-                     * @param SummaryDate 汇总日期:yyyy-MM-dd
+                     * @param _summaryDate 汇总日期:yyyy-MM-dd
+                     * 
                      */
                     void SetSummaryDate(const std::string& _summaryDate);
 
                     /**
                      * 判断参数 SummaryDate 是否已赋值
                      * @return SummaryDate 是否已赋值
+                     * 
                      */
                     bool SummaryDateHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return PageNumber 分页
+                     * 
                      */
                     Paging GetPageNumber() const;
 
                     /**
                      * 设置分页
-                     * @param PageNumber 分页
+                     * @param _pageNumber 分页
+                     * 
                      */
                     void SetPageNumber(const Paging& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取汇总订单类型:FREEZE, SETTLEMENT,PAYMENT
                      * @return OrderType 汇总订单类型:FREEZE, SETTLEMENT,PAYMENT
+                     * 
                      */
                     std::string GetOrderType() const;
 
                     /**
                      * 设置汇总订单类型:FREEZE, SETTLEMENT,PAYMENT
-                     * @param OrderType 汇总订单类型:FREEZE, SETTLEMENT,PAYMENT
+                     * @param _orderType 汇总订单类型:FREEZE, SETTLEMENT,PAYMENT
+                     * 
                      */
                     void SetOrderType(const std::string& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -126,6 +138,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -135,17 +148,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

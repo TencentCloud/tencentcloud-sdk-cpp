@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      * @return CommId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * 
                      */
                     std::string GetCommId() const;
 
                     /**
                      * 设置通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
-                     * @param CommId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * @param _commId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * 
                      */
                     void SetCommId(const std::string& _commId);
 
                     /**
                      * 判断参数 CommId 是否已赋值
                      * @return CommId 是否已赋值
+                     * 
                      */
                     bool CommIdHasBeenSet() const;
 
@@ -65,20 +68,23 @@ namespace TencentCloud
 注意：支持查询14天内的数据。
                      * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
 注意：支持查询14天内的数据。
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
 注意：支持查询14天内的数据。
-                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
+                     * @param _startTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
 注意：支持查询14天内的数据。
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -87,56 +93,65 @@ namespace TencentCloud
 注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
                      * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
 注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+                     * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
 注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
-                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+                     * @param _endTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
 注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+                     * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取用户SdkAppId（如：1400xxxxxx）。
                      * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置用户SdkAppId（如：1400xxxxxx）。
-                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）。
+                     * @param _sdkAppId 用户SdkAppId（如：1400xxxxxx）。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取需查询的用户数组，默认不填返回6个用户。
                      * @return UserIds 需查询的用户数组，默认不填返回6个用户。
+                     * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置需查询的用户数组，默认不填返回6个用户。
-                     * @param UserIds 需查询的用户数组，默认不填返回6个用户。
+                     * @param _userIds 需查询的用户数组，默认不填返回6个用户。
+                     * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
                     /**
                      * 判断参数 UserIds 是否已赋值
                      * @return UserIds 是否已赋值
+                     * 
                      */
                     bool UserIdsHasBeenSet() const;
 
@@ -169,6 +184,7 @@ aLoss：上/下行音频丢包率；
 bigvLoss：上/下行视频丢包率；
 bigvWidth：上/下行分辨率宽；
 bigvHeight：上/下行分辨率高
+                     * 
                      */
                     std::vector<std::string> GetDataType() const;
 
@@ -187,7 +203,7 @@ aLoss：上/下行音频丢包率；
 bigvLoss：上/下行视频丢包率；
 bigvWidth：上/下行分辨率宽；
 bigvHeight：上/下行分辨率高
-                     * @param DataType 需查询的指标，不填则只返回用户列表，填all则返回所有指标。
+                     * @param _dataType 需查询的指标，不填则只返回用户列表，填all则返回所有指标。
 appCpu：APP CPU使用率；
 sysCpu：系统 CPU使用率；
 aBit：上/下行音频码率；单位：bps
@@ -201,12 +217,14 @@ aLoss：上/下行音频丢包率；
 bigvLoss：上/下行视频丢包率；
 bigvWidth：上/下行分辨率宽；
 bigvHeight：上/下行分辨率高
+                     * 
                      */
                     void SetDataType(const std::vector<std::string>& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 
@@ -215,20 +233,23 @@ bigvHeight：上/下行分辨率高
 注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
                      * @return PageNumber 当前页数，默认为0，
 注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置当前页数，默认为0，
 注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
-                     * @param PageNumber 当前页数，默认为0，
+                     * @param _pageNumber 当前页数，默认为0，
 注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
@@ -241,6 +262,7 @@ DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
 范围：[1，100]
 注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
 DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
@@ -249,16 +271,18 @@ DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
 范围：[1，100]
 注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
 DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
-                     * @param PageSize 每页个数，默认为6，
+                     * @param _pageSize 每页个数，默认为6，
 范围：[1，100]
 注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
 DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

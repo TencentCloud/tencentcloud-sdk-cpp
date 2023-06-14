@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取查询字段名称
                      * @return Name 查询字段名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置查询字段名称
-                     * @param Name 查询字段名称
+                     * @param _name 查询字段名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取查询字段值
                      * @return Value 查询字段值
+                     * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
                      * 设置查询字段值
-                     * @param Value 查询字段值
+                     * @param _value 查询字段值
+                     * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

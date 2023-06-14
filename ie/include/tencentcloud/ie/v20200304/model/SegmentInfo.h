@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取每个切片平均时长，默认10s。
                      * @return FragmentTime 每个切片平均时长，默认10s。
+                     * 
                      */
                     int64_t GetFragmentTime() const;
 
                     /**
                      * 设置每个切片平均时长，默认10s。
-                     * @param FragmentTime 每个切片平均时长，默认10s。
+                     * @param _fragmentTime 每个切片平均时长，默认10s。
+                     * 
                      */
                     void SetFragmentTime(const int64_t& _fragmentTime);
 
                     /**
                      * 判断参数 FragmentTime 是否已赋值
                      * @return FragmentTime 是否已赋值
+                     * 
                      */
                     bool FragmentTimeHasBeenSet() const;
 
                     /**
                      * 获取切片类型，可选项：hls，不填时默认hls。
                      * @return SegmentType 切片类型，可选项：hls，不填时默认hls。
+                     * 
                      */
                     std::string GetSegmentType() const;
 
                     /**
                      * 设置切片类型，可选项：hls，不填时默认hls。
-                     * @param SegmentType 切片类型，可选项：hls，不填时默认hls。
+                     * @param _segmentType 切片类型，可选项：hls，不填时默认hls。
+                     * 
                      */
                     void SetSegmentType(const std::string& _segmentType);
 
                     /**
                      * 判断参数 SegmentType 是否已赋值
                      * @return SegmentType 是否已赋值
+                     * 
                      */
                     bool SegmentTypeHasBeenSet() const;
 
@@ -89,6 +95,7 @@ namespace TencentCloud
                      * @return FragmentName 切片文件名字。注意：
 1.不填切片文件名时，默认按照按照如下格式命名：m3u8文件名{order}。
 2.若填了切片文件名字，则会按照如下格式命名：用户指定文件名{order}。
+                     * 
                      */
                     std::string GetFragmentName() const;
 
@@ -96,15 +103,17 @@ namespace TencentCloud
                      * 设置切片文件名字。注意：
 1.不填切片文件名时，默认按照按照如下格式命名：m3u8文件名{order}。
 2.若填了切片文件名字，则会按照如下格式命名：用户指定文件名{order}。
-                     * @param FragmentName 切片文件名字。注意：
+                     * @param _fragmentName 切片文件名字。注意：
 1.不填切片文件名时，默认按照按照如下格式命名：m3u8文件名{order}。
 2.若填了切片文件名字，则会按照如下格式命名：用户指定文件名{order}。
+                     * 
                      */
                     void SetFragmentName(const std::string& _fragmentName);
 
                     /**
                      * 判断参数 FragmentName 是否已赋值
                      * @return FragmentName 是否已赋值
+                     * 
                      */
                     bool FragmentNameHasBeenSet() const;
 

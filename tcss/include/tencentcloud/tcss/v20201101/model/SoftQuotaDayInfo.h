@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取扣费时间
                      * @return PayTime 扣费时间
+                     * 
                      */
                     std::string GetPayTime() const;
 
                     /**
                      * 设置扣费时间
-                     * @param PayTime 扣费时间
+                     * @param _payTime 扣费时间
+                     * 
                      */
                     void SetPayTime(const std::string& _payTime);
 
                     /**
                      * 判断参数 PayTime 是否已赋值
                      * @return PayTime 是否已赋值
+                     * 
                      */
                     bool PayTimeHasBeenSet() const;
 
                     /**
                      * 获取计费核数
                      * @return CoresCnt 计费核数
+                     * 
                      */
                     uint64_t GetCoresCnt() const;
 
                     /**
                      * 设置计费核数
-                     * @param CoresCnt 计费核数
+                     * @param _coresCnt 计费核数
+                     * 
                      */
                     void SetCoresCnt(const uint64_t& _coresCnt);
 
                     /**
                      * 判断参数 CoresCnt 是否已赋值
                      * @return CoresCnt 是否已赋值
+                     * 
                      */
                     bool CoresCntHasBeenSet() const;
 

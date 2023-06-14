@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取坐席状态实时信息
                      * @return Metrics 坐席状态实时信息
+                     * 
                      */
                     std::vector<StaffStatusMetrics> GetMetrics() const;
 
                     /**
                      * 判断参数 Metrics 是否已赋值
                      * @return Metrics 是否已赋值
+                     * 
                      */
                     bool MetricsHasBeenSet() const;
 

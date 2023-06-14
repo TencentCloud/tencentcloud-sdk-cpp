@@ -50,12 +50,14 @@ namespace TencentCloud
                      * @return OriginalPrice 原价  
 * 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述
 * 币种：国内站为人民币，国际站为美元
+                     * 
                      */
                     int64_t GetOriginalPrice() const;
 
                     /**
                      * 判断参数 OriginalPrice 是否已赋值
                      * @return OriginalPrice 是否已赋值
+                     * 
                      */
                     bool OriginalPriceHasBeenSet() const;
 
@@ -66,12 +68,14 @@ namespace TencentCloud
                      * @return Price 实际价格，受折扣等影响，可能和原价不同
 * 单位：默认为分，若请求参数带有AmountUnit，参考AmountUnit描述
 * 币种：国内站人民币，国际站美元
+                     * 
                      */
                     int64_t GetPrice() const;
 
                     /**
                      * 判断参数 Price 是否已赋值
                      * @return Price 是否已赋值
+                     * 
                      */
                     bool PriceHasBeenSet() const;
 

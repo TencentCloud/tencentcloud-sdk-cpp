@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称
-                     * @param ProjectName 项目名称
+                     * @param _projectName 项目名称
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取项目描述
                      * @return ProjectDesc 项目描述
+                     * 
                      */
                     std::string GetProjectDesc() const;
 
                     /**
                      * 设置项目描述
-                     * @param ProjectDesc 项目描述
+                     * @param _projectDesc 项目描述
+                     * 
                      */
                     void SetProjectDesc(const std::string& _projectDesc);
 
                     /**
                      * 判断参数 ProjectDesc 是否已赋值
                      * @return ProjectDesc 是否已赋值
+                     * 
                      */
                     bool ProjectDescHasBeenSet() const;
 
                     /**
                      * 获取创建时间，unix时间戳
                      * @return CreateTime 创建时间，unix时间戳
+                     * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，unix时间戳
-                     * @param CreateTime 创建时间，unix时间戳
+                     * @param _createTime 创建时间，unix时间戳
+                     * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取更新时间，unix时间戳
                      * @return UpdateTime 更新时间，unix时间戳
+                     * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，unix时间戳
-                     * @param UpdateTime 更新时间，unix时间戳
+                     * @param _updateTime 更新时间，unix时间戳
+                     * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 

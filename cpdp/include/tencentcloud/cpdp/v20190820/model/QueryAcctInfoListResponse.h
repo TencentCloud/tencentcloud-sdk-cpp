@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取本次交易返回查询结果记录数
                      * @return ResultCount 本次交易返回查询结果记录数
+                     * 
                      */
                     int64_t GetResultCount() const;
 
                     /**
                      * 判断参数 ResultCount 是否已赋值
                      * @return ResultCount 是否已赋值
+                     * 
                      */
                     bool ResultCountHasBeenSet() const;
 
                     /**
                      * 获取符合业务查询条件的记录总数
                      * @return TotalCount 符合业务查询条件的记录总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取查询结果项 [object,object]
                      * @return QueryAcctItems 查询结果项 [object,object]
+                     * 
                      */
                     std::vector<QueryAcctItem> GetQueryAcctItems() const;
 
                     /**
                      * 判断参数 QueryAcctItems 是否已赋值
                      * @return QueryAcctItems 是否已赋值
+                     * 
                      */
                     bool QueryAcctItemsHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取主机Uuid
                      * @return Uuid 主机Uuid
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置主机Uuid
-                     * @param Uuid 主机Uuid
+                     * @param _uuid 主机Uuid
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取主机Quuid
                      * @return Quuid 主机Quuid
+                     * 
                      */
                     std::string GetQuuid() const;
 
                     /**
                      * 设置主机Quuid
-                     * @param Quuid 主机Quuid
+                     * @param _quuid 主机Quuid
+                     * 
                      */
                     void SetQuuid(const std::string& _quuid);
 
                     /**
                      * 判断参数 Quuid 是否已赋值
                      * @return Quuid 是否已赋值
+                     * 
                      */
                     bool QuuidHasBeenSet() const;
 
@@ -98,6 +104,7 @@ namespace TencentCloud
 2:dpkg
 3:java
 4:system</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -111,7 +118,7 @@ namespace TencentCloud
 2:dpkg
 3:java
 4:system</li>
-                     * @param Filters 过滤条件。
+                     * @param _filters 过滤条件。
 <li>Name - String - 是否必填：否 - 包 名</li>
 <li>StartTime - String - 是否必填：否 - 安装开始时间</li>
 <li>EndTime - String - 是否必填：否 - 安装开始时间</li>
@@ -120,84 +127,98 @@ namespace TencentCloud
 2:dpkg
 3:java
 4:system</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取需要返回的数量，默认为10，最大值为100
                      * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc-升序 或 desc-降序。默认：desc-降序
                      * @return Order 排序方式，asc-升序 或 desc-降序。默认：desc-降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序方式，asc-升序 或 desc-降序。默认：desc-降序
-                     * @param Order 排序方式，asc-升序 或 desc-降序。默认：desc-降序
+                     * @param _order 排序方式，asc-升序 或 desc-降序。默认：desc-降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 
                     /**
                      * 获取排序方式可选：[FistTime|InstallTime:安装时间]
                      * @return By 排序方式可选：[FistTime|InstallTime:安装时间]
+                     * 
                      */
                     std::string GetBy() const;
 
                     /**
                      * 设置排序方式可选：[FistTime|InstallTime:安装时间]
-                     * @param By 排序方式可选：[FistTime|InstallTime:安装时间]
+                     * @param _by 排序方式可选：[FistTime|InstallTime:安装时间]
+                     * 
                      */
                     void SetBy(const std::string& _by);
 
                     /**
                      * 判断参数 By 是否已赋值
                      * @return By 是否已赋值
+                     * 
                      */
                     bool ByHasBeenSet() const;
 

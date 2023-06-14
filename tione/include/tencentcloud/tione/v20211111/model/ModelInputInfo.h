@@ -55,6 +55,7 @@ RANGE：浮动
 FIXED：固定
 RANGE：浮动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetModelInputType() const;
 
@@ -63,16 +64,18 @@ RANGE：浮动
 FIXED：固定
 RANGE：浮动
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelInputType input数据类型
+                     * @param _modelInputType input数据类型
 FIXED：固定
 RANGE：浮动
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelInputType(const std::string& _modelInputType);
 
                     /**
                      * 判断参数 ModelInputType 是否已赋值
                      * @return ModelInputType 是否已赋值
+                     * 
                      */
                     bool ModelInputTypeHasBeenSet() const;
 
@@ -81,20 +84,23 @@ RANGE：浮动
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelInputDimension input数据尺寸
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetModelInputDimension() const;
 
                     /**
                      * 设置input数据尺寸
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ModelInputDimension input数据尺寸
+                     * @param _modelInputDimension input数据尺寸
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetModelInputDimension(const std::vector<std::string>& _modelInputDimension);
 
                     /**
                      * 判断参数 ModelInputDimension 是否已赋值
                      * @return ModelInputDimension 是否已赋值
+                     * 
                      */
                     bool ModelInputDimensionHasBeenSet() const;
 

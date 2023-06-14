@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
+                     * @param _region 地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetNum 互联网公网地址数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSubnetNum() const;
 
                     /**
                      * 设置互联网公网地址数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubnetNum 互联网公网地址数量
+                     * @param _subnetNum 互联网公网地址数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubnetNum(const int64_t& _subnetNum);
 
                     /**
                      * 判断参数 SubnetNum 是否已赋值
                      * @return SubnetNum 是否已赋值
+                     * 
                      */
                     bool SubnetNumHasBeenSet() const;
 

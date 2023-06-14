@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取告警阈值类型，1-入流量，2-清洗流量
                      * @return AlarmType 告警阈值类型，1-入流量，2-清洗流量
+                     * 
                      */
                     uint64_t GetAlarmType() const;
 
                     /**
                      * 设置告警阈值类型，1-入流量，2-清洗流量
-                     * @param AlarmType 告警阈值类型，1-入流量，2-清洗流量
+                     * @param _alarmType 告警阈值类型，1-入流量，2-清洗流量
+                     * 
                      */
                     void SetAlarmType(const uint64_t& _alarmType);
 
                     /**
                      * 判断参数 AlarmType 是否已赋值
                      * @return AlarmType 是否已赋值
+                     * 
                      */
                     bool AlarmTypeHasBeenSet() const;
 
                     /**
                      * 获取告警阈值，大于0（目前排定的值）
                      * @return AlarmThreshold 告警阈值，大于0（目前排定的值）
+                     * 
                      */
                     uint64_t GetAlarmThreshold() const;
 
                     /**
                      * 设置告警阈值，大于0（目前排定的值）
-                     * @param AlarmThreshold 告警阈值，大于0（目前排定的值）
+                     * @param _alarmThreshold 告警阈值，大于0（目前排定的值）
+                     * 
                      */
                     void SetAlarmThreshold(const uint64_t& _alarmThreshold);
 
                     /**
                      * 判断参数 AlarmThreshold 是否已赋值
                      * @return AlarmThreshold 是否已赋值
+                     * 
                      */
                     bool AlarmThresholdHasBeenSet() const;
 

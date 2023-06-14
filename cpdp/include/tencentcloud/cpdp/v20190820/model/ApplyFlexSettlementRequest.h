@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -67,6 +70,7 @@ OCCASION:偶然所得
                      * @return IncomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
+                     * 
                      */
                     std::string GetIncomeType() const;
 
@@ -74,69 +78,80 @@ OCCASION:偶然所得
                      * 设置收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
-                     * @param IncomeType 收入类型
+                     * @param _incomeType 收入类型
 LABOR:劳务所得
 OCCASION:偶然所得
+                     * 
                      */
                     void SetIncomeType(const std::string& _incomeType);
 
                     /**
                      * 判断参数 IncomeType 是否已赋值
                      * @return IncomeType 是否已赋值
+                     * 
                      */
                     bool IncomeTypeHasBeenSet() const;
 
                     /**
                      * 获取税前金额
                      * @return AmountBeforeTax 税前金额
+                     * 
                      */
                     std::string GetAmountBeforeTax() const;
 
                     /**
                      * 设置税前金额
-                     * @param AmountBeforeTax 税前金额
+                     * @param _amountBeforeTax 税前金额
+                     * 
                      */
                     void SetAmountBeforeTax(const std::string& _amountBeforeTax);
 
                     /**
                      * 判断参数 AmountBeforeTax 是否已赋值
                      * @return AmountBeforeTax 是否已赋值
+                     * 
                      */
                     bool AmountBeforeTaxHasBeenSet() const;
 
                     /**
                      * 获取外部订单ID
                      * @return OutOrderId 外部订单ID
+                     * 
                      */
                     std::string GetOutOrderId() const;
 
                     /**
                      * 设置外部订单ID
-                     * @param OutOrderId 外部订单ID
+                     * @param _outOrderId 外部订单ID
+                     * 
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
                     /**
                      * 判断参数 OutOrderId 是否已赋值
                      * @return OutOrderId 是否已赋值
+                     * 
                      */
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
                      * 获取备注
                      * @return Remark 备注
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-                     * @param Remark 备注
+                     * @param _remark 备注
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 
@@ -151,6 +166,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -160,17 +176,19 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

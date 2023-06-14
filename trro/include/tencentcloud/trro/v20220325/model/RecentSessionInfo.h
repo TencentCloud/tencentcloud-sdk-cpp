@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取会话ID
                      * @return SessionId 会话ID
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话ID
-                     * @param SessionId 会话ID
+                     * @param _sessionId 会话ID
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取远端设备ID
                      * @return RemoteDeviceId 远端设备ID
+                     * 
                      */
                     std::string GetRemoteDeviceId() const;
 
                     /**
                      * 设置远端设备ID
-                     * @param RemoteDeviceId 远端设备ID
+                     * @param _remoteDeviceId 远端设备ID
+                     * 
                      */
                     void SetRemoteDeviceId(const std::string& _remoteDeviceId);
 
                     /**
                      * 判断参数 RemoteDeviceId 是否已赋值
                      * @return RemoteDeviceId 是否已赋值
+                     * 
                      */
                     bool RemoteDeviceIdHasBeenSet() const;
 
                     /**
                      * 获取现场设备ID
                      * @return FieldDeviceId 现场设备ID
+                     * 
                      */
                     std::string GetFieldDeviceId() const;
 
                     /**
                      * 设置现场设备ID
-                     * @param FieldDeviceId 现场设备ID
+                     * @param _fieldDeviceId 现场设备ID
+                     * 
                      */
                     void SetFieldDeviceId(const std::string& _fieldDeviceId);
 
                     /**
                      * 判断参数 FieldDeviceId 是否已赋值
                      * @return FieldDeviceId 是否已赋值
+                     * 
                      */
                     bool FieldDeviceIdHasBeenSet() const;
 
                     /**
                      * 获取分辨率
                      * @return Resolution 分辨率
+                     * 
                      */
                     std::string GetResolution() const;
 
                     /**
                      * 设置分辨率
-                     * @param Resolution 分辨率
+                     * @param _resolution 分辨率
+                     * 
                      */
                     void SetResolution(const std::string& _resolution);
 
                     /**
                      * 判断参数 Resolution 是否已赋值
                      * @return Resolution 是否已赋值
+                     * 
                      */
                     bool ResolutionHasBeenSet() const;
 
                     /**
                      * 获取会话开始时间
                      * @return StartTime 会话开始时间
+                     * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
                      * 设置会话开始时间
-                     * @param StartTime 会话开始时间
+                     * @param _startTime 会话开始时间
+                     * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取最后更新时间
                      * @return LatestUpdateTime 最后更新时间
+                     * 
                      */
                     uint64_t GetLatestUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-                     * @param LatestUpdateTime 最后更新时间
+                     * @param _latestUpdateTime 最后更新时间
+                     * 
                      */
                     void SetLatestUpdateTime(const uint64_t& _latestUpdateTime);
 
                     /**
                      * 判断参数 LatestUpdateTime 是否已赋值
                      * @return LatestUpdateTime 是否已赋值
+                     * 
                      */
                     bool LatestUpdateTimeHasBeenSet() const;
 

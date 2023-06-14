@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取输入的桶名称。
                      * @return BucketName 输入的桶名称。
+                     * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 设置输入的桶名称。
-                     * @param BucketName 输入的桶名称。
+                     * @param _bucketName 输入的桶名称。
+                     * 
                      */
                     void SetBucketName(const std::string& _bucketName);
 
                     /**
                      * 判断参数 BucketName 是否已赋值
                      * @return BucketName 是否已赋值
+                     * 
                      */
                     bool BucketNameHasBeenSet() const;
 
                     /**
                      * 获取输入对象名称。
                      * @return ObjectName 输入对象名称。
+                     * 
                      */
                     std::string GetObjectName() const;
 
                     /**
                      * 设置输入对象名称。
-                     * @param ObjectName 输入对象名称。
+                     * @param _objectName 输入对象名称。
+                     * 
                      */
                     void SetObjectName(const std::string& _objectName);
 
                     /**
                      * 判断参数 ObjectName 是否已赋值
                      * @return ObjectName 是否已赋值
+                     * 
                      */
                     bool ObjectNameHasBeenSet() const;
 

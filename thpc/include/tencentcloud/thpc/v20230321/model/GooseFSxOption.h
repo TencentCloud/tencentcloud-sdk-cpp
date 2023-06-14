@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取文件系统master的ip和端口列表。
                      * @return Masters 文件系统master的ip和端口列表。
+                     * 
                      */
                     std::vector<std::string> GetMasters() const;
 
                     /**
                      * 设置文件系统master的ip和端口列表。
-                     * @param Masters 文件系统master的ip和端口列表。
+                     * @param _masters 文件系统master的ip和端口列表。
+                     * 
                      */
                     void SetMasters(const std::vector<std::string>& _masters);
 
                     /**
                      * 判断参数 Masters 是否已赋值
                      * @return Masters 是否已赋值
+                     * 
                      */
                     bool MastersHasBeenSet() const;
 
                     /**
                      * 获取文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
                      * @return LocalPath 文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
+                     * 
                      */
                     std::string GetLocalPath() const;
 
                     /**
                      * 设置文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
-                     * @param LocalPath 文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
+                     * @param _localPath 文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。
+                     * 
                      */
                     void SetLocalPath(const std::string& _localPath);
 
                     /**
                      * 判断参数 LocalPath 是否已赋值
                      * @return LocalPath 是否已赋值
+                     * 
                      */
                     bool LocalPathHasBeenSet() const;
 

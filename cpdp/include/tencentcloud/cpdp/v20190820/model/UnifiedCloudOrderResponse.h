@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransactionId 米大师的交易订单号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTransactionId() const;
 
                     /**
                      * 判断参数 TransactionId 是否已赋值
                      * @return TransactionId 是否已赋值
+                     * 
                      */
                     bool TransactionIdHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutTradeNo 开发者的支付订单号。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutTradeNo() const;
 
                     /**
                      * 判断参数 OutTradeNo 是否已赋值
                      * @return OutTradeNo 是否已赋值
+                     * 
                      */
                     bool OutTradeNoHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
                      * @return PayInfo SDK的支付参数。
 支付参数透传给米大师SDK（原文透传给SDK即可，不需要解码）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPayInfo() const;
 
                     /**
                      * 判断参数 PayInfo 是否已赋值
                      * @return PayInfo 是否已赋值
+                     * 
                      */
                     bool PayInfoHasBeenSet() const;
 
@@ -92,12 +98,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalAmt 支付金额，单位：分。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalAmt() const;
 
                     /**
                      * 判断参数 TotalAmt 是否已赋值
                      * @return TotalAmt 是否已赋值
+                     * 
                      */
                     bool TotalAmtHasBeenSet() const;
 
@@ -108,12 +116,14 @@ son字符串，注意此字段仅会在传入正确的PayScene入参时才会有
                      * @return ChannelInfo 渠道信息，用于拉起渠道支付。j
 son字符串，注意此字段仅会在传入正确的PayScene入参时才会有效。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetChannelInfo() const;
 
                     /**
                      * 判断参数 ChannelInfo 是否已赋值
                      * @return ChannelInfo 是否已赋值
+                     * 
                      */
                     bool ChannelInfoHasBeenSet() const;
 

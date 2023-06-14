@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取是否包含虚拟区
                      * @return IncludeVirtualZones 是否包含虚拟区
+                     * 
                      */
                     bool GetIncludeVirtualZones() const;
 
                     /**
                      * 设置是否包含虚拟区
-                     * @param IncludeVirtualZones 是否包含虚拟区
+                     * @param _includeVirtualZones 是否包含虚拟区
+                     * 
                      */
                     void SetIncludeVirtualZones(const bool& _includeVirtualZones);
 
                     /**
                      * 判断参数 IncludeVirtualZones 是否已赋值
                      * @return IncludeVirtualZones 是否已赋值
+                     * 
                      */
                     bool IncludeVirtualZonesHasBeenSet() const;
 
                     /**
                      * 获取是否展示地域下所有可用区，并显示用户每个可用区权限
                      * @return ShowPermission 是否展示地域下所有可用区，并显示用户每个可用区权限
+                     * 
                      */
                     bool GetShowPermission() const;
 
                     /**
                      * 设置是否展示地域下所有可用区，并显示用户每个可用区权限
-                     * @param ShowPermission 是否展示地域下所有可用区，并显示用户每个可用区权限
+                     * @param _showPermission 是否展示地域下所有可用区，并显示用户每个可用区权限
+                     * 
                      */
                     void SetShowPermission(const bool& _showPermission);
 
                     /**
                      * 判断参数 ShowPermission 是否已赋值
                      * @return ShowPermission 是否已赋值
+                     * 
                      */
                     bool ShowPermissionHasBeenSet() const;
 

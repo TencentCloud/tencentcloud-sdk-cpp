@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取该参数用于返回识别对象的ID以方便识别和区分。
                      * @return Id 该参数用于返回识别对象的ID以方便识别和区分。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置该参数用于返回识别对象的ID以方便识别和区分。
-                     * @param Id 该参数用于返回识别对象的ID以方便识别和区分。
+                     * @param _id 该参数用于返回识别对象的ID以方便识别和区分。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取该参数用于返回命中的实体标签。
                      * @return Name 该参数用于返回命中的实体标签。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置该参数用于返回命中的实体标签。
-                     * @param Name 该参数用于返回命中的实体标签。
+                     * @param _name 该参数用于返回命中的实体标签。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
                      * @return Value 该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
-                     * @param Value 该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
+                     * @param _value 该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
                      * @return Score 该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
+                     * 
                      */
                     uint64_t GetScore() const;
 
                     /**
                      * 设置该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
-                     * @param Score 该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
+                     * @param _score 该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
+                     * 
                      */
                     void SetScore(const uint64_t& _score);
 
                     /**
                      * 判断参数 Score 是否已赋值
                      * @return Score 是否已赋值
+                     * 
                      */
                     bool ScoreHasBeenSet() const;
 
                     /**
                      * 获取该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
                      * @return Location 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
+                     * 
                      */
                     Location GetLocation() const;
 
                     /**
                      * 设置该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
-                     * @param Location 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
+                     * @param _location 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
+                     * 
                      */
                     void SetLocation(const Location& _location);
 
                     /**
                      * 判断参数 Location 是否已赋值
                      * @return Location 是否已赋值
+                     * 
                      */
                     bool LocationHasBeenSet() const;
 
                     /**
                      * 获取该参数用于返回命中的实体二级标签。
                      * @return SubLabel 该参数用于返回命中的实体二级标签。
+                     * 
                      */
                     std::string GetSubLabel() const;
 
                     /**
                      * 设置该参数用于返回命中的实体二级标签。
-                     * @param SubLabel 该参数用于返回命中的实体二级标签。
+                     * @param _subLabel 该参数用于返回命中的实体二级标签。
+                     * 
                      */
                     void SetSubLabel(const std::string& _subLabel);
 
                     /**
                      * 判断参数 SubLabel 是否已赋值
                      * @return SubLabel 是否已赋值
+                     * 
                      */
                     bool SubLabelHasBeenSet() const;
 
@@ -160,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectId 该参数用于返回命中的人脸id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetObjectId() const;
 
                     /**
                      * 设置该参数用于返回命中的人脸id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectId 该参数用于返回命中的人脸id
+                     * @param _objectId 该参数用于返回命中的人脸id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetObjectId(const std::string& _objectId);
 
                     /**
                      * 判断参数 ObjectId 是否已赋值
                      * @return ObjectId 是否已赋值
+                     * 
                      */
                     bool ObjectIdHasBeenSet() const;
 

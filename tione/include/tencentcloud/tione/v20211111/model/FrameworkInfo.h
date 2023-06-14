@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取框架名称
                      * @return Name 框架名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置框架名称
-                     * @param Name 框架名称
+                     * @param _name 框架名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取框架版本以及对应的训练模式
                      * @return VersionInfos 框架版本以及对应的训练模式
+                     * 
                      */
                     std::vector<FrameworkVersion> GetVersionInfos() const;
 
                     /**
                      * 设置框架版本以及对应的训练模式
-                     * @param VersionInfos 框架版本以及对应的训练模式
+                     * @param _versionInfos 框架版本以及对应的训练模式
+                     * 
                      */
                     void SetVersionInfos(const std::vector<FrameworkVersion>& _versionInfos);
 
                     /**
                      * 判断参数 VersionInfos 是否已赋值
                      * @return VersionInfos 是否已赋值
+                     * 
                      */
                     bool VersionInfosHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取灾备实例状态
                      * @return Status 灾备实例状态
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置灾备实例状态
-                     * @param Status 灾备实例状态
+                     * @param _status 灾备实例状态
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取可用区信息
                      * @return Zone 可用区信息
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区信息
-                     * @param Zone 可用区信息
+                     * @param _zone 可用区信息
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取地域信息
                      * @return Region 地域信息
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域信息
-                     * @param Region 地域信息
+                     * @param _region 地域信息
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
@@ -131,6 +143,7 @@ namespace TencentCloud
 2 - 灾备同步成功；
 3 - 灾备同步失败；
 4 - 灾备同步修复中。
+                     * 
                      */
                     int64_t GetSyncStatus() const;
 
@@ -141,54 +154,62 @@ namespace TencentCloud
 2 - 灾备同步成功；
 3 - 灾备同步失败；
 4 - 灾备同步修复中。
-                     * @param SyncStatus 实例同步状态。可能的返回值为：
+                     * @param _syncStatus 实例同步状态。可能的返回值为：
 0 - 灾备未同步；
 1 - 灾备同步中；
 2 - 灾备同步成功；
 3 - 灾备同步失败；
 4 - 灾备同步修复中。
+                     * 
                      */
                     void SetSyncStatus(const int64_t& _syncStatus);
 
                     /**
                      * 判断参数 SyncStatus 是否已赋值
                      * @return SyncStatus 是否已赋值
+                     * 
                      */
                     bool SyncStatusHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取实例类型
                      * @return InstanceType 实例类型
+                     * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型
-                     * @param InstanceType 实例类型
+                     * @param _instanceType 实例类型
+                     * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
                      * @return InstanceType 是否已赋值
+                     * 
                      */
                     bool InstanceTypeHasBeenSet() const;
 

@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取已经完成提交的计算节点数量
                      * @return SubmittedCount 已经完成提交的计算节点数量
+                     * 
                      */
                     uint64_t GetSubmittedCount() const;
 
                     /**
                      * 设置已经完成提交的计算节点数量
-                     * @param SubmittedCount 已经完成提交的计算节点数量
+                     * @param _submittedCount 已经完成提交的计算节点数量
+                     * 
                      */
                     void SetSubmittedCount(const uint64_t& _submittedCount);
 
                     /**
                      * 判断参数 SubmittedCount 是否已赋值
                      * @return SubmittedCount 是否已赋值
+                     * 
                      */
                     bool SubmittedCountHasBeenSet() const;
 
                     /**
                      * 获取创建中的计算节点数量
                      * @return CreatingCount 创建中的计算节点数量
+                     * 
                      */
                     uint64_t GetCreatingCount() const;
 
                     /**
                      * 设置创建中的计算节点数量
-                     * @param CreatingCount 创建中的计算节点数量
+                     * @param _creatingCount 创建中的计算节点数量
+                     * 
                      */
                     void SetCreatingCount(const uint64_t& _creatingCount);
 
                     /**
                      * 判断参数 CreatingCount 是否已赋值
                      * @return CreatingCount 是否已赋值
+                     * 
                      */
                     bool CreatingCountHasBeenSet() const;
 
                     /**
                      * 获取创建失败的计算节点数量
                      * @return CreationFailedCount 创建失败的计算节点数量
+                     * 
                      */
                     uint64_t GetCreationFailedCount() const;
 
                     /**
                      * 设置创建失败的计算节点数量
-                     * @param CreationFailedCount 创建失败的计算节点数量
+                     * @param _creationFailedCount 创建失败的计算节点数量
+                     * 
                      */
                     void SetCreationFailedCount(const uint64_t& _creationFailedCount);
 
                     /**
                      * 判断参数 CreationFailedCount 是否已赋值
                      * @return CreationFailedCount 是否已赋值
+                     * 
                      */
                     bool CreationFailedCountHasBeenSet() const;
 
                     /**
                      * 获取完成创建的计算节点数量
                      * @return CreatedCount 完成创建的计算节点数量
+                     * 
                      */
                     uint64_t GetCreatedCount() const;
 
                     /**
                      * 设置完成创建的计算节点数量
-                     * @param CreatedCount 完成创建的计算节点数量
+                     * @param _createdCount 完成创建的计算节点数量
+                     * 
                      */
                     void SetCreatedCount(const uint64_t& _createdCount);
 
                     /**
                      * 判断参数 CreatedCount 是否已赋值
                      * @return CreatedCount 是否已赋值
+                     * 
                      */
                     bool CreatedCountHasBeenSet() const;
 
                     /**
                      * 获取运行中的计算节点数量
                      * @return RunningCount 运行中的计算节点数量
+                     * 
                      */
                     uint64_t GetRunningCount() const;
 
                     /**
                      * 设置运行中的计算节点数量
-                     * @param RunningCount 运行中的计算节点数量
+                     * @param _runningCount 运行中的计算节点数量
+                     * 
                      */
                     void SetRunningCount(const uint64_t& _runningCount);
 
                     /**
                      * 判断参数 RunningCount 是否已赋值
                      * @return RunningCount 是否已赋值
+                     * 
                      */
                     bool RunningCountHasBeenSet() const;
 
                     /**
                      * 获取销毁中的计算节点数量
                      * @return DeletingCount 销毁中的计算节点数量
+                     * 
                      */
                     uint64_t GetDeletingCount() const;
 
                     /**
                      * 设置销毁中的计算节点数量
-                     * @param DeletingCount 销毁中的计算节点数量
+                     * @param _deletingCount 销毁中的计算节点数量
+                     * 
                      */
                     void SetDeletingCount(const uint64_t& _deletingCount);
 
                     /**
                      * 判断参数 DeletingCount 是否已赋值
                      * @return DeletingCount 是否已赋值
+                     * 
                      */
                     bool DeletingCountHasBeenSet() const;
 
                     /**
                      * 获取异常的计算节点数量
                      * @return AbnormalCount 异常的计算节点数量
+                     * 
                      */
                     uint64_t GetAbnormalCount() const;
 
                     /**
                      * 设置异常的计算节点数量
-                     * @param AbnormalCount 异常的计算节点数量
+                     * @param _abnormalCount 异常的计算节点数量
+                     * 
                      */
                     void SetAbnormalCount(const uint64_t& _abnormalCount);
 
                     /**
                      * 判断参数 AbnormalCount 是否已赋值
                      * @return AbnormalCount 是否已赋值
+                     * 
                      */
                     bool AbnormalCountHasBeenSet() const;
 

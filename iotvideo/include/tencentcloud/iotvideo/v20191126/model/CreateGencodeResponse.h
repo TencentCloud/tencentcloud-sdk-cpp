@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZipCode 生成的源代码(zip压缩后的base64编码)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetZipCode() const;
 
                     /**
                      * 判断参数 ZipCode 是否已赋值
                      * @return ZipCode 是否已赋值
+                     * 
                      */
                     bool ZipCodeHasBeenSet() const;
 

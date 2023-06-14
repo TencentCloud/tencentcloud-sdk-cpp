@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 文件内容（base64加密的二进制内容）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置文件内容（base64加密的二进制内容）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Content 文件内容（base64加密的二进制内容）
+                     * @param _content 文件内容（base64加密的二进制内容）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContent(const std::string& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStorage() const;
 
                     /**
                      * 设置存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
+                     * @param _storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStorage(const std::string& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 

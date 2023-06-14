@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取统计信息列表。
                      * @return DataInfoList 统计信息列表。
+                     * 
                      */
                     std::vector<DayStreamPlayInfo> GetDataInfoList() const;
 
                     /**
                      * 判断参数 DataInfoList 是否已赋值
                      * @return DataInfoList 是否已赋值
+                     * 
                      */
                     bool DataInfoListHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取片头片尾模板号。
                      * @return Definition 片头片尾模板号。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置片头片尾模板号。
-                     * @param Definition 片头片尾模板号。
+                     * @param _definition 片头片尾模板号。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 

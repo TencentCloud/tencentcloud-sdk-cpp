@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取vpc id
                      * @return VpcId vpc id
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc id
-                     * @param VpcId vpc id
+                     * @param _vpcId vpc id
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取0：设置为关闭 1:设置为打开
                      * @return Status 0：设置为关闭 1:设置为打开
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0：设置为关闭 1:设置为打开
-                     * @param Status 0：设置为关闭 1:设置为打开
+                     * @param _status 0：设置为关闭 1:设置为打开
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

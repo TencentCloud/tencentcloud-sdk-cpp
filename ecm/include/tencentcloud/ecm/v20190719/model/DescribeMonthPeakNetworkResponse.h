@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonthNetWorkData 无
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<MonthNetwork> GetMonthNetWorkData() const;
 
                     /**
                      * 判断参数 MonthNetWorkData 是否已赋值
                      * @return MonthNetWorkData 是否已赋值
+                     * 
                      */
                     bool MonthNetWorkDataHasBeenSet() const;
 

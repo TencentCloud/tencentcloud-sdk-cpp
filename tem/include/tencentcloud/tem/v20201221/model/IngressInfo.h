@@ -53,92 +53,107 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceId tem namespaceId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置tem namespaceId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NamespaceId tem namespaceId
+                     * @param _namespaceId tem namespaceId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取eks namespace
                      * @return EksNamespace eks namespace
+                     * 
                      */
                     std::string GetEksNamespace() const;
 
                     /**
                      * 设置eks namespace
-                     * @param EksNamespace eks namespace
+                     * @param _eksNamespace eks namespace
+                     * 
                      */
                     void SetEksNamespace(const std::string& _eksNamespace);
 
                     /**
                      * 判断参数 EksNamespace 是否已赋值
                      * @return EksNamespace 是否已赋值
+                     * 
                      */
                     bool EksNamespaceHasBeenSet() const;
 
                     /**
                      * 获取ip version
                      * @return AddressIPVersion ip version
+                     * 
                      */
                     std::string GetAddressIPVersion() const;
 
                     /**
                      * 设置ip version
-                     * @param AddressIPVersion ip version
+                     * @param _addressIPVersion ip version
+                     * 
                      */
                     void SetAddressIPVersion(const std::string& _addressIPVersion);
 
                     /**
                      * 判断参数 AddressIPVersion 是否已赋值
                      * @return AddressIPVersion 是否已赋值
+                     * 
                      */
                     bool AddressIPVersionHasBeenSet() const;
 
                     /**
                      * 获取ingress name
                      * @return Name ingress name
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置ingress name
-                     * @param Name ingress name
+                     * @param _name ingress name
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取rules 配置
                      * @return Rules rules 配置
+                     * 
                      */
                     std::vector<IngressRule> GetRules() const;
 
                     /**
                      * 设置rules 配置
-                     * @param Rules rules 配置
+                     * @param _rules rules 配置
+                     * 
                      */
                     void SetRules(const std::vector<IngressRule>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
@@ -147,20 +162,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClbId clb ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClbId() const;
 
                     /**
                      * 设置clb ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClbId clb ID
+                     * @param _clbId clb ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClbId(const std::string& _clbId);
 
                     /**
                      * 判断参数 ClbId 是否已赋值
                      * @return ClbId 是否已赋值
+                     * 
                      */
                     bool ClbIdHasBeenSet() const;
 
@@ -169,20 +187,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tls tls 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<IngressTls> GetTls() const;
 
                     /**
                      * 设置tls 配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tls tls 配置
+                     * @param _tls tls 配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTls(const std::vector<IngressTls>& _tls);
 
                     /**
                      * 判断参数 Tls 是否已赋值
                      * @return Tls 是否已赋值
+                     * 
                      */
                     bool TlsHasBeenSet() const;
 
@@ -191,20 +212,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId eks clusterId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置eks clusterId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId eks clusterId
+                     * @param _clusterId eks clusterId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -213,20 +237,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip clb ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置clb ip
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip clb ip
+                     * @param _vip clb ip
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVip(const std::string& _vip);
 
                     /**
                      * 判断参数 Vip 是否已赋值
                      * @return Vip 是否已赋值
+                     * 
                      */
                     bool VipHasBeenSet() const;
 
@@ -235,38 +262,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取是否混合 https，默认 false，可选值 true 代表有 https 协议监听
                      * @return Mixed 是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     * 
                      */
                     bool GetMixed() const;
 
                     /**
                      * 设置是否混合 https，默认 false，可选值 true 代表有 https 协议监听
-                     * @param Mixed 是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     * @param _mixed 是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     * 
                      */
                     void SetMixed(const bool& _mixed);
 
                     /**
                      * 判断参数 Mixed 是否已赋值
                      * @return Mixed 是否已赋值
+                     * 
                      */
                     bool MixedHasBeenSet() const;
 

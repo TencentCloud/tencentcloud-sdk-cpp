@@ -63,6 +63,7 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -76,7 +77,7 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
-                     * @param Filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+                     * @param _filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
 <li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>
 <li> BuyTime 购买时间</li>
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
@@ -85,66 +86,77 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取限制条数,默认10.
                      * @return Limit 限制条数,默认10.
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制条数,默认10.
-                     * @param Limit 限制条数,默认10.
+                     * @param _limit 限制条数,默认10.
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量,默认0.
                      * @return Offset 偏移量,默认0.
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量,默认0.
-                     * @param Offset 偏移量,默认0.
+                     * @param _offset 偏移量,默认0.
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
                      * @return Tags 标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
+                     * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
                      * 设置标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
-                     * @param Tags 标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
+                     * @param _tags 标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
+                     * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 

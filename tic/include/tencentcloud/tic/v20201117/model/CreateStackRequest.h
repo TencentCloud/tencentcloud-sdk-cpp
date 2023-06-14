@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取资源栈名称，不得超过60个字符
                      * @return StackName 资源栈名称，不得超过60个字符
+                     * 
                      */
                     std::string GetStackName() const;
 
                     /**
                      * 设置资源栈名称，不得超过60个字符
-                     * @param StackName 资源栈名称，不得超过60个字符
+                     * @param _stackName 资源栈名称，不得超过60个字符
+                     * 
                      */
                     void SetStackName(const std::string& _stackName);
 
                     /**
                      * 判断参数 StackName 是否已赋值
                      * @return StackName 是否已赋值
+                     * 
                      */
                     bool StackNameHasBeenSet() const;
 
                     /**
                      * 获取资源栈所在地域
                      * @return StackRegion 资源栈所在地域
+                     * 
                      */
                     std::string GetStackRegion() const;
 
                     /**
                      * 设置资源栈所在地域
-                     * @param StackRegion 资源栈所在地域
+                     * @param _stackRegion 资源栈所在地域
+                     * 
                      */
                     void SetStackRegion(const std::string& _stackRegion);
 
                     /**
                      * 判断参数 StackRegion 是否已赋值
                      * @return StackRegion 是否已赋值
+                     * 
                      */
                     bool StackRegionHasBeenSet() const;
 
                     /**
                      * 获取HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
                      * @return TemplateUrl HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
+                     * 
                      */
                     std::string GetTemplateUrl() const;
 
                     /**
                      * 设置HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
-                     * @param TemplateUrl HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
+                     * @param _templateUrl HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式
+                     * 
                      */
                     void SetTemplateUrl(const std::string& _templateUrl);
 
                     /**
                      * 判断参数 TemplateUrl 是否已赋值
                      * @return TemplateUrl 是否已赋值
+                     * 
                      */
                     bool TemplateUrlHasBeenSet() const;
 
                     /**
                      * 获取资源栈描述，不得超过200个字符
                      * @return Description 资源栈描述，不得超过200个字符
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置资源栈描述，不得超过200个字符
-                     * @param Description 资源栈描述，不得超过200个字符
+                     * @param _description 资源栈描述，不得超过200个字符
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

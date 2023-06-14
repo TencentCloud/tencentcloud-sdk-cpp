@@ -46,126 +46,147 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取限制数目
                      * @return Limit 限制数目
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置限制数目
-                     * @param Limit 限制数目
+                     * @param _limit 限制数目
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取按照集群ID关键字搜索
                      * @return IdKeyword 按照集群ID关键字搜索
+                     * 
                      */
                     std::string GetIdKeyword() const;
 
                     /**
                      * 设置按照集群ID关键字搜索
-                     * @param IdKeyword 按照集群ID关键字搜索
+                     * @param _idKeyword 按照集群ID关键字搜索
+                     * 
                      */
                     void SetIdKeyword(const std::string& _idKeyword);
 
                     /**
                      * 判断参数 IdKeyword 是否已赋值
                      * @return IdKeyword 是否已赋值
+                     * 
                      */
                     bool IdKeywordHasBeenSet() const;
 
                     /**
                      * 获取按照集群名称关键字搜索
                      * @return NameKeyword 按照集群名称关键字搜索
+                     * 
                      */
                     std::string GetNameKeyword() const;
 
                     /**
                      * 设置按照集群名称关键字搜索
-                     * @param NameKeyword 按照集群名称关键字搜索
+                     * @param _nameKeyword 按照集群名称关键字搜索
+                     * 
                      */
                     void SetNameKeyword(const std::string& _nameKeyword);
 
                     /**
                      * 判断参数 NameKeyword 是否已赋值
                      * @return NameKeyword 是否已赋值
+                     * 
                      */
                     bool NameKeywordHasBeenSet() const;
 
                     /**
                      * 获取集群ID列表过滤
                      * @return ClusterIdList 集群ID列表过滤
+                     * 
                      */
                     std::vector<std::string> GetClusterIdList() const;
 
                     /**
                      * 设置集群ID列表过滤
-                     * @param ClusterIdList 集群ID列表过滤
+                     * @param _clusterIdList 集群ID列表过滤
+                     * 
                      */
                     void SetClusterIdList(const std::vector<std::string>& _clusterIdList);
 
                     /**
                      * 判断参数 ClusterIdList 是否已赋值
                      * @return ClusterIdList 是否已赋值
+                     * 
                      */
                     bool ClusterIdListHasBeenSet() const;
 
                     /**
                      * 获取标签过滤查找时，需要设置为true
                      * @return IsTagFilter 标签过滤查找时，需要设置为true
+                     * 
                      */
                     bool GetIsTagFilter() const;
 
                     /**
                      * 设置标签过滤查找时，需要设置为true
-                     * @param IsTagFilter 标签过滤查找时，需要设置为true
+                     * @param _isTagFilter 标签过滤查找时，需要设置为true
+                     * 
                      */
                     void SetIsTagFilter(const bool& _isTagFilter);
 
                     /**
                      * 判断参数 IsTagFilter 是否已赋值
                      * @return IsTagFilter 是否已赋值
+                     * 
                      */
                     bool IsTagFilterHasBeenSet() const;
 
                     /**
                      * 获取过滤器。目前支持标签过滤。
                      * @return Filters 过滤器。目前支持标签过滤。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤器。目前支持标签过滤。
-                     * @param Filters 过滤器。目前支持标签过滤。
+                     * @param _filters 过滤器。目前支持标签过滤。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取存储库名称
                      * @return CodeRepositoryName 存储库名称
+                     * 
                      */
                     std::string GetCodeRepositoryName() const;
 
                     /**
                      * 设置存储库名称
-                     * @param CodeRepositoryName 存储库名称
+                     * @param _codeRepositoryName 存储库名称
+                     * 
                      */
                     void SetCodeRepositoryName(const std::string& _codeRepositoryName);
 
                     /**
                      * 判断参数 CodeRepositoryName 是否已赋值
                      * @return CodeRepositoryName 是否已赋值
+                     * 
                      */
                     bool CodeRepositoryNameHasBeenSet() const;
 

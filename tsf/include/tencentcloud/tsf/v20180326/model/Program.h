@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramId 数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProgramId() const;
 
                     /**
                      * 设置数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProgramId 数据集ID
+                     * @param _programId 数据集ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgramId(const std::string& _programId);
 
                     /**
                      * 判断参数 ProgramId 是否已赋值
                      * @return ProgramId 是否已赋值
+                     * 
                      */
                     bool ProgramIdHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramName 数据集名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProgramName() const;
 
                     /**
                      * 设置数据集名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProgramName 数据集名称
+                     * @param _programName 数据集名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgramName(const std::string& _programName);
 
                     /**
                      * 判断参数 ProgramName 是否已赋值
                      * @return ProgramName 是否已赋值
+                     * 
                      */
                     bool ProgramNameHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramDesc 数据集描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProgramDesc() const;
 
                     /**
                      * 设置数据集描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProgramDesc 数据集描述
+                     * @param _programDesc 数据集描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgramDesc(const std::string& _programDesc);
 
                     /**
                      * 判断参数 ProgramDesc 是否已赋值
                      * @return ProgramDesc 是否已赋值
+                     * 
                      */
                     bool ProgramDescHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteFlag 删除标识，true: 可以删除; false: 不可删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetDeleteFlag() const;
 
                     /**
                      * 设置删除标识，true: 可以删除; false: 不可删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeleteFlag 删除标识，true: 可以删除; false: 不可删除
+                     * @param _deleteFlag 删除标识，true: 可以删除; false: 不可删除
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDeleteFlag(const bool& _deleteFlag);
 
                     /**
                      * 判断参数 DeleteFlag 是否已赋值
                      * @return DeleteFlag 是否已赋值
+                     * 
                      */
                     bool DeleteFlagHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetCreationTime() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreationTime 创建时间
+                     * @param _creationTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreationTime(const int64_t& _creationTime);
 
                     /**
                      * 判断参数 CreationTime 是否已赋值
                      * @return CreationTime 是否已赋值
+                     * 
                      */
                     bool CreationTimeHasBeenSet() const;
 
@@ -162,20 +177,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LastUpdateTime 最后更新时间
+                     * @param _lastUpdateTime 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
 
                     /**
                      * 判断参数 LastUpdateTime 是否已赋值
                      * @return LastUpdateTime 是否已赋值
+                     * 
                      */
                     bool LastUpdateTimeHasBeenSet() const;
 
@@ -184,20 +202,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramItemList 数据项列表，无值时返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ProgramItem> GetProgramItemList() const;
 
                     /**
                      * 设置数据项列表，无值时返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProgramItemList 数据项列表，无值时返回空数组
+                     * @param _programItemList 数据项列表，无值时返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProgramItemList(const std::vector<ProgramItem>& _programItemList);
 
                     /**
                      * 判断参数 ProgramItemList 是否已赋值
                      * @return ProgramItemList 是否已赋值
+                     * 
                      */
                     bool ProgramItemListHasBeenSet() const;
 

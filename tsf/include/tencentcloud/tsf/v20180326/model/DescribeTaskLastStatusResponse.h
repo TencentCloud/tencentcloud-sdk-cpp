@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取任务上一次执行状态
                      * @return Result 任务上一次执行状态
+                     * 
                      */
                     TaskLastExecuteStatus GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

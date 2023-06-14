@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 作者id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置作者id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 作者id
+                     * @param _id 作者id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 作者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置作者名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 作者名称
+                     * @param _name 作者名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceId 作者来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSourceId() const;
 
                     /**
                      * 设置作者来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceId 作者来源
+                     * @param _sourceId 作者来源
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceId(const int64_t& _sourceId);
 
                     /**
                      * 判断参数 SourceId 是否已赋值
                      * @return SourceId 是否已赋值
+                     * 
                      */
                     bool SourceIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FollowType 关注类型：1-关注，2-取关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFollowType() const;
 
                     /**
                      * 设置关注类型：1-关注，2-取关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowType 关注类型：1-关注，2-取关
+                     * @param _followType 关注类型：1-关注，2-取关
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFollowType(const int64_t& _followType);
 
                     /**
                      * 判断参数 FollowType 是否已赋值
                      * @return FollowType 是否已赋值
+                     * 
                      */
                     bool FollowTypeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IconUrl 作者头像icon地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
                      * 设置作者头像icon地址
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IconUrl 作者头像icon地址
+                     * @param _iconUrl 作者头像icon地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
 
                     /**
                      * 判断参数 IconUrl 是否已赋值
                      * @return IconUrl 是否已赋值
+                     * 
                      */
                     bool IconUrlHasBeenSet() const;
 

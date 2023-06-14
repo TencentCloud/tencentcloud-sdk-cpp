@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return ID 策略ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置策略ID
-                     * @param ID 策略ID
+                     * @param _iD 策略ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取是否自动执行策略
                      * @return IsAuto 是否自动执行策略
+                     * 
                      */
                     int64_t GetIsAuto() const;
 
                     /**
                      * 设置是否自动执行策略
-                     * @param IsAuto 是否自动执行策略
+                     * @param _isAuto 是否自动执行策略
+                     * 
                      */
                     void SetIsAuto(const int64_t& _isAuto);
 
                     /**
                      * 判断参数 IsAuto 是否已赋值
                      * @return IsAuto 是否已赋值
+                     * 
                      */
                     bool IsAutoHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PingInterval 设备上报信息间隔
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPingInterval() const;
 
                     /**
                      * 设置设备上报信息间隔
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PingInterval 设备上报信息间隔
+                     * @param _pingInterval 设备上报信息间隔
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPingInterval(const int64_t& _pingInterval);
 
                     /**
                      * 判断参数 PingInterval 是否已赋值
                      * @return PingInterval 是否已赋值
+                     * 
                      */
                     bool PingIntervalHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWeak 是否开启弱信号检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsWeak() const;
 
                     /**
                      * 设置是否开启弱信号检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsWeak 是否开启弱信号检查
+                     * @param _isWeak 是否开启弱信号检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsWeak(const int64_t& _isWeak);
 
                     /**
                      * 判断参数 IsWeak 是否已赋值
                      * @return IsWeak 是否已赋值
+                     * 
                      */
                     bool IsWeakHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeakThreshold 弱信号阈值（-dbm）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetWeakThreshold() const;
 
                     /**
                      * 设置弱信号阈值（-dbm）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WeakThreshold 弱信号阈值（-dbm）
+                     * @param _weakThreshold 弱信号阈值（-dbm）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeakThreshold(const int64_t& _weakThreshold);
 
                     /**
                      * 判断参数 WeakThreshold 是否已赋值
                      * @return WeakThreshold 是否已赋值
+                     * 
                      */
                     bool WeakThresholdHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDelay 忘了时延切换
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsDelay() const;
 
                     /**
                      * 设置忘了时延切换
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsDelay 忘了时延切换
+                     * @param _isDelay 忘了时延切换
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsDelay(const int64_t& _isDelay);
 
                     /**
                      * 判断参数 IsDelay 是否已赋值
                      * @return IsDelay 是否已赋值
+                     * 
                      */
                     bool IsDelayHasBeenSet() const;
 
@@ -197,20 +218,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DelayThreshold 时延阈值（ms）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDelayThreshold() const;
 
                     /**
                      * 设置时延阈值（ms）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DelayThreshold 时延阈值（ms）
+                     * @param _delayThreshold 时延阈值（ms）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDelayThreshold(const int64_t& _delayThreshold);
 
                     /**
                      * 判断参数 DelayThreshold 是否已赋值
                      * @return DelayThreshold 是否已赋值
+                     * 
                      */
                     bool DelayThresholdHasBeenSet() const;
 
@@ -219,20 +243,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFake 是否开启假信号检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsFake() const;
 
                     /**
                      * 设置是否开启假信号检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsFake 是否开启假信号检测
+                     * @param _isFake 是否开启假信号检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsFake(const int64_t& _isFake);
 
                     /**
                      * 判断参数 IsFake 是否已赋值
                      * @return IsFake 是否已赋值
+                     * 
                      */
                     bool IsFakeHasBeenSet() const;
 
@@ -241,20 +268,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FakeIP 假信号检测IP字符串，用逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFakeIP() const;
 
                     /**
                      * 设置假信号检测IP字符串，用逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FakeIP 假信号检测IP字符串，用逗号分隔
+                     * @param _fakeIP 假信号检测IP字符串，用逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFakeIP(const std::string& _fakeIP);
 
                     /**
                      * 判断参数 FakeIP 是否已赋值
                      * @return FakeIP 是否已赋值
+                     * 
                      */
                     bool FakeIPHasBeenSet() const;
 
@@ -263,20 +293,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FakeInterval 假信号检测间隔（s）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFakeInterval() const;
 
                     /**
                      * 设置假信号检测间隔（s）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FakeInterval 假信号检测间隔（s）
+                     * @param _fakeInterval 假信号检测间隔（s）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFakeInterval(const int64_t& _fakeInterval);
 
                     /**
                      * 判断参数 FakeInterval 是否已赋值
                      * @return FakeInterval 是否已赋值
+                     * 
                      */
                     bool FakeIntervalHasBeenSet() const;
 
@@ -285,20 +318,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNet 是否开启网络制式检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsNet() const;
 
                     /**
                      * 设置是否开启网络制式检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsNet 是否开启网络制式检测
+                     * @param _isNet 是否开启网络制式检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsNet(const int64_t& _isNet);
 
                     /**
                      * 判断参数 IsNet 是否已赋值
                      * @return IsNet 是否已赋值
+                     * 
                      */
                     bool IsNetHasBeenSet() const;
 
@@ -307,20 +343,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Network 网络回落制式 1: 2G、 2: 3G 、 3: 2/3G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetNetwork() const;
 
                     /**
                      * 设置网络回落制式 1: 2G、 2: 3G 、 3: 2/3G
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Network 网络回落制式 1: 2G、 2: 3G 、 3: 2/3G
+                     * @param _network 网络回落制式 1: 2G、 2: 3G 、 3: 2/3G
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNetwork(const int64_t& _network);
 
                     /**
                      * 判断参数 Network 是否已赋值
                      * @return Network 是否已赋值
+                     * 
                      */
                     bool NetworkHasBeenSet() const;
 
@@ -329,38 +368,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsMove 是否开启移动检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsMove() const;
 
                     /**
                      * 设置是否开启移动检测
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsMove 是否开启移动检测
+                     * @param _isMove 是否开启移动检测
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsMove(const int64_t& _isMove);
 
                     /**
                      * 判断参数 IsMove 是否已赋值
                      * @return IsMove 是否已赋值
+                     * 
                      */
                     bool IsMoveHasBeenSet() const;
 
                     /**
                      * 获取策略名称
                      * @return Name 策略名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略名称
-                     * @param Name 策略名称
+                     * @param _name 策略名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -369,20 +414,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPriorityTele 是否开启最优先运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsPriorityTele() const;
 
                     /**
                      * 设置是否开启最优先运营商
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsPriorityTele 是否开启最优先运营商
+                     * @param _isPriorityTele 是否开启最优先运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsPriorityTele(const int64_t& _isPriorityTele);
 
                     /**
                      * 判断参数 IsPriorityTele 是否已赋值
                      * @return IsPriorityTele 是否已赋值
+                     * 
                      */
                     bool IsPriorityTeleHasBeenSet() const;
 
@@ -391,20 +439,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriorityTele 最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPriorityTele() const;
 
                     /**
                      * 设置最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PriorityTele 最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商
+                     * @param _priorityTele 最优先运营商 1 移动、 2 联通、 3 电信 4 上次在线运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPriorityTele(const int64_t& _priorityTele);
 
                     /**
                      * 判断参数 PriorityTele 是否已赋值
                      * @return PriorityTele 是否已赋值
+                     * 
                      */
                     bool PriorityTeleHasBeenSet() const;
 
@@ -413,20 +464,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsBottomTele 是否开启最不优先运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsBottomTele() const;
 
                     /**
                      * 设置是否开启最不优先运营商
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsBottomTele 是否开启最不优先运营商
+                     * @param _isBottomTele 是否开启最不优先运营商
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsBottomTele(const int64_t& _isBottomTele);
 
                     /**
                      * 判断参数 IsBottomTele 是否已赋值
                      * @return IsBottomTele 是否已赋值
+                     * 
                      */
                     bool IsBottomTeleHasBeenSet() const;
 
@@ -435,20 +489,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BottomTele 最不优先运营商 1 移动、 2 联通、 3 电信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetBottomTele() const;
 
                     /**
                      * 设置最不优先运营商 1 移动、 2 联通、 3 电信
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BottomTele 最不优先运营商 1 移动、 2 联通、 3 电信
+                     * @param _bottomTele 最不优先运营商 1 移动、 2 联通、 3 电信
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBottomTele(const int64_t& _bottomTele);
 
                     /**
                      * 判断参数 BottomTele 是否已赋值
                      * @return BottomTele 是否已赋值
+                     * 
                      */
                     bool BottomTeleHasBeenSet() const;
 
@@ -457,20 +514,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsBestSignal 是否开启最优先信号选取策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIsBestSignal() const;
 
                     /**
                      * 设置是否开启最优先信号选取策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsBestSignal 是否开启最优先信号选取策略
+                     * @param _isBestSignal 是否开启最优先信号选取策略
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIsBestSignal(const int64_t& _isBestSignal);
 
                     /**
                      * 判断参数 IsBestSignal 是否已赋值
                      * @return IsBestSignal 是否已赋值
+                     * 
                      */
                     bool IsBestSignalHasBeenSet() const;
 

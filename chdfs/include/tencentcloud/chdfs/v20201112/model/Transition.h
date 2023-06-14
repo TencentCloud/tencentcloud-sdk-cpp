@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取触发时间（单位天）
                      * @return Days 触发时间（单位天）
+                     * 
                      */
                     uint64_t GetDays() const;
 
                     /**
                      * 设置触发时间（单位天）
-                     * @param Days 触发时间（单位天）
+                     * @param _days 触发时间（单位天）
+                     * 
                      */
                     void SetDays(const uint64_t& _days);
 
                     /**
                      * 判断参数 Days 是否已赋值
                      * @return Days 是否已赋值
+                     * 
                      */
                     bool DaysHasBeenSet() const;
 
                     /**
                      * 获取转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
                      * @return Type 转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
-                     * @param Type 转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
+                     * @param _type 转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

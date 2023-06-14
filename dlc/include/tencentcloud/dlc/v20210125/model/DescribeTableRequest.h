@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取查询对象表名称
                      * @return TableName 查询对象表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置查询对象表名称
-                     * @param TableName 查询对象表名称
+                     * @param _tableName 查询对象表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取查询表所在的数据库名称。
                      * @return DatabaseName 查询表所在的数据库名称。
+                     * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置查询表所在的数据库名称。
-                     * @param DatabaseName 查询表所在的数据库名称。
+                     * @param _databaseName 查询表所在的数据库名称。
+                     * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
 
                     /**
                      * 判断参数 DatabaseName 是否已赋值
                      * @return DatabaseName 是否已赋值
+                     * 
                      */
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
                      * 获取查询表所在的数据源名称
                      * @return DatasourceConnectionName 查询表所在的数据源名称
+                     * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置查询表所在的数据源名称
-                     * @param DatasourceConnectionName 查询表所在的数据源名称
+                     * @param _datasourceConnectionName 查询表所在的数据源名称
+                     * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
 
                     /**
                      * 判断参数 DatasourceConnectionName 是否已赋值
                      * @return DatasourceConnectionName 是否已赋值
+                     * 
                      */
                     bool DatasourceConnectionNameHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取私有域数量
                      * @return TotalCount 私有域数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取私有域列表
                      * @return PrivateZoneSet 私有域列表
+                     * 
                      */
                     std::vector<PrivateZone> GetPrivateZoneSet() const;
 
                     /**
                      * 判断参数 PrivateZoneSet 是否已赋值
                      * @return PrivateZoneSet 是否已赋值
+                     * 
                      */
                     bool PrivateZoneSetHasBeenSet() const;
 

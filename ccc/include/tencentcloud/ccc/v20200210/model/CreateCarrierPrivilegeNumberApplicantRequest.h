@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取SdkAppId
                      * @return SdkAppId SdkAppId
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置SdkAppId
-                     * @param SdkAppId SdkAppId
+                     * @param _sdkAppId SdkAppId
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）
                      * @return Callers 主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）
+                     * 
                      */
                     std::vector<std::string> GetCallers() const;
 
                     /**
                      * 设置主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）
-                     * @param Callers 主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）
+                     * @param _callers 主叫号码，必须为实例中存在的号码，格式为0086xxxx（暂时只支持国内号码）
+                     * 
                      */
                     void SetCallers(const std::vector<std::string>& _callers);
 
                     /**
                      * 判断参数 Callers 是否已赋值
                      * @return Callers 是否已赋值
+                     * 
                      */
                     bool CallersHasBeenSet() const;
 
                     /**
                      * 获取被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）
                      * @return Callees 被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）
+                     * 
                      */
                     std::vector<std::string> GetCallees() const;
 
                     /**
                      * 设置被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）
-                     * @param Callees 被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）
+                     * @param _callees 被叫号码，必须为实例中坐席绑定的手机号码，格式为0086xxxx（暂时只支持国内号码）
+                     * 
                      */
                     void SetCallees(const std::vector<std::string>& _callees);
 
                     /**
                      * 判断参数 Callees 是否已赋值
                      * @return Callees 是否已赋值
+                     * 
                      */
                     bool CalleesHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Description 描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-                     * @param Description 描述
+                     * @param _description 描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

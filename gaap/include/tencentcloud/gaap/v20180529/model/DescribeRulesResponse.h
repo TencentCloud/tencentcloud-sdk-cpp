@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取按照域名分类的规则信息列表
                      * @return DomainRuleSet 按照域名分类的规则信息列表
+                     * 
                      */
                     std::vector<DomainRuleSet> GetDomainRuleSet() const;
 
                     /**
                      * 判断参数 DomainRuleSet 是否已赋值
                      * @return DomainRuleSet 是否已赋值
+                     * 
                      */
                     bool DomainRuleSetHasBeenSet() const;
 
                     /**
                      * 获取该监听器下的域名总数
                      * @return TotalCount 该监听器下的域名总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

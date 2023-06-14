@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取子客企业唯一标识
                      * @return ProxyOrganizationOpenId 子客企业唯一标识
+                     * 
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
                      * 设置子客企业唯一标识
-                     * @param ProxyOrganizationOpenId 子客企业唯一标识
+                     * @param _proxyOrganizationOpenId 子客企业唯一标识
+                     * 
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
 
                     /**
                      * 判断参数 ProxyOrganizationOpenId 是否已赋值
                      * @return ProxyOrganizationOpenId 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOrganizationName 子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
                      * 设置子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyOrganizationName 子客企业名
+                     * @param _proxyOrganizationName 子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
 
                     /**
                      * 判断参数 ProxyOrganizationName 是否已赋值
                      * @return ProxyOrganizationName 是否已赋值
+                     * 
                      */
                     bool ProxyOrganizationNameHasBeenSet() const;
 
@@ -91,38 +97,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 日期，当需要汇总数据时日期为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期，当需要汇总数据时日期为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Date 日期，当需要汇总数据时日期为空
+                     * @param _date 日期，当需要汇总数据时日期为空
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 
                     /**
                      * 获取消耗数量
                      * @return Usage 消耗数量
+                     * 
                      */
                     uint64_t GetUsage() const;
 
                     /**
                      * 设置消耗数量
-                     * @param Usage 消耗数量
+                     * @param _usage 消耗数量
+                     * 
                      */
                     void SetUsage(const uint64_t& _usage);
 
                     /**
                      * 判断参数 Usage 是否已赋值
                      * @return Usage 是否已赋值
+                     * 
                      */
                     bool UsageHasBeenSet() const;
 
@@ -131,20 +143,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cancel 撤回数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetCancel() const;
 
                     /**
                      * 设置撤回数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cancel 撤回数量
+                     * @param _cancel 撤回数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCancel(const uint64_t& _cancel);
 
                     /**
                      * 判断参数 Cancel 是否已赋值
                      * @return Cancel 是否已赋值
+                     * 
                      */
                     bool CancelHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowChannel 消耗渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetFlowChannel() const;
 
                     /**
                      * 设置消耗渠道
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowChannel 消耗渠道
+                     * @param _flowChannel 消耗渠道
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFlowChannel(const std::string& _flowChannel);
 
                     /**
                      * 判断参数 FlowChannel 是否已赋值
                      * @return FlowChannel 是否已赋值
+                     * 
                      */
                     bool FlowChannelHasBeenSet() const;
 

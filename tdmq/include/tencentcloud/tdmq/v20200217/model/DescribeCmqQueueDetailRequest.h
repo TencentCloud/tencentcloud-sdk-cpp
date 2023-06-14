@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取精确匹配QueueName
                      * @return QueueName 精确匹配QueueName
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置精确匹配QueueName
-                     * @param QueueName 精确匹配QueueName
+                     * @param _queueName 精确匹配QueueName
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 

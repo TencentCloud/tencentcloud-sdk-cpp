@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取调用量信息
                      * @return GeneralStat 调用量信息
+                     * 
                      */
                     GeneralStat GetGeneralStat() const;
 
                     /**
                      * 判断参数 GeneralStat 是否已赋值
                      * @return GeneralStat 是否已赋值
+                     * 
                      */
                     bool GeneralStatHasBeenSet() const;
 

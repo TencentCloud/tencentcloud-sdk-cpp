@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取偏移量
                      * @return Offset 偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置偏移量
-                     * @param Offset 偏移量
+                     * @param _offset 偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取个数限制
                      * @return Limit 个数限制
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置个数限制
-                     * @param Limit 个数限制
+                     * @param _limit 个数限制
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取按项目ID搜索
                      * @return ProjectId 按项目ID搜索
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置按项目ID搜索
-                     * @param ProjectId 按项目ID搜索
+                     * @param _projectId 按项目ID搜索
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取按产品ID搜索
                      * @return ProductId 按产品ID搜索
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置按产品ID搜索
-                     * @param ProductId 按产品ID搜索
+                     * @param _productId 按产品ID搜索
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选
                      * @return Includes 加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选
+                     * 
                      */
                     std::vector<std::string> GetIncludes() const;
 
                     /**
                      * 设置加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选
-                     * @param Includes 加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选
+                     * @param _includes 加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选
+                     * 
                      */
                     void SetIncludes(const std::vector<std::string>& _includes);
 
                     /**
                      * 判断参数 Includes 是否已赋值
                      * @return Includes 是否已赋值
+                     * 
                      */
                     bool IncludesHasBeenSet() const;
 
                     /**
                      * 获取按项目名称搜索
                      * @return ProjectName 按项目名称搜索
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置按项目名称搜索
-                     * @param ProjectName 按项目名称搜索
+                     * @param _projectName 按项目名称搜索
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 

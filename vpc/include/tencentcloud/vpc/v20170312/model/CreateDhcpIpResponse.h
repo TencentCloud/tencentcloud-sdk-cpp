@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取新创建的`DhcpIp`信息。
                      * @return DhcpIpSet 新创建的`DhcpIp`信息。
+                     * 
                      */
                     std::vector<DhcpIp> GetDhcpIpSet() const;
 
                     /**
                      * 判断参数 DhcpIpSet 是否已赋值
                      * @return DhcpIpSet 是否已赋值
+                     * 
                      */
                     bool DhcpIpSetHasBeenSet() const;
 

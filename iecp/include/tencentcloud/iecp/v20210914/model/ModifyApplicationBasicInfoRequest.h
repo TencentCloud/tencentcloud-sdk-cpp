@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取应用模板ID
                      * @return ApplicationId 应用模板ID
+                     * 
                      */
                     uint64_t GetApplicationId() const;
 
                     /**
                      * 设置应用模板ID
-                     * @param ApplicationId 应用模板ID
+                     * @param _applicationId 应用模板ID
+                     * 
                      */
                     void SetApplicationId(const uint64_t& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取应用模板基本信息
                      * @return BasicInfo 应用模板基本信息
+                     * 
                      */
                     ApplicationBasicInfo GetBasicInfo() const;
 
                     /**
                      * 设置应用模板基本信息
-                     * @param BasicInfo 应用模板基本信息
+                     * @param _basicInfo 应用模板基本信息
+                     * 
                      */
                     void SetBasicInfo(const ApplicationBasicInfo& _basicInfo);
 
                     /**
                      * 判断参数 BasicInfo 是否已赋值
                      * @return BasicInfo 是否已赋值
+                     * 
                      */
                     bool BasicInfoHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取批量修改的域名。
                      * @return Domains 批量修改的域名。
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置批量修改的域名。
-                     * @param Domains 批量修改的域名。
+                     * @param _domains 批量修改的域名。
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
                     /**
                      * 获取模板ID。
                      * @return TemplateId 模板ID。
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置模板ID。
-                     * @param TemplateId 模板ID。
+                     * @param _templateId 模板ID。
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
@@ -85,6 +91,7 @@ false：关闭60天内禁止转移注册商锁定
                      * @return LockTransfer true： 开启60天内禁止转移注册商锁定
 false：关闭60天内禁止转移注册商锁定
 默认 true
+                     * 
                      */
                     bool GetLockTransfer() const;
 
@@ -92,15 +99,17 @@ false：关闭60天内禁止转移注册商锁定
                      * 设置true： 开启60天内禁止转移注册商锁定
 false：关闭60天内禁止转移注册商锁定
 默认 true
-                     * @param LockTransfer true： 开启60天内禁止转移注册商锁定
+                     * @param _lockTransfer true： 开启60天内禁止转移注册商锁定
 false：关闭60天内禁止转移注册商锁定
 默认 true
+                     * 
                      */
                     void SetLockTransfer(const bool& _lockTransfer);
 
                     /**
                      * 判断参数 LockTransfer 是否已赋值
                      * @return LockTransfer 是否已赋值
+                     * 
                      */
                     bool LockTransferHasBeenSet() const;
 

@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取接收请求的目标节点类型列表
                      * @return TargetNodeTypes 接收请求的目标节点类型列表
+                     * 
                      */
                     std::vector<std::string> GetTargetNodeTypes() const;
 
                     /**
                      * 设置接收请求的目标节点类型列表
-                     * @param TargetNodeTypes 接收请求的目标节点类型列表
+                     * @param _targetNodeTypes 接收请求的目标节点类型列表
+                     * 
                      */
                     void SetTargetNodeTypes(const std::vector<std::string>& _targetNodeTypes);
 
                     /**
                      * 判断参数 TargetNodeTypes 是否已赋值
                      * @return TargetNodeTypes 是否已赋值
+                     * 
                      */
                     bool TargetNodeTypesHasBeenSet() const;
 

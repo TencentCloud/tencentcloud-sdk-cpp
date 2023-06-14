@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取审计规则。
                      * @return RuleFilters 审计规则。
+                     * 
                      */
                     std::vector<RuleFilters> GetRuleFilters() const;
 
                     /**
                      * 设置审计规则。
-                     * @param RuleFilters 审计规则。
+                     * @param _ruleFilters 审计规则。
+                     * 
                      */
                     void SetRuleFilters(const std::vector<RuleFilters>& _ruleFilters);
 
                     /**
                      * 判断参数 RuleFilters 是否已赋值
                      * @return RuleFilters 是否已赋值
+                     * 
                      */
                     bool RuleFiltersHasBeenSet() const;
 
                     /**
                      * 获取规则模版名称。
                      * @return RuleTemplateName 规则模版名称。
+                     * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
                      * 设置规则模版名称。
-                     * @param RuleTemplateName 规则模版名称。
+                     * @param _ruleTemplateName 规则模版名称。
+                     * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
 
                     /**
                      * 判断参数 RuleTemplateName 是否已赋值
                      * @return RuleTemplateName 是否已赋值
+                     * 
                      */
                     bool RuleTemplateNameHasBeenSet() const;
 
                     /**
                      * 获取规则模版描述。
                      * @return Description 规则模版描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则模版描述。
-                     * @param Description 规则模版描述。
+                     * @param _description 规则模版描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

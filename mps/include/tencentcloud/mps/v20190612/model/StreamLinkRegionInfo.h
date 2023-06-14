@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取媒体直传输的地区信息列表。
                      * @return Regions 媒体直传输的地区信息列表。
+                     * 
                      */
                     std::vector<RegionInfo> GetRegions() const;
 
                     /**
                      * 设置媒体直传输的地区信息列表。
-                     * @param Regions 媒体直传输的地区信息列表。
+                     * @param _regions 媒体直传输的地区信息列表。
+                     * 
                      */
                     void SetRegions(const std::vector<RegionInfo>& _regions);
 
                     /**
                      * 判断参数 Regions 是否已赋值
                      * @return Regions 是否已赋值
+                     * 
                      */
                     bool RegionsHasBeenSet() const;
 

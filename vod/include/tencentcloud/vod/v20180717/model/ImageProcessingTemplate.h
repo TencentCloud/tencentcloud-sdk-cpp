@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取图片处理模板唯一标识。
                      * @return Definition 图片处理模板唯一标识。
+                     * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
                      * 设置图片处理模板唯一标识。
-                     * @param Definition 图片处理模板唯一标识。
+                     * @param _definition 图片处理模板唯一标识。
+                     * 
                      */
                     void SetDefinition(const uint64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return Type 模板类型，取值范围：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
+                     * 
                      */
                     std::string GetType() const;
 
@@ -79,51 +83,59 @@ namespace TencentCloud
                      * 设置模板类型，取值范围：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
-                     * @param Type 模板类型，取值范围：
+                     * @param _type 模板类型，取值范围：
 <li>Preset：系统预置模板；</li>
 <li>Custom：用户自定义模板。</li>
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取图片处理模板名称。
                      * @return Name 图片处理模板名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置图片处理模板名称。
-                     * @param Name 图片处理模板名称。
+                     * @param _name 图片处理模板名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息。
                      * @return Comment 模板描述信息。
+                     * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置模板描述信息。
-                     * @param Comment 模板描述信息。
+                     * @param _comment 模板描述信息。
+                     * 
                      */
                     void SetComment(const std::string& _comment);
 
                     /**
                      * 判断参数 Comment 是否已赋值
                      * @return Comment 是否已赋值
+                     * 
                      */
                     bool CommentHasBeenSet() const;
 
@@ -132,38 +144,44 @@ namespace TencentCloud
 <li>长度限制：3。</li>
                      * @return Operations 图片处理操作数组，操作将以数组顺序执行。
 <li>长度限制：3。</li>
+                     * 
                      */
                     std::vector<ImageOperation> GetOperations() const;
 
                     /**
                      * 设置图片处理操作数组，操作将以数组顺序执行。
 <li>长度限制：3。</li>
-                     * @param Operations 图片处理操作数组，操作将以数组顺序执行。
+                     * @param _operations 图片处理操作数组，操作将以数组顺序执行。
 <li>长度限制：3。</li>
+                     * 
                      */
                     void SetOperations(const std::vector<ImageOperation>& _operations);
 
                     /**
                      * 判断参数 Operations 是否已赋值
                      * @return Operations 是否已赋值
+                     * 
                      */
                     bool OperationsHasBeenSet() const;
 
                     /**
                      * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _createTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

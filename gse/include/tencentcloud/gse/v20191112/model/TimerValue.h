@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Day 每X天，执行一次(重复周期-按天/单次)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDay() const;
 
                     /**
                      * 设置每X天，执行一次(重复周期-按天/单次)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Day 每X天，执行一次(重复周期-按天/单次)
+                     * @param _day 每X天，执行一次(重复周期-按天/单次)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDay(const int64_t& _day);
 
                     /**
                      * 判断参数 Day 是否已赋值
                      * @return Day 是否已赋值
+                     * 
                      */
                     bool DayHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FromDay 每月从第x天，执行一次(重复周期-按月)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFromDay() const;
 
                     /**
                      * 设置每月从第x天，执行一次(重复周期-按月)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FromDay 每月从第x天，执行一次(重复周期-按月)
+                     * @param _fromDay 每月从第x天，执行一次(重复周期-按月)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFromDay(const int64_t& _fromDay);
 
                     /**
                      * 判断参数 FromDay 是否已赋值
                      * @return FromDay 是否已赋值
+                     * 
                      */
                     bool FromDayHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ToDay 每月到第x天，执行一次(重复周期-按月)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetToDay() const;
 
                     /**
                      * 设置每月到第x天，执行一次(重复周期-按月)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ToDay 每月到第x天，执行一次(重复周期-按月)
+                     * @param _toDay 每月到第x天，执行一次(重复周期-按月)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetToDay(const int64_t& _toDay);
 
                     /**
                      * 判断参数 ToDay 是否已赋值
                      * @return ToDay 是否已赋值
+                     * 
                      */
                     bool ToDayHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeekDays 重复周期-按周，周几（多个值,取值周一(1,2,3,4,5,6,7)周日）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<int64_t> GetWeekDays() const;
 
                     /**
                      * 设置重复周期-按周，周几（多个值,取值周一(1,2,3,4,5,6,7)周日）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WeekDays 重复周期-按周，周几（多个值,取值周一(1,2,3,4,5,6,7)周日）
+                     * @param _weekDays 重复周期-按周，周几（多个值,取值周一(1,2,3,4,5,6,7)周日）
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetWeekDays(const std::vector<int64_t>& _weekDays);
 
                     /**
                      * 判断参数 WeekDays 是否已赋值
                      * @return WeekDays 是否已赋值
+                     * 
                      */
                     bool WeekDaysHasBeenSet() const;
 

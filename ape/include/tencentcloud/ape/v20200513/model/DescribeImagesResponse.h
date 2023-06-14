@@ -47,60 +47,70 @@ namespace TencentCloud
                     /**
                      * 获取页偏移量
                      * @return Offset 页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return Limit 页大小
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取总条数
                      * @return Total 总条数
+                     * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
                     /**
                      * 获取是否有下一页
                      * @return HaveMore 是否有下一页
+                     * 
                      */
                     bool GetHaveMore() const;
 
                     /**
                      * 判断参数 HaveMore 是否已赋值
                      * @return HaveMore 是否已赋值
+                     * 
                      */
                     bool HaveMoreHasBeenSet() const;
 
                     /**
                      * 获取图片信息数组
                      * @return Items 图片信息数组
+                     * 
                      */
                     std::vector<ImageItem> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 

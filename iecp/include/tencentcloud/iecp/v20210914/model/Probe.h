@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialDelaySeconds 启动后，延迟探测时间 单位:秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetInitialDelaySeconds() const;
 
                     /**
                      * 设置启动后，延迟探测时间 单位:秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InitialDelaySeconds 启动后，延迟探测时间 单位:秒
+                     * @param _initialDelaySeconds 启动后，延迟探测时间 单位:秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInitialDelaySeconds(const int64_t& _initialDelaySeconds);
 
                     /**
                      * 判断参数 InitialDelaySeconds 是否已赋值
                      * @return InitialDelaySeconds 是否已赋值
+                     * 
                      */
                     bool InitialDelaySecondsHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodSeconds 探测间隔，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPeriodSeconds() const;
 
                     /**
                      * 设置探测间隔，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeriodSeconds 探测间隔，单位：秒
+                     * @param _periodSeconds 探测间隔，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeriodSeconds(const int64_t& _periodSeconds);
 
                     /**
                      * 判断参数 PeriodSeconds 是否已赋值
                      * @return PeriodSeconds 是否已赋值
+                     * 
                      */
                     bool PeriodSecondsHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutSeconds 探测超时时间 单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTimeoutSeconds() const;
 
                     /**
                      * 设置探测超时时间 单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimeoutSeconds 探测超时时间 单位：秒
+                     * @param _timeoutSeconds 探测超时时间 单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTimeoutSeconds(const int64_t& _timeoutSeconds);
 
                     /**
                      * 判断参数 TimeoutSeconds 是否已赋值
                      * @return TimeoutSeconds 是否已赋值
+                     * 
                      */
                     bool TimeoutSecondsHasBeenSet() const;
 
@@ -119,20 +128,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessThreshold 失败后检查成功的最小连续成功次数。默认为1.活跃度必须为1。最小值为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetSuccessThreshold() const;
 
                     /**
                      * 设置失败后检查成功的最小连续成功次数。默认为1.活跃度必须为1。最小值为1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SuccessThreshold 失败后检查成功的最小连续成功次数。默认为1.活跃度必须为1。最小值为1
+                     * @param _successThreshold 失败后检查成功的最小连续成功次数。默认为1.活跃度必须为1。最小值为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSuccessThreshold(const int64_t& _successThreshold);
 
                     /**
                      * 判断参数 SuccessThreshold 是否已赋值
                      * @return SuccessThreshold 是否已赋值
+                     * 
                      */
                     bool SuccessThresholdHasBeenSet() const;
 
@@ -141,20 +153,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureThreshold 当Pod成功启动且检查失败时，放弃之前尝试次数。默认为3.最小值为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetFailureThreshold() const;
 
                     /**
                      * 设置当Pod成功启动且检查失败时，放弃之前尝试次数。默认为3.最小值为1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FailureThreshold 当Pod成功启动且检查失败时，放弃之前尝试次数。默认为3.最小值为1
+                     * @param _failureThreshold 当Pod成功启动且检查失败时，放弃之前尝试次数。默认为3.最小值为1
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetFailureThreshold(const int64_t& _failureThreshold);
 
                     /**
                      * 判断参数 FailureThreshold 是否已赋值
                      * @return FailureThreshold 是否已赋值
+                     * 
                      */
                     bool FailureThresholdHasBeenSet() const;
 
@@ -163,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpProbe HTTP探测配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HttpProbe GetHttpProbe() const;
 
                     /**
                      * 设置HTTP探测配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpProbe HTTP探测配置
+                     * @param _httpProbe HTTP探测配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttpProbe(const HttpProbe& _httpProbe);
 
                     /**
                      * 判断参数 HttpProbe 是否已赋值
                      * @return HttpProbe 是否已赋值
+                     * 
                      */
                     bool HttpProbeHasBeenSet() const;
 
@@ -185,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcpProbe TCP探测配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TcpProbe GetTcpProbe() const;
 
                     /**
                      * 设置TCP探测配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TcpProbe TCP探测配置
+                     * @param _tcpProbe TCP探测配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTcpProbe(const TcpProbe& _tcpProbe);
 
                     /**
                      * 判断参数 TcpProbe 是否已赋值
                      * @return TcpProbe 是否已赋值
+                     * 
                      */
                     bool TcpProbeHasBeenSet() const;
 

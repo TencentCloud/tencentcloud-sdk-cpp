@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取企业ID
                      * @return CorpId 企业ID
+                     * 
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-                     * @param CorpId 企业ID
+                     * @param _corpId 企业ID
+                     * 
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
                     /**
                      * 判断参数 CorpId 是否已赋值
                      * @return CorpId 是否已赋值
+                     * 
                      */
                     bool CorpIdHasBeenSet() const;
 
                     /**
                      * 获取批次ID
                      * @return BatchId 批次ID
+                     * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-                     * @param BatchId 批次ID
+                     * @param _batchId 批次ID
+                     * 
                      */
                     void SetBatchId(const std::string& _batchId);
 
                     /**
                      * 判断参数 BatchId 是否已赋值
                      * @return BatchId 是否已赋值
+                     * 
                      */
                     bool BatchIdHasBeenSet() const;
 
                     /**
                      * 获取生产任务ID
                      * @return TaskId 生产任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置生产任务ID
-                     * @param TaskId 生产任务ID
+                     * @param _taskId 生产任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取溯源ID
                      * @return TraceIds 溯源ID
+                     * 
                      */
                     std::vector<std::string> GetTraceIds() const;
 
                     /**
                      * 设置溯源ID
-                     * @param TraceIds 溯源ID
+                     * @param _traceIds 溯源ID
+                     * 
                      */
                     void SetTraceIds(const std::vector<std::string>& _traceIds);
 
                     /**
                      * 判断参数 TraceIds 是否已赋值
                      * @return TraceIds 是否已赋值
+                     * 
                      */
                     bool TraceIdsHasBeenSet() const;
 

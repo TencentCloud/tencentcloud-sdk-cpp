@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取歌单Id
                      * @return PlaylistId 歌单Id
+                     * 
                      */
                     std::string GetPlaylistId() const;
 
                     /**
                      * 设置歌单Id
-                     * @param PlaylistId 歌单Id
+                     * @param _playlistId 歌单Id
+                     * 
                      */
                     void SetPlaylistId(const std::string& _playlistId);
 
                     /**
                      * 判断参数 PlaylistId 是否已赋值
                      * @return PlaylistId 是否已赋值
+                     * 
                      */
                     bool PlaylistIdHasBeenSet() const;
 
                     /**
                      * 获取歌单标题
                      * @return Title 歌单标题
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置歌单标题
-                     * @param Title 歌单标题
+                     * @param _title 歌单标题
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取歌单介绍
                      * @return Description 歌单介绍
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置歌单介绍
-                     * @param Description 歌单介绍
+                     * @param _description 歌单介绍
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取歌曲数量
                      * @return MusicNum 歌曲数量
+                     * 
                      */
                     int64_t GetMusicNum() const;
 
                     /**
                      * 设置歌曲数量
-                     * @param MusicNum 歌曲数量
+                     * @param _musicNum 歌曲数量
+                     * 
                      */
                     void SetMusicNum(const int64_t& _musicNum);
 
                     /**
                      * 判断参数 MusicNum 是否已赋值
                      * @return MusicNum 是否已赋值
+                     * 
                      */
                     bool MusicNumHasBeenSet() const;
 

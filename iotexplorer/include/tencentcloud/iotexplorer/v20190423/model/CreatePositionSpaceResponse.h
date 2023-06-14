@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceId 空间Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
                      * 判断参数 SpaceId 是否已赋值
                      * @return SpaceId 是否已赋值
+                     * 
                      */
                     bool SpaceIdHasBeenSet() const;
 

@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取第三方渠道子商户查询银行账户返回。
                      * @return AccountList 第三方渠道子商户查询银行账户返回。
+                     * 
                      */
                     std::vector<QueryOpenBankExternalSubMerchantBankAccountData> GetAccountList() const;
 
                     /**
                      * 设置第三方渠道子商户查询银行账户返回。
-                     * @param AccountList 第三方渠道子商户查询银行账户返回。
+                     * @param _accountList 第三方渠道子商户查询银行账户返回。
+                     * 
                      */
                     void SetAccountList(const std::vector<QueryOpenBankExternalSubMerchantBankAccountData>& _accountList);
 
                     /**
                      * 判断参数 AccountList 是否已赋值
                      * @return AccountList 是否已赋值
+                     * 
                      */
                     bool AccountListHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。
                      * @return TopicName 主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。
+                     * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。
-                     * @param TopicName 主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。
+                     * @param _topicName 主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。
+                     * 
                      */
                     void SetTopicName(const std::string& _topicName);
 
                     /**
                      * 判断参数 TopicName 是否已赋值
                      * @return TopicName 是否已赋值
+                     * 
                      */
                     bool TopicNameHasBeenSet() const;
 
                     /**
                      * 获取分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
                      * @return Offset 分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
-                     * @param Offset 分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * @param _offset 分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。
                      * @return Limit 分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。
-                     * @param Limit 分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。
+                     * @param _limit 分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取筛选参数，目前只支持SubscriptionName，且仅支持一个关键字。
                      * @return Filters 筛选参数，目前只支持SubscriptionName，且仅支持一个关键字。
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置筛选参数，目前只支持SubscriptionName，且仅支持一个关键字。
-                     * @param Filters 筛选参数，目前只支持SubscriptionName，且仅支持一个关键字。
+                     * @param _filters 筛选参数，目前只支持SubscriptionName，且仅支持一个关键字。
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

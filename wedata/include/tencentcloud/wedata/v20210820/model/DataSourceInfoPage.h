@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageNumber 分页页码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置分页页码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageNumber 分页页码
+                     * @param _pageNumber 分页页码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageSize 分页大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageSize 分页大小
+                     * @param _pageSize 分页大小
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
@@ -96,20 +102,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rows 数据源列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DataSourceInfo> GetRows() const;
 
                     /**
                      * 设置数据源列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rows 数据源列表
+                     * @param _rows 数据源列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRows(const std::vector<DataSourceInfo>& _rows);
 
                     /**
                      * 判断参数 Rows 是否已赋值
                      * @return Rows 是否已赋值
+                     * 
                      */
                     bool RowsHasBeenSet() const;
 
@@ -118,20 +127,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCount 总数
+                     * @param _totalCount 总数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
@@ -140,20 +152,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPageNumber 总分页页码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTotalPageNumber() const;
 
                     /**
                      * 设置总分页页码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalPageNumber 总分页页码
+                     * @param _totalPageNumber 总分页页码
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTotalPageNumber(const uint64_t& _totalPageNumber);
 
                     /**
                      * 判断参数 TotalPageNumber 是否已赋值
                      * @return TotalPageNumber 是否已赋值
+                     * 
                      */
                     bool TotalPageNumberHasBeenSet() const;
 

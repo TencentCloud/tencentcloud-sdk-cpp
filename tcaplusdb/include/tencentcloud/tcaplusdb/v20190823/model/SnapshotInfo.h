@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取所属表格组ID
                      * @return TableGroupId 所属表格组ID
+                     * 
                      */
                     std::string GetTableGroupId() const;
 
                     /**
                      * 设置所属表格组ID
-                     * @param TableGroupId 所属表格组ID
+                     * @param _tableGroupId 所属表格组ID
+                     * 
                      */
                     void SetTableGroupId(const std::string& _tableGroupId);
 
                     /**
                      * 判断参数 TableGroupId 是否已赋值
                      * @return TableGroupId 是否已赋值
+                     * 
                      */
                     bool TableGroupIdHasBeenSet() const;
 
                     /**
                      * 获取表名称
                      * @return TableName 表名称
+                     * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-                     * @param TableName 表名称
+                     * @param _tableName 表名称
+                     * 
                      */
                     void SetTableName(const std::string& _tableName);
 
                     /**
                      * 判断参数 TableName 是否已赋值
                      * @return TableName 是否已赋值
+                     * 
                      */
                     bool TableNameHasBeenSet() const;
 
                     /**
                      * 获取快照名称
                      * @return SnapshotName 快照名称
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置快照名称
-                     * @param SnapshotName 快照名称
+                     * @param _snapshotName 快照名称
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
                      * 获取快照时间点
                      * @return SnapshotTime 快照时间点
+                     * 
                      */
                     std::string GetSnapshotTime() const;
 
                     /**
                      * 设置快照时间点
-                     * @param SnapshotTime 快照时间点
+                     * @param _snapshotTime 快照时间点
+                     * 
                      */
                     void SetSnapshotTime(const std::string& _snapshotTime);
 
                     /**
                      * 判断参数 SnapshotTime 是否已赋值
                      * @return SnapshotTime 是否已赋值
+                     * 
                      */
                     bool SnapshotTimeHasBeenSet() const;
 
                     /**
                      * 获取快照过期时间点
                      * @return SnapshotDeadTime 快照过期时间点
+                     * 
                      */
                     std::string GetSnapshotDeadTime() const;
 
                     /**
                      * 设置快照过期时间点
-                     * @param SnapshotDeadTime 快照过期时间点
+                     * @param _snapshotDeadTime 快照过期时间点
+                     * 
                      */
                     void SetSnapshotDeadTime(const std::string& _snapshotDeadTime);
 
                     /**
                      * 判断参数 SnapshotDeadTime 是否已赋值
                      * @return SnapshotDeadTime 是否已赋值
+                     * 
                      */
                     bool SnapshotDeadTimeHasBeenSet() const;
 

@@ -46,48 +46,56 @@ namespace TencentCloud
                     /**
                      * 获取镜像ID
                      * @return ImageID 镜像ID
+                     * 
                      */
                     std::string GetImageID() const;
 
                     /**
                      * 判断参数 ImageID 是否已赋值
                      * @return ImageID 是否已赋值
+                     * 
                      */
                     bool ImageIDHasBeenSet() const;
 
                     /**
                      * 获取镜像名称
                      * @return ImageName 镜像名称
+                     * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 判断参数 ImageName 是否已赋值
                      * @return ImageName 是否已赋值
+                     * 
                      */
                     bool ImageNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取镜像大小
                      * @return Size 镜像大小
+                     * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 判断参数 Size 是否已赋值
                      * @return Size 是否已赋值
+                     * 
                      */
                     bool SizeHasBeenSet() const;
 
@@ -96,12 +104,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCnt 关联主机个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetHostCnt() const;
 
                     /**
                      * 判断参数 HostCnt 是否已赋值
                      * @return HostCnt 是否已赋值
+                     * 
                      */
                     bool HostCntHasBeenSet() const;
 
@@ -110,12 +120,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerCnt 关联容器个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetContainerCnt() const;
 
                     /**
                      * 判断参数 ContainerCnt 是否已赋值
                      * @return ContainerCnt 是否已赋值
+                     * 
                      */
                     bool ContainerCntHasBeenSet() const;
 
@@ -124,12 +136,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTime 最近扫描时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanTime() const;
 
                     /**
                      * 判断参数 ScanTime 是否已赋值
                      * @return ScanTime 是否已赋值
+                     * 
                      */
                     bool ScanTimeHasBeenSet() const;
 
@@ -138,12 +152,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCnt 漏洞个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVulCnt() const;
 
                     /**
                      * 判断参数 VulCnt 是否已赋值
                      * @return VulCnt 是否已赋值
+                     * 
                      */
                     bool VulCntHasBeenSet() const;
 
@@ -152,12 +168,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCnt 风险行为数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRiskCnt() const;
 
                     /**
                      * 判断参数 RiskCnt 是否已赋值
                      * @return RiskCnt 是否已赋值
+                     * 
                      */
                     bool RiskCntHasBeenSet() const;
 
@@ -166,36 +184,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveInfoCnt 敏感信息数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetSensitiveInfoCnt() const;
 
                     /**
                      * 判断参数 SensitiveInfoCnt 是否已赋值
                      * @return SensitiveInfoCnt 是否已赋值
+                     * 
                      */
                     bool SensitiveInfoCntHasBeenSet() const;
 
                     /**
                      * 获取是否信任镜像
                      * @return IsTrustImage 是否信任镜像
+                     * 
                      */
                     bool GetIsTrustImage() const;
 
                     /**
                      * 判断参数 IsTrustImage 是否已赋值
                      * @return IsTrustImage 是否已赋值
+                     * 
                      */
                     bool IsTrustImageHasBeenSet() const;
 
                     /**
                      * 获取镜像系统
                      * @return OsName 镜像系统
+                     * 
                      */
                     std::string GetOsName() const;
 
                     /**
                      * 判断参数 OsName 是否已赋值
                      * @return OsName 是否已赋值
+                     * 
                      */
                     bool OsNameHasBeenSet() const;
 
@@ -204,12 +228,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentError agent镜像扫描错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAgentError() const;
 
                     /**
                      * 判断参数 AgentError 是否已赋值
                      * @return AgentError 是否已赋值
+                     * 
                      */
                     bool AgentErrorHasBeenSet() const;
 
@@ -218,12 +244,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanError 后端镜像扫描错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanError() const;
 
                     /**
                      * 判断参数 ScanError 是否已赋值
                      * @return ScanError 是否已赋值
+                     * 
                      */
                     bool ScanErrorHasBeenSet() const;
 
@@ -232,12 +260,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Architecture 系统架构
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetArchitecture() const;
 
                     /**
                      * 判断参数 Architecture 是否已赋值
                      * @return Architecture 是否已赋值
+                     * 
                      */
                     bool ArchitectureHasBeenSet() const;
 
@@ -246,12 +276,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Author 作者
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAuthor() const;
 
                     /**
                      * 判断参数 Author 是否已赋值
                      * @return Author 是否已赋值
+                     * 
                      */
                     bool AuthorHasBeenSet() const;
 
@@ -260,12 +292,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildHistory 构建历史
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBuildHistory() const;
 
                     /**
                      * 判断参数 BuildHistory 是否已赋值
                      * @return BuildHistory 是否已赋值
+                     * 
                      */
                     bool BuildHistoryHasBeenSet() const;
 
@@ -274,12 +308,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVirusProgress 木马扫描进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScanVirusProgress() const;
 
                     /**
                      * 判断参数 ScanVirusProgress 是否已赋值
                      * @return ScanVirusProgress 是否已赋值
+                     * 
                      */
                     bool ScanVirusProgressHasBeenSet() const;
 
@@ -288,12 +324,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVulProgress 漏洞扫进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScanVulProgress() const;
 
                     /**
                      * 判断参数 ScanVulProgress 是否已赋值
                      * @return ScanVulProgress 是否已赋值
+                     * 
                      */
                     bool ScanVulProgressHasBeenSet() const;
 
@@ -302,12 +340,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRiskProgress 敏感信息扫描进度
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetScanRiskProgress() const;
 
                     /**
                      * 判断参数 ScanRiskProgress 是否已赋值
                      * @return ScanRiskProgress 是否已赋值
+                     * 
                      */
                     bool ScanRiskProgressHasBeenSet() const;
 
@@ -316,12 +356,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVirusError 木马扫描错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanVirusError() const;
 
                     /**
                      * 判断参数 ScanVirusError 是否已赋值
                      * @return ScanVirusError 是否已赋值
+                     * 
                      */
                     bool ScanVirusErrorHasBeenSet() const;
 
@@ -330,12 +372,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVulError 漏洞扫描错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanVulError() const;
 
                     /**
                      * 判断参数 ScanVulError 是否已赋值
                      * @return ScanVulError 是否已赋值
+                     * 
                      */
                     bool ScanVulErrorHasBeenSet() const;
 
@@ -344,12 +388,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRiskError 敏感信息错误
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanRiskError() const;
 
                     /**
                      * 判断参数 ScanRiskError 是否已赋值
                      * @return ScanRiskError 是否已赋值
+                     * 
                      */
                     bool ScanRiskErrorHasBeenSet() const;
 
@@ -358,12 +404,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanStatus 镜像扫描状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetScanStatus() const;
 
                     /**
                      * 判断参数 ScanStatus 是否已赋值
                      * @return ScanStatus 是否已赋值
+                     * 
                      */
                     bool ScanStatusHasBeenSet() const;
 
@@ -372,12 +420,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusCnt 木马病毒数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetVirusCnt() const;
 
                     /**
                      * 判断参数 VirusCnt 是否已赋值
                      * @return VirusCnt 是否已赋值
+                     * 
                      */
                     bool VirusCntHasBeenSet() const;
 
@@ -386,12 +436,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 镜像扫描状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -400,24 +452,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainScanTime 剩余扫描时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetRemainScanTime() const;
 
                     /**
                      * 判断参数 RemainScanTime 是否已赋值
                      * @return RemainScanTime 是否已赋值
+                     * 
                      */
                     bool RemainScanTimeHasBeenSet() const;
 
                     /**
                      * 获取授权为：1，未授权为：0
                      * @return IsAuthorized 授权为：1，未授权为：0
+                     * 
                      */
                     int64_t GetIsAuthorized() const;
 
                     /**
                      * 判断参数 IsAuthorized 是否已赋值
                      * @return IsAuthorized 是否已赋值
+                     * 
                      */
                     bool IsAuthorizedHasBeenSet() const;
 

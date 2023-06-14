@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Separator 逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSeparator() const;
 
                     /**
                      * 设置逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Separator 逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。
+                     * @param _separator 逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSeparator(const std::string& _separator);
 
                     /**
                      * 判断参数 Separator 是否已赋值
                      * @return Separator 是否已赋值
+                     * 
                      */
                     bool SeparatorHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regex 填写正则表达式：长度128
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置填写正则表达式：长度128
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Regex 填写正则表达式：长度128
+                     * @param _regex 填写正则表达式：长度128
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegex(const std::string& _regex);
 
                     /**
                      * 判断参数 Regex 是否已赋值
                      * @return Regex 是否已赋值
+                     * 
                      */
                     bool RegexHasBeenSet() const;
 

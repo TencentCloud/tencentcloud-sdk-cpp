@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * @param _policyId 策略ID
+                     * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取角色ID（与角色名至少填一个）
                      * @return RoleId 角色ID（与角色名至少填一个）
+                     * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色ID（与角色名至少填一个）
-                     * @param RoleId 角色ID（与角色名至少填一个）
+                     * @param _roleId 角色ID（与角色名至少填一个）
+                     * 
                      */
                     void SetRoleId(const std::string& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
+                     * 
                      */
                     bool RoleIdHasBeenSet() const;
 
                     /**
                      * 获取角色名（与角色ID至少填一个）
                      * @return RoleName 角色名（与角色ID至少填一个）
+                     * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色名（与角色ID至少填一个）
-                     * @param RoleName 角色名（与角色ID至少填一个）
+                     * @param _roleName 角色名（与角色ID至少填一个）
+                     * 
                      */
                     void SetRoleName(const std::string& _roleName);
 
                     /**
                      * 判断参数 RoleName 是否已赋值
                      * @return RoleName 是否已赋值
+                     * 
                      */
                     bool RoleNameHasBeenSet() const;
 

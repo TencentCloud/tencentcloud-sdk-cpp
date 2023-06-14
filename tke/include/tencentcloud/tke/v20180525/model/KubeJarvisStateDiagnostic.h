@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 诊断开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置诊断开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 诊断开始时间
+                     * @param _startTime 诊断开始时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 诊断结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置诊断结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 诊断结束时间
+                     * @param _endTime 诊断结束时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalogues 诊断目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateCatalogue> GetCatalogues() const;
 
                     /**
                      * 设置诊断目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Catalogues 诊断目录
+                     * @param _catalogues 诊断目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCatalogues(const std::vector<KubeJarvisStateCatalogue>& _catalogues);
 
                     /**
                      * 判断参数 Catalogues 是否已赋值
                      * @return Catalogues 是否已赋值
+                     * 
                      */
                     bool CataloguesHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 诊断类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置诊断类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 诊断类型
+                     * @param _type 诊断类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 诊断名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置诊断名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 诊断名称
+                     * @param _name 诊断名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 诊断描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置诊断描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 诊断描述
+                     * @param _desc 诊断描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 诊断结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateResultsItem> GetResults() const;
 
                     /**
                      * 设置诊断结果列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Results 诊断结果列表
+                     * @param _results 诊断结果列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetResults(const std::vector<KubeJarvisStateResultsItem>& _results);
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 设置诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Statistics 诊断结果统计
+                     * @param _statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatistics(const std::vector<KubeJarvisStateStatistic>& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取回滚任务 ID，用来查询回滚状态
                      * @return TaskId 回滚任务 ID，用来查询回滚状态
+                     * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

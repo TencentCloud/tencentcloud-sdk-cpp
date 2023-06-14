@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取视频url地址
                      * @return Url 视频url地址
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置视频url地址
-                     * @param Url 视频url地址
+                     * @param _url 视频url地址
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。
                      * @return BeautyParam 美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。
+                     * 
                      */
                     std::vector<BeautyParam> GetBeautyParam() const;
 
                     /**
                      * 设置美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。
-                     * @param BeautyParam 美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。
+                     * @param _beautyParam 美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。
+                     * 
                      */
                     void SetBeautyParam(const std::vector<BeautyParam>& _beautyParam);
 
                     /**
                      * 判断参数 BeautyParam 是否已赋值
                      * @return BeautyParam 是否已赋值
+                     * 
                      */
                     bool BeautyParamHasBeenSet() const;
 
                     /**
                      * 获取目前只支持mp4
                      * @return OutputVideoType 目前只支持mp4
+                     * 
                      */
                     std::string GetOutputVideoType() const;
 
                     /**
                      * 设置目前只支持mp4
-                     * @param OutputVideoType 目前只支持mp4
+                     * @param _outputVideoType 目前只支持mp4
+                     * 
                      */
                     void SetOutputVideoType(const std::string& _outputVideoType);
 
                     /**
                      * 判断参数 OutputVideoType 是否已赋值
                      * @return OutputVideoType 是否已赋值
+                     * 
                      */
                     bool OutputVideoTypeHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
                      * @return InstanceIds 实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param InstanceIds 实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceIds 实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
                      * @return IsRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * 
                      */
                     std::string GetIsRemoteZone() const;
 
                     /**
                      * 设置克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
-                     * @param IsRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * @param _isRemoteZone 克隆实例与源实例是否在同一可用区，是:"false"，否:"true"
+                     * 
                      */
                     void SetIsRemoteZone(const std::string& _isRemoteZone);
 
                     /**
                      * 判断参数 IsRemoteZone 是否已赋值
                      * @return IsRemoteZone 是否已赋值
+                     * 
                      */
                     bool IsRemoteZoneHasBeenSet() const;
 
                     /**
                      * 获取克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
                      * @return BackupRegion 克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     * 
                      */
                     std::string GetBackupRegion() const;
 
                     /**
                      * 设置克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
-                     * @param BackupRegion 克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     * @param _backupRegion 克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例："ap-guangzhou"
+                     * 
                      */
                     void SetBackupRegion(const std::string& _backupRegion);
 
                     /**
                      * 判断参数 BackupRegion 是否已赋值
                      * @return BackupRegion 是否已赋值
+                     * 
                      */
                     bool BackupRegionHasBeenSet() const;
 

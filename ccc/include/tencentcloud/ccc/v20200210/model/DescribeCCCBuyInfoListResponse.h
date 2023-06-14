@@ -48,36 +48,42 @@ namespace TencentCloud
                     /**
                      * 获取应用总数
                      * @return TotalCount 应用总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取应用购买信息列表
                      * @return SdkAppIdBuyList 应用购买信息列表
+                     * 
                      */
                     std::vector<SdkAppIdBuyInfo> GetSdkAppIdBuyList() const;
 
                     /**
                      * 判断参数 SdkAppIdBuyList 是否已赋值
                      * @return SdkAppIdBuyList 是否已赋值
+                     * 
                      */
                     bool SdkAppIdBuyListHasBeenSet() const;
 
                     /**
                      * 获取套餐包购买信息列表
                      * @return PackageBuyList 套餐包购买信息列表
+                     * 
                      */
                     std::vector<PackageBuyInfo> GetPackageBuyList() const;
 
                     /**
                      * 判断参数 PackageBuyList 是否已赋值
                      * @return PackageBuyList 是否已赋值
+                     * 
                      */
                     bool PackageBuyListHasBeenSet() const;
 

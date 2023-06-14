@@ -46,216 +46,252 @@ namespace TencentCloud
                     /**
                      * 获取NAT网关名称
                      * @return NatGatewayName NAT网关名称
+                     * 
                      */
                     std::string GetNatGatewayName() const;
 
                     /**
                      * 设置NAT网关名称
-                     * @param NatGatewayName NAT网关名称
+                     * @param _natGatewayName NAT网关名称
+                     * 
                      */
                     void SetNatGatewayName(const std::string& _natGatewayName);
 
                     /**
                      * 判断参数 NatGatewayName 是否已赋值
                      * @return NatGatewayName 是否已赋值
+                     * 
                      */
                     bool NatGatewayNameHasBeenSet() const;
 
                     /**
                      * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
                      * @return VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param VpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * @param _vpcId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
                      * @return InternetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
-                     * @param InternetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
+                     * @param _internetMaxBandwidthOut NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
                      * @return MaxConcurrentConnection NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
+                     * 
                      */
                     uint64_t GetMaxConcurrentConnection() const;
 
                     /**
                      * 设置NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
-                     * @param MaxConcurrentConnection NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
+                     * @param _maxConcurrentConnection NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。
+                     * 
                      */
                     void SetMaxConcurrentConnection(const uint64_t& _maxConcurrentConnection);
 
                     /**
                      * 判断参数 MaxConcurrentConnection 是否已赋值
                      * @return MaxConcurrentConnection 是否已赋值
+                     * 
                      */
                     bool MaxConcurrentConnectionHasBeenSet() const;
 
                     /**
                      * 获取需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
                      * @return AddressCount 需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
+                     * 
                      */
                     uint64_t GetAddressCount() const;
 
                     /**
                      * 设置需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
-                     * @param AddressCount 需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
+                     * @param _addressCount 需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。
+                     * 
                      */
                     void SetAddressCount(const uint64_t& _addressCount);
 
                     /**
                      * 判断参数 AddressCount 是否已赋值
                      * @return AddressCount 是否已赋值
+                     * 
                      */
                     bool AddressCountHasBeenSet() const;
 
                     /**
                      * 获取绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
                      * @return PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
-                     * @param PublicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * @param _publicIpAddresses 绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。
+                     * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
 
                     /**
                      * 判断参数 PublicIpAddresses 是否已赋值
                      * @return PublicIpAddresses 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressesHasBeenSet() const;
 
                     /**
                      * 获取可用区，形如：`ap-guangzhou-1`。
                      * @return Zone 可用区，形如：`ap-guangzhou-1`。
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区，形如：`ap-guangzhou-1`。
-                     * @param Zone 可用区，形如：`ap-guangzhou-1`。
+                     * @param _zone 可用区，形如：`ap-guangzhou-1`。
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
                      * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取NAT网关所属子网
                      * @return SubnetId NAT网关所属子网
+                     * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置NAT网关所属子网
-                     * @param SubnetId NAT网关所属子网
+                     * @param _subnetId NAT网关所属子网
+                     * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
                     /**
                      * 判断参数 SubnetId 是否已赋值
                      * @return SubnetId 是否已赋值
+                     * 
                      */
                     bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
                      * @return StockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 
                      */
                     uint64_t GetStockPublicIpAddressesBandwidthOut() const;
 
                     /**
                      * 设置绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
-                     * @param StockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * @param _stockPublicIpAddressesBandwidthOut 绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 
                      */
                     void SetStockPublicIpAddressesBandwidthOut(const uint64_t& _stockPublicIpAddressesBandwidthOut);
 
                     /**
                      * 判断参数 StockPublicIpAddressesBandwidthOut 是否已赋值
                      * @return StockPublicIpAddressesBandwidthOut 是否已赋值
+                     * 
                      */
                     bool StockPublicIpAddressesBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
                      * @return PublicIpAddressesBandwidthOut 需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 
                      */
                     uint64_t GetPublicIpAddressesBandwidthOut() const;
 
                     /**
                      * 设置需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
-                     * @param PublicIpAddressesBandwidthOut 需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * @param _publicIpAddressesBandwidthOut 需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。
+                     * 
                      */
                     void SetPublicIpAddressesBandwidthOut(const uint64_t& _publicIpAddressesBandwidthOut);
 
                     /**
                      * 判断参数 PublicIpAddressesBandwidthOut 是否已赋值
                      * @return PublicIpAddressesBandwidthOut 是否已赋值
+                     * 
                      */
                     bool PublicIpAddressesBandwidthOutHasBeenSet() const;
 
                     /**
                      * 获取公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
                      * @return PublicIpFromSameZone 公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     * 
                      */
                     bool GetPublicIpFromSameZone() const;
 
                     /**
                      * 设置公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
-                     * @param PublicIpFromSameZone 公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     * @param _publicIpFromSameZone 公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。
+                     * 
                      */
                     void SetPublicIpFromSameZone(const bool& _publicIpFromSameZone);
 
                     /**
                      * 判断参数 PublicIpFromSameZone 是否已赋值
                      * @return PublicIpFromSameZone 是否已赋值
+                     * 
                      */
                     bool PublicIpFromSameZoneHasBeenSet() const;
 

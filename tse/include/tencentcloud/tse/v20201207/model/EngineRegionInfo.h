@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取引擎节点所在地域
                      * @return EngineRegion 引擎节点所在地域
+                     * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置引擎节点所在地域
-                     * @param EngineRegion 引擎节点所在地域
+                     * @param _engineRegion 引擎节点所在地域
+                     * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
 
                     /**
                      * 判断参数 EngineRegion 是否已赋值
                      * @return EngineRegion 是否已赋值
+                     * 
                      */
                     bool EngineRegionHasBeenSet() const;
 
                     /**
                      * 获取此地域节点分配数量
                      * @return Replica 此地域节点分配数量
+                     * 
                      */
                     int64_t GetReplica() const;
 
                     /**
                      * 设置此地域节点分配数量
-                     * @param Replica 此地域节点分配数量
+                     * @param _replica 此地域节点分配数量
+                     * 
                      */
                     void SetReplica(const int64_t& _replica);
 
                     /**
                      * 判断参数 Replica 是否已赋值
                      * @return Replica 是否已赋值
+                     * 
                      */
                     bool ReplicaHasBeenSet() const;
 
                     /**
                      * 获取集群网络信息
                      * @return VpcInfos 集群网络信息
+                     * 
                      */
                     std::vector<VpcInfo> GetVpcInfos() const;
 
                     /**
                      * 设置集群网络信息
-                     * @param VpcInfos 集群网络信息
+                     * @param _vpcInfos 集群网络信息
+                     * 
                      */
                     void SetVpcInfos(const std::vector<VpcInfo>& _vpcInfos);
 
                     /**
                      * 判断参数 VpcInfos 是否已赋值
                      * @return VpcInfos 是否已赋值
+                     * 
                      */
                     bool VpcInfosHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的版本数量
                      * @return TotalCount 符合条件的版本数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取版本详细信息列表
                      * @return Versions 版本详细信息列表
+                     * 
                      */
                     std::vector<VersionInfo> GetVersions() const;
 
                     /**
                      * 判断参数 Versions 是否已赋值
                      * @return Versions 是否已赋值
+                     * 
                      */
                     bool VersionsHasBeenSet() const;
 

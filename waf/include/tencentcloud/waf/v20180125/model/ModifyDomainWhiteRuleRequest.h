@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取需要更改的规则的域名
                      * @return Domain 需要更改的规则的域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置需要更改的规则的域名
-                     * @param Domain 需要更改的规则的域名
+                     * @param _domain 需要更改的规则的域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取白名单id
                      * @return Id 白名单id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置白名单id
-                     * @param Id 白名单id
+                     * @param _id 白名单id
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取规则的id列表
                      * @return Rules 规则的id列表
+                     * 
                      */
                     std::vector<uint64_t> GetRules() const;
 
                     /**
                      * 设置规则的id列表
-                     * @param Rules 规则的id列表
+                     * @param _rules 规则的id列表
+                     * 
                      */
                     void SetRules(const std::vector<uint64_t>& _rules);
 
                     /**
                      * 判断参数 Rules 是否已赋值
                      * @return Rules 是否已赋值
+                     * 
                      */
                     bool RulesHasBeenSet() const;
 
                     /**
                      * 获取规则匹配路径
                      * @return Url 规则匹配路径
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置规则匹配路径
-                     * @param Url 规则匹配路径
+                     * @param _url 规则匹配路径
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取规则匹配方法
                      * @return Function 规则匹配方法
+                     * 
                      */
                     std::string GetFunction() const;
 
                     /**
                      * 设置规则匹配方法
-                     * @param Function 规则匹配方法
+                     * @param _function 规则匹配方法
+                     * 
                      */
                     void SetFunction(const std::string& _function);
 
                     /**
                      * 判断参数 Function 是否已赋值
                      * @return Function 是否已赋值
+                     * 
                      */
                     bool FunctionHasBeenSet() const;
 
                     /**
                      * 获取规则的开关状态，0表示关闭开关，1表示打开开关
                      * @return Status 规则的开关状态，0表示关闭开关，1表示打开开关
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置规则的开关状态，0表示关闭开关，1表示打开开关
-                     * @param Status 规则的开关状态，0表示关闭开关，1表示打开开关
+                     * @param _status 规则的开关状态，0表示关闭开关，1表示打开开关
+                     * 
                      */
                     void SetStatus(const uint64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

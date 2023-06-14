@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTask 总任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalTask() const;
 
                     /**
                      * 判断参数 TotalTask 是否已赋值
                      * @return TotalTask 是否已赋值
+                     * 
                      */
                     bool TotalTaskHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProdTask 生产态任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetProdTask() const;
 
                     /**
                      * 判断参数 ProdTask 是否已赋值
                      * @return ProdTask 是否已赋值
+                     * 
                      */
                     bool ProdTaskHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevTask 开发态任务数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDevTask() const;
 
                     /**
                      * 判断参数 DevTask 是否已赋值
                      * @return DevTask 是否已赋值
+                     * 
                      */
                     bool DevTaskHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalReadRecords 总读取条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalReadRecords() const;
 
                     /**
                      * 判断参数 TotalReadRecords 是否已赋值
                      * @return TotalReadRecords 是否已赋值
+                     * 
                      */
                     bool TotalReadRecordsHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalWriteRecords 总写入条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalWriteRecords() const;
 
                     /**
                      * 判断参数 TotalWriteRecords 是否已赋值
                      * @return TotalWriteRecords 是否已赋值
+                     * 
                      */
                     bool TotalWriteRecordsHasBeenSet() const;
 
@@ -118,12 +128,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalErrorRecords 总脏数据条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalErrorRecords() const;
 
                     /**
                      * 判断参数 TotalErrorRecords 是否已赋值
                      * @return TotalErrorRecords 是否已赋值
+                     * 
                      */
                     bool TotalErrorRecordsHasBeenSet() const;
 
@@ -132,12 +144,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalAlarmEvent 总告警事件数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTotalAlarmEvent() const;
 
                     /**
                      * 判断参数 TotalAlarmEvent 是否已赋值
                      * @return TotalAlarmEvent 是否已赋值
+                     * 
                      */
                     bool TotalAlarmEventHasBeenSet() const;
 
@@ -146,12 +160,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncreaseReadRecords 当天读取增长条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIncreaseReadRecords() const;
 
                     /**
                      * 判断参数 IncreaseReadRecords 是否已赋值
                      * @return IncreaseReadRecords 是否已赋值
+                     * 
                      */
                     bool IncreaseReadRecordsHasBeenSet() const;
 
@@ -160,12 +176,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncreaseWriteRecords 当天写入增长条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIncreaseWriteRecords() const;
 
                     /**
                      * 判断参数 IncreaseWriteRecords 是否已赋值
                      * @return IncreaseWriteRecords 是否已赋值
+                     * 
                      */
                     bool IncreaseWriteRecordsHasBeenSet() const;
 
@@ -174,12 +192,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncreaseErrorRecords 当天脏数据增长条数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIncreaseErrorRecords() const;
 
                     /**
                      * 判断参数 IncreaseErrorRecords 是否已赋值
                      * @return IncreaseErrorRecords 是否已赋值
+                     * 
                      */
                     bool IncreaseErrorRecordsHasBeenSet() const;
 
@@ -188,12 +208,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncreaseAlarmEvent 当天告警事件增长数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetIncreaseAlarmEvent() const;
 
                     /**
                      * 判断参数 IncreaseAlarmEvent 是否已赋值
                      * @return IncreaseAlarmEvent 是否已赋值
+                     * 
                      */
                     bool IncreaseAlarmEventHasBeenSet() const;
 
@@ -202,12 +224,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmEvent 告警事件统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAlarmEvent() const;
 
                     /**
                      * 判断参数 AlarmEvent 是否已赋值
                      * @return AlarmEvent 是否已赋值
+                     * 
                      */
                     bool AlarmEventHasBeenSet() const;
 

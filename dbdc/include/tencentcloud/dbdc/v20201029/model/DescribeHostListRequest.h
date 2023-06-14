@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取独享集群实例Id
                      * @return InstanceId 独享集群实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置独享集群实例Id
-                     * @param InstanceId 独享集群实例Id
+                     * @param _instanceId 独享集群实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取分页返回数量
                      * @return Limit 分页返回数量
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页返回数量
-                     * @param Limit 分页返回数量
+                     * @param _limit 分页返回数量
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页偏移量
                      * @return Offset 分页偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页偏移量
-                     * @param Offset 分页偏移量
+                     * @param _offset 分页偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分配状态过滤，0-可分配，1-禁止分配
                      * @return AssignStatus 分配状态过滤，0-可分配，1-禁止分配
+                     * 
                      */
                     std::vector<int64_t> GetAssignStatus() const;
 
                     /**
                      * 设置分配状态过滤，0-可分配，1-禁止分配
-                     * @param AssignStatus 分配状态过滤，0-可分配，1-禁止分配
+                     * @param _assignStatus 分配状态过滤，0-可分配，1-禁止分配
+                     * 
                      */
                     void SetAssignStatus(const std::vector<int64_t>& _assignStatus);
 
                     /**
                      * 判断参数 AssignStatus 是否已赋值
                      * @return AssignStatus 是否已赋值
+                     * 
                      */
                     bool AssignStatusHasBeenSet() const;
 

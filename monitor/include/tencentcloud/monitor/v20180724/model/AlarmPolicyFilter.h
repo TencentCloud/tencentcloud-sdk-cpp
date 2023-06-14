@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 过滤条件类型 DIMENSION=使用 Dimensions 做过滤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置过滤条件类型 DIMENSION=使用 Dimensions 做过滤
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 过滤条件类型 DIMENSION=使用 Dimensions 做过滤
+                     * @param _type 过滤条件类型 DIMENSION=使用 Dimensions 做过滤
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dimensions AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDimensions() const;
 
                     /**
                      * 设置AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Dimensions AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
+                     * @param _dimensions AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDimensions(const std::string& _dimensions);
 
                     /**
                      * 判断参数 Dimensions 是否已赋值
                      * @return Dimensions 是否已赋值
+                     * 
                      */
                     bool DimensionsHasBeenSet() const;
 

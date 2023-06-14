@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取验证码应用ID
                      * @return CaptchaAppId 验证码应用ID
+                     * 
                      */
                     int64_t GetCaptchaAppId() const;
 
                     /**
                      * 设置验证码应用ID
-                     * @param CaptchaAppId 验证码应用ID
+                     * @param _captchaAppId 验证码应用ID
+                     * 
                      */
                     void SetCaptchaAppId(const int64_t& _captchaAppId);
 
                     /**
                      * 判断参数 CaptchaAppId 是否已赋值
                      * @return CaptchaAppId 是否已赋值
+                     * 
                      */
                     bool CaptchaAppIdHasBeenSet() const;
 
                     /**
                      * 获取查询开始时间 例如：20200909
                      * @return Start 查询开始时间 例如：20200909
+                     * 
                      */
                     int64_t GetStart() const;
 
                     /**
                      * 设置查询开始时间 例如：20200909
-                     * @param Start 查询开始时间 例如：20200909
+                     * @param _start 查询开始时间 例如：20200909
+                     * 
                      */
                     void SetStart(const int64_t& _start);
 
                     /**
                      * 判断参数 Start 是否已赋值
                      * @return Start 是否已赋值
+                     * 
                      */
                     bool StartHasBeenSet() const;
 
                     /**
                      * 获取查询结束时间 例如：20220314
                      * @return End 查询结束时间 例如：20220314
+                     * 
                      */
                     int64_t GetEnd() const;
 
                     /**
                      * 设置查询结束时间 例如：20220314
-                     * @param End 查询结束时间 例如：20220314
+                     * @param _end 查询结束时间 例如：20220314
+                     * 
                      */
                     void SetEnd(const int64_t& _end);
 
                     /**
                      * 判断参数 End 是否已赋值
                      * @return End 是否已赋值
+                     * 
                      */
                     bool EndHasBeenSet() const;
 

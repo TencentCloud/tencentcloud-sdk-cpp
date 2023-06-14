@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取本地镜像重新漏洞扫描时的任务ID
                      * @return LocalTaskID 本地镜像重新漏洞扫描时的任务ID
+                     * 
                      */
                     int64_t GetLocalTaskID() const;
 
                     /**
                      * 判断参数 LocalTaskID 是否已赋值
                      * @return LocalTaskID 是否已赋值
+                     * 
                      */
                     bool LocalTaskIDHasBeenSet() const;
 
                     /**
                      * 获取仓库镜像重新漏洞扫描时的任务ID
                      * @return RegistryTaskID 仓库镜像重新漏洞扫描时的任务ID
+                     * 
                      */
                     int64_t GetRegistryTaskID() const;
 
                     /**
                      * 判断参数 RegistryTaskID 是否已赋值
                      * @return RegistryTaskID 是否已赋值
+                     * 
                      */
                     bool RegistryTaskIDHasBeenSet() const;
 

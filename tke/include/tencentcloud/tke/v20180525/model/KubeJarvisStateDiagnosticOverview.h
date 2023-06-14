@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalogues 诊断目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateCatalogue> GetCatalogues() const;
 
                     /**
                      * 设置诊断目录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Catalogues 诊断目录
+                     * @param _catalogues 诊断目录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCatalogues(const std::vector<KubeJarvisStateCatalogue>& _catalogues);
 
                     /**
                      * 判断参数 Catalogues 是否已赋值
                      * @return Catalogues 是否已赋值
+                     * 
                      */
                     bool CataloguesHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<KubeJarvisStateStatistic> GetStatistics() const;
 
                     /**
                      * 设置诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Statistics 诊断结果统计
+                     * @param _statistics 诊断结果统计
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatistics(const std::vector<KubeJarvisStateStatistic>& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取快照记录 ID
                      * @return SnapshotId 快照记录 ID
+                     * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
                      * 设置快照记录 ID
-                     * @param SnapshotId 快照记录 ID
+                     * @param _snapshotId 快照记录 ID
+                     * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
 
                     /**
                      * 判断参数 SnapshotId 是否已赋值
                      * @return SnapshotId 是否已赋值
+                     * 
                      */
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
                      * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
                      * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
-                     * @param DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。
+                     * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
                     /**
                      * 判断参数 DomainId 是否已赋值
                      * @return DomainId 是否已赋值
+                     * 
                      */
                     bool DomainIdHasBeenSet() const;
 
                     /**
                      * 获取指定需要回滚的记录
                      * @return RecordList 指定需要回滚的记录
+                     * 
                      */
                     std::vector<SnapshotRecord> GetRecordList() const;
 
                     /**
                      * 设置指定需要回滚的记录
-                     * @param RecordList 指定需要回滚的记录
+                     * @param _recordList 指定需要回滚的记录
+                     * 
                      */
                     void SetRecordList(const std::vector<SnapshotRecord>& _recordList);
 
                     /**
                      * 判断参数 RecordList 是否已赋值
                      * @return RecordList 是否已赋值
+                     * 
                      */
                     bool RecordListHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取容器实例详细信息
                      * @return ContainerInstance 容器实例详细信息
+                     * 
                      */
                     ContainerInstance GetContainerInstance() const;
 
                     /**
                      * 判断参数 ContainerInstance 是否已赋值
                      * @return ContainerInstance 是否已赋值
+                     * 
                      */
                     bool ContainerInstanceHasBeenSet() const;
 

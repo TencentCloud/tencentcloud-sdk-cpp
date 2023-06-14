@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取IECP边缘单元ID
                      * @return EdgeUnitId IECP边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置IECP边缘单元ID
-                     * @param EdgeUnitId IECP边缘单元ID
+                     * @param _edgeUnitId IECP边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取节点ID
                      * @return NodeId 节点ID
+                     * 
                      */
                     uint64_t GetNodeId() const;
 
                     /**
                      * 设置节点ID
-                     * @param NodeId 节点ID
+                     * @param _nodeId 节点ID
+                     * 
                      */
                     void SetNodeId(const uint64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取命名空间
                      * @return Namespace 命名空间
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-                     * @param Namespace 命名空间
+                     * @param _namespace 命名空间
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
                     /**
                      * 获取Pod名称过滤串
                      * @return PodNamePattern Pod名称过滤串
+                     * 
                      */
                     std::string GetPodNamePattern() const;
 
                     /**
                      * 设置Pod名称过滤串
-                     * @param PodNamePattern Pod名称过滤串
+                     * @param _podNamePattern Pod名称过滤串
+                     * 
                      */
                     void SetPodNamePattern(const std::string& _podNamePattern);
 
                     /**
                      * 判断参数 PodNamePattern 是否已赋值
                      * @return PodNamePattern 是否已赋值
+                     * 
                      */
                     bool PodNamePatternHasBeenSet() const;
 

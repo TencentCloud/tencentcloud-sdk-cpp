@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取下衣颜色信息，返回值为以下集合中的一个{ 黑色系, 灰白色系, 彩色} 。
                      * @return Type 下衣颜色信息，返回值为以下集合中的一个{ 黑色系, 灰白色系, 彩色} 。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置下衣颜色信息，返回值为以下集合中的一个{ 黑色系, 灰白色系, 彩色} 。
-                     * @param Type 下衣颜色信息，返回值为以下集合中的一个{ 黑色系, 灰白色系, 彩色} 。
+                     * @param _type 下衣颜色信息，返回值为以下集合中的一个{ 黑色系, 灰白色系, 彩色} 。
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
                      * @return Probability Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
+                     * 
                      */
                     double GetProbability() const;
 
                     /**
                      * 设置Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
-                     * @param Probability Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
+                     * @param _probability Type识别概率值，[0.0,1.0],代表判断正确的概率。如0.8则代表有Type值有80%概率正确。
+                     * 
                      */
                     void SetProbability(const double& _probability);
 
                     /**
                      * 判断参数 Probability 是否已赋值
                      * @return Probability 是否已赋值
+                     * 
                      */
                     bool ProbabilityHasBeenSet() const;
 

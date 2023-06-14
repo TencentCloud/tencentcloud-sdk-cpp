@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取视频智能标签列表。
                      * @return TagSet 视频智能标签列表。
+                     * 
                      */
                     std::vector<MediaAiAnalysisTagItem> GetTagSet() const;
 
                     /**
                      * 设置视频智能标签列表。
-                     * @param TagSet 视频智能标签列表。
+                     * @param _tagSet 视频智能标签列表。
+                     * 
                      */
                     void SetTagSet(const std::vector<MediaAiAnalysisTagItem>& _tagSet);
 
                     /**
                      * 判断参数 TagSet 是否已赋值
                      * @return TagSet 是否已赋值
+                     * 
                      */
                     bool TagSetHasBeenSet() const;
 

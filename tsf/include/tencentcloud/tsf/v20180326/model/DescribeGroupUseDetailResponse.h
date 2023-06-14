@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取日使用统计对象
                      * @return Result 日使用统计对象
+                     * 
                      */
                     GroupDailyUseStatistics GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

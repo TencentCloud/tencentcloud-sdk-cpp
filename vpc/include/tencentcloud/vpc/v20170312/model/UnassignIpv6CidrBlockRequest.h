@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取`VPC`实例`ID`，形如：`vpc-f49l6u0z`。
                      * @return VpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置`VPC`实例`ID`，形如：`vpc-f49l6u0z`。
-                     * @param VpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * @param _vpcId `VPC`实例`ID`，形如：`vpc-f49l6u0z`。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取`IPv6`网段。形如：`3402:4e00:20:1000::/56`。
                      * @return Ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`。
+                     * 
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
                      * 设置`IPv6`网段。形如：`3402:4e00:20:1000::/56`。
-                     * @param Ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`。
+                     * @param _ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`。
+                     * 
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
 
                     /**
                      * 判断参数 Ipv6CidrBlock 是否已赋值
                      * @return Ipv6CidrBlock 是否已赋值
+                     * 
                      */
                     bool Ipv6CidrBlockHasBeenSet() const;
 

@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Name 名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-                     * @param Name 名称
+                     * @param _name 名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述
                      * @return Desc 描述
+                     * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-                     * @param Desc 描述
+                     * @param _desc 描述
+                     * 
                      */
                     void SetDesc(const std::string& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
                     /**
                      * 获取版本
                      * @return Version 版本
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本
-                     * @param Version 版本
+                     * @param _version 版本
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取链接
                      * @return Link 链接
+                     * 
                      */
                     std::string GetLink() const;
 
                     /**
                      * 设置链接
-                     * @param Link 链接
+                     * @param _link 链接
+                     * 
                      */
                     void SetLink(const std::string& _link);
 
                     /**
                      * 判断参数 Link 是否已赋值
                      * @return Link 是否已赋值
+                     * 
                      */
                     bool LinkHasBeenSet() const;
 

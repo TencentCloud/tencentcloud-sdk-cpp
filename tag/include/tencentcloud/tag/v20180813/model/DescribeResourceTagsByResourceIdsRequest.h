@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取业务类型
                      * @return ServiceType 业务类型
+                     * 
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置业务类型
-                     * @param ServiceType 业务类型
+                     * @param _serviceType 业务类型
+                     * 
                      */
                     void SetServiceType(const std::string& _serviceType);
 
                     /**
                      * 判断参数 ServiceType 是否已赋值
                      * @return ServiceType 是否已赋值
+                     * 
                      */
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取资源前缀
                      * @return ResourcePrefix 资源前缀
+                     * 
                      */
                     std::string GetResourcePrefix() const;
 
                     /**
                      * 设置资源前缀
-                     * @param ResourcePrefix 资源前缀
+                     * @param _resourcePrefix 资源前缀
+                     * 
                      */
                     void SetResourcePrefix(const std::string& _resourcePrefix);
 
                     /**
                      * 判断参数 ResourcePrefix 是否已赋值
                      * @return ResourcePrefix 是否已赋值
+                     * 
                      */
                     bool ResourcePrefixHasBeenSet() const;
 
                     /**
                      * 获取资源ID数组，大小不超过50
                      * @return ResourceIds 资源ID数组，大小不超过50
+                     * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 设置资源ID数组，大小不超过50
-                     * @param ResourceIds 资源ID数组，大小不超过50
+                     * @param _resourceIds 资源ID数组，大小不超过50
+                     * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
+                     * 
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取资源所在地域
                      * @return ResourceRegion 资源所在地域
+                     * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在地域
-                     * @param ResourceRegion 资源所在地域
+                     * @param _resourceRegion 资源所在地域
+                     * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
 
                     /**
                      * 判断参数 ResourceRegion 是否已赋值
                      * @return ResourceRegion 是否已赋值
+                     * 
                      */
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认为 0, 必须为Limit参数的整数倍
                      * @return Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @param Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * @param _offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取每页大小，默认为 15
                      * @return Limit 每页大小，默认为 15
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页大小，默认为 15
-                     * @param Limit 每页大小，默认为 15
+                     * @param _limit 每页大小，默认为 15
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

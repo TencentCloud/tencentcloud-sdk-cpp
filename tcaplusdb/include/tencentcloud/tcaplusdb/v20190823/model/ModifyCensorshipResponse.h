@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取集群id
                      * @return ClusterId 集群id
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -60,24 +62,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uins 已加入审批人的uin
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetUins() const;
 
                     /**
                      * 判断参数 Uins 是否已赋值
                      * @return Uins 是否已赋值
+                     * 
                      */
                     bool UinsHasBeenSet() const;
 
                     /**
                      * 获取集群是否开启审核 0-关闭 1-开启
                      * @return Censorship 集群是否开启审核 0-关闭 1-开启
+                     * 
                      */
                     int64_t GetCensorship() const;
 
                     /**
                      * 判断参数 Censorship 是否已赋值
                      * @return Censorship 是否已赋值
+                     * 
                      */
                     bool CensorshipHasBeenSet() const;
 

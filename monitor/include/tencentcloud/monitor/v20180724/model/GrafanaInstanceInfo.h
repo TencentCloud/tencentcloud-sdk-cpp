@@ -50,162 +50,189 @@ namespace TencentCloud
                     /**
                      * 获取实例名
                      * @return InstanceName 实例名
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名
-                     * @param InstanceName 实例名
+                     * @param _instanceName 实例名
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * @param _instanceId 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取地域
                      * @return Region 地域
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-                     * @param Region 地域
+                     * @param _region 地域
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取VPC ID
                      * @return VpcId VPC ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID
-                     * @param VpcId VPC ID
+                     * @param _vpcId VPC ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网 ID 数组
                      * @return SubnetIds 子网 ID 数组
+                     * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网 ID 数组
-                     * @param SubnetIds 子网 ID 数组
+                     * @param _subnetIds 子网 ID 数组
+                     * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
 
                     /**
                      * 判断参数 SubnetIds 是否已赋值
                      * @return SubnetIds 是否已赋值
+                     * 
                      */
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
                      * 获取Grafana 内网地址
                      * @return InternetUrl Grafana 内网地址
+                     * 
                      */
                     std::string GetInternetUrl() const;
 
                     /**
                      * 设置Grafana 内网地址
-                     * @param InternetUrl Grafana 内网地址
+                     * @param _internetUrl Grafana 内网地址
+                     * 
                      */
                     void SetInternetUrl(const std::string& _internetUrl);
 
                     /**
                      * 判断参数 InternetUrl 是否已赋值
                      * @return InternetUrl 是否已赋值
+                     * 
                      */
                     bool InternetUrlHasBeenSet() const;
 
                     /**
                      * 获取Grafana 公网地址
                      * @return InternalUrl Grafana 公网地址
+                     * 
                      */
                     std::string GetInternalUrl() const;
 
                     /**
                      * 设置Grafana 公网地址
-                     * @param InternalUrl Grafana 公网地址
+                     * @param _internalUrl Grafana 公网地址
+                     * 
                      */
                     void SetInternalUrl(const std::string& _internalUrl);
 
                     /**
                      * 判断参数 InternalUrl 是否已赋值
                      * @return InternalUrl 是否已赋值
+                     * 
                      */
                     bool InternalUrlHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedAt 创建时间
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
+                     * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）
                      * @return InstanceStatus 运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）
+                     * 
                      */
                     int64_t GetInstanceStatus() const;
 
                     /**
                      * 设置运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）
-                     * @param InstanceStatus 运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）
+                     * @param _instanceStatus 运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）
+                     * 
                      */
                     void SetInstanceStatus(const int64_t& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
+                     * 
                      */
                     bool InstanceStatusHasBeenSet() const;
 
@@ -214,182 +241,212 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSpecification 实例的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<PrometheusTag> GetTagSpecification() const;
 
                     /**
                      * 设置实例的标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TagSpecification 实例的标签
+                     * @param _tagSpecification 实例的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTagSpecification(const std::vector<PrometheusTag>& _tagSpecification);
 
                     /**
                      * 判断参数 TagSpecification 是否已赋值
                      * @return TagSpecification 是否已赋值
+                     * 
                      */
                     bool TagSpecificationHasBeenSet() const;
 
                     /**
                      * 获取实例的可用区
                      * @return Zone 实例的可用区
+                     * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置实例的可用区
-                     * @param Zone 实例的可用区
+                     * @param _zone 实例的可用区
+                     * 
                      */
                     void SetZone(const std::string& _zone);
 
                     /**
                      * 判断参数 Zone 是否已赋值
                      * @return Zone 是否已赋值
+                     * 
                      */
                     bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取计费模式（1:包年包月）
                      * @return InstanceChargeType 计费模式（1:包年包月）
+                     * 
                      */
                     int64_t GetInstanceChargeType() const;
 
                     /**
                      * 设置计费模式（1:包年包月）
-                     * @param InstanceChargeType 计费模式（1:包年包月）
+                     * @param _instanceChargeType 计费模式（1:包年包月）
+                     * 
                      */
                     void SetInstanceChargeType(const int64_t& _instanceChargeType);
 
                     /**
                      * 判断参数 InstanceChargeType 是否已赋值
                      * @return InstanceChargeType 是否已赋值
+                     * 
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
                      * 获取VPC 名称
                      * @return VpcName VPC 名称
+                     * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置VPC 名称
-                     * @param VpcName VPC 名称
+                     * @param _vpcName VPC 名称
+                     * 
                      */
                     void SetVpcName(const std::string& _vpcName);
 
                     /**
                      * 判断参数 VpcName 是否已赋值
                      * @return VpcName 是否已赋值
+                     * 
                      */
                     bool VpcNameHasBeenSet() const;
 
                     /**
                      * 获取子网名称
                      * @return SubnetName 子网名称
+                     * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网名称
-                     * @param SubnetName 子网名称
+                     * @param _subnetName 子网名称
+                     * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
 
                     /**
                      * 判断参数 SubnetName 是否已赋值
                      * @return SubnetName 是否已赋值
+                     * 
                      */
                     bool SubnetNameHasBeenSet() const;
 
                     /**
                      * 获取地域 ID
                      * @return RegionId 地域 ID
+                     * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域 ID
-                     * @param RegionId 地域 ID
+                     * @param _regionId 地域 ID
+                     * 
                      */
                     void SetRegionId(const int64_t& _regionId);
 
                     /**
                      * 判断参数 RegionId 是否已赋值
                      * @return RegionId 是否已赋值
+                     * 
                      */
                     bool RegionIdHasBeenSet() const;
 
                     /**
                      * 获取可访问此实例的完整 URL
                      * @return RootUrl 可访问此实例的完整 URL
+                     * 
                      */
                     std::string GetRootUrl() const;
 
                     /**
                      * 设置可访问此实例的完整 URL
-                     * @param RootUrl 可访问此实例的完整 URL
+                     * @param _rootUrl 可访问此实例的完整 URL
+                     * 
                      */
                     void SetRootUrl(const std::string& _rootUrl);
 
                     /**
                      * 判断参数 RootUrl 是否已赋值
                      * @return RootUrl 是否已赋值
+                     * 
                      */
                     bool RootUrlHasBeenSet() const;
 
                     /**
                      * 获取是否开启 SSO
                      * @return EnableSSO 是否开启 SSO
+                     * 
                      */
                     bool GetEnableSSO() const;
 
                     /**
                      * 设置是否开启 SSO
-                     * @param EnableSSO 是否开启 SSO
+                     * @param _enableSSO 是否开启 SSO
+                     * 
                      */
                     void SetEnableSSO(const bool& _enableSSO);
 
                     /**
                      * 判断参数 EnableSSO 是否已赋值
                      * @return EnableSSO 是否已赋值
+                     * 
                      */
                     bool EnableSSOHasBeenSet() const;
 
                     /**
                      * 获取版本号
                      * @return Version 版本号
+                     * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本号
-                     * @param Version 版本号
+                     * @param _version 版本号
+                     * 
                      */
                     void SetVersion(const std::string& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取SSO登录时是否开启cam鉴权
                      * @return EnableSSOCamCheck SSO登录时是否开启cam鉴权
+                     * 
                      */
                     bool GetEnableSSOCamCheck() const;
 
                     /**
                      * 设置SSO登录时是否开启cam鉴权
-                     * @param EnableSSOCamCheck SSO登录时是否开启cam鉴权
+                     * @param _enableSSOCamCheck SSO登录时是否开启cam鉴权
+                     * 
                      */
                     void SetEnableSSOCamCheck(const bool& _enableSSOCamCheck);
 
                     /**
                      * 判断参数 EnableSSOCamCheck 是否已赋值
                      * @return EnableSSOCamCheck 是否已赋值
+                     * 
                      */
                     bool EnableSSOCamCheckHasBeenSet() const;
 

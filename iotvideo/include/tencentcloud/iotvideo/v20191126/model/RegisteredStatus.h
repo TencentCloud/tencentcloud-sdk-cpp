@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取终端用户的唯一ID
                      * @return CunionId 终端用户的唯一ID
+                     * 
                      */
                     std::string GetCunionId() const;
 
                     /**
                      * 设置终端用户的唯一ID
-                     * @param CunionId 终端用户的唯一ID
+                     * @param _cunionId 终端用户的唯一ID
+                     * 
                      */
                     void SetCunionId(const std::string& _cunionId);
 
                     /**
                      * 判断参数 CunionId 是否已赋值
                      * @return CunionId 是否已赋值
+                     * 
                      */
                     bool CunionIdHasBeenSet() const;
 
                     /**
                      * 获取注册状态
                      * @return IsRegisted 注册状态
+                     * 
                      */
                     bool GetIsRegisted() const;
 
                     /**
                      * 设置注册状态
-                     * @param IsRegisted 注册状态
+                     * @param _isRegisted 注册状态
+                     * 
                      */
                     void SetIsRegisted(const bool& _isRegisted);
 
                     /**
                      * 判断参数 IsRegisted 是否已赋值
                      * @return IsRegisted 是否已赋值
+                     * 
                      */
                     bool IsRegistedHasBeenSet() const;
 

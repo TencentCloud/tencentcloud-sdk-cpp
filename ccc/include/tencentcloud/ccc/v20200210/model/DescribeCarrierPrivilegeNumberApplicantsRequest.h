@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取实例Id
                      * @return SdkAppId 实例Id
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置实例Id
-                     * @param SdkAppId 实例Id
+                     * @param _sdkAppId 实例Id
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取默认0，从0开始
                      * @return PageNumber 默认0，从0开始
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置默认0，从0开始
-                     * @param PageNumber 默认0，从0开始
+                     * @param _pageNumber 默认0，从0开始
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取默认10，最大100
                      * @return PageSize 默认10，最大100
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置默认10，最大100
-                     * @param PageSize 默认10，最大100
+                     * @param _pageSize 默认10，最大100
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)
                      * @return Filters 筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)
-                     * @param Filters 筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)
+                     * @param _filters 筛选条件,Name支持ApplicantId,PhoneNumber(按号码模糊查找)
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

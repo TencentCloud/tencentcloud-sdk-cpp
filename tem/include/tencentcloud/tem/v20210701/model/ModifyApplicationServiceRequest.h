@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取服务id
                      * @return ApplicationId 服务id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置服务id
-                     * @param ApplicationId 服务id
+                     * @param _applicationId 服务id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取环境ID
                      * @return EnvironmentId 环境ID
+                     * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvironmentId 环境ID
+                     * @param _environmentId 环境ID
+                     * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
 
                     /**
                      * 判断参数 EnvironmentId 是否已赋值
                      * @return EnvironmentId 是否已赋值
+                     * 
                      */
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
                      * 获取来源渠道
                      * @return SourceChannel 来源渠道
+                     * 
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
                      * 设置来源渠道
-                     * @param SourceChannel 来源渠道
+                     * @param _sourceChannel 来源渠道
+                     * 
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
                     /**
                      * 判断参数 SourceChannel 是否已赋值
                      * @return SourceChannel 是否已赋值
+                     * 
                      */
                     bool SourceChannelHasBeenSet() const;
 
                     /**
                      * 获取全量访问方式设置
                      * @return Service 全量访问方式设置
+                     * 
                      */
                     EksService GetService() const;
 
                     /**
                      * 设置全量访问方式设置
-                     * @param Service 全量访问方式设置
+                     * @param _service 全量访问方式设置
+                     * 
                      */
                     void SetService(const EksService& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
                     /**
                      * 获取单条访问方式设置
                      * @return Data 单条访问方式设置
+                     * 
                      */
                     ServicePortMapping GetData() const;
 
                     /**
                      * 设置单条访问方式设置
-                     * @param Data 单条访问方式设置
+                     * @param _data 单条访问方式设置
+                     * 
                      */
                     void SetData(const ServicePortMapping& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

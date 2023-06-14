@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLog() const;
 
                     /**
                      * 设置日志内容
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Log 日志内容
+                     * @param _log 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
+                     * 
                      */
                     bool LogHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgId 日志组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPkgId() const;
 
                     /**
                      * 设置日志组Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PkgId 日志组Id
+                     * @param _pkgId 日志组Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPkgId(const std::string& _pkgId);
 
                     /**
                      * 判断参数 PkgId 是否已赋值
                      * @return PkgId 是否已赋值
+                     * 
                      */
                     bool PkgIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PkgLogId 日志Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPkgLogId() const;
 
                     /**
                      * 设置日志Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PkgLogId 日志Id
+                     * @param _pkgLogId 日志Id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPkgLogId(const std::string& _pkgLogId);
 
                     /**
                      * 判断参数 PkgLogId 是否已赋值
                      * @return PkgLogId 是否已赋值
+                     * 
                      */
                     bool PkgLogIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetTime() const;
 
                     /**
                      * 设置时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Time 时间
+                     * @param _time 时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTime(const uint64_t& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName 日志所属的容器名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置日志所属的容器名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerName 日志所属的容器名
+                     * @param _containerName 日志所属的容器名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 

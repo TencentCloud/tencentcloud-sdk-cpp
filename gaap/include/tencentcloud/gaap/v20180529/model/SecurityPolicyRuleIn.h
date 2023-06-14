@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取请求来源IP或IP段。
                      * @return SourceCidr 请求来源IP或IP段。
+                     * 
                      */
                     std::string GetSourceCidr() const;
 
                     /**
                      * 设置请求来源IP或IP段。
-                     * @param SourceCidr 请求来源IP或IP段。
+                     * @param _sourceCidr 请求来源IP或IP段。
+                     * 
                      */
                     void SetSourceCidr(const std::string& _sourceCidr);
 
                     /**
                      * 判断参数 SourceCidr 是否已赋值
                      * @return SourceCidr 是否已赋值
+                     * 
                      */
                     bool SourceCidrHasBeenSet() const;
 
                     /**
                      * 获取策略：允许（ACCEPT）或拒绝（DROP）
                      * @return Action 策略：允许（ACCEPT）或拒绝（DROP）
+                     * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置策略：允许（ACCEPT）或拒绝（DROP）
-                     * @param Action 策略：允许（ACCEPT）或拒绝（DROP）
+                     * @param _action 策略：允许（ACCEPT）或拒绝（DROP）
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
                     /**
                      * 获取规则别名
                      * @return AliasName 规则别名
+                     * 
                      */
                     std::string GetAliasName() const;
 
                     /**
                      * 设置规则别名
-                     * @param AliasName 规则别名
+                     * @param _aliasName 规则别名
+                     * 
                      */
                     void SetAliasName(const std::string& _aliasName);
 
                     /**
                      * 判断参数 AliasName 是否已赋值
                      * @return AliasName 是否已赋值
+                     * 
                      */
                     bool AliasNameHasBeenSet() const;
 
                     /**
                      * 获取协议：TCP或UDP，ALL表示所有协议
                      * @return Protocol 协议：TCP或UDP，ALL表示所有协议
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议：TCP或UDP，ALL表示所有协议
-                     * @param Protocol 协议：TCP或UDP，ALL表示所有协议
+                     * @param _protocol 协议：TCP或UDP，ALL表示所有协议
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
@@ -129,6 +141,7 @@ namespace TencentCloud
 多个端口: 80,443
 连续端口: 3306-20000
 所有端口: ALL
+                     * 
                      */
                     std::string GetDestPortRange() const;
 
@@ -138,17 +151,19 @@ namespace TencentCloud
 多个端口: 80,443
 连续端口: 3306-20000
 所有端口: ALL
-                     * @param DestPortRange 目标端口，填写格式举例：
+                     * @param _destPortRange 目标端口，填写格式举例：
 单个端口: 80
 多个端口: 80,443
 连续端口: 3306-20000
 所有端口: ALL
+                     * 
                      */
                     void SetDestPortRange(const std::string& _destPortRange);
 
                     /**
                      * 判断参数 DestPortRange 是否已赋值
                      * @return DestPortRange 是否已赋值
+                     * 
                      */
                     bool DestPortRangeHasBeenSet() const;
 

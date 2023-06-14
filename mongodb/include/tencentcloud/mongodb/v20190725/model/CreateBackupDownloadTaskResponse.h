@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取下载任务状态
                      * @return Tasks 下载任务状态
+                     * 
                      */
                     std::vector<BackupDownloadTaskStatus> GetTasks() const;
 
                     /**
                      * 判断参数 Tasks 是否已赋值
                      * @return Tasks 是否已赋值
+                     * 
                      */
                     bool TasksHasBeenSet() const;
 

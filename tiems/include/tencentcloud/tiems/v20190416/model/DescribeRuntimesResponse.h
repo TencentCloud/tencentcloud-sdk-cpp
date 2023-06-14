@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取TIEMS支持的运行环境列表
                      * @return Runtimes TIEMS支持的运行环境列表
+                     * 
                      */
                     std::vector<Runtime> GetRuntimes() const;
 
                     /**
                      * 判断参数 Runtimes 是否已赋值
                      * @return Runtimes 是否已赋值
+                     * 
                      */
                     bool RuntimesHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAccess 用户对runtime对权限
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetUserAccess() const;
 
                     /**
                      * 判断参数 UserAccess 是否已赋值
                      * @return UserAccess 是否已赋值
+                     * 
                      */
                     bool UserAccessHasBeenSet() const;
 

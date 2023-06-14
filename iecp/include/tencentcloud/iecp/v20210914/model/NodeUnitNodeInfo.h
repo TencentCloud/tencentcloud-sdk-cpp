@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取节点ID
                      * @return Id 节点ID
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置节点ID
-                     * @param Id 节点ID
+                     * @param _id 节点ID
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取节点状态  NodeStatusHealthy (健康)/NodeStatusAbnormal (异常)/NodeStatusOffline (下线)/NodeStatusNotActivated (未激活
                      * @return Status 节点状态  NodeStatusHealthy (健康)/NodeStatusAbnormal (异常)/NodeStatusOffline (下线)/NodeStatusNotActivated (未激活
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点状态  NodeStatusHealthy (健康)/NodeStatusAbnormal (异常)/NodeStatusOffline (下线)/NodeStatusNotActivated (未激活
-                     * @param Status 节点状态  NodeStatusHealthy (健康)/NodeStatusAbnormal (异常)/NodeStatusOffline (下线)/NodeStatusNotActivated (未激活
+                     * @param _status 节点状态  NodeStatusHealthy (健康)/NodeStatusAbnormal (异常)/NodeStatusOffline (下线)/NodeStatusNotActivated (未激活
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取节点名称
                      * @return NodeName 节点名称
+                     * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-                     * @param NodeName 节点名称
+                     * @param _nodeName 节点名称
+                     * 
                      */
                     void SetNodeName(const std::string& _nodeName);
 
                     /**
                      * 判断参数 NodeName 是否已赋值
                      * @return NodeName 是否已赋值
+                     * 
                      */
                     bool NodeNameHasBeenSet() const;
 
                     /**
                      * 获取内网节点IP
                      * @return InternalIP 内网节点IP
+                     * 
                      */
                     std::string GetInternalIP() const;
 
                     /**
                      * 设置内网节点IP
-                     * @param InternalIP 内网节点IP
+                     * @param _internalIP 内网节点IP
+                     * 
                      */
                     void SetInternalIP(const std::string& _internalIP);
 
                     /**
                      * 判断参数 InternalIP 是否已赋值
                      * @return InternalIP 是否已赋值
+                     * 
                      */
                     bool InternalIPHasBeenSet() const;
 

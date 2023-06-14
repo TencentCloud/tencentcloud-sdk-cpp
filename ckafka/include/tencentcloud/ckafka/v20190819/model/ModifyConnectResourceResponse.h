@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取连接源的Id
                      * @return Result 连接源的Id
+                     * 
                      */
                     ConnectResourceResourceIdResp GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

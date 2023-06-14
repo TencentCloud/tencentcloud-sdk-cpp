@@ -49,198 +49,231 @@ namespace TencentCloud
                     /**
                      * 获取任务ID。
                      * @return Id 任务ID。
+                     * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置任务ID。
-                     * @param Id 任务ID。
+                     * @param _id 任务ID。
+                     * 
                      */
                     void SetId(const int64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取任务状态，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。
                      * @return Status 任务状态，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。
-                     * @param Status 任务状态，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。
+                     * @param _status 任务状态，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
                      * @return SqlType SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+                     * 
                      */
                     std::string GetSqlType() const;
 
                     /**
                      * 设置SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
-                     * @param SqlType SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+                     * @param _sqlType SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。
+                     * 
                      */
                     void SetSqlType(const std::string& _sqlType);
 
                     /**
                      * 判断参数 SqlType 是否已赋值
                      * @return SqlType 是否已赋值
+                     * 
                      */
                     bool SqlTypeHasBeenSet() const;
 
                     /**
                      * 获取筛选SQL的关键词，多个关键词用英文逗号拼接。
                      * @return OriginKeys 筛选SQL的关键词，多个关键词用英文逗号拼接。
+                     * 
                      */
                     std::string GetOriginKeys() const;
 
                     /**
                      * 设置筛选SQL的关键词，多个关键词用英文逗号拼接。
-                     * @param OriginKeys 筛选SQL的关键词，多个关键词用英文逗号拼接。
+                     * @param _originKeys 筛选SQL的关键词，多个关键词用英文逗号拼接。
+                     * 
                      */
                     void SetOriginKeys(const std::string& _originKeys);
 
                     /**
                      * 判断参数 OriginKeys 是否已赋值
                      * @return OriginKeys 是否已赋值
+                     * 
                      */
                     bool OriginKeysHasBeenSet() const;
 
                     /**
                      * 获取筛选SQL的规则。
                      * @return OriginRule 筛选SQL的规则。
+                     * 
                      */
                     std::string GetOriginRule() const;
 
                     /**
                      * 设置筛选SQL的规则。
-                     * @param OriginRule 筛选SQL的规则。
+                     * @param _originRule 筛选SQL的规则。
+                     * 
                      */
                     void SetOriginRule(const std::string& _originRule);
 
                     /**
                      * 判断参数 OriginRule 是否已赋值
                      * @return OriginRule 是否已赋值
+                     * 
                      */
                     bool OriginRuleHasBeenSet() const;
 
                     /**
                      * 获取已拒绝SQL数目。
                      * @return RejectedSqlCount 已拒绝SQL数目。
+                     * 
                      */
                     int64_t GetRejectedSqlCount() const;
 
                     /**
                      * 设置已拒绝SQL数目。
-                     * @param RejectedSqlCount 已拒绝SQL数目。
+                     * @param _rejectedSqlCount 已拒绝SQL数目。
+                     * 
                      */
                     void SetRejectedSqlCount(const int64_t& _rejectedSqlCount);
 
                     /**
                      * 判断参数 RejectedSqlCount 是否已赋值
                      * @return RejectedSqlCount 是否已赋值
+                     * 
                      */
                     bool RejectedSqlCountHasBeenSet() const;
 
                     /**
                      * 获取当前并发数。
                      * @return CurrentConcurrency 当前并发数。
+                     * 
                      */
                     int64_t GetCurrentConcurrency() const;
 
                     /**
                      * 设置当前并发数。
-                     * @param CurrentConcurrency 当前并发数。
+                     * @param _currentConcurrency 当前并发数。
+                     * 
                      */
                     void SetCurrentConcurrency(const int64_t& _currentConcurrency);
 
                     /**
                      * 判断参数 CurrentConcurrency 是否已赋值
                      * @return CurrentConcurrency 是否已赋值
+                     * 
                      */
                     bool CurrentConcurrencyHasBeenSet() const;
 
                     /**
                      * 获取最大并发数。
                      * @return MaxConcurrency 最大并发数。
+                     * 
                      */
                     int64_t GetMaxConcurrency() const;
 
                     /**
                      * 设置最大并发数。
-                     * @param MaxConcurrency 最大并发数。
+                     * @param _maxConcurrency 最大并发数。
+                     * 
                      */
                     void SetMaxConcurrency(const int64_t& _maxConcurrency);
 
                     /**
                      * 判断参数 MaxConcurrency 是否已赋值
                      * @return MaxConcurrency 是否已赋值
+                     * 
                      */
                     bool MaxConcurrencyHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间。
                      * @return CreateTime 任务创建时间。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间。
-                     * @param CreateTime 任务创建时间。
+                     * @param _createTime 任务创建时间。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取当前时间。
                      * @return CurrentTime 当前时间。
+                     * 
                      */
                     std::string GetCurrentTime() const;
 
                     /**
                      * 设置当前时间。
-                     * @param CurrentTime 当前时间。
+                     * @param _currentTime 当前时间。
+                     * 
                      */
                     void SetCurrentTime(const std::string& _currentTime);
 
                     /**
                      * 判断参数 CurrentTime 是否已赋值
                      * @return CurrentTime 是否已赋值
+                     * 
                      */
                     bool CurrentTimeHasBeenSet() const;
 
                     /**
                      * 获取限流过期时间。
                      * @return ExpireTime 限流过期时间。
+                     * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置限流过期时间。
-                     * @param ExpireTime 限流过期时间。
+                     * @param _expireTime 限流过期时间。
+                     * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
                     /**
                      * 判断参数 ExpireTime 是否已赋值
                      * @return ExpireTime 是否已赋值
+                     * 
                      */
                     bool ExpireTimeHasBeenSet() const;
 

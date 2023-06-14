@@ -47,36 +47,42 @@ namespace TencentCloud
                     /**
                      * 获取应用信息，此接口Agent.AppId必填
                      * @return Agent 应用信息，此接口Agent.AppId必填
+                     * 
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用信息，此接口Agent.AppId必填
-                     * @param Agent 应用信息，此接口Agent.AppId必填
+                     * @param _agent 应用信息，此接口Agent.AppId必填
+                     * 
                      */
                     void SetAgent(const Agent& _agent);
 
                     /**
                      * 判断参数 Agent 是否已赋值
                      * @return Agent 是否已赋值
+                     * 
                      */
                     bool AgentHasBeenSet() const;
 
                     /**
                      * 获取开始时间，例如：2021-03-21
                      * @return StartDate 开始时间，例如：2021-03-21
+                     * 
                      */
                     std::string GetStartDate() const;
 
                     /**
                      * 设置开始时间，例如：2021-03-21
-                     * @param StartDate 开始时间，例如：2021-03-21
+                     * @param _startDate 开始时间，例如：2021-03-21
+                     * 
                      */
                     void SetStartDate(const std::string& _startDate);
 
                     /**
                      * 判断参数 StartDate 是否已赋值
                      * @return StartDate 是否已赋值
+                     * 
                      */
                     bool StartDateHasBeenSet() const;
 
@@ -85,20 +91,23 @@ namespace TencentCloud
 开始时间到结束时间的区间长度小于等于90天。
                      * @return EndDate 结束时间，例如：2021-06-21；
 开始时间到结束时间的区间长度小于等于90天。
+                     * 
                      */
                     std::string GetEndDate() const;
 
                     /**
                      * 设置结束时间，例如：2021-06-21；
 开始时间到结束时间的区间长度小于等于90天。
-                     * @param EndDate 结束时间，例如：2021-06-21；
+                     * @param _endDate 结束时间，例如：2021-06-21；
 开始时间到结束时间的区间长度小于等于90天。
+                     * 
                      */
                     void SetEndDate(const std::string& _endDate);
 
                     /**
                      * 判断参数 EndDate 是否已赋值
                      * @return EndDate 是否已赋值
+                     * 
                      */
                     bool EndDateHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
                      * @return NeedAggregate 是否汇总数据，默认不汇总。
 不汇总：返回在统计区间内第三方平台下所有企业的每日明细，即每个企业N条数据，N为统计天数；
 汇总：返回在统计区间内第三方平台下所有企业的汇总后数据，即每个企业一条数据；
+                     * 
                      */
                     bool GetNeedAggregate() const;
 
@@ -116,69 +126,80 @@ namespace TencentCloud
                      * 设置是否汇总数据，默认不汇总。
 不汇总：返回在统计区间内第三方平台下所有企业的每日明细，即每个企业N条数据，N为统计天数；
 汇总：返回在统计区间内第三方平台下所有企业的汇总后数据，即每个企业一条数据；
-                     * @param NeedAggregate 是否汇总数据，默认不汇总。
+                     * @param _needAggregate 是否汇总数据，默认不汇总。
 不汇总：返回在统计区间内第三方平台下所有企业的每日明细，即每个企业N条数据，N为统计天数；
 汇总：返回在统计区间内第三方平台下所有企业的汇总后数据，即每个企业一条数据；
+                     * 
                      */
                     void SetNeedAggregate(const bool& _needAggregate);
 
                     /**
                      * 判断参数 NeedAggregate 是否已赋值
                      * @return NeedAggregate 是否已赋值
+                     * 
                      */
                     bool NeedAggregateHasBeenSet() const;
 
                     /**
                      * 获取单次返回的最多条目数量。默认为1000，且不能超过1000。
                      * @return Limit 单次返回的最多条目数量。默认为1000，且不能超过1000。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置单次返回的最多条目数量。默认为1000，且不能超过1000。
-                     * @param Limit 单次返回的最多条目数量。默认为1000，且不能超过1000。
+                     * @param _limit 单次返回的最多条目数量。默认为1000，且不能超过1000。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取偏移量，默认是0。
                      * @return Offset 偏移量，默认是0。
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置偏移量，默认是0。
-                     * @param Offset 偏移量，默认是0。
+                     * @param _offset 偏移量，默认是0。
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
                      * @return Operator 暂未开放
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置暂未开放
-                     * @param Operator 暂未开放
+                     * @param _operator 暂未开放
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 

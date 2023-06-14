@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取模块名，这里填“monitor”
                      * @return Module 模块名，这里填“monitor”
+                     * 
                      */
                     std::string GetModule() const;
 
                     /**
                      * 设置模块名，这里填“monitor”
-                     * @param Module 模块名，这里填“monitor”
+                     * @param _module 模块名，这里填“monitor”
+                     * 
                      */
                     void SetModule(const std::string& _module);
 
                     /**
                      * 判断参数 Module 是否已赋值
                      * @return Module 是否已赋值
+                     * 
                      */
                     bool ModuleHasBeenSet() const;
 
                     /**
                      * 获取告警策略 ID
                      * @return PolicyId 告警策略 ID
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置告警策略 ID
-                     * @param PolicyId 告警策略 ID
+                     * @param _policyId 告警策略 ID
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取告警策略触发任务列表，空数据代表解绑
                      * @return TriggerTasks 告警策略触发任务列表，空数据代表解绑
+                     * 
                      */
                     std::vector<AlarmPolicyTriggerTask> GetTriggerTasks() const;
 
                     /**
                      * 设置告警策略触发任务列表，空数据代表解绑
-                     * @param TriggerTasks 告警策略触发任务列表，空数据代表解绑
+                     * @param _triggerTasks 告警策略触发任务列表，空数据代表解绑
+                     * 
                      */
                     void SetTriggerTasks(const std::vector<AlarmPolicyTriggerTask>& _triggerTasks);
 
                     /**
                      * 判断参数 TriggerTasks 是否已赋值
                      * @return TriggerTasks 是否已赋值
+                     * 
                      */
                     bool TriggerTasksHasBeenSet() const;
 

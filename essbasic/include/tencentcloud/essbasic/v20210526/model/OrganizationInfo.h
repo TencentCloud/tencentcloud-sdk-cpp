@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取用户在渠道的机构编号
                      * @return OrganizationOpenId 用户在渠道的机构编号
+                     * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
                      * 设置用户在渠道的机构编号
-                     * @param OrganizationOpenId 用户在渠道的机构编号
+                     * @param _organizationOpenId 用户在渠道的机构编号
+                     * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
                     /**
                      * 判断参数 OrganizationOpenId 是否已赋值
                      * @return OrganizationOpenId 是否已赋值
+                     * 
                      */
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
                      * 获取机构在平台的编号
                      * @return OrganizationId 机构在平台的编号
+                     * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
                      * 设置机构在平台的编号
-                     * @param OrganizationId 机构在平台的编号
+                     * @param _organizationId 机构在平台的编号
+                     * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
 
                     /**
                      * 判断参数 OrganizationId 是否已赋值
                      * @return OrganizationId 是否已赋值
+                     * 
                      */
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
                      * 获取用户渠道
                      * @return Channel 用户渠道
+                     * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置用户渠道
-                     * @param Channel 用户渠道
+                     * @param _channel 用户渠道
+                     * 
                      */
                     void SetChannel(const std::string& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
                     /**
                      * 获取用户真实的IP
                      * @return ClientIp 用户真实的IP
+                     * @deprecated
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置用户真实的IP
-                     * @param ClientIp 用户真实的IP
+                     * @param _clientIp 用户真实的IP
+                     * @deprecated
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * @deprecated
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取机构的代理IP
                      * @return ProxyIp 机构的代理IP
+                     * @deprecated
                      */
                     std::string GetProxyIp() const;
 
                     /**
                      * 设置机构的代理IP
-                     * @param ProxyIp 机构的代理IP
+                     * @param _proxyIp 机构的代理IP
+                     * @deprecated
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
                     /**
                      * 判断参数 ProxyIp 是否已赋值
                      * @return ProxyIp 是否已赋值
+                     * @deprecated
                      */
                     bool ProxyIpHasBeenSet() const;
 

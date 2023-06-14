@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取转自适应码流规格。
                      * @return Definition 转自适应码流规格。
+                     * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置转自适应码流规格。
-                     * @param Definition 转自适应码流规格。
+                     * @param _definition 转自适应码流规格。
+                     * 
                      */
                     void SetDefinition(const int64_t& _definition);
 
                     /**
                      * 判断参数 Definition 是否已赋值
                      * @return Definition 是否已赋值
+                     * 
                      */
                     bool DefinitionHasBeenSet() const;
 
                     /**
                      * 获取打包格式，可能为 HLS和 MPEG-DASH 两种。
                      * @return Package 打包格式，可能为 HLS和 MPEG-DASH 两种。
+                     * 
                      */
                     std::string GetPackage() const;
 
                     /**
                      * 设置打包格式，可能为 HLS和 MPEG-DASH 两种。
-                     * @param Package 打包格式，可能为 HLS和 MPEG-DASH 两种。
+                     * @param _package 打包格式，可能为 HLS和 MPEG-DASH 两种。
+                     * 
                      */
                     void SetPackage(const std::string& _package);
 
                     /**
                      * 判断参数 Package 是否已赋值
                      * @return Package 是否已赋值
+                     * 
                      */
                     bool PackageHasBeenSet() const;
 
                     /**
                      * 获取播放路径。
                      * @return Path 播放路径。
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置播放路径。
-                     * @param Path 播放路径。
+                     * @param _path 播放路径。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取自适应码流文件的存储位置。
                      * @return Storage 自适应码流文件的存储位置。
+                     * 
                      */
                     TaskOutputStorage GetStorage() const;
 
                     /**
                      * 设置自适应码流文件的存储位置。
-                     * @param Storage 自适应码流文件的存储位置。
+                     * @param _storage 自适应码流文件的存储位置。
+                     * 
                      */
                     void SetStorage(const TaskOutputStorage& _storage);
 
                     /**
                      * 判断参数 Storage 是否已赋值
                      * @return Storage 是否已赋值
+                     * 
                      */
                     bool StorageHasBeenSet() const;
 

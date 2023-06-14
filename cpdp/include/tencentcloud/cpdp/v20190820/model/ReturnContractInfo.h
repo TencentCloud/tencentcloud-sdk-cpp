@@ -52,54 +52,63 @@ namespace TencentCloud
                     /**
                      * 获取合约信息
                      * @return ContractInfo 合约信息
+                     * 
                      */
                     ContractInfo GetContractInfo() const;
 
                     /**
                      * 设置合约信息
-                     * @param ContractInfo 合约信息
+                     * @param _contractInfo 合约信息
+                     * 
                      */
                     void SetContractInfo(const ContractInfo& _contractInfo);
 
                     /**
                      * 判断参数 ContractInfo 是否已赋值
                      * @return ContractInfo 是否已赋值
+                     * 
                      */
                     bool ContractInfoHasBeenSet() const;
 
                     /**
                      * 获取米大师内部生成的合约信息
                      * @return ChannelReturnContractInfo 米大师内部生成的合约信息
+                     * 
                      */
                     ChannelReturnContractInfo GetChannelReturnContractInfo() const;
 
                     /**
                      * 设置米大师内部生成的合约信息
-                     * @param ChannelReturnContractInfo 米大师内部生成的合约信息
+                     * @param _channelReturnContractInfo 米大师内部生成的合约信息
+                     * 
                      */
                     void SetChannelReturnContractInfo(const ChannelReturnContractInfo& _channelReturnContractInfo);
 
                     /**
                      * 判断参数 ChannelReturnContractInfo 是否已赋值
                      * @return ChannelReturnContractInfo 是否已赋值
+                     * 
                      */
                     bool ChannelReturnContractInfoHasBeenSet() const;
 
                     /**
                      * 获取第三方渠道合约信息
                      * @return ExternalReturnContractInfo 第三方渠道合约信息
+                     * 
                      */
                     ExternalReturnContractInfo GetExternalReturnContractInfo() const;
 
                     /**
                      * 设置第三方渠道合约信息
-                     * @param ExternalReturnContractInfo 第三方渠道合约信息
+                     * @param _externalReturnContractInfo 第三方渠道合约信息
+                     * 
                      */
                     void SetExternalReturnContractInfo(const ExternalReturnContractInfo& _externalReturnContractInfo);
 
                     /**
                      * 判断参数 ExternalReturnContractInfo 是否已赋值
                      * @return ExternalReturnContractInfo 是否已赋值
+                     * 
                      */
                     bool ExternalReturnContractInfoHasBeenSet() const;
 

@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取文件系统id
                      * @return FileSystemId 文件系统id
+                     * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
                      * 设置文件系统id
-                     * @param FileSystemId 文件系统id
+                     * @param _fileSystemId 文件系统id
+                     * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
 
                     /**
                      * 判断参数 FileSystemId 是否已赋值
                      * @return FileSystemId 是否已赋值
+                     * 
                      */
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
                      * 获取快照名称
                      * @return SnapshotName 快照名称
+                     * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
                      * 设置快照名称
-                     * @param SnapshotName 快照名称
+                     * @param _snapshotName 快照名称
+                     * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
 
                     /**
                      * 判断参数 SnapshotName 是否已赋值
                      * @return SnapshotName 是否已赋值
+                     * 
                      */
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
                      * 获取快照标签
                      * @return ResourceTags 快照标签
+                     * 
                      */
                     std::vector<TagInfo> GetResourceTags() const;
 
                     /**
                      * 设置快照标签
-                     * @param ResourceTags 快照标签
+                     * @param _resourceTags 快照标签
+                     * 
                      */
                     void SetResourceTags(const std::vector<TagInfo>& _resourceTags);
 
                     /**
                      * 判断参数 ResourceTags 是否已赋值
                      * @return ResourceTags 是否已赋值
+                     * 
                      */
                     bool ResourceTagsHasBeenSet() const;
 

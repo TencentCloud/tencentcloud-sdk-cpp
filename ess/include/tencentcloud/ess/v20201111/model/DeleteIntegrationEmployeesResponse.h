@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取员工删除数据
                      * @return DeleteEmployeeResult 员工删除数据
+                     * 
                      */
                     DeleteStaffsResult GetDeleteEmployeeResult() const;
 
                     /**
                      * 判断参数 DeleteEmployeeResult 是否已赋值
                      * @return DeleteEmployeeResult 是否已赋值
+                     * 
                      */
                     bool DeleteEmployeeResultHasBeenSet() const;
 

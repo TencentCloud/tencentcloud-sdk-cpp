@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取存证内容hash，hash类型即为用户在存证时所用或所选的hash类型
                      * @return EvidenceHash 存证内容hash，hash类型即为用户在存证时所用或所选的hash类型
+                     * 
                      */
                     std::string GetEvidenceHash() const;
 
                     /**
                      * 设置存证内容hash，hash类型即为用户在存证时所用或所选的hash类型
-                     * @param EvidenceHash 存证内容hash，hash类型即为用户在存证时所用或所选的hash类型
+                     * @param _evidenceHash 存证内容hash，hash类型即为用户在存证时所用或所选的hash类型
+                     * 
                      */
                     void SetEvidenceHash(const std::string& _evidenceHash);
 
                     /**
                      * 判断参数 EvidenceHash 是否已赋值
                      * @return EvidenceHash 是否已赋值
+                     * 
                      */
                     bool EvidenceHashHasBeenSet() const;
 

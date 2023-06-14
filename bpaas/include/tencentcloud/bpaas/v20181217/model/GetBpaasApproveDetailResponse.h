@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取申请人uin
                      * @return ApplyUin 申请人uin
+                     * 
                      */
                     uint64_t GetApplyUin() const;
 
                     /**
                      * 判断参数 ApplyUin 是否已赋值
                      * @return ApplyUin 是否已赋值
+                     * 
                      */
                     bool ApplyUinHasBeenSet() const;
 
                     /**
                      * 获取申请人主账号
                      * @return ApplyOwnUin 申请人主账号
+                     * 
                      */
                     uint64_t GetApplyOwnUin() const;
 
                     /**
                      * 判断参数 ApplyOwnUin 是否已赋值
                      * @return ApplyOwnUin 是否已赋值
+                     * 
                      */
                     bool ApplyOwnUinHasBeenSet() const;
 
@@ -74,36 +78,42 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyUinNick 申请人昵称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplyUinNick() const;
 
                     /**
                      * 判断参数 ApplyUinNick 是否已赋值
                      * @return ApplyUinNick 是否已赋值
+                     * 
                      */
                     bool ApplyUinNickHasBeenSet() const;
 
                     /**
                      * 获取审批流id
                      * @return BpaasId 审批流id
+                     * 
                      */
                     uint64_t GetBpaasId() const;
 
                     /**
                      * 判断参数 BpaasId 是否已赋值
                      * @return BpaasId 是否已赋值
+                     * 
                      */
                     bool BpaasIdHasBeenSet() const;
 
                     /**
                      * 获取审批流名称
                      * @return BpaasName 审批流名称
+                     * 
                      */
                     std::string GetBpaasName() const;
 
                     /**
                      * 判断参数 BpaasName 是否已赋值
                      * @return BpaasName 是否已赋值
+                     * 
                      */
                     bool BpaasNameHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationParams 申请参数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ApplyParam> GetApplicationParams() const;
 
                     /**
                      * 判断参数 ApplicationParams 是否已赋值
                      * @return ApplicationParams 是否已赋值
+                     * 
                      */
                     bool ApplicationParamsHasBeenSet() const;
 
@@ -126,12 +138,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 申请原因
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 判断参数 Reason 是否已赋值
                      * @return Reason 是否已赋值
+                     * 
                      */
                     bool ReasonHasBeenSet() const;
 
@@ -140,12 +154,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 申请时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -154,12 +170,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 申请单状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -168,12 +186,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nodes 节点信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<StatusNode> GetNodes() const;
 
                     /**
                      * 判断参数 Nodes 是否已赋值
                      * @return Nodes 是否已赋值
+                     * 
                      */
                     bool NodesHasBeenSet() const;
 
@@ -182,14 +202,32 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApprovingNodeId 正在审批的节点id
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApprovingNodeId() const;
 
                     /**
                      * 判断参数 ApprovingNodeId 是否已赋值
                      * @return ApprovingNodeId 是否已赋值
+                     * 
                      */
                     bool ApprovingNodeIdHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间，时间格式：2021-12-12 10:12:10	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifyTime 更新时间，时间格式：2021-12-12 10:12:10	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
 
                 private:
 
@@ -265,6 +303,13 @@ namespace TencentCloud
                      */
                     std::string m_approvingNodeId;
                     bool m_approvingNodeIdHasBeenSet;
+
+                    /**
+                     * 更新时间，时间格式：2021-12-12 10:12:10	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
 
                 };
             }

@@ -45,180 +45,210 @@ namespace TencentCloud
                     /**
                      * 获取产品ID
                      * @return ProductID 产品ID
+                     * 
                      */
                     std::string GetProductID() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductID 产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
                     void SetProductID(const std::string& _productID);
 
                     /**
                      * 判断参数 ProductID 是否已赋值
                      * @return ProductID 是否已赋值
+                     * 
                      */
                     bool ProductIDHasBeenSet() const;
 
                     /**
                      * 获取消息类型
                      * @return MsgType 消息类型
+                     * 
                      */
                     uint64_t GetMsgType() const;
 
                     /**
                      * 设置消息类型
-                     * @param MsgType 消息类型
+                     * @param _msgType 消息类型
+                     * 
                      */
                     void SetMsgType(const uint64_t& _msgType);
 
                     /**
                      * 判断参数 MsgType 是否已赋值
                      * @return MsgType 是否已赋值
+                     * 
                      */
                     bool MsgTypeHasBeenSet() const;
 
                     /**
                      * 获取控制台Skey
                      * @return Skey 控制台Skey
+                     * 
                      */
                     std::string GetSkey() const;
 
                     /**
                      * 设置控制台Skey
-                     * @param Skey 控制台Skey
+                     * @param _skey 控制台Skey
+                     * 
                      */
                     void SetSkey(const std::string& _skey);
 
                     /**
                      * 判断参数 Skey 是否已赋值
                      * @return Skey 是否已赋值
+                     * 
                      */
                     bool SkeyHasBeenSet() const;
 
                     /**
                      * 获取队列区域
                      * @return QueueRegion 队列区域
+                     * 
                      */
                     std::string GetQueueRegion() const;
 
                     /**
                      * 设置队列区域
-                     * @param QueueRegion 队列区域
+                     * @param _queueRegion 队列区域
+                     * 
                      */
                     void SetQueueRegion(const std::string& _queueRegion);
 
                     /**
                      * 判断参数 QueueRegion 是否已赋值
                      * @return QueueRegion 是否已赋值
+                     * 
                      */
                     bool QueueRegionHasBeenSet() const;
 
                     /**
                      * 获取队列类型 0.CMQ 1.CKafka
                      * @return QueueType 队列类型 0.CMQ 1.CKafka
+                     * 
                      */
                     uint64_t GetQueueType() const;
 
                     /**
                      * 设置队列类型 0.CMQ 1.CKafka
-                     * @param QueueType 队列类型 0.CMQ 1.CKafka
+                     * @param _queueType 队列类型 0.CMQ 1.CKafka
+                     * 
                      */
                     void SetQueueType(const uint64_t& _queueType);
 
                     /**
                      * 判断参数 QueueType 是否已赋值
                      * @return QueueType 是否已赋值
+                     * 
                      */
                     bool QueueTypeHasBeenSet() const;
 
                     /**
                      * 获取临时密钥
                      * @return Consecretid 临时密钥
+                     * 
                      */
                     std::string GetConsecretid() const;
 
                     /**
                      * 设置临时密钥
-                     * @param Consecretid 临时密钥
+                     * @param _consecretid 临时密钥
+                     * 
                      */
                     void SetConsecretid(const std::string& _consecretid);
 
                     /**
                      * 判断参数 Consecretid 是否已赋值
                      * @return Consecretid 是否已赋值
+                     * 
                      */
                     bool ConsecretidHasBeenSet() const;
 
                     /**
                      * 获取实例ID
                      * @return InstanceId 实例ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * @param _instanceId 实例ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例名称
                      * @return InstanceName 实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * @param _instanceName 实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取队列或主题ID
                      * @return QueueID 队列或主题ID
+                     * 
                      */
                     std::string GetQueueID() const;
 
                     /**
                      * 设置队列或主题ID
-                     * @param QueueID 队列或主题ID
+                     * @param _queueID 队列或主题ID
+                     * 
                      */
                     void SetQueueID(const std::string& _queueID);
 
                     /**
                      * 判断参数 QueueID 是否已赋值
                      * @return QueueID 是否已赋值
+                     * 
                      */
                     bool QueueIDHasBeenSet() const;
 
                     /**
                      * 获取队列或主题名称
                      * @return QueueName 队列或主题名称
+                     * 
                      */
                     std::string GetQueueName() const;
 
                     /**
                      * 设置队列或主题名称
-                     * @param QueueName 队列或主题名称
+                     * @param _queueName 队列或主题名称
+                     * 
                      */
                     void SetQueueName(const std::string& _queueName);
 
                     /**
                      * 判断参数 QueueName 是否已赋值
                      * @return QueueName 是否已赋值
+                     * 
                      */
                     bool QueueNameHasBeenSet() const;
 

@@ -46,72 +46,84 @@ namespace TencentCloud
                     /**
                      * 获取获取的页数
                      * @return PageNum 获取的页数
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 设置获取的页数
-                     * @param PageNum 获取的页数
+                     * @param _pageNum 获取的页数
+                     * 
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取分页的大小
                      * @return PageSize 分页的大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置分页的大小
-                     * @param PageSize 分页的大小
+                     * @param _pageSize 分页的大小
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取产品ID
                      * @return ProductId 产品ID
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置产品ID
-                     * @param ProductId 产品ID
+                     * @param _productId 产品ID
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取搜索过滤条件
                      * @return Filters 搜索过滤条件
+                     * 
                      */
                     std::vector<SearchKeyword> GetFilters() const;
 
                     /**
                      * 设置搜索过滤条件
-                     * @param Filters 搜索过滤条件
+                     * @param _filters 搜索过滤条件
+                     * 
                      */
                     void SetFilters(const std::vector<SearchKeyword>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

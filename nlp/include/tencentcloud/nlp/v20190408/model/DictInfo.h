@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取自定义词库名称。
                      * @return Name 自定义词库名称。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义词库名称。
-                     * @param Name 自定义词库名称。
+                     * @param _name 自定义词库名称。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取自定义词库ID。
                      * @return Id 自定义词库ID。
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置自定义词库ID。
-                     * @param Id 自定义词库ID。
+                     * @param _id 自定义词库ID。
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取自定义词库描述信息。
                      * @return Description 自定义词库描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置自定义词库描述信息。
-                     * @param Description 自定义词库描述信息。
+                     * @param _description 自定义词库描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
                      * @return UpdateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
-                     * @param UpdateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * @param _updateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
                     /**
                      * 判断参数 UpdateTime 是否已赋值
                      * @return UpdateTime 是否已赋值
+                     * 
                      */
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
                      * 获取自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
                      * @return CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-                     * @param CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * @param _createTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

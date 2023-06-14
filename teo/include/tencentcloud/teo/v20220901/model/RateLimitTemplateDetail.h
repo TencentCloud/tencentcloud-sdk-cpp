@@ -63,6 +63,7 @@ namespace TencentCloud
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMode() const;
 
@@ -75,7 +76,7 @@ namespace TencentCloud
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode 模板等级名称，取值有：
+                     * @param _mode 模板等级名称，取值有：
 <li>sup_loose：超级宽松；</li>
 <li>loose：宽松；</li>
 <li>emergency：紧急；</li>
@@ -83,30 +84,35 @@ namespace TencentCloud
 <li>strict：严格；</li>
 <li>close：关闭，仅精准速率限制生效。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取唯一id。
                      * @return ID 唯一id。
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置唯一id。
-                     * @param ID 唯一id。
+                     * @param _iD 唯一id。
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
@@ -119,6 +125,7 @@ namespace TencentCloud
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAction() const;
 
@@ -127,16 +134,18 @@ namespace TencentCloud
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 模板处置方式，取值有：
+                     * @param _action 模板处置方式，取值有：
 <li>alg：JavaScript挑战；</li>
 <li>monitor：观察。</li>
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAction(const std::string& _action);
 
                     /**
                      * 判断参数 Action 是否已赋值
                      * @return Action 是否已赋值
+                     * 
                      */
                     bool ActionHasBeenSet() const;
 
@@ -145,56 +154,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PunishTime 惩罚时间，取值范围0-2天，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetPunishTime() const;
 
                     /**
                      * 设置惩罚时间，取值范围0-2天，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishTime 惩罚时间，取值范围0-2天，单位秒。
+                     * @param _punishTime 惩罚时间，取值范围0-2天，单位秒。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPunishTime(const int64_t& _punishTime);
 
                     /**
                      * 判断参数 PunishTime 是否已赋值
                      * @return PunishTime 是否已赋值
+                     * 
                      */
                     bool PunishTimeHasBeenSet() const;
 
                     /**
                      * 获取统计阈值，单位是次，取值范围0-4294967294。
                      * @return Threshold 统计阈值，单位是次，取值范围0-4294967294。
+                     * 
                      */
                     int64_t GetThreshold() const;
 
                     /**
                      * 设置统计阈值，单位是次，取值范围0-4294967294。
-                     * @param Threshold 统计阈值，单位是次，取值范围0-4294967294。
+                     * @param _threshold 统计阈值，单位是次，取值范围0-4294967294。
+                     * 
                      */
                     void SetThreshold(const int64_t& _threshold);
 
                     /**
                      * 判断参数 Threshold 是否已赋值
                      * @return Threshold 是否已赋值
+                     * 
                      */
                     bool ThresholdHasBeenSet() const;
 
                     /**
                      * 获取统计周期，取值范围0-120秒。
                      * @return Period 统计周期，取值范围0-120秒。
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置统计周期，取值范围0-120秒。
-                     * @param Period 统计周期，取值范围0-120秒。
+                     * @param _period 统计周期，取值范围0-120秒。
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

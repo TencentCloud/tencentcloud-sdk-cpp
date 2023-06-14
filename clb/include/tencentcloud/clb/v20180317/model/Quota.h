@@ -63,6 +63,7 @@ namespace TencentCloud
 <li> TOTAL_TARGET_BIND_QUOTA：一条转发规则下可绑定设备的配额 </li>
 <li> TOTAL_SNAP_IP_QUOTA： 一个CLB实例下跨地域2.0的SNAT IP配额 </li>
 <li>TOTAL_ISP_CLB_QUOTA：用户当前地域下的三网CLB配额 </li>
+                     * 
                      */
                     std::string GetQuotaId() const;
 
@@ -75,7 +76,7 @@ namespace TencentCloud
 <li> TOTAL_TARGET_BIND_QUOTA：一条转发规则下可绑定设备的配额 </li>
 <li> TOTAL_SNAP_IP_QUOTA： 一个CLB实例下跨地域2.0的SNAT IP配额 </li>
 <li>TOTAL_ISP_CLB_QUOTA：用户当前地域下的三网CLB配额 </li>
-                     * @param QuotaId 配额名称，取值范围：
+                     * @param _quotaId 配额名称，取值范围：
 <li> TOTAL_OPEN_CLB_QUOTA：用户当前地域下的公网CLB配额 </li>
 <li> TOTAL_INTERNAL_CLB_QUOTA：用户当前地域下的内网CLB配额 </li>
 <li> TOTAL_LISTENER_QUOTA：一个CLB下的监听器配额 </li>
@@ -83,12 +84,14 @@ namespace TencentCloud
 <li> TOTAL_TARGET_BIND_QUOTA：一条转发规则下可绑定设备的配额 </li>
 <li> TOTAL_SNAP_IP_QUOTA： 一个CLB实例下跨地域2.0的SNAT IP配额 </li>
 <li>TOTAL_ISP_CLB_QUOTA：用户当前地域下的三网CLB配额 </li>
+                     * 
                      */
                     void SetQuotaId(const std::string& _quotaId);
 
                     /**
                      * 判断参数 QuotaId 是否已赋值
                      * @return QuotaId 是否已赋值
+                     * 
                      */
                     bool QuotaIdHasBeenSet() const;
 
@@ -97,38 +100,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaCurrent 当前使用数量，为 null 时表示无意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetQuotaCurrent() const;
 
                     /**
                      * 设置当前使用数量，为 null 时表示无意义。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QuotaCurrent 当前使用数量，为 null 时表示无意义。
+                     * @param _quotaCurrent 当前使用数量，为 null 时表示无意义。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetQuotaCurrent(const int64_t& _quotaCurrent);
 
                     /**
                      * 判断参数 QuotaCurrent 是否已赋值
                      * @return QuotaCurrent 是否已赋值
+                     * 
                      */
                     bool QuotaCurrentHasBeenSet() const;
 
                     /**
                      * 获取配额数量。
                      * @return QuotaLimit 配额数量。
+                     * 
                      */
                     int64_t GetQuotaLimit() const;
 
                     /**
                      * 设置配额数量。
-                     * @param QuotaLimit 配额数量。
+                     * @param _quotaLimit 配额数量。
+                     * 
                      */
                     void SetQuotaLimit(const int64_t& _quotaLimit);
 
                     /**
                      * 判断参数 QuotaLimit 是否已赋值
                      * @return QuotaLimit 是否已赋值
+                     * 
                      */
                     bool QuotaLimitHasBeenSet() const;
 

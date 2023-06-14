@@ -54,20 +54,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitType 同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInitType() const;
 
                     /**
                      * 设置同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InitType 同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)
+                     * @param _initType 同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInitType(const std::string& _initType);
 
                     /**
                      * 判断参数 InitType 是否已赋值
                      * @return InitType 是否已赋值
+                     * 
                      */
                     bool InitTypeHasBeenSet() const;
 
@@ -76,20 +79,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDealOfExistSameTable() const;
 
                     /**
                      * 设置同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)
+                     * @param _dealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDealOfExistSameTable(const std::string& _dealOfExistSameTable);
 
                     /**
                      * 判断参数 DealOfExistSameTable 是否已赋值
                      * @return DealOfExistSameTable 是否已赋值
+                     * 
                      */
                     bool DealOfExistSameTableHasBeenSet() const;
 
@@ -98,20 +104,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConflictHandleType 冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetConflictHandleType() const;
 
                     /**
                      * 设置冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConflictHandleType 冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
+                     * @param _conflictHandleType 冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConflictHandleType(const std::string& _conflictHandleType);
 
                     /**
                      * 判断参数 ConflictHandleType 是否已赋值
                      * @return ConflictHandleType 是否已赋值
+                     * 
                      */
                     bool ConflictHandleTypeHasBeenSet() const;
 
@@ -120,20 +129,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddAdditionalColumn 是否添加附加列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     bool GetAddAdditionalColumn() const;
 
                     /**
                      * 设置是否添加附加列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AddAdditionalColumn 是否添加附加列
+                     * @param _addAdditionalColumn 是否添加附加列
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAddAdditionalColumn(const bool& _addAdditionalColumn);
 
                     /**
                      * 判断参数 AddAdditionalColumn 是否已赋值
                      * @return AddAdditionalColumn 是否已赋值
+                     * 
                      */
                     bool AddAdditionalColumnHasBeenSet() const;
 
@@ -142,20 +154,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetOpTypes() const;
 
                     /**
                      * 设置所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )
+                     * @param _opTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOpTypes(const std::vector<std::string>& _opTypes);
 
                     /**
                      * 判断参数 OpTypes 是否已赋值
                      * @return OpTypes 是否已赋值
+                     * 
                      */
                     bool OpTypesHasBeenSet() const;
 
@@ -164,20 +179,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ConflictHandleOption GetConflictHandleOption() const;
 
                     /**
                      * 设置冲突处理的详细选项，如条件覆盖中的条件行和条件操作
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作
+                     * @param _conflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetConflictHandleOption(const ConflictHandleOption& _conflictHandleOption);
 
                     /**
                      * 判断参数 ConflictHandleOption 是否已赋值
                      * @return ConflictHandleOption 是否已赋值
+                     * 
                      */
                     bool ConflictHandleOptionHasBeenSet() const;
 
@@ -186,20 +204,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DdlOptions DDL同步选项，具体描述要同步那些DDL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DdlOption> GetDdlOptions() const;
 
                     /**
                      * 设置DDL同步选项，具体描述要同步那些DDL
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdlOptions DDL同步选项，具体描述要同步那些DDL
+                     * @param _ddlOptions DDL同步选项，具体描述要同步那些DDL
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDdlOptions(const std::vector<DdlOption>& _ddlOptions);
 
                     /**
                      * 判断参数 DdlOptions 是否已赋值
                      * @return DdlOptions 是否已赋值
+                     * 
                      */
                     bool DdlOptionsHasBeenSet() const;
 
@@ -208,20 +229,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaOption kafka同步选项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     KafkaOption GetKafkaOption() const;
 
                     /**
                      * 设置kafka同步选项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KafkaOption kafka同步选项
+                     * @param _kafkaOption kafka同步选项
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKafkaOption(const KafkaOption& _kafkaOption);
 
                     /**
                      * 判断参数 KafkaOption 是否已赋值
                      * @return KafkaOption 是否已赋值
+                     * 
                      */
                     bool KafkaOptionHasBeenSet() const;
 

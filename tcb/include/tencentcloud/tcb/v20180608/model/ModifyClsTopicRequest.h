@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取环境ID
                      * @return EnvId 环境ID
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境ID
-                     * @param EnvId 环境ID
+                     * @param _envId 环境ID
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取日志生命周期，单位天，可取值范围1~3600，取值为3640时代表永久保存
                      * @return Period 日志生命周期，单位天，可取值范围1~3600，取值为3640时代表永久保存
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置日志生命周期，单位天，可取值范围1~3600，取值为3640时代表永久保存
-                     * @param Period 日志生命周期，单位天，可取值范围1~3600，取值为3640时代表永久保存
+                     * @param _period 日志生命周期，单位天，可取值范围1~3600，取值为3640时代表永久保存
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 

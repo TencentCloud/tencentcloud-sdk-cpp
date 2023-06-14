@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取报告分类结果
                      * @return Reports 报告分类结果
+                     * 
                      */
                     std::vector<ClassifiedReports> GetReports() const;
 
                     /**
                      * 判断参数 Reports 是否已赋值
                      * @return Reports 是否已赋值
+                     * 
                      */
                     bool ReportsHasBeenSet() const;
 

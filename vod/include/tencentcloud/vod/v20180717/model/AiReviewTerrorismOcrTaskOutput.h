@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取Ocr 文字有涉及令人不安全信息的评分，分值为0到100。
                      * @return Confidence Ocr 文字有涉及令人不安全信息的评分，分值为0到100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置Ocr 文字有涉及令人不安全信息的评分，分值为0到100。
-                     * @param Confidence Ocr 文字有涉及令人不安全信息的评分，分值为0到100。
+                     * @param _confidence Ocr 文字有涉及令人不安全信息的评分，分值为0到100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -74,6 +77,7 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -82,16 +86,18 @@ namespace TencentCloud
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion Ocr 文字有涉及令人不安全信息的结果建议，取值范围：
+                     * @param _suggestion Ocr 文字有涉及令人不安全信息的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -100,56 +106,65 @@ namespace TencentCloud
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。
                      * @return SegmentSet Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。
+                     * 
                      */
                     std::vector<MediaContentReviewOcrTextSegmentItem> GetSegmentSet() const;
 
                     /**
                      * 设置Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。
-                     * @param SegmentSet Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表。
+                     * @param _segmentSet Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表。
 <font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。
+                     * 
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewOcrTextSegmentItem>& _segmentSet);
 
                     /**
                      * 判断参数 SegmentSet 是否已赋值
                      * @return SegmentSet 是否已赋值
+                     * 
                      */
                     bool SegmentSetHasBeenSet() const;
 
                     /**
                      * 获取Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。
                      * @return SegmentSetFileUrl Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * 
                      */
                     std::string GetSegmentSetFileUrl() const;
 
                     /**
                      * 设置Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。
-                     * @param SegmentSetFileUrl Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * @param _segmentSetFileUrl Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * 
                      */
                     void SetSegmentSetFileUrl(const std::string& _segmentSetFileUrl);
 
                     /**
                      * 判断参数 SegmentSetFileUrl 是否已赋值
                      * @return SegmentSetFileUrl 是否已赋值
+                     * 
                      */
                     bool SegmentSetFileUrlHasBeenSet() const;
 
                     /**
                      * 获取Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
                      * @return SegmentSetFileUrlExpireTime Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     std::string GetSegmentSetFileUrlExpireTime() const;
 
                     /**
                      * 设置Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param SegmentSetFileUrlExpireTime Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _segmentSetFileUrlExpireTime Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
                      */
                     void SetSegmentSetFileUrlExpireTime(const std::string& _segmentSetFileUrlExpireTime);
 
                     /**
                      * 判断参数 SegmentSetFileUrlExpireTime 是否已赋值
                      * @return SegmentSetFileUrlExpireTime 是否已赋值
+                     * 
                      */
                     bool SegmentSetFileUrlExpireTimeHasBeenSet() const;
 

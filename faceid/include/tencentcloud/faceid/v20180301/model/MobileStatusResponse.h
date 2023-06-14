@@ -58,24 +58,28 @@ namespace TencentCloud
 -1：未查询到结果
 -2：手机号格式不正确
 -3：验证中心服务繁忙
+                     * 
                      */
                     std::string GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
                     /**
                      * 获取业务结果描述。
                      * @return Description 业务结果描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -94,12 +98,14 @@ namespace TencentCloud
 3：空号
 4：不在网
 99：未知状态
+                     * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
                      * 判断参数 StatusCode 是否已赋值
                      * @return StatusCode 是否已赋值
+                     * 
                      */
                     bool StatusCodeHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取cfs的实例的ID
                      * @return Id cfs的实例的ID
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置cfs的实例的ID
-                     * @param Id cfs的实例的ID
+                     * @param _id cfs的实例的ID
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取存储的路径
                      * @return Path 存储的路径
+                     * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置存储的路径
-                     * @param Path 存储的路径
+                     * @param _path 存储的路径
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 

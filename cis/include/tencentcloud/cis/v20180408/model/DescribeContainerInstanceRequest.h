@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取容器实例名称
                      * @return InstanceName 容器实例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置容器实例名称
-                     * @param InstanceName 容器实例名称
+                     * @param _instanceName 容器实例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 

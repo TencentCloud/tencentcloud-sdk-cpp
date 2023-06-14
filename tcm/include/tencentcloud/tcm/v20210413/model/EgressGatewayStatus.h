@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取egress gateway的当前版本
                      * @return CurrentVersion egress gateway的当前版本
+                     * 
                      */
                     std::string GetCurrentVersion() const;
 
                     /**
                      * 设置egress gateway的当前版本
-                     * @param CurrentVersion egress gateway的当前版本
+                     * @param _currentVersion egress gateway的当前版本
+                     * 
                      */
                     void SetCurrentVersion(const std::string& _currentVersion);
 
                     /**
                      * 判断参数 CurrentVersion 是否已赋值
                      * @return CurrentVersion 是否已赋值
+                     * 
                      */
                     bool CurrentVersionHasBeenSet() const;
 
                     /**
                      * 获取egress gateway的目标版本
                      * @return DesiredVersion egress gateway的目标版本
+                     * 
                      */
                     std::string GetDesiredVersion() const;
 
                     /**
                      * 设置egress gateway的目标版本
-                     * @param DesiredVersion egress gateway的目标版本
+                     * @param _desiredVersion egress gateway的目标版本
+                     * 
                      */
                     void SetDesiredVersion(const std::string& _desiredVersion);
 
                     /**
                      * 判断参数 DesiredVersion 是否已赋值
                      * @return DesiredVersion 是否已赋值
+                     * 
                      */
                     bool DesiredVersionHasBeenSet() const;
 
                     /**
                      * 获取egress gateway的状态，取值：running，upgrading，rollbacking
                      * @return State egress gateway的状态，取值：running，upgrading，rollbacking
+                     * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置egress gateway的状态，取值：running，upgrading，rollbacking
-                     * @param State egress gateway的状态，取值：running，upgrading，rollbacking
+                     * @param _state egress gateway的状态，取值：running，upgrading，rollbacking
+                     * 
                      */
                     void SetState(const std::string& _state);
 
                     /**
                      * 判断参数 State 是否已赋值
                      * @return State 是否已赋值
+                     * 
                      */
                     bool StateHasBeenSet() const;
 

@@ -51,6 +51,7 @@ namespace TencentCloud
 例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。
 
 支持最近六个月的查询。
+                     * 
                      */
                     std::string GetQueryTime() const;
 
@@ -59,70 +60,81 @@ namespace TencentCloud
 例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。
 
 支持最近六个月的查询。
-                     * @param QueryTime utc分钟粒度查询时间，查询某一分钟的用量数据，格式为：yyyy-mm-ddTHH:MM:00Z，参考https://cloud.tencent.com/document/product/266/11732#I，
+                     * @param _queryTime utc分钟粒度查询时间，查询某一分钟的用量数据，格式为：yyyy-mm-ddTHH:MM:00Z，参考https://cloud.tencent.com/document/product/266/11732#I，
 例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。
 
 支持最近六个月的查询。
+                     * 
                      */
                     void SetQueryTime(const std::string& _queryTime);
 
                     /**
                      * 判断参数 QueryTime 是否已赋值
                      * @return QueryTime 是否已赋值
+                     * 
                      */
                     bool QueryTimeHasBeenSet() const;
 
                     /**
                      * 获取类型数组，分直播live和点播vod，不传默认查全部。
                      * @return Type 类型数组，分直播live和点播vod，不传默认查全部。
+                     * 
                      */
                     std::vector<std::string> GetType() const;
 
                     /**
                      * 设置类型数组，分直播live和点播vod，不传默认查全部。
-                     * @param Type 类型数组，分直播live和点播vod，不传默认查全部。
+                     * @param _type 类型数组，分直播live和点播vod，不传默认查全部。
+                     * 
                      */
                     void SetType(const std::vector<std::string>& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取查询流数组，不传默认查所有流。
                      * @return StreamNames 查询流数组，不传默认查所有流。
+                     * 
                      */
                     std::vector<std::string> GetStreamNames() const;
 
                     /**
                      * 设置查询流数组，不传默认查所有流。
-                     * @param StreamNames 查询流数组，不传默认查所有流。
+                     * @param _streamNames 查询流数组，不传默认查所有流。
+                     * 
                      */
                     void SetStreamNames(const std::vector<std::string>& _streamNames);
 
                     /**
                      * 判断参数 StreamNames 是否已赋值
                      * @return StreamNames 是否已赋值
+                     * 
                      */
                     bool StreamNamesHasBeenSet() const;
 
                     /**
                      * 获取查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。
                      * @return Dimension 查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。
+                     * 
                      */
                     std::vector<std::string> GetDimension() const;
 
                     /**
                      * 设置查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。
-                     * @param Dimension 查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。
+                     * @param _dimension 查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。
+                     * 
                      */
                     void SetDimension(const std::vector<std::string>& _dimension);
 
                     /**
                      * 判断参数 Dimension 是否已赋值
                      * @return Dimension 是否已赋值
+                     * 
                      */
                     bool DimensionHasBeenSet() const;
 

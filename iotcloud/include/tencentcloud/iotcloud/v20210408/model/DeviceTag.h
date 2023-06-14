@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取属性名称
                      * @return Tag 属性名称
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置属性名称
-                     * @param Tag 属性名称
+                     * @param _tag 属性名称
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 
                     /**
                      * 获取属性值的类型，1 int，2 string
                      * @return Type 属性值的类型，1 int，2 string
+                     * 
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置属性值的类型，1 int，2 string
-                     * @param Type 属性值的类型，1 int，2 string
+                     * @param _type 属性值的类型，1 int，2 string
+                     * 
                      */
                     void SetType(const uint64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取属性的值
                      * @return Value 属性的值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置属性的值
-                     * @param Value 属性的值
+                     * @param _value 属性的值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 属性描述名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置属性描述名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 属性描述名称
+                     * @param _name 属性描述名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取字段名
                      * @return Field 字段名
+                     * 
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置字段名
-                     * @param Field 字段名
+                     * @param _field 字段名
+                     * 
                      */
                     void SetField(const std::string& _field);
 
                     /**
                      * 判断参数 Field 是否已赋值
                      * @return Field 是否已赋值
+                     * 
                      */
                     bool FieldHasBeenSet() const;
 
                     /**
                      * 获取排序(ASC:升序 DESC:降序
                      * @return Order 排序(ASC:升序 DESC:降序
+                     * 
                      */
                     std::string GetOrder() const;
 
                     /**
                      * 设置排序(ASC:升序 DESC:降序
-                     * @param Order 排序(ASC:升序 DESC:降序
+                     * @param _order 排序(ASC:升序 DESC:降序
+                     * 
                      */
                     void SetOrder(const std::string& _order);
 
                     /**
                      * 判断参数 Order 是否已赋值
                      * @return Order 是否已赋值
+                     * 
                      */
                     bool OrderHasBeenSet() const;
 

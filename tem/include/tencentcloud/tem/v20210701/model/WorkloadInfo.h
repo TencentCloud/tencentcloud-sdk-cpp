@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 资源 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置资源 ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 资源 ID
+                     * @param _clusterId 资源 ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationName 应用名
+                     * @param _applicationName 应用名
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
 
                     /**
                      * 判断参数 ApplicationName 是否已赋值
                      * @return ApplicationName 是否已赋值
+                     * 
                      */
                     bool ApplicationNameHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 版本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 设置版本名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VersionName 版本名称
+                     * @param _versionName 版本名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVersionName(const std::string& _versionName);
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadyReplicas Ready实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReadyReplicas() const;
 
                     /**
                      * 设置Ready实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadyReplicas Ready实例数
+                     * @param _readyReplicas Ready实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadyReplicas(const int64_t& _readyReplicas);
 
                     /**
                      * 判断参数 ReadyReplicas 是否已赋值
                      * @return ReadyReplicas 是否已赋值
+                     * 
                      */
                     bool ReadyReplicasHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
                      * 设置实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Replicas 实例数
+                     * @param _replicas 实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReplicas(const int64_t& _replicas);
 
                     /**
                      * 判断参数 Replicas 是否已赋值
                      * @return Replicas 是否已赋值
+                     * 
                      */
                     bool ReplicasHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedReplicas Updated实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdatedReplicas() const;
 
                     /**
                      * 设置Updated实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedReplicas Updated实例数
+                     * @param _updatedReplicas Updated实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedReplicas(const int64_t& _updatedReplicas);
 
                     /**
                      * 判断参数 UpdatedReplicas 是否已赋值
                      * @return UpdatedReplicas 是否已赋值
+                     * 
                      */
                     bool UpdatedReplicasHasBeenSet() const;
 
@@ -183,20 +201,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedReadyReplicas UpdatedReady实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetUpdatedReadyReplicas() const;
 
                     /**
                      * 设置UpdatedReady实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedReadyReplicas UpdatedReady实例数
+                     * @param _updatedReadyReplicas UpdatedReady实例数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdatedReadyReplicas(const int64_t& _updatedReadyReplicas);
 
                     /**
                      * 判断参数 UpdatedReadyReplicas 是否已赋值
                      * @return UpdatedReadyReplicas 是否已赋值
+                     * 
                      */
                     bool UpdatedReadyReplicasHasBeenSet() const;
 
@@ -205,20 +226,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateRevision 更新版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdateRevision() const;
 
                     /**
                      * 设置更新版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateRevision 更新版本
+                     * @param _updateRevision 更新版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUpdateRevision(const std::string& _updateRevision);
 
                     /**
                      * 判断参数 UpdateRevision 是否已赋值
                      * @return UpdateRevision 是否已赋值
+                     * 
                      */
                     bool UpdateRevisionHasBeenSet() const;
 
@@ -227,20 +251,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentRevision 当前版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCurrentRevision() const;
 
                     /**
                      * 设置当前版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CurrentRevision 当前版本
+                     * @param _currentRevision 当前版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCurrentRevision(const std::string& _currentRevision);
 
                     /**
                      * 判断参数 CurrentRevision 是否已赋值
                      * @return CurrentRevision 是否已赋值
+                     * 
                      */
                     bool CurrentRevisionHasBeenSet() const;
 

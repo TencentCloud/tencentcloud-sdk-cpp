@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取规则id
                      * @return Id 规则id
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 

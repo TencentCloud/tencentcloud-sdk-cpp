@@ -45,108 +45,126 @@ namespace TencentCloud
                     /**
                      * 获取环境id
                      * @return EnvId 环境id
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 设置环境id
-                     * @param EnvId 环境id
+                     * @param _envId 环境id
+                     * 
                      */
                     void SetEnvId(const std::string& _envId);
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取项目名称
                      * @return ProjectName 项目名称
+                     * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称
-                     * @param ProjectName 项目名称
+                     * @param _projectName 项目名称
+                     * 
                      */
                     void SetProjectName(const std::string& _projectName);
 
                     /**
                      * 判断参数 ProjectName 是否已赋值
                      * @return ProjectName 是否已赋值
+                     * 
                      */
                     bool ProjectNameHasBeenSet() const;
 
                     /**
                      * 获取页大小
                      * @return PageSize 页大小
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置页大小
-                     * @param PageSize 页大小
+                     * @param _pageSize 页大小
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 
                     /**
                      * 获取第几页,从0开始
                      * @return PageNum 第几页,从0开始
+                     * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
                      * 设置第几页,从0开始
-                     * @param PageNum 第几页,从0开始
+                     * @param _pageNum 第几页,从0开始
+                     * 
                      */
                     void SetPageNum(const uint64_t& _pageNum);
 
                     /**
                      * 判断参数 PageNum 是否已赋值
                      * @return PageNum 是否已赋值
+                     * 
                      */
                     bool PageNumHasBeenSet() const;
 
                     /**
                      * 获取起始时间 2021-03-27 12:00:00
                      * @return StartTime 起始时间 2021-03-27 12:00:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置起始时间 2021-03-27 12:00:00
-                     * @param StartTime 起始时间 2021-03-27 12:00:00
+                     * @param _startTime 起始时间 2021-03-27 12:00:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取终止时间 2021-03-27 12:00:00
                      * @return EndTime 终止时间 2021-03-27 12:00:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置终止时间 2021-03-27 12:00:00
-                     * @param EndTime 终止时间 2021-03-27 12:00:00
+                     * @param _endTime 终止时间 2021-03-27 12:00:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosModelArtifacts cos输出路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCosModelArtifacts() const;
 
                     /**
                      * 设置cos输出路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CosModelArtifacts cos输出路径
+                     * @param _cosModelArtifacts cos输出路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCosModelArtifacts(const std::string& _cosModelArtifacts);
 
                     /**
                      * 判断参数 CosModelArtifacts 是否已赋值
                      * @return CosModelArtifacts 是否已赋值
+                     * 
                      */
                     bool CosModelArtifactsHasBeenSet() const;
 

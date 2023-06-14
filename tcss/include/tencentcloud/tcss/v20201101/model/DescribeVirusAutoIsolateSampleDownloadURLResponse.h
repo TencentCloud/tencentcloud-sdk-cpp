@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取样本下载链接
                      * @return FileUrl 样本下载链接
+                     * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 判断参数 FileUrl 是否已赋值
                      * @return FileUrl 是否已赋值
+                     * 
                      */
                     bool FileUrlHasBeenSet() const;
 

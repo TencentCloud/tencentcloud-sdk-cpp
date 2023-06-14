@@ -50,108 +50,126 @@ namespace TencentCloud
                     /**
                      * 获取句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.
                      * @return SentenceId 句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.
+                     * 
                      */
                     int64_t GetSentenceId() const;
 
                     /**
                      * 设置句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.
-                     * @param SentenceId 句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.
+                     * @param _sentenceId 句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.
+                     * 
                      */
                     void SetSentenceId(const int64_t& _sentenceId);
 
                     /**
                      * 判断参数 SentenceId 是否已赋值
                      * @return SentenceId 是否已赋值
+                     * 
                      */
                     bool SentenceIdHasBeenSet() const;
 
                     /**
                      * 获取详细发音评估结果
                      * @return Words 详细发音评估结果
+                     * 
                      */
                     std::vector<WordRsp> GetWords() const;
 
                     /**
                      * 设置详细发音评估结果
-                     * @param Words 详细发音评估结果
+                     * @param _words 详细发音评估结果
+                     * 
                      */
                     void SetWords(const std::vector<WordRsp>& _words);
 
                     /**
                      * 判断参数 Words 是否已赋值
                      * @return Words 是否已赋值
+                     * 
                      */
                     bool WordsHasBeenSet() const;
 
                     /**
                      * 获取发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。
                      * @return PronAccuracy 发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。
+                     * 
                      */
                     double GetPronAccuracy() const;
 
                     /**
                      * 设置发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。
-                     * @param PronAccuracy 发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。
+                     * @param _pronAccuracy 发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。
+                     * 
                      */
                     void SetPronAccuracy(const double& _pronAccuracy);
 
                     /**
                      * 判断参数 PronAccuracy 是否已赋值
                      * @return PronAccuracy 是否已赋值
+                     * 
                      */
                     bool PronAccuracyHasBeenSet() const;
 
                     /**
                      * 获取发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
                      * @return PronFluency 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 
                      */
                     double GetPronFluency() const;
 
                     /**
                      * 设置发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
-                     * @param PronFluency 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * @param _pronFluency 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 
                      */
                     void SetPronFluency(const double& _pronFluency);
 
                     /**
                      * 判断参数 PronFluency 是否已赋值
                      * @return PronFluency 是否已赋值
+                     * 
                      */
                     bool PronFluencyHasBeenSet() const;
 
                     /**
                      * 获取发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
                      * @return PronCompletion 发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 
                      */
                     double GetPronCompletion() const;
 
                     /**
                      * 设置发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
-                     * @param PronCompletion 发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * @param _pronCompletion 发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 
                      */
                     void SetPronCompletion(const double& _pronCompletion);
 
                     /**
                      * 判断参数 PronCompletion 是否已赋值
                      * @return PronCompletion 是否已赋值
+                     * 
                      */
                     bool PronCompletionHasBeenSet() const;
 
                     /**
                      * 获取建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。
                      * @return SuggestedScore 建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。
+                     * 
                      */
                     double GetSuggestedScore() const;
 
                     /**
                      * 设置建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。
-                     * @param SuggestedScore 建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。
+                     * @param _suggestedScore 建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。
+                     * 
                      */
                     void SetSuggestedScore(const double& _suggestedScore);
 
                     /**
                      * 判断参数 SuggestedScore 是否已赋值
                      * @return SuggestedScore 是否已赋值
+                     * 
                      */
                     bool SuggestedScoreHasBeenSet() const;
 
@@ -160,20 +178,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefTextId 匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRefTextId() const;
 
                     /**
                      * 设置匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RefTextId 匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
+                     * @param _refTextId 匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRefTextId(const int64_t& _refTextId);
 
                     /**
                      * 判断参数 RefTextId 是否已赋值
                      * @return RefTextId 是否已赋值
+                     * 
                      */
                     bool RefTextIdHasBeenSet() const;
 
@@ -182,20 +203,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyWordHits 主题词命中标志，0表示没命中，1表示命中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetKeyWordHits() const;
 
                     /**
                      * 设置主题词命中标志，0表示没命中，1表示命中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyWordHits 主题词命中标志，0表示没命中，1表示命中
+                     * @param _keyWordHits 主题词命中标志，0表示没命中，1表示命中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKeyWordHits(const std::vector<double>& _keyWordHits);
 
                     /**
                      * 判断参数 KeyWordHits 是否已赋值
                      * @return KeyWordHits 是否已赋值
+                     * 
                      */
                     bool KeyWordHitsHasBeenSet() const;
 
@@ -204,20 +228,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnKeyWordHits 负向主题词命中标志，0表示没命中，1表示命中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<double> GetUnKeyWordHits() const;
 
                     /**
                      * 设置负向主题词命中标志，0表示没命中，1表示命中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UnKeyWordHits 负向主题词命中标志，0表示没命中，1表示命中
+                     * @param _unKeyWordHits 负向主题词命中标志，0表示没命中，1表示命中
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetUnKeyWordHits(const std::vector<double>& _unKeyWordHits);
 
                     /**
                      * 判断参数 UnKeyWordHits 是否已赋值
                      * @return UnKeyWordHits 是否已赋值
+                     * 
                      */
                     bool UnKeyWordHitsHasBeenSet() const;
 

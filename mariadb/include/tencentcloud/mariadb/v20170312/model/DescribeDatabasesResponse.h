@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取该实例上的数据库列表。
                      * @return Databases 该实例上的数据库列表。
+                     * 
                      */
                     std::vector<Database> GetDatabases() const;
 
                     /**
                      * 判断参数 Databases 是否已赋值
                      * @return Databases 是否已赋值
+                     * 
                      */
                     bool DatabasesHasBeenSet() const;
 
                     /**
                      * 获取透传入参。
                      * @return InstanceId 透传入参。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 

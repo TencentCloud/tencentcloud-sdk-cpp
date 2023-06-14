@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取vpc的ID
                      * @return VpcId vpc的ID
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的ID
-                     * @param VpcId vpc的ID
+                     * @param _vpcId vpc的ID
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取NAT网关ID
                      * @return NatGatewayId NAT网关ID
+                     * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
                      * 设置NAT网关ID
-                     * @param NatGatewayId NAT网关ID
+                     * @param _natGatewayId NAT网关ID
+                     * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
 
                     /**
                      * 判断参数 NatGatewayId 是否已赋值
                      * @return NatGatewayId 是否已赋值
+                     * 
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
                      * 获取是否是预刷新；True:是， False:否
                      * @return DryRun 是否是预刷新；True:是， False:否
+                     * 
                      */
                     bool GetDryRun() const;
 
                     /**
                      * 设置是否是预刷新；True:是， False:否
-                     * @param DryRun 是否是预刷新；True:是， False:否
+                     * @param _dryRun 是否是预刷新；True:是， False:否
+                     * 
                      */
                     void SetDryRun(const bool& _dryRun);
 
                     /**
                      * 判断参数 DryRun 是否已赋值
                      * @return DryRun 是否已赋值
+                     * 
                      */
                     bool DryRunHasBeenSet() const;
 

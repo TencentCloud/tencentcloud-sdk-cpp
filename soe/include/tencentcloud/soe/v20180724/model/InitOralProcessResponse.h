@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取语音段唯一标识，一个完整语音一个SessionId
                      * @return SessionId 语音段唯一标识，一个完整语音一个SessionId
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 

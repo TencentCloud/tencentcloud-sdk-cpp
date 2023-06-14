@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
+                     * 
                      */
                     Caller GetCaller() const;
 
                     /**
                      * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * @param _caller 调用方信息
+                     * 
                      */
                     void SetCaller(const Caller& _caller);
 
                     /**
                      * 判断参数 Caller 是否已赋值
                      * @return Caller 是否已赋值
+                     * 
                      */
                     bool CallerHasBeenSet() const;
 
                     /**
                      * 获取流程创建信息
                      * @return FlowInfo 流程创建信息
+                     * 
                      */
                     FlowInfo GetFlowInfo() const;
 
                     /**
                      * 设置流程创建信息
-                     * @param FlowInfo 流程创建信息
+                     * @param _flowInfo 流程创建信息
+                     * 
                      */
                     void SetFlowInfo(const FlowInfo& _flowInfo);
 
                     /**
                      * 判断参数 FlowInfo 是否已赋值
                      * @return FlowInfo 是否已赋值
+                     * 
                      */
                     bool FlowInfoHasBeenSet() const;
 
                     /**
                      * 获取文件资源列表 (支持多文件)
                      * @return FileIds 文件资源列表 (支持多文件)
+                     * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
                      * 设置文件资源列表 (支持多文件)
-                     * @param FileIds 文件资源列表 (支持多文件)
+                     * @param _fileIds 文件资源列表 (支持多文件)
+                     * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
                      * 判断参数 FileIds 是否已赋值
                      * @return FileIds 是否已赋值
+                     * 
                      */
                     bool FileIdsHasBeenSet() const;
 
                     /**
                      * 获取自定义流程id
                      * @return CustomId 自定义流程id
+                     * 
                      */
                     std::string GetCustomId() const;
 
                     /**
                      * 设置自定义流程id
-                     * @param CustomId 自定义流程id
+                     * @param _customId 自定义流程id
+                     * 
                      */
                     void SetCustomId(const std::string& _customId);
 
                     /**
                      * 判断参数 CustomId 是否已赋值
                      * @return CustomId 是否已赋值
+                     * 
                      */
                     bool CustomIdHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取授权url
                      * @return AuthorizedUrl 授权url
+                     * 
                      */
                     std::string GetAuthorizedUrl() const;
 
                     /**
                      * 判断参数 AuthorizedUrl 是否已赋值
                      * @return AuthorizedUrl 是否已赋值
+                     * 
                      */
                     bool AuthorizedUrlHasBeenSet() const;
 

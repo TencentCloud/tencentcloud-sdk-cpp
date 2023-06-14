@@ -46,90 +46,105 @@ namespace TencentCloud
                     /**
                      * 获取参数模板ID，用于唯一确认参数模板，不可修改
                      * @return TemplateId 参数模板ID，用于唯一确认参数模板，不可修改
+                     * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置参数模板ID，用于唯一确认参数模板，不可修改
-                     * @param TemplateId 参数模板ID，用于唯一确认参数模板，不可修改
+                     * @param _templateId 参数模板ID，用于唯一确认参数模板，不可修改
+                     * 
                      */
                     void SetTemplateId(const std::string& _templateId);
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称
                      * @return TemplateName 参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称
+                     * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称
-                     * @param TemplateName 参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称
+                     * @param _templateName 参数模板名称，长度为1～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若该字段为空    ，则保持原参数模板名称
+                     * 
                      */
                     void SetTemplateName(const std::string& _templateName);
 
                     /**
                      * 判断参数 TemplateName 是否已赋值
                      * @return TemplateName 是否已赋值
+                     * 
                      */
                     bool TemplateNameHasBeenSet() const;
 
                     /**
                      * 获取参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述
                      * @return TemplateDescription 参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述
+                     * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
                      * 设置参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述
-                     * @param TemplateDescription 参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述
+                     * @param _templateDescription 参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述
+                     * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
 
                     /**
                      * 判断参数 TemplateDescription 是否已赋值
                      * @return TemplateDescription 是否已赋值
+                     * 
                      */
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
                      * 获取需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
                      * @return ModifyParamEntrySet 需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
+                     * 
                      */
                     std::vector<ParamEntry> GetModifyParamEntrySet() const;
 
                     /**
                      * 设置需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
-                     * @param ModifyParamEntrySet 需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
+                     * @param _modifyParamEntrySet 需要修改或添加的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
+                     * 
                      */
                     void SetModifyParamEntrySet(const std::vector<ParamEntry>& _modifyParamEntrySet);
 
                     /**
                      * 判断参数 ModifyParamEntrySet 是否已赋值
                      * @return ModifyParamEntrySet 是否已赋值
+                     * 
                      */
                     bool ModifyParamEntrySetHasBeenSet() const;
 
                     /**
                      * 获取需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
                      * @return DeleteParamSet 需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
+                     * 
                      */
                     std::vector<std::string> GetDeleteParamSet() const;
 
                     /**
                      * 设置需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
-                     * @param DeleteParamSet 需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
+                     * @param _deleteParamSet 需要从模板中删除的参数集合，注：同一参数不能同时出现在修改添加集合和删除集合中
+                     * 
                      */
                     void SetDeleteParamSet(const std::vector<std::string>& _deleteParamSet);
 
                     /**
                      * 判断参数 DeleteParamSet 是否已赋值
                      * @return DeleteParamSet 是否已赋值
+                     * 
                      */
                     bool DeleteParamSetHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Switch 访问协议强制跳转配置开关，on或off。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
                     /**
                      * 设置访问协议强制跳转配置开关，on或off。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 访问协议强制跳转配置开关，on或off。
+                     * @param _switch 访问协议强制跳转配置开关，on或off。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectType 强制跳转访问协议类型，支持http，https，分别表示请求强制跳转http协议，请求强制跳转https协议。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRedirectType() const;
 
                     /**
                      * 设置强制跳转访问协议类型，支持http，https，分别表示请求强制跳转http协议，请求强制跳转https协议。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectType 强制跳转访问协议类型，支持http，https，分别表示请求强制跳转http协议，请求强制跳转https协议。
+                     * @param _redirectType 强制跳转访问协议类型，支持http，https，分别表示请求强制跳转http协议，请求强制跳转https协议。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectType(const std::string& _redirectType);
 
                     /**
                      * 判断参数 RedirectType 是否已赋值
                      * @return RedirectType 是否已赋值
+                     * 
                      */
                     bool RedirectTypeHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedirectStatusCode 强制跳转开启时返回的http状态码，支持301或302。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetRedirectStatusCode() const;
 
                     /**
                      * 设置强制跳转开启时返回的http状态码，支持301或302。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectStatusCode 强制跳转开启时返回的http状态码，支持301或302。
+                     * @param _redirectStatusCode 强制跳转开启时返回的http状态码，支持301或302。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRedirectStatusCode(const int64_t& _redirectStatusCode);
 
                     /**
                      * 判断参数 RedirectStatusCode 是否已赋值
                      * @return RedirectStatusCode 是否已赋值
+                     * 
                      */
                     bool RedirectStatusCodeHasBeenSet() const;
 

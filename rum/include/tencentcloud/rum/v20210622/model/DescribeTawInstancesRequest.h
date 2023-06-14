@@ -46,162 +46,189 @@ namespace TencentCloud
                     /**
                      * 获取计费状态
                      * @return ChargeStatuses 计费状态
+                     * 
                      */
                     std::vector<int64_t> GetChargeStatuses() const;
 
                     /**
                      * 设置计费状态
-                     * @param ChargeStatuses 计费状态
+                     * @param _chargeStatuses 计费状态
+                     * 
                      */
                     void SetChargeStatuses(const std::vector<int64_t>& _chargeStatuses);
 
                     /**
                      * 判断参数 ChargeStatuses 是否已赋值
                      * @return ChargeStatuses 是否已赋值
+                     * 
                      */
                     bool ChargeStatusesHasBeenSet() const;
 
                     /**
                      * 获取计费类型
                      * @return ChargeTypes 计费类型
+                     * 
                      */
                     std::vector<int64_t> GetChargeTypes() const;
 
                     /**
                      * 设置计费类型
-                     * @param ChargeTypes 计费类型
+                     * @param _chargeTypes 计费类型
+                     * 
                      */
                     void SetChargeTypes(const std::vector<int64_t>& _chargeTypes);
 
                     /**
                      * 判断参数 ChargeTypes 是否已赋值
                      * @return ChargeTypes 是否已赋值
+                     * 
                      */
                     bool ChargeTypesHasBeenSet() const;
 
                     /**
                      * 获取分页Limit
                      * @return Limit 分页Limit
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页Limit
-                     * @param Limit 分页Limit
+                     * @param _limit 分页Limit
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页Offset
                      * @return Offset 分页Offset
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页Offset
-                     * @param Offset 分页Offset
+                     * @param _offset 分页Offset
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取片区Id
                      * @return AreaIds 片区Id
+                     * 
                      */
                     std::vector<int64_t> GetAreaIds() const;
 
                     /**
                      * 设置片区Id
-                     * @param AreaIds 片区Id
+                     * @param _areaIds 片区Id
+                     * 
                      */
                     void SetAreaIds(const std::vector<int64_t>& _areaIds);
 
                     /**
                      * 判断参数 AreaIds 是否已赋值
                      * @return AreaIds 是否已赋值
+                     * 
                      */
                     bool AreaIdsHasBeenSet() const;
 
                     /**
                      * 获取实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      * @return InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
+                     * 
                      */
                     std::vector<int64_t> GetInstanceStatuses() const;
 
                     /**
                      * 设置实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
-                     * @param InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
+                     * @param _instanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
+                     * 
                      */
                     void SetInstanceStatuses(const std::vector<int64_t>& _instanceStatuses);
 
                     /**
                      * 判断参数 InstanceStatuses 是否已赋值
                      * @return InstanceStatuses 是否已赋值
+                     * 
                      */
                     bool InstanceStatusesHasBeenSet() const;
 
                     /**
                      * 获取实例Id, 该参数已废弃，请在Filters内注明
                      * @return InstanceIds 实例Id, 该参数已废弃，请在Filters内注明
+                     * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置实例Id, 该参数已废弃，请在Filters内注明
-                     * @param InstanceIds 实例Id, 该参数已废弃，请在Filters内注明
+                     * @param _instanceIds 实例Id, 该参数已废弃，请在Filters内注明
+                     * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
                     /**
                      * 判断参数 InstanceIds 是否已赋值
                      * @return InstanceIds 是否已赋值
+                     * 
                      */
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
                      * 获取过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
                      * @return Filters 过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
-                     * @param Filters 过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
+                     * @param _filters 过滤参数；demo模式传{"Name": "IsDemo", "Values":["1"]}
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取该参数已废弃，demo模式请在Filters内注明
                      * @return IsDemo 该参数已废弃，demo模式请在Filters内注明
+                     * 
                      */
                     int64_t GetIsDemo() const;
 
                     /**
                      * 设置该参数已废弃，demo模式请在Filters内注明
-                     * @param IsDemo 该参数已废弃，demo模式请在Filters内注明
+                     * @param _isDemo 该参数已废弃，demo模式请在Filters内注明
+                     * 
                      */
                     void SetIsDemo(const int64_t& _isDemo);
 
                     /**
                      * 判断参数 IsDemo 是否已赋值
                      * @return IsDemo 是否已赋值
+                     * 
                      */
                     bool IsDemoHasBeenSet() const;
 

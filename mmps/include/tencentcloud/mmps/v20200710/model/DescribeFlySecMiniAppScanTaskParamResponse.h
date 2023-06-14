@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取返回值, 0:成功, 其他值请查看“返回值”定义
                      * @return Ret 返回值, 0:成功, 其他值请查看“返回值”定义
+                     * 
                      */
                     int64_t GetRet() const;
 
                     /**
                      * 判断参数 Ret 是否已赋值
                      * @return Ret 是否已赋值
+                     * 
                      */
                     bool RetHasBeenSet() const;
 
                     /**
                      * 获取小程序AppID
                      * @return MiniAppID 小程序AppID
+                     * 
                      */
                     std::string GetMiniAppID() const;
 
                     /**
                      * 判断参数 MiniAppID 是否已赋值
                      * @return MiniAppID 是否已赋值
+                     * 
                      */
                     bool MiniAppIDHasBeenSet() const;
 
                     /**
                      * 获取诊断模式 1:基础诊断，2:深度诊断
                      * @return Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 
                      */
                     int64_t GetMode() const;
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
+                     * 
                      */
                     bool ModeHasBeenSet() const;
 
@@ -84,12 +90,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniAppTestAccount 小程序测试账号(自有账号体系需提供,其他情况不需要)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMiniAppTestAccount() const;
 
                     /**
                      * 判断参数 MiniAppTestAccount 是否已赋值
                      * @return MiniAppTestAccount 是否已赋值
+                     * 
                      */
                     bool MiniAppTestAccountHasBeenSet() const;
 
@@ -98,12 +106,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniAppTestPwd 小程序测试密码(自有账号体系需提供,其他情况不需要)
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetMiniAppTestPwd() const;
 
                     /**
                      * 判断参数 MiniAppTestPwd 是否已赋值
                      * @return MiniAppTestPwd 是否已赋值
+                     * 
                      */
                     bool MiniAppTestPwdHasBeenSet() const;
 
@@ -112,12 +122,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVersion 诊断扫描版本 0:正式版 1:体验版
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetScanVersion() const;
 
                     /**
                      * 判断参数 ScanVersion 是否已赋值
                      * @return ScanVersion 是否已赋值
+                     * 
                      */
                     bool ScanVersionHasBeenSet() const;
 

@@ -50,90 +50,105 @@ namespace TencentCloud
                     /**
                      * 获取围栏事件的产品Id
                      * @return ProductId 围栏事件的产品Id
+                     * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置围栏事件的产品Id
-                     * @param ProductId 围栏事件的产品Id
+                     * @param _productId 围栏事件的产品Id
+                     * 
                      */
                     void SetProductId(const std::string& _productId);
 
                     /**
                      * 判断参数 ProductId 是否已赋值
                      * @return ProductId 是否已赋值
+                     * 
                      */
                     bool ProductIdHasBeenSet() const;
 
                     /**
                      * 获取围栏事件的设备名称
                      * @return DeviceName 围栏事件的设备名称
+                     * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置围栏事件的设备名称
-                     * @param DeviceName 围栏事件的设备名称
+                     * @param _deviceName 围栏事件的设备名称
+                     * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
 
                     /**
                      * 判断参数 DeviceName 是否已赋值
                      * @return DeviceName 是否已赋值
+                     * 
                      */
                     bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取围栏Id
                      * @return FenceId 围栏Id
+                     * 
                      */
                     int64_t GetFenceId() const;
 
                     /**
                      * 设置围栏Id
-                     * @param FenceId 围栏Id
+                     * @param _fenceId 围栏Id
+                     * 
                      */
                     void SetFenceId(const int64_t& _fenceId);
 
                     /**
                      * 判断参数 FenceId 是否已赋值
                      * @return FenceId 是否已赋值
+                     * 
                      */
                     bool FenceIdHasBeenSet() const;
 
                     /**
                      * 获取围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）
                      * @return AlertType 围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）
+                     * 
                      */
                     std::string GetAlertType() const;
 
                     /**
                      * 设置围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）
-                     * @param AlertType 围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）
+                     * @param _alertType 围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）
+                     * 
                      */
                     void SetAlertType(const std::string& _alertType);
 
                     /**
                      * 判断参数 AlertType 是否已赋值
                      * @return AlertType 是否已赋值
+                     * 
                      */
                     bool AlertTypeHasBeenSet() const;
 
                     /**
                      * 获取围栏事件的设备位置信息
                      * @return Data 围栏事件的设备位置信息
+                     * 
                      */
                     FenceAlarmPoint GetData() const;
 
                     /**
                      * 设置围栏事件的设备位置信息
-                     * @param Data 围栏事件的设备位置信息
+                     * @param _data 围栏事件的设备位置信息
+                     * 
                      */
                     void SetData(const FenceAlarmPoint& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

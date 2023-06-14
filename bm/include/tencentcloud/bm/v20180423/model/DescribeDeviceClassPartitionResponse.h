@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取支持的RAID格式列表
                      * @return DeviceClassPartitionInfoSet 支持的RAID格式列表
+                     * 
                      */
                     std::vector<DeviceClassPartitionInfo> GetDeviceClassPartitionInfoSet() const;
 
                     /**
                      * 判断参数 DeviceClassPartitionInfoSet 是否已赋值
                      * @return DeviceClassPartitionInfoSet 是否已赋值
+                     * 
                      */
                     bool DeviceClassPartitionInfoSetHasBeenSet() const;
 

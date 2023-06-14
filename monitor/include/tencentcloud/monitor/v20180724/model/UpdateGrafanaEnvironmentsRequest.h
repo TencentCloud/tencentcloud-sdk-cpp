@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-12345678
                      * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-12345678
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取环境变量字符串
                      * @return Envs 环境变量字符串
+                     * 
                      */
                     std::string GetEnvs() const;
 
                     /**
                      * 设置环境变量字符串
-                     * @param Envs 环境变量字符串
+                     * @param _envs 环境变量字符串
+                     * 
                      */
                     void SetEnvs(const std::string& _envs);
 
                     /**
                      * 判断参数 Envs 是否已赋值
                      * @return Envs 是否已赋值
+                     * 
                      */
                     bool EnvsHasBeenSet() const;
 

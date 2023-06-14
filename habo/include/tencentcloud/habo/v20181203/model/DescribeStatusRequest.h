@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取购买服务后获得的授权帐号，用于保证请求有效性
                      * @return Pk 购买服务后获得的授权帐号，用于保证请求有效性
+                     * 
                      */
                     std::string GetPk() const;
 
                     /**
                      * 设置购买服务后获得的授权帐号，用于保证请求有效性
-                     * @param Pk 购买服务后获得的授权帐号，用于保证请求有效性
+                     * @param _pk 购买服务后获得的授权帐号，用于保证请求有效性
+                     * 
                      */
                     void SetPk(const std::string& _pk);
 
                     /**
                      * 判断参数 Pk 是否已赋值
                      * @return Pk 是否已赋值
+                     * 
                      */
                     bool PkHasBeenSet() const;
 
                     /**
                      * 获取需要获取分析结果的样本md5
                      * @return Md5 需要获取分析结果的样本md5
+                     * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置需要获取分析结果的样本md5
-                     * @param Md5 需要获取分析结果的样本md5
+                     * @param _md5 需要获取分析结果的样本md5
+                     * 
                      */
                     void SetMd5(const std::string& _md5);
 
                     /**
                      * 判断参数 Md5 是否已赋值
                      * @return Md5 是否已赋值
+                     * 
                      */
                     bool Md5HasBeenSet() const;
 

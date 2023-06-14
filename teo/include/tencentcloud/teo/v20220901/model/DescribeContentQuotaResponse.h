@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PurgeQuota 刷新相关配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Quota> GetPurgeQuota() const;
 
                     /**
                      * 判断参数 PurgeQuota 是否已赋值
                      * @return PurgeQuota 是否已赋值
+                     * 
                      */
                     bool PurgeQuotaHasBeenSet() const;
 
@@ -63,12 +65,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrefetchQuota 预热相关配额。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Quota> GetPrefetchQuota() const;
 
                     /**
                      * 判断参数 PrefetchQuota 是否已赋值
                      * @return PrefetchQuota 是否已赋值
+                     * 
                      */
                     bool PrefetchQuotaHasBeenSet() const;
 

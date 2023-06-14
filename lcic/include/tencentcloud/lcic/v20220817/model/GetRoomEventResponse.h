@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取该房间的事件总数，keyword搜索不影响该值。
                      * @return Total 该房间的事件总数，keyword搜索不影响该值。
+                     * 
                      */
                     uint64_t GetTotal() const;
 
                     /**
                      * 判断参数 Total 是否已赋值
                      * @return Total 是否已赋值
+                     * 
                      */
                     bool TotalHasBeenSet() const;
 
@@ -61,12 +63,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 详细事件内容。包含相应的类型、发生的时间戳。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<EventInfo> GetEvents() const;
 
                     /**
                      * 判断参数 Events 是否已赋值
                      * @return Events 是否已赋值
+                     * 
                      */
                     bool EventsHasBeenSet() const;
 

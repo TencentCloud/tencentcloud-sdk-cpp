@@ -47,18 +47,21 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息,UserId必填
                      * @return Operator 操作人信息,UserId必填
+                     * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息,UserId必填
-                     * @param Operator 操作人信息,UserId必填
+                     * @param _operator 操作人信息,UserId必填
+                     * 
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
+                     * 
                      */
                     bool OperatorHasBeenSet() const;
 
@@ -67,110 +70,128 @@ namespace TencentCloud
 E_PRESCRIPTION_AUTO_SIGN 电子处方
                      * @return SceneKey 自动签场景:
 E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 
                      */
                     std::string GetSceneKey() const;
 
                     /**
                      * 设置自动签场景:
 E_PRESCRIPTION_AUTO_SIGN 电子处方
-                     * @param SceneKey 自动签场景:
+                     * @param _sceneKey 自动签场景:
 E_PRESCRIPTION_AUTO_SIGN 电子处方
+                     * 
                      */
                     void SetSceneKey(const std::string& _sceneKey);
 
                     /**
                      * 判断参数 SceneKey 是否已赋值
                      * @return SceneKey 是否已赋值
+                     * 
                      */
                     bool SceneKeyHasBeenSet() const;
 
                     /**
                      * 获取自动签开通，签署相关配置
                      * @return AutoSignConfig 自动签开通，签署相关配置
+                     * 
                      */
                     AutoSignConfig GetAutoSignConfig() const;
 
                     /**
                      * 设置自动签开通，签署相关配置
-                     * @param AutoSignConfig 自动签开通，签署相关配置
+                     * @param _autoSignConfig 自动签开通，签署相关配置
+                     * 
                      */
                     void SetAutoSignConfig(const AutoSignConfig& _autoSignConfig);
 
                     /**
                      * 判断参数 AutoSignConfig 是否已赋值
                      * @return AutoSignConfig 是否已赋值
+                     * 
                      */
                     bool AutoSignConfigHasBeenSet() const;
 
                     /**
                      * 获取链接类型，空-默认小程序端链接，H5SIGN-h5端链接
                      * @return UrlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 
                      */
                     std::string GetUrlType() const;
 
                     /**
                      * 设置链接类型，空-默认小程序端链接，H5SIGN-h5端链接
-                     * @param UrlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * @param _urlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 
                      */
                     void SetUrlType(const std::string& _urlType);
 
                     /**
                      * 判断参数 UrlType 是否已赋值
                      * @return UrlType 是否已赋值
+                     * 
                      */
                     bool UrlTypeHasBeenSet() const;
 
                     /**
                      * 获取通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
                      * @return NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
                      * 设置通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
-                     * @param NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * @param _notifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
                     /**
                      * 判断参数 NotifyType 是否已赋值
                      * @return NotifyType 是否已赋值
+                     * 
                      */
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
                      * 获取若上方填写为 SMS，则此处为手机号
                      * @return NotifyAddress 若上方填写为 SMS，则此处为手机号
+                     * 
                      */
                     std::string GetNotifyAddress() const;
 
                     /**
                      * 设置若上方填写为 SMS，则此处为手机号
-                     * @param NotifyAddress 若上方填写为 SMS，则此处为手机号
+                     * @param _notifyAddress 若上方填写为 SMS，则此处为手机号
+                     * 
                      */
                     void SetNotifyAddress(const std::string& _notifyAddress);
 
                     /**
                      * 判断参数 NotifyAddress 是否已赋值
                      * @return NotifyAddress 是否已赋值
+                     * 
                      */
                     bool NotifyAddressHasBeenSet() const;
 
                     /**
                      * 获取链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
                      * @return ExpiredTime 链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 设置链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
-                     * @param ExpiredTime 链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     * @param _expiredTime 链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。
+                     * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
 
                     /**
                      * 判断参数 ExpiredTime 是否已赋值
                      * @return ExpiredTime 是否已赋值
+                     * 
                      */
                     bool ExpiredTimeHasBeenSet() const;
 

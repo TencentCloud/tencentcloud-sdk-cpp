@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取推送类型。ckafka：消息队列；forward：http/https推送
                      * @return Type 推送类型。ckafka：消息队列；forward：http/https推送
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -60,12 +62,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardAddress 第三方推送地址
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetForwardAddress() const;
 
                     /**
                      * 判断参数 ForwardAddress 是否已赋值
                      * @return ForwardAddress 是否已赋值
+                     * 
                      */
                     bool ForwardAddressHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardKey 第三方推送密钥
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetForwardKey() const;
 
                     /**
                      * 判断参数 ForwardKey 是否已赋值
                      * @return ForwardKey 是否已赋值
+                     * 
                      */
                     bool ForwardKeyHasBeenSet() const;
 
@@ -88,12 +94,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CKafkaRegion ckafka地域
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCKafkaRegion() const;
 
                     /**
                      * 判断参数 CKafkaRegion 是否已赋值
                      * @return CKafkaRegion 是否已赋值
+                     * 
                      */
                     bool CKafkaRegionHasBeenSet() const;
 
@@ -102,12 +110,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CKafkaInstance ckafka实例
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCKafkaInstance() const;
 
                     /**
                      * 判断参数 CKafkaInstance 是否已赋值
                      * @return CKafkaInstance 是否已赋值
+                     * 
                      */
                     bool CKafkaInstanceHasBeenSet() const;
 
@@ -116,12 +126,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CKafkaTopic ckafka订阅主题
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCKafkaTopic() const;
 
                     /**
                      * 判断参数 CKafkaTopic 是否已赋值
                      * @return CKafkaTopic 是否已赋值
+                     * 
                      */
                     bool CKafkaTopicHasBeenSet() const;
 

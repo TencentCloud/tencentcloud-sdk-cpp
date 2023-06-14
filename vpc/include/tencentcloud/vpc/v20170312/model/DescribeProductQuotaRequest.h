@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。
                      * @return Product 查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。
-                     * @param Product 查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。
+                     * @param _product 查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

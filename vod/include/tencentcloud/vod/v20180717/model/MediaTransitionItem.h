@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取转场持续时间，单位为秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。
                      * @return Duration 转场持续时间，单位为秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。
+                     * 
                      */
                     double GetDuration() const;
 
                     /**
                      * 设置转场持续时间，单位为秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。
-                     * @param Duration 转场持续时间，单位为秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。
+                     * @param _duration 转场持续时间，单位为秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。
+                     * 
                      */
                     void SetDuration(const double& _duration);
 
                     /**
                      * 判断参数 Duration 是否已赋值
                      * @return Duration 是否已赋值
+                     * 
                      */
                     bool DurationHasBeenSet() const;
 
                     /**
                      * 获取转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
                      * @return Transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * 
                      */
                     std::vector<TransitionOpertion> GetTransitions() const;
 
                     /**
                      * 设置转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
-                     * @param Transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * @param _transitions 转场操作列表。图像转场操作和音频转场操作各自最多支持一个。
+                     * 
                      */
                     void SetTransitions(const std::vector<TransitionOpertion>& _transitions);
 
                     /**
                      * 判断参数 Transitions 是否已赋值
                      * @return Transitions 是否已赋值
+                     * 
                      */
                     bool TransitionsHasBeenSet() const;
 

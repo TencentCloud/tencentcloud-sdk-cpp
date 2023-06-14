@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
                      * @return Url 视频 URL。
 注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置视频 URL。
 注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
-                     * @param Url 视频 URL。
+                     * @param _url 视频 URL。
 注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
@@ -77,6 +80,7 @@ namespace TencentCloud
 0：音视频 ;
 1：直播流。 
 默认为0。其他非0非1值默认为0。画质重生任务只支持0。
+                     * 
                      */
                     int64_t GetFormat() const;
 
@@ -85,34 +89,39 @@ namespace TencentCloud
 0：音视频 ;
 1：直播流。 
 默认为0。其他非0非1值默认为0。画质重生任务只支持0。
-                     * @param Format 视频地址格式，可选值： 
+                     * @param _format 视频地址格式，可选值： 
 0：音视频 ;
 1：直播流。 
 默认为0。其他非0非1值默认为0。画质重生任务只支持0。
+                     * 
                      */
                     void SetFormat(const int64_t& _format);
 
                     /**
                      * 判断参数 Format 是否已赋值
                      * @return Format 是否已赋值
+                     * 
                      */
                     bool FormatHasBeenSet() const;
 
                     /**
                      * 获取【不再支持】指定请求资源时，HTTP头部host的值。
                      * @return Host 【不再支持】指定请求资源时，HTTP头部host的值。
+                     * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置【不再支持】指定请求资源时，HTTP头部host的值。
-                     * @param Host 【不再支持】指定请求资源时，HTTP头部host的值。
+                     * @param _host 【不再支持】指定请求资源时，HTTP头部host的值。
+                     * 
                      */
                     void SetHost(const std::string& _host);
 
                     /**
                      * 判断参数 Host 是否已赋值
                      * @return Host 是否已赋值
+                     * 
                      */
                     bool HostHasBeenSet() const;
 

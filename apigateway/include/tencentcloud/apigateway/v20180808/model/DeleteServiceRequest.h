@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取待删除服务的唯一 ID。
                      * @return ServiceId 待删除服务的唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待删除服务的唯一 ID。
-                     * @param ServiceId 待删除服务的唯一 ID。
+                     * @param _serviceId 待删除服务的唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取跳过删除前置条件校验（仅支持独享实例上的服务）
                      * @return SkipVerification 跳过删除前置条件校验（仅支持独享实例上的服务）
+                     * 
                      */
                     int64_t GetSkipVerification() const;
 
                     /**
                      * 设置跳过删除前置条件校验（仅支持独享实例上的服务）
-                     * @param SkipVerification 跳过删除前置条件校验（仅支持独享实例上的服务）
+                     * @param _skipVerification 跳过删除前置条件校验（仅支持独享实例上的服务）
+                     * 
                      */
                     void SetSkipVerification(const int64_t& _skipVerification);
 
                     /**
                      * 判断参数 SkipVerification 是否已赋值
                      * @return SkipVerification 是否已赋值
+                     * 
                      */
                     bool SkipVerificationHasBeenSet() const;
 

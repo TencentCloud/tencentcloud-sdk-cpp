@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取域名。
                      * @return DomainName 域名。
+                     * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置域名。
-                     * @param DomainName 域名。
+                     * @param _domainName 域名。
+                     * 
                      */
                     void SetDomainName(const std::string& _domainName);
 
                     /**
                      * 判断参数 DomainName 是否已赋值
                      * @return DomainName 是否已赋值
+                     * 
                      */
                     bool DomainNameHasBeenSet() const;
 
@@ -73,6 +76,7 @@ namespace TencentCloud
 1：启用
 0：禁用
 -1：保持不变
+                     * 
                      */
                     int64_t GetStatus() const;
 
@@ -81,16 +85,18 @@ namespace TencentCloud
 1：启用
 0：禁用
 -1：保持不变
-                     * @param Status 是否启用域名的https规则。
+                     * @param _status 是否启用域名的https规则。
 1：启用
 0：禁用
 -1：保持不变
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

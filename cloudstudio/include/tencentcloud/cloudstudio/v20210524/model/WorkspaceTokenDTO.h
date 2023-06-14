@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取工作空间 SpaceKey
                      * @return SpaceKey 工作空间 SpaceKey
+                     * 
                      */
                     std::string GetSpaceKey() const;
 
                     /**
                      * 设置工作空间 SpaceKey
-                     * @param SpaceKey 工作空间 SpaceKey
+                     * @param _spaceKey 工作空间 SpaceKey
+                     * 
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
 
                     /**
                      * 判断参数 SpaceKey 是否已赋值
                      * @return SpaceKey 是否已赋值
+                     * 
                      */
                     bool SpaceKeyHasBeenSet() const;
 
                     /**
                      * 获取token过期时间，单位是秒，默认 3600
                      * @return TokenExpiredLimitSec token过期时间，单位是秒，默认 3600
+                     * 
                      */
                     uint64_t GetTokenExpiredLimitSec() const;
 
                     /**
                      * 设置token过期时间，单位是秒，默认 3600
-                     * @param TokenExpiredLimitSec token过期时间，单位是秒，默认 3600
+                     * @param _tokenExpiredLimitSec token过期时间，单位是秒，默认 3600
+                     * 
                      */
                     void SetTokenExpiredLimitSec(const uint64_t& _tokenExpiredLimitSec);
 
                     /**
                      * 判断参数 TokenExpiredLimitSec 是否已赋值
                      * @return TokenExpiredLimitSec 是否已赋值
+                     * 
                      */
                     bool TokenExpiredLimitSecHasBeenSet() const;
 

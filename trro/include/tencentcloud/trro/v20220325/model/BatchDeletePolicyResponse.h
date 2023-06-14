@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取删除权限配置失败的远端设备ID列表
                      * @return FailedRemoteDeviceIds 删除权限配置失败的远端设备ID列表
+                     * 
                      */
                     std::vector<std::string> GetFailedRemoteDeviceIds() const;
 
                     /**
                      * 判断参数 FailedRemoteDeviceIds 是否已赋值
                      * @return FailedRemoteDeviceIds 是否已赋值
+                     * 
                      */
                     bool FailedRemoteDeviceIdsHasBeenSet() const;
 

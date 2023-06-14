@@ -49,126 +49,147 @@ namespace TencentCloud
                     /**
                      * 获取事件ID
                      * @return EventId 事件ID
+                     * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件ID
-                     * @param EventId 事件ID
+                     * @param _eventId 事件ID
+                     * 
                      */
                     void SetEventId(const std::string& _eventId);
 
                     /**
                      * 判断参数 EventId 是否已赋值
                      * @return EventId 是否已赋值
+                     * 
                      */
                     bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取版本ID
                      * @return VersionId 版本ID
+                     * 
                      */
                     std::string GetVersionId() const;
 
                     /**
                      * 设置版本ID
-                     * @param VersionId 版本ID
+                     * @param _versionId 版本ID
+                     * 
                      */
                     void SetVersionId(const std::string& _versionId);
 
                     /**
                      * 判断参数 VersionId 是否已赋值
                      * @return VersionId 是否已赋值
+                     * 
                      */
                     bool VersionIdHasBeenSet() const;
 
                     /**
                      * 获取资源栈ID
                      * @return StackId 资源栈ID
+                     * 
                      */
                     std::string GetStackId() const;
 
                     /**
                      * 设置资源栈ID
-                     * @param StackId 资源栈ID
+                     * @param _stackId 资源栈ID
+                     * 
                      */
                     void SetStackId(const std::string& _stackId);
 
                     /**
                      * 判断参数 StackId 是否已赋值
                      * @return StackId 是否已赋值
+                     * 
                      */
                     bool StackIdHasBeenSet() const;
 
                     /**
                      * 获取事件类型
                      * @return Type 事件类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件类型
-                     * @param Type 事件类型
+                     * @param _type 事件类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取版本状态
                      * @return Status 版本状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置版本状态
-                     * @param Status 版本状态
+                     * @param _status 版本状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取状态信息
                      * @return Message 状态信息
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置状态信息
-                     * @param Message 状态信息
+                     * @param _message 状态信息
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * @param _createTime 创建时间
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 

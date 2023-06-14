@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取指标名
                      * @return Metric 指标名
+                     * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名
-                     * @param Metric 指标名
+                     * @param _metric 指标名
+                     * 
                      */
                     void SetMetric(const std::string& _metric);
 
                     /**
                      * 判断参数 Metric 是否已赋值
                      * @return Metric 是否已赋值
+                     * 
                      */
                     bool MetricHasBeenSet() const;
 
                     /**
                      * 获取聚合函数
                      * @return Aggregation 聚合函数
+                     * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置聚合函数
-                     * @param Aggregation 聚合函数
+                     * @param _aggregation 聚合函数
+                     * 
                      */
                     void SetAggregation(const std::string& _aggregation);
 
                     /**
                      * 判断参数 Aggregation 是否已赋值
                      * @return Aggregation 是否已赋值
+                     * 
                      */
                     bool AggregationHasBeenSet() const;
 
                     /**
                      * 获取deprecated, 请使用Filters
                      * @return Labels deprecated, 请使用Filters
+                     * 
                      */
                     std::vector<Label> GetLabels() const;
 
                     /**
                      * 设置deprecated, 请使用Filters
-                     * @param Labels deprecated, 请使用Filters
+                     * @param _labels deprecated, 请使用Filters
+                     * 
                      */
                     void SetLabels(const std::vector<Label>& _labels);
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
                     /**
                      * 获取指标过滤
                      * @return Filters 指标过滤
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置指标过滤
-                     * @param Filters 指标过滤
+                     * @param _filters 指标过滤
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取指标分组
                      * @return GroupBy 指标分组
+                     * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
                      * 设置指标分组
-                     * @param GroupBy 指标分组
+                     * @param _groupBy 指标分组
+                     * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
                     /**
                      * 判断参数 GroupBy 是否已赋值
                      * @return GroupBy 是否已赋值
+                     * 
                      */
                     bool GroupByHasBeenSet() const;
 

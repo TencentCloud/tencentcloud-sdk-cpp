@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DependType 依赖关系，0:被其他集群依赖，1:依赖其他集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDependType() const;
 
                     /**
                      * 设置依赖关系，0:被其他集群依赖，1:依赖其他集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DependType 依赖关系，0:被其他集群依赖，1:依赖其他集群
+                     * @param _dependType 依赖关系，0:被其他集群依赖，1:依赖其他集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDependType(const int64_t& _dependType);
 
                     /**
                      * 判断参数 DependType 是否已赋值
                      * @return DependType 是否已赋值
+                     * 
                      */
                     bool DependTypeHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 共用组件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置共用组件
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Service 共用组件
+                     * @param _service 共用组件
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetService(const std::string& _service);
 
                     /**
                      * 判断参数 Service 是否已赋值
                      * @return Service 是否已赋值
+                     * 
                      */
                     bool ServiceHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 共用集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置共用集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId 共用集群
+                     * @param _clusterId 共用集群
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 共用集群状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
                      * 设置共用集群状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterStatus 共用集群状态
+                     * @param _clusterStatus 共用集群状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterStatus(const int64_t& _clusterStatus);
 
                     /**
                      * 判断参数 ClusterStatus 是否已赋值
                      * @return ClusterStatus 是否已赋值
+                     * 
                      */
                     bool ClusterStatusHasBeenSet() const;
 

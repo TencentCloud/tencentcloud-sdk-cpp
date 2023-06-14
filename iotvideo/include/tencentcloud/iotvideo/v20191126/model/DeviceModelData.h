@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取设备TID
                      * @return Tid 设备TID
+                     * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置设备TID
-                     * @param Tid 设备TID
+                     * @param _tid 设备TID
+                     * 
                      */
                     void SetTid(const std::string& _tid);
 
                     /**
                      * 判断参数 Tid 是否已赋值
                      * @return Tid 是否已赋值
+                     * 
                      */
                     bool TidHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 物模型分支路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置物模型分支路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Branch 物模型分支路径
+                     * @param _branch 物模型分支路径
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBranch(const std::string& _branch);
 
                     /**
                      * 判断参数 Branch 是否已赋值
                      * @return Branch 是否已赋值
+                     * 
                      */
                     bool BranchHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IotModel 物模型数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetIotModel() const;
 
                     /**
                      * 设置物模型数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IotModel 物模型数据
+                     * @param _iotModel 物模型数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetIotModel(const std::string& _iotModel);
 
                     /**
                      * 判断参数 IotModel 是否已赋值
                      * @return IotModel 是否已赋值
+                     * 
                      */
                     bool IotModelHasBeenSet() const;
 

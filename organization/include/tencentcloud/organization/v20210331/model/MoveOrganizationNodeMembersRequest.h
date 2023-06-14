@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取组织节点ID。
                      * @return NodeId 组织节点ID。
+                     * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置组织节点ID。
-                     * @param NodeId 组织节点ID。
+                     * @param _nodeId 组织节点ID。
+                     * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
                     /**
                      * 判断参数 NodeId 是否已赋值
                      * @return NodeId 是否已赋值
+                     * 
                      */
                     bool NodeIdHasBeenSet() const;
 
                     /**
                      * 获取成员UIN列表。
                      * @return MemberUin 成员UIN列表。
+                     * 
                      */
                     std::vector<int64_t> GetMemberUin() const;
 
                     /**
                      * 设置成员UIN列表。
-                     * @param MemberUin 成员UIN列表。
+                     * @param _memberUin 成员UIN列表。
+                     * 
                      */
                     void SetMemberUin(const std::vector<int64_t>& _memberUin);
 
                     /**
                      * 判断参数 MemberUin 是否已赋值
                      * @return MemberUin 是否已赋值
+                     * 
                      */
                     bool MemberUinHasBeenSet() const;
 

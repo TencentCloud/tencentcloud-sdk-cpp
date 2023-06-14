@@ -64,6 +64,7 @@ directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
@@ -75,19 +76,21 @@ directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RulePaths CacheType 对应类型下的匹配内容：
+                     * @param _rulePaths CacheType 对应类型下的匹配内容：
 all 时填充 *
 file 时填充后缀名，如 jpg、txt
 directory 时填充路径，如 /xxx/test
 path 时填充绝对路径，如 /xxx/test.html
 index 时填充 /
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRulePaths(const std::vector<std::string>& _rulePaths);
 
                     /**
                      * 判断参数 RulePaths 是否已赋值
                      * @return RulePaths 是否已赋值
+                     * 
                      */
                     bool RulePathsHasBeenSet() const;
 
@@ -106,6 +109,7 @@ directory：指定路径生效
 path：指定绝对路径生效
 index：首页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleType() const;
 
@@ -117,19 +121,21 @@ directory：指定路径生效
 path：指定绝对路径生效
 index：首页
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleType 规则类型：
+                     * @param _ruleType 规则类型：
 all：所有文件生效
 file：指定文件后缀生效
 directory：指定路径生效
 path：指定绝对路径生效
 index：首页
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleType(const std::string& _ruleType);
 
                     /**
                      * 判断参数 RuleType 是否已赋值
                      * @return RuleType 是否已赋值
+                     * 
                      */
                     bool RuleTypeHasBeenSet() const;
 
@@ -138,20 +144,23 @@ index：首页
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CacheConfig 缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     RuleCacheConfig GetCacheConfig() const;
 
                     /**
                      * 设置缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheConfig 缓存配置。
+                     * @param _cacheConfig 缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCacheConfig(const RuleCacheConfig& _cacheConfig);
 
                     /**
                      * 判断参数 CacheConfig 是否已赋值
                      * @return CacheConfig 是否已赋值
+                     * 
                      */
                     bool CacheConfigHasBeenSet() const;
 

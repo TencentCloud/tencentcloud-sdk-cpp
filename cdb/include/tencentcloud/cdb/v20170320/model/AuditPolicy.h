@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取审计策略 ID。
                      * @return PolicyId 审计策略 ID。
+                     * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
                      * 设置审计策略 ID。
-                     * @param PolicyId 审计策略 ID。
+                     * @param _policyId 审计策略 ID。
+                     * 
                      */
                     void SetPolicyId(const std::string& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
@@ -75,6 +78,7 @@ namespace TencentCloud
 "running" - 运行中;
 "paused" - 暂停中;
 "failed" - 创建失败。
+                     * 
                      */
                     std::string GetStatus() const;
 
@@ -84,107 +88,124 @@ namespace TencentCloud
 "running" - 运行中;
 "paused" - 暂停中;
 "failed" - 创建失败。
-                     * @param Status 审计策略的状态。可能返回的值为：
+                     * @param _status 审计策略的状态。可能返回的值为：
 "creating" - 创建中;
 "running" - 运行中;
 "paused" - 暂停中;
 "failed" - 创建失败。
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取数据库实例 ID。
                      * @return InstanceId 数据库实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置数据库实例 ID。
-                     * @param InstanceId 数据库实例 ID。
+                     * @param _instanceId 数据库实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取审计策略创建时间。格式为 : "2019-03-20 17:09:13"。
                      * @return CreateTime 审计策略创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置审计策略创建时间。格式为 : "2019-03-20 17:09:13"。
-                     * @param CreateTime 审计策略创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * @param _createTime 审计策略创建时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取审计策略最后修改时间。格式为 : "2019-03-20 17:09:13"。
                      * @return ModifyTime 审计策略最后修改时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置审计策略最后修改时间。格式为 : "2019-03-20 17:09:13"。
-                     * @param ModifyTime 审计策略最后修改时间。格式为 : "2019-03-20 17:09:13"。
+                     * @param _modifyTime 审计策略最后修改时间。格式为 : "2019-03-20 17:09:13"。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
                      * 获取审计策略名称。
                      * @return PolicyName 审计策略名称。
+                     * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置审计策略名称。
-                     * @param PolicyName 审计策略名称。
+                     * @param _policyName 审计策略名称。
+                     * 
                      */
                     void SetPolicyName(const std::string& _policyName);
 
                     /**
                      * 判断参数 PolicyName 是否已赋值
                      * @return PolicyName 是否已赋值
+                     * 
                      */
                     bool PolicyNameHasBeenSet() const;
 
                     /**
                      * 获取审计规则 ID。
                      * @return RuleId 审计规则 ID。
+                     * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置审计规则 ID。
-                     * @param RuleId 审计规则 ID。
+                     * @param _ruleId 审计规则 ID。
+                     * 
                      */
                     void SetRuleId(const std::string& _ruleId);
 
                     /**
                      * 判断参数 RuleId 是否已赋值
                      * @return RuleId 是否已赋值
+                     * 
                      */
                     bool RuleIdHasBeenSet() const;
 
@@ -193,20 +214,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 审计规则名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置审计规则名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleName 审计规则名称。
+                     * @param _ruleName 审计规则名称。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
@@ -215,20 +239,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 数据库实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置数据库实例名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceName 数据库实例名称
+                     * @param _instanceName 数据库实例名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 

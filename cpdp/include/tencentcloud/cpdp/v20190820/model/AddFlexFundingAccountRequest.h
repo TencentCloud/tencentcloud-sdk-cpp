@@ -47,92 +47,107 @@ namespace TencentCloud
 PINGAN_BANK:平安银行
                      * @return FundingAccountType 资金账户类型
 PINGAN_BANK:平安银行
+                     * 
                      */
                     std::string GetFundingAccountType() const;
 
                     /**
                      * 设置资金账户类型
 PINGAN_BANK:平安银行
-                     * @param FundingAccountType 资金账户类型
+                     * @param _fundingAccountType 资金账户类型
 PINGAN_BANK:平安银行
+                     * 
                      */
                     void SetFundingAccountType(const std::string& _fundingAccountType);
 
                     /**
                      * 判断参数 FundingAccountType 是否已赋值
                      * @return FundingAccountType 是否已赋值
+                     * 
                      */
                     bool FundingAccountTypeHasBeenSet() const;
 
                     /**
                      * 获取收款资金账户姓名
                      * @return FundingAccountName 收款资金账户姓名
+                     * 
                      */
                     std::string GetFundingAccountName() const;
 
                     /**
                      * 设置收款资金账户姓名
-                     * @param FundingAccountName 收款资金账户姓名
+                     * @param _fundingAccountName 收款资金账户姓名
+                     * 
                      */
                     void SetFundingAccountName(const std::string& _fundingAccountName);
 
                     /**
                      * 判断参数 FundingAccountName 是否已赋值
                      * @return FundingAccountName 是否已赋值
+                     * 
                      */
                     bool FundingAccountNameHasBeenSet() const;
 
                     /**
                      * 获取收款资金账户号
                      * @return FundingAccountNo 收款资金账户号
+                     * 
                      */
                     std::string GetFundingAccountNo() const;
 
                     /**
                      * 设置收款资金账户号
-                     * @param FundingAccountNo 收款资金账户号
+                     * @param _fundingAccountNo 收款资金账户号
+                     * 
                      */
                     void SetFundingAccountNo(const std::string& _fundingAccountNo);
 
                     /**
                      * 判断参数 FundingAccountNo 是否已赋值
                      * @return FundingAccountNo 是否已赋值
+                     * 
                      */
                     bool FundingAccountNoHasBeenSet() const;
 
                     /**
                      * 获取收款资金账户手机号
                      * @return PhoneNo 收款资金账户手机号
+                     * 
                      */
                     std::string GetPhoneNo() const;
 
                     /**
                      * 设置收款资金账户手机号
-                     * @param PhoneNo 收款资金账户手机号
+                     * @param _phoneNo 收款资金账户手机号
+                     * 
                      */
                     void SetPhoneNo(const std::string& _phoneNo);
 
                     /**
                      * 判断参数 PhoneNo 是否已赋值
                      * @return PhoneNo 是否已赋值
+                     * 
                      */
                     bool PhoneNoHasBeenSet() const;
 
                     /**
                      * 获取收款用户ID
                      * @return PayeeId 收款用户ID
+                     * 
                      */
                     std::string GetPayeeId() const;
 
                     /**
                      * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
+                     * @param _payeeId 收款用户ID
+                     * 
                      */
                     void SetPayeeId(const std::string& _payeeId);
 
                     /**
                      * 判断参数 PayeeId 是否已赋值
                      * @return PayeeId 是否已赋值
+                     * 
                      */
                     bool PayeeIdHasBeenSet() const;
 
@@ -147,6 +162,7 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -156,35 +172,40 @@ __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 __test__:测试环境
 缺省默认为生产环境
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 
                     /**
                      * 获取开户支行名
                      * @return BankBranchName 开户支行名
+                     * 
                      */
                     std::string GetBankBranchName() const;
 
                     /**
                      * 设置开户支行名
-                     * @param BankBranchName 开户支行名
+                     * @param _bankBranchName 开户支行名
+                     * 
                      */
                     void SetBankBranchName(const std::string& _bankBranchName);
 
                     /**
                      * 判断参数 BankBranchName 是否已赋值
                      * @return BankBranchName 是否已赋值
+                     * 
                      */
                     bool BankBranchNameHasBeenSet() const;
 

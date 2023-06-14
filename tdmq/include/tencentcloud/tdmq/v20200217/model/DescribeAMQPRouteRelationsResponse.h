@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取总记录数
                      * @return TotalCount 总记录数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取路由关系列表
                      * @return RouteRelations 路由关系列表
+                     * 
                      */
                     std::vector<AMQPRouteRelation> GetRouteRelations() const;
 
                     /**
                      * 判断参数 RouteRelations 是否已赋值
                      * @return RouteRelations 是否已赋值
+                     * 
                      */
                     bool RouteRelationsHasBeenSet() const;
 

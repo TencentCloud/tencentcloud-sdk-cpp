@@ -57,6 +57,7 @@ SUCCESS: 进件成功
 FAILED: 进件失败
 PROCESSING: 进件中 
 注意：若返回进件中，需要再次调用进件结果查询接口，查询结果。
+                     * 
                      */
                     std::string GetRegistrationStatus() const;
 
@@ -66,17 +67,19 @@ SUCCESS: 进件成功
 FAILED: 进件失败
 PROCESSING: 进件中 
 注意：若返回进件中，需要再次调用进件结果查询接口，查询结果。
-                     * @param RegistrationStatus 进件状态 
+                     * @param _registrationStatus 进件状态 
 SUCCESS: 进件成功 
 FAILED: 进件失败
 PROCESSING: 进件中 
 注意：若返回进件中，需要再次调用进件结果查询接口，查询结果。
+                     * 
                      */
                     void SetRegistrationStatus(const std::string& _registrationStatus);
 
                     /**
                      * 判断参数 RegistrationStatus 是否已赋值
                      * @return RegistrationStatus 是否已赋值
+                     * 
                      */
                     bool RegistrationStatusHasBeenSet() const;
 
@@ -85,56 +88,65 @@ PROCESSING: 进件中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrationMessage 进件返回描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRegistrationMessage() const;
 
                     /**
                      * 设置进件返回描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegistrationMessage 进件返回描述
+                     * @param _registrationMessage 进件返回描述
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRegistrationMessage(const std::string& _registrationMessage);
 
                     /**
                      * 判断参数 RegistrationMessage 是否已赋值
                      * @return RegistrationMessage 是否已赋值
+                     * 
                      */
                     bool RegistrationMessageHasBeenSet() const;
 
                     /**
                      * 获取渠道进件序列号
                      * @return ChannelRegistrationNo 渠道进件序列号
+                     * 
                      */
                     std::string GetChannelRegistrationNo() const;
 
                     /**
                      * 设置渠道进件序列号
-                     * @param ChannelRegistrationNo 渠道进件序列号
+                     * @param _channelRegistrationNo 渠道进件序列号
+                     * 
                      */
                     void SetChannelRegistrationNo(const std::string& _channelRegistrationNo);
 
                     /**
                      * 判断参数 ChannelRegistrationNo 是否已赋值
                      * @return ChannelRegistrationNo 是否已赋值
+                     * 
                      */
                     bool ChannelRegistrationNoHasBeenSet() const;
 
                     /**
                      * 获取渠道子商户ID
                      * @return ChannelSubMerchantId 渠道子商户ID
+                     * 
                      */
                     std::string GetChannelSubMerchantId() const;
 
                     /**
                      * 设置渠道子商户ID
-                     * @param ChannelSubMerchantId 渠道子商户ID
+                     * @param _channelSubMerchantId 渠道子商户ID
+                     * 
                      */
                     void SetChannelSubMerchantId(const std::string& _channelSubMerchantId);
 
                     /**
                      * 判断参数 ChannelSubMerchantId 是否已赋值
                      * @return ChannelSubMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelSubMerchantIdHasBeenSet() const;
 

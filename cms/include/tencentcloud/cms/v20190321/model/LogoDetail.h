@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppLogoDetail 命中的Applogo详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Logo> GetAppLogoDetail() const;
 
                     /**
                      * 设置命中的Applogo详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppLogoDetail 命中的Applogo详情
+                     * @param _appLogoDetail 命中的Applogo详情
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppLogoDetail(const std::vector<Logo>& _appLogoDetail);
 
                     /**
                      * 判断参数 AppLogoDetail 是否已赋值
                      * @return AppLogoDetail 是否已赋值
+                     * 
                      */
                     bool AppLogoDetailHasBeenSet() const;
 

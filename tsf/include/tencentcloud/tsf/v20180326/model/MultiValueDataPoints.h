@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取多值数据点
                      * @return Points 多值数据点
+                     * 
                      */
                     std::vector<MultiValue> GetPoints() const;
 
                     /**
                      * 设置多值数据点
-                     * @param Points 多值数据点
+                     * @param _points 多值数据点
+                     * 
                      */
                     void SetPoints(const std::vector<MultiValue>& _points);
 
                     /**
                      * 判断参数 Points 是否已赋值
                      * @return Points 是否已赋值
+                     * 
                      */
                     bool PointsHasBeenSet() const;
 
                     /**
                      * 获取指标名称
                      * @return MetricName 指标名称
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名称
-                     * @param MetricName 指标名称
+                     * @param _metricName 指标名称
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取多值数据点key列表，每个值表示当前数据点所在区域的下限
                      * @return PointKeys 多值数据点key列表，每个值表示当前数据点所在区域的下限
+                     * 
                      */
                     std::vector<std::string> GetPointKeys() const;
 
                     /**
                      * 设置多值数据点key列表，每个值表示当前数据点所在区域的下限
-                     * @param PointKeys 多值数据点key列表，每个值表示当前数据点所在区域的下限
+                     * @param _pointKeys 多值数据点key列表，每个值表示当前数据点所在区域的下限
+                     * 
                      */
                     void SetPointKeys(const std::vector<std::string>& _pointKeys);
 
                     /**
                      * 判断参数 PointKeys 是否已赋值
                      * @return PointKeys 是否已赋值
+                     * 
                      */
                     bool PointKeysHasBeenSet() const;
 

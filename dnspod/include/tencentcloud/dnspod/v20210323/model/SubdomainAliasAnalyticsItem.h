@@ -51,36 +51,42 @@ namespace TencentCloud
                     /**
                      * 获取子域名解析量统计查询信息
                      * @return Info 子域名解析量统计查询信息
+                     * 
                      */
                     SubdomainAnalyticsInfo GetInfo() const;
 
                     /**
                      * 设置子域名解析量统计查询信息
-                     * @param Info 子域名解析量统计查询信息
+                     * @param _info 子域名解析量统计查询信息
+                     * 
                      */
                     void SetInfo(const SubdomainAnalyticsInfo& _info);
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取当前统计维度解析量小计
                      * @return Data 当前统计维度解析量小计
+                     * 
                      */
                     std::vector<DomainAnalyticsDetail> GetData() const;
 
                     /**
                      * 设置当前统计维度解析量小计
-                     * @param Data 当前统计维度解析量小计
+                     * @param _data 当前统计维度解析量小计
+                     * 
                      */
                     void SetData(const std::vector<DomainAnalyticsDetail>& _data);
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

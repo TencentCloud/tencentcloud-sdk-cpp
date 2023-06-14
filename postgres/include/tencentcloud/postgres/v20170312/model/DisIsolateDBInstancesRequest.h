@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      * @return DBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
                      * 设置资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
-                     * @param DBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * @param _dBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
                     /**
                      * 判断参数 DBInstanceIdSet 是否已赋值
                      * @return DBInstanceIdSet 是否已赋值
+                     * 
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
                      * 获取包年包月实例解隔离时购买时常 以月为单位
                      * @return Period 包年包月实例解隔离时购买时常 以月为单位
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置包年包月实例解隔离时购买时常 以月为单位
-                     * @param Period 包年包月实例解隔离时购买时常 以月为单位
+                     * @param _period 包年包月实例解隔离时购买时常 以月为单位
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取是否使用代金券：true-使用,false-不使用，默认不使用
                      * @return AutoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
+                     * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
                      * 设置是否使用代金券：true-使用,false-不使用，默认不使用
-                     * @param AutoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
+                     * @param _autoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
+                     * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
 
                     /**
                      * 判断参数 AutoVoucher 是否已赋值
                      * @return AutoVoucher 是否已赋值
+                     * 
                      */
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
                      * 获取代金券id列表
                      * @return VoucherIds 代金券id列表
+                     * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
                      * 设置代金券id列表
-                     * @param VoucherIds 代金券id列表
+                     * @param _voucherIds 代金券id列表
+                     * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
 
                     /**
                      * 判断参数 VoucherIds 是否已赋值
                      * @return VoucherIds 是否已赋值
+                     * 
                      */
                     bool VoucherIdsHasBeenSet() const;
 

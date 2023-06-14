@@ -29,6 +29,8 @@
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/DeleteEndPointRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/DeleteEndPointResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRequest.h>
@@ -88,6 +90,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrivateZoneRecordResponse> CreatePrivateZoneRecordOutcome;
                 typedef std::future<CreatePrivateZoneRecordOutcome> CreatePrivateZoneRecordOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::CreatePrivateZoneRecordRequest&, CreatePrivateZoneRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateZoneRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEndPointResponse> DeleteEndPointOutcome;
+                typedef std::future<DeleteEndPointOutcome> DeleteEndPointOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::DeleteEndPointRequest&, DeleteEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrivateDNSAccountResponse> DeletePrivateDNSAccountOutcome;
                 typedef std::future<DeletePrivateDNSAccountOutcome> DeletePrivateDNSAccountOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::DeletePrivateDNSAccountRequest&, DeletePrivateDNSAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateDNSAccountAsyncHandler;
@@ -171,6 +176,15 @@ namespace TencentCloud
                 CreatePrivateZoneRecordOutcome CreatePrivateZoneRecord(const Model::CreatePrivateZoneRecordRequest &request);
                 void CreatePrivateZoneRecordAsync(const Model::CreatePrivateZoneRecordRequest& request, const CreatePrivateZoneRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrivateZoneRecordOutcomeCallable CreatePrivateZoneRecordCallable(const Model::CreatePrivateZoneRecordRequest& request);
+
+                /**
+                 *删除终端节点
+                 * @param req DeleteEndPointRequest
+                 * @return DeleteEndPointOutcome
+                 */
+                DeleteEndPointOutcome DeleteEndPoint(const Model::DeleteEndPointRequest &request);
+                void DeleteEndPointAsync(const Model::DeleteEndPointRequest& request, const DeleteEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEndPointOutcomeCallable DeleteEndPointCallable(const Model::DeleteEndPointRequest& request);
 
                 /**
                  *删除私有域解析账号

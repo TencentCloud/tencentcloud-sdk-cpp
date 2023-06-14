@@ -53,6 +53,7 @@ mainland：境内计费方式查询
 overseas：境外计费方式查询
 global：全球计费方式查询
 未填充时，默认为 mainland
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -62,35 +63,40 @@ mainland：境内计费方式查询
 overseas：境外计费方式查询
 global：全球计费方式查询
 未填充时，默认为 mainland
-                     * @param Area 指定服务地域查询
+                     * @param _area 指定服务地域查询
 mainland：境内计费方式查询
 overseas：境外计费方式查询
 global：全球计费方式查询
 未填充时，默认为 mainland
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
                     /**
                      * 获取指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
                      * @return Product 指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
-                     * @param Product 指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     * @param _product 指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 
@@ -103,6 +109,7 @@ https：HTTPS请求包
 flux：流量包
 https：HTTPS请求包
 未填充时，默认为 flux
+                     * 
                      */
                     std::string GetType() const;
 
@@ -111,16 +118,18 @@ https：HTTPS请求包
 flux：流量包
 https：HTTPS请求包
 未填充时，默认为 flux
-                     * @param Type 指定资源包查询
+                     * @param _type 指定资源包查询
 flux：流量包
 https：HTTPS请求包
 未填充时，默认为 flux
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

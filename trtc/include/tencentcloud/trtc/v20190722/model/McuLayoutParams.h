@@ -51,90 +51,105 @@ namespace TencentCloud
                     /**
                      * 获取布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
                      * @return MixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
+                     * 
                      */
                     uint64_t GetMixLayoutMode() const;
 
                     /**
                      * 设置布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
-                     * @param MixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
+                     * @param _mixLayoutMode 布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。
+                     * 
                      */
                     void SetMixLayoutMode(const uint64_t& _mixLayoutMode);
 
                     /**
                      * 判断参数 MixLayoutMode 是否已赋值
                      * @return MixLayoutMode 是否已赋值
+                     * 
                      */
                     bool MixLayoutModeHasBeenSet() const;
 
                     /**
                      * 获取纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。
                      * @return PureAudioHoldPlaceMode 纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。
+                     * 
                      */
                     uint64_t GetPureAudioHoldPlaceMode() const;
 
                     /**
                      * 设置纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。
-                     * @param PureAudioHoldPlaceMode 纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。
+                     * @param _pureAudioHoldPlaceMode 纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。
+                     * 
                      */
                     void SetPureAudioHoldPlaceMode(const uint64_t& _pureAudioHoldPlaceMode);
 
                     /**
                      * 判断参数 PureAudioHoldPlaceMode 是否已赋值
                      * @return PureAudioHoldPlaceMode 是否已赋值
+                     * 
                      */
                     bool PureAudioHoldPlaceModeHasBeenSet() const;
 
                     /**
                      * 获取自定义模板中有效，指定用户视频在混合画面中的位置。
                      * @return MixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * 
                      */
                     std::vector<McuLayout> GetMixLayoutList() const;
 
                     /**
                      * 设置自定义模板中有效，指定用户视频在混合画面中的位置。
-                     * @param MixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * @param _mixLayoutList 自定义模板中有效，指定用户视频在混合画面中的位置。
+                     * 
                      */
                     void SetMixLayoutList(const std::vector<McuLayout>& _mixLayoutList);
 
                     /**
                      * 判断参数 MixLayoutList 是否已赋值
                      * @return MixLayoutList 是否已赋值
+                     * 
                      */
                     bool MixLayoutListHasBeenSet() const;
 
                     /**
                      * 获取指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。
                      * @return MaxVideoUser 指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。
+                     * 
                      */
                     MaxVideoUser GetMaxVideoUser() const;
 
                     /**
                      * 设置指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。
-                     * @param MaxVideoUser 指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。
+                     * @param _maxVideoUser 指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。
+                     * 
                      */
                     void SetMaxVideoUser(const MaxVideoUser& _maxVideoUser);
 
                     /**
                      * 判断参数 MaxVideoUser 是否已赋值
                      * @return MaxVideoUser 是否已赋值
+                     * 
                      */
                     bool MaxVideoUserHasBeenSet() const;
 
                     /**
                      * 获取屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
                      * @return RenderMode 屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     * 
                      */
                     uint64_t GetRenderMode() const;
 
                     /**
                      * 设置屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
-                     * @param RenderMode 屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     * @param _renderMode 屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     * 
                      */
                     void SetRenderMode(const uint64_t& _renderMode);
 
                     /**
                      * 判断参数 RenderMode 是否已赋值
                      * @return RenderMode 是否已赋值
+                     * 
                      */
                     bool RenderModeHasBeenSet() const;
 

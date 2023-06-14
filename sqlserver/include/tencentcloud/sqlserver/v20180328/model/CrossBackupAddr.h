@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取跨地域备份目标地域
                      * @return CrossRegion 跨地域备份目标地域
+                     * 
                      */
                     std::string GetCrossRegion() const;
 
                     /**
                      * 设置跨地域备份目标地域
-                     * @param CrossRegion 跨地域备份目标地域
+                     * @param _crossRegion 跨地域备份目标地域
+                     * 
                      */
                     void SetCrossRegion(const std::string& _crossRegion);
 
                     /**
                      * 判断参数 CrossRegion 是否已赋值
                      * @return CrossRegion 是否已赋值
+                     * 
                      */
                     bool CrossRegionHasBeenSet() const;
 
                     /**
                      * 获取跨地域备份内网下载地址
                      * @return CrossInternalAddr 跨地域备份内网下载地址
+                     * 
                      */
                     std::string GetCrossInternalAddr() const;
 
                     /**
                      * 设置跨地域备份内网下载地址
-                     * @param CrossInternalAddr 跨地域备份内网下载地址
+                     * @param _crossInternalAddr 跨地域备份内网下载地址
+                     * 
                      */
                     void SetCrossInternalAddr(const std::string& _crossInternalAddr);
 
                     /**
                      * 判断参数 CrossInternalAddr 是否已赋值
                      * @return CrossInternalAddr 是否已赋值
+                     * 
                      */
                     bool CrossInternalAddrHasBeenSet() const;
 
                     /**
                      * 获取跨地域备份外网下载地址
                      * @return CrossExternalAddr 跨地域备份外网下载地址
+                     * 
                      */
                     std::string GetCrossExternalAddr() const;
 
                     /**
                      * 设置跨地域备份外网下载地址
-                     * @param CrossExternalAddr 跨地域备份外网下载地址
+                     * @param _crossExternalAddr 跨地域备份外网下载地址
+                     * 
                      */
                     void SetCrossExternalAddr(const std::string& _crossExternalAddr);
 
                     /**
                      * 判断参数 CrossExternalAddr 是否已赋值
                      * @return CrossExternalAddr 是否已赋值
+                     * 
                      */
                     bool CrossExternalAddrHasBeenSet() const;
 

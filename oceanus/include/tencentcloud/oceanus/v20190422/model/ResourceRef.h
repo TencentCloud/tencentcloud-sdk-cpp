@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取资源ID
                      * @return ResourceId 资源ID
+                     * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-                     * @param ResourceId 资源ID
+                     * @param _resourceId 资源ID
+                     * 
                      */
                     void SetResourceId(const std::string& _resourceId);
 
                     /**
                      * 判断参数 ResourceId 是否已赋值
                      * @return ResourceId 是否已赋值
+                     * 
                      */
                     bool ResourceIdHasBeenSet() const;
 
                     /**
                      * 获取资源版本ID，-1表示使用最新版本
                      * @return Version 资源版本ID，-1表示使用最新版本
+                     * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置资源版本ID，-1表示使用最新版本
-                     * @param Version 资源版本ID，-1表示使用最新版本
+                     * @param _version 资源版本ID，-1表示使用最新版本
+                     * 
                      */
                     void SetVersion(const int64_t& _version);
 
                     /**
                      * 判断参数 Version 是否已赋值
                      * @return Version 是否已赋值
+                     * 
                      */
                     bool VersionHasBeenSet() const;
 
                     /**
                      * 获取引用资源类型，例如主资源设置为1，代表main class所在的jar包
                      * @return Type 引用资源类型，例如主资源设置为1，代表main class所在的jar包
+                     * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置引用资源类型，例如主资源设置为1，代表main class所在的jar包
-                     * @param Type 引用资源类型，例如主资源设置为1，代表main class所在的jar包
+                     * @param _type 引用资源类型，例如主资源设置为1，代表main class所在的jar包
+                     * 
                      */
                     void SetType(const int64_t& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

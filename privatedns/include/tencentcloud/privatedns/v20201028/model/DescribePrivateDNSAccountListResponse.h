@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取私有域解析账号数量
                      * @return TotalCount 私有域解析账号数量
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取私有域解析账号列表
                      * @return AccountSet 私有域解析账号列表
+                     * 
                      */
                     std::vector<PrivateDNSAccount> GetAccountSet() const;
 
                     /**
                      * 判断参数 AccountSet 是否已赋值
                      * @return AccountSet 是否已赋值
+                     * 
                      */
                     bool AccountSetHasBeenSet() const;
 

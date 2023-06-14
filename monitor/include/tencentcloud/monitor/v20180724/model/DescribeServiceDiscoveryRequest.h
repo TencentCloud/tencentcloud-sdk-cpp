@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Prometheus 实例 ID
                      * @return InstanceId Prometheus 实例 ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Prometheus 实例 ID
-                     * @param InstanceId Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>
                      * @return KubeClusterId <li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>
+                     * 
                      */
                     std::string GetKubeClusterId() const;
 
                     /**
                      * 设置<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>
-                     * @param KubeClusterId <li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>
+                     * @param _kubeClusterId <li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>
+                     * 
                      */
                     void SetKubeClusterId(const std::string& _kubeClusterId);
 
                     /**
                      * 判断参数 KubeClusterId 是否已赋值
                      * @return KubeClusterId 是否已赋值
+                     * 
                      */
                     bool KubeClusterIdHasBeenSet() const;
 
@@ -83,20 +89,23 @@ namespace TencentCloud
 <li> 1 = 容器服务集群(TKE) </li>
                      * @return KubeType 用户 Kubernetes 集群类型：
 <li> 1 = 容器服务集群(TKE) </li>
+                     * 
                      */
                     int64_t GetKubeType() const;
 
                     /**
                      * 设置用户 Kubernetes 集群类型：
 <li> 1 = 容器服务集群(TKE) </li>
-                     * @param KubeType 用户 Kubernetes 集群类型：
+                     * @param _kubeType 用户 Kubernetes 集群类型：
 <li> 1 = 容器服务集群(TKE) </li>
+                     * 
                      */
                     void SetKubeType(const int64_t& _kubeType);
 
                     /**
                      * 判断参数 KubeType 是否已赋值
                      * @return KubeType 是否已赋值
+                     * 
                      */
                     bool KubeTypeHasBeenSet() const;
 

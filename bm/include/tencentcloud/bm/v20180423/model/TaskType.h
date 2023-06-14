@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取故障类ID
                      * @return TypeId 故障类ID
+                     * 
                      */
                     uint64_t GetTypeId() const;
 
                     /**
                      * 设置故障类ID
-                     * @param TypeId 故障类ID
+                     * @param _typeId 故障类ID
+                     * 
                      */
                     void SetTypeId(const uint64_t& _typeId);
 
                     /**
                      * 判断参数 TypeId 是否已赋值
                      * @return TypeId 是否已赋值
+                     * 
                      */
                     bool TypeIdHasBeenSet() const;
 
                     /**
                      * 获取故障类中文名
                      * @return TypeName 故障类中文名
+                     * 
                      */
                     std::string GetTypeName() const;
 
                     /**
                      * 设置故障类中文名
-                     * @param TypeName 故障类中文名
+                     * @param _typeName 故障类中文名
+                     * 
                      */
                     void SetTypeName(const std::string& _typeName);
 
                     /**
                      * 判断参数 TypeName 是否已赋值
                      * @return TypeName 是否已赋值
+                     * 
                      */
                     bool TypeNameHasBeenSet() const;
 
                     /**
                      * 获取故障类型父类
                      * @return TaskSubType 故障类型父类
+                     * 
                      */
                     std::string GetTaskSubType() const;
 
                     /**
                      * 设置故障类型父类
-                     * @param TaskSubType 故障类型父类
+                     * @param _taskSubType 故障类型父类
+                     * 
                      */
                     void SetTaskSubType(const std::string& _taskSubType);
 
                     /**
                      * 判断参数 TaskSubType 是否已赋值
                      * @return TaskSubType 是否已赋值
+                     * 
                      */
                     bool TaskSubTypeHasBeenSet() const;
 

@@ -57,20 +57,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcType 检测方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManualCalcType GetCalcType() const;
 
                     /**
                      * 设置检测方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CalcType 检测方式
+                     * @param _calcType 检测方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCalcType(const DescribePolicyConditionListConfigManualCalcType& _calcType);
 
                     /**
                      * 判断参数 CalcType 是否已赋值
                      * @return CalcType 是否已赋值
+                     * 
                      */
                     bool CalcTypeHasBeenSet() const;
 
@@ -79,20 +82,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalcValue 检测阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManualCalcValue GetCalcValue() const;
 
                     /**
                      * 设置检测阈值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CalcValue 检测阈值
+                     * @param _calcValue 检测阈值
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCalcValue(const DescribePolicyConditionListConfigManualCalcValue& _calcValue);
 
                     /**
                      * 判断参数 CalcValue 是否已赋值
                      * @return CalcValue 是否已赋值
+                     * 
                      */
                     bool CalcValueHasBeenSet() const;
 
@@ -101,20 +107,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueTime 持续时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManualContinueTime GetContinueTime() const;
 
                     /**
                      * 设置持续时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContinueTime 持续时间
+                     * @param _continueTime 持续时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContinueTime(const DescribePolicyConditionListConfigManualContinueTime& _continueTime);
 
                     /**
                      * 判断参数 ContinueTime 是否已赋值
                      * @return ContinueTime 是否已赋值
+                     * 
                      */
                     bool ContinueTimeHasBeenSet() const;
 
@@ -123,20 +132,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 数据周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManualPeriod GetPeriod() const;
 
                     /**
                      * 设置数据周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Period 数据周期
+                     * @param _period 数据周期
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeriod(const DescribePolicyConditionListConfigManualPeriod& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
@@ -145,20 +157,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodNum 持续周期个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManualPeriodNum GetPeriodNum() const;
 
                     /**
                      * 设置持续周期个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeriodNum 持续周期个数
+                     * @param _periodNum 持续周期个数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeriodNum(const DescribePolicyConditionListConfigManualPeriodNum& _periodNum);
 
                     /**
                      * 判断参数 PeriodNum 是否已赋值
                      * @return PeriodNum 是否已赋值
+                     * 
                      */
                     bool PeriodNumHasBeenSet() const;
 
@@ -167,20 +182,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatType 聚合方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribePolicyConditionListConfigManualStatType GetStatType() const;
 
                     /**
                      * 设置聚合方式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatType 聚合方式
+                     * @param _statType 聚合方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetStatType(const DescribePolicyConditionListConfigManualStatType& _statType);
 
                     /**
                      * 判断参数 StatType 是否已赋值
                      * @return StatType 是否已赋值
+                     * 
                      */
                     bool StatTypeHasBeenSet() const;
 

@@ -47,144 +47,168 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
                      * @return Filters 过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
-                     * @param Filters 过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
+                     * @param _filters 过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序字段（AlarmTime）
                      * @return OrderFields 排序字段（AlarmTime）
+                     * 
                      */
                     std::vector<OrderField> GetOrderFields() const;
 
                     /**
                      * 设置排序字段（AlarmTime）
-                     * @param OrderFields 排序字段（AlarmTime）
+                     * @param _orderFields 排序字段（AlarmTime）
+                     * 
                      */
                     void SetOrderFields(const std::vector<OrderField>& _orderFields);
 
                     /**
                      * 判断参数 OrderFields 是否已赋值
                      * @return OrderFields 是否已赋值
+                     * 
                      */
                     bool OrderFieldsHasBeenSet() const;
 
                     /**
                      * 获取类型(201表示实时，202表示离线)
                      * @return TaskType 类型(201表示实时，202表示离线)
+                     * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
                      * 设置类型(201表示实时，202表示离线)
-                     * @param TaskType 类型(201表示实时，202表示离线)
+                     * @param _taskType 类型(201表示实时，202表示离线)
+                     * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
 
                     /**
                      * 判断参数 TaskType 是否已赋值
                      * @return TaskType 是否已赋值
+                     * 
                      */
                     bool TaskTypeHasBeenSet() const;
 
                     /**
                      * 获取开始时间
                      * @return StartTime 开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间
-                     * @param StartTime 开始时间
+                     * @param _startTime 开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间
                      * @return EndTime 结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-                     * @param EndTime 结束时间
+                     * @param _endTime 结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const std::string& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取当前页
                      * @return PageNumber 当前页
+                     * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
                      * 设置当前页
-                     * @param PageNumber 当前页
+                     * @param _pageNumber 当前页
+                     * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
 
                     /**
                      * 判断参数 PageNumber 是否已赋值
                      * @return PageNumber 是否已赋值
+                     * 
                      */
                     bool PageNumberHasBeenSet() const;
 
                     /**
                      * 获取每页记录数
                      * @return PageSize 每页记录数
+                     * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
                      * 设置每页记录数
-                     * @param PageSize 每页记录数
+                     * @param _pageSize 每页记录数
+                     * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
 
                     /**
                      * 判断参数 PageSize 是否已赋值
                      * @return PageSize 是否已赋值
+                     * 
                      */
                     bool PageSizeHasBeenSet() const;
 

@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取ES集群ID
                      * @return ESInstanceId ES集群ID
+                     * 
                      */
                     std::string GetESInstanceId() const;
 
                     /**
                      * 设置ES集群ID
-                     * @param ESInstanceId ES集群ID
+                     * @param _eSInstanceId ES集群ID
+                     * 
                      */
                     void SetESInstanceId(const std::string& _eSInstanceId);
 
                     /**
                      * 判断参数 ESInstanceId 是否已赋值
                      * @return ESInstanceId 是否已赋值
+                     * 
                      */
                     bool ESInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取ES集群用户名
                      * @return ESUserName ES集群用户名
+                     * 
                      */
                     std::string GetESUserName() const;
 
                     /**
                      * 设置ES集群用户名
-                     * @param ESUserName ES集群用户名
+                     * @param _eSUserName ES集群用户名
+                     * 
                      */
                     void SetESUserName(const std::string& _eSUserName);
 
                     /**
                      * 判断参数 ESUserName 是否已赋值
                      * @return ESUserName 是否已赋值
+                     * 
                      */
                     bool ESUserNameHasBeenSet() const;
 
                     /**
                      * 获取ES集群密码
                      * @return ESPassword ES集群密码
+                     * 
                      */
                     std::string GetESPassword() const;
 
                     /**
                      * 设置ES集群密码
-                     * @param ESPassword ES集群密码
+                     * @param _eSPassword ES集群密码
+                     * 
                      */
                     void SetESPassword(const std::string& _eSPassword);
 
                     /**
                      * 判断参数 ESPassword 是否已赋值
                      * @return ESPassword 是否已赋值
+                     * 
                      */
                     bool ESPasswordHasBeenSet() const;
 

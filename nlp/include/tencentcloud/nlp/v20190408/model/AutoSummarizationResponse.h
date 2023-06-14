@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取文本摘要结果
                      * @return Summary 文本摘要结果
+                     * 
                      */
                     std::string GetSummary() const;
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 

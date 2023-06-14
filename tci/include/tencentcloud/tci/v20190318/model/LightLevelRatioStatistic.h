@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取名称
                      * @return Level 名称
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置名称
-                     * @param Level 名称
+                     * @param _level 名称
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取比例
                      * @return Ratio 比例
+                     * 
                      */
                     double GetRatio() const;
 
                     /**
                      * 设置比例
-                     * @param Ratio 比例
+                     * @param _ratio 比例
+                     * 
                      */
                     void SetRatio(const double& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 

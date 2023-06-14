@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取云产品监控类型查询数据使用的命名空间
                      * @return QceNamespace 云产品监控类型查询数据使用的命名空间
+                     * 
                      */
                     std::string GetQceNamespace() const;
 
                     /**
                      * 设置云产品监控类型查询数据使用的命名空间
-                     * @param QceNamespace 云产品监控类型查询数据使用的命名空间
+                     * @param _qceNamespace 云产品监控类型查询数据使用的命名空间
+                     * 
                      */
                     void SetQceNamespace(const std::string& _qceNamespace);
 
                     /**
                      * 判断参数 QceNamespace 是否已赋值
                      * @return QceNamespace 是否已赋值
+                     * 
                      */
                     bool QceNamespaceHasBeenSet() const;
 
                     /**
                      * 获取指标名
                      * @return MetricName 指标名
+                     * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标名
-                     * @param MetricName 指标名
+                     * @param _metricName 指标名
+                     * 
                      */
                     void SetMetricName(const std::string& _metricName);
 
                     /**
                      * 判断参数 MetricName 是否已赋值
                      * @return MetricName 是否已赋值
+                     * 
                      */
                     bool MetricNameHasBeenSet() const;
 
                     /**
                      * 获取统计周期
                      * @return Period 统计周期
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置统计周期
-                     * @param Period 统计周期
+                     * @param _period 统计周期
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取触发告警的数值
                      * @return Value 触发告警的数值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置触发告警的数值
-                     * @param Value 触发告警的数值
+                     * @param _value 触发告警的数值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 
                     /**
                      * 获取指标的展示名
                      * @return Description 指标的展示名
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置指标的展示名
-                     * @param Description 指标的展示名
+                     * @param _description 指标的展示名
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 

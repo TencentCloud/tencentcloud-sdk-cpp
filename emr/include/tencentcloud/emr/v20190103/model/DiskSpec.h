@@ -61,6 +61,7 @@ LOCAL_SSD 本地SSD。
 CLOUD_SSD 云SSD。
 CLOUD_PREMIUM 高效云盘。
 CLOUD_HSSD 增强型云SSD。
+                     * 
                      */
                     std::string GetDiskType() const;
 
@@ -72,37 +73,42 @@ LOCAL_SSD 本地SSD。
 CLOUD_SSD 云SSD。
 CLOUD_PREMIUM 高效云盘。
 CLOUD_HSSD 增强型云SSD。
-                     * @param DiskType 磁盘类型。
+                     * @param _diskType 磁盘类型。
 LOCAL_BASIC  本地盘。
 CLOUD_BASIC 云硬盘。
 LOCAL_SSD 本地SSD。
 CLOUD_SSD 云SSD。
 CLOUD_PREMIUM 高效云盘。
 CLOUD_HSSD 增强型云SSD。
+                     * 
                      */
                     void SetDiskType(const std::string& _diskType);
 
                     /**
                      * 判断参数 DiskType 是否已赋值
                      * @return DiskType 是否已赋值
+                     * 
                      */
                     bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取磁盘大小，单位GB。
                      * @return DiskSize 磁盘大小，单位GB。
+                     * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置磁盘大小，单位GB。
-                     * @param DiskSize 磁盘大小，单位GB。
+                     * @param _diskSize 磁盘大小，单位GB。
+                     * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
 
                     /**
                      * 判断参数 DiskSize 是否已赋值
                      * @return DiskSize 是否已赋值
+                     * 
                      */
                     bool DiskSizeHasBeenSet() const;
 

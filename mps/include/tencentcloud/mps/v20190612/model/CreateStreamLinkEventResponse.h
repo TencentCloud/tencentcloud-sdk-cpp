@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取创建的Event信息。
                      * @return Info 创建的Event信息。
+                     * 
                      */
                     DescribeEvent GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 

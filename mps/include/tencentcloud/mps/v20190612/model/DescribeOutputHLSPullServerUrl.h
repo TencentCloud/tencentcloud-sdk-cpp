@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取HLS拉流地址的Url。
                      * @return Url HLS拉流地址的Url。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置HLS拉流地址的Url。
-                     * @param Url HLS拉流地址的Url。
+                     * @param _url HLS拉流地址的Url。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 

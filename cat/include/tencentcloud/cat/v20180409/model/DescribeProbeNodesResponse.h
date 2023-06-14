@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeSet 节点列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<NodeDefine> GetNodeSet() const;
 
                     /**
                      * 判断参数 NodeSet 是否已赋值
                      * @return NodeSet 是否已赋值
+                     * 
                      */
                     bool NodeSetHasBeenSet() const;
 

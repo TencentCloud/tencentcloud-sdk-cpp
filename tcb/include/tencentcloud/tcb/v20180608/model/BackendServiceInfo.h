@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取服务名称
                      * @return ServiceName 服务名称
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名称
-                     * @param ServiceName 服务名称
+                     * @param _serviceName 服务名称
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取服务状态
                      * @return Status 服务状态
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置服务状态
-                     * @param Status 服务状态
+                     * @param _status 服务状态
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取异步下载任务ID，需要配合ExportTasks接口使用
                      * @return TaskId 异步下载任务ID，需要配合ExportTasks接口使用
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 

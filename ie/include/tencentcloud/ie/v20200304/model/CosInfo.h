@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取cos 区域值。例如：ap-beijing。
                      * @return Region cos 区域值。例如：ap-beijing。
+                     * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置cos 区域值。例如：ap-beijing。
-                     * @param Region cos 区域值。例如：ap-beijing。
+                     * @param _region cos 区域值。例如：ap-beijing。
+                     * 
                      */
                     void SetRegion(const std::string& _region);
 
                     /**
                      * 判断参数 Region 是否已赋值
                      * @return Region 是否已赋值
+                     * 
                      */
                     bool RegionHasBeenSet() const;
 
                     /**
                      * 获取cos 存储桶，格式为BuketName-AppId。例如：test-123456。
                      * @return Bucket cos 存储桶，格式为BuketName-AppId。例如：test-123456。
+                     * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置cos 存储桶，格式为BuketName-AppId。例如：test-123456。
-                     * @param Bucket cos 存储桶，格式为BuketName-AppId。例如：test-123456。
+                     * @param _bucket cos 存储桶，格式为BuketName-AppId。例如：test-123456。
+                     * 
                      */
                     void SetBucket(const std::string& _bucket);
 
                     /**
                      * 判断参数 Bucket 是否已赋值
                      * @return Bucket 是否已赋值
+                     * 
                      */
                     bool BucketHasBeenSet() const;
 
@@ -90,6 +96,7 @@ namespace TencentCloud
                      * @return Path cos 路径。 
 对于写表示目录，例如：/test； 
 对于读表示文件路径，例如：/test/test.mp4。
+                     * 
                      */
                     std::string GetPath() const;
 
@@ -97,33 +104,38 @@ namespace TencentCloud
                      * 设置cos 路径。 
 对于写表示目录，例如：/test； 
 对于读表示文件路径，例如：/test/test.mp4。
-                     * @param Path cos 路径。 
+                     * @param _path cos 路径。 
 对于写表示目录，例如：/test； 
 对于读表示文件路径，例如：/test/test.mp4。
+                     * 
                      */
                     void SetPath(const std::string& _path);
 
                     /**
                      * 判断参数 Path 是否已赋值
                      * @return Path 是否已赋值
+                     * 
                      */
                     bool PathHasBeenSet() const;
 
                     /**
                      * 获取cos 授权信息，不填默认为公有权限。
                      * @return CosAuthMode cos 授权信息，不填默认为公有权限。
+                     * 
                      */
                     CosAuthMode GetCosAuthMode() const;
 
                     /**
                      * 设置cos 授权信息，不填默认为公有权限。
-                     * @param CosAuthMode cos 授权信息，不填默认为公有权限。
+                     * @param _cosAuthMode cos 授权信息，不填默认为公有权限。
+                     * 
                      */
                     void SetCosAuthMode(const CosAuthMode& _cosAuthMode);
 
                     /**
                      * 判断参数 CosAuthMode 是否已赋值
                      * @return CosAuthMode 是否已赋值
+                     * 
                      */
                     bool CosAuthModeHasBeenSet() const;
 

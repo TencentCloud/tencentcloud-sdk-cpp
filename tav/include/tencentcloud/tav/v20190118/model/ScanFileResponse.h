@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取接口调用状态，成功返回200，失败返回400
                      * @return Status 接口调用状态，成功返回200，失败返回400
+                     * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取接口调用描述信息，成功返回"success"，失败返回"invalid request"
                      * @return Info 接口调用描述信息，成功返回"success"，失败返回"invalid request"
+                     * 
                      */
                     std::string GetInfo() const;
 
                     /**
                      * 判断参数 Info 是否已赋值
                      * @return Info 是否已赋值
+                     * 
                      */
                     bool InfoHasBeenSet() const;
 
                     /**
                      * 获取异步扫描任务提交成功返回success
                      * @return Data 异步扫描任务提交成功返回success
+                     * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
                      * @return Data 是否已赋值
+                     * 
                      */
                     bool DataHasBeenSet() const;
 

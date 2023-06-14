@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取容器实例id
                      * @return EksCiId 容器实例id
+                     * 
                      */
                     std::string GetEksCiId() const;
 
                     /**
                      * 设置容器实例id
-                     * @param EksCiId 容器实例id
+                     * @param _eksCiId 容器实例id
+                     * 
                      */
                     void SetEksCiId(const std::string& _eksCiId);
 
                     /**
                      * 判断参数 EksCiId 是否已赋值
                      * @return EksCiId 是否已赋值
+                     * 
                      */
                     bool EksCiIdHasBeenSet() const;
 
                     /**
                      * 获取最大事件数量。默认为50，最大取值100。
                      * @return Limit 最大事件数量。默认为50，最大取值100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置最大事件数量。默认为50，最大取值100。
-                     * @param Limit 最大事件数量。默认为50，最大取值100。
+                     * @param _limit 最大事件数量。默认为50，最大取值100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

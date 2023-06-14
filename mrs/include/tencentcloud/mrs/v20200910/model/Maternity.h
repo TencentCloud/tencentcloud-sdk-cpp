@@ -53,20 +53,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述部分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MaternityDesc GetDesc() const;
 
                     /**
                      * 设置描述部分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Desc 描述部分
+                     * @param _desc 描述部分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDesc(const MaternityDesc& _desc);
 
                     /**
                      * 判断参数 Desc 是否已赋值
                      * @return Desc 是否已赋值
+                     * 
                      */
                     bool DescHasBeenSet() const;
 
@@ -75,20 +78,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Summary 结论部分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MaternitySummary GetSummary() const;
 
                     /**
                      * 设置结论部分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Summary 结论部分
+                     * @param _summary 结论部分
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSummary(const MaternitySummary& _summary);
 
                     /**
                      * 判断参数 Summary 是否已赋值
                      * @return Summary 是否已赋值
+                     * 
                      */
                     bool SummaryHasBeenSet() const;
 
@@ -97,20 +103,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrText 报告原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOcrText() const;
 
                     /**
                      * 设置报告原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrText 报告原文
+                     * @param _ocrText 报告原文
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcrText(const std::string& _ocrText);
 
                     /**
                      * 判断参数 OcrText 是否已赋值
                      * @return OcrText 是否已赋值
+                     * 
                      */
                     bool OcrTextHasBeenSet() const;
 

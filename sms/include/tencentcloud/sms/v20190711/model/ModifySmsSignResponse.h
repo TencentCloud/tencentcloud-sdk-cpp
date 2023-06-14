@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取修改签名响应
                      * @return ModifySignStatus 修改签名响应
+                     * 
                      */
                     ModifySignStatus GetModifySignStatus() const;
 
                     /**
                      * 判断参数 ModifySignStatus 是否已赋值
                      * @return ModifySignStatus 是否已赋值
+                     * 
                      */
                     bool ModifySignStatusHasBeenSet() const;
 

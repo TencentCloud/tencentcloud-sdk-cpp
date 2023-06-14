@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取固件升级任务状态分布信息
                      * @return StatusInfos 固件升级任务状态分布信息
+                     * 
                      */
                     std::vector<StatusStatistic> GetStatusInfos() const;
 
                     /**
                      * 判断参数 StatusInfos 是否已赋值
                      * @return StatusInfos 是否已赋值
+                     * 
                      */
                     bool StatusInfosHasBeenSet() const;
 

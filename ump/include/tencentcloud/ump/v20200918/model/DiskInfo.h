@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取硬盘名字
                      * @return DiskName 硬盘名字
+                     * 
                      */
                     std::string GetDiskName() const;
 
                     /**
                      * 设置硬盘名字
-                     * @param DiskName 硬盘名字
+                     * @param _diskName 硬盘名字
+                     * 
                      */
                     void SetDiskName(const std::string& _diskName);
 
                     /**
                      * 判断参数 DiskName 是否已赋值
                      * @return DiskName 是否已赋值
+                     * 
                      */
                     bool DiskNameHasBeenSet() const;
 
                     /**
                      * 获取硬盘使用率
                      * @return Usage 硬盘使用率
+                     * 
                      */
                     double GetUsage() const;
 
                     /**
                      * 设置硬盘使用率
-                     * @param Usage 硬盘使用率
+                     * @param _usage 硬盘使用率
+                     * 
                      */
                     void SetUsage(const double& _usage);
 
                     /**
                      * 判断参数 Usage 是否已赋值
                      * @return Usage 是否已赋值
+                     * 
                      */
                     bool UsageHasBeenSet() const;
 

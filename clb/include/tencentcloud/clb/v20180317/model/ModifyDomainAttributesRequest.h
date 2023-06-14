@@ -47,198 +47,231 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID。
                      * @return LoadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
                      * 设置负载均衡实例ID。
-                     * @param LoadBalancerId 负载均衡实例ID。
+                     * @param _loadBalancerId 负载均衡实例ID。
+                     * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
 
                     /**
                      * 判断参数 LoadBalancerId 是否已赋值
                      * @return LoadBalancerId 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡监听器ID。
                      * @return ListenerId 负载均衡监听器ID。
+                     * 
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置负载均衡监听器ID。
-                     * @param ListenerId 负载均衡监听器ID。
+                     * @param _listenerId 负载均衡监听器ID。
+                     * 
                      */
                     void SetListenerId(const std::string& _listenerId);
 
                     /**
                      * 判断参数 ListenerId 是否已赋值
                      * @return ListenerId 是否已赋值
+                     * 
                      */
                     bool ListenerIdHasBeenSet() const;
 
                     /**
                      * 获取域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
                      * @return Domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
-                     * @param Domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * @param _domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取要修改的新域名。NewDomain和NewDomains只能传一个。
                      * @return NewDomain 要修改的新域名。NewDomain和NewDomains只能传一个。
+                     * 
                      */
                     std::string GetNewDomain() const;
 
                     /**
                      * 设置要修改的新域名。NewDomain和NewDomains只能传一个。
-                     * @param NewDomain 要修改的新域名。NewDomain和NewDomains只能传一个。
+                     * @param _newDomain 要修改的新域名。NewDomain和NewDomains只能传一个。
+                     * 
                      */
                     void SetNewDomain(const std::string& _newDomain);
 
                     /**
                      * 判断参数 NewDomain 是否已赋值
                      * @return NewDomain 是否已赋值
+                     * 
                      */
                     bool NewDomainHasBeenSet() const;
 
                     /**
                      * 获取域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
                      * @return Certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
+                     * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
                      * 设置域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
-                     * @param Certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
+                     * @param _certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
+                     * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
 
                     /**
                      * 判断参数 Certificate 是否已赋值
                      * @return Certificate 是否已赋值
+                     * 
                      */
                     bool CertificateHasBeenSet() const;
 
                     /**
                      * 获取是否开启Http2，注意，只有HTTPS域名才能开启Http2。
                      * @return Http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 
                      */
                     bool GetHttp2() const;
 
                     /**
                      * 设置是否开启Http2，注意，只有HTTPS域名才能开启Http2。
-                     * @param Http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * @param _http2 是否开启Http2，注意，只有HTTPS域名才能开启Http2。
+                     * 
                      */
                     void SetHttp2(const bool& _http2);
 
                     /**
                      * 判断参数 Http2 是否已赋值
                      * @return Http2 是否已赋值
+                     * 
                      */
                     bool Http2HasBeenSet() const;
 
                     /**
                      * 获取是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
                      * @return DefaultServer 是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * 
                      */
                     bool GetDefaultServer() const;
 
                     /**
                      * 设置是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
-                     * @param DefaultServer 是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * @param _defaultServer 是否设为默认域名，注意，一个监听器下只能设置一个默认域名。
+                     * 
                      */
                     void SetDefaultServer(const bool& _defaultServer);
 
                     /**
                      * 判断参数 DefaultServer 是否已赋值
                      * @return DefaultServer 是否已赋值
+                     * 
                      */
                     bool DefaultServerHasBeenSet() const;
 
                     /**
                      * 获取是否开启Quic，注意，只有HTTPS域名才能开启Quic
                      * @return Quic 是否开启Quic，注意，只有HTTPS域名才能开启Quic
+                     * 
                      */
                     bool GetQuic() const;
 
                     /**
                      * 设置是否开启Quic，注意，只有HTTPS域名才能开启Quic
-                     * @param Quic 是否开启Quic，注意，只有HTTPS域名才能开启Quic
+                     * @param _quic 是否开启Quic，注意，只有HTTPS域名才能开启Quic
+                     * 
                      */
                     void SetQuic(const bool& _quic);
 
                     /**
                      * 判断参数 Quic 是否已赋值
                      * @return Quic 是否已赋值
+                     * 
                      */
                     bool QuicHasBeenSet() const;
 
                     /**
                      * 获取监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      * @return NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * 
                      */
                     std::string GetNewDefaultServerDomain() const;
 
                     /**
                      * 设置监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
-                     * @param NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * @param _newDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * 
                      */
                     void SetNewDefaultServerDomain(const std::string& _newDefaultServerDomain);
 
                     /**
                      * 判断参数 NewDefaultServerDomain 是否已赋值
                      * @return NewDefaultServerDomain 是否已赋值
+                     * 
                      */
                     bool NewDefaultServerDomainHasBeenSet() const;
 
                     /**
                      * 获取要修改的新域名列表。NewDomain和NewDomains只能传一个。
                      * @return NewDomains 要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     * 
                      */
                     std::vector<std::string> GetNewDomains() const;
 
                     /**
                      * 设置要修改的新域名列表。NewDomain和NewDomains只能传一个。
-                     * @param NewDomains 要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     * @param _newDomains 要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     * 
                      */
                     void SetNewDomains(const std::vector<std::string>& _newDomains);
 
                     /**
                      * 判断参数 NewDomains 是否已赋值
                      * @return NewDomains 是否已赋值
+                     * 
                      */
                     bool NewDomainsHasBeenSet() const;
 
                     /**
                      * 获取域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
                      * @return MultiCertInfo 域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     * 
                      */
                     MultiCertInfo GetMultiCertInfo() const;
 
                     /**
                      * 设置域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
-                     * @param MultiCertInfo 域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     * @param _multiCertInfo 域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     * 
                      */
                     void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
 
                     /**
                      * 判断参数 MultiCertInfo 是否已赋值
                      * @return MultiCertInfo 是否已赋值
+                     * 
                      */
                     bool MultiCertInfoHasBeenSet() const;
 

@@ -56,54 +56,63 @@ namespace TencentCloud
                     /**
                      * 获取输出Id。
                      * @return OutputId 输出Id。
+                     * 
                      */
                     std::string GetOutputId() const;
 
                     /**
                      * 设置输出Id。
-                     * @param OutputId 输出Id。
+                     * @param _outputId 输出Id。
+                     * 
                      */
                     void SetOutputId(const std::string& _outputId);
 
                     /**
                      * 判断参数 OutputId 是否已赋值
                      * @return OutputId 是否已赋值
+                     * 
                      */
                     bool OutputIdHasBeenSet() const;
 
                     /**
                      * 获取输出名称。
                      * @return OutputName 输出名称。
+                     * 
                      */
                     std::string GetOutputName() const;
 
                     /**
                      * 设置输出名称。
-                     * @param OutputName 输出名称。
+                     * @param _outputName 输出名称。
+                     * 
                      */
                     void SetOutputName(const std::string& _outputName);
 
                     /**
                      * 判断参数 OutputName 是否已赋值
                      * @return OutputName 是否已赋值
+                     * 
                      */
                     bool OutputNameHasBeenSet() const;
 
                     /**
                      * 获取输出类型。
                      * @return OutputType 输出类型。
+                     * 
                      */
                     std::string GetOutputType() const;
 
                     /**
                      * 设置输出类型。
-                     * @param OutputType 输出类型。
+                     * @param _outputType 输出类型。
+                     * 
                      */
                     void SetOutputType(const std::string& _outputType);
 
                     /**
                      * 判断参数 OutputType 是否已赋值
                      * @return OutputType 是否已赋值
+                     * 
                      */
                     bool OutputTypeHasBeenSet() const;
 
@@ -112,56 +121,65 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 输出描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置输出描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 输出描述。
+                     * @param _description 输出描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取输出协议。
                      * @return Protocol 输出协议。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置输出协议。
-                     * @param Protocol 输出协议。
+                     * @param _protocol 输出协议。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取输出的出口地址信息列表。
                      * @return OutputAddressList 输出的出口地址信息列表。
+                     * 
                      */
                     std::vector<OutputAddress> GetOutputAddressList() const;
 
                     /**
                      * 设置输出的出口地址信息列表。
-                     * @param OutputAddressList 输出的出口地址信息列表。
+                     * @param _outputAddressList 输出的出口地址信息列表。
+                     * 
                      */
                     void SetOutputAddressList(const std::vector<OutputAddress>& _outputAddressList);
 
                     /**
                      * 判断参数 OutputAddressList 是否已赋值
                      * @return OutputAddressList 是否已赋值
+                     * 
                      */
                     bool OutputAddressListHasBeenSet() const;
 
@@ -170,20 +188,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputRegion 输出的地区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOutputRegion() const;
 
                     /**
                      * 设置输出的地区。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputRegion 输出的地区。
+                     * @param _outputRegion 输出的地区。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOutputRegion(const std::string& _outputRegion);
 
                     /**
                      * 判断参数 OutputRegion 是否已赋值
                      * @return OutputRegion 是否已赋值
+                     * 
                      */
                     bool OutputRegionHasBeenSet() const;
 
@@ -192,20 +213,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SRTSettings 输出的SRT配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeOutputSRTSettings GetSRTSettings() const;
 
                     /**
                      * 设置输出的SRT配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SRTSettings 输出的SRT配置信息。
+                     * @param _sRTSettings 输出的SRT配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSRTSettings(const DescribeOutputSRTSettings& _sRTSettings);
 
                     /**
                      * 判断参数 SRTSettings 是否已赋值
                      * @return SRTSettings 是否已赋值
+                     * 
                      */
                     bool SRTSettingsHasBeenSet() const;
 
@@ -214,20 +238,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTPSettings 输出的RTP配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeOutputRTPSettings GetRTPSettings() const;
 
                     /**
                      * 设置输出的RTP配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RTPSettings 输出的RTP配置信息。
+                     * @param _rTPSettings 输出的RTP配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRTPSettings(const DescribeOutputRTPSettings& _rTPSettings);
 
                     /**
                      * 判断参数 RTPSettings 是否已赋值
                      * @return RTPSettings 是否已赋值
+                     * 
                      */
                     bool RTPSettingsHasBeenSet() const;
 
@@ -236,20 +263,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTMPSettings 输出的RTMP配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeOutputRTMPSettings GetRTMPSettings() const;
 
                     /**
                      * 设置输出的RTMP配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RTMPSettings 输出的RTMP配置信息。
+                     * @param _rTMPSettings 输出的RTMP配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRTMPSettings(const DescribeOutputRTMPSettings& _rTMPSettings);
 
                     /**
                      * 判断参数 RTMPSettings 是否已赋值
                      * @return RTMPSettings 是否已赋值
+                     * 
                      */
                     bool RTMPSettingsHasBeenSet() const;
 
@@ -258,20 +288,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTMPPullSettings 输出的RTMP拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeOutputRTMPPullSettings GetRTMPPullSettings() const;
 
                     /**
                      * 设置输出的RTMP拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RTMPPullSettings 输出的RTMP拉流配置信息。
+                     * @param _rTMPPullSettings 输出的RTMP拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRTMPPullSettings(const DescribeOutputRTMPPullSettings& _rTMPPullSettings);
 
                     /**
                      * 判断参数 RTMPPullSettings 是否已赋值
                      * @return RTMPPullSettings 是否已赋值
+                     * 
                      */
                     bool RTMPPullSettingsHasBeenSet() const;
 
@@ -282,6 +315,7 @@ namespace TencentCloud
                      * @return AllowIpList CIDR白名单列表。
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetAllowIpList() const;
 
@@ -289,15 +323,17 @@ namespace TencentCloud
                      * 设置CIDR白名单列表。
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AllowIpList CIDR白名单列表。
+                     * @param _allowIpList CIDR白名单列表。
 当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAllowIpList(const std::vector<std::string>& _allowIpList);
 
                     /**
                      * 判断参数 AllowIpList 是否已赋值
                      * @return AllowIpList 是否已赋值
+                     * 
                      */
                     bool AllowIpListHasBeenSet() const;
 
@@ -306,20 +342,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RTSPPullSettings 输出的RTSP拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeOutputRTSPPullSettings GetRTSPPullSettings() const;
 
                     /**
                      * 设置输出的RTSP拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RTSPPullSettings 输出的RTSP拉流配置信息。
+                     * @param _rTSPPullSettings 输出的RTSP拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRTSPPullSettings(const DescribeOutputRTSPPullSettings& _rTSPPullSettings);
 
                     /**
                      * 判断参数 RTSPPullSettings 是否已赋值
                      * @return RTSPPullSettings 是否已赋值
+                     * 
                      */
                     bool RTSPPullSettingsHasBeenSet() const;
 
@@ -328,38 +367,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HLSPullSettings 输出的HLS拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     DescribeOutputHLSPullSettings GetHLSPullSettings() const;
 
                     /**
                      * 设置输出的HLS拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HLSPullSettings 输出的HLS拉流配置信息。
+                     * @param _hLSPullSettings 输出的HLS拉流配置信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHLSPullSettings(const DescribeOutputHLSPullSettings& _hLSPullSettings);
 
                     /**
                      * 判断参数 HLSPullSettings 是否已赋值
                      * @return HLSPullSettings 是否已赋值
+                     * 
                      */
                     bool HLSPullSettingsHasBeenSet() const;
 
                     /**
                      * 获取最大拉流并发数，最大为4，默认4。
                      * @return MaxConcurrent 最大拉流并发数，最大为4，默认4。
+                     * 
                      */
                     uint64_t GetMaxConcurrent() const;
 
                     /**
                      * 设置最大拉流并发数，最大为4，默认4。
-                     * @param MaxConcurrent 最大拉流并发数，最大为4，默认4。
+                     * @param _maxConcurrent 最大拉流并发数，最大为4，默认4。
+                     * 
                      */
                     void SetMaxConcurrent(const uint64_t& _maxConcurrent);
 
                     /**
                      * 判断参数 MaxConcurrent 是否已赋值
                      * @return MaxConcurrent 是否已赋值
+                     * 
                      */
                     bool MaxConcurrentHasBeenSet() const;
 

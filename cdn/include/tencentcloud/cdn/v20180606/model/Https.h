@@ -58,6 +58,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSwitch() const;
 
@@ -66,16 +67,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch https 配置开关，取值有：
+                     * @param _switch https 配置开关，取值有：
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSwitch(const std::string& _switch);
 
                     /**
                      * 判断参数 Switch 是否已赋值
                      * @return Switch 是否已赋值
+                     * 
                      */
                     bool SwitchHasBeenSet() const;
 
@@ -88,6 +91,7 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetHttp2() const;
 
@@ -96,16 +100,18 @@ off：关闭
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Http2 http2 配置开关
+                     * @param _http2 http2 配置开关
 on：开启
 off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHttp2(const std::string& _http2);
 
                     /**
                      * 判断参数 Http2 是否已赋值
                      * @return Http2 是否已赋值
+                     * 
                      */
                     bool Http2HasBeenSet() const;
 
@@ -120,6 +126,7 @@ on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetOcspStapling() const;
 
@@ -129,17 +136,19 @@ on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcspStapling OCSP 配置开关
+                     * @param _ocspStapling OCSP 配置开关
 on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetOcspStapling(const std::string& _ocspStapling);
 
                     /**
                      * 判断参数 OcspStapling 是否已赋值
                      * @return OcspStapling 是否已赋值
+                     * 
                      */
                     bool OcspStaplingHasBeenSet() const;
 
@@ -154,6 +163,7 @@ on：开启
 off：关闭
 默认为关闭状态，开启时需要上传客户端证书信息，该配置项目前在灰度中，尚未全量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetVerifyClient() const;
 
@@ -163,17 +173,19 @@ on：开启
 off：关闭
 默认为关闭状态，开启时需要上传客户端证书信息，该配置项目前在灰度中，尚未全量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VerifyClient 客户端证书校验功能
+                     * @param _verifyClient 客户端证书校验功能
 on：开启
 off：关闭
 默认为关闭状态，开启时需要上传客户端证书信息，该配置项目前在灰度中，尚未全量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetVerifyClient(const std::string& _verifyClient);
 
                     /**
                      * 判断参数 VerifyClient 是否已赋值
                      * @return VerifyClient 是否已赋值
+                     * 
                      */
                     bool VerifyClientHasBeenSet() const;
 
@@ -182,20 +194,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertInfo 服务端证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ServerCert GetCertInfo() const;
 
                     /**
                      * 设置服务端证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertInfo 服务端证书配置信息
+                     * @param _certInfo 服务端证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCertInfo(const ServerCert& _certInfo);
 
                     /**
                      * 判断参数 CertInfo 是否已赋值
                      * @return CertInfo 是否已赋值
+                     * 
                      */
                     bool CertInfoHasBeenSet() const;
 
@@ -204,20 +219,23 @@ off：关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientCertInfo 客户端证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ClientCert GetClientCertInfo() const;
 
                     /**
                      * 设置客户端证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClientCertInfo 客户端证书配置信息
+                     * @param _clientCertInfo 客户端证书配置信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClientCertInfo(const ClientCert& _clientCertInfo);
 
                     /**
                      * 判断参数 ClientCertInfo 是否已赋值
                      * @return ClientCertInfo 是否已赋值
+                     * 
                      */
                     bool ClientCertInfoHasBeenSet() const;
 
@@ -232,6 +250,7 @@ on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSpdy() const;
 
@@ -241,17 +260,19 @@ on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Spdy Spdy 配置开关
+                     * @param _spdy Spdy 配置开关
 on：开启
 off：关闭
 默认为关闭状态
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSpdy(const std::string& _spdy);
 
                     /**
                      * 判断参数 Spdy 是否已赋值
                      * @return Spdy 是否已赋值
+                     * 
                      */
                     bool SpdyHasBeenSet() const;
 
@@ -268,6 +289,7 @@ deploying：部署中
 deployed：部署成功
 failed：部署失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSslStatus() const;
 
@@ -278,18 +300,20 @@ deploying：部署中
 deployed：部署成功
 failed：部署失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SslStatus https 证书部署状态
+                     * @param _sslStatus https 证书部署状态
 closed：已关闭
 deploying：部署中
 deployed：部署成功
 failed：部署失败
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSslStatus(const std::string& _sslStatus);
 
                     /**
                      * 判断参数 SslStatus 是否已赋值
                      * @return SslStatus 是否已赋值
+                     * 
                      */
                     bool SslStatusHasBeenSet() const;
 
@@ -298,20 +322,23 @@ failed：部署失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hsts Hsts配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Hsts GetHsts() const;
 
                     /**
                      * 设置Hsts配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Hsts Hsts配置
+                     * @param _hsts Hsts配置
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetHsts(const Hsts& _hsts);
 
                     /**
                      * 判断参数 Hsts 是否已赋值
                      * @return Hsts 是否已赋值
+                     * 
                      */
                     bool HstsHasBeenSet() const;
 
@@ -320,20 +347,23 @@ failed：部署失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TlsVersion Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTlsVersion() const;
 
                     /**
                      * 设置Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TlsVersion Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * @param _tlsVersion Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
 
                     /**
                      * 判断参数 TlsVersion 是否已赋值
                      * @return TlsVersion 是否已赋值
+                     * 
                      */
                     bool TlsVersionHasBeenSet() const;
 

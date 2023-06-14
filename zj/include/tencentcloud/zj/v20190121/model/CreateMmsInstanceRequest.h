@@ -46,162 +46,189 @@ namespace TencentCloud
                     /**
                      * 获取商户证书
                      * @return License 商户证书
+                     * 
                      */
                     std::string GetLicense() const;
 
                     /**
                      * 设置商户证书
-                     * @param License 商户证书
+                     * @param _license 商户证书
+                     * 
                      */
                     void SetLicense(const std::string& _license);
 
                     /**
                      * 判断参数 License 是否已赋值
                      * @return License 是否已赋值
+                     * 
                      */
                     bool LicenseHasBeenSet() const;
 
                     /**
                      * 获取样例名称
                      * @return InstanceName 样例名称
+                     * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置样例名称
-                     * @param InstanceName 样例名称
+                     * @param _instanceName 样例名称
+                     * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
                     /**
                      * 判断参数 InstanceName 是否已赋值
                      * @return InstanceName 是否已赋值
+                     * 
                      */
                     bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取标题
                      * @return Title 标题
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置标题
-                     * @param Title 标题
+                     * @param _title 标题
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取签名
                      * @return Sign 签名
+                     * 
                      */
                     std::string GetSign() const;
 
                     /**
                      * 设置签名
-                     * @param Sign 签名
+                     * @param _sign 签名
+                     * 
                      */
                     void SetSign(const std::string& _sign);
 
                     /**
                      * 判断参数 Sign 是否已赋值
                      * @return Sign 是否已赋值
+                     * 
                      */
                     bool SignHasBeenSet() const;
 
                     /**
                      * 获取素材内容
                      * @return Contents 素材内容
+                     * 
                      */
                     std::vector<CreateMmsInstanceItem> GetContents() const;
 
                     /**
                      * 设置素材内容
-                     * @param Contents 素材内容
+                     * @param _contents 素材内容
+                     * 
                      */
                     void SetContents(const std::vector<CreateMmsInstanceItem>& _contents);
 
                     /**
                      * 判断参数 Contents 是否已赋值
                      * @return Contents 是否已赋值
+                     * 
                      */
                     bool ContentsHasBeenSet() const;
 
                     /**
                      * 获取样例中链接动态变量对应的链接，和占位符顺序一致
                      * @return Urls 样例中链接动态变量对应的链接，和占位符顺序一致
+                     * 
                      */
                     std::vector<std::string> GetUrls() const;
 
                     /**
                      * 设置样例中链接动态变量对应的链接，和占位符顺序一致
-                     * @param Urls 样例中链接动态变量对应的链接，和占位符顺序一致
+                     * @param _urls 样例中链接动态变量对应的链接，和占位符顺序一致
+                     * 
                      */
                     void SetUrls(const std::vector<std::string>& _urls);
 
                     /**
                      * 判断参数 Urls 是否已赋值
                      * @return Urls 是否已赋值
+                     * 
                      */
                     bool UrlsHasBeenSet() const;
 
                     /**
                      * 获取机型列表
                      * @return PhoneType 机型列表
+                     * 
                      */
                     std::vector<uint64_t> GetPhoneType() const;
 
                     /**
                      * 设置机型列表
-                     * @param PhoneType 机型列表
+                     * @param _phoneType 机型列表
+                     * 
                      */
                     void SetPhoneType(const std::vector<uint64_t>& _phoneType);
 
                     /**
                      * 判断参数 PhoneType 是否已赋值
                      * @return PhoneType 是否已赋值
+                     * 
                      */
                     bool PhoneTypeHasBeenSet() const;
 
                     /**
                      * 获取发送超短活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号
                      * @return CommonParams 发送超短活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号
+                     * 
                      */
                     std::vector<uint64_t> GetCommonParams() const;
 
                     /**
                      * 设置发送超短活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号
-                     * @param CommonParams 发送超短活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号
+                     * @param _commonParams 发送超短活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号
+                     * 
                      */
                     void SetCommonParams(const std::vector<uint64_t>& _commonParams);
 
                     /**
                      * 判断参数 CommonParams 是否已赋值
                      * @return CommonParams 是否已赋值
+                     * 
                      */
                     bool CommonParamsHasBeenSet() const;
 
                     /**
                      * 获取发送超短活动时用于展示短连接模板占位符序号,仅用作超短活动
                      * @return UrlParams 发送超短活动时用于展示短连接模板占位符序号,仅用作超短活动
+                     * 
                      */
                     std::vector<uint64_t> GetUrlParams() const;
 
                     /**
                      * 设置发送超短活动时用于展示短连接模板占位符序号,仅用作超短活动
-                     * @param UrlParams 发送超短活动时用于展示短连接模板占位符序号,仅用作超短活动
+                     * @param _urlParams 发送超短活动时用于展示短连接模板占位符序号,仅用作超短活动
+                     * 
                      */
                     void SetUrlParams(const std::vector<uint64_t>& _urlParams);
 
                     /**
                      * 判断参数 UrlParams 是否已赋值
                      * @return UrlParams 是否已赋值
+                     * 
                      */
                     bool UrlParamsHasBeenSet() const;
 

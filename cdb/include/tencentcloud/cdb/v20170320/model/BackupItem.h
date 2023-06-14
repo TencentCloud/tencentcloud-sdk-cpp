@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取需要备份的库名
                      * @return Db 需要备份的库名
+                     * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置需要备份的库名
-                     * @param Db 需要备份的库名
+                     * @param _db 需要备份的库名
+                     * 
                      */
                     void SetDb(const std::string& _db);
 
                     /**
                      * 判断参数 Db 是否已赋值
                      * @return Db 是否已赋值
+                     * 
                      */
                     bool DbHasBeenSet() const;
 
                     /**
                      * 获取需要备份的表名。 如果传该参数，表示备份该库中的指定表。如果不传该参数则备份该db库
                      * @return Table 需要备份的表名。 如果传该参数，表示备份该库中的指定表。如果不传该参数则备份该db库
+                     * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置需要备份的表名。 如果传该参数，表示备份该库中的指定表。如果不传该参数则备份该db库
-                     * @param Table 需要备份的表名。 如果传该参数，表示备份该库中的指定表。如果不传该参数则备份该db库
+                     * @param _table 需要备份的表名。 如果传该参数，表示备份该库中的指定表。如果不传该参数则备份该db库
+                     * 
                      */
                     void SetTable(const std::string& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
                      * @return Table 是否已赋值
+                     * 
                      */
                     bool TableHasBeenSet() const;
 

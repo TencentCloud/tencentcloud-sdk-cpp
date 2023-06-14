@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取视频剪辑任务 ID。
                      * @return TaskId 视频剪辑任务 ID。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置视频剪辑任务 ID。
-                     * @param TaskId 视频剪辑任务 ID。
+                     * @param _taskId 视频剪辑任务 ID。
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑任务源文件 ID。
                      * @return SrcFileId 视频剪辑任务源文件 ID。
+                     * 
                      */
                     std::string GetSrcFileId() const;
 
                     /**
                      * 设置视频剪辑任务源文件 ID。
-                     * @param SrcFileId 视频剪辑任务源文件 ID。
+                     * @param _srcFileId 视频剪辑任务源文件 ID。
+                     * 
                      */
                     void SetSrcFileId(const std::string& _srcFileId);
 
                     /**
                      * 判断参数 SrcFileId 是否已赋值
                      * @return SrcFileId 是否已赋值
+                     * 
                      */
                     bool SrcFileIdHasBeenSet() const;
 
                     /**
                      * 获取视频剪辑输出的文件信息。
                      * @return FileInfo 视频剪辑输出的文件信息。
+                     * 
                      */
                     ClipFileInfo2017 GetFileInfo() const;
 
                     /**
                      * 设置视频剪辑输出的文件信息。
-                     * @param FileInfo 视频剪辑输出的文件信息。
+                     * @param _fileInfo 视频剪辑输出的文件信息。
+                     * 
                      */
                     void SetFileInfo(const ClipFileInfo2017& _fileInfo);
 
                     /**
                      * 判断参数 FileInfo 是否已赋值
                      * @return FileInfo 是否已赋值
+                     * 
                      */
                     bool FileInfoHasBeenSet() const;
 

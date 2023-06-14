@@ -51,20 +51,23 @@ namespace TencentCloud
 <li>"NO"代表选择自定义密码，这时要指定Password字段。</li>
                      * @return AutoGeneratePassword <li>"YES"代表选择自动生成密码，这时不指定Password字段。</li>
 <li>"NO"代表选择自定义密码，这时要指定Password字段。</li>
+                     * 
                      */
                     std::string GetAutoGeneratePassword() const;
 
                     /**
                      * 设置<li>"YES"代表选择自动生成密码，这时不指定Password字段。</li>
 <li>"NO"代表选择自定义密码，这时要指定Password字段。</li>
-                     * @param AutoGeneratePassword <li>"YES"代表选择自动生成密码，这时不指定Password字段。</li>
+                     * @param _autoGeneratePassword <li>"YES"代表选择自动生成密码，这时不指定Password字段。</li>
 <li>"NO"代表选择自定义密码，这时要指定Password字段。</li>
+                     * 
                      */
                     void SetAutoGeneratePassword(const std::string& _autoGeneratePassword);
 
                     /**
                      * 判断参数 AutoGeneratePassword 是否已赋值
                      * @return AutoGeneratePassword 是否已赋值
+                     * 
                      */
                     bool AutoGeneratePasswordHasBeenSet() const;
 
@@ -81,6 +84,7 @@ WINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户�
 <li>大写字母：[A-Z]</li>
 <li>数字： 0-9</li>
 <li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>
+                     * 
                      */
                     std::string GetPassword() const;
 
@@ -91,18 +95,20 @@ WINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户�
 <li>大写字母：[A-Z]</li>
 <li>数字： 0-9</li>
 <li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>
-                     * @param Password 实例登录密码。具体按照操作系统的复杂度要求。 
+                     * @param _password 实例登录密码。具体按照操作系统的复杂度要求。 
 WINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户名, 至少包含以下字符中的三种不同字符 
 <li>小写字母：[a-z]</li>
 <li>大写字母：[A-Z]</li>
 <li>数字： 0-9</li>
 <li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

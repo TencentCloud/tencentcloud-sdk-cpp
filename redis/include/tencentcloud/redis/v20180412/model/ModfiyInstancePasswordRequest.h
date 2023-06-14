@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
-                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例旧密码。
                      * @return OldPassword 实例旧密码。
+                     * 
                      */
                     std::string GetOldPassword() const;
 
                     /**
                      * 设置实例旧密码。
-                     * @param OldPassword 实例旧密码。
+                     * @param _oldPassword 实例旧密码。
+                     * 
                      */
                     void SetOldPassword(const std::string& _oldPassword);
 
                     /**
                      * 判断参数 OldPassword 是否已赋值
                      * @return OldPassword 是否已赋值
+                     * 
                      */
                     bool OldPasswordHasBeenSet() const;
 
@@ -87,6 +93,7 @@ namespace TencentCloud
 - 长度8 - 30位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * 
                      */
                     std::string GetPassword() const;
 
@@ -95,16 +102,18 @@ namespace TencentCloud
 - 长度8 - 30位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
-                     * @param Password 实例新密码。密码复杂度要求如下：
+                     * @param _password 实例新密码。密码复杂度要求如下：
 - 长度8 - 30位, 推荐使用12位以上的密码。
 - 不能以"/"开头。
 - 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * 
                      */
                     void SetPassword(const std::string& _password);
 
                     /**
                      * 判断参数 Password 是否已赋值
                      * @return Password 是否已赋值
+                     * 
                      */
                     bool PasswordHasBeenSet() const;
 

@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取渠道商户号。
                      * @return ChannelMerchantId 渠道商户号。
+                     * 
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
                      * 设置渠道商户号。
-                     * @param ChannelMerchantId 渠道商户号。
+                     * @param _channelMerchantId 渠道商户号。
+                     * 
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
                     /**
                      * 判断参数 ChannelMerchantId 是否已赋值
                      * @return ChannelMerchantId 是否已赋值
+                     * 
                      */
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
                      * 获取渠道进件号，与外部进件号二者选填其一。
                      * @return ChannelRegistrationNo 渠道进件号，与外部进件号二者选填其一。
+                     * 
                      */
                     std::string GetChannelRegistrationNo() const;
 
                     /**
                      * 设置渠道进件号，与外部进件号二者选填其一。
-                     * @param ChannelRegistrationNo 渠道进件号，与外部进件号二者选填其一。
+                     * @param _channelRegistrationNo 渠道进件号，与外部进件号二者选填其一。
+                     * 
                      */
                     void SetChannelRegistrationNo(const std::string& _channelRegistrationNo);
 
                     /**
                      * 判断参数 ChannelRegistrationNo 是否已赋值
                      * @return ChannelRegistrationNo 是否已赋值
+                     * 
                      */
                     bool ChannelRegistrationNoHasBeenSet() const;
 
                     /**
                      * 获取外部进件号，与渠道进件号二者选填其一。
                      * @return OutRegistrationNo 外部进件号，与渠道进件号二者选填其一。
+                     * 
                      */
                     std::string GetOutRegistrationNo() const;
 
                     /**
                      * 设置外部进件号，与渠道进件号二者选填其一。
-                     * @param OutRegistrationNo 外部进件号，与渠道进件号二者选填其一。
+                     * @param _outRegistrationNo 外部进件号，与渠道进件号二者选填其一。
+                     * 
                      */
                     void SetOutRegistrationNo(const std::string& _outRegistrationNo);
 
                     /**
                      * 判断参数 OutRegistrationNo 是否已赋值
                      * @return OutRegistrationNo 是否已赋值
+                     * 
                      */
                     bool OutRegistrationNoHasBeenSet() const;
 
@@ -105,6 +114,7 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     std::string GetEnvironment() const;
 
@@ -113,16 +123,18 @@ _不填默认为生产环境_
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
-                     * @param Environment 环境类型
+                     * @param _environment 环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
 _不填默认为生产环境_
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 

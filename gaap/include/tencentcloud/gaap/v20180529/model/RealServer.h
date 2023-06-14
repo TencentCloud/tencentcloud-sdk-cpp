@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取源站的IP或域名
                      * @return RealServerIP 源站的IP或域名
+                     * 
                      */
                     std::string GetRealServerIP() const;
 
                     /**
                      * 设置源站的IP或域名
-                     * @param RealServerIP 源站的IP或域名
+                     * @param _realServerIP 源站的IP或域名
+                     * 
                      */
                     void SetRealServerIP(const std::string& _realServerIP);
 
                     /**
                      * 判断参数 RealServerIP 是否已赋值
                      * @return RealServerIP 是否已赋值
+                     * 
                      */
                     bool RealServerIPHasBeenSet() const;
 
                     /**
                      * 获取源站ID
                      * @return RealServerId 源站ID
+                     * 
                      */
                     std::string GetRealServerId() const;
 
                     /**
                      * 设置源站ID
-                     * @param RealServerId 源站ID
+                     * @param _realServerId 源站ID
+                     * 
                      */
                     void SetRealServerId(const std::string& _realServerId);
 
                     /**
                      * 判断参数 RealServerId 是否已赋值
                      * @return RealServerId 是否已赋值
+                     * 
                      */
                     bool RealServerIdHasBeenSet() const;
 
                     /**
                      * 获取源站名称
                      * @return RealServerName 源站名称
+                     * 
                      */
                     std::string GetRealServerName() const;
 
                     /**
                      * 设置源站名称
-                     * @param RealServerName 源站名称
+                     * @param _realServerName 源站名称
+                     * 
                      */
                     void SetRealServerName(const std::string& _realServerName);
 
                     /**
                      * 判断参数 RealServerName 是否已赋值
                      * @return RealServerName 是否已赋值
+                     * 
                      */
                     bool RealServerNameHasBeenSet() const;
 
                     /**
                      * 获取项目ID
                      * @return ProjectId 项目ID
+                     * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * @param _projectId 项目ID
+                     * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
                      * @return InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     * 
                      */
                     int64_t GetInBanBlacklist() const;
 
                     /**
                      * 设置是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
-                     * @param InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     * @param _inBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+                     * 
                      */
                     void SetInBanBlacklist(const int64_t& _inBanBlacklist);
 
                     /**
                      * 判断参数 InBanBlacklist 是否已赋值
                      * @return InBanBlacklist 是否已赋值
+                     * 
                      */
                     bool InBanBlacklistHasBeenSet() const;
 

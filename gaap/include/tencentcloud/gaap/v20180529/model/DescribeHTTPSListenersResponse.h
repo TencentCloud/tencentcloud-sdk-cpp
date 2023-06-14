@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取监听器数量
                      * @return TotalCount 监听器数量
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 
                     /**
                      * 获取HTTPS监听器列表
                      * @return ListenerSet HTTPS监听器列表
+                     * 
                      */
                     std::vector<HTTPSListener> GetListenerSet() const;
 
                     /**
                      * 判断参数 ListenerSet 是否已赋值
                      * @return ListenerSet 是否已赋值
+                     * 
                      */
                     bool ListenerSetHasBeenSet() const;
 

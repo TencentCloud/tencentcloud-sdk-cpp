@@ -51,6 +51,7 @@ namespace TencentCloud
                      * @return Filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
 <li>ResourceId 资源ID</li>
+                     * 
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -58,69 +59,80 @@ namespace TencentCloud
                      * 设置多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
 <li>ResourceId 资源ID</li>
-                     * @param Filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+                     * @param _filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
 <li>ResourceId 资源ID</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取是否导出全部授权详情
                      * @return IsHistory 是否导出全部授权详情
+                     * 
                      */
                     bool GetIsHistory() const;
 
                     /**
                      * 设置是否导出全部授权详情
-                     * @param IsHistory 是否导出全部授权详情
+                     * @param _isHistory 是否导出全部授权详情
+                     * 
                      */
                     void SetIsHistory(const bool& _isHistory);
 
                     /**
                      * 判断参数 IsHistory 是否已赋值
                      * @return IsHistory 是否已赋值
+                     * 
                      */
                     bool IsHistoryHasBeenSet() const;
 
                     /**
                      * 获取标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
                      * @return Tags 标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
+                     * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
                      * 设置标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
-                     * @param Tags 标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
+                     * @param _tags 标签筛选,平台标签能力,这里传入 标签键,标签值作为一个对象
+                     * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
                     /**
                      * 获取导出月份, 该参数仅在IsHistory 时可选.
                      * @return ExportMonth 导出月份, 该参数仅在IsHistory 时可选.
+                     * 
                      */
                     std::string GetExportMonth() const;
 
                     /**
                      * 设置导出月份, 该参数仅在IsHistory 时可选.
-                     * @param ExportMonth 导出月份, 该参数仅在IsHistory 时可选.
+                     * @param _exportMonth 导出月份, 该参数仅在IsHistory 时可选.
+                     * 
                      */
                     void SetExportMonth(const std::string& _exportMonth);
 
                     /**
                      * 判断参数 ExportMonth 是否已赋值
                      * @return ExportMonth 是否已赋值
+                     * 
                      */
                     bool ExportMonthHasBeenSet() const;
 

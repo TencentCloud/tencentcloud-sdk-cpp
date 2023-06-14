@@ -50,12 +50,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels Web网络版标签结果数组。如未选择WEB场景，则为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetectLabelItem> GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -64,12 +66,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CameraLabels Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetectLabelItem> GetCameraLabels() const;
 
                     /**
                      * 判断参数 CameraLabels 是否已赋值
                      * @return CameraLabels 是否已赋值
+                     * 
                      */
                     bool CameraLabelsHasBeenSet() const;
 
@@ -78,12 +82,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlbumLabels Album相册版标签结果数组。如未选择ALBUM场景，则为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetectLabelItem> GetAlbumLabels() const;
 
                     /**
                      * 判断参数 AlbumLabels 是否已赋值
                      * @return AlbumLabels 是否已赋值
+                     * 
                      */
                     bool AlbumLabelsHasBeenSet() const;
 
@@ -94,12 +100,14 @@ namespace TencentCloud
                      * @return NewsLabels News新闻版标签结果数组。如未选择NEWS场景，则为空。
 新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetectLabelItem> GetNewsLabels() const;
 
                     /**
                      * 判断参数 NewsLabels 是否已赋值
                      * @return NewsLabels 是否已赋值
+                     * 
                      */
                     bool NewsLabelsHasBeenSet() const;
 
@@ -108,12 +116,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoneCamLabels 非实拍标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DetectLabelItem> GetNoneCamLabels() const;
 
                     /**
                      * 判断参数 NoneCamLabels 是否已赋值
                      * @return NoneCamLabels 是否已赋值
+                     * 
                      */
                     bool NoneCamLabelsHasBeenSet() const;
 
@@ -122,12 +132,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationLabels 识别结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<Product> GetLocationLabels() const;
 
                     /**
                      * 判断参数 LocationLabels 是否已赋值
                      * @return LocationLabels 是否已赋值
+                     * 
                      */
                     bool LocationLabelsHasBeenSet() const;
 

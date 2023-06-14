@@ -50,54 +50,63 @@ namespace TencentCloud
                     /**
                      * 获取转发路径。
                      * @return Url 转发路径。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置转发路径。
-                     * @param Url 转发路径。
+                     * @param _url 转发路径。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取转发路径实例ID。
                      * @return LocationId 转发路径实例ID。
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置转发路径实例ID。
-                     * @param LocationId 转发路径实例ID。
+                     * @param _locationId 转发路径实例ID。
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取该转发路径所绑定的主机列表。
                      * @return BackendSet 该转发路径所绑定的主机列表。
+                     * 
                      */
                     std::vector<DevicesBindInfoBackend> GetBackendSet() const;
 
                     /**
                      * 设置该转发路径所绑定的主机列表。
-                     * @param BackendSet 该转发路径所绑定的主机列表。
+                     * @param _backendSet 该转发路径所绑定的主机列表。
+                     * 
                      */
                     void SetBackendSet(const std::vector<DevicesBindInfoBackend>& _backendSet);
 
                     /**
                      * 判断参数 BackendSet 是否已赋值
                      * @return BackendSet 是否已赋值
+                     * 
                      */
                     bool BackendSetHasBeenSet() const;
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 原始总金额，浮点型参数，精确到小数点后两位，如：2000.99
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetTotalCost() const;
 
                     /**
                      * 判断参数 TotalCost 是否已赋值
                      * @return TotalCost 是否已赋值
+                     * 
                      */
                     bool TotalCostHasBeenSet() const;
 
@@ -62,12 +64,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GoodsNum 购买的实例数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
                      * 判断参数 GoodsNum 是否已赋值
                      * @return GoodsNum 是否已赋值
+                     * 
                      */
                     bool GoodsNumHasBeenSet() const;
 
@@ -76,12 +80,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeSpan() const;
 
                     /**
                      * 判断参数 TimeSpan 是否已赋值
                      * @return TimeSpan 是否已赋值
+                     * 
                      */
                     bool TimeSpanHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 商品的时间单位，m表示月，y表示年
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 判断参数 TimeUnit 是否已赋值
                      * @return TimeUnit 是否已赋值
+                     * 
                      */
                     bool TimeUnitHasBeenSet() const;
 
@@ -104,12 +112,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 应付总金额，浮点型参数，精确到小数点后两位，如：2000.99
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetOriginalCost() const;
 
                     /**
                      * 判断参数 OriginalCost 是否已赋值
                      * @return OriginalCost 是否已赋值
+                     * 
                      */
                     bool OriginalCostHasBeenSet() const;
 

@@ -53,12 +53,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskInfo 任务信息，不包含任务结果
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TaskInfo GetTaskInfo() const;
 
                     /**
                      * 判断参数 TaskInfo 是否已赋值
                      * @return TaskInfo 是否已赋值
+                     * 
                      */
                     bool TaskInfoHasBeenSet() const;
 
@@ -67,12 +69,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskData 视频任务结果数据，只在视频任务结束时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     Data GetTaskData() const;
 
                     /**
                      * 判断参数 TaskData 是否已赋值
                      * @return TaskData 是否已赋值
+                     * 
                      */
                     bool TaskDataHasBeenSet() const;
 
@@ -81,12 +85,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageTaskData 图片任务结果数据，只在图片任务结束时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     ImageData GetImageTaskData() const;
 
                     /**
                      * 判断参数 ImageTaskData 是否已赋值
                      * @return ImageTaskData 是否已赋值
+                     * 
                      */
                     bool ImageTaskDataHasBeenSet() const;
 
@@ -95,12 +101,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioTaskData 音频任务结果数据，只在音频任务结束时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AudioData GetAudioTaskData() const;
 
                     /**
                      * 判断参数 AudioTaskData 是否已赋值
                      * @return AudioTaskData 是否已赋值
+                     * 
                      */
                     bool AudioTaskDataHasBeenSet() const;
 
@@ -109,12 +117,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextTaskData 文本任务结果数据，只在文本任务结束时返回
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     TextData GetTextTaskData() const;
 
                     /**
                      * 判断参数 TextTaskData 是否已赋值
                      * @return TextTaskData 是否已赋值
+                     * 
                      */
                     bool TextTaskDataHasBeenSet() const;
 

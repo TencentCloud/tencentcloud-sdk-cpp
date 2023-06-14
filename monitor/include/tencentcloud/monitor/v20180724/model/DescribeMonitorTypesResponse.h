@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取监控类型，云产品监控为 MT_QCE
                      * @return MonitorTypes 监控类型，云产品监控为 MT_QCE
+                     * 
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
                      * 判断参数 MonitorTypes 是否已赋值
                      * @return MonitorTypes 是否已赋值
+                     * 
                      */
                     bool MonitorTypesHasBeenSet() const;
 
                     /**
                      * 获取监控类型详情
                      * @return MonitorTypeInfos 监控类型详情
+                     * 
                      */
                     std::vector<MonitorTypeInfo> GetMonitorTypeInfos() const;
 
                     /**
                      * 判断参数 MonitorTypeInfos 是否已赋值
                      * @return MonitorTypeInfos 是否已赋值
+                     * 
                      */
                     bool MonitorTypeInfosHasBeenSet() const;
 

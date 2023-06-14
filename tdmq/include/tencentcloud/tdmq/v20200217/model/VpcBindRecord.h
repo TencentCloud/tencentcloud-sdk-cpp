@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取租户Vpc Id
                      * @return UniqueVpcId 租户Vpc Id
+                     * 
                      */
                     std::string GetUniqueVpcId() const;
 
                     /**
                      * 设置租户Vpc Id
-                     * @param UniqueVpcId 租户Vpc Id
+                     * @param _uniqueVpcId 租户Vpc Id
+                     * 
                      */
                     void SetUniqueVpcId(const std::string& _uniqueVpcId);
 
                     /**
                      * 判断参数 UniqueVpcId 是否已赋值
                      * @return UniqueVpcId 是否已赋值
+                     * 
                      */
                     bool UniqueVpcIdHasBeenSet() const;
 
                     /**
                      * 获取租户Vpc子网Id
                      * @return UniqueSubnetId 租户Vpc子网Id
+                     * 
                      */
                     std::string GetUniqueSubnetId() const;
 
                     /**
                      * 设置租户Vpc子网Id
-                     * @param UniqueSubnetId 租户Vpc子网Id
+                     * @param _uniqueSubnetId 租户Vpc子网Id
+                     * 
                      */
                     void SetUniqueSubnetId(const std::string& _uniqueSubnetId);
 
                     /**
                      * 判断参数 UniqueSubnetId 是否已赋值
                      * @return UniqueSubnetId 是否已赋值
+                     * 
                      */
                     bool UniqueSubnetIdHasBeenSet() const;
 
                     /**
                      * 获取路由Id
                      * @return RouterId 路由Id
+                     * 
                      */
                     std::string GetRouterId() const;
 
                     /**
                      * 设置路由Id
-                     * @param RouterId 路由Id
+                     * @param _routerId 路由Id
+                     * 
                      */
                     void SetRouterId(const std::string& _routerId);
 
                     /**
                      * 判断参数 RouterId 是否已赋值
                      * @return RouterId 是否已赋值
+                     * 
                      */
                     bool RouterIdHasBeenSet() const;
 
                     /**
                      * 获取Vpc的Id
                      * @return Ip Vpc的Id
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Vpc的Id
-                     * @param Ip Vpc的Id
+                     * @param _ip Vpc的Id
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取Vpc的Port
                      * @return Port Vpc的Port
+                     * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置Vpc的Port
-                     * @param Port Vpc的Port
+                     * @param _port Vpc的Port
+                     * 
                      */
                     void SetPort(const uint64_t& _port);
 
                     /**
                      * 判断参数 Port 是否已赋值
                      * @return Port 是否已赋值
+                     * 
                      */
                     bool PortHasBeenSet() const;
 
@@ -141,20 +156,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明，128个字符以内
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明，128个字符以内
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 说明，128个字符以内
+                     * @param _remark 说明，128个字符以内
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulTopList 漏洞top列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<VulTopInfo> GetVulTopList() const;
 
                     /**
                      * 判断参数 VulTopList 是否已赋值
                      * @return VulTopList 是否已赋值
+                     * 
                      */
                     bool VulTopListHasBeenSet() const;
 

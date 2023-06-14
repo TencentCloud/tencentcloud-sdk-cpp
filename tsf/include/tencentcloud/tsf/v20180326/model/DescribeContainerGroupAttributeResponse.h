@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取部署组列表-其它字段
                      * @return Result 部署组列表-其它字段
+                     * 
                      */
                     ContainerGroupOther GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

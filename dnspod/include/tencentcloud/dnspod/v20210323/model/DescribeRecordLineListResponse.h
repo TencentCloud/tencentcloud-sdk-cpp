@@ -48,24 +48,28 @@ namespace TencentCloud
                     /**
                      * 获取线路列表。
                      * @return LineList 线路列表。
+                     * 
                      */
                     std::vector<LineInfo> GetLineList() const;
 
                     /**
                      * 判断参数 LineList 是否已赋值
                      * @return LineList 是否已赋值
+                     * 
                      */
                     bool LineListHasBeenSet() const;
 
                     /**
                      * 获取线路分组列表。
                      * @return LineGroupList 线路分组列表。
+                     * 
                      */
                     std::vector<LineGroupInfo> GetLineGroupList() const;
 
                     /**
                      * 判断参数 LineGroupList 是否已赋值
                      * @return LineGroupList 是否已赋值
+                     * 
                      */
                     bool LineGroupListHasBeenSet() const;
 

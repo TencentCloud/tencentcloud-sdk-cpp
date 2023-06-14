@@ -46,24 +46,28 @@ namespace TencentCloud
                     /**
                      * 获取SSL 证书下载地址。
                      * @return CertDownloadUrl SSL 证书下载地址。
+                     * 
                      */
                     std::string GetCertDownloadUrl() const;
 
                     /**
                      * 判断参数 CertDownloadUrl 是否已赋值
                      * @return CertDownloadUrl 是否已赋值
+                     * 
                      */
                     bool CertDownloadUrlHasBeenSet() const;
 
                     /**
                      * 获取证书下载链接到期时间。
                      * @return UrlExpiredTime 证书下载链接到期时间。
+                     * 
                      */
                     std::string GetUrlExpiredTime() const;
 
                     /**
                      * 判断参数 UrlExpiredTime 是否已赋值
                      * @return UrlExpiredTime 是否已赋值
+                     * 
                      */
                     bool UrlExpiredTimeHasBeenSet() const;
 
@@ -74,12 +78,14 @@ namespace TencentCloud
                      * @return SSLConfig 标识实例开启 SSL 功能。
 - true：开启 。
 - false：关闭。
+                     * 
                      */
                     bool GetSSLConfig() const;
 
                     /**
                      * 判断参数 SSLConfig 是否已赋值
                      * @return SSLConfig 是否已赋值
+                     * 
                      */
                     bool SSLConfigHasBeenSet() const;
 
@@ -90,12 +96,14 @@ namespace TencentCloud
                      * @return FeatureSupport 标识实例是否支持 SSL特性。
 - true：支持。
 - false：不支持。
+                     * 
                      */
                     bool GetFeatureSupport() const;
 
                     /**
                      * 判断参数 FeatureSupport 是否已赋值
                      * @return FeatureSupport 是否已赋值
+                     * 
                      */
                     bool FeatureSupportHasBeenSet() const;
 
@@ -106,12 +114,14 @@ namespace TencentCloud
                      * @return Status 说明配置 SSL 的状态。
 - 1: 配置中。
 - 2：配置成功。
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

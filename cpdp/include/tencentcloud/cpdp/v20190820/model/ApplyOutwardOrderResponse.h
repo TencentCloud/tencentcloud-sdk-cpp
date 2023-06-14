@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取汇出指令申请
                      * @return Result 汇出指令申请
+                     * 
                      */
                     ApplyOutwardOrderResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

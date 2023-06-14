@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取ClusterIP/NodePort/LoadBalancer
                      * @return Type ClusterIP/NodePort/LoadBalancer
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置ClusterIP/NodePort/LoadBalancer
-                     * @param Type ClusterIP/NodePort/LoadBalancer
+                     * @param _type ClusterIP/NodePort/LoadBalancer
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取是否开启LB直通Pod
                      * @return CLBDirectAccess 是否开启LB直通Pod
+                     * 
                      */
                     bool GetCLBDirectAccess() const;
 
                     /**
                      * 设置是否开启LB直通Pod
-                     * @param CLBDirectAccess 是否开启LB直通Pod
+                     * @param _cLBDirectAccess 是否开启LB直通Pod
+                     * 
                      */
                     void SetCLBDirectAccess(const bool& _cLBDirectAccess);
 
                     /**
                      * 判断参数 CLBDirectAccess 是否已赋值
                      * @return CLBDirectAccess 是否已赋值
+                     * 
                      */
                     bool CLBDirectAccessHasBeenSet() const;
 
                     /**
                      * 获取服务是否希望将外部流量路由到节点本地或集群范围的端点。 有两个可用选项：Cluster（默认）和 Local。Cluster 隐藏了客户端源 IP，可能导致第二跳到另一个节点；Local 保留客户端源 IP 并避免 LoadBalancer 和 NodePort 类型服务的第二跳。
                      * @return ExternalTrafficPolicy 服务是否希望将外部流量路由到节点本地或集群范围的端点。 有两个可用选项：Cluster（默认）和 Local。Cluster 隐藏了客户端源 IP，可能导致第二跳到另一个节点；Local 保留客户端源 IP 并避免 LoadBalancer 和 NodePort 类型服务的第二跳。
+                     * 
                      */
                     std::string GetExternalTrafficPolicy() const;
 
                     /**
                      * 设置服务是否希望将外部流量路由到节点本地或集群范围的端点。 有两个可用选项：Cluster（默认）和 Local。Cluster 隐藏了客户端源 IP，可能导致第二跳到另一个节点；Local 保留客户端源 IP 并避免 LoadBalancer 和 NodePort 类型服务的第二跳。
-                     * @param ExternalTrafficPolicy 服务是否希望将外部流量路由到节点本地或集群范围的端点。 有两个可用选项：Cluster（默认）和 Local。Cluster 隐藏了客户端源 IP，可能导致第二跳到另一个节点；Local 保留客户端源 IP 并避免 LoadBalancer 和 NodePort 类型服务的第二跳。
+                     * @param _externalTrafficPolicy 服务是否希望将外部流量路由到节点本地或集群范围的端点。 有两个可用选项：Cluster（默认）和 Local。Cluster 隐藏了客户端源 IP，可能导致第二跳到另一个节点；Local 保留客户端源 IP 并避免 LoadBalancer 和 NodePort 类型服务的第二跳。
+                     * 
                      */
                     void SetExternalTrafficPolicy(const std::string& _externalTrafficPolicy);
 
                     /**
                      * 判断参数 ExternalTrafficPolicy 是否已赋值
                      * @return ExternalTrafficPolicy 是否已赋值
+                     * 
                      */
                     bool ExternalTrafficPolicyHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取创建时间
                      * @return Created 创建时间
+                     * 
                      */
                     int64_t GetCreated() const;
 
                     /**
                      * 设置创建时间
-                     * @param Created 创建时间
+                     * @param _created 创建时间
+                     * 
                      */
                     void SetCreated(const int64_t& _created);
 
                     /**
                      * 判断参数 Created 是否已赋值
                      * @return Created 是否已赋值
+                     * 
                      */
                     bool CreatedHasBeenSet() const;
 
                     /**
                      * 获取创建着did
                      * @return Creator 创建着did
+                     * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置创建着did
-                     * @param Creator 创建着did
+                     * @param _creator 创建着did
+                     * 
                      */
                     void SetCreator(const std::string& _creator);
 
                     /**
                      * 判断参数 Creator 是否已赋值
                      * @return Creator 是否已赋值
+                     * 
                      */
                     bool CreatorHasBeenSet() const;
 
                     /**
                      * 获取salt值
                      * @return SaltJson salt值
+                     * 
                      */
                     std::string GetSaltJson() const;
 
                     /**
                      * 设置salt值
-                     * @param SaltJson salt值
+                     * @param _saltJson salt值
+                     * 
                      */
                     void SetSaltJson(const std::string& _saltJson);
 
                     /**
                      * 判断参数 SaltJson 是否已赋值
                      * @return SaltJson 是否已赋值
+                     * 
                      */
                     bool SaltJsonHasBeenSet() const;
 
                     /**
                      * 获取签名
                      * @return SignatureValue 签名
+                     * 
                      */
                     std::string GetSignatureValue() const;
 
                     /**
                      * 设置签名
-                     * @param SignatureValue 签名
+                     * @param _signatureValue 签名
+                     * 
                      */
                     void SetSignatureValue(const std::string& _signatureValue);
 
                     /**
                      * 判断参数 SignatureValue 是否已赋值
                      * @return SignatureValue 是否已赋值
+                     * 
                      */
                     bool SignatureValueHasBeenSet() const;
 
                     /**
                      * 获取type类型
                      * @return Type type类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置type类型
-                     * @param Type type类型
+                     * @param _type type类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

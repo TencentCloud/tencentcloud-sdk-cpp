@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取协议端口模板集合对象。
                      * @return ServiceTemplateGroup 协议端口模板集合对象。
+                     * 
                      */
                     ServiceTemplateGroup GetServiceTemplateGroup() const;
 
                     /**
                      * 判断参数 ServiceTemplateGroup 是否已赋值
                      * @return ServiceTemplateGroup 是否已赋值
+                     * 
                      */
                     bool ServiceTemplateGroupHasBeenSet() const;
 

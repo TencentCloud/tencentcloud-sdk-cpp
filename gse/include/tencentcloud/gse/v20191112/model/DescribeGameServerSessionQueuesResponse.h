@@ -49,24 +49,28 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GameServerSessionQueues 游戏服务器会话队列数组
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<GameServerSessionQueue> GetGameServerSessionQueues() const;
 
                     /**
                      * 判断参数 GameServerSessionQueues 是否已赋值
                      * @return GameServerSessionQueues 是否已赋值
+                     * 
                      */
                     bool GameServerSessionQueuesHasBeenSet() const;
 
                     /**
                      * 获取游戏服务器会话队列总数
                      * @return TotalCount 游戏服务器会话队列总数
+                     * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取VIP信息
                      * @return VipInfo VIP信息
+                     * 
                      */
                     std::vector<VipInfo> GetVipInfo() const;
 
                     /**
                      * 判断参数 VipInfo 是否已赋值
                      * @return VipInfo 是否已赋值
+                     * 
                      */
                     bool VipInfoHasBeenSet() const;
 

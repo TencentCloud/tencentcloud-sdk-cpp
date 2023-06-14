@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取EMR集群ID
                      * @return ClusterId EMR集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置EMR集群ID
-                     * @param ClusterId EMR集群ID
+                     * @param _clusterId EMR集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取区ID
                      * @return ZoneId 区ID
+                     * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置区ID
-                     * @param ZoneId 区ID
+                     * @param _zoneId 区ID
+                     * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 

@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取数据内容
                      * @return Content 数据内容
+                     * 
                      */
                     std::vector<TimeValue> GetContent() const;
 
                     /**
                      * 设置数据内容
-                     * @param Content 数据内容
+                     * @param _content 数据内容
+                     * 
                      */
                     void SetContent(const std::vector<TimeValue>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
                      * @return Content 是否已赋值
+                     * 
                      */
                     bool ContentHasBeenSet() const;
 
                     /**
                      * 获取用户ID
                      * @return UserId 用户ID
+                     * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-                     * @param UserId 用户ID
+                     * @param _userId 用户ID
+                     * 
                      */
                     void SetUserId(const std::string& _userId);
 
                     /**
                      * 判断参数 UserId 是否已赋值
                      * @return UserId 是否已赋值
+                     * 
                      */
                     bool UserIdHasBeenSet() const;
 
@@ -88,38 +94,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerId 对端Id,为空时表示上行数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetPeerId() const;
 
                     /**
                      * 设置对端Id,为空时表示上行数据
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PeerId 对端Id,为空时表示上行数据
+                     * @param _peerId 对端Id,为空时表示上行数据
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetPeerId(const std::string& _peerId);
 
                     /**
                      * 判断参数 PeerId 是否已赋值
                      * @return PeerId 是否已赋值
+                     * 
                      */
                     bool PeerIdHasBeenSet() const;
 
                     /**
                      * 获取数据类型
                      * @return DataType 数据类型
+                     * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置数据类型
-                     * @param DataType 数据类型
+                     * @param _dataType 数据类型
+                     * 
                      */
                     void SetDataType(const std::string& _dataType);
 
                     /**
                      * 判断参数 DataType 是否已赋值
                      * @return DataType 是否已赋值
+                     * 
                      */
                     bool DataTypeHasBeenSet() const;
 

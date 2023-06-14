@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取语音文本。
                      * @return Text 语音文本。
+                     * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置语音文本。
-                     * @param Text 语音文本。
+                     * @param _text 语音文本。
+                     * 
                      */
                     void SetText(const std::string& _text);
 
                     /**
                      * 判断参数 Text 是否已赋值
                      * @return Text 是否已赋值
+                     * 
                      */
                     bool TextHasBeenSet() const;
 
                     /**
                      * 获取识别片段起始的 PTS 时间，单位：秒。
                      * @return StartPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetStartPtsTime() const;
 
                     /**
                      * 设置识别片段起始的 PTS 时间，单位：秒。
-                     * @param StartPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * @param _startPtsTime 识别片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetStartPtsTime(const double& _startPtsTime);
 
                     /**
                      * 判断参数 StartPtsTime 是否已赋值
                      * @return StartPtsTime 是否已赋值
+                     * 
                      */
                     bool StartPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取识别片段终止的 PTS 时间，单位：秒。
                      * @return EndPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetEndPtsTime() const;
 
                     /**
                      * 设置识别片段终止的 PTS 时间，单位：秒。
-                     * @param EndPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * @param _endPtsTime 识别片段终止的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetEndPtsTime(const double& _endPtsTime);
 
                     /**
                      * 判断参数 EndPtsTime 是否已赋值
                      * @return EndPtsTime 是否已赋值
+                     * 
                      */
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取识别片段置信度。取值：0~100。
                      * @return Confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置识别片段置信度。取值：0~100。
-                     * @param Confidence 识别片段置信度。取值：0~100。
+                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
                     /**
                      * 获取识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
                      * @return AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 
                      */
                     std::vector<int64_t> GetAreaCoordSet() const;
 
                     /**
                      * 设置识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
-                     * @param AreaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * @param _areaCoordSet 识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。
+                     * 
                      */
                     void SetAreaCoordSet(const std::vector<int64_t>& _areaCoordSet);
 
                     /**
                      * 判断参数 AreaCoordSet 是否已赋值
                      * @return AreaCoordSet 是否已赋值
+                     * 
                      */
                     bool AreaCoordSetHasBeenSet() const;
 

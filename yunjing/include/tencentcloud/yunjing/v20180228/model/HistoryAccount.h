@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取唯一ID。
                      * @return Id 唯一ID。
+                     * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置唯一ID。
-                     * @param Id 唯一ID。
+                     * @param _id 唯一ID。
+                     * 
                      */
                     void SetId(const uint64_t& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取云镜客户端唯一Uuid。
                      * @return Uuid 云镜客户端唯一Uuid。
+                     * 
                      */
                     std::string GetUuid() const;
 
                     /**
                      * 设置云镜客户端唯一Uuid。
-                     * @param Uuid 云镜客户端唯一Uuid。
+                     * @param _uuid 云镜客户端唯一Uuid。
+                     * 
                      */
                     void SetUuid(const std::string& _uuid);
 
                     /**
                      * 判断参数 Uuid 是否已赋值
                      * @return Uuid 是否已赋值
+                     * 
                      */
                     bool UuidHasBeenSet() const;
 
                     /**
                      * 获取主机内网IP。
                      * @return MachineIp 主机内网IP。
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置主机内网IP。
-                     * @param MachineIp 主机内网IP。
+                     * @param _machineIp 主机内网IP。
+                     * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取主机名。
                      * @return MachineName 主机名。
+                     * 
                      */
                     std::string GetMachineName() const;
 
                     /**
                      * 设置主机名。
-                     * @param MachineName 主机名。
+                     * @param _machineName 主机名。
+                     * 
                      */
                     void SetMachineName(const std::string& _machineName);
 
                     /**
                      * 判断参数 MachineName 是否已赋值
                      * @return MachineName 是否已赋值
+                     * 
                      */
                     bool MachineNameHasBeenSet() const;
 
                     /**
                      * 获取帐号名。
                      * @return Username 帐号名。
+                     * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置帐号名。
-                     * @param Username 帐号名。
+                     * @param _username 帐号名。
+                     * 
                      */
                     void SetUsername(const std::string& _username);
 
                     /**
                      * 判断参数 Username 是否已赋值
                      * @return Username 是否已赋值
+                     * 
                      */
                     bool UsernameHasBeenSet() const;
 
@@ -145,6 +160,7 @@ namespace TencentCloud
 <li>CREATE：表示新增帐号</li>
 <li>MODIFY：表示修改帐号</li>
 <li>DELETE：表示删除帐号</li>
+                     * 
                      */
                     std::string GetModifyType() const;
 
@@ -153,34 +169,39 @@ namespace TencentCloud
 <li>CREATE：表示新增帐号</li>
 <li>MODIFY：表示修改帐号</li>
 <li>DELETE：表示删除帐号</li>
-                     * @param ModifyType 帐号变更类型。
+                     * @param _modifyType 帐号变更类型。
 <li>CREATE：表示新增帐号</li>
 <li>MODIFY：表示修改帐号</li>
 <li>DELETE：表示删除帐号</li>
+                     * 
                      */
                     void SetModifyType(const std::string& _modifyType);
 
                     /**
                      * 判断参数 ModifyType 是否已赋值
                      * @return ModifyType 是否已赋值
+                     * 
                      */
                     bool ModifyTypeHasBeenSet() const;
 
                     /**
                      * 获取变更时间。
                      * @return ModifyTime 变更时间。
+                     * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置变更时间。
-                     * @param ModifyTime 变更时间。
+                     * @param _modifyTime 变更时间。
+                     * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
                     /**
                      * 判断参数 ModifyTime 是否已赋值
                      * @return ModifyTime 是否已赋值
+                     * 
                      */
                     bool ModifyTimeHasBeenSet() const;
 

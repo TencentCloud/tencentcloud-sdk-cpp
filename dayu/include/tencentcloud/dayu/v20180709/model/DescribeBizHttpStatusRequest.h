@@ -46,144 +46,168 @@ namespace TencentCloud
                     /**
                      * 获取大禹子产品代号（bgpip表示高防IP）
                      * @return Business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置大禹子产品代号（bgpip表示高防IP）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP）
+                     * @param _business 大禹子产品代号（bgpip表示高防IP）
+                     * 
                      */
                     void SetBusiness(const std::string& _business);
 
                     /**
                      * 判断参数 Business 是否已赋值
                      * @return Business 是否已赋值
+                     * 
                      */
                     bool BusinessHasBeenSet() const;
 
                     /**
                      * 获取资源Id
                      * @return Id 资源Id
+                     * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置资源Id
-                     * @param Id 资源Id
+                     * @param _id 资源Id
+                     * 
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
+                     * 
                      */
                     bool IdHasBeenSet() const;
 
                     /**
                      * 获取统计周期，可取值300，1800，3600， 21600，86400，单位秒
                      * @return Period 统计周期，可取值300，1800，3600， 21600，86400，单位秒
+                     * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置统计周期，可取值300，1800，3600， 21600，86400，单位秒
-                     * @param Period 统计周期，可取值300，1800，3600， 21600，86400，单位秒
+                     * @param _period 统计周期，可取值300，1800，3600， 21600，86400，单位秒
+                     * 
                      */
                     void SetPeriod(const int64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
+                     * 
                      */
                     bool PeriodHasBeenSet() const;
 
                     /**
                      * 获取统计开始时间
                      * @return StartTime 统计开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置统计开始时间
-                     * @param StartTime 统计开始时间
+                     * @param _startTime 统计开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取统计结束时间
                      * @return EndTime 统计结束时间
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置统计结束时间
-                     * @param EndTime 统计结束时间
+                     * @param _endTime 统计结束时间
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取统计方式，仅支持sum
                      * @return Statistics 统计方式，仅支持sum
+                     * 
                      */
                     std::string GetStatistics() const;
 
                     /**
                      * 设置统计方式，仅支持sum
-                     * @param Statistics 统计方式，仅支持sum
+                     * @param _statistics 统计方式，仅支持sum
+                     * 
                      */
                     void SetStatistics(const std::string& _statistics);
 
                     /**
                      * 判断参数 Statistics 是否已赋值
                      * @return Statistics 是否已赋值
+                     * 
                      */
                     bool StatisticsHasBeenSet() const;
 
                     /**
                      * 获取协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效
                      * @return ProtoInfo 协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效
+                     * 
                      */
                     std::vector<ProtocolPort> GetProtoInfo() const;
 
                     /**
                      * 设置协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效
-                     * @param ProtoInfo 协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效
+                     * @param _protoInfo 协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效
+                     * 
                      */
                     void SetProtoInfo(const std::vector<ProtocolPort>& _protoInfo);
 
                     /**
                      * 判断参数 ProtoInfo 是否已赋值
                      * @return ProtoInfo 是否已赋值
+                     * 
                      */
                     bool ProtoInfoHasBeenSet() const;
 
                     /**
                      * 获取特定域名查询
                      * @return Domain 特定域名查询
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置特定域名查询
-                     * @param Domain 特定域名查询
+                     * @param _domain 特定域名查询
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

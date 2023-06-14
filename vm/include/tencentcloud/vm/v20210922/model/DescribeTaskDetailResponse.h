@@ -54,12 +54,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 该字段用于返回创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
@@ -68,12 +70,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataId 该字段用于返回调用视频审核接口时传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDataId() const;
 
                     /**
                      * 判断参数 DataId 是否已赋值
                      * @return DataId 是否已赋值
+                     * 
                      */
                     bool DataIdHasBeenSet() const;
 
@@ -82,12 +86,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizType 该字段用于返回调用视频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 判断参数 BizType 是否已赋值
                      * @return BizType 是否已赋值
+                     * 
                      */
                     bool BizTypeHasBeenSet() const;
 
@@ -96,12 +102,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 该字段用于返回调用视频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -112,12 +120,14 @@ namespace TencentCloud
                      * @return Status 该字段用于返回所查询内容的任务状态。
 <br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
@@ -126,12 +136,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 该字段用于返回调用视频审核接口时输入的视频审核类型，取值为：**VIDEO**（点播视频）和**LIVE_VIDEO**（直播视频），默认值为VIDEO。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
@@ -140,12 +152,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSuggestion() const;
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -154,12 +168,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<TaskLabel> GetLabels() const;
 
                     /**
                      * 判断参数 Labels 是否已赋值
                      * @return Labels 是否已赋值
+                     * 
                      */
                     bool LabelsHasBeenSet() const;
 
@@ -168,12 +184,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaInfo 该字段用于返回输入媒体文件的详细信息，包括编解码格式、分片时长等信息。详细内容敬请参考MediaInfo数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     MediaInfo GetMediaInfo() const;
 
                     /**
                      * 判断参数 MediaInfo 是否已赋值
                      * @return MediaInfo 是否已赋值
+                     * 
                      */
                     bool MediaInfoHasBeenSet() const;
 
@@ -182,12 +200,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     InputInfo GetInputInfo() const;
 
                     /**
                      * 判断参数 InputInfo 是否已赋值
                      * @return InputInfo 是否已赋值
+                     * 
                      */
                     bool InputInfoHasBeenSet() const;
 
@@ -196,12 +216,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
@@ -210,12 +232,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 判断参数 UpdatedAt 是否已赋值
                      * @return UpdatedAt 是否已赋值
+                     * 
                      */
                     bool UpdatedAtHasBeenSet() const;
 
@@ -224,12 +248,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TryInSeconds 在秒后重试
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetTryInSeconds() const;
 
                     /**
                      * 判断参数 TryInSeconds 是否已赋值
                      * @return TryInSeconds 是否已赋值
+                     * 
                      */
                     bool TryInSecondsHasBeenSet() const;
 
@@ -238,12 +264,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSegments 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<ImageSegments> GetImageSegments() const;
 
                     /**
                      * 判断参数 ImageSegments 是否已赋值
                      * @return ImageSegments 是否已赋值
+                     * 
                      */
                     bool ImageSegmentsHasBeenSet() const;
 
@@ -252,12 +280,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioSegments 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
 
                     /**
                      * 判断参数 AudioSegments 是否已赋值
                      * @return AudioSegments 是否已赋值
+                     * 
                      */
                     bool AudioSegmentsHasBeenSet() const;
 
@@ -270,12 +300,14 @@ namespace TencentCloud
 **URL_ERROR**：下载地址验证失败。
 **TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorType() const;
 
                     /**
                      * 判断参数 ErrorType 是否已赋值
                      * @return ErrorType 是否已赋值
+                     * 
                      */
                     bool ErrorTypeHasBeenSet() const;
 
@@ -284,12 +316,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorDescription 当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetErrorDescription() const;
 
                     /**
                      * 判断参数 ErrorDescription 是否已赋值
                      * @return ErrorDescription 是否已赋值
+                     * 
                      */
                     bool ErrorDescriptionHasBeenSet() const;
 
@@ -298,12 +332,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 该字段用于返回检测结果所对应的标签。如果未命中恶意，返回Normal，如果命中恶意，则返回Labels中优先级最高的标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -312,12 +348,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioText 该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAudioText() const;
 
                     /**
                      * 判断参数 AudioText 是否已赋值
                      * @return AudioText 是否已赋值
+                     * 
                      */
                     bool AudioTextHasBeenSet() const;
 
@@ -326,12 +364,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Asrs 该字段用于返回音频文件识别出的对应文本内容。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<RcbAsr> GetAsrs() const;
 
                     /**
                      * 判断参数 Asrs 是否已赋值
                      * @return Asrs 是否已赋值
+                     * 
                      */
                     bool AsrsHasBeenSet() const;
 

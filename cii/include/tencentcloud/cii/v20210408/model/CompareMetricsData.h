@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShortStructAccuracy 短文准确率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShortStructAccuracy() const;
 
                     /**
                      * 设置短文准确率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShortStructAccuracy 短文准确率
+                     * @param _shortStructAccuracy 短文准确率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShortStructAccuracy(const std::string& _shortStructAccuracy);
 
                     /**
                      * 判断参数 ShortStructAccuracy 是否已赋值
                      * @return ShortStructAccuracy 是否已赋值
+                     * 
                      */
                     bool ShortStructAccuracyHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShortStructRecall 短文召回率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetShortStructRecall() const;
 
                     /**
                      * 设置短文召回率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ShortStructRecall 短文召回率
+                     * @param _shortStructRecall 短文召回率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetShortStructRecall(const std::string& _shortStructRecall);
 
                     /**
                      * 判断参数 ShortStructRecall 是否已赋值
                      * @return ShortStructRecall 是否已赋值
+                     * 
                      */
                     bool ShortStructRecallHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LongStructAccuracy 长文结构化准确率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLongStructAccuracy() const;
 
                     /**
                      * 设置长文结构化准确率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LongStructAccuracy 长文结构化准确率
+                     * @param _longStructAccuracy 长文结构化准确率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLongStructAccuracy(const std::string& _longStructAccuracy);
 
                     /**
                      * 判断参数 LongStructAccuracy 是否已赋值
                      * @return LongStructAccuracy 是否已赋值
+                     * 
                      */
                     bool LongStructAccuracyHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LongStructRecall 长文结构化召回率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLongStructRecall() const;
 
                     /**
                      * 设置长文结构化召回率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LongStructRecall 长文结构化召回率
+                     * @param _longStructRecall 长文结构化召回率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLongStructRecall(const std::string& _longStructRecall);
 
                     /**
                      * 判断参数 LongStructRecall 是否已赋值
                      * @return LongStructRecall 是否已赋值
+                     * 
                      */
                     bool LongStructRecallHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LongContentAccuracy 长文提取准确率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLongContentAccuracy() const;
 
                     /**
                      * 设置长文提取准确率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LongContentAccuracy 长文提取准确率
+                     * @param _longContentAccuracy 长文提取准确率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLongContentAccuracy(const std::string& _longContentAccuracy);
 
                     /**
                      * 判断参数 LongContentAccuracy 是否已赋值
                      * @return LongContentAccuracy 是否已赋值
+                     * 
                      */
                     bool LongContentAccuracyHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LongContentRecall 长文提取召回率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLongContentRecall() const;
 
                     /**
                      * 设置长文提取召回率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LongContentRecall 长文提取召回率
+                     * @param _longContentRecall 长文提取召回率
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLongContentRecall(const std::string& _longContentRecall);
 
                     /**
                      * 判断参数 LongContentRecall 是否已赋值
                      * @return LongContentRecall 是否已赋值
+                     * 
                      */
                     bool LongContentRecallHasBeenSet() const;
 

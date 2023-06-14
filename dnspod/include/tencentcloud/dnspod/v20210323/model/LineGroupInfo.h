@@ -49,72 +49,84 @@ namespace TencentCloud
                     /**
                      * 获取线路分组ID
                      * @return LineId 线路分组ID
+                     * 
                      */
                     std::string GetLineId() const;
 
                     /**
                      * 设置线路分组ID
-                     * @param LineId 线路分组ID
+                     * @param _lineId 线路分组ID
+                     * 
                      */
                     void SetLineId(const std::string& _lineId);
 
                     /**
                      * 判断参数 LineId 是否已赋值
                      * @return LineId 是否已赋值
+                     * 
                      */
                     bool LineIdHasBeenSet() const;
 
                     /**
                      * 获取线路分组名称
                      * @return Name 线路分组名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置线路分组名称
-                     * @param Name 线路分组名称
+                     * @param _name 线路分组名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取分组类型
                      * @return Type 分组类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置分组类型
-                     * @param Type 分组类型
+                     * @param _type 分组类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取线路分组包含的线路列表
                      * @return LineList 线路分组包含的线路列表
+                     * 
                      */
                     std::vector<std::string> GetLineList() const;
 
                     /**
                      * 设置线路分组包含的线路列表
-                     * @param LineList 线路分组包含的线路列表
+                     * @param _lineList 线路分组包含的线路列表
+                     * 
                      */
                     void SetLineList(const std::vector<std::string>& _lineList);
 
                     /**
                      * 判断参数 LineList 是否已赋值
                      * @return LineList 是否已赋值
+                     * 
                      */
                     bool LineListHasBeenSet() const;
 

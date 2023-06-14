@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取策略ID
                      * @return PolicyId 策略ID
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略ID
-                     * @param PolicyId 策略ID
+                     * @param _policyId 策略ID
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取策略文本信息
                      * @return PolicyDocument 策略文本信息
+                     * 
                      */
                     std::string GetPolicyDocument() const;
 
                     /**
                      * 设置策略文本信息
-                     * @param PolicyDocument 策略文本信息
+                     * @param _policyDocument 策略文本信息
+                     * 
                      */
                     void SetPolicyDocument(const std::string& _policyDocument);
 
                     /**
                      * 判断参数 PolicyDocument 是否已赋值
                      * @return PolicyDocument 是否已赋值
+                     * 
                      */
                     bool PolicyDocumentHasBeenSet() const;
 
                     /**
                      * 获取是否设置为当前策略的版本
                      * @return SetAsDefault 是否设置为当前策略的版本
+                     * 
                      */
                     bool GetSetAsDefault() const;
 
                     /**
                      * 设置是否设置为当前策略的版本
-                     * @param SetAsDefault 是否设置为当前策略的版本
+                     * @param _setAsDefault 是否设置为当前策略的版本
+                     * 
                      */
                     void SetSetAsDefault(const bool& _setAsDefault);
 
                     /**
                      * 判断参数 SetAsDefault 是否已赋值
                      * @return SetAsDefault 是否已赋值
+                     * 
                      */
                     bool SetAsDefaultHasBeenSet() const;
 

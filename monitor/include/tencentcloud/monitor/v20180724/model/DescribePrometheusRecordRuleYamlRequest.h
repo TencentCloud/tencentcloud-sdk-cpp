@@ -46,54 +46,63 @@ namespace TencentCloud
                     /**
                      * 获取实例id
                      * @return InstanceId 实例id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-                     * @param InstanceId 实例id
+                     * @param _instanceId 实例id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return Offset 分页
+                     * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
                      * 设置分页
-                     * @param Offset 分页
+                     * @param _offset 分页
+                     * 
                      */
                     void SetOffset(const uint64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取分页
                      * @return Limit 分页
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置分页
-                     * @param Limit 分页
+                     * @param _limit 分页
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -104,6 +113,7 @@ Values = 目标名称列表
                      * @return Filters 过滤，当前支持
 Name = Name
 Values = 目标名称列表
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -111,15 +121,17 @@ Values = 目标名称列表
                      * 设置过滤，当前支持
 Name = Name
 Values = 目标名称列表
-                     * @param Filters 过滤，当前支持
+                     * @param _filters 过滤，当前支持
 Name = Name
 Values = 目标名称列表
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取开始时间。
                      * @return StartTime 开始时间。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间。
-                     * @param StartTime 开始时间。
+                     * @param _startTime 开始时间。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。
-                     * @param EndTime 结束时间。
+                     * @param _endTime 结束时间。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取ddos策略组集合，不填默认选择全部策略。
                      * @return PolicyIds ddos策略组集合，不填默认选择全部策略。
+                     * 
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
                      * 设置ddos策略组集合，不填默认选择全部策略。
-                     * @param PolicyIds ddos策略组集合，不填默认选择全部策略。
+                     * @param _policyIds ddos策略组集合，不填默认选择全部策略。
+                     * 
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
                     /**
                      * 判断参数 PolicyIds 是否已赋值
                      * @return PolicyIds 是否已赋值
+                     * 
                      */
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
                      * 获取站点集合，此参数必填，不填默认查询为空。
                      * @return ZoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * 
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
                      * 设置站点集合，此参数必填，不填默认查询为空。
-                     * @param ZoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * @param _zoneIds 站点集合，此参数必填，不填默认查询为空。
+                     * 
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
                     /**
                      * 判断参数 ZoneIds 是否已赋值
                      * @return ZoneIds 是否已赋值
+                     * 
                      */
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
                      * 获取分页查询的限制数目，默认值为20，最大查询条目为1000。
                      * @return Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置分页查询的限制数目，默认值为20，最大查询条目为1000。
-                     * @param Limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * @param _limit 分页查询的限制数目，默认值为20，最大查询条目为1000。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取分页的偏移量，默认值为0。
                      * @return Offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置分页的偏移量，默认值为0。
-                     * @param Offset 分页的偏移量，默认值为0。
+                     * @param _offset 分页的偏移量，默认值为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取是否展示详细信息。
                      * @return ShowDetail 是否展示详细信息。
+                     * 
                      */
                     bool GetShowDetail() const;
 
                     /**
                      * 设置是否展示详细信息。
-                     * @param ShowDetail 是否展示详细信息。
+                     * @param _showDetail 是否展示详细信息。
+                     * 
                      */
                     void SetShowDetail(const bool& _showDetail);
 
                     /**
                      * 判断参数 ShowDetail 是否已赋值
                      * @return ShowDetail 是否已赋值
+                     * 
                      */
                     bool ShowDetailHasBeenSet() const;
 
@@ -177,6 +198,7 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据；</li>不填默认取值为global。
+                     * 
                      */
                     std::string GetArea() const;
 
@@ -185,16 +207,18 @@ namespace TencentCloud
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据；</li>不填默认取值为global。
-                     * @param Area 数据归属地区，取值有：
+                     * @param _area 数据归属地区，取值有：
 <li>overseas：全球（除中国大陆地区）数据；</li>
 <li>mainland：中国大陆地区数据；</li>
 <li>global：全球数据；</li>不填默认取值为global。
+                     * 
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
+                     * 
                      */
                     bool AreaHasBeenSet() const;
 
@@ -205,6 +229,7 @@ namespace TencentCloud
                      * @return OrderBy 排序字段，取值有：
 <li>MaxBandWidth：带宽峰值；</li>
 <li>AttackStartTime：攻击开始时间。</li>不填默认值为：AttackStartTime。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
@@ -212,15 +237,17 @@ namespace TencentCloud
                      * 设置排序字段，取值有：
 <li>MaxBandWidth：带宽峰值；</li>
 <li>AttackStartTime：攻击开始时间。</li>不填默认值为：AttackStartTime。
-                     * @param OrderBy 排序字段，取值有：
+                     * @param _orderBy 排序字段，取值有：
 <li>MaxBandWidth：带宽峰值；</li>
 <li>AttackStartTime：攻击开始时间。</li>不填默认值为：AttackStartTime。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
@@ -231,6 +258,7 @@ namespace TencentCloud
                      * @return OrderType 排序方式，取值有：
 <li>asc：升序方式；</li>
 <li>desc：降序方式。</li>不填默认值为：desc。
+                     * 
                      */
                     std::string GetOrderType() const;
 
@@ -238,15 +266,17 @@ namespace TencentCloud
                      * 设置排序方式，取值有：
 <li>asc：升序方式；</li>
 <li>desc：降序方式。</li>不填默认值为：desc。
-                     * @param OrderType 排序方式，取值有：
+                     * @param _orderType 排序方式，取值有：
 <li>asc：升序方式；</li>
 <li>desc：降序方式。</li>不填默认值为：desc。
+                     * 
                      */
                     void SetOrderType(const std::string& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 

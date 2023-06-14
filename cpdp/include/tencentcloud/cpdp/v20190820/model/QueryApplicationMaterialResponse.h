@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取成功申报材料查询结果
                      * @return Result 成功申报材料查询结果
+                     * 
                      */
                     QueryDeclareResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

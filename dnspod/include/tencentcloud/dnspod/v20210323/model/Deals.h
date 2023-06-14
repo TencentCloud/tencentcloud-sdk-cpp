@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取子订单ID
                      * @return DealId 子订单ID
+                     * 
                      */
                     std::string GetDealId() const;
 
                     /**
                      * 设置子订单ID
-                     * @param DealId 子订单ID
+                     * @param _dealId 子订单ID
+                     * 
                      */
                     void SetDealId(const std::string& _dealId);
 
                     /**
                      * 判断参数 DealId 是否已赋值
                      * @return DealId 是否已赋值
+                     * 
                      */
                     bool DealIdHasBeenSet() const;
 
                     /**
                      * 获取子订单号
                      * @return DealName 子订单号
+                     * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置子订单号
-                     * @param DealName 子订单号
+                     * @param _dealName 子订单号
+                     * 
                      */
                     void SetDealName(const std::string& _dealName);
 
                     /**
                      * 判断参数 DealName 是否已赋值
                      * @return DealName 是否已赋值
+                     * 
                      */
                     bool DealNameHasBeenSet() const;
 

@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Records 记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LogConfig> GetRecords() const;
 
                     /**
                      * 设置记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Records 记录
+                     * @param _records 记录
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetRecords(const std::vector<LogConfig>& _records);
 
                     /**
                      * 判断参数 Records 是否已赋值
                      * @return Records 是否已赋值
+                     * 
                      */
                     bool RecordsHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContinueToken 翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContinueToken() const;
 
                     /**
                      * 设置翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContinueToken 翻页游标
+                     * @param _continueToken 翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContinueToken(const std::string& _continueToken);
 
                     /**
                      * 判断参数 ContinueToken 是否已赋值
                      * @return ContinueToken 是否已赋值
+                     * 
                      */
                     bool ContinueTokenHasBeenSet() const;
 

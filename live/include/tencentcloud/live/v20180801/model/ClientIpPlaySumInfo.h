@@ -49,108 +49,126 @@ namespace TencentCloud
                     /**
                      * 获取客户端 IP，点分型。
                      * @return ClientIp 客户端 IP，点分型。
+                     * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置客户端 IP，点分型。
-                     * @param ClientIp 客户端 IP，点分型。
+                     * @param _clientIp 客户端 IP，点分型。
+                     * 
                      */
                     void SetClientIp(const std::string& _clientIp);
 
                     /**
                      * 判断参数 ClientIp 是否已赋值
                      * @return ClientIp 是否已赋值
+                     * 
                      */
                     bool ClientIpHasBeenSet() const;
 
                     /**
                      * 获取客户端所在省份。
                      * @return Province 客户端所在省份。
+                     * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置客户端所在省份。
-                     * @param Province 客户端所在省份。
+                     * @param _province 客户端所在省份。
+                     * 
                      */
                     void SetProvince(const std::string& _province);
 
                     /**
                      * 判断参数 Province 是否已赋值
                      * @return Province 是否已赋值
+                     * 
                      */
                     bool ProvinceHasBeenSet() const;
 
                     /**
                      * 获取总流量。
                      * @return TotalFlux 总流量。
+                     * 
                      */
                     double GetTotalFlux() const;
 
                     /**
                      * 设置总流量。
-                     * @param TotalFlux 总流量。
+                     * @param _totalFlux 总流量。
+                     * 
                      */
                     void SetTotalFlux(const double& _totalFlux);
 
                     /**
                      * 判断参数 TotalFlux 是否已赋值
                      * @return TotalFlux 是否已赋值
+                     * 
                      */
                     bool TotalFluxHasBeenSet() const;
 
                     /**
                      * 获取总请求数。
                      * @return TotalRequest 总请求数。
+                     * 
                      */
                     uint64_t GetTotalRequest() const;
 
                     /**
                      * 设置总请求数。
-                     * @param TotalRequest 总请求数。
+                     * @param _totalRequest 总请求数。
+                     * 
                      */
                     void SetTotalRequest(const uint64_t& _totalRequest);
 
                     /**
                      * 判断参数 TotalRequest 是否已赋值
                      * @return TotalRequest 是否已赋值
+                     * 
                      */
                     bool TotalRequestHasBeenSet() const;
 
                     /**
                      * 获取总失败请求数。
                      * @return TotalFailedRequest 总失败请求数。
+                     * 
                      */
                     uint64_t GetTotalFailedRequest() const;
 
                     /**
                      * 设置总失败请求数。
-                     * @param TotalFailedRequest 总失败请求数。
+                     * @param _totalFailedRequest 总失败请求数。
+                     * 
                      */
                     void SetTotalFailedRequest(const uint64_t& _totalFailedRequest);
 
                     /**
                      * 判断参数 TotalFailedRequest 是否已赋值
                      * @return TotalFailedRequest 是否已赋值
+                     * 
                      */
                     bool TotalFailedRequestHasBeenSet() const;
 
                     /**
                      * 获取客户端所在国家。
                      * @return CountryArea 客户端所在国家。
+                     * 
                      */
                     std::string GetCountryArea() const;
 
                     /**
                      * 设置客户端所在国家。
-                     * @param CountryArea 客户端所在国家。
+                     * @param _countryArea 客户端所在国家。
+                     * 
                      */
                     void SetCountryArea(const std::string& _countryArea);
 
                     /**
                      * 判断参数 CountryArea 是否已赋值
                      * @return CountryArea 是否已赋值
+                     * 
                      */
                     bool CountryAreaHasBeenSet() const;
 

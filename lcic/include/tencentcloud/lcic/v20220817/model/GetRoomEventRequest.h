@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取房间Id。
                      * @return RoomId 房间Id。
+                     * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
                      * 设置房间Id。
-                     * @param RoomId 房间Id。
+                     * @param _roomId 房间Id。
+                     * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
 
                     /**
                      * 判断参数 RoomId 是否已赋值
                      * @return RoomId 是否已赋值
+                     * 
                      */
                     bool RoomIdHasBeenSet() const;
 
                     /**
                      * 获取应用Id。
                      * @return SdkAppId 应用Id。
+                     * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用Id。
-                     * @param SdkAppId 应用Id。
+                     * @param _sdkAppId 应用Id。
+                     * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
 
                     /**
                      * 判断参数 SdkAppId 是否已赋值
                      * @return SdkAppId 是否已赋值
+                     * 
                      */
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
                      * 获取起始页，1开始。keyword为空时有效。
                      * @return Page 起始页，1开始。keyword为空时有效。
+                     * 
                      */
                     uint64_t GetPage() const;
 
                     /**
                      * 设置起始页，1开始。keyword为空时有效。
-                     * @param Page 起始页，1开始。keyword为空时有效。
+                     * @param _page 起始页，1开始。keyword为空时有效。
+                     * 
                      */
                     void SetPage(const uint64_t& _page);
 
                     /**
                      * 判断参数 Page 是否已赋值
                      * @return Page 是否已赋值
+                     * 
                      */
                     bool PageHasBeenSet() const;
 
                     /**
                      * 获取每页个数。keyword为空时有效。一次性最多200条。
                      * @return Limit 每页个数。keyword为空时有效。一次性最多200条。
+                     * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置每页个数。keyword为空时有效。一次性最多200条。
-                     * @param Limit 每页个数。keyword为空时有效。一次性最多200条。
+                     * @param _limit 每页个数。keyword为空时有效。一次性最多200条。
+                     * 
                      */
                     void SetLimit(const uint64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
@@ -127,6 +139,7 @@ RoomEnd:房间结束
 MemberJoin:成员加入
 MemberQuit:成员退出
 RecordFinish:录制结束
+                     * 
                      */
                     std::string GetKeyword() const;
 
@@ -137,18 +150,20 @@ RoomEnd:房间结束
 MemberJoin:成员加入
 MemberQuit:成员退出
 RecordFinish:录制结束
-                     * @param Keyword 搜索事件类型。有以下事件类型:
+                     * @param _keyword 搜索事件类型。有以下事件类型:
 RoomStart:房间开始
 RoomEnd:房间结束
 MemberJoin:成员加入
 MemberQuit:成员退出
 RecordFinish:录制结束
+                     * 
                      */
                     void SetKeyword(const std::string& _keyword);
 
                     /**
                      * 判断参数 Keyword 是否已赋值
                      * @return Keyword 是否已赋值
+                     * 
                      */
                     bool KeywordHasBeenSet() const;
 

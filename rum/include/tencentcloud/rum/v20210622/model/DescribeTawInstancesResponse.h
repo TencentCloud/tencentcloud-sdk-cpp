@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取实例列表
                      * @return InstanceSet 实例列表
+                     * 
                      */
                     std::vector<RumInstanceInfo> GetInstanceSet() const;
 
                     /**
                      * 判断参数 InstanceSet 是否已赋值
                      * @return InstanceSet 是否已赋值
+                     * 
                      */
                     bool InstanceSetHasBeenSet() const;
 
                     /**
                      * 获取实例总数
                      * @return TotalCount 实例总数
+                     * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
                      * @return TotalCount 是否已赋值
+                     * 
                      */
                     bool TotalCountHasBeenSet() const;
 

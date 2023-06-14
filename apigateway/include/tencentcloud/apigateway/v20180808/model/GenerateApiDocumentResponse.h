@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取api文档&sdk链接。
                      * @return Result api文档&sdk链接。
+                     * 
                      */
                     DocumentSDK GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 

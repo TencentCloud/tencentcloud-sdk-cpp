@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取边缘单元ID
                      * @return EdgeUnitId 边缘单元ID
+                     * 
                      */
                     uint64_t GetEdgeUnitId() const;
 
                     /**
                      * 设置边缘单元ID
-                     * @param EdgeUnitId 边缘单元ID
+                     * @param _edgeUnitId 边缘单元ID
+                     * 
                      */
                     void SetEdgeUnitId(const uint64_t& _edgeUnitId);
 
                     /**
                      * 判断参数 EdgeUnitId 是否已赋值
                      * @return EdgeUnitId 是否已赋值
+                     * 
                      */
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
                      * 获取边缘单元名称，64字符内
                      * @return Name 边缘单元名称，64字符内
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置边缘单元名称，64字符内
-                     * @param Name 边缘单元名称，64字符内
+                     * @param _name 边缘单元名称，64字符内
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取描述，200字符内
                      * @return Description 描述，200字符内
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述，200字符内
-                     * @param Description 描述，200字符内
+                     * @param _description 描述，200字符内
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取是否开启监控
                      * @return OpenCloudMonitor 是否开启监控
+                     * 
                      */
                     bool GetOpenCloudMonitor() const;
 
                     /**
                      * 设置是否开启监控
-                     * @param OpenCloudMonitor 是否开启监控
+                     * @param _openCloudMonitor 是否开启监控
+                     * 
                      */
                     void SetOpenCloudMonitor(const bool& _openCloudMonitor);
 
                     /**
                      * 判断参数 OpenCloudMonitor 是否已赋值
                      * @return OpenCloudMonitor 是否已赋值
+                     * 
                      */
                     bool OpenCloudMonitorHasBeenSet() const;
 

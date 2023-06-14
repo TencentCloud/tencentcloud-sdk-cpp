@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取嫌疑片段起始的 PTS 时间，单位：秒。
                      * @return StartPtsTime 嫌疑片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetStartPtsTime() const;
 
                     /**
                      * 设置嫌疑片段起始的 PTS 时间，单位：秒。
-                     * @param StartPtsTime 嫌疑片段起始的 PTS 时间，单位：秒。
+                     * @param _startPtsTime 嫌疑片段起始的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetStartPtsTime(const double& _startPtsTime);
 
                     /**
                      * 判断参数 StartPtsTime 是否已赋值
                      * @return StartPtsTime 是否已赋值
+                     * 
                      */
                     bool StartPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取嫌疑片段结束的 PTS 时间，单位：秒。
                      * @return EndPtsTime 嫌疑片段结束的 PTS 时间，单位：秒。
+                     * 
                      */
                     double GetEndPtsTime() const;
 
                     /**
                      * 设置嫌疑片段结束的 PTS 时间，单位：秒。
-                     * @param EndPtsTime 嫌疑片段结束的 PTS 时间，单位：秒。
+                     * @param _endPtsTime 嫌疑片段结束的 PTS 时间，单位：秒。
+                     * 
                      */
                     void SetEndPtsTime(const double& _endPtsTime);
 
                     /**
                      * 判断参数 EndPtsTime 是否已赋值
                      * @return EndPtsTime 是否已赋值
+                     * 
                      */
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
                      * 获取嫌疑片段涉黄分数。
                      * @return Confidence 嫌疑片段涉黄分数。
+                     * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置嫌疑片段涉黄分数。
-                     * @param Confidence 嫌疑片段涉黄分数。
+                     * @param _confidence 嫌疑片段涉黄分数。
+                     * 
                      */
                     void SetConfidence(const double& _confidence);
 
                     /**
                      * 判断参数 Confidence 是否已赋值
                      * @return Confidence 是否已赋值
+                     * 
                      */
                     bool ConfidenceHasBeenSet() const;
 
@@ -109,6 +118,7 @@ namespace TencentCloud
 <li>pass</li>
 <li>review</li>
 <li>block</li>
+                     * 
                      */
                     std::string GetSuggestion() const;
 
@@ -117,16 +127,18 @@ namespace TencentCloud
 <li>pass</li>
 <li>review</li>
 <li>block</li>
-                     * @param Suggestion 嫌疑片段鉴黄结果建议，取值范围：
+                     * @param _suggestion 嫌疑片段鉴黄结果建议，取值范围：
 <li>pass</li>
 <li>review</li>
 <li>block</li>
+                     * 
                      */
                     void SetSuggestion(const std::string& _suggestion);
 
                     /**
                      * 判断参数 Suggestion 是否已赋值
                      * @return Suggestion 是否已赋值
+                     * 
                      */
                     bool SuggestionHasBeenSet() const;
 
@@ -141,6 +153,7 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
+                     * 
                      */
                     std::string GetLabel() const;
 
@@ -150,17 +163,19 @@ namespace TencentCloud
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
-                     * @param Label 视频鉴黄结果标签，取值范围：
+                     * @param _label 视频鉴黄结果标签，取值范围：
 <li>porn：色情。</li>
 <li>sexy：性感。</li>
 <li>vulgar：低俗。</li>
 <li>intimacy：亲密行为。</li>
+                     * 
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
+                     * 
                      */
                     bool LabelHasBeenSet() const;
 
@@ -169,38 +184,44 @@ namespace TencentCloud
 PicUrlExpireTime 时间点后图片将被删除）。
                      * @return Url 嫌疑图片 URL （图片不会永久存储，到达
 PicUrlExpireTime 时间点后图片将被删除）。
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置嫌疑图片 URL （图片不会永久存储，到达
 PicUrlExpireTime 时间点后图片将被删除）。
-                     * @param Url 嫌疑图片 URL （图片不会永久存储，到达
+                     * @param _url 嫌疑图片 URL （图片不会永久存储，到达
 PicUrlExpireTime 时间点后图片将被删除）。
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
                      * @return PicUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 
                      */
                     std::string GetPicUrlExpireTime() const;
 
                     /**
                      * 设置嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
-                     * @param PicUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _picUrlExpireTime 嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 
                      */
                     void SetPicUrlExpireTime(const std::string& _picUrlExpireTime);
 
                     /**
                      * 判断参数 PicUrlExpireTime 是否已赋值
                      * @return PicUrlExpireTime 是否已赋值
+                     * 
                      */
                     bool PicUrlExpireTimeHasBeenSet() const;
 

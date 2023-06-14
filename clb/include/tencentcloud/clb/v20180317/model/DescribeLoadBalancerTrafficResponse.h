@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerTraffic 按出带宽从高到低排序后的负载均衡信息。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<LoadBalancerTraffic> GetLoadBalancerTraffic() const;
 
                     /**
                      * 判断参数 LoadBalancerTraffic 是否已赋值
                      * @return LoadBalancerTraffic 是否已赋值
+                     * 
                      */
                     bool LoadBalancerTrafficHasBeenSet() const;
 

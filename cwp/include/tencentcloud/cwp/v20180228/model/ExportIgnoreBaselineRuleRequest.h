@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取检测项名称
                      * @return RuleName 检测项名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置检测项名称
-                     * @param RuleName 检测项名称
+                     * @param _ruleName 检测项名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取主机内网IP。
                      * @return MachineIp 主机内网IP。
+                     * 
                      */
                     std::string GetMachineIp() const;
 
                     /**
                      * 设置主机内网IP。
-                     * @param MachineIp 主机内网IP。
+                     * @param _machineIp 主机内网IP。
+                     * 
                      */
                     void SetMachineIp(const std::string& _machineIp);
 
                     /**
                      * 判断参数 MachineIp 是否已赋值
                      * @return MachineIp 是否已赋值
+                     * 
                      */
                     bool MachineIpHasBeenSet() const;
 
                     /**
                      * 获取漏洞名称。
                      * @return VulName 漏洞名称。
+                     * 
                      */
                     std::string GetVulName() const;
 
                     /**
                      * 设置漏洞名称。
-                     * @param VulName 漏洞名称。
+                     * @param _vulName 漏洞名称。
+                     * 
                      */
                     void SetVulName(const std::string& _vulName);
 
                     /**
                      * 判断参数 VulName 是否已赋值
                      * @return VulName 是否已赋值
+                     * 
                      */
                     bool VulNameHasBeenSet() const;
 
@@ -91,6 +97,7 @@ namespace TencentCloud
 <li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
+                     * 
                      */
                     std::string GetVulType() const;
 
@@ -99,34 +106,39 @@ namespace TencentCloud
 <li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
-                     * @param VulType 漏洞类型。
+                     * @param _vulType 漏洞类型。
 <li> WEB : Web漏洞</li>
 <li> SYSTEM :系统组件漏洞</li>
 <li> BASELINE : 安全基线</li>
+                     * 
                      */
                     void SetVulType(const std::string& _vulType);
 
                     /**
                      * 判断参数 VulType 是否已赋值
                      * @return VulType 是否已赋值
+                     * 
                      */
                     bool VulTypeHasBeenSet() const;
 
                     /**
                      * 获取漏洞描述。
                      * @return Description 漏洞描述。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置漏洞描述。
-                     * @param Description 漏洞描述。
+                     * @param _description 漏洞描述。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -139,6 +151,7 @@ namespace TencentCloud
 <li> UN_OPERATED : 待处理</li>
 <li> SCANING : 扫描中</li>
 <li> FIXED : 已修复</li>
+                     * 
                      */
                     std::string GetVulStatus() const;
 
@@ -147,34 +160,39 @@ namespace TencentCloud
 <li> UN_OPERATED : 待处理</li>
 <li> SCANING : 扫描中</li>
 <li> FIXED : 已修复</li>
-                     * @param VulStatus 漏洞状态。
+                     * @param _vulStatus 漏洞状态。
 <li> UN_OPERATED : 待处理</li>
 <li> SCANING : 扫描中</li>
 <li> FIXED : 已修复</li>
+                     * 
                      */
                     void SetVulStatus(const std::string& _vulStatus);
 
                     /**
                      * 判断参数 VulStatus 是否已赋值
                      * @return VulStatus 是否已赋值
+                     * 
                      */
                     bool VulStatusHasBeenSet() const;
 
                     /**
                      * 获取最后扫描时间。
                      * @return LastScanTime 最后扫描时间。
+                     * 
                      */
                     std::string GetLastScanTime() const;
 
                     /**
                      * 设置最后扫描时间。
-                     * @param LastScanTime 最后扫描时间。
+                     * @param _lastScanTime 最后扫描时间。
+                     * 
                      */
                     void SetLastScanTime(const std::string& _lastScanTime);
 
                     /**
                      * 判断参数 LastScanTime 是否已赋值
                      * @return LastScanTime 是否已赋值
+                     * 
                      */
                     bool LastScanTimeHasBeenSet() const;
 

@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取ip地址
                      * @return IP ip地址
+                     * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置ip地址
-                     * @param IP ip地址
+                     * @param _iP ip地址
+                     * 
                      */
                     void SetIP(const std::string& _iP);
 
                     /**
                      * 判断参数 IP 是否已赋值
                      * @return IP 是否已赋值
+                     * 
                      */
                     bool IPHasBeenSet() const;
 
                     /**
                      * 获取防护状态   1:防护打开; -1:地址错误; 其他:未防护
                      * @return Status 防护状态   1:防护打开; -1:地址错误; 其他:未防护
+                     * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置防护状态   1:防护打开; -1:地址错误; 其他:未防护
-                     * @param Status 防护状态   1:防护打开; -1:地址错误; 其他:未防护
+                     * @param _status 防护状态   1:防护打开; -1:地址错误; 其他:未防护
+                     * 
                      */
                     void SetStatus(const int64_t& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 

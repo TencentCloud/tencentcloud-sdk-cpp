@@ -49,84 +49,98 @@ namespace TencentCloud
                     /**
                      * 获取歌曲基础信息
                      * @return KTVMusicBaseInfo 歌曲基础信息
+                     * 
                      */
                     KTVMusicBaseInfo GetKTVMusicBaseInfo() const;
 
                     /**
                      * 判断参数 KTVMusicBaseInfo 是否已赋值
                      * @return KTVMusicBaseInfo 是否已赋值
+                     * 
                      */
                     bool KTVMusicBaseInfoHasBeenSet() const;
 
                     /**
                      * 获取播放凭证
                      * @return PlayToken 播放凭证
+                     * 
                      */
                     std::string GetPlayToken() const;
 
                     /**
                      * 判断参数 PlayToken 是否已赋值
                      * @return PlayToken 是否已赋值
+                     * 
                      */
                     bool PlayTokenHasBeenSet() const;
 
                     /**
                      * 获取歌词下载地址
                      * @return LyricsUrl 歌词下载地址
+                     * 
                      */
                     std::string GetLyricsUrl() const;
 
                     /**
                      * 判断参数 LyricsUrl 是否已赋值
                      * @return LyricsUrl 是否已赋值
+                     * 
                      */
                     bool LyricsUrlHasBeenSet() const;
 
                     /**
                      * 获取歌曲规格信息列表
                      * @return DefinitionInfoSet 歌曲规格信息列表
+                     * 
                      */
                     std::vector<KTVMusicDefinitionInfo> GetDefinitionInfoSet() const;
 
                     /**
                      * 判断参数 DefinitionInfoSet 是否已赋值
                      * @return DefinitionInfoSet 是否已赋值
+                     * 
                      */
                     bool DefinitionInfoSetHasBeenSet() const;
 
                     /**
                      * 获取音高数据文件下载地址
                      * @return MidiJsonUrl 音高数据文件下载地址
+                     * 
                      */
                     std::string GetMidiJsonUrl() const;
 
                     /**
                      * 判断参数 MidiJsonUrl 是否已赋值
                      * @return MidiJsonUrl 是否已赋值
+                     * 
                      */
                     bool MidiJsonUrlHasBeenSet() const;
 
                     /**
                      * 获取副歌片段数据列表
                      * @return ChorusClipSet 副歌片段数据列表
+                     * 
                      */
                     std::vector<ChorusClip> GetChorusClipSet() const;
 
                     /**
                      * 判断参数 ChorusClipSet 是否已赋值
                      * @return ChorusClipSet 是否已赋值
+                     * 
                      */
                     bool ChorusClipSetHasBeenSet() const;
 
                     /**
                      * 获取前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
                      * @return PreludeInterval 前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分
+                     * 
                      */
                     int64_t GetPreludeInterval() const;
 
                     /**
                      * 判断参数 PreludeInterval 是否已赋值
                      * @return PreludeInterval 是否已赋值
+                     * 
                      */
                     bool PreludeIntervalHasBeenSet() const;
 

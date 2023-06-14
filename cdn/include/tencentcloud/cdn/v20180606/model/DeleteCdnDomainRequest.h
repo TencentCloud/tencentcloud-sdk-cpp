@@ -47,20 +47,23 @@ namespace TencentCloud
 域名状态需要为【已停用】
                      * @return Domain 域名
 域名状态需要为【已停用】
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
 域名状态需要为【已停用】
-                     * @param Domain 域名
+                     * @param _domain 域名
 域名状态需要为【已停用】
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 

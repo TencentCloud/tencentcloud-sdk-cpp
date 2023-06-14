@@ -50,72 +50,84 @@ namespace TencentCloud
                     /**
                      * 获取规则id
                      * @return LocationId 规则id
+                     * 
                      */
                     std::string GetLocationId() const;
 
                     /**
                      * 设置规则id
-                     * @param LocationId 规则id
+                     * @param _locationId 规则id
+                     * 
                      */
                     void SetLocationId(const std::string& _locationId);
 
                     /**
                      * 判断参数 LocationId 是否已赋值
                      * @return LocationId 是否已赋值
+                     * 
                      */
                     bool LocationIdHasBeenSet() const;
 
                     /**
                      * 获取域名
                      * @return Domain 域名
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-                     * @param Domain 域名
+                     * @param _domain 域名
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取uri
                      * @return Url uri
+                     * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置uri
-                     * @param Url uri
+                     * @param _url uri
+                     * 
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
+                     * 
                      */
                     bool UrlHasBeenSet() const;
 
                     /**
                      * 获取绑定的后端对象
                      * @return Targets 绑定的后端对象
+                     * 
                      */
                     std::vector<LbRsTargets> GetTargets() const;
 
                     /**
                      * 设置绑定的后端对象
-                     * @param Targets 绑定的后端对象
+                     * @param _targets 绑定的后端对象
+                     * 
                      */
                     void SetTargets(const std::vector<LbRsTargets>& _targets);
 
                     /**
                      * 判断参数 Targets 是否已赋值
                      * @return Targets 是否已赋值
+                     * 
                      */
                     bool TargetsHasBeenSet() const;
 

@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取消息的 key 名称
                      * @return JsonKey 消息的 key 名称
+                     * 
                      */
                     std::string GetJsonKey() const;
 
                     /**
                      * 设置消息的 key 名称
-                     * @param JsonKey 消息的 key 名称
+                     * @param _jsonKey 消息的 key 名称
+                     * 
                      */
                     void SetJsonKey(const std::string& _jsonKey);
 
                     /**
                      * 判断参数 JsonKey 是否已赋值
                      * @return JsonKey 是否已赋值
+                     * 
                      */
                     bool JsonKeyHasBeenSet() const;
 
                     /**
                      * 获取消息类型
                      * @return Type 消息类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置消息类型
-                     * @param Type 消息类型
+                     * @param _type 消息类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取消息是否允许为空
                      * @return AllowNull 消息是否允许为空
+                     * 
                      */
                     bool GetAllowNull() const;
 
                     /**
                      * 设置消息是否允许为空
-                     * @param AllowNull 消息是否允许为空
+                     * @param _allowNull 消息是否允许为空
+                     * 
                      */
                     void SetAllowNull(const bool& _allowNull);
 
                     /**
                      * 判断参数 AllowNull 是否已赋值
                      * @return AllowNull 是否已赋值
+                     * 
                      */
                     bool AllowNullHasBeenSet() const;
 
                     /**
                      * 获取对应映射列名称
                      * @return ColumnName 对应映射列名称
+                     * 
                      */
                     std::string GetColumnName() const;
 
                     /**
                      * 设置对应映射列名称
-                     * @param ColumnName 对应映射列名称
+                     * @param _columnName 对应映射列名称
+                     * 
                      */
                     void SetColumnName(const std::string& _columnName);
 
                     /**
                      * 判断参数 ColumnName 是否已赋值
                      * @return ColumnName 是否已赋值
+                     * 
                      */
                     bool ColumnNameHasBeenSet() const;
 
                     /**
                      * 获取数据库表额外字段
                      * @return ExtraInfo 数据库表额外字段
+                     * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
                      * 设置数据库表额外字段
-                     * @param ExtraInfo 数据库表额外字段
+                     * @param _extraInfo 数据库表额外字段
+                     * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
 
                     /**
                      * 判断参数 ExtraInfo 是否已赋值
                      * @return ExtraInfo 是否已赋值
+                     * 
                      */
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
                      * 获取当前列大小
                      * @return ColumnSize 当前列大小
+                     * 
                      */
                     std::string GetColumnSize() const;
 
                     /**
                      * 设置当前列大小
-                     * @param ColumnSize 当前列大小
+                     * @param _columnSize 当前列大小
+                     * 
                      */
                     void SetColumnSize(const std::string& _columnSize);
 
                     /**
                      * 判断参数 ColumnSize 是否已赋值
                      * @return ColumnSize 是否已赋值
+                     * 
                      */
                     bool ColumnSizeHasBeenSet() const;
 
                     /**
                      * 获取当前列精度
                      * @return DecimalDigits 当前列精度
+                     * 
                      */
                     std::string GetDecimalDigits() const;
 
                     /**
                      * 设置当前列精度
-                     * @param DecimalDigits 当前列精度
+                     * @param _decimalDigits 当前列精度
+                     * 
                      */
                     void SetDecimalDigits(const std::string& _decimalDigits);
 
                     /**
                      * 判断参数 DecimalDigits 是否已赋值
                      * @return DecimalDigits 是否已赋值
+                     * 
                      */
                     bool DecimalDigitsHasBeenSet() const;
 
                     /**
                      * 获取是否为自增列
                      * @return AutoIncrement 是否为自增列
+                     * 
                      */
                     bool GetAutoIncrement() const;
 
                     /**
                      * 设置是否为自增列
-                     * @param AutoIncrement 是否为自增列
+                     * @param _autoIncrement 是否为自增列
+                     * 
                      */
                     void SetAutoIncrement(const bool& _autoIncrement);
 
                     /**
                      * 判断参数 AutoIncrement 是否已赋值
                      * @return AutoIncrement 是否已赋值
+                     * 
                      */
                     bool AutoIncrementHasBeenSet() const;
 
                     /**
                      * 获取数据库表默认参数
                      * @return DefaultValue 数据库表默认参数
+                     * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
                      * 设置数据库表默认参数
-                     * @param DefaultValue 数据库表默认参数
+                     * @param _defaultValue 数据库表默认参数
+                     * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
                     /**
                      * 判断参数 DefaultValue 是否已赋值
                      * @return DefaultValue 是否已赋值
+                     * 
                      */
                     bool DefaultValueHasBeenSet() const;
 

@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取参数模板 ID。
                      * @return TemplateId 参数模板 ID。
+                     * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
                      * 判断参数 TemplateId 是否已赋值
                      * @return TemplateId 是否已赋值
+                     * 
                      */
                     bool TemplateIdHasBeenSet() const;
 

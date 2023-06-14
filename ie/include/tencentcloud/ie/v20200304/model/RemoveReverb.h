@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取去混响类型，可选项：normal
                      * @return Type 去混响类型，可选项：normal
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置去混响类型，可选项：normal
-                     * @param Type 去混响类型，可选项：normal
+                     * @param _type 去混响类型，可选项：normal
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 

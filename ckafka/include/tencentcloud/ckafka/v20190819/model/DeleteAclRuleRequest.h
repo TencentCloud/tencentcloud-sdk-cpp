@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取实例id信息
                      * @return InstanceId 实例id信息
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id信息
-                     * @param InstanceId 实例id信息
+                     * @param _instanceId 实例id信息
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取acl规则名称
                      * @return RuleName acl规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置acl规则名称
-                     * @param RuleName acl规则名称
+                     * @param _ruleName acl规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 

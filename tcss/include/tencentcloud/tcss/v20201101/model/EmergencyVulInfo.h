@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取漏洞名称
                      * @return Name 漏洞名称
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置漏洞名称
-                     * @param Name 漏洞名称
+                     * @param _name 漏洞名称
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -69,20 +72,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 漏洞标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置漏洞标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 漏洞标签
+                     * @param _tags 漏洞标签
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
+                     * 
                      */
                     bool TagsHasBeenSet() const;
 
@@ -91,20 +97,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVSSV3Score CVSS V3分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetCVSSV3Score() const;
 
                     /**
                      * 设置CVSS V3分数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CVSSV3Score CVSS V3分数
+                     * @param _cVSSV3Score CVSS V3分数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCVSSV3Score(const double& _cVSSV3Score);
 
                     /**
                      * 判断参数 CVSSV3Score 是否已赋值
                      * @return CVSSV3Score 是否已赋值
+                     * 
                      */
                     bool CVSSV3ScoreHasBeenSet() const;
 
@@ -113,38 +122,44 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 风险等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置风险等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Level 风险等级
+                     * @param _level 风险等级
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取CVE编号
                      * @return CVEID CVE编号
+                     * 
                      */
                     std::string GetCVEID() const;
 
                     /**
                      * 设置CVE编号
-                     * @param CVEID CVE编号
+                     * @param _cVEID CVE编号
+                     * 
                      */
                     void SetCVEID(const std::string& _cVEID);
 
                     /**
                      * 判断参数 CVEID 是否已赋值
                      * @return CVEID 是否已赋值
+                     * 
                      */
                     bool CVEIDHasBeenSet() const;
 
@@ -153,20 +168,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 漏洞类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置漏洞类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Category 漏洞类型
+                     * @param _category 漏洞类型
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCategory(const std::string& _category);
 
                     /**
                      * 判断参数 Category 是否已赋值
                      * @return Category 是否已赋值
+                     * 
                      */
                     bool CategoryHasBeenSet() const;
 
@@ -175,20 +193,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitTime 漏洞披露时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置漏洞披露时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubmitTime 漏洞披露时间
+                     * @param _submitTime 漏洞披露时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
 
                     /**
                      * 判断参数 SubmitTime 是否已赋值
                      * @return SubmitTime 是否已赋值
+                     * 
                      */
                     bool SubmitTimeHasBeenSet() const;
 
@@ -197,74 +218,86 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestFoundTime 最近发现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetLatestFoundTime() const;
 
                     /**
                      * 设置最近发现时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LatestFoundTime 最近发现时间
+                     * @param _latestFoundTime 最近发现时间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLatestFoundTime(const std::string& _latestFoundTime);
 
                     /**
                      * 判断参数 LatestFoundTime 是否已赋值
                      * @return LatestFoundTime 是否已赋值
+                     * 
                      */
                     bool LatestFoundTimeHasBeenSet() const;
 
                     /**
                      * 获取应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED_NOT_RISK：已扫描，暂未风险 ，SCANNED_RISK：已扫描存在风险
                      * @return Status 应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED_NOT_RISK：已扫描，暂未风险 ，SCANNED_RISK：已扫描存在风险
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED_NOT_RISK：已扫描，暂未风险 ，SCANNED_RISK：已扫描存在风险
-                     * @param Status 应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED_NOT_RISK：已扫描，暂未风险 ，SCANNED_RISK：已扫描存在风险
+                     * @param _status 应急漏洞风险情况：NOT_SCAN：未扫描，SCANNING：扫描中，SCANNED_NOT_RISK：已扫描，暂未风险 ，SCANNED_RISK：已扫描存在风险
+                     * 
                      */
                     void SetStatus(const std::string& _status);
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取漏洞ID
                      * @return ID 漏洞ID
+                     * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置漏洞ID
-                     * @param ID 漏洞ID
+                     * @param _iD 漏洞ID
+                     * 
                      */
                     void SetID(const int64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取漏洞PocID
                      * @return PocID 漏洞PocID
+                     * 
                      */
                     std::string GetPocID() const;
 
                     /**
                      * 设置漏洞PocID
-                     * @param PocID 漏洞PocID
+                     * @param _pocID 漏洞PocID
+                     * 
                      */
                     void SetPocID(const std::string& _pocID);
 
                     /**
                      * 判断参数 PocID 是否已赋值
                      * @return PocID 是否已赋值
+                     * 
                      */
                     bool PocIDHasBeenSet() const;
 
@@ -273,20 +306,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenceStatus 防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefenceStatus() const;
 
                     /**
                      * 设置防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefenceStatus 防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
+                     * @param _defenceStatus 防御状态，NO_DEFENDED:未防御，DEFENDED:已防御
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefenceStatus(const std::string& _defenceStatus);
 
                     /**
                      * 判断参数 DefenceStatus 是否已赋值
                      * @return DefenceStatus 是否已赋值
+                     * 
                      */
                     bool DefenceStatusHasBeenSet() const;
 
@@ -295,20 +331,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenceScope 漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDefenceScope() const;
 
                     /**
                      * 设置漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefenceScope 漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
+                     * @param _defenceScope 漏洞防御主机范围: MANUAL:自选主机节点，ALL:全部
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefenceScope(const std::string& _defenceScope);
 
                     /**
                      * 判断参数 DefenceScope 是否已赋值
                      * @return DefenceScope 是否已赋值
+                     * 
                      */
                     bool DefenceScopeHasBeenSet() const;
 
@@ -317,20 +356,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenceHostCount 漏洞防御主机数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDefenceHostCount() const;
 
                     /**
                      * 设置漏洞防御主机数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefenceHostCount 漏洞防御主机数量
+                     * @param _defenceHostCount 漏洞防御主机数量
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefenceHostCount(const int64_t& _defenceHostCount);
 
                     /**
                      * 判断参数 DefenceHostCount 是否已赋值
                      * @return DefenceHostCount 是否已赋值
+                     * 
                      */
                     bool DefenceHostCountHasBeenSet() const;
 
@@ -339,20 +381,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefendedCount 已防御攻击次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetDefendedCount() const;
 
                     /**
                      * 设置已防御攻击次数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DefendedCount 已防御攻击次数
+                     * @param _defendedCount 已防御攻击次数
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDefendedCount(const int64_t& _defendedCount);
 
                     /**
                      * 判断参数 DefendedCount 是否已赋值
                      * @return DefendedCount 是否已赋值
+                     * 
                      */
                     bool DefendedCountHasBeenSet() const;
 

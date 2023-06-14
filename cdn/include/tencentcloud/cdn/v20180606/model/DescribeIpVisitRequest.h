@@ -47,20 +47,23 @@ namespace TencentCloud
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00
                      * @return StartTime 查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00
-                     * @param StartTime 查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间
+                     * @param _startTime 查询起始时间，如：2018-09-04 10:40:10，返回结果大于等于指定时间
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的第一个数据对应时间点为 2018-09-04 10:40:00
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00
                      * @return EndTime 查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00
-                     * @param EndTime 查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间
+                     * @param _endTime 查询结束时间，如：2018-09-04 10:40:10，返回结果小于等于指定时间
 根据指定时间粒度不同，会进行向前归整，如 2018-09-04 10:40:10 在按 5 分钟的时间粒度查询时，返回的最后一个数据对应时间点为 2018-09-04 10:40:00
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取指定查询域名列表，最多可一次性查询 30 个加速域名明细
                      * @return Domains 指定查询域名列表，最多可一次性查询 30 个加速域名明细
+                     * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
                      * 设置指定查询域名列表，最多可一次性查询 30 个加速域名明细
-                     * @param Domains 指定查询域名列表，最多可一次性查询 30 个加速域名明细
+                     * @param _domains 指定查询域名列表，最多可一次性查询 30 个加速域名明细
+                     * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
                     /**
                      * 判断参数 Domains 是否已赋值
                      * @return Domains 是否已赋值
+                     * 
                      */
                     bool DomainsHasBeenSet() const;
 
@@ -109,20 +118,23 @@ namespace TencentCloud
 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
                      * @return Project 指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)
 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
+                     * 
                      */
                     int64_t GetProject() const;
 
                     /**
                      * 设置指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)
 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
-                     * @param Project 指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)
+                     * @param _project 指定要查询的项目 ID，[前往查看项目 ID](https://console.cloud.tencent.com/project)
 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
+                     * 
                      */
                     void SetProject(const int64_t& _project);
 
                     /**
                      * 判断参数 Project 是否已赋值
                      * @return Project 是否已赋值
+                     * 
                      */
                     bool ProjectHasBeenSet() const;
 
@@ -133,6 +145,7 @@ day：天粒度，查询时间区间大于 1 天时，默认返回天粒度活�
                      * @return Interval 时间粒度，支持以下几种模式：
 5min：5 分钟粒度，查询时间区间 24 小时内，默认返回 5 分钟粒度活跃用户数
 day：天粒度，查询时间区间大于 1 天时，默认返回天粒度活跃用户数
+                     * 
                      */
                     std::string GetInterval() const;
 
@@ -140,15 +153,17 @@ day：天粒度，查询时间区间大于 1 天时，默认返回天粒度活�
                      * 设置时间粒度，支持以下几种模式：
 5min：5 分钟粒度，查询时间区间 24 小时内，默认返回 5 分钟粒度活跃用户数
 day：天粒度，查询时间区间大于 1 天时，默认返回天粒度活跃用户数
-                     * @param Interval 时间粒度，支持以下几种模式：
+                     * @param _interval 时间粒度，支持以下几种模式：
 5min：5 分钟粒度，查询时间区间 24 小时内，默认返回 5 分钟粒度活跃用户数
 day：天粒度，查询时间区间大于 1 天时，默认返回天粒度活跃用户数
+                     * 
                      */
                     void SetInterval(const std::string& _interval);
 
                     /**
                      * 判断参数 Interval 是否已赋值
                      * @return Interval 是否已赋值
+                     * 
                      */
                     bool IntervalHasBeenSet() const;
 

@@ -47,24 +47,28 @@ namespace TencentCloud
                     /**
                      * 获取用户appid
                      * @return AppId 用户appid
+                     * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
                     /**
                      * 获取配额数据
                      * @return AccountQuotaOverview 配额数据
+                     * 
                      */
                     AccountQuotaOverview GetAccountQuotaOverview() const;
 
                     /**
                      * 判断参数 AccountQuotaOverview 是否已赋值
                      * @return AccountQuotaOverview 是否已赋值
+                     * 
                      */
                     bool AccountQuotaOverviewHasBeenSet() const;
 

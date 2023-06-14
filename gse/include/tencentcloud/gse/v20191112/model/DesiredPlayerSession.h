@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取与玩家会话关联的唯一玩家标识
                      * @return PlayerId 与玩家会话关联的唯一玩家标识
+                     * 
                      */
                     std::string GetPlayerId() const;
 
                     /**
                      * 设置与玩家会话关联的唯一玩家标识
-                     * @param PlayerId 与玩家会话关联的唯一玩家标识
+                     * @param _playerId 与玩家会话关联的唯一玩家标识
+                     * 
                      */
                     void SetPlayerId(const std::string& _playerId);
 
                     /**
                      * 判断参数 PlayerId 是否已赋值
                      * @return PlayerId 是否已赋值
+                     * 
                      */
                     bool PlayerIdHasBeenSet() const;
 
                     /**
                      * 获取开发人员定义的玩家数据
                      * @return PlayerData 开发人员定义的玩家数据
+                     * 
                      */
                     std::string GetPlayerData() const;
 
                     /**
                      * 设置开发人员定义的玩家数据
-                     * @param PlayerData 开发人员定义的玩家数据
+                     * @param _playerData 开发人员定义的玩家数据
+                     * 
                      */
                     void SetPlayerData(const std::string& _playerData);
 
                     /**
                      * 判断参数 PlayerData 是否已赋值
                      * @return PlayerData 是否已赋值
+                     * 
                      */
                     bool PlayerDataHasBeenSet() const;
 

@@ -55,234 +55,273 @@ namespace TencentCloud
                     /**
                      * 获取连接源名称
                      * @return ResourceName 连接源名称
+                     * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置连接源名称
-                     * @param ResourceName 连接源名称
+                     * @param _resourceName 连接源名称
+                     * 
                      */
                     void SetResourceName(const std::string& _resourceName);
 
                     /**
                      * 判断参数 ResourceName 是否已赋值
                      * @return ResourceName 是否已赋值
+                     * 
                      */
                     bool ResourceNameHasBeenSet() const;
 
                     /**
                      * 获取连接源类型
                      * @return Type 连接源类型
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置连接源类型
-                     * @param Type 连接源类型
+                     * @param _type 连接源类型
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取连接源描述
                      * @return Description 连接源描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置连接源描述
-                     * @param Description 连接源描述
+                     * @param _description 连接源描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取Dts配置，Type为DTS时必填
                      * @return DtsConnectParam Dts配置，Type为DTS时必填
+                     * 
                      */
                     DtsConnectParam GetDtsConnectParam() const;
 
                     /**
                      * 设置Dts配置，Type为DTS时必填
-                     * @param DtsConnectParam Dts配置，Type为DTS时必填
+                     * @param _dtsConnectParam Dts配置，Type为DTS时必填
+                     * 
                      */
                     void SetDtsConnectParam(const DtsConnectParam& _dtsConnectParam);
 
                     /**
                      * 判断参数 DtsConnectParam 是否已赋值
                      * @return DtsConnectParam 是否已赋值
+                     * 
                      */
                     bool DtsConnectParamHasBeenSet() const;
 
                     /**
                      * 获取MongoDB配置，Type为MONGODB时必填
                      * @return MongoDBConnectParam MongoDB配置，Type为MONGODB时必填
+                     * 
                      */
                     MongoDBConnectParam GetMongoDBConnectParam() const;
 
                     /**
                      * 设置MongoDB配置，Type为MONGODB时必填
-                     * @param MongoDBConnectParam MongoDB配置，Type为MONGODB时必填
+                     * @param _mongoDBConnectParam MongoDB配置，Type为MONGODB时必填
+                     * 
                      */
                     void SetMongoDBConnectParam(const MongoDBConnectParam& _mongoDBConnectParam);
 
                     /**
                      * 判断参数 MongoDBConnectParam 是否已赋值
                      * @return MongoDBConnectParam 是否已赋值
+                     * 
                      */
                     bool MongoDBConnectParamHasBeenSet() const;
 
                     /**
                      * 获取Es配置，Type为ES时必填
                      * @return EsConnectParam Es配置，Type为ES时必填
+                     * 
                      */
                     EsConnectParam GetEsConnectParam() const;
 
                     /**
                      * 设置Es配置，Type为ES时必填
-                     * @param EsConnectParam Es配置，Type为ES时必填
+                     * @param _esConnectParam Es配置，Type为ES时必填
+                     * 
                      */
                     void SetEsConnectParam(const EsConnectParam& _esConnectParam);
 
                     /**
                      * 判断参数 EsConnectParam 是否已赋值
                      * @return EsConnectParam 是否已赋值
+                     * 
                      */
                     bool EsConnectParamHasBeenSet() const;
 
                     /**
                      * 获取ClickHouse配置，Type为CLICKHOUSE时必填
                      * @return ClickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * 
                      */
                     ClickHouseConnectParam GetClickHouseConnectParam() const;
 
                     /**
                      * 设置ClickHouse配置，Type为CLICKHOUSE时必填
-                     * @param ClickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * @param _clickHouseConnectParam ClickHouse配置，Type为CLICKHOUSE时必填
+                     * 
                      */
                     void SetClickHouseConnectParam(const ClickHouseConnectParam& _clickHouseConnectParam);
 
                     /**
                      * 判断参数 ClickHouseConnectParam 是否已赋值
                      * @return ClickHouseConnectParam 是否已赋值
+                     * 
                      */
                     bool ClickHouseConnectParamHasBeenSet() const;
 
                     /**
                      * 获取MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
                      * @return MySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
+                     * 
                      */
                     MySQLConnectParam GetMySQLConnectParam() const;
 
                     /**
                      * 设置MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
-                     * @param MySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
+                     * @param _mySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时必填
+                     * 
                      */
                     void SetMySQLConnectParam(const MySQLConnectParam& _mySQLConnectParam);
 
                     /**
                      * 判断参数 MySQLConnectParam 是否已赋值
                      * @return MySQLConnectParam 是否已赋值
+                     * 
                      */
                     bool MySQLConnectParamHasBeenSet() const;
 
                     /**
                      * 获取PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
                      * @return PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 
                      */
                     PostgreSQLConnectParam GetPostgreSQLConnectParam() const;
 
                     /**
                      * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
-                     * @param PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * @param _postgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 
                      */
                     void SetPostgreSQLConnectParam(const PostgreSQLConnectParam& _postgreSQLConnectParam);
 
                     /**
                      * 判断参数 PostgreSQLConnectParam 是否已赋值
                      * @return PostgreSQLConnectParam 是否已赋值
+                     * 
                      */
                     bool PostgreSQLConnectParamHasBeenSet() const;
 
                     /**
                      * 获取MariaDB配置，Type为MARIADB时必填
                      * @return MariaDBConnectParam MariaDB配置，Type为MARIADB时必填
+                     * 
                      */
                     MariaDBConnectParam GetMariaDBConnectParam() const;
 
                     /**
                      * 设置MariaDB配置，Type为MARIADB时必填
-                     * @param MariaDBConnectParam MariaDB配置，Type为MARIADB时必填
+                     * @param _mariaDBConnectParam MariaDB配置，Type为MARIADB时必填
+                     * 
                      */
                     void SetMariaDBConnectParam(const MariaDBConnectParam& _mariaDBConnectParam);
 
                     /**
                      * 判断参数 MariaDBConnectParam 是否已赋值
                      * @return MariaDBConnectParam 是否已赋值
+                     * 
                      */
                     bool MariaDBConnectParamHasBeenSet() const;
 
                     /**
                      * 获取SQLServer配置，Type为SQLSERVER时必填
                      * @return SQLServerConnectParam SQLServer配置，Type为SQLSERVER时必填
+                     * 
                      */
                     SQLServerConnectParam GetSQLServerConnectParam() const;
 
                     /**
                      * 设置SQLServer配置，Type为SQLSERVER时必填
-                     * @param SQLServerConnectParam SQLServer配置，Type为SQLSERVER时必填
+                     * @param _sQLServerConnectParam SQLServer配置，Type为SQLSERVER时必填
+                     * 
                      */
                     void SetSQLServerConnectParam(const SQLServerConnectParam& _sQLServerConnectParam);
 
                     /**
                      * 判断参数 SQLServerConnectParam 是否已赋值
                      * @return SQLServerConnectParam 是否已赋值
+                     * 
                      */
                     bool SQLServerConnectParamHasBeenSet() const;
 
                     /**
                      * 获取Doris 配置，Type为 DORIS 时必填
                      * @return DorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     * 
                      */
                     DorisConnectParam GetDorisConnectParam() const;
 
                     /**
                      * 设置Doris 配置，Type为 DORIS 时必填
-                     * @param DorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     * @param _dorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     * 
                      */
                     void SetDorisConnectParam(const DorisConnectParam& _dorisConnectParam);
 
                     /**
                      * 判断参数 DorisConnectParam 是否已赋值
                      * @return DorisConnectParam 是否已赋值
+                     * 
                      */
                     bool DorisConnectParamHasBeenSet() const;
 
                     /**
                      * 获取Kafka配置，Type为 KAFKA 时必填
                      * @return KafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     * 
                      */
                     KafkaConnectParam GetKafkaConnectParam() const;
 
                     /**
                      * 设置Kafka配置，Type为 KAFKA 时必填
-                     * @param KafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     * @param _kafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     * 
                      */
                     void SetKafkaConnectParam(const KafkaConnectParam& _kafkaConnectParam);
 
                     /**
                      * 判断参数 KafkaConnectParam 是否已赋值
                      * @return KafkaConnectParam 是否已赋值
+                     * 
                      */
                     bool KafkaConnectParamHasBeenSet() const;
 

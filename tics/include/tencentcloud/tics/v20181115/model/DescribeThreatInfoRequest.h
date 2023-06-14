@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取查询对象，域名或IP
                      * @return Key 查询对象，域名或IP
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置查询对象，域名或IP
-                     * @param Key 查询对象，域名或IP
+                     * @param _key 查询对象，域名或IP
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
                     /**
                      * 获取查询类型，当前取值为domain或ip
                      * @return Type 查询类型，当前取值为domain或ip
+                     * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置查询类型，当前取值为domain或ip
-                     * @param Type 查询类型，当前取值为domain或ip
+                     * @param _type 查询类型，当前取值为domain或ip
+                     * 
                      */
                     void SetType(const std::string& _type);
 
                     /**
                      * 判断参数 Type 是否已赋值
                      * @return Type 是否已赋值
+                     * 
                      */
                     bool TypeHasBeenSet() const;
 
                     /**
                      * 获取附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
                      * @return Option 附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
+                     * 
                      */
                     uint64_t GetOption() const;
 
                     /**
                      * 设置附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
-                     * @param Option 附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
+                     * @param _option 附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。
+                     * 
                      */
                     void SetOption(const uint64_t& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
                      * @return Option 是否已赋值
+                     * 
                      */
                     bool OptionHasBeenSet() const;
 

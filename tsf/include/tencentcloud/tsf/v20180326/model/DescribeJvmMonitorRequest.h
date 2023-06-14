@@ -45,126 +45,147 @@ namespace TencentCloud
                     /**
                      * 获取查询的实例Id
                      * @return InstanceId 查询的实例Id
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置查询的实例Id
-                     * @param InstanceId 查询的实例Id
+                     * @param _instanceId 查询的实例Id
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取实例所属应用Id
                      * @return ApplicationId 实例所属应用Id
+                     * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置实例所属应用Id
-                     * @param ApplicationId 实例所属应用Id
+                     * @param _applicationId 实例所属应用Id
+                     * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
                      * @return ApplicationId 是否已赋值
+                     * 
                      */
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
                      * 获取时间粒度,单位:秒
                      * @return TimeGranularity 时间粒度,单位:秒
+                     * 
                      */
                     int64_t GetTimeGranularity() const;
 
                     /**
                      * 设置时间粒度,单位:秒
-                     * @param TimeGranularity 时间粒度,单位:秒
+                     * @param _timeGranularity 时间粒度,单位:秒
+                     * 
                      */
                     void SetTimeGranularity(const int64_t& _timeGranularity);
 
                     /**
                      * 判断参数 TimeGranularity 是否已赋值
                      * @return TimeGranularity 是否已赋值
+                     * 
                      */
                     bool TimeGranularityHasBeenSet() const;
 
                     /**
                      * 获取查询数据起始时间格式(yyyy-MM-dd HH:mm:ss)
                      * @return From 查询数据起始时间格式(yyyy-MM-dd HH:mm:ss)
+                     * 
                      */
                     std::string GetFrom() const;
 
                     /**
                      * 设置查询数据起始时间格式(yyyy-MM-dd HH:mm:ss)
-                     * @param From 查询数据起始时间格式(yyyy-MM-dd HH:mm:ss)
+                     * @param _from 查询数据起始时间格式(yyyy-MM-dd HH:mm:ss)
+                     * 
                      */
                     void SetFrom(const std::string& _from);
 
                     /**
                      * 判断参数 From 是否已赋值
                      * @return From 是否已赋值
+                     * 
                      */
                     bool FromHasBeenSet() const;
 
                     /**
                      * 获取查询数据结束时间格式(yyyy-MM-dd HH:mm:ss)
                      * @return To 查询数据结束时间格式(yyyy-MM-dd HH:mm:ss)
+                     * 
                      */
                     std::string GetTo() const;
 
                     /**
                      * 设置查询数据结束时间格式(yyyy-MM-dd HH:mm:ss)
-                     * @param To 查询数据结束时间格式(yyyy-MM-dd HH:mm:ss)
+                     * @param _to 查询数据结束时间格式(yyyy-MM-dd HH:mm:ss)
+                     * 
                      */
                     void SetTo(const std::string& _to);
 
                     /**
                      * 判断参数 To 是否已赋值
                      * @return To 是否已赋值
+                     * 
                      */
                     bool ToHasBeenSet() const;
 
                     /**
                      * 获取查询的监控图列表,以返回值属性名作为入参
                      * @return RequiredPictures 查询的监控图列表,以返回值属性名作为入参
+                     * 
                      */
                     std::vector<std::string> GetRequiredPictures() const;
 
                     /**
                      * 设置查询的监控图列表,以返回值属性名作为入参
-                     * @param RequiredPictures 查询的监控图列表,以返回值属性名作为入参
+                     * @param _requiredPictures 查询的监控图列表,以返回值属性名作为入参
+                     * 
                      */
                     void SetRequiredPictures(const std::vector<std::string>& _requiredPictures);
 
                     /**
                      * 判断参数 RequiredPictures 是否已赋值
                      * @return RequiredPictures 是否已赋值
+                     * 
                      */
                     bool RequiredPicturesHasBeenSet() const;
 
                     /**
                      * 获取扩展字段
                      * @return Tag 扩展字段
+                     * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置扩展字段
-                     * @param Tag 扩展字段
+                     * @param _tag 扩展字段
+                     * 
                      */
                     void SetTag(const std::string& _tag);
 
                     /**
                      * 判断参数 Tag 是否已赋值
                      * @return Tag 是否已赋值
+                     * 
                      */
                     bool TagHasBeenSet() const;
 

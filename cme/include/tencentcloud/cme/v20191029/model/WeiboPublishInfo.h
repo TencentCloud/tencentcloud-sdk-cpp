@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取视频发布标题。
                      * @return Title 视频发布标题。
+                     * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置视频发布标题。
-                     * @param Title 视频发布标题。
+                     * @param _title 视频发布标题。
+                     * 
                      */
                     void SetTitle(const std::string& _title);
 
                     /**
                      * 判断参数 Title 是否已赋值
                      * @return Title 是否已赋值
+                     * 
                      */
                     bool TitleHasBeenSet() const;
 
                     /**
                      * 获取视频发布描述信息。
                      * @return Description 视频发布描述信息。
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置视频发布描述信息。
-                     * @param Description 视频发布描述信息。
+                     * @param _description 视频发布描述信息。
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
@@ -93,6 +99,7 @@ namespace TencentCloud
 <li>Private：私有，仅自己可见。</li>
 
 默认为 Public，所有人可见。
+                     * 
                      */
                     std::string GetVisible() const;
 
@@ -102,17 +109,19 @@ namespace TencentCloud
 <li>Private：私有，仅自己可见。</li>
 
 默认为 Public，所有人可见。
-                     * @param Visible 微博可见性，可取值为：
+                     * @param _visible 微博可见性，可取值为：
 <li>Public：公开，所有人可见；</li>
 <li>Private：私有，仅自己可见。</li>
 
 默认为 Public，所有人可见。
+                     * 
                      */
                     void SetVisible(const std::string& _visible);
 
                     /**
                      * 判断参数 Visible 是否已赋值
                      * @return Visible 是否已赋值
+                     * 
                      */
                     bool VisibleHasBeenSet() const;
 

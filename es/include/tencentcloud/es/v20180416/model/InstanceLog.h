@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取日志时间
                      * @return Time 日志时间
+                     * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置日志时间
-                     * @param Time 日志时间
+                     * @param _time 日志时间
+                     * 
                      */
                     void SetTime(const std::string& _time);
 
                     /**
                      * 判断参数 Time 是否已赋值
                      * @return Time 是否已赋值
+                     * 
                      */
                     bool TimeHasBeenSet() const;
 
                     /**
                      * 获取日志级别
                      * @return Level 日志级别
+                     * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志级别
-                     * @param Level 日志级别
+                     * @param _level 日志级别
+                     * 
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
+                     * 
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取集群节点ip
                      * @return Ip 集群节点ip
+                     * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置集群节点ip
-                     * @param Ip 集群节点ip
+                     * @param _ip 集群节点ip
+                     * 
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
+                     * 
                      */
                     bool IpHasBeenSet() const;
 
                     /**
                      * 获取日志内容
                      * @return Message 日志内容
+                     * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置日志内容
-                     * @param Message 日志内容
+                     * @param _message 日志内容
+                     * 
                      */
                     void SetMessage(const std::string& _message);
 
                     /**
                      * 判断参数 Message 是否已赋值
                      * @return Message 是否已赋值
+                     * 
                      */
                     bool MessageHasBeenSet() const;
 
                     /**
                      * 获取集群节点ID
                      * @return NodeID 集群节点ID
+                     * 
                      */
                     std::string GetNodeID() const;
 
                     /**
                      * 设置集群节点ID
-                     * @param NodeID 集群节点ID
+                     * @param _nodeID 集群节点ID
+                     * 
                      */
                     void SetNodeID(const std::string& _nodeID);
 
                     /**
                      * 判断参数 NodeID 是否已赋值
                      * @return NodeID 是否已赋值
+                     * 
                      */
                     bool NodeIDHasBeenSet() const;
 

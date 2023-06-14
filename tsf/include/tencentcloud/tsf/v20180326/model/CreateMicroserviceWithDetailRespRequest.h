@@ -45,54 +45,63 @@ namespace TencentCloud
                     /**
                      * 获取命名空间ID
                      * @return NamespaceId 命名空间ID
+                     * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-                     * @param NamespaceId 命名空间ID
+                     * @param _namespaceId 命名空间ID
+                     * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
                     /**
                      * 判断参数 NamespaceId 是否已赋值
                      * @return NamespaceId 是否已赋值
+                     * 
                      */
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
                      * 获取微服务名称
                      * @return MicroserviceName 微服务名称
+                     * 
                      */
                     std::string GetMicroserviceName() const;
 
                     /**
                      * 设置微服务名称
-                     * @param MicroserviceName 微服务名称
+                     * @param _microserviceName 微服务名称
+                     * 
                      */
                     void SetMicroserviceName(const std::string& _microserviceName);
 
                     /**
                      * 判断参数 MicroserviceName 是否已赋值
                      * @return MicroserviceName 是否已赋值
+                     * 
                      */
                     bool MicroserviceNameHasBeenSet() const;
 
                     /**
                      * 获取微服务描述信息
                      * @return MicroserviceDesc 微服务描述信息
+                     * 
                      */
                     std::string GetMicroserviceDesc() const;
 
                     /**
                      * 设置微服务描述信息
-                     * @param MicroserviceDesc 微服务描述信息
+                     * @param _microserviceDesc 微服务描述信息
+                     * 
                      */
                     void SetMicroserviceDesc(const std::string& _microserviceDesc);
 
                     /**
                      * 判断参数 MicroserviceDesc 是否已赋值
                      * @return MicroserviceDesc 是否已赋值
+                     * 
                      */
                     bool MicroserviceDescHasBeenSet() const;
 

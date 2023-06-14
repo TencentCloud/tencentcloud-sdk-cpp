@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取订单号
                      * @return OrderId 订单号
+                     * 
                      */
                     std::string GetOrderId() const;
 
                     /**
                      * 设置订单号
-                     * @param OrderId 订单号
+                     * @param _orderId 订单号
+                     * 
                      */
                     void SetOrderId(const std::string& _orderId);
 
                     /**
                      * 判断参数 OrderId 是否已赋值
                      * @return OrderId 是否已赋值
+                     * 
                      */
                     bool OrderIdHasBeenSet() const;
 
                     /**
                      * 获取发票结果回传地址
                      * @return CallbackUrl 发票结果回传地址
+                     * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
                      * 设置发票结果回传地址
-                     * @param CallbackUrl 发票结果回传地址
+                     * @param _callbackUrl 发票结果回传地址
+                     * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
                      * 判断参数 CallbackUrl 是否已赋值
                      * @return CallbackUrl 是否已赋值
+                     * 
                      */
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取业务开票号
                      * @return OrderSn 业务开票号
+                     * 
                      */
                     std::string GetOrderSn() const;
 
                     /**
                      * 设置业务开票号
-                     * @param OrderSn 业务开票号
+                     * @param _orderSn 业务开票号
+                     * 
                      */
                     void SetOrderSn(const std::string& _orderSn);
 
                     /**
                      * 判断参数 OrderSn 是否已赋值
                      * @return OrderSn 是否已赋值
+                     * 
                      */
                     bool OrderSnHasBeenSet() const;
 
                     /**
                      * 获取红字信息表编码
                      * @return RedSerialNo 红字信息表编码
+                     * 
                      */
                     std::string GetRedSerialNo() const;
 
                     /**
                      * 设置红字信息表编码
-                     * @param RedSerialNo 红字信息表编码
+                     * @param _redSerialNo 红字信息表编码
+                     * 
                      */
                     void SetRedSerialNo(const std::string& _redSerialNo);
 
                     /**
                      * 判断参数 RedSerialNo 是否已赋值
                      * @return RedSerialNo 是否已赋值
+                     * 
                      */
                     bool RedSerialNoHasBeenSet() const;
 
                     /**
                      * 获取门店编号
                      * @return StoreNo 门店编号
+                     * 
                      */
                     std::string GetStoreNo() const;
 
                     /**
                      * 设置门店编号
-                     * @param StoreNo 门店编号
+                     * @param _storeNo 门店编号
+                     * 
                      */
                     void SetStoreNo(const std::string& _storeNo);
 
                     /**
                      * 判断参数 StoreNo 是否已赋值
                      * @return StoreNo 是否已赋值
+                     * 
                      */
                     bool StoreNoHasBeenSet() const;
 

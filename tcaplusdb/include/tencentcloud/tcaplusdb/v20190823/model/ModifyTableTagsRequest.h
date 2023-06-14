@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取待修改标签表格所属集群ID
                      * @return ClusterId 待修改标签表格所属集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置待修改标签表格所属集群ID
-                     * @param ClusterId 待修改标签表格所属集群ID
+                     * @param _clusterId 待修改标签表格所属集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取待修改标签表格列表
                      * @return SelectedTables 待修改标签表格列表
+                     * 
                      */
                     std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
                      * 设置待修改标签表格列表
-                     * @param SelectedTables 待修改标签表格列表
+                     * @param _selectedTables 待修改标签表格列表
+                     * 
                      */
                     void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
 
                     /**
                      * 判断参数 SelectedTables 是否已赋值
                      * @return SelectedTables 是否已赋值
+                     * 
                      */
                     bool SelectedTablesHasBeenSet() const;
 
                     /**
                      * 获取待增加或修改的标签列表
                      * @return ReplaceTags 待增加或修改的标签列表
+                     * 
                      */
                     std::vector<TagInfoUnit> GetReplaceTags() const;
 
                     /**
                      * 设置待增加或修改的标签列表
-                     * @param ReplaceTags 待增加或修改的标签列表
+                     * @param _replaceTags 待增加或修改的标签列表
+                     * 
                      */
                     void SetReplaceTags(const std::vector<TagInfoUnit>& _replaceTags);
 
                     /**
                      * 判断参数 ReplaceTags 是否已赋值
                      * @return ReplaceTags 是否已赋值
+                     * 
                      */
                     bool ReplaceTagsHasBeenSet() const;
 
                     /**
                      * 获取待删除的标签列表
                      * @return DeleteTags 待删除的标签列表
+                     * 
                      */
                     std::vector<TagInfoUnit> GetDeleteTags() const;
 
                     /**
                      * 设置待删除的标签列表
-                     * @param DeleteTags 待删除的标签列表
+                     * @param _deleteTags 待删除的标签列表
+                     * 
                      */
                     void SetDeleteTags(const std::vector<TagInfoUnit>& _deleteTags);
 
                     /**
                      * 判断参数 DeleteTags 是否已赋值
                      * @return DeleteTags 是否已赋值
+                     * 
                      */
                     bool DeleteTagsHasBeenSet() const;
 

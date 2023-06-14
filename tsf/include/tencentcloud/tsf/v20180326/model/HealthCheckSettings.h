@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivenessProbe 存活健康检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HealthCheckSetting GetLivenessProbe() const;
 
                     /**
                      * 设置存活健康检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LivenessProbe 存活健康检查
+                     * @param _livenessProbe 存活健康检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLivenessProbe(const HealthCheckSetting& _livenessProbe);
 
                     /**
                      * 判断参数 LivenessProbe 是否已赋值
                      * @return LivenessProbe 是否已赋值
+                     * 
                      */
                     bool LivenessProbeHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadinessProbe 就绪健康检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     HealthCheckSetting GetReadinessProbe() const;
 
                     /**
                      * 设置就绪健康检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReadinessProbe 就绪健康检查
+                     * @param _readinessProbe 就绪健康检查
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetReadinessProbe(const HealthCheckSetting& _readinessProbe);
 
                     /**
                      * 判断参数 ReadinessProbe 是否已赋值
                      * @return ReadinessProbe 是否已赋值
+                     * 
                      */
                     bool ReadinessProbeHasBeenSet() const;
 

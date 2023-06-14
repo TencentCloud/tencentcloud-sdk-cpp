@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DimensionScoreList 维度评分列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<DimensionScoreInfo> GetDimensionScoreList() const;
 
                     /**
                      * 设置维度评分列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DimensionScoreList 维度评分列表
+                     * @param _dimensionScoreList 维度评分列表
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDimensionScoreList(const std::vector<DimensionScoreInfo>& _dimensionScoreList);
 
                     /**
                      * 判断参数 DimensionScoreList 是否已赋值
                      * @return DimensionScoreList 是否已赋值
+                     * 
                      */
                     bool DimensionScoreListHasBeenSet() const;
 

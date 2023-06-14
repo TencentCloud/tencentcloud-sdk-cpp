@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取策略 id
                      * @return PolicyId 策略 id
+                     * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
                      * 设置策略 id
-                     * @param PolicyId 策略 id
+                     * @param _policyId 策略 id
+                     * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
 
                     /**
                      * 判断参数 PolicyId 是否已赋值
                      * @return PolicyId 是否已赋值
+                     * 
                      */
                     bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取子账号 uin
                      * @return DetachUin 子账号 uin
+                     * 
                      */
                     uint64_t GetDetachUin() const;
 
                     /**
                      * 设置子账号 uin
-                     * @param DetachUin 子账号 uin
+                     * @param _detachUin 子账号 uin
+                     * 
                      */
                     void SetDetachUin(const uint64_t& _detachUin);
 
                     /**
                      * 判断参数 DetachUin 是否已赋值
                      * @return DetachUin 是否已赋值
+                     * 
                      */
                     bool DetachUinHasBeenSet() const;
 

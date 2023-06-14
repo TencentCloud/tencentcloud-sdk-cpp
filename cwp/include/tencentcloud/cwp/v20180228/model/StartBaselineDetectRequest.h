@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取基线检测参数
                      * @return Param 基线检测参数
+                     * 
                      */
                     BaselineDetectParam GetParam() const;
 
                     /**
                      * 设置基线检测参数
-                     * @param Param 基线检测参数
+                     * @param _param 基线检测参数
+                     * 
                      */
                     void SetParam(const BaselineDetectParam& _param);
 
                     /**
                      * 判断参数 Param 是否已赋值
                      * @return Param 是否已赋值
+                     * 
                      */
                     bool ParamHasBeenSet() const;
 

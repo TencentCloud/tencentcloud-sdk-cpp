@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceRegion 源地域，例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetSourceRegion() const;
 
                     /**
                      * 设置源地域，例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceRegion 源地域，例如：ap-shanghai
+                     * @param _sourceRegion 源地域，例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetSourceRegion(const std::string& _sourceRegion);
 
                     /**
                      * 判断参数 SourceRegion 是否已赋值
                      * @return SourceRegion 是否已赋值
+                     * 
                      */
                     bool SourceRegionHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationRegion 目的地域， 例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetDestinationRegion() const;
 
                     /**
                      * 设置目的地域， 例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DestinationRegion 目的地域， 例如：ap-shanghai
+                     * @param _destinationRegion 目的地域， 例如：ap-shanghai
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetDestinationRegion(const std::string& _destinationRegion);
 
                     /**
                      * 判断参数 DestinationRegion 是否已赋值
                      * @return DestinationRegion 是否已赋值
+                     * 
                      */
                     bool DestinationRegionHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthLimit 出带宽上限，单位：Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetBandwidthLimit() const;
 
                     /**
                      * 设置出带宽上限，单位：Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BandwidthLimit 出带宽上限，单位：Mbps。
+                     * @param _bandwidthLimit 出带宽上限，单位：Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetBandwidthLimit(const uint64_t& _bandwidthLimit);
 
                     /**
                      * 判断参数 BandwidthLimit 是否已赋值
                      * @return BandwidthLimit 是否已赋值
+                     * 
                      */
                     bool BandwidthLimitHasBeenSet() const;
 

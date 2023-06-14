@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name GPU 显卡类型；枚举值: V100 A100 T4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置GPU 显卡类型；枚举值: V100 A100 T4
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name GPU 显卡类型；枚举值: V100 A100 T4
+                     * @param _name GPU 显卡类型；枚举值: V100 A100 T4
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value GPU 显卡数；单位为1/100卡，比如100代表1卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetValue() const;
 
                     /**
                      * 设置GPU 显卡数；单位为1/100卡，比如100代表1卡
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value GPU 显卡数；单位为1/100卡，比如100代表1卡
+                     * @param _value GPU 显卡数；单位为1/100卡，比如100代表1卡
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const uint64_t& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

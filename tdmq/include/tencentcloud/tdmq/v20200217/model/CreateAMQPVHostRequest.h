@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取集群ID
                      * @return ClusterId 集群ID
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-                     * @param ClusterId 集群ID
+                     * @param _clusterId 集群ID
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
                     /**
                      * 获取vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”
                      * @return VHostId vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     std::string GetVHostId() const;
 
                     /**
                      * 设置vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”
-                     * @param VHostId vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * @param _vHostId vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”
+                     * 
                      */
                     void SetVHostId(const std::string& _vHostId);
 
                     /**
                      * 判断参数 VHostId 是否已赋值
                      * @return VHostId 是否已赋值
+                     * 
                      */
                     bool VHostIdHasBeenSet() const;
 
                     /**
                      * 获取未消费消息的保留时间，以毫秒为单位，60秒-15天
                      * @return MsgTtl 未消费消息的保留时间，以毫秒为单位，60秒-15天
+                     * 
                      */
                     uint64_t GetMsgTtl() const;
 
                     /**
                      * 设置未消费消息的保留时间，以毫秒为单位，60秒-15天
-                     * @param MsgTtl 未消费消息的保留时间，以毫秒为单位，60秒-15天
+                     * @param _msgTtl 未消费消息的保留时间，以毫秒为单位，60秒-15天
+                     * 
                      */
                     void SetMsgTtl(const uint64_t& _msgTtl);
 
                     /**
                      * 判断参数 MsgTtl 是否已赋值
                      * @return MsgTtl 是否已赋值
+                     * 
                      */
                     bool MsgTtlHasBeenSet() const;
 
                     /**
                      * 获取说明，最大128个字符
                      * @return Remark 说明，最大128个字符
+                     * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明，最大128个字符
-                     * @param Remark 说明，最大128个字符
+                     * @param _remark 说明，最大128个字符
+                     * 
                      */
                     void SetRemark(const std::string& _remark);
 
                     /**
                      * 判断参数 Remark 是否已赋值
                      * @return Remark 是否已赋值
+                     * 
                      */
                     bool RemarkHasBeenSet() const;
 

@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取待修改服务的唯一 Id。
                      * @return ServiceId 待修改服务的唯一 Id。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待修改服务的唯一 Id。
-                     * @param ServiceId 待修改服务的唯一 Id。
+                     * @param _serviceId 待修改服务的唯一 Id。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的服务名称。
                      * @return ServiceName 修改后的服务名称。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置修改后的服务名称。
-                     * @param ServiceName 修改后的服务名称。
+                     * @param _serviceName 修改后的服务名称。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
                     /**
                      * 获取修改后的服务描述。
                      * @return ServiceDesc 修改后的服务描述。
+                     * 
                      */
                     std::string GetServiceDesc() const;
 
                     /**
                      * 设置修改后的服务描述。
-                     * @param ServiceDesc 修改后的服务描述。
+                     * @param _serviceDesc 修改后的服务描述。
+                     * 
                      */
                     void SetServiceDesc(const std::string& _serviceDesc);
 
                     /**
                      * 判断参数 ServiceDesc 是否已赋值
                      * @return ServiceDesc 是否已赋值
+                     * 
                      */
                     bool ServiceDescHasBeenSet() const;
 
                     /**
                      * 获取修改后的服务前端请求类型，如 http、https和 http&https。
                      * @return Protocol 修改后的服务前端请求类型，如 http、https和 http&https。
+                     * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置修改后的服务前端请求类型，如 http、https和 http&https。
-                     * @param Protocol 修改后的服务前端请求类型，如 http、https和 http&https。
+                     * @param _protocol 修改后的服务前端请求类型，如 http、https和 http&https。
+                     * 
                      */
                     void SetProtocol(const std::string& _protocol);
 
                     /**
                      * 判断参数 Protocol 是否已赋值
                      * @return Protocol 是否已赋值
+                     * 
                      */
                     bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
                      * @return NetTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
+                     * 
                      */
                     std::vector<std::string> GetNetTypes() const;
 
                     /**
                      * 设置网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
-                     * @param NetTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
+                     * @param _netTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
+                     * 
                      */
                     void SetNetTypes(const std::vector<std::string>& _netTypes);
 
                     /**
                      * 判断参数 NetTypes 是否已赋值
                      * @return NetTypes 是否已赋值
+                     * 
                      */
                     bool NetTypesHasBeenSet() const;
 

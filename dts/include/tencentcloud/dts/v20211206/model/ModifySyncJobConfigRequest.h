@@ -47,54 +47,63 @@ namespace TencentCloud
                     /**
                      * 获取同步任务id
                      * @return JobId 同步任务id
+                     * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置同步任务id
-                     * @param JobId 同步任务id
+                     * @param _jobId 同步任务id
+                     * 
                      */
                     void SetJobId(const std::string& _jobId);
 
                     /**
                      * 判断参数 JobId 是否已赋值
                      * @return JobId 是否已赋值
+                     * 
                      */
                     bool JobIdHasBeenSet() const;
 
                     /**
                      * 获取修改后的同步对象
                      * @return DynamicObjects 修改后的同步对象
+                     * 
                      */
                     Objects GetDynamicObjects() const;
 
                     /**
                      * 设置修改后的同步对象
-                     * @param DynamicObjects 修改后的同步对象
+                     * @param _dynamicObjects 修改后的同步对象
+                     * 
                      */
                     void SetDynamicObjects(const Objects& _dynamicObjects);
 
                     /**
                      * 判断参数 DynamicObjects 是否已赋值
                      * @return DynamicObjects 是否已赋值
+                     * 
                      */
                     bool DynamicObjectsHasBeenSet() const;
 
                     /**
                      * 获取修改后的同步任务选项
                      * @return DynamicOptions 修改后的同步任务选项
+                     * 
                      */
                     DynamicOptions GetDynamicOptions() const;
 
                     /**
                      * 设置修改后的同步任务选项
-                     * @param DynamicOptions 修改后的同步任务选项
+                     * @param _dynamicOptions 修改后的同步任务选项
+                     * 
                      */
                     void SetDynamicOptions(const DynamicOptions& _dynamicOptions);
 
                     /**
                      * 判断参数 DynamicOptions 是否已赋值
                      * @return DynamicOptions 是否已赋值
+                     * 
                      */
                     bool DynamicOptionsHasBeenSet() const;
 

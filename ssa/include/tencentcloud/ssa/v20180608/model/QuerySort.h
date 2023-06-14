@@ -49,36 +49,42 @@ namespace TencentCloud
                     /**
                      * 获取排序字段
                      * @return SortKey 排序字段
+                     * 
                      */
                     std::string GetSortKey() const;
 
                     /**
                      * 设置排序字段
-                     * @param SortKey 排序字段
+                     * @param _sortKey 排序字段
+                     * 
                      */
                     void SetSortKey(const std::string& _sortKey);
 
                     /**
                      * 判断参数 SortKey 是否已赋值
                      * @return SortKey 是否已赋值
+                     * 
                      */
                     bool SortKeyHasBeenSet() const;
 
                     /**
                      * 获取顺序，1升序2降序
                      * @return SortType 顺序，1升序2降序
+                     * 
                      */
                     int64_t GetSortType() const;
 
                     /**
                      * 设置顺序，1升序2降序
-                     * @param SortType 顺序，1升序2降序
+                     * @param _sortType 顺序，1升序2降序
+                     * 
                      */
                     void SetSortType(const int64_t& _sortType);
 
                     /**
                      * 判断参数 SortType 是否已赋值
                      * @return SortType 是否已赋值
+                     * 
                      */
                     bool SortTypeHasBeenSet() const;
 

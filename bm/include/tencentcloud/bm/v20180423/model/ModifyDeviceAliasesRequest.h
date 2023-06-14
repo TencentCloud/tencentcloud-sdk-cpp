@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取需要改名的设备与别名列表
                      * @return DeviceAliases 需要改名的设备与别名列表
+                     * 
                      */
                     std::vector<DeviceAlias> GetDeviceAliases() const;
 
                     /**
                      * 设置需要改名的设备与别名列表
-                     * @param DeviceAliases 需要改名的设备与别名列表
+                     * @param _deviceAliases 需要改名的设备与别名列表
+                     * 
                      */
                     void SetDeviceAliases(const std::vector<DeviceAlias>& _deviceAliases);
 
                     /**
                      * 判断参数 DeviceAliases 是否已赋值
                      * @return DeviceAliases 是否已赋值
+                     * 
                      */
                     bool DeviceAliasesHasBeenSet() const;
 

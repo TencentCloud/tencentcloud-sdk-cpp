@@ -48,48 +48,56 @@ namespace TencentCloud
                     /**
                      * 获取检测到的文本信息，具体内容请点击左侧链接。
                      * @return VatInvoiceInfos 检测到的文本信息，具体内容请点击左侧链接。
+                     * 
                      */
                     std::vector<TextVatInvoice> GetVatInvoiceInfos() const;
 
                     /**
                      * 判断参数 VatInvoiceInfos 是否已赋值
                      * @return VatInvoiceInfos 是否已赋值
+                     * 
                      */
                     bool VatInvoiceInfosHasBeenSet() const;
 
                     /**
                      * 获取明细条目。VatInvoiceInfos中关于明细项的具体条目。
                      * @return Items 明细条目。VatInvoiceInfos中关于明细项的具体条目。
+                     * 
                      */
                     std::vector<VatInvoiceItem> GetItems() const;
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
+                     * 
                      */
                     bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取默认值为0。如果图片为PDF时，返回PDF的总页数。
                      * @return PdfPageSize 默认值为0。如果图片为PDF时，返回PDF的总页数。
+                     * 
                      */
                     int64_t GetPdfPageSize() const;
 
                     /**
                      * 判断参数 PdfPageSize 是否已赋值
                      * @return PdfPageSize 是否已赋值
+                     * 
                      */
                     bool PdfPageSizeHasBeenSet() const;
 
                     /**
                      * 获取图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
                      * @return Angle 图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href="https://cloud.tencent.com/document/product/866/45139">如何纠正倾斜文本</a>
+                     * 
                      */
                     double GetAngle() const;
 
                     /**
                      * 判断参数 Angle 是否已赋值
                      * @return Angle 是否已赋值
+                     * 
                      */
                     bool AngleHasBeenSet() const;
 

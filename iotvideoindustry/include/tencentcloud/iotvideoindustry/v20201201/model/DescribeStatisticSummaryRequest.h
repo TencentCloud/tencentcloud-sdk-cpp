@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取指定日期。格式【YYYY-MM-DD】
                      * @return Date 指定日期。格式【YYYY-MM-DD】
+                     * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置指定日期。格式【YYYY-MM-DD】
-                     * @param Date 指定日期。格式【YYYY-MM-DD】
+                     * @param _date 指定日期。格式【YYYY-MM-DD】
+                     * 
                      */
                     void SetDate(const std::string& _date);
 
                     /**
                      * 判断参数 Date 是否已赋值
                      * @return Date 是否已赋值
+                     * 
                      */
                     bool DateHasBeenSet() const;
 

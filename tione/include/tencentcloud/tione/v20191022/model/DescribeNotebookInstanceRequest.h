@@ -47,20 +47,23 @@ namespace TencentCloud
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
                      * @return NotebookInstanceName Notebook实例名称
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
+                     * 
                      */
                     std::string GetNotebookInstanceName() const;
 
                     /**
                      * 设置Notebook实例名称
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
-                     * @param NotebookInstanceName Notebook实例名称
+                     * @param _notebookInstanceName Notebook实例名称
 规则：“^\[a-zA-Z0-9\](-\*\[a-zA-Z0-9\])\*$”
+                     * 
                      */
                     void SetNotebookInstanceName(const std::string& _notebookInstanceName);
 
                     /**
                      * 判断参数 NotebookInstanceName 是否已赋值
                      * @return NotebookInstanceName 是否已赋值
+                     * 
                      */
                     bool NotebookInstanceNameHasBeenSet() const;
 

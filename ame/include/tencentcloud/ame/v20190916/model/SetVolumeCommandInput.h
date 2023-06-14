@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取音量大小，取值范围为 0~100，默认值为 50。
                      * @return Volume 音量大小，取值范围为 0~100，默认值为 50。
+                     * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 设置音量大小，取值范围为 0~100，默认值为 50。
-                     * @param Volume 音量大小，取值范围为 0~100，默认值为 50。
+                     * @param _volume 音量大小，取值范围为 0~100，默认值为 50。
+                     * 
                      */
                     void SetVolume(const int64_t& _volume);
 
                     /**
                      * 判断参数 Volume 是否已赋值
                      * @return Volume 是否已赋值
+                     * 
                      */
                     bool VolumeHasBeenSet() const;
 

@@ -49,90 +49,105 @@ namespace TencentCloud
                     /**
                      * 获取规则名称
                      * @return RuleName 规则名称
+                     * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-                     * @param RuleName 规则名称
+                     * @param _ruleName 规则名称
+                     * 
                      */
                     void SetRuleName(const std::string& _ruleName);
 
                     /**
                      * 判断参数 RuleName 是否已赋值
                      * @return RuleName 是否已赋值
+                     * 
                      */
                     bool RuleNameHasBeenSet() const;
 
                     /**
                      * 获取规则描述
                      * @return Description 规则描述
+                     * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述
-                     * @param Description 规则描述
+                     * @param _description 规则描述
+                     * 
                      */
                     void SetDescription(const std::string& _description);
 
                     /**
                      * 判断参数 Description 是否已赋值
                      * @return Description 是否已赋值
+                     * 
                      */
                     bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreatedAt 创建时间
+                     * 
                      */
                     uint64_t GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-                     * @param CreatedAt 创建时间
+                     * @param _createdAt 创建时间
+                     * 
                      */
                     void SetCreatedAt(const uint64_t& _createdAt);
 
                     /**
                      * 判断参数 CreatedAt 是否已赋值
                      * @return CreatedAt 是否已赋值
+                     * 
                      */
                     bool CreatedAtHasBeenSet() const;
 
                     /**
                      * 获取不生效
                      * @return RuleDisabled 不生效
+                     * 
                      */
                     bool GetRuleDisabled() const;
 
                     /**
                      * 设置不生效
-                     * @param RuleDisabled 不生效
+                     * @param _ruleDisabled 不生效
+                     * 
                      */
                     void SetRuleDisabled(const bool& _ruleDisabled);
 
                     /**
                      * 判断参数 RuleDisabled 是否已赋值
                      * @return RuleDisabled 是否已赋值
+                     * 
                      */
                     bool RuleDisabledHasBeenSet() const;
 
                     /**
                      * 获取规则模式
                      * @return TopicPattern 规则模式
+                     * 
                      */
                     std::string GetTopicPattern() const;
 
                     /**
                      * 设置规则模式
-                     * @param TopicPattern 规则模式
+                     * @param _topicPattern 规则模式
+                     * 
                      */
                     void SetTopicPattern(const std::string& _topicPattern);
 
                     /**
                      * 判断参数 TopicPattern 是否已赋值
                      * @return TopicPattern 是否已赋值
+                     * 
                      */
                     bool TopicPatternHasBeenSet() const;
 

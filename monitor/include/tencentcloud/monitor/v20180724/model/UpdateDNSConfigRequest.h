@@ -45,36 +45,42 @@ namespace TencentCloud
                     /**
                      * 获取Grafana 实例 ID，例如：grafana-12345678
                      * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置Grafana 实例 ID，例如：grafana-12345678
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-12345678
+                     * @param _instanceId Grafana 实例 ID，例如：grafana-12345678
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取DNS 数组
                      * @return NameServers DNS 数组
+                     * 
                      */
                     std::vector<std::string> GetNameServers() const;
 
                     /**
                      * 设置DNS 数组
-                     * @param NameServers DNS 数组
+                     * @param _nameServers DNS 数组
+                     * 
                      */
                     void SetNameServers(const std::vector<std::string>& _nameServers);
 
                     /**
                      * 判断参数 NameServers 是否已赋值
                      * @return NameServers 是否已赋值
+                     * 
                      */
                     bool NameServersHasBeenSet() const;
 

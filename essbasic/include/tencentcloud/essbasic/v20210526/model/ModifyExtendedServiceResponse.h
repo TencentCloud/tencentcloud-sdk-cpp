@@ -54,12 +54,14 @@ namespace TencentCloud
 
 当操作类型是 OPEN 且 扩展服务类型是  AUTO_SIGN 或 DOWNLOAD_FLOW 或者 OVERSEA_SIGN 时返回操作链接，
 返回的链接需要平台方自行触达超管或法人，超管或法人点击链接完成服务开通操作。
+                     * 
                      */
                     std::string GetOperateUrl() const;
 
                     /**
                      * 判断参数 OperateUrl 是否已赋值
                      * @return OperateUrl 是否已赋值
+                     * 
                      */
                     bool OperateUrlHasBeenSet() const;
 

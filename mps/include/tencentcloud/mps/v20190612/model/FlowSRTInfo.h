@@ -49,162 +49,189 @@ namespace TencentCloud
                     /**
                      * 获取时间戳，单位是秒。
                      * @return Timestamp 时间戳，单位是秒。
+                     * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置时间戳，单位是秒。
-                     * @param Timestamp 时间戳，单位是秒。
+                     * @param _timestamp 时间戳，单位是秒。
+                     * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
 
                     /**
                      * 判断参数 Timestamp 是否已赋值
                      * @return Timestamp 是否已赋值
+                     * 
                      */
                     bool TimestampHasBeenSet() const;
 
                     /**
                      * 获取发送丢包率。
                      * @return SendPacketLossRate 发送丢包率。
+                     * 
                      */
                     int64_t GetSendPacketLossRate() const;
 
                     /**
                      * 设置发送丢包率。
-                     * @param SendPacketLossRate 发送丢包率。
+                     * @param _sendPacketLossRate 发送丢包率。
+                     * 
                      */
                     void SetSendPacketLossRate(const int64_t& _sendPacketLossRate);
 
                     /**
                      * 判断参数 SendPacketLossRate 是否已赋值
                      * @return SendPacketLossRate 是否已赋值
+                     * 
                      */
                     bool SendPacketLossRateHasBeenSet() const;
 
                     /**
                      * 获取发送重传率。
                      * @return SendRetransmissionRate 发送重传率。
+                     * 
                      */
                     int64_t GetSendRetransmissionRate() const;
 
                     /**
                      * 设置发送重传率。
-                     * @param SendRetransmissionRate 发送重传率。
+                     * @param _sendRetransmissionRate 发送重传率。
+                     * 
                      */
                     void SetSendRetransmissionRate(const int64_t& _sendRetransmissionRate);
 
                     /**
                      * 判断参数 SendRetransmissionRate 是否已赋值
                      * @return SendRetransmissionRate 是否已赋值
+                     * 
                      */
                     bool SendRetransmissionRateHasBeenSet() const;
 
                     /**
                      * 获取接收丢包率。
                      * @return RecvPacketLossRate 接收丢包率。
+                     * 
                      */
                     int64_t GetRecvPacketLossRate() const;
 
                     /**
                      * 设置接收丢包率。
-                     * @param RecvPacketLossRate 接收丢包率。
+                     * @param _recvPacketLossRate 接收丢包率。
+                     * 
                      */
                     void SetRecvPacketLossRate(const int64_t& _recvPacketLossRate);
 
                     /**
                      * 判断参数 RecvPacketLossRate 是否已赋值
                      * @return RecvPacketLossRate 是否已赋值
+                     * 
                      */
                     bool RecvPacketLossRateHasBeenSet() const;
 
                     /**
                      * 获取接收重传率。
                      * @return RecvRetransmissionRate 接收重传率。
+                     * 
                      */
                     int64_t GetRecvRetransmissionRate() const;
 
                     /**
                      * 设置接收重传率。
-                     * @param RecvRetransmissionRate 接收重传率。
+                     * @param _recvRetransmissionRate 接收重传率。
+                     * 
                      */
                     void SetRecvRetransmissionRate(const int64_t& _recvRetransmissionRate);
 
                     /**
                      * 判断参数 RecvRetransmissionRate 是否已赋值
                      * @return RecvRetransmissionRate 是否已赋值
+                     * 
                      */
                     bool RecvRetransmissionRateHasBeenSet() const;
 
                     /**
                      * 获取与对端的RTT时延。
                      * @return RTT 与对端的RTT时延。
+                     * 
                      */
                     int64_t GetRTT() const;
 
                     /**
                      * 设置与对端的RTT时延。
-                     * @param RTT 与对端的RTT时延。
+                     * @param _rTT 与对端的RTT时延。
+                     * 
                      */
                     void SetRTT(const int64_t& _rTT);
 
                     /**
                      * 判断参数 RTT 是否已赋值
                      * @return RTT 是否已赋值
+                     * 
                      */
                     bool RTTHasBeenSet() const;
 
                     /**
                      * 获取标志同一次推流。
                      * @return SessionId 标志同一次推流。
+                     * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置标志同一次推流。
-                     * @param SessionId 标志同一次推流。
+                     * @param _sessionId 标志同一次推流。
+                     * 
                      */
                     void SetSessionId(const std::string& _sessionId);
 
                     /**
                      * 判断参数 SessionId 是否已赋值
                      * @return SessionId 是否已赋值
+                     * 
                      */
                     bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取发送弃包数。
                      * @return SendPacketDropNumber 发送弃包数。
+                     * 
                      */
                     int64_t GetSendPacketDropNumber() const;
 
                     /**
                      * 设置发送弃包数。
-                     * @param SendPacketDropNumber 发送弃包数。
+                     * @param _sendPacketDropNumber 发送弃包数。
+                     * 
                      */
                     void SetSendPacketDropNumber(const int64_t& _sendPacketDropNumber);
 
                     /**
                      * 判断参数 SendPacketDropNumber 是否已赋值
                      * @return SendPacketDropNumber 是否已赋值
+                     * 
                      */
                     bool SendPacketDropNumberHasBeenSet() const;
 
                     /**
                      * 获取接收弃包数。
                      * @return RecvPacketDropNumber 接收弃包数。
+                     * 
                      */
                     int64_t GetRecvPacketDropNumber() const;
 
                     /**
                      * 设置接收弃包数。
-                     * @param RecvPacketDropNumber 接收弃包数。
+                     * @param _recvPacketDropNumber 接收弃包数。
+                     * 
                      */
                     void SetRecvPacketDropNumber(const int64_t& _recvPacketDropNumber);
 
                     /**
                      * 判断参数 RecvPacketDropNumber 是否已赋值
                      * @return RecvPacketDropNumber 是否已赋值
+                     * 
                      */
                     bool RecvPacketDropNumberHasBeenSet() const;
 

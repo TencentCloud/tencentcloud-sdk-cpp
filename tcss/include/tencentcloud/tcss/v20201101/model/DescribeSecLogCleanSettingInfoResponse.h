@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取触发清理的储量底线
                      * @return ReservesLimit 触发清理的储量底线
+                     * 
                      */
                     uint64_t GetReservesLimit() const;
 
                     /**
                      * 判断参数 ReservesLimit 是否已赋值
                      * @return ReservesLimit 是否已赋值
+                     * 
                      */
                     bool ReservesLimitHasBeenSet() const;
 
                     /**
                      * 获取清理停止时的储量截至线
                      * @return ReservesDeadline 清理停止时的储量截至线
+                     * 
                      */
                     uint64_t GetReservesDeadline() const;
 
                     /**
                      * 判断参数 ReservesDeadline 是否已赋值
                      * @return ReservesDeadline 是否已赋值
+                     * 
                      */
                     bool ReservesDeadlineHasBeenSet() const;
 
                     /**
                      * 获取触发清理的存储天数
                      * @return DayLimit 触发清理的存储天数
+                     * 
                      */
                     uint64_t GetDayLimit() const;
 
                     /**
                      * 判断参数 DayLimit 是否已赋值
                      * @return DayLimit 是否已赋值
+                     * 
                      */
                     bool DayLimitHasBeenSet() const;
 

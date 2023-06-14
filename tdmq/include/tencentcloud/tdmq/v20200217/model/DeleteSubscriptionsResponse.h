@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取成功删除的订阅关系数组。
                      * @return SubscriptionTopicSets 成功删除的订阅关系数组。
+                     * 
                      */
                     std::vector<SubscriptionTopic> GetSubscriptionTopicSets() const;
 
                     /**
                      * 判断参数 SubscriptionTopicSets 是否已赋值
                      * @return SubscriptionTopicSets 是否已赋值
+                     * 
                      */
                     bool SubscriptionTopicSetsHasBeenSet() const;
 

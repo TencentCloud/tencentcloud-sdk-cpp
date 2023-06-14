@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取步骤
                      * @return StepName 步骤
+                     * 
                      */
                     std::string GetStepName() const;
 
                     /**
                      * 设置步骤
-                     * @param StepName 步骤
+                     * @param _stepName 步骤
+                     * 
                      */
                     void SetStepName(const std::string& _stepName);
 
                     /**
                      * 判断参数 StepName 是否已赋值
                      * @return StepName 是否已赋值
+                     * 
                      */
                     bool StepNameHasBeenSet() const;
 
                     /**
                      * 获取此步骤开始时间
                      * @return StartTime 此步骤开始时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置此步骤开始时间
-                     * @param StartTime 此步骤开始时间
+                     * @param _startTime 此步骤开始时间
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取0: 已完成 1: 当前进行 2: 未开始
                      * @return StepType 0: 已完成 1: 当前进行 2: 未开始
+                     * 
                      */
                     uint64_t GetStepType() const;
 
                     /**
                      * 设置0: 已完成 1: 当前进行 2: 未开始
-                     * @param StepType 0: 已完成 1: 当前进行 2: 未开始
+                     * @param _stepType 0: 已完成 1: 当前进行 2: 未开始
+                     * 
                      */
                     void SetStepType(const uint64_t& _stepType);
 
                     /**
                      * 判断参数 StepType 是否已赋值
                      * @return StepType 是否已赋值
+                     * 
                      */
                     bool StepTypeHasBeenSet() const;
 

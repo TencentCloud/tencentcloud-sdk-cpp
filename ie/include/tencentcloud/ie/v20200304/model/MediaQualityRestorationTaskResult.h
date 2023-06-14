@@ -50,36 +50,42 @@ namespace TencentCloud
                     /**
                      * 获取画质重生任务ID
                      * @return TaskId 画质重生任务ID
+                     * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置画质重生任务ID
-                     * @param TaskId 画质重生任务ID
+                     * @param _taskId 画质重生任务ID
+                     * 
                      */
                     void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
                      * @return TaskId 是否已赋值
+                     * 
                      */
                     bool TaskIdHasBeenSet() const;
 
                     /**
                      * 获取画质重生处理后文件的详细信息。
                      * @return SubTaskResult 画质重生处理后文件的详细信息。
+                     * 
                      */
                     std::vector<SubTaskResultItem> GetSubTaskResult() const;
 
                     /**
                      * 设置画质重生处理后文件的详细信息。
-                     * @param SubTaskResult 画质重生处理后文件的详细信息。
+                     * @param _subTaskResult 画质重生处理后文件的详细信息。
+                     * 
                      */
                     void SetSubTaskResult(const std::vector<SubTaskResultItem>& _subTaskResult);
 
                     /**
                      * 判断参数 SubTaskResult 是否已赋值
                      * @return SubTaskResult 是否已赋值
+                     * 
                      */
                     bool SubTaskResultHasBeenSet() const;
 

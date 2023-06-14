@@ -46,18 +46,21 @@ namespace TencentCloud
                     /**
                      * 获取负载均衡实例ID。实例ID数量上限为20个。
                      * @return LoadBalancerIds 负载均衡实例ID。实例ID数量上限为20个。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
                      * 设置负载均衡实例ID。实例ID数量上限为20个。
-                     * @param LoadBalancerIds 负载均衡实例ID。实例ID数量上限为20个。
+                     * @param _loadBalancerIds 负载均衡实例ID。实例ID数量上限为20个。
+                     * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
                     /**
                      * 判断参数 LoadBalancerIds 是否已赋值
                      * @return LoadBalancerIds 是否已赋值
+                     * 
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
@@ -66,254 +69,296 @@ namespace TencentCloud
 OPEN：公网属性， INTERNAL：内网属性。
                      * @return LoadBalancerType 负载均衡实例的网络类型：
 OPEN：公网属性， INTERNAL：内网属性。
+                     * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
                      * 设置负载均衡实例的网络类型：
 OPEN：公网属性， INTERNAL：内网属性。
-                     * @param LoadBalancerType 负载均衡实例的网络类型：
+                     * @param _loadBalancerType 负载均衡实例的网络类型：
 OPEN：公网属性， INTERNAL：内网属性。
+                     * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
 
                     /**
                      * 判断参数 LoadBalancerType 是否已赋值
                      * @return LoadBalancerType 是否已赋值
+                     * 
                      */
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
                      * @return Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
+                     * 
                      */
                     int64_t GetForward() const;
 
                     /**
                      * 设置负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
-                     * @param Forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
+                     * @param _forward 负载均衡实例的类型。1：通用的负载均衡实例，0：传统型负载均衡实例。如果不传此参数，则查询所有类型的负载均衡实例。
+                     * 
                      */
                     void SetForward(const int64_t& _forward);
 
                     /**
                      * 判断参数 Forward 是否已赋值
                      * @return Forward 是否已赋值
+                     * 
                      */
                     bool ForwardHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例的名称。
                      * @return LoadBalancerName 负载均衡实例的名称。
+                     * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
                      * 设置负载均衡实例的名称。
-                     * @param LoadBalancerName 负载均衡实例的名称。
+                     * @param _loadBalancerName 负载均衡实例的名称。
+                     * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
 
                     /**
                      * 判断参数 LoadBalancerName 是否已赋值
                      * @return LoadBalancerName 是否已赋值
+                     * 
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
                      * 获取腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
                      * @return Domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
-                     * @param Domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * @param _domain 腾讯云为负载均衡实例分配的域名，本参数仅对传统型公网负载均衡才有意义。
+                     * 
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
+                     * 
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例的 VIP 地址，支持多个。
                      * @return LoadBalancerVips 负载均衡实例的 VIP 地址，支持多个。
+                     * 
                      */
                     std::vector<std::string> GetLoadBalancerVips() const;
 
                     /**
                      * 设置负载均衡实例的 VIP 地址，支持多个。
-                     * @param LoadBalancerVips 负载均衡实例的 VIP 地址，支持多个。
+                     * @param _loadBalancerVips 负载均衡实例的 VIP 地址，支持多个。
+                     * 
                      */
                     void SetLoadBalancerVips(const std::vector<std::string>& _loadBalancerVips);
 
                     /**
                      * 判断参数 LoadBalancerVips 是否已赋值
                      * @return LoadBalancerVips 是否已赋值
+                     * 
                      */
                     bool LoadBalancerVipsHasBeenSet() const;
 
                     /**
                      * 获取负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
                      * @return BackendPublicIps 负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
+                     * 
                      */
                     std::vector<std::string> GetBackendPublicIps() const;
 
                     /**
                      * 设置负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
-                     * @param BackendPublicIps 负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
+                     * @param _backendPublicIps 负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
+                     * 
                      */
                     void SetBackendPublicIps(const std::vector<std::string>& _backendPublicIps);
 
                     /**
                      * 判断参数 BackendPublicIps 是否已赋值
                      * @return BackendPublicIps 是否已赋值
+                     * 
                      */
                     bool BackendPublicIpsHasBeenSet() const;
 
                     /**
                      * 获取负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
                      * @return BackendPrivateIps 负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
+                     * 
                      */
                     std::vector<std::string> GetBackendPrivateIps() const;
 
                     /**
                      * 设置负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
-                     * @param BackendPrivateIps 负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
+                     * @param _backendPrivateIps 负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
+                     * 
                      */
                     void SetBackendPrivateIps(const std::vector<std::string>& _backendPrivateIps);
 
                     /**
                      * 判断参数 BackendPrivateIps 是否已赋值
                      * @return BackendPrivateIps 是否已赋值
+                     * 
                      */
                     bool BackendPrivateIpsHasBeenSet() const;
 
                     /**
                      * 获取数据偏移量，默认为0。
                      * @return Offset 数据偏移量，默认为0。
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置数据偏移量，默认为0。
-                     * @param Offset 数据偏移量，默认为0。
+                     * @param _offset 数据偏移量，默认为0。
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取返回负载均衡实例的数量，默认为20，最大值为100。
                      * @return Limit 返回负载均衡实例的数量，默认为20，最大值为100。
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置返回负载均衡实例的数量，默认为20，最大值为100。
-                     * @param Limit 返回负载均衡实例的数量，默认为20，最大值为100。
+                     * @param _limit 返回负载均衡实例的数量，默认为20，最大值为100。
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 
                     /**
                      * 获取排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
                      * @return OrderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
-                     * @param OrderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * @param _orderBy 排序参数，支持以下字段：LoadBalancerName，CreateTime，Domain，LoadBalancerType。
+                     * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
                     /**
                      * 判断参数 OrderBy 是否已赋值
                      * @return OrderBy 是否已赋值
+                     * 
                      */
                     bool OrderByHasBeenSet() const;
 
                     /**
                      * 获取1：倒序，0：顺序，默认按照创建时间倒序。
                      * @return OrderType 1：倒序，0：顺序，默认按照创建时间倒序。
+                     * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
                      * 设置1：倒序，0：顺序，默认按照创建时间倒序。
-                     * @param OrderType 1：倒序，0：顺序，默认按照创建时间倒序。
+                     * @param _orderType 1：倒序，0：顺序，默认按照创建时间倒序。
+                     * 
                      */
                     void SetOrderType(const int64_t& _orderType);
 
                     /**
                      * 判断参数 OrderType 是否已赋值
                      * @return OrderType 是否已赋值
+                     * 
                      */
                     bool OrderTypeHasBeenSet() const;
 
                     /**
                      * 获取搜索字段，模糊匹配名称、域名、VIP。
                      * @return SearchKey 搜索字段，模糊匹配名称、域名、VIP。
+                     * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
                      * 设置搜索字段，模糊匹配名称、域名、VIP。
-                     * @param SearchKey 搜索字段，模糊匹配名称、域名、VIP。
+                     * @param _searchKey 搜索字段，模糊匹配名称、域名、VIP。
+                     * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
                     /**
                      * 判断参数 SearchKey 是否已赋值
                      * @return SearchKey 是否已赋值
+                     * 
                      */
                     bool SearchKeyHasBeenSet() const;
 
                     /**
                      * 获取负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
                      * @return ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
+                     * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
-                     * @param ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
+                     * @param _projectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。
+                     * 
                      */
                     void SetProjectId(const int64_t& _projectId);
 
                     /**
                      * 判断参数 ProjectId 是否已赋值
                      * @return ProjectId 是否已赋值
+                     * 
                      */
                     bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
                      * @return WithRs 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
+                     * 
                      */
                     int64_t GetWithRs() const;
 
                     /**
                      * 设置负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
-                     * @param WithRs 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
+                     * @param _withRs 负载均衡是否绑定后端服务，0：没有绑定后端服务，1：绑定后端服务，-1：查询全部。
+                     * 
                      */
                     void SetWithRs(const int64_t& _withRs);
 
                     /**
                      * 判断参数 WithRs 是否已赋值
                      * @return WithRs 是否已赋值
+                     * 
                      */
                     bool WithRsHasBeenSet() const;
 
@@ -322,56 +367,65 @@ OPEN：公网属性， INTERNAL：内网属性。
 基础网络可传入'0'。
                      * @return VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
 基础网络可传入'0'。
+                     * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
 基础网络可传入'0'。
-                     * @param VpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
+                     * @param _vpcId 负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，
 基础网络可传入'0'。
+                     * 
                      */
                     void SetVpcId(const std::string& _vpcId);
 
                     /**
                      * 判断参数 VpcId 是否已赋值
                      * @return VpcId 是否已赋值
+                     * 
                      */
                     bool VpcIdHasBeenSet() const;
 
                     /**
                      * 获取安全组ID，如 sg-m1cc****。
                      * @return SecurityGroup 安全组ID，如 sg-m1cc****。
+                     * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置安全组ID，如 sg-m1cc****。
-                     * @param SecurityGroup 安全组ID，如 sg-m1cc****。
+                     * @param _securityGroup 安全组ID，如 sg-m1cc****。
+                     * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
 
                     /**
                      * 判断参数 SecurityGroup 是否已赋值
                      * @return SecurityGroup 是否已赋值
+                     * 
                      */
                     bool SecurityGroupHasBeenSet() const;
 
                     /**
                      * 获取主可用区ID，如 ："100001" （对应的是广州一区）。
                      * @return MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）。
+                     * 
                      */
                     std::string GetMasterZone() const;
 
                     /**
                      * 设置主可用区ID，如 ："100001" （对应的是广州一区）。
-                     * @param MasterZone 主可用区ID，如 ："100001" （对应的是广州一区）。
+                     * @param _masterZone 主可用区ID，如 ："100001" （对应的是广州一区）。
+                     * 
                      */
                     void SetMasterZone(const std::string& _masterZone);
 
                     /**
                      * 判断参数 MasterZone 是否已赋值
                      * @return MasterZone 是否已赋值
+                     * 
                      */
                     bool MasterZoneHasBeenSet() const;
 
@@ -396,6 +450,7 @@ OPEN：公网属性， INTERNAL：内网属性。
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
 <li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
 <li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+                     * 
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -410,7 +465,7 @@ OPEN：公网属性， INTERNAL：内网属性。
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
 <li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
 <li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
-                     * @param Filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
+                     * @param _filters 每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：
 <li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括"PREPAID","POSTPAID_BY_HOUR"。</li>
 <li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括"BANDWIDTH_PREPAID","TRAFFIC_POSTPAID_BY_HOUR","BANDWIDTH_POSTPAID_BY_HOUR","BANDWIDTH_PACKAGE"。</li>
 <li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ："100001" （对应的是广州一区）。</li>
@@ -420,12 +475,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 <li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>
 <li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如："BGP","INTERNAL","CMCC","CTCC","CUCC"等。</li>
 <li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括"clb.c2.medium","clb.c3.small","clb.c3.medium","clb.c4.small","clb.c4.medium","clb.c4.large","clb.c4.xlarge"。</li>
+                     * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
                     /**
                      * 判断参数 Filters 是否已赋值
                      * @return Filters 是否已赋值
+                     * 
                      */
                     bool FiltersHasBeenSet() const;
 

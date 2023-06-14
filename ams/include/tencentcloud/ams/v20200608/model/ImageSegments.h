@@ -50,18 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取画面截帧结果详情
                      * @return Result 画面截帧结果详情
+                     * 
                      */
                     ImageResult GetResult() const;
 
                     /**
                      * 设置画面截帧结果详情
-                     * @param Result 画面截帧结果详情
+                     * @param _result 画面截帧结果详情
+                     * 
                      */
                     void SetResult(const ImageResult& _result);
 
                     /**
                      * 判断参数 Result 是否已赋值
                      * @return Result 是否已赋值
+                     * 
                      */
                     bool ResultHasBeenSet() const;
 
@@ -72,6 +75,7 @@ namespace TencentCloud
                      * @return OffsetTime 截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
+                     * 
                      */
                     std::string GetOffsetTime() const;
 
@@ -79,15 +83,17 @@ namespace TencentCloud
                      * 设置截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
-                     * @param OffsetTime 截帧时间。
+                     * @param _offsetTime 截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
+                     * 
                      */
                     void SetOffsetTime(const std::string& _offsetTime);
 
                     /**
                      * 判断参数 OffsetTime 是否已赋值
                      * @return OffsetTime 是否已赋值
+                     * 
                      */
                     bool OffsetTimeHasBeenSet() const;
 

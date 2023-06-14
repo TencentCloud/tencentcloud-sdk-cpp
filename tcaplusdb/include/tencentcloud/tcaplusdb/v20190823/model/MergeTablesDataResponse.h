@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取合服结果集
                      * @return Results 合服结果集
+                     * 
                      */
                     std::vector<MergeTableResult> GetResults() const;
 
                     /**
                      * 判断参数 Results 是否已赋值
                      * @return Results 是否已赋值
+                     * 
                      */
                     bool ResultsHasBeenSet() const;
 

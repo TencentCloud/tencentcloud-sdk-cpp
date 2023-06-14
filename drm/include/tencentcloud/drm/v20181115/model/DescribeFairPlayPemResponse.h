@@ -49,12 +49,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FairPlayPems 该账户下，所有设置的FairPlay私钥摘要信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::vector<FairPlayPemDigestInfo> GetFairPlayPems() const;
 
                     /**
                      * 判断参数 FairPlayPems 是否已赋值
                      * @return FairPlayPems 是否已赋值
+                     * 
                      */
                     bool FairPlayPemsHasBeenSet() const;
 

@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取集群字符串ID
                      * @return InstanceId 集群字符串ID
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置集群字符串ID
-                     * @param InstanceId 集群字符串ID
+                     * @param _instanceId 集群字符串ID
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取用户信息列表
                      * @return UserManagerUserList 用户信息列表
+                     * 
                      */
                     std::vector<UserInfoForUserManager> GetUserManagerUserList() const;
 
                     /**
                      * 设置用户信息列表
-                     * @param UserManagerUserList 用户信息列表
+                     * @param _userManagerUserList 用户信息列表
+                     * 
                      */
                     void SetUserManagerUserList(const std::vector<UserInfoForUserManager>& _userManagerUserList);
 
                     /**
                      * 判断参数 UserManagerUserList 是否已赋值
                      * @return UserManagerUserList 是否已赋值
+                     * 
                      */
                     bool UserManagerUserListHasBeenSet() const;
 

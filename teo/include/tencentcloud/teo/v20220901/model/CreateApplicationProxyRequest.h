@@ -48,18 +48,21 @@ namespace TencentCloud
                     /**
                      * 获取站点 ID。
                      * @return ZoneId 站点 ID。
+                     * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
-                     * @param ZoneId 站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
                      */
                     void SetZoneId(const std::string& _zoneId);
 
                     /**
                      * 判断参数 ZoneId 是否已赋值
                      * @return ZoneId 是否已赋值
+                     * 
                      */
                     bool ZoneIdHasBeenSet() const;
 
@@ -68,20 +71,23 @@ namespace TencentCloud
 当 ProxyType=instance 时，表示代理名称。
                      * @return ProxyName 当 ProxyType=hostname 时，表示域名或子域名；
 当 ProxyType=instance 时，表示代理名称。
+                     * 
                      */
                     std::string GetProxyName() const;
 
                     /**
                      * 设置当 ProxyType=hostname 时，表示域名或子域名；
 当 ProxyType=instance 时，表示代理名称。
-                     * @param ProxyName 当 ProxyType=hostname 时，表示域名或子域名；
+                     * @param _proxyName 当 ProxyType=hostname 时，表示域名或子域名；
 当 ProxyType=instance 时，表示代理名称。
+                     * 
                      */
                     void SetProxyName(const std::string& _proxyName);
 
                     /**
                      * 判断参数 ProxyName 是否已赋值
                      * @return ProxyName 是否已赋值
+                     * 
                      */
                     bool ProxyNameHasBeenSet() const;
 
@@ -92,6 +98,7 @@ namespace TencentCloud
                      * @return PlatType 调度模式，取值有：
 <li>ip：表示Anycast IP调度；</li>
 <li>domain：表示CNAME调度。</li>
+                     * 
                      */
                     std::string GetPlatType() const;
 
@@ -99,15 +106,17 @@ namespace TencentCloud
                      * 设置调度模式，取值有：
 <li>ip：表示Anycast IP调度；</li>
 <li>domain：表示CNAME调度。</li>
-                     * @param PlatType 调度模式，取值有：
+                     * @param _platType 调度模式，取值有：
 <li>ip：表示Anycast IP调度；</li>
 <li>domain：表示CNAME调度。</li>
+                     * 
                      */
                     void SetPlatType(const std::string& _platType);
 
                     /**
                      * 判断参数 PlatType 是否已赋值
                      * @return PlatType 是否已赋值
+                     * 
                      */
                     bool PlatTypeHasBeenSet() const;
 
@@ -118,6 +127,7 @@ namespace TencentCloud
                      * @return SecurityType 是否开启安全，取值有：
 <li>0：关闭安全；</li>
 <li>1：开启安全。</li>
+                     * 
                      */
                     int64_t GetSecurityType() const;
 
@@ -125,15 +135,17 @@ namespace TencentCloud
                      * 设置是否开启安全，取值有：
 <li>0：关闭安全；</li>
 <li>1：开启安全。</li>
-                     * @param SecurityType 是否开启安全，取值有：
+                     * @param _securityType 是否开启安全，取值有：
 <li>0：关闭安全；</li>
 <li>1：开启安全。</li>
+                     * 
                      */
                     void SetSecurityType(const int64_t& _securityType);
 
                     /**
                      * 判断参数 SecurityType 是否已赋值
                      * @return SecurityType 是否已赋值
+                     * 
                      */
                     bool SecurityTypeHasBeenSet() const;
 
@@ -144,6 +156,7 @@ namespace TencentCloud
                      * @return AccelerateType 是否开启加速，取值有：
 <li>0：关闭加速；</li>
 <li>1：开启加速。</li>
+                     * 
                      */
                     int64_t GetAccelerateType() const;
 
@@ -151,15 +164,17 @@ namespace TencentCloud
                      * 设置是否开启加速，取值有：
 <li>0：关闭加速；</li>
 <li>1：开启加速。</li>
-                     * @param AccelerateType 是否开启加速，取值有：
+                     * @param _accelerateType 是否开启加速，取值有：
 <li>0：关闭加速；</li>
 <li>1：开启加速。</li>
+                     * 
                      */
                     void SetAccelerateType(const int64_t& _accelerateType);
 
                     /**
                      * 判断参数 AccelerateType 是否已赋值
                      * @return AccelerateType 是否已赋值
+                     * 
                      */
                     bool AccelerateTypeHasBeenSet() const;
 
@@ -170,6 +185,7 @@ namespace TencentCloud
                      * @return ProxyType 四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写使用默认值instance。
+                     * 
                      */
                     std::string GetProxyType() const;
 
@@ -177,15 +193,17 @@ namespace TencentCloud
                      * 设置四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写使用默认值instance。
-                     * @param ProxyType 四层代理模式，取值有：
+                     * @param _proxyType 四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写使用默认值instance。
+                     * 
                      */
                     void SetProxyType(const std::string& _proxyType);
 
                     /**
                      * 判断参数 ProxyType 是否已赋值
                      * @return ProxyType 是否已赋值
+                     * 
                      */
                     bool ProxyTypeHasBeenSet() const;
 
@@ -194,20 +212,23 @@ namespace TencentCloud
 不填写使用默认值600。
                      * @return SessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒。
 不填写使用默认值600。
+                     * 
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
                      * 设置会话保持时间，取值范围：30-3600，单位：秒。
 不填写使用默认值600。
-                     * @param SessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒。
+                     * @param _sessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒。
 不填写使用默认值600。
+                     * 
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
 
                     /**
                      * 判断参数 SessionPersistTime 是否已赋值
                      * @return SessionPersistTime 是否已赋值
+                     * 
                      */
                     bool SessionPersistTimeHasBeenSet() const;
 
@@ -216,20 +237,23 @@ namespace TencentCloud
 不填写表示关闭 Ipv6 访问。
                      * @return Ipv6 Ipv6 访问配置。
 不填写表示关闭 Ipv6 访问。
+                     * 
                      */
                     Ipv6 GetIpv6() const;
 
                     /**
                      * 设置Ipv6 访问配置。
 不填写表示关闭 Ipv6 访问。
-                     * @param Ipv6 Ipv6 访问配置。
+                     * @param _ipv6 Ipv6 访问配置。
 不填写表示关闭 Ipv6 访问。
+                     * 
                      */
                     void SetIpv6(const Ipv6& _ipv6);
 
                     /**
                      * 判断参数 Ipv6 是否已赋值
                      * @return Ipv6 是否已赋值
+                     * 
                      */
                     bool Ipv6HasBeenSet() const;
 
@@ -238,38 +262,44 @@ namespace TencentCloud
 不填写则不创建规则。
                      * @return ApplicationProxyRules 规则详细信息。
 不填写则不创建规则。
+                     * 
                      */
                     std::vector<ApplicationProxyRule> GetApplicationProxyRules() const;
 
                     /**
                      * 设置规则详细信息。
 不填写则不创建规则。
-                     * @param ApplicationProxyRules 规则详细信息。
+                     * @param _applicationProxyRules 规则详细信息。
 不填写则不创建规则。
+                     * 
                      */
                     void SetApplicationProxyRules(const std::vector<ApplicationProxyRule>& _applicationProxyRules);
 
                     /**
                      * 判断参数 ApplicationProxyRules 是否已赋值
                      * @return ApplicationProxyRules 是否已赋值
+                     * 
                      */
                     bool ApplicationProxyRulesHasBeenSet() const;
 
                     /**
                      * 获取中国大陆加速优化配置。不填写表示关闭中国大陆加速优化。
                      * @return AccelerateMainland 中国大陆加速优化配置。不填写表示关闭中国大陆加速优化。
+                     * 
                      */
                     AccelerateMainland GetAccelerateMainland() const;
 
                     /**
                      * 设置中国大陆加速优化配置。不填写表示关闭中国大陆加速优化。
-                     * @param AccelerateMainland 中国大陆加速优化配置。不填写表示关闭中国大陆加速优化。
+                     * @param _accelerateMainland 中国大陆加速优化配置。不填写表示关闭中国大陆加速优化。
+                     * 
                      */
                     void SetAccelerateMainland(const AccelerateMainland& _accelerateMainland);
 
                     /**
                      * 判断参数 AccelerateMainland 是否已赋值
                      * @return AccelerateMainland 是否已赋值
+                     * 
                      */
                     bool AccelerateMainlandHasBeenSet() const;
 

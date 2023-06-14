@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取音频流的码率，单位：bps。
                      * @return Bitrate 音频流的码率，单位：bps。
+                     * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
                      * 设置音频流的码率，单位：bps。
-                     * @param Bitrate 音频流的码率，单位：bps。
+                     * @param _bitrate 音频流的码率，单位：bps。
+                     * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
 
                     /**
                      * 判断参数 Bitrate 是否已赋值
                      * @return Bitrate 是否已赋值
+                     * 
                      */
                     bool BitrateHasBeenSet() const;
 
                     /**
                      * 获取音频流的采样率，单位：hz。
                      * @return SamplingRate 音频流的采样率，单位：hz。
+                     * 
                      */
                     int64_t GetSamplingRate() const;
 
                     /**
                      * 设置音频流的采样率，单位：hz。
-                     * @param SamplingRate 音频流的采样率，单位：hz。
+                     * @param _samplingRate 音频流的采样率，单位：hz。
+                     * 
                      */
                     void SetSamplingRate(const int64_t& _samplingRate);
 
                     /**
                      * 判断参数 SamplingRate 是否已赋值
                      * @return SamplingRate 是否已赋值
+                     * 
                      */
                     bool SamplingRateHasBeenSet() const;
 
                     /**
                      * 获取音频流的编码格式，例如 aac。
                      * @return Codec 音频流的编码格式，例如 aac。
+                     * 
                      */
                     std::string GetCodec() const;
 
                     /**
                      * 设置音频流的编码格式，例如 aac。
-                     * @param Codec 音频流的编码格式，例如 aac。
+                     * @param _codec 音频流的编码格式，例如 aac。
+                     * 
                      */
                     void SetCodec(const std::string& _codec);
 
                     /**
                      * 判断参数 Codec 是否已赋值
                      * @return Codec 是否已赋值
+                     * 
                      */
                     bool CodecHasBeenSet() const;
 
@@ -105,20 +114,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 音频声道数，例如 2。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetChannel() const;
 
                     /**
                      * 设置音频声道数，例如 2。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Channel 音频声道数，例如 2。
+                     * @param _channel 音频声道数，例如 2。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetChannel(const int64_t& _channel);
 
                     /**
                      * 判断参数 Channel 是否已赋值
                      * @return Channel 是否已赋值
+                     * 
                      */
                     bool ChannelHasBeenSet() const;
 
@@ -127,20 +139,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codecs 音频Codecs。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetCodecs() const;
 
                     /**
                      * 设置音频Codecs。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Codecs 音频Codecs。
+                     * @param _codecs 音频Codecs。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetCodecs(const std::string& _codecs);
 
                     /**
                      * 判断参数 Codecs 是否已赋值
                      * @return Codecs 是否已赋值
+                     * 
                      */
                     bool CodecsHasBeenSet() const;
 
@@ -149,20 +164,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Loudness 音频响度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     double GetLoudness() const;
 
                     /**
                      * 设置音频响度。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Loudness 音频响度。
+                     * @param _loudness 音频响度。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetLoudness(const double& _loudness);
 
                     /**
                      * 判断参数 Loudness 是否已赋值
                      * @return Loudness 是否已赋值
+                     * 
                      */
                     bool LoudnessHasBeenSet() const;
 

@@ -51,20 +51,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置AppId
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppId AppId
+                     * @param _appId AppId
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 
@@ -73,20 +76,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId TKE集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置TKE集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterId TKE集群ID
+                     * @param _clusterId TKE集群ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 
@@ -95,20 +101,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace TKE集群命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置TKE集群命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Namespace TKE集群命名空间
+                     * @param _namespace TKE集群命名空间
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetNamespace(const std::string& _namespace);
 
                     /**
                      * 判断参数 Namespace 是否已赋值
                      * @return Namespace 是否已赋值
+                     * 
                      */
                     bool NamespaceHasBeenSet() const;
 
@@ -117,20 +126,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName TKE集群工作负载名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置TKE集群工作负载名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ServiceName TKE集群工作负载名称
+                     * @param _serviceName TKE集群工作负载名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetServiceName(const std::string& _serviceName);
 
                     /**
                      * 判断参数 ServiceName 是否已赋值
                      * @return ServiceName 是否已赋值
+                     * 
                      */
                     bool ServiceNameHasBeenSet() const;
 
@@ -139,20 +151,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName TKE集群工作负载中容器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置TKE集群工作负载中容器名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainerName TKE集群工作负载中容器名称
+                     * @param _containerName TKE集群工作负载中容器名称
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetContainerName(const std::string& _containerName);
 
                     /**
                      * 判断参数 ContainerName 是否已赋值
                      * @return ContainerName 是否已赋值
+                     * 
                      */
                     bool ContainerNameHasBeenSet() const;
 
@@ -161,20 +176,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterRegion TKE集群地域数字ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     int64_t GetClusterRegion() const;
 
                     /**
                      * 设置TKE集群地域数字ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterRegion TKE集群地域数字ID
+                     * @param _clusterRegion TKE集群地域数字ID
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetClusterRegion(const int64_t& _clusterRegion);
 
                     /**
                      * 判断参数 ClusterRegion 是否已赋值
                      * @return ClusterRegion 是否已赋值
+                     * 
                      */
                     bool ClusterRegionHasBeenSet() const;
 

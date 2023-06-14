@@ -51,38 +51,44 @@ namespace TencentCloud
 大写金额、小写金额、账号、票号1、票号2、收款人、大写日期、同城交换号、地址-省份、地址-城市、付款行全称、支票密码、支票用途。
                      * @return Name 识别出的字段名称(关键字)，支持以下字段：
 大写金额、小写金额、账号、票号1、票号2、收款人、大写日期、同城交换号、地址-省份、地址-城市、付款行全称、支票密码、支票用途。
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置识别出的字段名称(关键字)，支持以下字段：
 大写金额、小写金额、账号、票号1、票号2、收款人、大写日期、同城交换号、地址-省份、地址-城市、付款行全称、支票密码、支票用途。
-                     * @param Name 识别出的字段名称(关键字)，支持以下字段：
+                     * @param _name 识别出的字段名称(关键字)，支持以下字段：
 大写金额、小写金额、账号、票号1、票号2、收款人、大写日期、同城交换号、地址-省份、地址-城市、付款行全称、支票密码、支票用途。
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
                      * @return Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
-                     * @param Value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * @param _value 识别出的字段名称对应的值，也就是字段Name对应的字符串结果。
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

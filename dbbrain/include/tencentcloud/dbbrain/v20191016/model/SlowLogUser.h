@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取来源用户名。
                      * @return UserName 来源用户名。
+                     * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置来源用户名。
-                     * @param UserName 来源用户名。
+                     * @param _userName 来源用户名。
+                     * 
                      */
                     void SetUserName(const std::string& _userName);
 
                     /**
                      * 判断参数 UserName 是否已赋值
                      * @return UserName 是否已赋值
+                     * 
                      */
                     bool UserNameHasBeenSet() const;
 
                     /**
                      * 获取该来源用户名的慢日志数目占总数目的比例，单位%。
                      * @return Ratio 该来源用户名的慢日志数目占总数目的比例，单位%。
+                     * 
                      */
                     double GetRatio() const;
 
                     /**
                      * 设置该来源用户名的慢日志数目占总数目的比例，单位%。
-                     * @param Ratio 该来源用户名的慢日志数目占总数目的比例，单位%。
+                     * @param _ratio 该来源用户名的慢日志数目占总数目的比例，单位%。
+                     * 
                      */
                     void SetRatio(const double& _ratio);
 
                     /**
                      * 判断参数 Ratio 是否已赋值
                      * @return Ratio 是否已赋值
+                     * 
                      */
                     bool RatioHasBeenSet() const;
 
                     /**
                      * 获取该来源用户名的慢日志数目。
                      * @return Count 该来源用户名的慢日志数目。
+                     * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该来源用户名的慢日志数目。
-                     * @param Count 该来源用户名的慢日志数目。
+                     * @param _count 该来源用户名的慢日志数目。
+                     * 
                      */
                     void SetCount(const int64_t& _count);
 
                     /**
                      * 判断参数 Count 是否已赋值
                      * @return Count 是否已赋值
+                     * 
                      */
                     bool CountHasBeenSet() const;
 

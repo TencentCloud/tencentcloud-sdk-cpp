@@ -47,90 +47,105 @@ namespace TencentCloud
                     /**
                      * 获取实例ID。
                      * @return InstanceId 实例ID。
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * @param _instanceId 实例ID。
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取要分析的日志开始时间，格式为："2023-02-16 00:00:20"。
                      * @return StartTime 要分析的日志开始时间，格式为："2023-02-16 00:00:20"。
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置要分析的日志开始时间，格式为："2023-02-16 00:00:20"。
-                     * @param StartTime 要分析的日志开始时间，格式为："2023-02-16 00:00:20"。
+                     * @param _startTime 要分析的日志开始时间，格式为："2023-02-16 00:00:20"。
+                     * 
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取要分析的日志结束时间，格式为："2023-02-16 00:10:20"。
                      * @return EndTime 要分析的日志结束时间，格式为："2023-02-16 00:10:20"。
+                     * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置要分析的日志结束时间，格式为："2023-02-16 00:10:20"。
-                     * @param EndTime 要分析的日志结束时间，格式为："2023-02-16 00:10:20"。
+                     * @param _endTime 要分析的日志结束时间，格式为："2023-02-16 00:10:20"。
+                     * 
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
+                     * 
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
                      * 获取聚合维度的排序条件。
                      * @return AggregationConditions 聚合维度的排序条件。
+                     * 
                      */
                     std::vector<AggregationCondition> GetAggregationConditions() const;
 
                     /**
                      * 设置聚合维度的排序条件。
-                     * @param AggregationConditions 聚合维度的排序条件。
+                     * @param _aggregationConditions 聚合维度的排序条件。
+                     * 
                      */
                     void SetAggregationConditions(const std::vector<AggregationCondition>& _aggregationConditions);
 
                     /**
                      * 判断参数 AggregationConditions 是否已赋值
                      * @return AggregationConditions 是否已赋值
+                     * 
                      */
                     bool AggregationConditionsHasBeenSet() const;
 
                     /**
                      * 获取该过滤条件下的审计日志结果集作为分析日志。
                      * @return AuditLogFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * 
                      */
                     AuditLogFilter GetAuditLogFilter() const;
 
                     /**
                      * 设置该过滤条件下的审计日志结果集作为分析日志。
-                     * @param AuditLogFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * @param _auditLogFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * 
                      */
                     void SetAuditLogFilter(const AuditLogFilter& _auditLogFilter);
 
                     /**
                      * 判断参数 AuditLogFilter 是否已赋值
                      * @return AuditLogFilter 是否已赋值
+                     * 
                      */
                     bool AuditLogFilterHasBeenSet() const;
 

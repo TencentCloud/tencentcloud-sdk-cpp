@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取对应appid
                      * @return ClusterId 对应appid
+                     * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置对应appid
-                     * @param ClusterId 对应appid
+                     * @param _clusterId 对应appid
+                     * 
                      */
                     void SetClusterId(const std::string& _clusterId);
 
                     /**
                      * 判断参数 ClusterId 是否已赋值
                      * @return ClusterId 是否已赋值
+                     * 
                      */
                     bool ClusterIdHasBeenSet() const;
 

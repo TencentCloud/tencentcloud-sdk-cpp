@@ -45,72 +45,84 @@ namespace TencentCloud
                     /**
                      * 获取网关实体ID
                      * @return GatewayInstanceId 网关实体ID
+                     * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实体ID
-                     * @param GatewayInstanceId 网关实体ID
+                     * @param _gatewayInstanceId 网关实体ID
+                     * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
 
                     /**
                      * 判断参数 GatewayInstanceId 是否已赋值
                      * @return GatewayInstanceId 是否已赋值
+                     * 
                      */
                     bool GatewayInstanceIdHasBeenSet() const;
 
                     /**
                      * 获取根据命名空间名或ID模糊查询
                      * @return SearchWord 根据命名空间名或ID模糊查询
+                     * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置根据命名空间名或ID模糊查询
-                     * @param SearchWord 根据命名空间名或ID模糊查询
+                     * @param _searchWord 根据命名空间名或ID模糊查询
+                     * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
+                     * 
                      */
                     bool SearchWordHasBeenSet() const;
 
                     /**
                      * 获取翻页查询偏移量
                      * @return Offset 翻页查询偏移量
+                     * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置翻页查询偏移量
-                     * @param Offset 翻页查询偏移量
+                     * @param _offset 翻页查询偏移量
+                     * 
                      */
                     void SetOffset(const int64_t& _offset);
 
                     /**
                      * 判断参数 Offset 是否已赋值
                      * @return Offset 是否已赋值
+                     * 
                      */
                     bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取翻页查询每页记录数
                      * @return Limit 翻页查询每页记录数
+                     * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置翻页查询每页记录数
-                     * @param Limit 翻页查询每页记录数
+                     * @param _limit 翻页查询每页记录数
+                     * 
                      */
                     void SetLimit(const int64_t& _limit);
 
                     /**
                      * 判断参数 Limit 是否已赋值
                      * @return Limit 是否已赋值
+                     * 
                      */
                     bool LimitHasBeenSet() const;
 

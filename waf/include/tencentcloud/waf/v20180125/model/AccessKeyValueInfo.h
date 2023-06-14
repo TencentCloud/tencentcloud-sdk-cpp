@@ -52,20 +52,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 需要配置键值或者元字段索引的字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置需要配置键值或者元字段索引的字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key 需要配置键值或者元字段索引的字段
+                     * @param _key 需要配置键值或者元字段索引的字段
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetKey(const std::string& _key);
 
                     /**
                      * 判断参数 Key 是否已赋值
                      * @return Key 是否已赋值
+                     * 
                      */
                     bool KeyHasBeenSet() const;
 
@@ -74,20 +77,23 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 字段的索引描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     AccessValueInfo GetValue() const;
 
                     /**
                      * 设置字段的索引描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 字段的索引描述信息
+                     * @param _value 字段的索引描述信息
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetValue(const AccessValueInfo& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

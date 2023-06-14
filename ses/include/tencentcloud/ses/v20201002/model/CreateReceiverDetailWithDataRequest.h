@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取收件人列表ID
                      * @return ReceiverId 收件人列表ID
+                     * 
                      */
                     uint64_t GetReceiverId() const;
 
                     /**
                      * 设置收件人列表ID
-                     * @param ReceiverId 收件人列表ID
+                     * @param _receiverId 收件人列表ID
+                     * 
                      */
                     void SetReceiverId(const uint64_t& _receiverId);
 
                     /**
                      * 判断参数 ReceiverId 是否已赋值
                      * @return ReceiverId 是否已赋值
+                     * 
                      */
                     bool ReceiverIdHasBeenSet() const;
 
                     /**
                      * 获取收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
                      * @return Datas 收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
+                     * 
                      */
                     std::vector<ReceiverInputData> GetDatas() const;
 
                     /**
                      * 设置收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
-                     * @param Datas 收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
+                     * @param _datas 收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
+                     * 
                      */
                     void SetDatas(const std::vector<ReceiverInputData>& _datas);
 
                     /**
                      * 判断参数 Datas 是否已赋值
                      * @return Datas 是否已赋值
+                     * 
                      */
                     bool DatasHasBeenSet() const;
 

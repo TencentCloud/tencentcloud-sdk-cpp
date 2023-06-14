@@ -47,12 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取代理商完税证明批次信息
                      * @return AgentTaxPaymentBatch 代理商完税证明批次信息
+                     * 
                      */
                     AgentTaxPaymentBatch GetAgentTaxPaymentBatch() const;
 
                     /**
                      * 判断参数 AgentTaxPaymentBatch 是否已赋值
                      * @return AgentTaxPaymentBatch 是否已赋值
+                     * 
                      */
                     bool AgentTaxPaymentBatchHasBeenSet() const;
 

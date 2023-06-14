@@ -47,72 +47,84 @@ namespace TencentCloud
                     /**
                      * 获取外部任务Id
                      * @return ExternalId 外部任务Id
+                     * 
                      */
                     std::string GetExternalId() const;
 
                     /**
                      * 判断参数 ExternalId 是否已赋值
                      * @return ExternalId 是否已赋值
+                     * 
                      */
                     bool ExternalIdHasBeenSet() const;
 
                     /**
                      * 获取弃用
                      * @return EnvId 弃用
+                     * 
                      */
                     std::string GetEnvId() const;
 
                     /**
                      * 判断参数 EnvId 是否已赋值
                      * @return EnvId 是否已赋值
+                     * 
                      */
                     bool EnvIdHasBeenSet() const;
 
                     /**
                      * 获取用户uin
                      * @return UserUin 用户uin
+                     * 
                      */
                     std::string GetUserUin() const;
 
                     /**
                      * 判断参数 UserUin 是否已赋值
                      * @return UserUin 是否已赋值
+                     * 
                      */
                     bool UserUinHasBeenSet() const;
 
                     /**
                      * 获取服务名
                      * @return ServerName 服务名
+                     * 
                      */
                     std::string GetServerName() const;
 
                     /**
                      * 判断参数 ServerName 是否已赋值
                      * @return ServerName 是否已赋值
+                     * 
                      */
                     bool ServerNameHasBeenSet() const;
 
                     /**
                      * 获取版本名
                      * @return VersionName 版本名
+                     * 
                      */
                     std::string GetVersionName() const;
 
                     /**
                      * 判断参数 VersionName 是否已赋值
                      * @return VersionName 是否已赋值
+                     * 
                      */
                     bool VersionNameHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
+                     * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
                      * @return CreateTime 是否已赋值
+                     * 
                      */
                     bool CreateTimeHasBeenSet() const;
 
@@ -125,12 +137,14 @@ namespace TencentCloud
 微信云托管环境创建阶段：envStage
 存储资源创建阶段：storageStage
 服务创建阶段：serverStage
+                     * 
                      */
                     std::string GetStage() const;
 
                     /**
                      * 判断参数 Stage 是否已赋值
                      * @return Stage 是否已赋值
+                     * 
                      */
                     bool StageHasBeenSet() const;
 
@@ -145,60 +159,70 @@ running
 stopped
 failed
 finished
+                     * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 判断参数 Status 是否已赋值
                      * @return Status 是否已赋值
+                     * 
                      */
                     bool StatusHasBeenSet() const;
 
                     /**
                      * 获取失败原因
                      * @return FailReason 失败原因
+                     * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 判断参数 FailReason 是否已赋值
                      * @return FailReason 是否已赋值
+                     * 
                      */
                     bool FailReasonHasBeenSet() const;
 
                     /**
                      * 获取用户envId
                      * @return UserEnvId 用户envId
+                     * 
                      */
                     std::string GetUserEnvId() const;
 
                     /**
                      * 判断参数 UserEnvId 是否已赋值
                      * @return UserEnvId 是否已赋值
+                     * 
                      */
                     bool UserEnvIdHasBeenSet() const;
 
                     /**
                      * 获取创建时间
                      * @return StartTime 创建时间
+                     * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
+                     * 
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取步骤信息
                      * @return Steps 步骤信息
+                     * 
                      */
                     std::vector<OneClickTaskStepInfo> GetSteps() const;
 
                     /**
                      * 判断参数 Steps 是否已赋值
                      * @return Steps 是否已赋值
+                     * 
                      */
                     bool StepsHasBeenSet() const;
 

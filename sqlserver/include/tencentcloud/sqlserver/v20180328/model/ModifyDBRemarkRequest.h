@@ -46,36 +46,42 @@ namespace TencentCloud
                     /**
                      * 获取实例ID，形如mssql-rljoi3bf
                      * @return InstanceId 实例ID，形如mssql-rljoi3bf
+                     * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID，形如mssql-rljoi3bf
-                     * @param InstanceId 实例ID，形如mssql-rljoi3bf
+                     * @param _instanceId 实例ID，形如mssql-rljoi3bf
+                     * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
+                     * 
                      */
                     bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取数据库名称及备注数组，每个元素包含数据库名和对应的备注
                      * @return DBRemarks 数据库名称及备注数组，每个元素包含数据库名和对应的备注
+                     * 
                      */
                     std::vector<DBRemark> GetDBRemarks() const;
 
                     /**
                      * 设置数据库名称及备注数组，每个元素包含数据库名和对应的备注
-                     * @param DBRemarks 数据库名称及备注数组，每个元素包含数据库名和对应的备注
+                     * @param _dBRemarks 数据库名称及备注数组，每个元素包含数据库名和对应的备注
+                     * 
                      */
                     void SetDBRemarks(const std::vector<DBRemark>& _dBRemarks);
 
                     /**
                      * 判断参数 DBRemarks 是否已赋值
                      * @return DBRemarks 是否已赋值
+                     * 
                      */
                     bool DBRemarksHasBeenSet() const;
 

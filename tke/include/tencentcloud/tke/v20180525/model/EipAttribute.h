@@ -51,20 +51,23 @@ namespace TencentCloud
 Never表示不释放，其他任意值（包括空字符串）表示释放。
                      * @return DeletePolicy 容器实例删除后，EIP是否释放。
 Never表示不释放，其他任意值（包括空字符串）表示释放。
+                     * 
                      */
                     std::string GetDeletePolicy() const;
 
                     /**
                      * 设置容器实例删除后，EIP是否释放。
 Never表示不释放，其他任意值（包括空字符串）表示释放。
-                     * @param DeletePolicy 容器实例删除后，EIP是否释放。
+                     * @param _deletePolicy 容器实例删除后，EIP是否释放。
 Never表示不释放，其他任意值（包括空字符串）表示释放。
+                     * 
                      */
                     void SetDeletePolicy(const std::string& _deletePolicy);
 
                     /**
                      * 判断参数 DeletePolicy 是否已赋值
                      * @return DeletePolicy 是否已赋值
+                     * 
                      */
                     bool DeletePolicyHasBeenSet() const;
 
@@ -83,6 +86,7 @@ CTCC：中国电信
 CUCC：中国联通
 注意：仅部分地域支持静态单线IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     std::string GetInternetServiceProvider() const;
 
@@ -94,19 +98,21 @@ CTCC：中国电信
 CUCC：中国联通
 注意：仅部分地域支持静态单线IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetServiceProvider EIP线路类型。默认值：BGP。
+                     * @param _internetServiceProvider EIP线路类型。默认值：BGP。
 已开通静态单线IP白名单的用户，可选值：
 CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
 注意：仅部分地域支持静态单线IP。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetServiceProvider(const std::string& _internetServiceProvider);
 
                     /**
                      * 判断参数 InternetServiceProvider 是否已赋值
                      * @return InternetServiceProvider 是否已赋值
+                     * 
                      */
                     bool InternetServiceProviderHasBeenSet() const;
 
@@ -115,20 +121,23 @@ CUCC：中国联通
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut EIP出带宽上限，单位：Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置EIP出带宽上限，单位：Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InternetMaxBandwidthOut EIP出带宽上限，单位：Mbps。
+                     * @param _internetMaxBandwidthOut EIP出带宽上限，单位：Mbps。
 注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
 
                     /**
                      * 判断参数 InternetMaxBandwidthOut 是否已赋值
                      * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 

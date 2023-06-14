@@ -46,12 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取快照下载链接
                      * @return CosUrl 快照下载链接
+                     * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
                      * 判断参数 CosUrl 是否已赋值
                      * @return CosUrl 是否已赋值
+                     * 
                      */
                     bool CosUrlHasBeenSet() const;
 

@@ -49,18 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取操作时间戳，单位秒
                      * @return PostTime 操作时间戳，单位秒
+                     * 
                      */
                     uint64_t GetPostTime() const;
 
                     /**
                      * 设置操作时间戳，单位秒
-                     * @param PostTime 操作时间戳，单位秒
+                     * @param _postTime 操作时间戳，单位秒
+                     * 
                      */
                     void SetPostTime(const uint64_t& _postTime);
 
                     /**
                      * 判断参数 PostTime 是否已赋值
                      * @return PostTime 是否已赋值
+                     * 
                      */
                     bool PostTimeHasBeenSet() const;
 
@@ -69,38 +72,44 @@ namespace TencentCloud
 accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
                      * @return Uid 用户ID 
 accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
+                     * 
                      */
                     std::string GetUid() const;
 
                     /**
                      * 设置用户ID 
 accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
-                     * @param Uid 用户ID 
+                     * @param _uid 用户ID 
 accountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId
+                     * 
                      */
                     void SetUid(const std::string& _uid);
 
                     /**
                      * 判断参数 Uid 是否已赋值
                      * @return Uid 是否已赋值
+                     * 
                      */
                     bool UidHasBeenSet() const;
 
                     /**
                      * 获取操作来源的外网IP
                      * @return UserIp 操作来源的外网IP
+                     * 
                      */
                     std::string GetUserIp() const;
 
                     /**
                      * 设置操作来源的外网IP
-                     * @param UserIp 操作来源的外网IP
+                     * @param _userIp 操作来源的外网IP
+                     * 
                      */
                     void SetUserIp(const std::string& _userIp);
 
                     /**
                      * 判断参数 UserIp 是否已赋值
                      * @return UserIp 是否已赋值
+                     * 
                      */
                     bool UserIpHasBeenSet() const;
 
@@ -113,6 +122,7 @@ accountType不同对应不同的用户ID。如果是QQ或微信用户则填入�
 [0,50]低价值
 [50,70]价值一般
 [70,100]高价值
+                     * 
                      */
                     uint64_t GetValueScore() const;
 
@@ -121,16 +131,18 @@ accountType不同对应不同的用户ID。如果是QQ或微信用户则填入�
 [0,50]低价值
 [50,70]价值一般
 [70,100]高价值
-                     * @param ValueScore 0~100：营销价值评分，分值越高，价值越大
+                     * @param _valueScore 0~100：营销价值评分，分值越高，价值越大
 [0,50]低价值
 [50,70]价值一般
 [70,100]高价值
+                     * 
                      */
                     void SetValueScore(const uint64_t& _valueScore);
 
                     /**
                      * 判断参数 ValueScore 是否已赋值
                      * @return ValueScore 是否已赋值
+                     * 
                      */
                     bool ValueScoreHasBeenSet() const;
 

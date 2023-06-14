@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取业务appid
                      * @return BizAppId 业务appid
+                     * 
                      */
                     std::string GetBizAppId() const;
 
                     /**
                      * 设置业务appid
-                     * @param BizAppId 业务appid
+                     * @param _bizAppId 业务appid
+                     * 
                      */
                     void SetBizAppId(const std::string& _bizAppId);
 
                     /**
                      * 判断参数 BizAppId 是否已赋值
                      * @return BizAppId 是否已赋值
+                     * 
                      */
                     bool BizAppIdHasBeenSet() const;
 
                     /**
                      * 获取回拨请求响应中返回的 callId，按 callId 查询该话单详细信息
                      * @return CallId 回拨请求响应中返回的 callId，按 callId 查询该话单详细信息
+                     * 
                      */
                     std::string GetCallId() const;
 
                     /**
                      * 设置回拨请求响应中返回的 callId，按 callId 查询该话单详细信息
-                     * @param CallId 回拨请求响应中返回的 callId，按 callId 查询该话单详细信息
+                     * @param _callId 回拨请求响应中返回的 callId，按 callId 查询该话单详细信息
+                     * 
                      */
                     void SetCallId(const std::string& _callId);
 
                     /**
                      * 判断参数 CallId 是否已赋值
                      * @return CallId 是否已赋值
+                     * 
                      */
                     bool CallIdHasBeenSet() const;
 
                     /**
                      * 获取查询主叫用户产生的呼叫话单，如填空表示拉取这个时间段所有话单
                      * @return Src 查询主叫用户产生的呼叫话单，如填空表示拉取这个时间段所有话单
+                     * 
                      */
                     std::string GetSrc() const;
 
                     /**
                      * 设置查询主叫用户产生的呼叫话单，如填空表示拉取这个时间段所有话单
-                     * @param Src 查询主叫用户产生的呼叫话单，如填空表示拉取这个时间段所有话单
+                     * @param _src 查询主叫用户产生的呼叫话单，如填空表示拉取这个时间段所有话单
+                     * 
                      */
                     void SetSrc(const std::string& _src);
 
                     /**
                      * 判断参数 Src 是否已赋值
                      * @return Src 是否已赋值
+                     * 
                      */
                     bool SrcHasBeenSet() const;
 
                     /**
                      * 获取话单开始时间戳
                      * @return StartTimeStamp 话单开始时间戳
+                     * 
                      */
                     std::string GetStartTimeStamp() const;
 
                     /**
                      * 设置话单开始时间戳
-                     * @param StartTimeStamp 话单开始时间戳
+                     * @param _startTimeStamp 话单开始时间戳
+                     * 
                      */
                     void SetStartTimeStamp(const std::string& _startTimeStamp);
 
                     /**
                      * 判断参数 StartTimeStamp 是否已赋值
                      * @return StartTimeStamp 是否已赋值
+                     * 
                      */
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
                      * 获取话单结束时间戳
                      * @return EndTimeStamp 话单结束时间戳
+                     * 
                      */
                     std::string GetEndTimeStamp() const;
 
                     /**
                      * 设置话单结束时间戳
-                     * @param EndTimeStamp 话单结束时间戳
+                     * @param _endTimeStamp 话单结束时间戳
+                     * 
                      */
                     void SetEndTimeStamp(const std::string& _endTimeStamp);
 
                     /**
                      * 判断参数 EndTimeStamp 是否已赋值
                      * @return EndTimeStamp 是否已赋值
+                     * 
                      */
                     bool EndTimeStampHasBeenSet() const;
 

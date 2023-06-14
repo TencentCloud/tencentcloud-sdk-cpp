@@ -49,6 +49,7 @@ hybrid: 宙斯盾本地化
                      * @return Product 代表是否混合云本地化的产品。
 hybrid: 宙斯盾本地化
 不填写：其他
+                     * 
                      */
                     std::string GetProduct() const;
 
@@ -56,15 +57,17 @@ hybrid: 宙斯盾本地化
                      * 设置代表是否混合云本地化的产品。
 hybrid: 宙斯盾本地化
 不填写：其他
-                     * @param Product 代表是否混合云本地化的产品。
+                     * @param _product 代表是否混合云本地化的产品。
 hybrid: 宙斯盾本地化
 不填写：其他
+                     * 
                      */
                     void SetProduct(const std::string& _product);
 
                     /**
                      * 判断参数 Product 是否已赋值
                      * @return Product 是否已赋值
+                     * 
                      */
                     bool ProductHasBeenSet() const;
 

@@ -45,18 +45,21 @@ namespace TencentCloud
                     /**
                      * 获取自定义数据类型的标识符
                      * @return TypeId 自定义数据类型的标识符
+                     * 
                      */
                     std::string GetTypeId() const;
 
                     /**
                      * 设置自定义数据类型的标识符
-                     * @param TypeId 自定义数据类型的标识符
+                     * @param _typeId 自定义数据类型的标识符
+                     * 
                      */
                     void SetTypeId(const std::string& _typeId);
 
                     /**
                      * 判断参数 TypeId 是否已赋值
                      * @return TypeId 是否已赋值
+                     * 
                      */
                     bool TypeIdHasBeenSet() const;
 

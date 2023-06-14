@@ -49,54 +49,63 @@ namespace TencentCloud
                     /**
                      * 获取自定义字段编号
                      * @return ID 自定义字段编号
+                     * 
                      */
                     uint64_t GetID() const;
 
                     /**
                      * 设置自定义字段编号
-                     * @param ID 自定义字段编号
+                     * @param _iD 自定义字段编号
+                     * 
                      */
                     void SetID(const uint64_t& _iD);
 
                     /**
                      * 判断参数 ID 是否已赋值
                      * @return ID 是否已赋值
+                     * 
                      */
                     bool IDHasBeenSet() const;
 
                     /**
                      * 获取自定义字段名称/说明
                      * @return Name 自定义字段名称/说明
+                     * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义字段名称/说明
-                     * @param Name 自定义字段名称/说明
+                     * @param _name 自定义字段名称/说明
+                     * 
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
+                     * 
                      */
                     bool NameHasBeenSet() const;
 
                     /**
                      * 获取字段值
                      * @return Value 字段值
+                     * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置字段值
-                     * @param Value 字段值
+                     * @param _value 字段值
+                     * 
                      */
                     void SetValue(const std::string& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
                      * @return Value 是否已赋值
+                     * 
                      */
                     bool ValueHasBeenSet() const;
 

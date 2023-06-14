@@ -45,90 +45,105 @@ namespace TencentCloud
                     /**
                      * 获取待绑定的使用计划唯一 ID 列表。
                      * @return UsagePlanIds 待绑定的使用计划唯一 ID 列表。
+                     * 
                      */
                     std::vector<std::string> GetUsagePlanIds() const;
 
                     /**
                      * 设置待绑定的使用计划唯一 ID 列表。
-                     * @param UsagePlanIds 待绑定的使用计划唯一 ID 列表。
+                     * @param _usagePlanIds 待绑定的使用计划唯一 ID 列表。
+                     * 
                      */
                     void SetUsagePlanIds(const std::vector<std::string>& _usagePlanIds);
 
                     /**
                      * 判断参数 UsagePlanIds 是否已赋值
                      * @return UsagePlanIds 是否已赋值
+                     * 
                      */
                     bool UsagePlanIdsHasBeenSet() const;
 
                     /**
                      * 获取绑定类型，取值为API、SERVICE，默认值为SERVICE。
                      * @return BindType 绑定类型，取值为API、SERVICE，默认值为SERVICE。
+                     * 
                      */
                     std::string GetBindType() const;
 
                     /**
                      * 设置绑定类型，取值为API、SERVICE，默认值为SERVICE。
-                     * @param BindType 绑定类型，取值为API、SERVICE，默认值为SERVICE。
+                     * @param _bindType 绑定类型，取值为API、SERVICE，默认值为SERVICE。
+                     * 
                      */
                     void SetBindType(const std::string& _bindType);
 
                     /**
                      * 判断参数 BindType 是否已赋值
                      * @return BindType 是否已赋值
+                     * 
                      */
                     bool BindTypeHasBeenSet() const;
 
                     /**
                      * 获取待绑定的环境。
                      * @return Environment 待绑定的环境。
+                     * 
                      */
                     std::string GetEnvironment() const;
 
                     /**
                      * 设置待绑定的环境。
-                     * @param Environment 待绑定的环境。
+                     * @param _environment 待绑定的环境。
+                     * 
                      */
                     void SetEnvironment(const std::string& _environment);
 
                     /**
                      * 判断参数 Environment 是否已赋值
                      * @return Environment 是否已赋值
+                     * 
                      */
                     bool EnvironmentHasBeenSet() const;
 
                     /**
                      * 获取待绑定的服务唯一 ID。
                      * @return ServiceId 待绑定的服务唯一 ID。
+                     * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置待绑定的服务唯一 ID。
-                     * @param ServiceId 待绑定的服务唯一 ID。
+                     * @param _serviceId 待绑定的服务唯一 ID。
+                     * 
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
+                     * 
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取API唯一ID数组，当bindType=API时，需要传入此参数。
                      * @return ApiIds API唯一ID数组，当bindType=API时，需要传入此参数。
+                     * 
                      */
                     std::vector<std::string> GetApiIds() const;
 
                     /**
                      * 设置API唯一ID数组，当bindType=API时，需要传入此参数。
-                     * @param ApiIds API唯一ID数组，当bindType=API时，需要传入此参数。
+                     * @param _apiIds API唯一ID数组，当bindType=API时，需要传入此参数。
+                     * 
                      */
                     void SetApiIds(const std::vector<std::string>& _apiIds);
 
                     /**
                      * 判断参数 ApiIds 是否已赋值
                      * @return ApiIds 是否已赋值
+                     * 
                      */
                     bool ApiIdsHasBeenSet() const;
 
