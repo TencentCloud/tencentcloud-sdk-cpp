@@ -36,6 +36,7 @@
 #include <tencentcloud/vod/v20180717/model/RemoveWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/RebuildMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTask.h>
+#include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
 #include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
 #include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
@@ -75,7 +76,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesTask：获取文件属性任务；</li>
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
-<li>ExtractTraceWatermark：提取溯源水印任务。</li>
+<li>ExtractTraceWatermark：提取溯源水印任务；</li>
+<li>ExtractCopyRightWatermark：提取版权水印任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -89,7 +91,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesTask：获取文件属性任务；</li>
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
-<li>ExtractTraceWatermark：提取溯源水印任务。</li>
+<li>ExtractTraceWatermark：提取溯源水印任务；</li>
+<li>ExtractCopyRightWatermark：提取版权水印任务。</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -404,6 +407,22 @@ namespace TencentCloud
                     bool ExtractTraceWatermarkTaskHasBeenSet() const;
 
                     /**
+                     * 获取提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtractCopyRightWatermarkTask 提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtractCopyRightWatermarkTask GetExtractCopyRightWatermarkTask() const;
+
+                    /**
+                     * 判断参数 ExtractCopyRightWatermarkTask 是否已赋值
+                     * @return ExtractCopyRightWatermarkTask 是否已赋值
+                     * 
+                     */
+                    bool ExtractCopyRightWatermarkTaskHasBeenSet() const;
+
+                    /**
                      * 获取音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReviewAudioVideoTask 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
@@ -467,7 +486,8 @@ namespace TencentCloud
 <li>DescribeFileAttributesTask：获取文件属性任务；</li>
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
-<li>ExtractTraceWatermark：提取溯源水印任务。</li>
+<li>ExtractTraceWatermark：提取溯源水印任务；</li>
+<li>ExtractCopyRightWatermark：提取版权水印任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -603,6 +623,13 @@ namespace TencentCloud
                      */
                     ExtractTraceWatermarkTask m_extractTraceWatermarkTask;
                     bool m_extractTraceWatermarkTaskHasBeenSet;
+
+                    /**
+                     * 提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtractCopyRightWatermarkTask m_extractCopyRightWatermarkTask;
+                    bool m_extractCopyRightWatermarkTaskHasBeenSet;
 
                     /**
                      * 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。

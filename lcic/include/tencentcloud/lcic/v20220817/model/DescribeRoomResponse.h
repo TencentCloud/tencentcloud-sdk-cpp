@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间开始时间，unix时间戳。
-                     * @return StartTime 预定的房间开始时间，unix时间戳。
+                     * 获取预定的房间开始时间，unix时间戳（秒）。
+                     * @return StartTime 预定的房间开始时间，unix时间戳（秒）。
                      * 
                      */
                     uint64_t GetStartTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间结束时间，unix时间戳。
-                     * @return EndTime 预定的房间结束时间，unix时间戳。
+                     * 获取预定的房间结束时间，unix时间戳（秒）。
+                     * @return EndTime 预定的房间结束时间，unix时间戳（秒）。
                      * 
                      */
                     uint64_t GetEndTime() const;
@@ -308,13 +308,13 @@ video 纯视频
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 预定的房间开始时间，unix时间戳。
+                     * 预定的房间开始时间，unix时间戳（秒）。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 预定的房间结束时间，unix时间戳。
+                     * 预定的房间结束时间，unix时间戳（秒）。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

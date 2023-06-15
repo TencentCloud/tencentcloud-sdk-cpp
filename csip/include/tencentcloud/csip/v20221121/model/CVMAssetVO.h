@@ -1272,6 +1272,31 @@ namespace TencentCloud
                      */
                     bool RiskExposureHasBeenSet() const;
 
+                    /**
+                     * 获取模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BASAgentStatus 模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBASAgentStatus() const;
+
+                    /**
+                     * 设置模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bASAgentStatus 模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBASAgentStatus(const int64_t& _bASAgentStatus);
+
+                    /**
+                     * 判断参数 BASAgentStatus 是否已赋值
+                     * @return BASAgentStatus 是否已赋值
+                     * 
+                     */
+                    bool BASAgentStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1616,6 +1641,13 @@ namespace TencentCloud
                      */
                     int64_t m_riskExposure;
                     bool m_riskExposureHasBeenSet;
+
+                    /**
+                     * 模拟攻击工具状态。0代表未安装，1代表已安装，2代表已离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_bASAgentStatus;
+                    bool m_bASAgentStatusHasBeenSet;
 
                 };
             }

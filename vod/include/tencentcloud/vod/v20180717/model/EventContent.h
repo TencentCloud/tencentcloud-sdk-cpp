@@ -42,6 +42,7 @@
 #include <tencentcloud/vod/v20180717/model/RestoreMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/RebuildMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTask.h>
+#include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
 #include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
 #include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
@@ -103,6 +104,7 @@ namespace TencentCloud
 <li>RebuildMediaComplete：音画质重生完成事件。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
+<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
@@ -124,6 +126,7 @@ namespace TencentCloud
 <li>RebuildMediaComplete：音画质重生完成事件。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
+<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
@@ -150,6 +153,7 @@ namespace TencentCloud
 <li>RebuildMediaComplete：音画质重生完成事件。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
+<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
@@ -171,6 +175,7 @@ namespace TencentCloud
 <li>RebuildMediaComplete：音画质重生完成事件。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
+<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
@@ -640,6 +645,31 @@ namespace TencentCloud
                     bool ExtractTraceWatermarkCompleteEventHasBeenSet() const;
 
                     /**
+                     * 获取版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtractCopyRightWatermarkCompleteEvent 版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtractCopyRightWatermarkTask GetExtractCopyRightWatermarkCompleteEvent() const;
+
+                    /**
+                     * 设置版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extractCopyRightWatermarkCompleteEvent 版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtractCopyRightWatermarkCompleteEvent(const ExtractCopyRightWatermarkTask& _extractCopyRightWatermarkCompleteEvent);
+
+                    /**
+                     * 判断参数 ExtractCopyRightWatermarkCompleteEvent 是否已赋值
+                     * @return ExtractCopyRightWatermarkCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool ExtractCopyRightWatermarkCompleteEventHasBeenSet() const;
+
+                    /**
                      * 获取音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReviewAudioVideoCompleteEvent 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
@@ -737,6 +767,7 @@ namespace TencentCloud
 <li>RebuildMediaComplete：音画质重生完成事件。</li>
 <li>ReviewAudioVideoComplete：音视频审核完成；</li>
 <li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>
+<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>
 <li>DescribeFileAttributesComplete：获取文件属性完成；</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
@@ -873,6 +904,13 @@ namespace TencentCloud
                      */
                     ExtractTraceWatermarkTask m_extractTraceWatermarkCompleteEvent;
                     bool m_extractTraceWatermarkCompleteEventHasBeenSet;
+
+                    /**
+                     * 版权水印提取完成事件，当事件类型为 ExtractCopyRightWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtractCopyRightWatermarkTask m_extractCopyRightWatermarkCompleteEvent;
+                    bool m_extractCopyRightWatermarkCompleteEventHasBeenSet;
 
                     /**
                      * 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。

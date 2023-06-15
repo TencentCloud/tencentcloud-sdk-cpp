@@ -44,6 +44,7 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_removeWatermarkTaskHasBeenSet(false),
     m_rebuildMediaTaskHasBeenSet(false),
     m_extractTraceWatermarkTaskHasBeenSet(false),
+    m_extractCopyRightWatermarkTaskHasBeenSet(false),
     m_reviewAudioVideoTaskHasBeenSet(false),
     m_reduceMediaBitrateTaskHasBeenSet(false),
     m_describeFileAttributesTaskHasBeenSet(false)
@@ -389,6 +390,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_extractTraceWatermarkTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtractCopyRightWatermarkTask") && !rsp["ExtractCopyRightWatermarkTask"].IsNull())
+    {
+        if (!rsp["ExtractCopyRightWatermarkTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractCopyRightWatermarkTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extractCopyRightWatermarkTask.Deserialize(rsp["ExtractCopyRightWatermarkTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extractCopyRightWatermarkTaskHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ReviewAudioVideoTask") && !rsp["ReviewAudioVideoTask"].IsNull())
     {
         if (!rsp["ReviewAudioVideoTask"].IsObject())
@@ -623,6 +641,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extractTraceWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extractCopyRightWatermarkTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractCopyRightWatermarkTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractCopyRightWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_reviewAudioVideoTaskHasBeenSet)
@@ -862,6 +889,16 @@ ExtractTraceWatermarkTask DescribeTaskDetailResponse::GetExtractTraceWatermarkTa
 bool DescribeTaskDetailResponse::ExtractTraceWatermarkTaskHasBeenSet() const
 {
     return m_extractTraceWatermarkTaskHasBeenSet;
+}
+
+ExtractCopyRightWatermarkTask DescribeTaskDetailResponse::GetExtractCopyRightWatermarkTask() const
+{
+    return m_extractCopyRightWatermarkTask;
+}
+
+bool DescribeTaskDetailResponse::ExtractCopyRightWatermarkTaskHasBeenSet() const
+{
+    return m_extractCopyRightWatermarkTaskHasBeenSet;
 }
 
 ReviewAudioVideoTask DescribeTaskDetailResponse::GetReviewAudioVideoTask() const

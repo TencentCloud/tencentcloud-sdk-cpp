@@ -39,7 +39,8 @@ NatGateway::NatGateway() :
     m_sourceIpTranslationNatRuleSetHasBeenSet(false),
     m_isExclusiveHasBeenSet(false),
     m_exclusiveGatewayBandwidthHasBeenSet(false),
-    m_restrictStateHasBeenSet(false)
+    m_restrictStateHasBeenSet(false),
+    m_natProductVersionHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,16 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
         m_restrictStateHasBeenSet = true;
     }
 
+    if (value.HasMember("NatProductVersion") && !value["NatProductVersion"].IsNull())
+    {
+        if (!value["NatProductVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatGateway.NatProductVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_natProductVersion = value["NatProductVersion"].GetUint64();
+        m_natProductVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +490,14 @@ void NatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RestrictState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_restrictState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_natProductVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NatProductVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_natProductVersion, allocator);
     }
 
 }
@@ -786,5 +805,21 @@ void NatGateway::SetRestrictState(const string& _restrictState)
 bool NatGateway::RestrictStateHasBeenSet() const
 {
     return m_restrictStateHasBeenSet;
+}
+
+uint64_t NatGateway::GetNatProductVersion() const
+{
+    return m_natProductVersion;
+}
+
+void NatGateway::SetNatProductVersion(const uint64_t& _natProductVersion)
+{
+    m_natProductVersion = _natProductVersion;
+    m_natProductVersionHasBeenSet = true;
+}
+
+bool NatGateway::NatProductVersionHasBeenSet() const
+{
+    return m_natProductVersionHasBeenSet;
 }
 

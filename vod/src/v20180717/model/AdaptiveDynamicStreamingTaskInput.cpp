@@ -24,6 +24,7 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_definitionHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
     m_traceWatermarkHasBeenSet(false),
+    m_copyRightWatermarkHasBeenSet(false),
     m_subtitleSetHasBeenSet(false)
 {
 }
@@ -80,6 +81,23 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_traceWatermarkHasBeenSet = true;
     }
 
+    if (value.HasMember("CopyRightWatermark") && !value["CopyRightWatermark"].IsNull())
+    {
+        if (!value["CopyRightWatermark"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.CopyRightWatermark` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_copyRightWatermark.Deserialize(value["CopyRightWatermark"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_copyRightWatermarkHasBeenSet = true;
+    }
+
     if (value.HasMember("SubtitleSet") && !value["SubtitleSet"].IsNull())
     {
         if (!value["SubtitleSet"].IsArray())
@@ -130,6 +148,15 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_traceWatermark.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_copyRightWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyRightWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_copyRightWatermark.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_subtitleSetHasBeenSet)
@@ -194,6 +221,22 @@ void AdaptiveDynamicStreamingTaskInput::SetTraceWatermark(const TraceWatermarkIn
 bool AdaptiveDynamicStreamingTaskInput::TraceWatermarkHasBeenSet() const
 {
     return m_traceWatermarkHasBeenSet;
+}
+
+CopyRightWatermarkInput AdaptiveDynamicStreamingTaskInput::GetCopyRightWatermark() const
+{
+    return m_copyRightWatermark;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetCopyRightWatermark(const CopyRightWatermarkInput& _copyRightWatermark)
+{
+    m_copyRightWatermark = _copyRightWatermark;
+    m_copyRightWatermarkHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::CopyRightWatermarkHasBeenSet() const
+{
+    return m_copyRightWatermarkHasBeenSet;
 }
 
 vector<string> AdaptiveDynamicStreamingTaskInput::GetSubtitleSet() const

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取资源ID，如果ResourceType为USERDEFINED，可以为空
+                     * @return ResourceId 资源ID，如果ResourceType为USERDEFINED，可以为空
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置资源ID，如果ResourceType为USERDEFINED，可以为空
+                     * @param _resourceId 资源ID，如果ResourceType为USERDEFINED，可以为空
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，目前包含SUBNET、NETWORKINTERFACE
+                     * 获取资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE
+                     * @return ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型，目前包含SUBNET、NETWORKINTERFACE
+                     * 设置资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE
+                     * @param _resourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -254,13 +254,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID
+                     * 资源ID，如果ResourceType为USERDEFINED，可以为空
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，目前包含SUBNET、NETWORKINTERFACE
+                     * 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;

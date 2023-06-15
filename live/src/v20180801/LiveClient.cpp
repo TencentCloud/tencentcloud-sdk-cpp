@@ -384,6 +384,92 @@ LiveClient::CreateLiveCallbackTemplateOutcomeCallable LiveClient::CreateLiveCall
     return task->get_future();
 }
 
+LiveClient::CreateLivePadRuleOutcome LiveClient::CreateLivePadRule(const CreateLivePadRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLivePadRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLivePadRuleResponse rsp = CreateLivePadRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLivePadRuleOutcome(rsp);
+        else
+            return CreateLivePadRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLivePadRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLivePadRuleAsync(const CreateLivePadRuleRequest& request, const CreateLivePadRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLivePadRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateLivePadRuleOutcomeCallable LiveClient::CreateLivePadRuleCallable(const CreateLivePadRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLivePadRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLivePadRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateLivePadTemplateOutcome LiveClient::CreateLivePadTemplate(const CreateLivePadTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLivePadTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLivePadTemplateResponse rsp = CreateLivePadTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLivePadTemplateOutcome(rsp);
+        else
+            return CreateLivePadTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLivePadTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLivePadTemplateAsync(const CreateLivePadTemplateRequest& request, const CreateLivePadTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLivePadTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateLivePadTemplateOutcomeCallable LiveClient::CreateLivePadTemplateCallable(const CreateLivePadTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLivePadTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLivePadTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::CreateLivePullStreamTaskOutcome LiveClient::CreateLivePullStreamTask(const CreateLivePullStreamTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLivePullStreamTask");
@@ -635,6 +721,49 @@ LiveClient::CreateLiveSnapshotTemplateOutcomeCallable LiveClient::CreateLiveSnap
         [this, request]()
         {
             return this->CreateLiveSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateLiveStreamMonitorOutcome LiveClient::CreateLiveStreamMonitor(const CreateLiveStreamMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveStreamMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveStreamMonitorResponse rsp = CreateLiveStreamMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveStreamMonitorOutcome(rsp);
+        else
+            return CreateLiveStreamMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveStreamMonitorOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveStreamMonitorAsync(const CreateLiveStreamMonitorRequest& request, const CreateLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLiveStreamMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateLiveStreamMonitorOutcomeCallable LiveClient::CreateLiveStreamMonitorCallable(const CreateLiveStreamMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLiveStreamMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLiveStreamMonitor(request);
         }
     );
 
@@ -1115,6 +1244,92 @@ LiveClient::DeleteLiveDomainOutcomeCallable LiveClient::DeleteLiveDomainCallable
     return task->get_future();
 }
 
+LiveClient::DeleteLivePadRuleOutcome LiveClient::DeleteLivePadRule(const DeleteLivePadRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLivePadRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLivePadRuleResponse rsp = DeleteLivePadRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLivePadRuleOutcome(rsp);
+        else
+            return DeleteLivePadRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLivePadRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLivePadRuleAsync(const DeleteLivePadRuleRequest& request, const DeleteLivePadRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLivePadRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteLivePadRuleOutcomeCallable LiveClient::DeleteLivePadRuleCallable(const DeleteLivePadRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLivePadRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLivePadRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteLivePadTemplateOutcome LiveClient::DeleteLivePadTemplate(const DeleteLivePadTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLivePadTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLivePadTemplateResponse rsp = DeleteLivePadTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLivePadTemplateOutcome(rsp);
+        else
+            return DeleteLivePadTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLivePadTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLivePadTemplateAsync(const DeleteLivePadTemplateRequest& request, const DeleteLivePadTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLivePadTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteLivePadTemplateOutcomeCallable LiveClient::DeleteLivePadTemplateCallable(const DeleteLivePadTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLivePadTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLivePadTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DeleteLivePullStreamTaskOutcome LiveClient::DeleteLivePullStreamTask(const DeleteLivePullStreamTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLivePullStreamTask");
@@ -1366,6 +1581,49 @@ LiveClient::DeleteLiveSnapshotTemplateOutcomeCallable LiveClient::DeleteLiveSnap
         [this, request]()
         {
             return this->DeleteLiveSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteLiveStreamMonitorOutcome LiveClient::DeleteLiveStreamMonitor(const DeleteLiveStreamMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveStreamMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveStreamMonitorResponse rsp = DeleteLiveStreamMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveStreamMonitorOutcome(rsp);
+        else
+            return DeleteLiveStreamMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveStreamMonitorOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLiveStreamMonitorAsync(const DeleteLiveStreamMonitorRequest& request, const DeleteLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLiveStreamMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveStreamMonitorOutcomeCallable LiveClient::DeleteLiveStreamMonitorCallable(const DeleteLiveStreamMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLiveStreamMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLiveStreamMonitor(request);
         }
     );
 
@@ -2706,6 +2964,135 @@ LiveClient::DescribeLivePackageInfoOutcomeCallable LiveClient::DescribeLivePacka
     return task->get_future();
 }
 
+LiveClient::DescribeLivePadRulesOutcome LiveClient::DescribeLivePadRules(const DescribeLivePadRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLivePadRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLivePadRulesResponse rsp = DescribeLivePadRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLivePadRulesOutcome(rsp);
+        else
+            return DescribeLivePadRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLivePadRulesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLivePadRulesAsync(const DescribeLivePadRulesRequest& request, const DescribeLivePadRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLivePadRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePadRulesOutcomeCallable LiveClient::DescribeLivePadRulesCallable(const DescribeLivePadRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLivePadRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLivePadRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLivePadTemplateOutcome LiveClient::DescribeLivePadTemplate(const DescribeLivePadTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLivePadTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLivePadTemplateResponse rsp = DescribeLivePadTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLivePadTemplateOutcome(rsp);
+        else
+            return DescribeLivePadTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLivePadTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLivePadTemplateAsync(const DescribeLivePadTemplateRequest& request, const DescribeLivePadTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLivePadTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePadTemplateOutcomeCallable LiveClient::DescribeLivePadTemplateCallable(const DescribeLivePadTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLivePadTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLivePadTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLivePadTemplatesOutcome LiveClient::DescribeLivePadTemplates(const DescribeLivePadTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLivePadTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLivePadTemplatesResponse rsp = DescribeLivePadTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLivePadTemplatesOutcome(rsp);
+        else
+            return DescribeLivePadTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLivePadTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLivePadTemplatesAsync(const DescribeLivePadTemplatesRequest& request, const DescribeLivePadTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLivePadTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePadTemplatesOutcomeCallable LiveClient::DescribeLivePadTemplatesCallable(const DescribeLivePadTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLivePadTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLivePadTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLivePlayAuthKeyOutcome LiveClient::DescribeLivePlayAuthKey(const DescribeLivePlayAuthKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLivePlayAuthKey");
@@ -3129,6 +3516,92 @@ LiveClient::DescribeLiveStreamEventListOutcomeCallable LiveClient::DescribeLiveS
         [this, request]()
         {
             return this->DescribeLiveStreamEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamMonitorOutcome LiveClient::DescribeLiveStreamMonitor(const DescribeLiveStreamMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveStreamMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveStreamMonitorResponse rsp = DescribeLiveStreamMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveStreamMonitorOutcome(rsp);
+        else
+            return DescribeLiveStreamMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveStreamMonitorOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveStreamMonitorAsync(const DescribeLiveStreamMonitorRequest& request, const DescribeLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveStreamMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamMonitorOutcomeCallable LiveClient::DescribeLiveStreamMonitorCallable(const DescribeLiveStreamMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveStreamMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveStreamMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLiveStreamMonitorListOutcome LiveClient::DescribeLiveStreamMonitorList(const DescribeLiveStreamMonitorListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveStreamMonitorList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveStreamMonitorListResponse rsp = DescribeLiveStreamMonitorListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveStreamMonitorListOutcome(rsp);
+        else
+            return DescribeLiveStreamMonitorListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveStreamMonitorListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveStreamMonitorListAsync(const DescribeLiveStreamMonitorListRequest& request, const DescribeLiveStreamMonitorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveStreamMonitorList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamMonitorListOutcomeCallable LiveClient::DescribeLiveStreamMonitorListCallable(const DescribeLiveStreamMonitorListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveStreamMonitorListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveStreamMonitorList(request);
         }
     );
 
@@ -3860,6 +4333,49 @@ LiveClient::DescribeLogDownloadListOutcomeCallable LiveClient::DescribeLogDownlo
         [this, request]()
         {
             return this->DescribeLogDownloadList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeMonitorReportOutcome LiveClient::DescribeMonitorReport(const DescribeMonitorReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMonitorReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMonitorReportResponse rsp = DescribeMonitorReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMonitorReportOutcome(rsp);
+        else
+            return DescribeMonitorReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMonitorReportOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeMonitorReportAsync(const DescribeMonitorReportRequest& request, const DescribeMonitorReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMonitorReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeMonitorReportOutcomeCallable LiveClient::DescribeMonitorReportCallable(const DescribeMonitorReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMonitorReportOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMonitorReport(request);
         }
     );
 
@@ -4942,6 +5458,49 @@ LiveClient::ModifyLiveDomainRefererOutcomeCallable LiveClient::ModifyLiveDomainR
     return task->get_future();
 }
 
+LiveClient::ModifyLivePadTemplateOutcome LiveClient::ModifyLivePadTemplate(const ModifyLivePadTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLivePadTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLivePadTemplateResponse rsp = ModifyLivePadTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLivePadTemplateOutcome(rsp);
+        else
+            return ModifyLivePadTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLivePadTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLivePadTemplateAsync(const ModifyLivePadTemplateRequest& request, const ModifyLivePadTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLivePadTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyLivePadTemplateOutcomeCallable LiveClient::ModifyLivePadTemplateCallable(const ModifyLivePadTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLivePadTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLivePadTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::ModifyLivePlayAuthKeyOutcome LiveClient::ModifyLivePlayAuthKey(const ModifyLivePlayAuthKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLivePlayAuthKey");
@@ -5193,6 +5752,49 @@ LiveClient::ModifyLiveSnapshotTemplateOutcomeCallable LiveClient::ModifyLiveSnap
         [this, request]()
         {
             return this->ModifyLiveSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyLiveStreamMonitorOutcome LiveClient::ModifyLiveStreamMonitor(const ModifyLiveStreamMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveStreamMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveStreamMonitorResponse rsp = ModifyLiveStreamMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveStreamMonitorOutcome(rsp);
+        else
+            return ModifyLiveStreamMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveStreamMonitorOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLiveStreamMonitorAsync(const ModifyLiveStreamMonitorRequest& request, const ModifyLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLiveStreamMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveStreamMonitorOutcomeCallable LiveClient::ModifyLiveStreamMonitorCallable(const ModifyLiveStreamMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLiveStreamMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLiveStreamMonitor(request);
         }
     );
 
@@ -5501,6 +6103,49 @@ LiveClient::ResumeLiveStreamOutcomeCallable LiveClient::ResumeLiveStreamCallable
     return task->get_future();
 }
 
+LiveClient::StartLiveStreamMonitorOutcome LiveClient::StartLiveStreamMonitor(const StartLiveStreamMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartLiveStreamMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartLiveStreamMonitorResponse rsp = StartLiveStreamMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartLiveStreamMonitorOutcome(rsp);
+        else
+            return StartLiveStreamMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return StartLiveStreamMonitorOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StartLiveStreamMonitorAsync(const StartLiveStreamMonitorRequest& request, const StartLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartLiveStreamMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::StartLiveStreamMonitorOutcomeCallable LiveClient::StartLiveStreamMonitorCallable(const StartLiveStreamMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartLiveStreamMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->StartLiveStreamMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::StopLiveRecordOutcome LiveClient::StopLiveRecord(const StopLiveRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "StopLiveRecord");
@@ -5537,6 +6182,49 @@ LiveClient::StopLiveRecordOutcomeCallable LiveClient::StopLiveRecordCallable(con
         [this, request]()
         {
             return this->StopLiveRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::StopLiveStreamMonitorOutcome LiveClient::StopLiveStreamMonitor(const StopLiveStreamMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopLiveStreamMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopLiveStreamMonitorResponse rsp = StopLiveStreamMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopLiveStreamMonitorOutcome(rsp);
+        else
+            return StopLiveStreamMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return StopLiveStreamMonitorOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopLiveStreamMonitorAsync(const StopLiveStreamMonitorRequest& request, const StopLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopLiveStreamMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::StopLiveStreamMonitorOutcomeCallable LiveClient::StopLiveStreamMonitorCallable(const StopLiveStreamMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopLiveStreamMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->StopLiveStreamMonitor(request);
         }
     );
 

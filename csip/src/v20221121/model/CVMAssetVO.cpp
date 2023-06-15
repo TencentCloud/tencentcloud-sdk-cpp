@@ -69,7 +69,8 @@ CVMAssetVO::CVMAssetVO() :
     m_tagHasBeenSet(false),
     m_memberIdHasBeenSet(false),
     m_osHasBeenSet(false),
-    m_riskExposureHasBeenSet(false)
+    m_riskExposureHasBeenSet(false),
+    m_bASAgentStatusHasBeenSet(false)
 {
 }
 
@@ -578,6 +579,16 @@ CoreInternalOutcome CVMAssetVO::Deserialize(const rapidjson::Value &value)
         m_riskExposureHasBeenSet = true;
     }
 
+    if (value.HasMember("BASAgentStatus") && !value["BASAgentStatus"].IsNull())
+    {
+        if (!value["BASAgentStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.BASAgentStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bASAgentStatus = value["BASAgentStatus"].GetInt64();
+        m_bASAgentStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -982,6 +993,14 @@ void CVMAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RiskExposure";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskExposure, allocator);
+    }
+
+    if (m_bASAgentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BASAgentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bASAgentStatus, allocator);
     }
 
 }
@@ -1769,5 +1788,21 @@ void CVMAssetVO::SetRiskExposure(const int64_t& _riskExposure)
 bool CVMAssetVO::RiskExposureHasBeenSet() const
 {
     return m_riskExposureHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetBASAgentStatus() const
+{
+    return m_bASAgentStatus;
+}
+
+void CVMAssetVO::SetBASAgentStatus(const int64_t& _bASAgentStatus)
+{
+    m_bASAgentStatus = _bASAgentStatus;
+    m_bASAgentStatusHasBeenSet = true;
+}
+
+bool CVMAssetVO::BASAgentStatusHasBeenSet() const
+{
+    return m_bASAgentStatusHasBeenSet;
 }
 

@@ -485,6 +485,31 @@ namespace TencentCloud
                      */
                     bool RestrictStateHasBeenSet() const;
 
+                    /**
+                     * 获取NAT网关大版本号，传统型=1，标准型=2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NatProductVersion NAT网关大版本号，传统型=1，标准型=2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetNatProductVersion() const;
+
+                    /**
+                     * 设置NAT网关大版本号，传统型=1，标准型=2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _natProductVersion NAT网关大版本号，传统型=1，标准型=2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNatProductVersion(const uint64_t& _natProductVersion);
+
+                    /**
+                     * 判断参数 NatProductVersion 是否已赋值
+                     * @return NatProductVersion 是否已赋值
+                     * 
+                     */
+                    bool NatProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -609,6 +634,13 @@ namespace TencentCloud
                      */
                     std::string m_restrictState;
                     bool m_restrictStateHasBeenSet;
+
+                    /**
+                     * NAT网关大版本号，传统型=1，标准型=2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_natProductVersion;
+                    bool m_natProductVersionHasBeenSet;
 
                 };
             }

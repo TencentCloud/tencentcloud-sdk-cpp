@@ -24,7 +24,8 @@ CFSOptionOverview::CFSOptionOverview() :
     m_localPathHasBeenSet(false),
     m_remotePathHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_mountOptionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CFSOptionOverview::Deserialize(const rapidjson::Value &value
         m_storageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MountOption") && !value["MountOption"].IsNull())
+    {
+        if (!value["MountOption"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSOptionOverview.MountOption` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountOption = string(value["MountOption"].GetString());
+        m_mountOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CFSOptionOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountOption.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CFSOptionOverview::SetStorageType(const string& _storageType)
 bool CFSOptionOverview::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+string CFSOptionOverview::GetMountOption() const
+{
+    return m_mountOption;
+}
+
+void CFSOptionOverview::SetMountOption(const string& _mountOption)
+{
+    m_mountOption = _mountOption;
+    m_mountOptionHasBeenSet = true;
+}
+
+bool CFSOptionOverview::MountOptionHasBeenSet() const
+{
+    return m_mountOptionHasBeenSet;
 }
 

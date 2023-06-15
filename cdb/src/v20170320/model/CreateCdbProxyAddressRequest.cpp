@@ -39,7 +39,8 @@ CreateCdbProxyAddressRequest::CreateCdbProxyAddressRequest() :
     m_descHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vPortHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
+    m_securityGroupHasBeenSet(false),
+    m_connectionPoolTypeHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string CreateCdbProxyAddressRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_connectionPoolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionPoolType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectionPoolType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -476,6 +485,22 @@ void CreateCdbProxyAddressRequest::SetSecurityGroup(const vector<string>& _secur
 bool CreateCdbProxyAddressRequest::SecurityGroupHasBeenSet() const
 {
     return m_securityGroupHasBeenSet;
+}
+
+string CreateCdbProxyAddressRequest::GetConnectionPoolType() const
+{
+    return m_connectionPoolType;
+}
+
+void CreateCdbProxyAddressRequest::SetConnectionPoolType(const string& _connectionPoolType)
+{
+    m_connectionPoolType = _connectionPoolType;
+    m_connectionPoolTypeHasBeenSet = true;
+}
+
+bool CreateCdbProxyAddressRequest::ConnectionPoolTypeHasBeenSet() const
+{
+    return m_connectionPoolTypeHasBeenSet;
 }
 
 

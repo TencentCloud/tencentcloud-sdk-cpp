@@ -476,14 +476,18 @@ ComponentType为SIGN_DATE时，支持以下参数：
 
                     /**
                      * 获取是否是表单域类型，默认不false-不是
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFormType 是否是表单域类型，默认不false-不是
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsFormType() const;
 
                     /**
                      * 设置是否是表单域类型，默认不false-不是
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFormType 是否是表单域类型，默认不false-不是
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFormType(const bool& _isFormType);
@@ -889,14 +893,18 @@ KEYWORD 关键字，使用ComponentId指定关键字
 
                     /**
                      * 获取指定关键字时横坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffsetX 指定关键字时横坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOffsetX() const;
 
                     /**
                      * 设置指定关键字时横坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offsetX 指定关键字时横坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffsetX(const double& _offsetX);
@@ -910,14 +918,18 @@ KEYWORD 关键字，使用ComponentId指定关键字
 
                     /**
                      * 获取指定关键字时纵坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffsetY 指定关键字时纵坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOffsetY() const;
 
                     /**
                      * 设置指定关键字时纵坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offsetY 指定关键字时纵坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffsetY(const double& _offsetY);
@@ -1158,6 +1170,7 @@ ComponentType为SIGN_DATE时，支持以下参数：
 
                     /**
                      * 是否是表单域类型，默认不false-不是
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isFormType;
                     bool m_isFormTypeHasBeenSet;
@@ -1265,12 +1278,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
 
                     /**
                      * 指定关键字时横坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_offsetX;
                     bool m_offsetXHasBeenSet;
 
                     /**
                      * 指定关键字时纵坐标偏移量，单位pt
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;

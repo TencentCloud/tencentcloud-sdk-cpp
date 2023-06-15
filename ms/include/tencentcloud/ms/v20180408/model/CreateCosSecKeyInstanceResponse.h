@@ -130,14 +130,14 @@ namespace TencentCloud
                     /**
                      * 获取密钥TOCKEN信息
                      * @return CosTocken 密钥TOCKEN信息
-                     * 
+                     * @deprecated
                      */
                     std::string GetCosTocken() const;
 
                     /**
                      * 判断参数 CosTocken 是否已赋值
                      * @return CosTocken 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CosTockenHasBeenSet() const;
 
@@ -154,6 +154,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CosPrefixHasBeenSet() const;
+
+                    /**
+                     * 获取密钥TOCKEN信息
+                     * @return CosToken 密钥TOCKEN信息
+                     * 
+                     */
+                    std::string GetCosToken() const;
+
+                    /**
+                     * 判断参数 CosToken 是否已赋值
+                     * @return CosToken 是否已赋值
+                     * 
+                     */
+                    bool CosTokenHasBeenSet() const;
 
                 private:
 
@@ -204,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_cosPrefix;
                     bool m_cosPrefixHasBeenSet;
+
+                    /**
+                     * 密钥TOCKEN信息
+                     */
+                    std::string m_cosToken;
+                    bool m_cosTokenHasBeenSet;
 
                 };
             }

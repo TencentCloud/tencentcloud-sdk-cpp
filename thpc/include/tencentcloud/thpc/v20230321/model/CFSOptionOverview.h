@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统挂载命令参数选项。
+                     * @return MountOption 文件系统挂载命令参数选项。
+                     * 
+                     */
+                    std::string GetMountOption() const;
+
+                    /**
+                     * 设置文件系统挂载命令参数选项。
+                     * @param _mountOption 文件系统挂载命令参数选项。
+                     * 
+                     */
+                    void SetMountOption(const std::string& _mountOption);
+
+                    /**
+                     * 判断参数 MountOption 是否已赋值
+                     * @return MountOption 是否已赋值
+                     * 
+                     */
+                    bool MountOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +191,12 @@ namespace TencentCloud
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * 文件系统挂载命令参数选项。
+                     */
+                    std::string m_mountOption;
+                    bool m_mountOptionHasBeenSet;
 
                 };
             }

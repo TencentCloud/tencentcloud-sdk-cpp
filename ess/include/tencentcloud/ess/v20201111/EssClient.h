@@ -473,7 +473,7 @@ namespace TencentCloud
                 CreateIntegrationDepartmentOutcomeCallable CreateIntegrationDepartmentCallable(const Model::CreateIntegrationDepartmentRequest& request);
 
                 /**
-                 *创建员工,如需在此接口提醒员工实名，入参Employees的OpenId不传
+                 *创建员工,此接口会发送提醒员工实名的短信
                  * @param req CreateIntegrationEmployeesRequest
                  * @return CreateIntegrationEmployeesOutcome
                  */
@@ -801,7 +801,7 @@ callbackinfo包含： 回调地址和签名key
                 UnbindEmployeeUserIdWithClientOpenIdOutcomeCallable UnbindEmployeeUserIdWithClientOpenIdCallable(const Model::UnbindEmployeeUserIdWithClientOpenIdRequest& request);
 
                 /**
-                 *更新员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号
+                 *更新员工信息(姓名，手机号，邮件、部门)，用户实名后无法更改姓名与手机号
                  * @param req UpdateIntegrationEmployeesRequest
                  * @return UpdateIntegrationEmployeesOutcome
                  */

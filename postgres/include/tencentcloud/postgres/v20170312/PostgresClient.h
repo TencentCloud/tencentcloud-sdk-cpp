@@ -768,7 +768,7 @@ namespace TencentCloud
                 DescribeDBInstanceAttributeOutcomeCallable DescribeDBInstanceAttributeCallable(const Model::DescribeDBInstanceAttributeRequest& request);
 
                 /**
-                 *获取实例可修改参数列表
+                 *本接口（DescribeDBInstanceAttribute）用于查询实例的参数信息。
                  * @param req DescribeDBInstanceParametersRequest
                  * @return DescribeDBInstanceParametersOutcome
                  */

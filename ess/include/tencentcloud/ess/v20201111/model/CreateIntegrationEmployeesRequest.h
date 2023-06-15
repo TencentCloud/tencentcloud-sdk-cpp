@@ -67,15 +67,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取待创建员工的信息，Mobile和DisplayName必填,OpenId和Email选填，其他字段暂不支持
-                     * @return Employees 待创建员工的信息，Mobile和DisplayName必填,OpenId和Email选填，其他字段暂不支持
+                     * 获取待创建员工的信息，不超过20个。
+Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+                     * @return Employees 待创建员工的信息，不超过20个。
+Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
                      * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
-                     * 设置待创建员工的信息，Mobile和DisplayName必填,OpenId和Email选填，其他字段暂不支持
-                     * @param _employees 待创建员工的信息，Mobile和DisplayName必填,OpenId和Email选填，其他字段暂不支持
+                     * 设置待创建员工的信息，不超过20个。
+Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+                     * @param _employees 待创建员工的信息，不超过20个。
+Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
                      * 
                      */
                     void SetEmployees(const std::vector<Staff>& _employees);
@@ -117,7 +121,8 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 待创建员工的信息，Mobile和DisplayName必填,OpenId和Email选填，其他字段暂不支持
+                     * 待创建员工的信息，不超过20个。
+Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;

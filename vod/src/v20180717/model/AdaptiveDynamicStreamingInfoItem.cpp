@@ -27,7 +27,8 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
     m_urlHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_digitalWatermarkTypeHasBeenSet(false),
-    m_subStreamSetHasBeenSet(false)
+    m_subStreamSetHasBeenSet(false),
+    m_copyRightWatermarkTextHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
         m_subStreamSetHasBeenSet = true;
     }
 
+    if (value.HasMember("CopyRightWatermarkText") && !value["CopyRightWatermarkText"].IsNull())
+    {
+        if (!value["CopyRightWatermarkText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.CopyRightWatermarkText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_copyRightWatermarkText = string(value["CopyRightWatermarkText"].GetString());
+        m_copyRightWatermarkTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rap
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_copyRightWatermarkTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyRightWatermarkText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_copyRightWatermarkText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void AdaptiveDynamicStreamingInfoItem::SetSubStreamSet(const vector<MediaSubStre
 bool AdaptiveDynamicStreamingInfoItem::SubStreamSetHasBeenSet() const
 {
     return m_subStreamSetHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingInfoItem::GetCopyRightWatermarkText() const
+{
+    return m_copyRightWatermarkText;
+}
+
+void AdaptiveDynamicStreamingInfoItem::SetCopyRightWatermarkText(const string& _copyRightWatermarkText)
+{
+    m_copyRightWatermarkText = _copyRightWatermarkText;
+    m_copyRightWatermarkTextHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingInfoItem::CopyRightWatermarkTextHasBeenSet() const
+{
+    return m_copyRightWatermarkTextHasBeenSet;
 }
 

@@ -142,6 +142,43 @@ namespace TencentCloud
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统挂载挂载命令参数选项。
+
+- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
+- NFS 4.0默认值：vers=4.0,noresvport
+- TURBO默认值：user_xattr
+                     * @return MountOption 文件系统挂载挂载命令参数选项。
+
+- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
+- NFS 4.0默认值：vers=4.0,noresvport
+- TURBO默认值：user_xattr
+                     * 
+                     */
+                    std::string GetMountOption() const;
+
+                    /**
+                     * 设置文件系统挂载挂载命令参数选项。
+
+- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
+- NFS 4.0默认值：vers=4.0,noresvport
+- TURBO默认值：user_xattr
+                     * @param _mountOption 文件系统挂载挂载命令参数选项。
+
+- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
+- NFS 4.0默认值：vers=4.0,noresvport
+- TURBO默认值：user_xattr
+                     * 
+                     */
+                    void SetMountOption(const std::string& _mountOption);
+
+                    /**
+                     * 判断参数 MountOption 是否已赋值
+                     * @return MountOption 是否已赋值
+                     * 
+                     */
+                    bool MountOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +207,16 @@ namespace TencentCloud
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * 文件系统挂载挂载命令参数选项。
+
+- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport
+- NFS 4.0默认值：vers=4.0,noresvport
+- TURBO默认值：user_xattr
+                     */
+                    std::string m_mountOption;
+                    bool m_mountOptionHasBeenSet;
 
                 };
             }

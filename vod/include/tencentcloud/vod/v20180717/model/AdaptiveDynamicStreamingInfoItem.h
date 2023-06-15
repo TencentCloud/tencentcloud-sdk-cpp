@@ -175,9 +175,11 @@ namespace TencentCloud
                     /**
                      * 获取数字水印类型。可选值：
 <li>Trace 表示经过溯源水印处理；</li>
+<li>CopyRight 表示经过版权水印处理；</li>
 <li>None 表示没有经过数字水印处理。</li>
                      * @return DigitalWatermarkType 数字水印类型。可选值：
 <li>Trace 表示经过溯源水印处理；</li>
+<li>CopyRight 表示经过版权水印处理；</li>
 <li>None 表示没有经过数字水印处理。</li>
                      * 
                      */
@@ -186,9 +188,11 @@ namespace TencentCloud
                     /**
                      * 设置数字水印类型。可选值：
 <li>Trace 表示经过溯源水印处理；</li>
+<li>CopyRight 表示经过版权水印处理；</li>
 <li>None 表示没有经过数字水印处理。</li>
                      * @param _digitalWatermarkType 数字水印类型。可选值：
 <li>Trace 表示经过溯源水印处理；</li>
+<li>CopyRight 表示经过版权水印处理；</li>
 <li>None 表示没有经过数字水印处理。</li>
                      * 
                      */
@@ -221,6 +225,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SubStreamSetHasBeenSet() const;
+
+                    /**
+                     * 获取版权信息。
+                     * @return CopyRightWatermarkText 版权信息。
+                     * 
+                     */
+                    std::string GetCopyRightWatermarkText() const;
+
+                    /**
+                     * 设置版权信息。
+                     * @param _copyRightWatermarkText 版权信息。
+                     * 
+                     */
+                    void SetCopyRightWatermarkText(const std::string& _copyRightWatermarkText);
+
+                    /**
+                     * 判断参数 CopyRightWatermarkText 是否已赋值
+                     * @return CopyRightWatermarkText 是否已赋值
+                     * 
+                     */
+                    bool CopyRightWatermarkTextHasBeenSet() const;
 
                 private:
 
@@ -262,6 +287,7 @@ namespace TencentCloud
                     /**
                      * 数字水印类型。可选值：
 <li>Trace 表示经过溯源水印处理；</li>
+<li>CopyRight 表示经过版权水印处理；</li>
 <li>None 表示没有经过数字水印处理。</li>
                      */
                     std::string m_digitalWatermarkType;
@@ -272,6 +298,12 @@ namespace TencentCloud
                      */
                     std::vector<MediaSubStreamInfoItem> m_subStreamSet;
                     bool m_subStreamSetHasBeenSet;
+
+                    /**
+                     * 版权信息。
+                     */
+                    std::string m_copyRightWatermarkText;
+                    bool m_copyRightWatermarkTextHasBeenSet;
 
                 };
             }

@@ -702,15 +702,27 @@ serverCollationName：排序规则名称，可选参数，在初始化后不可�
                     bool DBEngineConfigHasBeenSet() const;
 
                     /**
-                     * 获取主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async
-                     * @return SyncMode 主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async
+                     * 获取主从同步方式，可取值： 
+1、Semi-sync：半同步
+2、Async：异步 
+当前只支持Semi-sync
+                     * @return SyncMode 主从同步方式，可取值： 
+1、Semi-sync：半同步
+2、Async：异步 
+当前只支持Semi-sync
                      * 
                      */
                     std::string GetSyncMode() const;
 
                     /**
-                     * 设置主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async
-                     * @param _syncMode 主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async
+                     * 设置主从同步方式，可取值： 
+1、Semi-sync：半同步
+2、Async：异步 
+当前只支持Semi-sync
+                     * @param _syncMode 主从同步方式，可取值： 
+1、Semi-sync：半同步
+2、Async：异步 
+当前只支持Semi-sync
                      * 
                      */
                     void SetSyncMode(const std::string& _syncMode);
@@ -911,7 +923,10 @@ serverCollationName：排序规则名称，可选参数，在初始化后不可�
                     bool m_dBEngineConfigHasBeenSet;
 
                     /**
-                     * 主从同步方式，取值： 1)Semi-sync：半同步 2)Async：异步 默认为Async
+                     * 主从同步方式，可取值： 
+1、Semi-sync：半同步
+2、Async：异步 
+当前只支持Semi-sync
                      */
                     std::string m_syncMode;
                     bool m_syncModeHasBeenSet;

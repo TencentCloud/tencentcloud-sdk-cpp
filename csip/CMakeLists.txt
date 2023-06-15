@@ -19,31 +19,46 @@ set(csip_public_header
   )
 
 set(csip_public_header_model
+  include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeScanReportListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewVULRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDomainAndIpRequest.h
-  include/tencentcloud/csip/v20221121/model/ScanTaskInfo.h
+  include/tencentcloud/csip/v20221121/model/DomainAssetVO.h
+  include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/FilterDataObject.h
   include/tencentcloud/csip/v20221121/model/CVMAssetVO.h
   include/tencentcloud/csip/v20221121/model/DescribeScanReportListResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/AddNewBindRoleUserRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h
-  include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribePublicIpAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/Vpc.h
+  include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewVULRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DBAssetVO.h
+  include/tencentcloud/csip/v20221121/model/ScanTaskInfo.h
   include/tencentcloud/csip/v20221121/model/SubnetAsset.h
   include/tencentcloud/csip/v20221121/model/Tag.h
+  include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetInfoRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/Filter.h
   include/tencentcloud/csip/v20221121/model/DbAssetInfo.h
-  include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/IpAssetListVO.h
+  include/tencentcloud/csip/v20221121/model/AssetViewVULRisk.h
+  include/tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/AssetBaseInfoResponse.h
-  include/tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h
+  include/tencentcloud/csip/v20221121/model/AssetViewPortRisk.h
+  include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/AssetClusterPod.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h
@@ -52,31 +67,46 @@ set(csip_public_header_model
 
 set(csip_src
   src/v20221121/CsipClient.cpp
+  src/v20221121/model/DescribeDomainAssetsResponse.cpp
   src/v20221121/model/DescribeDbAssetInfoResponse.cpp
   src/v20221121/model/DescribeDbAssetsRequest.cpp
   src/v20221121/model/DescribeScanReportListRequest.cpp
+  src/v20221121/model/DescribeRiskCenterAssetViewVULRiskListRequest.cpp
   src/v20221121/model/CreateDomainAndIpRequest.cpp
-  src/v20221121/model/ScanTaskInfo.cpp
+  src/v20221121/model/DomainAssetVO.cpp
+  src/v20221121/model/DescribeVpcAssetsResponse.cpp
   src/v20221121/model/FilterDataObject.cpp
   src/v20221121/model/CVMAssetVO.cpp
   src/v20221121/model/DescribeScanReportListResponse.cpp
+  src/v20221121/model/DescribeClusterPodAssetsRequest.cpp
+  src/v20221121/model/DescribeSubnetAssetsRequest.cpp
   src/v20221121/model/AddNewBindRoleUserRequest.cpp
   src/v20221121/model/DescribeCVMAssetInfoResponse.cpp
-  src/v20221121/model/DescribeVpcAssetsResponse.cpp
+  src/v20221121/model/DescribePublicIpAssetsResponse.cpp
   src/v20221121/model/Vpc.cpp
+  src/v20221121/model/DescribeRiskCenterAssetViewVULRiskListResponse.cpp
   src/v20221121/model/DescribeCVMAssetsRequest.cpp
   src/v20221121/model/DBAssetVO.cpp
+  src/v20221121/model/ScanTaskInfo.cpp
   src/v20221121/model/SubnetAsset.cpp
   src/v20221121/model/Tag.cpp
+  src/v20221121/model/DescribeRiskCenterAssetViewPortRiskListResponse.cpp
   src/v20221121/model/DescribeSubnetAssetsResponse.cpp
   src/v20221121/model/DescribeDbAssetInfoRequest.cpp
+  src/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.cpp
+  src/v20221121/model/DescribeCVMAssetsResponse.cpp
   src/v20221121/model/DescribeVpcAssetsRequest.cpp
   src/v20221121/model/Filter.cpp
   src/v20221121/model/DbAssetInfo.cpp
-  src/v20221121/model/DescribeSubnetAssetsRequest.cpp
+  src/v20221121/model/IpAssetListVO.cpp
+  src/v20221121/model/AssetViewVULRisk.cpp
+  src/v20221121/model/DescribeClusterPodAssetsResponse.cpp
   src/v20221121/model/AssetBaseInfoResponse.cpp
-  src/v20221121/model/DescribeCVMAssetsResponse.cpp
+  src/v20221121/model/AssetViewPortRisk.cpp
+  src/v20221121/model/DescribeDomainAssetsRequest.cpp
   src/v20221121/model/CreateDomainAndIpResponse.cpp
+  src/v20221121/model/DescribePublicIpAssetsRequest.cpp
+  src/v20221121/model/AssetClusterPod.cpp
   src/v20221121/model/DescribeDbAssetsResponse.cpp
   src/v20221121/model/AddNewBindRoleUserResponse.cpp
   src/v20221121/model/DescribeCVMAssetInfoRequest.cpp

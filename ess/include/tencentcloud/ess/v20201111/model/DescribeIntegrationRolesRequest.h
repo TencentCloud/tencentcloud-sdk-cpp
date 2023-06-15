@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取操作人信息，UserId必填
+                     * @return Operator 操作人信息，UserId必填
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param _operator 操作人信息
+                     * 设置操作人信息，UserId必填
+                     * @param _operator 操作人信息，UserId必填
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -165,7 +165,7 @@ Key:"IsGroupRole"，Values:["0"],查询非集团角色，Values:["1"]表示查�
                 private:
 
                     /**
-                     * 操作人信息
+                     * 操作人信息，UserId必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

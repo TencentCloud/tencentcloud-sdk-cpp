@@ -32,7 +32,8 @@ MediaTranscodeItem::MediaTranscodeItem() :
     m_containerHasBeenSet(false),
     m_videoStreamSetHasBeenSet(false),
     m_audioStreamSetHasBeenSet(false),
-    m_digitalWatermarkTypeHasBeenSet(false)
+    m_digitalWatermarkTypeHasBeenSet(false),
+    m_copyRightWatermarkTextHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_digitalWatermarkTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CopyRightWatermarkText") && !value["CopyRightWatermarkText"].IsNull())
+    {
+        if (!value["CopyRightWatermarkText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.CopyRightWatermarkText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_copyRightWatermarkText = string(value["CopyRightWatermarkText"].GetString());
+        m_copyRightWatermarkTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,14 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "DigitalWatermarkType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_digitalWatermarkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_copyRightWatermarkTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyRightWatermarkText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_copyRightWatermarkText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -491,5 +510,21 @@ void MediaTranscodeItem::SetDigitalWatermarkType(const string& _digitalWatermark
 bool MediaTranscodeItem::DigitalWatermarkTypeHasBeenSet() const
 {
     return m_digitalWatermarkTypeHasBeenSet;
+}
+
+string MediaTranscodeItem::GetCopyRightWatermarkText() const
+{
+    return m_copyRightWatermarkText;
+}
+
+void MediaTranscodeItem::SetCopyRightWatermarkText(const string& _copyRightWatermarkText)
+{
+    m_copyRightWatermarkText = _copyRightWatermarkText;
+    m_copyRightWatermarkTextHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::CopyRightWatermarkTextHasBeenSet() const
+{
+    return m_copyRightWatermarkTextHasBeenSet;
 }
 

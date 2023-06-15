@@ -404,6 +404,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupHasBeenSet() const;
 
+                    /**
+                     * 获取连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。
+                     * @return ConnectionPoolType 连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。
+                     * 
+                     */
+                    std::string GetConnectionPoolType() const;
+
+                    /**
+                     * 设置连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。
+                     * @param _connectionPoolType 连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。
+                     * 
+                     */
+                    void SetConnectionPoolType(const std::string& _connectionPoolType);
+
+                    /**
+                     * 判断参数 ConnectionPoolType 是否已赋值
+                     * @return ConnectionPoolType 是否已赋值
+                     * 
+                     */
+                    bool ConnectionPoolTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +529,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroup;
                     bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。
+                     */
+                    std::string m_connectionPoolType;
+                    bool m_connectionPoolTypeHasBeenSet;
 
                 };
             }

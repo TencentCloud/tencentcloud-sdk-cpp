@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间开始时间，unix时间戳。直播开始后不允许修改。
-                     * @return StartTime 预定的房间开始时间，unix时间戳。直播开始后不允许修改。
+                     * 获取预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。
+                     * @return StartTime 预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置预定的房间开始时间，unix时间戳。直播开始后不允许修改。
-                     * @param _startTime 预定的房间开始时间，unix时间戳。直播开始后不允许修改。
+                     * 设置预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。
+                     * @param _startTime 预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间结束时间，unix时间戳。直播开始后不允许修改。
-                     * @return EndTime 预定的房间结束时间，unix时间戳。直播开始后不允许修改。
+                     * 获取预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。
+                     * @return EndTime 预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置预定的房间结束时间，unix时间戳。直播开始后不允许修改。
-                     * @param _endTime 预定的房间结束时间，unix时间戳。直播开始后不允许修改。
+                     * 设置预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。
+                     * @param _endTime 预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -444,13 +444,13 @@ coteaching 双师
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 预定的房间开始时间，unix时间戳。直播开始后不允许修改。
+                     * 预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 预定的房间结束时间，unix时间戳。直播开始后不允许修改。
+                     * 预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
