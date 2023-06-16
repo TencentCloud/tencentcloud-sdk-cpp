@@ -278,6 +278,27 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
+                     * 获取合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * @return RemindedOn 合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * 
+                     */
+                    int64_t GetRemindedOn() const;
+
+                    /**
+                     * 设置合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * @param _remindedOn 合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * 
+                     */
+                    void SetRemindedOn(const int64_t& _remindedOn);
+
+                    /**
+                     * 判断参数 RemindedOn 是否已赋值
+                     * @return RemindedOn 是否已赋值
+                     * 
+                     */
+                    bool RemindedOnHasBeenSet() const;
+
+                    /**
                      * 获取发送类型：
 true：无序签
 false：有序签
@@ -589,6 +610,12 @@ MobileCheck：手机号验证
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     */
+                    int64_t m_remindedOn;
+                    bool m_remindedOnHasBeenSet;
 
                     /**
                      * 发送类型：

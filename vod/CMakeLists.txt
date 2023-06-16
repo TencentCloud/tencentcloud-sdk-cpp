@@ -343,6 +343,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TEHDConfig.h
   include/tencentcloud/vod/v20180717/model/ImageReviewUsageDataItem.h
   include/tencentcloud/vod/v20180717/model/AnimatedGraphicsTemplate.h
+  include/tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeEnhanceMediaTemplatesRequest.h
   include/tencentcloud/vod/v20180717/model/DailyPlayStatInfo.h
   include/tencentcloud/vod/v20180717/model/TerrorismOcrReviewTemplateInfoForUpdate.h
@@ -397,6 +398,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ReduceMediaBitrateAdaptiveDynamicStreamingResult.h
   include/tencentcloud/vod/v20180717/model/ImageWatermarkInputForUpdate.h
   include/tencentcloud/vod/v20180717/model/DescribeAIAnalysisTemplatesRequest.h
+  include/tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkResponse.h
   include/tencentcloud/vod/v20180717/model/MediaTranscodeInfo.h
   include/tencentcloud/vod/v20180717/model/ResolutionNameInfo.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsResultItem.h
@@ -1052,6 +1054,7 @@ set(vod_src
   src/v20180717/model/TEHDConfig.cpp
   src/v20180717/model/ImageReviewUsageDataItem.cpp
   src/v20180717/model/AnimatedGraphicsTemplate.cpp
+  src/v20180717/model/ExtractCopyRightWatermarkRequest.cpp
   src/v20180717/model/DescribeEnhanceMediaTemplatesRequest.cpp
   src/v20180717/model/DailyPlayStatInfo.cpp
   src/v20180717/model/TerrorismOcrReviewTemplateInfoForUpdate.cpp
@@ -1106,6 +1109,7 @@ set(vod_src
   src/v20180717/model/ReduceMediaBitrateAdaptiveDynamicStreamingResult.cpp
   src/v20180717/model/ImageWatermarkInputForUpdate.cpp
   src/v20180717/model/DescribeAIAnalysisTemplatesRequest.cpp
+  src/v20180717/model/ExtractCopyRightWatermarkResponse.cpp
   src/v20180717/model/MediaTranscodeInfo.cpp
   src/v20180717/model/ResolutionNameInfo.cpp
   src/v20180717/model/AiRecognitionTaskOcrWordsResultItem.cpp

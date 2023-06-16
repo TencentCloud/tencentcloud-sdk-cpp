@@ -233,6 +233,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEncryptionStatusRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEncryptionStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h>
@@ -303,6 +305,8 @@
 #include <tencentcloud/tke/v20180525/model/DisableClusterAuditResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionResponse.h>
+#include <tencentcloud/tke/v20180525/model/DisableEncryptionProtectionRequest.h>
+#include <tencentcloud/tke/v20180525/model/DisableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableEventPersistenceRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableEventPersistenceResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableVpcCniNetworkTypeRequest.h>
@@ -313,6 +317,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableClusterAuditResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEventPersistenceRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableEventPersistenceResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
@@ -742,6 +748,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnableVpcCniProgressResponse> DescribeEnableVpcCniProgressOutcome;
                 typedef std::future<DescribeEnableVpcCniProgressOutcome> DescribeEnableVpcCniProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEnableVpcCniProgressRequest&, DescribeEnableVpcCniProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnableVpcCniProgressAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEncryptionStatusResponse> DescribeEncryptionStatusOutcome;
+                typedef std::future<DescribeEncryptionStatusOutcome> DescribeEncryptionStatusOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEncryptionStatusRequest&, DescribeEncryptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEncryptionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExistedInstancesResponse> DescribeExistedInstancesOutcome;
                 typedef std::future<DescribeExistedInstancesOutcome> DescribeExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExistedInstancesRequest&, DescribeExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExistedInstancesAsyncHandler;
@@ -847,6 +856,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableClusterDeletionProtectionResponse> DisableClusterDeletionProtectionOutcome;
                 typedef std::future<DisableClusterDeletionProtectionOutcome> DisableClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableClusterDeletionProtectionRequest&, DisableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClusterDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableEncryptionProtectionResponse> DisableEncryptionProtectionOutcome;
+                typedef std::future<DisableEncryptionProtectionOutcome> DisableEncryptionProtectionOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DisableEncryptionProtectionRequest&, DisableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableEncryptionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableEventPersistenceResponse> DisableEventPersistenceOutcome;
                 typedef std::future<DisableEventPersistenceOutcome> DisableEventPersistenceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableEventPersistenceRequest&, DisableEventPersistenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableEventPersistenceAsyncHandler;
@@ -862,6 +874,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableClusterDeletionProtectionResponse> EnableClusterDeletionProtectionOutcome;
                 typedef std::future<EnableClusterDeletionProtectionOutcome> EnableClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableClusterDeletionProtectionRequest&, EnableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableEncryptionProtectionResponse> EnableEncryptionProtectionOutcome;
+                typedef std::future<EnableEncryptionProtectionOutcome> EnableEncryptionProtectionOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableEncryptionProtectionRequest&, EnableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEncryptionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableEventPersistenceResponse> EnableEventPersistenceOutcome;
                 typedef std::future<EnableEventPersistenceOutcome> EnableEventPersistenceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableEventPersistenceRequest&, EnableEventPersistenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEventPersistenceAsyncHandler;
@@ -1961,6 +1976,15 @@ namespace TencentCloud
                 DescribeEnableVpcCniProgressOutcomeCallable DescribeEnableVpcCniProgressCallable(const Model::DescribeEnableVpcCniProgressRequest& request);
 
                 /**
+                 *查询etcd数据是否进行加密
+                 * @param req DescribeEncryptionStatusRequest
+                 * @return DescribeEncryptionStatusOutcome
+                 */
+                DescribeEncryptionStatusOutcome DescribeEncryptionStatus(const Model::DescribeEncryptionStatusRequest &request);
+                void DescribeEncryptionStatusAsync(const Model::DescribeEncryptionStatusRequest& request, const DescribeEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEncryptionStatusOutcomeCallable DescribeEncryptionStatusCallable(const Model::DescribeEncryptionStatusRequest& request);
+
+                /**
                  *查询已经存在的节点，判断是否可以加入集群
                  * @param req DescribeExistedInstancesRequest
                  * @return DescribeExistedInstancesOutcome
@@ -2276,6 +2300,15 @@ namespace TencentCloud
                 DisableClusterDeletionProtectionOutcomeCallable DisableClusterDeletionProtectionCallable(const Model::DisableClusterDeletionProtectionRequest& request);
 
                 /**
+                 *关闭加密信息保护
+                 * @param req DisableEncryptionProtectionRequest
+                 * @return DisableEncryptionProtectionOutcome
+                 */
+                DisableEncryptionProtectionOutcome DisableEncryptionProtection(const Model::DisableEncryptionProtectionRequest &request);
+                void DisableEncryptionProtectionAsync(const Model::DisableEncryptionProtectionRequest& request, const DisableEncryptionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableEncryptionProtectionOutcomeCallable DisableEncryptionProtectionCallable(const Model::DisableEncryptionProtectionRequest& request);
+
+                /**
                  *关闭事件持久化功能
                  * @param req DisableEventPersistenceRequest
                  * @return DisableEventPersistenceOutcome
@@ -2319,6 +2352,15 @@ namespace TencentCloud
                 EnableClusterDeletionProtectionOutcome EnableClusterDeletionProtection(const Model::EnableClusterDeletionProtectionRequest &request);
                 void EnableClusterDeletionProtectionAsync(const Model::EnableClusterDeletionProtectionRequest& request, const EnableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableClusterDeletionProtectionOutcomeCallable EnableClusterDeletionProtectionCallable(const Model::EnableClusterDeletionProtectionRequest& request);
+
+                /**
+                 *开启加密数据保护
+                 * @param req EnableEncryptionProtectionRequest
+                 * @return EnableEncryptionProtectionOutcome
+                 */
+                EnableEncryptionProtectionOutcome EnableEncryptionProtection(const Model::EnableEncryptionProtectionRequest &request);
+                void EnableEncryptionProtectionAsync(const Model::EnableEncryptionProtectionRequest& request, const EnableEncryptionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableEncryptionProtectionOutcomeCallable EnableEncryptionProtectionCallable(const Model::EnableEncryptionProtectionRequest& request);
 
                 /**
                  *开启事件持久化功能

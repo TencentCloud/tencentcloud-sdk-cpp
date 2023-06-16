@@ -4426,6 +4426,49 @@ VodClient::ExecuteFunctionOutcomeCallable VodClient::ExecuteFunctionCallable(con
     return task->get_future();
 }
 
+VodClient::ExtractCopyRightWatermarkOutcome VodClient::ExtractCopyRightWatermark(const ExtractCopyRightWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractCopyRightWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractCopyRightWatermarkResponse rsp = ExtractCopyRightWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractCopyRightWatermarkOutcome(rsp);
+        else
+            return ExtractCopyRightWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractCopyRightWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ExtractCopyRightWatermarkAsync(const ExtractCopyRightWatermarkRequest& request, const ExtractCopyRightWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExtractCopyRightWatermark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ExtractCopyRightWatermarkOutcomeCallable VodClient::ExtractCopyRightWatermarkCallable(const ExtractCopyRightWatermarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExtractCopyRightWatermarkOutcome()>>(
+        [this, request]()
+        {
+            return this->ExtractCopyRightWatermark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ExtractTraceWatermarkOutcome VodClient::ExtractTraceWatermark(const ExtractTraceWatermarkRequest &request)
 {
     auto outcome = MakeRequest(request, "ExtractTraceWatermark");

@@ -4555,6 +4555,49 @@ TkeClient::DescribeEnableVpcCniProgressOutcomeCallable TkeClient::DescribeEnable
     return task->get_future();
 }
 
+TkeClient::DescribeEncryptionStatusOutcome TkeClient::DescribeEncryptionStatus(const DescribeEncryptionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEncryptionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEncryptionStatusResponse rsp = DescribeEncryptionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEncryptionStatusOutcome(rsp);
+        else
+            return DescribeEncryptionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEncryptionStatusOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEncryptionStatusAsync(const DescribeEncryptionStatusRequest& request, const DescribeEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEncryptionStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEncryptionStatusOutcomeCallable TkeClient::DescribeEncryptionStatusCallable(const DescribeEncryptionStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEncryptionStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEncryptionStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeExistedInstancesOutcome TkeClient::DescribeExistedInstances(const DescribeExistedInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExistedInstances");
@@ -6060,6 +6103,49 @@ TkeClient::DisableClusterDeletionProtectionOutcomeCallable TkeClient::DisableClu
     return task->get_future();
 }
 
+TkeClient::DisableEncryptionProtectionOutcome TkeClient::DisableEncryptionProtection(const DisableEncryptionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableEncryptionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableEncryptionProtectionResponse rsp = DisableEncryptionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableEncryptionProtectionOutcome(rsp);
+        else
+            return DisableEncryptionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableEncryptionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DisableEncryptionProtectionAsync(const DisableEncryptionProtectionRequest& request, const DisableEncryptionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableEncryptionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DisableEncryptionProtectionOutcomeCallable TkeClient::DisableEncryptionProtectionCallable(const DisableEncryptionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableEncryptionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableEncryptionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DisableEventPersistenceOutcome TkeClient::DisableEventPersistence(const DisableEventPersistenceRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableEventPersistence");
@@ -6268,6 +6354,49 @@ TkeClient::EnableClusterDeletionProtectionOutcomeCallable TkeClient::EnableClust
         [this, request]()
         {
             return this->EnableClusterDeletionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::EnableEncryptionProtectionOutcome TkeClient::EnableEncryptionProtection(const EnableEncryptionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableEncryptionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableEncryptionProtectionResponse rsp = EnableEncryptionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableEncryptionProtectionOutcome(rsp);
+        else
+            return EnableEncryptionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableEncryptionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableEncryptionProtectionAsync(const EnableEncryptionProtectionRequest& request, const EnableEncryptionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableEncryptionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::EnableEncryptionProtectionOutcomeCallable TkeClient::EnableEncryptionProtectionCallable(const EnableEncryptionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableEncryptionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableEncryptionProtection(request);
         }
     );
 

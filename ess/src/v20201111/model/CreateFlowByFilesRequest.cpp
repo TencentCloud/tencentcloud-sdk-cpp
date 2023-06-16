@@ -33,6 +33,7 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_needPreviewHasBeenSet(false),
     m_previewTypeHasBeenSet(false),
     m_deadlineHasBeenSet(false),
+    m_remindedOnHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
@@ -158,6 +159,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deadline, allocator);
+    }
+
+    if (m_remindedOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemindedOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_remindedOn, allocator);
     }
 
     if (m_unorderedHasBeenSet)
@@ -407,6 +416,22 @@ void CreateFlowByFilesRequest::SetDeadline(const int64_t& _deadline)
 bool CreateFlowByFilesRequest::DeadlineHasBeenSet() const
 {
     return m_deadlineHasBeenSet;
+}
+
+int64_t CreateFlowByFilesRequest::GetRemindedOn() const
+{
+    return m_remindedOn;
+}
+
+void CreateFlowByFilesRequest::SetRemindedOn(const int64_t& _remindedOn)
+{
+    m_remindedOn = _remindedOn;
+    m_remindedOnHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::RemindedOnHasBeenSet() const
+{
+    return m_remindedOnHasBeenSet;
 }
 
 bool CreateFlowByFilesRequest::GetUnordered() const

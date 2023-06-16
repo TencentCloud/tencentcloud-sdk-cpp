@@ -227,6 +227,8 @@
 #include <tencentcloud/vod/v20180717/model/EnhanceMediaByTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExecuteFunctionResponse.h>
+#include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkRequest.h>
+#include <tencentcloud/vod/v20180717/model/ExtractCopyRightWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkRequest.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionRequest.h>
@@ -651,6 +653,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteFunctionResponse> ExecuteFunctionOutcome;
                 typedef std::future<ExecuteFunctionOutcome> ExecuteFunctionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExecuteFunctionRequest&, ExecuteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractCopyRightWatermarkResponse> ExtractCopyRightWatermarkOutcome;
+                typedef std::future<ExtractCopyRightWatermarkOutcome> ExtractCopyRightWatermarkOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ExtractCopyRightWatermarkRequest&, ExtractCopyRightWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractCopyRightWatermarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExtractTraceWatermarkResponse> ExtractTraceWatermarkOutcome;
                 typedef std::future<ExtractTraceWatermarkOutcome> ExtractTraceWatermarkOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ExtractTraceWatermarkRequest&, ExtractTraceWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractTraceWatermarkAsyncHandler;
@@ -1856,6 +1861,15 @@ namespace TencentCloud
                 ExecuteFunctionOutcome ExecuteFunction(const Model::ExecuteFunctionRequest &request);
                 void ExecuteFunctionAsync(const Model::ExecuteFunctionRequest& request, const ExecuteFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExecuteFunctionOutcomeCallable ExecuteFunctionCallable(const Model::ExecuteFunctionRequest& request);
+
+                /**
+                 *提取版权水印信息。
+                 * @param req ExtractCopyRightWatermarkRequest
+                 * @return ExtractCopyRightWatermarkOutcome
+                 */
+                ExtractCopyRightWatermarkOutcome ExtractCopyRightWatermark(const Model::ExtractCopyRightWatermarkRequest &request);
+                void ExtractCopyRightWatermarkAsync(const Model::ExtractCopyRightWatermarkRequest& request, const ExtractCopyRightWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractCopyRightWatermarkOutcomeCallable ExtractCopyRightWatermarkCallable(const Model::ExtractCopyRightWatermarkRequest& request);
 
                 /**
                  *用于提取溯源水印。

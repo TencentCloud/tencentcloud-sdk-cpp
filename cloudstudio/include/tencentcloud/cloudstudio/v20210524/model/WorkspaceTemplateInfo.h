@@ -510,31 +510,6 @@ namespace TencentCloud
                     bool PluginFileHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PrebuildFile xxx
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetPrebuildFile() const;
-
-                    /**
-                     * 设置xxx
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _prebuildFile xxx
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetPrebuildFile(const std::string& _prebuildFile);
-
-                    /**
-                     * 判断参数 PrebuildFile 是否已赋值
-                     * @return PrebuildFile 是否已赋值
-                     * 
-                     */
-                    bool PrebuildFileHasBeenSet() const;
-
-                    /**
                      * 获取是否标记
                      * @return Marked 是否标记
                      * 
@@ -895,13 +870,6 @@ namespace TencentCloud
                      */
                     std::string m_pluginFile;
                     bool m_pluginFileHasBeenSet;
-
-                    /**
-                     * xxx
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_prebuildFile;
-                    bool m_prebuildFileHasBeenSet;
 
                     /**
                      * 是否标记

@@ -28,17 +28,18 @@ CreateFlowRequest::CreateFlowRequest() :
     m_approversHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_relatedFlowIdHasBeenSet(false),
     m_deadLineHasBeenSet(false),
+    m_remindedOnHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
-    m_autoSignSceneHasBeenSet(false)
+    m_autoSignSceneHasBeenSet(false),
+    m_relatedFlowIdHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -97,20 +98,20 @@ string CreateFlowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_relatedFlowIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RelatedFlowId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_relatedFlowId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_deadLineHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deadLine, allocator);
+    }
+
+    if (m_remindedOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemindedOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_remindedOn, allocator);
     }
 
     if (m_userDataHasBeenSet)
@@ -153,14 +154,6 @@ string CreateFlowRequest::ToJsonString() const
         d.AddMember(iKey, m_needSignReview, allocator);
     }
 
-    if (m_callbackUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -191,6 +184,22 @@ string CreateFlowRequest::ToJsonString() const
         string key = "AutoSignScene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoSignScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relatedFlowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelatedFlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_relatedFlowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -281,22 +290,6 @@ bool CreateFlowRequest::ClientTokenHasBeenSet() const
     return m_clientTokenHasBeenSet;
 }
 
-string CreateFlowRequest::GetRelatedFlowId() const
-{
-    return m_relatedFlowId;
-}
-
-void CreateFlowRequest::SetRelatedFlowId(const string& _relatedFlowId)
-{
-    m_relatedFlowId = _relatedFlowId;
-    m_relatedFlowIdHasBeenSet = true;
-}
-
-bool CreateFlowRequest::RelatedFlowIdHasBeenSet() const
-{
-    return m_relatedFlowIdHasBeenSet;
-}
-
 int64_t CreateFlowRequest::GetDeadLine() const
 {
     return m_deadLine;
@@ -311,6 +304,22 @@ void CreateFlowRequest::SetDeadLine(const int64_t& _deadLine)
 bool CreateFlowRequest::DeadLineHasBeenSet() const
 {
     return m_deadLineHasBeenSet;
+}
+
+int64_t CreateFlowRequest::GetRemindedOn() const
+{
+    return m_remindedOn;
+}
+
+void CreateFlowRequest::SetRemindedOn(const int64_t& _remindedOn)
+{
+    m_remindedOn = _remindedOn;
+    m_remindedOnHasBeenSet = true;
+}
+
+bool CreateFlowRequest::RemindedOnHasBeenSet() const
+{
+    return m_remindedOnHasBeenSet;
 }
 
 string CreateFlowRequest::GetUserData() const
@@ -393,22 +402,6 @@ bool CreateFlowRequest::NeedSignReviewHasBeenSet() const
     return m_needSignReviewHasBeenSet;
 }
 
-string CreateFlowRequest::GetCallbackUrl() const
-{
-    return m_callbackUrl;
-}
-
-void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
-{
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
-}
-
-bool CreateFlowRequest::CallbackUrlHasBeenSet() const
-{
-    return m_callbackUrlHasBeenSet;
-}
-
 Agent CreateFlowRequest::GetAgent() const
 {
     return m_agent;
@@ -455,6 +448,38 @@ void CreateFlowRequest::SetAutoSignScene(const string& _autoSignScene)
 bool CreateFlowRequest::AutoSignSceneHasBeenSet() const
 {
     return m_autoSignSceneHasBeenSet;
+}
+
+string CreateFlowRequest::GetRelatedFlowId() const
+{
+    return m_relatedFlowId;
+}
+
+void CreateFlowRequest::SetRelatedFlowId(const string& _relatedFlowId)
+{
+    m_relatedFlowId = _relatedFlowId;
+    m_relatedFlowIdHasBeenSet = true;
+}
+
+bool CreateFlowRequest::RelatedFlowIdHasBeenSet() const
+{
+    return m_relatedFlowIdHasBeenSet;
+}
+
+string CreateFlowRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateFlowRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
 

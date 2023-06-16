@@ -40,7 +40,6 @@ WorkspaceTemplateInfo::WorkspaceTemplateInfo() :
     m_userVersionControlRefTypeHasBeenSet(false),
     m_devFileHasBeenSet(false),
     m_pluginFileHasBeenSet(false),
-    m_prebuildFileHasBeenSet(false),
     m_markedHasBeenSet(false),
     m_markAtHasBeenSet(false),
     m_createDateHasBeenSet(false),
@@ -247,16 +246,6 @@ CoreInternalOutcome WorkspaceTemplateInfo::Deserialize(const rapidjson::Value &v
         }
         m_pluginFile = string(value["PluginFile"].GetString());
         m_pluginFileHasBeenSet = true;
-    }
-
-    if (value.HasMember("PrebuildFile") && !value["PrebuildFile"].IsNull())
-    {
-        if (!value["PrebuildFile"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `WorkspaceTemplateInfo.PrebuildFile` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_prebuildFile = string(value["PrebuildFile"].GetString());
-        m_prebuildFileHasBeenSet = true;
     }
 
     if (value.HasMember("Marked") && !value["Marked"].IsNull())
@@ -516,14 +505,6 @@ void WorkspaceTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "PluginFile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pluginFile.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_prebuildFileHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PrebuildFile";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_prebuildFile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_markedHasBeenSet)
@@ -911,22 +892,6 @@ void WorkspaceTemplateInfo::SetPluginFile(const string& _pluginFile)
 bool WorkspaceTemplateInfo::PluginFileHasBeenSet() const
 {
     return m_pluginFileHasBeenSet;
-}
-
-string WorkspaceTemplateInfo::GetPrebuildFile() const
-{
-    return m_prebuildFile;
-}
-
-void WorkspaceTemplateInfo::SetPrebuildFile(const string& _prebuildFile)
-{
-    m_prebuildFile = _prebuildFile;
-    m_prebuildFileHasBeenSet = true;
-}
-
-bool WorkspaceTemplateInfo::PrebuildFileHasBeenSet() const
-{
-    return m_prebuildFileHasBeenSet;
 }
 
 bool WorkspaceTemplateInfo::GetMarked() const

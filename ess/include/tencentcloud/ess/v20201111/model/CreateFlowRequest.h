@@ -152,27 +152,6 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return RelatedFlowId 暂未开放
-                     * @deprecated
-                     */
-                    std::string GetRelatedFlowId() const;
-
-                    /**
-                     * 设置暂未开放
-                     * @param _relatedFlowId 暂未开放
-                     * @deprecated
-                     */
-                    void SetRelatedFlowId(const std::string& _relatedFlowId);
-
-                    /**
-                     * 判断参数 RelatedFlowId 是否已赋值
-                     * @return RelatedFlowId 是否已赋值
-                     * @deprecated
-                     */
-                    bool RelatedFlowIdHasBeenSet() const;
-
-                    /**
                      * 获取签署流程的签署截止时间。
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      * @return DeadLine 签署流程的签署截止时间。
@@ -196,6 +175,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DeadLineHasBeenSet() const;
+
+                    /**
+                     * 获取合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * @return RemindedOn 合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * 
+                     */
+                    int64_t GetRemindedOn() const;
+
+                    /**
+                     * 设置合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * @param _remindedOn 合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     * 
+                     */
+                    void SetRemindedOn(const int64_t& _remindedOn);
+
+                    /**
+                     * 判断参数 RemindedOn 是否已赋值
+                     * @return RemindedOn 是否已赋值
+                     * 
+                     */
+                    bool RemindedOnHasBeenSet() const;
 
                     /**
                      * 获取用户自定义字段，回调的时候会进行透传，长度需要小于20480
@@ -327,27 +327,6 @@ false：有序签
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return CallbackUrl 暂未开放
-                     * @deprecated
-                     */
-                    std::string GetCallbackUrl() const;
-
-                    /**
-                     * 设置暂未开放
-                     * @param _callbackUrl 暂未开放
-                     * @deprecated
-                     */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
-
-                    /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
-                     * @deprecated
-                     */
-                    bool CallbackUrlHasBeenSet() const;
-
-                    /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * 
@@ -414,6 +393,48 @@ false：有序签
                      */
                     bool AutoSignSceneHasBeenSet() const;
 
+                    /**
+                     * 获取暂未开放
+                     * @return RelatedFlowId 暂未开放
+                     * @deprecated
+                     */
+                    std::string GetRelatedFlowId() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param _relatedFlowId 暂未开放
+                     * @deprecated
+                     */
+                    void SetRelatedFlowId(const std::string& _relatedFlowId);
+
+                    /**
+                     * 判断参数 RelatedFlowId 是否已赋值
+                     * @return RelatedFlowId 是否已赋值
+                     * @deprecated
+                     */
+                    bool RelatedFlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取暂未开放
+                     * @return CallbackUrl 暂未开放
+                     * @deprecated
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param _callbackUrl 暂未开放
+                     * @deprecated
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     * @deprecated
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -447,17 +468,17 @@ false：有序签
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 暂未开放
-                     */
-                    std::string m_relatedFlowId;
-                    bool m_relatedFlowIdHasBeenSet;
-
-                    /**
                      * 签署流程的签署截止时间。
 值为unix时间戳,精确到秒,不传默认为当前时间一年后
                      */
                     int64_t m_deadLine;
                     bool m_deadLineHasBeenSet;
+
+                    /**
+                     * 合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。
+                     */
+                    int64_t m_remindedOn;
+                    bool m_remindedOnHasBeenSet;
 
                     /**
                      * 用户自定义字段，回调的时候会进行透传，长度需要小于20480
@@ -496,12 +517,6 @@ false：有序签
                     bool m_needSignReviewHasBeenSet;
 
                     /**
-                     * 暂未开放
-                     */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
-
-                    /**
                      * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
@@ -519,6 +534,18 @@ false：有序签
                      */
                     std::string m_autoSignScene;
                     bool m_autoSignSceneHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    std::string m_relatedFlowId;
+                    bool m_relatedFlowIdHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                 };
             }
