@@ -69,6 +69,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateSealRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateSealResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h>
@@ -210,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSchemeUrlResponse> CreateSchemeUrlOutcome;
                 typedef std::future<CreateSchemeUrlOutcome> CreateSchemeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSchemeUrlRequest&, CreateSchemeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchemeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSealResponse> CreateSealOutcome;
+                typedef std::future<CreateSealOutcome> CreateSealOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateSealRequest&, CreateSealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSealPolicyResponse> CreateSealPolicyOutcome;
                 typedef std::future<CreateSealPolicyOutcome> CreateSealPolicyOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSealPolicyRequest&, CreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealPolicyAsyncHandler;
@@ -554,6 +559,15 @@ namespace TencentCloud
                 CreateSchemeUrlOutcome CreateSchemeUrl(const Model::CreateSchemeUrlRequest &request);
                 void CreateSchemeUrlAsync(const Model::CreateSchemeUrlRequest& request, const CreateSchemeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSchemeUrlOutcomeCallable CreateSchemeUrlCallable(const Model::CreateSchemeUrlRequest& request);
+
+                /**
+                 *创建电子印章
+                 * @param req CreateSealRequest
+                 * @return CreateSealOutcome
+                 */
+                CreateSealOutcome CreateSeal(const Model::CreateSealRequest &request);
+                void CreateSealAsync(const Model::CreateSealRequest& request, const CreateSealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSealOutcomeCallable CreateSealCallable(const Model::CreateSealRequest& request);
 
                 /**
                  *对企业员工进行印章授权

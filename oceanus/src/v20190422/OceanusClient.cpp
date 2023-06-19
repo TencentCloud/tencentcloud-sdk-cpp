@@ -943,6 +943,49 @@ OceanusClient::DescribeTreeResourcesOutcomeCallable OceanusClient::DescribeTreeR
     return task->get_future();
 }
 
+OceanusClient::DescribeWorkSpacesOutcome OceanusClient::DescribeWorkSpaces(const DescribeWorkSpacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkSpaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkSpacesResponse rsp = DescribeWorkSpacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkSpacesOutcome(rsp);
+        else
+            return DescribeWorkSpacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkSpacesOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeWorkSpacesAsync(const DescribeWorkSpacesRequest& request, const DescribeWorkSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkSpaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeWorkSpacesOutcomeCallable OceanusClient::DescribeWorkSpacesCallable(const DescribeWorkSpacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkSpacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkSpaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::ModifyJobOutcome OceanusClient::ModifyJob(const ModifyJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyJob");

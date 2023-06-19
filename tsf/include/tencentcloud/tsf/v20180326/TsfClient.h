@@ -2155,7 +2155,7 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeImageTagsOutcomeCallable DescribeImageTagsCallable(const Model::DescribeImageTagsRequest& request);
 
                 /**
-                 *查询调用监控指标
+                 *废弃
                  * @param req DescribeInovcationIndicatorsRequest
                  * @return DescribeInovcationIndicatorsOutcome
                  */

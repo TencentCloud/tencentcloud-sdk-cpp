@@ -341,6 +341,49 @@ CynosdbClient::CloseClusterPasswordComplexityOutcomeCallable CynosdbClient::Clos
     return task->get_future();
 }
 
+CynosdbClient::CloseProxyOutcome CynosdbClient::CloseProxy(const CloseProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseProxyResponse rsp = CloseProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseProxyOutcome(rsp);
+        else
+            return CloseProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseProxyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CloseProxyAsync(const CloseProxyRequest& request, const CloseProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CloseProxyOutcomeCallable CynosdbClient::CloseProxyCallable(const CloseProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CloseWanOutcome CynosdbClient::CloseWan(const CloseWanRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseWan");
@@ -721,6 +764,92 @@ CynosdbClient::CreateParamTemplateOutcomeCallable CynosdbClient::CreateParamTemp
         [this, request]()
         {
             return this->CreateParamTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::CreateProxyOutcome CynosdbClient::CreateProxy(const CreateProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProxyResponse rsp = CreateProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProxyOutcome(rsp);
+        else
+            return CreateProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProxyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateProxyAsync(const CreateProxyRequest& request, const CreateProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateProxyOutcomeCallable CynosdbClient::CreateProxyCallable(const CreateProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::CreateProxyEndPointOutcome CynosdbClient::CreateProxyEndPoint(const CreateProxyEndPointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProxyEndPoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProxyEndPointResponse rsp = CreateProxyEndPointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProxyEndPointOutcome(rsp);
+        else
+            return CreateProxyEndPointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProxyEndPointOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateProxyEndPointAsync(const CreateProxyEndPointRequest& request, const CreateProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProxyEndPoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateProxyEndPointOutcomeCallable CynosdbClient::CreateProxyEndPointCallable(const CreateProxyEndPointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProxyEndPointOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProxyEndPoint(request);
         }
     );
 
@@ -2405,6 +2534,92 @@ CynosdbClient::DescribeProjectSecurityGroupsOutcomeCallable CynosdbClient::Descr
     return task->get_future();
 }
 
+CynosdbClient::DescribeProxiesOutcome CynosdbClient::DescribeProxies(const DescribeProxiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxiesResponse rsp = DescribeProxiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxiesOutcome(rsp);
+        else
+            return DescribeProxiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxiesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeProxiesAsync(const DescribeProxiesRequest& request, const DescribeProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProxies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeProxiesOutcomeCallable CynosdbClient::DescribeProxiesCallable(const DescribeProxiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProxiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProxies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeProxyNodesOutcome CynosdbClient::DescribeProxyNodes(const DescribeProxyNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxyNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxyNodesResponse rsp = DescribeProxyNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxyNodesOutcome(rsp);
+        else
+            return DescribeProxyNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxyNodesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeProxyNodesAsync(const DescribeProxyNodesRequest& request, const DescribeProxyNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProxyNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeProxyNodesOutcomeCallable CynosdbClient::DescribeProxyNodesCallable(const DescribeProxyNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProxyNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProxyNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeResourcePackageDetailOutcome CynosdbClient::DescribeResourcePackageDetail(const DescribeResourcePackageDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourcePackageDetail");
@@ -3910,6 +4125,92 @@ CynosdbClient::ModifyParamTemplateOutcomeCallable CynosdbClient::ModifyParamTemp
     return task->get_future();
 }
 
+CynosdbClient::ModifyProxyDescOutcome CynosdbClient::ModifyProxyDesc(const ModifyProxyDescRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProxyDesc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProxyDescResponse rsp = ModifyProxyDescResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProxyDescOutcome(rsp);
+        else
+            return ModifyProxyDescOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProxyDescOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyProxyDescAsync(const ModifyProxyDescRequest& request, const ModifyProxyDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProxyDesc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyProxyDescOutcomeCallable CynosdbClient::ModifyProxyDescCallable(const ModifyProxyDescRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProxyDescOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProxyDesc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyProxyRwSplitOutcome CynosdbClient::ModifyProxyRwSplit(const ModifyProxyRwSplitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProxyRwSplit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProxyRwSplitResponse rsp = ModifyProxyRwSplitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProxyRwSplitOutcome(rsp);
+        else
+            return ModifyProxyRwSplitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProxyRwSplitOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyProxyRwSplitAsync(const ModifyProxyRwSplitRequest& request, const ModifyProxyRwSplitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProxyRwSplit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyProxyRwSplitOutcomeCallable CynosdbClient::ModifyProxyRwSplitCallable(const ModifyProxyRwSplitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProxyRwSplitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProxyRwSplit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyResourcePackageClustersOutcome CynosdbClient::ModifyResourcePackageClusters(const ModifyResourcePackageClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyResourcePackageClusters");
@@ -4376,6 +4677,49 @@ CynosdbClient::RefundResourcePackageOutcomeCallable CynosdbClient::RefundResourc
         [this, request]()
         {
             return this->RefundResourcePackage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ReloadBalanceProxyNodeOutcome CynosdbClient::ReloadBalanceProxyNode(const ReloadBalanceProxyNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReloadBalanceProxyNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReloadBalanceProxyNodeResponse rsp = ReloadBalanceProxyNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReloadBalanceProxyNodeOutcome(rsp);
+        else
+            return ReloadBalanceProxyNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ReloadBalanceProxyNodeOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ReloadBalanceProxyNodeAsync(const ReloadBalanceProxyNodeRequest& request, const ReloadBalanceProxyNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReloadBalanceProxyNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ReloadBalanceProxyNodeOutcomeCallable CynosdbClient::ReloadBalanceProxyNodeCallable(const ReloadBalanceProxyNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReloadBalanceProxyNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ReloadBalanceProxyNode(request);
         }
     );
 
@@ -5021,6 +5365,92 @@ CynosdbClient::UpgradeInstanceOutcomeCallable CynosdbClient::UpgradeInstanceCall
         [this, request]()
         {
             return this->UpgradeInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::UpgradeProxyOutcome CynosdbClient::UpgradeProxy(const UpgradeProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeProxyResponse rsp = UpgradeProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeProxyOutcome(rsp);
+        else
+            return UpgradeProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeProxyOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::UpgradeProxyAsync(const UpgradeProxyRequest& request, const UpgradeProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::UpgradeProxyOutcomeCallable CynosdbClient::UpgradeProxyCallable(const UpgradeProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::UpgradeProxyVersionOutcome CynosdbClient::UpgradeProxyVersion(const UpgradeProxyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeProxyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeProxyVersionResponse rsp = UpgradeProxyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeProxyVersionOutcome(rsp);
+        else
+            return UpgradeProxyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeProxyVersionOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::UpgradeProxyVersionAsync(const UpgradeProxyVersionRequest& request, const UpgradeProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeProxyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::UpgradeProxyVersionOutcomeCallable CynosdbClient::UpgradeProxyVersionCallable(const UpgradeProxyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeProxyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeProxyVersion(request);
         }
     );
 

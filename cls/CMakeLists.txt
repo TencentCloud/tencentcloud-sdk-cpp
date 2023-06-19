@@ -202,6 +202,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ParquetInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
   include/tencentcloud/cls/v20201016/model/CosRechargeInfo.h
+  include/tencentcloud/cls/v20201016/model/MultiTopicSearchInformation.h
   include/tencentcloud/cls/v20201016/model/ConsumerContent.h
   include/tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h
   include/tencentcloud/cls/v20201016/model/CreateExportResponse.h
@@ -395,6 +396,7 @@ set(cls_src
   src/v20201016/model/ParquetInfo.cpp
   src/v20201016/model/DeleteTopicResponse.cpp
   src/v20201016/model/CosRechargeInfo.cpp
+  src/v20201016/model/MultiTopicSearchInformation.cpp
   src/v20201016/model/ConsumerContent.cpp
   src/v20201016/model/RetryShipperTaskRequest.cpp
   src/v20201016/model/CreateExportResponse.cpp

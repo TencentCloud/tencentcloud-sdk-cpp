@@ -279,6 +279,156 @@ OCCASION:偶然所得
                      */
                     bool SumSettlementAmountHasBeenSet() const;
 
+                    /**
+                     * 获取已缴个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaidIncomeTax 已缴个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPaidIncomeTax() const;
+
+                    /**
+                     * 设置已缴个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paidIncomeTax 已缴个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPaidIncomeTax(const std::string& _paidIncomeTax);
+
+                    /**
+                     * 判断参数 PaidIncomeTax 是否已赋值
+                     * @return PaidIncomeTax 是否已赋值
+                     * 
+                     */
+                    bool PaidIncomeTaxHasBeenSet() const;
+
+                    /**
+                     * 获取提现中个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InPayIncomeTax 提现中个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInPayIncomeTax() const;
+
+                    /**
+                     * 设置提现中个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inPayIncomeTax 提现中个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInPayIncomeTax(const std::string& _inPayIncomeTax);
+
+                    /**
+                     * 判断参数 InPayIncomeTax 是否已赋值
+                     * @return InPayIncomeTax 是否已赋值
+                     * 
+                     */
+                    bool InPayIncomeTaxHasBeenSet() const;
+
+                    /**
+                     * 获取已缴增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaidValueAddedTax 已缴增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPaidValueAddedTax() const;
+
+                    /**
+                     * 设置已缴增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paidValueAddedTax 已缴增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPaidValueAddedTax(const std::string& _paidValueAddedTax);
+
+                    /**
+                     * 判断参数 PaidValueAddedTax 是否已赋值
+                     * @return PaidValueAddedTax 是否已赋值
+                     * 
+                     */
+                    bool PaidValueAddedTaxHasBeenSet() const;
+
+                    /**
+                     * 获取提现中增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InPayValueAddedTax 提现中增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInPayValueAddedTax() const;
+
+                    /**
+                     * 设置提现中增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inPayValueAddedTax 提现中增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInPayValueAddedTax(const std::string& _inPayValueAddedTax);
+
+                    /**
+                     * 判断参数 InPayValueAddedTax 是否已赋值
+                     * @return InPayValueAddedTax 是否已赋值
+                     * 
+                     */
+                    bool InPayValueAddedTaxHasBeenSet() const;
+
+                    /**
+                     * 获取已缴附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaidAttachTax 已缴附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPaidAttachTax() const;
+
+                    /**
+                     * 设置已缴附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paidAttachTax 已缴附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPaidAttachTax(const std::string& _paidAttachTax);
+
+                    /**
+                     * 判断参数 PaidAttachTax 是否已赋值
+                     * @return PaidAttachTax 是否已赋值
+                     * 
+                     */
+                    bool PaidAttachTaxHasBeenSet() const;
+
+                    /**
+                     * 获取提现中附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InPayAttachTax 提现中附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInPayAttachTax() const;
+
+                    /**
+                     * 设置提现中附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inPayAttachTax 提现中附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInPayAttachTax(const std::string& _inPayAttachTax);
+
+                    /**
+                     * 判断参数 InPayAttachTax 是否已赋值
+                     * @return InPayAttachTax 是否已赋值
+                     * 
+                     */
+                    bool InPayAttachTaxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +495,48 @@ OCCASION:偶然所得
                      */
                     std::string m_sumSettlementAmount;
                     bool m_sumSettlementAmountHasBeenSet;
+
+                    /**
+                     * 已缴个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paidIncomeTax;
+                    bool m_paidIncomeTaxHasBeenSet;
+
+                    /**
+                     * 提现中个税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inPayIncomeTax;
+                    bool m_inPayIncomeTaxHasBeenSet;
+
+                    /**
+                     * 已缴增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paidValueAddedTax;
+                    bool m_paidValueAddedTaxHasBeenSet;
+
+                    /**
+                     * 提现中增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inPayValueAddedTax;
+                    bool m_inPayValueAddedTaxHasBeenSet;
+
+                    /**
+                     * 已缴附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paidAttachTax;
+                    bool m_paidAttachTaxHasBeenSet;
+
+                    /**
+                     * 提现中附加税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inPayAttachTax;
+                    bool m_inPayAttachTaxHasBeenSet;
 
                 };
             }

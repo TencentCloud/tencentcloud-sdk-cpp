@@ -19,6 +19,7 @@ set(ess_public_header
   )
 
 set(ess_public_header_model
+  include/tencentcloud/ess/v20201111/model/CreateSealRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h
@@ -140,6 +141,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h
   include/tencentcloud/ess/v20201111/model/IntegrationMainOrganizationUser.h
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateSealResponse.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverOption.h
   include/tencentcloud/ess/v20201111/model/FileUrl.h
@@ -181,6 +183,7 @@ set(ess_public_header_model
 
 set(ess_src
   src/v20201111/EssClient.cpp
+  src/v20201111/model/CreateSealRequest.cpp
   src/v20201111/model/ModifyIntegrationDepartmentResponse.cpp
   src/v20201111/model/CancelFlowResponse.cpp
   src/v20201111/model/DescribeFlowEvidenceReportRequest.cpp
@@ -302,6 +305,7 @@ set(ess_src
   src/v20201111/model/ModifyApplicationCallbackInfoRequest.cpp
   src/v20201111/model/IntegrationMainOrganizationUser.cpp
   src/v20201111/model/StartFlowRequest.cpp
+  src/v20201111/model/CreateSealResponse.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/ApproverOption.cpp
   src/v20201111/model/FileUrl.cpp

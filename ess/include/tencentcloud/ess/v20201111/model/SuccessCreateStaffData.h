@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取提示，当创建已存在未实名用户时，改字段有值
+                     * 获取提示，当创建已存在未实名用户时，该字段有值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Note 提示，当创建已存在未实名用户时，改字段有值
+                     * @return Note 提示，当创建已存在未实名用户时，该字段有值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
-                     * 设置提示，当创建已存在未实名用户时，改字段有值
+                     * 设置提示，当创建已存在未实名用户时，该字段有值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _note 提示，当创建已存在未实名用户时，改字段有值
+                     * @param _note 提示，当创建已存在未实名用户时，该字段有值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -155,7 +155,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 提示，当创建已存在未实名用户时，改字段有值
+                     * 提示，当创建已存在未实名用户时，该字段有值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;

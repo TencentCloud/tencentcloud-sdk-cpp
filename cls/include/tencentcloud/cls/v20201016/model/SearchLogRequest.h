@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/MultiTopicSearchInformation.h>
 
 
 namespace TencentCloud
@@ -114,15 +115,19 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取要检索分析的日志主题ID
-                     * @return TopicId 要检索分析的日志主题ID
+                     * 获取- 要检索分析的日志主题ID，仅能指定一个日志主题。
+- 如需同时检索多个日志主题，请使用Topics参数。
+                     * @return TopicId - 要检索分析的日志主题ID，仅能指定一个日志主题。
+- 如需同时检索多个日志主题，请使用Topics参数。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置要检索分析的日志主题ID
-                     * @param _topicId 要检索分析的日志主题ID
+                     * 设置- 要检索分析的日志主题ID，仅能指定一个日志主题。
+- 如需同时检索多个日志主题，请使用Topics参数。
+                     * @param _topicId - 要检索分析的日志主题ID，仅能指定一个日志主题。
+- 如需同时检索多个日志主题，请使用Topics参数。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -332,6 +337,35 @@ namespace TencentCloud
                      */
                     bool SyntaxRuleHasBeenSet() const;
 
+                    /**
+                     * 获取- 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * @return Topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * 
+                     */
+                    std::vector<MultiTopicSearchInformation> GetTopics() const;
+
+                    /**
+                     * 设置- 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * @param _topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * 
+                     */
+                    void SetTopics(const std::vector<MultiTopicSearchInformation>& _topics);
+
+                    /**
+                     * 判断参数 Topics 是否已赋值
+                     * @return Topics 是否已赋值
+                     * 
+                     */
+                    bool TopicsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,7 +389,8 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 要检索分析的日志主题ID
+                     * - 要检索分析的日志主题ID，仅能指定一个日志主题。
+- 如需同时检索多个日志主题，请使用Topics参数。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -413,6 +448,14 @@ namespace TencentCloud
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
+
+                    /**
+                     * - 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     */
+                    std::vector<MultiTopicSearchInformation> m_topics;
+                    bool m_topicsHasBeenSet;
 
                 };
             }

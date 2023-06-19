@@ -1029,6 +1029,49 @@ EssClient::CreateSchemeUrlOutcomeCallable EssClient::CreateSchemeUrlCallable(con
     return task->get_future();
 }
 
+EssClient::CreateSealOutcome EssClient::CreateSeal(const CreateSealRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSeal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSealResponse rsp = CreateSealResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSealOutcome(rsp);
+        else
+            return CreateSealOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSealOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateSealAsync(const CreateSealRequest& request, const CreateSealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSeal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateSealOutcomeCallable EssClient::CreateSealCallable(const CreateSealRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSealOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSeal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateSealPolicyOutcome EssClient::CreateSealPolicy(const CreateSealPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSealPolicy");

@@ -32,7 +32,8 @@ SearchLogRequest::SearchLogRequest() :
     m_sortHasBeenSet(false),
     m_useNewAnalysisHasBeenSet(false),
     m_samplingRateHasBeenSet(false),
-    m_syntaxRuleHasBeenSet(false)
+    m_syntaxRuleHasBeenSet(false),
+    m_topicsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string SearchLogRequest::ToJsonString() const
         string key = "SyntaxRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_topicsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topics";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_topics.begin(); itr != m_topics.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void SearchLogRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
 bool SearchLogRequest::SyntaxRuleHasBeenSet() const
 {
     return m_syntaxRuleHasBeenSet;
+}
+
+vector<MultiTopicSearchInformation> SearchLogRequest::GetTopics() const
+{
+    return m_topics;
+}
+
+void SearchLogRequest::SetTopics(const vector<MultiTopicSearchInformation>& _topics)
+{
+    m_topics = _topics;
+    m_topicsHasBeenSet = true;
+}
+
+bool SearchLogRequest::TopicsHasBeenSet() const
+{
+    return m_topicsHasBeenSet;
 }
 
 

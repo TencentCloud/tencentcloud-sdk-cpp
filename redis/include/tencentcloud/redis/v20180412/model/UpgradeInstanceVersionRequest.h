@@ -43,15 +43,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
-                     * @return TargetInstanceType 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
+                     * 获取目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的**TypeId**，即实例要变更的目标类型。
+- Redis 4.0 及以上的版本，支持相同版本的实例从标准架构升级至集群架构，例如，支持 Redis 4.0 标准架构升级至 Redis 4.0 集群架构。
+- 不支持跨版本架构升级，例如，Redis 4.0 标准架构升级至 Redis 5.0 集群架构。
+- 不支持 Redis 2.8 版本升级架构。
+- 不支持从集群架构降级至标准架构。
+
+                     * @return TargetInstanceType 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的**TypeId**，即实例要变更的目标类型。
+- Redis 4.0 及以上的版本，支持相同版本的实例从标准架构升级至集群架构，例如，支持 Redis 4.0 标准架构升级至 Redis 4.0 集群架构。
+- 不支持跨版本架构升级，例如，Redis 4.0 标准架构升级至 Redis 5.0 集群架构。
+- 不支持 Redis 2.8 版本升级架构。
+- 不支持从集群架构降级至标准架构。
+
                      * 
                      */
                     std::string GetTargetInstanceType() const;
 
                     /**
-                     * 设置目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
-                     * @param _targetInstanceType 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
+                     * 设置目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的**TypeId**，即实例要变更的目标类型。
+- Redis 4.0 及以上的版本，支持相同版本的实例从标准架构升级至集群架构，例如，支持 Redis 4.0 标准架构升级至 Redis 4.0 集群架构。
+- 不支持跨版本架构升级，例如，Redis 4.0 标准架构升级至 Redis 5.0 集群架构。
+- 不支持 Redis 2.8 版本升级架构。
+- 不支持从集群架构降级至标准架构。
+
+                     * @param _targetInstanceType 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的**TypeId**，即实例要变更的目标类型。
+- Redis 4.0 及以上的版本，支持相同版本的实例从标准架构升级至集群架构，例如，支持 Redis 4.0 标准架构升级至 Redis 4.0 集群架构。
+- 不支持跨版本架构升级，例如，Redis 4.0 标准架构升级至 Redis 5.0 集群架构。
+- 不支持 Redis 2.8 版本升级架构。
+- 不支持从集群架构降级至标准架构。
+
                      * 
                      */
                     void SetTargetInstanceType(const std::string& _targetInstanceType);
@@ -64,15 +84,23 @@ namespace TencentCloud
                     bool TargetInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取切换模式：1-维护时间窗切换，2-立即切换
-                     * @return SwitchOption 切换模式：1-维护时间窗切换，2-立即切换
+                     * 获取切换时间。
+- 1：维护时间窗切换。
+- 2：立即切换。
+                     * @return SwitchOption 切换时间。
+- 1：维护时间窗切换。
+- 2：立即切换。
                      * 
                      */
                     int64_t GetSwitchOption() const;
 
                     /**
-                     * 设置切换模式：1-维护时间窗切换，2-立即切换
-                     * @param _switchOption 切换模式：1-维护时间窗切换，2-立即切换
+                     * 设置切换时间。
+- 1：维护时间窗切换。
+- 2：立即切换。
+                     * @param _switchOption 切换时间。
+- 1：维护时间窗切换。
+- 2：立即切换。
                      * 
                      */
                     void SetSwitchOption(const int64_t& _switchOption);
@@ -85,15 +113,15 @@ namespace TencentCloud
                     bool SwitchOptionHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,19 +136,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type，即实例要变更的目标类型
+                     * 目标实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的**TypeId**，即实例要变更的目标类型。
+- Redis 4.0 及以上的版本，支持相同版本的实例从标准架构升级至集群架构，例如，支持 Redis 4.0 标准架构升级至 Redis 4.0 集群架构。
+- 不支持跨版本架构升级，例如，Redis 4.0 标准架构升级至 Redis 5.0 集群架构。
+- 不支持 Redis 2.8 版本升级架构。
+- 不支持从集群架构降级至标准架构。
+
                      */
                     std::string m_targetInstanceType;
                     bool m_targetInstanceTypeHasBeenSet;
 
                     /**
-                     * 切换模式：1-维护时间窗切换，2-立即切换
+                     * 切换时间。
+- 1：维护时间窗切换。
+- 2：立即切换。
                      */
                     int64_t m_switchOption;
                     bool m_switchOptionHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

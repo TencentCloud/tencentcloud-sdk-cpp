@@ -32,11 +32,13 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/ClusterSession.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ClusterVersion.h
@@ -51,13 +53,14 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceConfigItem.h
-  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/RoleAuth.h
   include/tencentcloud/oceanus/v20190422/model/Tag.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRsp.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/TreeResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
+  include/tencentcloud/oceanus/v20190422/model/WorkSpaceSetItem.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefJobInfo.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
@@ -69,11 +72,13 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/Filter.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ClusterGroupSetItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h
   include/tencentcloud/oceanus/v20190422/model/CopyJobItem.h
@@ -87,7 +92,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/Cluster.h
   include/tencentcloud/oceanus/v20190422/model/DescribeClustersResponse.h
-  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeWorkSpacesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h
@@ -112,11 +117,13 @@ set(oceanus_src
   src/v20190422/model/DeleteJobsRequest.cpp
   src/v20190422/model/StopJobDescription.cpp
   src/v20190422/model/CreateFolderRequest.cpp
+  src/v20190422/model/TriggerJobSavepointResponse.cpp
   src/v20190422/model/ModifyJobResponse.cpp
   src/v20190422/model/ClusterSession.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
+  src/v20190422/model/TriggerJobSavepointRequest.cpp
   src/v20190422/model/CreateResourceConfigRequest.cpp
   src/v20190422/model/DescribeSystemResourcesResponse.cpp
   src/v20190422/model/ClusterVersion.cpp
@@ -131,13 +138,14 @@ set(oceanus_src
   src/v20190422/model/DeleteResourcesResponse.cpp
   src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/ResourceConfigItem.cpp
-  src/v20190422/model/TriggerJobSavepointResponse.cpp
+  src/v20190422/model/RoleAuth.cpp
   src/v20190422/model/Tag.cpp
   src/v20190422/model/DescribeTreeResourcesRsp.cpp
   src/v20190422/model/DescribeResourcesRequest.cpp
   src/v20190422/model/TreeResourceItem.cpp
   src/v20190422/model/RefJobStatusCountItem.cpp
   src/v20190422/model/ResourceLocParam.cpp
+  src/v20190422/model/WorkSpaceSetItem.cpp
   src/v20190422/model/ResourceRefJobInfo.cpp
   src/v20190422/model/DescribeJobConfigsRequest.cpp
   src/v20190422/model/CheckSavepointResponse.cpp
@@ -149,11 +157,13 @@ set(oceanus_src
   src/v20190422/model/Filter.cpp
   src/v20190422/model/DeleteResourcesRequest.cpp
   src/v20190422/model/DescribeJobsResponse.cpp
+  src/v20190422/model/DescribeWorkSpacesResponse.cpp
   src/v20190422/model/ResourceItem.cpp
   src/v20190422/model/WorkSpaceClusterItem.cpp
   src/v20190422/model/StopJobsResponse.cpp
   src/v20190422/model/DescribeJobSavepointRequest.cpp
   src/v20190422/model/CreateResourceResponse.cpp
+  src/v20190422/model/ClusterGroupSetItem.cpp
   src/v20190422/model/DescribeSystemResourcesRequest.cpp
   src/v20190422/model/CreateFolderResponse.cpp
   src/v20190422/model/CopyJobItem.cpp
@@ -167,7 +177,7 @@ set(oceanus_src
   src/v20190422/model/DescribeResourcesResponse.cpp
   src/v20190422/model/Cluster.cpp
   src/v20190422/model/DescribeClustersResponse.cpp
-  src/v20190422/model/TriggerJobSavepointRequest.cpp
+  src/v20190422/model/DescribeWorkSpacesRequest.cpp
   src/v20190422/model/DescribeResourceConfigsResponse.cpp
   src/v20190422/model/ResourceRef.cpp
   src/v20190422/model/DescribeJobsRequest.cpp

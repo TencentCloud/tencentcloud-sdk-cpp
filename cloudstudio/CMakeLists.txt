@@ -15,10 +15,35 @@
 #
 
 set(cloudstudio_public_header
+  include/tencentcloud/cloudstudio/v20230508/CloudstudioClient.h
   include/tencentcloud/cloudstudio/v20210524/CloudstudioClient.h
   )
 
 set(cloudstudio_public_header_model
+  include/tencentcloud/cloudstudio/v20230508/model/DescribeConfigRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/DescribeWorkspacesRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/Env.h
+  include/tencentcloud/cloudstudio/v20230508/model/RunWorkspaceRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/CreateWorkspaceTokenResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/GitRepository.h
+  include/tencentcloud/cloudstudio/v20230508/model/CreateWorkspaceTokenRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/CreateWorkspaceRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/RunWorkspaceResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/StopWorkspaceResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/RemoveWorkspaceResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/RemoveWorkspaceRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/LifeCycleCommand.h
+  include/tencentcloud/cloudstudio/v20230508/model/StopWorkspaceRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/WorkspaceStatusInfo.h
+  include/tencentcloud/cloudstudio/v20230508/model/LifeCycle.h
+  include/tencentcloud/cloudstudio/v20230508/model/ModifyWorkspaceResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/CreateWorkspaceResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/Image.h
+  include/tencentcloud/cloudstudio/v20230508/model/DescribeConfigResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/DescribeImagesRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/DescribeWorkspacesResponse.h
+  include/tencentcloud/cloudstudio/v20230508/model/ModifyWorkspaceRequest.h
+  include/tencentcloud/cloudstudio/v20230508/model/DescribeImagesResponse.h
   include/tencentcloud/cloudstudio/v20210524/model/UserDefinedTemplatePatchedParams.h
   include/tencentcloud/cloudstudio/v20210524/model/WorkspaceInfoDTO.h
   include/tencentcloud/cloudstudio/v20210524/model/RecoverWorkspaceResponse.h
@@ -82,7 +107,32 @@ set(cloudstudio_public_header_model
   )
 
 set(cloudstudio_src
+  src/v20230508/CloudstudioClient.cpp
   src/v20210524/CloudstudioClient.cpp
+  src/v20230508/model/DescribeConfigRequest.cpp
+  src/v20230508/model/DescribeWorkspacesRequest.cpp
+  src/v20230508/model/Env.cpp
+  src/v20230508/model/RunWorkspaceRequest.cpp
+  src/v20230508/model/CreateWorkspaceTokenResponse.cpp
+  src/v20230508/model/GitRepository.cpp
+  src/v20230508/model/CreateWorkspaceTokenRequest.cpp
+  src/v20230508/model/CreateWorkspaceRequest.cpp
+  src/v20230508/model/RunWorkspaceResponse.cpp
+  src/v20230508/model/StopWorkspaceResponse.cpp
+  src/v20230508/model/RemoveWorkspaceResponse.cpp
+  src/v20230508/model/RemoveWorkspaceRequest.cpp
+  src/v20230508/model/LifeCycleCommand.cpp
+  src/v20230508/model/StopWorkspaceRequest.cpp
+  src/v20230508/model/WorkspaceStatusInfo.cpp
+  src/v20230508/model/LifeCycle.cpp
+  src/v20230508/model/ModifyWorkspaceResponse.cpp
+  src/v20230508/model/CreateWorkspaceResponse.cpp
+  src/v20230508/model/Image.cpp
+  src/v20230508/model/DescribeConfigResponse.cpp
+  src/v20230508/model/DescribeImagesRequest.cpp
+  src/v20230508/model/DescribeWorkspacesResponse.cpp
+  src/v20230508/model/ModifyWorkspaceRequest.cpp
+  src/v20230508/model/DescribeImagesResponse.cpp
   src/v20210524/model/UserDefinedTemplatePatchedParams.cpp
   src/v20210524/model/WorkspaceInfoDTO.cpp
   src/v20210524/model/RecoverWorkspaceResponse.cpp
