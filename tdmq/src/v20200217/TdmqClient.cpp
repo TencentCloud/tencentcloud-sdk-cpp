@@ -5028,6 +5028,49 @@ TdmqClient::SendMsgOutcomeCallable TdmqClient::SendMsgCallable(const SendMsgRequ
     return task->get_future();
 }
 
+TdmqClient::SendRocketMQMessageOutcome TdmqClient::SendRocketMQMessage(const SendRocketMQMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendRocketMQMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendRocketMQMessageResponse rsp = SendRocketMQMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendRocketMQMessageOutcome(rsp);
+        else
+            return SendRocketMQMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return SendRocketMQMessageOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::SendRocketMQMessageAsync(const SendRocketMQMessageRequest& request, const SendRocketMQMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendRocketMQMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::SendRocketMQMessageOutcomeCallable TdmqClient::SendRocketMQMessageCallable(const SendRocketMQMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendRocketMQMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->SendRocketMQMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::UnbindCmqDeadLetterOutcome TdmqClient::UnbindCmqDeadLetter(const UnbindCmqDeadLetterRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindCmqDeadLetter");

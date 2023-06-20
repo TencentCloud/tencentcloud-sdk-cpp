@@ -563,7 +563,7 @@ namespace TencentCloud
                 BindWorkGroupsToUserOutcomeCallable BindWorkGroupsToUserCallable(const Model::BindWorkGroupsToUserRequest& request);
 
                 /**
-                 *本接口（CancelNotebookSessionStatement）用于取消session statement
+                 *本接口（CancelNotebookSessionStatement）用于取消session中执行的任务
                  * @param req CancelNotebookSessionStatementRequest
                  * @return CancelNotebookSessionStatementOutcome
                  */
@@ -572,7 +572,7 @@ namespace TencentCloud
                 CancelNotebookSessionStatementOutcomeCallable CancelNotebookSessionStatementCallable(const Model::CancelNotebookSessionStatementRequest& request);
 
                 /**
-                 *本接口（CancelNotebookSessionStatementBatch）用于按批取消Session statement。
+                 *本接口（CancelNotebookSessionStatementBatch）用于批量取消Session 中执行的任务
                  * @param req CancelNotebookSessionStatementBatchRequest
                  * @return CancelNotebookSessionStatementBatchOutcome
                  */
@@ -590,7 +590,7 @@ namespace TencentCloud
                 CancelSparkSessionBatchSQLOutcomeCallable CancelSparkSessionBatchSQLCallable(const Model::CancelSparkSessionBatchSQLRequest& request);
 
                 /**
-                 *本接口（CancelTask），用于取消任务执行
+                 *本接口（CancelTask），用于取消任务
                  * @param req CancelTaskRequest
                  * @return CancelTaskOutcome
                  */
@@ -671,7 +671,7 @@ namespace TencentCloud
                 CreateInternalTableOutcomeCallable CreateInternalTableCallable(const Model::CreateInternalTableRequest& request);
 
                 /**
-                 *本接口（CreateNotebookSession）用于创建notebook livy session
+                 *本接口（CreateNotebookSession）用于创建交互式session（notebook）
                  * @param req CreateNotebookSessionRequest
                  * @return CreateNotebookSessionOutcome
                  */
@@ -680,7 +680,7 @@ namespace TencentCloud
                 CreateNotebookSessionOutcomeCallable CreateNotebookSessionCallable(const Model::CreateNotebookSessionRequest& request);
 
                 /**
-                 *本接口（CreateNotebookSessionStatement）用于创建session statement
+                 *本接口（CreateNotebookSessionStatement）用于在session中执行代码片段
                  * @param req CreateNotebookSessionStatementRequest
                  * @return CreateNotebookSessionStatementOutcome
                  */
@@ -689,7 +689,7 @@ namespace TencentCloud
                 CreateNotebookSessionStatementOutcomeCallable CreateNotebookSessionStatementCallable(const Model::CreateNotebookSessionStatementRequest& request);
 
                 /**
-                 *本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建Statement批量运行SQL任务。
+                 *本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建交互式session并执行SQL任务
                  * @param req CreateNotebookSessionStatementSupportBatchSQLRequest
                  * @return CreateNotebookSessionStatementSupportBatchSQLOutcome
                  */
@@ -716,7 +716,7 @@ namespace TencentCloud
                 CreateScriptOutcomeCallable CreateScriptCallable(const Model::CreateScriptRequest& request);
 
                 /**
-                 *创建spark应用
+                 *创建spark作业
                  * @param req CreateSparkAppRequest
                  * @return CreateSparkAppOutcome
                  */
@@ -725,7 +725,7 @@ namespace TencentCloud
                 CreateSparkAppOutcomeCallable CreateSparkAppCallable(const Model::CreateSparkAppRequest& request);
 
                 /**
-                 *创建spark任务
+                 *启动Spark作业
                  * @param req CreateSparkAppTaskRequest
                  * @return CreateSparkAppTaskOutcome
                  */
@@ -761,7 +761,7 @@ namespace TencentCloud
                 CreateTableOutcomeCallable CreateTableCallable(const Model::CreateTableRequest& request);
 
                 /**
-                 *本接口（CreateTask）用于创建sql查询任务。（推荐使用CreateTasks接口）
+                 *本接口（CreateTask）用于创建并执行SQL任务。（推荐使用CreateTasks接口）
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -770,7 +770,7 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
-                 *本接口（CreateTasks），用于批量创建任务
+                 *本接口（CreateTasks），用于批量创建并执行SQL任务
                  * @param req CreateTasksRequest
                  * @return CreateTasksOutcome
                  */
@@ -824,7 +824,7 @@ namespace TencentCloud
                 DeleteScriptOutcomeCallable DeleteScriptCallable(const Model::DeleteScriptRequest& request);
 
                 /**
-                 *删除spark应用
+                 *删除spark作业
                  * @param req DeleteSparkAppRequest
                  * @return DeleteSparkAppOutcome
                  */
@@ -896,7 +896,7 @@ namespace TencentCloud
                 DescribeDMSTablesOutcomeCallable DescribeDMSTablesCallable(const Model::DescribeDMSTablesRequest& request);
 
                 /**
-                 *本接口（DescribeDataEngines）用于获取DataEngines信息列表
+                 *本接口（DescribeDataEngines）用于查询DataEngines信息列表
                  * @param req DescribeDataEnginesRequest
                  * @return DescribeDataEnginesOutcome
                  */
@@ -914,7 +914,7 @@ namespace TencentCloud
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
 
                 /**
-                 *本接口根据引擎ID获取数据引擎资源使用情况
+                 *本接口根据引擎ID查询数据引擎资源使用情况
                  * @param req DescribeEngineUsageInfoRequest
                  * @return DescribeEngineUsageInfoOutcome
                  */
@@ -923,7 +923,7 @@ namespace TencentCloud
                 DescribeEngineUsageInfoOutcomeCallable DescribeEngineUsageInfoCallable(const Model::DescribeEngineUsageInfoRequest& request);
 
                 /**
-                 *本接口（DescribeForbiddenTablePro）用于获取被禁用的表属性列表
+                 *本接口（DescribeForbiddenTablePro）用于查询被禁用的表属性列表（新）
                  * @param req DescribeForbiddenTableProRequest
                  * @return DescribeForbiddenTableProOutcome
                  */
@@ -950,7 +950,7 @@ namespace TencentCloud
                 DescribeLakeFsInfoOutcomeCallable DescribeLakeFsInfoCallable(const Model::DescribeLakeFsInfoRequest& request);
 
                 /**
-                 *本接口（DescribeNotebookSession）用于获取notebook livy session详情信息
+                 *本接口（DescribeNotebookSession）用于查询交互式 session详情信息
                  * @param req DescribeNotebookSessionRequest
                  * @return DescribeNotebookSessionOutcome
                  */
@@ -959,7 +959,7 @@ namespace TencentCloud
                 DescribeNotebookSessionOutcomeCallable DescribeNotebookSessionCallable(const Model::DescribeNotebookSessionRequest& request);
 
                 /**
-                 *本接口（DescribeNotebookSessionLog）用于获取notebook livy session日志
+                 *本接口（DescribeNotebookSessionLog）用于查询交互式 session日志
                  * @param req DescribeNotebookSessionLogRequest
                  * @return DescribeNotebookSessionLogOutcome
                  */
@@ -968,7 +968,7 @@ namespace TencentCloud
                 DescribeNotebookSessionLogOutcomeCallable DescribeNotebookSessionLogCallable(const Model::DescribeNotebookSessionLogRequest& request);
 
                 /**
-                 *本接口（DescribeNotebookSessionStatement）用于获取session statement信息
+                 *本接口（DescribeNotebookSessionStatement）用于查询session 中执行任务的详情
                  * @param req DescribeNotebookSessionStatementRequest
                  * @return DescribeNotebookSessionStatementOutcome
                  */
@@ -986,7 +986,7 @@ namespace TencentCloud
                 DescribeNotebookSessionStatementSqlResultOutcomeCallable DescribeNotebookSessionStatementSqlResultCallable(const Model::DescribeNotebookSessionStatementSqlResultRequest& request);
 
                 /**
-                 *本接口（DescribeNotebookSessionStatements）用于获取Session Statement列表。
+                 *本接口（DescribeNotebookSessionStatements）用于查询Session中执行的任务列表
                  * @param req DescribeNotebookSessionStatementsRequest
                  * @return DescribeNotebookSessionStatementsOutcome
                  */
@@ -995,7 +995,7 @@ namespace TencentCloud
                 DescribeNotebookSessionStatementsOutcomeCallable DescribeNotebookSessionStatementsCallable(const Model::DescribeNotebookSessionStatementsRequest& request);
 
                 /**
-                 *本接口（DescribeNotebookSessions）用于获取notebook livy session列表
+                 *本接口（DescribeNotebookSessions）用于查询交互式 session列表
                  * @param req DescribeNotebookSessionsRequest
                  * @return DescribeNotebookSessionsOutcome
                  */
@@ -1013,7 +1013,7 @@ namespace TencentCloud
                 DescribeResultDownloadOutcomeCallable DescribeResultDownloadCallable(const Model::DescribeResultDownloadRequest& request);
 
                 /**
-                 *该接口（DescribeScripts）用于获取所有SQL查询。
+                 *该接口（DescribeScripts）用于查询SQL脚本列表
                  * @param req DescribeScriptsRequest
                  * @return DescribeScriptsOutcome
                  */
@@ -1022,7 +1022,7 @@ namespace TencentCloud
                 DescribeScriptsOutcomeCallable DescribeScriptsCallable(const Model::DescribeScriptsRequest& request);
 
                 /**
-                 *查询具体的spark应用
+                 *查询spark作业信息
                  * @param req DescribeSparkAppJobRequest
                  * @return DescribeSparkAppJobOutcome
                  */
@@ -1031,7 +1031,7 @@ namespace TencentCloud
                 DescribeSparkAppJobOutcomeCallable DescribeSparkAppJobCallable(const Model::DescribeSparkAppJobRequest& request);
 
                 /**
-                 *获取spark应用列表。
+                 *查询spark作业列表
                  * @param req DescribeSparkAppJobsRequest
                  * @return DescribeSparkAppJobsOutcome
                  */
@@ -1040,7 +1040,7 @@ namespace TencentCloud
                 DescribeSparkAppJobsOutcomeCallable DescribeSparkAppJobsCallable(const Model::DescribeSparkAppJobsRequest& request);
 
                 /**
-                 *查询spark应用的运行任务实例列表
+                 *查询Spark作业的运行任务列表
                  * @param req DescribeSparkAppTasksRequest
                  * @return DescribeSparkAppTasksOutcome
                  */
@@ -1184,7 +1184,7 @@ namespace TencentCloud
                 GenerateCreateMangedTableSqlOutcomeCallable GenerateCreateMangedTableSqlCallable(const Model::GenerateCreateMangedTableSqlRequest& request);
 
                 /**
-                 *本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表
+                 *本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情
                  * @param req ListTaskJobLogDetailRequest
                  * @return ListTaskJobLogDetailOutcome
                  */
@@ -1211,7 +1211,7 @@ namespace TencentCloud
                 ModifyGovernEventRuleOutcomeCallable ModifyGovernEventRuleCallable(const Model::ModifyGovernEventRuleRequest& request);
 
                 /**
-                 *更新spark应用
+                 *更新spark作业
                  * @param req ModifySparkAppRequest
                  * @return ModifySparkAppOutcome
                  */
@@ -1256,7 +1256,7 @@ namespace TencentCloud
                 ReportHeartbeatMetaDataOutcomeCallable ReportHeartbeatMetaDataCallable(const Model::ReportHeartbeatMetaDataRequest& request);
 
                 /**
-                 *本接口用于控制暂停或恢复数据引擎
+                 *本接口用于控制挂起或启动数据引擎
                  * @param req SuspendResumeDataEngineRequest
                  * @return SuspendResumeDataEngineOutcome
                  */

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取类型，当前支持：spark、pyspark、sparkr、sql
-                     * @return Kind 类型，当前支持：spark、pyspark、sparkr、sql
+                     * 获取类型，当前支持：sql
+                     * @return Kind 类型，当前支持：sql
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置类型，当前支持：spark、pyspark、sparkr、sql
-                     * @param _kind 类型，当前支持：spark、pyspark、sparkr、sql
+                     * 设置类型，当前支持：sql
+                     * @param _kind 类型，当前支持：sql
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 类型，当前支持：spark、pyspark、sparkr、sql
+                     * 类型，当前支持：sql
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

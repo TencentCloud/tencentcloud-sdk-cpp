@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool CrontabResumeSuspendStrategyHasBeenSet() const;
 
                     /**
-                     * 获取引擎执行任务类型，默认为SQL
-                     * @return EngineExecType 引擎执行任务类型，默认为SQL
+                     * 获取引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
+                     * @return EngineExecType 引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
                      * 
                      */
                     std::string GetEngineExecType() const;
 
                     /**
-                     * 设置引擎执行任务类型，默认为SQL
-                     * @param _engineExecType 引擎执行任务类型，默认为SQL
+                     * 设置引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
+                     * @param _engineExecType 引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
                      * 
                      */
                     void SetEngineExecType(const std::string& _engineExecType);
@@ -793,7 +793,7 @@ namespace TencentCloud
                     bool m_crontabResumeSuspendStrategyHasBeenSet;
 
                     /**
-                     * 引擎执行任务类型，默认为SQL
+                     * 引擎执行任务类型，有效值：SQL/BATCH，默认为SQL
                      */
                     std::string m_engineExecType;
                     bool m_engineExecTypeHasBeenSet;

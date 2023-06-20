@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool TableGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取待查询表格信息列表
-                     * @return SelectedTables 待查询表格信息列表
+                     * 获取待查询表格信息列表，用户不用关注，过滤请使用filter
+                     * @return SelectedTables 待查询表格信息列表，用户不用关注，过滤请使用filter
                      * 
                      */
                     std::vector<SelectedTableInfoNew> GetSelectedTables() const;
 
                     /**
-                     * 设置待查询表格信息列表
-                     * @param _selectedTables 待查询表格信息列表
+                     * 设置待查询表格信息列表，用户不用关注，过滤请使用filter
+                     * @param _selectedTables 待查询表格信息列表，用户不用关注，过滤请使用filter
                      * 
                      */
                     void SetSelectedTables(const std::vector<SelectedTableInfoNew>& _selectedTables);
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_tableGroupIdsHasBeenSet;
 
                     /**
-                     * 待查询表格信息列表
+                     * 待查询表格信息列表，用户不用关注，过滤请使用filter
                      */
                     std::vector<SelectedTableInfoNew> m_selectedTables;
                     bool m_selectedTablesHasBeenSet;

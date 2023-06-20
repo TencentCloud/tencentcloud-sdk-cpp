@@ -27,6 +27,8 @@
 #include <tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h>
@@ -71,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainAndIpResponse> CreateDomainAndIpOutcome;
                 typedef std::future<CreateDomainAndIpOutcome> CreateDomainAndIpOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateDomainAndIpRequest&, CreateDomainAndIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAndIpAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRiskCenterScanTaskResponse> CreateRiskCenterScanTaskOutcome;
+                typedef std::future<CreateRiskCenterScanTaskOutcome> CreateRiskCenterScanTaskOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateRiskCenterScanTaskRequest&, CreateRiskCenterScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskCenterScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCVMAssetInfoResponse> DescribeCVMAssetInfoOutcome;
                 typedef std::future<DescribeCVMAssetInfoOutcome> DescribeCVMAssetInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCVMAssetInfoRequest&, DescribeCVMAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCVMAssetInfoAsyncHandler;
@@ -127,6 +132,15 @@ namespace TencentCloud
                 CreateDomainAndIpOutcome CreateDomainAndIp(const Model::CreateDomainAndIpRequest &request);
                 void CreateDomainAndIpAsync(const Model::CreateDomainAndIpRequest& request, const CreateDomainAndIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDomainAndIpOutcomeCallable CreateDomainAndIpCallable(const Model::CreateDomainAndIpRequest& request);
+
+                /**
+                 *创建风险中心扫描任务
+                 * @param req CreateRiskCenterScanTaskRequest
+                 * @return CreateRiskCenterScanTaskOutcome
+                 */
+                CreateRiskCenterScanTaskOutcome CreateRiskCenterScanTask(const Model::CreateRiskCenterScanTaskRequest &request);
+                void CreateRiskCenterScanTaskAsync(const Model::CreateRiskCenterScanTaskRequest& request, const CreateRiskCenterScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRiskCenterScanTaskOutcomeCallable CreateRiskCenterScanTaskCallable(const Model::CreateRiskCenterScanTaskRequest& request);
 
                 /**
                  *cvm详情

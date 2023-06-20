@@ -857,6 +857,49 @@ TbaasClient::GetLatesdTransactionListOutcomeCallable TbaasClient::GetLatesdTrans
     return task->get_future();
 }
 
+TbaasClient::GetLatestTransactionListOutcome TbaasClient::GetLatestTransactionList(const GetLatestTransactionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetLatestTransactionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetLatestTransactionListResponse rsp = GetLatestTransactionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetLatestTransactionListOutcome(rsp);
+        else
+            return GetLatestTransactionListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetLatestTransactionListOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::GetLatestTransactionListAsync(const GetLatestTransactionListRequest& request, const GetLatestTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetLatestTransactionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::GetLatestTransactionListOutcomeCallable TbaasClient::GetLatestTransactionListCallable(const GetLatestTransactionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetLatestTransactionListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetLatestTransactionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::GetPeerLogForUserOutcome TbaasClient::GetPeerLogForUser(const GetPeerLogForUserRequest &request)
 {
     auto outcome = MakeRequest(request, "GetPeerLogForUser");

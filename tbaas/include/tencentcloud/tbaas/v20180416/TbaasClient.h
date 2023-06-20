@@ -61,6 +61,8 @@
 #include <tencentcloud/tbaas/v20180416/model/GetInvokeTxResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetLatesdTransactionListResponse.h>
+#include <tencentcloud/tbaas/v20180416/model/GetLatestTransactionListRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetPeerLogForUserRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/GetPeerLogForUserResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/GetTransactionDetailForUserRequest.h>
@@ -162,6 +164,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetLatesdTransactionListResponse> GetLatesdTransactionListOutcome;
                 typedef std::future<GetLatesdTransactionListOutcome> GetLatesdTransactionListOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetLatesdTransactionListRequest&, GetLatesdTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatesdTransactionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLatestTransactionListResponse> GetLatestTransactionListOutcome;
+                typedef std::future<GetLatestTransactionListOutcome> GetLatestTransactionListOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::GetLatestTransactionListRequest&, GetLatestTransactionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatestTransactionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPeerLogForUserResponse> GetPeerLogForUserOutcome;
                 typedef std::future<GetPeerLogForUserOutcome> GetPeerLogForUserOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::GetPeerLogForUserRequest&, GetPeerLogForUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPeerLogForUserAsyncHandler;
@@ -238,7 +243,9 @@ namespace TencentCloud
                 CreateChaincodeAndInstallForUserOutcomeCallable CreateChaincodeAndInstallForUserCallable(const Model::CreateChaincodeAndInstallForUserRequest& request);
 
                 /**
-                 *动态部署并发布Bcos合约
+                 *Bcos区块链引擎已下线，请选用其他区块链引擎
+
+动态部署并发布Bcos合约
                  * @param req DeployDynamicBcosContractRequest
                  * @return DeployDynamicBcosContractOutcome
                  */
@@ -256,7 +263,9 @@ namespace TencentCloud
                 DownloadUserCertOutcomeCallable DownloadUserCertCallable(const Model::DownloadUserCertRequest& request);
 
                 /**
-                 *使用块高查询Bcos区块信息
+                 *Bcos区块链引擎已下线，请选用其他区块链引擎
+
+使用块高查询Bcos区块信息
                  * @param req GetBcosBlockByNumberRequest
                  * @return GetBcosBlockByNumberOutcome
                  */
@@ -265,7 +274,9 @@ namespace TencentCloud
                 GetBcosBlockByNumberOutcomeCallable GetBcosBlockByNumberCallable(const Model::GetBcosBlockByNumberRequest& request);
 
                 /**
-                 *Bcos分页查询当前群组下的区块列表
+                 *Bcos区块链引擎已下线，请选用其他区块链引擎
+
+Bcos分页查询当前群组下的区块列表
                  * @param req GetBcosBlockListRequest
                  * @return GetBcosBlockListOutcome
                  */
@@ -274,7 +285,9 @@ namespace TencentCloud
                 GetBcosBlockListOutcomeCallable GetBcosBlockListCallable(const Model::GetBcosBlockListRequest& request);
 
                 /**
-                 *Bcos根据交易哈希查看交易详细信息
+                 *Bcos区块链引擎已下线，请选用其他区块链引擎
+
+Bcos根据交易哈希查看交易详细信息
                  * @param req GetBcosTransByHashRequest
                  * @return GetBcosTransByHashOutcome
                  */
@@ -283,7 +296,9 @@ namespace TencentCloud
                 GetBcosTransByHashOutcomeCallable GetBcosTransByHashCallable(const Model::GetBcosTransByHashRequest& request);
 
                 /**
-                 *Bcos分页查询当前群组的交易信息列表
+                 *Bcos区块链引擎已下线，请选用其他区块链引擎
+
+Bcos分页查询当前群组的交易信息列表
                  * @param req GetBcosTransListRequest
                  * @return GetBcosTransListOutcome
                  */
@@ -373,13 +388,22 @@ namespace TencentCloud
                 GetInvokeTxOutcomeCallable GetInvokeTxCallable(const Model::GetInvokeTxRequest& request);
 
                 /**
-                 *获取最新交易列表
+                 *获取最新交易列表（已废弃）
                  * @param req GetLatesdTransactionListRequest
                  * @return GetLatesdTransactionListOutcome
                  */
                 GetLatesdTransactionListOutcome GetLatesdTransactionList(const Model::GetLatesdTransactionListRequest &request);
                 void GetLatesdTransactionListAsync(const Model::GetLatesdTransactionListRequest& request, const GetLatesdTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLatesdTransactionListOutcomeCallable GetLatesdTransactionListCallable(const Model::GetLatesdTransactionListRequest& request);
+
+                /**
+                 *获取fabric最新交易列表
+                 * @param req GetLatestTransactionListRequest
+                 * @return GetLatestTransactionListOutcome
+                 */
+                GetLatestTransactionListOutcome GetLatestTransactionList(const Model::GetLatestTransactionListRequest &request);
+                void GetLatestTransactionListAsync(const Model::GetLatestTransactionListRequest& request, const GetLatestTransactionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLatestTransactionListOutcomeCallable GetLatestTransactionListCallable(const Model::GetLatestTransactionListRequest& request);
 
                 /**
                  *获取节点日志
@@ -418,7 +442,9 @@ namespace TencentCloud
                 InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request);
 
                 /**
-                 *执行Bcos交易，支持动态部署的合约
+                 *Bcos区块链引擎已下线，请选用其他区块链引擎
+
+执行Bcos交易，支持动态部署的合约
                  * @param req InvokeBcosTransRequest
                  * @return InvokeBcosTransOutcome
                  */

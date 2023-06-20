@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DatasourceConnectionNameHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，当前版本仅支持按库名排序
-                     * @return Sort 排序字段，当前版本仅支持按库名排序
+                     * 获取排序字段，CreateTime：创建时间，Name：数据库名称
+                     * @return Sort 排序字段，CreateTime：创建时间，Name：数据库名称
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序字段，当前版本仅支持按库名排序
-                     * @param _sort 排序字段，当前版本仅支持按库名排序
+                     * 设置排序字段，CreateTime：创建时间，Name：数据库名称
+                     * @param _sort 排序字段，CreateTime：创建时间，Name：数据库名称
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_datasourceConnectionNameHasBeenSet;
 
                     /**
-                     * 排序字段，当前版本仅支持按库名排序
+                     * 排序字段，CreateTime：创建时间，Name：数据库名称
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;

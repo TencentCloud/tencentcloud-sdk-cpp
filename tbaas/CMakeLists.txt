@@ -59,6 +59,7 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionResponse.h
   include/tencentcloud/tbaas/v20180416/model/DownloadUserCertRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetClusterSummaryResponse.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListRequest.h
   include/tencentcloud/tbaas/v20180416/model/PeerSet.h
   include/tencentcloud/tbaas/v20180416/model/ChainMakerTransactionResult.h
   include/tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserRequest.h
@@ -87,11 +88,12 @@ set(tbaas_public_header_model
   include/tencentcloud/tbaas/v20180416/model/GetChannelListForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/QueryChainMakerContractResponse.h
   include/tencentcloud/tbaas/v20180416/model/GetBcosTransByHashRequest.h
+  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetChaincodeCompileLogForUserResponse.h
   include/tencentcloud/tbaas/v20180416/model/DeployDynamicBcosContractRequest.h
   include/tencentcloud/tbaas/v20180416/model/InvokeChainMakerContractRequest.h
   include/tencentcloud/tbaas/v20180416/model/GetBcosTransListResponse.h
-  include/tencentcloud/tbaas/v20180416/model/QueryChainMakerTransactionRequest.h
+  include/tencentcloud/tbaas/v20180416/model/GetLatestTransactionListResponse.h
   include/tencentcloud/tbaas/v20180416/model/BcosBlockObj.h
   include/tencentcloud/tbaas/v20180416/model/ChannelDetailForUser.h
   include/tencentcloud/tbaas/v20180416/model/QueryRequest.h
@@ -145,6 +147,7 @@ set(tbaas_src
   src/v20180416/model/QueryChainMakerTransactionResponse.cpp
   src/v20180416/model/DownloadUserCertRequest.cpp
   src/v20180416/model/GetClusterSummaryResponse.cpp
+  src/v20180416/model/GetLatestTransactionListRequest.cpp
   src/v20180416/model/PeerSet.cpp
   src/v20180416/model/ChainMakerTransactionResult.cpp
   src/v20180416/model/CreateChaincodeAndInstallForUserRequest.cpp
@@ -173,11 +176,12 @@ set(tbaas_src
   src/v20180416/model/GetChannelListForUserResponse.cpp
   src/v20180416/model/QueryChainMakerContractResponse.cpp
   src/v20180416/model/GetBcosTransByHashRequest.cpp
+  src/v20180416/model/QueryChainMakerTransactionRequest.cpp
   src/v20180416/model/GetChaincodeCompileLogForUserResponse.cpp
   src/v20180416/model/DeployDynamicBcosContractRequest.cpp
   src/v20180416/model/InvokeChainMakerContractRequest.cpp
   src/v20180416/model/GetBcosTransListResponse.cpp
-  src/v20180416/model/QueryChainMakerTransactionRequest.cpp
+  src/v20180416/model/GetLatestTransactionListResponse.cpp
   src/v20180416/model/BcosBlockObj.cpp
   src/v20180416/model/ChannelDetailForUser.cpp
   src/v20180416/model/QueryRequest.cpp

@@ -93,6 +93,8 @@
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateTKEEdgeClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateTKEEdgeClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteAddonRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteAddonResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteBackupStorageLocationRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteBackupStorageLocationResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRequest.h>
@@ -147,6 +149,10 @@
 #include <tencentcloud/tke/v20180525/model/DeletePrometheusTemplateSyncResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteTKEEdgeClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteTKEEdgeClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeAddonRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeAddonResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeAddonValuesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeAddonValuesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableClusterVersionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableClusterVersionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableTKEEdgeVersionRequest.h>
@@ -335,6 +341,8 @@
 #include <tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressResponse.h>
+#include <tencentcloud/tke/v20180525/model/InstallAddonRequest.h>
+#include <tencentcloud/tke/v20180525/model/InstallAddonResponse.h>
 #include <tencentcloud/tke/v20180525/model/InstallEdgeLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/InstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/InstallLogAgentRequest.h>
@@ -401,6 +409,8 @@
 #include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpdateAddonRequest.h>
+#include <tencentcloud/tke/v20180525/model/UpdateAddonResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateClusterVersionRequest.h>
@@ -538,6 +548,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTKEEdgeClusterResponse> CreateTKEEdgeClusterOutcome;
                 typedef std::future<CreateTKEEdgeClusterOutcome> CreateTKEEdgeClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateTKEEdgeClusterRequest&, CreateTKEEdgeClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTKEEdgeClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAddonResponse> DeleteAddonOutcome;
+                typedef std::future<DeleteAddonOutcome> DeleteAddonOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteAddonRequest&, DeleteAddonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAddonAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBackupStorageLocationResponse> DeleteBackupStorageLocationOutcome;
                 typedef std::future<DeleteBackupStorageLocationOutcome> DeleteBackupStorageLocationOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteBackupStorageLocationRequest&, DeleteBackupStorageLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupStorageLocationAsyncHandler;
@@ -619,6 +632,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTKEEdgeClusterResponse> DeleteTKEEdgeClusterOutcome;
                 typedef std::future<DeleteTKEEdgeClusterOutcome> DeleteTKEEdgeClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteTKEEdgeClusterRequest&, DeleteTKEEdgeClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTKEEdgeClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddonResponse> DescribeAddonOutcome;
+                typedef std::future<DescribeAddonOutcome> DescribeAddonOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeAddonRequest&, DescribeAddonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddonAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddonValuesResponse> DescribeAddonValuesOutcome;
+                typedef std::future<DescribeAddonValuesOutcome> DescribeAddonValuesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeAddonValuesRequest&, DescribeAddonValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddonValuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailableClusterVersionResponse> DescribeAvailableClusterVersionOutcome;
                 typedef std::future<DescribeAvailableClusterVersionOutcome> DescribeAvailableClusterVersionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeAvailableClusterVersionRequest&, DescribeAvailableClusterVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableClusterVersionAsyncHandler;
@@ -901,6 +920,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUpgradeInstanceProgressResponse> GetUpgradeInstanceProgressOutcome;
                 typedef std::future<GetUpgradeInstanceProgressOutcome> GetUpgradeInstanceProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetUpgradeInstanceProgressRequest&, GetUpgradeInstanceProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeInstanceProgressAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallAddonResponse> InstallAddonOutcome;
+                typedef std::future<InstallAddonOutcome> InstallAddonOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::InstallAddonRequest&, InstallAddonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAddonAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstallEdgeLogAgentResponse> InstallEdgeLogAgentOutcome;
                 typedef std::future<InstallEdgeLogAgentOutcome> InstallEdgeLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::InstallEdgeLogAgentRequest&, InstallEdgeLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallEdgeLogAgentAsyncHandler;
@@ -1000,6 +1022,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UninstallLogAgentResponse> UninstallLogAgentOutcome;
                 typedef std::future<UninstallLogAgentOutcome> UninstallLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UninstallLogAgentRequest&, UninstallLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallLogAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAddonResponse> UpdateAddonOutcome;
+                typedef std::future<UpdateAddonOutcome> UpdateAddonOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UpdateAddonRequest&, UpdateAddonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAddonAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateClusterKubeconfigResponse> UpdateClusterKubeconfigOutcome;
                 typedef std::future<UpdateClusterKubeconfigOutcome> UpdateClusterKubeconfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpdateClusterKubeconfigRequest&, UpdateClusterKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterKubeconfigAsyncHandler;
@@ -1346,6 +1371,15 @@ namespace TencentCloud
                 CreateTKEEdgeClusterOutcomeCallable CreateTKEEdgeClusterCallable(const Model::CreateTKEEdgeClusterRequest& request);
 
                 /**
+                 *删除一个addon
+                 * @param req DeleteAddonRequest
+                 * @return DeleteAddonOutcome
+                 */
+                DeleteAddonOutcome DeleteAddon(const Model::DeleteAddonRequest &request);
+                void DeleteAddonAsync(const Model::DeleteAddonRequest& request, const DeleteAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAddonOutcomeCallable DeleteAddonCallable(const Model::DeleteAddonRequest& request);
+
+                /**
                  *删除备份仓库
                  * @param req DeleteBackupStorageLocationRequest
                  * @return DeleteBackupStorageLocationOutcome
@@ -1587,6 +1621,24 @@ namespace TencentCloud
                 DeleteTKEEdgeClusterOutcome DeleteTKEEdgeCluster(const Model::DeleteTKEEdgeClusterRequest &request);
                 void DeleteTKEEdgeClusterAsync(const Model::DeleteTKEEdgeClusterRequest& request, const DeleteTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTKEEdgeClusterOutcomeCallable DeleteTKEEdgeClusterCallable(const Model::DeleteTKEEdgeClusterRequest& request);
+
+                /**
+                 *获取addon列表
+                 * @param req DescribeAddonRequest
+                 * @return DescribeAddonOutcome
+                 */
+                DescribeAddonOutcome DescribeAddon(const Model::DescribeAddonRequest &request);
+                void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddonOutcomeCallable DescribeAddonCallable(const Model::DescribeAddonRequest& request);
+
+                /**
+                 *获取一个addon的参数
+                 * @param req DescribeAddonValuesRequest
+                 * @return DescribeAddonValuesOutcome
+                 */
+                DescribeAddonValuesOutcome DescribeAddonValues(const Model::DescribeAddonValuesRequest &request);
+                void DescribeAddonValuesAsync(const Model::DescribeAddonValuesRequest& request, const DescribeAddonValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddonValuesOutcomeCallable DescribeAddonValuesCallable(const Model::DescribeAddonValuesRequest& request);
 
                 /**
                  *获取集群可以升级的所有版本
@@ -2435,6 +2487,15 @@ namespace TencentCloud
                 GetUpgradeInstanceProgressOutcomeCallable GetUpgradeInstanceProgressCallable(const Model::GetUpgradeInstanceProgressRequest& request);
 
                 /**
+                 *为目标集群安装一个addon
+                 * @param req InstallAddonRequest
+                 * @return InstallAddonOutcome
+                 */
+                InstallAddonOutcome InstallAddon(const Model::InstallAddonRequest &request);
+                void InstallAddonAsync(const Model::InstallAddonRequest& request, const InstallAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallAddonOutcomeCallable InstallAddonCallable(const Model::InstallAddonRequest& request);
+
+                /**
                  *在tke@edge集群的边缘节点上安装日志采集组件
                  * @param req InstallEdgeLogAgentRequest
                  * @return InstallEdgeLogAgentOutcome
@@ -2730,6 +2791,15 @@ namespace TencentCloud
                 UninstallLogAgentOutcome UninstallLogAgent(const Model::UninstallLogAgentRequest &request);
                 void UninstallLogAgentAsync(const Model::UninstallLogAgentRequest& request, const UninstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UninstallLogAgentOutcomeCallable UninstallLogAgentCallable(const Model::UninstallLogAgentRequest& request);
+
+                /**
+                 *更新一个addon的参数和版本
+                 * @param req UpdateAddonRequest
+                 * @return UpdateAddonOutcome
+                 */
+                UpdateAddonOutcome UpdateAddon(const Model::UpdateAddonRequest &request);
+                void UpdateAddonAsync(const Model::UpdateAddonRequest& request, const UpdateAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAddonOutcomeCallable UpdateAddonCallable(const Model::UpdateAddonRequest& request);
 
                 /**
                  *对集群的Kubeconfig信息进行更新

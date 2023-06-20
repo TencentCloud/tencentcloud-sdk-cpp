@@ -211,15 +211,15 @@ task-kind - string （任务类型过滤）
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取支持计算资源名字筛选
-                     * @return DataEngineName 支持计算资源名字筛选
+                     * 获取数据引擎名称，用于筛选
+                     * @return DataEngineName 数据引擎名称，用于筛选
                      * 
                      */
                     std::string GetDataEngineName() const;
 
                     /**
-                     * 设置支持计算资源名字筛选
-                     * @param _dataEngineName 支持计算资源名字筛选
+                     * 设置数据引擎名称，用于筛选
+                     * @param _dataEngineName 数据引擎名称，用于筛选
                      * 
                      */
                     void SetDataEngineName(const std::string& _dataEngineName);
@@ -281,7 +281,7 @@ task-kind - string （任务类型过滤）
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 支持计算资源名字筛选
+                     * 数据引擎名称，用于筛选
                      */
                     std::string m_dataEngineName;
                     bool m_dataEngineNameHasBeenSet;

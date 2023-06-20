@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcaplusdb::V20190823::Model;
 using namespace std;
 
 ImportSnapshotsResponse::ImportSnapshotsResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome ImportSnapshotsResponse::Deserialize(const string &payload)
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ApplicationId") && !rsp["ApplicationId"].IsNull())
+    {
+        if (!rsp["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(rsp["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string ImportSnapshotsResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string ImportSnapshotsResponse::GetTaskId() const
 bool ImportSnapshotsResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string ImportSnapshotsResponse::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+bool ImportSnapshotsResponse::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 
 

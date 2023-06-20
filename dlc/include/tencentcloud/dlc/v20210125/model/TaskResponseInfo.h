@@ -24,6 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/CommonMetrics.h>
+#include <tencentcloud/dlc/v20210125/model/SparkMonitorMetrics.h>
+#include <tencentcloud/dlc/v20210125/model/PrestoMonitorMetrics.h>
 
 
 namespace TencentCloud
@@ -911,6 +914,81 @@ namespace TencentCloud
                      */
                     bool ExecutorMaxNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取任务公共指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CommonMetrics 任务公共指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CommonMetrics GetCommonMetrics() const;
+
+                    /**
+                     * 设置任务公共指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _commonMetrics 任务公共指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCommonMetrics(const CommonMetrics& _commonMetrics);
+
+                    /**
+                     * 判断参数 CommonMetrics 是否已赋值
+                     * @return CommonMetrics 是否已赋值
+                     * 
+                     */
+                    bool CommonMetricsHasBeenSet() const;
+
+                    /**
+                     * 获取spark任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkMonitorMetrics spark任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SparkMonitorMetrics GetSparkMonitorMetrics() const;
+
+                    /**
+                     * 设置spark任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sparkMonitorMetrics spark任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSparkMonitorMetrics(const SparkMonitorMetrics& _sparkMonitorMetrics);
+
+                    /**
+                     * 判断参数 SparkMonitorMetrics 是否已赋值
+                     * @return SparkMonitorMetrics 是否已赋值
+                     * 
+                     */
+                    bool SparkMonitorMetricsHasBeenSet() const;
+
+                    /**
+                     * 获取presto任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrestoMonitorMetrics presto任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PrestoMonitorMetrics GetPrestoMonitorMetrics() const;
+
+                    /**
+                     * 设置presto任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _prestoMonitorMetrics presto任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrestoMonitorMetrics(const PrestoMonitorMetrics& _prestoMonitorMetrics);
+
+                    /**
+                     * 判断参数 PrestoMonitorMetrics 是否已赋值
+                     * @return PrestoMonitorMetrics 是否已赋值
+                     * 
+                     */
+                    bool PrestoMonitorMetricsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1156,6 +1234,27 @@ namespace TencentCloud
                      */
                     uint64_t m_executorMaxNumbers;
                     bool m_executorMaxNumbersHasBeenSet;
+
+                    /**
+                     * 任务公共指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CommonMetrics m_commonMetrics;
+                    bool m_commonMetricsHasBeenSet;
+
+                    /**
+                     * spark任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SparkMonitorMetrics m_sparkMonitorMetrics;
+                    bool m_sparkMonitorMetricsHasBeenSet;
+
+                    /**
+                     * presto任务指标数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PrestoMonitorMetrics m_prestoMonitorMetrics;
+                    bool m_prestoMonitorMetricsHasBeenSet;
 
                 };
             }

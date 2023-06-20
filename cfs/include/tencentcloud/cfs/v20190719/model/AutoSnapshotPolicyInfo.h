@@ -370,6 +370,27 @@ namespace TencentCloud
                      */
                     bool IntervalDaysHasBeenSet() const;
 
+                    /**
+                     * 获取跨地域复制的快照保留时间
+                     * @return CrossRegionsAliveDays 跨地域复制的快照保留时间
+                     * 
+                     */
+                    uint64_t GetCrossRegionsAliveDays() const;
+
+                    /**
+                     * 设置跨地域复制的快照保留时间
+                     * @param _crossRegionsAliveDays 跨地域复制的快照保留时间
+                     * 
+                     */
+                    void SetCrossRegionsAliveDays(const uint64_t& _crossRegionsAliveDays);
+
+                    /**
+                     * 判断参数 CrossRegionsAliveDays 是否已赋值
+                     * @return CrossRegionsAliveDays 是否已赋值
+                     * 
+                     */
+                    bool CrossRegionsAliveDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +484,12 @@ namespace TencentCloud
                      */
                     uint64_t m_intervalDays;
                     bool m_intervalDaysHasBeenSet;
+
+                    /**
+                     * 跨地域复制的快照保留时间
+                     */
+                    uint64_t m_crossRegionsAliveDays;
+                    bool m_crossRegionsAliveDaysHasBeenSet;
 
                 };
             }

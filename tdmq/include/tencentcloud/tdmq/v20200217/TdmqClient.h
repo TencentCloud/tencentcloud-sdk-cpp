@@ -255,6 +255,8 @@
 #include <tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/SendMsgRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/SendMsgResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/SendRocketMQMessageRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/SendRocketMQMessageResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterResponse.h>
 
@@ -619,6 +621,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SendMsgResponse> SendMsgOutcome;
                 typedef std::future<SendMsgOutcome> SendMsgOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::SendMsgRequest&, SendMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMsgAsyncHandler;
+                typedef Outcome<Core::Error, Model::SendRocketMQMessageResponse> SendRocketMQMessageOutcome;
+                typedef std::future<SendRocketMQMessageOutcome> SendRocketMQMessageOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::SendRocketMQMessageRequest&, SendRocketMQMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendRocketMQMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindCmqDeadLetterResponse> UnbindCmqDeadLetterOutcome;
                 typedef std::future<UnbindCmqDeadLetterOutcome> UnbindCmqDeadLetterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::UnbindCmqDeadLetterRequest&, UnbindCmqDeadLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCmqDeadLetterAsyncHandler;
@@ -1727,6 +1732,15 @@ BatchReceivePolicy 的接口会一次性返回多条消息：
                 SendMsgOutcome SendMsg(const Model::SendMsgRequest &request);
                 void SendMsgAsync(const Model::SendMsgRequest& request, const SendMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendMsgOutcomeCallable SendMsgCallable(const Model::SendMsgRequest& request);
+
+                /**
+                 *发送RocketMQ消息
+                 * @param req SendRocketMQMessageRequest
+                 * @return SendRocketMQMessageOutcome
+                 */
+                SendRocketMQMessageOutcome SendRocketMQMessage(const Model::SendRocketMQMessageRequest &request);
+                void SendRocketMQMessageAsync(const Model::SendRocketMQMessageRequest& request, const SendRocketMQMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendRocketMQMessageOutcomeCallable SendRocketMQMessageCallable(const Model::SendRocketMQMessageRequest& request);
 
                 /**
                  *解绑cmq死信队列

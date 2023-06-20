@@ -59,6 +59,22 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取ApplicationId由 AppInstanceId-applicationId 组成，以区分不同集群的申请
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId ApplicationId由 AppInstanceId-applicationId 组成，以区分不同集群的申请
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +83,13 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * ApplicationId由 AppInstanceId-applicationId 组成，以区分不同集群的申请
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

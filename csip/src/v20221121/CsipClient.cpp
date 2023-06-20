@@ -126,6 +126,49 @@ CsipClient::CreateDomainAndIpOutcomeCallable CsipClient::CreateDomainAndIpCallab
     return task->get_future();
 }
 
+CsipClient::CreateRiskCenterScanTaskOutcome CsipClient::CreateRiskCenterScanTask(const CreateRiskCenterScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRiskCenterScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRiskCenterScanTaskResponse rsp = CreateRiskCenterScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRiskCenterScanTaskOutcome(rsp);
+        else
+            return CreateRiskCenterScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRiskCenterScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::CreateRiskCenterScanTaskAsync(const CreateRiskCenterScanTaskRequest& request, const CreateRiskCenterScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRiskCenterScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::CreateRiskCenterScanTaskOutcomeCallable CsipClient::CreateRiskCenterScanTaskCallable(const CreateRiskCenterScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRiskCenterScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRiskCenterScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCVMAssetInfoOutcome CsipClient::DescribeCVMAssetInfo(const DescribeCVMAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCVMAssetInfo");

@@ -21,6 +21,7 @@ set(dlc_public_header
 set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h
+  include/tencentcloud/dlc/v20210125/model/PrestoMonitorMetrics.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementRequest.h
   include/tencentcloud/dlc/v20210125/model/NetworkConnection.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementRequest.h
@@ -59,6 +60,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSPartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessions.h
+  include/tencentcloud/dlc/v20210125/model/CommonMetrics.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h
   include/tencentcloud/dlc/v20210125/model/AddDMSPartitionsResponse.h
@@ -115,6 +117,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/CSV.h
+  include/tencentcloud/dlc/v20210125/model/SparkMonitorMetrics.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessionStatementInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateTableRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementRequest.h
@@ -264,6 +267,7 @@ set(dlc_src
   src/v20210125/DlcClient.cpp
   src/v20210125/model/DescribeResultDownloadResponse.cpp
   src/v20210125/model/DescribeTaskResultResponse.cpp
+  src/v20210125/model/PrestoMonitorMetrics.cpp
   src/v20210125/model/DescribeNotebookSessionStatementRequest.cpp
   src/v20210125/model/NetworkConnection.cpp
   src/v20210125/model/CancelNotebookSessionStatementRequest.cpp
@@ -302,6 +306,7 @@ set(dlc_src
   src/v20210125/model/DescribeDMSTableResponse.cpp
   src/v20210125/model/DropDMSPartitionsRequest.cpp
   src/v20210125/model/NotebookSessions.cpp
+  src/v20210125/model/CommonMetrics.cpp
   src/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.cpp
   src/v20210125/model/CreateTasksInOrderRequest.cpp
   src/v20210125/model/AddDMSPartitionsResponse.cpp
@@ -358,6 +363,7 @@ set(dlc_src
   src/v20210125/model/CreateTaskRequest.cpp
   src/v20210125/model/DescribeNotebookSessionRequest.cpp
   src/v20210125/model/CSV.cpp
+  src/v20210125/model/SparkMonitorMetrics.cpp
   src/v20210125/model/NotebookSessionStatementInfo.cpp
   src/v20210125/model/CreateTableRequest.cpp
   src/v20210125/model/CreateNotebookSessionStatementRequest.cpp

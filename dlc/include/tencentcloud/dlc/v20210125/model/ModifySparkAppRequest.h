@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取spark应用名
-                     * @return AppName spark应用名
+                     * 获取spark作业名
+                     * @return AppName spark作业名
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置spark应用名
-                     * @param _appName spark应用名
+                     * 设置spark作业名
+                     * @param _appName spark作业名
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取1代表spark jar应用，2代表spark streaming应用
-                     * @return AppType 1代表spark jar应用，2代表spark streaming应用
+                     * 获取spark作业类型，1代表spark jar作业，2代表spark streaming作业
+                     * @return AppType spark作业类型，1代表spark jar作业，2代表spark streaming作业
                      * 
                      */
                     int64_t GetAppType() const;
 
                     /**
-                     * 设置1代表spark jar应用，2代表spark streaming应用
-                     * @param _appType 1代表spark jar应用，2代表spark streaming应用
+                     * 设置spark作业类型，1代表spark jar作业，2代表spark streaming作业
+                     * @param _appType spark作业类型，1代表spark jar作业，2代表spark streaming作业
                      * 
                      */
                     void SetAppType(const int64_t& _appType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取执行spark作业的数据引擎
-                     * @return DataEngine 执行spark作业的数据引擎
+                     * 获取执行spark作业的数据引擎名称
+                     * @return DataEngine 执行spark作业的数据引擎名称
                      * 
                      */
                     std::string GetDataEngine() const;
 
                     /**
-                     * 设置执行spark作业的数据引擎
-                     * @param _dataEngine 执行spark作业的数据引擎
+                     * 设置执行spark作业的数据引擎名称
+                     * @param _dataEngine 执行spark作业的数据引擎名称
                      * 
                      */
                     void SetDataEngine(const std::string& _dataEngine);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DataEngineHasBeenSet() const;
 
                     /**
-                     * 获取spark应用的执行入口
-                     * @return AppFile spark应用的执行入口
+                     * 获取spark作业程序包文件路径
+                     * @return AppFile spark作业程序包文件路径
                      * 
                      */
                     std::string GetAppFile() const;
 
                     /**
-                     * 设置spark应用的执行入口
-                     * @param _appFile spark应用的执行入口
+                     * 设置spark作业程序包文件路径
+                     * @param _appFile spark作业程序包文件路径
                      * 
                      */
                     void SetAppFile(const std::string& _appFile);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AppFileHasBeenSet() const;
 
                     /**
-                     * 获取执行spark作业的角色ID
-                     * @return RoleArn 执行spark作业的角色ID
+                     * 获取数据访问策略，CAM Role arn
+                     * @return RoleArn 数据访问策略，CAM Role arn
                      * 
                      */
                     int64_t GetRoleArn() const;
 
                     /**
-                     * 设置执行spark作业的角色ID
-                     * @param _roleArn 执行spark作业的角色ID
+                     * 设置数据访问策略，CAM Role arn
+                     * @param _roleArn 数据访问策略，CAM Role arn
                      * 
                      */
                     void SetRoleArn(const int64_t& _roleArn);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RoleArnHasBeenSet() const;
 
                     /**
-                     * 获取spark作业driver资源规格大小, 可取small,medium,large,xlarge
-                     * @return AppDriverSize spark作业driver资源规格大小, 可取small,medium,large,xlarge
+                     * 获取指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
+                     * @return AppDriverSize 指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
                      * 
                      */
                     std::string GetAppDriverSize() const;
 
                     /**
-                     * 设置spark作业driver资源规格大小, 可取small,medium,large,xlarge
-                     * @param _appDriverSize spark作业driver资源规格大小, 可取small,medium,large,xlarge
+                     * 设置指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
+                     * @param _appDriverSize 指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
                      * 
                      */
                     void SetAppDriverSize(const std::string& _appDriverSize);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AppDriverSizeHasBeenSet() const;
 
                     /**
-                     * 获取spark作业executor资源规格大小, 可取small,medium,large,xlarge
-                     * @return AppExecutorSize spark作业executor资源规格大小, 可取small,medium,large,xlarge
+                     * 获取指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
+                     * @return AppExecutorSize 指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
                      * 
                      */
                     std::string GetAppExecutorSize() const;
 
                     /**
-                     * 设置spark作业executor资源规格大小, 可取small,medium,large,xlarge
-                     * @param _appExecutorSize spark作业executor资源规格大小, 可取small,medium,large,xlarge
+                     * 设置指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
+                     * @param _appExecutorSize 指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
                      * 
                      */
                     void SetAppExecutorSize(const std::string& _appExecutorSize);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool AppExecutorNumsHasBeenSet() const;
 
                     /**
-                     * 获取spark应用Id
-                     * @return SparkAppId spark应用Id
+                     * 获取spark作业Id
+                     * @return SparkAppId spark作业Id
                      * 
                      */
                     std::string GetSparkAppId() const;
 
                     /**
-                     * 设置spark应用Id
-                     * @param _sparkAppId spark应用Id
+                     * 设置spark作业Id
+                     * @param _sparkAppId spark作业Id
                      * 
                      */
                     void SetSparkAppId(const std::string& _sparkAppId);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool EniHasBeenSet() const;
 
                     /**
-                     * 获取是否本地上传，可取cos,lakefs
-                     * @return IsLocal 是否本地上传，可取cos,lakefs
+                     * 获取spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocal spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     std::string GetIsLocal() const;
 
                     /**
-                     * 设置是否本地上传，可取cos,lakefs
-                     * @param _isLocal 是否本地上传，可取cos,lakefs
+                     * 设置spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocal spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     void SetIsLocal(const std::string& _isLocal);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool IsLocalHasBeenSet() const;
 
                     /**
-                     * 获取spark jar作业时的主类
-                     * @return MainClass spark jar作业时的主类
+                     * 获取spark作业主类
+                     * @return MainClass spark作业主类
                      * 
                      */
                     std::string GetMainClass() const;
 
                     /**
-                     * 设置spark jar作业时的主类
-                     * @param _mainClass spark jar作业时的主类
+                     * 设置spark作业主类
+                     * @param _mainClass spark作业主类
                      * 
                      */
                     void SetMainClass(const std::string& _mainClass);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool AppConfHasBeenSet() const;
 
                     /**
-                     * 获取jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @return IsLocalJars jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 获取spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalJars spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     std::string GetIsLocalJars() const;
 
                     /**
-                     * 设置jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @param _isLocalJars jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 设置spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocalJars spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     void SetIsLocalJars(const std::string& _isLocalJars);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool IsLocalJarsHasBeenSet() const;
 
                     /**
-                     * 获取spark jar作业依赖jars，以逗号分隔
-                     * @return AppJars spark jar作业依赖jars，以逗号分隔
+                     * 获取spark 作业依赖jar包（--jars），以逗号分隔
+                     * @return AppJars spark 作业依赖jar包（--jars），以逗号分隔
                      * 
                      */
                     std::string GetAppJars() const;
 
                     /**
-                     * 设置spark jar作业依赖jars，以逗号分隔
-                     * @param _appJars spark jar作业依赖jars，以逗号分隔
+                     * 设置spark 作业依赖jar包（--jars），以逗号分隔
+                     * @param _appJars spark 作业依赖jar包（--jars），以逗号分隔
                      * 
                      */
                     void SetAppJars(const std::string& _appJars);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool AppJarsHasBeenSet() const;
 
                     /**
-                     * 获取file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @return IsLocalFiles file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 获取spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalFiles spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     std::string GetIsLocalFiles() const;
 
                     /**
-                     * 设置file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @param _isLocalFiles file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 设置spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocalFiles spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     void SetIsLocalFiles(const std::string& _isLocalFiles);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool IsLocalFilesHasBeenSet() const;
 
                     /**
-                     * 获取spark作业依赖资源，以逗号分隔
-                     * @return AppFiles spark作业依赖资源，以逗号分隔
+                     * 获取spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔
+                     * @return AppFiles spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔
                      * 
                      */
                     std::string GetAppFiles() const;
 
                     /**
-                     * 设置spark作业依赖资源，以逗号分隔
-                     * @param _appFiles spark作业依赖资源，以逗号分隔
+                     * 设置spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔
+                     * @param _appFiles spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔
                      * 
                      */
                     void SetAppFiles(const std::string& _appFiles);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool AppFilesHasBeenSet() const;
 
                     /**
-                     * 获取pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @return IsLocalPythonFiles pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 获取pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalPythonFiles pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     std::string GetIsLocalPythonFiles() const;
 
                     /**
-                     * 设置pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @param _isLocalPythonFiles pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 设置pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocalPythonFiles pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     void SetIsLocalPythonFiles(const std::string& _isLocalPythonFiles);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool IsLocalPythonFilesHasBeenSet() const;
 
                     /**
-                     * 获取pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
-                     * @return AppPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 获取pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔
+                     * @return AppPythonFiles pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔
                      * 
                      */
                     std::string GetAppPythonFiles() const;
 
                     /**
-                     * 设置pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
-                     * @param _appPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 设置pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔
+                     * @param _appPythonFiles pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔
                      * 
                      */
                     void SetAppPythonFiles(const std::string& _appPythonFiles);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool AppPythonFilesHasBeenSet() const;
 
                     /**
-                     * 获取spark作业命令行参数
-                     * @return CmdArgs spark作业命令行参数
+                     * 获取spark作业程序入参
+                     * @return CmdArgs spark作业程序入参
                      * 
                      */
                     std::string GetCmdArgs() const;
 
                     /**
-                     * 设置spark作业命令行参数
-                     * @param _cmdArgs spark作业命令行参数
+                     * 设置spark作业程序入参
+                     * @param _cmdArgs spark作业程序入参
                      * 
                      */
                     void SetCmdArgs(const std::string& _cmdArgs);
@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool CmdArgsHasBeenSet() const;
 
                     /**
-                     * 获取只对spark流任务生效
-                     * @return MaxRetries 只对spark流任务生效
+                     * 获取最大重试次数，只对spark流任务生效
+                     * @return MaxRetries 最大重试次数，只对spark流任务生效
                      * 
                      */
                     int64_t GetMaxRetries() const;
 
                     /**
-                     * 设置只对spark流任务生效
-                     * @param _maxRetries 只对spark流任务生效
+                     * 设置最大重试次数，只对spark流任务生效
+                     * @param _maxRetries 最大重试次数，只对spark流任务生效
                      * 
                      */
                     void SetMaxRetries(const int64_t& _maxRetries);
@@ -505,15 +505,15 @@ namespace TencentCloud
                     bool DataSourceHasBeenSet() const;
 
                     /**
-                     * 获取archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @return IsLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 获取spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalArchives spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     std::string GetIsLocalArchives() const;
 
                     /**
-                     * 设置archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
-                     * @param _isLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * 设置spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
+                     * @param _isLocalArchives spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      * 
                      */
                     void SetIsLocalArchives(const std::string& _isLocalArchives);
@@ -526,15 +526,15 @@ namespace TencentCloud
                     bool IsLocalArchivesHasBeenSet() const;
 
                     /**
-                     * 获取archives：依赖资源
-                     * @return AppArchives archives：依赖资源
+                     * 获取spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔
+                     * @return AppArchives spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔
                      * 
                      */
                     std::string GetAppArchives() const;
 
                     /**
-                     * 设置archives：依赖资源
-                     * @param _appArchives archives：依赖资源
+                     * 设置spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔
+                     * @param _appArchives spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔
                      * 
                      */
                     void SetAppArchives(const std::string& _appArchives);
@@ -547,15 +547,15 @@ namespace TencentCloud
                     bool AppArchivesHasBeenSet() const;
 
                     /**
-                     * 获取Spark Image 版本
-                     * @return SparkImage Spark Image 版本
+                     * 获取Spark Image 版本号
+                     * @return SparkImage Spark Image 版本号
                      * 
                      */
                     std::string GetSparkImage() const;
 
                     /**
-                     * 设置Spark Image 版本
-                     * @param _sparkImage Spark Image 版本
+                     * 设置Spark Image 版本号
+                     * @param _sparkImage Spark Image 版本号
                      * 
                      */
                     void SetSparkImage(const std::string& _sparkImage);
@@ -654,43 +654,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * spark应用名
+                     * spark作业名
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 1代表spark jar应用，2代表spark streaming应用
+                     * spark作业类型，1代表spark jar作业，2代表spark streaming作业
                      */
                     int64_t m_appType;
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * 执行spark作业的数据引擎
+                     * 执行spark作业的数据引擎名称
                      */
                     std::string m_dataEngine;
                     bool m_dataEngineHasBeenSet;
 
                     /**
-                     * spark应用的执行入口
+                     * spark作业程序包文件路径
                      */
                     std::string m_appFile;
                     bool m_appFileHasBeenSet;
 
                     /**
-                     * 执行spark作业的角色ID
+                     * 数据访问策略，CAM Role arn
                      */
                     int64_t m_roleArn;
                     bool m_roleArnHasBeenSet;
 
                     /**
-                     * spark作业driver资源规格大小, 可取small,medium,large,xlarge
+                     * 指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
                      */
                     std::string m_appDriverSize;
                     bool m_appDriverSizeHasBeenSet;
 
                     /**
-                     * spark作业executor资源规格大小, 可取small,medium,large,xlarge
+                     * 指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）
                      */
                     std::string m_appExecutorSize;
                     bool m_appExecutorSizeHasBeenSet;
@@ -702,7 +702,7 @@ namespace TencentCloud
                     bool m_appExecutorNumsHasBeenSet;
 
                     /**
-                     * spark应用Id
+                     * spark作业Id
                      */
                     std::string m_sparkAppId;
                     bool m_sparkAppIdHasBeenSet;
@@ -714,13 +714,13 @@ namespace TencentCloud
                     bool m_eniHasBeenSet;
 
                     /**
-                     * 是否本地上传，可取cos,lakefs
+                     * spark作业程序包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocal;
                     bool m_isLocalHasBeenSet;
 
                     /**
-                     * spark jar作业时的主类
+                     * spark作业主类
                      */
                     std::string m_mainClass;
                     bool m_mainClassHasBeenSet;
@@ -732,49 +732,49 @@ namespace TencentCloud
                     bool m_appConfHasBeenSet;
 
                     /**
-                     * jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * spark 作业依赖jar包是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocalJars;
                     bool m_isLocalJarsHasBeenSet;
 
                     /**
-                     * spark jar作业依赖jars，以逗号分隔
+                     * spark 作业依赖jar包（--jars），以逗号分隔
                      */
                     std::string m_appJars;
                     bool m_appJarsHasBeenSet;
 
                     /**
-                     * file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * spark作业依赖文件资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocalFiles;
                     bool m_isLocalFilesHasBeenSet;
 
                     /**
-                     * spark作业依赖资源，以逗号分隔
+                     * spark作业依赖文件资源（--files）（非jar、zip），以逗号分隔
                      */
                     std::string m_appFiles;
                     bool m_appFilesHasBeenSet;
 
                     /**
-                     * pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * pyspark：依赖上传方式，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocalPythonFiles;
                     bool m_isLocalPythonFilesHasBeenSet;
 
                     /**
-                     * pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * pyspark作业依赖python资源（--py-files），支持py/zip/egg等归档格式，多文件以逗号分隔
                      */
                     std::string m_appPythonFiles;
                     bool m_appPythonFilesHasBeenSet;
 
                     /**
-                     * spark作业命令行参数
+                     * spark作业程序入参
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;
 
                     /**
-                     * 只对spark流任务生效
+                     * 最大重试次数，只对spark流任务生效
                      */
                     int64_t m_maxRetries;
                     bool m_maxRetriesHasBeenSet;
@@ -786,19 +786,19 @@ namespace TencentCloud
                     bool m_dataSourceHasBeenSet;
 
                     /**
-                     * archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * spark作业依赖archives资源是否本地上传，cos：存放与cos，lakefs：本地上传（控制台使用，该方式不支持直接接口调用）
                      */
                     std::string m_isLocalArchives;
                     bool m_isLocalArchivesHasBeenSet;
 
                     /**
-                     * archives：依赖资源
+                     * spark作业依赖archives资源（--archives），支持tar.gz/tgz/tar等归档格式，以逗号分隔
                      */
                     std::string m_appArchives;
                     bool m_appArchivesHasBeenSet;
 
                     /**
-                     * Spark Image 版本
+                     * Spark Image 版本号
                      */
                     std::string m_sparkImage;
                     bool m_sparkImageHasBeenSet;

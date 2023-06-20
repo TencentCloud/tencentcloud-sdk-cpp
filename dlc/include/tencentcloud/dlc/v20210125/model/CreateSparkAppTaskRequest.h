@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
-                     * 获取spark作业的命令行参数，以空格分隔；一般用于周期性调用使用
-                     * @return CmdArgs spark作业的命令行参数，以空格分隔；一般用于周期性调用使用
+                     * 获取spark作业程序入参，以空格分隔；一般用于周期性调用使用
+                     * @return CmdArgs spark作业程序入参，以空格分隔；一般用于周期性调用使用
                      * 
                      */
                     std::string GetCmdArgs() const;
 
                     /**
-                     * 设置spark作业的命令行参数，以空格分隔；一般用于周期性调用使用
-                     * @param _cmdArgs spark作业的命令行参数，以空格分隔；一般用于周期性调用使用
+                     * 设置spark作业程序入参，以空格分隔；一般用于周期性调用使用
+                     * @param _cmdArgs spark作业程序入参，以空格分隔；一般用于周期性调用使用
                      * 
                      */
                     void SetCmdArgs(const std::string& _cmdArgs);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_jobNameHasBeenSet;
 
                     /**
-                     * spark作业的命令行参数，以空格分隔；一般用于周期性调用使用
+                     * spark作业程序入参，以空格分隔；一般用于周期性调用使用
                      */
                     std::string m_cmdArgs;
                     bool m_cmdArgsHasBeenSet;

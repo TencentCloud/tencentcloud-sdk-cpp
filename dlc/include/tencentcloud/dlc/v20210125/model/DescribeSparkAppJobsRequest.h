@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SortingHasBeenSet() const;
 
                     /**
-                     * 获取按照该参数过滤,支持spark-job-name
-                     * @return Filters 按照该参数过滤,支持spark-job-name
+                     * 获取过滤条件，如下支持的过滤类型，传参Name应为其一:spark-job-name（作业名称），spark-job-id（作业id），spark-app-type（作业类型，1：批任务，2：流任务，4：SQL作业），user-name（创建人），key-word（作业名称或ID关键词模糊搜索）
+                     * @return Filters 过滤条件，如下支持的过滤类型，传参Name应为其一:spark-job-name（作业名称），spark-job-id（作业id），spark-app-type（作业类型，1：批任务，2：流任务，4：SQL作业），user-name（创建人），key-word（作业名称或ID关键词模糊搜索）
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置按照该参数过滤,支持spark-job-name
-                     * @param _filters 按照该参数过滤,支持spark-job-name
+                     * 设置过滤条件，如下支持的过滤类型，传参Name应为其一:spark-job-name（作业名称），spark-job-id（作业id），spark-app-type（作业类型，1：批任务，2：流任务，4：SQL作业），user-name（创建人），key-word（作业名称或ID关键词模糊搜索）
+                     * @param _filters 过滤条件，如下支持的过滤类型，传参Name应为其一:spark-job-name（作业名称），spark-job-id（作业id），spark-app-type（作业类型，1：批任务，2：流任务，4：SQL作业），user-name（创建人），key-word（作业名称或ID关键词模糊搜索）
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_sortingHasBeenSet;
 
                     /**
-                     * 按照该参数过滤,支持spark-job-name
+                     * 过滤条件，如下支持的过滤类型，传参Name应为其一:spark-job-name（作业名称），spark-job-id（作业id），spark-app-type（作业类型，1：批任务，2：流任务，4：SQL作业），user-name（创建人），key-word（作业名称或ID关键词模糊搜索）
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

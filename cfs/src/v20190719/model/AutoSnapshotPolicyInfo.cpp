@@ -35,7 +35,8 @@ AutoSnapshotPolicyInfo::AutoSnapshotPolicyInfo() :
     m_regionNameHasBeenSet(false),
     m_fileSystemsHasBeenSet(false),
     m_dayOfMonthHasBeenSet(false),
-    m_intervalDaysHasBeenSet(false)
+    m_intervalDaysHasBeenSet(false),
+    m_crossRegionsAliveDaysHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome AutoSnapshotPolicyInfo::Deserialize(const rapidjson::Value &
         m_intervalDaysHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossRegionsAliveDays") && !value["CrossRegionsAliveDays"].IsNull())
+    {
+        if (!value["CrossRegionsAliveDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicyInfo.CrossRegionsAliveDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_crossRegionsAliveDays = value["CrossRegionsAliveDays"].GetUint64();
+        m_crossRegionsAliveDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void AutoSnapshotPolicyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IntervalDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intervalDays, allocator);
+    }
+
+    if (m_crossRegionsAliveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossRegionsAliveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_crossRegionsAliveDays, allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void AutoSnapshotPolicyInfo::SetIntervalDays(const uint64_t& _intervalDays)
 bool AutoSnapshotPolicyInfo::IntervalDaysHasBeenSet() const
 {
     return m_intervalDaysHasBeenSet;
+}
+
+uint64_t AutoSnapshotPolicyInfo::GetCrossRegionsAliveDays() const
+{
+    return m_crossRegionsAliveDays;
+}
+
+void AutoSnapshotPolicyInfo::SetCrossRegionsAliveDays(const uint64_t& _crossRegionsAliveDays)
+{
+    m_crossRegionsAliveDays = _crossRegionsAliveDays;
+    m_crossRegionsAliveDaysHasBeenSet = true;
+}
+
+bool AutoSnapshotPolicyInfo::CrossRegionsAliveDaysHasBeenSet() const
+{
+    return m_crossRegionsAliveDaysHasBeenSet;
 }
 

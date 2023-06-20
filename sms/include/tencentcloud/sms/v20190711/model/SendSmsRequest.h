@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ExtendCodeHasBeenSet() const;
 
                     /**
-                     * 获取用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。
-                     * @return SessionContext 用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。
+                     * 获取用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。
+                     * @return SessionContext 用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。
-                     * @param _sessionContext 用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。
+                     * 设置用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。
+                     * @param _sessionContext 用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_extendCodeHasBeenSet;
 
                     /**
-                     * 用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。
+                     * 用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;

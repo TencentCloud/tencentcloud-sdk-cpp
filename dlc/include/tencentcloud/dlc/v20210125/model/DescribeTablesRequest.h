@@ -157,15 +157,15 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool DatasourceConnectionNameHasBeenSet() const;
 
                     /**
-                     * 获取起始时间：用于对更新时间的筛选
-                     * @return StartTime 起始时间：用于对更新时间的筛选
+                     * 获取起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
+                     * @return StartTime 起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间：用于对更新时间的筛选
-                     * @param _startTime 起始时间：用于对更新时间的筛选
+                     * 设置起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
+                     * @param _startTime 起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -178,15 +178,15 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取终止时间：用于对更新时间的筛选
-                     * @return EndTime 终止时间：用于对更新时间的筛选
+                     * 获取终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
+                     * @return EndTime 终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置终止时间：用于对更新时间的筛选
-                     * @param _endTime 终止时间：用于对更新时间的筛选
+                     * 设置终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
+                     * @param _endTime 终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -199,15 +199,15 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
-                     * @return Sort 排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
+                     * 获取排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）
+                     * @return Sort 排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
-                     * @param _sort 排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
+                     * 设置排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）
+                     * @param _sort 排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -317,19 +317,19 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool m_datasourceConnectionNameHasBeenSet;
 
                     /**
-                     * 起始时间：用于对更新时间的筛选
+                     * 起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 终止时间：用于对更新时间的筛选
+                     * 终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
+                     * 排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;

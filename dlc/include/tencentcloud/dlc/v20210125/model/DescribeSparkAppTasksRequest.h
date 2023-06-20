@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取更新时间起始点
-                     * @return StartTime 更新时间起始点
+                     * 获取更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置更新时间起始点
-                     * @param _startTime 更新时间起始点
+                     * 设置更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @param _startTime 更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间截止点
-                     * @return EndTime 更新时间截止点
+                     * 获取更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置更新时间截止点
-                     * @param _endTime 更新时间截止点
+                     * 设置更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @param _endTime 更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -217,13 +217,13 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 更新时间起始点
+                     * 更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 更新时间截止点
+                     * 更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

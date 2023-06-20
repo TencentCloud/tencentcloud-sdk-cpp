@@ -1545,6 +1545,49 @@ TkeClient::CreateTKEEdgeClusterOutcomeCallable TkeClient::CreateTKEEdgeClusterCa
     return task->get_future();
 }
 
+TkeClient::DeleteAddonOutcome TkeClient::DeleteAddon(const DeleteAddonRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAddon");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAddonResponse rsp = DeleteAddonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAddonOutcome(rsp);
+        else
+            return DeleteAddonOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAddonOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteAddonAsync(const DeleteAddonRequest& request, const DeleteAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAddon(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteAddonOutcomeCallable TkeClient::DeleteAddonCallable(const DeleteAddonRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAddonOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAddon(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DeleteBackupStorageLocationOutcome TkeClient::DeleteBackupStorageLocation(const DeleteBackupStorageLocationRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBackupStorageLocation");
@@ -2699,6 +2742,92 @@ TkeClient::DeleteTKEEdgeClusterOutcomeCallable TkeClient::DeleteTKEEdgeClusterCa
         [this, request]()
         {
             return this->DeleteTKEEdgeCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeAddonOutcome TkeClient::DescribeAddon(const DescribeAddonRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddon");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddonResponse rsp = DescribeAddonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddonOutcome(rsp);
+        else
+            return DescribeAddonOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddonOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeAddonAsync(const DescribeAddonRequest& request, const DescribeAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddon(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeAddonOutcomeCallable TkeClient::DescribeAddonCallable(const DescribeAddonRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddonOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddon(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeAddonValuesOutcome TkeClient::DescribeAddonValues(const DescribeAddonValuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddonValues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddonValuesResponse rsp = DescribeAddonValuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddonValuesOutcome(rsp);
+        else
+            return DescribeAddonValuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddonValuesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeAddonValuesAsync(const DescribeAddonValuesRequest& request, const DescribeAddonValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddonValues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeAddonValuesOutcomeCallable TkeClient::DescribeAddonValuesCallable(const DescribeAddonValuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddonValuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddonValues(request);
         }
     );
 
@@ -6748,6 +6877,49 @@ TkeClient::GetUpgradeInstanceProgressOutcomeCallable TkeClient::GetUpgradeInstan
     return task->get_future();
 }
 
+TkeClient::InstallAddonOutcome TkeClient::InstallAddon(const InstallAddonRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallAddon");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallAddonResponse rsp = InstallAddonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallAddonOutcome(rsp);
+        else
+            return InstallAddonOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallAddonOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::InstallAddonAsync(const InstallAddonRequest& request, const InstallAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallAddon(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::InstallAddonOutcomeCallable TkeClient::InstallAddonCallable(const InstallAddonRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallAddonOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallAddon(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::InstallEdgeLogAgentOutcome TkeClient::InstallEdgeLogAgent(const InstallEdgeLogAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "InstallEdgeLogAgent");
@@ -8160,6 +8332,49 @@ TkeClient::UninstallLogAgentOutcomeCallable TkeClient::UninstallLogAgentCallable
         [this, request]()
         {
             return this->UninstallLogAgent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpdateAddonOutcome TkeClient::UpdateAddon(const UpdateAddonRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAddon");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAddonResponse rsp = UpdateAddonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAddonOutcome(rsp);
+        else
+            return UpdateAddonOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAddonOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateAddonAsync(const UpdateAddonRequest& request, const UpdateAddonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAddon(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateAddonOutcomeCallable TkeClient::UpdateAddonCallable(const UpdateAddonRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAddonOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAddon(request);
         }
     );
 
