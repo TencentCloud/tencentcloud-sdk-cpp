@@ -48,7 +48,8 @@ AgentDealNewElem::AgentDealNewElem() :
     m_overdueTimeHasBeenSet(false),
     m_productInfoHasBeenSet(false),
     m_paymentMethodHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_resourceIdsHasBeenSet(false)
 {
 }
 
@@ -354,6 +355,19 @@ CoreInternalOutcome AgentDealNewElem::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceIds") && !value["ResourceIds"].IsNull())
+    {
+        if (!value["ResourceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentDealNewElem.ResourceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_resourceIds.push_back((*itr).GetString());
+        }
+        m_resourceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -591,6 +605,19 @@ void AgentDealNewElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1042,5 +1069,21 @@ void AgentDealNewElem::SetUpdateTime(const string& _updateTime)
 bool AgentDealNewElem::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<string> AgentDealNewElem::GetResourceIds() const
+{
+    return m_resourceIds;
+}
+
+void AgentDealNewElem::SetResourceIds(const vector<string>& _resourceIds)
+{
+    m_resourceIds = _resourceIds;
+    m_resourceIdsHasBeenSet = true;
+}
+
+bool AgentDealNewElem::ResourceIdsHasBeenSet() const
+{
+    return m_resourceIdsHasBeenSet;
 }
 

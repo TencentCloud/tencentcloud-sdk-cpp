@@ -89,6 +89,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFlowComponentsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowBriefsResponse> DescribeFlowBriefsOutcome;
                 typedef std::future<DescribeFlowBriefsOutcome> DescribeFlowBriefsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowBriefsRequest&, DescribeFlowBriefsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowBriefsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowComponentsResponse> DescribeFlowComponentsOutcome;
+                typedef std::future<DescribeFlowComponentsOutcome> DescribeFlowComponentsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeFlowComponentsRequest&, DescribeFlowComponentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowComponentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowEvidenceReportResponse> DescribeFlowEvidenceReportOutcome;
                 typedef std::future<DescribeFlowEvidenceReportOutcome> DescribeFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowEvidenceReportRequest&, DescribeFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowEvidenceReportAsyncHandler;
@@ -652,6 +657,15 @@ namespace TencentCloud
                 DescribeFlowBriefsOutcome DescribeFlowBriefs(const Model::DescribeFlowBriefsRequest &request);
                 void DescribeFlowBriefsAsync(const Model::DescribeFlowBriefsRequest& request, const DescribeFlowBriefsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowBriefsOutcomeCallable DescribeFlowBriefsCallable(const Model::DescribeFlowBriefsRequest& request);
+
+                /**
+                 *查询流程填写控件内容，可以根据流程Id查询该流程相关联的填写控件信息
+                 * @param req DescribeFlowComponentsRequest
+                 * @return DescribeFlowComponentsOutcome
+                 */
+                DescribeFlowComponentsOutcome DescribeFlowComponents(const Model::DescribeFlowComponentsRequest &request);
+                void DescribeFlowComponentsAsync(const Model::DescribeFlowComponentsRequest& request, const DescribeFlowComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowComponentsOutcomeCallable DescribeFlowComponentsCallable(const Model::DescribeFlowComponentsRequest& request);
 
                 /**
                  *查询出证报告，返回报告 URL。

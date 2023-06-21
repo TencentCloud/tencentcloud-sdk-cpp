@@ -900,6 +900,49 @@ EssbasicClient::ChannelDescribeEmployeesOutcomeCallable EssbasicClient::ChannelD
     return task->get_future();
 }
 
+EssbasicClient::ChannelDescribeFlowComponentsOutcome EssbasicClient::ChannelDescribeFlowComponents(const ChannelDescribeFlowComponentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDescribeFlowComponents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDescribeFlowComponentsResponse rsp = ChannelDescribeFlowComponentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDescribeFlowComponentsOutcome(rsp);
+        else
+            return ChannelDescribeFlowComponentsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDescribeFlowComponentsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDescribeFlowComponentsAsync(const ChannelDescribeFlowComponentsRequest& request, const ChannelDescribeFlowComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDescribeFlowComponents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDescribeFlowComponentsOutcomeCallable EssbasicClient::ChannelDescribeFlowComponentsCallable(const ChannelDescribeFlowComponentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDescribeFlowComponentsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDescribeFlowComponents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDescribeOrganizationSealsOutcome EssbasicClient::ChannelDescribeOrganizationSeals(const ChannelDescribeOrganizationSealsRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDescribeOrganizationSeals");

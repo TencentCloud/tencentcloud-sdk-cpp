@@ -26,7 +26,8 @@ DescribeTopicFlowRankingRequest::DescribeTopicFlowRankingRequest() :
     m_instanceIdHasBeenSet(false),
     m_rankingTypeHasBeenSet(false),
     m_beginDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
+    m_endDateHasBeenSet(false),
+    m_brokerIpHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeTopicFlowRankingRequest::ToJsonString() const
         string key = "EndDate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_brokerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_brokerIp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeTopicFlowRankingRequest::SetEndDate(const string& _endDate)
 bool DescribeTopicFlowRankingRequest::EndDateHasBeenSet() const
 {
     return m_endDateHasBeenSet;
+}
+
+string DescribeTopicFlowRankingRequest::GetBrokerIp() const
+{
+    return m_brokerIp;
+}
+
+void DescribeTopicFlowRankingRequest::SetBrokerIp(const string& _brokerIp)
+{
+    m_brokerIp = _brokerIp;
+    m_brokerIpHasBeenSet = true;
+}
+
+bool DescribeTopicFlowRankingRequest::BrokerIpHasBeenSet() const
+{
+    return m_brokerIpHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ StreamOnlineInfo::StreamOnlineInfo() :
     m_streamNameHasBeenSet(false),
     m_publishTimeListHasBeenSet(false),
     m_appNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_pushToDelayHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome StreamOnlineInfo::Deserialize(const rapidjson::Value &value)
         m_domainNameHasBeenSet = true;
     }
 
+    if (value.HasMember("PushToDelay") && !value["PushToDelay"].IsNull())
+    {
+        if (!value["PushToDelay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StreamOnlineInfo.PushToDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pushToDelay = value["PushToDelay"].GetInt64();
+        m_pushToDelayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void StreamOnlineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pushToDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PushToDelay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pushToDelay, allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void StreamOnlineInfo::SetDomainName(const string& _domainName)
 bool StreamOnlineInfo::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+int64_t StreamOnlineInfo::GetPushToDelay() const
+{
+    return m_pushToDelay;
+}
+
+void StreamOnlineInfo::SetPushToDelay(const int64_t& _pushToDelay)
+{
+    m_pushToDelay = _pushToDelay;
+    m_pushToDelayHasBeenSet = true;
+}
+
+bool StreamOnlineInfo::PushToDelayHasBeenSet() const
+{
+    return m_pushToDelayHasBeenSet;
 }
 

@@ -21,7 +21,7 @@ set(dcdb_public_header
 set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeUserTasksResponse.h
   include/tencentcloud/dcdb/v20180411/model/InitDCDBInstancesResponse.h
-  include/tencentcloud/dcdb/v20180411/model/UpgradeDCDBInstanceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDBTmpInstancesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountPrivilegesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDatabasesRequest.h
   include/tencentcloud/dcdb/v20180411/model/ParamDesc.h
@@ -43,6 +43,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlRequest.h
+  include/tencentcloud/dcdb/v20180411/model/UpgradeDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBUpgradePriceResponse.h
@@ -106,6 +107,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/SwitchDBInstanceHARequest.h
   include/tencentcloud/dcdb/v20180411/model/DBParamValue.h
   include/tencentcloud/dcdb/v20180411/model/SpecConfigInfo.h
+  include/tencentcloud/dcdb/v20180411/model/TmpInstance.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBParametersRequest.h
   include/tencentcloud/dcdb/v20180411/model/DCDBInstanceInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.h
@@ -172,6 +174,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/UserTaskInfo.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseProcedure.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDBTmpInstancesResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/AddShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeRequest.h
@@ -213,7 +216,7 @@ set(dcdb_src
   src/v20180411/DcdbClient.cpp
   src/v20180411/model/DescribeUserTasksResponse.cpp
   src/v20180411/model/InitDCDBInstancesResponse.cpp
-  src/v20180411/model/UpgradeDCDBInstanceResponse.cpp
+  src/v20180411/model/DescribeDBTmpInstancesRequest.cpp
   src/v20180411/model/DescribeAccountPrivilegesResponse.cpp
   src/v20180411/model/DescribeDatabasesRequest.cpp
   src/v20180411/model/ParamDesc.cpp
@@ -235,6 +238,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20180411/model/CancelDcnJobResponse.cpp
   src/v20180411/model/DescribeFileDownloadUrlRequest.cpp
+  src/v20180411/model/UpgradeDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeDBSyncModeResponse.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDCDBUpgradePriceResponse.cpp
@@ -298,6 +302,7 @@ set(dcdb_src
   src/v20180411/model/SwitchDBInstanceHARequest.cpp
   src/v20180411/model/DBParamValue.cpp
   src/v20180411/model/SpecConfigInfo.cpp
+  src/v20180411/model/TmpInstance.cpp
   src/v20180411/model/ModifyDBParametersRequest.cpp
   src/v20180411/model/DCDBInstanceInfo.cpp
   src/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.cpp
@@ -364,6 +369,7 @@ set(dcdb_src
   src/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.cpp
   src/v20180411/model/UserTaskInfo.cpp
   src/v20180411/model/DatabaseProcedure.cpp
+  src/v20180411/model/DescribeDBTmpInstancesResponse.cpp
   src/v20180411/model/ModifyDBEncryptAttributesRequest.cpp
   src/v20180411/model/AddShardConfig.cpp
   src/v20180411/model/ModifyDBSyncModeRequest.cpp

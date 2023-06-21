@@ -65,6 +65,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDBTmpInstancesRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDBTmpInstancesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h>
@@ -244,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSyncModeResponse> DescribeDBSyncModeOutcome;
                 typedef std::future<DescribeDBSyncModeOutcome> DescribeDBSyncModeOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBSyncModeRequest&, DescribeDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSyncModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBTmpInstancesResponse> DescribeDBTmpInstancesOutcome;
+                typedef std::future<DescribeDBTmpInstancesOutcome> DescribeDBTmpInstancesOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeDBTmpInstancesRequest&, DescribeDBTmpInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBTmpInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDCDBInstanceDetailResponse> DescribeDCDBInstanceDetailOutcome;
                 typedef std::future<DescribeDCDBInstanceDetailOutcome> DescribeDCDBInstanceDetailOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDCDBInstanceDetailRequest&, DescribeDCDBInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDCDBInstanceDetailAsyncHandler;
@@ -590,6 +595,15 @@ namespace TencentCloud
                 DescribeDBSyncModeOutcome DescribeDBSyncMode(const Model::DescribeDBSyncModeRequest &request);
                 void DescribeDBSyncModeAsync(const Model::DescribeDBSyncModeRequest& request, const DescribeDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSyncModeOutcomeCallable DescribeDBSyncModeCallable(const Model::DescribeDBSyncModeRequest& request);
+
+                /**
+                 *本接口（DescribeDBTmpInstances）用于获取实例回档生成的临时实例
+                 * @param req DescribeDBTmpInstancesRequest
+                 * @return DescribeDBTmpInstancesOutcome
+                 */
+                DescribeDBTmpInstancesOutcome DescribeDBTmpInstances(const Model::DescribeDBTmpInstancesRequest &request);
+                void DescribeDBTmpInstancesAsync(const Model::DescribeDBTmpInstancesRequest& request, const DescribeDBTmpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBTmpInstancesOutcomeCallable DescribeDBTmpInstancesCallable(const Model::DescribeDBTmpInstancesRequest& request);
 
                 /**
                  *本接口（DescribeDCDBInstanceDetail）用于获取TDSQL实例详情

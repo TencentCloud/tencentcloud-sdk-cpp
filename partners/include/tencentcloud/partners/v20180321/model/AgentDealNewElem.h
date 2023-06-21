@@ -732,6 +732,31 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceIds 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 设置资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceIds 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -925,6 +950,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 资源id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
 
                 };
             }

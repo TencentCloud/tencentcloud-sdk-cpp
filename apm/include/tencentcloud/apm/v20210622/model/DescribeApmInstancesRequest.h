@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool DemoInstanceFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否查询全地域实例
+                     * @return AllRegionsFlag 是否查询全地域实例
+                     * 
+                     */
+                    int64_t GetAllRegionsFlag() const;
+
+                    /**
+                     * 设置是否查询全地域实例
+                     * @param _allRegionsFlag 是否查询全地域实例
+                     * 
+                     */
+                    void SetAllRegionsFlag(const int64_t& _allRegionsFlag);
+
+                    /**
+                     * 判断参数 AllRegionsFlag 是否已赋值
+                     * @return AllRegionsFlag 是否已赋值
+                     * 
+                     */
+                    bool AllRegionsFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     int64_t m_demoInstanceFlag;
                     bool m_demoInstanceFlagHasBeenSet;
+
+                    /**
+                     * 是否查询全地域实例
+                     */
+                    int64_t m_allRegionsFlag;
+                    bool m_allRegionsFlagHasBeenSet;
 
                 };
             }

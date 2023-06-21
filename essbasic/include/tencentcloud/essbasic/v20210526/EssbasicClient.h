@@ -63,6 +63,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeFlowComponentsRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeFlowComponentsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelDescribeEmployeesResponse> ChannelDescribeEmployeesOutcome;
                 typedef std::future<ChannelDescribeEmployeesOutcome> ChannelDescribeEmployeesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeEmployeesRequest&, ChannelDescribeEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDescribeFlowComponentsResponse> ChannelDescribeFlowComponentsOutcome;
+                typedef std::future<ChannelDescribeFlowComponentsOutcome> ChannelDescribeFlowComponentsOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeFlowComponentsRequest&, ChannelDescribeFlowComponentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeFlowComponentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelDescribeOrganizationSealsResponse> ChannelDescribeOrganizationSealsOutcome;
                 typedef std::future<ChannelDescribeOrganizationSealsOutcome> ChannelDescribeOrganizationSealsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeOrganizationSealsRequest&, ChannelDescribeOrganizationSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeOrganizationSealsAsyncHandler;
@@ -475,6 +480,15 @@ namespace TencentCloud
                 ChannelDescribeEmployeesOutcome ChannelDescribeEmployees(const Model::ChannelDescribeEmployeesRequest &request);
                 void ChannelDescribeEmployeesAsync(const Model::ChannelDescribeEmployeesRequest& request, const ChannelDescribeEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelDescribeEmployeesOutcomeCallable ChannelDescribeEmployeesCallable(const Model::ChannelDescribeEmployeesRequest& request);
+
+                /**
+                 *查询流程填写控件内容，可以根据流程Id查询该流程相关联的填写控件信息
+                 * @param req ChannelDescribeFlowComponentsRequest
+                 * @return ChannelDescribeFlowComponentsOutcome
+                 */
+                ChannelDescribeFlowComponentsOutcome ChannelDescribeFlowComponents(const Model::ChannelDescribeFlowComponentsRequest &request);
+                void ChannelDescribeFlowComponentsAsync(const Model::ChannelDescribeFlowComponentsRequest& request, const ChannelDescribeFlowComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDescribeFlowComponentsOutcomeCallable ChannelDescribeFlowComponentsCallable(const Model::ChannelDescribeFlowComponentsRequest& request);
 
                 /**
                  *查询子客企业电子印章，需要操作者具有管理印章权限

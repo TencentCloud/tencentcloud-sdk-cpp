@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool EndDateHasBeenSet() const;
 
+                    /**
+                     * 获取Broker IP 地址
+                     * @return BrokerIp Broker IP 地址
+                     * 
+                     */
+                    std::string GetBrokerIp() const;
+
+                    /**
+                     * 设置Broker IP 地址
+                     * @param _brokerIp Broker IP 地址
+                     * 
+                     */
+                    void SetBrokerIp(const std::string& _brokerIp);
+
+                    /**
+                     * 判断参数 BrokerIp 是否已赋值
+                     * @return BrokerIp 是否已赋值
+                     * 
+                     */
+                    bool BrokerIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
+
+                    /**
+                     * Broker IP 地址
+                     */
+                    std::string m_brokerIp;
+                    bool m_brokerIpHasBeenSet;
 
                 };
             }

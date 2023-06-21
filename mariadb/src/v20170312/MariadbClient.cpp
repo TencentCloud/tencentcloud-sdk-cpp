@@ -1072,6 +1072,49 @@ MariadbClient::DescribeDBSlowLogsOutcomeCallable MariadbClient::DescribeDBSlowLo
     return task->get_future();
 }
 
+MariadbClient::DescribeDBTmpInstancesOutcome MariadbClient::DescribeDBTmpInstances(const DescribeDBTmpInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBTmpInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBTmpInstancesResponse rsp = DescribeDBTmpInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBTmpInstancesOutcome(rsp);
+        else
+            return DescribeDBTmpInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBTmpInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeDBTmpInstancesAsync(const DescribeDBTmpInstancesRequest& request, const DescribeDBTmpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBTmpInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeDBTmpInstancesOutcomeCallable MariadbClient::DescribeDBTmpInstancesCallable(const DescribeDBTmpInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBTmpInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBTmpInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeDatabaseObjectsOutcome MariadbClient::DescribeDatabaseObjects(const DescribeDatabaseObjectsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabaseObjects");

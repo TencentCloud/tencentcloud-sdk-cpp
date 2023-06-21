@@ -23,7 +23,9 @@ using namespace std;
 TopicFlowRankingResult::TopicFlowRankingResult() :
     m_topicFlowHasBeenSet(false),
     m_consumeSpeedHasBeenSet(false),
-    m_topicMessageHeapHasBeenSet(false)
+    m_topicMessageHeapHasBeenSet(false),
+    m_brokerIpHasBeenSet(false),
+    m_brokerTopicDataHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,39 @@ CoreInternalOutcome TopicFlowRankingResult::Deserialize(const rapidjson::Value &
         m_topicMessageHeapHasBeenSet = true;
     }
 
+    if (value.HasMember("BrokerIp") && !value["BrokerIp"].IsNull())
+    {
+        if (!value["BrokerIp"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TopicFlowRankingResult.BrokerIp` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BrokerIp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_brokerIp.push_back((*itr).GetString());
+        }
+        m_brokerIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("BrokerTopicData") && !value["BrokerTopicData"].IsNull())
+    {
+        if (!value["BrokerTopicData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TopicFlowRankingResult.BrokerTopicData` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BrokerTopicData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BrokerTopicData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_brokerTopicData.push_back(item);
+        }
+        m_brokerTopicDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -138,6 +173,34 @@ void TopicFlowRankingResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
 
         int i=0;
         for (auto itr = m_topicMessageHeap.begin(); itr != m_topicMessageHeap.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_brokerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_brokerIp.begin(); itr != m_brokerIp.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_brokerTopicDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerTopicData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_brokerTopicData.begin(); itr != m_brokerTopicData.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -193,5 +256,37 @@ void TopicFlowRankingResult::SetTopicMessageHeap(const vector<TopicMessageHeapRa
 bool TopicFlowRankingResult::TopicMessageHeapHasBeenSet() const
 {
     return m_topicMessageHeapHasBeenSet;
+}
+
+vector<string> TopicFlowRankingResult::GetBrokerIp() const
+{
+    return m_brokerIp;
+}
+
+void TopicFlowRankingResult::SetBrokerIp(const vector<string>& _brokerIp)
+{
+    m_brokerIp = _brokerIp;
+    m_brokerIpHasBeenSet = true;
+}
+
+bool TopicFlowRankingResult::BrokerIpHasBeenSet() const
+{
+    return m_brokerIpHasBeenSet;
+}
+
+vector<BrokerTopicData> TopicFlowRankingResult::GetBrokerTopicData() const
+{
+    return m_brokerTopicData;
+}
+
+void TopicFlowRankingResult::SetBrokerTopicData(const vector<BrokerTopicData>& _brokerTopicData)
+{
+    m_brokerTopicData = _brokerTopicData;
+    m_brokerTopicDataHasBeenSet = true;
+}
+
+bool TopicFlowRankingResult::BrokerTopicDataHasBeenSet() const
+{
+    return m_brokerTopicDataHasBeenSet;
 }
 

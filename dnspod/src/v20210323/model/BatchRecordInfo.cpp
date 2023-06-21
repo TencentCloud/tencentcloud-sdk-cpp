@@ -33,7 +33,8 @@ BatchRecordInfo::BatchRecordInfo() :
     m_idHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_mXHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome BatchRecordInfo::Deserialize(const rapidjson::Value &value)
         m_weightHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchRecordInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void BatchRecordInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void BatchRecordInfo::SetWeight(const uint64_t& _weight)
 bool BatchRecordInfo::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+string BatchRecordInfo::GetRemark() const
+{
+    return m_remark;
+}
+
+void BatchRecordInfo::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool BatchRecordInfo::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

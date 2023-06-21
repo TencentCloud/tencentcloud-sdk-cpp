@@ -404,7 +404,7 @@ namespace TencentCloud
                 ScaleOutInstanceOutcomeCallable ScaleOutInstanceCallable(const Model::ScaleOutInstanceRequest& request);
 
                 /**
-                 *用于启动或停止监控或服务
+                 *用于启停服务 重启服务等功能
                  * @param req StartStopServiceOrMonitorRequest
                  * @return StartStopServiceOrMonitorOutcome
                  */

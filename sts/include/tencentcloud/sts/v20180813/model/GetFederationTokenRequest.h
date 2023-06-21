@@ -64,12 +64,12 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取授予该临时证书权限的CAM策略
+                     * 获取授予该临时访问凭证权限的CAM策略
 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
 3、该参数需要做urlencode。
-                     * @return Policy 授予该临时证书权限的CAM策略
+                     * @return Policy 授予该临时访问凭证权限的CAM策略
 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
@@ -79,12 +79,12 @@ namespace TencentCloud
                     std::string GetPolicy() const;
 
                     /**
-                     * 设置授予该临时证书权限的CAM策略
+                     * 设置授予该临时访问凭证权限的CAM策略
 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
 3、该参数需要做urlencode。
-                     * @param _policy 授予该临时证书权限的CAM策略
+                     * @param _policy 授予该临时访问凭证权限的CAM策略
 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 授予该临时证书权限的CAM策略
+                     * 授予该临时访问凭证权限的CAM策略
 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。

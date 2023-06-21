@@ -65,15 +65,36 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取存储桶全名，新建后不可更改
-                     * @return BucketName 存储桶全名，新建后不可更改
+                     * 获取备注，最多 250 个字符
+                     * @return Remark 备注，最多 250 个字符
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注，最多 250 个字符
+                     * @param _remark 备注，最多 250 个字符
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
+                     * @return BucketName 存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置存储桶全名，新建后不可更改
-                     * @param _bucketName 存储桶全名，新建后不可更改
+                     * 设置存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
+                     * @param _bucketName 存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -86,15 +107,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取存储桶所在地域，新建后不可更改
-                     * @return BucketRegion 存储桶所在地域，新建后不可更改
+                     * 获取存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
+                     * @return BucketRegion 存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置存储桶所在地域，新建后不可更改
-                     * @param _bucketRegion 存储桶所在地域，新建后不可更改
+                     * 设置存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
+                     * @param _bucketRegion 存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -127,27 +148,6 @@ namespace TencentCloud
                      */
                     bool LibraryExtensionHasBeenSet() const;
 
-                    /**
-                     * 获取备注，最多 250 个字符
-                     * @return Remark 备注，最多 250 个字符
-                     * 
-                     */
-                    std::string GetRemark() const;
-
-                    /**
-                     * 设置备注，最多 250 个字符
-                     * @param _remark 备注，最多 250 个字符
-                     * 
-                     */
-                    void SetRemark(const std::string& _remark);
-
-                    /**
-                     * 判断参数 Remark 是否已赋值
-                     * @return Remark 是否已赋值
-                     * 
-                     */
-                    bool RemarkHasBeenSet() const;
-
                 private:
 
                     /**
@@ -157,13 +157,19 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 存储桶全名，新建后不可更改
+                     * 备注，最多 250 个字符
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 存储桶所在地域，新建后不可更改
+                     * 存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
@@ -173,12 +179,6 @@ namespace TencentCloud
                      */
                     LibraryExtension m_libraryExtension;
                     bool m_libraryExtensionHasBeenSet;
-
-                    /**
-                     * 备注，最多 250 个字符
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
 
                 };
             }

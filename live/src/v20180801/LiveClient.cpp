@@ -3136,6 +3136,49 @@ LiveClient::DescribeLivePlayAuthKeyOutcomeCallable LiveClient::DescribeLivePlayA
     return task->get_future();
 }
 
+LiveClient::DescribeLivePullStreamTaskStatusOutcome LiveClient::DescribeLivePullStreamTaskStatus(const DescribeLivePullStreamTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLivePullStreamTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLivePullStreamTaskStatusResponse rsp = DescribeLivePullStreamTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLivePullStreamTaskStatusOutcome(rsp);
+        else
+            return DescribeLivePullStreamTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLivePullStreamTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLivePullStreamTaskStatusAsync(const DescribeLivePullStreamTaskStatusRequest& request, const DescribeLivePullStreamTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLivePullStreamTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePullStreamTaskStatusOutcomeCallable LiveClient::DescribeLivePullStreamTaskStatusCallable(const DescribeLivePullStreamTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLivePullStreamTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLivePullStreamTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLivePullStreamTasksOutcome LiveClient::DescribeLivePullStreamTasks(const DescribeLivePullStreamTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLivePullStreamTasks");

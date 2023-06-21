@@ -167,6 +167,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLivePadTemplatesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePlayAuthKeyRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePlayAuthKeyResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLivePullStreamTaskStatusRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLivePullStreamTaskStatusResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePullStreamTasksRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePullStreamTasksResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLivePushAuthKeyRequest.h>
@@ -549,6 +551,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLivePlayAuthKeyResponse> DescribeLivePlayAuthKeyOutcome;
                 typedef std::future<DescribeLivePlayAuthKeyOutcome> DescribeLivePlayAuthKeyOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePlayAuthKeyRequest&, DescribeLivePlayAuthKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePlayAuthKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLivePullStreamTaskStatusResponse> DescribeLivePullStreamTaskStatusOutcome;
+                typedef std::future<DescribeLivePullStreamTaskStatusOutcome> DescribeLivePullStreamTaskStatusOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLivePullStreamTaskStatusRequest&, DescribeLivePullStreamTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePullStreamTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLivePullStreamTasksResponse> DescribeLivePullStreamTasksOutcome;
                 typedef std::future<DescribeLivePullStreamTasksOutcome> DescribeLivePullStreamTasksOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLivePullStreamTasksRequest&, DescribeLivePullStreamTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLivePullStreamTasksAsyncHandler;
@@ -1492,6 +1497,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLivePlayAuthKeyOutcome DescribeLivePlayAuthKey(const Model::DescribeLivePlayAuthKeyRequest &request);
                 void DescribeLivePlayAuthKeyAsync(const Model::DescribeLivePlayAuthKeyRequest& request, const DescribeLivePlayAuthKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLivePlayAuthKeyOutcomeCallable DescribeLivePlayAuthKeyCallable(const Model::DescribeLivePlayAuthKeyRequest& request);
+
+                /**
+                 *查询直播拉流任务状态信息。
+                 * @param req DescribeLivePullStreamTaskStatusRequest
+                 * @return DescribeLivePullStreamTaskStatusOutcome
+                 */
+                DescribeLivePullStreamTaskStatusOutcome DescribeLivePullStreamTaskStatus(const Model::DescribeLivePullStreamTaskStatusRequest &request);
+                void DescribeLivePullStreamTaskStatusAsync(const Model::DescribeLivePullStreamTaskStatusRequest& request, const DescribeLivePullStreamTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLivePullStreamTaskStatusOutcomeCallable DescribeLivePullStreamTaskStatusCallable(const Model::DescribeLivePullStreamTaskStatusRequest& request);
 
                 /**
                  *查询使用 CreateLivePullStreamTask 接口创建的直播拉流任务。

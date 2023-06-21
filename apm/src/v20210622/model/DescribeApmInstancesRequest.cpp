@@ -26,7 +26,8 @@ DescribeApmInstancesRequest::DescribeApmInstancesRequest() :
     m_tagsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_demoInstanceFlagHasBeenSet(false)
+    m_demoInstanceFlagHasBeenSet(false),
+    m_allRegionsFlagHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeApmInstancesRequest::ToJsonString() const
         string key = "DemoInstanceFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_demoInstanceFlag, allocator);
+    }
+
+    if (m_allRegionsFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllRegionsFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allRegionsFlag, allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeApmInstancesRequest::SetDemoInstanceFlag(const int64_t& _demoInstan
 bool DescribeApmInstancesRequest::DemoInstanceFlagHasBeenSet() const
 {
     return m_demoInstanceFlagHasBeenSet;
+}
+
+int64_t DescribeApmInstancesRequest::GetAllRegionsFlag() const
+{
+    return m_allRegionsFlag;
+}
+
+void DescribeApmInstancesRequest::SetAllRegionsFlag(const int64_t& _allRegionsFlag)
+{
+    m_allRegionsFlag = _allRegionsFlag;
+    m_allRegionsFlagHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::AllRegionsFlagHasBeenSet() const
+{
+    return m_allRegionsFlagHasBeenSet;
 }
 
 

@@ -36,7 +36,8 @@ DescribeBillDetailRequest::DescribeBillDetailRequest() :
     m_actionTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_businessCodeHasBeenSet(false),
-    m_contextHasBeenSet(false)
+    m_contextHasBeenSet(false),
+    m_payerUinHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string DescribeBillDetailRequest::ToJsonString() const
         string key = "Context";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -389,6 +398,22 @@ void DescribeBillDetailRequest::SetContext(const string& _context)
 bool DescribeBillDetailRequest::ContextHasBeenSet() const
 {
     return m_contextHasBeenSet;
+}
+
+string DescribeBillDetailRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeBillDetailRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeBillDetailRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 

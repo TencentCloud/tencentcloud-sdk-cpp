@@ -27,6 +27,7 @@
 #include <tencentcloud/ckafka/v20190819/model/TopicFlowRanking.h>
 #include <tencentcloud/ckafka/v20190819/model/ConsumerGroupSpeed.h>
 #include <tencentcloud/ckafka/v20190819/model/TopicMessageHeapRanking.h>
+#include <tencentcloud/ckafka/v20190819/model/BrokerTopicData.h>
 
 
 namespace TencentCloud
@@ -116,6 +117,56 @@ namespace TencentCloud
                      */
                     bool TopicMessageHeapHasBeenSet() const;
 
+                    /**
+                     * 获取Broker Ip 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BrokerIp Broker Ip 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetBrokerIp() const;
+
+                    /**
+                     * 设置Broker Ip 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _brokerIp Broker Ip 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBrokerIp(const std::vector<std::string>& _brokerIp);
+
+                    /**
+                     * 判断参数 BrokerIp 是否已赋值
+                     * @return BrokerIp 是否已赋值
+                     * 
+                     */
+                    bool BrokerIpHasBeenSet() const;
+
+                    /**
+                     * 获取单个broker 节点 Topic占用的数据大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BrokerTopicData 单个broker 节点 Topic占用的数据大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BrokerTopicData> GetBrokerTopicData() const;
+
+                    /**
+                     * 设置单个broker 节点 Topic占用的数据大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _brokerTopicData 单个broker 节点 Topic占用的数据大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBrokerTopicData(const std::vector<BrokerTopicData>& _brokerTopicData);
+
+                    /**
+                     * 判断参数 BrokerTopicData 是否已赋值
+                     * @return BrokerTopicData 是否已赋值
+                     * 
+                     */
+                    bool BrokerTopicDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -136,6 +187,20 @@ namespace TencentCloud
                      */
                     std::vector<TopicMessageHeapRanking> m_topicMessageHeap;
                     bool m_topicMessageHeapHasBeenSet;
+
+                    /**
+                     * Broker Ip 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_brokerIp;
+                    bool m_brokerIpHasBeenSet;
+
+                    /**
+                     * 单个broker 节点 Topic占用的数据大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BrokerTopicData> m_brokerTopicData;
+                    bool m_brokerTopicDataHasBeenSet;
 
                 };
             }

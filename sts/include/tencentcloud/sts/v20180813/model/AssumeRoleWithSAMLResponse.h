@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool CredentialsHasBeenSet() const;
 
                     /**
-                     * 获取证书无效的时间，返回 Unix 时间戳，精确到秒
-                     * @return ExpiredTime 证书无效的时间，返回 Unix 时间戳，精确到秒
+                     * 获取临时访问凭证的过期时间，返回 Unix 时间戳，精确到秒
+                     * @return ExpiredTime 临时访问凭证的过期时间，返回 Unix 时间戳，精确到秒
                      * 
                      */
                     uint64_t GetExpiredTime() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书无效的时间，以 ISO8601 格式的 UTC 时间表示
-                     * @return Expiration 证书无效的时间，以 ISO8601 格式的 UTC 时间表示
+                     * 获取临时访问凭证的过期时间，以 ISO8601 格式的 UTC 时间表示
+                     * @return Expiration 临时访问凭证的过期时间，以 ISO8601 格式的 UTC 时间表示
                      * 
                      */
                     std::string GetExpiration() const;
@@ -95,13 +95,13 @@ namespace TencentCloud
                     bool m_credentialsHasBeenSet;
 
                     /**
-                     * 证书无效的时间，返回 Unix 时间戳，精确到秒
+                     * 临时访问凭证的过期时间，返回 Unix 时间戳，精确到秒
                      */
                     uint64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 证书无效的时间，以 ISO8601 格式的 UTC 时间表示
+                     * 临时访问凭证的过期时间，以 ISO8601 格式的 UTC 时间表示
                      */
                     std::string m_expiration;
                     bool m_expirationHasBeenSet;

@@ -131,6 +131,39 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取流是否推送到延播。
+0 - 无延播，
+1 - 有延播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PushToDelay 流是否推送到延播。
+0 - 无延播，
+1 - 有延播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPushToDelay() const;
+
+                    /**
+                     * 设置流是否推送到延播。
+0 - 无延播，
+1 - 有延播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pushToDelay 流是否推送到延播。
+0 - 无延播，
+1 - 有延播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPushToDelay(const int64_t& _pushToDelay);
+
+                    /**
+                     * 判断参数 PushToDelay 是否已赋值
+                     * @return PushToDelay 是否已赋值
+                     * 
+                     */
+                    bool PushToDelayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +189,15 @@ namespace TencentCloud
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 流是否推送到延播。
+0 - 无延播，
+1 - 有延播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pushToDelay;
+                    bool m_pushToDelayHasBeenSet;
 
                 };
             }

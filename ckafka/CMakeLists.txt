@@ -123,7 +123,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateUserResponse.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRes.h
+  include/tencentcloud/ckafka/v20190819/model/BrokerTopicData.h
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/MySQLParam.h
@@ -178,6 +178,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/TopicSubscribeGroup.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/DtsConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRes.h
   include/tencentcloud/ckafka/v20190819/model/DorisModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/FieldParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupInfoResponse.h
@@ -443,7 +444,7 @@ set(ckafka_src
   src/v20190819/model/RenewCkafkaInstanceResponse.cpp
   src/v20190819/model/DescribeACLRequest.cpp
   src/v20190819/model/CreateUserResponse.cpp
-  src/v20190819/model/DescribeDatahubTaskRes.cpp
+  src/v20190819/model/BrokerTopicData.cpp
   src/v20190819/model/CreatePartitionResponse.cpp
   src/v20190819/model/MongoDBConnectParam.cpp
   src/v20190819/model/MySQLParam.cpp
@@ -498,6 +499,7 @@ set(ckafka_src
   src/v20190819/model/TopicSubscribeGroup.cpp
   src/v20190819/model/DescribeUserResponse.cpp
   src/v20190819/model/DtsConnectParam.cpp
+  src/v20190819/model/DescribeDatahubTaskRes.cpp
   src/v20190819/model/DorisModifyConnectParam.cpp
   src/v20190819/model/FieldParam.cpp
   src/v20190819/model/DescribeGroupInfoResponse.cpp
