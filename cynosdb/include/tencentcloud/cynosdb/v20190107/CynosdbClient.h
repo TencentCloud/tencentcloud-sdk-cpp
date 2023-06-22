@@ -143,6 +143,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxiesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageListRequest.h>
@@ -469,6 +471,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxyNodesResponse> DescribeProxyNodesOutcome;
                 typedef std::future<DescribeProxyNodesOutcome> DescribeProxyNodesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeProxyNodesRequest&, DescribeProxyNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProxySpecsResponse> DescribeProxySpecsOutcome;
+                typedef std::future<DescribeProxySpecsOutcome> DescribeProxySpecsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeProxySpecsRequest&, DescribeProxySpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySpecsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourcePackageDetailResponse> DescribeResourcePackageDetailOutcome;
                 typedef std::future<DescribeResourcePackageDetailOutcome> DescribeResourcePackageDetailOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeResourcePackageDetailRequest&, DescribeResourcePackageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePackageDetailAsyncHandler;
@@ -1209,6 +1214,15 @@ namespace TencentCloud
                 DescribeProxyNodesOutcome DescribeProxyNodes(const Model::DescribeProxyNodesRequest &request);
                 void DescribeProxyNodesAsync(const Model::DescribeProxyNodesRequest& request, const DescribeProxyNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxyNodesOutcomeCallable DescribeProxyNodesCallable(const Model::DescribeProxyNodesRequest& request);
+
+                /**
+                 *查询数据库代理规格
+                 * @param req DescribeProxySpecsRequest
+                 * @return DescribeProxySpecsOutcome
+                 */
+                DescribeProxySpecsOutcome DescribeProxySpecs(const Model::DescribeProxySpecsRequest &request);
+                void DescribeProxySpecsAsync(const Model::DescribeProxySpecsRequest& request, const DescribeProxySpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProxySpecsOutcomeCallable DescribeProxySpecsCallable(const Model::DescribeProxySpecsRequest& request);
 
                 /**
                  *查询资源包使用详情

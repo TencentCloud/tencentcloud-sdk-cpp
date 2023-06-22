@@ -54,7 +54,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    Group GetGroupList() const;
+                    std::vector<Group> GetGroupList() const;
 
                     /**
                      * 设置消息组列表。	
@@ -63,7 +63,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetGroupList(const Group& _groupList);
+                    void SetGroupList(const std::vector<Group>& _groupList);
 
                     /**
                      * 判断参数 GroupList 是否已赋值
@@ -78,7 +78,7 @@ namespace TencentCloud
                      * 消息组列表。	
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    Group m_groupList;
+                    std::vector<Group> m_groupList;
                     bool m_groupListHasBeenSet;
 
                 };

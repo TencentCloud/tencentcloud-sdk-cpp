@@ -2620,6 +2620,49 @@ CynosdbClient::DescribeProxyNodesOutcomeCallable CynosdbClient::DescribeProxyNod
     return task->get_future();
 }
 
+CynosdbClient::DescribeProxySpecsOutcome CynosdbClient::DescribeProxySpecs(const DescribeProxySpecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxySpecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxySpecsResponse rsp = DescribeProxySpecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxySpecsOutcome(rsp);
+        else
+            return DescribeProxySpecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxySpecsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeProxySpecsAsync(const DescribeProxySpecsRequest& request, const DescribeProxySpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProxySpecs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeProxySpecsOutcomeCallable CynosdbClient::DescribeProxySpecsCallable(const DescribeProxySpecsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProxySpecsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProxySpecs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeResourcePackageDetailOutcome CynosdbClient::DescribeResourcePackageDetail(const DescribeResourcePackageDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourcePackageDetail");

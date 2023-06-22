@@ -47,7 +47,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_extractCopyRightWatermarkTaskHasBeenSet(false),
     m_reviewAudioVideoTaskHasBeenSet(false),
     m_reduceMediaBitrateTaskHasBeenSet(false),
-    m_describeFileAttributesTaskHasBeenSet(false)
+    m_describeFileAttributesTaskHasBeenSet(false),
+    m_qualityInspectTaskHasBeenSet(false)
 {
 }
 
@@ -458,6 +459,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_describeFileAttributesTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QualityInspectTask") && !rsp["QualityInspectTask"].IsNull())
+    {
+        if (!rsp["QualityInspectTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qualityInspectTask.Deserialize(rsp["QualityInspectTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qualityInspectTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -677,6 +695,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_describeFileAttributesTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qualityInspectTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityInspectTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityInspectTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -929,6 +956,16 @@ DescribeFileAttributesTask DescribeTaskDetailResponse::GetDescribeFileAttributes
 bool DescribeTaskDetailResponse::DescribeFileAttributesTaskHasBeenSet() const
 {
     return m_describeFileAttributesTaskHasBeenSet;
+}
+
+QualityInspectTask DescribeTaskDetailResponse::GetQualityInspectTask() const
+{
+    return m_qualityInspectTask;
+}
+
+bool DescribeTaskDetailResponse::QualityInspectTaskHasBeenSet() const
+{
+    return m_qualityInspectTaskHasBeenSet;
 }
 
 

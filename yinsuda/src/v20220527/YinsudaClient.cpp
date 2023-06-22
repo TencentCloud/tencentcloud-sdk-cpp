@@ -212,6 +212,49 @@ YinsudaClient::DescribeKTVMatchMusicsOutcomeCallable YinsudaClient::DescribeKTVM
     return task->get_future();
 }
 
+YinsudaClient::DescribeKTVMusicAccompanySegmentUrlOutcome YinsudaClient::DescribeKTVMusicAccompanySegmentUrl(const DescribeKTVMusicAccompanySegmentUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVMusicAccompanySegmentUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVMusicAccompanySegmentUrlResponse rsp = DescribeKTVMusicAccompanySegmentUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVMusicAccompanySegmentUrlOutcome(rsp);
+        else
+            return DescribeKTVMusicAccompanySegmentUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVMusicAccompanySegmentUrlOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeKTVMusicAccompanySegmentUrlAsync(const DescribeKTVMusicAccompanySegmentUrlRequest& request, const DescribeKTVMusicAccompanySegmentUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVMusicAccompanySegmentUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeKTVMusicAccompanySegmentUrlOutcomeCallable YinsudaClient::DescribeKTVMusicAccompanySegmentUrlCallable(const DescribeKTVMusicAccompanySegmentUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVMusicAccompanySegmentUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVMusicAccompanySegmentUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::DescribeKTVMusicsByTagOutcome YinsudaClient::DescribeKTVMusicsByTag(const DescribeKTVMusicsByTagRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKTVMusicsByTag");

@@ -63,6 +63,8 @@
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateDatabaseRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateDatabaseResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDeployGroupRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateDeployGroupResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h>
@@ -395,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
+                typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeployGroupResponse> CreateDeployGroupOutcome;
                 typedef std::future<CreateDeployGroupOutcome> CreateDeployGroupOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateDeployGroupRequest&, CreateDeployGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeployGroupAsyncHandler;
@@ -983,6 +988,15 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcome CreateDBInstanceHour(const Model::CreateDBInstanceHourRequest &request);
                 void CreateDBInstanceHourAsync(const Model::CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
+
+                /**
+                 *本接口(CreateDatabase)用于在云数据库实例中创建数据库。
+                 * @param req CreateDatabaseRequest
+                 * @return CreateDatabaseOutcome
+                 */
+                CreateDatabaseOutcome CreateDatabase(const Model::CreateDatabaseRequest &request);
+                void CreateDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request);
 
                 /**
                  *本接口(CreateDeployGroup)用于创建放置实例的置放群组

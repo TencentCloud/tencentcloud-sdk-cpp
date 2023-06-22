@@ -158,22 +158,6 @@ namespace TencentCloud
                     bool ResponseTextHasBeenSet() const;
 
                     /**
-                     * 获取机器人应答。	
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResponseMessage 机器人应答。	
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    ResponseMessage GetResponseMessage() const;
-
-                    /**
-                     * 判断参数 ResponseMessage 是否已赋值
-                     * @return ResponseMessage 是否已赋值
-                     * 
-                     */
-                    bool ResponseMessageHasBeenSet() const;
-
-                    /**
                      * 获取结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。	
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultType 结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。	
@@ -188,6 +172,22 @@ namespace TencentCloud
                      * 
                      */
                     bool ResultTypeHasBeenSet() const;
+
+                    /**
+                     * 获取机器人应答。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResponseMessage 机器人应答。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResponseMessage GetResponseMessage() const;
+
+                    /**
+                     * 判断参数 ResponseMessage 是否已赋值
+                     * @return ResponseMessage 是否已赋值
+                     * 
+                     */
+                    bool ResponseMessageHasBeenSet() const;
 
                 private:
 
@@ -241,18 +241,18 @@ namespace TencentCloud
                     bool m_responseTextHasBeenSet;
 
                     /**
-                     * 机器人应答。	
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ResponseMessage m_responseMessage;
-                    bool m_responseMessageHasBeenSet;
-
-                    /**
                      * 结果类型 {中间逻辑出错:0; 任务型机器人:1; 问答型机器人:2; 闲聊型机器人:3; 未匹配上，返回预设兜底话术:5; 未匹配上，返回相似问题列表:6}。	
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;
+
+                    /**
+                     * 机器人应答。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResponseMessage m_responseMessage;
+                    bool m_responseMessageHasBeenSet;
 
                 };
             }

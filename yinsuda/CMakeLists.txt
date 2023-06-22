@@ -46,7 +46,9 @@ set(yinsuda_public_header_model
   include/tencentcloud/yinsuda/v20220527/model/SetAudioParamCommandInput.h
   include/tencentcloud/yinsuda/v20220527/model/KTVMatchMusic.h
   include/tencentcloud/yinsuda/v20220527/model/TRTCJoinRoomInput.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVOtherSegments.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVRobotsResponse.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlRequest.h
   include/tencentcloud/yinsuda/v20220527/model/KTVTagGroupInfo.h
   include/tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsRequest.h
   include/tencentcloud/yinsuda/v20220527/model/AMEMusicBaseInfo.h
@@ -70,6 +72,7 @@ set(yinsuda_public_header_model
   include/tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsRequest.h
   include/tencentcloud/yinsuda/v20220527/model/PlayCommandInput.h
   include/tencentcloud/yinsuda/v20220527/model/TimeRange.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlResponse.h
   include/tencentcloud/yinsuda/v20220527/model/KTVPlaylistBaseInfo.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeUserInfoRequest.h
   include/tencentcloud/yinsuda/v20220527/model/SendMessageCommandInput.h
@@ -111,7 +114,9 @@ set(yinsuda_src
   src/v20220527/model/SetAudioParamCommandInput.cpp
   src/v20220527/model/KTVMatchMusic.cpp
   src/v20220527/model/TRTCJoinRoomInput.cpp
+  src/v20220527/model/KTVOtherSegments.cpp
   src/v20220527/model/DescribeKTVRobotsResponse.cpp
+  src/v20220527/model/DescribeKTVMusicAccompanySegmentUrlRequest.cpp
   src/v20220527/model/KTVTagGroupInfo.cpp
   src/v20220527/model/BatchDescribeKTVMusicDetailsRequest.cpp
   src/v20220527/model/AMEMusicBaseInfo.cpp
@@ -135,6 +140,7 @@ set(yinsuda_src
   src/v20220527/model/SearchKTVMusicsRequest.cpp
   src/v20220527/model/PlayCommandInput.cpp
   src/v20220527/model/TimeRange.cpp
+  src/v20220527/model/DescribeKTVMusicAccompanySegmentUrlResponse.cpp
   src/v20220527/model/KTVPlaylistBaseInfo.cpp
   src/v20220527/model/DescribeUserInfoRequest.cpp
   src/v20220527/model/SendMessageCommandInput.cpp

@@ -44,7 +44,8 @@ EventContent::EventContent() :
     m_extractCopyRightWatermarkCompleteEventHasBeenSet(false),
     m_reviewAudioVideoCompleteEventHasBeenSet(false),
     m_reduceMediaBitrateCompleteEventHasBeenSet(false),
-    m_describeFileAttributesCompleteEventHasBeenSet(false)
+    m_describeFileAttributesCompleteEventHasBeenSet(false),
+    m_qualityInspectCompleteEventHasBeenSet(false)
 {
 }
 
@@ -447,6 +448,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_describeFileAttributesCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("QualityInspectCompleteEvent") && !value["QualityInspectCompleteEvent"].IsNull())
+    {
+        if (!value["QualityInspectCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.QualityInspectCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qualityInspectCompleteEvent.Deserialize(value["QualityInspectCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qualityInspectCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -666,6 +684,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_describeFileAttributesCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qualityInspectCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityInspectCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityInspectCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1053,5 +1080,21 @@ void EventContent::SetDescribeFileAttributesCompleteEvent(const DescribeFileAttr
 bool EventContent::DescribeFileAttributesCompleteEventHasBeenSet() const
 {
     return m_describeFileAttributesCompleteEventHasBeenSet;
+}
+
+QualityInspectTask EventContent::GetQualityInspectCompleteEvent() const
+{
+    return m_qualityInspectCompleteEvent;
+}
+
+void EventContent::SetQualityInspectCompleteEvent(const QualityInspectTask& _qualityInspectCompleteEvent)
+{
+    m_qualityInspectCompleteEvent = _qualityInspectCompleteEvent;
+    m_qualityInspectCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::QualityInspectCompleteEventHasBeenSet() const
+{
+    return m_qualityInspectCompleteEventHasBeenSet;
 }
 

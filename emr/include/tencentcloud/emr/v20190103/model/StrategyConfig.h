@@ -76,18 +76,18 @@ namespace TencentCloud
                     bool RollingRestartSwitchHasBeenSet() const;
 
                     /**
-                     * 获取滚动重启每批次的重启数量
+                     * 获取滚动重启每批次的重启数量，最大重启台数为 99999 台
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchSize 滚动重启每批次的重启数量
+                     * @return BatchSize 滚动重启每批次的重启数量，最大重启台数为 99999 台
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBatchSize() const;
 
                     /**
-                     * 设置滚动重启每批次的重启数量
+                     * 设置滚动重启每批次的重启数量，最大重启台数为 99999 台
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _batchSize 滚动重启每批次的重启数量
+                     * @param _batchSize 滚动重启每批次的重启数量，最大重启台数为 99999 台
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -101,18 +101,18 @@ namespace TencentCloud
                     bool BatchSizeHasBeenSet() const;
 
                     /**
-                     * 获取滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
+                     * 获取滚动重启每批停止等待时间 ,最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeWait 滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
+                     * @return TimeWait 滚动重启每批停止等待时间 ,最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeWait() const;
 
                     /**
-                     * 设置滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
+                     * 设置滚动重启每批停止等待时间 ,最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeWait 滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
+                     * @param _timeWait 滚动重启每批停止等待时间 ,最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -161,14 +161,14 @@ namespace TencentCloud
                     bool m_rollingRestartSwitchHasBeenSet;
 
                     /**
-                     * 滚动重启每批次的重启数量
+                     * 滚动重启每批次的重启数量，最大重启台数为 99999 台
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_batchSize;
                     bool m_batchSizeHasBeenSet;
 
                     /**
-                     * 滚动重启每批停止等待时间 ,最大重启台数为 99999 台，最大间隔为 5 分钟 单位是秒
+                     * 滚动重启每批停止等待时间 ,最大间隔为 5 分钟 单位是秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeWait;

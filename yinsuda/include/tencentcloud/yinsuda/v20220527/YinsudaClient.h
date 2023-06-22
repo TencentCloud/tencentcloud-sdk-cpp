@@ -31,6 +31,8 @@
 #include <tencentcloud/yinsuda/v20220527/model/CreateKTVRobotResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicAccompanySegmentUrlResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailRequest.h>
@@ -81,6 +83,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVMatchMusicsResponse> DescribeKTVMatchMusicsOutcome;
                 typedef std::future<DescribeKTVMatchMusicsOutcome> DescribeKTVMatchMusicsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMatchMusicsRequest&, DescribeKTVMatchMusicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMatchMusicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVMusicAccompanySegmentUrlResponse> DescribeKTVMusicAccompanySegmentUrlOutcome;
+                typedef std::future<DescribeKTVMusicAccompanySegmentUrlOutcome> DescribeKTVMusicAccompanySegmentUrlOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMusicAccompanySegmentUrlRequest&, DescribeKTVMusicAccompanySegmentUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicAccompanySegmentUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKTVMusicsByTagResponse> DescribeKTVMusicsByTagOutcome;
                 typedef std::future<DescribeKTVMusicsByTagOutcome> DescribeKTVMusicsByTagOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMusicsByTagRequest&, DescribeKTVMusicsByTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicsByTagAsyncHandler;
@@ -155,6 +160,15 @@ namespace TencentCloud
                 DescribeKTVMatchMusicsOutcome DescribeKTVMatchMusics(const Model::DescribeKTVMatchMusicsRequest &request);
                 void DescribeKTVMatchMusicsAsync(const Model::DescribeKTVMatchMusicsRequest& request, const DescribeKTVMatchMusicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKTVMatchMusicsOutcomeCallable DescribeKTVMatchMusicsCallable(const Model::DescribeKTVMatchMusicsRequest& request);
+
+                /**
+                 *获取歌曲伴奏片段链接，可用于抢唱
+                 * @param req DescribeKTVMusicAccompanySegmentUrlRequest
+                 * @return DescribeKTVMusicAccompanySegmentUrlOutcome
+                 */
+                DescribeKTVMusicAccompanySegmentUrlOutcome DescribeKTVMusicAccompanySegmentUrl(const Model::DescribeKTVMusicAccompanySegmentUrlRequest &request);
+                void DescribeKTVMusicAccompanySegmentUrlAsync(const Model::DescribeKTVMusicAccompanySegmentUrlRequest& request, const DescribeKTVMusicAccompanySegmentUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVMusicAccompanySegmentUrlOutcomeCallable DescribeKTVMusicAccompanySegmentUrlCallable(const Model::DescribeKTVMusicAccompanySegmentUrlRequest& request);
 
                 /**
                  *通过标签过滤歌曲列表。

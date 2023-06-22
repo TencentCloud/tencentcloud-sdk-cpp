@@ -57,6 +57,8 @@
 #include <tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateQualityInspectTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateQualityInspectTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateRebuildMediaTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateRebuildMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateReviewTemplateRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/vod/v20180717/model/DeletePersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteProcedureTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteQualityInspectTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteQualityInspectTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteRebuildMediaTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteRebuildMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteReviewTemplateRequest.h>
@@ -187,6 +191,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribePrepaidProductsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeQualityInspectTemplatesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeQualityInspectTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeRebuildMediaTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeRebuildMediaTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsRequest.h>
@@ -233,6 +239,8 @@
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ForbidMediaDistributionResponse.h>
+#include <tencentcloud/vod/v20180717/model/InspectMediaQualityRequest.h>
+#include <tencentcloud/vod/v20180717/model/InspectMediaQualityResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/ManageTaskRequest.h>
@@ -265,6 +273,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyMediaStorageClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyQualityInspectTemplateRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyQualityInspectTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyRebuildMediaTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyRebuildMediaTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyReviewTemplateRequest.h>
@@ -398,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProcedureTemplateResponse> CreateProcedureTemplateOutcome;
                 typedef std::future<CreateProcedureTemplateOutcome> CreateProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateProcedureTemplateRequest&, CreateProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcedureTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateQualityInspectTemplateResponse> CreateQualityInspectTemplateOutcome;
+                typedef std::future<CreateQualityInspectTemplateOutcome> CreateQualityInspectTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateQualityInspectTemplateRequest&, CreateQualityInspectTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityInspectTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRebuildMediaTemplateResponse> CreateRebuildMediaTemplateOutcome;
                 typedef std::future<CreateRebuildMediaTemplateOutcome> CreateRebuildMediaTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateRebuildMediaTemplateRequest&, CreateRebuildMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRebuildMediaTemplateAsyncHandler;
@@ -473,6 +486,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProcedureTemplateResponse> DeleteProcedureTemplateOutcome;
                 typedef std::future<DeleteProcedureTemplateOutcome> DeleteProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteProcedureTemplateRequest&, DeleteProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProcedureTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteQualityInspectTemplateResponse> DeleteQualityInspectTemplateOutcome;
+                typedef std::future<DeleteQualityInspectTemplateOutcome> DeleteQualityInspectTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteQualityInspectTemplateRequest&, DeleteQualityInspectTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityInspectTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRebuildMediaTemplateResponse> DeleteRebuildMediaTemplateOutcome;
                 typedef std::future<DeleteRebuildMediaTemplateOutcome> DeleteRebuildMediaTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteRebuildMediaTemplateRequest&, DeleteRebuildMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRebuildMediaTemplateAsyncHandler;
@@ -593,6 +609,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProcedureTemplatesResponse> DescribeProcedureTemplatesOutcome;
                 typedef std::future<DescribeProcedureTemplatesOutcome> DescribeProcedureTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeProcedureTemplatesRequest&, DescribeProcedureTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcedureTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQualityInspectTemplatesResponse> DescribeQualityInspectTemplatesOutcome;
+                typedef std::future<DescribeQualityInspectTemplatesOutcome> DescribeQualityInspectTemplatesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeQualityInspectTemplatesRequest&, DescribeQualityInspectTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityInspectTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRebuildMediaTemplatesResponse> DescribeRebuildMediaTemplatesOutcome;
                 typedef std::future<DescribeRebuildMediaTemplatesOutcome> DescribeRebuildMediaTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeRebuildMediaTemplatesRequest&, DescribeRebuildMediaTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebuildMediaTemplatesAsyncHandler;
@@ -662,6 +681,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForbidMediaDistributionResponse> ForbidMediaDistributionOutcome;
                 typedef std::future<ForbidMediaDistributionOutcome> ForbidMediaDistributionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ForbidMediaDistributionRequest&, ForbidMediaDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidMediaDistributionAsyncHandler;
+                typedef Outcome<Core::Error, Model::InspectMediaQualityResponse> InspectMediaQualityOutcome;
+                typedef std::future<InspectMediaQualityOutcome> InspectMediaQualityOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::InspectMediaQualityRequest&, InspectMediaQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InspectMediaQualityAsyncHandler;
                 typedef Outcome<Core::Error, Model::LiveRealTimeClipResponse> LiveRealTimeClipOutcome;
                 typedef std::future<LiveRealTimeClipOutcome> LiveRealTimeClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::LiveRealTimeClipRequest&, LiveRealTimeClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LiveRealTimeClipAsyncHandler;
@@ -710,6 +732,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPersonSampleResponse> ModifyPersonSampleOutcome;
                 typedef std::future<ModifyPersonSampleOutcome> ModifyPersonSampleOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyPersonSampleRequest&, ModifyPersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyQualityInspectTemplateResponse> ModifyQualityInspectTemplateOutcome;
+                typedef std::future<ModifyQualityInspectTemplateOutcome> ModifyQualityInspectTemplateOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyQualityInspectTemplateRequest&, ModifyQualityInspectTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQualityInspectTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRebuildMediaTemplateResponse> ModifyRebuildMediaTemplateOutcome;
                 typedef std::future<ModifyRebuildMediaTemplateOutcome> ModifyRebuildMediaTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyRebuildMediaTemplateRequest&, ModifyRebuildMediaTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRebuildMediaTemplateAsyncHandler;
@@ -988,6 +1013,15 @@ namespace TencentCloud
                 CreateProcedureTemplateOutcomeCallable CreateProcedureTemplateCallable(const Model::CreateProcedureTemplateRequest& request);
 
                 /**
+                 *创建音画质检测模板。
+                 * @param req CreateQualityInspectTemplateRequest
+                 * @return CreateQualityInspectTemplateOutcome
+                 */
+                CreateQualityInspectTemplateOutcome CreateQualityInspectTemplate(const Model::CreateQualityInspectTemplateRequest &request);
+                void CreateQualityInspectTemplateAsync(const Model::CreateQualityInspectTemplateRequest& request, const CreateQualityInspectTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateQualityInspectTemplateOutcomeCallable CreateQualityInspectTemplateCallable(const Model::CreateQualityInspectTemplateRequest& request);
+
+                /**
                  *创建音画质重生模板。
                  * @param req CreateRebuildMediaTemplateRequest
                  * @return CreateRebuildMediaTemplateOutcome
@@ -1224,6 +1258,15 @@ namespace TencentCloud
                 DeleteProcedureTemplateOutcome DeleteProcedureTemplate(const Model::DeleteProcedureTemplateRequest &request);
                 void DeleteProcedureTemplateAsync(const Model::DeleteProcedureTemplateRequest& request, const DeleteProcedureTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProcedureTemplateOutcomeCallable DeleteProcedureTemplateCallable(const Model::DeleteProcedureTemplateRequest& request);
+
+                /**
+                 *删除音画质检测模板。
+                 * @param req DeleteQualityInspectTemplateRequest
+                 * @return DeleteQualityInspectTemplateOutcome
+                 */
+                DeleteQualityInspectTemplateOutcome DeleteQualityInspectTemplate(const Model::DeleteQualityInspectTemplateRequest &request);
+                void DeleteQualityInspectTemplateAsync(const Model::DeleteQualityInspectTemplateRequest& request, const DeleteQualityInspectTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteQualityInspectTemplateOutcomeCallable DeleteQualityInspectTemplateCallable(const Model::DeleteQualityInspectTemplateRequest& request);
 
                 /**
                  *删除音画质重生模板。
@@ -1654,6 +1697,15 @@ namespace TencentCloud
                 DescribeProcedureTemplatesOutcomeCallable DescribeProcedureTemplatesCallable(const Model::DescribeProcedureTemplatesRequest& request);
 
                 /**
+                 *获取音画质检测模板列表。
+                 * @param req DescribeQualityInspectTemplatesRequest
+                 * @return DescribeQualityInspectTemplatesOutcome
+                 */
+                DescribeQualityInspectTemplatesOutcome DescribeQualityInspectTemplates(const Model::DescribeQualityInspectTemplatesRequest &request);
+                void DescribeQualityInspectTemplatesAsync(const Model::DescribeQualityInspectTemplatesRequest& request, const DescribeQualityInspectTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQualityInspectTemplatesOutcomeCallable DescribeQualityInspectTemplatesCallable(const Model::DescribeQualityInspectTemplatesRequest& request);
+
+                /**
                  *获取音画质重生模板列表。
                  * @param req DescribeRebuildMediaTemplatesRequest
                  * @return DescribeRebuildMediaTemplatesOutcome
@@ -1891,6 +1943,15 @@ namespace TencentCloud
                 ForbidMediaDistributionOutcomeCallable ForbidMediaDistributionCallable(const Model::ForbidMediaDistributionRequest& request);
 
                 /**
+                 *对点播中的音视频媒体发起音画质检测任务。
+                 * @param req InspectMediaQualityRequest
+                 * @return InspectMediaQualityOutcome
+                 */
+                InspectMediaQualityOutcome InspectMediaQuality(const Model::InspectMediaQualityRequest &request);
+                void InspectMediaQualityAsync(const Model::InspectMediaQualityRequest& request, const InspectMediaQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InspectMediaQualityOutcomeCallable InspectMediaQualityCallable(const Model::InspectMediaQualityRequest& request);
+
+                /**
                  *直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。
 
 腾讯云点播支持两种即时剪辑模式：
@@ -2077,6 +2138,15 @@ namespace TencentCloud
                 ModifyPersonSampleOutcome ModifyPersonSample(const Model::ModifyPersonSampleRequest &request);
                 void ModifyPersonSampleAsync(const Model::ModifyPersonSampleRequest& request, const ModifyPersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPersonSampleOutcomeCallable ModifyPersonSampleCallable(const Model::ModifyPersonSampleRequest& request);
+
+                /**
+                 *修改音画质检测模板。
+                 * @param req ModifyQualityInspectTemplateRequest
+                 * @return ModifyQualityInspectTemplateOutcome
+                 */
+                ModifyQualityInspectTemplateOutcome ModifyQualityInspectTemplate(const Model::ModifyQualityInspectTemplateRequest &request);
+                void ModifyQualityInspectTemplateAsync(const Model::ModifyQualityInspectTemplateRequest& request, const ModifyQualityInspectTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyQualityInspectTemplateOutcomeCallable ModifyQualityInspectTemplateCallable(const Model::ModifyQualityInspectTemplateRequest& request);
 
                 /**
                  *修改音画质重生模板。

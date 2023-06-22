@@ -32,18 +32,21 @@ CoreInternalOutcome ResponseMessage::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("GroupList") && !value["GroupList"].IsNull())
     {
-        if (!value["GroupList"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ResponseMessage.GroupList` is not object type").SetRequestId(requestId));
-        }
+        if (!value["GroupList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResponseMessage.GroupList` is not array type"));
 
-        CoreInternalOutcome outcome = m_groupList.Deserialize(value["GroupList"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["GroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            Group item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_groupList.push_back(item);
         }
-
         m_groupListHasBeenSet = true;
     }
 
@@ -59,19 +62,25 @@ void ResponseMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_groupList.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_groupList.begin(); itr != m_groupList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
 
 
-Group ResponseMessage::GetGroupList() const
+vector<Group> ResponseMessage::GetGroupList() const
 {
     return m_groupList;
 }
 
-void ResponseMessage::SetGroupList(const Group& _groupList)
+void ResponseMessage::SetGroupList(const vector<Group>& _groupList)
 {
     m_groupList = _groupList;
     m_groupListHasBeenSet = true;

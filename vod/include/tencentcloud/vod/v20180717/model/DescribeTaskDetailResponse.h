@@ -40,6 +40,7 @@
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
 #include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
 #include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
+#include <tencentcloud/vod/v20180717/model/QualityInspectTask.h>
 
 
 namespace TencentCloud
@@ -77,7 +78,8 @@ namespace TencentCloud
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
 <li>ExtractTraceWatermark：提取溯源水印任务；</li>
-<li>ExtractCopyRightWatermark：提取版权水印任务。</li>
+<li>ExtractCopyRightWatermark：提取版权水印任务；</li>
+<li>QualityInspect：音画质检测任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -92,7 +94,8 @@ namespace TencentCloud
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
 <li>ExtractTraceWatermark：提取溯源水印任务；</li>
-<li>ExtractCopyRightWatermark：提取版权水印任务。</li>
+<li>ExtractCopyRightWatermark：提取版权水印任务；</li>
+<li>QualityInspect：音画质检测任务。</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -470,6 +473,22 @@ namespace TencentCloud
                      */
                     bool DescribeFileAttributesTaskHasBeenSet() const;
 
+                    /**
+                     * 获取音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityInspectTask 音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    QualityInspectTask GetQualityInspectTask() const;
+
+                    /**
+                     * 判断参数 QualityInspectTask 是否已赋值
+                     * @return QualityInspectTask 是否已赋值
+                     * 
+                     */
+                    bool QualityInspectTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,7 +506,8 @@ namespace TencentCloud
 <li>RebuildMedia：音画质重生任务；</li>
 <li>ReviewAudioVideo：音视频审核任务；</li>
 <li>ExtractTraceWatermark：提取溯源水印任务；</li>
-<li>ExtractCopyRightWatermark：提取版权水印任务。</li>
+<li>ExtractCopyRightWatermark：提取版权水印任务；</li>
+<li>QualityInspect：音画质检测任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -651,6 +671,13 @@ namespace TencentCloud
                      */
                     DescribeFileAttributesTask m_describeFileAttributesTask;
                     bool m_describeFileAttributesTaskHasBeenSet;
+
+                    /**
+                     * 音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    QualityInspectTask m_qualityInspectTask;
+                    bool m_qualityInspectTaskHasBeenSet;
 
                 };
             }

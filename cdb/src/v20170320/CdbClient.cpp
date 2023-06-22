@@ -900,6 +900,49 @@ CdbClient::CreateDBInstanceHourOutcomeCallable CdbClient::CreateDBInstanceHourCa
     return task->get_future();
 }
 
+CdbClient::CreateDatabaseOutcome CdbClient::CreateDatabase(const CreateDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDatabaseResponse rsp = CreateDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDatabaseOutcome(rsp);
+        else
+            return CreateDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CreateDatabaseAsync(const CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CreateDatabaseOutcomeCallable CdbClient::CreateDatabaseCallable(const CreateDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CreateDeployGroupOutcome CdbClient::CreateDeployGroup(const CreateDeployGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeployGroup");
