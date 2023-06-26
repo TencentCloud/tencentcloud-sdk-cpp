@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool TraceCodeHasBeenSet() const;
 
+                    /**
+                     * 获取码路径，如level是2，则为 [1级, 2级]
+                     * @return CodePath 码路径，如level是2，则为 [1级, 2级]
+                     * 
+                     */
+                    std::vector<std::string> GetCodePath() const;
+
+                    /**
+                     * 判断参数 CodePath 是否已赋值
+                     * @return CodePath 是否已赋值
+                     * 
+                     */
+                    bool CodePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     TraceCode m_traceCode;
                     bool m_traceCodeHasBeenSet;
+
+                    /**
+                     * 码路径，如level是2，则为 [1级, 2级]
+                     */
+                    std::vector<std::string> m_codePath;
+                    bool m_codePathHasBeenSet;
 
                 };
             }

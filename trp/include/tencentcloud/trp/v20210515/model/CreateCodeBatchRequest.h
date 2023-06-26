@@ -231,6 +231,48 @@ namespace TencentCloud
                      */
                     bool BatchCodeHasBeenSet() const;
 
+                    /**
+                     * 获取有效期
+                     * @return ValidDate 有效期
+                     * 
+                     */
+                    std::string GetValidDate() const;
+
+                    /**
+                     * 设置有效期
+                     * @param _validDate 有效期
+                     * 
+                     */
+                    void SetValidDate(const std::string& _validDate);
+
+                    /**
+                     * 判断参数 ValidDate 是否已赋值
+                     * @return ValidDate 是否已赋值
+                     * 
+                     */
+                    bool ValidDateHasBeenSet() const;
+
+                    /**
+                     * 获取生产日期
+                     * @return ProductionDate 生产日期
+                     * 
+                     */
+                    std::string GetProductionDate() const;
+
+                    /**
+                     * 设置生产日期
+                     * @param _productionDate 生产日期
+                     * 
+                     */
+                    void SetProductionDate(const std::string& _productionDate);
+
+                    /**
+                     * 判断参数 ProductionDate 是否已赋值
+                     * @return ProductionDate 是否已赋值
+                     * 
+                     */
+                    bool ProductionDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +328,18 @@ namespace TencentCloud
                      */
                     std::string m_batchCode;
                     bool m_batchCodeHasBeenSet;
+
+                    /**
+                     * 有效期
+                     */
+                    std::string m_validDate;
+                    bool m_validDateHasBeenSet;
+
+                    /**
+                     * 生产日期
+                     */
+                    std::string m_productionDate;
+                    bool m_productionDateHasBeenSet;
 
                 };
             }

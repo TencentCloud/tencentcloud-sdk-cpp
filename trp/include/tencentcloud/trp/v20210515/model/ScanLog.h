@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogId 行ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLogId() const;
 
                     /**
                      * 设置行ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logId 行ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogId(const int64_t& _logId);
@@ -446,11 +442,81 @@ namespace TencentCloud
                      */
                     bool BatchIdHasBeenSet() const;
 
+                    /**
+                     * 获取扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码
+                     * @return Type 扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码
+                     * @param _type 扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取商户名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MerchantName 商户名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMerchantName() const;
+
+                    /**
+                     * 设置商户名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _merchantName 商户名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMerchantName(const std::string& _merchantName);
+
+                    /**
+                     * 判断参数 MerchantName 是否已赋值
+                     * @return MerchantName 是否已赋值
+                     * 
+                     */
+                    bool MerchantNameHasBeenSet() const;
+
+                    /**
+                     * 获取产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductName 产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productName 产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     * 
+                     */
+                    bool ProductNameHasBeenSet() const;
+
                 private:
 
                     /**
                      * 行ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_logId;
                     bool m_logIdHasBeenSet;
@@ -559,6 +625,26 @@ namespace TencentCloud
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 扫码类型 0:无效扫码 1: 小程序扫码 2: 商家扫码
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 商户名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_merchantName;
+                    bool m_merchantNameHasBeenSet;
+
+                    /**
+                     * 产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_regularBackupCountsHasBeenSet(false),
     m_regularBackupStartTimeHasBeenSet(false),
     m_blockedThresholdHasBeenSet(false),
-    m_eventSaveDaysHasBeenSet(false)
+    m_eventSaveDaysHasBeenSet(false),
+    m_tDEConfigHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,23 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_eventSaveDaysHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TDEConfig") && !rsp["TDEConfig"].IsNull())
+    {
+        if (!rsp["TDEConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TDEConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tDEConfig.Deserialize(rsp["TDEConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tDEConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +239,15 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         string key = "EventSaveDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventSaveDays, allocator);
+    }
+
+    if (m_tDEConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TDEConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tDEConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +340,16 @@ int64_t DescribeDBInstancesAttributeResponse::GetEventSaveDays() const
 bool DescribeDBInstancesAttributeResponse::EventSaveDaysHasBeenSet() const
 {
     return m_eventSaveDaysHasBeenSet;
+}
+
+TDEConfigAttribute DescribeDBInstancesAttributeResponse::GetTDEConfig() const
+{
+    return m_tDEConfig;
+}
+
+bool DescribeDBInstancesAttributeResponse::TDEConfigHasBeenSet() const
+{
+    return m_tDEConfigHasBeenSet;
 }
 
 

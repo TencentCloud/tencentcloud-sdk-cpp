@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trp/v20210515/model/Ext.h>
 #include <tencentcloud/trp/v20210515/model/Job.h>
+#include <tencentcloud/trp/v20210515/model/AttrItem.h>
 
 
 namespace TencentCloud
@@ -473,6 +474,77 @@ namespace TencentCloud
                      */
                     bool JobHasBeenSet() const;
 
+                    /**
+                     * 获取生产日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductionDate 生产日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductionDate() const;
+
+                    /**
+                     * 设置生产日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productionDate 生产日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductionDate(const std::string& _productionDate);
+
+                    /**
+                     * 判断参数 ProductionDate 是否已赋值
+                     * @return ProductionDate 是否已赋值
+                     * 
+                     */
+                    bool ProductionDateHasBeenSet() const;
+
+                    /**
+                     * 获取有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValidDate 有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetValidDate() const;
+
+                    /**
+                     * 设置有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _validDate 有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValidDate(const std::string& _validDate);
+
+                    /**
+                     * 判断参数 ValidDate 是否已赋值
+                     * @return ValidDate 是否已赋值
+                     * 
+                     */
+                    bool ValidDateHasBeenSet() const;
+
+                    /**
+                     * 获取扩展属性
+                     * @return Attrs 扩展属性
+                     * 
+                     */
+                    std::vector<AttrItem> GetAttrs() const;
+
+                    /**
+                     * 设置扩展属性
+                     * @param _attrs 扩展属性
+                     * 
+                     */
+                    void SetAttrs(const std::vector<AttrItem>& _attrs);
+
+                    /**
+                     * 判断参数 Attrs 是否已赋值
+                     * @return Attrs 是否已赋值
+                     * 
+                     */
+                    bool AttrsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +665,26 @@ namespace TencentCloud
                      */
                     Job m_job;
                     bool m_jobHasBeenSet;
+
+                    /**
+                     * 生产日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productionDate;
+                    bool m_productionDateHasBeenSet;
+
+                    /**
+                     * 有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_validDate;
+                    bool m_validDateHasBeenSet;
+
+                    /**
+                     * 扩展属性
+                     */
+                    std::vector<AttrItem> m_attrs;
+                    bool m_attrsHasBeenSet;
 
                 };
             }

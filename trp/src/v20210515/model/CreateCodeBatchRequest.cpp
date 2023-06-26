@@ -31,7 +31,9 @@ CreateCodeBatchRequest::CreateCodeBatchRequest() :
     m_remarkHasBeenSet(false),
     m_mpTplHasBeenSet(false),
     m_cloneIdHasBeenSet(false),
-    m_batchCodeHasBeenSet(false)
+    m_batchCodeHasBeenSet(false),
+    m_validDateHasBeenSet(false),
+    m_productionDateHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string CreateCodeBatchRequest::ToJsonString() const
         string key = "BatchCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_batchCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_validDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productionDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductionDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productionDate.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +282,38 @@ void CreateCodeBatchRequest::SetBatchCode(const string& _batchCode)
 bool CreateCodeBatchRequest::BatchCodeHasBeenSet() const
 {
     return m_batchCodeHasBeenSet;
+}
+
+string CreateCodeBatchRequest::GetValidDate() const
+{
+    return m_validDate;
+}
+
+void CreateCodeBatchRequest::SetValidDate(const string& _validDate)
+{
+    m_validDate = _validDate;
+    m_validDateHasBeenSet = true;
+}
+
+bool CreateCodeBatchRequest::ValidDateHasBeenSet() const
+{
+    return m_validDateHasBeenSet;
+}
+
+string CreateCodeBatchRequest::GetProductionDate() const
+{
+    return m_productionDate;
+}
+
+void CreateCodeBatchRequest::SetProductionDate(const string& _productionDate)
+{
+    m_productionDate = _productionDate;
+    m_productionDateHasBeenSet = true;
+}
+
+bool CreateCodeBatchRequest::ProductionDateHasBeenSet() const
+{
+    return m_productionDateHasBeenSet;
 }
 
 

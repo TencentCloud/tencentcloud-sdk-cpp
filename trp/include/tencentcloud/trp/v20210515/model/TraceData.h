@@ -24,9 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trp/v20210515/model/TraceItem.h>
 #include <tencentcloud/trp/v20210515/model/ChainData.h>
 #include <tencentcloud/trp/v20210515/model/PhaseData.h>
+#include <tencentcloud/trp/v20210515/model/TraceItem.h>
 
 
 namespace TencentCloud
@@ -226,27 +226,6 @@ namespace TencentCloud
                     bool TraceTimeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return TraceItems 无
-                     * 
-                     */
-                    std::vector<TraceItem> GetTraceItems() const;
-
-                    /**
-                     * 设置无
-                     * @param _traceItems 无
-                     * 
-                     */
-                    void SetTraceItems(const std::vector<TraceItem>& _traceItems);
-
-                    /**
-                     * 判断参数 TraceItems 是否已赋值
-                     * @return TraceItems 是否已赋值
-                     * 
-                     */
-                    bool TraceItemsHasBeenSet() const;
-
-                    /**
                      * 获取创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
@@ -392,6 +371,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return TraceItems 无
+                     * 
+                     */
+                    std::vector<TraceItem> GetTraceItems() const;
+
+                    /**
+                     * 设置无
+                     * @param _traceItems 无
+                     * 
+                     */
+                    void SetTraceItems(const std::vector<TraceItem>& _traceItems);
+
+                    /**
+                     * 判断参数 TraceItems 是否已赋值
+                     * @return TraceItems 是否已赋值
+                     * 
+                     */
+                    bool TraceItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -445,12 +445,6 @@ namespace TencentCloud
                     bool m_traceTimeHasBeenSet;
 
                     /**
-                     * 无
-                     */
-                    std::vector<TraceItem> m_traceItems;
-                    bool m_traceItemsHasBeenSet;
-
-                    /**
                      * 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -490,6 +484,12 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<TraceItem> m_traceItems;
+                    bool m_traceItemsHasBeenSet;
 
                 };
             }

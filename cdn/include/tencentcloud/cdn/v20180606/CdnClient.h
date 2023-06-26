@@ -155,6 +155,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListTopWafDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ModifyDomainConfigRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ModifyDomainConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusResponse.h>
 #include <tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h>
@@ -395,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ManageClsTopicDomainsResponse> ManageClsTopicDomainsOutcome;
                 typedef std::future<ManageClsTopicDomainsOutcome> ManageClsTopicDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ManageClsTopicDomainsRequest&, ManageClsTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageClsTopicDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainConfigResponse> ModifyDomainConfigOutcome;
+                typedef std::future<ModifyDomainConfigOutcome> ModifyDomainConfigOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ModifyDomainConfigRequest&, ModifyDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPurgeFetchTaskStatusResponse> ModifyPurgeFetchTaskStatusOutcome;
                 typedef std::future<ModifyPurgeFetchTaskStatusOutcome> ModifyPurgeFetchTaskStatusOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ModifyPurgeFetchTaskStatusRequest&, ModifyPurgeFetchTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPurgeFetchTaskStatusAsyncHandler;
@@ -1086,6 +1091,19 @@ namespace TencentCloud
                 ManageClsTopicDomainsOutcome ManageClsTopicDomains(const Model::ManageClsTopicDomainsRequest &request);
                 void ManageClsTopicDomainsAsync(const Model::ManageClsTopicDomainsRequest& request, const ManageClsTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManageClsTopicDomainsOutcomeCallable ManageClsTopicDomainsCallable(const Model::ManageClsTopicDomainsRequest& request);
+
+                /**
+                 *ModifyDomainConfig 用于修改内容分发网络加速域名配置信息
+注意：
+Route 字段，使用点分隔，最后一段称为叶子节点，非叶子节点配置保持不变；
+Value 字段，使用 json 进行序列化，其中固定 update 作为 key，配置路径值参考 https://cloud.tencent.com/document/product/228/41116 接口各配置项复杂类型，为配置路径对应复杂类型下的节点。
+云审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到云审计。
+                 * @param req ModifyDomainConfigRequest
+                 * @return ModifyDomainConfigOutcome
+                 */
+                ModifyDomainConfigOutcome ModifyDomainConfig(const Model::ModifyDomainConfigRequest &request);
+                void ModifyDomainConfigAsync(const Model::ModifyDomainConfigRequest& request, const ModifyDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainConfigOutcomeCallable ModifyDomainConfigCallable(const Model::ModifyDomainConfigRequest& request);
 
                 /**
                  *ModifyPurgeFetchTaskStatus 用于上报定时刷新预热任务执行状态

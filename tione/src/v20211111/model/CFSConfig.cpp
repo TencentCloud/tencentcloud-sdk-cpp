@@ -22,7 +22,9 @@ using namespace std;
 
 CFSConfig::CFSConfig() :
     m_idHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_mountTypeHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome CFSConfig::Deserialize(const rapidjson::Value &value)
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("MountType") && !value["MountType"].IsNull())
+    {
+        if (!value["MountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSConfig.MountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountType = string(value["MountType"].GetString());
+        m_mountTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CFSConfig.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void CFSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void CFSConfig::SetPath(const string& _path)
 bool CFSConfig::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string CFSConfig::GetMountType() const
+{
+    return m_mountType;
+}
+
+void CFSConfig::SetMountType(const string& _mountType)
+{
+    m_mountType = _mountType;
+    m_mountTypeHasBeenSet = true;
+}
+
+bool CFSConfig::MountTypeHasBeenSet() const
+{
+    return m_mountTypeHasBeenSet;
+}
+
+string CFSConfig::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CFSConfig::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CFSConfig::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 

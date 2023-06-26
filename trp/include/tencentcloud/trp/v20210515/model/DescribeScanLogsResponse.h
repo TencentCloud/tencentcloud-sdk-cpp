@@ -46,17 +46,15 @@ namespace TencentCloud
 
                     /**
                      * 获取【弃用】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Products 【弃用】
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<ScanLog> GetProducts() const;
 
                     /**
                      * 判断参数 Products 是否已赋值
                      * @return Products 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProductsHasBeenSet() const;
 
@@ -92,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 【弃用】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanLog> m_products;
                     bool m_productsHasBeenSet;

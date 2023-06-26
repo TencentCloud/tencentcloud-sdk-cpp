@@ -37,7 +37,10 @@ CodeBatch::CodeBatch() :
     m_productNameHasBeenSet(false),
     m_extHasBeenSet(false),
     m_tplNameHasBeenSet(false),
-    m_jobHasBeenSet(false)
+    m_jobHasBeenSet(false),
+    m_productionDateHasBeenSet(false),
+    m_validDateHasBeenSet(false),
+    m_attrsHasBeenSet(false)
 {
 }
 
@@ -230,6 +233,46 @@ CoreInternalOutcome CodeBatch::Deserialize(const rapidjson::Value &value)
         m_jobHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductionDate") && !value["ProductionDate"].IsNull())
+    {
+        if (!value["ProductionDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeBatch.ProductionDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productionDate = string(value["ProductionDate"].GetString());
+        m_productionDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValidDate") && !value["ValidDate"].IsNull())
+    {
+        if (!value["ValidDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeBatch.ValidDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_validDate = string(value["ValidDate"].GetString());
+        m_validDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("Attrs") && !value["Attrs"].IsNull())
+    {
+        if (!value["Attrs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CodeBatch.Attrs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Attrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttrItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_attrs.push_back(item);
+        }
+        m_attrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +416,37 @@ void CodeBatch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_job.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_productionDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductionDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productionDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_validDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Attrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attrs.begin(); itr != m_attrs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -648,5 +722,53 @@ void CodeBatch::SetJob(const Job& _job)
 bool CodeBatch::JobHasBeenSet() const
 {
     return m_jobHasBeenSet;
+}
+
+string CodeBatch::GetProductionDate() const
+{
+    return m_productionDate;
+}
+
+void CodeBatch::SetProductionDate(const string& _productionDate)
+{
+    m_productionDate = _productionDate;
+    m_productionDateHasBeenSet = true;
+}
+
+bool CodeBatch::ProductionDateHasBeenSet() const
+{
+    return m_productionDateHasBeenSet;
+}
+
+string CodeBatch::GetValidDate() const
+{
+    return m_validDate;
+}
+
+void CodeBatch::SetValidDate(const string& _validDate)
+{
+    m_validDate = _validDate;
+    m_validDateHasBeenSet = true;
+}
+
+bool CodeBatch::ValidDateHasBeenSet() const
+{
+    return m_validDateHasBeenSet;
+}
+
+vector<AttrItem> CodeBatch::GetAttrs() const
+{
+    return m_attrs;
+}
+
+void CodeBatch::SetAttrs(const vector<AttrItem>& _attrs)
+{
+    m_attrs = _attrs;
+    m_attrsHasBeenSet = true;
+}
+
+bool CodeBatch::AttrsHasBeenSet() const
+{
+    return m_attrsHasBeenSet;
 }
 

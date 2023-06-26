@@ -2921,6 +2921,49 @@ CynosdbClient::DescribeRollbackTimeValidityOutcomeCallable CynosdbClient::Descri
     return task->get_future();
 }
 
+CynosdbClient::DescribeSupportProxyVersionOutcome CynosdbClient::DescribeSupportProxyVersion(const DescribeSupportProxyVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSupportProxyVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSupportProxyVersionResponse rsp = DescribeSupportProxyVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSupportProxyVersionOutcome(rsp);
+        else
+            return DescribeSupportProxyVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSupportProxyVersionOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeSupportProxyVersionAsync(const DescribeSupportProxyVersionRequest& request, const DescribeSupportProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSupportProxyVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeSupportProxyVersionOutcomeCallable CynosdbClient::DescribeSupportProxyVersionCallable(const DescribeSupportProxyVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSupportProxyVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSupportProxyVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeZonesOutcome CynosdbClient::DescribeZones(const DescribeZonesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZones");

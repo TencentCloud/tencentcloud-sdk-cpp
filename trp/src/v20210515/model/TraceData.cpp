@@ -29,13 +29,13 @@ TraceData::TraceData() :
     m_phaseHasBeenSet(false),
     m_phaseNameHasBeenSet(false),
     m_traceTimeHasBeenSet(false),
-    m_traceItemsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_chainStatusHasBeenSet(false),
     m_chainTimeHasBeenSet(false),
     m_chainDataHasBeenSet(false),
     m_phaseDataHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_traceItemsHasBeenSet(false)
 {
 }
 
@@ -124,26 +124,6 @@ CoreInternalOutcome TraceData::Deserialize(const rapidjson::Value &value)
         m_traceTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("TraceItems") && !value["TraceItems"].IsNull())
-    {
-        if (!value["TraceItems"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TraceData.TraceItems` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["TraceItems"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            TraceItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_traceItems.push_back(item);
-        }
-        m_traceItemsHasBeenSet = true;
-    }
-
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -218,6 +198,26 @@ CoreInternalOutcome TraceData::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("TraceItems") && !value["TraceItems"].IsNull())
+    {
+        if (!value["TraceItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TraceData.TraceItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TraceItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TraceItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_traceItems.push_back(item);
+        }
+        m_traceItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,21 +289,6 @@ void TraceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_traceTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_traceItemsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TraceItems";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_traceItems.begin(); itr != m_traceItems.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -352,6 +337,21 @@ void TraceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_traceItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_traceItems.begin(); itr != m_traceItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -485,22 +485,6 @@ bool TraceData::TraceTimeHasBeenSet() const
     return m_traceTimeHasBeenSet;
 }
 
-vector<TraceItem> TraceData::GetTraceItems() const
-{
-    return m_traceItems;
-}
-
-void TraceData::SetTraceItems(const vector<TraceItem>& _traceItems)
-{
-    m_traceItems = _traceItems;
-    m_traceItemsHasBeenSet = true;
-}
-
-bool TraceData::TraceItemsHasBeenSet() const
-{
-    return m_traceItemsHasBeenSet;
-}
-
 string TraceData::GetCreateTime() const
 {
     return m_createTime;
@@ -595,5 +579,21 @@ void TraceData::SetStatus(const int64_t& _status)
 bool TraceData::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<TraceItem> TraceData::GetTraceItems() const
+{
+    return m_traceItems;
+}
+
+void TraceData::SetTraceItems(const vector<TraceItem>& _traceItems)
+{
+    m_traceItems = _traceItems;
+    m_traceItemsHasBeenSet = true;
+}
+
+bool TraceData::TraceItemsHasBeenSet() const
+{
+    return m_traceItemsHasBeenSet;
 }
 

@@ -88,6 +88,56 @@ namespace TencentCloud
                      */
                     bool PathHasBeenSet() const;
 
+                    /**
+                     * 获取cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MountType cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMountType() const;
+
+                    /**
+                     * 设置cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mountType cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMountType(const std::string& _mountType);
+
+                    /**
+                     * 判断参数 MountType 是否已赋值
+                     * @return MountType 是否已赋值
+                     * 
+                     */
+                    bool MountTypeHasBeenSet() const;
+
+                    /**
+                     * 获取协议 1: NFS, 2: TURBO
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol 协议 1: NFS, 2: TURBO
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置协议 1: NFS, 2: TURBO
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _protocol 协议 1: NFS, 2: TURBO
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +151,20 @@ namespace TencentCloud
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * cfs的挂载类型，可选值为：STORAGE、SOURCE 分别表示存储拓展模式和数据源模式，默认为 STORAGE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mountType;
+                    bool m_mountTypeHasBeenSet;
+
+                    /**
+                     * 协议 1: NFS, 2: TURBO
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

@@ -21,11 +21,11 @@ using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
 Product::Product() :
+    m_merchantIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_corpIdHasBeenSet(false),
-    m_merchantIdHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_specificationHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_logoHasBeenSet(false),
@@ -40,6 +40,26 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("MerchantId") && !value["MerchantId"].IsNull())
+    {
+        if (!value["MerchantId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Product.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_merchantId = string(value["MerchantId"].GetString());
+        m_merchantIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Product.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
 
     if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
     {
@@ -61,16 +81,6 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
         m_corpIdHasBeenSet = true;
     }
 
-    if (value.HasMember("MerchantId") && !value["MerchantId"].IsNull())
-    {
-        if (!value["MerchantId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Product.MerchantId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_merchantId = string(value["MerchantId"].GetString());
-        m_merchantIdHasBeenSet = true;
-    }
-
     if (value.HasMember("ProductCode") && !value["ProductCode"].IsNull())
     {
         if (!value["ProductCode"].IsString())
@@ -79,16 +89,6 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
         }
         m_productCode = string(value["ProductCode"].GetString());
         m_productCodeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Product.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("Specification") && !value["Specification"].IsNull())
@@ -178,6 +178,22 @@ CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
 void Product::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_merchantIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MerchantId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_merchantId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_productIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -194,28 +210,12 @@ void Product::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, m_corpId, allocator);
     }
 
-    if (m_merchantIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MerchantId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_merchantId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_productCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_specificationHasBeenSet)
@@ -283,6 +283,38 @@ void Product::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 }
 
 
+string Product::GetMerchantId() const
+{
+    return m_merchantId;
+}
+
+void Product::SetMerchantId(const string& _merchantId)
+{
+    m_merchantId = _merchantId;
+    m_merchantIdHasBeenSet = true;
+}
+
+bool Product::MerchantIdHasBeenSet() const
+{
+    return m_merchantIdHasBeenSet;
+}
+
+string Product::GetName() const
+{
+    return m_name;
+}
+
+void Product::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool Product::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
 string Product::GetProductId() const
 {
     return m_productId;
@@ -315,22 +347,6 @@ bool Product::CorpIdHasBeenSet() const
     return m_corpIdHasBeenSet;
 }
 
-string Product::GetMerchantId() const
-{
-    return m_merchantId;
-}
-
-void Product::SetMerchantId(const string& _merchantId)
-{
-    m_merchantId = _merchantId;
-    m_merchantIdHasBeenSet = true;
-}
-
-bool Product::MerchantIdHasBeenSet() const
-{
-    return m_merchantIdHasBeenSet;
-}
-
 string Product::GetProductCode() const
 {
     return m_productCode;
@@ -345,22 +361,6 @@ void Product::SetProductCode(const string& _productCode)
 bool Product::ProductCodeHasBeenSet() const
 {
     return m_productCodeHasBeenSet;
-}
-
-string Product::GetName() const
-{
-    return m_name;
-}
-
-void Product::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool Product::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
 }
 
 string Product::GetSpecification() const

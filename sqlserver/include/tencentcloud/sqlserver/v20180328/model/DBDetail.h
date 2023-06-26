@@ -194,6 +194,27 @@ namespace TencentCloud
                      */
                     bool InternalStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否已开启TDE加密，enable-已加密，disable-未加密
+                     * @return Encryption 是否已开启TDE加密，enable-已加密，disable-未加密
+                     * 
+                     */
+                    std::string GetEncryption() const;
+
+                    /**
+                     * 设置是否已开启TDE加密，enable-已加密，disable-未加密
+                     * @param _encryption 是否已开启TDE加密，enable-已加密，disable-未加密
+                     * 
+                     */
+                    void SetEncryption(const std::string& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +258,12 @@ namespace TencentCloud
                      */
                     std::string m_internalStatus;
                     bool m_internalStatusHasBeenSet;
+
+                    /**
+                     * 是否已开启TDE加密，enable-已加密，disable-未加密
+                     */
+                    std::string m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                 };
             }

@@ -206,6 +206,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBNameResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CosUploadBackupFile.h
   include/tencentcloud/sqlserver/v20180328/model/DbNormalDetail.h
+  include/tencentcloud/sqlserver/v20180328/model/TDEConfigAttribute.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceRenewFlagRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesAttributeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/Backup.h
@@ -485,6 +486,7 @@ set(sqlserver_src
   src/v20180328/model/ModifyDBNameResponse.cpp
   src/v20180328/model/CosUploadBackupFile.cpp
   src/v20180328/model/DbNormalDetail.cpp
+  src/v20180328/model/TDEConfigAttribute.cpp
   src/v20180328/model/ModifyDBInstanceRenewFlagRequest.cpp
   src/v20180328/model/DescribeDBInstancesAttributeResponse.cpp
   src/v20180328/model/Backup.cpp

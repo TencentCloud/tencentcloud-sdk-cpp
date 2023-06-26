@@ -30,7 +30,9 @@ ModifyCodeBatchRequest::ModifyCodeBatchRequest() :
     m_merchantIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_batchCodeHasBeenSet(false)
+    m_batchCodeHasBeenSet(false),
+    m_validDateHasBeenSet(false),
+    m_productionDateHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string ModifyCodeBatchRequest::ToJsonString() const
         string key = "BatchCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_batchCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_validDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_validDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productionDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductionDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productionDate.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +257,38 @@ void ModifyCodeBatchRequest::SetBatchCode(const string& _batchCode)
 bool ModifyCodeBatchRequest::BatchCodeHasBeenSet() const
 {
     return m_batchCodeHasBeenSet;
+}
+
+string ModifyCodeBatchRequest::GetValidDate() const
+{
+    return m_validDate;
+}
+
+void ModifyCodeBatchRequest::SetValidDate(const string& _validDate)
+{
+    m_validDate = _validDate;
+    m_validDateHasBeenSet = true;
+}
+
+bool ModifyCodeBatchRequest::ValidDateHasBeenSet() const
+{
+    return m_validDateHasBeenSet;
+}
+
+string ModifyCodeBatchRequest::GetProductionDate() const
+{
+    return m_productionDate;
+}
+
+void ModifyCodeBatchRequest::SetProductionDate(const string& _productionDate)
+{
+    m_productionDate = _productionDate;
+    m_productionDateHasBeenSet = true;
+}
+
+bool ModifyCodeBatchRequest::ProductionDateHasBeenSet() const
+{
+    return m_productionDateHasBeenSet;
 }
 
 

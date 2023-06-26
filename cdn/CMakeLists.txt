@@ -96,6 +96,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h
   include/tencentcloud/cdn/v20180606/model/VideoSeek.h
   include/tencentcloud/cdn/v20180606/model/Compatibility.h
+  include/tencentcloud/cdn/v20180606/model/ModifyDomainConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/ClsSearchLogs.h
   include/tencentcloud/cdn/v20180606/model/OriginIp.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnBotDataRequest.h
@@ -351,6 +352,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RemoteAuthentication.h
   include/tencentcloud/cdn/v20180606/model/KeyRule.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
+  include/tencentcloud/cdn/v20180606/model/ModifyDomainConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/Quic.h
   include/tencentcloud/cdn/v20180606/model/CdnData.h
   include/tencentcloud/cdn/v20180606/model/CreateEdgePackTaskResponse.h
@@ -455,6 +457,7 @@ set(cdn_src
   src/v20180606/model/AwsPrivateAccess.cpp
   src/v20180606/model/VideoSeek.cpp
   src/v20180606/model/Compatibility.cpp
+  src/v20180606/model/ModifyDomainConfigRequest.cpp
   src/v20180606/model/ClsSearchLogs.cpp
   src/v20180606/model/OriginIp.cpp
   src/v20180606/model/DescribeScdnBotDataRequest.cpp
@@ -710,6 +713,7 @@ set(cdn_src
   src/v20180606/model/RemoteAuthentication.cpp
   src/v20180606/model/KeyRule.cpp
   src/v20180606/model/CappingRule.cpp
+  src/v20180606/model/ModifyDomainConfigResponse.cpp
   src/v20180606/model/Quic.cpp
   src/v20180606/model/CdnData.cpp
   src/v20180606/model/CreateEdgePackTaskResponse.cpp

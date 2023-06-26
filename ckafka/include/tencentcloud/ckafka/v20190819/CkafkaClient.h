@@ -55,6 +55,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreatePostPaidInstanceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreatePostPaidInstanceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTokenRequest.h>
@@ -241,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePartitionResponse> CreatePartitionOutcome;
                 typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreatePartitionRequest&, CreatePartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePostPaidInstanceResponse> CreatePostPaidInstanceOutcome;
+                typedef std::future<CreatePostPaidInstanceOutcome> CreatePostPaidInstanceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreatePostPaidInstanceRequest&, CreatePostPaidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostPaidInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRouteResponse> CreateRouteOutcome;
                 typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateRouteRequest&, CreateRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteAsyncHandler;
@@ -573,6 +578,15 @@ namespace TencentCloud
                 CreatePartitionOutcome CreatePartition(const Model::CreatePartitionRequest &request);
                 void CreatePartitionAsync(const Model::CreatePartitionRequest& request, const CreatePartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePartitionOutcomeCallable CreatePartitionCallable(const Model::CreatePartitionRequest& request);
+
+                /**
+                 *当前接口用来替代 CreateInstancePost 接口。创建按量计费实例。通常用于 SDK 或云 API 控制台调用接口，创建后付费 CKafka 实例。调用接口与在 CKafka 控制台购买按量付费实例效果相同。
+                 * @param req CreatePostPaidInstanceRequest
+                 * @return CreatePostPaidInstanceOutcome
+                 */
+                CreatePostPaidInstanceOutcome CreatePostPaidInstance(const Model::CreatePostPaidInstanceRequest &request);
+                void CreatePostPaidInstanceAsync(const Model::CreatePostPaidInstanceRequest& request, const CreatePostPaidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePostPaidInstanceOutcomeCallable CreatePostPaidInstanceCallable(const Model::CreatePostPaidInstanceRequest& request);
 
                 /**
                  *添加实例路由

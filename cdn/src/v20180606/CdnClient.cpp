@@ -2878,6 +2878,49 @@ CdnClient::ManageClsTopicDomainsOutcomeCallable CdnClient::ManageClsTopicDomains
     return task->get_future();
 }
 
+CdnClient::ModifyDomainConfigOutcome CdnClient::ModifyDomainConfig(const ModifyDomainConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainConfigResponse rsp = ModifyDomainConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainConfigOutcome(rsp);
+        else
+            return ModifyDomainConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ModifyDomainConfigAsync(const ModifyDomainConfigRequest& request, const ModifyDomainConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ModifyDomainConfigOutcomeCallable CdnClient::ModifyDomainConfigCallable(const ModifyDomainConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::ModifyPurgeFetchTaskStatusOutcome CdnClient::ModifyPurgeFetchTaskStatus(const ModifyPurgeFetchTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPurgeFetchTaskStatus");

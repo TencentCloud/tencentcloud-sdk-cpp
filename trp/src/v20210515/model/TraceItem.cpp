@@ -24,9 +24,9 @@ TraceItem::TraceItem() :
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_valuesHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_hiddenHasBeenSet(false),
-    m_valuesHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_extHasBeenSet(false),
     m_attrsHasBeenSet(false),
@@ -69,6 +69,19 @@ CoreInternalOutcome TraceItem::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("Values") && !value["Values"].IsNull())
+    {
+        if (!value["Values"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TraceItem.Values` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Values"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_values.push_back((*itr).GetString());
+        }
+        m_valuesHasBeenSet = true;
+    }
+
     if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
     {
         if (!value["ReadOnly"].IsBool())
@@ -87,19 +100,6 @@ CoreInternalOutcome TraceItem::Deserialize(const rapidjson::Value &value)
         }
         m_hidden = value["Hidden"].GetBool();
         m_hiddenHasBeenSet = true;
-    }
-
-    if (value.HasMember("Values") && !value["Values"].IsNull())
-    {
-        if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TraceItem.Values` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Values"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_values.push_back((*itr).GetString());
-        }
-        m_valuesHasBeenSet = true;
     }
 
     if (value.HasMember("Key") && !value["Key"].IsNull())
@@ -193,6 +193,19 @@ void TraceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_valuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Values";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_readOnlyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -207,19 +220,6 @@ void TraceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Hidden";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hidden, allocator);
-    }
-
-    if (m_valuesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Values";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_keyHasBeenSet)
@@ -319,6 +319,22 @@ bool TraceItem::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
+vector<string> TraceItem::GetValues() const
+{
+    return m_values;
+}
+
+void TraceItem::SetValues(const vector<string>& _values)
+{
+    m_values = _values;
+    m_valuesHasBeenSet = true;
+}
+
+bool TraceItem::ValuesHasBeenSet() const
+{
+    return m_valuesHasBeenSet;
+}
+
 bool TraceItem::GetReadOnly() const
 {
     return m_readOnly;
@@ -349,22 +365,6 @@ void TraceItem::SetHidden(const bool& _hidden)
 bool TraceItem::HiddenHasBeenSet() const
 {
     return m_hiddenHasBeenSet;
-}
-
-vector<string> TraceItem::GetValues() const
-{
-    return m_values;
-}
-
-void TraceItem::SetValues(const vector<string>& _values)
-{
-    m_values = _values;
-    m_valuesHasBeenSet = true;
-}
-
-bool TraceItem::ValuesHasBeenSet() const
-{
-    return m_valuesHasBeenSet;
 }
 
 string TraceItem::GetKey() const

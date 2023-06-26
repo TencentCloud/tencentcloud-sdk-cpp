@@ -27,7 +27,8 @@ DBDetail::DBDetail() :
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_accountsHasBeenSet(false),
-    m_internalStatusHasBeenSet(false)
+    m_internalStatusHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DBDetail::Deserialize(const rapidjson::Value &value)
         m_internalStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Encryption") && !value["Encryption"].IsNull())
+    {
+        if (!value["Encryption"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBDetail.Encryption` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryption = string(value["Encryption"].GetString());
+        m_encryptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void DBDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "InternalStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_internalStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryption.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void DBDetail::SetInternalStatus(const string& _internalStatus)
 bool DBDetail::InternalStatusHasBeenSet() const
 {
     return m_internalStatusHasBeenSet;
+}
+
+string DBDetail::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void DBDetail::SetEncryption(const string& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool DBDetail::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 

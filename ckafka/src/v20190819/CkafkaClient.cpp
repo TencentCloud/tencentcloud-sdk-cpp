@@ -728,6 +728,49 @@ CkafkaClient::CreatePartitionOutcomeCallable CkafkaClient::CreatePartitionCallab
     return task->get_future();
 }
 
+CkafkaClient::CreatePostPaidInstanceOutcome CkafkaClient::CreatePostPaidInstance(const CreatePostPaidInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePostPaidInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePostPaidInstanceResponse rsp = CreatePostPaidInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePostPaidInstanceOutcome(rsp);
+        else
+            return CreatePostPaidInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePostPaidInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreatePostPaidInstanceAsync(const CreatePostPaidInstanceRequest& request, const CreatePostPaidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePostPaidInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreatePostPaidInstanceOutcomeCallable CkafkaClient::CreatePostPaidInstanceCallable(const CreatePostPaidInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePostPaidInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePostPaidInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateRouteOutcome CkafkaClient::CreateRoute(const CreateRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRoute");

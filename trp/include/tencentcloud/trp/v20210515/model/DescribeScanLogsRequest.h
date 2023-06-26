@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取码
-                     * @return Code 码
-                     * 
-                     */
-                    std::string GetCode() const;
-
-                    /**
-                     * 设置码
-                     * @param _code 码
-                     * 
-                     */
-                    void SetCode(const std::string& _code);
-
-                    /**
-                     * 判断参数 Code 是否已赋值
-                     * @return Code 是否已赋值
-                     * 
-                     */
-                    bool CodeHasBeenSet() const;
-
-                    /**
                      * 获取企业ID
                      * @return CorpId 企业ID
                      * 
@@ -84,19 +63,121 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取分页数量
+                     * @return PageSize 分页数量
+                     * 
+                     */
+                    uint64_t GetPageSize() const;
 
                     /**
-                     * 码
+                     * 设置分页数量
+                     * @param _pageSize 分页数量
+                     * 
                      */
-                    std::string m_code;
-                    bool m_codeHasBeenSet;
+                    void SetPageSize(const uint64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取当前分页
+                     * @return PageNumber 当前分页
+                     * 
+                     */
+                    uint64_t GetPageNumber() const;
+
+                    /**
+                     * 设置当前分页
+                     * @param _pageNumber 当前分页
+                     * 
+                     */
+                    void SetPageNumber(const uint64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取安心码
+                     * @return Code 安心码
+                     * 
+                     */
+                    std::string GetCode() const;
+
+                    /**
+                     * 设置安心码
+                     * @param _code 安心码
+                     * 
+                     */
+                    void SetCode(const std::string& _code);
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     * 
+                     */
+                    bool CodeHasBeenSet() const;
+
+                    /**
+                     * 获取小程序用户ID
+                     * @return Openid 小程序用户ID
+                     * 
+                     */
+                    std::string GetOpenid() const;
+
+                    /**
+                     * 设置小程序用户ID
+                     * @param _openid 小程序用户ID
+                     * 
+                     */
+                    void SetOpenid(const std::string& _openid);
+
+                    /**
+                     * 判断参数 Openid 是否已赋值
+                     * @return Openid 是否已赋值
+                     * 
+                     */
+                    bool OpenidHasBeenSet() const;
+
+                private:
 
                     /**
                      * 企业ID
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
+
+                    /**
+                     * 分页数量
+                     */
+                    uint64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 当前分页
+                     */
+                    uint64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 安心码
+                     */
+                    std::string m_code;
+                    bool m_codeHasBeenSet;
+
+                    /**
+                     * 小程序用户ID
+                     */
+                    std::string m_openid;
+                    bool m_openidHasBeenSet;
 
                 };
             }

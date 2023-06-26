@@ -41,6 +41,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeProductsResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceChainResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataListResponse.h
+  include/tencentcloud/trp/v20210515/model/AttrItem.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesRequest.h
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataResponse.h
@@ -163,6 +164,7 @@ set(trp_src
   src/v20210515/model/DescribeProductsResponse.cpp
   src/v20210515/model/CreateTraceChainResponse.cpp
   src/v20210515/model/DescribeTraceDataListResponse.cpp
+  src/v20210515/model/AttrItem.cpp
   src/v20210515/model/DescribeTraceCodesRequest.cpp
   src/v20210515/model/CreateTraceCodesAsyncRequest.cpp
   src/v20210515/model/ModifyTraceDataResponse.cpp

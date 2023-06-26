@@ -48,6 +48,48 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取商户标识码
+                     * @return MerchantId 商户标识码
+                     * 
+                     */
+                    std::string GetMerchantId() const;
+
+                    /**
+                     * 设置商户标识码
+                     * @param _merchantId 商户标识码
+                     * 
+                     */
+                    void SetMerchantId(const std::string& _merchantId);
+
+                    /**
+                     * 判断参数 MerchantId 是否已赋值
+                     * @return MerchantId 是否已赋值
+                     * 
+                     */
+                    bool MerchantIdHasBeenSet() const;
+
+                    /**
+                     * 获取商品名称
+                     * @return Name 商品名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置商品名称
+                     * @param _name 商品名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取商品id
                      * @return ProductId 商品id
                      * 
@@ -90,27 +132,6 @@ namespace TencentCloud
                     bool CorpIdHasBeenSet() const;
 
                     /**
-                     * 获取商户标识码
-                     * @return MerchantId 商户标识码
-                     * 
-                     */
-                    std::string GetMerchantId() const;
-
-                    /**
-                     * 设置商户标识码
-                     * @param _merchantId 商户标识码
-                     * 
-                     */
-                    void SetMerchantId(const std::string& _merchantId);
-
-                    /**
-                     * 判断参数 MerchantId 是否已赋值
-                     * @return MerchantId 是否已赋值
-                     * 
-                     */
-                    bool MerchantIdHasBeenSet() const;
-
-                    /**
                      * 获取商品编号
                      * @return ProductCode 商品编号
                      * 
@@ -130,27 +151,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ProductCodeHasBeenSet() const;
-
-                    /**
-                     * 获取商品名称
-                     * @return Name 商品名称
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置商品名称
-                     * @param _name 商品名称
-                     * 
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
 
                     /**
                      * 获取商品规格
@@ -318,6 +318,18 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 商户标识码
+                     */
+                    std::string m_merchantId;
+                    bool m_merchantIdHasBeenSet;
+
+                    /**
+                     * 商品名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
                      * 商品id
                      */
                     std::string m_productId;
@@ -330,22 +342,10 @@ namespace TencentCloud
                     bool m_corpIdHasBeenSet;
 
                     /**
-                     * 商户标识码
-                     */
-                    std::string m_merchantId;
-                    bool m_merchantIdHasBeenSet;
-
-                    /**
                      * 商品编号
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
-
-                    /**
-                     * 商品名称
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
 
                     /**
                      * 商品规格

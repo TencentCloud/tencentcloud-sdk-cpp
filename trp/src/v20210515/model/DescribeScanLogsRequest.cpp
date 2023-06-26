@@ -23,8 +23,11 @@ using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
 DescribeScanLogsRequest::DescribeScanLogsRequest() :
+    m_corpIdHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
     m_codeHasBeenSet(false),
-    m_corpIdHasBeenSet(false)
+    m_openidHasBeenSet(false)
 {
 }
 
@@ -35,6 +38,30 @@ string DescribeScanLogsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_corpIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_corpId, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
     if (m_codeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -43,12 +70,12 @@ string DescribeScanLogsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_corpIdHasBeenSet)
+    if (m_openidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CorpId";
+        string key = "Openid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_corpId, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_openid.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,6 +85,54 @@ string DescribeScanLogsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeScanLogsRequest::GetCorpId() const
+{
+    return m_corpId;
+}
+
+void DescribeScanLogsRequest::SetCorpId(const uint64_t& _corpId)
+{
+    m_corpId = _corpId;
+    m_corpIdHasBeenSet = true;
+}
+
+bool DescribeScanLogsRequest::CorpIdHasBeenSet() const
+{
+    return m_corpIdHasBeenSet;
+}
+
+uint64_t DescribeScanLogsRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeScanLogsRequest::SetPageSize(const uint64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeScanLogsRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+uint64_t DescribeScanLogsRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeScanLogsRequest::SetPageNumber(const uint64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeScanLogsRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
 
 string DescribeScanLogsRequest::GetCode() const
 {
@@ -75,20 +150,20 @@ bool DescribeScanLogsRequest::CodeHasBeenSet() const
     return m_codeHasBeenSet;
 }
 
-uint64_t DescribeScanLogsRequest::GetCorpId() const
+string DescribeScanLogsRequest::GetOpenid() const
 {
-    return m_corpId;
+    return m_openid;
 }
 
-void DescribeScanLogsRequest::SetCorpId(const uint64_t& _corpId)
+void DescribeScanLogsRequest::SetOpenid(const string& _openid)
 {
-    m_corpId = _corpId;
-    m_corpIdHasBeenSet = true;
+    m_openid = _openid;
+    m_openidHasBeenSet = true;
 }
 
-bool DescribeScanLogsRequest::CorpIdHasBeenSet() const
+bool DescribeScanLogsRequest::OpenidHasBeenSet() const
 {
-    return m_corpIdHasBeenSet;
+    return m_openidHasBeenSet;
 }
 
 

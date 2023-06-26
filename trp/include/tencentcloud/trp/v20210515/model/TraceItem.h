@@ -138,6 +138,27 @@ mp:小程序类型
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取多个值
+                     * @return Values 多个值
+                     * 
+                     */
+                    std::vector<std::string> GetValues() const;
+
+                    /**
+                     * 设置多个值
+                     * @param _values 多个值
+                     * 
+                     */
+                    void SetValues(const std::vector<std::string>& _values);
+
+                    /**
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
+                     * 
+                     */
+                    bool ValuesHasBeenSet() const;
+
+                    /**
                      * 获取只读
                      * @return ReadOnly 只读
                      * 
@@ -178,27 +199,6 @@ mp:小程序类型
                      * 
                      */
                     bool HiddenHasBeenSet() const;
-
-                    /**
-                     * 获取多个值
-                     * @return Values 多个值
-                     * 
-                     */
-                    std::vector<std::string> GetValues() const;
-
-                    /**
-                     * 设置多个值
-                     * @param _values 多个值
-                     * 
-                     */
-                    void SetValues(const std::vector<std::string>& _values);
-
-                    /**
-                     * 判断参数 Values 是否已赋值
-                     * @return Values 是否已赋值
-                     * 
-                     */
-                    bool ValuesHasBeenSet() const;
 
                     /**
                      * 获取类型标识
@@ -309,6 +309,12 @@ mp:小程序类型
                     bool m_typeHasBeenSet;
 
                     /**
+                     * 多个值
+                     */
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
+
+                    /**
                      * 只读
                      */
                     bool m_readOnly;
@@ -319,12 +325,6 @@ mp:小程序类型
                      */
                     bool m_hidden;
                     bool m_hiddenHasBeenSet;
-
-                    /**
-                     * 多个值
-                     */
-                    std::vector<std::string> m_values;
-                    bool m_valuesHasBeenSet;
 
                     /**
                      * 类型标识

@@ -24,7 +24,8 @@ using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
 DescribeTraceCodeByIdResponse::DescribeTraceCodeByIdResponse() :
-    m_traceCodeHasBeenSet(false)
+    m_traceCodeHasBeenSet(false),
+    m_codePathHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,19 @@ CoreInternalOutcome DescribeTraceCodeByIdResponse::Deserialize(const string &pay
         m_traceCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CodePath") && !rsp["CodePath"].IsNull())
+    {
+        if (!rsp["CodePath"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CodePath` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CodePath"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_codePath.push_back((*itr).GetString());
+        }
+        m_codePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +110,19 @@ string DescribeTraceCodeByIdResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_traceCode.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_codePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_codePath.begin(); itr != m_codePath.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,16 @@ TraceCode DescribeTraceCodeByIdResponse::GetTraceCode() const
 bool DescribeTraceCodeByIdResponse::TraceCodeHasBeenSet() const
 {
     return m_traceCodeHasBeenSet;
+}
+
+vector<string> DescribeTraceCodeByIdResponse::GetCodePath() const
+{
+    return m_codePath;
+}
+
+bool DescribeTraceCodeByIdResponse::CodePathHasBeenSet() const
+{
+    return m_codePathHasBeenSet;
 }
 
 
