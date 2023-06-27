@@ -137,6 +137,15 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
             if (request.BodySize() > 0)
             {
                 curl_easy_setopt(m_curlHandle, CURLOPT_POSTFIELDS, request.Body());
+                // explicitly set body size because libcurl use strlen() to determine body size
+                // which could fail when there is a '\0' in the middle
+                if (request.BodySize() > (size_t)2 * 1024 * 1024 * 1024) {
+                    // https://curl.se/libcurl/c/CURLOPT_POSTFIELDSIZE.html
+                    // If you post more than 2GB, use CURLOPT_POSTFIELDSIZE_LARGE
+                    curl_easy_setopt(m_curlHandle, CURLOPT_POSTFIELDSIZE_LARGE, request.BodySize());
+                } else {
+                    curl_easy_setopt(m_curlHandle, CURLOPT_POSTFIELDSIZE, request.BodySize());
+                }
             }
             else
             {
