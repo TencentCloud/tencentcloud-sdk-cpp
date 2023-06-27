@@ -26,7 +26,9 @@ DescribeQualityScoreTrendRequest::DescribeQualityScoreTrendRequest() :
     m_statisticsStartDateHasBeenSet(false),
     m_statisticsEndDateHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_datasourceIdHasBeenSet(false)
+    m_datasourceIdHasBeenSet(false),
+    m_scoreTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,29 @@ string DescribeQualityScoreTrendRequest::ToJsonString() const
         string key = "DatasourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scoreTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScoreType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scoreType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +164,38 @@ void DescribeQualityScoreTrendRequest::SetDatasourceId(const string& _datasource
 bool DescribeQualityScoreTrendRequest::DatasourceIdHasBeenSet() const
 {
     return m_datasourceIdHasBeenSet;
+}
+
+string DescribeQualityScoreTrendRequest::GetScoreType() const
+{
+    return m_scoreType;
+}
+
+void DescribeQualityScoreTrendRequest::SetScoreType(const string& _scoreType)
+{
+    m_scoreType = _scoreType;
+    m_scoreTypeHasBeenSet = true;
+}
+
+bool DescribeQualityScoreTrendRequest::ScoreTypeHasBeenSet() const
+{
+    return m_scoreTypeHasBeenSet;
+}
+
+vector<Filter> DescribeQualityScoreTrendRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeQualityScoreTrendRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeQualityScoreTrendRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -22,7 +22,8 @@ using namespace std;
 
 DimensionCount::DimensionCount() :
     m_dimTypeHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_qualityDimHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome DimensionCount::Deserialize(const rapidjson::Value &value)
         m_countHasBeenSet = true;
     }
 
+    if (value.HasMember("QualityDim") && !value["QualityDim"].IsNull())
+    {
+        if (!value["QualityDim"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DimensionCount.QualityDim` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualityDim = value["QualityDim"].GetUint64();
+        m_qualityDimHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void DimensionCount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_qualityDimHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityDim";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qualityDim, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void DimensionCount::SetCount(const uint64_t& _count)
 bool DimensionCount::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+uint64_t DimensionCount::GetQualityDim() const
+{
+    return m_qualityDim;
+}
+
+void DimensionCount::SetQualityDim(const uint64_t& _qualityDim)
+{
+    m_qualityDim = _qualityDim;
+    m_qualityDimHasBeenSet = true;
+}
+
+bool DimensionCount::QualityDimHasBeenSet() const
+{
+    return m_qualityDimHasBeenSet;
 }
 

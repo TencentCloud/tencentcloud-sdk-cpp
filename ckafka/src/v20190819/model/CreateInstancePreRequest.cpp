@@ -41,7 +41,8 @@ CreateInstancePreRequest::CreateInstancePreRequest() :
     m_diskTypeHasBeenSet(false),
     m_multiZoneFlagHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
-    m_publicNetworkMonthlyHasBeenSet(false)
+    m_publicNetworkMonthlyHasBeenSet(false),
+    m_instanceNumHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,14 @@ string CreateInstancePreRequest::ToJsonString() const
         string key = "PublicNetworkMonthly";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publicNetworkMonthly, allocator);
+    }
+
+    if (m_instanceNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceNum, allocator);
     }
 
 
@@ -526,6 +535,22 @@ void CreateInstancePreRequest::SetPublicNetworkMonthly(const int64_t& _publicNet
 bool CreateInstancePreRequest::PublicNetworkMonthlyHasBeenSet() const
 {
     return m_publicNetworkMonthlyHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetInstanceNum() const
+{
+    return m_instanceNum;
+}
+
+void CreateInstancePreRequest::SetInstanceNum(const int64_t& _instanceNum)
+{
+    m_instanceNum = _instanceNum;
+    m_instanceNumHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::InstanceNumHasBeenSet() const
+{
+    return m_instanceNumHasBeenSet;
 }
 
 

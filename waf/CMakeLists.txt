@@ -52,6 +52,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h
   include/tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsRequest.h
   include/tencentcloud/waf/v20180125/model/UpsertIpAccessControlRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifySpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h
@@ -76,6 +77,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/HostRecord.h
   include/tencentcloud/waf/v20180125/model/CreateHostRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/SpartaProtectionPort.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/PeakPointsItem.h
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
@@ -139,6 +141,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AccessRuleInfo.h
   include/tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifySpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h
@@ -198,6 +201,7 @@ set(waf_src
   src/v20180125/model/DescribeFlowTrendResponse.cpp
   src/v20180125/model/GetAttackDownloadRecordsRequest.cpp
   src/v20180125/model/UpsertIpAccessControlRequest.cpp
+  src/v20180125/model/ModifySpartaProtectionResponse.cpp
   src/v20180125/model/DeleteDownloadRecordRequest.cpp
   src/v20180125/model/DescribeUserCdcClbWafRegionsResponse.cpp
   src/v20180125/model/DeleteAccessExportResponse.cpp
@@ -222,6 +226,7 @@ set(waf_src
   src/v20180125/model/HostRecord.cpp
   src/v20180125/model/CreateHostRequest.cpp
   src/v20180125/model/ModifyAreaBanStatusRequest.cpp
+  src/v20180125/model/SpartaProtectionPort.cpp
   src/v20180125/model/AddSpartaProtectionRequest.cpp
   src/v20180125/model/PeakPointsItem.cpp
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
@@ -285,6 +290,7 @@ set(waf_src
   src/v20180125/model/AccessRuleInfo.cpp
   src/v20180125/model/GetAttackDownloadRecordsResponse.cpp
   src/v20180125/model/DeleteAccessExportRequest.cpp
+  src/v20180125/model/ModifySpartaProtectionRequest.cpp
   src/v20180125/model/DescribeUserClbWafRegionsRequest.cpp
   src/v20180125/model/DescribeDomainWhiteRulesResponse.cpp
   src/v20180125/model/DescribeWafThreatenIntelligenceResponse.cpp

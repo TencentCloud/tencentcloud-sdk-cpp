@@ -97,22 +97,22 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
+                     * 获取实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType 实例类型
+                     * @return InstanceType 实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetInstanceType() const;
+                    int64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型
+                     * 设置实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceType 实例类型
+                     * @param _instanceType 实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetInstanceType(const std::string& _instanceType);
+                    void SetInstanceType(const int64_t& _instanceType);
 
                     /**
                      * 判断参数 InstanceType 是否已赋值
@@ -238,10 +238,10 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * 实例类型：1 master 主实例; 2 ro 只读实例; 3 dr 灾备实例; 4 sdr 小灾备实例
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_instanceType;
+                    int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**

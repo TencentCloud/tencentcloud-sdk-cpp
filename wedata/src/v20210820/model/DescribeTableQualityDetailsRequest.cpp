@@ -29,7 +29,8 @@ DescribeTableQualityDetailsRequest::DescribeTableQualityDetailsRequest() :
     m_pageSizeHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderFieldsHasBeenSet(false),
-    m_datasourceIdHasBeenSet(false)
+    m_datasourceIdHasBeenSet(false),
+    m_scoreTypeHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string DescribeTableQualityDetailsRequest::ToJsonString() const
         string key = "DatasourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scoreTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScoreType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scoreType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -228,6 +237,22 @@ void DescribeTableQualityDetailsRequest::SetDatasourceId(const string& _datasour
 bool DescribeTableQualityDetailsRequest::DatasourceIdHasBeenSet() const
 {
     return m_datasourceIdHasBeenSet;
+}
+
+string DescribeTableQualityDetailsRequest::GetScoreType() const
+{
+    return m_scoreType;
+}
+
+void DescribeTableQualityDetailsRequest::SetScoreType(const string& _scoreType)
+{
+    m_scoreType = _scoreType;
+    m_scoreTypeHasBeenSet = true;
+}
+
+bool DescribeTableQualityDetailsRequest::ScoreTypeHasBeenSet() const
+{
+    return m_scoreTypeHasBeenSet;
 }
 
 

@@ -22,7 +22,10 @@ using namespace std;
 
 SourceObject::SourceObject() :
     m_sourceObjectDataTypeNameHasBeenSet(false),
-    m_sourceObjectValueHasBeenSet(false)
+    m_sourceObjectValueHasBeenSet(false),
+    m_objectDataTypeNameHasBeenSet(false),
+    m_objectValueHasBeenSet(false),
+    m_objectTypeHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome SourceObject::Deserialize(const rapidjson::Value &value)
         m_sourceObjectValueHasBeenSet = true;
     }
 
+    if (value.HasMember("ObjectDataTypeName") && !value["ObjectDataTypeName"].IsNull())
+    {
+        if (!value["ObjectDataTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceObject.ObjectDataTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectDataTypeName = string(value["ObjectDataTypeName"].GetString());
+        m_objectDataTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObjectValue") && !value["ObjectValue"].IsNull())
+    {
+        if (!value["ObjectValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceObject.ObjectValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectValue = string(value["ObjectValue"].GetString());
+        m_objectValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObjectType") && !value["ObjectType"].IsNull())
+    {
+        if (!value["ObjectType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceObject.ObjectType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectType = value["ObjectType"].GetUint64();
+        m_objectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void SourceObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SourceObjectValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceObjectValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectDataTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectDataTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectDataTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_objectType, allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void SourceObject::SetSourceObjectValue(const string& _sourceObjectValue)
 bool SourceObject::SourceObjectValueHasBeenSet() const
 {
     return m_sourceObjectValueHasBeenSet;
+}
+
+string SourceObject::GetObjectDataTypeName() const
+{
+    return m_objectDataTypeName;
+}
+
+void SourceObject::SetObjectDataTypeName(const string& _objectDataTypeName)
+{
+    m_objectDataTypeName = _objectDataTypeName;
+    m_objectDataTypeNameHasBeenSet = true;
+}
+
+bool SourceObject::ObjectDataTypeNameHasBeenSet() const
+{
+    return m_objectDataTypeNameHasBeenSet;
+}
+
+string SourceObject::GetObjectValue() const
+{
+    return m_objectValue;
+}
+
+void SourceObject::SetObjectValue(const string& _objectValue)
+{
+    m_objectValue = _objectValue;
+    m_objectValueHasBeenSet = true;
+}
+
+bool SourceObject::ObjectValueHasBeenSet() const
+{
+    return m_objectValueHasBeenSet;
+}
+
+uint64_t SourceObject::GetObjectType() const
+{
+    return m_objectType;
+}
+
+void SourceObject::SetObjectType(const uint64_t& _objectType)
+{
+    m_objectType = _objectType;
+    m_objectTypeHasBeenSet = true;
+}
+
+bool SourceObject::ObjectTypeHasBeenSet() const
+{
+    return m_objectTypeHasBeenSet;
 }
 

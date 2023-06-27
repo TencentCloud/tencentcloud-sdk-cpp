@@ -196,21 +196,21 @@ namespace TencentCloud
                     /**
                      * 获取修改时间
                      * @return ModifedTime 修改时间
-                     * 
+                     * @deprecated
                      */
                     std::string GetModifedTime() const;
 
                     /**
                      * 设置修改时间
                      * @param _modifedTime 修改时间
-                     * 
+                     * @deprecated
                      */
                     void SetModifedTime(const std::string& _modifedTime);
 
                     /**
                      * 判断参数 ModifedTime 是否已赋值
                      * @return ModifedTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModifedTimeHasBeenSet() const;
 

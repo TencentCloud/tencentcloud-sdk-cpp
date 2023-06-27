@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterDetailRequest.h>
+#include <tencentcloud/nlp/v20190408/model/AnalyzeSentimentRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tdid::V20210519::Model;
+using namespace TencentCloud::Nlp::V20190408::Model;
 using namespace std;
 
-GetDidClusterDetailRequest::GetDidClusterDetailRequest() :
-    m_clusterIdHasBeenSet(false)
+AnalyzeSentimentRequest::AnalyzeSentimentRequest() :
+    m_textHasBeenSet(false)
 {
 }
 
-string GetDidClusterDetailRequest::ToJsonString() const
+string AnalyzeSentimentRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clusterIdHasBeenSet)
+    if (m_textHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
+        string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string GetDidClusterDetailRequest::ToJsonString() const
 }
 
 
-string GetDidClusterDetailRequest::GetClusterId() const
+string AnalyzeSentimentRequest::GetText() const
 {
-    return m_clusterId;
+    return m_text;
 }
 
-void GetDidClusterDetailRequest::SetClusterId(const string& _clusterId)
+void AnalyzeSentimentRequest::SetText(const string& _text)
 {
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
+    m_text = _text;
+    m_textHasBeenSet = true;
 }
 
-bool GetDidClusterDetailRequest::ClusterIdHasBeenSet() const
+bool AnalyzeSentimentRequest::TextHasBeenSet() const
 {
-    return m_clusterIdHasBeenSet;
+    return m_textHasBeenSet;
 }
 
 

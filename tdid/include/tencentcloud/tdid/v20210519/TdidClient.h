@@ -51,10 +51,6 @@
 #include <tencentcloud/tdid/v20210519/model/GetCredentialCptRankResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetCredentialStatusRequest.h>
 #include <tencentcloud/tdid/v20210519/model/GetCredentialStatusResponse.h>
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterDetailRequest.h>
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterDetailResponse.h>
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterListRequest.h>
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterListResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetDidDocumentRequest.h>
 #include <tencentcloud/tdid/v20210519/model/GetDidDocumentResponse.h>
 #include <tencentcloud/tdid/v20210519/model/RegisterCptRequest.h>
@@ -119,12 +115,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetCredentialStatusResponse> GetCredentialStatusOutcome;
                 typedef std::future<GetCredentialStatusOutcome> GetCredentialStatusOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::GetCredentialStatusRequest&, GetCredentialStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCredentialStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetDidClusterDetailResponse> GetDidClusterDetailOutcome;
-                typedef std::future<GetDidClusterDetailOutcome> GetDidClusterDetailOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::GetDidClusterDetailRequest&, GetDidClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDidClusterDetailAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetDidClusterListResponse> GetDidClusterListOutcome;
-                typedef std::future<GetDidClusterListOutcome> GetDidClusterListOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::GetDidClusterListRequest&, GetDidClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDidClusterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDidDocumentResponse> GetDidDocumentOutcome;
                 typedef std::future<GetDidDocumentOutcome> GetDidDocumentOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::GetDidDocumentRequest&, GetDidDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDidDocumentAsyncHandler;
@@ -153,7 +143,9 @@ DID添加标签
                 AddLabelOutcomeCallable AddLabelCallable(const Model::AddLabelRequest& request);
 
                 /**
-                 *检查区块链信息
+                 *该接口不再使用
+
+检查区块链信息
                  * @param req CheckChainRequest
                  * @return CheckChainOutcome
                  */
@@ -162,7 +154,9 @@ DID添加标签
                 CheckChainOutcomeCallable CheckChainCallable(const Model::CheckChainRequest& request);
 
                 /**
-                 *创建凭证
+                 *该接口不再使用
+
+创建凭证
                  * @param req CreateCredentialRequest
                  * @return CreateCredentialOutcome
                  */
@@ -171,7 +165,9 @@ DID添加标签
                 CreateCredentialOutcomeCallable CreateCredentialCallable(const Model::CreateCredentialRequest& request);
 
                 /**
-                 *创建选择性批露凭证
+                 *该接口不再使用
+
+创建选择性批露凭证
                  * @param req CreateSelectiveCredentialRequest
                  * @return CreateSelectiveCredentialOutcome
                  */
@@ -180,7 +176,9 @@ DID添加标签
                 CreateSelectiveCredentialOutcomeCallable CreateSelectiveCredentialCallable(const Model::CreateSelectiveCredentialRequest& request);
 
                 /**
-                 *创建机构DID
+                 *该接口不再使用
+
+创建机构DID
                  * @param req CreateTDidRequest
                  * @return CreateTDidOutcome
                  */
@@ -189,7 +187,9 @@ DID添加标签
                 CreateTDidOutcomeCallable CreateTDidCallable(const Model::CreateTDidRequest& request);
 
                 /**
-                 *新建DID根据私钥生成Tdid
+                 *该接口不再使用
+
+新建DID根据私钥生成Tdid
                  * @param req CreateTDidByPrivateKeyRequest
                  * @return CreateTDidByPrivateKeyOutcome
                  */
@@ -198,7 +198,9 @@ DID添加标签
                 CreateTDidByPrivateKeyOutcomeCallable CreateTDidByPrivateKeyCallable(const Model::CreateTDidByPrivateKeyRequest& request);
 
                 /**
-                 * 新建DID根据公钥生成Tdid
+                 *该接口不再使用
+
+ 新建DID根据公钥生成Tdid
                  * @param req CreateTDidByPublicKeyRequest
                  * @return CreateTDidByPublicKeyOutcome
                  */
@@ -218,7 +220,9 @@ DID添加标签
                 GetAgencyTDidOutcomeCallable GetAgencyTDidCallable(const Model::GetAgencyTDidRequest& request);
 
                 /**
-                 *获取权威机构信息
+                 *该接口不再使用
+
+获取权威机构信息
                  * @param req GetAuthorityIssuerRequest
                  * @return GetAuthorityIssuerOutcome
                  */
@@ -249,7 +253,9 @@ DID添加标签
                 GetConsortiumListOutcomeCallable GetConsortiumListCallable(const Model::GetConsortiumListRequest& request);
 
                 /**
-                 *凭证模版详情
+                 *该接口不再使用
+
+凭证模版详情
                  * @param req GetCptInfoRequest
                  * @return GetCptInfoOutcome
                  */
@@ -269,7 +275,9 @@ DID添加标签
                 GetCredentialCptRankOutcomeCallable GetCredentialCptRankCallable(const Model::GetCredentialCptRankRequest& request);
 
                 /**
-                 *获取凭证链上状态信息
+                 *该接口不再使用
+
+获取凭证链上状态信息
                  * @param req GetCredentialStatusRequest
                  * @return GetCredentialStatusOutcome
                  */
@@ -278,29 +286,9 @@ DID添加标签
                 GetCredentialStatusOutcomeCallable GetCredentialStatusCallable(const Model::GetCredentialStatusRequest& request);
 
                 /**
-                 *下线已有内测接口，待上线正式版本的接口
+                 *该接口不再使用
 
-获取DID区块链网络详情
-                 * @param req GetDidClusterDetailRequest
-                 * @return GetDidClusterDetailOutcome
-                 */
-                GetDidClusterDetailOutcome GetDidClusterDetail(const Model::GetDidClusterDetailRequest &request);
-                void GetDidClusterDetailAsync(const Model::GetDidClusterDetailRequest& request, const GetDidClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetDidClusterDetailOutcomeCallable GetDidClusterDetailCallable(const Model::GetDidClusterDetailRequest& request);
-
-                /**
-                 *下线已有内测接口，待上线正式版本的接口
-
-获取用户的DID网络列表
-                 * @param req GetDidClusterListRequest
-                 * @return GetDidClusterListOutcome
-                 */
-                GetDidClusterListOutcome GetDidClusterList(const Model::GetDidClusterListRequest &request);
-                void GetDidClusterListAsync(const Model::GetDidClusterListRequest& request, const GetDidClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetDidClusterListOutcomeCallable GetDidClusterListCallable(const Model::GetDidClusterListRequest& request);
-
-                /**
-                 *查看DID文档
+查看DID文档
 
                  * @param req GetDidDocumentRequest
                  * @return GetDidDocumentOutcome
@@ -310,7 +298,9 @@ DID添加标签
                 GetDidDocumentOutcomeCallable GetDidDocumentCallable(const Model::GetDidDocumentRequest& request);
 
                 /**
-                 *凭证模版新建
+                 *该接口不再使用
+
+凭证模版新建
                  * @param req RegisterCptRequest
                  * @return RegisterCptOutcome
                  */
@@ -319,7 +309,9 @@ DID添加标签
                 RegisterCptOutcomeCallable RegisterCptCallable(const Model::RegisterCptRequest& request);
 
                 /**
-                 *设置凭证链上状态
+                 *该接口不再使用
+
+设置凭证链上状态
                  * @param req SetCredentialStatusRequest
                  * @return SetCredentialStatusOutcome
                  */
@@ -328,7 +320,9 @@ DID添加标签
                 SetCredentialStatusOutcomeCallable SetCredentialStatusCallable(const Model::SetCredentialStatusRequest& request);
 
                 /**
-                 *验证凭证
+                 *该接口不再使用
+
+验证凭证
                  * @param req VerifyCredentialRequest
                  * @return VerifyCredentialOutcome
                  */

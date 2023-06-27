@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DimType 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetDimType() const;
 
@@ -60,14 +60,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dimType 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetDimType(const uint64_t& _dimType);
 
                     /**
                      * 判断参数 DimType 是否已赋值
                      * @return DimType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DimTypeHasBeenSet() const;
 
@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool CountHasBeenSet() const;
 
+                    /**
+                     * 获取维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityDim 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetQualityDim() const;
+
+                    /**
+                     * 设置维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _qualityDim 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQualityDim(const uint64_t& _qualityDim);
+
+                    /**
+                     * 判断参数 QualityDim 是否已赋值
+                     * @return QualityDim 是否已赋值
+                     * 
+                     */
+                    bool QualityDimHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 维度类型1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_qualityDim;
+                    bool m_qualityDimHasBeenSet;
 
                 };
             }

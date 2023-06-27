@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterDetailResponse.h>
+#include <tencentcloud/nlp/v20190408/model/AnalyzeSentimentResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdid::V20210519::Model;
+using namespace TencentCloud::Nlp::V20190408::Model;
 using namespace std;
 
-GetDidClusterDetailResponse::GetDidClusterDetailResponse() :
-    m_clusterIdHasBeenSet(false),
-    m_consortiumNameHasBeenSet(false),
-    m_chainAgencyHasBeenSet(false)
+AnalyzeSentimentResponse::AnalyzeSentimentResponse() :
+    m_positiveHasBeenSet(false),
+    m_neutralHasBeenSet(false),
+    m_negativeHasBeenSet(false),
+    m_sentimentHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetDidClusterDetailResponse::Deserialize(const string &payload)
+CoreInternalOutcome AnalyzeSentimentResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +65,86 @@ CoreInternalOutcome GetDidClusterDetailResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
+    if (rsp.HasMember("Positive") && !rsp["Positive"].IsNull())
     {
-        if (!rsp["ClusterId"].IsString())
+        if (!rsp["Positive"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Positive` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_clusterId = string(rsp["ClusterId"].GetString());
-        m_clusterIdHasBeenSet = true;
+        m_positive = rsp["Positive"].GetDouble();
+        m_positiveHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ConsortiumName") && !rsp["ConsortiumName"].IsNull())
+    if (rsp.HasMember("Neutral") && !rsp["Neutral"].IsNull())
     {
-        if (!rsp["ConsortiumName"].IsString())
+        if (!rsp["Neutral"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `ConsortiumName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Neutral` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_consortiumName = string(rsp["ConsortiumName"].GetString());
-        m_consortiumNameHasBeenSet = true;
+        m_neutral = rsp["Neutral"].GetDouble();
+        m_neutralHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ChainAgency") && !rsp["ChainAgency"].IsNull())
+    if (rsp.HasMember("Negative") && !rsp["Negative"].IsNull())
     {
-        if (!rsp["ChainAgency"].IsString())
+        if (!rsp["Negative"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `ChainAgency` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Negative` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_chainAgency = string(rsp["ChainAgency"].GetString());
-        m_chainAgencyHasBeenSet = true;
+        m_negative = rsp["Negative"].GetDouble();
+        m_negativeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Sentiment") && !rsp["Sentiment"].IsNull())
+    {
+        if (!rsp["Sentiment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Sentiment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sentiment = string(rsp["Sentiment"].GetString());
+        m_sentimentHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string GetDidClusterDetailResponse::ToJsonString() const
+string AnalyzeSentimentResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_clusterIdHasBeenSet)
+    if (m_positiveHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
+        string key = "Positive";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_positive, allocator);
     }
 
-    if (m_consortiumNameHasBeenSet)
+    if (m_neutralHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConsortiumName";
+        string key = "Neutral";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_consortiumName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_neutral, allocator);
     }
 
-    if (m_chainAgencyHasBeenSet)
+    if (m_negativeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChainAgency";
+        string key = "Negative";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_chainAgency.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_negative, allocator);
+    }
+
+    if (m_sentimentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sentiment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sentiment.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +159,44 @@ string GetDidClusterDetailResponse::ToJsonString() const
 }
 
 
-string GetDidClusterDetailResponse::GetClusterId() const
+double AnalyzeSentimentResponse::GetPositive() const
 {
-    return m_clusterId;
+    return m_positive;
 }
 
-bool GetDidClusterDetailResponse::ClusterIdHasBeenSet() const
+bool AnalyzeSentimentResponse::PositiveHasBeenSet() const
 {
-    return m_clusterIdHasBeenSet;
+    return m_positiveHasBeenSet;
 }
 
-string GetDidClusterDetailResponse::GetConsortiumName() const
+double AnalyzeSentimentResponse::GetNeutral() const
 {
-    return m_consortiumName;
+    return m_neutral;
 }
 
-bool GetDidClusterDetailResponse::ConsortiumNameHasBeenSet() const
+bool AnalyzeSentimentResponse::NeutralHasBeenSet() const
 {
-    return m_consortiumNameHasBeenSet;
+    return m_neutralHasBeenSet;
 }
 
-string GetDidClusterDetailResponse::GetChainAgency() const
+double AnalyzeSentimentResponse::GetNegative() const
 {
-    return m_chainAgency;
+    return m_negative;
 }
 
-bool GetDidClusterDetailResponse::ChainAgencyHasBeenSet() const
+bool AnalyzeSentimentResponse::NegativeHasBeenSet() const
 {
-    return m_chainAgencyHasBeenSet;
+    return m_negativeHasBeenSet;
+}
+
+string AnalyzeSentimentResponse::GetSentiment() const
+{
+    return m_sentiment;
+}
+
+bool AnalyzeSentimentResponse::SentimentHasBeenSet() const
+{
+    return m_sentimentHasBeenSet;
 }
 
 

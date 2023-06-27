@@ -26,7 +26,8 @@ DescribeTableScoreTrendRequest::DescribeTableScoreTrendRequest() :
     m_projectIdHasBeenSet(false),
     m_statisticsStartDateHasBeenSet(false),
     m_statisticsEndDateHasBeenSet(false),
-    m_tableIdHasBeenSet(false)
+    m_tableIdHasBeenSet(false),
+    m_scoreTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeTableScoreTrendRequest::ToJsonString() const
         string key = "TableId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scoreTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScoreType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scoreType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeTableScoreTrendRequest::SetTableId(const string& _tableId)
 bool DescribeTableScoreTrendRequest::TableIdHasBeenSet() const
 {
     return m_tableIdHasBeenSet;
+}
+
+string DescribeTableScoreTrendRequest::GetScoreType() const
+{
+    return m_scoreType;
+}
+
+void DescribeTableScoreTrendRequest::SetScoreType(const string& _scoreType)
+{
+    m_scoreType = _scoreType;
+    m_scoreTypeHasBeenSet = true;
+}
+
+bool DescribeTableScoreTrendRequest::ScoreTypeHasBeenSet() const
+{
+    return m_scoreTypeHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/Filter.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,48 @@ namespace TencentCloud
                      */
                     bool DatasourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * @return ScoreType 1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * 
+                     */
+                    std::string GetScoreType() const;
+
+                    /**
+                     * 设置1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * @param _scoreType 1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * 
+                     */
+                    void SetScoreType(const std::string& _scoreType);
+
+                    /**
+                     * 判断参数 ScoreType 是否已赋值
+                     * @return ScoreType 是否已赋值
+                     * 
+                     */
+                    bool ScoreTypeHasBeenSet() const;
+
+                    /**
+                     * 获取过滤参数
+                     * @return Filters 过滤参数
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤参数
+                     * @param _filters 过滤参数
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +194,18 @@ namespace TencentCloud
                      */
                     std::string m_datasourceId;
                     bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     */
+                    std::string m_scoreType;
+                    bool m_scoreTypeHasBeenSet;
+
+                    /**
+                     * 过滤参数
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

@@ -39,7 +39,9 @@ RuleExecResult::RuleExecResult() :
     m_targetObjectValueHasBeenSet(false),
     m_targetObjectDataTypeHasBeenSet(false),
     m_fieldConfigHasBeenSet(false),
-    m_relConditionExprHasBeenSet(false)
+    m_relConditionExprHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false)
 {
 }
 
@@ -252,6 +254,26 @@ CoreInternalOutcome RuleExecResult::Deserialize(const rapidjson::Value &value)
         m_relConditionExprHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmLevel") && !value["AlarmLevel"].IsNull())
+    {
+        if (!value["AlarmLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.AlarmLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmLevel = value["AlarmLevel"].GetUint64();
+        m_alarmLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +433,22 @@ void RuleExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RelConditionExpr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_relConditionExpr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmLevel, allocator);
     }
 
 }
@@ -718,5 +756,37 @@ void RuleExecResult::SetRelConditionExpr(const string& _relConditionExpr)
 bool RuleExecResult::RelConditionExprHasBeenSet() const
 {
     return m_relConditionExprHasBeenSet;
+}
+
+string RuleExecResult::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void RuleExecResult::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool RuleExecResult::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+uint64_t RuleExecResult::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void RuleExecResult::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool RuleExecResult::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
 }
 

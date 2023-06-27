@@ -25,7 +25,9 @@ using namespace std;
 DescribeQualityScoreRequest::DescribeQualityScoreRequest() :
     m_statisticsDateHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_datasourceIdHasBeenSet(false)
+    m_datasourceIdHasBeenSet(false),
+    m_scoreTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,29 @@ string DescribeQualityScoreRequest::ToJsonString() const
         string key = "DatasourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scoreTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScoreType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scoreType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +139,38 @@ void DescribeQualityScoreRequest::SetDatasourceId(const string& _datasourceId)
 bool DescribeQualityScoreRequest::DatasourceIdHasBeenSet() const
 {
     return m_datasourceIdHasBeenSet;
+}
+
+string DescribeQualityScoreRequest::GetScoreType() const
+{
+    return m_scoreType;
+}
+
+void DescribeQualityScoreRequest::SetScoreType(const string& _scoreType)
+{
+    m_scoreType = _scoreType;
+    m_scoreTypeHasBeenSet = true;
+}
+
+bool DescribeQualityScoreRequest::ScoreTypeHasBeenSet() const
+{
+    return m_scoreTypeHasBeenSet;
+}
+
+vector<Filter> DescribeQualityScoreRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeQualityScoreRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeQualityScoreRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

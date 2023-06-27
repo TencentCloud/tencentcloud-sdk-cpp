@@ -58,11 +58,11 @@ CoreInternalOutcome ProxyInst::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
     {
-        if (!value["InstanceType"].IsString())
+        if (!value["InstanceType"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ProxyInst.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProxyInst.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceType = value["InstanceType"].GetInt64();
         m_instanceTypeHasBeenSet = true;
     }
 
@@ -134,7 +134,7 @@ void ProxyInst::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -204,12 +204,12 @@ bool ProxyInst::InstanceNameHasBeenSet() const
     return m_instanceNameHasBeenSet;
 }
 
-string ProxyInst::GetInstanceType() const
+int64_t ProxyInst::GetInstanceType() const
 {
     return m_instanceType;
 }
 
-void ProxyInst::SetInstanceType(const string& _instanceType)
+void ProxyInst::SetInstanceType(const int64_t& _instanceType)
 {
     m_instanceType = _instanceType;
     m_instanceTypeHasBeenSet = true;

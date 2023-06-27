@@ -37,7 +37,8 @@ RuleGroup::RuleGroup() :
     m_permissionHasBeenSet(false),
     m_ruleCountHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
-    m_tableOwnerUserIdHasBeenSet(false)
+    m_tableOwnerUserIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,16 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_tableOwnerUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +384,14 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TableOwnerUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tableOwnerUserId, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -648,5 +667,21 @@ void RuleGroup::SetTableOwnerUserId(const uint64_t& _tableOwnerUserId)
 bool RuleGroup::TableOwnerUserIdHasBeenSet() const
 {
     return m_tableOwnerUserIdHasBeenSet;
+}
+
+string RuleGroup::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RuleGroup::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RuleGroup::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

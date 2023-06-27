@@ -421,6 +421,27 @@ namespace TencentCloud
                      */
                     bool FilterAssetIpListHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含基础防护增强版 0: 不包含 1: 包含
+                     * @return FilterBasicPlusFlag 是否包含基础防护增强版 0: 不包含 1: 包含
+                     * 
+                     */
+                    uint64_t GetFilterBasicPlusFlag() const;
+
+                    /**
+                     * 设置是否包含基础防护增强版 0: 不包含 1: 包含
+                     * @param _filterBasicPlusFlag 是否包含基础防护增强版 0: 不包含 1: 包含
+                     * 
+                     */
+                    void SetFilterBasicPlusFlag(const uint64_t& _filterBasicPlusFlag);
+
+                    /**
+                     * 判断参数 FilterBasicPlusFlag 是否已赋值
+                     * @return FilterBasicPlusFlag 是否已赋值
+                     * 
+                     */
+                    bool FilterBasicPlusFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +551,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_filterAssetIpList;
                     bool m_filterAssetIpListHasBeenSet;
+
+                    /**
+                     * 是否包含基础防护增强版 0: 不包含 1: 包含
+                     */
+                    uint64_t m_filterBasicPlusFlag;
+                    bool m_filterBasicPlusFlagHasBeenSet;
 
                 };
             }

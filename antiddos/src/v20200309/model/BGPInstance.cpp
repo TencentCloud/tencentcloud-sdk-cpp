@@ -40,7 +40,8 @@ BGPInstance::BGPInstance() :
     m_lineHasBeenSet(false),
     m_elasticServiceBandwidthHasBeenSet(false),
     m_giftServiceBandWidthHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_basicPlusFlagHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("BasicPlusFlag") && !value["BasicPlusFlag"].IsNull())
+    {
+        if (!value["BasicPlusFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.BasicPlusFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicPlusFlag = value["BasicPlusFlag"].GetUint64();
+        m_basicPlusFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +499,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_basicPlusFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicPlusFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicPlusFlag, allocator);
     }
 
 }
@@ -811,5 +830,21 @@ void BGPInstance::SetModifyTime(const string& _modifyTime)
 bool BGPInstance::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+uint64_t BGPInstance::GetBasicPlusFlag() const
+{
+    return m_basicPlusFlag;
+}
+
+void BGPInstance::SetBasicPlusFlag(const uint64_t& _basicPlusFlag)
+{
+    m_basicPlusFlag = _basicPlusFlag;
+    m_basicPlusFlagHasBeenSet = true;
+}
+
+bool BGPInstance::BasicPlusFlagHasBeenSet() const
+{
+    return m_basicPlusFlagHasBeenSet;
 }
 

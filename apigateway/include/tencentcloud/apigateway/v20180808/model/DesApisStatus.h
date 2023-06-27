@@ -419,7 +419,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelationBuniessApiIds 授权API关联的业务API列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetRelationBuniessApiIds() const;
 
@@ -428,14 +428,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relationBuniessApiIds 授权API关联的业务API列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetRelationBuniessApiIds(const std::vector<std::string>& _relationBuniessApiIds);
 
                     /**
                      * 判断参数 RelationBuniessApiIds 是否已赋值
                      * @return RelationBuniessApiIds 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RelationBuniessApiIdsHasBeenSet() const;
 

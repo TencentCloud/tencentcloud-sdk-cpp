@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdid/v20210519/model/GetDidClusterListResponse.h>
+#include <tencentcloud/nlp/v20190408/model/ComposeCoupletResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdid::V20210519::Model;
+using namespace TencentCloud::Nlp::V20190408::Model;
 using namespace std;
 
-GetDidClusterListResponse::GetDidClusterListResponse() :
-    m_didClusterListHasBeenSet(false)
+ComposeCoupletResponse::ComposeCoupletResponse() :
+    m_topScrollHasBeenSet(false),
+    m_contentHasBeenSet(false),
+    m_randomCauseHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetDidClusterListResponse::Deserialize(const string &payload)
+CoreInternalOutcome ComposeCoupletResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,49 +64,76 @@ CoreInternalOutcome GetDidClusterListResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("DidClusterList") && !rsp["DidClusterList"].IsNull())
+    if (rsp.HasMember("TopScroll") && !rsp["TopScroll"].IsNull())
     {
-        if (!rsp["DidClusterList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DidClusterList` is not array type"));
+        if (!rsp["TopScroll"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopScroll` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topScroll = string(rsp["TopScroll"].GetString());
+        m_topScrollHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["DidClusterList"];
+    if (rsp.HasMember("Content") && !rsp["Content"].IsNull())
+    {
+        if (!rsp["Content"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Content` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Content"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DidCluster item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_didClusterList.push_back(item);
+            m_content.push_back((*itr).GetString());
         }
-        m_didClusterListHasBeenSet = true;
+        m_contentHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RandomCause") && !rsp["RandomCause"].IsNull())
+    {
+        if (!rsp["RandomCause"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RandomCause` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_randomCause = string(rsp["RandomCause"].GetString());
+        m_randomCauseHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string GetDidClusterListResponse::ToJsonString() const
+string ComposeCoupletResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_didClusterListHasBeenSet)
+    if (m_topScrollHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DidClusterList";
+        string key = "TopScroll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topScroll.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        int i=0;
-        for (auto itr = m_didClusterList.begin(); itr != m_didClusterList.end(); ++itr, ++i)
+        for (auto itr = m_content.begin(); itr != m_content.end(); ++itr)
         {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_randomCauseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RandomCause";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_randomCause.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +148,34 @@ string GetDidClusterListResponse::ToJsonString() const
 }
 
 
-vector<DidCluster> GetDidClusterListResponse::GetDidClusterList() const
+string ComposeCoupletResponse::GetTopScroll() const
 {
-    return m_didClusterList;
+    return m_topScroll;
 }
 
-bool GetDidClusterListResponse::DidClusterListHasBeenSet() const
+bool ComposeCoupletResponse::TopScrollHasBeenSet() const
 {
-    return m_didClusterListHasBeenSet;
+    return m_topScrollHasBeenSet;
+}
+
+vector<string> ComposeCoupletResponse::GetContent() const
+{
+    return m_content;
+}
+
+bool ComposeCoupletResponse::ContentHasBeenSet() const
+{
+    return m_contentHasBeenSet;
+}
+
+string ComposeCoupletResponse::GetRandomCause() const
+{
+    return m_randomCause;
+}
+
+bool ComposeCoupletResponse::RandomCauseHasBeenSet() const
+{
+    return m_randomCauseHasBeenSet;
 }
 
 

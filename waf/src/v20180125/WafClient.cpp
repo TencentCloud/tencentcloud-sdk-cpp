@@ -1846,6 +1846,49 @@ WafClient::ModifyDomainWhiteRuleOutcomeCallable WafClient::ModifyDomainWhiteRule
     return task->get_future();
 }
 
+WafClient::ModifySpartaProtectionOutcome WafClient::ModifySpartaProtection(const ModifySpartaProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySpartaProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySpartaProtectionResponse rsp = ModifySpartaProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySpartaProtectionOutcome(rsp);
+        else
+            return ModifySpartaProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySpartaProtectionOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifySpartaProtectionAsync(const ModifySpartaProtectionRequest& request, const ModifySpartaProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySpartaProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifySpartaProtectionOutcomeCallable WafClient::ModifySpartaProtectionCallable(const ModifySpartaProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySpartaProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySpartaProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyWafAutoDenyRulesOutcome WafClient::ModifyWafAutoDenyRules(const ModifyWafAutoDenyRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWafAutoDenyRules");

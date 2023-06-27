@@ -31,13 +31,10 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h
   include/tencentcloud/tdid/v20210519/model/VerifyFunctionArg.h
   include/tencentcloud/tdid/v20210519/model/GetConsortiumListRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetDidClusterListResponse.h
   include/tencentcloud/tdid/v20210519/model/CreateCredentialRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetDidClusterDetailResponse.h
   include/tencentcloud/tdid/v20210519/model/GetDidDocumentRequest.h
   include/tencentcloud/tdid/v20210519/model/GetConsortiumListResponse.h
   include/tencentcloud/tdid/v20210519/model/ConsortiumItem.h
-  include/tencentcloud/tdid/v20210519/model/GetDidClusterListRequest.h
   include/tencentcloud/tdid/v20210519/model/GetCredentialStatusRequest.h
   include/tencentcloud/tdid/v20210519/model/GetAgencyTDidResponse.h
   include/tencentcloud/tdid/v20210519/model/AddLabelResponse.h
@@ -56,7 +53,6 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyResponse.h
   include/tencentcloud/tdid/v20210519/model/GetCredentialCptRankRequest.h
   include/tencentcloud/tdid/v20210519/model/RegisterCptRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetDidClusterDetailRequest.h
   include/tencentcloud/tdid/v20210519/model/Proof.h
   include/tencentcloud/tdid/v20210519/model/VerifyCredentialRequest.h
   include/tencentcloud/tdid/v20210519/model/GetConsortiumClusterListRequest.h
@@ -64,7 +60,6 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/CreateTDidByPrivateKeyRequest.h
   include/tencentcloud/tdid/v20210519/model/BcosClusterItem.h
   include/tencentcloud/tdid/v20210519/model/SetCredentialStatusRequest.h
-  include/tencentcloud/tdid/v20210519/model/DidCluster.h
   include/tencentcloud/tdid/v20210519/model/GetCptInfoRequest.h
   include/tencentcloud/tdid/v20210519/model/Identity.h
   include/tencentcloud/tdid/v20210519/model/GetCredentialStatusResponse.h
@@ -85,13 +80,10 @@ set(tdid_src
   src/v20210519/model/GetAuthorityIssuerRequest.cpp
   src/v20210519/model/VerifyFunctionArg.cpp
   src/v20210519/model/GetConsortiumListRequest.cpp
-  src/v20210519/model/GetDidClusterListResponse.cpp
   src/v20210519/model/CreateCredentialRequest.cpp
-  src/v20210519/model/GetDidClusterDetailResponse.cpp
   src/v20210519/model/GetDidDocumentRequest.cpp
   src/v20210519/model/GetConsortiumListResponse.cpp
   src/v20210519/model/ConsortiumItem.cpp
-  src/v20210519/model/GetDidClusterListRequest.cpp
   src/v20210519/model/GetCredentialStatusRequest.cpp
   src/v20210519/model/GetAgencyTDidResponse.cpp
   src/v20210519/model/AddLabelResponse.cpp
@@ -110,7 +102,6 @@ set(tdid_src
   src/v20210519/model/CreateTDidByPublicKeyResponse.cpp
   src/v20210519/model/GetCredentialCptRankRequest.cpp
   src/v20210519/model/RegisterCptRequest.cpp
-  src/v20210519/model/GetDidClusterDetailRequest.cpp
   src/v20210519/model/Proof.cpp
   src/v20210519/model/VerifyCredentialRequest.cpp
   src/v20210519/model/GetConsortiumClusterListRequest.cpp
@@ -118,7 +109,6 @@ set(tdid_src
   src/v20210519/model/CreateTDidByPrivateKeyRequest.cpp
   src/v20210519/model/BcosClusterItem.cpp
   src/v20210519/model/SetCredentialStatusRequest.cpp
-  src/v20210519/model/DidCluster.cpp
   src/v20210519/model/GetCptInfoRequest.cpp
   src/v20210519/model/Identity.cpp
   src/v20210519/model/GetCredentialStatusResponse.cpp

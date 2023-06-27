@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDID_V20210519_MODEL_GETDIDCLUSTERLISTREQUEST_H_
-#define TENCENTCLOUD_TDID_V20210519_MODEL_GETDIDCLUSTERLISTREQUEST_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYSPARTAPROTECTIONRESPONSE_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYSPARTAPROTECTIONRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,21 @@
 
 namespace TencentCloud
 {
-    namespace Tdid
+    namespace Waf
     {
-        namespace V20210519
+        namespace V20180125
         {
             namespace Model
             {
                 /**
-                * GetDidClusterList请求参数结构体
+                * ModifySpartaProtection返回参数结构体
                 */
-                class GetDidClusterListRequest : public AbstractModel
+                class ModifySpartaProtectionResponse : public AbstractModel
                 {
                 public:
-                    GetDidClusterListRequest();
-                    ~GetDidClusterListRequest() = default;
+                    ModifySpartaProtectionResponse();
+                    ~ModifySpartaProtectionResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
@@ -50,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDID_V20210519_MODEL_GETDIDCLUSTERLISTREQUEST_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYSPARTAPROTECTIONRESPONSE_H_

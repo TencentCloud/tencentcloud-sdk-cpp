@@ -605,7 +605,7 @@ namespace TencentCloud
                 DeleteMachineGroupInfoOutcomeCallable DeleteMachineGroupInfoCallable(const Model::DeleteMachineGroupInfoRequest& request);
 
                 /**
-                 *删除投递规则
+                 *删除投递COS任务
                  * @param req DeleteShipperRequest
                  * @return DeleteShipperOutcome
                  */

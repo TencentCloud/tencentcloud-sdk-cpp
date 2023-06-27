@@ -272,6 +272,31 @@ namespace TencentCloud
                      */
                     bool TableOwnerUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取2.HIVE 3.DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 2.HIVE 3.DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDatasourceType() const;
+
+                    /**
+                     * 设置2.HIVE 3.DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 2.HIVE 3.DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const uint64_t& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +361,13 @@ namespace TencentCloud
                      */
                     uint64_t m_tableOwnerUserId;
                     bool m_tableOwnerUserIdHasBeenSet;
+
+                    /**
+                     * 2.HIVE 3.DLC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
 
                 };
             }

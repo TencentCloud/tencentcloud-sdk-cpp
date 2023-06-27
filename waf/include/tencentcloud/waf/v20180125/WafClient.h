@@ -107,6 +107,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusRequest.h>
@@ -263,6 +265,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainWhiteRuleResponse> ModifyDomainWhiteRuleOutcome;
                 typedef std::future<ModifyDomainWhiteRuleOutcome> ModifyDomainWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyDomainWhiteRuleRequest&, ModifyDomainWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySpartaProtectionResponse> ModifySpartaProtectionOutcome;
+                typedef std::future<ModifySpartaProtectionOutcome> ModifySpartaProtectionOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifySpartaProtectionRequest&, ModifySpartaProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySpartaProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWafAutoDenyRulesResponse> ModifyWafAutoDenyRulesOutcome;
                 typedef std::future<ModifyWafAutoDenyRulesOutcome> ModifyWafAutoDenyRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyWafAutoDenyRulesRequest&, ModifyWafAutoDenyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafAutoDenyRulesAsyncHandler;
@@ -667,6 +672,15 @@ namespace TencentCloud
                 ModifyDomainWhiteRuleOutcome ModifyDomainWhiteRule(const Model::ModifyDomainWhiteRuleRequest &request);
                 void ModifyDomainWhiteRuleAsync(const Model::ModifyDomainWhiteRuleRequest& request, const ModifyDomainWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainWhiteRuleOutcomeCallable ModifyDomainWhiteRuleCallable(const Model::ModifyDomainWhiteRuleRequest& request);
+
+                /**
+                 *修改域名配置
+                 * @param req ModifySpartaProtectionRequest
+                 * @return ModifySpartaProtectionOutcome
+                 */
+                ModifySpartaProtectionOutcome ModifySpartaProtection(const Model::ModifySpartaProtectionRequest &request);
+                void ModifySpartaProtectionAsync(const Model::ModifySpartaProtectionRequest& request, const ModifySpartaProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySpartaProtectionOutcomeCallable ModifySpartaProtectionCallable(const Model::ModifySpartaProtectionRequest& request);
 
                 /**
                  *修改ip惩罚规则

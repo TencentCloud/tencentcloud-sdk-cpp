@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool TableIdHasBeenSet() const;
 
+                    /**
+                     * 获取1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * @return ScoreType 1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * 
+                     */
+                    std::string GetScoreType() const;
+
+                    /**
+                     * 设置1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * @param _scoreType 1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     * 
+                     */
+                    void SetScoreType(const std::string& _scoreType);
+
+                    /**
+                     * 判断参数 ScoreType 是否已赋值
+                     * @return ScoreType 是否已赋值
+                     * 
+                     */
+                    bool ScoreTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
+
+                    /**
+                     * 1:按全维度权重计算,2:按已配置维度权重计算,3:不按维度权重计算,默认1
+                     */
+                    std::string m_scoreType;
+                    bool m_scoreTypeHasBeenSet;
 
                 };
             }

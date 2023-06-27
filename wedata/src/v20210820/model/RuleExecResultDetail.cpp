@@ -29,7 +29,8 @@ RuleExecResultDetail::RuleExecResultDetail() :
     m_tableIdHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_ruleExecResultHasBeenSet(false),
-    m_tableOwnerUserIdHasBeenSet(false)
+    m_tableOwnerUserIdHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome RuleExecResultDetail::Deserialize(const rapidjson::Value &va
         m_tableOwnerUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResultDetail.DatasourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = value["DatasourceType"].GetUint64();
+        m_datasourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void RuleExecResultDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TableOwnerUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tableOwnerUserId, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceType, allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void RuleExecResultDetail::SetTableOwnerUserId(const uint64_t& _tableOwnerUserId
 bool RuleExecResultDetail::TableOwnerUserIdHasBeenSet() const
 {
     return m_tableOwnerUserIdHasBeenSet;
+}
+
+uint64_t RuleExecResultDetail::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void RuleExecResultDetail::SetDatasourceType(const uint64_t& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool RuleExecResultDetail::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
 }
 

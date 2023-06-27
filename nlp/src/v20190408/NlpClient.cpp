@@ -40,6 +40,49 @@ NlpClient::NlpClient(const Credential &credential, const string &region, const C
 }
 
 
+NlpClient::AnalyzeSentimentOutcome NlpClient::AnalyzeSentiment(const AnalyzeSentimentRequest &request)
+{
+    auto outcome = MakeRequest(request, "AnalyzeSentiment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AnalyzeSentimentResponse rsp = AnalyzeSentimentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AnalyzeSentimentOutcome(rsp);
+        else
+            return AnalyzeSentimentOutcome(o.GetError());
+    }
+    else
+    {
+        return AnalyzeSentimentOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::AnalyzeSentimentAsync(const AnalyzeSentimentRequest& request, const AnalyzeSentimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AnalyzeSentiment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::AnalyzeSentimentOutcomeCallable NlpClient::AnalyzeSentimentCallable(const AnalyzeSentimentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AnalyzeSentimentOutcome()>>(
+        [this, request]()
+        {
+            return this->AnalyzeSentiment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::AutoSummarizationOutcome NlpClient::AutoSummarization(const AutoSummarizationRequest &request)
 {
     auto outcome = MakeRequest(request, "AutoSummarization");
@@ -119,6 +162,135 @@ NlpClient::ChatBotOutcomeCallable NlpClient::ChatBotCallable(const ChatBotReques
         [this, request]()
         {
             return this->ChatBot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::ClassifyContentOutcome NlpClient::ClassifyContent(const ClassifyContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClassifyContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClassifyContentResponse rsp = ClassifyContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClassifyContentOutcome(rsp);
+        else
+            return ClassifyContentOutcome(o.GetError());
+    }
+    else
+    {
+        return ClassifyContentOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::ClassifyContentAsync(const ClassifyContentRequest& request, const ClassifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClassifyContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::ClassifyContentOutcomeCallable NlpClient::ClassifyContentCallable(const ClassifyContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClassifyContentOutcome()>>(
+        [this, request]()
+        {
+            return this->ClassifyContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::ComposeCoupletOutcome NlpClient::ComposeCouplet(const ComposeCoupletRequest &request)
+{
+    auto outcome = MakeRequest(request, "ComposeCouplet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ComposeCoupletResponse rsp = ComposeCoupletResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ComposeCoupletOutcome(rsp);
+        else
+            return ComposeCoupletOutcome(o.GetError());
+    }
+    else
+    {
+        return ComposeCoupletOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::ComposeCoupletAsync(const ComposeCoupletRequest& request, const ComposeCoupletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ComposeCouplet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::ComposeCoupletOutcomeCallable NlpClient::ComposeCoupletCallable(const ComposeCoupletRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ComposeCoupletOutcome()>>(
+        [this, request]()
+        {
+            return this->ComposeCouplet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::ComposePoetryOutcome NlpClient::ComposePoetry(const ComposePoetryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ComposePoetry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ComposePoetryResponse rsp = ComposePoetryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ComposePoetryOutcome(rsp);
+        else
+            return ComposePoetryOutcome(o.GetError());
+    }
+    else
+    {
+        return ComposePoetryOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::ComposePoetryAsync(const ComposePoetryRequest& request, const ComposePoetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ComposePoetry(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::ComposePoetryOutcomeCallable NlpClient::ComposePoetryCallable(const ComposePoetryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ComposePoetryOutcome()>>(
+        [this, request]()
+        {
+            return this->ComposePoetry(request);
         }
     );
 

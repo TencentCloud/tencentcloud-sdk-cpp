@@ -523,6 +523,56 @@ namespace TencentCloud
                      */
                     bool RelConditionExprHasBeenSet() const;
 
+                    /**
+                     * 获取执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _startTime 执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取1/2/3:低/中/高
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmLevel 1/2/3:低/中/高
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAlarmLevel() const;
+
+                    /**
+                     * 设置1/2/3:低/中/高
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmLevel 1/2/3:低/中/高
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmLevel(const uint64_t& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -657,6 +707,20 @@ namespace TencentCloud
                      */
                     std::string m_relConditionExpr;
                     bool m_relConditionExprHasBeenSet;
+
+                    /**
+                     * 执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 1/2/3:低/中/高
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
 
                 };
             }

@@ -529,6 +529,31 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否是基础防护加强版 0: 不是 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BasicPlusFlag 是否是基础防护加强版 0: 不是 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetBasicPlusFlag() const;
+
+                    /**
+                     * 设置是否是基础防护加强版 0: 不是 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _basicPlusFlag 是否是基础防护加强版 0: 不是 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBasicPlusFlag(const uint64_t& _basicPlusFlag);
+
+                    /**
+                     * 判断参数 BasicPlusFlag 是否已赋值
+                     * @return BasicPlusFlag 是否已赋值
+                     * 
+                     */
+                    bool BasicPlusFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -664,6 +689,13 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 是否是基础防护加强版 0: 不是 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_basicPlusFlag;
+                    bool m_basicPlusFlagHasBeenSet;
 
                 };
             }
