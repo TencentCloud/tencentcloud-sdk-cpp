@@ -97,10 +97,16 @@ vcpkg install openssl:x64-windows
 # 允许执行 powershell 脚本
 Set-ExecutionPolicy Bypass -Scope Process
 
-# build
+# 64位build
 # 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
 # 通过 CMAKE_TOOLCHAIN_FILE 指定 vcpkg 目录（必须）
 .\build.ps1 build -DBUILD_MODULES="cvm;cbs" -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake'
+
+# 32位build
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+# 通过 CMAKE_TOOLCHAIN_FILE 指定 vcpkg 目录（必须）
+# 通过 'Visual Studio 17 2022' 指定 visual studio 版本，参考 https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#visual-studio-generators
+.\build32.ps1 build -DBUILD_MODULES="cvm;cbs" -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake' 'Visual Studio 17 2022'
 
 # install，需要 Administrator 权限
 .\build.ps1 install
