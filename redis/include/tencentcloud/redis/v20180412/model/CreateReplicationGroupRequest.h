@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组名称。
-                     * @return GroupName 复制组名称。
+                     * 获取复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @return GroupName 复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置复制组名称。
-                     * @param _groupName 复制组名称。
+                     * 设置复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
+                     * @param _groupName 复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 复制组名称。
+                     * 复制组名称。名称只支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;

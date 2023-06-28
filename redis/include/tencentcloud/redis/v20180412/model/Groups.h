@@ -86,7 +86,6 @@ namespace TencentCloud
 - 21：印度 
 - 22：美东（弗吉尼亚）
 - 23：泰国 
-- 24：俄罗斯 
 - 25：日本
                      * @return RegionId 地域ID 。
 - 1：广州 
@@ -105,7 +104,6 @@ namespace TencentCloud
 - 21：印度 
 - 22：美东（弗吉尼亚）
 - 23：泰国 
-- 24：俄罗斯 
 - 25：日本
                      * 
                      */
@@ -129,7 +127,6 @@ namespace TencentCloud
 - 21：印度 
 - 22：美东（弗吉尼亚）
 - 23：泰国 
-- 24：俄罗斯 
 - 25：日本
                      * @param _regionId 地域ID 。
 - 1：广州 
@@ -148,7 +145,6 @@ namespace TencentCloud
 - 21：印度 
 - 22：美东（弗吉尼亚）
 - 23：泰国 
-- 24：俄罗斯 
 - 25：日本
                      * 
                      */
@@ -345,7 +341,6 @@ namespace TencentCloud
 - 21：印度 
 - 22：美东（弗吉尼亚）
 - 23：泰国 
-- 24：俄罗斯 
 - 25：日本
                      */
                     int64_t m_regionId;

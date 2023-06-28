@@ -66,15 +66,51 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
-                     * @return EmbedType WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
+                     * 获取WEB嵌入资源类型。
+CREATE_SEAL: 创建印章
+CREATE_TEMPLATE：创建模版
+MODIFY_TEMPLATE：修改模版
+PREVIEW_TEMPLATE：预览模版
+PREVIEW_FLOW：预览合同文档
+PREVIEW_FLOW_DETAIL：预览合同详情
+PREVIEW_SEAL_LIST：预览印章列表
+PREVIEW_SEAL_DETAIL：预览印章详情
+EXTEND_SERVICE：扩展服务
+                     * @return EmbedType WEB嵌入资源类型。
+CREATE_SEAL: 创建印章
+CREATE_TEMPLATE：创建模版
+MODIFY_TEMPLATE：修改模版
+PREVIEW_TEMPLATE：预览模版
+PREVIEW_FLOW：预览合同文档
+PREVIEW_FLOW_DETAIL：预览合同详情
+PREVIEW_SEAL_LIST：预览印章列表
+PREVIEW_SEAL_DETAIL：预览印章详情
+EXTEND_SERVICE：扩展服务
                      * 
                      */
                     std::string GetEmbedType() const;
 
                     /**
-                     * 设置WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
-                     * @param _embedType WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
+                     * 设置WEB嵌入资源类型。
+CREATE_SEAL: 创建印章
+CREATE_TEMPLATE：创建模版
+MODIFY_TEMPLATE：修改模版
+PREVIEW_TEMPLATE：预览模版
+PREVIEW_FLOW：预览合同文档
+PREVIEW_FLOW_DETAIL：预览合同详情
+PREVIEW_SEAL_LIST：预览印章列表
+PREVIEW_SEAL_DETAIL：预览印章详情
+EXTEND_SERVICE：扩展服务
+                     * @param _embedType WEB嵌入资源类型。
+CREATE_SEAL: 创建印章
+CREATE_TEMPLATE：创建模版
+MODIFY_TEMPLATE：修改模版
+PREVIEW_TEMPLATE：预览模版
+PREVIEW_FLOW：预览合同文档
+PREVIEW_FLOW_DETAIL：预览合同详情
+PREVIEW_SEAL_LIST：预览印章列表
+PREVIEW_SEAL_DETAIL：预览印章详情
+EXTEND_SERVICE：扩展服务
                      * 
                      */
                     void SetEmbedType(const std::string& _embedType);
@@ -87,15 +123,27 @@ namespace TencentCloud
                     bool EmbedTypeHasBeenSet() const;
 
                     /**
-                     * 获取WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
-                     * @return BusinessId WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
+                     * 获取WEB嵌入的业务资源ID
+EmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id
+PREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id
+PREVIEW_SEAL_DETAIL，必填，取值为印章id
+                     * @return BusinessId WEB嵌入的业务资源ID
+EmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id
+PREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id
+PREVIEW_SEAL_DETAIL，必填，取值为印章id
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
-                     * 设置WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
-                     * @param _businessId WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
+                     * 设置WEB嵌入的业务资源ID
+EmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id
+PREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id
+PREVIEW_SEAL_DETAIL，必填，取值为印章id
+                     * @param _businessId WEB嵌入的业务资源ID
+EmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id
+PREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id
+PREVIEW_SEAL_DETAIL，必填，取值为印章id
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -158,13 +206,25 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * WEB嵌入资源类型，取值范围：CREATE_SEAL创建印章，CREATE_TEMPLATE创建模板，MODIFY_TEMPLATE修改模板，PREVIEW_TEMPLATE预览模板，PREVIEW_FLOW预览流程
+                     * WEB嵌入资源类型。
+CREATE_SEAL: 创建印章
+CREATE_TEMPLATE：创建模版
+MODIFY_TEMPLATE：修改模版
+PREVIEW_TEMPLATE：预览模版
+PREVIEW_FLOW：预览合同文档
+PREVIEW_FLOW_DETAIL：预览合同详情
+PREVIEW_SEAL_LIST：预览印章列表
+PREVIEW_SEAL_DETAIL：预览印章详情
+EXTEND_SERVICE：扩展服务
                      */
                     std::string m_embedType;
                     bool m_embedTypeHasBeenSet;
 
                     /**
-                     * WEB嵌入的业务资源ID，EmbedType取值MODIFY_TEMPLATE或PREVIEW_TEMPLATE或 PREVIEW_FLOW时BusinessId必填
+                     * WEB嵌入的业务资源ID
+EmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id
+PREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id
+PREVIEW_SEAL_DETAIL，必填，取值为印章id
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

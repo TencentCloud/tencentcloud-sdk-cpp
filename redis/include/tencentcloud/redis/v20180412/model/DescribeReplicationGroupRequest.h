@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取复制组ID。
-                     * @return GroupId 复制组ID。
+                     * 获取指定复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+                     * @return GroupId 指定复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组ID。
-                     * @param _groupId 复制组ID。
+                     * 设置指定复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
+                     * @param _groupId 指定复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
-                     * @return SearchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * 获取模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID及名称。
+                     * @return SearchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID及名称。
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
-                     * @param _searchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * 设置模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID及名称。
+                     * @param _searchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID及名称。
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -141,13 +141,13 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 复制组ID。
+                     * 指定复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID及名称。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

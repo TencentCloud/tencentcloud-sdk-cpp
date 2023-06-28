@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启HTTP公网访问
+                     * @return PublicAccessEnabled 是否开启HTTP公网访问
+                     * 
+                     */
+                    bool GetPublicAccessEnabled() const;
+
+                    /**
+                     * 设置是否开启HTTP公网访问
+                     * @param _publicAccessEnabled 是否开启HTTP公网访问
+                     * 
+                     */
+                    void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
+
+                    /**
+                     * 判断参数 PublicAccessEnabled 是否已赋值
+                     * @return PublicAccessEnabled 是否已赋值
+                     * 
+                     */
+                    bool PublicAccessEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 是否开启HTTP公网访问
+                     */
+                    bool m_publicAccessEnabled;
+                    bool m_publicAccessEnabledHasBeenSet;
 
                 };
             }

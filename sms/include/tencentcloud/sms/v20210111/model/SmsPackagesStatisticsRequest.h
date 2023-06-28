@@ -107,18 +107,18 @@ namespace TencentCloud
 
                     /**
                      * 获取起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-注：拉取套餐包的创建时间不小于起始时间。
+注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-注：拉取套餐包的创建时间不小于起始时间。
+注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-注：拉取套餐包的创建时间不小于起始时间。
+注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-注：拉取套餐包的创建时间不小于起始时间。
+注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -132,18 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime 且小于当前时间。
                      * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime 且小于当前时间。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime 且小于当前时间。
                      * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime 且小于当前时间。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -177,14 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 起始时间，格式为yyyymmddhh，精确到小时，例如2021050113，表示2021年5月1号13时。
-注：拉取套餐包的创建时间不小于起始时间。
+注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime 且小于当前时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

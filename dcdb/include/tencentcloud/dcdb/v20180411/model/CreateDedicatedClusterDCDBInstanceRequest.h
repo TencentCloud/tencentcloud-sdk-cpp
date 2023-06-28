@@ -402,6 +402,27 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
+                     * 获取安全组ID列表
+                     * @return SecurityGroupIds 安全组ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ID列表
+                     * @param _securityGroupIds 安全组ID列表
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
                      * 获取DCN源实例ID
                      * @return DcnInstanceId DCN源实例ID
                      * 
@@ -735,6 +756,12 @@ namespace TencentCloud
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
+
+                    /**
+                     * 安全组ID列表
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                     /**
                      * DCN源实例ID

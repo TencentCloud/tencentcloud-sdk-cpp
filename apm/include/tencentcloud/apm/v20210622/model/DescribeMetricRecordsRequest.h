@@ -297,6 +297,27 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取Or过滤条件
+                     * @return OrFilters Or过滤条件
+                     * 
+                     */
+                    std::vector<Filter> GetOrFilters() const;
+
+                    /**
+                     * 设置Or过滤条件
+                     * @param _orFilters Or过滤条件
+                     * 
+                     */
+                    void SetOrFilters(const std::vector<Filter>& _orFilters);
+
+                    /**
+                     * 判断参数 OrFilters 是否已赋值
+                     * @return OrFilters 是否已赋值
+                     * 
+                     */
+                    bool OrFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,6 +391,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * Or过滤条件
+                     */
+                    std::vector<Filter> m_orFilters;
+                    bool m_orFiltersHasBeenSet;
 
                 };
             }

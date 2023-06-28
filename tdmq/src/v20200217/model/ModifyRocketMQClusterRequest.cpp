@@ -25,7 +25,8 @@ using namespace std;
 ModifyRocketMQClusterRequest::ModifyRocketMQClusterRequest() :
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_publicAccessEnabledHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyRocketMQClusterRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicAccessEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicAccessEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicAccessEnabled, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyRocketMQClusterRequest::SetRemark(const string& _remark)
 bool ModifyRocketMQClusterRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+bool ModifyRocketMQClusterRequest::GetPublicAccessEnabled() const
+{
+    return m_publicAccessEnabled;
+}
+
+void ModifyRocketMQClusterRequest::SetPublicAccessEnabled(const bool& _publicAccessEnabled)
+{
+    m_publicAccessEnabled = _publicAccessEnabled;
+    m_publicAccessEnabledHasBeenSet = true;
+}
+
+bool ModifyRocketMQClusterRequest::PublicAccessEnabledHasBeenSet() const
+{
+    return m_publicAccessEnabledHasBeenSet;
 }
 
 

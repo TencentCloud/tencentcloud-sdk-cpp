@@ -215,18 +215,18 @@ namespace TencentCloud
                     bool RedisShardSizeHasBeenSet() const;
 
                     /**
-                     * 获取实例的磁盘大小
+                     * 获取实例的磁盘大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskSize 实例的磁盘大小
+                     * @return DiskSize 实例的磁盘大小。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置实例的磁盘大小
+                     * 设置实例的磁盘大小。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskSize 实例的磁盘大小
+                     * @param _diskSize 实例的磁盘大小。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -565,7 +565,7 @@ namespace TencentCloud
                     bool m_redisShardSizeHasBeenSet;
 
                     /**
-                     * 实例的磁盘大小
+                     * 实例的磁盘大小。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;

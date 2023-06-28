@@ -546,7 +546,7 @@ namespace TencentCloud
                 ChangeInstanceRoleOutcomeCallable ChangeInstanceRoleCallable(const Model::ChangeInstanceRoleRequest& request);
 
                 /**
-                 *复制组实例切主
+                 *该接口（ChangeMasterInstance）用于将复制组内只读实例设置为主实例。
                  * @param req ChangeMasterInstanceRequest
                  * @return ChangeMasterInstanceOutcome
                  */
@@ -627,7 +627,7 @@ namespace TencentCloud
                 CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
 
                 /**
-                 *创建复制组
+                 *该接口（CreateReplicationGroup）用于创建复制组。
                  * @param req CreateReplicationGroupRequest
                  * @return CreateReplicationGroupOutcome
                  */
@@ -951,7 +951,7 @@ namespace TencentCloud
                 DescribeProxySlowLogOutcomeCallable DescribeProxySlowLogCallable(const Model::DescribeProxySlowLogRequest& request);
 
                 /**
-                 *本接口（DescribeReplicationGroup）查询复制组。
+                 *本接口（DescribeReplicationGroup）用于查询复制组。
                  * @param req DescribeReplicationGroupRequest
                  * @return DescribeReplicationGroupOutcome
                  */
@@ -978,7 +978,7 @@ namespace TencentCloud
                 DescribeSlowLogOutcomeCallable DescribeSlowLogCallable(const Model::DescribeSlowLogRequest& request);
 
                 /**
-                 *用于查询任务结果
+                 *本接口（DescribeTaskInfo）用于获取指定任务的执行情况。
                  * @param req DescribeTaskInfoRequest
                  * @return DescribeTaskInfoOutcome
                  */

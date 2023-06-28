@@ -40,6 +40,7 @@ CreateDedicatedClusterDCDBInstanceRequest::CreateDedicatedClusterDCDBInstanceReq
     m_shardNodeStorageHasBeenSet(false),
     m_dbVersionIdHasBeenSet(false),
     m_securityGroupIdHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
     m_dcnInstanceIdHasBeenSet(false),
     m_dcnRegionHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
@@ -195,6 +196,19 @@ string CreateDedicatedClusterDCDBInstanceRequest::ToJsonString() const
         string key = "SecurityGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_dcnInstanceIdHasBeenSet)
@@ -582,6 +596,22 @@ void CreateDedicatedClusterDCDBInstanceRequest::SetSecurityGroupId(const string&
 bool CreateDedicatedClusterDCDBInstanceRequest::SecurityGroupIdHasBeenSet() const
 {
     return m_securityGroupIdHasBeenSet;
+}
+
+vector<string> CreateDedicatedClusterDCDBInstanceRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateDedicatedClusterDCDBInstanceRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateDedicatedClusterDCDBInstanceRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 string CreateDedicatedClusterDCDBInstanceRequest::GetDcnInstanceId() const

@@ -318,15 +318,15 @@ namespace TencentCloud
                     bool ErrorPageHasBeenSet() const;
 
                     /**
-                     * 获取请求头部配置
-                     * @return RequestHeader 请求头部配置
+                     * 获取回源请求头部配置
+                     * @return RequestHeader 回源请求头部配置
                      * 
                      */
                     RequestHeader GetRequestHeader() const;
 
                     /**
-                     * 设置请求头部配置
-                     * @param _requestHeader 请求头部配置
+                     * 设置回源请求头部配置
+                     * @param _requestHeader 回源请求头部配置
                      * 
                      */
                     void SetRequestHeader(const RequestHeader& _requestHeader);
@@ -1216,7 +1216,7 @@ global：全球加速
                     bool m_errorPageHasBeenSet;
 
                     /**
-                     * 请求头部配置
+                     * 回源请求头部配置
                      */
                     RequestHeader m_requestHeader;
                     bool m_requestHeaderHasBeenSet;

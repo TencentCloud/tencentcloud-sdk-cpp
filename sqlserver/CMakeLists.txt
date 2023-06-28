@@ -24,6 +24,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CloneDBResponse.h
   include/tencentcloud/sqlserver/v20180328/model/InstanceRenewInfo.h
   include/tencentcloud/sqlserver/v20180328/model/DealInfo.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBEncryptAttributesResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyRequest.h
   include/tencentcloud/sqlserver/v20180328/model/RestoreInstanceRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateBasicDBInstancesResponse.h
@@ -57,7 +58,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CreateBusinessIntelligenceFileResponse.h
   include/tencentcloud/sqlserver/v20180328/model/OpenInterCommunicationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeProductConfigRequest.h
-  include/tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDBEncryptAttributesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateAccountRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ParamRecord.h
   include/tencentcloud/sqlserver/v20180328/model/RollbackInstanceResponse.h
@@ -89,6 +90,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/MigrationDetail.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupByFlowIdResponse.h
   include/tencentcloud/sqlserver/v20180328/model/RecycleDBInstanceRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyInstanceEncryptAttributesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/BusinessIntelligenceFile.h
   include/tencentcloud/sqlserver/v20180328/model/CompleteMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ResetAccountPasswordResponse.h
@@ -109,6 +111,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateCloudReadOnlyDBInstancesRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyInstanceEncryptAttributesResponse.h
   include/tencentcloud/sqlserver/v20180328/model/MigrationStep.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyAccountRemarkResponse.h
   include/tencentcloud/sqlserver/v20180328/model/Events.h
@@ -196,6 +199,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DBInstance.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeProductConfigResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DBTDEEncrypt.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CreateMigrationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstanceInterRequest.h
@@ -251,6 +255,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CrossBackupAddr.h
   include/tencentcloud/sqlserver/v20180328/model/Parameter.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteDBInstanceRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CreateAccountResponse.h
   include/tencentcloud/sqlserver/v20180328/model/RenewPostpaidDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeRequest.h
@@ -304,6 +309,7 @@ set(sqlserver_src
   src/v20180328/model/CloneDBResponse.cpp
   src/v20180328/model/InstanceRenewInfo.cpp
   src/v20180328/model/DealInfo.cpp
+  src/v20180328/model/ModifyDBEncryptAttributesResponse.cpp
   src/v20180328/model/ModifyBackupStrategyRequest.cpp
   src/v20180328/model/RestoreInstanceRequest.cpp
   src/v20180328/model/CreateBasicDBInstancesResponse.cpp
@@ -337,7 +343,7 @@ set(sqlserver_src
   src/v20180328/model/CreateBusinessIntelligenceFileResponse.cpp
   src/v20180328/model/OpenInterCommunicationRequest.cpp
   src/v20180328/model/DescribeProductConfigRequest.cpp
-  src/v20180328/model/ModifyPublishSubscribeNameResponse.cpp
+  src/v20180328/model/ModifyDBEncryptAttributesRequest.cpp
   src/v20180328/model/CreateAccountRequest.cpp
   src/v20180328/model/ParamRecord.cpp
   src/v20180328/model/RollbackInstanceResponse.cpp
@@ -369,6 +375,7 @@ set(sqlserver_src
   src/v20180328/model/MigrationDetail.cpp
   src/v20180328/model/DescribeBackupByFlowIdResponse.cpp
   src/v20180328/model/RecycleDBInstanceRequest.cpp
+  src/v20180328/model/ModifyInstanceEncryptAttributesRequest.cpp
   src/v20180328/model/BusinessIntelligenceFile.cpp
   src/v20180328/model/CompleteMigrationResponse.cpp
   src/v20180328/model/ResetAccountPasswordResponse.cpp
@@ -389,6 +396,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeDBsResponse.cpp
   src/v20180328/model/DescribeDBInstancesRequest.cpp
   src/v20180328/model/CreateCloudReadOnlyDBInstancesRequest.cpp
+  src/v20180328/model/ModifyInstanceEncryptAttributesResponse.cpp
   src/v20180328/model/MigrationStep.cpp
   src/v20180328/model/ModifyAccountRemarkResponse.cpp
   src/v20180328/model/Events.cpp
@@ -476,6 +484,7 @@ set(sqlserver_src
   src/v20180328/model/DBInstance.cpp
   src/v20180328/model/DescribeProductConfigResponse.cpp
   src/v20180328/model/DescribeRollbackTimeRequest.cpp
+  src/v20180328/model/DBTDEEncrypt.cpp
   src/v20180328/model/DescribeUploadBackupInfoResponse.cpp
   src/v20180328/model/CreateMigrationRequest.cpp
   src/v20180328/model/DescribeDBInstanceInterRequest.cpp
@@ -531,6 +540,7 @@ set(sqlserver_src
   src/v20180328/model/CrossBackupAddr.cpp
   src/v20180328/model/Parameter.cpp
   src/v20180328/model/DeleteDBInstanceRequest.cpp
+  src/v20180328/model/ModifyPublishSubscribeNameResponse.cpp
   src/v20180328/model/CreateAccountResponse.cpp
   src/v20180328/model/RenewPostpaidDBInstanceResponse.cpp
   src/v20180328/model/DescribeBackupUploadSizeRequest.cpp

@@ -34,7 +34,8 @@ DescribeMetricRecordsRequest::DescribeMetricRecordsRequest() :
     m_endTimeHasBeenSet(false),
     m_businessNameHasBeenSet(false),
     m_pageIndexHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_orFiltersHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,21 @@ string DescribeMetricRecordsRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_orFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_orFilters.begin(); itr != m_orFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -359,6 +375,22 @@ void DescribeMetricRecordsRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeMetricRecordsRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+vector<Filter> DescribeMetricRecordsRequest::GetOrFilters() const
+{
+    return m_orFilters;
+}
+
+void DescribeMetricRecordsRequest::SetOrFilters(const vector<Filter>& _orFilters)
+{
+    m_orFilters = _orFilters;
+    m_orFiltersHasBeenSet = true;
+}
+
+bool DescribeMetricRecordsRequest::OrFiltersHasBeenSet() const
+{
+    return m_orFiltersHasBeenSet;
 }
 
 

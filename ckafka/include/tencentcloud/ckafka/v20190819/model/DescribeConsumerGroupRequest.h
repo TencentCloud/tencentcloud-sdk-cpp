@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取本次返回个数限制
-                     * @return Limit 本次返回个数限制
+                     * 获取本次返回个数限制，最大支持50
+                     * @return Limit 本次返回个数限制，最大支持50
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置本次返回个数限制
-                     * @param _limit 本次返回个数限制
+                     * 设置本次返回个数限制，最大支持50
+                     * @param _limit 本次返回个数限制，最大支持50
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 本次返回个数限制
+                     * 本次返回个数限制，最大支持50
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

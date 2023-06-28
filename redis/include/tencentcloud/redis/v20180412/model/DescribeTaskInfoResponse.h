@@ -44,8 +44,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态preparing:待执行，running：执行中，succeed：成功，failed：失败，error 执行出错
-                     * @return Status 任务状态preparing:待执行，running：执行中，succeed：成功，failed：失败，error 执行出错
+                     * 获取任务状态。
+- preparing：待执行。
+- running：执行中。
+- succeed：成功。
+- failed：失败。
+- error：执行出错。
+                     * @return Status 任务状态。
+- preparing：待执行。
+- running：执行中。
+- succeed：成功。
+- failed：失败。
+- error：执行出错。
                      * 
                      */
                     std::string GetStatus() const;
@@ -58,8 +68,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务开始时间
-                     * @return StartTime 任务开始时间
+                     * 获取任务开始时间。
+                     * @return StartTime 任务开始时间。
                      * 
                      */
                     std::string GetStartTime() const;
@@ -72,8 +82,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskType 任务类型
+                     * 获取任务类型。常见的类型包含：新建类型、配置变更、关闭实例、清空实例、重置密码、版本升级、备份实例、改变网络类型、实例可用区迁移、手动提主等。
+                     * @return TaskType 任务类型。常见的类型包含：新建类型、配置变更、关闭实例、清空实例、重置密码、版本升级、备份实例、改变网络类型、实例可用区迁移、手动提主等。
                      * 
                      */
                     std::string GetTaskType() const;
@@ -86,8 +96,8 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例的ID
-                     * @return InstanceId 实例的ID
+                     * 获取实例的 ID。
+                     * @return InstanceId 实例的 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -100,8 +110,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取任务信息，错误时显示错误信息。执行中与成功则为空
-                     * @return TaskMessage 任务信息，错误时显示错误信息。执行中与成功则为空
+                     * 获取任务执行返回的信息，执行错误时显示错误信息。执行中或执行成功则为空。
+                     * @return TaskMessage 任务执行返回的信息，执行错误时显示错误信息。执行中或执行成功则为空。
                      * 
                      */
                     std::string GetTaskMessage() const;
@@ -116,31 +126,36 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态preparing:待执行，running：执行中，succeed：成功，failed：失败，error 执行出错
+                     * 任务状态。
+- preparing：待执行。
+- running：执行中。
+- succeed：成功。
+- failed：失败。
+- error：执行出错。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务开始时间
+                     * 任务开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型。常见的类型包含：新建类型、配置变更、关闭实例、清空实例、重置密码、版本升级、备份实例、改变网络类型、实例可用区迁移、手动提主等。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 实例的ID
+                     * 实例的 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 任务信息，错误时显示错误信息。执行中与成功则为空
+                     * 任务执行返回的信息，执行错误时显示错误信息。执行中或执行成功则为空。
                      */
                     std::string m_taskMessage;
                     bool m_taskMessageHasBeenSet;

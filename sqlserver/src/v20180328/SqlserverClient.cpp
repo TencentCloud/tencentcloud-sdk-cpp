@@ -3222,6 +3222,49 @@ SqlserverClient::ModifyBackupStrategyOutcomeCallable SqlserverClient::ModifyBack
     return task->get_future();
 }
 
+SqlserverClient::ModifyDBEncryptAttributesOutcome SqlserverClient::ModifyDBEncryptAttributes(const ModifyDBEncryptAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBEncryptAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBEncryptAttributesResponse rsp = ModifyDBEncryptAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBEncryptAttributesOutcome(rsp);
+        else
+            return ModifyDBEncryptAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBEncryptAttributesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDBEncryptAttributesAsync(const ModifyDBEncryptAttributesRequest& request, const ModifyDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBEncryptAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDBEncryptAttributesOutcomeCallable SqlserverClient::ModifyDBEncryptAttributesCallable(const ModifyDBEncryptAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBEncryptAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBEncryptAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::ModifyDBInstanceNameOutcome SqlserverClient::ModifyDBInstanceName(const ModifyDBInstanceNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceName");
@@ -3688,6 +3731,49 @@ SqlserverClient::ModifyIncrementalMigrationOutcomeCallable SqlserverClient::Modi
         [this, request]()
         {
             return this->ModifyIncrementalMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::ModifyInstanceEncryptAttributesOutcome SqlserverClient::ModifyInstanceEncryptAttributes(const ModifyInstanceEncryptAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceEncryptAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceEncryptAttributesResponse rsp = ModifyInstanceEncryptAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceEncryptAttributesOutcome(rsp);
+        else
+            return ModifyInstanceEncryptAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceEncryptAttributesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyInstanceEncryptAttributesAsync(const ModifyInstanceEncryptAttributesRequest& request, const ModifyInstanceEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceEncryptAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyInstanceEncryptAttributesOutcomeCallable SqlserverClient::ModifyInstanceEncryptAttributesCallable(const ModifyInstanceEncryptAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceEncryptAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceEncryptAttributes(request);
         }
     );
 
