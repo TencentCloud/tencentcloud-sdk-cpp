@@ -1084,18 +1084,18 @@ namespace TencentCloud
                     bool ServiceWebsocketTransportFunctionQualifierHasBeenSet() const;
 
                     /**
-                     * 获取API绑定微服务服务列表。
+                     * 获取API绑定微服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MicroServices API绑定微服务服务列表。
+                     * @return MicroServices API绑定微服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MicroService> GetMicroServices() const;
 
                     /**
-                     * 设置API绑定微服务服务列表。
+                     * 设置API绑定微服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _microServices API绑定微服务服务列表。
+                     * @param _microServices API绑定微服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1623,7 +1623,7 @@ namespace TencentCloud
                     bool m_serviceWebsocketTransportFunctionQualifierHasBeenSet;
 
                     /**
-                     * API绑定微服务服务列表。
+                     * API绑定微服务列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MicroService> m_microServices;

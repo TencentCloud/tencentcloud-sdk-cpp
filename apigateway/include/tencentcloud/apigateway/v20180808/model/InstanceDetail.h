@@ -342,7 +342,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetZones() const;
+                    std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置可用区列表
@@ -351,7 +351,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetZones(const std::string& _zones);
+                    void SetZones(const std::vector<std::string>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
@@ -447,7 +447,7 @@ namespace TencentCloud
                      * 可用区列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_zones;
+                    std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                 };

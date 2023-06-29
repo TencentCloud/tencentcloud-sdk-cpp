@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DefaultNumPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2
-                     * @return DefaultReplicationFactor 如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * 获取如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * @return DefaultReplicationFactor 如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
                      * 
                      */
                     int64_t GetDefaultReplicationFactor() const;
 
                     /**
-                     * 设置如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2
-                     * @param _defaultReplicationFactor 如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * 设置如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * @param _defaultReplicationFactor 如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
                      * 
                      */
                     void SetDefaultReplicationFactor(const int64_t& _defaultReplicationFactor);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_defaultNumPartitionsHasBeenSet;
 
                     /**
-                     * 如歌auto.create.topic.enable设置为true没有指定该值时默认设置为2
+                     * 如果auto.create.topic.enable设置为true没有指定该值时默认设置为2
                      */
                     int64_t m_defaultReplicationFactor;
                     bool m_defaultReplicationFactorHasBeenSet;

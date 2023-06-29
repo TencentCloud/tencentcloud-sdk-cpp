@@ -40,7 +40,9 @@ CreateRoomRequest::CreateRoomRequest() :
     m_audienceTypeHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_enableDirectControlHasBeenSet(false)
+    m_enableDirectControlHasBeenSet(false),
+    m_interactionModeHasBeenSet(false),
+    m_videoOrientationHasBeenSet(false)
 {
 }
 
@@ -198,6 +200,22 @@ string CreateRoomRequest::ToJsonString() const
         string key = "EnableDirectControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDirectControl, allocator);
+    }
+
+    if (m_interactionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InteractionMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_interactionMode, allocator);
+    }
+
+    if (m_videoOrientationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoOrientation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_videoOrientation, allocator);
     }
 
 
@@ -494,6 +512,38 @@ void CreateRoomRequest::SetEnableDirectControl(const uint64_t& _enableDirectCont
 bool CreateRoomRequest::EnableDirectControlHasBeenSet() const
 {
     return m_enableDirectControlHasBeenSet;
+}
+
+int64_t CreateRoomRequest::GetInteractionMode() const
+{
+    return m_interactionMode;
+}
+
+void CreateRoomRequest::SetInteractionMode(const int64_t& _interactionMode)
+{
+    m_interactionMode = _interactionMode;
+    m_interactionModeHasBeenSet = true;
+}
+
+bool CreateRoomRequest::InteractionModeHasBeenSet() const
+{
+    return m_interactionModeHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetVideoOrientation() const
+{
+    return m_videoOrientation;
+}
+
+void CreateRoomRequest::SetVideoOrientation(const uint64_t& _videoOrientation)
+{
+    m_videoOrientation = _videoOrientation;
+    m_videoOrientationHasBeenSet = true;
+}
+
+bool CreateRoomRequest::VideoOrientationHasBeenSet() const
+{
+    return m_videoOrientationHasBeenSet;
 }
 
 

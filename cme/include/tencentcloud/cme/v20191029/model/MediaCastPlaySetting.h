@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取自动启动时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return AutoStartTime 自动启动时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
+                     */
+                    std::string GetAutoStartTime() const;
+
+                    /**
+                     * 设置自动启动时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param _autoStartTime 自动启动时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 
+                     */
+                    void SetAutoStartTime(const std::string& _autoStartTime);
+
+                    /**
+                     * 判断参数 AutoStartTime 是否已赋值
+                     * @return AutoStartTime 是否已赋值
+                     * 
+                     */
+                    bool AutoStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 自动启动时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string m_autoStartTime;
+                    bool m_autoStartTimeHasBeenSet;
 
                 };
             }

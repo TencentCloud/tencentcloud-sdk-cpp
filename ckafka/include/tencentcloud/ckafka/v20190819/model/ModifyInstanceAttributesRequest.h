@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool DynamicRetentionConfigHasBeenSet() const;
 
                     /**
-                     * 获取修改升配置rebalance时间
-                     * @return RebalanceTime 修改升配置rebalance时间
+                     * 获取升配Rebalance时间
+                     * @return RebalanceTime 升配Rebalance时间
                      * 
                      */
                     int64_t GetRebalanceTime() const;
 
                     /**
-                     * 设置修改升配置rebalance时间
-                     * @param _rebalanceTime 修改升配置rebalance时间
+                     * 设置升配Rebalance时间
+                     * @param _rebalanceTime 升配Rebalance时间
                      * 
                      */
                     void SetRebalanceTime(const int64_t& _rebalanceTime);
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_dynamicRetentionConfigHasBeenSet;
 
                     /**
-                     * 修改升配置rebalance时间
+                     * 升配Rebalance时间
                      */
                     int64_t m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;

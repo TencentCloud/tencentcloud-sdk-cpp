@@ -300,12 +300,10 @@ namespace TencentCloud
                      * 获取房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
 直播开始后不允许修改。
                      * @return SubType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
 直播开始后不允许修改。
                      * 
                      */
@@ -315,12 +313,10 @@ coteaching 双师
                      * 设置房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
 直播开始后不允许修改。
                      * @param _subType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
 直播开始后不允许修改。
                      * 
                      */
@@ -388,15 +384,15 @@ coteaching 双师
                     bool AssistantsHasBeenSet() const;
 
                     /**
-                     * 获取房间绑定的群组ID
-                     * @return GroupId 房间绑定的群组ID
+                     * 获取房间绑定的群组ID。直播开始后不允许修改。
+                     * @return GroupId 房间绑定的群组ID。直播开始后不允许修改。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置房间绑定的群组ID
-                     * @param _groupId 房间绑定的群组ID
+                     * 设置房间绑定的群组ID。直播开始后不允许修改。
+                     * @param _groupId 房间绑定的群组ID。直播开始后不允许修改。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -409,15 +405,15 @@ coteaching 双师
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取打开学生麦克风/摄像头的授权开关
-                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 获取打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。
+                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。
                      * 
                      */
                     uint64_t GetEnableDirectControl() const;
 
                     /**
-                     * 设置打开学生麦克风/摄像头的授权开关
-                     * @param _enableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 设置打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。
+                     * @param _enableDirectControl 打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。
                      * 
                      */
                     void SetEnableDirectControl(const uint64_t& _enableDirectControl);
@@ -428,6 +424,56 @@ coteaching 双师
                      * 
                      */
                     bool EnableDirectControlHasBeenSet() const;
+
+                    /**
+                     * 获取开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * @return InteractionMode 开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * 
+                     */
+                    uint64_t GetInteractionMode() const;
+
+                    /**
+                     * 设置开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * @param _interactionMode 开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * 
+                     */
+                    void SetInteractionMode(const uint64_t& _interactionMode);
+
+                    /**
+                     * 判断参数 InteractionMode 是否已赋值
+                     * @return InteractionMode 是否已赋值
+                     * 
+                     */
+                    bool InteractionModeHasBeenSet() const;
+
+                    /**
+                     * 获取横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * @return VideoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * 
+                     */
+                    uint64_t GetVideoOrientation() const;
+
+                    /**
+                     * 设置横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * @param _videoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * 
+                     */
+                    void SetVideoOrientation(const uint64_t& _videoOrientation);
+
+                    /**
+                     * 判断参数 VideoOrientation 是否已赋值
+                     * @return VideoOrientation 是否已赋值
+                     * 
+                     */
+                    bool VideoOrientationHasBeenSet() const;
 
                 private:
 
@@ -506,7 +552,6 @@ coteaching 双师
                      * 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
 直播开始后不允许修改。
                      */
                     std::string m_subType;
@@ -528,16 +573,30 @@ coteaching 双师
                     bool m_assistantsHasBeenSet;
 
                     /**
-                     * 房间绑定的群组ID
+                     * 房间绑定的群组ID。直播开始后不允许修改。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 打开学生麦克风/摄像头的授权开关
+                     * 打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。
                      */
                     uint64_t m_enableDirectControl;
                     bool m_enableDirectControlHasBeenSet;
+
+                    /**
+                     * 开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     */
+                    uint64_t m_interactionMode;
+                    bool m_interactionModeHasBeenSet;
+
+                    /**
+                     * 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     */
+                    uint64_t m_videoOrientation;
+                    bool m_videoOrientationHasBeenSet;
 
                 };
             }

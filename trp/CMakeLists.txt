@@ -52,6 +52,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeCodePackStatusRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchsRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeAgentCorpsResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataRanksResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdResponse.h
@@ -66,16 +67,17 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeCodesByPackResponse.h
   include/tencentcloud/trp/v20210515/model/CreateProductResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceDataRequest.h
-  include/tencentcloud/trp/v20210515/model/Ext.h
+  include/tencentcloud/trp/v20210515/model/CreateCodePackRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCorpQuotasRequest.h
   include/tencentcloud/trp/v20210515/model/AuthorizedTransferRequest.h
   include/tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusRequest.h
   include/tencentcloud/trp/v20210515/model/CreateProductRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCustomPackRequest.h
-  include/tencentcloud/trp/v20210515/model/CreateCodePackRequest.h
+  include/tencentcloud/trp/v20210515/model/Ext.h
   include/tencentcloud/trp/v20210515/model/CreateCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/TraceItem.h
   include/tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeAgentCorpsRequest.h
   include/tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusResponse.h
   include/tencentcloud/trp/v20210515/model/ChainData.h
   include/tencentcloud/trp/v20210515/model/PhaseData.h
@@ -175,6 +177,7 @@ set(trp_src
   src/v20210515/model/DescribeCodePackStatusRequest.cpp
   src/v20210515/model/ModifyTraceDataRequest.cpp
   src/v20210515/model/DescribeCodeBatchsRequest.cpp
+  src/v20210515/model/DescribeAgentCorpsResponse.cpp
   src/v20210515/model/ModifyTraceDataRanksResponse.cpp
   src/v20210515/model/CreateTraceCodesRequest.cpp
   src/v20210515/model/DescribeCodeBatchByIdResponse.cpp
@@ -189,16 +192,17 @@ set(trp_src
   src/v20210515/model/DescribeCodesByPackResponse.cpp
   src/v20210515/model/CreateProductResponse.cpp
   src/v20210515/model/CreateTraceDataRequest.cpp
-  src/v20210515/model/Ext.cpp
+  src/v20210515/model/CreateCodePackRequest.cpp
   src/v20210515/model/DescribeCorpQuotasRequest.cpp
   src/v20210515/model/AuthorizedTransferRequest.cpp
   src/v20210515/model/ReportBatchCallbackStatusRequest.cpp
   src/v20210515/model/CreateProductRequest.cpp
   src/v20210515/model/CreateCustomPackRequest.cpp
-  src/v20210515/model/CreateCodePackRequest.cpp
+  src/v20210515/model/Ext.cpp
   src/v20210515/model/CreateCodeBatchRequest.cpp
   src/v20210515/model/TraceItem.cpp
   src/v20210515/model/DescribeCustomRuleByIdRequest.cpp
+  src/v20210515/model/DescribeAgentCorpsRequest.cpp
   src/v20210515/model/ReportBatchCallbackStatusResponse.cpp
   src/v20210515/model/ChainData.cpp
   src/v20210515/model/PhaseData.cpp

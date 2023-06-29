@@ -40,7 +40,8 @@ MemberRecord::MemberRecord() :
     m_roleHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_subGroupIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
+    m_stageHasBeenSet(false),
+    m_currentStateHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,16 @@ CoreInternalOutcome MemberRecord::Deserialize(const rapidjson::Value &value)
         m_stageHasBeenSet = true;
     }
 
+    if (value.HasMember("CurrentState") && !value["CurrentState"].IsNull())
+    {
+        if (!value["CurrentState"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.CurrentState` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentState = value["CurrentState"].GetUint64();
+        m_currentStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void MemberRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Stage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stage, allocator);
+    }
+
+    if (m_currentStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentState, allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void MemberRecord::SetStage(const int64_t& _stage)
 bool MemberRecord::StageHasBeenSet() const
 {
     return m_stageHasBeenSet;
+}
+
+uint64_t MemberRecord::GetCurrentState() const
+{
+    return m_currentState;
+}
+
+void MemberRecord::SetCurrentState(const uint64_t& _currentState)
+{
+    m_currentState = _currentState;
+    m_currentStateHasBeenSet = true;
+}
+
+bool MemberRecord::CurrentStateHasBeenSet() const
+{
+    return m_currentStateHasBeenSet;
 }
 

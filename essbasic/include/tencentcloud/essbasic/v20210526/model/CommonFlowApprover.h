@@ -306,21 +306,21 @@ namespace TencentCloud
                     /**
                      * 获取通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
                      * @return NotifyType 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
-                     * 
+                     * @deprecated
                      */
                     std::string GetNotifyType() const;
 
                     /**
                      * 设置通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
                      * @param _notifyType 通知类型：SMS（短信） NONE（不做通知）, 不传 默认SMS
-                     * 
+                     * @deprecated
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
                     /**
                      * 判断参数 NotifyType 是否已赋值
                      * @return NotifyType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NotifyTypeHasBeenSet() const;
 

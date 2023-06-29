@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-EnableEncryptionProtectionRequest::EnableEncryptionProtectionRequest()
+EnableEncryptionProtectionRequest::EnableEncryptionProtectionRequest() :
+    m_clusterIdHasBeenSet(false),
+    m_kMSConfigurationHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,23 @@ string EnableEncryptionProtectionRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kMSConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KMSConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kMSConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +59,37 @@ string EnableEncryptionProtectionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string EnableEncryptionProtectionRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void EnableEncryptionProtectionRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool EnableEncryptionProtectionRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+KMSConfiguration EnableEncryptionProtectionRequest::GetKMSConfiguration() const
+{
+    return m_kMSConfiguration;
+}
+
+void EnableEncryptionProtectionRequest::SetKMSConfiguration(const KMSConfiguration& _kMSConfiguration)
+{
+    m_kMSConfiguration = _kMSConfiguration;
+    m_kMSConfigurationHasBeenSet = true;
+}
+
+bool EnableEncryptionProtectionRequest::KMSConfigurationHasBeenSet() const
+{
+    return m_kMSConfigurationHasBeenSet;
+}
 
 

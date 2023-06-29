@@ -478,6 +478,31 @@ namespace TencentCloud
                      */
                     bool StageHasBeenSet() const;
 
+                    /**
+                     * 获取用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurrentState 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCurrentState() const;
+
+                    /**
+                     * 设置用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _currentState 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCurrentState(const uint64_t& _currentState);
+
+                    /**
+                     * 判断参数 CurrentState 是否已赋值
+                     * @return CurrentState 是否已赋值
+                     * 
+                     */
+                    bool CurrentStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -602,6 +627,13 @@ namespace TencentCloud
                      */
                     int64_t m_stage;
                     bool m_stageHasBeenSet;
+
+                    /**
+                     * 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_currentState;
+                    bool m_currentStateHasBeenSet;
 
                 };
             }

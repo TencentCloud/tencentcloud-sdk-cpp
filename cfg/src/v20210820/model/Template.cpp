@@ -35,7 +35,8 @@ Template::Template() :
     m_templateGroupsHasBeenSet(false),
     m_templateMonitorsHasBeenSet(false),
     m_templatePolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_templateSourceHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,16 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateSource") && !value["TemplateSource"].IsNull())
+    {
+        if (!value["TemplateSource"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.TemplateSource` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateSource = value["TemplateSource"].GetInt64();
+        m_templateSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +389,14 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_templateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateSource, allocator);
     }
 
 }
@@ -621,5 +640,21 @@ void Template::SetTags(const vector<TagWithDescribe>& _tags)
 bool Template::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t Template::GetTemplateSource() const
+{
+    return m_templateSource;
+}
+
+void Template::SetTemplateSource(const int64_t& _templateSource)
+{
+    m_templateSource = _templateSource;
+    m_templateSourceHasBeenSet = true;
+}
+
+bool Template::TemplateSourceHasBeenSet() const
+{
+    return m_templateSourceHasBeenSet;
 }
 

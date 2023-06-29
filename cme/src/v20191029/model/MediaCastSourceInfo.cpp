@@ -24,7 +24,10 @@ MediaCastSourceInfo::MediaCastSourceInfo() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_materialIdHasBeenSet(false)
+    m_materialIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome MediaCastSourceInfo::Deserialize(const rapidjson::Value &val
         m_materialIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Offset") && !value["Offset"].IsNull())
+    {
+        if (!value["Offset"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.Offset` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = value["Offset"].GetDouble();
+        m_offsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetDouble();
+        m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void MediaCastSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MaterialId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_materialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void MediaCastSourceInfo::SetMaterialId(const string& _materialId)
 bool MediaCastSourceInfo::MaterialIdHasBeenSet() const
 {
     return m_materialIdHasBeenSet;
+}
+
+double MediaCastSourceInfo::GetOffset() const
+{
+    return m_offset;
+}
+
+void MediaCastSourceInfo::SetOffset(const double& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool MediaCastSourceInfo::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+double MediaCastSourceInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void MediaCastSourceInfo::SetDuration(const double& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool MediaCastSourceInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
+}
+
+string MediaCastSourceInfo::GetUrl() const
+{
+    return m_url;
+}
+
+void MediaCastSourceInfo::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool MediaCastSourceInfo::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

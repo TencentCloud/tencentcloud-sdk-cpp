@@ -37,14 +37,11 @@ CoreInternalOutcome RemoteBackupInfo::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("SubBackupId") && !value["SubBackupId"].IsNull())
     {
-        if (!value["SubBackupId"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `RemoteBackupInfo.SubBackupId` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["SubBackupId"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["SubBackupId"].IsInt64())
         {
-            m_subBackupId.push_back((*itr).GetInt64());
+            return CoreInternalOutcome(Core::Error("response `RemoteBackupInfo.SubBackupId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
+        m_subBackupId = value["SubBackupId"].GetInt64();
         m_subBackupIdHasBeenSet = true;
     }
 
@@ -110,12 +107,7 @@ void RemoteBackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubBackupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_subBackupId.begin(); itr != m_subBackupId.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
+        value.AddMember(iKey, m_subBackupId, allocator);
     }
 
     if (m_regionHasBeenSet)
@@ -161,12 +153,12 @@ void RemoteBackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 }
 
 
-vector<int64_t> RemoteBackupInfo::GetSubBackupId() const
+int64_t RemoteBackupInfo::GetSubBackupId() const
 {
     return m_subBackupId;
 }
 
-void RemoteBackupInfo::SetSubBackupId(const vector<int64_t>& _subBackupId)
+void RemoteBackupInfo::SetSubBackupId(const int64_t& _subBackupId)
 {
     m_subBackupId = _subBackupId;
     m_subBackupIdHasBeenSet = true;

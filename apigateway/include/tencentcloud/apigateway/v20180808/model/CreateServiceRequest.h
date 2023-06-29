@@ -107,27 +107,6 @@ namespace TencentCloud
                     bool ServiceDescHasBeenSet() const;
 
                     /**
-                     * 获取独立集群名称，用于指定创建服务所在的独立集群。
-                     * @return ExclusiveSetName 独立集群名称，用于指定创建服务所在的独立集群。
-                     * 
-                     */
-                    std::string GetExclusiveSetName() const;
-
-                    /**
-                     * 设置独立集群名称，用于指定创建服务所在的独立集群。
-                     * @param _exclusiveSetName 独立集群名称，用于指定创建服务所在的独立集群。
-                     * 
-                     */
-                    void SetExclusiveSetName(const std::string& _exclusiveSetName);
-
-                    /**
-                     * 判断参数 ExclusiveSetName 是否已赋值
-                     * @return ExclusiveSetName 是否已赋值
-                     * 
-                     */
-                    bool ExclusiveSetNameHasBeenSet() const;
-
-                    /**
                      * 获取网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
                      * @return NetTypes 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
                      * 
@@ -170,15 +149,15 @@ namespace TencentCloud
                     bool IpVersionHasBeenSet() const;
 
                     /**
-                     * 获取集群名称。保留字段，tsf serverlss类型使用。
-                     * @return SetServerName 集群名称。保留字段，tsf serverlss类型使用。
+                     * 获取集群名称。保留字段，tsf serverless类型使用。
+                     * @return SetServerName 集群名称。保留字段，tsf serverless类型使用。
                      * 
                      */
                     std::string GetSetServerName() const;
 
                     /**
-                     * 设置集群名称。保留字段，tsf serverlss类型使用。
-                     * @param _setServerName 集群名称。保留字段，tsf serverlss类型使用。
+                     * 设置集群名称。保留字段，tsf serverless类型使用。
+                     * @param _setServerName 集群名称。保留字段，tsf serverless类型使用。
                      * 
                      */
                     void SetSetServerName(const std::string& _setServerName);
@@ -295,12 +274,6 @@ namespace TencentCloud
                     bool m_serviceDescHasBeenSet;
 
                     /**
-                     * 独立集群名称，用于指定创建服务所在的独立集群。
-                     */
-                    std::string m_exclusiveSetName;
-                    bool m_exclusiveSetNameHasBeenSet;
-
-                    /**
                      * 网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。
                      */
                     std::vector<std::string> m_netTypes;
@@ -313,7 +286,7 @@ namespace TencentCloud
                     bool m_ipVersionHasBeenSet;
 
                     /**
-                     * 集群名称。保留字段，tsf serverlss类型使用。
+                     * 集群名称。保留字段，tsf serverless类型使用。
                      */
                     std::string m_setServerName;
                     bool m_setServerNameHasBeenSet;

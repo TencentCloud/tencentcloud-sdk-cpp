@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/KMSConfiguration.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取kms加密配置
+                     * @return KMSConfiguration kms加密配置
+                     * 
+                     */
+                    KMSConfiguration GetKMSConfiguration() const;
+
+                    /**
+                     * 设置kms加密配置
+                     * @param _kMSConfiguration kms加密配置
+                     * 
+                     */
+                    void SetKMSConfiguration(const KMSConfiguration& _kMSConfiguration);
+
+                    /**
+                     * 判断参数 KMSConfiguration 是否已赋值
+                     * @return KMSConfiguration 是否已赋值
+                     * 
+                     */
+                    bool KMSConfigurationHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * kms加密配置
+                     */
+                    KMSConfiguration m_kMSConfiguration;
+                    bool m_kMSConfigurationHasBeenSet;
 
                 };
             }

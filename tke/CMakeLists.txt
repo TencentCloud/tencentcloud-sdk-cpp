@@ -287,6 +287,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ReleaseValues.h
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/Filter.h
+  include/tencentcloud/tke/v20180525/model/KMSConfiguration.h
   include/tencentcloud/tke/v20180525/model/UpdateTKEEdgeClusterResponse.h
   include/tencentcloud/tke/v20180525/model/EipAttribute.h
   include/tencentcloud/tke/v20180525/model/UpdateAddonResponse.h
@@ -851,6 +852,7 @@ set(tke_src
   src/v20180525/model/ReleaseValues.cpp
   src/v20180525/model/CreateClusterNodePoolResponse.cpp
   src/v20180525/model/Filter.cpp
+  src/v20180525/model/KMSConfiguration.cpp
   src/v20180525/model/UpdateTKEEdgeClusterResponse.cpp
   src/v20180525/model/EipAttribute.cpp
   src/v20180525/model/UpdateAddonResponse.cpp

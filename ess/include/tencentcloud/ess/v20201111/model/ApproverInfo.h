@@ -449,6 +449,27 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool ApproverSignTypesHasBeenSet() const;
 
+                    /**
+                     * 获取当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。	
+                     * @return ApproverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。	
+                     * 
+                     */
+                    bool GetApproverNeedSignReview() const;
+
+                    /**
+                     * 设置当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。	
+                     * @param _approverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。	
+                     * 
+                     */
+                    void SetApproverNeedSignReview(const bool& _approverNeedSignReview);
+
+                    /**
+                     * 判断参数 ApproverNeedSignReview 是否已赋值
+                     * @return ApproverNeedSignReview 是否已赋值
+                     * 
+                     */
+                    bool ApproverNeedSignReviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +584,12 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;
+
+                    /**
+                     * 当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。	
+                     */
+                    bool m_approverNeedSignReview;
+                    bool m_approverNeedSignReviewHasBeenSet;
 
                 };
             }

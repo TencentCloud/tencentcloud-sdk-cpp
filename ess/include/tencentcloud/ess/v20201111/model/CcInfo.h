@@ -146,6 +146,27 @@ namespace TencentCloud
                      */
                     bool CcPermissionHasBeenSet() const;
 
+                    /**
+                     * 获取关注方通知类型：sms--短信，none--不通知
+                     * @return NotifyType 关注方通知类型：sms--短信，none--不通知
+                     * 
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置关注方通知类型：sms--短信，none--不通知
+                     * @param _notifyType 关注方通知类型：sms--短信，none--不通知
+                     * 
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     * 
+                     */
+                    bool NotifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +196,12 @@ namespace TencentCloud
                      */
                     int64_t m_ccPermission;
                     bool m_ccPermissionHasBeenSet;
+
+                    /**
+                     * 关注方通知类型：sms--短信，none--不通知
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
 
                 };
             }

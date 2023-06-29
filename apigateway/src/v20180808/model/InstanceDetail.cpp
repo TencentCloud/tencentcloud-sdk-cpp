@@ -206,11 +206,14 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Zones") && !value["Zones"].IsNull())
     {
-        if (!value["Zones"].IsString())
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `InstanceDetail.Zones` IsString=false incorrectly").SetRequestId(requestId));
+            m_zones.push_back((*itr).GetString());
         }
-        m_zones = string(value["Zones"].GetString());
         m_zonesHasBeenSet = true;
     }
 
@@ -340,7 +343,12 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zones.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -554,12 +562,12 @@ bool InstanceDetail::CreatedTimeHasBeenSet() const
     return m_createdTimeHasBeenSet;
 }
 
-string InstanceDetail::GetZones() const
+vector<string> InstanceDetail::GetZones() const
 {
     return m_zones;
 }
 
-void InstanceDetail::SetZones(const string& _zones)
+void InstanceDetail::SetZones(const vector<string>& _zones)
 {
     m_zones = _zones;
     m_zonesHasBeenSet = true;

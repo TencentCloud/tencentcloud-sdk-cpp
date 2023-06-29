@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeEncryptionStatusResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeAgentCorpsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
-DescribeEncryptionStatusResponse::DescribeEncryptionStatusResponse() :
-    m_statusHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+DescribeAgentCorpsResponse::DescribeAgentCorpsResponse()
 {
 }
 
-CoreInternalOutcome DescribeEncryptionStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeAgentCorpsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,51 +61,15 @@ CoreInternalOutcome DescribeEncryptionStatusResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
-    {
-        if (!rsp["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(rsp["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
-    {
-        if (!rsp["ErrorMsg"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_errorMsg = string(rsp["ErrorMsg"].GetString());
-        m_errorMsgHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeEncryptionStatusResponse::ToJsonString() const
+string DescribeAgentCorpsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_errorMsgHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrorMsg";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -120,25 +82,5 @@ string DescribeEncryptionStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeEncryptionStatusResponse::GetStatus() const
-{
-    return m_status;
-}
-
-bool DescribeEncryptionStatusResponse::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-string DescribeEncryptionStatusResponse::GetErrorMsg() const
-{
-    return m_errorMsg;
-}
-
-bool DescribeEncryptionStatusResponse::ErrorMsgHasBeenSet() const
-{
-    return m_errorMsgHasBeenSet;
-}
 
 

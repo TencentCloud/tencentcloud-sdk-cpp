@@ -348,15 +348,15 @@ namespace TencentCloud
                     bool ServiceMockReturnMessageHasBeenSet() const;
 
                     /**
-                     * 获取API绑定微服务服务列表。
-                     * @return MicroServices API绑定微服务服务列表。
+                     * 获取API绑定微服务列表。
+                     * @return MicroServices API绑定微服务列表。
                      * 
                      */
                     std::vector<MicroServiceReq> GetMicroServices() const;
 
                     /**
-                     * 设置API绑定微服务服务列表。
-                     * @param _microServices API绑定微服务服务列表。
+                     * 设置API绑定微服务列表。
+                     * @param _microServices API绑定微服务列表。
                      * 
                      */
                     void SetMicroServices(const std::vector<MicroServiceReq>& _microServices);
@@ -1253,7 +1253,7 @@ namespace TencentCloud
                     bool m_serviceMockReturnMessageHasBeenSet;
 
                     /**
-                     * API绑定微服务服务列表。
+                     * API绑定微服务列表。
                      */
                     std::vector<MicroServiceReq> m_microServices;
                     bool m_microServicesHasBeenSet;

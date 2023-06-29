@@ -393,15 +393,15 @@ video 纯视频
                     bool RTCAudienceNumberHasBeenSet() const;
 
                     /**
-                     * 获取观看类型，互动直播（默认）。
-                     * @return AudienceType 观看类型，互动直播（默认）。
+                     * 获取观看类型。互动观看 （默认）
+                     * @return AudienceType 观看类型。互动观看 （默认）
                      * 
                      */
                     uint64_t GetAudienceType() const;
 
                     /**
-                     * 设置观看类型，互动直播（默认）。
-                     * @param _audienceType 观看类型，互动直播（默认）。
+                     * 设置观看类型。互动观看 （默认）
+                     * @param _audienceType 观看类型。互动观看 （默认）
                      * 
                      */
                     void SetAudienceType(const uint64_t& _audienceType);
@@ -483,6 +483,56 @@ video 纯视频
                      * 
                      */
                     bool EnableDirectControlHasBeenSet() const;
+
+                    /**
+                     * 获取开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * @return InteractionMode 开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * 
+                     */
+                    int64_t GetInteractionMode() const;
+
+                    /**
+                     * 设置开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * @param _interactionMode 开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     * 
+                     */
+                    void SetInteractionMode(const int64_t& _interactionMode);
+
+                    /**
+                     * 判断参数 InteractionMode 是否已赋值
+                     * @return InteractionMode 是否已赋值
+                     * 
+                     */
+                    bool InteractionModeHasBeenSet() const;
+
+                    /**
+                     * 获取横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * @return VideoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * 
+                     */
+                    uint64_t GetVideoOrientation() const;
+
+                    /**
+                     * 设置横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * @param _videoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * 
+                     */
+                    void SetVideoOrientation(const uint64_t& _videoOrientation);
+
+                    /**
+                     * 判断参数 VideoOrientation 是否已赋值
+                     * @return VideoOrientation 是否已赋值
+                     * 
+                     */
+                    bool VideoOrientationHasBeenSet() const;
 
                 private:
 
@@ -585,7 +635,7 @@ video 纯视频
                     bool m_rTCAudienceNumberHasBeenSet;
 
                     /**
-                     * 观看类型，互动直播（默认）。
+                     * 观看类型。互动观看 （默认）
                      */
                     uint64_t m_audienceType;
                     bool m_audienceTypeHasBeenSet;
@@ -609,6 +659,20 @@ video 纯视频
                      */
                     uint64_t m_enableDirectControl;
                     bool m_enableDirectControlHasBeenSet;
+
+                    /**
+                     * 开启专注模式。
+0 收看全部角色音视频(默认)
+1 只看老师和助教
+                     */
+                    int64_t m_interactionMode;
+                    bool m_interactionModeHasBeenSet;
+
+                    /**
+                     * 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     */
+                    uint64_t m_videoOrientation;
+                    bool m_videoOrientationHasBeenSet;
 
                 };
             }

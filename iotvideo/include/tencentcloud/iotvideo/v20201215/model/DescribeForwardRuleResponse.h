@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool QueueTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例id， 目前只有Ckafaka会用到
-                     * @return InstanceId 实例id， 目前只有Ckafaka会用到
+                     * 获取实例id， 目前只有Ckafka会用到
+                     * @return InstanceId 实例id， 目前只有Ckafka会用到
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称，目前只有Ckafaka会用到
-                     * @return InstanceName 实例名称，目前只有Ckafaka会用到
+                     * 获取实例名称，目前只有Ckafka会用到
+                     * @return InstanceName 实例名称，目前只有Ckafka会用到
                      * 
                      */
                     std::string GetInstanceName() const;
@@ -268,13 +268,13 @@ namespace TencentCloud
                     bool m_queueTypeHasBeenSet;
 
                     /**
-                     * 实例id， 目前只有Ckafaka会用到
+                     * 实例id， 目前只有Ckafka会用到
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称，目前只有Ckafaka会用到
+                     * 实例名称，目前只有Ckafka会用到
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

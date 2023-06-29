@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取点播转直播项目 Id 。
-                     * @return ProjectId 点播转直播项目 Id 。
+                     * 获取媒体转推项目 Id 。
+                     * @return ProjectId 媒体转推项目 Id 。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置点播转直播项目 Id 。
-                     * @param _projectId 点播转直播项目 Id 。
+                     * 设置媒体转推项目 Id 。
+                     * @param _projectId 媒体转推项目 Id 。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -235,15 +235,15 @@ namespace TencentCloud
                     bool PositionHasBeenSet() const;
 
                     /**
-                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
-                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 获取操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有媒体转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * @return Operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有媒体转推项目。如果指定操作者，则操作者必须为项目所有者。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
-                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 设置操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有媒体转推项目。如果指定操作者，则操作者必须为项目所有者。
+                     * @param _operator 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有媒体转推项目。如果指定操作者，则操作者必须为项目所有者。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -264,7 +264,7 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 点播转直播项目 Id 。
+                     * 媒体转推项目 Id 。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -311,7 +311,7 @@ namespace TencentCloud
                     bool m_positionHasBeenSet;
 
                     /**
-                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有点播转直播项目。如果指定操作者，则操作者必须为项目所有者。
+                     * 操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有媒体转推项目。如果指定操作者，则操作者必须为项目所有者。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

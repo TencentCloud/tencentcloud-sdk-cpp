@@ -48,11 +48,13 @@ namespace TencentCloud
 <li>Bandwidth：带宽，单位为 Bps。</li>
 <li>Requests：请求数。</li>
 <li>QUICRequests：QUIC 请求数。</li>
+<li>IpVisit：IP 访问数。</li>
                      * @return Metric 查询指标，取值有：
 <li>Traffic：流量，单位为 Byte。</li>
 <li>Bandwidth：带宽，单位为 Bps。</li>
 <li>Requests：请求数。</li>
 <li>QUICRequests：QUIC 请求数。</li>
+<li>IpVisit：IP 访问数。</li>
                      * 
                      */
                     std::string GetMetric() const;
@@ -63,11 +65,13 @@ namespace TencentCloud
 <li>Bandwidth：带宽，单位为 Bps。</li>
 <li>Requests：请求数。</li>
 <li>QUICRequests：QUIC 请求数。</li>
+<li>IpVisit：IP 访问数。</li>
                      * @param _metric 查询指标，取值有：
 <li>Traffic：流量，单位为 Byte。</li>
 <li>Bandwidth：带宽，单位为 Bps。</li>
 <li>Requests：请求数。</li>
 <li>QUICRequests：QUIC 请求数。</li>
+<li>IpVisit：IP 访问数。</li>
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -475,6 +479,7 @@ namespace TencentCloud
 <li>Bandwidth：带宽，单位为 Bps。</li>
 <li>Requests：请求数。</li>
 <li>QUICRequests：QUIC 请求数。</li>
+<li>IpVisit：IP 访问数。</li>
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;

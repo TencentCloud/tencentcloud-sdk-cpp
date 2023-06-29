@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool HealthyMessageHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间时间
-                     * @return CreateTime 实例创建时间时间
+                     * 获取实例创建时间
+                     * @return CreateTime 实例创建时间
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置实例创建时间时间
-                     * @param _createTime 实例创建时间时间
+                     * 设置实例创建时间
+                     * @param _createTime 实例创建时间
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -859,7 +859,7 @@ namespace TencentCloud
                     bool m_healthyMessageHasBeenSet;
 
                     /**
-                     * 实例创建时间时间
+                     * 实例创建时间
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UsagePlanIdHasBeenSet() const;
 
                     /**
-                     * 获取定类型，取值为 API、SERVICE，默认值为 SERVICE。
-                     * @return BindType 定类型，取值为 API、SERVICE，默认值为 SERVICE。
+                     * 获取定义类型，取值为 API、SERVICE，默认值为 SERVICE。
+                     * @return BindType 定义类型，取值为 API、SERVICE，默认值为 SERVICE。
                      * 
                      */
                     std::string GetBindType() const;
 
                     /**
-                     * 设置定类型，取值为 API、SERVICE，默认值为 SERVICE。
-                     * @param _bindType 定类型，取值为 API、SERVICE，默认值为 SERVICE。
+                     * 设置定义类型，取值为 API、SERVICE，默认值为 SERVICE。
+                     * @param _bindType 定义类型，取值为 API、SERVICE，默认值为 SERVICE。
                      * 
                      */
                     void SetBindType(const std::string& _bindType);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_usagePlanIdHasBeenSet;
 
                     /**
-                     * 定类型，取值为 API、SERVICE，默认值为 SERVICE。
+                     * 定义类型，取值为 API、SERVICE，默认值为 SERVICE。
                      */
                     std::string m_bindType;
                     bool m_bindTypeHasBeenSet;

@@ -39,7 +39,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_registerInfoHasBeenSet(false),
     m_approverOptionHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
-    m_signIdHasBeenSet(false)
+    m_signIdHasBeenSet(false),
+    m_approverNeedSignReviewHasBeenSet(false)
 {
 }
 
@@ -255,6 +256,16 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_signIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverNeedSignReview") && !value["ApproverNeedSignReview"].IsNull())
+    {
+        if (!value["ApproverNeedSignReview"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverNeedSignReview` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverNeedSignReview = value["ApproverNeedSignReview"].GetBool();
+        m_approverNeedSignReviewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +430,14 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverNeedSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverNeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_approverNeedSignReview, allocator);
     }
 
 }
@@ -726,5 +745,21 @@ void FlowCreateApprover::SetSignId(const string& _signId)
 bool FlowCreateApprover::SignIdHasBeenSet() const
 {
     return m_signIdHasBeenSet;
+}
+
+bool FlowCreateApprover::GetApproverNeedSignReview() const
+{
+    return m_approverNeedSignReview;
+}
+
+void FlowCreateApprover::SetApproverNeedSignReview(const bool& _approverNeedSignReview)
+{
+    m_approverNeedSignReview = _approverNeedSignReview;
+    m_approverNeedSignReviewHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverNeedSignReviewHasBeenSet() const
+{
+    return m_approverNeedSignReviewHasBeenSet;
 }
 

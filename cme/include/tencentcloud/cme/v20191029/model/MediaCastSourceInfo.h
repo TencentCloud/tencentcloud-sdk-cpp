@@ -75,9 +75,11 @@ namespace TencentCloud
                      * 获取输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+<li>EXTERNAL：非多媒体创建引擎或者云点播的媒资文件。</li>
                      * @return Type 输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+<li>EXTERNAL：非多媒体创建引擎或者云点播的媒资文件。</li>
                      * 
                      */
                     std::string GetType() const;
@@ -86,9 +88,11 @@ namespace TencentCloud
                      * 设置输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+<li>EXTERNAL：非多媒体创建引擎或者云点播的媒资文件。</li>
                      * @param _type 输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+<li>EXTERNAL：非多媒体创建引擎或者云点播的媒资文件。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -142,6 +146,69 @@ namespace TencentCloud
                      */
                     bool MaterialIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件播放的的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。
+                     * @return Offset 文件播放的的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。
+                     * 
+                     */
+                    double GetOffset() const;
+
+                    /**
+                     * 设置文件播放的的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。
+                     * @param _offset 文件播放的的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。
+                     * 
+                     */
+                    void SetOffset(const double& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。
+                     * @return Duration 播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。
+                     * 
+                     */
+                    double GetDuration() const;
+
+                    /**
+                     * 设置播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。
+                     * @param _duration 播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。
+                     * 
+                     */
+                    void SetDuration(const double& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     * 
+                     */
+                    bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。
+                     * @return Url 外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。
+                     * @param _url 外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +222,7 @@ namespace TencentCloud
                      * 输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
+<li>EXTERNAL：非多媒体创建引擎或者云点播的媒资文件。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -170,6 +238,24 @@ namespace TencentCloud
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
+
+                    /**
+                     * 文件播放的的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。
+                     */
+                    double m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。
+                     */
+                    double m_duration;
+                    bool m_durationHasBeenSet;
+
+                    /**
+                     * 外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

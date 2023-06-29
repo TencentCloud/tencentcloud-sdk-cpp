@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool RecordReplayProjectInputHasBeenSet() const;
 
                     /**
-                     * 获取点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
-                     * @return MediaCastProjectInput 点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * 获取媒体转推项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * @return MediaCastProjectInput 媒体转推项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
                      * 
                      */
                     MediaCastProjectInput GetMediaCastProjectInput() const;
 
                     /**
-                     * 设置点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
-                     * @param _mediaCastProjectInput 点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * 设置媒体转推项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * @param _mediaCastProjectInput 媒体转推项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
                      * 
                      */
                     void SetMediaCastProjectInput(const MediaCastProjectInput& _mediaCastProjectInput);
@@ -495,7 +495,7 @@ namespace TencentCloud
                     bool m_recordReplayProjectInputHasBeenSet;
 
                     /**
-                     * 点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * 媒体转推项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
                      */
                     MediaCastProjectInput m_mediaCastProjectInput;
                     bool m_mediaCastProjectInputHasBeenSet;

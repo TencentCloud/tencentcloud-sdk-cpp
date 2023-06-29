@@ -55,6 +55,8 @@
 #include <tencentcloud/trp/v20210515/model/DeleteProductResponse.h>
 #include <tencentcloud/trp/v20210515/model/DeleteTraceDataRequest.h>
 #include <tencentcloud/trp/v20210515/model/DeleteTraceDataResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeAgentCorpsRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeAgentCorpsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchsRequest.h>
@@ -181,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTraceDataResponse> DeleteTraceDataOutcome;
                 typedef std::future<DeleteTraceDataOutcome> DeleteTraceDataOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DeleteTraceDataRequest&, DeleteTraceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTraceDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentCorpsResponse> DescribeAgentCorpsOutcome;
+                typedef std::future<DescribeAgentCorpsOutcome> DescribeAgentCorpsOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeAgentCorpsRequest&, DescribeAgentCorpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentCorpsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCodeBatchByIdResponse> DescribeCodeBatchByIdOutcome;
                 typedef std::future<DescribeCodeBatchByIdOutcome> DescribeCodeBatchByIdOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodeBatchByIdRequest&, DescribeCodeBatchByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodeBatchByIdAsyncHandler;
@@ -423,6 +428,15 @@ namespace TencentCloud
                 DeleteTraceDataOutcome DeleteTraceData(const Model::DeleteTraceDataRequest &request);
                 void DeleteTraceDataAsync(const Model::DeleteTraceDataRequest& request, const DeleteTraceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTraceDataOutcomeCallable DeleteTraceDataCallable(const Model::DeleteTraceDataRequest& request);
+
+                /**
+                 *查询渠道企业列表
+                 * @param req DescribeAgentCorpsRequest
+                 * @return DescribeAgentCorpsOutcome
+                 */
+                DescribeAgentCorpsOutcome DescribeAgentCorps(const Model::DescribeAgentCorpsRequest &request);
+                void DescribeAgentCorpsAsync(const Model::DescribeAgentCorpsRequest& request, const DescribeAgentCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentCorpsOutcomeCallable DescribeAgentCorpsCallable(const Model::DescribeAgentCorpsRequest& request);
 
                 /**
                  *查询批次信息

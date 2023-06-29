@@ -169,6 +169,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取经验来源 0-自建 1-专家推荐
+                     * @return TemplateSource 经验来源 0-自建 1-专家推荐
+                     * 
+                     */
+                    int64_t GetTemplateSource() const;
+
+                    /**
+                     * 设置经验来源 0-自建 1-专家推荐
+                     * @param _templateSource 经验来源 0-自建 1-专家推荐
+                     * 
+                     */
+                    void SetTemplateSource(const int64_t& _templateSource);
+
+                    /**
+                     * 判断参数 TemplateSource 是否已赋值
+                     * @return TemplateSource 是否已赋值
+                     * 
+                     */
+                    bool TemplateSourceHasBeenSet() const;
+
+                    /**
+                     * 获取经验ID
+                     * @return TemplateIdList 经验ID
+                     * 
+                     */
+                    std::vector<int64_t> GetTemplateIdList() const;
+
+                    /**
+                     * 设置经验ID
+                     * @param _templateIdList 经验ID
+                     * 
+                     */
+                    void SetTemplateIdList(const std::vector<int64_t>& _templateIdList);
+
+                    /**
+                     * 判断参数 TemplateIdList 是否已赋值
+                     * @return TemplateIdList 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +248,18 @@ namespace TencentCloud
                      */
                     std::vector<TagWithDescribe> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 经验来源 0-自建 1-专家推荐
+                     */
+                    int64_t m_templateSource;
+                    bool m_templateSourceHasBeenSet;
+
+                    /**
+                     * 经验ID
+                     */
+                    std::vector<int64_t> m_templateIdList;
+                    bool m_templateIdListHasBeenSet;
 
                 };
             }

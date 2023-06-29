@@ -22,7 +22,8 @@ using namespace std;
 
 MediaCastPlaySetting::MediaCastPlaySetting() :
     m_loopCountHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_autoStartTimeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome MediaCastPlaySetting::Deserialize(const rapidjson::Value &va
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoStartTime") && !value["AutoStartTime"].IsNull())
+    {
+        if (!value["AutoStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastPlaySetting.AutoStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoStartTime = string(value["AutoStartTime"].GetString());
+        m_autoStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void MediaCastPlaySetting::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoStartTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void MediaCastPlaySetting::SetEndTime(const string& _endTime)
 bool MediaCastPlaySetting::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string MediaCastPlaySetting::GetAutoStartTime() const
+{
+    return m_autoStartTime;
+}
+
+void MediaCastPlaySetting::SetAutoStartTime(const string& _autoStartTime)
+{
+    m_autoStartTime = _autoStartTime;
+    m_autoStartTimeHasBeenSet = true;
+}
+
+bool MediaCastPlaySetting::AutoStartTimeHasBeenSet() const
+{
+    return m_autoStartTimeHasBeenSet;
 }
 

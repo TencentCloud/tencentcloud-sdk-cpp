@@ -147,20 +147,6 @@ namespace TencentCloud
                     bool ModifiedTimeHasBeenSet() const;
 
                     /**
-                     * 获取独立集群名称。
-                     * @return ExclusiveSetName 独立集群名称。
-                     * 
-                     */
-                    std::string GetExclusiveSetName() const;
-
-                    /**
-                     * 判断参数 ExclusiveSetName 是否已赋值
-                     * @return ExclusiveSetName 是否已赋值
-                     * 
-                     */
-                    bool ExclusiveSetNameHasBeenSet() const;
-
-                    /**
                      * 获取网络类型列表，INNER为内网访问，OUTER为外网访问。
                      * @return NetTypes 网络类型列表，INNER为内网访问，OUTER为外网访问。
                      * 
@@ -478,12 +464,6 @@ namespace TencentCloud
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
-
-                    /**
-                     * 独立集群名称。
-                     */
-                    std::string m_exclusiveSetName;
-                    bool m_exclusiveSetNameHasBeenSet;
 
                     /**
                      * 网络类型列表，INNER为内网访问，OUTER为外网访问。

@@ -24,7 +24,8 @@ CcInfo::CcInfo() :
     m_mobileHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ccTypeHasBeenSet(false),
-    m_ccPermissionHasBeenSet(false)
+    m_ccPermissionHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CcInfo::Deserialize(const rapidjson::Value &value)
         m_ccPermissionHasBeenSet = true;
     }
 
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcInfo.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CcInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "CcPermission";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ccPermission, allocator);
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CcInfo::SetCcPermission(const int64_t& _ccPermission)
 bool CcInfo::CcPermissionHasBeenSet() const
 {
     return m_ccPermissionHasBeenSet;
+}
+
+string CcInfo::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void CcInfo::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool CcInfo::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
 }
 

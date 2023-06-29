@@ -29,7 +29,8 @@ TaskListItem::TaskListItem() :
     m_taskCreateTimeHasBeenSet(false),
     m_taskUpdateTimeHasBeenSet(false),
     m_taskPreCheckStatusHasBeenSet(false),
-    m_taskPreCheckSuccessHasBeenSet(false)
+    m_taskPreCheckSuccessHasBeenSet(false),
+    m_taskExpectHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TaskListItem::Deserialize(const rapidjson::Value &value)
         m_taskPreCheckSuccessHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskExpect") && !value["TaskExpect"].IsNull())
+    {
+        if (!value["TaskExpect"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskListItem.TaskExpect` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskExpect = value["TaskExpect"].GetInt64();
+        m_taskExpectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void TaskListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TaskPreCheckSuccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskPreCheckSuccess, allocator);
+    }
+
+    if (m_taskExpectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskExpect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskExpect, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void TaskListItem::SetTaskPreCheckSuccess(const bool& _taskPreCheckSuccess)
 bool TaskListItem::TaskPreCheckSuccessHasBeenSet() const
 {
     return m_taskPreCheckSuccessHasBeenSet;
+}
+
+int64_t TaskListItem::GetTaskExpect() const
+{
+    return m_taskExpect;
+}
+
+void TaskListItem::SetTaskExpect(const int64_t& _taskExpect)
+{
+    m_taskExpect = _taskExpect;
+    m_taskExpectHasBeenSet = true;
+}
+
+bool TaskListItem::TaskExpectHasBeenSet() const
+{
+    return m_taskExpectHasBeenSet;
 }
 

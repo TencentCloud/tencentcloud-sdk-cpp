@@ -28,7 +28,9 @@ DescribeTemplateListRequest::DescribeTemplateListRequest() :
     m_titleHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_isUsedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_templateSourceHasBeenSet(false),
+    m_templateIdListHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,27 @@ string DescribeTemplateListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_templateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_templateSource, allocator);
+    }
+
+    if (m_templateIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_templateIdList.begin(); itr != m_templateIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -201,6 +224,38 @@ void DescribeTemplateListRequest::SetTags(const vector<TagWithDescribe>& _tags)
 bool DescribeTemplateListRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t DescribeTemplateListRequest::GetTemplateSource() const
+{
+    return m_templateSource;
+}
+
+void DescribeTemplateListRequest::SetTemplateSource(const int64_t& _templateSource)
+{
+    m_templateSource = _templateSource;
+    m_templateSourceHasBeenSet = true;
+}
+
+bool DescribeTemplateListRequest::TemplateSourceHasBeenSet() const
+{
+    return m_templateSourceHasBeenSet;
+}
+
+vector<int64_t> DescribeTemplateListRequest::GetTemplateIdList() const
+{
+    return m_templateIdList;
+}
+
+void DescribeTemplateListRequest::SetTemplateIdList(const vector<int64_t>& _templateIdList)
+{
+    m_templateIdList = _templateIdList;
+    m_templateIdListHasBeenSet = true;
+}
+
+bool DescribeTemplateListRequest::TemplateIdListHasBeenSet() const
+{
+    return m_templateIdListHasBeenSet;
 }
 
 

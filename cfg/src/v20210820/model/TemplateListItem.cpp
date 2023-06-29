@@ -28,7 +28,8 @@ TemplateListItem::TemplateListItem() :
     m_templateIsUsedHasBeenSet(false),
     m_templateCreateTimeHasBeenSet(false),
     m_templateUpdateTimeHasBeenSet(false),
-    m_templateUsedNumHasBeenSet(false)
+    m_templateUsedNumHasBeenSet(false),
+    m_templateSourceHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome TemplateListItem::Deserialize(const rapidjson::Value &value)
         m_templateUsedNumHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateSource") && !value["TemplateSource"].IsNull())
+    {
+        if (!value["TemplateSource"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateListItem.TemplateSource` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateSource = value["TemplateSource"].GetInt64();
+        m_templateSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void TemplateListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TemplateUsedNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateUsedNum, allocator);
+    }
+
+    if (m_templateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateSource, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void TemplateListItem::SetTemplateUsedNum(const int64_t& _templateUsedNum)
 bool TemplateListItem::TemplateUsedNumHasBeenSet() const
 {
     return m_templateUsedNumHasBeenSet;
+}
+
+int64_t TemplateListItem::GetTemplateSource() const
+{
+    return m_templateSource;
+}
+
+void TemplateListItem::SetTemplateSource(const int64_t& _templateSource)
+{
+    m_templateSource = _templateSource;
+    m_templateSourceHasBeenSet = true;
+}
+
+bool TemplateListItem::TemplateSourceHasBeenSet() const
+{
+    return m_templateSourceHasBeenSet;
 }
 

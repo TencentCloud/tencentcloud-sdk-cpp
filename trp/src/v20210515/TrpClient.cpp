@@ -728,6 +728,49 @@ TrpClient::DeleteTraceDataOutcomeCallable TrpClient::DeleteTraceDataCallable(con
     return task->get_future();
 }
 
+TrpClient::DescribeAgentCorpsOutcome TrpClient::DescribeAgentCorps(const DescribeAgentCorpsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentCorps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentCorpsResponse rsp = DescribeAgentCorpsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentCorpsOutcome(rsp);
+        else
+            return DescribeAgentCorpsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentCorpsOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeAgentCorpsAsync(const DescribeAgentCorpsRequest& request, const DescribeAgentCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentCorps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeAgentCorpsOutcomeCallable TrpClient::DescribeAgentCorpsCallable(const DescribeAgentCorpsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentCorpsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentCorps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeCodeBatchByIdOutcome TrpClient::DescribeCodeBatchById(const DescribeCodeBatchByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCodeBatchById");

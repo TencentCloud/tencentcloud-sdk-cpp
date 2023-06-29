@@ -1781,7 +1781,7 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
 
                 /**
-                 *本接口(ModifyBackupEncryptionStatus)用于设置实例备份文件是否加密。 
+                 *本接口(ModifyBackupEncryptionStatus)用于设置实例备份文件是否加密。
                  * @param req ModifyBackupEncryptionStatusRequest
                  * @return ModifyBackupEncryptionStatusOutcome
                  */

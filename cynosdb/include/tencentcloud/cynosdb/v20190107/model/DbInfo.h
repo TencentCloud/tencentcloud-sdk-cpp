@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取拍讯规则
-                     * @return CollateRule 拍讯规则
+                     * 获取排序规则
+                     * @return CollateRule 排序规则
                      * 
                      */
                     std::string GetCollateRule() const;
 
                     /**
-                     * 设置拍讯规则
-                     * @param _collateRule 拍讯规则
+                     * 设置排序规则
+                     * @param _collateRule 排序规则
                      * 
                      */
                     void SetCollateRule(const std::string& _collateRule);
@@ -352,7 +352,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 拍讯规则
+                     * 排序规则
                      */
                     std::string m_collateRule;
                     bool m_collateRuleHasBeenSet;

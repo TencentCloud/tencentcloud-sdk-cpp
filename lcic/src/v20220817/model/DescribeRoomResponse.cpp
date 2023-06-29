@@ -39,7 +39,9 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordUrlHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_enableDirectControlHasBeenSet(false)
+    m_enableDirectControlHasBeenSet(false),
+    m_interactionModeHasBeenSet(false),
+    m_videoOrientationHasBeenSet(false)
 {
 }
 
@@ -240,6 +242,26 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_enableDirectControlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InteractionMode") && !rsp["InteractionMode"].IsNull())
+    {
+        if (!rsp["InteractionMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InteractionMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_interactionMode = rsp["InteractionMode"].GetInt64();
+        m_interactionModeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VideoOrientation") && !rsp["VideoOrientation"].IsNull())
+    {
+        if (!rsp["VideoOrientation"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoOrientation` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoOrientation = rsp["VideoOrientation"].GetUint64();
+        m_videoOrientationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +403,22 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "EnableDirectControl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableDirectControl, allocator);
+    }
+
+    if (m_interactionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InteractionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_interactionMode, allocator);
+    }
+
+    if (m_videoOrientationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoOrientation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoOrientation, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -553,6 +591,26 @@ uint64_t DescribeRoomResponse::GetEnableDirectControl() const
 bool DescribeRoomResponse::EnableDirectControlHasBeenSet() const
 {
     return m_enableDirectControlHasBeenSet;
+}
+
+int64_t DescribeRoomResponse::GetInteractionMode() const
+{
+    return m_interactionMode;
+}
+
+bool DescribeRoomResponse::InteractionModeHasBeenSet() const
+{
+    return m_interactionModeHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetVideoOrientation() const
+{
+    return m_videoOrientation;
+}
+
+bool DescribeRoomResponse::VideoOrientationHasBeenSet() const
+{
+    return m_videoOrientationHasBeenSet;
 }
 
 

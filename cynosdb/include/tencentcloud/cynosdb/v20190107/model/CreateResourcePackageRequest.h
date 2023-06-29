@@ -89,23 +89,15 @@ china-中国内地通用，overseas-港澳台及海外通用
                     bool PackageRegionHasBeenSet() const;
 
                     /**
-                     * 获取资源包类型
-
-资源包类型：CCU-计算资源包，DISK-存储资源包
-                     * @return PackageType 资源包类型
-
-资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * 获取资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * @return PackageType 资源包类型：CCU-计算资源包，DISK-存储资源包
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置资源包类型
-
-资源包类型：CCU-计算资源包，DISK-存储资源包
-                     * @param _packageType 资源包类型
-
-资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * 设置资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * @param _packageType 资源包类型：CCU-计算资源包，DISK-存储资源包
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -242,9 +234,7 @@ china-中国内地通用，overseas-港澳台及海外通用
                     bool m_packageRegionHasBeenSet;
 
                     /**
-                     * 资源包类型
-
-资源包类型：CCU-计算资源包，DISK-存储资源包
+                     * 资源包类型：CCU-计算资源包，DISK-存储资源包
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
