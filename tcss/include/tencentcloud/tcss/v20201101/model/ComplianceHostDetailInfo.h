@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool K8SVersionHasBeenSet() const;
 
+                    /**
+                     * 获取主机上Containerd版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerdVersion 主机上Containerd版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContainerdVersion() const;
+
+                    /**
+                     * 设置主机上Containerd版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _containerdVersion 主机上Containerd版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContainerdVersion(const std::string& _containerdVersion);
+
+                    /**
+                     * 判断参数 ContainerdVersion 是否已赋值
+                     * @return ContainerdVersion 是否已赋值
+                     * 
+                     */
+                    bool ContainerdVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::string m_k8SVersion;
                     bool m_k8SVersionHasBeenSet;
+
+                    /**
+                     * 主机上Containerd版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerdVersion;
+                    bool m_containerdVersionHasBeenSet;
 
                 };
             }

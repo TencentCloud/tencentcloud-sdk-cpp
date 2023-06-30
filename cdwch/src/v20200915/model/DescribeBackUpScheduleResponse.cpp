@@ -28,7 +28,8 @@ DescribeBackUpScheduleResponse::DescribeBackUpScheduleResponse() :
     m_metaStrategyHasBeenSet(false),
     m_dataStrategyHasBeenSet(false),
     m_backUpContentsHasBeenSet(false),
-    m_backUpStatusHasBeenSet(false)
+    m_backUpStatusHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome DescribeBackUpScheduleResponse::Deserialize(const string &pa
         m_backUpStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +208,14 @@ string DescribeBackUpScheduleResponse::ToJsonString() const
         string key = "BackUpStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backUpStatus, allocator);
+    }
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -259,6 +278,16 @@ int64_t DescribeBackUpScheduleResponse::GetBackUpStatus() const
 bool DescribeBackUpScheduleResponse::BackUpStatusHasBeenSet() const
 {
     return m_backUpStatusHasBeenSet;
+}
+
+string DescribeBackUpScheduleResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeBackUpScheduleResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

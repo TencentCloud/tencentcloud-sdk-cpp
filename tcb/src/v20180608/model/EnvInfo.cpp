@@ -43,7 +43,9 @@ EnvInfo::EnvInfo() :
     m_customLogServicesHasBeenSet(false),
     m_envTypeHasBeenSet(false),
     m_isDauPackageHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
+    m_packageTypeHasBeenSet(false),
+    m_architectureTypeHasBeenSet(false),
+    m_recycleHasBeenSet(false)
 {
 }
 
@@ -352,6 +354,26 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_packageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchitectureType") && !value["ArchitectureType"].IsNull())
+    {
+        if (!value["ArchitectureType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.ArchitectureType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_architectureType = string(value["ArchitectureType"].GetString());
+        m_architectureTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Recycle") && !value["Recycle"].IsNull())
+    {
+        if (!value["Recycle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.Recycle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recycle = string(value["Recycle"].GetString());
+        m_recycleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -590,6 +612,22 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_architectureTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchitectureType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_architectureType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Recycle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recycle.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -961,5 +999,37 @@ void EnvInfo::SetPackageType(const string& _packageType)
 bool EnvInfo::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+string EnvInfo::GetArchitectureType() const
+{
+    return m_architectureType;
+}
+
+void EnvInfo::SetArchitectureType(const string& _architectureType)
+{
+    m_architectureType = _architectureType;
+    m_architectureTypeHasBeenSet = true;
+}
+
+bool EnvInfo::ArchitectureTypeHasBeenSet() const
+{
+    return m_architectureTypeHasBeenSet;
+}
+
+string EnvInfo::GetRecycle() const
+{
+    return m_recycle;
+}
+
+void EnvInfo::SetRecycle(const string& _recycle)
+{
+    m_recycle = _recycle;
+    m_recycleHasBeenSet = true;
+}
+
+bool EnvInfo::RecycleHasBeenSet() const
+{
+    return m_recycleHasBeenSet;
 }
 

@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据库代理组ID
+                     * @return ProxyGroupId 数据库代理组ID
+                     * 
+                     */
+                    std::string GetProxyGroupId() const;
+
+                    /**
+                     * 判断参数 ProxyGroupId 是否已赋值
+                     * @return ProxyGroupId 是否已赋值
+                     * 
+                     */
+                    bool ProxyGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 数据库代理组ID
+                     */
+                    std::string m_proxyGroupId;
+                    bool m_proxyGroupIdHasBeenSet;
 
                 };
             }

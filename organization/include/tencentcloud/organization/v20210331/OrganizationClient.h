@@ -65,6 +65,8 @@
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationNodeRequest.h>
@@ -146,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MoveOrganizationNodeMembersResponse> MoveOrganizationNodeMembersOutcome;
                 typedef std::future<MoveOrganizationNodeMembersOutcome> MoveOrganizationNodeMembersOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::MoveOrganizationNodeMembersRequest&, MoveOrganizationNodeMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveOrganizationNodeMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOrganizationMemberResponse> UpdateOrganizationMemberOutcome;
+                typedef std::future<UpdateOrganizationMemberOutcome> UpdateOrganizationMemberOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationMemberRequest&, UpdateOrganizationMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationMemberEmailBindResponse> UpdateOrganizationMemberEmailBindOutcome;
                 typedef std::future<UpdateOrganizationMemberEmailBindOutcome> UpdateOrganizationMemberEmailBindOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationMemberEmailBindRequest&, UpdateOrganizationMemberEmailBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationMemberEmailBindAsyncHandler;
@@ -344,6 +349,15 @@ namespace TencentCloud
                 MoveOrganizationNodeMembersOutcome MoveOrganizationNodeMembers(const Model::MoveOrganizationNodeMembersRequest &request);
                 void MoveOrganizationNodeMembersAsync(const Model::MoveOrganizationNodeMembersRequest& request, const MoveOrganizationNodeMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MoveOrganizationNodeMembersOutcomeCallable MoveOrganizationNodeMembersCallable(const Model::MoveOrganizationNodeMembersRequest& request);
+
+                /**
+                 *更新组织成员信息
+                 * @param req UpdateOrganizationMemberRequest
+                 * @return UpdateOrganizationMemberOutcome
+                 */
+                UpdateOrganizationMemberOutcome UpdateOrganizationMember(const Model::UpdateOrganizationMemberRequest &request);
+                void UpdateOrganizationMemberAsync(const Model::UpdateOrganizationMemberRequest& request, const UpdateOrganizationMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOrganizationMemberOutcomeCallable UpdateOrganizationMemberCallable(const Model::UpdateOrganizationMemberRequest& request);
 
                 /**
                  *修改绑定成员邮箱

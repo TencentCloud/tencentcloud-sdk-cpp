@@ -24,7 +24,8 @@ using namespace std;
 
 CreateFlowEvidenceReportRequest::CreateFlowEvidenceReportRequest() :
     m_operatorHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string CreateFlowEvidenceReportRequest::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void CreateFlowEvidenceReportRequest::SetFlowId(const string& _flowId)
 bool CreateFlowEvidenceReportRequest::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+Agent CreateFlowEvidenceReportRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateFlowEvidenceReportRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateFlowEvidenceReportRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

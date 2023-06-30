@@ -35,7 +35,8 @@ InstanceInfo::InstanceInfo() :
     m_leakNumHasBeenSet(false),
     m_insSourceHasBeenSet(false),
     m_resourcePathHasBeenSet(false),
-    m_serverHasBeenSet(false)
+    m_serverHasBeenSet(false),
+    m_regionKeyHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_serverHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionKey") && !value["RegionKey"].IsNull())
+    {
+        if (!value["RegionKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RegionKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionKey = string(value["RegionKey"].GetString());
+        m_regionKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_regionKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -578,5 +597,21 @@ void InstanceInfo::SetServer(const vector<string>& _server)
 bool InstanceInfo::ServerHasBeenSet() const
 {
     return m_serverHasBeenSet;
+}
+
+string InstanceInfo::GetRegionKey() const
+{
+    return m_regionKey;
+}
+
+void InstanceInfo::SetRegionKey(const string& _regionKey)
+{
+    m_regionKey = _regionKey;
+    m_regionKeyHasBeenSet = true;
+}
+
+bool InstanceInfo::RegionKeyHasBeenSet() const
+{
+    return m_regionKeyHasBeenSet;
 }
 

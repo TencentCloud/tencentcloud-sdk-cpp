@@ -391,6 +391,31 @@ type InstanceInfo struct {
                      */
                     bool ServerHasBeenSet() const;
 
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionKey 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionKey() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionKey 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionKey(const std::string& _regionKey);
+
+                    /**
+                     * 判断参数 RegionKey 是否已赋值
+                     * @return RegionKey 是否已赋值
+                     * 
+                     */
+                    bool RegionKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +510,13 @@ type InstanceInfo struct {
                      */
                     std::vector<std::string> m_server;
                     bool m_serverHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionKey;
+                    bool m_regionKeyHasBeenSet;
 
                 };
             }

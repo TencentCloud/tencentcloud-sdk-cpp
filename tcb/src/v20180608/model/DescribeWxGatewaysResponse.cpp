@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeWxGatewaysResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DeleteImageLifecyclePersonalResponse::DeleteImageLifecyclePersonalResponse()
+DescribeWxGatewaysResponse::DescribeWxGatewaysResponse() :
+    m_gatewaysHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteImageLifecyclePersonalResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeWxGatewaysResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +63,68 @@ CoreInternalOutcome DeleteImageLifecyclePersonalResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("Gateways") && !rsp["Gateways"].IsNull())
+    {
+        if (!rsp["Gateways"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Gateways` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Gateways"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GatewayItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gateways.push_back(item);
+        }
+        m_gatewaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteImageLifecyclePersonalResponse::ToJsonString() const
+string DescribeWxGatewaysResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_gatewaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gateways";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gateways.begin(); itr != m_gateways.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DeleteImageLifecyclePersonalResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<GatewayItem> DescribeWxGatewaysResponse::GetGateways() const
+{
+    return m_gateways;
+}
+
+bool DescribeWxGatewaysResponse::GatewaysHasBeenSet() const
+{
+    return m_gatewaysHasBeenSet;
+}
+
+int64_t DescribeWxGatewaysResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeWxGatewaysResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

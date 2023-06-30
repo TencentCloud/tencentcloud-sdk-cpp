@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-CreateImageLifecyclePersonalResponse::CreateImageLifecyclePersonalResponse()
+UpdateOrganizationMemberResponse::UpdateOrganizationMemberResponse()
 {
 }
 
-CoreInternalOutcome CreateImageLifecyclePersonalResponse::Deserialize(const string &payload)
+CoreInternalOutcome UpdateOrganizationMemberResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome CreateImageLifecyclePersonalResponse::Deserialize(const stri
     return CoreInternalOutcome(true);
 }
 
-string CreateImageLifecyclePersonalResponse::ToJsonString() const
+string UpdateOrganizationMemberResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

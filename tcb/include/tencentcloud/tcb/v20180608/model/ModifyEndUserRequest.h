@@ -85,10 +85,10 @@ namespace TencentCloud
                     bool UUIdHasBeenSet() const;
 
                     /**
-                     * 获取帐号的状态
+                     * 获取账号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
-                     * @return Status 帐号的状态
+                     * @return Status 账号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
                      * 
@@ -96,10 +96,10 @@ namespace TencentCloud
                     std::string GetStatus() const;
 
                     /**
-                     * 设置帐号的状态
+                     * 设置账号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
-                     * @param _status 帐号的状态
+                     * @param _status 账号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
                      * 
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_uUIdHasBeenSet;
 
                     /**
-                     * 帐号的状态
+                     * 账号的状态
 <li>ENABLE</li>
 <li>DISABLE</li>
                      */

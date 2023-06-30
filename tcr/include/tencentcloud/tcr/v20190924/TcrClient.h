@@ -37,8 +37,6 @@
 #include <tencentcloud/tcr/v20190924/model/CreateCustomAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceResponse.h>
-#include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalRequest.h>
-#include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceRequest.h>
@@ -85,8 +83,6 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h>
-#include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalRequest.h>
-#include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImmutableTagRulesRequest.h>
@@ -278,9 +274,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImageAccelerationServiceResponse> CreateImageAccelerationServiceOutcome;
                 typedef std::future<CreateImageAccelerationServiceOutcome> CreateImageAccelerationServiceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateImageAccelerationServiceRequest&, CreateImageAccelerationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAccelerationServiceAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateImageLifecyclePersonalResponse> CreateImageLifecyclePersonalOutcome;
-                typedef std::future<CreateImageLifecyclePersonalOutcome> CreateImageLifecyclePersonalOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::CreateImageLifecyclePersonalRequest&, CreateImageLifecyclePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageLifecyclePersonalAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImmutableTagRulesResponse> CreateImmutableTagRulesOutcome;
                 typedef std::future<CreateImmutableTagRulesOutcome> CreateImmutableTagRulesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateImmutableTagRulesRequest&, CreateImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImmutableTagRulesAsyncHandler;
@@ -350,9 +343,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImageLifecycleGlobalPersonalResponse> DeleteImageLifecycleGlobalPersonalOutcome;
                 typedef std::future<DeleteImageLifecycleGlobalPersonalOutcome> DeleteImageLifecycleGlobalPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImageLifecycleGlobalPersonalRequest&, DeleteImageLifecycleGlobalPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageLifecycleGlobalPersonalAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteImageLifecyclePersonalResponse> DeleteImageLifecyclePersonalOutcome;
-                typedef std::future<DeleteImageLifecyclePersonalOutcome> DeleteImageLifecyclePersonalOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::DeleteImageLifecyclePersonalRequest&, DeleteImageLifecyclePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageLifecyclePersonalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteImagePersonalResponse> DeleteImagePersonalOutcome;
                 typedef std::future<DeleteImagePersonalOutcome> DeleteImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImagePersonalRequest&, DeleteImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagePersonalAsyncHandler;
@@ -654,17 +644,6 @@ namespace TencentCloud
                 CreateImageAccelerationServiceOutcomeCallable CreateImageAccelerationServiceCallable(const Model::CreateImageAccelerationServiceRequest& request);
 
                 /**
-                 *前端与现有逻辑均不再使用，可下线
-
-用于在个人版中创建清理策略
-                 * @param req CreateImageLifecyclePersonalRequest
-                 * @return CreateImageLifecyclePersonalOutcome
-                 */
-                CreateImageLifecyclePersonalOutcome CreateImageLifecyclePersonal(const Model::CreateImageLifecyclePersonalRequest &request);
-                void CreateImageLifecyclePersonalAsync(const Model::CreateImageLifecyclePersonalRequest& request, const CreateImageLifecyclePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateImageLifecyclePersonalOutcomeCallable CreateImageLifecyclePersonalCallable(const Model::CreateImageLifecyclePersonalRequest& request);
-
-                /**
                  *创建镜像不可变规则
                  * @param req CreateImmutableTagRulesRequest
                  * @return CreateImmutableTagRulesOutcome
@@ -870,17 +849,6 @@ namespace TencentCloud
                 DeleteImageLifecycleGlobalPersonalOutcome DeleteImageLifecycleGlobalPersonal(const Model::DeleteImageLifecycleGlobalPersonalRequest &request);
                 void DeleteImageLifecycleGlobalPersonalAsync(const Model::DeleteImageLifecycleGlobalPersonalRequest& request, const DeleteImageLifecycleGlobalPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImageLifecycleGlobalPersonalOutcomeCallable DeleteImageLifecycleGlobalPersonalCallable(const Model::DeleteImageLifecycleGlobalPersonalRequest& request);
-
-                /**
-                 *前端与后端目前现有逻辑均不再使用，可下线
-
-用于在个人版镜像仓库中删除仓库Tag自动清理策略
-                 * @param req DeleteImageLifecyclePersonalRequest
-                 * @return DeleteImageLifecyclePersonalOutcome
-                 */
-                DeleteImageLifecyclePersonalOutcome DeleteImageLifecyclePersonal(const Model::DeleteImageLifecyclePersonalRequest &request);
-                void DeleteImageLifecyclePersonalAsync(const Model::DeleteImageLifecyclePersonalRequest& request, const DeleteImageLifecyclePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteImageLifecyclePersonalOutcomeCallable DeleteImageLifecyclePersonalCallable(const Model::DeleteImageLifecyclePersonalRequest& request);
 
                 /**
                  *用于在个人版中删除tag

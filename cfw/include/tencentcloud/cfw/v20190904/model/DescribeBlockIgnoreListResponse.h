@@ -100,6 +100,20 @@ namespace TencentCloud
                      */
                     bool ReturnMsgHasBeenSet() const;
 
+                    /**
+                     * 获取安全事件来源下拉框
+                     * @return SourceList 安全事件来源下拉框
+                     * 
+                     */
+                    std::vector<std::string> GetSourceList() const;
+
+                    /**
+                     * 判断参数 SourceList 是否已赋值
+                     * @return SourceList 是否已赋值
+                     * 
+                     */
+                    bool SourceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +139,12 @@ namespace TencentCloud
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
+
+                    /**
+                     * 安全事件来源下拉框
+                     */
+                    std::vector<std::string> m_sourceList;
+                    bool m_sourceListHasBeenSet;
 
                 };
             }

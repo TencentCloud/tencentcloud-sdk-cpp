@@ -25,7 +25,8 @@ ScheduleStrategy::ScheduleStrategy() :
     m_retainDaysHasBeenSet(false),
     m_weekDaysHasBeenSet(false),
     m_executeHourHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false)
+    m_scheduleIdHasBeenSet(false),
+    m_nextBackupTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ScheduleStrategy::Deserialize(const rapidjson::Value &value)
         m_scheduleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NextBackupTime") && !value["NextBackupTime"].IsNull())
+    {
+        if (!value["NextBackupTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleStrategy.NextBackupTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextBackupTime = string(value["NextBackupTime"].GetString());
+        m_nextBackupTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ScheduleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ScheduleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scheduleId, allocator);
+    }
+
+    if (m_nextBackupTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextBackupTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextBackupTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ScheduleStrategy::SetScheduleId(const int64_t& _scheduleId)
 bool ScheduleStrategy::ScheduleIdHasBeenSet() const
 {
     return m_scheduleIdHasBeenSet;
+}
+
+string ScheduleStrategy::GetNextBackupTime() const
+{
+    return m_nextBackupTime;
+}
+
+void ScheduleStrategy::SetNextBackupTime(const string& _nextBackupTime)
+{
+    m_nextBackupTime = _nextBackupTime;
+    m_nextBackupTimeHasBeenSet = true;
+}
+
+bool ScheduleStrategy::NextBackupTimeHasBeenSet() const
+{
+    return m_nextBackupTimeHasBeenSet;
 }
 

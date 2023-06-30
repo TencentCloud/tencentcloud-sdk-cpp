@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PermissionTypeHasBeenSet() const;
 
                     /**
-                     * 获取默认为：*，表示任何host都可以访问，当前ckafka不支持host为：* 和 ip网段
-                     * @return Host 默认为：*，表示任何host都可以访问，当前ckafka不支持host为：* 和 ip网段
+                     * 获取默认为\*，表示任何host都可以访问，当前ckafka不支持host为\* 和 ip网段
+                     * @return Host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\* 和 ip网段
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置默认为：*，表示任何host都可以访问，当前ckafka不支持host为：* 和 ip网段
-                     * @param _host 默认为：*，表示任何host都可以访问，当前ckafka不支持host为：* 和 ip网段
+                     * 设置默认为\*，表示任何host都可以访问，当前ckafka不支持host为\* 和 ip网段
+                     * @param _host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\* 和 ip网段
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_permissionTypeHasBeenSet;
 
                     /**
-                     * 默认为：*，表示任何host都可以访问，当前ckafka不支持host为：* 和 ip网段
+                     * 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\* 和 ip网段
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

@@ -25,7 +25,9 @@ BackupTableContent::BackupTableContent() :
     m_tableHasBeenSet(false),
     m_totalBytesHasBeenSet(false),
     m_vClusterHasBeenSet(false),
-    m_ipsHasBeenSet(false)
+    m_ipsHasBeenSet(false),
+    m_zooPathHasBeenSet(false),
+    m_ripHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome BackupTableContent::Deserialize(const rapidjson::Value &valu
         m_ipsHasBeenSet = true;
     }
 
+    if (value.HasMember("ZooPath") && !value["ZooPath"].IsNull())
+    {
+        if (!value["ZooPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupTableContent.ZooPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zooPath = string(value["ZooPath"].GetString());
+        m_zooPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("Rip") && !value["Rip"].IsNull())
+    {
+        if (!value["Rip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupTableContent.Rip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rip = string(value["Rip"].GetString());
+        m_ripHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void BackupTableContent::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Ips";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ips.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zooPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZooPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zooPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ripHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rip.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void BackupTableContent::SetIps(const string& _ips)
 bool BackupTableContent::IpsHasBeenSet() const
 {
     return m_ipsHasBeenSet;
+}
+
+string BackupTableContent::GetZooPath() const
+{
+    return m_zooPath;
+}
+
+void BackupTableContent::SetZooPath(const string& _zooPath)
+{
+    m_zooPath = _zooPath;
+    m_zooPathHasBeenSet = true;
+}
+
+bool BackupTableContent::ZooPathHasBeenSet() const
+{
+    return m_zooPathHasBeenSet;
+}
+
+string BackupTableContent::GetRip() const
+{
+    return m_rip;
+}
+
+void BackupTableContent::SetRip(const string& _rip)
+{
+    m_rip = _rip;
+    m_ripHasBeenSet = true;
+}
+
+bool BackupTableContent::RipHasBeenSet() const
+{
+    return m_ripHasBeenSet;
 }
 

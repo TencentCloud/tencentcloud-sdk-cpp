@@ -27,7 +27,8 @@ DescribeBlockIgnoreListResponse::DescribeBlockIgnoreListResponse() :
     m_dataHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_returnCodeHasBeenSet(false),
-    m_returnMsgHasBeenSet(false)
+    m_returnMsgHasBeenSet(false),
+    m_sourceListHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,19 @@ CoreInternalOutcome DescribeBlockIgnoreListResponse::Deserialize(const string &p
         m_returnMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SourceList") && !rsp["SourceList"].IsNull())
+    {
+        if (!rsp["SourceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SourceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SourceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sourceList.push_back((*itr).GetString());
+        }
+        m_sourceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +176,19 @@ string DescribeBlockIgnoreListResponse::ToJsonString() const
         string key = "ReturnMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceList.begin(); itr != m_sourceList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +241,16 @@ string DescribeBlockIgnoreListResponse::GetReturnMsg() const
 bool DescribeBlockIgnoreListResponse::ReturnMsgHasBeenSet() const
 {
     return m_returnMsgHasBeenSet;
+}
+
+vector<string> DescribeBlockIgnoreListResponse::GetSourceList() const
+{
+    return m_sourceList;
+}
+
+bool DescribeBlockIgnoreListResponse::SourceListHasBeenSet() const
+{
+    return m_sourceListHasBeenSet;
 }
 
 

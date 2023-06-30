@@ -47,6 +47,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_tagsHasBeenSet(false),
     m_asyncRunEnableHasBeenSet(false),
     m_traceEnableHasBeenSet(false),
+    m_autoDeployClsTopicIndexHasBeenSet(false),
+    m_autoCreateClsTopicHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_protocolParamsHasBeenSet(false),
     m_instanceConcurrencyConfigHasBeenSet(false)
@@ -270,6 +272,22 @@ string CreateFunctionRequest::ToJsonString() const
         string key = "TraceEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_traceEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoDeployClsTopicIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoDeployClsTopicIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoDeployClsTopicIndex.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoCreateClsTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCreateClsTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoCreateClsTopic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolTypeHasBeenSet)
@@ -688,6 +706,38 @@ void CreateFunctionRequest::SetTraceEnable(const string& _traceEnable)
 bool CreateFunctionRequest::TraceEnableHasBeenSet() const
 {
     return m_traceEnableHasBeenSet;
+}
+
+string CreateFunctionRequest::GetAutoDeployClsTopicIndex() const
+{
+    return m_autoDeployClsTopicIndex;
+}
+
+void CreateFunctionRequest::SetAutoDeployClsTopicIndex(const string& _autoDeployClsTopicIndex)
+{
+    m_autoDeployClsTopicIndex = _autoDeployClsTopicIndex;
+    m_autoDeployClsTopicIndexHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::AutoDeployClsTopicIndexHasBeenSet() const
+{
+    return m_autoDeployClsTopicIndexHasBeenSet;
+}
+
+string CreateFunctionRequest::GetAutoCreateClsTopic() const
+{
+    return m_autoCreateClsTopic;
+}
+
+void CreateFunctionRequest::SetAutoCreateClsTopic(const string& _autoCreateClsTopic)
+{
+    m_autoCreateClsTopic = _autoCreateClsTopic;
+    m_autoCreateClsTopicHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::AutoCreateClsTopicHasBeenSet() const
+{
+    return m_autoCreateClsTopicHasBeenSet;
 }
 
 string CreateFunctionRequest::GetProtocolType() const

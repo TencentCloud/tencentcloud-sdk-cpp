@@ -341,49 +341,6 @@ TcrClient::CreateImageAccelerationServiceOutcomeCallable TcrClient::CreateImageA
     return task->get_future();
 }
 
-TcrClient::CreateImageLifecyclePersonalOutcome TcrClient::CreateImageLifecyclePersonal(const CreateImageLifecyclePersonalRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateImageLifecyclePersonal");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateImageLifecyclePersonalResponse rsp = CreateImageLifecyclePersonalResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateImageLifecyclePersonalOutcome(rsp);
-        else
-            return CreateImageLifecyclePersonalOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateImageLifecyclePersonalOutcome(outcome.GetError());
-    }
-}
-
-void TcrClient::CreateImageLifecyclePersonalAsync(const CreateImageLifecyclePersonalRequest& request, const CreateImageLifecyclePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateImageLifecyclePersonal(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcrClient::CreateImageLifecyclePersonalOutcomeCallable TcrClient::CreateImageLifecyclePersonalCallable(const CreateImageLifecyclePersonalRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateImageLifecyclePersonalOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateImageLifecyclePersonal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcrClient::CreateImmutableTagRulesOutcome TcrClient::CreateImmutableTagRules(const CreateImmutableTagRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImmutableTagRules");
@@ -1366,49 +1323,6 @@ TcrClient::DeleteImageLifecycleGlobalPersonalOutcomeCallable TcrClient::DeleteIm
         [this, request]()
         {
             return this->DeleteImageLifecycleGlobalPersonal(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcrClient::DeleteImageLifecyclePersonalOutcome TcrClient::DeleteImageLifecyclePersonal(const DeleteImageLifecyclePersonalRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteImageLifecyclePersonal");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteImageLifecyclePersonalResponse rsp = DeleteImageLifecyclePersonalResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteImageLifecyclePersonalOutcome(rsp);
-        else
-            return DeleteImageLifecyclePersonalOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteImageLifecyclePersonalOutcome(outcome.GetError());
-    }
-}
-
-void TcrClient::DeleteImageLifecyclePersonalAsync(const DeleteImageLifecyclePersonalRequest& request, const DeleteImageLifecyclePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteImageLifecyclePersonal(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcrClient::DeleteImageLifecyclePersonalOutcomeCallable TcrClient::DeleteImageLifecyclePersonalCallable(const DeleteImageLifecyclePersonalRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteImageLifecyclePersonalOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteImageLifecyclePersonal(request);
         }
     );
 

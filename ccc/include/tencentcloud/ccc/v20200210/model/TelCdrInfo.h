@@ -1166,6 +1166,31 @@ namespace TencentCloud
                      */
                     bool VoicemailRecordURLHasBeenSet() const;
 
+                    /**
+                     * 获取通话中语音留言ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoicemailAsrURL 通话中语音留言ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetVoicemailAsrURL() const;
+
+                    /**
+                     * 设置通话中语音留言ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voicemailAsrURL 通话中语音留言ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoicemailAsrURL(const std::vector<std::string>& _voicemailAsrURL);
+
+                    /**
+                     * 判断参数 VoicemailAsrURL 是否已赋值
+                     * @return VoicemailAsrURL 是否已赋值
+                     * 
+                     */
+                    bool VoicemailAsrURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1471,6 +1496,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_voicemailRecordURL;
                     bool m_voicemailRecordURLHasBeenSet;
+
+                    /**
+                     * 通话中语音留言ASR文本信息地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_voicemailAsrURL;
+                    bool m_voicemailAsrURLHasBeenSet;
 
                 };
             }

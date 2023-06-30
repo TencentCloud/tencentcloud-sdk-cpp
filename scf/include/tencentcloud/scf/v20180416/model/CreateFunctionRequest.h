@@ -557,6 +557,48 @@ namespace TencentCloud
                     bool TraceEnableHasBeenSet() const;
 
                     /**
+                     * 获取是否自动创建cls索引，TRUE 为开启，FALSE为关闭
+                     * @return AutoDeployClsTopicIndex 是否自动创建cls索引，TRUE 为开启，FALSE为关闭
+                     * 
+                     */
+                    std::string GetAutoDeployClsTopicIndex() const;
+
+                    /**
+                     * 设置是否自动创建cls索引，TRUE 为开启，FALSE为关闭
+                     * @param _autoDeployClsTopicIndex 是否自动创建cls索引，TRUE 为开启，FALSE为关闭
+                     * 
+                     */
+                    void SetAutoDeployClsTopicIndex(const std::string& _autoDeployClsTopicIndex);
+
+                    /**
+                     * 判断参数 AutoDeployClsTopicIndex 是否已赋值
+                     * @return AutoDeployClsTopicIndex 是否已赋值
+                     * 
+                     */
+                    bool AutoDeployClsTopicIndexHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动创建cls主题，TRUE 为开启，FALSE为关闭
+                     * @return AutoCreateClsTopic 是否自动创建cls主题，TRUE 为开启，FALSE为关闭
+                     * 
+                     */
+                    std::string GetAutoCreateClsTopic() const;
+
+                    /**
+                     * 设置是否自动创建cls主题，TRUE 为开启，FALSE为关闭
+                     * @param _autoCreateClsTopic 是否自动创建cls主题，TRUE 为开启，FALSE为关闭
+                     * 
+                     */
+                    void SetAutoCreateClsTopic(const std::string& _autoCreateClsTopic);
+
+                    /**
+                     * 判断参数 AutoCreateClsTopic 是否已赋值
+                     * @return AutoCreateClsTopic 是否已赋值
+                     * 
+                     */
+                    bool AutoCreateClsTopicHasBeenSet() const;
+
+                    /**
                      * 获取HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
                      * @return ProtocolType HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS
                      * 
@@ -764,6 +806,18 @@ namespace TencentCloud
                      */
                     std::string m_traceEnable;
                     bool m_traceEnableHasBeenSet;
+
+                    /**
+                     * 是否自动创建cls索引，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_autoDeployClsTopicIndex;
+                    bool m_autoDeployClsTopicIndexHasBeenSet;
+
+                    /**
+                     * 是否自动创建cls主题，TRUE 为开启，FALSE为关闭
+                     */
+                    std::string m_autoCreateClsTopic;
+                    bool m_autoCreateClsTopicHasBeenSet;
 
                     /**
                      * HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS

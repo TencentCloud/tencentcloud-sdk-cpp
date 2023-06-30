@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_DELETEIMAGELIFECYCLEPERSONALRESPONSE_H_
-#define TENCENTCLOUD_TCR_V20190924_MODEL_DELETEIMAGELIFECYCLEPERSONALRESPONSE_H_
+#ifndef TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_UPDATEORGANIZATIONMEMBERRESPONSE_H_
+#define TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_UPDATEORGANIZATIONMEMBERRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tcr
+    namespace Organization
     {
-        namespace V20190924
+        namespace V20210331
         {
             namespace Model
             {
                 /**
-                * DeleteImageLifecyclePersonal返回参数结构体
+                * UpdateOrganizationMember返回参数结构体
                 */
-                class DeleteImageLifecyclePersonalResponse : public AbstractModel
+                class UpdateOrganizationMemberResponse : public AbstractModel
                 {
                 public:
-                    DeleteImageLifecyclePersonalResponse();
-                    ~DeleteImageLifecyclePersonalResponse() = default;
+                    UpdateOrganizationMemberResponse();
+                    ~UpdateOrganizationMemberResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_DELETEIMAGELIFECYCLEPERSONALRESPONSE_H_
+#endif // !TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_UPDATEORGANIZATIONMEMBERRESPONSE_H_

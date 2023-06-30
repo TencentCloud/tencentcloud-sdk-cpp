@@ -25,7 +25,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/WebhookTarget.h
-  include/tencentcloud/tcr/v20190924/model/CreateSignatureResponse.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.h
   include/tencentcloud/tcr/v20190924/model/WebhookTriggerLog.h
   include/tencentcloud/tcr/v20190924/model/AccessVpc.h
@@ -39,7 +39,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/RetentionRule.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h
-  include/tencentcloud/tcr/v20190924/model/TaskDetail.h
+  include/tencentcloud/tcr/v20190924/model/TagInfoResp.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryRequest.h
   include/tencentcloud/tcr/v20190924/model/RegistryCondition.h
   include/tencentcloud/tcr/v20190924/model/DescribeInternalEndpointDnsStatusRequest.h
@@ -64,6 +64,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesResponse.h
   include/tencentcloud/tcr/v20190924/model/Region.h
   include/tencentcloud/tcr/v20190924/model/NamespaceInfo.h
+  include/tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateMultipleSecurityPolicyResponse.h
   include/tencentcloud/tcr/v20190924/model/TriggerResp.h
   include/tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleResponse.h
@@ -75,7 +76,6 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h
   include/tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h
   include/tencentcloud/tcr/v20190924/model/ManageReplicationRequest.h
-  include/tencentcloud/tcr/v20190924/model/DescribeInstanceStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifySecurityPolicyRequest.h
@@ -99,23 +99,20 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeCustomAccountsRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalResponse.h
-  include/tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceRequest.h
+  include/tencentcloud/tcr/v20190924/model/DescribeInstanceStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h
-  include/tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespaceResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryOwnerPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/VpcPrivateDomainStatus.h
   include/tencentcloud/tcr/v20190924/model/Permission.h
   include/tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesResponse.h
-  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h
-  include/tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/CreateSignatureResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryTagsRequest.h
   include/tencentcloud/tcr/v20190924/model/RepoIsExistResp.h
   include/tencentcloud/tcr/v20190924/model/TcrImageInfo.h
-  include/tencentcloud/tcr/v20190924/model/RetentionPolicy.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespacePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusRequest.h
@@ -123,9 +120,9 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceStatusRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerRequest.h
-  include/tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteNamespaceResponse.h
-  include/tencentcloud/tcr/v20190924/model/TagInfoResp.h
+  include/tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/Favors.h
   include/tencentcloud/tcr/v20190924/model/CreateWebhookTriggerRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryPersonalResponse.h
@@ -165,7 +162,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/NamespaceInfoResp.h
   include/tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageFilterPersonalResponse.h
-  include/tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyResponse.h
   include/tencentcloud/tcr/v20190924/model/TriggerInvokeResult.h
@@ -212,20 +209,20 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/RepoInfo.h
   include/tencentcloud/tcr/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeUserQuotaPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/TaskDetail.h
   include/tencentcloud/tcr/v20190924/model/DescribeImagePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryFilterPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifySecurityPolicyResponse.h
-  include/tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageManifestsResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalResponse.h
-  include/tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerRequest.h
   include/tencentcloud/tcr/v20190924/model/ImmutableTagRule.h
   include/tencentcloud/tcr/v20190924/model/Header.h
-  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesResponse.h
+  include/tencentcloud/tcr/v20190924/model/RetentionPolicy.h
   include/tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/CustomAccount.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceResponse.h
@@ -245,7 +242,6 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryOwnerPersonalRequest.h
-  include/tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeTagRetentionRulesResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeRegionsRequest.h
@@ -312,7 +308,7 @@ set(tcr_src
   src/v20190924/model/DescribeImagePersonalResponse.cpp
   src/v20190924/model/DescribeUserQuotaPersonalRequest.cpp
   src/v20190924/model/WebhookTarget.cpp
-  src/v20190924/model/CreateSignatureResponse.cpp
+  src/v20190924/model/DescribeReplicationInstancesResponse.cpp
   src/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.cpp
   src/v20190924/model/WebhookTriggerLog.cpp
   src/v20190924/model/AccessVpc.cpp
@@ -326,7 +322,7 @@ set(tcr_src
   src/v20190924/model/RetentionRule.cpp
   src/v20190924/model/CreateInstanceResponse.cpp
   src/v20190924/model/DeleteInstanceTokenRequest.cpp
-  src/v20190924/model/TaskDetail.cpp
+  src/v20190924/model/TagInfoResp.cpp
   src/v20190924/model/ModifyRepositoryRequest.cpp
   src/v20190924/model/RegistryCondition.cpp
   src/v20190924/model/DescribeInternalEndpointDnsStatusRequest.cpp
@@ -351,6 +347,7 @@ set(tcr_src
   src/v20190924/model/ModifyImmutableTagRulesResponse.cpp
   src/v20190924/model/Region.cpp
   src/v20190924/model/NamespaceInfo.cpp
+  src/v20190924/model/CreateImageAccelerationServiceResponse.cpp
   src/v20190924/model/CreateMultipleSecurityPolicyResponse.cpp
   src/v20190924/model/TriggerResp.cpp
   src/v20190924/model/CreateTagRetentionRuleResponse.cpp
@@ -362,7 +359,6 @@ set(tcr_src
   src/v20190924/model/DescribeWebhookTriggerLogResponse.cpp
   src/v20190924/model/DownloadHelmChartResponse.cpp
   src/v20190924/model/ManageReplicationRequest.cpp
-  src/v20190924/model/DescribeInstanceStatusResponse.cpp
   src/v20190924/model/DeleteWebhookTriggerResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.cpp
   src/v20190924/model/ModifySecurityPolicyRequest.cpp
@@ -386,23 +382,20 @@ set(tcr_src
   src/v20190924/model/DuplicateImagePersonalResponse.cpp
   src/v20190924/model/DescribeCustomAccountsRequest.cpp
   src/v20190924/model/DescribeImageLifecyclePersonalResponse.cpp
-  src/v20190924/model/DeleteReplicationInstanceRequest.cpp
+  src/v20190924/model/DescribeInstanceStatusResponse.cpp
   src/v20190924/model/CreateImageAccelerationServiceRequest.cpp
   src/v20190924/model/DescribeWebhookTriggerResponse.cpp
   src/v20190924/model/ModifyInstanceTokenRequest.cpp
-  src/v20190924/model/DeleteImageLifecyclePersonalResponse.cpp
   src/v20190924/model/CreateNamespaceResponse.cpp
   src/v20190924/model/ModifyImmutableTagRulesRequest.cpp
   src/v20190924/model/DescribeRepositoryOwnerPersonalResponse.cpp
   src/v20190924/model/VpcPrivateDomainStatus.cpp
   src/v20190924/model/Permission.cpp
   src/v20190924/model/DescribeSecurityPoliciesResponse.cpp
-  src/v20190924/model/DescribeReplicationInstancesRequest.cpp
-  src/v20190924/model/CreateImageLifecyclePersonalResponse.cpp
+  src/v20190924/model/CreateSignatureResponse.cpp
   src/v20190924/model/DeleteRepositoryTagsRequest.cpp
   src/v20190924/model/RepoIsExistResp.cpp
   src/v20190924/model/TcrImageInfo.cpp
-  src/v20190924/model/RetentionPolicy.cpp
   src/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.cpp
   src/v20190924/model/CreateNamespacePersonalResponse.cpp
   src/v20190924/model/DescribeReplicationInstanceSyncStatusRequest.cpp
@@ -410,9 +403,9 @@ set(tcr_src
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeInstanceStatusRequest.cpp
   src/v20190924/model/ModifyWebhookTriggerRequest.cpp
-  src/v20190924/model/CreateImageAccelerationServiceResponse.cpp
+  src/v20190924/model/DeleteReplicationInstanceRequest.cpp
   src/v20190924/model/DeleteNamespaceResponse.cpp
-  src/v20190924/model/TagInfoResp.cpp
+  src/v20190924/model/DeleteNamespacePersonalResponse.cpp
   src/v20190924/model/Favors.cpp
   src/v20190924/model/CreateWebhookTriggerRequest.cpp
   src/v20190924/model/DescribeRepositoryPersonalResponse.cpp
@@ -452,7 +445,7 @@ set(tcr_src
   src/v20190924/model/NamespaceInfoResp.cpp
   src/v20190924/model/CreateRepositoryPersonalRequest.cpp
   src/v20190924/model/DescribeImageFilterPersonalResponse.cpp
-  src/v20190924/model/CreateImageLifecyclePersonalRequest.cpp
+  src/v20190924/model/DescribeReplicationInstancesRequest.cpp
   src/v20190924/model/DeleteWebhookTriggerRequest.cpp
   src/v20190924/model/DeleteSignaturePolicyResponse.cpp
   src/v20190924/model/TriggerInvokeResult.cpp
@@ -499,20 +492,20 @@ set(tcr_src
   src/v20190924/model/RepoInfo.cpp
   src/v20190924/model/ManageImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeUserQuotaPersonalResponse.cpp
+  src/v20190924/model/TaskDetail.cpp
   src/v20190924/model/DescribeImagePersonalRequest.cpp
   src/v20190924/model/DeleteSignaturePolicyRequest.cpp
   src/v20190924/model/DescribeRepositoryFilterPersonalResponse.cpp
   src/v20190924/model/ModifySecurityPolicyResponse.cpp
-  src/v20190924/model/DeleteImageLifecyclePersonalRequest.cpp
   src/v20190924/model/ModifyApplicationTriggerPersonalResponse.cpp
   src/v20190924/model/DeleteInstanceRequest.cpp
   src/v20190924/model/DescribeImageManifestsResponse.cpp
   src/v20190924/model/DescribeNamespacePersonalResponse.cpp
-  src/v20190924/model/DeleteNamespacePersonalResponse.cpp
+  src/v20190924/model/DeleteReplicationInstanceResponse.cpp
   src/v20190924/model/DescribeWebhookTriggerRequest.cpp
   src/v20190924/model/ImmutableTagRule.cpp
   src/v20190924/model/Header.cpp
-  src/v20190924/model/DescribeReplicationInstancesResponse.cpp
+  src/v20190924/model/RetentionPolicy.cpp
   src/v20190924/model/CreateSecurityPolicyRequest.cpp
   src/v20190924/model/CustomAccount.cpp
   src/v20190924/model/DeleteImageAccelerateServiceResponse.cpp
@@ -532,7 +525,6 @@ set(tcr_src
   src/v20190924/model/CheckInstanceNameResponse.cpp
   src/v20190924/model/DeleteTagRetentionRuleResponse.cpp
   src/v20190924/model/DescribeRepositoryOwnerPersonalRequest.cpp
-  src/v20190924/model/DeleteReplicationInstanceResponse.cpp
   src/v20190924/model/DescribeExternalEndpointStatusResponse.cpp
   src/v20190924/model/DescribeTagRetentionRulesResponse.cpp
   src/v20190924/model/DescribeRegionsRequest.cpp

@@ -46,7 +46,61 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取kms id
+                     * @return KeyId kms id
+                     * 
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 设置kms id
+                     * @param _keyId kms id
+                     * 
+                     */
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     * 
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取kms 地域
+                     * @return KmsRegion kms 地域
+                     * 
+                     */
+                    std::string GetKmsRegion() const;
+
+                    /**
+                     * 设置kms 地域
+                     * @param _kmsRegion kms 地域
+                     * 
+                     */
+                    void SetKmsRegion(const std::string& _kmsRegion);
+
+                    /**
+                     * 判断参数 KmsRegion 是否已赋值
+                     * @return KmsRegion 是否已赋值
+                     * 
+                     */
+                    bool KmsRegionHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * kms id
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
+
+                    /**
+                     * kms 地域
+                     */
+                    std::string m_kmsRegion;
+                    bool m_kmsRegionHasBeenSet;
 
                 };
             }

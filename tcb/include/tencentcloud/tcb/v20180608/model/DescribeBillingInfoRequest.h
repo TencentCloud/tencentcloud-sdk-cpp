@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_DELETEIMAGELIFECYCLEPERSONALREQUEST_H_
-#define TENCENTCLOUD_TCR_V20190924_MODEL_DELETEIMAGELIFECYCLEPERSONALREQUEST_H_
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEBILLINGINFOREQUEST_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEBILLINGINFOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Tcr
+    namespace Tcb
     {
-        namespace V20190924
+        namespace V20180608
         {
             namespace Model
             {
                 /**
-                * DeleteImageLifecyclePersonal请求参数结构体
+                * DescribeBillingInfo请求参数结构体
                 */
-                class DeleteImageLifecyclePersonalRequest : public AbstractModel
+                class DescribeBillingInfoRequest : public AbstractModel
                 {
                 public:
-                    DeleteImageLifecyclePersonalRequest();
-                    ~DeleteImageLifecyclePersonalRequest() = default;
+                    DescribeBillingInfoRequest();
+                    ~DescribeBillingInfoRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取仓库名称
-                     * @return RepoName 仓库名称
+                     * 获取环境ID
+                     * @return EnvId 环境ID
                      * 
                      */
-                    std::string GetRepoName() const;
+                    std::string GetEnvId() const;
 
                     /**
-                     * 设置仓库名称
-                     * @param _repoName 仓库名称
+                     * 设置环境ID
+                     * @param _envId 环境ID
                      * 
                      */
-                    void SetRepoName(const std::string& _repoName);
+                    void SetEnvId(const std::string& _envId);
 
                     /**
-                     * 判断参数 RepoName 是否已赋值
-                     * @return RepoName 是否已赋值
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
                      * 
                      */
-                    bool RepoNameHasBeenSet() const;
+                    bool EnvIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 仓库名称
+                     * 环境ID
                      */
-                    std::string m_repoName;
-                    bool m_repoNameHasBeenSet;
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_DELETEIMAGELIFECYCLEPERSONALREQUEST_H_
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEBILLINGINFOREQUEST_H_

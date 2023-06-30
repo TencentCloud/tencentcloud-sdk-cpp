@@ -25,7 +25,8 @@ using namespace std;
 
 CreateProxyResponse::CreateProxyResponse() :
     m_flowIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_proxyGroupIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CreateProxyResponse::Deserialize(const string &payload)
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProxyGroupId") && !rsp["ProxyGroupId"].IsNull())
+    {
+        if (!rsp["ProxyGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyGroupId = string(rsp["ProxyGroupId"].GetString());
+        m_proxyGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string CreateProxyResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_proxyGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyGroupId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ int64_t CreateProxyResponse::GetTaskId() const
 bool CreateProxyResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string CreateProxyResponse::GetProxyGroupId() const
+{
+    return m_proxyGroupId;
+}
+
+bool CreateProxyResponse::ProxyGroupIdHasBeenSet() const
+{
+    return m_proxyGroupIdHasBeenSet;
 }
 
 

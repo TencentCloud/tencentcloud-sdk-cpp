@@ -58,6 +58,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberPolicyResponse.h
   include/tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountResponse.h
+  include/tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberPoliciesRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberEmailBindRequest.h
@@ -68,6 +69,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/UpdateOrganizationNodeRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthAccountsRequest.h
   include/tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountRequest.h
+  include/tencentcloud/organization/v20210331/model/UpdateOrganizationMemberResponse.h
   include/tencentcloud/organization/v20210331/model/DeleteOrganizationNodesResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationFinancialByMemberResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthAccountsResponse.h
@@ -166,6 +168,7 @@ set(organization_src
   src/v20210331/model/DescribeOrganizationMembersResponse.cpp
   src/v20210331/model/CreateOrganizationMemberPolicyResponse.cpp
   src/v20210331/model/CancelOrganizationMemberAuthAccountResponse.cpp
+  src/v20210331/model/UpdateOrganizationMemberRequest.cpp
   src/v20210331/model/DescribeOrganizationResponse.cpp
   src/v20210331/model/DescribeOrganizationMemberPoliciesRequest.cpp
   src/v20210331/model/DescribeOrganizationMemberEmailBindRequest.cpp
@@ -176,6 +179,7 @@ set(organization_src
   src/v20210331/model/UpdateOrganizationNodeRequest.cpp
   src/v20210331/model/DescribeOrganizationMemberAuthAccountsRequest.cpp
   src/v20210331/model/CancelOrganizationMemberAuthAccountRequest.cpp
+  src/v20210331/model/UpdateOrganizationMemberResponse.cpp
   src/v20210331/model/DeleteOrganizationNodesResponse.cpp
   src/v20210331/model/DescribeOrganizationFinancialByMemberResponse.cpp
   src/v20210331/model/DescribeOrganizationMemberAuthAccountsResponse.cpp

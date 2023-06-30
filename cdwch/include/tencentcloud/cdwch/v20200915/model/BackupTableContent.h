@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取表总字节数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalBytes 表总字节数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalBytes() const;
 
                     /**
                      * 设置表总字节数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalBytes 表总字节数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalBytes(const int64_t& _totalBytes);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟cluster
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VCluster 虚拟cluster
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVCluster() const;
 
                     /**
                      * 设置虚拟cluster
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vCluster 虚拟cluster
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVCluster(const std::string& _vCluster);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取表ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ips 表ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIps() const;
 
                     /**
                      * 设置表ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ips 表ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIps(const std::string& _ips);
@@ -151,37 +171,106 @@ namespace TencentCloud
                      */
                     bool IpsHasBeenSet() const;
 
+                    /**
+                     * 获取zk路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZooPath zk路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZooPath() const;
+
+                    /**
+                     * 设置zk路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zooPath zk路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZooPath(const std::string& _zooPath);
+
+                    /**
+                     * 判断参数 ZooPath 是否已赋值
+                     * @return ZooPath 是否已赋值
+                     * 
+                     */
+                    bool ZooPathHasBeenSet() const;
+
+                    /**
+                     * 获取cvm的ip地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Rip cvm的ip地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRip() const;
+
+                    /**
+                     * 设置cvm的ip地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rip cvm的ip地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRip(const std::string& _rip);
+
+                    /**
+                     * 判断参数 Rip 是否已赋值
+                     * @return Rip 是否已赋值
+                     * 
+                     */
+                    bool RipHasBeenSet() const;
+
                 private:
 
                     /**
                      * 数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 表总字节数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalBytes;
                     bool m_totalBytesHasBeenSet;
 
                     /**
                      * 虚拟cluster
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vCluster;
                     bool m_vClusterHasBeenSet;
 
                     /**
                      * 表ip
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ips;
                     bool m_ipsHasBeenSet;
+
+                    /**
+                     * zk路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zooPath;
+                    bool m_zooPathHasBeenSet;
+
+                    /**
+                     * cvm的ip地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rip;
+                    bool m_ripHasBeenSet;
 
                 };
             }

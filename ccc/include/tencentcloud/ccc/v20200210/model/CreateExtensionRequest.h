@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool ExtensionNameHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的技能组列表
+                     * @return SkillGroupIds 绑定的技能组列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetSkillGroupIds() const;
+
+                    /**
+                     * 设置绑定的技能组列表
+                     * @param _skillGroupIds 绑定的技能组列表
+                     * 
+                     */
+                    void SetSkillGroupIds(const std::vector<uint64_t>& _skillGroupIds);
+
+                    /**
+                     * 判断参数 SkillGroupIds 是否已赋值
+                     * @return SkillGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SkillGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的坐席邮箱
+                     * @return Relation 绑定的坐席邮箱
+                     * 
+                     */
+                    std::string GetRelation() const;
+
+                    /**
+                     * 设置绑定的坐席邮箱
+                     * @param _relation 绑定的坐席邮箱
+                     * 
+                     */
+                    void SetRelation(const std::string& _relation);
+
+                    /**
+                     * 判断参数 Relation 是否已赋值
+                     * @return Relation 是否已赋值
+                     * 
+                     */
+                    bool RelationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_extensionName;
                     bool m_extensionNameHasBeenSet;
+
+                    /**
+                     * 绑定的技能组列表
+                     */
+                    std::vector<uint64_t> m_skillGroupIds;
+                    bool m_skillGroupIdsHasBeenSet;
+
+                    /**
+                     * 绑定的坐席邮箱
+                     */
+                    std::string m_relation;
+                    bool m_relationHasBeenSet;
 
                 };
             }

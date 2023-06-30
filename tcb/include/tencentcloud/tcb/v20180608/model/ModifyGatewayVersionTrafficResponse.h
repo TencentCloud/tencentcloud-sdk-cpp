@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_CREATEIMAGELIFECYCLEPERSONALRESPONSE_H_
-#define TENCENTCLOUD_TCR_V20190924_MODEL_CREATEIMAGELIFECYCLEPERSONALRESPONSE_H_
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_MODIFYGATEWAYVERSIONTRAFFICRESPONSE_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_MODIFYGATEWAYVERSIONTRAFFICRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tcr
+    namespace Tcb
     {
-        namespace V20190924
+        namespace V20180608
         {
             namespace Model
             {
                 /**
-                * CreateImageLifecyclePersonal返回参数结构体
+                * ModifyGatewayVersionTraffic返回参数结构体
                 */
-                class CreateImageLifecyclePersonalResponse : public AbstractModel
+                class ModifyGatewayVersionTrafficResponse : public AbstractModel
                 {
                 public:
-                    CreateImageLifecyclePersonalResponse();
-                    ~CreateImageLifecyclePersonalResponse() = default;
+                    ModifyGatewayVersionTrafficResponse();
+                    ~ModifyGatewayVersionTrafficResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_CREATEIMAGELIFECYCLEPERSONALRESPONSE_H_
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_MODIFYGATEWAYVERSIONTRAFFICRESPONSE_H_

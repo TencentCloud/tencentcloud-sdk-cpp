@@ -53,7 +53,8 @@ TelCdrInfo::TelCdrInfo() :
     m_customRecordURLHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_queuedSkillGroupNameHasBeenSet(false),
-    m_voicemailRecordURLHasBeenSet(false)
+    m_voicemailRecordURLHasBeenSet(false),
+    m_voicemailAsrURLHasBeenSet(false)
 {
 }
 
@@ -435,6 +436,19 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_voicemailRecordURLHasBeenSet = true;
     }
 
+    if (value.HasMember("VoicemailAsrURL") && !value["VoicemailAsrURL"].IsNull())
+    {
+        if (!value["VoicemailAsrURL"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.VoicemailAsrURL` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VoicemailAsrURL"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_voicemailAsrURL.push_back((*itr).GetString());
+        }
+        m_voicemailAsrURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -733,6 +747,19 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_voicemailRecordURL.begin(); itr != m_voicemailRecordURL.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_voicemailAsrURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicemailAsrURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_voicemailAsrURL.begin(); itr != m_voicemailAsrURL.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -1267,5 +1294,21 @@ void TelCdrInfo::SetVoicemailRecordURL(const vector<string>& _voicemailRecordURL
 bool TelCdrInfo::VoicemailRecordURLHasBeenSet() const
 {
     return m_voicemailRecordURLHasBeenSet;
+}
+
+vector<string> TelCdrInfo::GetVoicemailAsrURL() const
+{
+    return m_voicemailAsrURL;
+}
+
+void TelCdrInfo::SetVoicemailAsrURL(const vector<string>& _voicemailAsrURL)
+{
+    m_voicemailAsrURL = _voicemailAsrURL;
+    m_voicemailAsrURLHasBeenSet = true;
+}
+
+bool TelCdrInfo::VoicemailAsrURLHasBeenSet() const
+{
+    return m_voicemailAsrURLHasBeenSet;
 }
 

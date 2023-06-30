@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool PrincipalHasBeenSet() const;
 
                     /**
-                     * 获取默认为：*，表示任何host都可以访问，当前ckafka不支持host为：*，但是后面开源kafka的产品化会直接支持
+                     * 获取默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Host 默认为：*，表示任何host都可以访问，当前ckafka不支持host为：*，但是后面开源kafka的产品化会直接支持
+                     * @return Host 默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置默认为：*，表示任何host都可以访问，当前ckafka不支持host为：*，但是后面开源kafka的产品化会直接支持
+                     * 设置默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _host 默认为：*，表示任何host都可以访问，当前ckafka不支持host为：*，但是后面开源kafka的产品化会直接支持
+                     * @param _host 默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_principalHasBeenSet;
 
                     /**
-                     * 默认为：*，表示任何host都可以访问，当前ckafka不支持host为：*，但是后面开源kafka的产品化会直接支持
+                     * 默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;

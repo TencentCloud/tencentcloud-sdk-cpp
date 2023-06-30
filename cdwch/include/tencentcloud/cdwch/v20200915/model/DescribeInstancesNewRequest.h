@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool SearchTagsHasBeenSet() const;
 
+                    /**
+                     * 获取信息详细与否
+                     * @return IsSimple 信息详细与否
+                     * 
+                     */
+                    bool GetIsSimple() const;
+
+                    /**
+                     * 设置信息详细与否
+                     * @param _isSimple 信息详细与否
+                     * 
+                     */
+                    void SetIsSimple(const bool& _isSimple);
+
+                    /**
+                     * 判断参数 IsSimple 是否已赋值
+                     * @return IsSimple 是否已赋值
+                     * 
+                     */
+                    bool IsSimpleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<SearchTags> m_searchTags;
                     bool m_searchTagsHasBeenSet;
+
+                    /**
+                     * 信息详细与否
+                     */
+                    bool m_isSimple;
+                    bool m_isSimpleHasBeenSet;
 
                 };
             }

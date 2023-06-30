@@ -728,6 +728,49 @@ TcbClient::DeleteEndUserOutcomeCallable TcbClient::DeleteEndUserCallable(const D
     return task->get_future();
 }
 
+TcbClient::DeleteGatewayVersionOutcome TcbClient::DeleteGatewayVersion(const DeleteGatewayVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGatewayVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGatewayVersionResponse rsp = DeleteGatewayVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGatewayVersionOutcome(rsp);
+        else
+            return DeleteGatewayVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGatewayVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteGatewayVersionAsync(const DeleteGatewayVersionRequest& request, const DeleteGatewayVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGatewayVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DeleteGatewayVersionOutcomeCallable TcbClient::DeleteGatewayVersionCallable(const DeleteGatewayVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGatewayVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGatewayVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DeleteWxGatewayRouteOutcome TcbClient::DeleteWxGatewayRoute(const DeleteWxGatewayRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWxGatewayRoute");
@@ -936,6 +979,92 @@ TcbClient::DescribeBaasPackageListOutcomeCallable TcbClient::DescribeBaasPackage
         [this, request]()
         {
             return this->DescribeBaasPackageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeBillingInfoOutcome TcbClient::DescribeBillingInfo(const DescribeBillingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingInfoResponse rsp = DescribeBillingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingInfoOutcome(rsp);
+        else
+            return DescribeBillingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeBillingInfoAsync(const DescribeBillingInfoRequest& request, const DescribeBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeBillingInfoOutcomeCallable TcbClient::DescribeBillingInfoCallable(const DescribeBillingInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeCbrServerVersionOutcome TcbClient::DescribeCbrServerVersion(const DescribeCbrServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCbrServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCbrServerVersionResponse rsp = DescribeCbrServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCbrServerVersionOutcome(rsp);
+        else
+            return DescribeCbrServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCbrServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCbrServerVersionAsync(const DescribeCbrServerVersionRequest& request, const DescribeCbrServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCbrServerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCbrServerVersionOutcomeCallable TcbClient::DescribeCbrServerVersionCallable(const DescribeCbrServerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCbrServerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCbrServerVersion(request);
         }
     );
 
@@ -2233,6 +2362,92 @@ TcbClient::DescribeGatewayCurveDataOutcomeCallable TcbClient::DescribeGatewayCur
     return task->get_future();
 }
 
+TcbClient::DescribeGatewayVersionsOutcome TcbClient::DescribeGatewayVersions(const DescribeGatewayVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayVersionsResponse rsp = DescribeGatewayVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayVersionsOutcome(rsp);
+        else
+            return DescribeGatewayVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeGatewayVersionsAsync(const DescribeGatewayVersionsRequest& request, const DescribeGatewayVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeGatewayVersionsOutcomeCallable TcbClient::DescribeGatewayVersionsCallable(const DescribeGatewayVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeGraphDataOutcome TcbClient::DescribeGraphData(const DescribeGraphDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGraphData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGraphDataResponse rsp = DescribeGraphDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGraphDataOutcome(rsp);
+        else
+            return DescribeGraphDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGraphDataOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeGraphDataAsync(const DescribeGraphDataRequest& request, const DescribeGraphDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGraphData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeGraphDataOutcomeCallable TcbClient::DescribeGraphDataCallable(const DescribeGraphDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGraphDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGraphData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeHostingDomainTaskOutcome TcbClient::DescribeHostingDomainTask(const DescribeHostingDomainTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHostingDomainTask");
@@ -2699,6 +2914,92 @@ TcbClient::DescribeWxCloudBaseRunSubNetsOutcomeCallable TcbClient::DescribeWxClo
         [this, request]()
         {
             return this->DescribeWxCloudBaseRunSubNets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeWxGatewayRoutesOutcome TcbClient::DescribeWxGatewayRoutes(const DescribeWxGatewayRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWxGatewayRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWxGatewayRoutesResponse rsp = DescribeWxGatewayRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWxGatewayRoutesOutcome(rsp);
+        else
+            return DescribeWxGatewayRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWxGatewayRoutesOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeWxGatewayRoutesAsync(const DescribeWxGatewayRoutesRequest& request, const DescribeWxGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWxGatewayRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeWxGatewayRoutesOutcomeCallable TcbClient::DescribeWxGatewayRoutesCallable(const DescribeWxGatewayRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWxGatewayRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWxGatewayRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeWxGatewaysOutcome TcbClient::DescribeWxGateways(const DescribeWxGatewaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWxGateways");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWxGatewaysResponse rsp = DescribeWxGatewaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWxGatewaysOutcome(rsp);
+        else
+            return DescribeWxGatewaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWxGatewaysOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeWxGatewaysAsync(const DescribeWxGatewaysRequest& request, const DescribeWxGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWxGateways(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeWxGatewaysOutcomeCallable TcbClient::DescribeWxGatewaysCallable(const DescribeWxGatewaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWxGatewaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWxGateways(request);
         }
     );
 
@@ -3215,6 +3516,49 @@ TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnv
         [this, request]()
         {
             return this->ModifyEnv(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::ModifyGatewayVersionTrafficOutcome TcbClient::ModifyGatewayVersionTraffic(const ModifyGatewayVersionTrafficRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGatewayVersionTraffic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGatewayVersionTrafficResponse rsp = ModifyGatewayVersionTrafficResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGatewayVersionTrafficOutcome(rsp);
+        else
+            return ModifyGatewayVersionTrafficOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGatewayVersionTrafficOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyGatewayVersionTrafficAsync(const ModifyGatewayVersionTrafficRequest& request, const ModifyGatewayVersionTrafficAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGatewayVersionTraffic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::ModifyGatewayVersionTrafficOutcomeCallable TcbClient::ModifyGatewayVersionTrafficCallable(const ModifyGatewayVersionTrafficRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGatewayVersionTrafficOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGatewayVersionTraffic(request);
         }
     );
 

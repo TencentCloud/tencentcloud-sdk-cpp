@@ -155,6 +155,31 @@ namespace TencentCloud
                      */
                     bool ScheduleIdHasBeenSet() const;
 
+                    /**
+                     * 获取下次备份时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextBackupTime 下次备份时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNextBackupTime() const;
+
+                    /**
+                     * 设置下次备份时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nextBackupTime 下次备份时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNextBackupTime(const std::string& _nextBackupTime);
+
+                    /**
+                     * 判断参数 NextBackupTime 是否已赋值
+                     * @return NextBackupTime 是否已赋值
+                     * 
+                     */
+                    bool NextBackupTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +212,13 @@ namespace TencentCloud
                      */
                     int64_t m_scheduleId;
                     bool m_scheduleIdHasBeenSet;
+
+                    /**
+                     * 下次备份时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nextBackupTime;
+                    bool m_nextBackupTimeHasBeenSet;
 
                 };
             }

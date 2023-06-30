@@ -68,23 +68,23 @@ namespace TencentCloud
                     bool MaxFaceNumHasBeenSet() const;
 
                     /**
-                     * 获取人脸长和宽的最小尺寸，单位为像素。
-默认为34。建议不低于34。
-低于MinFaceSize值的人脸不会被检测。
-                     * @return MinFaceSize 人脸长和宽的最小尺寸，单位为像素。
-默认为34。建议不低于34。
-低于MinFaceSize值的人脸不会被检测。
+                     * 获取人脸长和宽的最小尺寸，单位为像素，低于MinFaceSize值的人脸不会被检测。
+只支持设置34和20，建议使用34。
+
+                     * @return MinFaceSize 人脸长和宽的最小尺寸，单位为像素，低于MinFaceSize值的人脸不会被检测。
+只支持设置34和20，建议使用34。
+
                      * 
                      */
                     uint64_t GetMinFaceSize() const;
 
                     /**
-                     * 设置人脸长和宽的最小尺寸，单位为像素。
-默认为34。建议不低于34。
-低于MinFaceSize值的人脸不会被检测。
-                     * @param _minFaceSize 人脸长和宽的最小尺寸，单位为像素。
-默认为34。建议不低于34。
-低于MinFaceSize值的人脸不会被检测。
+                     * 设置人脸长和宽的最小尺寸，单位为像素，低于MinFaceSize值的人脸不会被检测。
+只支持设置34和20，建议使用34。
+
+                     * @param _minFaceSize 人脸长和宽的最小尺寸，单位为像素，低于MinFaceSize值的人脸不会被检测。
+只支持设置34和20，建议使用34。
+
                      * 
                      */
                     void SetMinFaceSize(const uint64_t& _minFaceSize);
@@ -316,9 +316,9 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                     bool m_maxFaceNumHasBeenSet;
 
                     /**
-                     * 人脸长和宽的最小尺寸，单位为像素。
-默认为34。建议不低于34。
-低于MinFaceSize值的人脸不会被检测。
+                     * 人脸长和宽的最小尺寸，单位为像素，低于MinFaceSize值的人脸不会被检测。
+只支持设置34和20，建议使用34。
+
                      */
                     uint64_t m_minFaceSize;
                     bool m_minFaceSizeHasBeenSet;

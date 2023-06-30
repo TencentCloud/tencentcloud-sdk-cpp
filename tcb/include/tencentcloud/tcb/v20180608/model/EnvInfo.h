@@ -616,6 +616,56 @@ namespace TencentCloud
                      */
                     bool PackageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取架构类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArchitectureType 架构类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArchitectureType() const;
+
+                    /**
+                     * 设置架构类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _architectureType 架构类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArchitectureType(const std::string& _architectureType);
+
+                    /**
+                     * 判断参数 ArchitectureType 是否已赋值
+                     * @return ArchitectureType 是否已赋值
+                     * 
+                     */
+                    bool ArchitectureTypeHasBeenSet() const;
+
+                    /**
+                     * 获取回收标志，默认为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Recycle 回收标志，默认为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRecycle() const;
+
+                    /**
+                     * 设置回收标志，默认为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recycle 回收标志，默认为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecycle(const std::string& _recycle);
+
+                    /**
+                     * 判断参数 Recycle 是否已赋值
+                     * @return Recycle 是否已赋值
+                     * 
+                     */
+                    bool RecycleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -775,6 +825,20 @@ namespace TencentCloud
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 架构类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_architectureType;
+                    bool m_architectureTypeHasBeenSet;
+
+                    /**
+                     * 回收标志，默认为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recycle;
+                    bool m_recycleHasBeenSet;
 
                 };
             }

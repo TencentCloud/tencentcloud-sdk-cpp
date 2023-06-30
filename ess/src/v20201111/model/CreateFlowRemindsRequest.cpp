@@ -24,7 +24,8 @@ using namespace std;
 
 CreateFlowRemindsRequest::CreateFlowRemindsRequest() :
     m_operatorHasBeenSet(false),
-    m_flowIdsHasBeenSet(false)
+    m_flowIdsHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,15 @@ string CreateFlowRemindsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -95,6 +105,22 @@ void CreateFlowRemindsRequest::SetFlowIds(const vector<string>& _flowIds)
 bool CreateFlowRemindsRequest::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
+}
+
+Agent CreateFlowRemindsRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateFlowRemindsRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateFlowRemindsRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

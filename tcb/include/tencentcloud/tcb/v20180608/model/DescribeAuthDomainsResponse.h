@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全域名列表列表
-                     * @return Domains 安全域名列表列表
+                     * 获取安全域名列表
+                     * @return Domains 安全域名列表
                      * 
                      */
                     std::vector<AuthDomain> GetDomains() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全域名列表列表
+                     * 安全域名列表
                      */
                     std::vector<AuthDomain> m_domains;
                     bool m_domainsHasBeenSet;

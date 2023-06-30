@@ -27,7 +27,8 @@ DescribeInstancesNewRequest::DescribeInstancesNewRequest() :
     m_searchInstanceNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_searchTagsHasBeenSet(false)
+    m_searchTagsHasBeenSet(false),
+    m_isSimpleHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeInstancesNewRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isSimpleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSimple";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSimple, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeInstancesNewRequest::SetSearchTags(const vector<SearchTags>& _searc
 bool DescribeInstancesNewRequest::SearchTagsHasBeenSet() const
 {
     return m_searchTagsHasBeenSet;
+}
+
+bool DescribeInstancesNewRequest::GetIsSimple() const
+{
+    return m_isSimple;
+}
+
+void DescribeInstancesNewRequest::SetIsSimple(const bool& _isSimple)
+{
+    m_isSimple = _isSimple;
+    m_isSimpleHasBeenSet = true;
+}
+
+bool DescribeInstancesNewRequest::IsSimpleHasBeenSet() const
+{
+    return m_isSimpleHasBeenSet;
 }
 
 

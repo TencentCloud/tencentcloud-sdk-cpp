@@ -943,6 +943,49 @@ OrganizationClient::MoveOrganizationNodeMembersOutcomeCallable OrganizationClien
     return task->get_future();
 }
 
+OrganizationClient::UpdateOrganizationMemberOutcome OrganizationClient::UpdateOrganizationMember(const UpdateOrganizationMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOrganizationMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOrganizationMemberResponse rsp = UpdateOrganizationMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOrganizationMemberOutcome(rsp);
+        else
+            return UpdateOrganizationMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOrganizationMemberOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::UpdateOrganizationMemberAsync(const UpdateOrganizationMemberRequest& request, const UpdateOrganizationMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateOrganizationMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::UpdateOrganizationMemberOutcomeCallable OrganizationClient::UpdateOrganizationMemberCallable(const UpdateOrganizationMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateOrganizationMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateOrganizationMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::UpdateOrganizationMemberEmailBindOutcome OrganizationClient::UpdateOrganizationMemberEmailBind(const UpdateOrganizationMemberEmailBindRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateOrganizationMemberEmailBind");

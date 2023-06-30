@@ -22,7 +22,8 @@ using namespace std;
 
 ComplianceHostDetailInfo::ComplianceHostDetailInfo() :
     m_dockerVersionHasBeenSet(false),
-    m_k8SVersionHasBeenSet(false)
+    m_k8SVersionHasBeenSet(false),
+    m_containerdVersionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ComplianceHostDetailInfo::Deserialize(const rapidjson::Value
         m_k8SVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerdVersion") && !value["ContainerdVersion"].IsNull())
+    {
+        if (!value["ContainerdVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceHostDetailInfo.ContainerdVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerdVersion = string(value["ContainerdVersion"].GetString());
+        m_containerdVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ComplianceHostDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "K8SVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_k8SVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerdVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerdVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerdVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ComplianceHostDetailInfo::SetK8SVersion(const string& _k8SVersion)
 bool ComplianceHostDetailInfo::K8SVersionHasBeenSet() const
 {
     return m_k8SVersionHasBeenSet;
+}
+
+string ComplianceHostDetailInfo::GetContainerdVersion() const
+{
+    return m_containerdVersion;
+}
+
+void ComplianceHostDetailInfo::SetContainerdVersion(const string& _containerdVersion)
+{
+    m_containerdVersion = _containerdVersion;
+    m_containerdVersionHasBeenSet = true;
+}
+
+bool ComplianceHostDetailInfo::ContainerdVersionHasBeenSet() const
+{
+    return m_containerdVersionHasBeenSet;
 }
 

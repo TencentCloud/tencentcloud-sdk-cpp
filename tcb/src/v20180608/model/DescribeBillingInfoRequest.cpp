@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DeleteImageLifecyclePersonalRequest::DeleteImageLifecyclePersonalRequest() :
-    m_repoNameHasBeenSet(false)
+DescribeBillingInfoRequest::DescribeBillingInfoRequest() :
+    m_envIdHasBeenSet(false)
 {
 }
 
-string DeleteImageLifecyclePersonalRequest::ToJsonString() const
+string DescribeBillingInfoRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_repoNameHasBeenSet)
+    if (m_envIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RepoName";
+        string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string DeleteImageLifecyclePersonalRequest::ToJsonString() const
 }
 
 
-string DeleteImageLifecyclePersonalRequest::GetRepoName() const
+string DescribeBillingInfoRequest::GetEnvId() const
 {
-    return m_repoName;
+    return m_envId;
 }
 
-void DeleteImageLifecyclePersonalRequest::SetRepoName(const string& _repoName)
+void DescribeBillingInfoRequest::SetEnvId(const string& _envId)
 {
-    m_repoName = _repoName;
-    m_repoNameHasBeenSet = true;
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
 }
 
-bool DeleteImageLifecyclePersonalRequest::RepoNameHasBeenSet() const
+bool DescribeBillingInfoRequest::EnvIdHasBeenSet() const
 {
-    return m_repoNameHasBeenSet;
+    return m_envIdHasBeenSet;
 }
 
 

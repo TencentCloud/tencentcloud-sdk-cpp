@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 央视P2P流信息。
+                * P2P流信息。
                 */
                 class XP2PDetailInfo : public AbstractModel
                 {
