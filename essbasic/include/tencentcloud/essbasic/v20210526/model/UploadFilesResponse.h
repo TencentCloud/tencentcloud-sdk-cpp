@@ -44,20 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件id数组，有效期一个小时；有效期内此文件id可以反复使用
-                     * @return FileIds 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
-                     * 
-                     */
-                    std::vector<std::string> GetFileIds() const;
-
-                    /**
-                     * 判断参数 FileIds 是否已赋值
-                     * @return FileIds 是否已赋值
-                     * 
-                     */
-                    bool FileIdsHasBeenSet() const;
-
-                    /**
                      * 获取上传成功文件数量
                      * @return TotalCount 上传成功文件数量
                      * 
@@ -70,6 +56,20 @@ namespace TencentCloud
                      * 
                      */
                     bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     * @return FileIds 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     * 
+                     */
+                    std::vector<std::string> GetFileIds() const;
+
+                    /**
+                     * 判断参数 FileIds 是否已赋值
+                     * @return FileIds 是否已赋值
+                     * 
+                     */
+                    bool FileIdsHasBeenSet() const;
 
                     /**
                      * 获取文件Url
@@ -88,16 +88,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
-                     */
-                    std::vector<std::string> m_fileIds;
-                    bool m_fileIdsHasBeenSet;
-
-                    /**
                      * 上传成功文件数量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     */
+                    std::vector<std::string> m_fileIds;
+                    bool m_fileIdsHasBeenSet;
 
                     /**
                      * 文件Url

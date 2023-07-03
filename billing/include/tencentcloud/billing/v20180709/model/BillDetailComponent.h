@@ -194,6 +194,56 @@ namespace TencentCloud
                     bool UsedAmountUnitHasBeenSet() const;
 
                     /**
+                     * 获取原始用量/时长：组件被资源包抵扣前的原始用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealTotalMeasure 原始用量/时长：组件被资源包抵扣前的原始用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRealTotalMeasure() const;
+
+                    /**
+                     * 设置原始用量/时长：组件被资源包抵扣前的原始用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _realTotalMeasure 原始用量/时长：组件被资源包抵扣前的原始用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRealTotalMeasure(const std::string& _realTotalMeasure);
+
+                    /**
+                     * 判断参数 RealTotalMeasure 是否已赋值
+                     * @return RealTotalMeasure 是否已赋值
+                     * 
+                     */
+                    bool RealTotalMeasureHasBeenSet() const;
+
+                    /**
+                     * 获取抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeductedMeasure 抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeductedMeasure() const;
+
+                    /**
+                     * 设置抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deductedMeasure 抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeductedMeasure(const std::string& _deductedMeasure);
+
+                    /**
+                     * 判断参数 DeductedMeasure 是否已赋值
+                     * @return DeductedMeasure 是否已赋值
+                     * 
+                     */
+                    bool DeductedMeasureHasBeenSet() const;
+
+                    /**
                      * 获取使用时长：资源使用的时长
                      * @return TimeSpan 使用时长：资源使用的时长
                      * 
@@ -700,6 +750,20 @@ namespace TencentCloud
                      */
                     std::string m_usedAmountUnit;
                     bool m_usedAmountUnitHasBeenSet;
+
+                    /**
+                     * 原始用量/时长：组件被资源包抵扣前的原始用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_realTotalMeasure;
+                    bool m_realTotalMeasureHasBeenSet;
+
+                    /**
+                     * 抵扣用量/时长（含资源包）：组件被资源包抵扣的用量/时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deductedMeasure;
+                    bool m_deductedMeasureHasBeenSet;
 
                     /**
                      * 使用时长：资源使用的时长

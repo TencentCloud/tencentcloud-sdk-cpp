@@ -29,7 +29,9 @@ ReleasedApprover::ReleasedApprover() :
     m_idCardNumberHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_organizationOpenIdHasBeenSet(false),
-    m_openIdHasBeenSet(false)
+    m_openIdHasBeenSet(false),
+    m_approverSignComponentTypeHasBeenSet(false),
+    m_approverSignRoleHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
         m_openIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverSignComponentType") && !value["ApproverSignComponentType"].IsNull())
+    {
+        if (!value["ApproverSignComponentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.ApproverSignComponentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverSignComponentType = string(value["ApproverSignComponentType"].GetString());
+        m_approverSignComponentTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverSignRole") && !value["ApproverSignRole"].IsNull())
+    {
+        if (!value["ApproverSignRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.ApproverSignRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverSignRole = string(value["ApproverSignRole"].GetString());
+        m_approverSignRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverSignComponentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSignComponentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverSignComponentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverSignRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSignRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverSignRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void ReleasedApprover::SetOpenId(const string& _openId)
 bool ReleasedApprover::OpenIdHasBeenSet() const
 {
     return m_openIdHasBeenSet;
+}
+
+string ReleasedApprover::GetApproverSignComponentType() const
+{
+    return m_approverSignComponentType;
+}
+
+void ReleasedApprover::SetApproverSignComponentType(const string& _approverSignComponentType)
+{
+    m_approverSignComponentType = _approverSignComponentType;
+    m_approverSignComponentTypeHasBeenSet = true;
+}
+
+bool ReleasedApprover::ApproverSignComponentTypeHasBeenSet() const
+{
+    return m_approverSignComponentTypeHasBeenSet;
+}
+
+string ReleasedApprover::GetApproverSignRole() const
+{
+    return m_approverSignRole;
+}
+
+void ReleasedApprover::SetApproverSignRole(const string& _approverSignRole)
+{
+    m_approverSignRole = _approverSignRole;
+    m_approverSignRoleHasBeenSet = true;
+}
+
+bool ReleasedApprover::ApproverSignRoleHasBeenSet() const
+{
+    return m_approverSignRoleHasBeenSet;
 }
 

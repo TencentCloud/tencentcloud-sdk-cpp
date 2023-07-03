@@ -37,6 +37,8 @@ namespace TencentCloud
                 /**
                 * 解除协议的签署人，如不指定，默认使用待解除流程（即原流程）中的签署人。
 注意：不支持更换C端（个人身份类型）签署人，如果原流程中含有C端签署人，默认使用原流程中的该C端签署人。
+注意：目前不支持替换C端（个人身份类型）签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。
+注意：当指定C端签署人的签署方自定义控件别名不空时，除RelievedApproverReceiptId参数外，可以只参数ApproverSignRole。
                 */
                 class ReleasedApprover : public AbstractModel
                 {
@@ -143,6 +145,56 @@ ENTERPRISESERVER-企业静默签
                      */
                     bool ApproverTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
+- SIGN_SEAL-默认为印章控件类型
+- SIGN_SIGNATURE-手写签名控件类型
+                     * @return ApproverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
+- SIGN_SEAL-默认为印章控件类型
+- SIGN_SIGNATURE-手写签名控件类型
+                     * 
+                     */
+                    std::string GetApproverSignComponentType() const;
+
+                    /**
+                     * 设置签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
+- SIGN_SEAL-默认为印章控件类型
+- SIGN_SIGNATURE-手写签名控件类型
+                     * @param _approverSignComponentType 签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
+- SIGN_SEAL-默认为印章控件类型
+- SIGN_SIGNATURE-手写签名控件类型
+                     * 
+                     */
+                    void SetApproverSignComponentType(const std::string& _approverSignComponentType);
+
+                    /**
+                     * 判断参数 ApproverSignComponentType 是否已赋值
+                     * @return ApproverSignComponentType 是否已赋值
+                     * 
+                     */
+                    bool ApproverSignComponentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取签署方自定义控件别名，最大长度20个字符
+                     * @return ApproverSignRole 签署方自定义控件别名，最大长度20个字符
+                     * 
+                     */
+                    std::string GetApproverSignRole() const;
+
+                    /**
+                     * 设置签署方自定义控件别名，最大长度20个字符
+                     * @param _approverSignRole 签署方自定义控件别名，最大长度20个字符
+                     * 
+                     */
+                    void SetApproverSignRole(const std::string& _approverSignRole);
+
+                    /**
+                     * 判断参数 ApproverSignRole 是否已赋值
+                     * @return ApproverSignRole 是否已赋值
+                     * 
+                     */
+                    bool ApproverSignRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +223,20 @@ ENTERPRISESERVER-企业静默签
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
+
+                    /**
+                     * 签署控件类型，支持自定义企业签署方的签署控件为“印章”或“签名”
+- SIGN_SEAL-默认为印章控件类型
+- SIGN_SIGNATURE-手写签名控件类型
+                     */
+                    std::string m_approverSignComponentType;
+                    bool m_approverSignComponentTypeHasBeenSet;
+
+                    /**
+                     * 签署方自定义控件别名，最大长度20个字符
+                     */
+                    std::string m_approverSignRole;
+                    bool m_approverSignRoleHasBeenSet;
 
                 };
             }

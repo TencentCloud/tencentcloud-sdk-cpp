@@ -53,6 +53,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainBatchResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteRecordBatchRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteRecordBatchResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordGroupRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteShareDomainRequest.h>
@@ -214,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRecordResponse> DeleteRecordOutcome;
                 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteRecordRequest&, DeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordBatchResponse> DeleteRecordBatchOutcome;
+                typedef std::future<DeleteRecordBatchOutcome> DeleteRecordBatchOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DeleteRecordBatchRequest&, DeleteRecordBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordGroupResponse> DeleteRecordGroupOutcome;
                 typedef std::future<DeleteRecordGroupOutcome> DeleteRecordGroupOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteRecordGroupRequest&, DeleteRecordGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordGroupAsyncHandler;
@@ -504,6 +509,15 @@ namespace TencentCloud
                 DeleteRecordOutcome DeleteRecord(const Model::DeleteRecordRequest &request);
                 void DeleteRecordAsync(const Model::DeleteRecordRequest& request, const DeleteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRecordOutcomeCallable DeleteRecordCallable(const Model::DeleteRecordRequest& request);
+
+                /**
+                 *批量删除解析记录
+                 * @param req DeleteRecordBatchRequest
+                 * @return DeleteRecordBatchOutcome
+                 */
+                DeleteRecordBatchOutcome DeleteRecordBatch(const Model::DeleteRecordBatchRequest &request);
+                void DeleteRecordBatchAsync(const Model::DeleteRecordBatchRequest& request, const DeleteRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordBatchOutcomeCallable DeleteRecordBatchCallable(const Model::DeleteRecordBatchRequest& request);
 
                 /**
                  *删除记录分组

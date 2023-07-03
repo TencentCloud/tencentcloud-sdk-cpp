@@ -26,7 +26,8 @@ CreateReleaseFlowRequest::CreateReleaseFlowRequest() :
     m_operatorHasBeenSet(false),
     m_needRelievedFlowIdHasBeenSet(false),
     m_reliveInfoHasBeenSet(false),
-    m_releasedApproversHasBeenSet(false)
+    m_releasedApproversHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateReleaseFlowRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deadline, allocator);
     }
 
 
@@ -148,6 +157,22 @@ void CreateReleaseFlowRequest::SetReleasedApprovers(const vector<ReleasedApprove
 bool CreateReleaseFlowRequest::ReleasedApproversHasBeenSet() const
 {
     return m_releasedApproversHasBeenSet;
+}
+
+int64_t CreateReleaseFlowRequest::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void CreateReleaseFlowRequest::SetDeadline(const int64_t& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool CreateReleaseFlowRequest::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 
 

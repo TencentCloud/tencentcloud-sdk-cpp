@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取token时的的配置
+                * 获取token时的配置
                 */
                 class GetEidTokenConfig : public AbstractModel
                 {

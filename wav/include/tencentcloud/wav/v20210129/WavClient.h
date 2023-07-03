@@ -35,6 +35,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryActivityListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryArrivalListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryArrivalListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryChannelCodeListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryChannelCodeListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryChatArchivingListRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserEventListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryFollowListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryFollowListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryLicenseInfoRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryLicenseInfoResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryMaterialListRequest.h>
@@ -103,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryActivityLiveCodeListResponse> QueryActivityLiveCodeListOutcome;
                 typedef std::future<QueryActivityLiveCodeListOutcome> QueryActivityLiveCodeListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryActivityLiveCodeListRequest&, QueryActivityLiveCodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryActivityLiveCodeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryArrivalListResponse> QueryArrivalListOutcome;
+                typedef std::future<QueryArrivalListOutcome> QueryArrivalListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryArrivalListRequest&, QueryArrivalListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryArrivalListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryChannelCodeListResponse> QueryChannelCodeListOutcome;
                 typedef std::future<QueryChannelCodeListOutcome> QueryChannelCodeListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryChannelCodeListRequest&, QueryChannelCodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChannelCodeListAsyncHandler;
@@ -139,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryExternalUserMappingInfoResponse> QueryExternalUserMappingInfoOutcome;
                 typedef std::future<QueryExternalUserMappingInfoOutcome> QueryExternalUserMappingInfoOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalUserMappingInfoRequest&, QueryExternalUserMappingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalUserMappingInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFollowListResponse> QueryFollowListOutcome;
+                typedef std::future<QueryFollowListOutcome> QueryFollowListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryFollowListRequest&, QueryFollowListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFollowListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryLicenseInfoResponse> QueryLicenseInfoOutcome;
                 typedef std::future<QueryLicenseInfoOutcome> QueryLicenseInfoOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryLicenseInfoRequest&, QueryLicenseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryLicenseInfoAsyncHandler;
@@ -213,6 +223,15 @@ namespace TencentCloud
                 QueryActivityLiveCodeListOutcome QueryActivityLiveCodeList(const Model::QueryActivityLiveCodeListRequest &request);
                 void QueryActivityLiveCodeListAsync(const Model::QueryActivityLiveCodeListRequest& request, const QueryActivityLiveCodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryActivityLiveCodeListOutcomeCallable QueryActivityLiveCodeListCallable(const Model::QueryActivityLiveCodeListRequest& request);
+
+                /**
+                 *查询指定时间范围内发生过到店的潜客到店信息
+                 * @param req QueryArrivalListRequest
+                 * @return QueryArrivalListOutcome
+                 */
+                QueryArrivalListOutcome QueryArrivalList(const Model::QueryArrivalListRequest &request);
+                void QueryArrivalListAsync(const Model::QueryArrivalListRequest& request, const QueryArrivalListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryArrivalListOutcomeCallable QueryArrivalListCallable(const Model::QueryArrivalListRequest& request);
 
                 /**
                  *根据游标拉取渠道活码列表信息
@@ -321,6 +340,15 @@ namespace TencentCloud
                 QueryExternalUserMappingInfoOutcome QueryExternalUserMappingInfo(const Model::QueryExternalUserMappingInfoRequest &request);
                 void QueryExternalUserMappingInfoAsync(const Model::QueryExternalUserMappingInfoRequest& request, const QueryExternalUserMappingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryExternalUserMappingInfoOutcomeCallable QueryExternalUserMappingInfoCallable(const Model::QueryExternalUserMappingInfoRequest& request);
+
+                /**
+                 *查询指定时间范围内发生过跟进的潜客信息
+                 * @param req QueryFollowListRequest
+                 * @return QueryFollowListOutcome
+                 */
+                QueryFollowListOutcome QueryFollowList(const Model::QueryFollowListRequest &request);
+                void QueryFollowListAsync(const Model::QueryFollowListRequest& request, const QueryFollowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFollowListOutcomeCallable QueryFollowListCallable(const Model::QueryFollowListRequest& request);
 
                 /**
                  *该接口获取license对应的详细信息

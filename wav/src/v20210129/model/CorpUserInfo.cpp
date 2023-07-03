@@ -30,7 +30,8 @@ CorpUserInfo::CorpUserInfo() :
     m_orgIdsHasBeenSet(false),
     m_mainDepartmentHasBeenSet(false),
     m_isLeaderInDeptHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_jobNumberHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome CorpUserInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("JobNumber") && !value["JobNumber"].IsNull())
+    {
+        if (!value["JobNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CorpUserInfo.JobNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobNumber = string(value["JobNumber"].GetString());
+        m_jobNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void CorpUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_jobNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void CorpUserInfo::SetStatus(const int64_t& _status)
 bool CorpUserInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CorpUserInfo::GetJobNumber() const
+{
+    return m_jobNumber;
+}
+
+void CorpUserInfo::SetJobNumber(const string& _jobNumber)
+{
+    m_jobNumber = _jobNumber;
+    m_jobNumberHasBeenSet = true;
+}
+
+bool CorpUserInfo::JobNumberHasBeenSet() const
+{
+    return m_jobNumberHasBeenSet;
 }
 

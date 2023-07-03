@@ -685,6 +685,49 @@ DnspodClient::DeleteRecordOutcomeCallable DnspodClient::DeleteRecordCallable(con
     return task->get_future();
 }
 
+DnspodClient::DeleteRecordBatchOutcome DnspodClient::DeleteRecordBatch(const DeleteRecordBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecordBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordBatchResponse rsp = DeleteRecordBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordBatchOutcome(rsp);
+        else
+            return DeleteRecordBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordBatchOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DeleteRecordBatchAsync(const DeleteRecordBatchRequest& request, const DeleteRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRecordBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DeleteRecordBatchOutcomeCallable DnspodClient::DeleteRecordBatchCallable(const DeleteRecordBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRecordBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRecordBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DeleteRecordGroupOutcome DnspodClient::DeleteRecordGroup(const DeleteRecordGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRecordGroup");

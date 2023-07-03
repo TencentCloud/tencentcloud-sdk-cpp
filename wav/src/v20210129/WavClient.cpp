@@ -298,6 +298,49 @@ WavClient::QueryActivityLiveCodeListOutcomeCallable WavClient::QueryActivityLive
     return task->get_future();
 }
 
+WavClient::QueryArrivalListOutcome WavClient::QueryArrivalList(const QueryArrivalListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryArrivalList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryArrivalListResponse rsp = QueryArrivalListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryArrivalListOutcome(rsp);
+        else
+            return QueryArrivalListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryArrivalListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryArrivalListAsync(const QueryArrivalListRequest& request, const QueryArrivalListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryArrivalList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryArrivalListOutcomeCallable WavClient::QueryArrivalListCallable(const QueryArrivalListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryArrivalListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryArrivalList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryChannelCodeListOutcome WavClient::QueryChannelCodeList(const QueryChannelCodeListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryChannelCodeList");
@@ -807,6 +850,49 @@ WavClient::QueryExternalUserMappingInfoOutcomeCallable WavClient::QueryExternalU
         [this, request]()
         {
             return this->QueryExternalUserMappingInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WavClient::QueryFollowListOutcome WavClient::QueryFollowList(const QueryFollowListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFollowList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFollowListResponse rsp = QueryFollowListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFollowListOutcome(rsp);
+        else
+            return QueryFollowListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFollowListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryFollowListAsync(const QueryFollowListRequest& request, const QueryFollowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFollowList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryFollowListOutcomeCallable WavClient::QueryFollowListCallable(const QueryFollowListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFollowListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFollowList(request);
         }
     );
 

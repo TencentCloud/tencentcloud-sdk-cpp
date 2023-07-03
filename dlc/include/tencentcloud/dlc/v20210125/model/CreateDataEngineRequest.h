@@ -194,23 +194,23 @@ namespace TencentCloud
                     bool MaxClustersHasBeenSet() const;
 
                     /**
-                     * 获取是否为默虚拟集群
-                     * @return DefaultDataEngine 是否为默虚拟集群
-                     * 
+                     * 获取是否为默认虚拟集群
+                     * @return DefaultDataEngine 是否为默认虚拟集群
+                     * @deprecated
                      */
                     bool GetDefaultDataEngine() const;
 
                     /**
-                     * 设置是否为默虚拟集群
-                     * @param _defaultDataEngine 是否为默虚拟集群
-                     * 
+                     * 设置是否为默认虚拟集群
+                     * @param _defaultDataEngine 是否为默认虚拟集群
+                     * @deprecated
                      */
                     void SetDefaultDataEngine(const bool& _defaultDataEngine);
 
                     /**
                      * 判断参数 DefaultDataEngine 是否已赋值
                      * @return DefaultDataEngine 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DefaultDataEngineHasBeenSet() const;
 
@@ -593,15 +593,15 @@ namespace TencentCloud
                     bool ImageVersionNameHasBeenSet() const;
 
                     /**
-                     * 获取主集群名称
-                     * @return MainClusterName 主集群名称
+                     * 获取主集群名称，创建容灾集群时指定
+                     * @return MainClusterName 主集群名称，创建容灾集群时指定
                      * 
                      */
                     std::string GetMainClusterName() const;
 
                     /**
-                     * 设置主集群名称
-                     * @param _mainClusterName 主集群名称
+                     * 设置主集群名称，创建容灾集群时指定
+                     * @param _mainClusterName 主集群名称，创建容灾集群时指定
                      * 
                      */
                     void SetMainClusterName(const std::string& _mainClusterName);
@@ -721,7 +721,7 @@ namespace TencentCloud
                     bool m_maxClustersHasBeenSet;
 
                     /**
-                     * 是否为默虚拟集群
+                     * 是否为默认虚拟集群
                      */
                     bool m_defaultDataEngine;
                     bool m_defaultDataEngineHasBeenSet;
@@ -835,7 +835,7 @@ namespace TencentCloud
                     bool m_imageVersionNameHasBeenSet;
 
                     /**
-                     * 主集群名称
+                     * 主集群名称，创建容灾集群时指定
                      */
                     std::string m_mainClusterName;
                     bool m_mainClusterNameHasBeenSet;

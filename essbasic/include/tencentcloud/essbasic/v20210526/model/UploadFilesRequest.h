@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
-                     * @return Agent 应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
+                     * 获取应用相关信息，若是第三方应用集成调用 若是第三方应用集成调用,Agent.AppId 和 Agent.ProxyOrganizationOpenId 必填
+                     * @return Agent 应用相关信息，若是第三方应用集成调用 若是第三方应用集成调用,Agent.AppId 和 Agent.ProxyOrganizationOpenId 必填
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
-                     * @param _agent 应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
+                     * 设置应用相关信息，若是第三方应用集成调用 若是第三方应用集成调用,Agent.AppId 和 Agent.ProxyOrganizationOpenId 必填
+                     * @param _agent 应用相关信息，若是第三方应用集成调用 若是第三方应用集成调用,Agent.AppId 和 Agent.ProxyOrganizationOpenId 必填
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -140,7 +140,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息，若是第三方应用集成调用 appid 和proxyappid 必填
+                     * 应用相关信息，若是第三方应用集成调用 若是第三方应用集成调用,Agent.AppId 和 Agent.ProxyOrganizationOpenId 必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

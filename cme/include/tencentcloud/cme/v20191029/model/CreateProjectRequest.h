@@ -128,14 +128,14 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-<li>MEDIA_CAST：点播转直播。</li>
+<li>MEDIA_CAST：媒体转推。</li>
                      * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-<li>MEDIA_CAST：点播转直播。</li>
+<li>MEDIA_CAST：媒体转推。</li>
                      * 
                      */
                     std::string GetCategory() const;
@@ -147,14 +147,14 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-<li>MEDIA_CAST：点播转直播。</li>
+<li>MEDIA_CAST：媒体转推。</li>
                      * @param _category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-<li>MEDIA_CAST：点播转直播。</li>
+<li>MEDIA_CAST：媒体转推。</li>
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -429,7 +429,7 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
-<li>MEDIA_CAST：点播转直播。</li>
+<li>MEDIA_CAST：媒体转推。</li>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;

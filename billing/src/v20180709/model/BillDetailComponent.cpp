@@ -28,6 +28,8 @@ BillDetailComponent::BillDetailComponent() :
     m_priceUnitHasBeenSet(false),
     m_usedAmountHasBeenSet(false),
     m_usedAmountUnitHasBeenSet(false),
+    m_realTotalMeasureHasBeenSet(false),
+    m_deductedMeasureHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitNameHasBeenSet(false),
     m_costHasBeenSet(false),
@@ -124,6 +126,26 @@ CoreInternalOutcome BillDetailComponent::Deserialize(const rapidjson::Value &val
         }
         m_usedAmountUnit = string(value["UsedAmountUnit"].GetString());
         m_usedAmountUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealTotalMeasure") && !value["RealTotalMeasure"].IsNull())
+    {
+        if (!value["RealTotalMeasure"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.RealTotalMeasure` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realTotalMeasure = string(value["RealTotalMeasure"].GetString());
+        m_realTotalMeasureHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeductedMeasure") && !value["DeductedMeasure"].IsNull())
+    {
+        if (!value["DeductedMeasure"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetailComponent.DeductedMeasure` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deductedMeasure = string(value["DeductedMeasure"].GetString());
+        m_deductedMeasureHasBeenSet = true;
     }
 
     if (value.HasMember("TimeSpan") && !value["TimeSpan"].IsNull())
@@ -387,6 +409,22 @@ void BillDetailComponent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "UsedAmountUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_usedAmountUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realTotalMeasureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealTotalMeasure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realTotalMeasure.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deductedMeasureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeductedMeasure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deductedMeasure.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeSpanHasBeenSet)
@@ -662,6 +700,38 @@ void BillDetailComponent::SetUsedAmountUnit(const string& _usedAmountUnit)
 bool BillDetailComponent::UsedAmountUnitHasBeenSet() const
 {
     return m_usedAmountUnitHasBeenSet;
+}
+
+string BillDetailComponent::GetRealTotalMeasure() const
+{
+    return m_realTotalMeasure;
+}
+
+void BillDetailComponent::SetRealTotalMeasure(const string& _realTotalMeasure)
+{
+    m_realTotalMeasure = _realTotalMeasure;
+    m_realTotalMeasureHasBeenSet = true;
+}
+
+bool BillDetailComponent::RealTotalMeasureHasBeenSet() const
+{
+    return m_realTotalMeasureHasBeenSet;
+}
+
+string BillDetailComponent::GetDeductedMeasure() const
+{
+    return m_deductedMeasure;
+}
+
+void BillDetailComponent::SetDeductedMeasure(const string& _deductedMeasure)
+{
+    m_deductedMeasure = _deductedMeasure;
+    m_deductedMeasureHasBeenSet = true;
+}
+
+bool BillDetailComponent::DeductedMeasureHasBeenSet() const
+{
+    return m_deductedMeasureHasBeenSet;
 }
 
 string BillDetailComponent::GetTimeSpan() const

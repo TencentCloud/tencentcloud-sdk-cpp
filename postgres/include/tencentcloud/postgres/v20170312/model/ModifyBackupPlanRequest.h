@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MaxBackupStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例备份保留时长，取值范围为3-7，单位是天
-                     * @return BaseBackupRetentionPeriod 实例备份保留时长，取值范围为3-7，单位是天
+                     * 获取实例备份保留时长，取值范围为7-1830，单位是天
+                     * @return BaseBackupRetentionPeriod 实例备份保留时长，取值范围为7-1830，单位是天
                      * 
                      */
                     uint64_t GetBaseBackupRetentionPeriod() const;
 
                     /**
-                     * 设置实例备份保留时长，取值范围为3-7，单位是天
-                     * @param _baseBackupRetentionPeriod 实例备份保留时长，取值范围为3-7，单位是天
+                     * 设置实例备份保留时长，取值范围为7-1830，单位是天
+                     * @param _baseBackupRetentionPeriod 实例备份保留时长，取值范围为7-1830，单位是天
                      * 
                      */
                     void SetBaseBackupRetentionPeriod(const uint64_t& _baseBackupRetentionPeriod);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_maxBackupStartTimeHasBeenSet;
 
                     /**
-                     * 实例备份保留时长，取值范围为3-7，单位是天
+                     * 实例备份保留时长，取值范围为7-1830，单位是天
                      */
                     uint64_t m_baseBackupRetentionPeriod;
                     bool m_baseBackupRetentionPeriodHasBeenSet;

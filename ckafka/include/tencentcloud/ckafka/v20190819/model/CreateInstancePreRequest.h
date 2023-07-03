@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
-                     * @return ZoneId 可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
+                     * 获取可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
+                     * @return ZoneId 可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
-                     * @param _zoneId 可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
+                     * 设置可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
+                     * @param _zoneId 可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -107,19 +107,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取实例规格说明 专业版实例[所有规格]填写1.
-标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶型2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。
-                     * @return InstanceType 实例规格说明 专业版实例[所有规格]填写1.
-标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶型2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。
+                     * 获取国际站标准版实例规格。目前只有国际站标准版使用当前字段区分规格，国内站标准版使用峰值带宽区分规格。除了国际站标准版外的所有实例填写 1 即可。国际站标准版实例：入门型(general)]填写1；[标准型(standard)]填写2；[进阶型(advanced)]填写3；[容量型(capacity)]填写4；[高阶型1(specialized-1)]填写5；[高阶型2(specialized-2)]填写6；[高阶型3(specialized-3)]填写7；[高阶型4(specialized-4)]填写8。
+                     * @return InstanceType 国际站标准版实例规格。目前只有国际站标准版使用当前字段区分规格，国内站标准版使用峰值带宽区分规格。除了国际站标准版外的所有实例填写 1 即可。国际站标准版实例：入门型(general)]填写1；[标准型(standard)]填写2；[进阶型(advanced)]填写3；[容量型(capacity)]填写4；[高阶型1(specialized-1)]填写5；[高阶型2(specialized-2)]填写6；[高阶型3(specialized-3)]填写7；[高阶型4(specialized-4)]填写8。
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例规格说明 专业版实例[所有规格]填写1.
-标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶型2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。
-                     * @param _instanceType 实例规格说明 专业版实例[所有规格]填写1.
-标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶型2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。
+                     * 设置国际站标准版实例规格。目前只有国际站标准版使用当前字段区分规格，国内站标准版使用峰值带宽区分规格。除了国际站标准版外的所有实例填写 1 即可。国际站标准版实例：入门型(general)]填写1；[标准型(standard)]填写2；[进阶型(advanced)]填写3；[容量型(capacity)]填写4；[高阶型1(specialized-1)]填写5；[高阶型2(specialized-2)]填写6；[高阶型3(specialized-3)]填写7；[高阶型4(specialized-4)]填写8。
+                     * @param _instanceType 国际站标准版实例规格。目前只有国际站标准版使用当前字段区分规格，国内站标准版使用峰值带宽区分规格。除了国际站标准版外的所有实例填写 1 即可。国际站标准版实例：入门型(general)]填写1；[标准型(standard)]填写2；[进阶型(advanced)]填写3；[容量型(capacity)]填写4；[高阶型1(specialized-1)]填写5；[高阶型2(specialized-2)]填写6；[高阶型3(specialized-3)]填写7；[高阶型4(specialized-4)]填写8。
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取vpcId必填
-                     * @return VpcId vpcId必填
+                     * 获取vpcId，必填
+                     * @return VpcId vpcId，必填
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpcId必填
-                     * @param _vpcId vpcId必填
+                     * 设置vpcId，必填
+                     * @param _vpcId vpcId，必填
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -153,15 +149,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网id，vpc网络需要传该参数，基础网络可以不传
-                     * @return SubnetId 子网id，vpc网络需要传该参数，基础网络可以不传
+                     * 获取子网id，必填
+                     * @return SubnetId 子网id，必填
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网id，vpc网络需要传该参数，基础网络可以不传
-                     * @param _subnetId 子网id，vpc网络需要传该参数，基础网络可以不传
+                     * 设置子网id，必填
+                     * @param _subnetId 子网id，必填
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -258,15 +254,15 @@ namespace TencentCloud
                     bool KafkaVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
-                     * @return SpecificationsType 实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
+                     * 获取实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession"
+                     * @return SpecificationsType 实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession"
                      * 
                      */
                     std::string GetSpecificationsType() const;
 
                     /**
-                     * 设置实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
-                     * @param _specificationsType 实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
+                     * 设置实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession"
+                     * @param _specificationsType 实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession"
                      * 
                      */
                     void SetSpecificationsType(const std::string& _specificationsType);
@@ -279,15 +275,15 @@ namespace TencentCloud
                     bool SpecificationsTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return DiskSize 磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * @return DiskSize 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _diskSize 磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * @param _diskSize 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -300,15 +296,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return BandWidth 带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * @return BandWidth 带宽，如果跟控制台规格配比不相符，则无法创建成功
                      * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
-                     * 设置带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _bandWidth 带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * @param _bandWidth 带宽，如果跟控制台规格配比不相符，则无法创建成功
                      * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
@@ -321,15 +317,15 @@ namespace TencentCloud
                     bool BandWidthHasBeenSet() const;
 
                     /**
-                     * 获取分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
-                     * @return Partition 分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
+                     * 获取分区大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * @return Partition 分区大小，如果跟控制台规格配比不相符，则无法创建成功
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
-                     * @param _partition 分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
+                     * 设置分区大小，如果跟控制台规格配比不相符，则无法创建成功
+                     * @param _partition 分区大小，如果跟控制台规格配比不相符，则无法创建成功
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -363,15 +359,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型（ssd填写CLOUD_SSD，sata填写CLOUD_BASIC）
-                     * @return DiskType 磁盘类型（ssd填写CLOUD_SSD，sata填写CLOUD_BASIC）
+                     * 获取专业版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"
+                     * @return DiskType 专业版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘类型（ssd填写CLOUD_SSD，sata填写CLOUD_BASIC）
-                     * @param _diskType 磁盘类型（ssd填写CLOUD_SSD，sata填写CLOUD_BASIC）
+                     * 设置专业版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"
+                     * @param _diskType 专业版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -384,15 +380,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取跨可用区，zoneIds必填
-                     * @return MultiZoneFlag 跨可用区，zoneIds必填
+                     * 获取是否创建跨可用区实例，当前参数为 true 时，zoneIds必填
+                     * @return MultiZoneFlag 是否创建跨可用区实例，当前参数为 true 时，zoneIds必填
                      * 
                      */
                     bool GetMultiZoneFlag() const;
 
                     /**
-                     * 设置跨可用区，zoneIds必填
-                     * @param _multiZoneFlag 跨可用区，zoneIds必填
+                     * 设置是否创建跨可用区实例，当前参数为 true 时，zoneIds必填
+                     * @param _multiZoneFlag 是否创建跨可用区实例，当前参数为 true 时，zoneIds必填
                      * 
                      */
                     void SetMultiZoneFlag(const bool& _multiZoneFlag);
@@ -476,7 +472,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
+                     * 可用区。当购买多可用区实例时，当前参数为主可用区。需要保证传入的参数和 SubnetId 所在子网属于同一个可用区
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -488,20 +484,19 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 实例规格说明 专业版实例[所有规格]填写1.
-标准版实例 ([入门型(general)]填写1，[标准型(standard)]填写2，[进阶型(advanced)]填写3，[容量型(capacity)]填写4，[高阶型1(specialized-1)]填写5，[高阶型2(specialized-2)]填写6,[高阶型3(specialized-3)]填写7,[高阶型4(specialized-4)]填写8，[独占型(exclusive)]填写9。
+                     * 国际站标准版实例规格。目前只有国际站标准版使用当前字段区分规格，国内站标准版使用峰值带宽区分规格。除了国际站标准版外的所有实例填写 1 即可。国际站标准版实例：入门型(general)]填写1；[标准型(standard)]填写2；[进阶型(advanced)]填写3；[容量型(capacity)]填写4；[高阶型1(specialized-1)]填写5；[高阶型2(specialized-2)]填写6；[高阶型3(specialized-3)]填写7；[高阶型4(specialized-4)]填写8。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * vpcId必填
+                     * vpcId，必填
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网id，vpc网络需要传该参数，基础网络可以不传
+                     * 子网id，必填
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -531,25 +526,25 @@ namespace TencentCloud
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
-                     * 实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
+                     * 实例类型: [标准版实例]填写 "standard" (默认), [专业版实例]填写 "profession"
                      */
                     std::string m_specificationsType;
                     bool m_specificationsTypeHasBeenSet;
 
                     /**
-                     * 磁盘大小，专业版不填写默认最小磁盘，如果跟控制台规格配比不相符，则无法创建成功
+                     * 磁盘大小，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 带宽，专业版不填写默认最小带宽，如果跟控制台规格配比不相符，则无法创建成功
+                     * 带宽，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
 
                     /**
-                     * 分区大小，专业版不填写默认最小分区数，如果跟控制台规格配比不相符，则无法创建成功
+                     * 分区大小，如果跟控制台规格配比不相符，则无法创建成功
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
@@ -561,13 +556,13 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 磁盘类型（ssd填写CLOUD_SSD，sata填写CLOUD_BASIC）
+                     * 专业版实例磁盘类型，标准版实例不需要填写。"CLOUD_SSD"：SSD云硬盘；"CLOUD_BASIC"：高性能云硬盘。不传默认为 "CLOUD_BASIC"
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 跨可用区，zoneIds必填
+                     * 是否创建跨可用区实例，当前参数为 true 时，zoneIds必填
                      */
                     bool m_multiZoneFlag;
                     bool m_multiZoneFlagHasBeenSet;

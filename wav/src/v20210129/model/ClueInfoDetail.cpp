@@ -47,7 +47,30 @@ ClueInfoDetail::ClueInfoDetail() :
     m_levelCodeHasBeenSet(false),
     m_importAtTimeHasBeenSet(false),
     m_distributeTimeHasBeenSet(false),
-    m_createAtTimeHasBeenSet(false)
+    m_createAtTimeHasBeenSet(false),
+    m_wxIdHasBeenSet(false),
+    m_brandCodeHasBeenSet(false),
+    m_buildTimeHasBeenSet(false),
+    m_orderTimeHasBeenSet(false),
+    m_arrivalTimeHasBeenSet(false),
+    m_deliveryTimeHasBeenSet(false),
+    m_followTimeHasBeenSet(false),
+    m_nextFollowTimeHasBeenSet(false),
+    m_orgIdHasBeenSet(false),
+    m_orgNameHasBeenSet(false),
+    m_introducerHasBeenSet(false),
+    m_introducerPhoneHasBeenSet(false),
+    m_isBindWxHasBeenSet(false),
+    m_isMergeHasBeenSet(false),
+    m_isInvalidHasBeenSet(false),
+    m_invalidTypeHasBeenSet(false),
+    m_invalidTypeNameHasBeenSet(false),
+    m_invalidRemarkHasBeenSet(false),
+    m_invalidTimeHasBeenSet(false),
+    m_dealerNameHasBeenSet(false),
+    m_shopIdHasBeenSet(false),
+    m_shopNameHasBeenSet(false),
+    m_positionHasBeenSet(false)
 {
 }
 
@@ -329,6 +352,236 @@ CoreInternalOutcome ClueInfoDetail::Deserialize(const rapidjson::Value &value)
         m_createAtTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("WxId") && !value["WxId"].IsNull())
+    {
+        if (!value["WxId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.WxId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxId = string(value["WxId"].GetString());
+        m_wxIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BrandCode") && !value["BrandCode"].IsNull())
+    {
+        if (!value["BrandCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.BrandCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_brandCode = string(value["BrandCode"].GetString());
+        m_brandCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuildTime") && !value["BuildTime"].IsNull())
+    {
+        if (!value["BuildTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.BuildTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildTime = value["BuildTime"].GetUint64();
+        m_buildTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrderTime") && !value["OrderTime"].IsNull())
+    {
+        if (!value["OrderTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.OrderTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderTime = value["OrderTime"].GetUint64();
+        m_orderTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ArrivalTime") && !value["ArrivalTime"].IsNull())
+    {
+        if (!value["ArrivalTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.ArrivalTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_arrivalTime = value["ArrivalTime"].GetUint64();
+        m_arrivalTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliveryTime") && !value["DeliveryTime"].IsNull())
+    {
+        if (!value["DeliveryTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.DeliveryTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliveryTime = value["DeliveryTime"].GetUint64();
+        m_deliveryTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FollowTime") && !value["FollowTime"].IsNull())
+    {
+        if (!value["FollowTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.FollowTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_followTime = value["FollowTime"].GetUint64();
+        m_followTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NextFollowTime") && !value["NextFollowTime"].IsNull())
+    {
+        if (!value["NextFollowTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.NextFollowTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextFollowTime = value["NextFollowTime"].GetUint64();
+        m_nextFollowTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgId") && !value["OrgId"].IsNull())
+    {
+        if (!value["OrgId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.OrgId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgId = value["OrgId"].GetUint64();
+        m_orgIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgName") && !value["OrgName"].IsNull())
+    {
+        if (!value["OrgName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.OrgName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgName = string(value["OrgName"].GetString());
+        m_orgNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Introducer") && !value["Introducer"].IsNull())
+    {
+        if (!value["Introducer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.Introducer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_introducer = string(value["Introducer"].GetString());
+        m_introducerHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntroducerPhone") && !value["IntroducerPhone"].IsNull())
+    {
+        if (!value["IntroducerPhone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.IntroducerPhone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_introducerPhone = string(value["IntroducerPhone"].GetString());
+        m_introducerPhoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsBindWx") && !value["IsBindWx"].IsNull())
+    {
+        if (!value["IsBindWx"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.IsBindWx` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBindWx = value["IsBindWx"].GetInt64();
+        m_isBindWxHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsMerge") && !value["IsMerge"].IsNull())
+    {
+        if (!value["IsMerge"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.IsMerge` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMerge = value["IsMerge"].GetInt64();
+        m_isMergeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInvalid") && !value["IsInvalid"].IsNull())
+    {
+        if (!value["IsInvalid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.IsInvalid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInvalid = value["IsInvalid"].GetInt64();
+        m_isInvalidHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidType") && !value["InvalidType"].IsNull())
+    {
+        if (!value["InvalidType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.InvalidType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidType = string(value["InvalidType"].GetString());
+        m_invalidTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidTypeName") && !value["InvalidTypeName"].IsNull())
+    {
+        if (!value["InvalidTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.InvalidTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidTypeName = string(value["InvalidTypeName"].GetString());
+        m_invalidTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidRemark") && !value["InvalidRemark"].IsNull())
+    {
+        if (!value["InvalidRemark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.InvalidRemark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidRemark = string(value["InvalidRemark"].GetString());
+        m_invalidRemarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidTime") && !value["InvalidTime"].IsNull())
+    {
+        if (!value["InvalidTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.InvalidTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidTime = value["InvalidTime"].GetUint64();
+        m_invalidTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DealerName") && !value["DealerName"].IsNull())
+    {
+        if (!value["DealerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.DealerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealerName = string(value["DealerName"].GetString());
+        m_dealerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShopId") && !value["ShopId"].IsNull())
+    {
+        if (!value["ShopId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.ShopId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shopId = value["ShopId"].GetUint64();
+        m_shopIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShopName") && !value["ShopName"].IsNull())
+    {
+        if (!value["ShopName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.ShopName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shopName = string(value["ShopName"].GetString());
+        m_shopNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Position") && !value["Position"].IsNull())
+    {
+        if (!value["Position"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.Position` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_position = string(value["Position"].GetString());
+        m_positionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +808,190 @@ void ClueInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreateAtTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createAtTime, allocator);
+    }
+
+    if (m_wxIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wxId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_brandCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrandCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_brandCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_buildTime, allocator);
+    }
+
+    if (m_orderTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orderTime, allocator);
+    }
+
+    if (m_arrivalTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArrivalTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_arrivalTime, allocator);
+    }
+
+    if (m_deliveryTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliveryTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deliveryTime, allocator);
+    }
+
+    if (m_followTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FollowTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_followTime, allocator);
+    }
+
+    if (m_nextFollowTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextFollowTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nextFollowTime, allocator);
+    }
+
+    if (m_orgIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orgId, allocator);
+    }
+
+    if (m_orgNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_introducerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Introducer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_introducer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_introducerPhoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntroducerPhone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_introducerPhone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isBindWxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsBindWx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBindWx, allocator);
+    }
+
+    if (m_isMergeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMerge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMerge, allocator);
+    }
+
+    if (m_isInvalidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInvalid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInvalid, allocator);
+    }
+
+    if (m_invalidTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invalidType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invalidTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invalidTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invalidRemarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidRemark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invalidRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invalidTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidTime, allocator);
+    }
+
+    if (m_dealerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shopIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShopId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shopId, allocator);
+    }
+
+    if (m_shopNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShopName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shopName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_positionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Position";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_position.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -990,5 +1427,373 @@ void ClueInfoDetail::SetCreateAtTime(const uint64_t& _createAtTime)
 bool ClueInfoDetail::CreateAtTimeHasBeenSet() const
 {
     return m_createAtTimeHasBeenSet;
+}
+
+string ClueInfoDetail::GetWxId() const
+{
+    return m_wxId;
+}
+
+void ClueInfoDetail::SetWxId(const string& _wxId)
+{
+    m_wxId = _wxId;
+    m_wxIdHasBeenSet = true;
+}
+
+bool ClueInfoDetail::WxIdHasBeenSet() const
+{
+    return m_wxIdHasBeenSet;
+}
+
+string ClueInfoDetail::GetBrandCode() const
+{
+    return m_brandCode;
+}
+
+void ClueInfoDetail::SetBrandCode(const string& _brandCode)
+{
+    m_brandCode = _brandCode;
+    m_brandCodeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::BrandCodeHasBeenSet() const
+{
+    return m_brandCodeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetBuildTime() const
+{
+    return m_buildTime;
+}
+
+void ClueInfoDetail::SetBuildTime(const uint64_t& _buildTime)
+{
+    m_buildTime = _buildTime;
+    m_buildTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::BuildTimeHasBeenSet() const
+{
+    return m_buildTimeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetOrderTime() const
+{
+    return m_orderTime;
+}
+
+void ClueInfoDetail::SetOrderTime(const uint64_t& _orderTime)
+{
+    m_orderTime = _orderTime;
+    m_orderTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::OrderTimeHasBeenSet() const
+{
+    return m_orderTimeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetArrivalTime() const
+{
+    return m_arrivalTime;
+}
+
+void ClueInfoDetail::SetArrivalTime(const uint64_t& _arrivalTime)
+{
+    m_arrivalTime = _arrivalTime;
+    m_arrivalTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::ArrivalTimeHasBeenSet() const
+{
+    return m_arrivalTimeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetDeliveryTime() const
+{
+    return m_deliveryTime;
+}
+
+void ClueInfoDetail::SetDeliveryTime(const uint64_t& _deliveryTime)
+{
+    m_deliveryTime = _deliveryTime;
+    m_deliveryTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::DeliveryTimeHasBeenSet() const
+{
+    return m_deliveryTimeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetFollowTime() const
+{
+    return m_followTime;
+}
+
+void ClueInfoDetail::SetFollowTime(const uint64_t& _followTime)
+{
+    m_followTime = _followTime;
+    m_followTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::FollowTimeHasBeenSet() const
+{
+    return m_followTimeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetNextFollowTime() const
+{
+    return m_nextFollowTime;
+}
+
+void ClueInfoDetail::SetNextFollowTime(const uint64_t& _nextFollowTime)
+{
+    m_nextFollowTime = _nextFollowTime;
+    m_nextFollowTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::NextFollowTimeHasBeenSet() const
+{
+    return m_nextFollowTimeHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetOrgId() const
+{
+    return m_orgId;
+}
+
+void ClueInfoDetail::SetOrgId(const uint64_t& _orgId)
+{
+    m_orgId = _orgId;
+    m_orgIdHasBeenSet = true;
+}
+
+bool ClueInfoDetail::OrgIdHasBeenSet() const
+{
+    return m_orgIdHasBeenSet;
+}
+
+string ClueInfoDetail::GetOrgName() const
+{
+    return m_orgName;
+}
+
+void ClueInfoDetail::SetOrgName(const string& _orgName)
+{
+    m_orgName = _orgName;
+    m_orgNameHasBeenSet = true;
+}
+
+bool ClueInfoDetail::OrgNameHasBeenSet() const
+{
+    return m_orgNameHasBeenSet;
+}
+
+string ClueInfoDetail::GetIntroducer() const
+{
+    return m_introducer;
+}
+
+void ClueInfoDetail::SetIntroducer(const string& _introducer)
+{
+    m_introducer = _introducer;
+    m_introducerHasBeenSet = true;
+}
+
+bool ClueInfoDetail::IntroducerHasBeenSet() const
+{
+    return m_introducerHasBeenSet;
+}
+
+string ClueInfoDetail::GetIntroducerPhone() const
+{
+    return m_introducerPhone;
+}
+
+void ClueInfoDetail::SetIntroducerPhone(const string& _introducerPhone)
+{
+    m_introducerPhone = _introducerPhone;
+    m_introducerPhoneHasBeenSet = true;
+}
+
+bool ClueInfoDetail::IntroducerPhoneHasBeenSet() const
+{
+    return m_introducerPhoneHasBeenSet;
+}
+
+int64_t ClueInfoDetail::GetIsBindWx() const
+{
+    return m_isBindWx;
+}
+
+void ClueInfoDetail::SetIsBindWx(const int64_t& _isBindWx)
+{
+    m_isBindWx = _isBindWx;
+    m_isBindWxHasBeenSet = true;
+}
+
+bool ClueInfoDetail::IsBindWxHasBeenSet() const
+{
+    return m_isBindWxHasBeenSet;
+}
+
+int64_t ClueInfoDetail::GetIsMerge() const
+{
+    return m_isMerge;
+}
+
+void ClueInfoDetail::SetIsMerge(const int64_t& _isMerge)
+{
+    m_isMerge = _isMerge;
+    m_isMergeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::IsMergeHasBeenSet() const
+{
+    return m_isMergeHasBeenSet;
+}
+
+int64_t ClueInfoDetail::GetIsInvalid() const
+{
+    return m_isInvalid;
+}
+
+void ClueInfoDetail::SetIsInvalid(const int64_t& _isInvalid)
+{
+    m_isInvalid = _isInvalid;
+    m_isInvalidHasBeenSet = true;
+}
+
+bool ClueInfoDetail::IsInvalidHasBeenSet() const
+{
+    return m_isInvalidHasBeenSet;
+}
+
+string ClueInfoDetail::GetInvalidType() const
+{
+    return m_invalidType;
+}
+
+void ClueInfoDetail::SetInvalidType(const string& _invalidType)
+{
+    m_invalidType = _invalidType;
+    m_invalidTypeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::InvalidTypeHasBeenSet() const
+{
+    return m_invalidTypeHasBeenSet;
+}
+
+string ClueInfoDetail::GetInvalidTypeName() const
+{
+    return m_invalidTypeName;
+}
+
+void ClueInfoDetail::SetInvalidTypeName(const string& _invalidTypeName)
+{
+    m_invalidTypeName = _invalidTypeName;
+    m_invalidTypeNameHasBeenSet = true;
+}
+
+bool ClueInfoDetail::InvalidTypeNameHasBeenSet() const
+{
+    return m_invalidTypeNameHasBeenSet;
+}
+
+string ClueInfoDetail::GetInvalidRemark() const
+{
+    return m_invalidRemark;
+}
+
+void ClueInfoDetail::SetInvalidRemark(const string& _invalidRemark)
+{
+    m_invalidRemark = _invalidRemark;
+    m_invalidRemarkHasBeenSet = true;
+}
+
+bool ClueInfoDetail::InvalidRemarkHasBeenSet() const
+{
+    return m_invalidRemarkHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetInvalidTime() const
+{
+    return m_invalidTime;
+}
+
+void ClueInfoDetail::SetInvalidTime(const uint64_t& _invalidTime)
+{
+    m_invalidTime = _invalidTime;
+    m_invalidTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::InvalidTimeHasBeenSet() const
+{
+    return m_invalidTimeHasBeenSet;
+}
+
+string ClueInfoDetail::GetDealerName() const
+{
+    return m_dealerName;
+}
+
+void ClueInfoDetail::SetDealerName(const string& _dealerName)
+{
+    m_dealerName = _dealerName;
+    m_dealerNameHasBeenSet = true;
+}
+
+bool ClueInfoDetail::DealerNameHasBeenSet() const
+{
+    return m_dealerNameHasBeenSet;
+}
+
+uint64_t ClueInfoDetail::GetShopId() const
+{
+    return m_shopId;
+}
+
+void ClueInfoDetail::SetShopId(const uint64_t& _shopId)
+{
+    m_shopId = _shopId;
+    m_shopIdHasBeenSet = true;
+}
+
+bool ClueInfoDetail::ShopIdHasBeenSet() const
+{
+    return m_shopIdHasBeenSet;
+}
+
+string ClueInfoDetail::GetShopName() const
+{
+    return m_shopName;
+}
+
+void ClueInfoDetail::SetShopName(const string& _shopName)
+{
+    m_shopName = _shopName;
+    m_shopNameHasBeenSet = true;
+}
+
+bool ClueInfoDetail::ShopNameHasBeenSet() const
+{
+    return m_shopNameHasBeenSet;
+}
+
+string ClueInfoDetail::GetPosition() const
+{
+    return m_position;
+}
+
+void ClueInfoDetail::SetPosition(const string& _position)
+{
+    m_position = _position;
+    m_positionHasBeenSet = true;
+}
+
+bool ClueInfoDetail::PositionHasBeenSet() const
+{
+    return m_positionHasBeenSet;
 }
 

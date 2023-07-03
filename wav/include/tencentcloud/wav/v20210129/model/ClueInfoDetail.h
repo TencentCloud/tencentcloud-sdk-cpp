@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClueIdHasBeenSet() const;
 
                     /**
-                     * 获取接待客户经销商顾问所属组织id,多个组织使用逗号分割
-                     * @return DealerId 接待客户经销商顾问所属组织id,多个组织使用逗号分割
+                     * 获取接待客户经销商顾问所属经销商code
+                     * @return DealerId 接待客户经销商顾问所属经销商code
                      * 
                      */
                     std::string GetDealerId() const;
 
                     /**
-                     * 设置接待客户经销商顾问所属组织id,多个组织使用逗号分割
-                     * @param _dealerId 接待客户经销商顾问所属组织id,多个组织使用逗号分割
+                     * 设置接待客户经销商顾问所属经销商code
+                     * @param _dealerId 接待客户经销商顾问所属经销商code
                      * 
                      */
                     void SetDealerId(const std::string& _dealerId);
@@ -629,6 +629,521 @@ namespace TencentCloud
                      */
                     bool CreateAtTimeHasBeenSet() const;
 
+                    /**
+                     * 获取客户微信id
+                     * @return WxId 客户微信id
+                     * 
+                     */
+                    std::string GetWxId() const;
+
+                    /**
+                     * 设置客户微信id
+                     * @param _wxId 客户微信id
+                     * 
+                     */
+                    void SetWxId(const std::string& _wxId);
+
+                    /**
+                     * 判断参数 WxId 是否已赋值
+                     * @return WxId 是否已赋值
+                     * 
+                     */
+                    bool WxIdHasBeenSet() const;
+
+                    /**
+                     * 获取意向车型对应品牌code
+                     * @return BrandCode 意向车型对应品牌code
+                     * 
+                     */
+                    std::string GetBrandCode() const;
+
+                    /**
+                     * 设置意向车型对应品牌code
+                     * @param _brandCode 意向车型对应品牌code
+                     * 
+                     */
+                    void SetBrandCode(const std::string& _brandCode);
+
+                    /**
+                     * 判断参数 BrandCode 是否已赋值
+                     * @return BrandCode 是否已赋值
+                     * 
+                     */
+                    bool BrandCodeHasBeenSet() const;
+
+                    /**
+                     * 获取建档时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BuildTime 建档时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetBuildTime() const;
+
+                    /**
+                     * 设置建档时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _buildTime 建档时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBuildTime(const uint64_t& _buildTime);
+
+                    /**
+                     * 判断参数 BuildTime 是否已赋值
+                     * @return BuildTime 是否已赋值
+                     * 
+                     */
+                    bool BuildTimeHasBeenSet() const;
+
+                    /**
+                     * 获取下订时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrderTime 下订时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetOrderTime() const;
+
+                    /**
+                     * 设置下订时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orderTime 下订时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrderTime(const uint64_t& _orderTime);
+
+                    /**
+                     * 判断参数 OrderTime 是否已赋值
+                     * @return OrderTime 是否已赋值
+                     * 
+                     */
+                    bool OrderTimeHasBeenSet() const;
+
+                    /**
+                     * 获取到店时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArrivalTime 到店时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetArrivalTime() const;
+
+                    /**
+                     * 设置到店时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _arrivalTime 到店时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArrivalTime(const uint64_t& _arrivalTime);
+
+                    /**
+                     * 判断参数 ArrivalTime 是否已赋值
+                     * @return ArrivalTime 是否已赋值
+                     * 
+                     */
+                    bool ArrivalTimeHasBeenSet() const;
+
+                    /**
+                     * 获取交车时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeliveryTime 交车时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDeliveryTime() const;
+
+                    /**
+                     * 设置交车时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deliveryTime 交车时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeliveryTime(const uint64_t& _deliveryTime);
+
+                    /**
+                     * 判断参数 DeliveryTime 是否已赋值
+                     * @return DeliveryTime 是否已赋值
+                     * 
+                     */
+                    bool DeliveryTimeHasBeenSet() const;
+
+                    /**
+                     * 获取上次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FollowTime 上次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetFollowTime() const;
+
+                    /**
+                     * 设置上次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _followTime 上次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFollowTime(const uint64_t& _followTime);
+
+                    /**
+                     * 判断参数 FollowTime 是否已赋值
+                     * @return FollowTime 是否已赋值
+                     * 
+                     */
+                    bool FollowTimeHasBeenSet() const;
+
+                    /**
+                     * 获取下次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextFollowTime 下次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetNextFollowTime() const;
+
+                    /**
+                     * 设置下次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nextFollowTime 下次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNextFollowTime(const uint64_t& _nextFollowTime);
+
+                    /**
+                     * 判断参数 NextFollowTime 是否已赋值
+                     * @return NextFollowTime 是否已赋值
+                     * 
+                     */
+                    bool NextFollowTimeHasBeenSet() const;
+
+                    /**
+                     * 获取线索所属组织id
+                     * @return OrgId 线索所属组织id
+                     * 
+                     */
+                    uint64_t GetOrgId() const;
+
+                    /**
+                     * 设置线索所属组织id
+                     * @param _orgId 线索所属组织id
+                     * 
+                     */
+                    void SetOrgId(const uint64_t& _orgId);
+
+                    /**
+                     * 判断参数 OrgId 是否已赋值
+                     * @return OrgId 是否已赋值
+                     * 
+                     */
+                    bool OrgIdHasBeenSet() const;
+
+                    /**
+                     * 获取线索所属组织名称
+                     * @return OrgName 线索所属组织名称
+                     * 
+                     */
+                    std::string GetOrgName() const;
+
+                    /**
+                     * 设置线索所属组织名称
+                     * @param _orgName 线索所属组织名称
+                     * 
+                     */
+                    void SetOrgName(const std::string& _orgName);
+
+                    /**
+                     * 判断参数 OrgName 是否已赋值
+                     * @return OrgName 是否已赋值
+                     * 
+                     */
+                    bool OrgNameHasBeenSet() const;
+
+                    /**
+                     * 获取介绍人姓名
+                     * @return Introducer 介绍人姓名
+                     * 
+                     */
+                    std::string GetIntroducer() const;
+
+                    /**
+                     * 设置介绍人姓名
+                     * @param _introducer 介绍人姓名
+                     * 
+                     */
+                    void SetIntroducer(const std::string& _introducer);
+
+                    /**
+                     * 判断参数 Introducer 是否已赋值
+                     * @return Introducer 是否已赋值
+                     * 
+                     */
+                    bool IntroducerHasBeenSet() const;
+
+                    /**
+                     * 获取介绍人电话
+                     * @return IntroducerPhone 介绍人电话
+                     * 
+                     */
+                    std::string GetIntroducerPhone() const;
+
+                    /**
+                     * 设置介绍人电话
+                     * @param _introducerPhone 介绍人电话
+                     * 
+                     */
+                    void SetIntroducerPhone(const std::string& _introducerPhone);
+
+                    /**
+                     * 判断参数 IntroducerPhone 是否已赋值
+                     * @return IntroducerPhone 是否已赋值
+                     * 
+                     */
+                    bool IntroducerPhoneHasBeenSet() const;
+
+                    /**
+                     * 获取是否关联微信 1 是 0 否
+                     * @return IsBindWx 是否关联微信 1 是 0 否
+                     * 
+                     */
+                    int64_t GetIsBindWx() const;
+
+                    /**
+                     * 设置是否关联微信 1 是 0 否
+                     * @param _isBindWx 是否关联微信 1 是 0 否
+                     * 
+                     */
+                    void SetIsBindWx(const int64_t& _isBindWx);
+
+                    /**
+                     * 判断参数 IsBindWx 是否已赋值
+                     * @return IsBindWx 是否已赋值
+                     * 
+                     */
+                    bool IsBindWxHasBeenSet() const;
+
+                    /**
+                     * 获取是否经过合并 1 是 0 否
+                     * @return IsMerge 是否经过合并 1 是 0 否
+                     * 
+                     */
+                    int64_t GetIsMerge() const;
+
+                    /**
+                     * 设置是否经过合并 1 是 0 否
+                     * @param _isMerge 是否经过合并 1 是 0 否
+                     * 
+                     */
+                    void SetIsMerge(const int64_t& _isMerge);
+
+                    /**
+                     * 判断参数 IsMerge 是否已赋值
+                     * @return IsMerge 是否已赋值
+                     * 
+                     */
+                    bool IsMergeHasBeenSet() const;
+
+                    /**
+                     * 获取是否无效  1 是 0 否
+                     * @return IsInvalid 是否无效  1 是 0 否
+                     * 
+                     */
+                    int64_t GetIsInvalid() const;
+
+                    /**
+                     * 设置是否无效  1 是 0 否
+                     * @param _isInvalid 是否无效  1 是 0 否
+                     * 
+                     */
+                    void SetIsInvalid(const int64_t& _isInvalid);
+
+                    /**
+                     * 判断参数 IsInvalid 是否已赋值
+                     * @return IsInvalid 是否已赋值
+                     * 
+                     */
+                    bool IsInvalidHasBeenSet() const;
+
+                    /**
+                     * 获取无效类型
+                     * @return InvalidType 无效类型
+                     * 
+                     */
+                    std::string GetInvalidType() const;
+
+                    /**
+                     * 设置无效类型
+                     * @param _invalidType 无效类型
+                     * 
+                     */
+                    void SetInvalidType(const std::string& _invalidType);
+
+                    /**
+                     * 判断参数 InvalidType 是否已赋值
+                     * @return InvalidType 是否已赋值
+                     * 
+                     */
+                    bool InvalidTypeHasBeenSet() const;
+
+                    /**
+                     * 获取无效类型枚举：
+无意向购买、空错号、未接听、其他
+                     * @return InvalidTypeName 无效类型枚举：
+无意向购买、空错号、未接听、其他
+                     * 
+                     */
+                    std::string GetInvalidTypeName() const;
+
+                    /**
+                     * 设置无效类型枚举：
+无意向购买、空错号、未接听、其他
+                     * @param _invalidTypeName 无效类型枚举：
+无意向购买、空错号、未接听、其他
+                     * 
+                     */
+                    void SetInvalidTypeName(const std::string& _invalidTypeName);
+
+                    /**
+                     * 判断参数 InvalidTypeName 是否已赋值
+                     * @return InvalidTypeName 是否已赋值
+                     * 
+                     */
+                    bool InvalidTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取由顾问手动输入的无效原因文字
+                     * @return InvalidRemark 由顾问手动输入的无效原因文字
+                     * 
+                     */
+                    std::string GetInvalidRemark() const;
+
+                    /**
+                     * 设置由顾问手动输入的无效原因文字
+                     * @param _invalidRemark 由顾问手动输入的无效原因文字
+                     * 
+                     */
+                    void SetInvalidRemark(const std::string& _invalidRemark);
+
+                    /**
+                     * 判断参数 InvalidRemark 是否已赋值
+                     * @return InvalidRemark 是否已赋值
+                     * 
+                     */
+                    bool InvalidRemarkHasBeenSet() const;
+
+                    /**
+                     * 获取无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidTime 无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInvalidTime() const;
+
+                    /**
+                     * 设置无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invalidTime 无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvalidTime(const uint64_t& _invalidTime);
+
+                    /**
+                     * 判断参数 InvalidTime 是否已赋值
+                     * @return InvalidTime 是否已赋值
+                     * 
+                     */
+                    bool InvalidTimeHasBeenSet() const;
+
+                    /**
+                     * 获取经销商名称
+                     * @return DealerName 经销商名称
+                     * 
+                     */
+                    std::string GetDealerName() const;
+
+                    /**
+                     * 设置经销商名称
+                     * @param _dealerName 经销商名称
+                     * 
+                     */
+                    void SetDealerName(const std::string& _dealerName);
+
+                    /**
+                     * 判断参数 DealerName 是否已赋值
+                     * @return DealerName 是否已赋值
+                     * 
+                     */
+                    bool DealerNameHasBeenSet() const;
+
+                    /**
+                     * 获取经销商下级门店ID
+                     * @return ShopId 经销商下级门店ID
+                     * 
+                     */
+                    uint64_t GetShopId() const;
+
+                    /**
+                     * 设置经销商下级门店ID
+                     * @param _shopId 经销商下级门店ID
+                     * 
+                     */
+                    void SetShopId(const uint64_t& _shopId);
+
+                    /**
+                     * 判断参数 ShopId 是否已赋值
+                     * @return ShopId 是否已赋值
+                     * 
+                     */
+                    bool ShopIdHasBeenSet() const;
+
+                    /**
+                     * 获取经销商下级门店名称
+                     * @return ShopName 经销商下级门店名称
+                     * 
+                     */
+                    std::string GetShopName() const;
+
+                    /**
+                     * 设置经销商下级门店名称
+                     * @param _shopName 经销商下级门店名称
+                     * 
+                     */
+                    void SetShopName(const std::string& _shopName);
+
+                    /**
+                     * 判断参数 ShopName 是否已赋值
+                     * @return ShopName 是否已赋值
+                     * 
+                     */
+                    bool ShopNameHasBeenSet() const;
+
+                    /**
+                     * 获取职位
+                     * @return Position 职位
+                     * 
+                     */
+                    std::string GetPosition() const;
+
+                    /**
+                     * 设置职位
+                     * @param _position 职位
+                     * 
+                     */
+                    void SetPosition(const std::string& _position);
+
+                    /**
+                     * 判断参数 Position 是否已赋值
+                     * @return Position 是否已赋值
+                     * 
+                     */
+                    bool PositionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -638,7 +1153,7 @@ namespace TencentCloud
                     bool m_clueIdHasBeenSet;
 
                     /**
-                     * 接待客户经销商顾问所属组织id,多个组织使用逗号分割
+                     * 接待客户经销商顾问所属经销商code
                      */
                     std::string m_dealerId;
                     bool m_dealerIdHasBeenSet;
@@ -796,6 +1311,152 @@ namespace TencentCloud
                      */
                     uint64_t m_createAtTime;
                     bool m_createAtTimeHasBeenSet;
+
+                    /**
+                     * 客户微信id
+                     */
+                    std::string m_wxId;
+                    bool m_wxIdHasBeenSet;
+
+                    /**
+                     * 意向车型对应品牌code
+                     */
+                    std::string m_brandCode;
+                    bool m_brandCodeHasBeenSet;
+
+                    /**
+                     * 建档时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_buildTime;
+                    bool m_buildTimeHasBeenSet;
+
+                    /**
+                     * 下订时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_orderTime;
+                    bool m_orderTimeHasBeenSet;
+
+                    /**
+                     * 到店时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_arrivalTime;
+                    bool m_arrivalTimeHasBeenSet;
+
+                    /**
+                     * 交车时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deliveryTime;
+                    bool m_deliveryTimeHasBeenSet;
+
+                    /**
+                     * 上次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_followTime;
+                    bool m_followTimeHasBeenSet;
+
+                    /**
+                     * 下次跟进时间，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_nextFollowTime;
+                    bool m_nextFollowTimeHasBeenSet;
+
+                    /**
+                     * 线索所属组织id
+                     */
+                    uint64_t m_orgId;
+                    bool m_orgIdHasBeenSet;
+
+                    /**
+                     * 线索所属组织名称
+                     */
+                    std::string m_orgName;
+                    bool m_orgNameHasBeenSet;
+
+                    /**
+                     * 介绍人姓名
+                     */
+                    std::string m_introducer;
+                    bool m_introducerHasBeenSet;
+
+                    /**
+                     * 介绍人电话
+                     */
+                    std::string m_introducerPhone;
+                    bool m_introducerPhoneHasBeenSet;
+
+                    /**
+                     * 是否关联微信 1 是 0 否
+                     */
+                    int64_t m_isBindWx;
+                    bool m_isBindWxHasBeenSet;
+
+                    /**
+                     * 是否经过合并 1 是 0 否
+                     */
+                    int64_t m_isMerge;
+                    bool m_isMergeHasBeenSet;
+
+                    /**
+                     * 是否无效  1 是 0 否
+                     */
+                    int64_t m_isInvalid;
+                    bool m_isInvalidHasBeenSet;
+
+                    /**
+                     * 无效类型
+                     */
+                    std::string m_invalidType;
+                    bool m_invalidTypeHasBeenSet;
+
+                    /**
+                     * 无效类型枚举：
+无意向购买、空错号、未接听、其他
+                     */
+                    std::string m_invalidTypeName;
+                    bool m_invalidTypeNameHasBeenSet;
+
+                    /**
+                     * 由顾问手动输入的无效原因文字
+                     */
+                    std::string m_invalidRemark;
+                    bool m_invalidRemarkHasBeenSet;
+
+                    /**
+                     * 无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_invalidTime;
+                    bool m_invalidTimeHasBeenSet;
+
+                    /**
+                     * 经销商名称
+                     */
+                    std::string m_dealerName;
+                    bool m_dealerNameHasBeenSet;
+
+                    /**
+                     * 经销商下级门店ID
+                     */
+                    uint64_t m_shopId;
+                    bool m_shopIdHasBeenSet;
+
+                    /**
+                     * 经销商下级门店名称
+                     */
+                    std::string m_shopName;
+                    bool m_shopNameHasBeenSet;
+
+                    /**
+                     * 职位
+                     */
+                    std::string m_position;
+                    bool m_positionHasBeenSet;
 
                 };
             }

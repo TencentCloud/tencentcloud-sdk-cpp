@@ -288,6 +288,31 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobNumber 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetJobNumber() const;
+
+                    /**
+                     * 设置工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobNumber 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobNumber(const std::string& _jobNumber);
+
+                    /**
+                     * 判断参数 JobNumber 是否已赋值
+                     * @return JobNumber 是否已赋值
+                     * 
+                     */
+                    bool JobNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +382,13 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobNumber;
+                    bool m_jobNumberHasBeenSet;
 
                 };
             }

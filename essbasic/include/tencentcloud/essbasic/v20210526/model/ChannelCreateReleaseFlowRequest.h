@@ -194,6 +194,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * @return Deadline 签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * 
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * @param _deadline 签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     * 
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +258,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }
