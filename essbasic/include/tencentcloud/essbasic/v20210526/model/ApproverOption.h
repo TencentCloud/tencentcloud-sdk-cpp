@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否隐藏一键签署 false-不隐藏,默认 true-隐藏
-                     * @return HideOneKeySign 是否隐藏一键签署 false-不隐藏,默认 true-隐藏
+                     * 获取是否隐藏一键签署 默认false-不隐藏true-隐藏
+                     * @return HideOneKeySign 是否隐藏一键签署 默认false-不隐藏true-隐藏
                      * 
                      */
                     bool GetHideOneKeySign() const;
 
                     /**
-                     * 设置是否隐藏一键签署 false-不隐藏,默认 true-隐藏
-                     * @param _hideOneKeySign 是否隐藏一键签署 false-不隐藏,默认 true-隐藏
+                     * 设置是否隐藏一键签署 默认false-不隐藏true-隐藏
+                     * @param _hideOneKeySign 是否隐藏一键签署 默认false-不隐藏true-隐藏
                      * 
                      */
                     void SetHideOneKeySign(const bool& _hideOneKeySign);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否隐藏一键签署 false-不隐藏,默认 true-隐藏
+                     * 是否隐藏一键签署 默认false-不隐藏true-隐藏
                      */
                     bool m_hideOneKeySign;
                     bool m_hideOneKeySignHasBeenSet;

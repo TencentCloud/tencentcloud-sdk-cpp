@@ -36,6 +36,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/Filter.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h
+  include/tencentcloud/cls/v20201016/model/KafkaRechargeInfo.h
   include/tencentcloud/cls/v20201016/model/CreateLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeShippersRequest.h
   include/tencentcloud/cls/v20201016/model/LogItem.h
@@ -50,7 +51,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeShippersResponse.h
   include/tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyShipperResponse.h
-  include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
+  include/tencentcloud/cls/v20201016/model/DeleteKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/ContainerWorkLoadInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h
   include/tencentcloud/cls/v20201016/model/CallBackInfo.h
@@ -61,7 +62,8 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoRequest.h
   include/tencentcloud/cls/v20201016/model/CreateLogsetResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h
-  include/tencentcloud/cls/v20201016/model/Tag.h
+  include/tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h
+  include/tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h
   include/tencentcloud/cls/v20201016/model/MetaTagInfo.h
   include/tencentcloud/cls/v20201016/model/CreateCosRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/ExtractRuleInfo.h
@@ -93,7 +95,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h
   include/tencentcloud/cls/v20201016/model/SplitPartitionRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h
-  include/tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h
+  include/tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerRequest.h
   include/tencentcloud/cls/v20201016/model/MachineGroupInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeLogHistogramResponse.h
   include/tencentcloud/cls/v20201016/model/CloseKafkaConsumerResponse.h
@@ -106,6 +108,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateTopicRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeExportsRequest.h
   include/tencentcloud/cls/v20201016/model/AlarmTarget.h
+  include/tencentcloud/cls/v20201016/model/CreateKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/OpenKafkaConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexResponse.h
@@ -116,9 +119,11 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h
+  include/tencentcloud/cls/v20201016/model/KafkaConsumerContent.h
   include/tencentcloud/cls/v20201016/model/LogsetInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigRequest.h
   include/tencentcloud/cls/v20201016/model/AnalysisDimensional.h
+  include/tencentcloud/cls/v20201016/model/LogRechargeRuleInfo.h
   include/tencentcloud/cls/v20201016/model/ShipperTaskInfo.h
   include/tencentcloud/cls/v20201016/model/CloseKafkaConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/RuleTagInfo.h
@@ -128,7 +133,9 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigRequest.h
   include/tencentcloud/cls/v20201016/model/AddMachineGroupInfoRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaRechargesRequest.h
   include/tencentcloud/cls/v20201016/model/JsonInfo.h
+  include/tencentcloud/cls/v20201016/model/PreviewKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/CreateShipperRequest.h
   include/tencentcloud/cls/v20201016/model/CreateTopicResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmResponse.h
@@ -138,6 +145,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyTopicResponse.h
   include/tencentcloud/cls/v20201016/model/CreateConfigRequest.h
   include/tencentcloud/cls/v20201016/model/CreateShipperResponse.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaRechargesResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteIndexResponse.h
   include/tencentcloud/cls/v20201016/model/AlarmAnalysisConfig.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexRequest.h
@@ -151,13 +159,17 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h
   include/tencentcloud/cls/v20201016/model/ConfigInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteExportRequest.h
+  include/tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/SplitPartitionResponse.h
   include/tencentcloud/cls/v20201016/model/LogContextInfo.h
   include/tencentcloud/cls/v20201016/model/ModifyShipperRequest.h
+  include/tencentcloud/cls/v20201016/model/CreateKafkaRechargeRequest.h
+  include/tencentcloud/cls/v20201016/model/DeleteKafkaRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h
   include/tencentcloud/cls/v20201016/model/CreateConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/AlarmNotice.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigResponse.h
+  include/tencentcloud/cls/v20201016/model/ModifyKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyAlarmNoticeResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeMachinesResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyCosRechargeResponse.h
@@ -176,6 +188,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmNoticesRequest.h
   include/tencentcloud/cls/v20201016/model/NoticeReceiver.h
+  include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
   include/tencentcloud/cls/v20201016/model/Ckafka.h
   include/tencentcloud/cls/v20201016/model/DescribeMachinesRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h
@@ -185,6 +198,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/MonitorTime.h
   include/tencentcloud/cls/v20201016/model/SearchLogRequest.h
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h
+  include/tencentcloud/cls/v20201016/model/Tag.h
   include/tencentcloud/cls/v20201016/model/DescribeExportsResponse.h
   include/tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/ContainerFileInfo.h
@@ -195,8 +209,10 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/HistogramInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h
+  include/tencentcloud/cls/v20201016/model/ModifyKafkaRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoResponse.h
+  include/tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyCosRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeLogsetsRequest.h
   include/tencentcloud/cls/v20201016/model/ParquetInfo.h
@@ -230,6 +246,7 @@ set(cls_src
   src/v20201016/model/Filter.cpp
   src/v20201016/model/DescribeConfigMachineGroupsRequest.cpp
   src/v20201016/model/ModifyConfigExtraResponse.cpp
+  src/v20201016/model/KafkaRechargeInfo.cpp
   src/v20201016/model/CreateLogsetRequest.cpp
   src/v20201016/model/DescribeShippersRequest.cpp
   src/v20201016/model/LogItem.cpp
@@ -244,7 +261,7 @@ set(cls_src
   src/v20201016/model/DescribeShippersResponse.cpp
   src/v20201016/model/CreateConfigExtraResponse.cpp
   src/v20201016/model/ModifyShipperResponse.cpp
-  src/v20201016/model/ModifyTopicRequest.cpp
+  src/v20201016/model/DeleteKafkaRechargeResponse.cpp
   src/v20201016/model/ContainerWorkLoadInfo.cpp
   src/v20201016/model/DescribeConfigExtrasResponse.cpp
   src/v20201016/model/CallBackInfo.cpp
@@ -255,7 +272,8 @@ set(cls_src
   src/v20201016/model/DeleteMachineGroupInfoRequest.cpp
   src/v20201016/model/CreateLogsetResponse.cpp
   src/v20201016/model/DeleteMachineGroupResponse.cpp
-  src/v20201016/model/Tag.cpp
+  src/v20201016/model/KafkaProtocolInfo.cpp
+  src/v20201016/model/DescribeCosRechargesRequest.cpp
   src/v20201016/model/MetaTagInfo.cpp
   src/v20201016/model/CreateCosRechargeRequest.cpp
   src/v20201016/model/ExtractRuleInfo.cpp
@@ -287,7 +305,7 @@ set(cls_src
   src/v20201016/model/RetryShipperTaskResponse.cpp
   src/v20201016/model/SplitPartitionRequest.cpp
   src/v20201016/model/DescribeMachineGroupConfigsResponse.cpp
-  src/v20201016/model/DescribeCosRechargesRequest.cpp
+  src/v20201016/model/CheckRechargeKafkaServerRequest.cpp
   src/v20201016/model/MachineGroupInfo.cpp
   src/v20201016/model/DescribeLogHistogramResponse.cpp
   src/v20201016/model/CloseKafkaConsumerResponse.cpp
@@ -300,6 +318,7 @@ set(cls_src
   src/v20201016/model/CreateTopicRequest.cpp
   src/v20201016/model/DescribeExportsRequest.cpp
   src/v20201016/model/AlarmTarget.cpp
+  src/v20201016/model/CreateKafkaRechargeResponse.cpp
   src/v20201016/model/OpenKafkaConsumerRequest.cpp
   src/v20201016/model/DeleteConfigResponse.cpp
   src/v20201016/model/ModifyIndexResponse.cpp
@@ -310,9 +329,11 @@ set(cls_src
   src/v20201016/model/ModifyConsumerResponse.cpp
   src/v20201016/model/DescribeAlertRecordHistoryRequest.cpp
   src/v20201016/model/DescribeConfigsRequest.cpp
+  src/v20201016/model/KafkaConsumerContent.cpp
   src/v20201016/model/LogsetInfo.cpp
   src/v20201016/model/DeleteConfigRequest.cpp
   src/v20201016/model/AnalysisDimensional.cpp
+  src/v20201016/model/LogRechargeRuleInfo.cpp
   src/v20201016/model/ShipperTaskInfo.cpp
   src/v20201016/model/CloseKafkaConsumerRequest.cpp
   src/v20201016/model/RuleTagInfo.cpp
@@ -322,7 +343,9 @@ set(cls_src
   src/v20201016/model/DeleteConfigExtraRequest.cpp
   src/v20201016/model/ModifyConfigRequest.cpp
   src/v20201016/model/AddMachineGroupInfoRequest.cpp
+  src/v20201016/model/DescribeKafkaRechargesRequest.cpp
   src/v20201016/model/JsonInfo.cpp
+  src/v20201016/model/PreviewKafkaRechargeResponse.cpp
   src/v20201016/model/CreateShipperRequest.cpp
   src/v20201016/model/CreateTopicResponse.cpp
   src/v20201016/model/DeleteAlarmResponse.cpp
@@ -332,6 +355,7 @@ set(cls_src
   src/v20201016/model/ModifyTopicResponse.cpp
   src/v20201016/model/CreateConfigRequest.cpp
   src/v20201016/model/CreateShipperResponse.cpp
+  src/v20201016/model/DescribeKafkaRechargesResponse.cpp
   src/v20201016/model/DeleteIndexResponse.cpp
   src/v20201016/model/AlarmAnalysisConfig.cpp
   src/v20201016/model/ModifyIndexRequest.cpp
@@ -345,13 +369,17 @@ set(cls_src
   src/v20201016/model/DescribeLogContextResponse.cpp
   src/v20201016/model/ConfigInfo.cpp
   src/v20201016/model/DeleteExportRequest.cpp
+  src/v20201016/model/PreviewKafkaRechargeRequest.cpp
   src/v20201016/model/SplitPartitionResponse.cpp
   src/v20201016/model/LogContextInfo.cpp
   src/v20201016/model/ModifyShipperRequest.cpp
+  src/v20201016/model/CreateKafkaRechargeRequest.cpp
+  src/v20201016/model/DeleteKafkaRechargeRequest.cpp
   src/v20201016/model/CreateConfigExtraRequest.cpp
   src/v20201016/model/CreateConsumerRequest.cpp
   src/v20201016/model/AlarmNotice.cpp
   src/v20201016/model/ModifyConfigResponse.cpp
+  src/v20201016/model/ModifyKafkaRechargeResponse.cpp
   src/v20201016/model/ModifyAlarmNoticeResponse.cpp
   src/v20201016/model/DescribeMachinesResponse.cpp
   src/v20201016/model/ModifyCosRechargeResponse.cpp
@@ -370,6 +398,7 @@ set(cls_src
   src/v20201016/model/ModifyMachineGroupRequest.cpp
   src/v20201016/model/DescribeAlarmNoticesRequest.cpp
   src/v20201016/model/NoticeReceiver.cpp
+  src/v20201016/model/ModifyTopicRequest.cpp
   src/v20201016/model/Ckafka.cpp
   src/v20201016/model/DescribeMachinesRequest.cpp
   src/v20201016/model/DeleteAlarmNoticeRequest.cpp
@@ -379,6 +408,7 @@ set(cls_src
   src/v20201016/model/MonitorTime.cpp
   src/v20201016/model/SearchLogRequest.cpp
   src/v20201016/model/CreateMachineGroupRequest.cpp
+  src/v20201016/model/Tag.cpp
   src/v20201016/model/DescribeExportsResponse.cpp
   src/v20201016/model/ApplyConfigToMachineGroupRequest.cpp
   src/v20201016/model/ContainerFileInfo.cpp
@@ -389,8 +419,10 @@ set(cls_src
   src/v20201016/model/HistogramInfo.cpp
   src/v20201016/model/DescribeMachineGroupConfigsRequest.cpp
   src/v20201016/model/ModifyConfigExtraRequest.cpp
+  src/v20201016/model/ModifyKafkaRechargeRequest.cpp
   src/v20201016/model/ModifyLogsetRequest.cpp
   src/v20201016/model/DeleteMachineGroupInfoResponse.cpp
+  src/v20201016/model/CheckRechargeKafkaServerResponse.cpp
   src/v20201016/model/ModifyCosRechargeRequest.cpp
   src/v20201016/model/DescribeLogsetsRequest.cpp
   src/v20201016/model/ParquetInfo.cpp

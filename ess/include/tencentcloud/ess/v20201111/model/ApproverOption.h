@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否可以拒签 false-可以拒签,默认 true-不可以拒签
-                     * @return NoRefuse 是否可以拒签 false-可以拒签,默认 true-不可以拒签
+                     * 获取是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * @return NoRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
                      * 
                      */
                     bool GetNoRefuse() const;
 
                     /**
-                     * 设置是否可以拒签 false-可以拒签,默认 true-不可以拒签
-                     * @param _noRefuse 是否可以拒签 false-可以拒签,默认 true-不可以拒签
+                     * 设置是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * @param _noRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
                      * 
                      */
                     void SetNoRefuse(const bool& _noRefuse);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NoRefuseHasBeenSet() const;
 
                     /**
-                     * 获取是否可以转发 false-可以转发,默认 true-不可以转发
-                     * @return NoTransfer 是否可以转发 false-可以转发,默认 true-不可以转发
+                     * 获取是否可以转发 默认false-可以转发 true-不可以转发
+                     * @return NoTransfer 是否可以转发 默认false-可以转发 true-不可以转发
                      * 
                      */
                     bool GetNoTransfer() const;
 
                     /**
-                     * 设置是否可以转发 false-可以转发,默认 true-不可以转发
-                     * @param _noTransfer 是否可以转发 false-可以转发,默认 true-不可以转发
+                     * 设置是否可以转发 默认false-可以转发 true-不可以转发
+                     * @param _noTransfer 是否可以转发 默认false-可以转发 true-不可以转发
                      * 
                      */
                     void SetNoTransfer(const bool& _noTransfer);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否可以拒签 false-可以拒签,默认 true-不可以拒签
+                     * 是否可以拒签 默认false-可以拒签 true-不可以拒签
                      */
                     bool m_noRefuse;
                     bool m_noRefuseHasBeenSet;
 
                     /**
-                     * 是否可以转发 false-可以转发,默认 true-不可以转发
+                     * 是否可以转发 默认false-可以转发 true-不可以转发
                      */
                     bool m_noTransfer;
                     bool m_noTransferHasBeenSet;

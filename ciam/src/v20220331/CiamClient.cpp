@@ -169,6 +169,178 @@ CiamClient::CreateUserOutcomeCallable CiamClient::CreateUserCallable(const Creat
     return task->get_future();
 }
 
+CiamClient::CreateUserGroupOutcome CiamClient::CreateUserGroup(const CreateUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserGroupResponse rsp = CreateUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserGroupOutcome(rsp);
+        else
+            return CreateUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::CreateUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::CreateUserGroupOutcomeCallable CiamClient::CreateUserGroupCallable(const CreateUserGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::CreateUserStoreOutcome CiamClient::CreateUserStore(const CreateUserStoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserStore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserStoreResponse rsp = CreateUserStoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserStoreOutcome(rsp);
+        else
+            return CreateUserStoreOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserStoreOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::CreateUserStoreAsync(const CreateUserStoreRequest& request, const CreateUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserStore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::CreateUserStoreOutcomeCallable CiamClient::CreateUserStoreCallable(const CreateUserStoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserStoreOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserStore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::DeleteUserGroupsOutcome CiamClient::DeleteUserGroups(const DeleteUserGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserGroupsResponse rsp = DeleteUserGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserGroupsOutcome(rsp);
+        else
+            return DeleteUserGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::DeleteUserGroupsAsync(const DeleteUserGroupsRequest& request, const DeleteUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUserGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::DeleteUserGroupsOutcomeCallable CiamClient::DeleteUserGroupsCallable(const DeleteUserGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUserGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::DeleteUserStoreOutcome CiamClient::DeleteUserStore(const DeleteUserStoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserStore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserStoreResponse rsp = DeleteUserStoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserStoreOutcome(rsp);
+        else
+            return DeleteUserStoreOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserStoreOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::DeleteUserStoreAsync(const DeleteUserStoreRequest& request, const DeleteUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUserStore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::DeleteUserStoreOutcomeCallable CiamClient::DeleteUserStoreCallable(const DeleteUserStoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserStoreOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUserStore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiamClient::DeleteUsersOutcome CiamClient::DeleteUsers(const DeleteUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUsers");
@@ -513,6 +685,92 @@ CiamClient::ListUserByPropertyOutcomeCallable CiamClient::ListUserByPropertyCall
     return task->get_future();
 }
 
+CiamClient::ListUserGroupsOutcome CiamClient::ListUserGroups(const ListUserGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUserGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUserGroupsResponse rsp = ListUserGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUserGroupsOutcome(rsp);
+        else
+            return ListUserGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUserGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::ListUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListUserGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::ListUserGroupsOutcomeCallable CiamClient::ListUserGroupsCallable(const ListUserGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListUserGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListUserGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::ListUserStoreOutcome CiamClient::ListUserStore(const ListUserStoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUserStore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUserStoreResponse rsp = ListUserStoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUserStoreOutcome(rsp);
+        else
+            return ListUserStoreOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUserStoreOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::ListUserStoreAsync(const ListUserStoreRequest& request, const ListUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListUserStore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::ListUserStoreOutcomeCallable CiamClient::ListUserStoreCallable(const ListUserStoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListUserStoreOutcome()>>(
+        [this, request]()
+        {
+            return this->ListUserStore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiamClient::ResetPasswordOutcome CiamClient::ResetPassword(const ResetPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetPassword");
@@ -642,6 +900,49 @@ CiamClient::UpdateUserOutcomeCallable CiamClient::UpdateUserCallable(const Updat
     return task->get_future();
 }
 
+CiamClient::UpdateUserGroupOutcome CiamClient::UpdateUserGroup(const UpdateUserGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUserGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUserGroupResponse rsp = UpdateUserGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUserGroupOutcome(rsp);
+        else
+            return UpdateUserGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUserGroupOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::UpdateUserGroupAsync(const UpdateUserGroupRequest& request, const UpdateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateUserGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::UpdateUserGroupOutcomeCallable CiamClient::UpdateUserGroupCallable(const UpdateUserGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateUserGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiamClient::UpdateUserStatusOutcome CiamClient::UpdateUserStatus(const UpdateUserStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateUserStatus");
@@ -678,6 +979,49 @@ CiamClient::UpdateUserStatusOutcomeCallable CiamClient::UpdateUserStatusCallable
         [this, request]()
         {
             return this->UpdateUserStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiamClient::UpdateUserStoreOutcome CiamClient::UpdateUserStore(const UpdateUserStoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUserStore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUserStoreResponse rsp = UpdateUserStoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUserStoreOutcome(rsp);
+        else
+            return UpdateUserStoreOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUserStoreOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::UpdateUserStoreAsync(const UpdateUserStoreRequest& request, const UpdateUserStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateUserStore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::UpdateUserStoreOutcomeCallable CiamClient::UpdateUserStoreCallable(const UpdateUserStoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateUserStoreOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateUserStore(request);
         }
     );
 
