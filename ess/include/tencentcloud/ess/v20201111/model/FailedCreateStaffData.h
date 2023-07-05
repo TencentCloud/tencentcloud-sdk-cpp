@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
+                     * 获取传入的企微账号id
+                     * @return WeworkOpenId 传入的企微账号id
+                     * 
+                     */
+                    std::string GetWeworkOpenId() const;
+
+                    /**
+                     * 设置传入的企微账号id
+                     * @param _weworkOpenId 传入的企微账号id
+                     * 
+                     */
+                    void SetWeworkOpenId(const std::string& _weworkOpenId);
+
+                    /**
+                     * 判断参数 WeworkOpenId 是否已赋值
+                     * @return WeworkOpenId 是否已赋值
+                     * 
+                     */
+                    bool WeworkOpenIdHasBeenSet() const;
+
+                    /**
                      * 获取失败原因
                      * @return Reason 失败原因
                      * 
@@ -122,6 +143,12 @@ namespace TencentCloud
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
+
+                    /**
+                     * 传入的企微账号id
+                     */
+                    std::string m_weworkOpenId;
+                    bool m_weworkOpenIdHasBeenSet;
 
                     /**
                      * 失败原因

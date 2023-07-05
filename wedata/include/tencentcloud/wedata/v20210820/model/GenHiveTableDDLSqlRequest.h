@@ -24,6 +24,7 @@
 #include <tencentcloud/wedata/v20210820/model/SourceFieldInfo.h>
 #include <tencentcloud/wedata/v20210820/model/Partition.h>
 #include <tencentcloud/wedata/v20210820/model/Property.h>
+#include <tencentcloud/wedata/v20210820/model/TableBaseInfo.h>
 
 
 namespace TencentCloud
@@ -486,6 +487,48 @@ namespace TencentCloud
                      */
                     bool TargetDatasourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取dlc upsert主键
+                     * @return UpsertKeys dlc upsert主键
+                     * 
+                     */
+                    std::vector<std::string> GetUpsertKeys() const;
+
+                    /**
+                     * 设置dlc upsert主键
+                     * @param _upsertKeys dlc upsert主键
+                     * 
+                     */
+                    void SetUpsertKeys(const std::vector<std::string>& _upsertKeys);
+
+                    /**
+                     * 判断参数 UpsertKeys 是否已赋值
+                     * @return UpsertKeys 是否已赋值
+                     * 
+                     */
+                    bool UpsertKeysHasBeenSet() const;
+
+                    /**
+                     * 获取dlc表治理信息
+                     * @return TableBaseInfo dlc表治理信息
+                     * 
+                     */
+                    TableBaseInfo GetTableBaseInfo() const;
+
+                    /**
+                     * 设置dlc表治理信息
+                     * @param _tableBaseInfo dlc表治理信息
+                     * 
+                     */
+                    void SetTableBaseInfo(const TableBaseInfo& _tableBaseInfo);
+
+                    /**
+                     * 判断参数 TableBaseInfo 是否已赋值
+                     * @return TableBaseInfo 是否已赋值
+                     * 
+                     */
+                    bool TableBaseInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -613,6 +656,18 @@ namespace TencentCloud
                      */
                     std::string m_targetDatasourceId;
                     bool m_targetDatasourceIdHasBeenSet;
+
+                    /**
+                     * dlc upsert主键
+                     */
+                    std::vector<std::string> m_upsertKeys;
+                    bool m_upsertKeysHasBeenSet;
+
+                    /**
+                     * dlc表治理信息
+                     */
+                    TableBaseInfo m_tableBaseInfo;
+                    bool m_tableBaseInfoHasBeenSet;
 
                 };
             }

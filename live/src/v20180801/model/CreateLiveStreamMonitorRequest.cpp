@@ -33,7 +33,8 @@ CreateLiveStreamMonitorRequest::CreateLiveStreamMonitorRequest() :
     m_aiOcrInputIndexListHasBeenSet(false),
     m_checkStreamBrokenHasBeenSet(false),
     m_checkStreamLowFrameRateHasBeenSet(false),
-    m_allowMonitorReportHasBeenSet(false)
+    m_allowMonitorReportHasBeenSet(false),
+    m_aiFormatDiagnoseHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string CreateLiveStreamMonitorRequest::ToJsonString() const
         string key = "AllowMonitorReport";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allowMonitorReport, allocator);
+    }
+
+    if (m_aiFormatDiagnoseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiFormatDiagnose";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aiFormatDiagnose, allocator);
     }
 
 
@@ -333,6 +342,22 @@ void CreateLiveStreamMonitorRequest::SetAllowMonitorReport(const uint64_t& _allo
 bool CreateLiveStreamMonitorRequest::AllowMonitorReportHasBeenSet() const
 {
     return m_allowMonitorReportHasBeenSet;
+}
+
+uint64_t CreateLiveStreamMonitorRequest::GetAiFormatDiagnose() const
+{
+    return m_aiFormatDiagnose;
+}
+
+void CreateLiveStreamMonitorRequest::SetAiFormatDiagnose(const uint64_t& _aiFormatDiagnose)
+{
+    m_aiFormatDiagnose = _aiFormatDiagnose;
+    m_aiFormatDiagnoseHasBeenSet = true;
+}
+
+bool CreateLiveStreamMonitorRequest::AiFormatDiagnoseHasBeenSet() const
+{
+    return m_aiFormatDiagnoseHasBeenSet;
 }
 
 

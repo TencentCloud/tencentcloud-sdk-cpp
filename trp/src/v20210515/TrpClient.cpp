@@ -1373,6 +1373,49 @@ TrpClient::DescribeProductsOutcomeCallable TrpClient::DescribeProductsCallable(c
     return task->get_future();
 }
 
+TrpClient::DescribeRawScanLogsOutcome TrpClient::DescribeRawScanLogs(const DescribeRawScanLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRawScanLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRawScanLogsResponse rsp = DescribeRawScanLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRawScanLogsOutcome(rsp);
+        else
+            return DescribeRawScanLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRawScanLogsOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeRawScanLogsAsync(const DescribeRawScanLogsRequest& request, const DescribeRawScanLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRawScanLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeRawScanLogsOutcomeCallable TrpClient::DescribeRawScanLogsCallable(const DescribeRawScanLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRawScanLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRawScanLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeScanLogsOutcome TrpClient::DescribeScanLogs(const DescribeScanLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScanLogs");

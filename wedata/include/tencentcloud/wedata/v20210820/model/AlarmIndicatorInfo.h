@@ -221,6 +221,69 @@ namespace TencentCloud
                      */
                     bool AlarmIndicatorUnitHasBeenSet() const;
 
+                    /**
+                     * 获取告警周期
+                     * @return Duration 告警周期
+                     * 
+                     */
+                    int64_t GetDuration() const;
+
+                    /**
+                     * 设置告警周期
+                     * @param _duration 告警周期
+                     * 
+                     */
+                    void SetDuration(const int64_t& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     * 
+                     */
+                    bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取告警周期单位
+                     * @return DurationUnit 告警周期单位
+                     * 
+                     */
+                    std::string GetDurationUnit() const;
+
+                    /**
+                     * 设置告警周期单位
+                     * @param _durationUnit 告警周期单位
+                     * 
+                     */
+                    void SetDurationUnit(const std::string& _durationUnit);
+
+                    /**
+                     * 判断参数 DurationUnit 是否已赋值
+                     * @return DurationUnit 是否已赋值
+                     * 
+                     */
+                    bool DurationUnitHasBeenSet() const;
+
+                    /**
+                     * 获取周期内最多告警次数
+                     * @return MaxTimes 周期内最多告警次数
+                     * 
+                     */
+                    int64_t GetMaxTimes() const;
+
+                    /**
+                     * 设置周期内最多告警次数
+                     * @param _maxTimes 周期内最多告警次数
+                     * 
+                     */
+                    void SetMaxTimes(const int64_t& _maxTimes);
+
+                    /**
+                     * 判断参数 MaxTimes 是否已赋值
+                     * @return MaxTimes 是否已赋值
+                     * 
+                     */
+                    bool MaxTimesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +334,24 @@ namespace TencentCloud
                      */
                     std::string m_alarmIndicatorUnit;
                     bool m_alarmIndicatorUnitHasBeenSet;
+
+                    /**
+                     * 告警周期
+                     */
+                    int64_t m_duration;
+                    bool m_durationHasBeenSet;
+
+                    /**
+                     * 告警周期单位
+                     */
+                    std::string m_durationUnit;
+                    bool m_durationUnitHasBeenSet;
+
+                    /**
+                     * 周期内最多告警次数
+                     */
+                    int64_t m_maxTimes;
+                    bool m_maxTimesHasBeenSet;
 
                 };
             }

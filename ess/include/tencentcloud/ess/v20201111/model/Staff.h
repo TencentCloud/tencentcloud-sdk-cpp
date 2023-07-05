@@ -50,14 +50,18 @@ namespace TencentCloud
 
                     /**
                      * 获取用户在电子签平台的id
+注：创建和更新场景无需填写
                      * @return UserId 用户在电子签平台的id
+注：创建和更新场景无需填写
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户在电子签平台的id
+注：创建和更新场景无需填写
                      * @param _userId 用户在电子签平台的id
+注：创建和更新场景无需填写
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -163,8 +167,10 @@ namespace TencentCloud
 
                     /**
                      * 获取员工角色
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Roles 员工角色
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,8 +178,10 @@ namespace TencentCloud
 
                     /**
                      * 设置员工角色
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roles 员工角色
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -213,14 +221,18 @@ namespace TencentCloud
 
                     /**
                      * 获取员工是否实名
+注：创建和更新场景无需填写
                      * @return Verified 员工是否实名
+注：创建和更新场景无需填写
                      * 
                      */
                     bool GetVerified() const;
 
                     /**
                      * 设置员工是否实名
+注：创建和更新场景无需填写
                      * @param _verified 员工是否实名
+注：创建和更新场景无需填写
                      * 
                      */
                     void SetVerified(const bool& _verified);
@@ -234,14 +246,18 @@ namespace TencentCloud
 
                     /**
                      * 获取员工创建时间戳，单位秒
+注：创建和更新场景无需填写
                      * @return CreatedOn 员工创建时间戳，单位秒
+注：创建和更新场景无需填写
                      * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置员工创建时间戳，单位秒
+注：创建和更新场景无需填写
                      * @param _createdOn 员工创建时间戳，单位秒
+注：创建和更新场景无需填写
                      * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
@@ -255,8 +271,10 @@ namespace TencentCloud
 
                     /**
                      * 获取员工实名时间戳，单位秒
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifiedOn 员工实名时间戳，单位秒
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -264,8 +282,10 @@ namespace TencentCloud
 
                     /**
                      * 设置员工实名时间戳，单位秒
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifiedOn 员工实名时间戳，单位秒
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,8 +300,10 @@ namespace TencentCloud
 
                     /**
                      * 获取员工是否离职：0-未离职，1-离职
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuiteJob 员工是否离职：0-未离职，1-离职
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -289,8 +311,10 @@ namespace TencentCloud
 
                     /**
                      * 设置员工是否离职：0-未离职，1-离职
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quiteJob 员工是否离职：0-未离职，1-离职
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -305,14 +329,18 @@ namespace TencentCloud
 
                     /**
                      * 获取员工离职交接人用户id
+注：创建和更新场景无需填写
                      * @return ReceiveUserId 员工离职交接人用户id
+注：创建和更新场景无需填写
                      * 
                      */
                     std::string GetReceiveUserId() const;
 
                     /**
                      * 设置员工离职交接人用户id
+注：创建和更新场景无需填写
                      * @param _receiveUserId 员工离职交接人用户id
+注：创建和更新场景无需填写
                      * 
                      */
                     void SetReceiveUserId(const std::string& _receiveUserId);
@@ -326,14 +354,18 @@ namespace TencentCloud
 
                     /**
                      * 获取员工离职交接人用户OpenId
+注：创建和更新场景无需填写
                      * @return ReceiveOpenId 员工离职交接人用户OpenId
+注：创建和更新场景无需填写
                      * 
                      */
                     std::string GetReceiveOpenId() const;
 
                     /**
                      * 设置员工离职交接人用户OpenId
+注：创建和更新场景无需填写
                      * @param _receiveOpenId 员工离职交接人用户OpenId
+注：创建和更新场景无需填写
                      * 
                      */
                     void SetReceiveOpenId(const std::string& _receiveOpenId);
@@ -345,10 +377,40 @@ namespace TencentCloud
                      */
                     bool ReceiveOpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取企业微信用户账号ID
+注：仅企微类型的企业创建员工接口支持该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WeworkOpenId 企业微信用户账号ID
+注：仅企微类型的企业创建员工接口支持该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWeworkOpenId() const;
+
+                    /**
+                     * 设置企业微信用户账号ID
+注：仅企微类型的企业创建员工接口支持该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weworkOpenId 企业微信用户账号ID
+注：仅企微类型的企业创建员工接口支持该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWeworkOpenId(const std::string& _weworkOpenId);
+
+                    /**
+                     * 判断参数 WeworkOpenId 是否已赋值
+                     * @return WeworkOpenId 是否已赋值
+                     * 
+                     */
+                    bool WeworkOpenIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 用户在电子签平台的id
+注：创建和更新场景无需填写
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
@@ -381,6 +443,7 @@ namespace TencentCloud
 
                     /**
                      * 员工角色
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StaffRole> m_roles;
@@ -395,18 +458,21 @@ namespace TencentCloud
 
                     /**
                      * 员工是否实名
+注：创建和更新场景无需填写
                      */
                     bool m_verified;
                     bool m_verifiedHasBeenSet;
 
                     /**
                      * 员工创建时间戳，单位秒
+注：创建和更新场景无需填写
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 员工实名时间戳，单位秒
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_verifiedOn;
@@ -414,6 +480,7 @@ namespace TencentCloud
 
                     /**
                      * 员工是否离职：0-未离职，1-离职
+注：创建和更新场景无需填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_quiteJob;
@@ -421,15 +488,25 @@ namespace TencentCloud
 
                     /**
                      * 员工离职交接人用户id
+注：创建和更新场景无需填写
                      */
                     std::string m_receiveUserId;
                     bool m_receiveUserIdHasBeenSet;
 
                     /**
                      * 员工离职交接人用户OpenId
+注：创建和更新场景无需填写
                      */
                     std::string m_receiveOpenId;
                     bool m_receiveOpenIdHasBeenSet;
+
+                    /**
+                     * 企业微信用户账号ID
+注：仅企微类型的企业创建员工接口支持该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_weworkOpenId;
+                    bool m_weworkOpenIdHasBeenSet;
 
                 };
             }

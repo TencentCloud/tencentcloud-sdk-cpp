@@ -27,7 +27,10 @@ AlarmIndicatorInfo::AlarmIndicatorInfo() :
     m_triggerTypeHasBeenSet(false),
     m_estimatedTimeHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_alarmIndicatorUnitHasBeenSet(false)
+    m_alarmIndicatorUnitHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_durationUnitHasBeenSet(false),
+    m_maxTimesHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome AlarmIndicatorInfo::Deserialize(const rapidjson::Value &valu
         m_alarmIndicatorUnitHasBeenSet = true;
     }
 
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.Duration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetInt64();
+        m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("DurationUnit") && !value["DurationUnit"].IsNull())
+    {
+        if (!value["DurationUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.DurationUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_durationUnit = string(value["DurationUnit"].GetString());
+        m_durationUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxTimes") && !value["MaxTimes"].IsNull())
+    {
+        if (!value["MaxTimes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.MaxTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTimes = value["MaxTimes"].GetInt64();
+        m_maxTimesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void AlarmIndicatorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AlarmIndicatorUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alarmIndicatorUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_durationUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DurationUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_durationUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTimes, allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void AlarmIndicatorInfo::SetAlarmIndicatorUnit(const string& _alarmIndicatorUnit
 bool AlarmIndicatorInfo::AlarmIndicatorUnitHasBeenSet() const
 {
     return m_alarmIndicatorUnitHasBeenSet;
+}
+
+int64_t AlarmIndicatorInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void AlarmIndicatorInfo::SetDuration(const int64_t& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
+}
+
+string AlarmIndicatorInfo::GetDurationUnit() const
+{
+    return m_durationUnit;
+}
+
+void AlarmIndicatorInfo::SetDurationUnit(const string& _durationUnit)
+{
+    m_durationUnit = _durationUnit;
+    m_durationUnitHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::DurationUnitHasBeenSet() const
+{
+    return m_durationUnitHasBeenSet;
+}
+
+int64_t AlarmIndicatorInfo::GetMaxTimes() const
+{
+    return m_maxTimes;
+}
+
+void AlarmIndicatorInfo::SetMaxTimes(const int64_t& _maxTimes)
+{
+    m_maxTimes = _maxTimes;
+    m_maxTimesHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::MaxTimesHasBeenSet() const
+{
+    return m_maxTimesHasBeenSet;
 }
 

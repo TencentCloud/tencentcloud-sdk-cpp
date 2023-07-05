@@ -38,7 +38,8 @@ LiveStreamMonitorInfo::LiveStreamMonitorInfo() :
     m_asrLanguageHasBeenSet(false),
     m_ocrLanguageHasBeenSet(false),
     m_aiOcrInputIndexListHasBeenSet(false),
-    m_allowMonitorReportHasBeenSet(false)
+    m_allowMonitorReportHasBeenSet(false),
+    m_aiFormatDiagnoseHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome LiveStreamMonitorInfo::Deserialize(const rapidjson::Value &v
         m_allowMonitorReportHasBeenSet = true;
     }
 
+    if (value.HasMember("AiFormatDiagnose") && !value["AiFormatDiagnose"].IsNull())
+    {
+        if (!value["AiFormatDiagnose"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInfo.AiFormatDiagnose` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aiFormatDiagnose = value["AiFormatDiagnose"].GetUint64();
+        m_aiFormatDiagnoseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void LiveStreamMonitorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "AllowMonitorReport";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowMonitorReport, allocator);
+    }
+
+    if (m_aiFormatDiagnoseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiFormatDiagnose";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aiFormatDiagnose, allocator);
     }
 
 }
@@ -724,5 +743,21 @@ void LiveStreamMonitorInfo::SetAllowMonitorReport(const uint64_t& _allowMonitorR
 bool LiveStreamMonitorInfo::AllowMonitorReportHasBeenSet() const
 {
     return m_allowMonitorReportHasBeenSet;
+}
+
+uint64_t LiveStreamMonitorInfo::GetAiFormatDiagnose() const
+{
+    return m_aiFormatDiagnose;
+}
+
+void LiveStreamMonitorInfo::SetAiFormatDiagnose(const uint64_t& _aiFormatDiagnose)
+{
+    m_aiFormatDiagnose = _aiFormatDiagnose;
+    m_aiFormatDiagnoseHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInfo::AiFormatDiagnoseHasBeenSet() const
+{
+    return m_aiFormatDiagnoseHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return DBInstanceId 实例ID
+                     * 获取实例ID。
+                     * @return DBInstanceId 实例ID。
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _dBInstanceId 实例ID
+                     * 设置实例ID。
+                     * @param _dBInstanceId 实例ID。
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
-                     * @return TargetDBKernelVersion 升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
+                     * 获取升级的目标内核版本号。可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)的返回字段AvailableUpgradeTarget获取。
+
+                     * @return TargetDBKernelVersion 升级的目标内核版本号。可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)的返回字段AvailableUpgradeTarget获取。
+
                      * 
                      */
                     std::string GetTargetDBKernelVersion() const;
 
                     /**
-                     * 设置升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
-                     * @param _targetDBKernelVersion 升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
+                     * 设置升级的目标内核版本号。可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)的返回字段AvailableUpgradeTarget获取。
+
+                     * @param _targetDBKernelVersion 升级的目标内核版本号。可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)的返回字段AvailableUpgradeTarget获取。
+
                      * 
                      */
                     void SetTargetDBKernelVersion(const std::string& _targetDBKernelVersion);
@@ -85,27 +89,31 @@ namespace TencentCloud
                     bool TargetDBKernelVersionHasBeenSet() const;
 
                     /**
-                     * 获取指定实例升级内核版本号完成后的切换时间。可选值，
-0：立即切换（默认值）。
-1：指定时间切换。
-2：维护时间窗口内切换。
-                     * @return SwitchTag 指定实例升级内核版本号完成后的切换时间。可选值，
-0：立即切换（默认值）。
-1：指定时间切换。
-2：维护时间窗口内切换。
+                     * 获取指定实例升级内核版本号完成后的切换时间。可选值:
+<li>0：立即切换
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
+                     * @return SwitchTag 指定实例升级内核版本号完成后的切换时间。可选值:
+<li>0：立即切换
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
                      * 
                      */
                     uint64_t GetSwitchTag() const;
 
                     /**
-                     * 设置指定实例升级内核版本号完成后的切换时间。可选值，
-0：立即切换（默认值）。
-1：指定时间切换。
-2：维护时间窗口内切换。
-                     * @param _switchTag 指定实例升级内核版本号完成后的切换时间。可选值，
-0：立即切换（默认值）。
-1：指定时间切换。
-2：维护时间窗口内切换。
+                     * 设置指定实例升级内核版本号完成后的切换时间。可选值:
+<li>0：立即切换
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
+                     * @param _switchTag 指定实例升级内核版本号完成后的切换时间。可选值:
+<li>0：立即切换
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
                      * 
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
@@ -160,23 +168,27 @@ namespace TencentCloud
                     bool SwitchEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否对本次升级实例内核版本号操作执行预检查。可选值，
-true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-false：发送正常请求（默认值），通过检查后直接升级内核版本号。
-                     * @return DryRun 是否对本次升级实例内核版本号操作执行预检查。可选值，
-true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+                     * 获取是否对本次升级实例内核版本号操作执行预检查。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+默认值：false
+                     * @return DryRun 是否对本次升级实例内核版本号操作执行预检查。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+默认值：false
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否对本次升级实例内核版本号操作执行预检查。可选值，
-true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-false：发送正常请求（默认值），通过检查后直接升级内核版本号。
-                     * @param _dryRun 是否对本次升级实例内核版本号操作执行预检查。可选值，
-true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+                     * 设置是否对本次升级实例内核版本号操作执行预检查。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+默认值：false
+                     * @param _dryRun 是否对本次升级实例内核版本号操作执行预检查。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+默认值：false
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -191,22 +203,24 @@ false：发送正常请求（默认值），通过检查后直接升级内核版
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 升级的目标内核版本号。可以通过接口DescribeDBVersions的返回字段AvailableUpgradeTarget获取。
+                     * 升级的目标内核版本号。可以通过接口[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)的返回字段AvailableUpgradeTarget获取。
+
                      */
                     std::string m_targetDBKernelVersion;
                     bool m_targetDBKernelVersionHasBeenSet;
 
                     /**
-                     * 指定实例升级内核版本号完成后的切换时间。可选值，
-0：立即切换（默认值）。
-1：指定时间切换。
-2：维护时间窗口内切换。
+                     * 指定实例升级内核版本号完成后的切换时间。可选值:
+<li>0：立即切换
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
                      */
                     uint64_t m_switchTag;
                     bool m_switchTagHasBeenSet;
@@ -224,9 +238,10 @@ false：发送正常请求（默认值），通过检查后直接升级内核版
                     bool m_switchEndTimeHasBeenSet;
 
                     /**
-                     * 是否对本次升级实例内核版本号操作执行预检查。可选值，
-true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
-false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+                     * 是否对本次升级实例内核版本号操作执行预检查。
+<li>true：执行预检查操作，不升级内核版本号。检查项目包含请求参数、内核版本号兼容性、实例参数等。
+<li>false：发送正常请求（默认值），通过检查后直接升级内核版本号。
+默认值：false
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

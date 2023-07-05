@@ -24,7 +24,9 @@ using namespace std;
 
 StartIntegrationTaskRequest::StartIntegrationTaskRequest() :
     m_taskIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_eventHasBeenSet(false),
+    m_extConfigHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,29 @@ string StartIntegrationTaskRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Event";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_event.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extConfig.begin(); itr != m_extConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +114,38 @@ void StartIntegrationTaskRequest::SetProjectId(const string& _projectId)
 bool StartIntegrationTaskRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string StartIntegrationTaskRequest::GetEvent() const
+{
+    return m_event;
+}
+
+void StartIntegrationTaskRequest::SetEvent(const string& _event)
+{
+    m_event = _event;
+    m_eventHasBeenSet = true;
+}
+
+bool StartIntegrationTaskRequest::EventHasBeenSet() const
+{
+    return m_eventHasBeenSet;
+}
+
+vector<RecordField> StartIntegrationTaskRequest::GetExtConfig() const
+{
+    return m_extConfig;
+}
+
+void StartIntegrationTaskRequest::SetExtConfig(const vector<RecordField>& _extConfig)
+{
+    m_extConfig = _extConfig;
+    m_extConfigHasBeenSet = true;
+}
+
+bool StartIntegrationTaskRequest::ExtConfigHasBeenSet() const
+{
+    return m_extConfigHasBeenSet;
 }
 
 

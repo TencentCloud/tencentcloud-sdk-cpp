@@ -63,6 +63,14 @@
 #include <tencentcloud/asr/v20190614/model/SetVocabStateResponse.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintDeleteRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintDeleteResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintEnrollRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintEnrollResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintUpdateRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintUpdateResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintVerifyRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintVerifyResponse.h>
 
 
 namespace TencentCloud
@@ -137,6 +145,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAsrVocabResponse> UpdateAsrVocabOutcome;
                 typedef std::future<UpdateAsrVocabOutcome> UpdateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::UpdateAsrVocabRequest&, UpdateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintDeleteResponse> VoicePrintDeleteOutcome;
+                typedef std::future<VoicePrintDeleteOutcome> VoicePrintDeleteOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintDeleteRequest&, VoicePrintDeleteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintDeleteAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintEnrollResponse> VoicePrintEnrollOutcome;
+                typedef std::future<VoicePrintEnrollOutcome> VoicePrintEnrollOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintEnrollRequest&, VoicePrintEnrollOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintEnrollAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintUpdateResponse> VoicePrintUpdateOutcome;
+                typedef std::future<VoicePrintUpdateOutcome> VoicePrintUpdateOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintUpdateRequest&, VoicePrintUpdateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintUpdateAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintVerifyResponse> VoicePrintVerifyOutcome;
+                typedef std::future<VoicePrintVerifyOutcome> VoicePrintVerifyOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintVerifyRequest&, VoicePrintVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintVerifyAsyncHandler;
 
 
 
@@ -345,6 +365,48 @@ namespace TencentCloud
                 UpdateAsrVocabOutcome UpdateAsrVocab(const Model::UpdateAsrVocabRequest &request);
                 void UpdateAsrVocabAsync(const Model::UpdateAsrVocabRequest& request, const UpdateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAsrVocabOutcomeCallable UpdateAsrVocabCallable(const Model::UpdateAsrVocabRequest& request);
+
+                /**
+                 *本接口用于以删除已经注册的说话人信息（删除之后，原有的说话人ID和说话人音频数据都会失效）
+                 * @param req VoicePrintDeleteRequest
+                 * @return VoicePrintDeleteOutcome
+                 */
+                VoicePrintDeleteOutcome VoicePrintDelete(const Model::VoicePrintDeleteRequest &request);
+                void VoicePrintDeleteAsync(const Model::VoicePrintDeleteRequest& request, const VoicePrintDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintDeleteOutcomeCallable VoicePrintDeleteCallable(const Model::VoicePrintDeleteRequest& request);
+
+                /**
+                 *说话人注册接口用于注册一个指定音频，生成一个唯一的说话人id，后续可通过说话人验证接口验证其它音频和已有的说话人ID匹配度，注册时可指定说话人昵称，方便标识说话人ID，  说话人昵称可重复配置。 
+（注: 一个appid最多可以注册1000个说话人ID，一个说话人ID仅支持一条音频注册，后续可通过更新接口进行更新）
+
+使用须知
+支持的输入格式：编码文件(PCM, WAV)、16 bit采样位数、单声道（mono）。
+
+支持的音频采样率：16000 Hz。
+                 * @param req VoicePrintEnrollRequest
+                 * @return VoicePrintEnrollOutcome
+                 */
+                VoicePrintEnrollOutcome VoicePrintEnroll(const Model::VoicePrintEnrollRequest &request);
+                void VoicePrintEnrollAsync(const Model::VoicePrintEnrollRequest& request, const VoicePrintEnrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintEnrollOutcomeCallable VoicePrintEnrollCallable(const Model::VoicePrintEnrollRequest& request);
+
+                /**
+                 *本接口用于更新和覆盖已注册的音频数据和说话人昵称，更新后原有的音频数据将失效。
+                 * @param req VoicePrintUpdateRequest
+                 * @return VoicePrintUpdateOutcome
+                 */
+                VoicePrintUpdateOutcome VoicePrintUpdate(const Model::VoicePrintUpdateRequest &request);
+                void VoicePrintUpdateAsync(const Model::VoicePrintUpdateRequest& request, const VoicePrintUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintUpdateOutcomeCallable VoicePrintUpdateCallable(const Model::VoicePrintUpdateRequest& request);
+
+                /**
+                 *本接口用于校验传入音频与已注册音频的匹配程度，通过指定说话人ID（VoicePrintId）和一段音频进行音频和说话人的匹配度判断
+                 * @param req VoicePrintVerifyRequest
+                 * @return VoicePrintVerifyOutcome
+                 */
+                VoicePrintVerifyOutcome VoicePrintVerify(const Model::VoicePrintVerifyRequest &request);
+                void VoicePrintVerifyAsync(const Model::VoicePrintVerifyRequest& request, const VoicePrintVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintVerifyOutcomeCallable VoicePrintVerifyCallable(const Model::VoicePrintVerifyRequest& request);
 
             };
         }

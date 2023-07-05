@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool LowFrameRateResultsHasBeenSet() const;
 
+                    /**
+                     * 获取流格式诊断信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StreamFormatResults 流格式诊断信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetStreamFormatResults() const;
+
+                    /**
+                     * 设置流格式诊断信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _streamFormatResults 流格式诊断信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStreamFormatResults(const std::vector<std::string>& _streamFormatResults);
+
+                    /**
+                     * 判断参数 StreamFormatResults 是否已赋值
+                     * @return StreamFormatResults 是否已赋值
+                     * 
+                     */
+                    bool StreamFormatResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_lowFrameRateResults;
                     bool m_lowFrameRateResultsHasBeenSet;
+
+                    /**
+                     * 流格式诊断信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_streamFormatResults;
+                    bool m_streamFormatResultsHasBeenSet;
 
                 };
             }

@@ -68,18 +68,22 @@ namespace TencentCloud
 
                     /**
                      * 获取待创建员工的信息，不超过20个。
-Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
                      * @return Employees 待创建员工的信息，不超过20个。
-Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
                      * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
                      * 设置待创建员工的信息，不超过20个。
-Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
                      * @param _employees 待创建员工的信息，不超过20个。
-Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
                      * 
                      */
                     void SetEmployees(const std::vector<Staff>& _employees);
@@ -122,7 +126,8 @@ Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其�
 
                     /**
                      * 待创建员工的信息，不超过20个。
-Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。
+企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;

@@ -24,7 +24,8 @@ SuccessCreateStaffData::SuccessCreateStaffData() :
     m_displayNameHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_weworkOpenIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SuccessCreateStaffData::Deserialize(const rapidjson::Value &
         m_noteHasBeenSet = true;
     }
 
+    if (value.HasMember("WeworkOpenId") && !value["WeworkOpenId"].IsNull())
+    {
+        if (!value["WeworkOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCreateStaffData.WeworkOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weworkOpenId = string(value["WeworkOpenId"].GetString());
+        m_weworkOpenIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SuccessCreateStaffData::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weworkOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeworkOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weworkOpenId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SuccessCreateStaffData::SetNote(const string& _note)
 bool SuccessCreateStaffData::NoteHasBeenSet() const
 {
     return m_noteHasBeenSet;
+}
+
+string SuccessCreateStaffData::GetWeworkOpenId() const
+{
+    return m_weworkOpenId;
+}
+
+void SuccessCreateStaffData::SetWeworkOpenId(const string& _weworkOpenId)
+{
+    m_weworkOpenId = _weworkOpenId;
+    m_weworkOpenIdHasBeenSet = true;
+}
+
+bool SuccessCreateStaffData::WeworkOpenIdHasBeenSet() const
+{
+    return m_weworkOpenIdHasBeenSet;
 }
 

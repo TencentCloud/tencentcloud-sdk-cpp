@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/RecordField.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取额外参数
+                     * @return ExtConfig 额外参数
+                     * 
+                     */
+                    std::vector<RecordField> GetExtConfig() const;
+
+                    /**
+                     * 设置额外参数
+                     * @param _extConfig 额外参数
+                     * 
+                     */
+                    void SetExtConfig(const std::vector<RecordField>& _extConfig);
+
+                    /**
+                     * 判断参数 ExtConfig 是否已赋值
+                     * @return ExtConfig 是否已赋值
+                     * 
+                     */
+                    bool ExtConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 额外参数
+                     */
+                    std::vector<RecordField> m_extConfig;
+                    bool m_extConfigHasBeenSet;
 
                 };
             }

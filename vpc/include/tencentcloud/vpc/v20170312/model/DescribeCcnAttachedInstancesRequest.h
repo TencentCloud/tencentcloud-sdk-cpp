@@ -90,12 +90,12 @@ namespace TencentCloud
 <li>ccn-id - String -（过滤条件）CCN实例ID。</li>
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
-<li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+<li>instance-id - String -（过滤条件）关联实例ID。</li>
                      * @return Filters 过滤条件：
 <li>ccn-id - String -（过滤条件）CCN实例ID。</li>
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
-<li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+<li>instance-id - String -（过滤条件）关联实例ID。</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -105,12 +105,12 @@ namespace TencentCloud
 <li>ccn-id - String -（过滤条件）CCN实例ID。</li>
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
-<li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+<li>instance-id - String -（过滤条件）关联实例ID。</li>
                      * @param _filters 过滤条件：
 <li>ccn-id - String -（过滤条件）CCN实例ID。</li>
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
-<li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+<li>instance-id - String -（过滤条件）关联实例ID。</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -204,7 +204,7 @@ namespace TencentCloud
 <li>ccn-id - String -（过滤条件）CCN实例ID。</li>
 <li>instance-type - String -（过滤条件）关联实例类型。</li>
 <li>instance-region - String -（过滤条件）关联实例所属地域。</li>
-<li>instance-id - String -（过滤条件）关联实例实例ID。</li>
+<li>instance-id - String -（过滤条件）关联实例ID。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

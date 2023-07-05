@@ -465,18 +465,18 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool MetadataTypeHasBeenSet() const;
 
                     /**
-                     * 获取采集配置路径正则表达式，MetadataType为1时必填
+                     * 获取采集配置路径正则表达式，MetadataType为3时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PathRegex 采集配置路径正则表达式，MetadataType为1时必填
+                     * @return PathRegex 采集配置路径正则表达式，MetadataType为3时必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPathRegex() const;
 
                     /**
-                     * 设置采集配置路径正则表达式，MetadataType为1时必填
+                     * 设置采集配置路径正则表达式，MetadataType为3时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pathRegex 采集配置路径正则表达式，MetadataType为1时必填
+                     * @param _pathRegex 采集配置路径正则表达式，MetadataType为3时必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -629,7 +629,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool m_metadataTypeHasBeenSet;
 
                     /**
-                     * 采集配置路径正则表达式，MetadataType为1时必填
+                     * 采集配置路径正则表达式，MetadataType为3时必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pathRegex;

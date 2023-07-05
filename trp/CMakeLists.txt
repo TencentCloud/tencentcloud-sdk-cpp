@@ -81,6 +81,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusResponse.h
   include/tencentcloud/trp/v20210515/model/ChainData.h
   include/tencentcloud/trp/v20210515/model/PhaseData.h
+  include/tencentcloud/trp/v20210515/model/DescribeRawScanLogsRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteProductRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataRanksRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleStatusResponse.h
@@ -106,6 +107,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeCodesByPackRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeJobFileUrlRequest.h
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncResponse.h
+  include/tencentcloud/trp/v20210515/model/RawScanLog.h
   include/tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdRequest.h
@@ -125,6 +127,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeScanStatsResponse.h
   include/tencentcloud/trp/v20210515/model/CreateMerchantResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantsResponse.h
+  include/tencentcloud/trp/v20210515/model/DescribeRawScanLogsResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeScanStatsRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteMerchantResponse.h
@@ -206,6 +209,7 @@ set(trp_src
   src/v20210515/model/ReportBatchCallbackStatusResponse.cpp
   src/v20210515/model/ChainData.cpp
   src/v20210515/model/PhaseData.cpp
+  src/v20210515/model/DescribeRawScanLogsRequest.cpp
   src/v20210515/model/DeleteProductRequest.cpp
   src/v20210515/model/ModifyTraceDataRanksRequest.cpp
   src/v20210515/model/ModifyCustomRuleStatusResponse.cpp
@@ -231,6 +235,7 @@ set(trp_src
   src/v20210515/model/DescribeCodesByPackRequest.cpp
   src/v20210515/model/DescribeJobFileUrlRequest.cpp
   src/v20210515/model/CreateTraceCodesAsyncResponse.cpp
+  src/v20210515/model/RawScanLog.cpp
   src/v20210515/model/DescribeCustomRulesRequest.cpp
   src/v20210515/model/ModifyCodeBatchRequest.cpp
   src/v20210515/model/DescribeProductByIdRequest.cpp
@@ -250,6 +255,7 @@ set(trp_src
   src/v20210515/model/DescribeScanStatsResponse.cpp
   src/v20210515/model/CreateMerchantResponse.cpp
   src/v20210515/model/DescribeMerchantsResponse.cpp
+  src/v20210515/model/DescribeRawScanLogsResponse.cpp
   src/v20210515/model/DescribeTraceDataListRequest.cpp
   src/v20210515/model/DescribeScanStatsRequest.cpp
   src/v20210515/model/DeleteMerchantResponse.cpp

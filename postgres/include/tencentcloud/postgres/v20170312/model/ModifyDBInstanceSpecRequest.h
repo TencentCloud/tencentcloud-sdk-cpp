@@ -106,15 +106,27 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券,1是,0否，默认不使用。
-                     * @return AutoVoucher 是否自动使用代金券,1是,0否，默认不使用。
+                     * 获取是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @return AutoVoucher 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
                     uint64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券,1是,0否，默认不使用。
-                     * @param _autoVoucher 是否自动使用代金券,1是,0否，默认不使用。
+                     * 设置是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @param _autoVoucher 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
                     void SetAutoVoucher(const uint64_t& _autoVoucher);
@@ -169,15 +181,31 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
-                     * @return SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
+                     * 获取指定实例配置完成变更后的切换时间。
+<li>0：立即切换 
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
+                     * @return SwitchTag 指定实例配置完成变更后的切换时间。
+<li>0：立即切换 
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
                      * 
                      */
                     uint64_t GetSwitchTag() const;
 
                     /**
-                     * 设置指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
-                     * @param _switchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
+                     * 设置指定实例配置完成变更后的切换时间。
+<li>0：立即切换 
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
+                     * @param _switchTag 指定实例配置完成变更后的切换时间。
+<li>0：立即切换 
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
                      * 
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
@@ -252,7 +280,10 @@ namespace TencentCloud
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券,1是,0否，默认不使用。
+                     * 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      */
                     uint64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
@@ -270,7 +301,11 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
+                     * 指定实例配置完成变更后的切换时间。
+<li>0：立即切换 
+<li>1：指定时间切换
+<li>2：维护时间窗口内切换
+默认值：0 
                      */
                     uint64_t m_switchTag;
                     bool m_switchTagHasBeenSet;

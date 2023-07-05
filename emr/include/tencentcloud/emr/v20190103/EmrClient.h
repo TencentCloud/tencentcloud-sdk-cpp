@@ -37,6 +37,10 @@
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
@@ -49,6 +53,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h>
@@ -116,6 +122,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEmrApplicationStaticsResponse> DescribeEmrApplicationStaticsOutcome;
                 typedef std::future<DescribeEmrApplicationStaticsOutcome> DescribeEmrApplicationStaticsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrApplicationStaticsRequest&, DescribeEmrApplicationStaticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrApplicationStaticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHiveQueriesResponse> DescribeHiveQueriesOutcome;
+                typedef std::future<DescribeHiveQueriesOutcome> DescribeHiveQueriesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeHiveQueriesRequest&, DescribeHiveQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHiveQueriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImpalaQueriesResponse> DescribeImpalaQueriesOutcome;
+                typedef std::future<DescribeImpalaQueriesOutcome> DescribeImpalaQueriesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeImpalaQueriesRequest&, DescribeImpalaQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImpalaQueriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceRenewNodesResponse> DescribeInstanceRenewNodesOutcome;
                 typedef std::future<DescribeInstanceRenewNodesOutcome> DescribeInstanceRenewNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstanceRenewNodesRequest&, DescribeInstanceRenewNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRenewNodesAsyncHandler;
@@ -134,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsersForUserManagerResponse> DescribeUsersForUserManagerOutcome;
                 typedef std::future<DescribeUsersForUserManagerOutcome> DescribeUsersForUserManagerOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeUsersForUserManagerRequest&, DescribeUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersForUserManagerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeYarnApplicationsResponse> DescribeYarnApplicationsOutcome;
+                typedef std::future<DescribeYarnApplicationsOutcome> DescribeYarnApplicationsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeYarnApplicationsRequest&, DescribeYarnApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYarnApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewEmrResponse> InquirePriceRenewEmrOutcome;
                 typedef std::future<InquirePriceRenewEmrOutcome> InquirePriceRenewEmrOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquirePriceRenewEmrRequest&, InquirePriceRenewEmrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewEmrAsyncHandler;
@@ -250,6 +265,24 @@ namespace TencentCloud
                 DescribeEmrApplicationStaticsOutcomeCallable DescribeEmrApplicationStaticsCallable(const Model::DescribeEmrApplicationStaticsRequest& request);
 
                 /**
+                 *获取hive查询信息
+                 * @param req DescribeHiveQueriesRequest
+                 * @return DescribeHiveQueriesOutcome
+                 */
+                DescribeHiveQueriesOutcome DescribeHiveQueries(const Model::DescribeHiveQueriesRequest &request);
+                void DescribeHiveQueriesAsync(const Model::DescribeHiveQueriesRequest& request, const DescribeHiveQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHiveQueriesOutcomeCallable DescribeHiveQueriesCallable(const Model::DescribeHiveQueriesRequest& request);
+
+                /**
+                 *DescribeImpalaQueries
+                 * @param req DescribeImpalaQueriesRequest
+                 * @return DescribeImpalaQueriesOutcome
+                 */
+                DescribeImpalaQueriesOutcome DescribeImpalaQueries(const Model::DescribeImpalaQueriesRequest &request);
+                void DescribeImpalaQueriesAsync(const Model::DescribeImpalaQueriesRequest& request, const DescribeImpalaQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImpalaQueriesOutcomeCallable DescribeImpalaQueriesCallable(const Model::DescribeImpalaQueriesRequest& request);
+
+                /**
                  *查询待续费节点信息
                  * @param req DescribeInstanceRenewNodesRequest
                  * @return DescribeInstanceRenewNodesOutcome
@@ -303,6 +336,15 @@ namespace TencentCloud
                 DescribeUsersForUserManagerOutcome DescribeUsersForUserManager(const Model::DescribeUsersForUserManagerRequest &request);
                 void DescribeUsersForUserManagerAsync(const Model::DescribeUsersForUserManagerRequest& request, const DescribeUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUsersForUserManagerOutcomeCallable DescribeUsersForUserManagerCallable(const Model::DescribeUsersForUserManagerRequest& request);
+
+                /**
+                 *DescribeYarnApplications
+                 * @param req DescribeYarnApplicationsRequest
+                 * @return DescribeYarnApplicationsOutcome
+                 */
+                DescribeYarnApplicationsOutcome DescribeYarnApplications(const Model::DescribeYarnApplicationsRequest &request);
+                void DescribeYarnApplicationsAsync(const Model::DescribeYarnApplicationsRequest& request, const DescribeYarnApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeYarnApplicationsOutcomeCallable DescribeYarnApplicationsCallable(const Model::DescribeYarnApplicationsRequest& request);
 
                 /**
                  *集群续费询价。

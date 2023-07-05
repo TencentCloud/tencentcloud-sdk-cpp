@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取新的数据库实例名字
-                     * @return InstanceName 新的数据库实例名字
+                     * 获取实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+
+                     * @return InstanceName 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置新的数据库实例名字
-                     * @param _instanceName 新的数据库实例名字
+                     * 设置实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+
+                     * @param _instanceName 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -93,7 +97,8 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 新的数据库实例名字
+                     * 实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

@@ -34,7 +34,9 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_tagsHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
     m_addressNameHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_antiDDoSPackageIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -147,6 +149,22 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_antiDDoSPackageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AntiDDoSPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_antiDDoSPackageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -347,6 +365,38 @@ void AllocateAddressesRequest::SetEgress(const string& _egress)
 bool AllocateAddressesRequest::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetAntiDDoSPackageId() const
+{
+    return m_antiDDoSPackageId;
+}
+
+void AllocateAddressesRequest::SetAntiDDoSPackageId(const string& _antiDDoSPackageId)
+{
+    m_antiDDoSPackageId = _antiDDoSPackageId;
+    m_antiDDoSPackageIdHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::AntiDDoSPackageIdHasBeenSet() const
+{
+    return m_antiDDoSPackageIdHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void AllocateAddressesRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

@@ -33,7 +33,8 @@ Staff::Staff() :
     m_verifiedOnHasBeenSet(false),
     m_quiteJobHasBeenSet(false),
     m_receiveUserIdHasBeenSet(false),
-    m_receiveOpenIdHasBeenSet(false)
+    m_receiveOpenIdHasBeenSet(false),
+    m_weworkOpenIdHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,16 @@ CoreInternalOutcome Staff::Deserialize(const rapidjson::Value &value)
         m_receiveOpenIdHasBeenSet = true;
     }
 
+    if (value.HasMember("WeworkOpenId") && !value["WeworkOpenId"].IsNull())
+    {
+        if (!value["WeworkOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Staff.WeworkOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weworkOpenId = string(value["WeworkOpenId"].GetString());
+        m_weworkOpenIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void Staff::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ReceiveOpenId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_receiveOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weworkOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeworkOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weworkOpenId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void Staff::SetReceiveOpenId(const string& _receiveOpenId)
 bool Staff::ReceiveOpenIdHasBeenSet() const
 {
     return m_receiveOpenIdHasBeenSet;
+}
+
+string Staff::GetWeworkOpenId() const
+{
+    return m_weworkOpenId;
+}
+
+void Staff::SetWeworkOpenId(const string& _weworkOpenId)
+{
+    m_weworkOpenId = _weworkOpenId;
+    m_weworkOpenIdHasBeenSet = true;
+}
+
+bool Staff::WeworkOpenIdHasBeenSet() const
+{
+    return m_weworkOpenIdHasBeenSet;
 }
 

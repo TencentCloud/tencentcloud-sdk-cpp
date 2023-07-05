@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/RecordField.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,48 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)
+                     * @return Event 事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)
+                     * 
+                     */
+                    std::string GetEvent() const;
+
+                    /**
+                     * 设置事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)
+                     * @param _event 事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)
+                     * 
+                     */
+                    void SetEvent(const std::string& _event);
+
+                    /**
+                     * 判断参数 Event 是否已赋值
+                     * @return Event 是否已赋值
+                     * 
+                     */
+                    bool EventHasBeenSet() const;
+
+                    /**
+                     * 获取额外参数
+                     * @return ExtConfig 额外参数
+                     * 
+                     */
+                    std::vector<RecordField> GetExtConfig() const;
+
+                    /**
+                     * 设置额外参数
+                     * @param _extConfig 额外参数
+                     * 
+                     */
+                    void SetExtConfig(const std::vector<RecordField>& _extConfig);
+
+                    /**
+                     * 判断参数 ExtConfig 是否已赋值
+                     * @return ExtConfig 是否已赋值
+                     * 
+                     */
+                    bool ExtConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +140,18 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 事件类型(START, STOP, SUSPEND, RESUME, COMMIT, TIMESTAMP)
+                     */
+                    std::string m_event;
+                    bool m_eventHasBeenSet;
+
+                    /**
+                     * 额外参数
+                     */
+                    std::vector<RecordField> m_extConfig;
+                    bool m_extConfigHasBeenSet;
 
                 };
             }

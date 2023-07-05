@@ -27,7 +27,9 @@ CreateFlowSignReviewRequest::CreateFlowSignReviewRequest() :
     m_flowIdHasBeenSet(false),
     m_reviewTypeHasBeenSet(false),
     m_reviewMessageHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_recipientIdHasBeenSet(false),
+    m_operateTypeHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,22 @@ string CreateFlowSignReviewRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_recipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operateType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +184,38 @@ void CreateFlowSignReviewRequest::SetAgent(const Agent& _agent)
 bool CreateFlowSignReviewRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateFlowSignReviewRequest::GetRecipientId() const
+{
+    return m_recipientId;
+}
+
+void CreateFlowSignReviewRequest::SetRecipientId(const string& _recipientId)
+{
+    m_recipientId = _recipientId;
+    m_recipientIdHasBeenSet = true;
+}
+
+bool CreateFlowSignReviewRequest::RecipientIdHasBeenSet() const
+{
+    return m_recipientIdHasBeenSet;
+}
+
+string CreateFlowSignReviewRequest::GetOperateType() const
+{
+    return m_operateType;
+}
+
+void CreateFlowSignReviewRequest::SetOperateType(const string& _operateType)
+{
+    m_operateType = _operateType;
+    m_operateTypeHasBeenSet = true;
+}
+
+bool CreateFlowSignReviewRequest::OperateTypeHasBeenSet() const
+{
+    return m_operateTypeHasBeenSet;
 }
 
 

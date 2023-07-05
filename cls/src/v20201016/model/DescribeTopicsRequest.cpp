@@ -25,7 +25,9 @@ using namespace std;
 DescribeTopicsRequest::DescribeTopicsRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_preciseSearchHasBeenSet(false),
+    m_bizTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string DescribeTopicsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_preciseSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreciseSearch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_preciseSearch, allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bizType, allocator);
     }
 
 
@@ -121,6 +139,38 @@ void DescribeTopicsRequest::SetLimit(const int64_t& _limit)
 bool DescribeTopicsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t DescribeTopicsRequest::GetPreciseSearch() const
+{
+    return m_preciseSearch;
+}
+
+void DescribeTopicsRequest::SetPreciseSearch(const uint64_t& _preciseSearch)
+{
+    m_preciseSearch = _preciseSearch;
+    m_preciseSearchHasBeenSet = true;
+}
+
+bool DescribeTopicsRequest::PreciseSearchHasBeenSet() const
+{
+    return m_preciseSearchHasBeenSet;
+}
+
+uint64_t DescribeTopicsRequest::GetBizType() const
+{
+    return m_bizType;
+}
+
+void DescribeTopicsRequest::SetBizType(const uint64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool DescribeTopicsRequest::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
 }
 
 

@@ -45,7 +45,11 @@ DomainInfo::DomainInfo() :
     m_levelHasBeenSet(false),
     m_postCLSStatusHasBeenSet(false),
     m_postCKafkaStatusHasBeenSet(false),
-    m_albTypeHasBeenSet(false)
+    m_cdcClustersHasBeenSet(false),
+    m_apiStatusHasBeenSet(false),
+    m_albTypeHasBeenSet(false),
+    m_sgStateHasBeenSet(false),
+    m_sgDetailHasBeenSet(false)
 {
 }
 
@@ -320,6 +324,26 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_postCKafkaStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcClusters") && !value["CdcClusters"].IsNull())
+    {
+        if (!value["CdcClusters"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.CdcClusters` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcClusters = string(value["CdcClusters"].GetString());
+        m_cdcClustersHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiStatus") && !value["ApiStatus"].IsNull())
+    {
+        if (!value["ApiStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.ApiStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiStatus = value["ApiStatus"].GetInt64();
+        m_apiStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("AlbType") && !value["AlbType"].IsNull())
     {
         if (!value["AlbType"].IsString())
@@ -328,6 +352,26 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         }
         m_albType = string(value["AlbType"].GetString());
         m_albTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SgState") && !value["SgState"].IsNull())
+    {
+        if (!value["SgState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SgState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sgState = value["SgState"].GetInt64();
+        m_sgStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("SgDetail") && !value["SgDetail"].IsNull())
+    {
+        if (!value["SgDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SgDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sgDetail = string(value["SgDetail"].GetString());
+        m_sgDetailHasBeenSet = true;
     }
 
 
@@ -553,12 +597,44 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_postCKafkaStatus, allocator);
     }
 
+    if (m_cdcClustersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcClusters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcClusters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiStatus, allocator);
+    }
+
     if (m_albTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlbType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_albType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sgStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sgState, allocator);
+    }
+
+    if (m_sgDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sgDetail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -948,6 +1024,38 @@ bool DomainInfo::PostCKafkaStatusHasBeenSet() const
     return m_postCKafkaStatusHasBeenSet;
 }
 
+string DomainInfo::GetCdcClusters() const
+{
+    return m_cdcClusters;
+}
+
+void DomainInfo::SetCdcClusters(const string& _cdcClusters)
+{
+    m_cdcClusters = _cdcClusters;
+    m_cdcClustersHasBeenSet = true;
+}
+
+bool DomainInfo::CdcClustersHasBeenSet() const
+{
+    return m_cdcClustersHasBeenSet;
+}
+
+int64_t DomainInfo::GetApiStatus() const
+{
+    return m_apiStatus;
+}
+
+void DomainInfo::SetApiStatus(const int64_t& _apiStatus)
+{
+    m_apiStatus = _apiStatus;
+    m_apiStatusHasBeenSet = true;
+}
+
+bool DomainInfo::ApiStatusHasBeenSet() const
+{
+    return m_apiStatusHasBeenSet;
+}
+
 string DomainInfo::GetAlbType() const
 {
     return m_albType;
@@ -962,5 +1070,37 @@ void DomainInfo::SetAlbType(const string& _albType)
 bool DomainInfo::AlbTypeHasBeenSet() const
 {
     return m_albTypeHasBeenSet;
+}
+
+int64_t DomainInfo::GetSgState() const
+{
+    return m_sgState;
+}
+
+void DomainInfo::SetSgState(const int64_t& _sgState)
+{
+    m_sgState = _sgState;
+    m_sgStateHasBeenSet = true;
+}
+
+bool DomainInfo::SgStateHasBeenSet() const
+{
+    return m_sgStateHasBeenSet;
+}
+
+string DomainInfo::GetSgDetail() const
+{
+    return m_sgDetail;
+}
+
+void DomainInfo::SetSgDetail(const string& _sgDetail)
+{
+    m_sgDetail = _sgDetail;
+    m_sgDetailHasBeenSet = true;
+}
+
+bool DomainInfo::SgDetailHasBeenSet() const
+{
+    return m_sgDetailHasBeenSet;
 }
 

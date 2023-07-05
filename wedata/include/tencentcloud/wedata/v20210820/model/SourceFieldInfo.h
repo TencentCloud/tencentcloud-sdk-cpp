@@ -109,6 +109,31 @@ namespace TencentCloud
                      */
                     bool AliasHasBeenSet() const;
 
+                    /**
+                     * 获取字段描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Comment 字段描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置字段描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _comment 字段描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     * 
+                     */
+                    bool CommentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +153,13 @@ namespace TencentCloud
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
+
+                    /**
+                     * 字段描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                 };
             }

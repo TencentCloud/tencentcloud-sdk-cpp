@@ -734,7 +734,7 @@ namespace TencentCloud
                 CreateSparkAppTaskOutcomeCallable CreateSparkAppTaskCallable(const Model::CreateSparkAppTaskRequest& request);
 
                 /**
-                 *本接口（CreateSparkSessionBatchSQL）用于提交Spark SQL批任务。
+                 *本接口（CreateSparkSessionBatchSQL）用于向Spark作业引擎提交Spark SQL批任务。
                  * @param req CreateSparkSessionBatchSQLRequest
                  * @return CreateSparkSessionBatchSQLOutcome
                  */

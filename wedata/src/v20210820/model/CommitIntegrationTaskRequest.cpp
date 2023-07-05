@@ -26,7 +26,8 @@ CommitIntegrationTaskRequest::CommitIntegrationTaskRequest() :
     m_taskIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_commitTypeHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_extConfigHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string CommitIntegrationTaskRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_extConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extConfig.begin(); itr != m_extConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void CommitIntegrationTaskRequest::SetTaskType(const uint64_t& _taskType)
 bool CommitIntegrationTaskRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+vector<RecordField> CommitIntegrationTaskRequest::GetExtConfig() const
+{
+    return m_extConfig;
+}
+
+void CommitIntegrationTaskRequest::SetExtConfig(const vector<RecordField>& _extConfig)
+{
+    m_extConfig = _extConfig;
+    m_extConfigHasBeenSet = true;
+}
+
+bool CommitIntegrationTaskRequest::ExtConfigHasBeenSet() const
+{
+    return m_extConfigHasBeenSet;
 }
 
 

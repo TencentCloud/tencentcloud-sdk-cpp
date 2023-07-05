@@ -85,6 +85,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeRawScanLogsRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeRawScanLogsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeScanLogsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeScanLogsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeScanStatsRequest.h>
@@ -228,6 +230,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRawScanLogsResponse> DescribeRawScanLogsOutcome;
+                typedef std::future<DescribeRawScanLogsOutcome> DescribeRawScanLogsOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeRawScanLogsRequest&, DescribeRawScanLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRawScanLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanLogsResponse> DescribeScanLogsOutcome;
                 typedef std::future<DescribeScanLogsOutcome> DescribeScanLogsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeScanLogsRequest&, DescribeScanLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanLogsAsyncHandler;
@@ -563,6 +568,15 @@ namespace TencentCloud
                 DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest &request);
                 void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
+
+                /**
+                 *支持增量查询扫码日志，通常提供给数据同步使用，调用时需要指定从哪一行开始查询数据
+                 * @param req DescribeRawScanLogsRequest
+                 * @return DescribeRawScanLogsOutcome
+                 */
+                DescribeRawScanLogsOutcome DescribeRawScanLogs(const Model::DescribeRawScanLogsRequest &request);
+                void DescribeRawScanLogsAsync(const Model::DescribeRawScanLogsRequest& request, const DescribeRawScanLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRawScanLogsOutcomeCallable DescribeRawScanLogsCallable(const Model::DescribeRawScanLogsRequest& request);
 
                 /**
                  *查询扫码日志明细

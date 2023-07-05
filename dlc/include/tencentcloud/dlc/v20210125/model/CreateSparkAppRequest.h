@@ -630,6 +630,27 @@ namespace TencentCloud
                      */
                     bool IsInheritHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用session脚本的sql运行任务：false：否，true：是
+                     * @return IsSessionStarted 是否使用session脚本的sql运行任务：false：否，true：是
+                     * 
+                     */
+                    bool GetIsSessionStarted() const;
+
+                    /**
+                     * 设置是否使用session脚本的sql运行任务：false：否，true：是
+                     * @param _isSessionStarted 是否使用session脚本的sql运行任务：false：否，true：是
+                     * 
+                     */
+                    void SetIsSessionStarted(const bool& _isSessionStarted);
+
+                    /**
+                     * 判断参数 IsSessionStarted 是否已赋值
+                     * @return IsSessionStarted 是否已赋值
+                     * 
+                     */
+                    bool IsSessionStartedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -799,6 +820,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isInherit;
                     bool m_isInheritHasBeenSet;
+
+                    /**
+                     * 是否使用session脚本的sql运行任务：false：否，true：是
+                     */
+                    bool m_isSessionStarted;
+                    bool m_isSessionStartedHasBeenSet;
 
                 };
             }

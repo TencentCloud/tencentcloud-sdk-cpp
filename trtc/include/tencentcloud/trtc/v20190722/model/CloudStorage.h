@@ -115,18 +115,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方存储的access_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。
                      * @return AccessKey 第三方存储的access_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。
                      * 
                      */
                     std::string GetAccessKey() const;
 
                     /**
                      * 设置第三方存储的access_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。
                      * @param _accessKey 第三方存储的access_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。
                      * 
                      */
                     void SetAccessKey(const std::string& _accessKey);
@@ -140,18 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方存储的secret_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。
                      * @return SecretKey 第三方存储的secret_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。
                      * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置第三方存储的secret_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。
                      * @param _secretKey 第三方存储的secret_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。
                      * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
@@ -207,14 +207,14 @@ namespace TencentCloud
 
                     /**
                      * 第三方存储的access_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。
                      */
                     std::string m_accessKey;
                     bool m_accessKeyHasBeenSet;
 
                     /**
                      * 第三方存储的secret_key账号信息。
-若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建
+若存储至腾讯云COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;

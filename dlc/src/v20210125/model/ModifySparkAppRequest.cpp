@@ -51,7 +51,8 @@ ModifySparkAppRequest::ModifySparkAppRequest() :
     m_sparkImageVersionHasBeenSet(false),
     m_appExecutorMaxNumbersHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_isInheritHasBeenSet(false)
+    m_isInheritHasBeenSet(false),
+    m_isSessionStartedHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,14 @@ string ModifySparkAppRequest::ToJsonString() const
         string key = "IsInherit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isInherit, allocator);
+    }
+
+    if (m_isSessionStartedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSessionStarted";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSessionStarted, allocator);
     }
 
 
@@ -764,6 +773,22 @@ void ModifySparkAppRequest::SetIsInherit(const uint64_t& _isInherit)
 bool ModifySparkAppRequest::IsInheritHasBeenSet() const
 {
     return m_isInheritHasBeenSet;
+}
+
+bool ModifySparkAppRequest::GetIsSessionStarted() const
+{
+    return m_isSessionStarted;
+}
+
+void ModifySparkAppRequest::SetIsSessionStarted(const bool& _isSessionStarted)
+{
+    m_isSessionStarted = _isSessionStarted;
+    m_isSessionStartedHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::IsSessionStartedHasBeenSet() const
+{
+    return m_isSessionStartedHasBeenSet;
 }
 
 

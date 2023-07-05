@@ -341,6 +341,92 @@ EmrClient::DescribeEmrApplicationStaticsOutcomeCallable EmrClient::DescribeEmrAp
     return task->get_future();
 }
 
+EmrClient::DescribeHiveQueriesOutcome EmrClient::DescribeHiveQueries(const DescribeHiveQueriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHiveQueries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHiveQueriesResponse rsp = DescribeHiveQueriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHiveQueriesOutcome(rsp);
+        else
+            return DescribeHiveQueriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHiveQueriesOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeHiveQueriesAsync(const DescribeHiveQueriesRequest& request, const DescribeHiveQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHiveQueries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeHiveQueriesOutcomeCallable EmrClient::DescribeHiveQueriesCallable(const DescribeHiveQueriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHiveQueriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHiveQueries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeImpalaQueriesOutcome EmrClient::DescribeImpalaQueries(const DescribeImpalaQueriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImpalaQueries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImpalaQueriesResponse rsp = DescribeImpalaQueriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImpalaQueriesOutcome(rsp);
+        else
+            return DescribeImpalaQueriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImpalaQueriesOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeImpalaQueriesAsync(const DescribeImpalaQueriesRequest& request, const DescribeImpalaQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImpalaQueries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeImpalaQueriesOutcomeCallable EmrClient::DescribeImpalaQueriesCallable(const DescribeImpalaQueriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImpalaQueriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImpalaQueries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");
@@ -592,6 +678,49 @@ EmrClient::DescribeUsersForUserManagerOutcomeCallable EmrClient::DescribeUsersFo
         [this, request]()
         {
             return this->DescribeUsersForUserManager(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeYarnApplicationsOutcome EmrClient::DescribeYarnApplications(const DescribeYarnApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeYarnApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeYarnApplicationsResponse rsp = DescribeYarnApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeYarnApplicationsOutcome(rsp);
+        else
+            return DescribeYarnApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeYarnApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeYarnApplicationsAsync(const DescribeYarnApplicationsRequest& request, const DescribeYarnApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeYarnApplications(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeYarnApplicationsOutcomeCallable EmrClient::DescribeYarnApplicationsCallable(const DescribeYarnApplicationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeYarnApplicationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeYarnApplications(request);
         }
     );
 

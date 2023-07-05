@@ -43,7 +43,9 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_addEqualityDeletesHasBeenSet(false),
     m_addPositionDeletesHasBeenSet(false),
     m_addDeleteFilesHasBeenSet(false),
-    m_targetDatasourceIdHasBeenSet(false)
+    m_targetDatasourceIdHasBeenSet(false),
+    m_upsertKeysHasBeenSet(false),
+    m_tableBaseInfoHasBeenSet(false)
 {
 }
 
@@ -241,6 +243,28 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "TargetDatasourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_targetDatasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upsertKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpsertKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_upsertKeys.begin(); itr != m_upsertKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tableBaseInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableBaseInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tableBaseInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -585,6 +609,38 @@ void GenHiveTableDDLSqlRequest::SetTargetDatasourceId(const string& _targetDatas
 bool GenHiveTableDDLSqlRequest::TargetDatasourceIdHasBeenSet() const
 {
     return m_targetDatasourceIdHasBeenSet;
+}
+
+vector<string> GenHiveTableDDLSqlRequest::GetUpsertKeys() const
+{
+    return m_upsertKeys;
+}
+
+void GenHiveTableDDLSqlRequest::SetUpsertKeys(const vector<string>& _upsertKeys)
+{
+    m_upsertKeys = _upsertKeys;
+    m_upsertKeysHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::UpsertKeysHasBeenSet() const
+{
+    return m_upsertKeysHasBeenSet;
+}
+
+TableBaseInfo GenHiveTableDDLSqlRequest::GetTableBaseInfo() const
+{
+    return m_tableBaseInfo;
+}
+
+void GenHiveTableDDLSqlRequest::SetTableBaseInfo(const TableBaseInfo& _tableBaseInfo)
+{
+    m_tableBaseInfo = _tableBaseInfo;
+    m_tableBaseInfoHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TableBaseInfoHasBeenSet() const
+{
+    return m_tableBaseInfoHasBeenSet;
 }
 
 

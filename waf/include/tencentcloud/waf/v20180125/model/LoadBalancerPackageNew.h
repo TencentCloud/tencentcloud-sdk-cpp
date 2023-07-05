@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 负载均衡算法
+                * 负载均衡器
                 */
                 class LoadBalancerPackageNew : public AbstractModel
                 {

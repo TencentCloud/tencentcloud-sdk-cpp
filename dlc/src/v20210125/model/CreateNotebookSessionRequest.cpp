@@ -36,7 +36,8 @@ CreateNotebookSessionRequest::CreateNotebookSessionRequest() :
     m_argumentsHasBeenSet(false),
     m_proxyUserHasBeenSet(false),
     m_timeoutInSecondHasBeenSet(false),
-    m_executorMaxNumbersHasBeenSet(false)
+    m_executorMaxNumbersHasBeenSet(false),
+    m_sparkImageHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,14 @@ string CreateNotebookSessionRequest::ToJsonString() const
         string key = "ExecutorMaxNumbers";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_executorMaxNumbers, allocator);
+    }
+
+    if (m_sparkImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sparkImage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -416,6 +425,22 @@ void CreateNotebookSessionRequest::SetExecutorMaxNumbers(const uint64_t& _execut
 bool CreateNotebookSessionRequest::ExecutorMaxNumbersHasBeenSet() const
 {
     return m_executorMaxNumbersHasBeenSet;
+}
+
+string CreateNotebookSessionRequest::GetSparkImage() const
+{
+    return m_sparkImage;
+}
+
+void CreateNotebookSessionRequest::SetSparkImage(const string& _sparkImage)
+{
+    m_sparkImage = _sparkImage;
+    m_sparkImageHasBeenSet = true;
+}
+
+bool CreateNotebookSessionRequest::SparkImageHasBeenSet() const
+{
+    return m_sparkImageHasBeenSet;
 }
 
 

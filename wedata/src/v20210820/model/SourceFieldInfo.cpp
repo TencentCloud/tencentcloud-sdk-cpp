@@ -23,7 +23,8 @@ using namespace std;
 SourceFieldInfo::SourceFieldInfo() :
     m_fieldNameHasBeenSet(false),
     m_fieldTypeHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SourceFieldInfo::Deserialize(const rapidjson::Value &value)
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceFieldInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SourceFieldInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SourceFieldInfo::SetAlias(const string& _alias)
 bool SourceFieldInfo::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+string SourceFieldInfo::GetComment() const
+{
+    return m_comment;
+}
+
+void SourceFieldInfo::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool SourceFieldInfo::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 

@@ -515,6 +515,31 @@ namespace TencentCloud
                      */
                     bool AllowMonitorReportHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启格式诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiFormatDiagnose 是否开启格式诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAiFormatDiagnose() const;
+
+                    /**
+                     * 设置是否开启格式诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aiFormatDiagnose 是否开启格式诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAiFormatDiagnose(const uint64_t& _aiFormatDiagnose);
+
+                    /**
+                     * 判断参数 AiFormatDiagnose 是否已赋值
+                     * @return AiFormatDiagnose 是否已赋值
+                     * 
+                     */
+                    bool AiFormatDiagnoseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -646,6 +671,13 @@ namespace TencentCloud
                      */
                     uint64_t m_allowMonitorReport;
                     bool m_allowMonitorReportHasBeenSet;
+
+                    /**
+                     * 是否开启格式诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_aiFormatDiagnose;
+                    bool m_aiFormatDiagnoseHasBeenSet;
 
                 };
             }

@@ -900,3 +900,175 @@ AsrClient::UpdateAsrVocabOutcomeCallable AsrClient::UpdateAsrVocabCallable(const
     return task->get_future();
 }
 
+AsrClient::VoicePrintDeleteOutcome AsrClient::VoicePrintDelete(const VoicePrintDeleteRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintDelete");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintDeleteResponse rsp = VoicePrintDeleteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintDeleteOutcome(rsp);
+        else
+            return VoicePrintDeleteOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintDeleteOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintDeleteAsync(const VoicePrintDeleteRequest& request, const VoicePrintDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintDelete(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintDeleteOutcomeCallable AsrClient::VoicePrintDeleteCallable(const VoicePrintDeleteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintDeleteOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintDelete(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::VoicePrintEnrollOutcome AsrClient::VoicePrintEnroll(const VoicePrintEnrollRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintEnroll");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintEnrollResponse rsp = VoicePrintEnrollResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintEnrollOutcome(rsp);
+        else
+            return VoicePrintEnrollOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintEnrollOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintEnrollAsync(const VoicePrintEnrollRequest& request, const VoicePrintEnrollAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintEnroll(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintEnrollOutcomeCallable AsrClient::VoicePrintEnrollCallable(const VoicePrintEnrollRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintEnrollOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintEnroll(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::VoicePrintUpdateOutcome AsrClient::VoicePrintUpdate(const VoicePrintUpdateRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintUpdate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintUpdateResponse rsp = VoicePrintUpdateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintUpdateOutcome(rsp);
+        else
+            return VoicePrintUpdateOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintUpdateOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintUpdateAsync(const VoicePrintUpdateRequest& request, const VoicePrintUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintUpdate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintUpdateOutcomeCallable AsrClient::VoicePrintUpdateCallable(const VoicePrintUpdateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintUpdateOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintUpdate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsrClient::VoicePrintVerifyOutcome AsrClient::VoicePrintVerify(const VoicePrintVerifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintVerify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintVerifyResponse rsp = VoicePrintVerifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintVerifyOutcome(rsp);
+        else
+            return VoicePrintVerifyOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintVerifyOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintVerifyAsync(const VoicePrintVerifyRequest& request, const VoicePrintVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintVerify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintVerifyOutcomeCallable AsrClient::VoicePrintVerifyCallable(const VoicePrintVerifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintVerifyOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintVerify(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

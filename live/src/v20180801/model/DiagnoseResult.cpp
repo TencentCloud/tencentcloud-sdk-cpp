@@ -22,7 +22,8 @@ using namespace std;
 
 DiagnoseResult::DiagnoseResult() :
     m_streamBrokenResultsHasBeenSet(false),
-    m_lowFrameRateResultsHasBeenSet(false)
+    m_lowFrameRateResultsHasBeenSet(false),
+    m_streamFormatResultsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,19 @@ CoreInternalOutcome DiagnoseResult::Deserialize(const rapidjson::Value &value)
         m_lowFrameRateResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamFormatResults") && !value["StreamFormatResults"].IsNull())
+    {
+        if (!value["StreamFormatResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DiagnoseResult.StreamFormatResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StreamFormatResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_streamFormatResults.push_back((*itr).GetString());
+        }
+        m_streamFormatResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +99,19 @@ void DiagnoseResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_lowFrameRateResults.begin(); itr != m_lowFrameRateResults.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_streamFormatResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamFormatResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_streamFormatResults.begin(); itr != m_streamFormatResults.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -123,5 +150,21 @@ void DiagnoseResult::SetLowFrameRateResults(const vector<string>& _lowFrameRateR
 bool DiagnoseResult::LowFrameRateResultsHasBeenSet() const
 {
     return m_lowFrameRateResultsHasBeenSet;
+}
+
+vector<string> DiagnoseResult::GetStreamFormatResults() const
+{
+    return m_streamFormatResults;
+}
+
+void DiagnoseResult::SetStreamFormatResults(const vector<string>& _streamFormatResults)
+{
+    m_streamFormatResults = _streamFormatResults;
+    m_streamFormatResultsHasBeenSet = true;
+}
+
+bool DiagnoseResult::StreamFormatResultsHasBeenSet() const
+{
+    return m_streamFormatResultsHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
-                     * @return DBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 获取实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * @return DBInstanceIdSet 实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
-                     * @param _dBInstanceIdSet 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 设置实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * @param _dBInstanceIdSet 实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      * 
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取包年包月实例解隔离时购买时常 以月为单位
-                     * @return Period 包年包月实例解隔离时购买时常 以月为单位
+                     * 获取购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
+                     * @return Period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置包年包月实例解隔离时购买时常 以月为单位
-                     * @param _period 包年包月实例解隔离时购买时常 以月为单位
+                     * 设置购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
+                     * @param _period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -85,15 +93,27 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否使用代金券：true-使用,false-不使用，默认不使用
-                     * @return AutoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
+                     * 获取是否使用代金券：
+<li>true：使用
+<li>false：不使用
+默认值：false
+                     * @return AutoVoucher 是否使用代金券：
+<li>true：使用
+<li>false：不使用
+默认值：false
                      * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
-                     * 设置是否使用代金券：true-使用,false-不使用，默认不使用
-                     * @param _autoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
+                     * 设置是否使用代金券：
+<li>true：使用
+<li>false：不使用
+默认值：false
+                     * @param _autoVoucher 是否使用代金券：
+<li>true：使用
+<li>false：不使用
+默认值：false
                      * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
@@ -106,15 +126,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取代金券id列表
-                     * @return VoucherIds 代金券id列表
+                     * 获取代金券id列表。
+                     * @return VoucherIds 代金券id列表。
                      * 
                      */
                     std::vector<std::string> GetVoucherIds() const;
 
                     /**
-                     * 设置代金券id列表
-                     * @param _voucherIds 代金券id列表
+                     * 设置代金券id列表。
+                     * @param _voucherIds 代金券id列表。
                      * 
                      */
                     void SetVoucherIds(const std::vector<std::string>& _voucherIds);
@@ -129,25 +149,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
+                     * 实例ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
 
                     /**
-                     * 包年包月实例解隔离时购买时常 以月为单位
+                     * 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 是否使用代金券：true-使用,false-不使用，默认不使用
+                     * 是否使用代金券：
+<li>true：使用
+<li>false：不使用
+默认值：false
                      */
                     bool m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 代金券id列表
+                     * 代金券id列表。
                      */
                     std::vector<std::string> m_voucherIds;
                     bool m_voucherIdsHasBeenSet;

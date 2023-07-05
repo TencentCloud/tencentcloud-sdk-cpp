@@ -23,6 +23,7 @@ using namespace std;
 FailedCreateStaffData::FailedCreateStaffData() :
     m_displayNameHasBeenSet(false),
     m_mobileHasBeenSet(false),
+    m_weworkOpenIdHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {
 }
@@ -50,6 +51,16 @@ CoreInternalOutcome FailedCreateStaffData::Deserialize(const rapidjson::Value &v
         }
         m_mobile = string(value["Mobile"].GetString());
         m_mobileHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeworkOpenId") && !value["WeworkOpenId"].IsNull())
+    {
+        if (!value["WeworkOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FailedCreateStaffData.WeworkOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weworkOpenId = string(value["WeworkOpenId"].GetString());
+        m_weworkOpenIdHasBeenSet = true;
     }
 
     if (value.HasMember("Reason") && !value["Reason"].IsNull())
@@ -83,6 +94,14 @@ void FailedCreateStaffData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weworkOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeworkOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weworkOpenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reasonHasBeenSet)
@@ -126,6 +145,22 @@ void FailedCreateStaffData::SetMobile(const string& _mobile)
 bool FailedCreateStaffData::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string FailedCreateStaffData::GetWeworkOpenId() const
+{
+    return m_weworkOpenId;
+}
+
+void FailedCreateStaffData::SetWeworkOpenId(const string& _weworkOpenId)
+{
+    m_weworkOpenId = _weworkOpenId;
+    m_weworkOpenIdHasBeenSet = true;
+}
+
+bool FailedCreateStaffData::WeworkOpenIdHasBeenSet() const
+{
+    return m_weworkOpenIdHasBeenSet;
 }
 
 string FailedCreateStaffData::GetReason() const

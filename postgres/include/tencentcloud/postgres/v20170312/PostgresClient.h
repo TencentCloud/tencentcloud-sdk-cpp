@@ -1011,7 +1011,7 @@ namespace TencentCloud
                 InquiryPriceUpgradeDBInstanceOutcomeCallable InquiryPriceUpgradeDBInstanceCallable(const Model::InquiryPriceUpgradeDBInstanceRequest& request);
 
                 /**
-                 *本接口（IsolateDBInstances）用于隔离实例
+                 *本接口（IsolateDBInstances）用于隔离实例。
                  * @param req IsolateDBInstancesRequest
                  * @return IsolateDBInstancesOutcome
                  */

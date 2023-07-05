@@ -254,15 +254,27 @@ namespace TencentCloud
                     bool ExecutorNumbersHasBeenSet() const;
 
                     /**
-                     * 获取Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；
-                     * @return Arguments Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；
+                     * 获取Session相关配置，当前支持：
+1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；
+2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；
+3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；
+                     * @return Arguments Session相关配置，当前支持：
+1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；
+2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；
+3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；
                      * 
                      */
                     std::vector<KVPair> GetArguments() const;
 
                     /**
-                     * 设置Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；
-                     * @param _arguments Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；
+                     * 设置Session相关配置，当前支持：
+1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；
+2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；
+3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；
+                     * @param _arguments Session相关配置，当前支持：
+1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；
+2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；
+3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；
                      * 
                      */
                     void SetArguments(const std::vector<KVPair>& _arguments);
@@ -337,6 +349,27 @@ namespace TencentCloud
                      */
                     bool ExecutorMaxNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取指定spark版本名称，当前任务使用该spark镜像运行
+                     * @return SparkImage 指定spark版本名称，当前任务使用该spark镜像运行
+                     * 
+                     */
+                    std::string GetSparkImage() const;
+
+                    /**
+                     * 设置指定spark版本名称，当前任务使用该spark镜像运行
+                     * @param _sparkImage 指定spark版本名称，当前任务使用该spark镜像运行
+                     * 
+                     */
+                    void SetSparkImage(const std::string& _sparkImage);
+
+                    /**
+                     * 判断参数 SparkImage 是否已赋值
+                     * @return SparkImage 是否已赋值
+                     * 
+                     */
+                    bool SparkImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,7 +433,10 @@ namespace TencentCloud
                     bool m_executorNumbersHasBeenSet;
 
                     /**
-                     * Session相关配置，当前支持：dlc.eni、dlc.role.arn、dlc.sql.set.config以及用户指定的配置，注：roleArn必填；
+                     * Session相关配置，当前支持：
+1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；
+2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；
+3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；
                      */
                     std::vector<KVPair> m_arguments;
                     bool m_argumentsHasBeenSet;
@@ -422,6 +458,12 @@ namespace TencentCloud
                      */
                     uint64_t m_executorMaxNumbers;
                     bool m_executorMaxNumbersHasBeenSet;
+
+                    /**
+                     * 指定spark版本名称，当前任务使用该spark镜像运行
+                     */
+                    std::string m_sparkImage;
+                    bool m_sparkImageHasBeenSet;
 
                 };
             }
