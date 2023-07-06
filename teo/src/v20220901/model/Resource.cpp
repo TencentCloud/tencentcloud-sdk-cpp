@@ -30,7 +30,9 @@ Resource::Resource() :
     m_svHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_planIdHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_groupHasBeenSet(false),
+    m_zoneNumberHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_areaHasBeenSet = true;
     }
 
+    if (value.HasMember("Group") && !value["Group"].IsNull())
+    {
+        if (!value["Group"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.Group` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_group = string(value["Group"].GetString());
+        m_groupHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneNumber") && !value["ZoneNumber"].IsNull())
+    {
+        if (!value["ZoneNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.ZoneNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneNumber = value["ZoneNumber"].GetInt64();
+        m_zoneNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +263,22 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Group";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_group.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneNumber, allocator);
     }
 
 }
@@ -404,5 +442,37 @@ void Resource::SetArea(const string& _area)
 bool Resource::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string Resource::GetGroup() const
+{
+    return m_group;
+}
+
+void Resource::SetGroup(const string& _group)
+{
+    m_group = _group;
+    m_groupHasBeenSet = true;
+}
+
+bool Resource::GroupHasBeenSet() const
+{
+    return m_groupHasBeenSet;
+}
+
+int64_t Resource::GetZoneNumber() const
+{
+    return m_zoneNumber;
+}
+
+void Resource::SetZoneNumber(const int64_t& _zoneNumber)
+{
+    m_zoneNumber = _zoneNumber;
+    m_zoneNumberHasBeenSet = true;
+}
+
+bool Resource::ZoneNumberHasBeenSet() const
+{
+    return m_zoneNumberHasBeenSet;
 }
 

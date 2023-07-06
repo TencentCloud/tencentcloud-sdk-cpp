@@ -42,7 +42,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_ipv6HasBeenSet(false),
     m_clientIpCountryHasBeenSet(false),
     m_grpcHasBeenSet(false),
-    m_imageOptimizeHasBeenSet(false)
+    m_imageOptimizeHasBeenSet(false),
+    m_standardDebugHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageOptimize.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_standardDebugHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardDebug";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_standardDebug.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -558,6 +568,22 @@ void ModifyZoneSettingRequest::SetImageOptimize(const ImageOptimize& _imageOptim
 bool ModifyZoneSettingRequest::ImageOptimizeHasBeenSet() const
 {
     return m_imageOptimizeHasBeenSet;
+}
+
+StandardDebug ModifyZoneSettingRequest::GetStandardDebug() const
+{
+    return m_standardDebug;
+}
+
+void ModifyZoneSettingRequest::SetStandardDebug(const StandardDebug& _standardDebug)
+{
+    m_standardDebug = _standardDebug;
+    m_standardDebugHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::StandardDebugHasBeenSet() const
+{
+    return m_standardDebugHasBeenSet;
 }
 
 

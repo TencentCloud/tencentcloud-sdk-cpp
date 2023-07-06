@@ -174,10 +174,12 @@ namespace TencentCloud
                     /**
                      * 获取站点接入方式，取值有
 <li> full：NS 接入； </li>
-<li> partial：CNAME 接入。</li>
+<li> partial：CNAME 接入；</li>
+<li> noDomainAccess：无域名接入。</li>
                      * @return Type 站点接入方式，取值有
 <li> full：NS 接入； </li>
-<li> partial：CNAME 接入。</li>
+<li> partial：CNAME 接入；</li>
+<li> noDomainAccess：无域名接入。</li>
                      * 
                      */
                     std::string GetType() const;
@@ -185,10 +187,12 @@ namespace TencentCloud
                     /**
                      * 设置站点接入方式，取值有
 <li> full：NS 接入； </li>
-<li> partial：CNAME 接入。</li>
+<li> partial：CNAME 接入；</li>
+<li> noDomainAccess：无域名接入。</li>
                      * @param _type 站点接入方式，取值有
 <li> full：NS 接入； </li>
-<li> partial：CNAME 接入。</li>
+<li> partial：CNAME 接入；</li>
+<li> noDomainAccess：无域名接入。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -593,7 +597,8 @@ namespace TencentCloud
                     /**
                      * 站点接入方式，取值有
 <li> full：NS 接入； </li>
-<li> partial：CNAME 接入。</li>
+<li> partial：CNAME 接入；</li>
+<li> noDomainAccess：无域名接入。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

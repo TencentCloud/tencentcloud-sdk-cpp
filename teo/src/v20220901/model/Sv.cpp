@@ -22,7 +22,10 @@ using namespace std;
 
 Sv::Sv() :
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_packHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_protectionSpecsHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome Sv::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Pack") && !value["Pack"].IsNull())
+    {
+        if (!value["Pack"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Sv.Pack` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pack = string(value["Pack"].GetString());
+        m_packHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Sv.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProtectionSpecs") && !value["ProtectionSpecs"].IsNull())
+    {
+        if (!value["ProtectionSpecs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Sv.ProtectionSpecs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectionSpecs = string(value["ProtectionSpecs"].GetString());
+        m_protectionSpecsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void Sv::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTyp
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pack.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectionSpecsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectionSpecs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectionSpecs.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void Sv::SetValue(const string& _value)
 bool Sv::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string Sv::GetPack() const
+{
+    return m_pack;
+}
+
+void Sv::SetPack(const string& _pack)
+{
+    m_pack = _pack;
+    m_packHasBeenSet = true;
+}
+
+bool Sv::PackHasBeenSet() const
+{
+    return m_packHasBeenSet;
+}
+
+string Sv::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Sv::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Sv::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string Sv::GetProtectionSpecs() const
+{
+    return m_protectionSpecs;
+}
+
+void Sv::SetProtectionSpecs(const string& _protectionSpecs)
+{
+    m_protectionSpecs = _protectionSpecs;
+    m_protectionSpecsHasBeenSet = true;
+}
+
+bool Sv::ProtectionSpecsHasBeenSet() const
+{
+    return m_protectionSpecsHasBeenSet;
 }
 

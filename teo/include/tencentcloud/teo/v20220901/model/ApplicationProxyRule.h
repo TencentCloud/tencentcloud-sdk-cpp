@@ -295,6 +295,31 @@ namespace TencentCloud
                     bool SessionPersistHasBeenSet() const;
 
                     /**
+                     * 获取会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionPersistTime 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSessionPersistTime() const;
+
+                    /**
+                     * 设置会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionPersistTime 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
+
+                    /**
+                     * 判断参数 SessionPersistTime 是否已赋值
+                     * @return SessionPersistTime 是否已赋值
+                     * 
+                     */
+                    bool SessionPersistTimeHasBeenSet() const;
+
+                    /**
                      * 获取源站端口，支持格式：
 <li>单端口，如：80。</li>
 <li>端口段：81-82，表示81，82两个端口。</li>
@@ -392,6 +417,13 @@ namespace TencentCloud
                      */
                     bool m_sessionPersist;
                     bool m_sessionPersistHasBeenSet;
+
+                    /**
+                     * 会话保持的时间，只有当SessionPersist为true时，该值才会生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sessionPersistTime;
+                    bool m_sessionPersistTimeHasBeenSet;
 
                     /**
                      * 源站端口，支持格式：

@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyInstanceRequest::ModifyInstanceRequest() :
     m_registryIdHasBeenSet(false),
-    m_registryTypeHasBeenSet(false)
+    m_registryTypeHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "RegistryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_registryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyInstanceRequest::SetRegistryType(const string& _registryType)
 bool ModifyInstanceRequest::RegistryTypeHasBeenSet() const
 {
     return m_registryTypeHasBeenSet;
+}
+
+bool ModifyInstanceRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void ModifyInstanceRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

@@ -67,10 +67,10 @@ namespace TencentCloud
                     /**
                      * 获取站点接入方式，取值有：
 <li> full：NS 接入；</li>
-<li> partial：CNAME 接入。</li>不填写保持原有配置。
+<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
                      * @return Type 站点接入方式，取值有：
 <li> full：NS 接入；</li>
-<li> partial：CNAME 接入。</li>不填写保持原有配置。
+<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
                      * 
                      */
                     std::string GetType() const;
@@ -78,10 +78,10 @@ namespace TencentCloud
                     /**
                      * 设置站点接入方式，取值有：
 <li> full：NS 接入；</li>
-<li> partial：CNAME 接入。</li>不填写保持原有配置。
+<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
                      * @param _type 站点接入方式，取值有：
 <li> full：NS 接入；</li>
-<li> partial：CNAME 接入。</li>不填写保持原有配置。
+<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。
-                     * @return VanityNameServers 自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。
+                     * 获取自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。当站点是无域名接入方式时不允许传此参数。
+                     * @return VanityNameServers 自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。当站点是无域名接入方式时不允许传此参数。
                      * 
                      */
                     VanityNameServers GetVanityNameServers() const;
 
                     /**
-                     * 设置自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。
-                     * @param _vanityNameServers 自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。
+                     * 设置自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。当站点是无域名接入方式时不允许传此参数。
+                     * @param _vanityNameServers 自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。当站点是无域名接入方式时不允许传此参数。
                      * 
                      */
                     void SetVanityNameServers(const VanityNameServers& _vanityNameServers);
@@ -135,6 +135,60 @@ namespace TencentCloud
                      */
                     bool AliasZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取站点接入地域，取值有：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>当站点是无域名接入方式时，不允许传此参数。
+                     * @return Area 站点接入地域，取值有：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>当站点是无域名接入方式时，不允许传此参数。
+                     * 
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置站点接入地域，取值有：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>当站点是无域名接入方式时，不允许传此参数。
+                     * @param _area 站点接入地域，取值有：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>当站点是无域名接入方式时，不允许传此参数。
+                     * 
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     * 
+                     */
+                    bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取站点名称。仅当站点由无域名接入方式切换到CNAME接入方式的场景下有效。
+                     * @return ZoneName 站点名称。仅当站点由无域名接入方式切换到CNAME接入方式的场景下有效。
+                     * 
+                     */
+                    std::string GetZoneName() const;
+
+                    /**
+                     * 设置站点名称。仅当站点由无域名接入方式切换到CNAME接入方式的场景下有效。
+                     * @param _zoneName 站点名称。仅当站点由无域名接入方式切换到CNAME接入方式的场景下有效。
+                     * 
+                     */
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     * 
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,13 +200,13 @@ namespace TencentCloud
                     /**
                      * 站点接入方式，取值有：
 <li> full：NS 接入；</li>
-<li> partial：CNAME 接入。</li>不填写保持原有配置。
+<li> partial：CNAME 接入，如果站点当前是无域名接入，仅支持切换到CNAME接入。</li>不填写保持原有配置。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。
+                     * 自定义站点信息，以替代系统默认分配的名称服务器。不填写保持原有配置。当站点是无域名接入方式时不允许传此参数。
                      */
                     VanityNameServers m_vanityNameServers;
                     bool m_vanityNameServersHasBeenSet;
@@ -162,6 +216,21 @@ namespace TencentCloud
                      */
                     std::string m_aliasZoneName;
                     bool m_aliasZoneNameHasBeenSet;
+
+                    /**
+                     * 站点接入地域，取值有：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>当站点是无域名接入方式时，不允许传此参数。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
+
+                    /**
+                     * 站点名称。仅当站点由无域名接入方式切换到CNAME接入方式的场景下有效。
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
 
                 };
             }

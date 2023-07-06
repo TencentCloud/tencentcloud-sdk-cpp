@@ -191,6 +191,27 @@ namespace TencentCloud
                      */
                     bool EnableCosMAZHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启实例删除保护
+                     * @return DeletionProtection 是否开启实例删除保护
+                     * 
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置是否开启实例删除保护
+                     * @param _deletionProtection 是否开启实例删除保护
+                     * 
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +255,12 @@ namespace TencentCloud
                      */
                     bool m_enableCosMAZ;
                     bool m_enableCosMAZHasBeenSet;
+
+                    /**
+                     * 是否开启实例删除保护
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

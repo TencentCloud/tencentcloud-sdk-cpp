@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
+                     * 设置站点 ID。
+                     * @param _zoneId 站点 ID。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -64,35 +64,35 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取清除缓存类型，取值有：
-<li>purge_url：URL；</li>
-<li>purge_prefix：前缀；</li>
-<li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存；</li>
-<li>purge_cache_tag：cache-tag刷新。</li>
-                     * @return Type 清除缓存类型，取值有：
-<li>purge_url：URL；</li>
-<li>purge_prefix：前缀；</li>
-<li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存；</li>
-<li>purge_cache_tag：cache-tag刷新。</li>
+                     * 获取节点缓存清除类型，取值有：
+<li>purge_url：URL刷新；</li>
+<li>purge_prefix：目录刷新；</li>
+<li>purge_host：Hostname 刷新；</li>
+<li>purge_all：站点下全部缓存刷新；</li>
+<li>purge_cache_tag：cache-tag 刷新。</li>缓存清除类型详情请查看[清除缓存](https://cloud.tencent.com/document/product/1552/70759)。
+                     * @return Type 节点缓存清除类型，取值有：
+<li>purge_url：URL刷新；</li>
+<li>purge_prefix：目录刷新；</li>
+<li>purge_host：Hostname 刷新；</li>
+<li>purge_all：站点下全部缓存刷新；</li>
+<li>purge_cache_tag：cache-tag 刷新。</li>缓存清除类型详情请查看[清除缓存](https://cloud.tencent.com/document/product/1552/70759)。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置清除缓存类型，取值有：
-<li>purge_url：URL；</li>
-<li>purge_prefix：前缀；</li>
-<li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存；</li>
-<li>purge_cache_tag：cache-tag刷新。</li>
-                     * @param _type 清除缓存类型，取值有：
-<li>purge_url：URL；</li>
-<li>purge_prefix：前缀；</li>
-<li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存；</li>
-<li>purge_cache_tag：cache-tag刷新。</li>
+                     * 设置节点缓存清除类型，取值有：
+<li>purge_url：URL刷新；</li>
+<li>purge_prefix：目录刷新；</li>
+<li>purge_host：Hostname 刷新；</li>
+<li>purge_all：站点下全部缓存刷新；</li>
+<li>purge_cache_tag：cache-tag 刷新。</li>缓存清除类型详情请查看[清除缓存](https://cloud.tencent.com/document/product/1552/70759)。
+                     * @param _type 节点缓存清除类型，取值有：
+<li>purge_url：URL刷新；</li>
+<li>purge_prefix：目录刷新；</li>
+<li>purge_host：Hostname 刷新；</li>
+<li>purge_all：站点下全部缓存刷新；</li>
+<li>purge_cache_tag：cache-tag 刷新。</li>缓存清除类型详情请查看[清除缓存](https://cloud.tencent.com/document/product/1552/70759)。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -105,55 +105,36 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取要清除缓存的资源列表，每个元素格式依据Type而定：
-1) Type = purge_host 时：
-形如：www.example.com 或 foo.bar.example.com。
-2) Type = purge_prefix 时：
-形如：http://www.example.com/example。
-3) Type = purge_url 时：
-形如：https://www.example.com/example.jpg。
-4）Type = purge_all 时：
-Targets可为空，不需要填写。
-5）Type = purge_cache_tag 时：
-形如：tag1。
-                     * @return Targets 要清除缓存的资源列表，每个元素格式依据Type而定：
-1) Type = purge_host 时：
-形如：www.example.com 或 foo.bar.example.com。
-2) Type = purge_prefix 时：
-形如：http://www.example.com/example。
-3) Type = purge_url 时：
-形如：https://www.example.com/example.jpg。
-4）Type = purge_all 时：
-Targets可为空，不需要填写。
-5）Type = purge_cache_tag 时：
-形如：tag1。
+                     * 获取节点缓存清除方法，仅对目录刷新类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>注意：使用目录刷新时，默认值： invalidate。
+                     * @return Method 节点缓存清除方法，仅对目录刷新类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>注意：使用目录刷新时，默认值： invalidate。
+                     * 
+                     */
+                    std::string GetMethod() const;
+
+                    /**
+                     * 设置节点缓存清除方法，仅对目录刷新类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>注意：使用目录刷新时，默认值： invalidate。
+                     * @param _method 节点缓存清除方法，仅对目录刷新类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>注意：使用目录刷新时，默认值： invalidate。
+                     * 
+                     */
+                    void SetMethod(const std::string& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     * 
+                     */
+                    bool MethodHasBeenSet() const;
+
+                    /**
+                     * 获取要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>EO 默认针对内容含有非 ASCII 字符集的字符进行转义，编码规则遵循 RFC3986；</li><li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>
+                     * @return Targets 要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>EO 默认针对内容含有非 ASCII 字符集的字符进行转义，编码规则遵循 RFC3986；</li><li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>
                      * 
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置要清除缓存的资源列表，每个元素格式依据Type而定：
-1) Type = purge_host 时：
-形如：www.example.com 或 foo.bar.example.com。
-2) Type = purge_prefix 时：
-形如：http://www.example.com/example。
-3) Type = purge_url 时：
-形如：https://www.example.com/example.jpg。
-4）Type = purge_all 时：
-Targets可为空，不需要填写。
-5）Type = purge_cache_tag 时：
-形如：tag1。
-                     * @param _targets 要清除缓存的资源列表，每个元素格式依据Type而定：
-1) Type = purge_host 时：
-形如：www.example.com 或 foo.bar.example.com。
-2) Type = purge_prefix 时：
-形如：http://www.example.com/example。
-3) Type = purge_url 时：
-形如：https://www.example.com/example.jpg。
-4）Type = purge_all 时：
-Targets可为空，不需要填写。
-5）Type = purge_cache_tag 时：
-形如：tag1。
+                     * 设置要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>EO 默认针对内容含有非 ASCII 字符集的字符进行转义，编码规则遵循 RFC3986；</li><li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>
+                     * @param _targets 要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>EO 默认针对内容含有非 ASCII 字符集的字符进行转义，编码规则遵循 RFC3986；</li><li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>
                      * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
@@ -170,7 +151,7 @@ Targets可为空，不需要填写。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
                      * @return EncodeUrl 若有编码转换，仅清除编码转换后匹配的资源。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
-                     * 
+                     * @deprecated
                      */
                     bool GetEncodeUrl() const;
 
@@ -179,48 +160,44 @@ Targets可为空，不需要填写。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
                      * @param _encodeUrl 若有编码转换，仅清除编码转换后匹配的资源。
 若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
-                     * 
+                     * @deprecated
                      */
                     void SetEncodeUrl(const bool& _encodeUrl);
 
                     /**
                      * 判断参数 EncodeUrl 是否已赋值
                      * @return EncodeUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EncodeUrlHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 清除缓存类型，取值有：
-<li>purge_url：URL；</li>
-<li>purge_prefix：前缀；</li>
-<li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存；</li>
-<li>purge_cache_tag：cache-tag刷新。</li>
+                     * 节点缓存清除类型，取值有：
+<li>purge_url：URL刷新；</li>
+<li>purge_prefix：目录刷新；</li>
+<li>purge_host：Hostname 刷新；</li>
+<li>purge_all：站点下全部缓存刷新；</li>
+<li>purge_cache_tag：cache-tag 刷新。</li>缓存清除类型详情请查看[清除缓存](https://cloud.tencent.com/document/product/1552/70759)。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 要清除缓存的资源列表，每个元素格式依据Type而定：
-1) Type = purge_host 时：
-形如：www.example.com 或 foo.bar.example.com。
-2) Type = purge_prefix 时：
-形如：http://www.example.com/example。
-3) Type = purge_url 时：
-形如：https://www.example.com/example.jpg。
-4）Type = purge_all 时：
-Targets可为空，不需要填写。
-5）Type = purge_cache_tag 时：
-形如：tag1。
+                     * 节点缓存清除方法，仅对目录刷新类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>注意：使用目录刷新时，默认值： invalidate。
+                     */
+                    std::string m_method;
+                    bool m_methodHasBeenSet;
+
+                    /**
+                     * 要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>EO 默认针对内容含有非 ASCII 字符集的字符进行转义，编码规则遵循 RFC3986；</li><li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;

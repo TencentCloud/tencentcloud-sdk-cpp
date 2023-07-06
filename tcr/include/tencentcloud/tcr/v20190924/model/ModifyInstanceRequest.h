@@ -64,15 +64,27 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取实例的规格
-                     * @return RegistryType 实例的规格
+                     * 获取实例的规格,
+基础版：basic
+标准版：standard
+高级版：premium
+                     * @return RegistryType 实例的规格,
+基础版：basic
+标准版：standard
+高级版：premium
                      * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
-                     * 设置实例的规格
-                     * @param _registryType 实例的规格
+                     * 设置实例的规格,
+基础版：basic
+标准版：standard
+高级版：premium
+                     * @param _registryType 实例的规格,
+基础版：basic
+标准版：standard
+高级版：premium
                      * 
                      */
                     void SetRegistryType(const std::string& _registryType);
@@ -84,6 +96,27 @@ namespace TencentCloud
                      */
                     bool RegistryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例删除保护，false为关闭
+                     * @return DeletionProtection 实例删除保护，false为关闭
+                     * 
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置实例删除保护，false为关闭
+                     * @param _deletionProtection 实例删除保护，false为关闭
+                     * 
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +126,19 @@ namespace TencentCloud
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 实例的规格
+                     * 实例的规格,
+基础版：basic
+标准版：standard
+高级版：premium
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
+
+                    /**
+                     * 实例删除保护，false为关闭
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

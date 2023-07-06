@@ -67,8 +67,10 @@ namespace TencentCloud
                     /**
                      * 获取要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      * @return Targets 要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      * 
                      */
                     std::vector<std::string> GetTargets() const;
@@ -76,8 +78,10 @@ http://www.example.com/example.txt。
                     /**
                      * 设置要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      * @param _targets 要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      * 
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
@@ -142,6 +146,7 @@ http://www.example.com/example.txt。
                     /**
                      * 要预热的资源列表，每个元素格式类似如下:
 http://www.example.com/example.txt。
+注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;

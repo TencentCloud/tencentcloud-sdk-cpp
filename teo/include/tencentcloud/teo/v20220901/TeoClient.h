@@ -25,8 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
-#include <tencentcloud/teo/v20220901/model/CheckCertificateRequest.h>
-#include <tencentcloud/teo/v20220901/model/CheckCertificateResponse.h>
+#include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
+#include <tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAccelerationDomainRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateAccelerationDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAliasDomainRequest.h>
@@ -35,8 +35,6 @@
 #include <tencentcloud/teo/v20220901/model/CreateApplicationProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleResponse.h>
-#include <tencentcloud/teo/v20220901/model/CreateCredentialRequest.h>
-#include <tencentcloud/teo/v20220901/model/CreateCredentialResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreatePlanForZoneRequest.h>
@@ -45,14 +43,10 @@
 #include <tencentcloud/teo/v20220901/model/CreatePrefetchTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreatePurgeTaskRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreatePurgeTaskResponse.h>
-#include <tencentcloud/teo/v20220901/model/CreateReplayTaskRequest.h>
-#include <tencentcloud/teo/v20220901/model/CreateReplayTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateSecurityIPGroupResponse.h>
-#include <tencentcloud/teo/v20220901/model/CreateSpeedTestingRequest.h>
-#include <tencentcloud/teo/v20220901/model/CreateSpeedTestingResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteAccelerationDomainsRequest.h>
@@ -73,16 +67,12 @@
 #include <tencentcloud/teo/v20220901/model/DeleteZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAccelerationDomainsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAccelerationDomainsResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeAddableEntityListRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeAddableEntityListResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeClientRuleListRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeClientRuleListResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataRequest.h>
@@ -93,16 +83,10 @@
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeDnsDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeDnsDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeLogSetsRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeLogSetsResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeLogTopicTasksRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeLogTopicTasksResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h>
@@ -117,40 +101,16 @@
 #include <tencentcloud/teo/v20220901/model/DescribeRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSingleL7AnalysisDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSingleL7AnalysisDataResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeTimingL7SourceDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeTimingL7SourceDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebManagedRulesHitRuleDetailRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebManagedRulesHitRuleDetailResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebManagedRulesLogRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebManagedRulesLogResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionDataResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionHitRuleDetailRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionHitRuleDetailResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionTopDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeWebProtectionTopDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeZonesRequest.h>
@@ -177,34 +137,22 @@
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h>
-#include <tencentcloud/teo/v20220901/model/ModifyDefaultCertificateRequest.h>
-#include <tencentcloud/teo/v20220901/model/ModifyDefaultCertificateResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyHostsCertificateRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyHostsCertificateResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleResponse.h>
-#include <tencentcloud/teo/v20220901/model/ModifyRulePriorityRequest.h>
-#include <tencentcloud/teo/v20220901/model/ModifyRulePriorityResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityIPGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h>
-#include <tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyRequest.h>
-#include <tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h>
-#include <tencentcloud/teo/v20220901/model/ReclaimAliasDomainRequest.h>
-#include <tencentcloud/teo/v20220901/model/ReclaimAliasDomainResponse.h>
-#include <tencentcloud/teo/v20220901/model/ReclaimZoneRequest.h>
-#include <tencentcloud/teo/v20220901/model/ReclaimZoneResponse.h>
-#include <tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.h>
-#include <tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h>
 
 
 namespace TencentCloud
@@ -222,9 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindZoneToPlanResponse> BindZoneToPlanOutcome;
                 typedef std::future<BindZoneToPlanOutcome> BindZoneToPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::BindZoneToPlanRequest&, BindZoneToPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindZoneToPlanAsyncHandler;
-                typedef Outcome<Core::Error, Model::CheckCertificateResponse> CheckCertificateOutcome;
-                typedef std::future<CheckCertificateOutcome> CheckCertificateOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::CheckCertificateRequest&, CheckCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCnameStatusResponse> CheckCnameStatusOutcome;
+                typedef std::future<CheckCnameStatusOutcome> CheckCnameStatusOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CheckCnameStatusRequest&, CheckCnameStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCnameStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAccelerationDomainResponse> CreateAccelerationDomainOutcome;
                 typedef std::future<CreateAccelerationDomainOutcome> CreateAccelerationDomainOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateAccelerationDomainRequest&, CreateAccelerationDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccelerationDomainAsyncHandler;
@@ -237,9 +185,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationProxyRuleResponse> CreateApplicationProxyRuleOutcome;
                 typedef std::future<CreateApplicationProxyRuleOutcome> CreateApplicationProxyRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateApplicationProxyRuleRequest&, CreateApplicationProxyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationProxyRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCredentialResponse> CreateCredentialOutcome;
-                typedef std::future<CreateCredentialOutcome> CreateCredentialOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::CreateCredentialRequest&, CreateCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOriginGroupResponse> CreateOriginGroupOutcome;
                 typedef std::future<CreateOriginGroupOutcome> CreateOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateOriginGroupRequest&, CreateOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOriginGroupAsyncHandler;
@@ -252,18 +197,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePurgeTaskResponse> CreatePurgeTaskOutcome;
                 typedef std::future<CreatePurgeTaskOutcome> CreatePurgeTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreatePurgeTaskRequest&, CreatePurgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePurgeTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateReplayTaskResponse> CreateReplayTaskOutcome;
-                typedef std::future<CreateReplayTaskOutcome> CreateReplayTaskOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::CreateReplayTaskRequest&, CreateReplayTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplayTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityIPGroupResponse> CreateSecurityIPGroupOutcome;
                 typedef std::future<CreateSecurityIPGroupOutcome> CreateSecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateSecurityIPGroupRequest&, CreateSecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityIPGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateSpeedTestingResponse> CreateSpeedTestingOutcome;
-                typedef std::future<CreateSpeedTestingOutcome> CreateSpeedTestingOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::CreateSpeedTestingRequest&, CreateSpeedTestingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSpeedTestingAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateZoneResponse> CreateZoneOutcome;
                 typedef std::future<CreateZoneOutcome> CreateZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateZoneRequest&, CreateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateZoneAsyncHandler;
@@ -294,9 +233,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccelerationDomainsResponse> DescribeAccelerationDomainsOutcome;
                 typedef std::future<DescribeAccelerationDomainsOutcome> DescribeAccelerationDomainsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAccelerationDomainsRequest&, DescribeAccelerationDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccelerationDomainsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAddableEntityListResponse> DescribeAddableEntityListOutcome;
-                typedef std::future<DescribeAddableEntityListOutcome> DescribeAddableEntityListOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeAddableEntityListRequest&, DescribeAddableEntityListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddableEntityListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAliasDomainsResponse> DescribeAliasDomainsOutcome;
                 typedef std::future<DescribeAliasDomainsOutcome> DescribeAliasDomainsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAliasDomainsRequest&, DescribeAliasDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAliasDomainsAsyncHandler;
@@ -306,9 +242,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAvailablePlansResponse> DescribeAvailablePlansOutcome;
                 typedef std::future<DescribeAvailablePlansOutcome> DescribeAvailablePlansOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAvailablePlansRequest&, DescribeAvailablePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailablePlansAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeClientRuleListResponse> DescribeClientRuleListOutcome;
-                typedef std::future<DescribeClientRuleListOutcome> DescribeClientRuleListOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeClientRuleListRequest&, DescribeClientRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContentQuotaResponse> DescribeContentQuotaOutcome;
                 typedef std::future<DescribeContentQuotaOutcome> DescribeContentQuotaOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeContentQuotaRequest&, DescribeContentQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentQuotaAsyncHandler;
@@ -324,21 +257,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDefaultCertificatesResponse> DescribeDefaultCertificatesOutcome;
                 typedef std::future<DescribeDefaultCertificatesOutcome> DescribeDefaultCertificatesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDefaultCertificatesRequest&, DescribeDefaultCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultCertificatesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDnsDataResponse> DescribeDnsDataOutcome;
-                typedef std::future<DescribeDnsDataOutcome> DescribeDnsDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeDnsDataRequest&, DescribeDnsDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostsSettingResponse> DescribeHostsSettingOutcome;
                 typedef std::future<DescribeHostsSettingOutcome> DescribeHostsSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeHostsSettingRequest&, DescribeHostsSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostsSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIdentificationsResponse> DescribeIdentificationsOutcome;
                 typedef std::future<DescribeIdentificationsOutcome> DescribeIdentificationsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeIdentificationsRequest&, DescribeIdentificationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdentificationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLogSetsResponse> DescribeLogSetsOutcome;
-                typedef std::future<DescribeLogSetsOutcome> DescribeLogSetsOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeLogSetsRequest&, DescribeLogSetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSetsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLogTopicTasksResponse> DescribeLogTopicTasksOutcome;
-                typedef std::future<DescribeLogTopicTasksOutcome> DescribeLogTopicTasksOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeLogTopicTasksRequest&, DescribeLogTopicTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogTopicTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOriginGroupResponse> DescribeOriginGroupOutcome;
                 typedef std::future<DescribeOriginGroupOutcome> DescribeOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOriginGroupRequest&, DescribeOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginGroupAsyncHandler;
@@ -360,18 +284,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRulesSettingResponse> DescribeRulesSettingOutcome;
                 typedef std::future<DescribeRulesSettingOutcome> DescribeRulesSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeRulesSettingRequest&, DescribeRulesSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesSettingAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSingleL7AnalysisDataResponse> DescribeSingleL7AnalysisDataOutcome;
-                typedef std::future<DescribeSingleL7AnalysisDataOutcome> DescribeSingleL7AnalysisDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeSingleL7AnalysisDataRequest&, DescribeSingleL7AnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSingleL7AnalysisDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSpeedTestingDetailsResponse> DescribeSpeedTestingDetailsOutcome;
-                typedef std::future<DescribeSpeedTestingDetailsOutcome> DescribeSpeedTestingDetailsOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeSpeedTestingDetailsRequest&, DescribeSpeedTestingDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpeedTestingDetailsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSpeedTestingMetricDataResponse> DescribeSpeedTestingMetricDataOutcome;
-                typedef std::future<DescribeSpeedTestingMetricDataOutcome> DescribeSpeedTestingMetricDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeSpeedTestingMetricDataRequest&, DescribeSpeedTestingMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpeedTestingMetricDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSpeedTestingQuotaResponse> DescribeSpeedTestingQuotaOutcome;
-                typedef std::future<DescribeSpeedTestingQuotaOutcome> DescribeSpeedTestingQuotaOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeSpeedTestingQuotaRequest&, DescribeSpeedTestingQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpeedTestingQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTimingL4DataResponse> DescribeTimingL4DataOutcome;
                 typedef std::future<DescribeTimingL4DataOutcome> DescribeTimingL4DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4DataRequest&, DescribeTimingL4DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4DataAsyncHandler;
@@ -381,36 +293,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTimingL7CacheDataResponse> DescribeTimingL7CacheDataOutcome;
                 typedef std::future<DescribeTimingL7CacheDataOutcome> DescribeTimingL7CacheDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7CacheDataRequest&, DescribeTimingL7CacheDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7CacheDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTimingL7SourceDataResponse> DescribeTimingL7SourceDataOutcome;
-                typedef std::future<DescribeTimingL7SourceDataOutcome> DescribeTimingL7SourceDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7SourceDataRequest&, DescribeTimingL7SourceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7SourceDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopL7AnalysisDataResponse> DescribeTopL7AnalysisDataOutcome;
                 typedef std::future<DescribeTopL7AnalysisDataOutcome> DescribeTopL7AnalysisDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTopL7AnalysisDataRequest&, DescribeTopL7AnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7AnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopL7CacheDataResponse> DescribeTopL7CacheDataOutcome;
                 typedef std::future<DescribeTopL7CacheDataOutcome> DescribeTopL7CacheDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTopL7CacheDataRequest&, DescribeTopL7CacheDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7CacheDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebManagedRulesDataResponse> DescribeWebManagedRulesDataOutcome;
-                typedef std::future<DescribeWebManagedRulesDataOutcome> DescribeWebManagedRulesDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebManagedRulesDataRequest&, DescribeWebManagedRulesDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebManagedRulesDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebManagedRulesHitRuleDetailResponse> DescribeWebManagedRulesHitRuleDetailOutcome;
-                typedef std::future<DescribeWebManagedRulesHitRuleDetailOutcome> DescribeWebManagedRulesHitRuleDetailOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebManagedRulesHitRuleDetailRequest&, DescribeWebManagedRulesHitRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebManagedRulesHitRuleDetailAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebManagedRulesLogResponse> DescribeWebManagedRulesLogOutcome;
-                typedef std::future<DescribeWebManagedRulesLogOutcome> DescribeWebManagedRulesLogOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebManagedRulesLogRequest&, DescribeWebManagedRulesLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebManagedRulesLogAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebProtectionClientIpListResponse> DescribeWebProtectionClientIpListOutcome;
-                typedef std::future<DescribeWebProtectionClientIpListOutcome> DescribeWebProtectionClientIpListOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebProtectionClientIpListRequest&, DescribeWebProtectionClientIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebProtectionClientIpListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebProtectionDataResponse> DescribeWebProtectionDataOutcome;
-                typedef std::future<DescribeWebProtectionDataOutcome> DescribeWebProtectionDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebProtectionDataRequest&, DescribeWebProtectionDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebProtectionDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebProtectionHitRuleDetailResponse> DescribeWebProtectionHitRuleDetailOutcome;
-                typedef std::future<DescribeWebProtectionHitRuleDetailOutcome> DescribeWebProtectionHitRuleDetailOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebProtectionHitRuleDetailRequest&, DescribeWebProtectionHitRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebProtectionHitRuleDetailAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWebProtectionTopDataResponse> DescribeWebProtectionTopDataOutcome;
-                typedef std::future<DescribeWebProtectionTopDataOutcome> DescribeWebProtectionTopDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeWebProtectionTopDataRequest&, DescribeWebProtectionTopDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebProtectionTopDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneSettingResponse> DescribeZoneSettingOutcome;
                 typedef std::future<DescribeZoneSettingOutcome> DescribeZoneSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeZoneSettingRequest&, DescribeZoneSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneSettingAsyncHandler;
@@ -450,9 +338,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationProxyStatusResponse> ModifyApplicationProxyStatusOutcome;
                 typedef std::future<ModifyApplicationProxyStatusOutcome> ModifyApplicationProxyStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyApplicationProxyStatusRequest&, ModifyApplicationProxyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationProxyStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyDefaultCertificateResponse> ModifyDefaultCertificateOutcome;
-                typedef std::future<ModifyDefaultCertificateOutcome> ModifyDefaultCertificateOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::ModifyDefaultCertificateRequest&, ModifyDefaultCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyHostsCertificateResponse> ModifyHostsCertificateOutcome;
                 typedef std::future<ModifyHostsCertificateOutcome> ModifyHostsCertificateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyHostsCertificateRequest&, ModifyHostsCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostsCertificateAsyncHandler;
@@ -462,18 +347,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
                 typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyRulePriorityResponse> ModifyRulePriorityOutcome;
-                typedef std::future<ModifyRulePriorityOutcome> ModifyRulePriorityOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::ModifyRulePriorityRequest&, ModifyRulePriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRulePriorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityIPGroupResponse> ModifySecurityIPGroupOutcome;
                 typedef std::future<ModifySecurityIPGroupOutcome> ModifySecurityIPGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityIPGroupRequest&, ModifySecurityIPGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityIPGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifySecurityWafGroupPolicyResponse> ModifySecurityWafGroupPolicyOutcome;
-                typedef std::future<ModifySecurityWafGroupPolicyOutcome> ModifySecurityWafGroupPolicyOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::ModifySecurityWafGroupPolicyRequest&, ModifySecurityWafGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityWafGroupPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyZoneResponse> ModifyZoneOutcome;
                 typedef std::future<ModifyZoneOutcome> ModifyZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneRequest&, ModifyZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneAsyncHandler;
@@ -483,15 +362,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyZoneStatusResponse> ModifyZoneStatusOutcome;
                 typedef std::future<ModifyZoneStatusOutcome> ModifyZoneStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneStatusRequest&, ModifyZoneStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::ReclaimAliasDomainResponse> ReclaimAliasDomainOutcome;
-                typedef std::future<ReclaimAliasDomainOutcome> ReclaimAliasDomainOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::ReclaimAliasDomainRequest&, ReclaimAliasDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReclaimAliasDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::ReclaimZoneResponse> ReclaimZoneOutcome;
-                typedef std::future<ReclaimZoneOutcome> ReclaimZoneOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::ReclaimZoneRequest&, ReclaimZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReclaimZoneAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateOriginProtectionIPWhitelistResponse> UpdateOriginProtectionIPWhitelistOutcome;
-                typedef std::future<UpdateOriginProtectionIPWhitelistOutcome> UpdateOriginProtectionIPWhitelistOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::UpdateOriginProtectionIPWhitelistRequest&, UpdateOriginProtectionIPWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOriginProtectionIPWhitelistAsyncHandler;
 
 
 
@@ -505,13 +375,13 @@ namespace TencentCloud
                 BindZoneToPlanOutcomeCallable BindZoneToPlanCallable(const Model::BindZoneToPlanRequest& request);
 
                 /**
-                 *校验证书
-                 * @param req CheckCertificateRequest
-                 * @return CheckCertificateOutcome
+                 *校验域名 CNAME 状态
+                 * @param req CheckCnameStatusRequest
+                 * @return CheckCnameStatusOutcome
                  */
-                CheckCertificateOutcome CheckCertificate(const Model::CheckCertificateRequest &request);
-                void CheckCertificateAsync(const Model::CheckCertificateRequest& request, const CheckCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckCertificateOutcomeCallable CheckCertificateCallable(const Model::CheckCertificateRequest& request);
+                CheckCnameStatusOutcome CheckCnameStatus(const Model::CheckCnameStatusRequest &request);
+                void CheckCnameStatusAsync(const Model::CheckCnameStatusRequest& request, const CheckCnameStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCnameStatusOutcomeCallable CheckCnameStatusCallable(const Model::CheckCnameStatusRequest& request);
 
                 /**
                  *创建加速域名
@@ -550,15 +420,6 @@ namespace TencentCloud
                 CreateApplicationProxyRuleOutcomeCallable CreateApplicationProxyRuleCallable(const Model::CreateApplicationProxyRuleRequest& request);
 
                 /**
-                 *用于创建COS回源私有凭证
-                 * @param req CreateCredentialRequest
-                 * @return CreateCredentialOutcome
-                 */
-                CreateCredentialOutcome CreateCredential(const Model::CreateCredentialRequest &request);
-                void CreateCredentialAsync(const Model::CreateCredentialRequest& request, const CreateCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCredentialOutcomeCallable CreateCredentialCallable(const Model::CreateCredentialRequest& request);
-
-                /**
                  *创建源站组
                  * @param req CreateOriginGroupRequest
                  * @return CreateOriginGroupOutcome
@@ -586,22 +447,15 @@ namespace TencentCloud
                 CreatePrefetchTaskOutcomeCallable CreatePrefetchTaskCallable(const Model::CreatePrefetchTaskRequest& request);
 
                 /**
-                 *创建清除缓存任务
+                 *当源站资源更新，但节点缓存 TTL 未过期时，用户仍会访问到旧的资源，此时可以通过该接口实现节点资源更新。触发更新的方法有以下两种：<li>直接删除：不做任何校验，直接删除节点缓存，用户请求时触发回源拉取；</li><li>标记过期：将节点资源置为过期，用户请求时触发回源校验，即发送带有 If-None-Match 和 If-Modified-Since 头部的 HTTP 条件请求。若源站响应 200，则节点会回源拉取新的资源并更新缓存；若源站响应 304，则节点不会更新缓存；</li>
+
+清除缓存任务详情请查看[清除缓存](https://cloud.tencent.com/document/product/1552/70759)。</li>
                  * @param req CreatePurgeTaskRequest
                  * @return CreatePurgeTaskOutcome
                  */
                 CreatePurgeTaskOutcome CreatePurgeTask(const Model::CreatePurgeTaskRequest &request);
                 void CreatePurgeTaskAsync(const Model::CreatePurgeTaskRequest& request, const CreatePurgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePurgeTaskOutcomeCallable CreatePurgeTaskCallable(const Model::CreatePurgeTaskRequest& request);
-
-                /**
-                 *创建刷新/预热重放任务
-                 * @param req CreateReplayTaskRequest
-                 * @return CreateReplayTaskOutcome
-                 */
-                CreateReplayTaskOutcome CreateReplayTask(const Model::CreateReplayTaskRequest &request);
-                void CreateReplayTaskAsync(const Model::CreateReplayTaskRequest& request, const CreateReplayTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateReplayTaskOutcomeCallable CreateReplayTaskCallable(const Model::CreateReplayTaskRequest& request);
 
                 /**
                  *规则引擎创建规则。
@@ -620,15 +474,6 @@ namespace TencentCloud
                 CreateSecurityIPGroupOutcome CreateSecurityIPGroup(const Model::CreateSecurityIPGroupRequest &request);
                 void CreateSecurityIPGroupAsync(const Model::CreateSecurityIPGroupRequest& request, const CreateSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSecurityIPGroupOutcomeCallable CreateSecurityIPGroupCallable(const Model::CreateSecurityIPGroupRequest& request);
-
-                /**
-                 *对用户指定的域名进行一次站点拨测
-                 * @param req CreateSpeedTestingRequest
-                 * @return CreateSpeedTestingOutcome
-                 */
-                CreateSpeedTestingOutcome CreateSpeedTesting(const Model::CreateSpeedTestingRequest &request);
-                void CreateSpeedTestingAsync(const Model::CreateSpeedTestingRequest& request, const CreateSpeedTestingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateSpeedTestingOutcomeCallable CreateSpeedTestingCallable(const Model::CreateSpeedTestingRequest& request);
 
                 /**
                  *用于用户接入新的站点。
@@ -721,15 +566,6 @@ namespace TencentCloud
                 DescribeAccelerationDomainsOutcomeCallable DescribeAccelerationDomainsCallable(const Model::DescribeAccelerationDomainsRequest& request);
 
                 /**
-                 *本接口（DescribeAddableEntityList）用于查询剩余可添加的日志推送实体列表。
-                 * @param req DescribeAddableEntityListRequest
-                 * @return DescribeAddableEntityListOutcome
-                 */
-                DescribeAddableEntityListOutcome DescribeAddableEntityList(const Model::DescribeAddableEntityListRequest &request);
-                void DescribeAddableEntityListAsync(const Model::DescribeAddableEntityListRequest& request, const DescribeAddableEntityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAddableEntityListOutcomeCallable DescribeAddableEntityListCallable(const Model::DescribeAddableEntityListRequest& request);
-
-                /**
                  *查询别称域名信息列表。
                  * @param req DescribeAliasDomainsRequest
                  * @return DescribeAliasDomainsOutcome
@@ -755,15 +591,6 @@ namespace TencentCloud
                 DescribeAvailablePlansOutcome DescribeAvailablePlans(const Model::DescribeAvailablePlansRequest &request);
                 void DescribeAvailablePlansAsync(const Model::DescribeAvailablePlansRequest& request, const DescribeAvailablePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAvailablePlansOutcomeCallable DescribeAvailablePlansCallable(const Model::DescribeAvailablePlansRequest& request);
-
-                /**
-                 *本接口（DescribeClientRuleList）用于查询封禁客户端信息列表。
-                 * @param req DescribeClientRuleListRequest
-                 * @return DescribeClientRuleListOutcome
-                 */
-                DescribeClientRuleListOutcome DescribeClientRuleList(const Model::DescribeClientRuleListRequest &request);
-                void DescribeClientRuleListAsync(const Model::DescribeClientRuleListRequest& request, const DescribeClientRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeClientRuleListOutcomeCallable DescribeClientRuleListCallable(const Model::DescribeClientRuleListRequest& request);
 
                 /**
                  *查询内容管理接口配额
@@ -811,15 +638,6 @@ namespace TencentCloud
                 DescribeDefaultCertificatesOutcomeCallable DescribeDefaultCertificatesCallable(const Model::DescribeDefaultCertificatesRequest& request);
 
                 /**
-                 *获取DNS请求数统计曲线
-                 * @param req DescribeDnsDataRequest
-                 * @return DescribeDnsDataOutcome
-                 */
-                DescribeDnsDataOutcome DescribeDnsData(const Model::DescribeDnsDataRequest &request);
-                void DescribeDnsDataAsync(const Model::DescribeDnsDataRequest& request, const DescribeDnsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDnsDataOutcomeCallable DescribeDnsDataCallable(const Model::DescribeDnsDataRequest& request);
-
-                /**
                  *用于查询域名配置信息
                  * @param req DescribeHostsSettingRequest
                  * @return DescribeHostsSettingOutcome
@@ -836,24 +654,6 @@ namespace TencentCloud
                 DescribeIdentificationsOutcome DescribeIdentifications(const Model::DescribeIdentificationsRequest &request);
                 void DescribeIdentificationsAsync(const Model::DescribeIdentificationsRequest& request, const DescribeIdentificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIdentificationsOutcomeCallable DescribeIdentificationsCallable(const Model::DescribeIdentificationsRequest& request);
-
-                /**
-                 *本接口（DescribeLogSets）用于获取日志集列表。
-                 * @param req DescribeLogSetsRequest
-                 * @return DescribeLogSetsOutcome
-                 */
-                DescribeLogSetsOutcome DescribeLogSets(const Model::DescribeLogSetsRequest &request);
-                void DescribeLogSetsAsync(const Model::DescribeLogSetsRequest& request, const DescribeLogSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLogSetsOutcomeCallable DescribeLogSetsCallable(const Model::DescribeLogSetsRequest& request);
-
-                /**
-                 *本接口（DescribeLogTopicTasks）用于获取日志推送任务列表。
-                 * @param req DescribeLogTopicTasksRequest
-                 * @return DescribeLogTopicTasksOutcome
-                 */
-                DescribeLogTopicTasksOutcome DescribeLogTopicTasks(const Model::DescribeLogTopicTasksRequest &request);
-                void DescribeLogTopicTasksAsync(const Model::DescribeLogTopicTasksRequest& request, const DescribeLogTopicTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLogTopicTasksOutcomeCallable DescribeLogTopicTasksCallable(const Model::DescribeLogTopicTasksRequest& request);
 
                 /**
                  *获取源站组列表
@@ -919,42 +719,6 @@ namespace TencentCloud
                 DescribeRulesSettingOutcomeCallable DescribeRulesSettingCallable(const Model::DescribeRulesSettingRequest& request);
 
                 /**
-                 *本接口（DescribeSingleL7AnalysisData）用于查询七层流量数据分析单值数据列表，单值数据表示：指标在查询时间范围内的单个统计数据，通常表现为接口仅返回一个统计数值。
-                 * @param req DescribeSingleL7AnalysisDataRequest
-                 * @return DescribeSingleL7AnalysisDataOutcome
-                 */
-                DescribeSingleL7AnalysisDataOutcome DescribeSingleL7AnalysisData(const Model::DescribeSingleL7AnalysisDataRequest &request);
-                void DescribeSingleL7AnalysisDataAsync(const Model::DescribeSingleL7AnalysisDataRequest& request, const DescribeSingleL7AnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSingleL7AnalysisDataOutcomeCallable DescribeSingleL7AnalysisDataCallable(const Model::DescribeSingleL7AnalysisDataRequest& request);
-
-                /**
-                 *用于查询拨测分地区数据
-                 * @param req DescribeSpeedTestingDetailsRequest
-                 * @return DescribeSpeedTestingDetailsOutcome
-                 */
-                DescribeSpeedTestingDetailsOutcome DescribeSpeedTestingDetails(const Model::DescribeSpeedTestingDetailsRequest &request);
-                void DescribeSpeedTestingDetailsAsync(const Model::DescribeSpeedTestingDetailsRequest& request, const DescribeSpeedTestingDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSpeedTestingDetailsOutcomeCallable DescribeSpeedTestingDetailsCallable(const Model::DescribeSpeedTestingDetailsRequest& request);
-
-                /**
-                 *查询站点拨测结果
-                 * @param req DescribeSpeedTestingMetricDataRequest
-                 * @return DescribeSpeedTestingMetricDataOutcome
-                 */
-                DescribeSpeedTestingMetricDataOutcome DescribeSpeedTestingMetricData(const Model::DescribeSpeedTestingMetricDataRequest &request);
-                void DescribeSpeedTestingMetricDataAsync(const Model::DescribeSpeedTestingMetricDataRequest& request, const DescribeSpeedTestingMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSpeedTestingMetricDataOutcomeCallable DescribeSpeedTestingMetricDataCallable(const Model::DescribeSpeedTestingMetricDataRequest& request);
-
-                /**
-                 *查询站点拨测配额
-                 * @param req DescribeSpeedTestingQuotaRequest
-                 * @return DescribeSpeedTestingQuotaOutcome
-                 */
-                DescribeSpeedTestingQuotaOutcome DescribeSpeedTestingQuota(const Model::DescribeSpeedTestingQuotaRequest &request);
-                void DescribeSpeedTestingQuotaAsync(const Model::DescribeSpeedTestingQuotaRequest& request, const DescribeSpeedTestingQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSpeedTestingQuotaOutcomeCallable DescribeSpeedTestingQuotaCallable(const Model::DescribeSpeedTestingQuotaRequest& request);
-
-                /**
                  *本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。
                  * @param req DescribeTimingL4DataRequest
                  * @return DescribeTimingL4DataOutcome
@@ -982,15 +746,6 @@ namespace TencentCloud
                 DescribeTimingL7CacheDataOutcomeCallable DescribeTimingL7CacheDataCallable(const Model::DescribeTimingL7CacheDataRequest& request);
 
                 /**
-                 *本接口（DescribeTimingL7SourceData）查询七层回源分析时序数据。
-                 * @param req DescribeTimingL7SourceDataRequest
-                 * @return DescribeTimingL7SourceDataOutcome
-                 */
-                DescribeTimingL7SourceDataOutcome DescribeTimingL7SourceData(const Model::DescribeTimingL7SourceDataRequest &request);
-                void DescribeTimingL7SourceDataAsync(const Model::DescribeTimingL7SourceDataRequest& request, const DescribeTimingL7SourceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTimingL7SourceDataOutcomeCallable DescribeTimingL7SourceDataCallable(const Model::DescribeTimingL7SourceDataRequest& request);
-
-                /**
                  *本接口（DescribeTopL7AnalysisData）用于查询七层流量前topN的数据。
                  * @param req DescribeTopL7AnalysisDataRequest
                  * @return DescribeTopL7AnalysisDataOutcome
@@ -1007,69 +762,6 @@ namespace TencentCloud
                 DescribeTopL7CacheDataOutcome DescribeTopL7CacheData(const Model::DescribeTopL7CacheDataRequest &request);
                 void DescribeTopL7CacheDataAsync(const Model::DescribeTopL7CacheDataRequest& request, const DescribeTopL7CacheDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopL7CacheDataOutcomeCallable DescribeTopL7CacheDataCallable(const Model::DescribeTopL7CacheDataRequest& request);
-
-                /**
-                 *本接口（DescribeWebManagedRulesData）用于查询WAF攻击的时序数据。
-                 * @param req DescribeWebManagedRulesDataRequest
-                 * @return DescribeWebManagedRulesDataOutcome
-                 */
-                DescribeWebManagedRulesDataOutcome DescribeWebManagedRulesData(const Model::DescribeWebManagedRulesDataRequest &request);
-                void DescribeWebManagedRulesDataAsync(const Model::DescribeWebManagedRulesDataRequest& request, const DescribeWebManagedRulesDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebManagedRulesDataOutcomeCallable DescribeWebManagedRulesDataCallable(const Model::DescribeWebManagedRulesDataRequest& request);
-
-                /**
-                 *本接口（DescribeWebManagedRulesHitRuleDetail）用于查询WAF攻击命中规则详情。
-                 * @param req DescribeWebManagedRulesHitRuleDetailRequest
-                 * @return DescribeWebManagedRulesHitRuleDetailOutcome
-                 */
-                DescribeWebManagedRulesHitRuleDetailOutcome DescribeWebManagedRulesHitRuleDetail(const Model::DescribeWebManagedRulesHitRuleDetailRequest &request);
-                void DescribeWebManagedRulesHitRuleDetailAsync(const Model::DescribeWebManagedRulesHitRuleDetailRequest& request, const DescribeWebManagedRulesHitRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebManagedRulesHitRuleDetailOutcomeCallable DescribeWebManagedRulesHitRuleDetailCallable(const Model::DescribeWebManagedRulesHitRuleDetailRequest& request);
-
-                /**
-                 *本接口（DescribeWebManagedRulesLog）用于查询Web攻击日志。
-                 * @param req DescribeWebManagedRulesLogRequest
-                 * @return DescribeWebManagedRulesLogOutcome
-                 */
-                DescribeWebManagedRulesLogOutcome DescribeWebManagedRulesLog(const Model::DescribeWebManagedRulesLogRequest &request);
-                void DescribeWebManagedRulesLogAsync(const Model::DescribeWebManagedRulesLogRequest& request, const DescribeWebManagedRulesLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebManagedRulesLogOutcomeCallable DescribeWebManagedRulesLogCallable(const Model::DescribeWebManagedRulesLogRequest& request);
-
-                /**
-                 *本接口（DescribeWebProtectionClientIpList）用于查询CC防护客户端（攻击源）IP信息。
-                 * @param req DescribeWebProtectionClientIpListRequest
-                 * @return DescribeWebProtectionClientIpListOutcome
-                 */
-                DescribeWebProtectionClientIpListOutcome DescribeWebProtectionClientIpList(const Model::DescribeWebProtectionClientIpListRequest &request);
-                void DescribeWebProtectionClientIpListAsync(const Model::DescribeWebProtectionClientIpListRequest& request, const DescribeWebProtectionClientIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebProtectionClientIpListOutcomeCallable DescribeWebProtectionClientIpListCallable(const Model::DescribeWebProtectionClientIpListRequest& request);
-
-                /**
-                 *本接口（DescribeWebProtectionData）用于查询CC防护时序数据。
-                 * @param req DescribeWebProtectionDataRequest
-                 * @return DescribeWebProtectionDataOutcome
-                 */
-                DescribeWebProtectionDataOutcome DescribeWebProtectionData(const Model::DescribeWebProtectionDataRequest &request);
-                void DescribeWebProtectionDataAsync(const Model::DescribeWebProtectionDataRequest& request, const DescribeWebProtectionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebProtectionDataOutcomeCallable DescribeWebProtectionDataCallable(const Model::DescribeWebProtectionDataRequest& request);
-
-                /**
-                 *本接口（DescribeWebProtectionHitRuleDetail）用于查询CC防护命中规则详情列表。
-                 * @param req DescribeWebProtectionHitRuleDetailRequest
-                 * @return DescribeWebProtectionHitRuleDetailOutcome
-                 */
-                DescribeWebProtectionHitRuleDetailOutcome DescribeWebProtectionHitRuleDetail(const Model::DescribeWebProtectionHitRuleDetailRequest &request);
-                void DescribeWebProtectionHitRuleDetailAsync(const Model::DescribeWebProtectionHitRuleDetailRequest& request, const DescribeWebProtectionHitRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebProtectionHitRuleDetailOutcomeCallable DescribeWebProtectionHitRuleDetailCallable(const Model::DescribeWebProtectionHitRuleDetailRequest& request);
-
-                /**
-                 *本接口（DescribeWebProtectionTopData）用于查询CC防护的Top数据。
-                 * @param req DescribeWebProtectionTopDataRequest
-                 * @return DescribeWebProtectionTopDataOutcome
-                 */
-                DescribeWebProtectionTopDataOutcome DescribeWebProtectionTopData(const Model::DescribeWebProtectionTopDataRequest &request);
-                void DescribeWebProtectionTopDataAsync(const Model::DescribeWebProtectionTopDataRequest& request, const DescribeWebProtectionTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWebProtectionTopDataOutcomeCallable DescribeWebProtectionTopDataCallable(const Model::DescribeWebProtectionTopDataRequest& request);
 
                 /**
                  *用于查询站点的所有配置信息。
@@ -1189,15 +881,6 @@ namespace TencentCloud
                 ModifyApplicationProxyStatusOutcomeCallable ModifyApplicationProxyStatusCallable(const Model::ModifyApplicationProxyStatusRequest& request);
 
                 /**
-                 *修改默认证书状态
-                 * @param req ModifyDefaultCertificateRequest
-                 * @return ModifyDefaultCertificateOutcome
-                 */
-                ModifyDefaultCertificateOutcome ModifyDefaultCertificate(const Model::ModifyDefaultCertificateRequest &request);
-                void ModifyDefaultCertificateAsync(const Model::ModifyDefaultCertificateRequest& request, const ModifyDefaultCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyDefaultCertificateOutcomeCallable ModifyDefaultCertificateCallable(const Model::ModifyDefaultCertificateRequest& request);
-
-                /**
                  *用于修改域名证书
                  * @param req ModifyHostsCertificateRequest
                  * @return ModifyHostsCertificateOutcome
@@ -1225,15 +908,6 @@ namespace TencentCloud
                 ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
 
                 /**
-                 *修改规则引擎规则优先级
-                 * @param req ModifyRulePriorityRequest
-                 * @return ModifyRulePriorityOutcome
-                 */
-                ModifyRulePriorityOutcome ModifyRulePriority(const Model::ModifyRulePriorityRequest &request);
-                void ModifyRulePriorityAsync(const Model::ModifyRulePriorityRequest& request, const ModifyRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyRulePriorityOutcomeCallable ModifyRulePriorityCallable(const Model::ModifyRulePriorityRequest& request);
-
-                /**
                  *修改安全 IP 组。
                  * @param req ModifySecurityIPGroupRequest
                  * @return ModifySecurityIPGroupOutcome
@@ -1250,15 +924,6 @@ namespace TencentCloud
                 ModifySecurityPolicyOutcome ModifySecurityPolicy(const Model::ModifySecurityPolicyRequest &request);
                 void ModifySecurityPolicyAsync(const Model::ModifySecurityPolicyRequest& request, const ModifySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityPolicyOutcomeCallable ModifySecurityPolicyCallable(const Model::ModifySecurityPolicyRequest& request);
-
-                /**
-                 *修改安全配置托管规则
-                 * @param req ModifySecurityWafGroupPolicyRequest
-                 * @return ModifySecurityWafGroupPolicyOutcome
-                 */
-                ModifySecurityWafGroupPolicyOutcome ModifySecurityWafGroupPolicy(const Model::ModifySecurityWafGroupPolicyRequest &request);
-                void ModifySecurityWafGroupPolicyAsync(const Model::ModifySecurityWafGroupPolicyRequest& request, const ModifySecurityWafGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifySecurityWafGroupPolicyOutcomeCallable ModifySecurityWafGroupPolicyCallable(const Model::ModifySecurityWafGroupPolicyRequest& request);
 
                 /**
                  *修改站点信息。
@@ -1286,33 +951,6 @@ namespace TencentCloud
                 ModifyZoneStatusOutcome ModifyZoneStatus(const Model::ModifyZoneStatusRequest &request);
                 void ModifyZoneStatusAsync(const Model::ModifyZoneStatusRequest& request, const ModifyZoneStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyZoneStatusOutcomeCallable ModifyZoneStatusCallable(const Model::ModifyZoneStatusRequest& request);
-
-                /**
-                 *当客户取回站定的同时会取回此站点下关联的别称域名，此时入参为ZoneId；当客户接入站点发现已被别称域名接入时通过验证之后可取回域名，此时入参为ZoneName。
-                 * @param req ReclaimAliasDomainRequest
-                 * @return ReclaimAliasDomainOutcome
-                 */
-                ReclaimAliasDomainOutcome ReclaimAliasDomain(const Model::ReclaimAliasDomainRequest &request);
-                void ReclaimAliasDomainAsync(const Model::ReclaimAliasDomainRequest& request, const ReclaimAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ReclaimAliasDomainOutcomeCallable ReclaimAliasDomainCallable(const Model::ReclaimAliasDomainRequest& request);
-
-                /**
-                 *站点被其他用户接入后，验证了站点所有权之后，可以找回该站点。
-                 * @param req ReclaimZoneRequest
-                 * @return ReclaimZoneOutcome
-                 */
-                ReclaimZoneOutcome ReclaimZone(const Model::ReclaimZoneRequest &request);
-                void ReclaimZoneAsync(const Model::ReclaimZoneRequest& request, const ReclaimZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ReclaimZoneOutcomeCallable ReclaimZoneCallable(const Model::ReclaimZoneRequest& request);
-
-                /**
-                 *更新源站防护IP白名单
-                 * @param req UpdateOriginProtectionIPWhitelistRequest
-                 * @return UpdateOriginProtectionIPWhitelistOutcome
-                 */
-                UpdateOriginProtectionIPWhitelistOutcome UpdateOriginProtectionIPWhitelist(const Model::UpdateOriginProtectionIPWhitelistRequest &request);
-                void UpdateOriginProtectionIPWhitelistAsync(const Model::UpdateOriginProtectionIPWhitelistRequest& request, const UpdateOriginProtectionIPWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateOriginProtectionIPWhitelistOutcomeCallable UpdateOriginProtectionIPWhitelistCallable(const Model::UpdateOriginProtectionIPWhitelistRequest& request);
 
             };
         }

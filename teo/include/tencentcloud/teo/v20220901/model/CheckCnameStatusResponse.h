@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CIAM_V20220331_MODEL_CREATEUSERSTORERESPONSE_H_
-#define TENCENTCLOUD_CIAM_V20220331_MODEL_CREATEUSERSTORERESPONSE_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_CHECKCNAMESTATUSRESPONSE_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_CHECKCNAMESTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/CnameStatus.h>
 
 
 namespace TencentCloud
 {
-    namespace Ciam
+    namespace Teo
     {
-        namespace V20220331
+        namespace V20220901
         {
             namespace Model
             {
                 /**
-                * CreateUserStore返回参数结构体
+                * CheckCnameStatus返回参数结构体
                 */
-                class CreateUserStoreResponse : public AbstractModel
+                class CheckCnameStatusResponse : public AbstractModel
                 {
                 public:
-                    CreateUserStoreResponse();
-                    ~CreateUserStoreResponse() = default;
+                    CheckCnameStatusResponse();
+                    ~CheckCnameStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取用户目录ID
-                     * @return UserStoreId 用户目录ID
+                     * 获取域名Cname状态信息列表。
+                     * @return CnameStatus 域名Cname状态信息列表。
                      * 
                      */
-                    std::string GetUserStoreId() const;
+                    std::vector<CnameStatus> GetCnameStatus() const;
 
                     /**
-                     * 判断参数 UserStoreId 是否已赋值
-                     * @return UserStoreId 是否已赋值
+                     * 判断参数 CnameStatus 是否已赋值
+                     * @return CnameStatus 是否已赋值
                      * 
                      */
-                    bool UserStoreIdHasBeenSet() const;
+                    bool CnameStatusHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 用户目录ID
+                     * 域名Cname状态信息列表。
                      */
-                    std::string m_userStoreId;
-                    bool m_userStoreIdHasBeenSet;
+                    std::vector<CnameStatus> m_cnameStatus;
+                    bool m_cnameStatusHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CIAM_V20220331_MODEL_CREATEUSERSTORERESPONSE_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_CHECKCNAMESTATUSRESPONSE_H_

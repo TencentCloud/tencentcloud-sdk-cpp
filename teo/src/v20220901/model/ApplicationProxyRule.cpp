@@ -29,6 +29,7 @@ ApplicationProxyRule::ApplicationProxyRule() :
     m_statusHasBeenSet(false),
     m_forwardClientIpHasBeenSet(false),
     m_sessionPersistHasBeenSet(false),
+    m_sessionPersistTimeHasBeenSet(false),
     m_originPortHasBeenSet(false)
 {
 }
@@ -124,6 +125,16 @@ CoreInternalOutcome ApplicationProxyRule::Deserialize(const rapidjson::Value &va
         m_sessionPersistHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionPersistTime") && !value["SessionPersistTime"].IsNull())
+    {
+        if (!value["SessionPersistTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationProxyRule.SessionPersistTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionPersistTime = value["SessionPersistTime"].GetUint64();
+        m_sessionPersistTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("OriginPort") && !value["OriginPort"].IsNull())
     {
         if (!value["OriginPort"].IsString())
@@ -213,6 +224,14 @@ void ApplicationProxyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SessionPersist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionPersist, allocator);
+    }
+
+    if (m_sessionPersistTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionPersistTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionPersistTime, allocator);
     }
 
     if (m_originPortHasBeenSet)
@@ -352,6 +371,22 @@ void ApplicationProxyRule::SetSessionPersist(const bool& _sessionPersist)
 bool ApplicationProxyRule::SessionPersistHasBeenSet() const
 {
     return m_sessionPersistHasBeenSet;
+}
+
+uint64_t ApplicationProxyRule::GetSessionPersistTime() const
+{
+    return m_sessionPersistTime;
+}
+
+void ApplicationProxyRule::SetSessionPersistTime(const uint64_t& _sessionPersistTime)
+{
+    m_sessionPersistTime = _sessionPersistTime;
+    m_sessionPersistTimeHasBeenSet = true;
+}
+
+bool ApplicationProxyRule::SessionPersistTimeHasBeenSet() const
+{
+    return m_sessionPersistTimeHasBeenSet;
 }
 
 string ApplicationProxyRule::GetOriginPort() const

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ciam::V20220331::Model;
 using namespace std;
 
-CreateUserGroupResponse::CreateUserGroupResponse()
+CreateUserGroupResponse::CreateUserGroupResponse() :
+    m_userGroupIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateUserGroupResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("UserGroupId") && !rsp["UserGroupId"].IsNull())
+    {
+        if (!rsp["UserGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userGroupId = string(rsp["UserGroupId"].GetString());
+        m_userGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateUserGroupResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_userGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userGroupId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateUserGroupResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateUserGroupResponse::GetUserGroupId() const
+{
+    return m_userGroupId;
+}
+
+bool CreateUserGroupResponse::UserGroupIdHasBeenSet() const
+{
+    return m_userGroupIdHasBeenSet;
+}
 
 

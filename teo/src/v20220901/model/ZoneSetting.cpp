@@ -42,7 +42,8 @@ ZoneSetting::ZoneSetting() :
     m_clientIpCountryHasBeenSet(false),
     m_grpcHasBeenSet(false),
     m_imageOptimizeHasBeenSet(false),
-    m_accelerateMainlandHasBeenSet(false)
+    m_accelerateMainlandHasBeenSet(false),
+    m_standardDebugHasBeenSet(false)
 {
 }
 
@@ -411,6 +412,23 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_accelerateMainlandHasBeenSet = true;
     }
 
+    if (value.HasMember("StandardDebug") && !value["StandardDebug"].IsNull())
+    {
+        if (!value["StandardDebug"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.StandardDebug` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_standardDebug.Deserialize(value["StandardDebug"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_standardDebugHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -612,6 +630,15 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_accelerateMainland.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_standardDebugHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardDebug";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_standardDebug.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -967,5 +994,21 @@ void ZoneSetting::SetAccelerateMainland(const AccelerateMainland& _accelerateMai
 bool ZoneSetting::AccelerateMainlandHasBeenSet() const
 {
     return m_accelerateMainlandHasBeenSet;
+}
+
+StandardDebug ZoneSetting::GetStandardDebug() const
+{
+    return m_standardDebug;
+}
+
+void ZoneSetting::SetStandardDebug(const StandardDebug& _standardDebug)
+{
+    m_standardDebug = _standardDebug;
+    m_standardDebugHasBeenSet = true;
+}
+
+bool ZoneSetting::StandardDebugHasBeenSet() const
+{
+    return m_standardDebugHasBeenSet;
 }
 

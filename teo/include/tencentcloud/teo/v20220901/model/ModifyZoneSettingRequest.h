@@ -40,6 +40,7 @@
 #include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 #include <tencentcloud/teo/v20220901/model/Grpc.h>
 #include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
+#include <tencentcloud/teo/v20220901/model/StandardDebug.h>
 
 
 namespace TencentCloud
@@ -557,6 +558,27 @@ namespace TencentCloud
                      */
                     bool ImageOptimizeHasBeenSet() const;
 
+                    /**
+                     * 获取标准 Debug 配置。
+                     * @return StandardDebug 标准 Debug 配置。
+                     * 
+                     */
+                    StandardDebug GetStandardDebug() const;
+
+                    /**
+                     * 设置标准 Debug 配置。
+                     * @param _standardDebug 标准 Debug 配置。
+                     * 
+                     */
+                    void SetStandardDebug(const StandardDebug& _standardDebug);
+
+                    /**
+                     * 判断参数 StandardDebug 是否已赋值
+                     * @return StandardDebug 是否已赋值
+                     * 
+                     */
+                    bool StandardDebugHasBeenSet() const;
+
                 private:
 
                     /**
@@ -697,6 +719,12 @@ namespace TencentCloud
                      */
                     ImageOptimize m_imageOptimize;
                     bool m_imageOptimizeHasBeenSet;
+
+                    /**
+                     * 标准 Debug 配置。
+                     */
+                    StandardDebug m_standardDebug;
+                    bool m_standardDebugHasBeenSet;
 
                 };
             }

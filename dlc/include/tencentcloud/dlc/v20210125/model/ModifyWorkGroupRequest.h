@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool WorkGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取工作组描述
-                     * @return WorkGroupDescription 工作组描述
+                     * 获取工作组描述，最大字符数限制50
+                     * @return WorkGroupDescription 工作组描述，最大字符数限制50
                      * 
                      */
                     std::string GetWorkGroupDescription() const;
 
                     /**
-                     * 设置工作组描述
-                     * @param _workGroupDescription 工作组描述
+                     * 设置工作组描述，最大字符数限制50
+                     * @param _workGroupDescription 工作组描述，最大字符数限制50
                      * 
                      */
                     void SetWorkGroupDescription(const std::string& _workGroupDescription);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_workGroupIdHasBeenSet;
 
                     /**
-                     * 工作组描述
+                     * 工作组描述，最大字符数限制50
                      */
                     std::string m_workGroupDescription;
                     bool m_workGroupDescriptionHasBeenSet;

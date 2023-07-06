@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ciam/v20220331/model/CreateUserStoreResponse.h>
+#include <tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ciam::V20220331::Model;
+using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-CreateUserStoreResponse::CreateUserStoreResponse() :
-    m_userStoreIdHasBeenSet(false)
+CheckCnameStatusResponse::CheckCnameStatusResponse() :
+    m_cnameStatusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateUserStoreResponse::Deserialize(const string &payload)
+CoreInternalOutcome CheckCnameStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,49 @@ CoreInternalOutcome CreateUserStoreResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("UserStoreId") && !rsp["UserStoreId"].IsNull())
+    if (rsp.HasMember("CnameStatus") && !rsp["CnameStatus"].IsNull())
     {
-        if (!rsp["UserStoreId"].IsString())
+        if (!rsp["CnameStatus"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CnameStatus` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CnameStatus"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `UserStoreId` IsString=false incorrectly").SetRequestId(requestId));
+            CnameStatus item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cnameStatus.push_back(item);
         }
-        m_userStoreId = string(rsp["UserStoreId"].GetString());
-        m_userStoreIdHasBeenSet = true;
+        m_cnameStatusHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateUserStoreResponse::ToJsonString() const
+string CheckCnameStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_userStoreIdHasBeenSet)
+    if (m_cnameStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserStoreId";
+        string key = "CnameStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_userStoreId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cnameStatus.begin(); itr != m_cnameStatus.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +119,14 @@ string CreateUserStoreResponse::ToJsonString() const
 }
 
 
-string CreateUserStoreResponse::GetUserStoreId() const
+vector<CnameStatus> CheckCnameStatusResponse::GetCnameStatus() const
 {
-    return m_userStoreId;
+    return m_cnameStatus;
 }
 
-bool CreateUserStoreResponse::UserStoreIdHasBeenSet() const
+bool CheckCnameStatusResponse::CnameStatusHasBeenSet() const
 {
-    return m_userStoreIdHasBeenSet;
+    return m_cnameStatusHasBeenSet;
 }
 
 

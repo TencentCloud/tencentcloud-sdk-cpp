@@ -113,7 +113,7 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetIgnoreCacheControl() const;
 
@@ -126,14 +126,14 @@ namespace TencentCloud
 <li>on：开启；</li>
 <li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIgnoreCacheControl(const std::string& _ignoreCacheControl);
 
                     /**
                      * 判断参数 IgnoreCacheControl 是否已赋值
                      * @return IgnoreCacheControl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IgnoreCacheControlHasBeenSet() const;
 

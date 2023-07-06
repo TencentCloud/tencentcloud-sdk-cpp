@@ -83,42 +83,42 @@ TeoClient::BindZoneToPlanOutcomeCallable TeoClient::BindZoneToPlanCallable(const
     return task->get_future();
 }
 
-TeoClient::CheckCertificateOutcome TeoClient::CheckCertificate(const CheckCertificateRequest &request)
+TeoClient::CheckCnameStatusOutcome TeoClient::CheckCnameStatus(const CheckCnameStatusRequest &request)
 {
-    auto outcome = MakeRequest(request, "CheckCertificate");
+    auto outcome = MakeRequest(request, "CheckCnameStatus");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        CheckCertificateResponse rsp = CheckCertificateResponse();
+        CheckCnameStatusResponse rsp = CheckCnameStatusResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return CheckCertificateOutcome(rsp);
+            return CheckCnameStatusOutcome(rsp);
         else
-            return CheckCertificateOutcome(o.GetError());
+            return CheckCnameStatusOutcome(o.GetError());
     }
     else
     {
-        return CheckCertificateOutcome(outcome.GetError());
+        return CheckCnameStatusOutcome(outcome.GetError());
     }
 }
 
-void TeoClient::CheckCertificateAsync(const CheckCertificateRequest& request, const CheckCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TeoClient::CheckCnameStatusAsync(const CheckCnameStatusRequest& request, const CheckCnameStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->CheckCertificate(request), context);
+        handler(this, request, this->CheckCnameStatus(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-TeoClient::CheckCertificateOutcomeCallable TeoClient::CheckCertificateCallable(const CheckCertificateRequest &request)
+TeoClient::CheckCnameStatusOutcomeCallable TeoClient::CheckCnameStatusCallable(const CheckCnameStatusRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<CheckCertificateOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<CheckCnameStatusOutcome()>>(
         [this, request]()
         {
-            return this->CheckCertificate(request);
+            return this->CheckCnameStatus(request);
         }
     );
 
@@ -298,49 +298,6 @@ TeoClient::CreateApplicationProxyRuleOutcomeCallable TeoClient::CreateApplicatio
     return task->get_future();
 }
 
-TeoClient::CreateCredentialOutcome TeoClient::CreateCredential(const CreateCredentialRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCredential");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCredentialResponse rsp = CreateCredentialResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCredentialOutcome(rsp);
-        else
-            return CreateCredentialOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCredentialOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::CreateCredentialAsync(const CreateCredentialRequest& request, const CreateCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCredential(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::CreateCredentialOutcomeCallable TeoClient::CreateCredentialCallable(const CreateCredentialRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCredentialOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCredential(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::CreateOriginGroupOutcome TeoClient::CreateOriginGroup(const CreateOriginGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOriginGroup");
@@ -513,49 +470,6 @@ TeoClient::CreatePurgeTaskOutcomeCallable TeoClient::CreatePurgeTaskCallable(con
     return task->get_future();
 }
 
-TeoClient::CreateReplayTaskOutcome TeoClient::CreateReplayTask(const CreateReplayTaskRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateReplayTask");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateReplayTaskResponse rsp = CreateReplayTaskResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateReplayTaskOutcome(rsp);
-        else
-            return CreateReplayTaskOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateReplayTaskOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::CreateReplayTaskAsync(const CreateReplayTaskRequest& request, const CreateReplayTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateReplayTask(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::CreateReplayTaskOutcomeCallable TeoClient::CreateReplayTaskCallable(const CreateReplayTaskRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateReplayTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateReplayTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::CreateRuleOutcome TeoClient::CreateRule(const CreateRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRule");
@@ -635,49 +549,6 @@ TeoClient::CreateSecurityIPGroupOutcomeCallable TeoClient::CreateSecurityIPGroup
         [this, request]()
         {
             return this->CreateSecurityIPGroup(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::CreateSpeedTestingOutcome TeoClient::CreateSpeedTesting(const CreateSpeedTestingRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateSpeedTesting");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateSpeedTestingResponse rsp = CreateSpeedTestingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateSpeedTestingOutcome(rsp);
-        else
-            return CreateSpeedTestingOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateSpeedTestingOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::CreateSpeedTestingAsync(const CreateSpeedTestingRequest& request, const CreateSpeedTestingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSpeedTesting(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::CreateSpeedTestingOutcomeCallable TeoClient::CreateSpeedTestingCallable(const CreateSpeedTestingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateSpeedTestingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSpeedTesting(request);
         }
     );
 
@@ -1115,49 +986,6 @@ TeoClient::DescribeAccelerationDomainsOutcomeCallable TeoClient::DescribeAcceler
     return task->get_future();
 }
 
-TeoClient::DescribeAddableEntityListOutcome TeoClient::DescribeAddableEntityList(const DescribeAddableEntityListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAddableEntityList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAddableEntityListResponse rsp = DescribeAddableEntityListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAddableEntityListOutcome(rsp);
-        else
-            return DescribeAddableEntityListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAddableEntityListOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeAddableEntityListAsync(const DescribeAddableEntityListRequest& request, const DescribeAddableEntityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddableEntityList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeAddableEntityListOutcomeCallable TeoClient::DescribeAddableEntityListCallable(const DescribeAddableEntityListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAddableEntityListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddableEntityList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeAliasDomainsOutcome TeoClient::DescribeAliasDomains(const DescribeAliasDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAliasDomains");
@@ -1280,49 +1108,6 @@ TeoClient::DescribeAvailablePlansOutcomeCallable TeoClient::DescribeAvailablePla
         [this, request]()
         {
             return this->DescribeAvailablePlans(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeClientRuleListOutcome TeoClient::DescribeClientRuleList(const DescribeClientRuleListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeClientRuleList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeClientRuleListResponse rsp = DescribeClientRuleListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeClientRuleListOutcome(rsp);
-        else
-            return DescribeClientRuleListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeClientRuleListOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeClientRuleListAsync(const DescribeClientRuleListRequest& request, const DescribeClientRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClientRuleList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeClientRuleListOutcomeCallable TeoClient::DescribeClientRuleListCallable(const DescribeClientRuleListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeClientRuleListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClientRuleList(request);
         }
     );
 
@@ -1545,49 +1330,6 @@ TeoClient::DescribeDefaultCertificatesOutcomeCallable TeoClient::DescribeDefault
     return task->get_future();
 }
 
-TeoClient::DescribeDnsDataOutcome TeoClient::DescribeDnsData(const DescribeDnsDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDnsData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDnsDataResponse rsp = DescribeDnsDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDnsDataOutcome(rsp);
-        else
-            return DescribeDnsDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDnsDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeDnsDataAsync(const DescribeDnsDataRequest& request, const DescribeDnsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDnsData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeDnsDataOutcomeCallable TeoClient::DescribeDnsDataCallable(const DescribeDnsDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDnsDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDnsData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeHostsSettingOutcome TeoClient::DescribeHostsSetting(const DescribeHostsSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHostsSetting");
@@ -1667,92 +1409,6 @@ TeoClient::DescribeIdentificationsOutcomeCallable TeoClient::DescribeIdentificat
         [this, request]()
         {
             return this->DescribeIdentifications(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeLogSetsOutcome TeoClient::DescribeLogSets(const DescribeLogSetsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeLogSets");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeLogSetsResponse rsp = DescribeLogSetsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeLogSetsOutcome(rsp);
-        else
-            return DescribeLogSetsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeLogSetsOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeLogSetsAsync(const DescribeLogSetsRequest& request, const DescribeLogSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogSets(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeLogSetsOutcomeCallable TeoClient::DescribeLogSetsCallable(const DescribeLogSetsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeLogSetsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogSets(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeLogTopicTasksOutcome TeoClient::DescribeLogTopicTasks(const DescribeLogTopicTasksRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeLogTopicTasks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeLogTopicTasksResponse rsp = DescribeLogTopicTasksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeLogTopicTasksOutcome(rsp);
-        else
-            return DescribeLogTopicTasksOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeLogTopicTasksOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeLogTopicTasksAsync(const DescribeLogTopicTasksRequest& request, const DescribeLogTopicTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLogTopicTasks(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeLogTopicTasksOutcomeCallable TeoClient::DescribeLogTopicTasksCallable(const DescribeLogTopicTasksRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeLogTopicTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLogTopicTasks(request);
         }
     );
 
@@ -2061,178 +1717,6 @@ TeoClient::DescribeRulesSettingOutcomeCallable TeoClient::DescribeRulesSettingCa
     return task->get_future();
 }
 
-TeoClient::DescribeSingleL7AnalysisDataOutcome TeoClient::DescribeSingleL7AnalysisData(const DescribeSingleL7AnalysisDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSingleL7AnalysisData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSingleL7AnalysisDataResponse rsp = DescribeSingleL7AnalysisDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSingleL7AnalysisDataOutcome(rsp);
-        else
-            return DescribeSingleL7AnalysisDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSingleL7AnalysisDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeSingleL7AnalysisDataAsync(const DescribeSingleL7AnalysisDataRequest& request, const DescribeSingleL7AnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSingleL7AnalysisData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeSingleL7AnalysisDataOutcomeCallable TeoClient::DescribeSingleL7AnalysisDataCallable(const DescribeSingleL7AnalysisDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSingleL7AnalysisDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSingleL7AnalysisData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeSpeedTestingDetailsOutcome TeoClient::DescribeSpeedTestingDetails(const DescribeSpeedTestingDetailsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSpeedTestingDetails");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSpeedTestingDetailsResponse rsp = DescribeSpeedTestingDetailsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSpeedTestingDetailsOutcome(rsp);
-        else
-            return DescribeSpeedTestingDetailsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSpeedTestingDetailsOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeSpeedTestingDetailsAsync(const DescribeSpeedTestingDetailsRequest& request, const DescribeSpeedTestingDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpeedTestingDetails(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeSpeedTestingDetailsOutcomeCallable TeoClient::DescribeSpeedTestingDetailsCallable(const DescribeSpeedTestingDetailsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSpeedTestingDetailsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpeedTestingDetails(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeSpeedTestingMetricDataOutcome TeoClient::DescribeSpeedTestingMetricData(const DescribeSpeedTestingMetricDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSpeedTestingMetricData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSpeedTestingMetricDataResponse rsp = DescribeSpeedTestingMetricDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSpeedTestingMetricDataOutcome(rsp);
-        else
-            return DescribeSpeedTestingMetricDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSpeedTestingMetricDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeSpeedTestingMetricDataAsync(const DescribeSpeedTestingMetricDataRequest& request, const DescribeSpeedTestingMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpeedTestingMetricData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeSpeedTestingMetricDataOutcomeCallable TeoClient::DescribeSpeedTestingMetricDataCallable(const DescribeSpeedTestingMetricDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSpeedTestingMetricDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpeedTestingMetricData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeSpeedTestingQuotaOutcome TeoClient::DescribeSpeedTestingQuota(const DescribeSpeedTestingQuotaRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSpeedTestingQuota");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSpeedTestingQuotaResponse rsp = DescribeSpeedTestingQuotaResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSpeedTestingQuotaOutcome(rsp);
-        else
-            return DescribeSpeedTestingQuotaOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSpeedTestingQuotaOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeSpeedTestingQuotaAsync(const DescribeSpeedTestingQuotaRequest& request, const DescribeSpeedTestingQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSpeedTestingQuota(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeSpeedTestingQuotaOutcomeCallable TeoClient::DescribeSpeedTestingQuotaCallable(const DescribeSpeedTestingQuotaRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSpeedTestingQuotaOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSpeedTestingQuota(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeTimingL4DataOutcome TeoClient::DescribeTimingL4Data(const DescribeTimingL4DataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTimingL4Data");
@@ -2362,49 +1846,6 @@ TeoClient::DescribeTimingL7CacheDataOutcomeCallable TeoClient::DescribeTimingL7C
     return task->get_future();
 }
 
-TeoClient::DescribeTimingL7SourceDataOutcome TeoClient::DescribeTimingL7SourceData(const DescribeTimingL7SourceDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTimingL7SourceData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTimingL7SourceDataResponse rsp = DescribeTimingL7SourceDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTimingL7SourceDataOutcome(rsp);
-        else
-            return DescribeTimingL7SourceDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTimingL7SourceDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeTimingL7SourceDataAsync(const DescribeTimingL7SourceDataRequest& request, const DescribeTimingL7SourceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTimingL7SourceData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeTimingL7SourceDataOutcomeCallable TeoClient::DescribeTimingL7SourceDataCallable(const DescribeTimingL7SourceDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeTimingL7SourceDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTimingL7SourceData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeTopL7AnalysisDataOutcome TeoClient::DescribeTopL7AnalysisData(const DescribeTopL7AnalysisDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopL7AnalysisData");
@@ -2484,307 +1925,6 @@ TeoClient::DescribeTopL7CacheDataOutcomeCallable TeoClient::DescribeTopL7CacheDa
         [this, request]()
         {
             return this->DescribeTopL7CacheData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebManagedRulesDataOutcome TeoClient::DescribeWebManagedRulesData(const DescribeWebManagedRulesDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebManagedRulesData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebManagedRulesDataResponse rsp = DescribeWebManagedRulesDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebManagedRulesDataOutcome(rsp);
-        else
-            return DescribeWebManagedRulesDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebManagedRulesDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebManagedRulesDataAsync(const DescribeWebManagedRulesDataRequest& request, const DescribeWebManagedRulesDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebManagedRulesData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebManagedRulesDataOutcomeCallable TeoClient::DescribeWebManagedRulesDataCallable(const DescribeWebManagedRulesDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebManagedRulesDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebManagedRulesData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebManagedRulesHitRuleDetailOutcome TeoClient::DescribeWebManagedRulesHitRuleDetail(const DescribeWebManagedRulesHitRuleDetailRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebManagedRulesHitRuleDetail");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebManagedRulesHitRuleDetailResponse rsp = DescribeWebManagedRulesHitRuleDetailResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebManagedRulesHitRuleDetailOutcome(rsp);
-        else
-            return DescribeWebManagedRulesHitRuleDetailOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebManagedRulesHitRuleDetailOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebManagedRulesHitRuleDetailAsync(const DescribeWebManagedRulesHitRuleDetailRequest& request, const DescribeWebManagedRulesHitRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebManagedRulesHitRuleDetail(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebManagedRulesHitRuleDetailOutcomeCallable TeoClient::DescribeWebManagedRulesHitRuleDetailCallable(const DescribeWebManagedRulesHitRuleDetailRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebManagedRulesHitRuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebManagedRulesHitRuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebManagedRulesLogOutcome TeoClient::DescribeWebManagedRulesLog(const DescribeWebManagedRulesLogRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebManagedRulesLog");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebManagedRulesLogResponse rsp = DescribeWebManagedRulesLogResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebManagedRulesLogOutcome(rsp);
-        else
-            return DescribeWebManagedRulesLogOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebManagedRulesLogOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebManagedRulesLogAsync(const DescribeWebManagedRulesLogRequest& request, const DescribeWebManagedRulesLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebManagedRulesLog(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebManagedRulesLogOutcomeCallable TeoClient::DescribeWebManagedRulesLogCallable(const DescribeWebManagedRulesLogRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebManagedRulesLogOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebManagedRulesLog(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebProtectionClientIpListOutcome TeoClient::DescribeWebProtectionClientIpList(const DescribeWebProtectionClientIpListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebProtectionClientIpList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebProtectionClientIpListResponse rsp = DescribeWebProtectionClientIpListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebProtectionClientIpListOutcome(rsp);
-        else
-            return DescribeWebProtectionClientIpListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebProtectionClientIpListOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebProtectionClientIpListAsync(const DescribeWebProtectionClientIpListRequest& request, const DescribeWebProtectionClientIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebProtectionClientIpList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebProtectionClientIpListOutcomeCallable TeoClient::DescribeWebProtectionClientIpListCallable(const DescribeWebProtectionClientIpListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebProtectionClientIpListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebProtectionClientIpList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebProtectionDataOutcome TeoClient::DescribeWebProtectionData(const DescribeWebProtectionDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebProtectionData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebProtectionDataResponse rsp = DescribeWebProtectionDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebProtectionDataOutcome(rsp);
-        else
-            return DescribeWebProtectionDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebProtectionDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebProtectionDataAsync(const DescribeWebProtectionDataRequest& request, const DescribeWebProtectionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebProtectionData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebProtectionDataOutcomeCallable TeoClient::DescribeWebProtectionDataCallable(const DescribeWebProtectionDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebProtectionDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebProtectionData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebProtectionHitRuleDetailOutcome TeoClient::DescribeWebProtectionHitRuleDetail(const DescribeWebProtectionHitRuleDetailRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebProtectionHitRuleDetail");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebProtectionHitRuleDetailResponse rsp = DescribeWebProtectionHitRuleDetailResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebProtectionHitRuleDetailOutcome(rsp);
-        else
-            return DescribeWebProtectionHitRuleDetailOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebProtectionHitRuleDetailOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebProtectionHitRuleDetailAsync(const DescribeWebProtectionHitRuleDetailRequest& request, const DescribeWebProtectionHitRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebProtectionHitRuleDetail(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebProtectionHitRuleDetailOutcomeCallable TeoClient::DescribeWebProtectionHitRuleDetailCallable(const DescribeWebProtectionHitRuleDetailRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebProtectionHitRuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebProtectionHitRuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeWebProtectionTopDataOutcome TeoClient::DescribeWebProtectionTopData(const DescribeWebProtectionTopDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWebProtectionTopData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWebProtectionTopDataResponse rsp = DescribeWebProtectionTopDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWebProtectionTopDataOutcome(rsp);
-        else
-            return DescribeWebProtectionTopDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWebProtectionTopDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeWebProtectionTopDataAsync(const DescribeWebProtectionTopDataRequest& request, const DescribeWebProtectionTopDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWebProtectionTopData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeWebProtectionTopDataOutcomeCallable TeoClient::DescribeWebProtectionTopDataCallable(const DescribeWebProtectionTopDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWebProtectionTopDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWebProtectionTopData(request);
         }
     );
 
@@ -3351,49 +2491,6 @@ TeoClient::ModifyApplicationProxyStatusOutcomeCallable TeoClient::ModifyApplicat
     return task->get_future();
 }
 
-TeoClient::ModifyDefaultCertificateOutcome TeoClient::ModifyDefaultCertificate(const ModifyDefaultCertificateRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyDefaultCertificate");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyDefaultCertificateResponse rsp = ModifyDefaultCertificateResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyDefaultCertificateOutcome(rsp);
-        else
-            return ModifyDefaultCertificateOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyDefaultCertificateOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ModifyDefaultCertificateAsync(const ModifyDefaultCertificateRequest& request, const ModifyDefaultCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDefaultCertificate(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ModifyDefaultCertificateOutcomeCallable TeoClient::ModifyDefaultCertificateCallable(const ModifyDefaultCertificateRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyDefaultCertificateOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDefaultCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::ModifyHostsCertificateOutcome TeoClient::ModifyHostsCertificate(const ModifyHostsCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyHostsCertificate");
@@ -3523,49 +2620,6 @@ TeoClient::ModifyRuleOutcomeCallable TeoClient::ModifyRuleCallable(const ModifyR
     return task->get_future();
 }
 
-TeoClient::ModifyRulePriorityOutcome TeoClient::ModifyRulePriority(const ModifyRulePriorityRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyRulePriority");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyRulePriorityResponse rsp = ModifyRulePriorityResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyRulePriorityOutcome(rsp);
-        else
-            return ModifyRulePriorityOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyRulePriorityOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ModifyRulePriorityAsync(const ModifyRulePriorityRequest& request, const ModifyRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyRulePriority(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ModifyRulePriorityOutcomeCallable TeoClient::ModifyRulePriorityCallable(const ModifyRulePriorityRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyRulePriorityOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyRulePriority(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::ModifySecurityIPGroupOutcome TeoClient::ModifySecurityIPGroup(const ModifySecurityIPGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySecurityIPGroup");
@@ -3645,49 +2699,6 @@ TeoClient::ModifySecurityPolicyOutcomeCallable TeoClient::ModifySecurityPolicyCa
         [this, request]()
         {
             return this->ModifySecurityPolicy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::ModifySecurityWafGroupPolicyOutcome TeoClient::ModifySecurityWafGroupPolicy(const ModifySecurityWafGroupPolicyRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifySecurityWafGroupPolicy");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifySecurityWafGroupPolicyResponse rsp = ModifySecurityWafGroupPolicyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifySecurityWafGroupPolicyOutcome(rsp);
-        else
-            return ModifySecurityWafGroupPolicyOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifySecurityWafGroupPolicyOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ModifySecurityWafGroupPolicyAsync(const ModifySecurityWafGroupPolicyRequest& request, const ModifySecurityWafGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySecurityWafGroupPolicy(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ModifySecurityWafGroupPolicyOutcomeCallable TeoClient::ModifySecurityWafGroupPolicyCallable(const ModifySecurityWafGroupPolicyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifySecurityWafGroupPolicyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySecurityWafGroupPolicy(request);
         }
     );
 
@@ -3817,135 +2828,6 @@ TeoClient::ModifyZoneStatusOutcomeCallable TeoClient::ModifyZoneStatusCallable(c
         [this, request]()
         {
             return this->ModifyZoneStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::ReclaimAliasDomainOutcome TeoClient::ReclaimAliasDomain(const ReclaimAliasDomainRequest &request)
-{
-    auto outcome = MakeRequest(request, "ReclaimAliasDomain");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ReclaimAliasDomainResponse rsp = ReclaimAliasDomainResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ReclaimAliasDomainOutcome(rsp);
-        else
-            return ReclaimAliasDomainOutcome(o.GetError());
-    }
-    else
-    {
-        return ReclaimAliasDomainOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ReclaimAliasDomainAsync(const ReclaimAliasDomainRequest& request, const ReclaimAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReclaimAliasDomain(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ReclaimAliasDomainOutcomeCallable TeoClient::ReclaimAliasDomainCallable(const ReclaimAliasDomainRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ReclaimAliasDomainOutcome()>>(
-        [this, request]()
-        {
-            return this->ReclaimAliasDomain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::ReclaimZoneOutcome TeoClient::ReclaimZone(const ReclaimZoneRequest &request)
-{
-    auto outcome = MakeRequest(request, "ReclaimZone");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ReclaimZoneResponse rsp = ReclaimZoneResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ReclaimZoneOutcome(rsp);
-        else
-            return ReclaimZoneOutcome(o.GetError());
-    }
-    else
-    {
-        return ReclaimZoneOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ReclaimZoneAsync(const ReclaimZoneRequest& request, const ReclaimZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ReclaimZone(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ReclaimZoneOutcomeCallable TeoClient::ReclaimZoneCallable(const ReclaimZoneRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ReclaimZoneOutcome()>>(
-        [this, request]()
-        {
-            return this->ReclaimZone(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::UpdateOriginProtectionIPWhitelistOutcome TeoClient::UpdateOriginProtectionIPWhitelist(const UpdateOriginProtectionIPWhitelistRequest &request)
-{
-    auto outcome = MakeRequest(request, "UpdateOriginProtectionIPWhitelist");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UpdateOriginProtectionIPWhitelistResponse rsp = UpdateOriginProtectionIPWhitelistResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UpdateOriginProtectionIPWhitelistOutcome(rsp);
-        else
-            return UpdateOriginProtectionIPWhitelistOutcome(o.GetError());
-    }
-    else
-    {
-        return UpdateOriginProtectionIPWhitelistOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::UpdateOriginProtectionIPWhitelistAsync(const UpdateOriginProtectionIPWhitelistRequest& request, const UpdateOriginProtectionIPWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateOriginProtectionIPWhitelist(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::UpdateOriginProtectionIPWhitelistOutcomeCallable TeoClient::UpdateOriginProtectionIPWhitelistCallable(const UpdateOriginProtectionIPWhitelistRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<UpdateOriginProtectionIPWhitelistOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateOriginProtectionIPWhitelist(request);
         }
     );
 

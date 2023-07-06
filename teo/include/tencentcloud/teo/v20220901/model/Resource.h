@@ -297,6 +297,68 @@ namespace TencentCloud
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型，取值有：
+<li>plan：套餐类型；</li>
+<li>pay-as-you-go：后付费类型。</li>
+<li>value-added：增值服务类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Group 资源类型，取值有：
+<li>plan：套餐类型；</li>
+<li>pay-as-you-go：后付费类型。</li>
+<li>value-added：增值服务类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroup() const;
+
+                    /**
+                     * 设置资源类型，取值有：
+<li>plan：套餐类型；</li>
+<li>pay-as-you-go：后付费类型。</li>
+<li>value-added：增值服务类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _group 资源类型，取值有：
+<li>plan：套餐类型；</li>
+<li>pay-as-you-go：后付费类型。</li>
+<li>value-added：增值服务类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroup(const std::string& _group);
+
+                    /**
+                     * 判断参数 Group 是否已赋值
+                     * @return Group 是否已赋值
+                     * 
+                     */
+                    bool GroupHasBeenSet() const;
+
+                    /**
+                     * 获取当前资源绑定的站点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneNumber 当前资源绑定的站点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetZoneNumber() const;
+
+                    /**
+                     * 设置当前资源绑定的站点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneNumber 当前资源绑定的站点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneNumber(const int64_t& _zoneNumber);
+
+                    /**
+                     * 判断参数 ZoneNumber 是否已赋值
+                     * @return ZoneNumber 是否已赋值
+                     * 
+                     */
+                    bool ZoneNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +430,23 @@ namespace TencentCloud
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 资源类型，取值有：
+<li>plan：套餐类型；</li>
+<li>pay-as-you-go：后付费类型。</li>
+<li>value-added：增值服务类型。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_group;
+                    bool m_groupHasBeenSet;
+
+                    /**
+                     * 当前资源绑定的站点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_zoneNumber;
+                    bool m_zoneNumberHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@ using namespace std;
 CreatePurgeTaskRequest::CreatePurgeTaskRequest() :
     m_zoneIdHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_methodHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_encodeUrlHasBeenSet(false)
 {
@@ -51,6 +52,14 @@ string CreatePurgeTaskRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetsHasBeenSet)
@@ -112,6 +121,22 @@ void CreatePurgeTaskRequest::SetType(const string& _type)
 bool CreatePurgeTaskRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string CreatePurgeTaskRequest::GetMethod() const
+{
+    return m_method;
+}
+
+void CreatePurgeTaskRequest::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool CreatePurgeTaskRequest::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
 }
 
 vector<string> CreatePurgeTaskRequest::GetTargets() const

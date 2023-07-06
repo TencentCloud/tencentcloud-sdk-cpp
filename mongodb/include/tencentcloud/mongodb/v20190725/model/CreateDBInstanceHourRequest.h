@@ -548,23 +548,19 @@ namespace TencentCloud
                     bool AvailabilityZoneListHasBeenSet() const;
 
                     /**
-                     * 获取Mongos CPU 核数。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
-                     * @return MongosCpu Mongos CPU 核数。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * 获取Mongos CPU 核数。购买分片集群时，必须填写。
+
+                     * @return MongosCpu Mongos CPU 核数。购买分片集群时，必须填写。
+
                      * 
                      */
                     uint64_t GetMongosCpu() const;
 
                     /**
-                     * 设置Mongos CPU 核数。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
-                     * @param _mongosCpu Mongos CPU 核数。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * 设置Mongos CPU 核数。购买分片集群时，必须填写。
+
+                     * @param _mongosCpu Mongos CPU 核数。购买分片集群时，必须填写。
+
                      * 
                      */
                     void SetMongosCpu(const uint64_t& _mongosCpu);
@@ -577,23 +573,23 @@ namespace TencentCloud
                     bool MongosCpuHasBeenSet() const;
 
                     /**
-                     * 获取Mongos 内存大小。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
-                     * @return MongosMemory Mongos 内存大小。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * 获取Mongos 内存大小。购买分片集群时，必须填写。
+
+
+                     * @return MongosMemory Mongos 内存大小。购买分片集群时，必须填写。
+
+
                      * 
                      */
                     uint64_t GetMongosMemory() const;
 
                     /**
-                     * 设置Mongos 内存大小。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
-                     * @param _mongosMemory Mongos 内存大小。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * 设置Mongos 内存大小。购买分片集群时，必须填写。
+
+
+                     * @param _mongosMemory Mongos 内存大小。购买分片集群时，必须填写。
+
+
                      * 
                      */
                     void SetMongosMemory(const uint64_t& _mongosMemory);
@@ -606,23 +602,23 @@ namespace TencentCloud
                     bool MongosMemoryHasBeenSet() const;
 
                     /**
-                     * 获取Mongos 数量。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
-                     * @return MongosNodeNum Mongos 数量。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * 获取Mongos 数量。购买分片集群时，必须填写。
+
+
+                     * @return MongosNodeNum Mongos 数量。购买分片集群时，必须填写。
+
+
                      * 
                      */
                     uint64_t GetMongosNodeNum() const;
 
                     /**
-                     * 设置Mongos 数量。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
-                     * @param _mongosNodeNum Mongos 数量。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * 设置Mongos 数量。购买分片集群时，必须填写。
+
+
+                     * @param _mongosNodeNum Mongos 数量。购买分片集群时，必须填写。
+
+
                      * 
                      */
                     void SetMongosNodeNum(const uint64_t& _mongosNodeNum);
@@ -841,25 +837,24 @@ namespace TencentCloud
                     bool m_availabilityZoneListHasBeenSet;
 
                     /**
-                     * Mongos CPU 核数。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * Mongos CPU 核数。购买分片集群时，必须填写。
+
                      */
                     uint64_t m_mongosCpu;
                     bool m_mongosCpuHasBeenSet;
 
                     /**
-                     * Mongos 内存大小。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * Mongos 内存大小。购买分片集群时，必须填写。
+
+
                      */
                     uint64_t m_mongosMemory;
                     bool m_mongosMemoryHasBeenSet;
 
                     /**
-                     * Mongos 数量。
-- 购买MongoDB 3.6 WiredTiger存储引擎版本以上的分片集群时，可选择性配置该参数。
-- 若不配置该参数，则根据Mongod节点规格默认适配 Mongos 规格，默认规格免费。
+                     * Mongos 数量。购买分片集群时，必须填写。
+
+
                      */
                     uint64_t m_mongosNodeNum;
                     bool m_mongosNodeNumHasBeenSet;

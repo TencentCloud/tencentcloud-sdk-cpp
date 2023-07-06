@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣加
-                     * @return DiscountPrice 折扣加
+                     * 获取折扣价
+                     * @return DiscountPrice 折扣价
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置折扣加
-                     * @param _discountPrice 折扣加
+                     * 设置折扣价
+                     * @param _discountPrice 折扣价
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折扣加
+                     * 折扣价
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

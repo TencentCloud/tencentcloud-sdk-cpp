@@ -29,7 +29,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_registryChargeTypeHasBeenSet(false),
     m_registryChargePrepaidHasBeenSet(false),
     m_syncTagHasBeenSet(false),
-    m_enableCosMAZHasBeenSet(false)
+    m_enableCosMAZHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "EnableCosMAZ";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCosMAZ, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -216,6 +225,22 @@ void CreateInstanceRequest::SetEnableCosMAZ(const bool& _enableCosMAZ)
 bool CreateInstanceRequest::EnableCosMAZHasBeenSet() const
 {
     return m_enableCosMAZHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void CreateInstanceRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

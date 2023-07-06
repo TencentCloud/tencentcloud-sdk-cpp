@@ -44,6 +44,7 @@
 #include <tencentcloud/teo/v20220901/model/Grpc.h>
 #include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
 #include <tencentcloud/teo/v20220901/model/AccelerateMainland.h>
+#include <tencentcloud/teo/v20220901/model/StandardDebug.h>
 
 
 namespace TencentCloud
@@ -616,6 +617,31 @@ namespace TencentCloud
                      */
                     bool AccelerateMainlandHasBeenSet() const;
 
+                    /**
+                     * 获取标准 Debug 配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StandardDebug 标准 Debug 配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    StandardDebug GetStandardDebug() const;
+
+                    /**
+                     * 设置标准 Debug 配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _standardDebug 标准 Debug 配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStandardDebug(const StandardDebug& _standardDebug);
+
+                    /**
+                     * 判断参数 StandardDebug 是否已赋值
+                     * @return StandardDebug 是否已赋值
+                     * 
+                     */
+                    bool StandardDebugHasBeenSet() const;
+
                 private:
 
                     /**
@@ -771,6 +797,13 @@ namespace TencentCloud
                      */
                     AccelerateMainland m_accelerateMainland;
                     bool m_accelerateMainlandHasBeenSet;
+
+                    /**
+                     * 标准 Debug 配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StandardDebug m_standardDebug;
+                    bool m_standardDebugHasBeenSet;
 
                 };
             }
