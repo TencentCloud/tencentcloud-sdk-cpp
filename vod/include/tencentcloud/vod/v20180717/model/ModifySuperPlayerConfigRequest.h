@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool ImageSpriteDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取播放器对不于不同分辨率的子流展示名字。
-                     * @return ResolutionNames 播放器对不于不同分辨率的子流展示名字。
+                     * 获取播放器对于不同分辨率的子流展示名字。
+                     * @return ResolutionNames 播放器对于不同分辨率的子流展示名字。
                      * 
                      */
                     std::vector<ResolutionNameInfo> GetResolutionNames() const;
 
                     /**
-                     * 设置播放器对不于不同分辨率的子流展示名字。
-                     * @param _resolutionNames 播放器对不于不同分辨率的子流展示名字。
+                     * 设置播放器对于不同分辨率的子流展示名字。
+                     * @param _resolutionNames 播放器对于不同分辨率的子流展示名字。
                      * 
                      */
                     void SetResolutionNames(const std::vector<ResolutionNameInfo>& _resolutionNames);
@@ -384,7 +384,7 @@ namespace TencentCloud
                     bool m_imageSpriteDefinitionHasBeenSet;
 
                     /**
-                     * 播放器对不于不同分辨率的子流展示名字。
+                     * 播放器对于不同分辨率的子流展示名字。
                      */
                     std::vector<ResolutionNameInfo> m_resolutionNames;
                     bool m_resolutionNamesHasBeenSet;

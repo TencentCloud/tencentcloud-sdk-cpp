@@ -132,23 +132,86 @@ namespace TencentCloud
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-                     * @return Ipv6ISP ipv6运营商如下：
+                     * @return ISPType ipv6运营商如下：
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
                      * 
                      */
-                    std::string GetIpv6ISP() const;
+                    std::string GetISPType() const;
 
                     /**
                      * 设置ipv6运营商如下：
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
-                     * @param _ipv6ISP ipv6运营商如下：
+                     * @param _iSPType ipv6运营商如下：
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
+                     * 
+                     */
+                    void SetISPType(const std::string& _iSPType);
+
+                    /**
+                     * 判断参数 ISPType 是否已赋值
+                     * @return ISPType 是否已赋值
+                     * 
+                     */
+                    bool ISPTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否跳过校验一个网卡只能分配一个IPv6 CIDR。该字段通常为true（用于兼容存量子机只有一个地址的情形）。
+                     * @return SkipCheckIPv6Address 是否跳过校验一个网卡只能分配一个IPv6 CIDR。该字段通常为true（用于兼容存量子机只有一个地址的情形）。
+                     * 
+                     */
+                    bool GetSkipCheckIPv6Address() const;
+
+                    /**
+                     * 设置是否跳过校验一个网卡只能分配一个IPv6 CIDR。该字段通常为true（用于兼容存量子机只有一个地址的情形）。
+                     * @param _skipCheckIPv6Address 是否跳过校验一个网卡只能分配一个IPv6 CIDR。该字段通常为true（用于兼容存量子机只有一个地址的情形）。
+                     * 
+                     */
+                    void SetSkipCheckIPv6Address(const bool& _skipCheckIPv6Address);
+
+                    /**
+                     * 判断参数 SkipCheckIPv6Address 是否已赋值
+                     * @return SkipCheckIPv6Address 是否已赋值
+                     * 
+                     */
+                    bool SkipCheckIPv6AddressHasBeenSet() const;
+
+                    /**
+                     * 获取是否跳过自动开通公网带宽。通常为true(根据运营系统的用户配置来决定是否自动开通，以支持当前子机购买时的行为）。
+                     * @return SkipAllocateBandwidth 是否跳过自动开通公网带宽。通常为true(根据运营系统的用户配置来决定是否自动开通，以支持当前子机购买时的行为）。
+                     * 
+                     */
+                    bool GetSkipAllocateBandwidth() const;
+
+                    /**
+                     * 设置是否跳过自动开通公网带宽。通常为true(根据运营系统的用户配置来决定是否自动开通，以支持当前子机购买时的行为）。
+                     * @param _skipAllocateBandwidth 是否跳过自动开通公网带宽。通常为true(根据运营系统的用户配置来决定是否自动开通，以支持当前子机购买时的行为）。
+                     * 
+                     */
+                    void SetSkipAllocateBandwidth(const bool& _skipAllocateBandwidth);
+
+                    /**
+                     * 判断参数 SkipAllocateBandwidth 是否已赋值
+                     * @return SkipAllocateBandwidth 是否已赋值
+                     * 
+                     */
+                    bool SkipAllocateBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取该字段没有使用（已过期）。
+                     * @return Ipv6ISP 该字段没有使用（已过期）。
+                     * 
+                     */
+                    std::string GetIpv6ISP() const;
+
+                    /**
+                     * 设置该字段没有使用（已过期）。
+                     * @param _ipv6ISP 该字段没有使用（已过期）。
                      * 
                      */
                     void SetIpv6ISP(const std::string& _ipv6ISP);
@@ -191,6 +254,24 @@ CMCC：中国移动
 CTCC：中国电信
 CUCC：中国联通
 CMCC：中国移动
+                     */
+                    std::string m_iSPType;
+                    bool m_iSPTypeHasBeenSet;
+
+                    /**
+                     * 是否跳过校验一个网卡只能分配一个IPv6 CIDR。该字段通常为true（用于兼容存量子机只有一个地址的情形）。
+                     */
+                    bool m_skipCheckIPv6Address;
+                    bool m_skipCheckIPv6AddressHasBeenSet;
+
+                    /**
+                     * 是否跳过自动开通公网带宽。通常为true(根据运营系统的用户配置来决定是否自动开通，以支持当前子机购买时的行为）。
+                     */
+                    bool m_skipAllocateBandwidth;
+                    bool m_skipAllocateBandwidthHasBeenSet;
+
+                    /**
+                     * 该字段没有使用（已过期）。
                      */
                     std::string m_ipv6ISP;
                     bool m_ipv6ISPHasBeenSet;

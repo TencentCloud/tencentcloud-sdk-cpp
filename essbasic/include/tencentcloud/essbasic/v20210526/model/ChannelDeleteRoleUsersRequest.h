@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代理信息
-                     * @return Agent 代理信息
+                     * 获取代理信息此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * @return Agent 代理信息此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理信息
-                     * @param _agent 代理信息
+                     * 设置代理信息此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * @param _agent 代理信息此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -152,7 +152,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代理信息
+                     * 代理信息此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

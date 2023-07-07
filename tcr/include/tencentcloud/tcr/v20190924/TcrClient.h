@@ -61,6 +61,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateServiceAccountRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateServiceAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSignatureRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSignatureResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSignaturePolicyRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryTagsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteServiceAccountRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteServiceAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleRequest.h>
@@ -183,6 +187,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeServiceAccountsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeServiceAccountsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionTaskRequest.h>
@@ -227,6 +233,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyServiceAccountRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyServiceAccountResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h>
@@ -310,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSecurityPolicyResponse> CreateSecurityPolicyOutcome;
                 typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateSecurityPolicyRequest&, CreateSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateServiceAccountResponse> CreateServiceAccountOutcome;
+                typedef std::future<CreateServiceAccountOutcome> CreateServiceAccountOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateServiceAccountRequest&, CreateServiceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSignatureResponse> CreateSignatureOutcome;
                 typedef std::future<CreateSignatureOutcome> CreateSignatureOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateSignatureRequest&, CreateSignatureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignatureAsyncHandler;
@@ -385,6 +396,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSecurityPolicyResponse> DeleteSecurityPolicyOutcome;
                 typedef std::future<DeleteSecurityPolicyOutcome> DeleteSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteSecurityPolicyRequest&, DeleteSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteServiceAccountResponse> DeleteServiceAccountOutcome;
+                typedef std::future<DeleteServiceAccountOutcome> DeleteServiceAccountOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteServiceAccountRequest&, DeleteServiceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSignaturePolicyResponse> DeleteSignaturePolicyOutcome;
                 typedef std::future<DeleteSignaturePolicyOutcome> DeleteSignaturePolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteSignaturePolicyRequest&, DeleteSignaturePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSignaturePolicyAsyncHandler;
@@ -493,6 +507,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityPoliciesResponse> DescribeSecurityPoliciesOutcome;
                 typedef std::future<DescribeSecurityPoliciesOutcome> DescribeSecurityPoliciesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeSecurityPoliciesRequest&, DescribeSecurityPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServiceAccountsResponse> DescribeServiceAccountsOutcome;
+                typedef std::future<DescribeServiceAccountsOutcome> DescribeServiceAccountsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeServiceAccountsRequest&, DescribeServiceAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTagRetentionExecutionResponse> DescribeTagRetentionExecutionOutcome;
                 typedef std::future<DescribeTagRetentionExecutionOutcome> DescribeTagRetentionExecutionOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeTagRetentionExecutionRequest&, DescribeTagRetentionExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagRetentionExecutionAsyncHandler;
@@ -559,6 +576,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyServiceAccountResponse> ModifyServiceAccountOutcome;
+                typedef std::future<ModifyServiceAccountOutcome> ModifyServiceAccountOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyServiceAccountRequest&, ModifyServiceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTagRetentionRuleResponse> ModifyTagRetentionRuleOutcome;
                 typedef std::future<ModifyTagRetentionRuleOutcome> ModifyTagRetentionRuleOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyTagRetentionRuleRequest&, ModifyTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTagRetentionRuleAsyncHandler;
@@ -750,6 +770,15 @@ namespace TencentCloud
                 CreateSecurityPolicyOutcome CreateSecurityPolicy(const Model::CreateSecurityPolicyRequest &request);
                 void CreateSecurityPolicyAsync(const Model::CreateSecurityPolicyRequest& request, const CreateSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSecurityPolicyOutcomeCallable CreateSecurityPolicyCallable(const Model::CreateSecurityPolicyRequest& request);
+
+                /**
+                 *创建自定义账户
+                 * @param req CreateServiceAccountRequest
+                 * @return CreateServiceAccountOutcome
+                 */
+                CreateServiceAccountOutcome CreateServiceAccount(const Model::CreateServiceAccountRequest &request);
+                void CreateServiceAccountAsync(const Model::CreateServiceAccountRequest& request, const CreateServiceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServiceAccountOutcomeCallable CreateServiceAccountCallable(const Model::CreateServiceAccountRequest& request);
 
                 /**
                  *为一个镜像版本创建签名
@@ -977,6 +1006,15 @@ namespace TencentCloud
                 DeleteSecurityPolicyOutcome DeleteSecurityPolicy(const Model::DeleteSecurityPolicyRequest &request);
                 void DeleteSecurityPolicyAsync(const Model::DeleteSecurityPolicyRequest& request, const DeleteSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityPolicyOutcomeCallable DeleteSecurityPolicyCallable(const Model::DeleteSecurityPolicyRequest& request);
+
+                /**
+                 *删除服务级账号
+                 * @param req DeleteServiceAccountRequest
+                 * @return DeleteServiceAccountOutcome
+                 */
+                DeleteServiceAccountOutcome DeleteServiceAccount(const Model::DeleteServiceAccountRequest &request);
+                void DeleteServiceAccountAsync(const Model::DeleteServiceAccountRequest& request, const DeleteServiceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServiceAccountOutcomeCallable DeleteServiceAccountCallable(const Model::DeleteServiceAccountRequest& request);
 
                 /**
                  *删除命名空间加签策略
@@ -1303,6 +1341,15 @@ namespace TencentCloud
                 DescribeSecurityPoliciesOutcomeCallable DescribeSecurityPoliciesCallable(const Model::DescribeSecurityPoliciesRequest& request);
 
                 /**
+                 *查询服务级账号
+                 * @param req DescribeServiceAccountsRequest
+                 * @return DescribeServiceAccountsOutcome
+                 */
+                DescribeServiceAccountsOutcome DescribeServiceAccounts(const Model::DescribeServiceAccountsRequest &request);
+                void DescribeServiceAccountsAsync(const Model::DescribeServiceAccountsRequest& request, const DescribeServiceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceAccountsOutcomeCallable DescribeServiceAccountsCallable(const Model::DescribeServiceAccountsRequest& request);
+
+                /**
                  *查询版本保留执行记录
                  * @param req DescribeTagRetentionExecutionRequest
                  * @return DescribeTagRetentionExecutionOutcome
@@ -1499,6 +1546,15 @@ namespace TencentCloud
                 ModifySecurityPolicyOutcome ModifySecurityPolicy(const Model::ModifySecurityPolicyRequest &request);
                 void ModifySecurityPolicyAsync(const Model::ModifySecurityPolicyRequest& request, const ModifySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityPolicyOutcomeCallable ModifySecurityPolicyCallable(const Model::ModifySecurityPolicyRequest& request);
+
+                /**
+                 *更新服务级账号
+                 * @param req ModifyServiceAccountRequest
+                 * @return ModifyServiceAccountOutcome
+                 */
+                ModifyServiceAccountOutcome ModifyServiceAccount(const Model::ModifyServiceAccountRequest &request);
+                void ModifyServiceAccountAsync(const Model::ModifyServiceAccountRequest& request, const ModifyServiceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServiceAccountOutcomeCallable ModifyServiceAccountCallable(const Model::ModifyServiceAccountRequest& request);
 
                 /**
                  *更新版本保留规则

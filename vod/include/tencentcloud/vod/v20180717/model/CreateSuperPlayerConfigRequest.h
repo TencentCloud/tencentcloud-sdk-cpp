@@ -269,7 +269,7 @@ namespace TencentCloud
                     bool ImageSpriteDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
+                     * 获取播放器对于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
 <li>MinEdgeLength：240，Name：流畅；</li>
 <li>MinEdgeLength：480，Name：标清；</li>
 <li>MinEdgeLength：720，Name：高清；</li>
@@ -277,7 +277,7 @@ namespace TencentCloud
 <li>MinEdgeLength：1440，Name：2K；</li>
 <li>MinEdgeLength：2160，Name：4K；</li>
 <li>MinEdgeLength：4320，Name：8K。</li>
-                     * @return ResolutionNames 播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
+                     * @return ResolutionNames 播放器对于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
 <li>MinEdgeLength：240，Name：流畅；</li>
 <li>MinEdgeLength：480，Name：标清；</li>
 <li>MinEdgeLength：720，Name：高清；</li>
@@ -290,7 +290,7 @@ namespace TencentCloud
                     std::vector<ResolutionNameInfo> GetResolutionNames() const;
 
                     /**
-                     * 设置播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
+                     * 设置播放器对于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
 <li>MinEdgeLength：240，Name：流畅；</li>
 <li>MinEdgeLength：480，Name：标清；</li>
 <li>MinEdgeLength：720，Name：高清；</li>
@@ -298,7 +298,7 @@ namespace TencentCloud
 <li>MinEdgeLength：1440，Name：2K；</li>
 <li>MinEdgeLength：2160，Name：4K；</li>
 <li>MinEdgeLength：4320，Name：8K。</li>
-                     * @param _resolutionNames 播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
+                     * @param _resolutionNames 播放器对于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
 <li>MinEdgeLength：240，Name：流畅；</li>
 <li>MinEdgeLength：480，Name：标清；</li>
 <li>MinEdgeLength：720，Name：高清；</li>
@@ -453,7 +453,7 @@ namespace TencentCloud
                     bool m_imageSpriteDefinitionHasBeenSet;
 
                     /**
-                     * 播放器对不于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
+                     * 播放器对于不同分辨率的子流展示名字，不填或者填空数组则使用默认配置：
 <li>MinEdgeLength：240，Name：流畅；</li>
 <li>MinEdgeLength：480，Name：标清；</li>
 <li>MinEdgeLength：720，Name：高清；</li>

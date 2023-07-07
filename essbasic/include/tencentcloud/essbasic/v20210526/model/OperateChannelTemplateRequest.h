@@ -170,6 +170,31 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。若此字段值为0，则不会修改模板Available，1为启用模板，2为停用模板。
+启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+                     * @return Available 当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。若此字段值为0，则不会修改模板Available，1为启用模板，2为停用模板。
+启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+                     * 
+                     */
+                    int64_t GetAvailable() const;
+
+                    /**
+                     * 设置当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。若此字段值为0，则不会修改模板Available，1为启用模板，2为停用模板。
+启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+                     * @param _available 当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。若此字段值为0，则不会修改模板Available，1为启用模板，2为停用模板。
+启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+                     * 
+                     */
+                    void SetAvailable(const int64_t& _available);
+
+                    /**
+                     * 判断参数 Available 是否已赋值
+                     * @return Available 是否已赋值
+                     * 
+                     */
+                    bool AvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +232,13 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 当OperateType=UPADATE时，可以通过设置此字段对模板启停用状态进行操作。若此字段值为0，则不会修改模板Available，1为启用模板，2为停用模板。
+启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。
+                     */
+                    int64_t m_available;
+                    bool m_availableHasBeenSet;
 
                 };
             }

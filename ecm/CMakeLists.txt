@@ -64,6 +64,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateImageRequest.h
   include/tencentcloud/ecm/v20190719/model/Instance.h
   include/tencentcloud/ecm/v20190719/model/RunSecurityServiceEnabled.h
+  include/tencentcloud/ecm/v20190719/model/PeakBase.h
   include/tencentcloud/ecm/v20190719/model/DeleteLoadBalancerRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeVpcsRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeRouteConflictsResponse.h
@@ -104,7 +105,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DeleteSubnetResponse.h
   include/tencentcloud/ecm/v20190719/model/ISP.h
   include/tencentcloud/ecm/v20190719/model/Address.h
-  include/tencentcloud/ecm/v20190719/model/PeakBase.h
+  include/tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h
   include/tencentcloud/ecm/v20190719/model/ReplaceRouteTableAssociationRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyTargetWeightResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskResponse.h
@@ -139,7 +140,6 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ModifyTargetPortResponse.h
   include/tencentcloud/ecm/v20190719/model/MonthNetwork.h
   include/tencentcloud/ecm/v20190719/model/ResetRoutesResponse.h
-  include/tencentcloud/ecm/v20190719/model/AllocateAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateImageResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkRequest.h
   include/tencentcloud/ecm/v20190719/model/AddressTemplateSpecification.h
@@ -243,6 +243,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateHaVipResponse.h
   include/tencentcloud/ecm/v20190719/model/ImportImageRequest.h
   include/tencentcloud/ecm/v20190719/model/DiskChargePrepaid.h
+  include/tencentcloud/ecm/v20190719/model/ISPIPv6CidrBlock.h
   include/tencentcloud/ecm/v20190719/model/DisableRoutesRequest.h
   include/tencentcloud/ecm/v20190719/model/StopInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNameRequest.h
@@ -268,7 +269,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/BatchRegisterTargetsRequest.h
   include/tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/PublicIPAddressInfo.h
-  include/tencentcloud/ecm/v20190719/model/ModifyModuleImageResponse.h
+  include/tencentcloud/ecm/v20190719/model/AllocateAddressesResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteLoadBalancerListenersResponse.h
   include/tencentcloud/ecm/v20190719/model/VpcInfo.h
   include/tencentcloud/ecm/v20190719/model/ModuleItem.h
@@ -430,6 +431,7 @@ set(ecm_src
   src/v20190719/model/CreateImageRequest.cpp
   src/v20190719/model/Instance.cpp
   src/v20190719/model/RunSecurityServiceEnabled.cpp
+  src/v20190719/model/PeakBase.cpp
   src/v20190719/model/DeleteLoadBalancerRequest.cpp
   src/v20190719/model/DescribeVpcsRequest.cpp
   src/v20190719/model/DescribeRouteConflictsResponse.cpp
@@ -470,7 +472,7 @@ set(ecm_src
   src/v20190719/model/DeleteSubnetResponse.cpp
   src/v20190719/model/ISP.cpp
   src/v20190719/model/Address.cpp
-  src/v20190719/model/PeakBase.cpp
+  src/v20190719/model/ModifyModuleImageResponse.cpp
   src/v20190719/model/ReplaceRouteTableAssociationRequest.cpp
   src/v20190719/model/ModifyTargetWeightResponse.cpp
   src/v20190719/model/DescribeCustomImageTaskResponse.cpp
@@ -505,7 +507,6 @@ set(ecm_src
   src/v20190719/model/ModifyTargetPortResponse.cpp
   src/v20190719/model/MonthNetwork.cpp
   src/v20190719/model/ResetRoutesResponse.cpp
-  src/v20190719/model/AllocateAddressesResponse.cpp
   src/v20190719/model/CreateImageResponse.cpp
   src/v20190719/model/ModifyModuleNetworkRequest.cpp
   src/v20190719/model/AddressTemplateSpecification.cpp
@@ -609,6 +610,7 @@ set(ecm_src
   src/v20190719/model/CreateHaVipResponse.cpp
   src/v20190719/model/ImportImageRequest.cpp
   src/v20190719/model/DiskChargePrepaid.cpp
+  src/v20190719/model/ISPIPv6CidrBlock.cpp
   src/v20190719/model/DisableRoutesRequest.cpp
   src/v20190719/model/StopInstancesResponse.cpp
   src/v20190719/model/ModifyModuleNameRequest.cpp
@@ -634,7 +636,7 @@ set(ecm_src
   src/v20190719/model/BatchRegisterTargetsRequest.cpp
   src/v20190719/model/RemovePrivateIpAddressesResponse.cpp
   src/v20190719/model/PublicIPAddressInfo.cpp
-  src/v20190719/model/ModifyModuleImageResponse.cpp
+  src/v20190719/model/AllocateAddressesResponse.cpp
   src/v20190719/model/DeleteLoadBalancerListenersResponse.cpp
   src/v20190719/model/VpcInfo.cpp
   src/v20190719/model/ModuleItem.cpp

@@ -384,6 +384,49 @@ DbbrainClient::CreateProxySessionKillTaskOutcomeCallable DbbrainClient::CreatePr
     return task->get_future();
 }
 
+DbbrainClient::CreateRedisBigKeyAnalysisTaskOutcome DbbrainClient::CreateRedisBigKeyAnalysisTask(const CreateRedisBigKeyAnalysisTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRedisBigKeyAnalysisTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRedisBigKeyAnalysisTaskResponse rsp = CreateRedisBigKeyAnalysisTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRedisBigKeyAnalysisTaskOutcome(rsp);
+        else
+            return CreateRedisBigKeyAnalysisTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRedisBigKeyAnalysisTaskOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateRedisBigKeyAnalysisTaskAsync(const CreateRedisBigKeyAnalysisTaskRequest& request, const CreateRedisBigKeyAnalysisTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRedisBigKeyAnalysisTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateRedisBigKeyAnalysisTaskOutcomeCallable DbbrainClient::CreateRedisBigKeyAnalysisTaskCallable(const CreateRedisBigKeyAnalysisTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRedisBigKeyAnalysisTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRedisBigKeyAnalysisTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateSchedulerMailProfileOutcome DbbrainClient::CreateSchedulerMailProfile(const CreateSchedulerMailProfileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSchedulerMailProfile");

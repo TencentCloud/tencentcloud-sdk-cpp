@@ -131,6 +131,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeAlarmEventsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesRequest.h>
@@ -593,6 +595,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmReceiverResponse> DescribeAlarmReceiverOutcome;
                 typedef std::future<DescribeAlarmReceiverOutcome> DescribeAlarmReceiverOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeAlarmReceiverRequest&, DescribeAlarmReceiverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmReceiverAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchOperateTaskResponse> DescribeBatchOperateTaskOutcome;
+                typedef std::future<DescribeBatchOperateTaskOutcome> DescribeBatchOperateTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeBatchOperateTaskRequest&, DescribeBatchOperateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperateTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterNamespaceListResponse> DescribeClusterNamespaceListOutcome;
                 typedef std::future<DescribeClusterNamespaceListOutcome> DescribeClusterNamespaceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeClusterNamespaceListRequest&, DescribeClusterNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNamespaceListAsyncHandler;
@@ -1521,6 +1526,15 @@ namespace TencentCloud
                 DescribeAlarmReceiverOutcome DescribeAlarmReceiver(const Model::DescribeAlarmReceiverRequest &request);
                 void DescribeAlarmReceiverAsync(const Model::DescribeAlarmReceiverRequest& request, const DescribeAlarmReceiverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmReceiverOutcomeCallable DescribeAlarmReceiverCallable(const Model::DescribeAlarmReceiverRequest& request);
+
+                /**
+                 *批量操作任务列表
+                 * @param req DescribeBatchOperateTaskRequest
+                 * @return DescribeBatchOperateTaskOutcome
+                 */
+                DescribeBatchOperateTaskOutcome DescribeBatchOperateTask(const Model::DescribeBatchOperateTaskRequest &request);
+                void DescribeBatchOperateTaskAsync(const Model::DescribeBatchOperateTaskRequest& request, const DescribeBatchOperateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchOperateTaskOutcomeCallable DescribeBatchOperateTaskCallable(const Model::DescribeBatchOperateTaskRequest& request);
 
                 /**
                  *获取集群命名空间列表

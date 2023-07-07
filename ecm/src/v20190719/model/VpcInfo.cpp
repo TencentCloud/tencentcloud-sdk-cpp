@@ -38,7 +38,9 @@ VpcInfo::VpcInfo() :
     m_descriptionHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_subnetCountHasBeenSet(false),
-    m_instanceCountHasBeenSet(false)
+    m_instanceCountHasBeenSet(false),
+    m_ipv6ISPHasBeenSet(false),
+    m_ipv6CidrBlockSetHasBeenSet(false)
 {
 }
 
@@ -250,6 +252,36 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
         m_instanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6ISP") && !value["Ipv6ISP"].IsNull())
+    {
+        if (!value["Ipv6ISP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.Ipv6ISP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6ISP = string(value["Ipv6ISP"].GetString());
+        m_ipv6ISPHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ipv6CidrBlockSet") && !value["Ipv6CidrBlockSet"].IsNull())
+    {
+        if (!value["Ipv6CidrBlockSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.Ipv6CidrBlockSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Ipv6CidrBlockSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ISPIPv6CidrBlock item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ipv6CidrBlockSet.push_back(item);
+        }
+        m_ipv6CidrBlockSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -418,6 +450,29 @@ void VpcInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_ipv6ISPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6ISP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6ISP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6CidrBlockSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6CidrBlockSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ipv6CidrBlockSet.begin(); itr != m_ipv6CidrBlockSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -709,5 +764,37 @@ void VpcInfo::SetInstanceCount(const uint64_t& _instanceCount)
 bool VpcInfo::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+string VpcInfo::GetIpv6ISP() const
+{
+    return m_ipv6ISP;
+}
+
+void VpcInfo::SetIpv6ISP(const string& _ipv6ISP)
+{
+    m_ipv6ISP = _ipv6ISP;
+    m_ipv6ISPHasBeenSet = true;
+}
+
+bool VpcInfo::Ipv6ISPHasBeenSet() const
+{
+    return m_ipv6ISPHasBeenSet;
+}
+
+vector<ISPIPv6CidrBlock> VpcInfo::GetIpv6CidrBlockSet() const
+{
+    return m_ipv6CidrBlockSet;
+}
+
+void VpcInfo::SetIpv6CidrBlockSet(const vector<ISPIPv6CidrBlock>& _ipv6CidrBlockSet)
+{
+    m_ipv6CidrBlockSet = _ipv6CidrBlockSet;
+    m_ipv6CidrBlockSetHasBeenSet = true;
+}
+
+bool VpcInfo::Ipv6CidrBlockSetHasBeenSet() const
+{
+    return m_ipv6CidrBlockSetHasBeenSet;
 }
 

@@ -73,6 +73,20 @@ namespace TencentCloud
                     bool PodUsageHasBeenSet() const;
 
                     /**
+                     * 获取ReplicaSet使用量
+                     * @return RSUsage ReplicaSet使用量
+                     * 
+                     */
+                    uint64_t GetRSUsage() const;
+
+                    /**
+                     * 判断参数 RSUsage 是否已赋值
+                     * @return RSUsage 是否已赋值
+                     * 
+                     */
+                    bool RSUsageHasBeenSet() const;
+
+                    /**
                      * 获取ConfigMap使用量
                      * @return ConfigMapUsage ConfigMap使用量
                      * 
@@ -113,6 +127,12 @@ namespace TencentCloud
                      */
                     uint64_t m_podUsage;
                     bool m_podUsageHasBeenSet;
+
+                    /**
+                     * ReplicaSet使用量
+                     */
+                    uint64_t m_rSUsage;
+                    bool m_rSUsageHasBeenSet;
 
                     /**
                      * ConfigMap使用量

@@ -44,10 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
                      * 
@@ -55,10 +55,10 @@ namespace TencentCloud
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
                      * 
@@ -145,7 +145,7 @@ CLOSE:关闭
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
 
 注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId
                      */

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例Id。
-                     * @return InstanceId 实例Id。
+                     * 获取业务实例Id，和BusinessType对应。
+                     * @return InstanceId 业务实例Id，和BusinessType对应。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id。
-                     * @param _instanceId 实例Id。
+                     * 设置业务实例Id，和BusinessType对应。
+                     * @param _instanceId 业务实例Id，和BusinessType对应。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 实例Id。
+                     * 业务实例Id，和BusinessType对应。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

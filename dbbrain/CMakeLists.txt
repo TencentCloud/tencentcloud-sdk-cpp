@@ -30,7 +30,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ScoreItem.h
-  include/tencentcloud/dbbrain/v20210527/model/InstanceConfs.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateRedisBigKeyAnalysisTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsResponse.h
@@ -45,6 +45,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DiagHistoryEventItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/CreateRedisBigKeyAnalysisTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SessionItem.h
   include/tencentcloud/dbbrain/v20210527/model/HealthStatus.h
@@ -90,6 +91,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/InstanceConfs.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateResponse.h
   include/tencentcloud/dbbrain/v20210527/model/HealthScoreInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.h
@@ -258,7 +260,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeSlowLogsRequest.cpp
   src/v20210527/model/DescribeTopSpaceTablesRequest.cpp
   src/v20210527/model/ScoreItem.cpp
-  src/v20210527/model/InstanceConfs.cpp
+  src/v20210527/model/CreateRedisBigKeyAnalysisTaskResponse.cpp
   src/v20210527/model/CreateSecurityAuditLogExportTaskRequest.cpp
   src/v20210527/model/DescribeDBDiagEventResponse.cpp
   src/v20210527/model/DescribeDBDiagEventsResponse.cpp
@@ -273,6 +275,7 @@ set(dbbrain_src
   src/v20210527/model/CreateKillTaskResponse.cpp
   src/v20210527/model/DiagHistoryEventItem.cpp
   src/v20210527/model/DescribeProxySessionKillTasksRequest.cpp
+  src/v20210527/model/CreateRedisBigKeyAnalysisTaskRequest.cpp
   src/v20210527/model/DescribeMySqlProcessListResponse.cpp
   src/v20210527/model/SessionItem.cpp
   src/v20210527/model/HealthStatus.cpp
@@ -318,6 +321,7 @@ set(dbbrain_src
   src/v20210527/model/CreateDBDiagReportUrlRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.cpp
   src/v20210527/model/DescribeRedisTopKeyPrefixListRequest.cpp
+  src/v20210527/model/InstanceConfs.cpp
   src/v20210527/model/DescribeSqlTemplateResponse.cpp
   src/v20210527/model/HealthScoreInfo.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.cpp

@@ -27,7 +27,8 @@ ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
     m_vpcNameHasBeenSet(false),
     m_enableMulticastHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_enableCdcPublishHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string ModifyVpcAttributeRequest::ToJsonString() const
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCdcPublishHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCdcPublish";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCdcPublish, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void ModifyVpcAttributeRequest::SetDomainName(const string& _domainName)
 bool ModifyVpcAttributeRequest::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+bool ModifyVpcAttributeRequest::GetEnableCdcPublish() const
+{
+    return m_enableCdcPublish;
+}
+
+void ModifyVpcAttributeRequest::SetEnableCdcPublish(const bool& _enableCdcPublish)
+{
+    m_enableCdcPublish = _enableCdcPublish;
+    m_enableCdcPublishHasBeenSet = true;
+}
+
+bool ModifyVpcAttributeRequest::EnableCdcPublishHasBeenSet() const
+{
+    return m_enableCdcPublishHasBeenSet;
 }
 
 

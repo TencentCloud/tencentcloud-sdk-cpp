@@ -39,6 +39,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateRedisBigKeyAnalysisTaskRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateRedisBigKeyAnalysisTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskRequest.h>
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProxySessionKillTaskResponse> CreateProxySessionKillTaskOutcome;
                 typedef std::future<CreateProxySessionKillTaskOutcome> CreateProxySessionKillTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateProxySessionKillTaskRequest&, CreateProxySessionKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProxySessionKillTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRedisBigKeyAnalysisTaskResponse> CreateRedisBigKeyAnalysisTaskOutcome;
+                typedef std::future<CreateRedisBigKeyAnalysisTaskOutcome> CreateRedisBigKeyAnalysisTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateRedisBigKeyAnalysisTaskRequest&, CreateRedisBigKeyAnalysisTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRedisBigKeyAnalysisTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSchedulerMailProfileResponse> CreateSchedulerMailProfileOutcome;
                 typedef std::future<CreateSchedulerMailProfileOutcome> CreateSchedulerMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSchedulerMailProfileRequest&, CreateSchedulerMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchedulerMailProfileAsyncHandler;
@@ -356,6 +361,15 @@ namespace TencentCloud
                 CreateProxySessionKillTaskOutcome CreateProxySessionKillTask(const Model::CreateProxySessionKillTaskRequest &request);
                 void CreateProxySessionKillTaskAsync(const Model::CreateProxySessionKillTaskRequest& request, const CreateProxySessionKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProxySessionKillTaskOutcomeCallable CreateProxySessionKillTaskCallable(const Model::CreateProxySessionKillTaskRequest& request);
+
+                /**
+                 *即时创建redis实例大key分析任务，限制正在运行的即时分析任务数量默认为5。
+                 * @param req CreateRedisBigKeyAnalysisTaskRequest
+                 * @return CreateRedisBigKeyAnalysisTaskOutcome
+                 */
+                CreateRedisBigKeyAnalysisTaskOutcome CreateRedisBigKeyAnalysisTask(const Model::CreateRedisBigKeyAnalysisTaskRequest &request);
+                void CreateRedisBigKeyAnalysisTaskAsync(const Model::CreateRedisBigKeyAnalysisTaskRequest& request, const CreateRedisBigKeyAnalysisTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRedisBigKeyAnalysisTaskOutcomeCallable CreateRedisBigKeyAnalysisTaskCallable(const Model::CreateRedisBigKeyAnalysisTaskRequest& request);
 
                 /**
                  *该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。

@@ -39,7 +39,8 @@ Subnet::Subnet() :
     m_instanceCountHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
     m_vpcIpv6CidrBlockHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_iSPTypeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome Subnet::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("ISPType") && !value["ISPType"].IsNull())
+    {
+        if (!value["ISPType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subnet.ISPType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iSPType = string(value["ISPType"].GetString());
+        m_iSPTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void Subnet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iSPTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ISPType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iSPType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void Subnet::SetRegion(const string& _region)
 bool Subnet::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string Subnet::GetISPType() const
+{
+    return m_iSPType;
+}
+
+void Subnet::SetISPType(const string& _iSPType)
+{
+    m_iSPType = _iSPType;
+    m_iSPTypeHasBeenSet = true;
+}
+
+bool Subnet::ISPTypeHasBeenSet() const
+{
+    return m_iSPTypeHasBeenSet;
 }
 

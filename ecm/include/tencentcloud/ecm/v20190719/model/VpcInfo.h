@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ecm/v20190719/model/Tag.h>
 #include <tencentcloud/ecm/v20190719/model/AssistantCidr.h>
+#include <tencentcloud/ecm/v20190719/model/ISPIPv6CidrBlock.h>
 
 
 namespace TencentCloud
@@ -37,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 私有网络(VPC)对象。
+                * 私有网络(VPC) 对象。
                 */
                 class VpcInfo : public AbstractModel
                 {
@@ -438,6 +439,56 @@ namespace TencentCloud
                      */
                     bool InstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取ipv6运营商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6ISP ipv6运营商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIpv6ISP() const;
+
+                    /**
+                     * 设置ipv6运营商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipv6ISP ipv6运营商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpv6ISP(const std::string& _ipv6ISP);
+
+                    /**
+                     * 判断参数 Ipv6ISP 是否已赋值
+                     * @return Ipv6ISP 是否已赋值
+                     * 
+                     */
+                    bool Ipv6ISPHasBeenSet() const;
+
+                    /**
+                     * 获取多运营商IPv6 Cidr Block。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6CidrBlockSet 多运营商IPv6 Cidr Block。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ISPIPv6CidrBlock> GetIpv6CidrBlockSet() const;
+
+                    /**
+                     * 设置多运营商IPv6 Cidr Block。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipv6CidrBlockSet 多运营商IPv6 Cidr Block。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpv6CidrBlockSet(const std::vector<ISPIPv6CidrBlock>& _ipv6CidrBlockSet);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlockSet 是否已赋值
+                     * @return Ipv6CidrBlockSet 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -550,6 +601,20 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
+
+                    /**
+                     * ipv6运营商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipv6ISP;
+                    bool m_ipv6ISPHasBeenSet;
+
+                    /**
+                     * 多运营商IPv6 Cidr Block。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ISPIPv6CidrBlock> m_ipv6CidrBlockSet;
+                    bool m_ipv6CidrBlockSetHasBeenSet;
 
                 };
             }

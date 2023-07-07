@@ -29,6 +29,7 @@ DescribeUsersRequest::DescribeUsersRequest() :
     m_limitHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_phoneHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_authorizedDeviceIdSetHasBeenSet(false),
     m_authTypeSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false)
@@ -93,6 +94,14 @@ string DescribeUsersRequest::ToJsonString() const
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Email";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizedDeviceIdSetHasBeenSet)
@@ -231,6 +240,22 @@ void DescribeUsersRequest::SetPhone(const string& _phone)
 bool DescribeUsersRequest::PhoneHasBeenSet() const
 {
     return m_phoneHasBeenSet;
+}
+
+string DescribeUsersRequest::GetEmail() const
+{
+    return m_email;
+}
+
+void DescribeUsersRequest::SetEmail(const string& _email)
+{
+    m_email = _email;
+    m_emailHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::EmailHasBeenSet() const
+{
+    return m_emailHasBeenSet;
 }
 
 vector<uint64_t> DescribeUsersRequest::GetAuthorizedDeviceIdSet() const

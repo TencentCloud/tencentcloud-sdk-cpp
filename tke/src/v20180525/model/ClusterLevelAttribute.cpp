@@ -26,6 +26,7 @@ ClusterLevelAttribute::ClusterLevelAttribute() :
     m_nodeCountHasBeenSet(false),
     m_podCountHasBeenSet(false),
     m_configMapCountHasBeenSet(false),
+    m_rSCountHasBeenSet(false),
     m_cRDCountHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_otherCountHasBeenSet(false)
@@ -85,6 +86,16 @@ CoreInternalOutcome ClusterLevelAttribute::Deserialize(const rapidjson::Value &v
         }
         m_configMapCount = value["ConfigMapCount"].GetUint64();
         m_configMapCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RSCount") && !value["RSCount"].IsNull())
+    {
+        if (!value["RSCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterLevelAttribute.RSCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rSCount = value["RSCount"].GetUint64();
+        m_rSCountHasBeenSet = true;
     }
 
     if (value.HasMember("CRDCount") && !value["CRDCount"].IsNull())
@@ -162,6 +173,14 @@ void ClusterLevelAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ConfigMapCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_configMapCount, allocator);
+    }
+
+    if (m_rSCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RSCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rSCount, allocator);
     }
 
     if (m_cRDCountHasBeenSet)
@@ -269,6 +288,22 @@ void ClusterLevelAttribute::SetConfigMapCount(const uint64_t& _configMapCount)
 bool ClusterLevelAttribute::ConfigMapCountHasBeenSet() const
 {
     return m_configMapCountHasBeenSet;
+}
+
+uint64_t ClusterLevelAttribute::GetRSCount() const
+{
+    return m_rSCount;
+}
+
+void ClusterLevelAttribute::SetRSCount(const uint64_t& _rSCount)
+{
+    m_rSCount = _rSCount;
+    m_rSCountHasBeenSet = true;
+}
+
+bool ClusterLevelAttribute::RSCountHasBeenSet() const
+{
+    return m_rSCountHasBeenSet;
 }
 
 uint64_t ClusterLevelAttribute::GetCRDCount() const

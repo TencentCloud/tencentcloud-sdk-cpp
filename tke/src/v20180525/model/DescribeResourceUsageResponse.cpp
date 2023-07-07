@@ -26,6 +26,7 @@ using namespace std;
 DescribeResourceUsageResponse::DescribeResourceUsageResponse() :
     m_cRDUsageHasBeenSet(false),
     m_podUsageHasBeenSet(false),
+    m_rSUsageHasBeenSet(false),
     m_configMapUsageHasBeenSet(false),
     m_otherUsageHasBeenSet(false)
 {
@@ -92,6 +93,16 @@ CoreInternalOutcome DescribeResourceUsageResponse::Deserialize(const string &pay
         m_podUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RSUsage") && !rsp["RSUsage"].IsNull())
+    {
+        if (!rsp["RSUsage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RSUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rSUsage = rsp["RSUsage"].GetUint64();
+        m_rSUsageHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ConfigMapUsage") && !rsp["ConfigMapUsage"].IsNull())
     {
         if (!rsp["ConfigMapUsage"].IsUint64())
@@ -146,6 +157,14 @@ string DescribeResourceUsageResponse::ToJsonString() const
         value.AddMember(iKey, m_podUsage, allocator);
     }
 
+    if (m_rSUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RSUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rSUsage, allocator);
+    }
+
     if (m_configMapUsageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -193,6 +212,16 @@ uint64_t DescribeResourceUsageResponse::GetPodUsage() const
 bool DescribeResourceUsageResponse::PodUsageHasBeenSet() const
 {
     return m_podUsageHasBeenSet;
+}
+
+uint64_t DescribeResourceUsageResponse::GetRSUsage() const
+{
+    return m_rSUsage;
+}
+
+bool DescribeResourceUsageResponse::RSUsageHasBeenSet() const
+{
+    return m_rSUsageHasBeenSet;
 }
 
 uint64_t DescribeResourceUsageResponse::GetConfigMapUsage() const

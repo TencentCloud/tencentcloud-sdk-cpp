@@ -26,6 +26,7 @@ ModifyClusterVirtualNodePoolRequest::ModifyClusterVirtualNodePoolRequest() :
     m_clusterIdHasBeenSet(false),
     m_nodePoolIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_deletionProtectionHasBeenSet(false)
@@ -61,6 +62,19 @@ string ModifyClusterVirtualNodePoolRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_labelsHasBeenSet)
@@ -155,6 +169,22 @@ void ModifyClusterVirtualNodePoolRequest::SetName(const string& _name)
 bool ModifyClusterVirtualNodePoolRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<string> ModifyClusterVirtualNodePoolRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void ModifyClusterVirtualNodePoolRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool ModifyClusterVirtualNodePoolRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 vector<Label> ModifyClusterVirtualNodePoolRequest::GetLabels() const

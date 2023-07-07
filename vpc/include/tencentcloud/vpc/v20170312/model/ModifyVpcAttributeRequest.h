@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取发布cdc 子网到云联网的开关。true: 发布, false: 不发布。
+                     * @return EnableCdcPublish 发布cdc 子网到云联网的开关。true: 发布, false: 不发布。
+                     * 
+                     */
+                    bool GetEnableCdcPublish() const;
+
+                    /**
+                     * 设置发布cdc 子网到云联网的开关。true: 发布, false: 不发布。
+                     * @param _enableCdcPublish 发布cdc 子网到云联网的开关。true: 发布, false: 不发布。
+                     * 
+                     */
+                    void SetEnableCdcPublish(const bool& _enableCdcPublish);
+
+                    /**
+                     * 判断参数 EnableCdcPublish 是否已赋值
+                     * @return EnableCdcPublish 是否已赋值
+                     * 
+                     */
+                    bool EnableCdcPublishHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 发布cdc 子网到云联网的开关。true: 发布, false: 不发布。
+                     */
+                    bool m_enableCdcPublish;
+                    bool m_enableCdcPublishHasBeenSet;
 
                 };
             }

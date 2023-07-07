@@ -2362,6 +2362,49 @@ WedataClient::DescribeAlarmReceiverOutcomeCallable WedataClient::DescribeAlarmRe
     return task->get_future();
 }
 
+WedataClient::DescribeBatchOperateTaskOutcome WedataClient::DescribeBatchOperateTask(const DescribeBatchOperateTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOperateTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOperateTaskResponse rsp = DescribeBatchOperateTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOperateTaskOutcome(rsp);
+        else
+            return DescribeBatchOperateTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOperateTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeBatchOperateTaskAsync(const DescribeBatchOperateTaskRequest& request, const DescribeBatchOperateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOperateTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeBatchOperateTaskOutcomeCallable WedataClient::DescribeBatchOperateTaskCallable(const DescribeBatchOperateTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOperateTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOperateTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeClusterNamespaceListOutcome WedataClient::DescribeClusterNamespaceList(const DescribeClusterNamespaceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterNamespaceList");

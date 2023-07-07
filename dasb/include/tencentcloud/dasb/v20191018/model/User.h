@@ -91,27 +91,6 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @return Phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * 
-                     */
-                    std::string GetPhone() const;
-
-                    /**
-                     * 设置手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @param _phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * 
-                     */
-                    void SetPhone(const std::string& _phone);
-
-                    /**
-                     * 判断参数 Phone 是否已赋值
-                     * @return Phone 是否已赋值
-                     * 
-                     */
-                    bool PhoneHasBeenSet() const;
-
-                    /**
                      * 获取用户ID
                      * @return Id 用户ID
                      * 
@@ -131,6 +110,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @return Phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 
+                     */
+                    std::string GetPhone() const;
+
+                    /**
+                     * 设置手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * @param _phone 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 
+                     */
+                    void SetPhone(const std::string& _phone);
+
+                    /**
+                     * 判断参数 Phone 是否已赋值
+                     * @return Phone 是否已赋值
+                     * 
+                     */
+                    bool PhoneHasBeenSet() const;
 
                     /**
                      * 获取电子邮件
@@ -331,16 +331,16 @@ namespace TencentCloud
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     */
-                    std::string m_phone;
-                    bool m_phoneHasBeenSet;
-
-                    /**
                      * 用户ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     */
+                    std::string m_phone;
+                    bool m_phoneHasBeenSet;
 
                     /**
                      * 电子邮件

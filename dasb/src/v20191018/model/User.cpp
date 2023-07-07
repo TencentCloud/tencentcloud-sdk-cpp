@@ -23,8 +23,8 @@ using namespace std;
 User::User() :
     m_userNameHasBeenSet(false),
     m_realNameHasBeenSet(false),
-    m_phoneHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_phoneHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_validateFromHasBeenSet(false),
     m_validateToHasBeenSet(false),
@@ -61,16 +61,6 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_realNameHasBeenSet = true;
     }
 
-    if (value.HasMember("Phone") && !value["Phone"].IsNull())
-    {
-        if (!value["Phone"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `User.Phone` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_phone = string(value["Phone"].GetString());
-        m_phoneHasBeenSet = true;
-    }
-
     if (value.HasMember("Id") && !value["Id"].IsNull())
     {
         if (!value["Id"].IsUint64())
@@ -79,6 +69,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         }
         m_id = value["Id"].GetUint64();
         m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Phone") && !value["Phone"].IsNull())
+    {
+        if (!value["Phone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.Phone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phone = string(value["Phone"].GetString());
+        m_phoneHasBeenSet = true;
     }
 
     if (value.HasMember("Email") && !value["Email"].IsNull())
@@ -201,20 +201,20 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_realName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_phoneHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Phone";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_phoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Phone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_emailHasBeenSet)
@@ -324,22 +324,6 @@ bool User::RealNameHasBeenSet() const
     return m_realNameHasBeenSet;
 }
 
-string User::GetPhone() const
-{
-    return m_phone;
-}
-
-void User::SetPhone(const string& _phone)
-{
-    m_phone = _phone;
-    m_phoneHasBeenSet = true;
-}
-
-bool User::PhoneHasBeenSet() const
-{
-    return m_phoneHasBeenSet;
-}
-
 uint64_t User::GetId() const
 {
     return m_id;
@@ -354,6 +338,22 @@ void User::SetId(const uint64_t& _id)
 bool User::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string User::GetPhone() const
+{
+    return m_phone;
+}
+
+void User::SetPhone(const string& _phone)
+{
+    m_phone = _phone;
+    m_phoneHasBeenSet = true;
+}
+
+bool User::PhoneHasBeenSet() const
+{
+    return m_phoneHasBeenSet;
 }
 
 string User::GetEmail() const

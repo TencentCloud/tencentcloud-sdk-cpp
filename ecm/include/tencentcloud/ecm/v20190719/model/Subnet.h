@@ -470,6 +470,31 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ISPType 运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetISPType() const;
+
+                    /**
+                     * 设置运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iSPType 运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetISPType(const std::string& _iSPType);
+
+                    /**
+                     * 判断参数 ISPType 是否已赋值
+                     * @return ISPType 是否已赋值
+                     * 
+                     */
+                    bool ISPTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -591,6 +616,13 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 运营商类型。'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iSPType;
+                    bool m_iSPTypeHasBeenSet;
 
                 };
             }

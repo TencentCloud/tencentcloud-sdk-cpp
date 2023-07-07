@@ -173,6 +173,27 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
+                     * 获取邮箱，精确查询
+                     * @return Email 邮箱，精确查询
+                     * 
+                     */
+                    std::string GetEmail() const;
+
+                    /**
+                     * 设置邮箱，精确查询
+                     * @param _email 邮箱，精确查询
+                     * 
+                     */
+                    void SetEmail(const std::string& _email);
+
+                    /**
+                     * 判断参数 Email 是否已赋值
+                     * @return Email 是否已赋值
+                     * 
+                     */
+                    bool EmailHasBeenSet() const;
+
+                    /**
                      * 获取查询具有指定资产ID访问权限的用户
                      * @return AuthorizedDeviceIdSet 查询具有指定资产ID访问权限的用户
                      * 
@@ -273,6 +294,12 @@ namespace TencentCloud
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
+
+                    /**
+                     * 邮箱，精确查询
+                     */
+                    std::string m_email;
+                    bool m_emailHasBeenSet;
 
                     /**
                      * 查询具有指定资产ID访问权限的用户
