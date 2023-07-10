@@ -27,7 +27,8 @@ GetRoomsRequest::GetRoomsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_pageHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ string GetRoomsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -164,6 +178,22 @@ void GetRoomsRequest::SetLimit(const uint64_t& _limit)
 bool GetRoomsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<uint64_t> GetRoomsRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void GetRoomsRequest::SetStatus(const vector<uint64_t>& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool GetRoomsRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

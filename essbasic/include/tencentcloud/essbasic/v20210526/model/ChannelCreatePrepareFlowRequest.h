@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool FlowApproverListHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
+                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同流程配置信息
-                     * @return FlowOption 合同流程配置信息
+                     * 获取合同流程配置信息，用于配置发起合同时定制化
+                     * @return FlowOption 合同流程配置信息，用于配置发起合同时定制化
                      * 
                      */
                     CreateFlowOption GetFlowOption() const;
 
                     /**
-                     * 设置合同流程配置信息
-                     * @param _flowOption 合同流程配置信息
+                     * 设置合同流程配置信息，用于配置发起合同时定制化
+                     * @param _flowOption 合同流程配置信息，用于配置发起合同时定制化
                      * 
                      */
                     void SetFlowOption(const CreateFlowOption& _flowOption);
@@ -198,21 +198,21 @@ namespace TencentCloud
                     /**
                      * 获取该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
                      * @return NeedPreview 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
-                     * 
+                     * @deprecated
                      */
                     bool GetNeedPreview() const;
 
                     /**
                      * 设置该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
                      * @param _needPreview 该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL
-                     * 
+                     * @deprecated
                      */
                     void SetNeedPreview(const bool& _needPreview);
 
                     /**
                      * 判断参数 NeedPreview 是否已赋值
                      * @return NeedPreview 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NeedPreviewHasBeenSet() const;
 
@@ -285,13 +285,13 @@ namespace TencentCloud
                     bool m_flowApproverListHasBeenSet;
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同流程配置信息
+                     * 合同流程配置信息，用于配置发起合同时定制化
                      */
                     CreateFlowOption m_flowOption;
                     bool m_flowOptionHasBeenSet;

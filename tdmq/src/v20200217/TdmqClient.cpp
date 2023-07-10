@@ -1588,6 +1588,49 @@ TdmqClient::DeleteRabbitMQUserOutcomeCallable TdmqClient::DeleteRabbitMQUserCall
     return task->get_future();
 }
 
+TdmqClient::DeleteRabbitMQVipInstanceOutcome TdmqClient::DeleteRabbitMQVipInstance(const DeleteRabbitMQVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRabbitMQVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRabbitMQVipInstanceResponse rsp = DeleteRabbitMQVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRabbitMQVipInstanceOutcome(rsp);
+        else
+            return DeleteRabbitMQVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRabbitMQVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRabbitMQVipInstanceAsync(const DeleteRabbitMQVipInstanceRequest& request, const DeleteRabbitMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRabbitMQVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRabbitMQVipInstanceOutcomeCallable TdmqClient::DeleteRabbitMQVipInstanceCallable(const DeleteRabbitMQVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRabbitMQVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteRabbitMQVirtualHostOutcome TdmqClient::DeleteRabbitMQVirtualHost(const DeleteRabbitMQVirtualHostRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRabbitMQVirtualHost");

@@ -29,7 +29,8 @@ WordRsp::WordRsp() :
     m_matchTagHasBeenSet(false),
     m_phoneInfosHasBeenSet(false),
     m_referenceWordHasBeenSet(false),
-    m_keywordTagHasBeenSet(false)
+    m_keywordTagHasBeenSet(false),
+    m_toneHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
         m_keywordTagHasBeenSet = true;
     }
 
+    if (value.HasMember("Tone") && !value["Tone"].IsNull())
+    {
+        if (!value["Tone"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WordRsp.Tone` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tone.Deserialize(value["Tone"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_toneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +240,15 @@ void WordRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "KeywordTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keywordTag, allocator);
+    }
+
+    if (m_toneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tone.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -369,5 +396,21 @@ void WordRsp::SetKeywordTag(const int64_t& _keywordTag)
 bool WordRsp::KeywordTagHasBeenSet() const
 {
     return m_keywordTagHasBeenSet;
+}
+
+Tone WordRsp::GetTone() const
+{
+    return m_tone;
+}
+
+void WordRsp::SetTone(const Tone& _tone)
+{
+    m_tone = _tone;
+    m_toneHasBeenSet = true;
+}
+
+bool WordRsp::ToneHasBeenSet() const
+{
+    return m_toneHasBeenSet;
 }
 

@@ -1,0 +1,128 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/tse/v20201207/model/CloudAPIGatewayCanaryRuleList.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tse::V20201207::Model;
+using namespace std;
+
+CloudAPIGatewayCanaryRuleList::CloudAPIGatewayCanaryRuleList() :
+    m_canaryRuleListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome CloudAPIGatewayCanaryRuleList::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("CanaryRuleList") && !value["CanaryRuleList"].IsNull())
+    {
+        if (!value["CanaryRuleList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudAPIGatewayCanaryRuleList.CanaryRuleList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CanaryRuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudNativeAPIGatewayCanaryRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_canaryRuleList.push_back(item);
+        }
+        m_canaryRuleListHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCount") && !value["TotalCount"].IsNull())
+    {
+        if (!value["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAPIGatewayCanaryRuleList.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = value["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void CloudAPIGatewayCanaryRuleList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_canaryRuleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanaryRuleList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_canaryRuleList.begin(); itr != m_canaryRuleList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+}
+
+
+vector<CloudNativeAPIGatewayCanaryRule> CloudAPIGatewayCanaryRuleList::GetCanaryRuleList() const
+{
+    return m_canaryRuleList;
+}
+
+void CloudAPIGatewayCanaryRuleList::SetCanaryRuleList(const vector<CloudNativeAPIGatewayCanaryRule>& _canaryRuleList)
+{
+    m_canaryRuleList = _canaryRuleList;
+    m_canaryRuleListHasBeenSet = true;
+}
+
+bool CloudAPIGatewayCanaryRuleList::CanaryRuleListHasBeenSet() const
+{
+    return m_canaryRuleListHasBeenSet;
+}
+
+int64_t CloudAPIGatewayCanaryRuleList::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+void CloudAPIGatewayCanaryRuleList::SetTotalCount(const int64_t& _totalCount)
+{
+    m_totalCount = _totalCount;
+    m_totalCountHasBeenSet = true;
+}
+
+bool CloudAPIGatewayCanaryRuleList::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+

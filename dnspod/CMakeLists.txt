@@ -54,6 +54,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoRequest.h
   include/tencentcloud/dnspod/v20210323/model/DomainListItem.h
   include/tencentcloud/dnspod/v20210323/model/DeleteDomainBatchRequest.h
+  include/tencentcloud/dnspod/v20210323/model/TagItemFilter.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordTypeResponse.h
   include/tencentcloud/dnspod/v20210323/model/ModifyDomainRemarkResponse.h
   include/tencentcloud/dnspod/v20210323/model/DeleteSnapshotRequest.h
@@ -187,6 +188,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/WhoisInfo.h
   include/tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h
   include/tencentcloud/dnspod/v20210323/model/PreviewDetail.h
+  include/tencentcloud/dnspod/v20210323/model/TagItem.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisResponse.h
   include/tencentcloud/dnspod/v20210323/model/CreateRecordGroupResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainGroupListRequest.h
@@ -235,6 +237,7 @@ set(dnspod_src
   src/v20210323/model/DescribeDomainShareInfoRequest.cpp
   src/v20210323/model/DomainListItem.cpp
   src/v20210323/model/DeleteDomainBatchRequest.cpp
+  src/v20210323/model/TagItemFilter.cpp
   src/v20210323/model/DescribeRecordTypeResponse.cpp
   src/v20210323/model/ModifyDomainRemarkResponse.cpp
   src/v20210323/model/DeleteSnapshotRequest.cpp
@@ -368,6 +371,7 @@ set(dnspod_src
   src/v20210323/model/WhoisInfo.cpp
   src/v20210323/model/DownloadSnapshotResponse.cpp
   src/v20210323/model/PreviewDetail.cpp
+  src/v20210323/model/TagItem.cpp
   src/v20210323/model/DescribeDomainWhoisResponse.cpp
   src/v20210323/model/CreateRecordGroupResponse.cpp
   src/v20210323/model/DescribeDomainGroupListRequest.cpp

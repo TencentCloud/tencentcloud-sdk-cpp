@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ProxyOperatorHasBeenSet() const;
 
                     /**
-                     * 获取在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
-                     * @return ProxyAppId 在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
+                     * 获取非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
+                     * @return ProxyAppId 非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
                      * 
                      */
                     std::string GetProxyAppId() const;
 
                     /**
-                     * 设置在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
-                     * @param _proxyAppId 在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
+                     * 设置非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
+                     * @param _proxyAppId 非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
                      * 
                      */
                     void SetProxyAppId(const std::string& _proxyAppId);
@@ -173,7 +173,7 @@ namespace TencentCloud
                     bool m_proxyOperatorHasBeenSet;
 
                     /**
-                     * 在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
+                     * 非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。
                      */
                     std::string m_proxyAppId;
                     bool m_proxyAppIdHasBeenSet;

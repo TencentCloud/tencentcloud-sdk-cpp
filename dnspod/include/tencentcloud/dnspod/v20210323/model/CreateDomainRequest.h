@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dnspod/v20210323/model/TagItem.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,48 @@ namespace TencentCloud
                      */
                     bool IsMarkHasBeenSet() const;
 
+                    /**
+                     * 获取添加子域名时，是否迁移相关父域名的解析记录。不传默认为 true
+                     * @return TransferSubDomain 添加子域名时，是否迁移相关父域名的解析记录。不传默认为 true
+                     * 
+                     */
+                    bool GetTransferSubDomain() const;
+
+                    /**
+                     * 设置添加子域名时，是否迁移相关父域名的解析记录。不传默认为 true
+                     * @param _transferSubDomain 添加子域名时，是否迁移相关父域名的解析记录。不传默认为 true
+                     * 
+                     */
+                    void SetTransferSubDomain(const bool& _transferSubDomain);
+
+                    /**
+                     * 判断参数 TransferSubDomain 是否已赋值
+                     * @return TransferSubDomain 是否已赋值
+                     * 
+                     */
+                    bool TransferSubDomainHasBeenSet() const;
+
+                    /**
+                     * 获取域名绑定的标签
+                     * @return Tags 域名绑定的标签
+                     * 
+                     */
+                    std::vector<TagItem> GetTags() const;
+
+                    /**
+                     * 设置域名绑定的标签
+                     * @param _tags 域名绑定的标签
+                     * 
+                     */
+                    void SetTags(const std::vector<TagItem>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +167,18 @@ namespace TencentCloud
                      */
                     std::string m_isMark;
                     bool m_isMarkHasBeenSet;
+
+                    /**
+                     * 添加子域名时，是否迁移相关父域名的解析记录。不传默认为 true
+                     */
+                    bool m_transferSubDomain;
+                    bool m_transferSubDomainHasBeenSet;
+
+                    /**
+                     * 域名绑定的标签
+                     */
+                    std::vector<TagItem> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

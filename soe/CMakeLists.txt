@@ -20,6 +20,7 @@ set(soe_public_header
 
 set(soe_public_header_model
   include/tencentcloud/soe/v20180724/model/SentenceInfo.h
+  include/tencentcloud/soe/v20180724/model/Tone.h
   include/tencentcloud/soe/v20180724/model/InitOralProcessRequest.h
   include/tencentcloud/soe/v20180724/model/Keyword.h
   include/tencentcloud/soe/v20180724/model/KeywordEvaluateRequest.h
@@ -37,6 +38,7 @@ set(soe_public_header_model
 set(soe_src
   src/v20180724/SoeClient.cpp
   src/v20180724/model/SentenceInfo.cpp
+  src/v20180724/model/Tone.cpp
   src/v20180724/model/InitOralProcessRequest.cpp
   src/v20180724/model/Keyword.cpp
   src/v20180724/model/KeywordEvaluateRequest.cpp

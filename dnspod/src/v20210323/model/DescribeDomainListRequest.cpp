@@ -27,7 +27,8 @@ DescribeDomainListRequest::DescribeDomainListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_keywordHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string DescribeDomainListRequest::ToJsonString() const
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void DescribeDomainListRequest::SetKeyword(const string& _keyword)
 bool DescribeDomainListRequest::KeywordHasBeenSet() const
 {
     return m_keywordHasBeenSet;
+}
+
+vector<TagItemFilter> DescribeDomainListRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeDomainListRequest::SetTags(const vector<TagItemFilter>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeDomainListRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

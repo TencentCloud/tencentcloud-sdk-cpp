@@ -42,7 +42,8 @@ DomainListItem::DomainListItem() :
     m_recordCountHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_updatedOnHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,26 @@ CoreInternalOutcome DomainListItem::Deserialize(const rapidjson::Value &value)
         m_ownerHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainListItem.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +481,21 @@ void DomainListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -815,5 +851,21 @@ void DomainListItem::SetOwner(const string& _owner)
 bool DomainListItem::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+vector<TagItem> DomainListItem::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DomainListItem::SetTagList(const vector<TagItem>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DomainListItem::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

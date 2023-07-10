@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/soe/v20180724/model/PhoneInfo.h>
+#include <tencentcloud/soe/v20180724/model/Tone.h>
 
 
 namespace TencentCloud
@@ -240,6 +241,31 @@ namespace TencentCloud
                      */
                     bool KeywordTagHasBeenSet() const;
 
+                    /**
+                     * 获取声调检测结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tone 声调检测结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Tone GetTone() const;
+
+                    /**
+                     * 设置声调检测结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tone 声调检测结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTone(const Tone& _tone);
+
+                    /**
+                     * 判断参数 Tone 是否已赋值
+                     * @return Tone 是否已赋值
+                     * 
+                     */
+                    bool ToneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +322,13 @@ namespace TencentCloud
                      */
                     int64_t m_keywordTag;
                     bool m_keywordTagHasBeenSet;
+
+                    /**
+                     * 声调检测结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Tone m_tone;
+                    bool m_toneHasBeenSet;
 
                 };
             }

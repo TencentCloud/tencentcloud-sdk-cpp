@@ -25,7 +25,9 @@ using namespace std;
 CreateDomainRequest::CreateDomainRequest() :
     m_domainHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_isMarkHasBeenSet(false)
+    m_isMarkHasBeenSet(false),
+    m_transferSubDomainHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,29 @@ string CreateDomainRequest::ToJsonString() const
         string key = "IsMark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_isMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferSubDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferSubDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transferSubDomain, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +139,38 @@ void CreateDomainRequest::SetIsMark(const string& _isMark)
 bool CreateDomainRequest::IsMarkHasBeenSet() const
 {
     return m_isMarkHasBeenSet;
+}
+
+bool CreateDomainRequest::GetTransferSubDomain() const
+{
+    return m_transferSubDomain;
+}
+
+void CreateDomainRequest::SetTransferSubDomain(const bool& _transferSubDomain)
+{
+    m_transferSubDomain = _transferSubDomain;
+    m_transferSubDomainHasBeenSet = true;
+}
+
+bool CreateDomainRequest::TransferSubDomainHasBeenSet() const
+{
+    return m_transferSubDomainHasBeenSet;
+}
+
+vector<TagItem> CreateDomainRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateDomainRequest::SetTags(const vector<TagItem>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateDomainRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

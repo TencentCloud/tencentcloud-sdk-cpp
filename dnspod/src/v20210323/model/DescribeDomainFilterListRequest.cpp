@@ -37,7 +37,8 @@ DescribeDomainFilterListRequest::DescribeDomainFilterListRequest() :
     m_updatedAtEndHasBeenSet(false),
     m_recordCountBeginHasBeenSet(false),
     m_recordCountEndHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,21 @@ string DescribeDomainFilterListRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -429,6 +445,22 @@ void DescribeDomainFilterListRequest::SetProjectId(const int64_t& _projectId)
 bool DescribeDomainFilterListRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<TagItemFilter> DescribeDomainFilterListRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeDomainFilterListRequest::SetTags(const vector<TagItemFilter>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeDomainFilterListRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

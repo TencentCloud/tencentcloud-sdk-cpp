@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dnspod/v20210323/model/TagItemFilter.h>
 
 
 namespace TencentCloud
@@ -409,6 +410,27 @@ SPAM：封禁
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签过滤
+                     * @return Tags 标签过滤
+                     * 
+                     */
+                    std::vector<TagItemFilter> GetTags() const;
+
+                    /**
+                     * 设置标签过滤
+                     * @param _tags 标签过滤
+                     * 
+                     */
+                    void SetTags(const std::vector<TagItemFilter>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +535,12 @@ SPAM：封禁
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 标签过滤
+                     */
+                    std::vector<TagItemFilter> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

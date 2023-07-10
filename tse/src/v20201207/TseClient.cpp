@@ -40,6 +40,221 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::CreateCloudNativeAPIGatewayCanaryRuleOutcome TseClient::CreateCloudNativeAPIGatewayCanaryRule(const CreateCloudNativeAPIGatewayCanaryRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayCanaryRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayCanaryRuleResponse rsp = CreateCloudNativeAPIGatewayCanaryRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayCanaryRuleOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayCanaryRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayCanaryRuleOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayCanaryRuleAsync(const CreateCloudNativeAPIGatewayCanaryRuleRequest& request, const CreateCloudNativeAPIGatewayCanaryRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayCanaryRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayCanaryRuleOutcomeCallable TseClient::CreateCloudNativeAPIGatewayCanaryRuleCallable(const CreateCloudNativeAPIGatewayCanaryRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayCanaryRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayCanaryRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayRouteOutcome TseClient::CreateCloudNativeAPIGatewayRoute(const CreateCloudNativeAPIGatewayRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayRouteResponse rsp = CreateCloudNativeAPIGatewayRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayRouteOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayRouteOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayRouteAsync(const CreateCloudNativeAPIGatewayRouteRequest& request, const CreateCloudNativeAPIGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayRouteOutcomeCallable TseClient::CreateCloudNativeAPIGatewayRouteCallable(const CreateCloudNativeAPIGatewayRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayRouteRateLimitOutcome TseClient::CreateCloudNativeAPIGatewayRouteRateLimit(const CreateCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayRouteRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayRouteRateLimitResponse rsp = CreateCloudNativeAPIGatewayRouteRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayRouteRateLimitOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayRouteRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayRouteRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayRouteRateLimitAsync(const CreateCloudNativeAPIGatewayRouteRateLimitRequest& request, const CreateCloudNativeAPIGatewayRouteRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayRouteRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::CreateCloudNativeAPIGatewayRouteRateLimitCallable(const CreateCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayRouteRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayRouteRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayServiceOutcome TseClient::CreateCloudNativeAPIGatewayService(const CreateCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayServiceResponse rsp = CreateCloudNativeAPIGatewayServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayServiceOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayServiceAsync(const CreateCloudNativeAPIGatewayServiceRequest& request, const CreateCloudNativeAPIGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayServiceOutcomeCallable TseClient::CreateCloudNativeAPIGatewayServiceCallable(const CreateCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateCloudNativeAPIGatewayServiceRateLimitOutcome TseClient::CreateCloudNativeAPIGatewayServiceRateLimit(const CreateCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayServiceRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudNativeAPIGatewayServiceRateLimitResponse rsp = CreateCloudNativeAPIGatewayServiceRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudNativeAPIGatewayServiceRateLimitOutcome(rsp);
+        else
+            return CreateCloudNativeAPIGatewayServiceRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudNativeAPIGatewayServiceRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateCloudNativeAPIGatewayServiceRateLimitAsync(const CreateCloudNativeAPIGatewayServiceRateLimitRequest& request, const CreateCloudNativeAPIGatewayServiceRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudNativeAPIGatewayServiceRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient::CreateCloudNativeAPIGatewayServiceRateLimitCallable(const CreateCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudNativeAPIGatewayServiceRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudNativeAPIGatewayServiceRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateEngineOutcome TseClient::CreateEngine(const CreateEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEngine");
@@ -76,6 +291,221 @@ TseClient::CreateEngineOutcomeCallable TseClient::CreateEngineCallable(const Cre
         [this, request]()
         {
             return this->CreateEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayCanaryRuleOutcome TseClient::DeleteCloudNativeAPIGatewayCanaryRule(const DeleteCloudNativeAPIGatewayCanaryRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayCanaryRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayCanaryRuleResponse rsp = DeleteCloudNativeAPIGatewayCanaryRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayCanaryRuleOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayCanaryRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayCanaryRuleOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayCanaryRuleAsync(const DeleteCloudNativeAPIGatewayCanaryRuleRequest& request, const DeleteCloudNativeAPIGatewayCanaryRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayCanaryRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayCanaryRuleOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayCanaryRuleCallable(const DeleteCloudNativeAPIGatewayCanaryRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayCanaryRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayCanaryRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayRouteOutcome TseClient::DeleteCloudNativeAPIGatewayRoute(const DeleteCloudNativeAPIGatewayRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayRouteResponse rsp = DeleteCloudNativeAPIGatewayRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayRouteOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayRouteOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayRouteAsync(const DeleteCloudNativeAPIGatewayRouteRequest& request, const DeleteCloudNativeAPIGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayRouteOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayRouteCallable(const DeleteCloudNativeAPIGatewayRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayRouteRateLimitOutcome TseClient::DeleteCloudNativeAPIGatewayRouteRateLimit(const DeleteCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayRouteRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayRouteRateLimitResponse rsp = DeleteCloudNativeAPIGatewayRouteRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayRouteRateLimitOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayRouteRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayRouteRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayRouteRateLimitAsync(const DeleteCloudNativeAPIGatewayRouteRateLimitRequest& request, const DeleteCloudNativeAPIGatewayRouteRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayRouteRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayRouteRateLimitCallable(const DeleteCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayRouteRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayRouteRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayServiceOutcome TseClient::DeleteCloudNativeAPIGatewayService(const DeleteCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayServiceResponse rsp = DeleteCloudNativeAPIGatewayServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayServiceOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayServiceAsync(const DeleteCloudNativeAPIGatewayServiceRequest& request, const DeleteCloudNativeAPIGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayServiceOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayServiceCallable(const DeleteCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayServiceRateLimitOutcome TseClient::DeleteCloudNativeAPIGatewayServiceRateLimit(const DeleteCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayServiceRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayServiceRateLimitResponse rsp = DeleteCloudNativeAPIGatewayServiceRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayServiceRateLimitOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayServiceRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayServiceRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayServiceRateLimitAsync(const DeleteCloudNativeAPIGatewayServiceRateLimitRequest& request, const DeleteCloudNativeAPIGatewayServiceRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayServiceRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayServiceRateLimitCallable(const DeleteCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayServiceRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayServiceRateLimit(request);
         }
     );
 
@@ -126,6 +556,49 @@ TseClient::DeleteEngineOutcomeCallable TseClient::DeleteEngineCallable(const Del
     return task->get_future();
 }
 
+TseClient::DescribeCloudNativeAPIGatewayCanaryRulesOutcome TseClient::DescribeCloudNativeAPIGatewayCanaryRules(const DescribeCloudNativeAPIGatewayCanaryRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayCanaryRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayCanaryRulesResponse rsp = DescribeCloudNativeAPIGatewayCanaryRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayCanaryRulesOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayCanaryRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayCanaryRulesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayCanaryRulesAsync(const DescribeCloudNativeAPIGatewayCanaryRulesRequest& request, const DescribeCloudNativeAPIGatewayCanaryRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayCanaryRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCanaryRulesOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayCanaryRulesCallable(const DescribeCloudNativeAPIGatewayCanaryRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayCanaryRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayCanaryRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeCloudNativeAPIGatewayNodesOutcome TseClient::DescribeCloudNativeAPIGatewayNodes(const DescribeCloudNativeAPIGatewayNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayNodes");
@@ -162,6 +635,178 @@ TseClient::DescribeCloudNativeAPIGatewayNodesOutcomeCallable TseClient::Describe
         [this, request]()
         {
             return this->DescribeCloudNativeAPIGatewayNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayRouteRateLimitOutcome TseClient::DescribeCloudNativeAPIGatewayRouteRateLimit(const DescribeCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayRouteRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayRouteRateLimitResponse rsp = DescribeCloudNativeAPIGatewayRouteRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayRouteRateLimitOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayRouteRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayRouteRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayRouteRateLimitAsync(const DescribeCloudNativeAPIGatewayRouteRateLimitRequest& request, const DescribeCloudNativeAPIGatewayRouteRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayRouteRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayRouteRateLimitCallable(const DescribeCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayRouteRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayRouteRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayRoutesOutcome TseClient::DescribeCloudNativeAPIGatewayRoutes(const DescribeCloudNativeAPIGatewayRoutesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayRoutes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayRoutesResponse rsp = DescribeCloudNativeAPIGatewayRoutesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayRoutesOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayRoutesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayRoutesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayRoutesAsync(const DescribeCloudNativeAPIGatewayRoutesRequest& request, const DescribeCloudNativeAPIGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayRoutes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayRoutesOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayRoutesCallable(const DescribeCloudNativeAPIGatewayRoutesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayRoutesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServiceRateLimitOutcome TseClient::DescribeCloudNativeAPIGatewayServiceRateLimit(const DescribeCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayServiceRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayServiceRateLimitResponse rsp = DescribeCloudNativeAPIGatewayServiceRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayServiceRateLimitOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayServiceRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayServiceRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayServiceRateLimitAsync(const DescribeCloudNativeAPIGatewayServiceRateLimitRequest& request, const DescribeCloudNativeAPIGatewayServiceRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayServiceRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayServiceRateLimitCallable(const DescribeCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayServiceRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayServiceRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServicesOutcome TseClient::DescribeCloudNativeAPIGatewayServices(const DescribeCloudNativeAPIGatewayServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayServicesResponse rsp = DescribeCloudNativeAPIGatewayServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayServicesOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayServicesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayServicesAsync(const DescribeCloudNativeAPIGatewayServicesRequest& request, const DescribeCloudNativeAPIGatewayServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayServicesOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayServicesCallable(const DescribeCloudNativeAPIGatewayServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayServices(request);
         }
     );
 
@@ -248,6 +893,49 @@ TseClient::DescribeNacosServerInterfacesOutcomeCallable TseClient::DescribeNacos
         [this, request]()
         {
             return this->DescribeNacosServerInterfaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeOneCloudNativeAPIGatewayServiceOutcome TseClient::DescribeOneCloudNativeAPIGatewayService(const DescribeOneCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOneCloudNativeAPIGatewayService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOneCloudNativeAPIGatewayServiceResponse rsp = DescribeOneCloudNativeAPIGatewayServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOneCloudNativeAPIGatewayServiceOutcome(rsp);
+        else
+            return DescribeOneCloudNativeAPIGatewayServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOneCloudNativeAPIGatewayServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeOneCloudNativeAPIGatewayServiceAsync(const DescribeOneCloudNativeAPIGatewayServiceRequest& request, const DescribeOneCloudNativeAPIGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOneCloudNativeAPIGatewayService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable TseClient::DescribeOneCloudNativeAPIGatewayServiceCallable(const DescribeOneCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOneCloudNativeAPIGatewayServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOneCloudNativeAPIGatewayService(request);
         }
     );
 
@@ -420,6 +1108,221 @@ TseClient::DescribeZookeeperServerInterfacesOutcomeCallable TseClient::DescribeZ
         [this, request]()
         {
             return this->DescribeZookeeperServerInterfaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayCanaryRuleOutcome TseClient::ModifyCloudNativeAPIGatewayCanaryRule(const ModifyCloudNativeAPIGatewayCanaryRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayCanaryRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayCanaryRuleResponse rsp = ModifyCloudNativeAPIGatewayCanaryRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayCanaryRuleOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayCanaryRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayCanaryRuleOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayCanaryRuleAsync(const ModifyCloudNativeAPIGatewayCanaryRuleRequest& request, const ModifyCloudNativeAPIGatewayCanaryRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudNativeAPIGatewayCanaryRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyCloudNativeAPIGatewayCanaryRuleOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayCanaryRuleCallable(const ModifyCloudNativeAPIGatewayCanaryRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudNativeAPIGatewayCanaryRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudNativeAPIGatewayCanaryRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayRouteOutcome TseClient::ModifyCloudNativeAPIGatewayRoute(const ModifyCloudNativeAPIGatewayRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayRouteResponse rsp = ModifyCloudNativeAPIGatewayRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayRouteOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayRouteOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayRouteAsync(const ModifyCloudNativeAPIGatewayRouteRequest& request, const ModifyCloudNativeAPIGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudNativeAPIGatewayRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyCloudNativeAPIGatewayRouteOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayRouteCallable(const ModifyCloudNativeAPIGatewayRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudNativeAPIGatewayRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudNativeAPIGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayRouteRateLimitOutcome TseClient::ModifyCloudNativeAPIGatewayRouteRateLimit(const ModifyCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayRouteRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayRouteRateLimitResponse rsp = ModifyCloudNativeAPIGatewayRouteRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayRouteRateLimitOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayRouteRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayRouteRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayRouteRateLimitAsync(const ModifyCloudNativeAPIGatewayRouteRateLimitRequest& request, const ModifyCloudNativeAPIGatewayRouteRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudNativeAPIGatewayRouteRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyCloudNativeAPIGatewayRouteRateLimitOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayRouteRateLimitCallable(const ModifyCloudNativeAPIGatewayRouteRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudNativeAPIGatewayRouteRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudNativeAPIGatewayRouteRateLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayServiceOutcome TseClient::ModifyCloudNativeAPIGatewayService(const ModifyCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayServiceResponse rsp = ModifyCloudNativeAPIGatewayServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayServiceOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayServiceOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayServiceAsync(const ModifyCloudNativeAPIGatewayServiceRequest& request, const ModifyCloudNativeAPIGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudNativeAPIGatewayService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyCloudNativeAPIGatewayServiceOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayServiceCallable(const ModifyCloudNativeAPIGatewayServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudNativeAPIGatewayServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudNativeAPIGatewayService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyCloudNativeAPIGatewayServiceRateLimitOutcome TseClient::ModifyCloudNativeAPIGatewayServiceRateLimit(const ModifyCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudNativeAPIGatewayServiceRateLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudNativeAPIGatewayServiceRateLimitResponse rsp = ModifyCloudNativeAPIGatewayServiceRateLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudNativeAPIGatewayServiceRateLimitOutcome(rsp);
+        else
+            return ModifyCloudNativeAPIGatewayServiceRateLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudNativeAPIGatewayServiceRateLimitOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyCloudNativeAPIGatewayServiceRateLimitAsync(const ModifyCloudNativeAPIGatewayServiceRateLimitRequest& request, const ModifyCloudNativeAPIGatewayServiceRateLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudNativeAPIGatewayServiceRateLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient::ModifyCloudNativeAPIGatewayServiceRateLimitCallable(const ModifyCloudNativeAPIGatewayServiceRateLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudNativeAPIGatewayServiceRateLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudNativeAPIGatewayServiceRateLimit(request);
         }
     );
 

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CorpIdHasBeenSet() const;
 
                     /**
-                     * 获取分页数量，默认为 100，最大为 1000
-                     * @return PageSize 分页数量，默认为 100，最大为 1000
+                     * 获取分页数量，默认为 20，最大为 1000
+                     * @return PageSize 分页数量，默认为 20，最大为 1000
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页数量，默认为 100，最大为 1000
-                     * @param _pageSize 分页数量，默认为 100，最大为 1000
+                     * 设置分页数量，默认为 20，最大为 1000
+                     * @param _pageSize 分页数量，默认为 20，最大为 1000
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -134,6 +134,48 @@ namespace TencentCloud
                      */
                     bool AfterLogIdHasBeenSet() const;
 
+                    /**
+                     * 获取开始时间 >= StartTime
+                     * @return StartTime 开始时间 >= StartTime
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间 >= StartTime
+                     * @param _startTime 开始时间 >= StartTime
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间 < EndTime
+                     * @return EndTime 结束时间 < EndTime
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间 < EndTime
+                     * @param _endTime 结束时间 < EndTime
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,7 +186,7 @@ namespace TencentCloud
                     bool m_corpIdHasBeenSet;
 
                     /**
-                     * 分页数量，默认为 100，最大为 1000
+                     * 分页数量，默认为 20，最大为 1000
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -161,6 +203,18 @@ namespace TencentCloud
                      */
                     uint64_t m_afterLogId;
                     bool m_afterLogIdHasBeenSet;
+
+                    /**
+                     * 开始时间 >= StartTime
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间 < EndTime
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

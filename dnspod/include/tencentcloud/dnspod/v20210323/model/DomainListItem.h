@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dnspod/v20210323/model/TagItem.h>
 
 
 namespace TencentCloud
@@ -508,6 +509,31 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取域名关联的标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 域名关联的标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TagItem> GetTagList() const;
+
+                    /**
+                     * 设置域名关联的标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagList 域名关联的标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagList(const std::vector<TagItem>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +667,13 @@ namespace TencentCloud
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 域名关联的标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagItem> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

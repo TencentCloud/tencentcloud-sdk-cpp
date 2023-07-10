@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取课堂状态。默认展示所有课堂，0为未开始，1为正在上课，2为已结束，3为已过期
+                     * @return Status 课堂状态。默认展示所有课堂，0为未开始，1为正在上课，2为已结束，3为已过期
+                     * 
+                     */
+                    std::vector<uint64_t> GetStatus() const;
+
+                    /**
+                     * 设置课堂状态。默认展示所有课堂，0为未开始，1为正在上课，2为已结束，3为已过期
+                     * @param _status 课堂状态。默认展示所有课堂，0为未开始，1为正在上课，2为已结束，3为已过期
+                     * 
+                     */
+                    void SetStatus(const std::vector<uint64_t>& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +204,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 课堂状态。默认展示所有课堂，0为未开始，1为正在上课，2为已结束，3为已过期
+                     */
+                    std::vector<uint64_t> m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

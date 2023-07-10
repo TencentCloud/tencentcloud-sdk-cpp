@@ -379,6 +379,56 @@ namespace TencentCloud
                      */
                     bool EnableDirectControlHasBeenSet() const;
 
+                    /**
+                     * 获取开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InteractionMode 开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetInteractionMode() const;
+
+                    /**
+                     * 设置开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _interactionMode 开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInteractionMode(const int64_t& _interactionMode);
+
+                    /**
+                     * 判断参数 InteractionMode 是否已赋值
+                     * @return InteractionMode 是否已赋值
+                     * 
+                     */
+                    bool InteractionModeHasBeenSet() const;
+
+                    /**
+                     * 获取横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetVideoOrientation() const;
+
+                    /**
+                     * 设置横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoOrientation(const int64_t& _videoOrientation);
+
+                    /**
+                     * 判断参数 VideoOrientation 是否已赋值
+                     * @return VideoOrientation 是否已赋值
+                     * 
+                     */
+                    bool VideoOrientationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -473,6 +523,20 @@ namespace TencentCloud
                      */
                     uint64_t m_enableDirectControl;
                     bool m_enableDirectControlHasBeenSet;
+
+                    /**
+                     * 开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_interactionMode;
+                    bool m_interactionModeHasBeenSet;
+
+                    /**
+                     * 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_videoOrientation;
+                    bool m_videoOrientationHasBeenSet;
 
                 };
             }

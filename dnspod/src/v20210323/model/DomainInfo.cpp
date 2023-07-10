@@ -50,7 +50,8 @@ DomainInfo::DomainInfo() :
     m_vipEndAtHasBeenSet(false),
     m_vipAutoRenewHasBeenSet(false),
     m_vipResourceIdHasBeenSet(false),
-    m_isSubDomainHasBeenSet(false)
+    m_isSubDomainHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,26 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_isSubDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -620,6 +641,21 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsSubDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSubDomain, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1103,5 +1139,21 @@ void DomainInfo::SetIsSubDomain(const bool& _isSubDomain)
 bool DomainInfo::IsSubDomainHasBeenSet() const
 {
     return m_isSubDomainHasBeenSet;
+}
+
+vector<TagItem> DomainInfo::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DomainInfo::SetTagList(const vector<TagItem>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DomainInfo::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
