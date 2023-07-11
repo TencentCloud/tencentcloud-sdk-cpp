@@ -373,6 +373,31 @@ namespace TencentCloud
                      */
                     bool GatewayRoutePortHasBeenSet() const;
 
+                    /**
+                     * 获取路由环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayRouteEnvId 路由环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGatewayRouteEnvId() const;
+
+                    /**
+                     * 设置路由环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gatewayRouteEnvId 路由环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGatewayRouteEnvId(const std::string& _gatewayRouteEnvId);
+
+                    /**
+                     * 判断参数 GatewayRouteEnvId 是否已赋值
+                     * @return GatewayRouteEnvId 是否已赋值
+                     * 
+                     */
+                    bool GatewayRouteEnvIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +491,13 @@ namespace TencentCloud
                      */
                     int64_t m_gatewayRoutePort;
                     bool m_gatewayRoutePortHasBeenSet;
+
+                    /**
+                     * 路由环境ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayRouteEnvId;
+                    bool m_gatewayRouteEnvIdHasBeenSet;
 
                 };
             }

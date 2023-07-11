@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EngineVersionsHasBeenSet() const;
 
                     /**
-                     * 获取模版名称
-                     * @return TemplateNames 模版名称
+                     * 获取模板名称
+                     * @return TemplateNames 模板名称
                      * 
                      */
                     std::vector<std::string> GetTemplateNames() const;
 
                     /**
-                     * 设置模版名称
-                     * @param _templateNames 模版名称
+                     * 设置模板名称
+                     * @param _templateNames 模板名称
                      * 
                      */
                     void SetTemplateNames(const std::vector<std::string>& _templateNames);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TemplateNamesHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateIds 模版ID
+                     * 获取模板ID
+                     * @return TemplateIds 模板ID
                      * 
                      */
                     std::vector<int64_t> GetTemplateIds() const;
 
                     /**
-                     * 设置模版ID
-                     * @param _templateIds 模版ID
+                     * 设置模板ID
+                     * @param _templateIds 模板ID
                      * 
                      */
                     void SetTemplateIds(const std::vector<int64_t>& _templateIds);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ProductsHasBeenSet() const;
 
                     /**
-                     * 获取模版类型
-                     * @return TemplateTypes 模版类型
+                     * 获取模板类型
+                     * @return TemplateTypes 模板类型
                      * 
                      */
                     std::vector<std::string> GetTemplateTypes() const;
 
                     /**
-                     * 设置模版类型
-                     * @param _templateTypes 模版类型
+                     * 设置模板类型
+                     * @param _templateTypes 模板类型
                      * 
                      */
                     void SetTemplateTypes(const std::vector<std::string>& _templateTypes);
@@ -282,13 +282,13 @@ namespace TencentCloud
                     bool m_engineVersionsHasBeenSet;
 
                     /**
-                     * 模版名称
+                     * 模板名称
                      */
                     std::vector<std::string> m_templateNames;
                     bool m_templateNamesHasBeenSet;
 
                     /**
-                     * 模版ID
+                     * 模板ID
                      */
                     std::vector<int64_t> m_templateIds;
                     bool m_templateIdsHasBeenSet;
@@ -318,7 +318,7 @@ namespace TencentCloud
                     bool m_productsHasBeenSet;
 
                     /**
-                     * 模版类型
+                     * 模板类型
                      */
                     std::vector<std::string> m_templateTypes;
                     bool m_templateTypesHasBeenSet;

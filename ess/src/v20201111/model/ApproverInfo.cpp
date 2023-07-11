@@ -24,8 +24,8 @@ ApproverInfo::ApproverInfo() :
     m_approverTypeHasBeenSet(false),
     m_approverNameHasBeenSet(false),
     m_approverMobileHasBeenSet(false),
-    m_signComponentsHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
+    m_signComponentsHasBeenSet(false),
     m_approverIdCardNumberHasBeenSet(false),
     m_approverIdCardTypeHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
@@ -77,6 +77,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_approverMobileHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
+    {
+        if (!value["OrganizationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
     if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
     {
         if (!value["SignComponents"].IsArray())
@@ -95,16 +105,6 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
             m_signComponents.push_back(item);
         }
         m_signComponentsHasBeenSet = true;
-    }
-
-    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
-    {
-        if (!value["OrganizationName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApproverInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_organizationName = string(value["OrganizationName"].GetString());
-        m_organizationNameHasBeenSet = true;
     }
 
     if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
@@ -284,6 +284,14 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_approverMobile.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_signComponentsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -297,14 +305,6 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_organizationNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_approverIdCardNumberHasBeenSet)
@@ -478,22 +478,6 @@ bool ApproverInfo::ApproverMobileHasBeenSet() const
     return m_approverMobileHasBeenSet;
 }
 
-vector<Component> ApproverInfo::GetSignComponents() const
-{
-    return m_signComponents;
-}
-
-void ApproverInfo::SetSignComponents(const vector<Component>& _signComponents)
-{
-    m_signComponents = _signComponents;
-    m_signComponentsHasBeenSet = true;
-}
-
-bool ApproverInfo::SignComponentsHasBeenSet() const
-{
-    return m_signComponentsHasBeenSet;
-}
-
 string ApproverInfo::GetOrganizationName() const
 {
     return m_organizationName;
@@ -508,6 +492,22 @@ void ApproverInfo::SetOrganizationName(const string& _organizationName)
 bool ApproverInfo::OrganizationNameHasBeenSet() const
 {
     return m_organizationNameHasBeenSet;
+}
+
+vector<Component> ApproverInfo::GetSignComponents() const
+{
+    return m_signComponents;
+}
+
+void ApproverInfo::SetSignComponents(const vector<Component>& _signComponents)
+{
+    m_signComponents = _signComponents;
+    m_signComponentsHasBeenSet = true;
+}
+
+bool ApproverInfo::SignComponentsHasBeenSet() const
+{
+    return m_signComponentsHasBeenSet;
 }
 
 string ApproverInfo::GetApproverIdCardNumber() const

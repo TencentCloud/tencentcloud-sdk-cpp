@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每个子合同的发起所需的信息，数量限制2-100
-                     * @return FlowFileInfos 每个子合同的发起所需的信息，数量限制2-100
+                     * 获取每个子合同的发起所需的信息，数量限制2-50
+                     * @return FlowFileInfos 每个子合同的发起所需的信息，数量限制2-50
                      * 
                      */
                     std::vector<FlowFileInfo> GetFlowFileInfos() const;
 
                     /**
-                     * 设置每个子合同的发起所需的信息，数量限制2-100
-                     * @param _flowFileInfos 每个子合同的发起所需的信息，数量限制2-100
+                     * 设置每个子合同的发起所需的信息，数量限制2-50
+                     * @param _flowFileInfos 每个子合同的发起所需的信息，数量限制2-50
                      * 
                      */
                     void SetFlowFileInfos(const std::vector<FlowFileInfo>& _flowFileInfos);
@@ -165,7 +165,7 @@ MobileCheck：手机号验证
                 private:
 
                     /**
-                     * 每个子合同的发起所需的信息，数量限制2-100
+                     * 每个子合同的发起所需的信息，数量限制2-50
                      */
                     std::vector<FlowFileInfo> m_flowFileInfos;
                     bool m_flowFileInfosHasBeenSet;

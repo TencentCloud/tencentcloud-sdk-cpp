@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RowsSentHasBeenSet() const;
 
                     /**
-                     * 获取sql模版
-                     * @return SqlTemplate sql模版
+                     * 获取sql模板
+                     * @return SqlTemplate sql模板
                      * 
                      */
                     std::string GetSqlTemplate() const;
 
                     /**
-                     * 设置sql模版
-                     * @param _sqlTemplate sql模版
+                     * 设置sql模板
+                     * @param _sqlTemplate sql模板
                      * 
                      */
                     void SetSqlTemplate(const std::string& _sqlTemplate);
@@ -334,7 +334,7 @@ namespace TencentCloud
                     bool m_rowsSentHasBeenSet;
 
                     /**
-                     * sql模版
+                     * sql模板
                      */
                     std::string m_sqlTemplate;
                     bool m_sqlTemplateHasBeenSet;

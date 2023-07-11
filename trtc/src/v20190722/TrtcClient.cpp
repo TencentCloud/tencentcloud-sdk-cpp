@@ -298,49 +298,6 @@ TrtcClient::DescribeCloudRecordingOutcomeCallable TrtcClient::DescribeCloudRecor
     return task->get_future();
 }
 
-TrtcClient::DescribeExternalTrtcMeasureOutcome TrtcClient::DescribeExternalTrtcMeasure(const DescribeExternalTrtcMeasureRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeExternalTrtcMeasure");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeExternalTrtcMeasureResponse rsp = DescribeExternalTrtcMeasureResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeExternalTrtcMeasureOutcome(rsp);
-        else
-            return DescribeExternalTrtcMeasureOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeExternalTrtcMeasureOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeExternalTrtcMeasureAsync(const DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeExternalTrtcMeasure(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeExternalTrtcMeasureOutcomeCallable TrtcClient::DescribeExternalTrtcMeasureCallable(const DescribeExternalTrtcMeasureRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeExternalTrtcMeasureOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeExternalTrtcMeasure(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::DescribeMixTranscodingUsageOutcome TrtcClient::DescribeMixTranscodingUsage(const DescribeMixTranscodingUsageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMixTranscodingUsage");

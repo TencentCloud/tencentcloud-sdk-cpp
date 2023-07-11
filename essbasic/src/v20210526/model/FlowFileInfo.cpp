@@ -30,6 +30,7 @@ FlowFileInfo::FlowFileInfo() :
     m_callbackUrlHasBeenSet(false),
     m_customerDataHasBeenSet(false),
     m_unorderedHasBeenSet(false),
+    m_componentsHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false)
 {
@@ -143,6 +144,26 @@ CoreInternalOutcome FlowFileInfo::Deserialize(const rapidjson::Value &value)
         m_unorderedHasBeenSet = true;
     }
 
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowFileInfo.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_components.push_back(item);
+        }
+        m_componentsHasBeenSet = true;
+    }
+
     if (value.HasMember("CustomShowMap") && !value["CustomShowMap"].IsNull())
     {
         if (!value["CustomShowMap"].IsString())
@@ -252,6 +273,21 @@ void FlowFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Unordered";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unordered, allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_customShowMapHasBeenSet)
@@ -415,6 +451,22 @@ void FlowFileInfo::SetUnordered(const bool& _unordered)
 bool FlowFileInfo::UnorderedHasBeenSet() const
 {
     return m_unorderedHasBeenSet;
+}
+
+vector<Component> FlowFileInfo::GetComponents() const
+{
+    return m_components;
+}
+
+void FlowFileInfo::SetComponents(const vector<Component>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool FlowFileInfo::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
 }
 
 string FlowFileInfo::GetCustomShowMap() const

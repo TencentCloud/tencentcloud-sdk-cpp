@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取来源Ip或Ip段，例如192.168.0.0/16
-                     * @return CidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * 获取来源IP或IP段，例如192.168.0.0/16
+                     * @return CidrIp 来源IP或IP段，例如192.168.0.0/16
                      * 
                      */
                     std::string GetCidrIp() const;
 
                     /**
-                     * 设置来源Ip或Ip段，例如192.168.0.0/16
-                     * @param _cidrIp 来源Ip或Ip段，例如192.168.0.0/16
+                     * 设置来源IP或IP段，例如192.168.0.0/16
+                     * @param _cidrIp 来源IP或IP段，例如192.168.0.0/16
                      * 
                      */
                     void SetCidrIp(const std::string& _cidrIp);
@@ -223,7 +223,7 @@ namespace TencentCloud
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 来源Ip或Ip段，例如192.168.0.0/16
+                     * 来源IP或IP段，例如192.168.0.0/16
                      */
                     std::string m_cidrIp;
                     bool m_cidrIpHasBeenSet;

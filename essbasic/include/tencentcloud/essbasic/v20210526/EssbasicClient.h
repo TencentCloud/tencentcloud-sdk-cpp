@@ -41,6 +41,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h>
@@ -152,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateFlowGroupByFilesResponse> ChannelCreateFlowGroupByFilesOutcome;
                 typedef std::future<ChannelCreateFlowGroupByFilesOutcome> ChannelCreateFlowGroupByFilesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowGroupByFilesRequest&, ChannelCreateFlowGroupByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowGroupByFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateFlowGroupByTemplatesResponse> ChannelCreateFlowGroupByTemplatesOutcome;
+                typedef std::future<ChannelCreateFlowGroupByTemplatesOutcome> ChannelCreateFlowGroupByTemplatesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowGroupByTemplatesRequest&, ChannelCreateFlowGroupByTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowGroupByTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateFlowRemindsResponse> ChannelCreateFlowRemindsOutcome;
                 typedef std::future<ChannelCreateFlowRemindsOutcome> ChannelCreateFlowRemindsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowRemindsRequest&, ChannelCreateFlowRemindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowRemindsAsyncHandler;
@@ -359,6 +364,15 @@ namespace TencentCloud
                 ChannelCreateFlowGroupByFilesOutcomeCallable ChannelCreateFlowGroupByFilesCallable(const Model::ChannelCreateFlowGroupByFilesRequest& request);
 
                 /**
+                 *接口（ChannelCreateFlowGroupByTemplates）用于通过多模板创建合同组签署流程。
+                 * @param req ChannelCreateFlowGroupByTemplatesRequest
+                 * @return ChannelCreateFlowGroupByTemplatesOutcome
+                 */
+                ChannelCreateFlowGroupByTemplatesOutcome ChannelCreateFlowGroupByTemplates(const Model::ChannelCreateFlowGroupByTemplatesRequest &request);
+                void ChannelCreateFlowGroupByTemplatesAsync(const Model::ChannelCreateFlowGroupByTemplatesRequest& request, const ChannelCreateFlowGroupByTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateFlowGroupByTemplatesOutcomeCallable ChannelCreateFlowGroupByTemplatesCallable(const Model::ChannelCreateFlowGroupByTemplatesRequest& request);
+
+                /**
                  *指定需要批量催办的签署流程Id，批量催办合同，最多100个；接口失败后返回错误信息
 注意:
 该接口不可直接调用，请联系客户经理申请使用
@@ -501,7 +515,7 @@ namespace TencentCloud
                 ChannelDescribeOrganizationSealsOutcomeCallable ChannelDescribeOrganizationSealsCallable(const Model::ChannelDescribeOrganizationSealsRequest& request);
 
                 /**
-                 *查询用户角色
+                 *查询角色列表，支持根据类型和状态过滤角色列表
                  * @param req ChannelDescribeRolesRequest
                  * @return ChannelDescribeRolesOutcome
                  */

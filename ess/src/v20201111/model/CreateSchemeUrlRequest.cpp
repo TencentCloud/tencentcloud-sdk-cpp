@@ -29,6 +29,7 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_mobileHasBeenSet(false),
     m_endPointHasBeenSet(false),
     m_flowIdHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false),
     m_pathTypeHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
     m_agentHasBeenSet(false)
@@ -89,6 +90,14 @@ string CreateSchemeUrlRequest::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pathTypeHasBeenSet)
@@ -218,6 +227,22 @@ void CreateSchemeUrlRequest::SetFlowId(const string& _flowId)
 bool CreateSchemeUrlRequest::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void CreateSchemeUrlRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 uint64_t CreateSchemeUrlRequest::GetPathType() const

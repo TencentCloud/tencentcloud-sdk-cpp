@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6SubnetCidrBlockResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Ecm::V20190719::Model;
 using namespace std;
 
-DescribeExternalTrtcMeasureResponse::DescribeExternalTrtcMeasureResponse() :
-    m_sdkAppIdTrtrTimeUsagesHasBeenSet(false),
-    m_anchorUsageModeHasBeenSet(false),
-    m_audienceUsageModeHasBeenSet(false)
+AssignIpv6SubnetCidrBlockResponse::AssignIpv6SubnetCidrBlockResponse() :
+    m_ipv6SubnetCidrBlockSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeExternalTrtcMeasureResponse::Deserialize(const string &payload)
+CoreInternalOutcome AssignIpv6SubnetCidrBlockResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,85 +62,49 @@ CoreInternalOutcome DescribeExternalTrtcMeasureResponse::Deserialize(const strin
     }
 
 
-    if (rsp.HasMember("SdkAppIdTrtrTimeUsages") && !rsp["SdkAppIdTrtrTimeUsages"].IsNull())
+    if (rsp.HasMember("Ipv6SubnetCidrBlockSet") && !rsp["Ipv6SubnetCidrBlockSet"].IsNull())
     {
-        if (!rsp["SdkAppIdTrtrTimeUsages"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtrTimeUsages` is not array type"));
+        if (!rsp["Ipv6SubnetCidrBlockSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Ipv6SubnetCidrBlockSet` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["SdkAppIdTrtrTimeUsages"];
+        const rapidjson::Value &tmpValue = rsp["Ipv6SubnetCidrBlockSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            SdkAppIdNewTrtcTimeUsage item;
+            Ipv6SubnetCidrBlock item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_sdkAppIdTrtrTimeUsages.push_back(item);
+            m_ipv6SubnetCidrBlockSet.push_back(item);
         }
-        m_sdkAppIdTrtrTimeUsagesHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AnchorUsageMode") && !rsp["AnchorUsageMode"].IsNull())
-    {
-        if (!rsp["AnchorUsageMode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AnchorUsageMode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_anchorUsageMode = string(rsp["AnchorUsageMode"].GetString());
-        m_anchorUsageModeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("AudienceUsageMode") && !rsp["AudienceUsageMode"].IsNull())
-    {
-        if (!rsp["AudienceUsageMode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AudienceUsageMode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_audienceUsageMode = string(rsp["AudienceUsageMode"].GetString());
-        m_audienceUsageModeHasBeenSet = true;
+        m_ipv6SubnetCidrBlockSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeExternalTrtcMeasureResponse::ToJsonString() const
+string AssignIpv6SubnetCidrBlockResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_sdkAppIdTrtrTimeUsagesHasBeenSet)
+    if (m_ipv6SubnetCidrBlockSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppIdTrtrTimeUsages";
+        string key = "Ipv6SubnetCidrBlockSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_sdkAppIdTrtrTimeUsages.begin(); itr != m_sdkAppIdTrtrTimeUsages.end(); ++itr, ++i)
+        for (auto itr = m_ipv6SubnetCidrBlockSet.begin(); itr != m_ipv6SubnetCidrBlockSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_anchorUsageModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AnchorUsageMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_anchorUsageMode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_audienceUsageModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AudienceUsageMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_audienceUsageMode.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -157,34 +119,14 @@ string DescribeExternalTrtcMeasureResponse::ToJsonString() const
 }
 
 
-vector<SdkAppIdNewTrtcTimeUsage> DescribeExternalTrtcMeasureResponse::GetSdkAppIdTrtrTimeUsages() const
+vector<Ipv6SubnetCidrBlock> AssignIpv6SubnetCidrBlockResponse::GetIpv6SubnetCidrBlockSet() const
 {
-    return m_sdkAppIdTrtrTimeUsages;
+    return m_ipv6SubnetCidrBlockSet;
 }
 
-bool DescribeExternalTrtcMeasureResponse::SdkAppIdTrtrTimeUsagesHasBeenSet() const
+bool AssignIpv6SubnetCidrBlockResponse::Ipv6SubnetCidrBlockSetHasBeenSet() const
 {
-    return m_sdkAppIdTrtrTimeUsagesHasBeenSet;
-}
-
-string DescribeExternalTrtcMeasureResponse::GetAnchorUsageMode() const
-{
-    return m_anchorUsageMode;
-}
-
-bool DescribeExternalTrtcMeasureResponse::AnchorUsageModeHasBeenSet() const
-{
-    return m_anchorUsageModeHasBeenSet;
-}
-
-string DescribeExternalTrtcMeasureResponse::GetAudienceUsageMode() const
-{
-    return m_audienceUsageMode;
-}
-
-bool DescribeExternalTrtcMeasureResponse::AudienceUsageModeHasBeenSet() const
-{
-    return m_audienceUsageModeHasBeenSet;
+    return m_ipv6SubnetCidrBlockSetHasBeenSet;
 }
 
 

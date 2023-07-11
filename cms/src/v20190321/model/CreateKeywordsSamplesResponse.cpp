@@ -25,6 +25,7 @@ using namespace std;
 
 CreateKeywordsSamplesResponse::CreateKeywordsSamplesResponse() :
     m_sampleIDsHasBeenSet(false),
+    m_successInfosHasBeenSet(false),
     m_dupInfosHasBeenSet(false),
     m_invalidSamplesHasBeenSet(false)
 {
@@ -75,6 +76,26 @@ CoreInternalOutcome CreateKeywordsSamplesResponse::Deserialize(const string &pay
             m_sampleIDs.push_back((*itr).GetString());
         }
         m_sampleIDsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccessInfos") && !rsp["SuccessInfos"].IsNull())
+    {
+        if (!rsp["SuccessInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuccessInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserKeywordInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_successInfos.push_back(item);
+        }
+        m_successInfosHasBeenSet = true;
     }
 
     if (rsp.HasMember("DupInfos") && !rsp["DupInfos"].IsNull())
@@ -140,6 +161,21 @@ string CreateKeywordsSamplesResponse::ToJsonString() const
         }
     }
 
+    if (m_successInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_successInfos.begin(); itr != m_successInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_dupInfosHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -190,6 +226,16 @@ vector<string> CreateKeywordsSamplesResponse::GetSampleIDs() const
 bool CreateKeywordsSamplesResponse::SampleIDsHasBeenSet() const
 {
     return m_sampleIDsHasBeenSet;
+}
+
+vector<UserKeywordInfo> CreateKeywordsSamplesResponse::GetSuccessInfos() const
+{
+    return m_successInfos;
+}
+
+bool CreateKeywordsSamplesResponse::SuccessInfosHasBeenSet() const
+{
+    return m_successInfosHasBeenSet;
 }
 
 vector<UserKeywordInfo> CreateKeywordsSamplesResponse::GetDupInfos() const

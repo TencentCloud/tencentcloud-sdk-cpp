@@ -24,7 +24,9 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 DescribeFlowInfoResponse::DescribeFlowInfoResponse() :
-    m_flowDetailInfosHasBeenSet(false)
+    m_flowDetailInfosHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false),
+    m_flowGroupNameHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeFlowInfoResponse::Deserialize(const string &payload)
         m_flowDetailInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowGroupId") && !rsp["FlowGroupId"].IsNull())
+    {
+        if (!rsp["FlowGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowGroupId = string(rsp["FlowGroupId"].GetString());
+        m_flowGroupIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlowGroupName") && !rsp["FlowGroupName"].IsNull())
+    {
+        if (!rsp["FlowGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowGroupName = string(rsp["FlowGroupName"].GetString());
+        m_flowGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeFlowInfoResponse::ToJsonString() const
         }
     }
 
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowGroupName.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<FlowDetailInfo> DescribeFlowInfoResponse::GetFlowDetailInfos() const
 bool DescribeFlowInfoResponse::FlowDetailInfosHasBeenSet() const
 {
     return m_flowDetailInfosHasBeenSet;
+}
+
+string DescribeFlowInfoResponse::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+bool DescribeFlowInfoResponse::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
+}
+
+string DescribeFlowInfoResponse::GetFlowGroupName() const
+{
+    return m_flowGroupName;
+}
+
+bool DescribeFlowInfoResponse::FlowGroupNameHasBeenSet() const
+{
+    return m_flowGroupNameHasBeenSet;
 }
 
 

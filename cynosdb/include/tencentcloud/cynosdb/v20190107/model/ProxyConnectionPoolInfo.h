@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool OpenConnectionPoolHasBeenSet() const;
 
                     /**
-                     * 获取连接池类型：SessionConnectionPool（会话级别连接池
+                     * 获取连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConnectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池
+                     * @return ConnectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectionPoolType() const;
 
                     /**
-                     * 设置连接池类型：SessionConnectionPool（会话级别连接池
+                     * 设置连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _connectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池
+                     * @param _connectionPoolType 连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,7 +138,7 @@ namespace TencentCloud
                     bool m_openConnectionPoolHasBeenSet;
 
                     /**
-                     * 连接池类型：SessionConnectionPool（会话级别连接池
+                     * 连接池类型：SessionConnectionPool（会话级别连接池）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectionPoolType;

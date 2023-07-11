@@ -215,15 +215,27 @@ namespace TencentCloud
                     bool PrimaryLanguageHasBeenSet() const;
 
                     /**
-                     * 获取音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li>
-                     * @return SampleRate 音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li>
+                     * 获取音频采样率：
+<li>24000：24k（部分音色支持，请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)）</li>
+<li>16000：16k（默认）</li>
+<li>8000：8k</li>
+                     * @return SampleRate 音频采样率：
+<li>24000：24k（部分音色支持，请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)）</li>
+<li>16000：16k（默认）</li>
+<li>8000：8k</li>
                      * 
                      */
                     uint64_t GetSampleRate() const;
 
                     /**
-                     * 设置音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li>
-                     * @param _sampleRate 音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li>
+                     * 设置音频采样率：
+<li>24000：24k（部分音色支持，请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)）</li>
+<li>16000：16k（默认）</li>
+<li>8000：8k</li>
+                     * @param _sampleRate 音频采样率：
+<li>24000：24k（部分音色支持，请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)）</li>
+<li>16000：16k（默认）</li>
+<li>8000：8k</li>
                      * 
                      */
                     void SetSampleRate(const uint64_t& _sampleRate);
@@ -392,7 +404,10 @@ namespace TencentCloud
                     bool m_primaryLanguageHasBeenSet;
 
                     /**
-                     * 音频采样率：<li>16000：16k（默认）</li><li>8000：8k</li>
+                     * 音频采样率：
+<li>24000：24k（部分音色支持，请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)）</li>
+<li>16000：16k（默认）</li>
+<li>8000：8k</li>
                      */
                     uint64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;

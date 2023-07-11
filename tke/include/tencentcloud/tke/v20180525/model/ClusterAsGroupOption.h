@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool ScaleDownUtilizationThresholdHasBeenSet() const;
 
                     /**
-                     * 获取含有本地存储Pod的节点是否不缩容(默认： FALSE)
+                     * 获取含有本地存储Pod的节点是否不缩容(默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SkipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： FALSE)
+                     * @return SkipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSkipNodesWithLocalStorage() const;
 
                     /**
-                     * 设置含有本地存储Pod的节点是否不缩容(默认： FALSE)
+                     * 设置含有本地存储Pod的节点是否不缩容(默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _skipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： FALSE)
+                     * @param _skipNodesWithLocalStorage 含有本地存储Pod的节点是否不缩容(默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool SkipNodesWithLocalStorageHasBeenSet() const;
 
                     /**
-                     * 获取含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
+                     * 获取含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SkipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
+                     * @return SkipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSkipNodesWithSystemPods() const;
 
                     /**
-                     * 设置含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
+                     * 设置含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _skipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
+                     * @param _skipNodesWithSystemPods 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -416,14 +416,14 @@ namespace TencentCloud
                     bool m_scaleDownUtilizationThresholdHasBeenSet;
 
                     /**
-                     * 含有本地存储Pod的节点是否不缩容(默认： FALSE)
+                     * 含有本地存储Pod的节点是否不缩容(默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_skipNodesWithLocalStorage;
                     bool m_skipNodesWithLocalStorageHasBeenSet;
 
                     /**
-                     * 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： FALSE)
+                     * 含有kube-system namespace下非DaemonSet管理的Pod的节点是否不缩容 (默认： true)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_skipNodesWithSystemPods;

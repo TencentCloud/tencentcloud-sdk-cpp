@@ -183,6 +183,27 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool FlowIdHasBeenSet() const;
 
                     /**
+                     * 获取合同组ID
+                     * @return FlowGroupId 合同组ID
+                     * 
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组ID
+                     * @param _flowGroupId 合同组ID
+                     * 
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
+                    /**
                      * 获取跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
                      * @return PathType 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
                      * 
@@ -285,6 +306,12 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 合同组ID
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                     /**
                      * 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页

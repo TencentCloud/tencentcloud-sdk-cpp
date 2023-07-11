@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OpenConnectionPoolHasBeenSet() const;
 
                     /**
-                     * 获取连接池阀值：单位（秒）
-                     * @return ConnectionPoolTimeOut 连接池阀值：单位（秒）
+                     * 获取连接池阈值：单位（秒）
+                     * @return ConnectionPoolTimeOut 连接池阈值：单位（秒）
                      * 
                      */
                     int64_t GetConnectionPoolTimeOut() const;
 
                     /**
-                     * 设置连接池阀值：单位（秒）
-                     * @param _connectionPoolTimeOut 连接池阀值：单位（秒）
+                     * 设置连接池阈值：单位（秒）
+                     * @param _connectionPoolTimeOut 连接池阈值：单位（秒）
                      * 
                      */
                     void SetConnectionPoolTimeOut(const int64_t& _connectionPoolTimeOut);
@@ -470,7 +470,7 @@ nearby,balance
                     bool m_openConnectionPoolHasBeenSet;
 
                     /**
-                     * 连接池阀值：单位（秒）
+                     * 连接池阈值：单位（秒）
                      */
                     int64_t m_connectionPoolTimeOut;
                     bool m_connectionPoolTimeOutHasBeenSet;

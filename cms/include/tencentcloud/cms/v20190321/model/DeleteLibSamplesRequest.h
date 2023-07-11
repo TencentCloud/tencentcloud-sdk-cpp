@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词ID
-                     * @return SampleIDs 关键词ID
+                     * 获取关键词ID列表
+                     * @return SampleIDs 关键词ID列表
                      * 
                      */
                     std::vector<std::string> GetSampleIDs() const;
 
                     /**
-                     * 设置关键词ID
-                     * @param _sampleIDs 关键词ID
+                     * 设置关键词ID列表
+                     * @param _sampleIDs 关键词ID列表
                      * 
                      */
                     void SetSampleIDs(const std::vector<std::string>& _sampleIDs);
@@ -84,10 +84,31 @@ namespace TencentCloud
                      */
                     bool LibIDHasBeenSet() const;
 
+                    /**
+                     * 获取关键词内容列表
+                     * @return SampleContents 关键词内容列表
+                     * 
+                     */
+                    std::vector<std::string> GetSampleContents() const;
+
+                    /**
+                     * 设置关键词内容列表
+                     * @param _sampleContents 关键词内容列表
+                     * 
+                     */
+                    void SetSampleContents(const std::vector<std::string>& _sampleContents);
+
+                    /**
+                     * 判断参数 SampleContents 是否已赋值
+                     * @return SampleContents 是否已赋值
+                     * 
+                     */
+                    bool SampleContentsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 关键词ID
+                     * 关键词ID列表
                      */
                     std::vector<std::string> m_sampleIDs;
                     bool m_sampleIDsHasBeenSet;
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_libID;
                     bool m_libIDHasBeenSet;
+
+                    /**
+                     * 关键词内容列表
+                     */
+                    std::vector<std::string> m_sampleContents;
+                    bool m_sampleContentsHasBeenSet;
 
                 };
             }

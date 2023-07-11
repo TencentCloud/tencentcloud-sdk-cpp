@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取限额对象 "ConnectionsLimit" 或 "QPSLimit"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimitObject 限额对象 "ConnectionsLimit" 或 "QPSLimit"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLimitObject() const;
 
                     /**
                      * 设置限额对象 "ConnectionsLimit" 或 "QPSLimit"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limitObject 限额对象 "ConnectionsLimit" 或 "QPSLimit"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimitObject(const std::string& _limitObject);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取限额配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimitConfig 限额配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLimitConfig() const;
 
                     /**
                      * 设置限额配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limitConfig 限额配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimitConfig(const std::string& _limitConfig);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 限额对象 "ConnectionsLimit" 或 "QPSLimit"
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_limitObject;
                     bool m_limitObjectHasBeenSet;
 
                     /**
                      * 限额配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_limitConfig;
                     bool m_limitConfigHasBeenSet;

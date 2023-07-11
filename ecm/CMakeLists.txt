@@ -24,6 +24,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeHaVipsResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleSecurityGroupsRequest.h
   include/tencentcloud/ecm/v20190719/model/TerminateInstancesResponse.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlocksRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeMonthPeakNetworkResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeNetworkInterfacesRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupPoliciesResponse.h
@@ -32,6 +33,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/SystemDisk.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleRequest.h
+  include/tencentcloud/ecm/v20190719/model/DeleteSecurityGroupResponse.h
   include/tencentcloud/ecm/v20190719/model/RebootInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateDisksRequest.h
   include/tencentcloud/ecm/v20190719/model/AttachDisksRequest.h
@@ -41,7 +43,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeImageRequest.h
   include/tencentcloud/ecm/v20190719/model/OsVersion.h
   include/tencentcloud/ecm/v20190719/model/DescribeListenersResponse.h
-  include/tencentcloud/ecm/v20190719/model/TargetsWeightRule.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6SubnetCidrBlockRequest.h
   include/tencentcloud/ecm/v20190719/model/StartInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateVpcResponse.h
   include/tencentcloud/ecm/v20190719/model/AssistantCidr.h
@@ -60,10 +62,12 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/StopInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DetachNetworkInterfaceResponse.h
   include/tencentcloud/ecm/v20190719/model/ImageTask.h
-  include/tencentcloud/ecm/v20190719/model/ModifyListenerRequest.h
+  include/tencentcloud/ecm/v20190719/model/AllocateIpv6AddressesBandwidthRequest.h
+  include/tencentcloud/ecm/v20190719/model/RunSecurityServiceEnabled.h
   include/tencentcloud/ecm/v20190719/model/CreateImageRequest.h
   include/tencentcloud/ecm/v20190719/model/Instance.h
-  include/tencentcloud/ecm/v20190719/model/RunSecurityServiceEnabled.h
+  include/tencentcloud/ecm/v20190719/model/DescribeRegionIpv6AddressesResponse.h
+  include/tencentcloud/ecm/v20190719/model/Node.h
   include/tencentcloud/ecm/v20190719/model/PeakBase.h
   include/tencentcloud/ecm/v20190719/model/DeleteLoadBalancerRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeVpcsRequest.h
@@ -72,10 +76,13 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/BatchDeregisterTargetsRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyListenerResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeTargetHealthResponse.h
+  include/tencentcloud/ecm/v20190719/model/QueryVpcTaskResultRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyDefaultSubnetRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeTaskResultRequest.h
+  include/tencentcloud/ecm/v20190719/model/ISPTypeItem.h
   include/tencentcloud/ecm/v20190719/model/Snapshot.h
   include/tencentcloud/ecm/v20190719/model/AttachDisksResponse.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlockRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeLoadBalancersRequest.h
   include/tencentcloud/ecm/v20190719/model/DeleteRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskRequest.h
@@ -84,6 +91,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/PriceDetail.h
   include/tencentcloud/ecm/v20190719/model/ImportImageResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeSecurityGroupsRequest.h
+  include/tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesBandwidthRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribePriceRunInstanceResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteImageResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifySubnetAttributeResponse.h
@@ -93,6 +101,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribePackingQuotaGroupResponse.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlocksResponse.h
   include/tencentcloud/ecm/v20190719/model/LoadBalancer.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNameResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribePeakBaseOverviewRequest.h
@@ -109,7 +118,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ReplaceRouteTableAssociationRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyTargetWeightResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeCustomImageTaskResponse.h
-  include/tencentcloud/ecm/v20190719/model/ISPCounter.h
+  include/tencentcloud/ecm/v20190719/model/SecurityGroup.h
   include/tencentcloud/ecm/v20190719/model/CreateModuleResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribePackingQuotaGroupRequest.h
   include/tencentcloud/ecm/v20190719/model/SecurityGroupPolicy.h
@@ -141,6 +150,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/MonthNetwork.h
   include/tencentcloud/ecm/v20190719/model/ResetRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateImageResponse.h
+  include/tencentcloud/ecm/v20190719/model/UnassignIpv6SubnetCidrBlockRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleNetworkRequest.h
   include/tencentcloud/ecm/v20190719/model/AddressTemplateSpecification.h
   include/tencentcloud/ecm/v20190719/model/AssignIpv6AddressesRequest.h
@@ -159,6 +169,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateKeyPairRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleIpDirectResponse.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordRequest.h
+  include/tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/AssociateAddressResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeSecurityGroupPoliciesRequest.h
@@ -178,8 +189,10 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateModuleRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateLoadBalancerResponse.h
   include/tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsRequest.h
+  include/tencentcloud/ecm/v20190719/model/TargetsWeightRule.h
   include/tencentcloud/ecm/v20190719/model/DescribeImportImageOsResponse.h
   include/tencentcloud/ecm/v20190719/model/MigrateNetworkInterfaceResponse.h
+  include/tencentcloud/ecm/v20190719/model/DescribeRegionIpv6AddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/Module.h
   include/tencentcloud/ecm/v20190719/model/ListenerHealth.h
   include/tencentcloud/ecm/v20190719/model/DisassociateSecurityGroupsResponse.h
@@ -198,6 +211,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ModifyAddressesBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/RunInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstancesResponse.h
+  include/tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/InstanceTypeConfig.h
   include/tencentcloud/ecm/v20190719/model/AllocateAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/ZoneInfo.h
@@ -205,6 +219,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ResetInstancesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeNodeRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifySecurityGroupAttributeResponse.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlockResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleConfigRequest.h
   include/tencentcloud/ecm/v20190719/model/Area.h
   include/tencentcloud/ecm/v20190719/model/ModifyAddressAttributeResponse.h
@@ -218,6 +233,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/Listener.h
   include/tencentcloud/ecm/v20190719/model/StartInstancesRequest.h
   include/tencentcloud/ecm/v20190719/model/DeleteSnapshotsRequest.h
+  include/tencentcloud/ecm/v20190719/model/AssignIpv6SubnetCidrBlockResponse.h
   include/tencentcloud/ecm/v20190719/model/Placement.h
   include/tencentcloud/ecm/v20190719/model/Target.h
   include/tencentcloud/ecm/v20190719/model/DeleteSnapshotsResponse.h
@@ -227,7 +243,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DisableRoutesResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeConfigResponse.h
   include/tencentcloud/ecm/v20190719/model/DataDisk.h
-  include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h
+  include/tencentcloud/ecm/v20190719/model/QueryVpcTaskResultResponse.h
   include/tencentcloud/ecm/v20190719/model/PrivateIpAddressSpecification.h
   include/tencentcloud/ecm/v20190719/model/MigratePrivateIpAddressResponse.h
   include/tencentcloud/ecm/v20190719/model/DeleteRouteTableResponse.h
@@ -259,6 +275,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribePriceRunInstanceRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeTargetsResponse.h
   include/tencentcloud/ecm/v20190719/model/ImageOsList.h
+  include/tencentcloud/ecm/v20190719/model/UnassignIpv6SubnetCidrBlockResponse.h
   include/tencentcloud/ecm/v20190719/model/BatchModifyTargetWeightRequest.h
   include/tencentcloud/ecm/v20190719/model/BatchTarget.h
   include/tencentcloud/ecm/v20190719/model/City.h
@@ -281,6 +298,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeTaskResultResponse.h
   include/tencentcloud/ecm/v20190719/model/BatchDeregisterTargetsResponse.h
   include/tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateLoadBalancerRequest.h
   include/tencentcloud/ecm/v20190719/model/Internet.h
   include/tencentcloud/ecm/v20190719/model/DescribeModuleResponse.h
@@ -308,9 +326,9 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/RuleHealth.h
-  include/tencentcloud/ecm/v20190719/model/DeleteSecurityGroupResponse.h
+  include/tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesBandwidthRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceResponse.h
-  include/tencentcloud/ecm/v20190719/model/Node.h
+  include/tencentcloud/ecm/v20190719/model/ModifyListenerRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeDisksResponse.h
   include/tencentcloud/ecm/v20190719/model/ZoneInstanceCountISP.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressQuotaRequest.h
@@ -331,7 +349,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/Subnet.h
   include/tencentcloud/ecm/v20190719/model/AttachNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/ResetInstancesPasswordResponse.h
-  include/tencentcloud/ecm/v20190719/model/SecurityGroup.h
+  include/tencentcloud/ecm/v20190719/model/ISPCounter.h
   include/tencentcloud/ecm/v20190719/model/ModifyModuleDisableWanIpRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/ecm/v20190719/model/DisassociateAddressResponse.h
@@ -345,6 +363,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DescribeSnapshotsResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateHaVipRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateDisksResponse.h
+  include/tencentcloud/ecm/v20190719/model/Ipv6SubnetCidrBlock.h
   include/tencentcloud/ecm/v20190719/model/DescribeAddressQuotaResponse.h
   include/tencentcloud/ecm/v20190719/model/ZoneInstanceInfo.h
   include/tencentcloud/ecm/v20190719/model/DeleteLoadBalancerResponse.h
@@ -352,6 +371,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateRouteTableResponse.h
   include/tencentcloud/ecm/v20190719/model/DescribeDisksRequest.h
   include/tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeRequest.h
+  include/tencentcloud/ecm/v20190719/model/AllocateIpv6AddressesBandwidthResponse.h
   include/tencentcloud/ecm/v20190719/model/DetachDisksResponse.h
   include/tencentcloud/ecm/v20190719/model/CreateSecurityGroupRequest.h
   include/tencentcloud/ecm/v20190719/model/DescribeSecurityGroupLimitsRequest.h
@@ -391,6 +411,7 @@ set(ecm_src
   src/v20190719/model/DescribeHaVipsResponse.cpp
   src/v20190719/model/ModifyModuleSecurityGroupsRequest.cpp
   src/v20190719/model/TerminateInstancesResponse.cpp
+  src/v20190719/model/AssignIpv6CidrBlocksRequest.cpp
   src/v20190719/model/DescribeMonthPeakNetworkResponse.cpp
   src/v20190719/model/DescribeNetworkInterfacesRequest.cpp
   src/v20190719/model/CreateSecurityGroupPoliciesResponse.cpp
@@ -399,6 +420,7 @@ set(ecm_src
   src/v20190719/model/SystemDisk.cpp
   src/v20190719/model/DescribeNodeResponse.cpp
   src/v20190719/model/DescribeModuleRequest.cpp
+  src/v20190719/model/DeleteSecurityGroupResponse.cpp
   src/v20190719/model/RebootInstancesRequest.cpp
   src/v20190719/model/CreateDisksRequest.cpp
   src/v20190719/model/AttachDisksRequest.cpp
@@ -408,7 +430,7 @@ set(ecm_src
   src/v20190719/model/DescribeImageRequest.cpp
   src/v20190719/model/OsVersion.cpp
   src/v20190719/model/DescribeListenersResponse.cpp
-  src/v20190719/model/TargetsWeightRule.cpp
+  src/v20190719/model/AssignIpv6SubnetCidrBlockRequest.cpp
   src/v20190719/model/StartInstancesResponse.cpp
   src/v20190719/model/CreateVpcResponse.cpp
   src/v20190719/model/AssistantCidr.cpp
@@ -427,10 +449,12 @@ set(ecm_src
   src/v20190719/model/StopInstancesRequest.cpp
   src/v20190719/model/DetachNetworkInterfaceResponse.cpp
   src/v20190719/model/ImageTask.cpp
-  src/v20190719/model/ModifyListenerRequest.cpp
+  src/v20190719/model/AllocateIpv6AddressesBandwidthRequest.cpp
+  src/v20190719/model/RunSecurityServiceEnabled.cpp
   src/v20190719/model/CreateImageRequest.cpp
   src/v20190719/model/Instance.cpp
-  src/v20190719/model/RunSecurityServiceEnabled.cpp
+  src/v20190719/model/DescribeRegionIpv6AddressesResponse.cpp
+  src/v20190719/model/Node.cpp
   src/v20190719/model/PeakBase.cpp
   src/v20190719/model/DeleteLoadBalancerRequest.cpp
   src/v20190719/model/DescribeVpcsRequest.cpp
@@ -439,10 +463,13 @@ set(ecm_src
   src/v20190719/model/BatchDeregisterTargetsRequest.cpp
   src/v20190719/model/ModifyListenerResponse.cpp
   src/v20190719/model/DescribeTargetHealthResponse.cpp
+  src/v20190719/model/QueryVpcTaskResultRequest.cpp
   src/v20190719/model/ModifyDefaultSubnetRequest.cpp
   src/v20190719/model/DescribeTaskResultRequest.cpp
+  src/v20190719/model/ISPTypeItem.cpp
   src/v20190719/model/Snapshot.cpp
   src/v20190719/model/AttachDisksResponse.cpp
+  src/v20190719/model/AssignIpv6CidrBlockRequest.cpp
   src/v20190719/model/DescribeLoadBalancersRequest.cpp
   src/v20190719/model/DeleteRoutesResponse.cpp
   src/v20190719/model/DescribeCustomImageTaskRequest.cpp
@@ -451,6 +478,7 @@ set(ecm_src
   src/v20190719/model/PriceDetail.cpp
   src/v20190719/model/ImportImageResponse.cpp
   src/v20190719/model/DescribeSecurityGroupsRequest.cpp
+  src/v20190719/model/ReleaseIpv6AddressesBandwidthRequest.cpp
   src/v20190719/model/DescribePriceRunInstanceResponse.cpp
   src/v20190719/model/DeleteImageResponse.cpp
   src/v20190719/model/ModifySubnetAttributeResponse.cpp
@@ -460,6 +488,7 @@ set(ecm_src
   src/v20190719/model/DescribeVpcsResponse.cpp
   src/v20190719/model/ModifySecurityGroupAttributeRequest.cpp
   src/v20190719/model/DescribePackingQuotaGroupResponse.cpp
+  src/v20190719/model/AssignIpv6CidrBlocksResponse.cpp
   src/v20190719/model/LoadBalancer.cpp
   src/v20190719/model/ModifyModuleNameResponse.cpp
   src/v20190719/model/DescribePeakBaseOverviewRequest.cpp
@@ -476,7 +505,7 @@ set(ecm_src
   src/v20190719/model/ReplaceRouteTableAssociationRequest.cpp
   src/v20190719/model/ModifyTargetWeightResponse.cpp
   src/v20190719/model/DescribeCustomImageTaskResponse.cpp
-  src/v20190719/model/ISPCounter.cpp
+  src/v20190719/model/SecurityGroup.cpp
   src/v20190719/model/CreateModuleResponse.cpp
   src/v20190719/model/DescribePackingQuotaGroupRequest.cpp
   src/v20190719/model/SecurityGroupPolicy.cpp
@@ -508,6 +537,7 @@ set(ecm_src
   src/v20190719/model/MonthNetwork.cpp
   src/v20190719/model/ResetRoutesResponse.cpp
   src/v20190719/model/CreateImageResponse.cpp
+  src/v20190719/model/UnassignIpv6SubnetCidrBlockRequest.cpp
   src/v20190719/model/ModifyModuleNetworkRequest.cpp
   src/v20190719/model/AddressTemplateSpecification.cpp
   src/v20190719/model/AssignIpv6AddressesRequest.cpp
@@ -526,6 +556,7 @@ set(ecm_src
   src/v20190719/model/CreateKeyPairRequest.cpp
   src/v20190719/model/ModifyModuleIpDirectResponse.cpp
   src/v20190719/model/ResetInstancesPasswordRequest.cpp
+  src/v20190719/model/ModifyIpv6AddressesBandwidthResponse.cpp
   src/v20190719/model/AssociateAddressResponse.cpp
   src/v20190719/model/DescribeAddressesRequest.cpp
   src/v20190719/model/DescribeSecurityGroupPoliciesRequest.cpp
@@ -545,8 +576,10 @@ set(ecm_src
   src/v20190719/model/CreateModuleRequest.cpp
   src/v20190719/model/CreateLoadBalancerResponse.cpp
   src/v20190719/model/SetLoadBalancerSecurityGroupsRequest.cpp
+  src/v20190719/model/TargetsWeightRule.cpp
   src/v20190719/model/DescribeImportImageOsResponse.cpp
   src/v20190719/model/MigrateNetworkInterfaceResponse.cpp
+  src/v20190719/model/DescribeRegionIpv6AddressesRequest.cpp
   src/v20190719/model/Module.cpp
   src/v20190719/model/ListenerHealth.cpp
   src/v20190719/model/DisassociateSecurityGroupsResponse.cpp
@@ -565,6 +598,7 @@ set(ecm_src
   src/v20190719/model/ModifyAddressesBandwidthResponse.cpp
   src/v20190719/model/RunInstancesRequest.cpp
   src/v20190719/model/DescribeInstancesResponse.cpp
+  src/v20190719/model/ReleaseIpv6AddressesBandwidthResponse.cpp
   src/v20190719/model/InstanceTypeConfig.cpp
   src/v20190719/model/AllocateAddressesRequest.cpp
   src/v20190719/model/ZoneInfo.cpp
@@ -572,6 +606,7 @@ set(ecm_src
   src/v20190719/model/ResetInstancesResponse.cpp
   src/v20190719/model/DescribeNodeRequest.cpp
   src/v20190719/model/ModifySecurityGroupAttributeResponse.cpp
+  src/v20190719/model/AssignIpv6CidrBlockResponse.cpp
   src/v20190719/model/ModifyModuleConfigRequest.cpp
   src/v20190719/model/Area.cpp
   src/v20190719/model/ModifyAddressAttributeResponse.cpp
@@ -585,6 +620,7 @@ set(ecm_src
   src/v20190719/model/Listener.cpp
   src/v20190719/model/StartInstancesRequest.cpp
   src/v20190719/model/DeleteSnapshotsRequest.cpp
+  src/v20190719/model/AssignIpv6SubnetCidrBlockResponse.cpp
   src/v20190719/model/Placement.cpp
   src/v20190719/model/Target.cpp
   src/v20190719/model/DeleteSnapshotsResponse.cpp
@@ -594,7 +630,7 @@ set(ecm_src
   src/v20190719/model/DisableRoutesResponse.cpp
   src/v20190719/model/DescribeConfigResponse.cpp
   src/v20190719/model/DataDisk.cpp
-  src/v20190719/model/ModifyVpcAttributeResponse.cpp
+  src/v20190719/model/QueryVpcTaskResultResponse.cpp
   src/v20190719/model/PrivateIpAddressSpecification.cpp
   src/v20190719/model/MigratePrivateIpAddressResponse.cpp
   src/v20190719/model/DeleteRouteTableResponse.cpp
@@ -626,6 +662,7 @@ set(ecm_src
   src/v20190719/model/DescribePriceRunInstanceRequest.cpp
   src/v20190719/model/DescribeTargetsResponse.cpp
   src/v20190719/model/ImageOsList.cpp
+  src/v20190719/model/UnassignIpv6SubnetCidrBlockResponse.cpp
   src/v20190719/model/BatchModifyTargetWeightRequest.cpp
   src/v20190719/model/BatchTarget.cpp
   src/v20190719/model/City.cpp
@@ -648,6 +685,7 @@ set(ecm_src
   src/v20190719/model/DescribeTaskResultResponse.cpp
   src/v20190719/model/BatchDeregisterTargetsResponse.cpp
   src/v20190719/model/SetLoadBalancerSecurityGroupsResponse.cpp
+  src/v20190719/model/ModifyVpcAttributeResponse.cpp
   src/v20190719/model/CreateLoadBalancerRequest.cpp
   src/v20190719/model/Internet.cpp
   src/v20190719/model/DescribeModuleResponse.cpp
@@ -675,9 +713,9 @@ set(ecm_src
   src/v20190719/model/ReplaceSecurityGroupPolicyResponse.cpp
   src/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.cpp
   src/v20190719/model/RuleHealth.cpp
-  src/v20190719/model/DeleteSecurityGroupResponse.cpp
+  src/v20190719/model/ModifyIpv6AddressesBandwidthRequest.cpp
   src/v20190719/model/CreateNetworkInterfaceResponse.cpp
-  src/v20190719/model/Node.cpp
+  src/v20190719/model/ModifyListenerRequest.cpp
   src/v20190719/model/DescribeDisksResponse.cpp
   src/v20190719/model/ZoneInstanceCountISP.cpp
   src/v20190719/model/DescribeAddressQuotaRequest.cpp
@@ -698,7 +736,7 @@ set(ecm_src
   src/v20190719/model/Subnet.cpp
   src/v20190719/model/AttachNetworkInterfaceRequest.cpp
   src/v20190719/model/ResetInstancesPasswordResponse.cpp
-  src/v20190719/model/SecurityGroup.cpp
+  src/v20190719/model/ISPCounter.cpp
   src/v20190719/model/ModifyModuleDisableWanIpRequest.cpp
   src/v20190719/model/DescribeInstanceVncUrlResponse.cpp
   src/v20190719/model/DisassociateAddressResponse.cpp
@@ -712,6 +750,7 @@ set(ecm_src
   src/v20190719/model/DescribeSnapshotsResponse.cpp
   src/v20190719/model/CreateHaVipRequest.cpp
   src/v20190719/model/CreateDisksResponse.cpp
+  src/v20190719/model/Ipv6SubnetCidrBlock.cpp
   src/v20190719/model/DescribeAddressQuotaResponse.cpp
   src/v20190719/model/ZoneInstanceInfo.cpp
   src/v20190719/model/DeleteLoadBalancerResponse.cpp
@@ -719,6 +758,7 @@ set(ecm_src
   src/v20190719/model/CreateRouteTableResponse.cpp
   src/v20190719/model/DescribeDisksRequest.cpp
   src/v20190719/model/ModifyPrivateIpAddressesAttributeRequest.cpp
+  src/v20190719/model/AllocateIpv6AddressesBandwidthResponse.cpp
   src/v20190719/model/DetachDisksResponse.cpp
   src/v20190719/model/CreateSecurityGroupRequest.cpp
   src/v20190719/model/DescribeSecurityGroupLimitsRequest.cpp

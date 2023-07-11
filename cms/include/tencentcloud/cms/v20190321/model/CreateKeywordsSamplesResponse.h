@@ -62,6 +62,20 @@ namespace TencentCloud
                     bool SampleIDsHasBeenSet() const;
 
                     /**
+                     * 获取成功入库关键词列表
+                     * @return SuccessInfos 成功入库关键词列表
+                     * 
+                     */
+                    std::vector<UserKeywordInfo> GetSuccessInfos() const;
+
+                    /**
+                     * 判断参数 SuccessInfos 是否已赋值
+                     * @return SuccessInfos 是否已赋值
+                     * 
+                     */
+                    bool SuccessInfosHasBeenSet() const;
+
+                    /**
                      * 获取重复关键词列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DupInfos 重复关键词列表
@@ -101,6 +115,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sampleIDs;
                     bool m_sampleIDsHasBeenSet;
+
+                    /**
+                     * 成功入库关键词列表
+                     */
+                    std::vector<UserKeywordInfo> m_successInfos;
+                    bool m_successInfosHasBeenSet;
 
                     /**
                      * 重复关键词列表

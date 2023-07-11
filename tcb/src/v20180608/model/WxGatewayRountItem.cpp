@@ -34,7 +34,8 @@ WxGatewayRountItem::WxGatewayRountItem() :
     m_gatewayVersionHasBeenSet(false),
     m_gatewayRoutePathHasBeenSet(false),
     m_gatewayRouteMethodHasBeenSet(false),
-    m_gatewayRoutePortHasBeenSet(false)
+    m_gatewayRoutePortHasBeenSet(false),
+    m_gatewayRouteEnvIdHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome WxGatewayRountItem::Deserialize(const rapidjson::Value &valu
         m_gatewayRoutePortHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayRouteEnvId") && !value["GatewayRouteEnvId"].IsNull())
+    {
+        if (!value["GatewayRouteEnvId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WxGatewayRountItem.GatewayRouteEnvId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayRouteEnvId = string(value["GatewayRouteEnvId"].GetString());
+        m_gatewayRouteEnvIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void WxGatewayRountItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "GatewayRoutePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gatewayRoutePort, allocator);
+    }
+
+    if (m_gatewayRouteEnvIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayRouteEnvId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayRouteEnvId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void WxGatewayRountItem::SetGatewayRoutePort(const int64_t& _gatewayRoutePort)
 bool WxGatewayRountItem::GatewayRoutePortHasBeenSet() const
 {
     return m_gatewayRoutePortHasBeenSet;
+}
+
+string WxGatewayRountItem::GetGatewayRouteEnvId() const
+{
+    return m_gatewayRouteEnvId;
+}
+
+void WxGatewayRountItem::SetGatewayRouteEnvId(const string& _gatewayRouteEnvId)
+{
+    m_gatewayRouteEnvId = _gatewayRouteEnvId;
+    m_gatewayRouteEnvIdHasBeenSet = true;
+}
+
+bool WxGatewayRountItem::GatewayRouteEnvIdHasBeenSet() const
+{
+    return m_gatewayRouteEnvIdHasBeenSet;
 }
 

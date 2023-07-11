@@ -35,8 +35,6 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
@@ -129,9 +127,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudRecordingResponse> DescribeCloudRecordingOutcome;
                 typedef std::future<DescribeCloudRecordingOutcome> DescribeCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCloudRecordingRequest&, DescribeCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudRecordingAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeExternalTrtcMeasureResponse> DescribeExternalTrtcMeasureOutcome;
-                typedef std::future<DescribeExternalTrtcMeasureOutcome> DescribeExternalTrtcMeasureOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeExternalTrtcMeasureRequest&, DescribeExternalTrtcMeasureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalTrtcMeasureAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMixTranscodingUsageResponse> DescribeMixTranscodingUsageOutcome;
                 typedef std::future<DescribeMixTranscodingUsageOutcome> DescribeMixTranscodingUsageOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeMixTranscodingUsageRequest&, DescribeMixTranscodingUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMixTranscodingUsageAsyncHandler;
@@ -293,18 +288,6 @@ namespace TencentCloud
                 DescribeCloudRecordingOutcome DescribeCloudRecording(const Model::DescribeCloudRecordingRequest &request);
                 void DescribeCloudRecordingAsync(const Model::DescribeCloudRecordingRequest& request, const DescribeCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudRecordingOutcomeCallable DescribeCloudRecordingCallable(const Model::DescribeCloudRecordingRequest& request);
-
-                /**
-                 *接口内部调用计量接口，计量接口迁通用集群后不可用。目前已有新的对外接口可以供用户使用。
-
-获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据。
-当前接口已不再更新维护，请使用新版音视频用量接口：DescribeTrtcUsage （https://cloud.tencent.com/document/product/647/81425）
-                 * @param req DescribeExternalTrtcMeasureRequest
-                 * @return DescribeExternalTrtcMeasureOutcome
-                 */
-                DescribeExternalTrtcMeasureOutcome DescribeExternalTrtcMeasure(const Model::DescribeExternalTrtcMeasureRequest &request);
-                void DescribeExternalTrtcMeasureAsync(const Model::DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeExternalTrtcMeasureOutcomeCallable DescribeExternalTrtcMeasureCallable(const Model::DescribeExternalTrtcMeasureRequest& request);
 
                 /**
                  *获取TRTC混流转码的用量明细。

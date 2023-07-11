@@ -427,6 +427,49 @@ EssbasicClient::ChannelCreateFlowGroupByFilesOutcomeCallable EssbasicClient::Cha
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateFlowGroupByTemplatesOutcome EssbasicClient::ChannelCreateFlowGroupByTemplates(const ChannelCreateFlowGroupByTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowGroupByTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowGroupByTemplatesResponse rsp = ChannelCreateFlowGroupByTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowGroupByTemplatesOutcome(rsp);
+        else
+            return ChannelCreateFlowGroupByTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowGroupByTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowGroupByTemplatesAsync(const ChannelCreateFlowGroupByTemplatesRequest& request, const ChannelCreateFlowGroupByTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowGroupByTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowGroupByTemplatesOutcomeCallable EssbasicClient::ChannelCreateFlowGroupByTemplatesCallable(const ChannelCreateFlowGroupByTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowGroupByTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowGroupByTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowRemindsOutcome EssbasicClient::ChannelCreateFlowReminds(const ChannelCreateFlowRemindsRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowReminds");

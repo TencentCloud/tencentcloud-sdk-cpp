@@ -1144,6 +1144,27 @@ namespace TencentCloud
                      */
                     bool PositionHasBeenSet() const;
 
+                    /**
+                     * 获取自定义的门店id
+                     * @return CorpShopId 自定义的门店id
+                     * 
+                     */
+                    std::string GetCorpShopId() const;
+
+                    /**
+                     * 设置自定义的门店id
+                     * @param _corpShopId 自定义的门店id
+                     * 
+                     */
+                    void SetCorpShopId(const std::string& _corpShopId);
+
+                    /**
+                     * 判断参数 CorpShopId 是否已赋值
+                     * @return CorpShopId 是否已赋值
+                     * 
+                     */
+                    bool CorpShopIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1457,6 +1478,12 @@ namespace TencentCloud
                      */
                     std::string m_position;
                     bool m_positionHasBeenSet;
+
+                    /**
+                     * 自定义的门店id
+                     */
+                    std::string m_corpShopId;
+                    bool m_corpShopIdHasBeenSet;
 
                 };
             }

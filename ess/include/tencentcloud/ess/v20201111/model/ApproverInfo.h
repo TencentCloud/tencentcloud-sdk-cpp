@@ -128,27 +128,6 @@ namespace TencentCloud
                     bool ApproverMobileHasBeenSet() const;
 
                     /**
-                     * 获取签署人的签署控件列表
-                     * @return SignComponents 签署人的签署控件列表
-                     * 
-                     */
-                    std::vector<Component> GetSignComponents() const;
-
-                    /**
-                     * 设置签署人的签署控件列表
-                     * @param _signComponents 签署人的签署控件列表
-                     * 
-                     */
-                    void SetSignComponents(const std::vector<Component>& _signComponents);
-
-                    /**
-                     * 判断参数 SignComponents 是否已赋值
-                     * @return SignComponents 是否已赋值
-                     * 
-                     */
-                    bool SignComponentsHasBeenSet() const;
-
-                    /**
                      * 获取如果签署方是企业签署方，则为企业名
                      * @return OrganizationName 如果签署方是企业签署方，则为企业名
                      * 
@@ -168,6 +147,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取签署人的签署控件列表
+                     * @return SignComponents 签署人的签署控件列表
+                     * 
+                     */
+                    std::vector<Component> GetSignComponents() const;
+
+                    /**
+                     * 设置签署人的签署控件列表
+                     * @param _signComponents 签署人的签署控件列表
+                     * 
+                     */
+                    void SetSignComponents(const std::vector<Component>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     * 
+                     */
+                    bool SignComponentsHasBeenSet() const;
 
                     /**
                      * 获取签署人的身份证号
@@ -495,16 +495,16 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverMobileHasBeenSet;
 
                     /**
-                     * 签署人的签署控件列表
-                     */
-                    std::vector<Component> m_signComponents;
-                    bool m_signComponentsHasBeenSet;
-
-                    /**
                      * 如果签署方是企业签署方，则为企业名
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 签署人的签署控件列表
+                     */
+                    std::vector<Component> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                     /**
                      * 签署人的身份证号

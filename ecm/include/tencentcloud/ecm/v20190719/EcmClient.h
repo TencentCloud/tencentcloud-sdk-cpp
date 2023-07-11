@@ -25,8 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ecm/v20190719/model/AllocateAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AllocateAddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AllocateIpv6AddressesBandwidthRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AllocateIpv6AddressesBandwidthResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssignIpv6AddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AssignIpv6AddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlockRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlockResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlocksRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6CidrBlocksResponse.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6SubnetCidrBlockRequest.h>
+#include <tencentcloud/ecm/v20190719/model/AssignIpv6SubnetCidrBlockResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/AssignPrivateIpAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/AssociateAddressRequest.h>
@@ -151,6 +159,8 @@
 #include <tencentcloud/ecm/v20190719/model/DescribePeakNetworkOverviewResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePriceRunInstanceRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribePriceRunInstanceResponse.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeRegionIpv6AddressesRequest.h>
+#include <tencentcloud/ecm/v20190719/model/DescribeRegionIpv6AddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeRouteConflictsRequest.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeRouteConflictsResponse.h>
 #include <tencentcloud/ecm/v20190719/model/DescribeRouteTablesRequest.h>
@@ -213,6 +223,8 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesBandwidthRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ModifyIpv6AddressesBandwidthResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyListenerRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyListenerResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesRequest.h>
@@ -247,12 +259,16 @@
 #include <tencentcloud/ecm/v20190719/model/ModifyTargetWeightResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ModifyVpcAttributeResponse.h>
+#include <tencentcloud/ecm/v20190719/model/QueryVpcTaskResultRequest.h>
+#include <tencentcloud/ecm/v20190719/model/QueryVpcTaskResultResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RebootInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RebootInstancesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ReleaseAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ReleaseAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesBandwidthRequest.h>
+#include <tencentcloud/ecm/v20190719/model/ReleaseIpv6AddressesBandwidthResponse.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/RemovePrivateIpAddressesResponse.h>
 #include <tencentcloud/ecm/v20190719/model/ReplaceRouteTableAssociationRequest.h>
@@ -283,6 +299,8 @@
 #include <tencentcloud/ecm/v20190719/model/TerminateDisksResponse.h>
 #include <tencentcloud/ecm/v20190719/model/TerminateInstancesRequest.h>
 #include <tencentcloud/ecm/v20190719/model/TerminateInstancesResponse.h>
+#include <tencentcloud/ecm/v20190719/model/UnassignIpv6SubnetCidrBlockRequest.h>
+#include <tencentcloud/ecm/v20190719/model/UnassignIpv6SubnetCidrBlockResponse.h>
 
 
 namespace TencentCloud
@@ -300,9 +318,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AllocateAddressesResponse> AllocateAddressesOutcome;
                 typedef std::future<AllocateAddressesOutcome> AllocateAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AllocateAddressesRequest&, AllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AllocateIpv6AddressesBandwidthResponse> AllocateIpv6AddressesBandwidthOutcome;
+                typedef std::future<AllocateIpv6AddressesBandwidthOutcome> AllocateIpv6AddressesBandwidthOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AllocateIpv6AddressesBandwidthRequest&, AllocateIpv6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateIpv6AddressesBandwidthAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssignIpv6AddressesResponse> AssignIpv6AddressesOutcome;
                 typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AssignIpv6AddressesRequest&, AssignIpv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignIpv6AddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssignIpv6CidrBlockResponse> AssignIpv6CidrBlockOutcome;
+                typedef std::future<AssignIpv6CidrBlockOutcome> AssignIpv6CidrBlockOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AssignIpv6CidrBlockRequest&, AssignIpv6CidrBlockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignIpv6CidrBlockAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssignIpv6CidrBlocksResponse> AssignIpv6CidrBlocksOutcome;
+                typedef std::future<AssignIpv6CidrBlocksOutcome> AssignIpv6CidrBlocksOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AssignIpv6CidrBlocksRequest&, AssignIpv6CidrBlocksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignIpv6CidrBlocksAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssignIpv6SubnetCidrBlockResponse> AssignIpv6SubnetCidrBlockOutcome;
+                typedef std::future<AssignIpv6SubnetCidrBlockOutcome> AssignIpv6SubnetCidrBlockOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::AssignIpv6SubnetCidrBlockRequest&, AssignIpv6SubnetCidrBlockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignIpv6SubnetCidrBlockAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesOutcome;
                 typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::AssignPrivateIpAddressesRequest&, AssignPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignPrivateIpAddressesAsyncHandler;
@@ -489,6 +519,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePriceRunInstanceResponse> DescribePriceRunInstanceOutcome;
                 typedef std::future<DescribePriceRunInstanceOutcome> DescribePriceRunInstanceOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribePriceRunInstanceRequest&, DescribePriceRunInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceRunInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegionIpv6AddressesResponse> DescribeRegionIpv6AddressesOutcome;
+                typedef std::future<DescribeRegionIpv6AddressesOutcome> DescribeRegionIpv6AddressesOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::DescribeRegionIpv6AddressesRequest&, DescribeRegionIpv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionIpv6AddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteConflictsResponse> DescribeRouteConflictsOutcome;
                 typedef std::future<DescribeRouteConflictsOutcome> DescribeRouteConflictsOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::DescribeRouteConflictsRequest&, DescribeRouteConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteConflictsAsyncHandler;
@@ -582,6 +615,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIpv6AddressesAttributeResponse> ModifyIpv6AddressesAttributeOutcome;
                 typedef std::future<ModifyIpv6AddressesAttributeOutcome> ModifyIpv6AddressesAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyIpv6AddressesAttributeRequest&, ModifyIpv6AddressesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6AddressesAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIpv6AddressesBandwidthResponse> ModifyIpv6AddressesBandwidthOutcome;
+                typedef std::future<ModifyIpv6AddressesBandwidthOutcome> ModifyIpv6AddressesBandwidthOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ModifyIpv6AddressesBandwidthRequest&, ModifyIpv6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpv6AddressesBandwidthAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyListenerResponse> ModifyListenerOutcome;
                 typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyListenerRequest&, ModifyListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyListenerAsyncHandler;
@@ -633,6 +669,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryVpcTaskResultResponse> QueryVpcTaskResultOutcome;
+                typedef std::future<QueryVpcTaskResultOutcome> QueryVpcTaskResultOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::QueryVpcTaskResultRequest&, QueryVpcTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryVpcTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
@@ -642,6 +681,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseIpv6AddressesResponse> ReleaseIpv6AddressesOutcome;
                 typedef std::future<ReleaseIpv6AddressesOutcome> ReleaseIpv6AddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::ReleaseIpv6AddressesRequest&, ReleaseIpv6AddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIpv6AddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReleaseIpv6AddressesBandwidthResponse> ReleaseIpv6AddressesBandwidthOutcome;
+                typedef std::future<ReleaseIpv6AddressesBandwidthOutcome> ReleaseIpv6AddressesBandwidthOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::ReleaseIpv6AddressesBandwidthRequest&, ReleaseIpv6AddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseIpv6AddressesBandwidthAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemovePrivateIpAddressesResponse> RemovePrivateIpAddressesOutcome;
                 typedef std::future<RemovePrivateIpAddressesOutcome> RemovePrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::RemovePrivateIpAddressesRequest&, RemovePrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemovePrivateIpAddressesAsyncHandler;
@@ -687,6 +729,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const EcmClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnassignIpv6SubnetCidrBlockResponse> UnassignIpv6SubnetCidrBlockOutcome;
+                typedef std::future<UnassignIpv6SubnetCidrBlockOutcome> UnassignIpv6SubnetCidrBlockOutcomeCallable;
+                typedef std::function<void(const EcmClient*, const Model::UnassignIpv6SubnetCidrBlockRequest&, UnassignIpv6SubnetCidrBlockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnassignIpv6SubnetCidrBlockAsyncHandler;
 
 
 
@@ -700,6 +745,15 @@ namespace TencentCloud
                 AllocateAddressesOutcomeCallable AllocateAddressesCallable(const Model::AllocateAddressesRequest& request);
 
                 /**
+                 *本接口用于给IPv6地址分配公网带宽
+                 * @param req AllocateIpv6AddressesBandwidthRequest
+                 * @return AllocateIpv6AddressesBandwidthOutcome
+                 */
+                AllocateIpv6AddressesBandwidthOutcome AllocateIpv6AddressesBandwidth(const Model::AllocateIpv6AddressesBandwidthRequest &request);
+                void AllocateIpv6AddressesBandwidthAsync(const Model::AllocateIpv6AddressesBandwidthRequest& request, const AllocateIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AllocateIpv6AddressesBandwidthOutcomeCallable AllocateIpv6AddressesBandwidthCallable(const Model::AllocateIpv6AddressesBandwidthRequest& request);
+
+                /**
                  *本接口（AssignIpv6Addresses）用于弹性网卡申请IPv6地址。
                  * @param req AssignIpv6AddressesRequest
                  * @return AssignIpv6AddressesOutcome
@@ -707,6 +761,41 @@ namespace TencentCloud
                 AssignIpv6AddressesOutcome AssignIpv6Addresses(const Model::AssignIpv6AddressesRequest &request);
                 void AssignIpv6AddressesAsync(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssignIpv6AddressesOutcomeCallable AssignIpv6AddressesCallable(const Model::AssignIpv6AddressesRequest& request);
+
+                /**
+                 *本接口（AssignIpv6CidrBlock）用于分配IPv6网段。
+
+使用本接口前，您需要已有VPC实例，如果没有可通过接口CreateVpc创建。
+                 * @param req AssignIpv6CidrBlockRequest
+                 * @return AssignIpv6CidrBlockOutcome
+                 */
+                AssignIpv6CidrBlockOutcome AssignIpv6CidrBlock(const Model::AssignIpv6CidrBlockRequest &request);
+                void AssignIpv6CidrBlockAsync(const Model::AssignIpv6CidrBlockRequest& request, const AssignIpv6CidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignIpv6CidrBlockOutcomeCallable AssignIpv6CidrBlockCallable(const Model::AssignIpv6CidrBlockRequest& request);
+
+                /**
+                 *本接口（AssignIpv6CidrBlocks）用于分配IPv6网段。
+
+使用本接口前，您需要已有VPC实例，如果没有可通过接口CreateVpc创建。
+每个VPC 可以同时支持运营商网络('CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调)。本接口可以同时申请不同类型的IPv6网段
+                 * @param req AssignIpv6CidrBlocksRequest
+                 * @return AssignIpv6CidrBlocksOutcome
+                 */
+                AssignIpv6CidrBlocksOutcome AssignIpv6CidrBlocks(const Model::AssignIpv6CidrBlocksRequest &request);
+                void AssignIpv6CidrBlocksAsync(const Model::AssignIpv6CidrBlocksRequest& request, const AssignIpv6CidrBlocksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignIpv6CidrBlocksOutcomeCallable AssignIpv6CidrBlocksCallable(const Model::AssignIpv6CidrBlocksRequest& request);
+
+                /**
+                 *本接口（AssignIpv6SubnetCidrBlock）用于分配IPv6子网段。
+
+给子网分配 IPv6 网段，要求子网所属 VPC 已获得 IPv6 网段。如果尚未分配，请先通过接口 AssignIpv6CidrBlock 给子网所属 VPC 分配一个 IPv6 网段。否则无法分配 IPv6 子网段。
+每个子网只能分配一个IPv6网段。
+                 * @param req AssignIpv6SubnetCidrBlockRequest
+                 * @return AssignIpv6SubnetCidrBlockOutcome
+                 */
+                AssignIpv6SubnetCidrBlockOutcome AssignIpv6SubnetCidrBlock(const Model::AssignIpv6SubnetCidrBlockRequest &request);
+                void AssignIpv6SubnetCidrBlockAsync(const Model::AssignIpv6SubnetCidrBlockRequest& request, const AssignIpv6SubnetCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignIpv6SubnetCidrBlockOutcomeCallable AssignIpv6SubnetCidrBlockCallable(const Model::AssignIpv6SubnetCidrBlockRequest& request);
 
                 /**
                  *弹性网卡申请内网 IP
@@ -1298,6 +1387,15 @@ namespace TencentCloud
                 DescribePriceRunInstanceOutcomeCallable DescribePriceRunInstanceCallable(const Model::DescribePriceRunInstanceRequest& request);
 
                 /**
+                 *该接口（DescribeRegionIpv6Addresses）用于查询ECM地域之下的IPV6地址信息。
+                 * @param req DescribeRegionIpv6AddressesRequest
+                 * @return DescribeRegionIpv6AddressesOutcome
+                 */
+                DescribeRegionIpv6AddressesOutcome DescribeRegionIpv6Addresses(const Model::DescribeRegionIpv6AddressesRequest &request);
+                void DescribeRegionIpv6AddressesAsync(const Model::DescribeRegionIpv6AddressesRequest& request, const DescribeRegionIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionIpv6AddressesOutcomeCallable DescribeRegionIpv6AddressesCallable(const Model::DescribeRegionIpv6AddressesRequest& request);
+
+                /**
                  *查询自定义路由策略与云联网路由策略冲突列表
                  * @param req DescribeRouteConflictsRequest
                  * @return DescribeRouteConflictsOutcome
@@ -1589,6 +1687,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyIpv6AddressesAttributeOutcomeCallable ModifyIpv6AddressesAttributeCallable(const Model::ModifyIpv6AddressesAttributeRequest& request);
 
                 /**
+                 *该接口(ModifyIpv6AddressesBandwidth)用于修改IPV6地址访问internet的带宽
+                 * @param req ModifyIpv6AddressesBandwidthRequest
+                 * @return ModifyIpv6AddressesBandwidthOutcome
+                 */
+                ModifyIpv6AddressesBandwidthOutcome ModifyIpv6AddressesBandwidth(const Model::ModifyIpv6AddressesBandwidthRequest &request);
+                void ModifyIpv6AddressesBandwidthAsync(const Model::ModifyIpv6AddressesBandwidthRequest& request, const ModifyIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIpv6AddressesBandwidthOutcomeCallable ModifyIpv6AddressesBandwidthCallable(const Model::ModifyIpv6AddressesBandwidthRequest& request);
+
+                /**
                  *修改负载均衡监听器属性。
                  * @param req ModifyListenerRequest
                  * @return ModifyListenerOutcome
@@ -1742,6 +1849,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ModifyVpcAttributeOutcomeCallable ModifyVpcAttributeCallable(const Model::ModifyVpcAttributeRequest& request);
 
                 /**
+                 *查询私有网络下Vpc、子网、havip等异步任务请求结果
+                 * @param req QueryVpcTaskResultRequest
+                 * @return QueryVpcTaskResultOutcome
+                 */
+                QueryVpcTaskResultOutcome QueryVpcTaskResult(const Model::QueryVpcTaskResultRequest &request);
+                void QueryVpcTaskResultAsync(const Model::QueryVpcTaskResultRequest& request, const QueryVpcTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryVpcTaskResultOutcomeCallable QueryVpcTaskResultCallable(const Model::QueryVpcTaskResultRequest& request);
+
+                /**
                  *只有状态为RUNNING的实例才可以进行此操作；接口调用成功时，实例会进入REBOOTING状态；重启实例成功时，实例会进入RUNNING状态；支持强制重启，强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。
                  * @param req RebootInstancesRequest
                  * @return RebootInstancesOutcome
@@ -1769,6 +1885,15 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ReleaseIpv6AddressesOutcome ReleaseIpv6Addresses(const Model::ReleaseIpv6AddressesRequest &request);
                 void ReleaseIpv6AddressesAsync(const Model::ReleaseIpv6AddressesRequest& request, const ReleaseIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseIpv6AddressesOutcomeCallable ReleaseIpv6AddressesCallable(const Model::ReleaseIpv6AddressesRequest& request);
+
+                /**
+                 *该接口用于给弹性公网IPv6地址释放带宽。
+                 * @param req ReleaseIpv6AddressesBandwidthRequest
+                 * @return ReleaseIpv6AddressesBandwidthOutcome
+                 */
+                ReleaseIpv6AddressesBandwidthOutcome ReleaseIpv6AddressesBandwidth(const Model::ReleaseIpv6AddressesBandwidthRequest &request);
+                void ReleaseIpv6AddressesBandwidthAsync(const Model::ReleaseIpv6AddressesBandwidthRequest& request, const ReleaseIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseIpv6AddressesBandwidthOutcomeCallable ReleaseIpv6AddressesBandwidthCallable(const Model::ReleaseIpv6AddressesBandwidthRequest& request);
 
                 /**
                  *弹性网卡退还内网 IP。
@@ -1911,6 +2036,16 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest &request);
                 void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request);
+
+                /**
+                 *本接口（UnassignIpv6SubnetCidrBlock）用于释放IPv6子网段。
+子网段如果还有IP占用且未回收，则子网段无法释放。
+                 * @param req UnassignIpv6SubnetCidrBlockRequest
+                 * @return UnassignIpv6SubnetCidrBlockOutcome
+                 */
+                UnassignIpv6SubnetCidrBlockOutcome UnassignIpv6SubnetCidrBlock(const Model::UnassignIpv6SubnetCidrBlockRequest &request);
+                void UnassignIpv6SubnetCidrBlockAsync(const Model::UnassignIpv6SubnetCidrBlockRequest& request, const UnassignIpv6SubnetCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnassignIpv6SubnetCidrBlockOutcomeCallable UnassignIpv6SubnetCidrBlockCallable(const Model::UnassignIpv6SubnetCidrBlockRequest& request);
 
             };
         }

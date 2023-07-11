@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool DealModeHasBeenSet() const;
 
                     /**
-                     * 获取参数模版ID
-                     * @return ParamTemplateId 参数模版ID
+                     * 获取参数模板ID
+                     * @return ParamTemplateId 参数模板ID
                      * 
                      */
                     int64_t GetParamTemplateId() const;
 
                     /**
-                     * 设置参数模版ID
-                     * @param _paramTemplateId 参数模版ID
+                     * 设置参数模板ID
+                     * @param _paramTemplateId 参数模板ID
                      * 
                      */
                     void SetParamTemplateId(const int64_t& _paramTemplateId);
@@ -465,7 +465,7 @@ namespace TencentCloud
                     bool m_dealModeHasBeenSet;
 
                     /**
-                     * 参数模版ID
+                     * 参数模板ID
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;

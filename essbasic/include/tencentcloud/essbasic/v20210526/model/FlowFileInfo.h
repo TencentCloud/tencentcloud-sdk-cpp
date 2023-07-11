@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/Component.h>
 
 
 namespace TencentCloud
@@ -237,6 +238,27 @@ namespace TencentCloud
                     bool UnorderedHasBeenSet() const;
 
                     /**
+                     * 获取签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     * @return Components 签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     * 
+                     */
+                    std::vector<Component> GetComponents() const;
+
+                    /**
+                     * 设置签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     * @param _components 签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     * 
+                     */
+                    void SetComponents(const std::vector<Component>& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     * 
+                     */
+                    bool ComponentsHasBeenSet() const;
+
+                    /**
                      * 获取合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
                      * @return CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
                      * 
@@ -333,6 +355,12 @@ namespace TencentCloud
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
+
+                    /**
+                     * 签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     */
+                    std::vector<Component> m_components;
+                    bool m_componentsHasBeenSet;
 
                     /**
                      * 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始

@@ -556,6 +556,92 @@ EssClient::CreateFlowEvidenceReportOutcomeCallable EssClient::CreateFlowEvidence
     return task->get_future();
 }
 
+EssClient::CreateFlowGroupByFilesOutcome EssClient::CreateFlowGroupByFiles(const CreateFlowGroupByFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowGroupByFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowGroupByFilesResponse rsp = CreateFlowGroupByFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowGroupByFilesOutcome(rsp);
+        else
+            return CreateFlowGroupByFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowGroupByFilesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowGroupByFilesAsync(const CreateFlowGroupByFilesRequest& request, const CreateFlowGroupByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowGroupByFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowGroupByFilesOutcomeCallable EssClient::CreateFlowGroupByFilesCallable(const CreateFlowGroupByFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowGroupByFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowGroupByFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateFlowGroupByTemplatesOutcome EssClient::CreateFlowGroupByTemplates(const CreateFlowGroupByTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowGroupByTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowGroupByTemplatesResponse rsp = CreateFlowGroupByTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowGroupByTemplatesOutcome(rsp);
+        else
+            return CreateFlowGroupByTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowGroupByTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowGroupByTemplatesAsync(const CreateFlowGroupByTemplatesRequest& request, const CreateFlowGroupByTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowGroupByTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowGroupByTemplatesOutcomeCallable EssClient::CreateFlowGroupByTemplatesCallable(const CreateFlowGroupByTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowGroupByTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowGroupByTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowRemindsOutcome EssClient::CreateFlowReminds(const CreateFlowRemindsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowReminds");

@@ -70,7 +70,8 @@ ClueInfoDetail::ClueInfoDetail() :
     m_dealerNameHasBeenSet(false),
     m_shopIdHasBeenSet(false),
     m_shopNameHasBeenSet(false),
-    m_positionHasBeenSet(false)
+    m_positionHasBeenSet(false),
+    m_corpShopIdHasBeenSet(false)
 {
 }
 
@@ -582,6 +583,16 @@ CoreInternalOutcome ClueInfoDetail::Deserialize(const rapidjson::Value &value)
         m_positionHasBeenSet = true;
     }
 
+    if (value.HasMember("CorpShopId") && !value["CorpShopId"].IsNull())
+    {
+        if (!value["CorpShopId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.CorpShopId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_corpShopId = string(value["CorpShopId"].GetString());
+        m_corpShopIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -992,6 +1003,14 @@ void ClueInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_position.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_corpShopIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShopId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_corpShopId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1795,5 +1814,21 @@ void ClueInfoDetail::SetPosition(const string& _position)
 bool ClueInfoDetail::PositionHasBeenSet() const
 {
     return m_positionHasBeenSet;
+}
+
+string ClueInfoDetail::GetCorpShopId() const
+{
+    return m_corpShopId;
+}
+
+void ClueInfoDetail::SetCorpShopId(const string& _corpShopId)
+{
+    m_corpShopId = _corpShopId;
+    m_corpShopIdHasBeenSet = true;
+}
+
+bool ClueInfoDetail::CorpShopIdHasBeenSet() const
+{
+    return m_corpShopIdHasBeenSet;
 }
 

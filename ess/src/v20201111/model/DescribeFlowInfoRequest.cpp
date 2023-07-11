@@ -23,9 +23,10 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 DescribeFlowInfoRequest::DescribeFlowInfoRequest() :
-    m_flowIdsHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_flowIdsHasBeenSet(false),
+    m_agentHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,15 @@ string DescribeFlowInfoRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_flowIdsHasBeenSet)
     {
@@ -49,15 +59,6 @@ string DescribeFlowInfoRequest::ToJsonString() const
         }
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -67,6 +68,14 @@ string DescribeFlowInfoRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -74,22 +83,6 @@ string DescribeFlowInfoRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> DescribeFlowInfoRequest::GetFlowIds() const
-{
-    return m_flowIds;
-}
-
-void DescribeFlowInfoRequest::SetFlowIds(const vector<string>& _flowIds)
-{
-    m_flowIds = _flowIds;
-    m_flowIdsHasBeenSet = true;
-}
-
-bool DescribeFlowInfoRequest::FlowIdsHasBeenSet() const
-{
-    return m_flowIdsHasBeenSet;
-}
 
 UserInfo DescribeFlowInfoRequest::GetOperator() const
 {
@@ -107,6 +100,22 @@ bool DescribeFlowInfoRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
+vector<string> DescribeFlowInfoRequest::GetFlowIds() const
+{
+    return m_flowIds;
+}
+
+void DescribeFlowInfoRequest::SetFlowIds(const vector<string>& _flowIds)
+{
+    m_flowIds = _flowIds;
+    m_flowIdsHasBeenSet = true;
+}
+
+bool DescribeFlowInfoRequest::FlowIdsHasBeenSet() const
+{
+    return m_flowIdsHasBeenSet;
+}
+
 Agent DescribeFlowInfoRequest::GetAgent() const
 {
     return m_agent;
@@ -121,6 +130,22 @@ void DescribeFlowInfoRequest::SetAgent(const Agent& _agent)
 bool DescribeFlowInfoRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string DescribeFlowInfoRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void DescribeFlowInfoRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool DescribeFlowInfoRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 

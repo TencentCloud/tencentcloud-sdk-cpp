@@ -27,7 +27,8 @@ DescribeLibSamplesRequest::DescribeLibSamplesRequest() :
     m_offsetHasBeenSet(false),
     m_libIDHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_evilTypeListHasBeenSet(false)
+    m_evilTypeListHasBeenSet(false),
+    m_sampleIDsHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,19 @@ string DescribeLibSamplesRequest::ToJsonString() const
         for (auto itr = m_evilTypeList.begin(); itr != m_evilTypeList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_sampleIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SampleIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sampleIDs.begin(); itr != m_sampleIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -169,6 +183,22 @@ void DescribeLibSamplesRequest::SetEvilTypeList(const vector<int64_t>& _evilType
 bool DescribeLibSamplesRequest::EvilTypeListHasBeenSet() const
 {
     return m_evilTypeListHasBeenSet;
+}
+
+vector<string> DescribeLibSamplesRequest::GetSampleIDs() const
+{
+    return m_sampleIDs;
+}
+
+void DescribeLibSamplesRequest::SetSampleIDs(const vector<string>& _sampleIDs)
+{
+    m_sampleIDs = _sampleIDs;
+    m_sampleIDsHasBeenSet = true;
+}
+
+bool DescribeLibSamplesRequest::SampleIDsHasBeenSet() const
+{
+    return m_sampleIDsHasBeenSet;
 }
 
 

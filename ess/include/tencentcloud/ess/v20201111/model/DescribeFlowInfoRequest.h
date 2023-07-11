@@ -45,27 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要查询的流程ID列表，限制最大100个
-                     * @return FlowIds 需要查询的流程ID列表，限制最大100个
-                     * 
-                     */
-                    std::vector<std::string> GetFlowIds() const;
-
-                    /**
-                     * 设置需要查询的流程ID列表，限制最大100个
-                     * @param _flowIds 需要查询的流程ID列表，限制最大100个
-                     * 
-                     */
-                    void SetFlowIds(const std::vector<std::string>& _flowIds);
-
-                    /**
-                     * 判断参数 FlowIds 是否已赋值
-                     * @return FlowIds 是否已赋值
-                     * 
-                     */
-                    bool FlowIdsHasBeenSet() const;
-
-                    /**
                      * 获取调用方用户信息，userId 必填
                      * @return Operator 调用方用户信息，userId 必填
                      * 
@@ -85,6 +64,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取需要查询的流程ID列表，限制最大100个
+                     * @return FlowIds 需要查询的流程ID列表，限制最大100个
+                     * 
+                     */
+                    std::vector<std::string> GetFlowIds() const;
+
+                    /**
+                     * 设置需要查询的流程ID列表，限制最大100个
+                     * @param _flowIds 需要查询的流程ID列表，限制最大100个
+                     * 
+                     */
+                    void SetFlowIds(const std::vector<std::string>& _flowIds);
+
+                    /**
+                     * 判断参数 FlowIds 是否已赋值
+                     * @return FlowIds 是否已赋值
+                     * 
+                     */
+                    bool FlowIdsHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
@@ -107,13 +107,28 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取合同组ID
+                     * @return FlowGroupId 合同组ID
+                     * 
+                     */
+                    std::string GetFlowGroupId() const;
 
                     /**
-                     * 需要查询的流程ID列表，限制最大100个
+                     * 设置合同组ID
+                     * @param _flowGroupId 合同组ID
+                     * 
                      */
-                    std::vector<std::string> m_flowIds;
-                    bool m_flowIdsHasBeenSet;
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 调用方用户信息，userId 必填
@@ -122,10 +137,22 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
+                     * 需要查询的流程ID列表，限制最大100个
+                     */
+                    std::vector<std::string> m_flowIds;
+                    bool m_flowIdsHasBeenSet;
+
+                    /**
                      * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 合同组ID
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                 };
             }

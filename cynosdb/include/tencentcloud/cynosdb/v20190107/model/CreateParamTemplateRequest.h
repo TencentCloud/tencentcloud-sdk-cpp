@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版名称
-                     * @return TemplateName 模版名称
+                     * 获取模板名称
+                     * @return TemplateName 模板名称
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模版名称
-                     * @param _templateName 模版名称
+                     * 设置模板名称
+                     * @param _templateName 模板名称
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取模版描述
-                     * @return TemplateDescription 模版描述
+                     * 获取模板描述
+                     * @return TemplateDescription 模板描述
                      * 
                      */
                     std::string GetTemplateDescription() const;
 
                     /**
-                     * 设置模版描述
-                     * @param _templateDescription 模版描述
+                     * 设置模板描述
+                     * @param _templateDescription 模板描述
                      * 
                      */
                     void SetTemplateDescription(const std::string& _templateDescription);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TemplateDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取可选参数，需要复制的模版ID
-                     * @return TemplateId 可选参数，需要复制的模版ID
+                     * 获取可选参数，需要复制的模板ID
+                     * @return TemplateId 可选参数，需要复制的模板ID
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置可选参数，需要复制的模版ID
-                     * @param _templateId 可选参数，需要复制的模版ID
+                     * 设置可选参数，需要复制的模板ID
+                     * @param _templateId 可选参数，需要复制的模板ID
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -172,7 +172,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版名称
+                     * 模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
@@ -184,13 +184,13 @@ namespace TencentCloud
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 模版描述
+                     * 模板描述
                      */
                     std::string m_templateDescription;
                     bool m_templateDescriptionHasBeenSet;
 
                     /**
-                     * 可选参数，需要复制的模版ID
+                     * 可选参数，需要复制的模板ID
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

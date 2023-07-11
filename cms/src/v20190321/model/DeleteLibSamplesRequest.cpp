@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteLibSamplesRequest::DeleteLibSamplesRequest() :
     m_sampleIDsHasBeenSet(false),
-    m_libIDHasBeenSet(false)
+    m_libIDHasBeenSet(false),
+    m_sampleContentsHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,19 @@ string DeleteLibSamplesRequest::ToJsonString() const
         string key = "LibID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_libID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sampleContentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SampleContents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sampleContents.begin(); itr != m_sampleContents.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -94,6 +108,22 @@ void DeleteLibSamplesRequest::SetLibID(const string& _libID)
 bool DeleteLibSamplesRequest::LibIDHasBeenSet() const
 {
     return m_libIDHasBeenSet;
+}
+
+vector<string> DeleteLibSamplesRequest::GetSampleContents() const
+{
+    return m_sampleContents;
+}
+
+void DeleteLibSamplesRequest::SetSampleContents(const vector<string>& _sampleContents)
+{
+    m_sampleContents = _sampleContents;
+    m_sampleContentsHasBeenSet = true;
+}
+
+bool DeleteLibSamplesRequest::SampleContentsHasBeenSet() const
+{
+    return m_sampleContentsHasBeenSet;
 }
 
 

@@ -83,6 +83,49 @@ EcmClient::AllocateAddressesOutcomeCallable EcmClient::AllocateAddressesCallable
     return task->get_future();
 }
 
+EcmClient::AllocateIpv6AddressesBandwidthOutcome EcmClient::AllocateIpv6AddressesBandwidth(const AllocateIpv6AddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "AllocateIpv6AddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AllocateIpv6AddressesBandwidthResponse rsp = AllocateIpv6AddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AllocateIpv6AddressesBandwidthOutcome(rsp);
+        else
+            return AllocateIpv6AddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return AllocateIpv6AddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AllocateIpv6AddressesBandwidthAsync(const AllocateIpv6AddressesBandwidthRequest& request, const AllocateIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AllocateIpv6AddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AllocateIpv6AddressesBandwidthOutcomeCallable EcmClient::AllocateIpv6AddressesBandwidthCallable(const AllocateIpv6AddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AllocateIpv6AddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->AllocateIpv6AddressesBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::AssignIpv6AddressesOutcome EcmClient::AssignIpv6Addresses(const AssignIpv6AddressesRequest &request)
 {
     auto outcome = MakeRequest(request, "AssignIpv6Addresses");
@@ -119,6 +162,135 @@ EcmClient::AssignIpv6AddressesOutcomeCallable EcmClient::AssignIpv6AddressesCall
         [this, request]()
         {
             return this->AssignIpv6Addresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::AssignIpv6CidrBlockOutcome EcmClient::AssignIpv6CidrBlock(const AssignIpv6CidrBlockRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignIpv6CidrBlock");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignIpv6CidrBlockResponse rsp = AssignIpv6CidrBlockResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignIpv6CidrBlockOutcome(rsp);
+        else
+            return AssignIpv6CidrBlockOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignIpv6CidrBlockOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssignIpv6CidrBlockAsync(const AssignIpv6CidrBlockRequest& request, const AssignIpv6CidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignIpv6CidrBlock(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssignIpv6CidrBlockOutcomeCallable EcmClient::AssignIpv6CidrBlockCallable(const AssignIpv6CidrBlockRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignIpv6CidrBlockOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignIpv6CidrBlock(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::AssignIpv6CidrBlocksOutcome EcmClient::AssignIpv6CidrBlocks(const AssignIpv6CidrBlocksRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignIpv6CidrBlocks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignIpv6CidrBlocksResponse rsp = AssignIpv6CidrBlocksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignIpv6CidrBlocksOutcome(rsp);
+        else
+            return AssignIpv6CidrBlocksOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignIpv6CidrBlocksOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssignIpv6CidrBlocksAsync(const AssignIpv6CidrBlocksRequest& request, const AssignIpv6CidrBlocksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignIpv6CidrBlocks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssignIpv6CidrBlocksOutcomeCallable EcmClient::AssignIpv6CidrBlocksCallable(const AssignIpv6CidrBlocksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignIpv6CidrBlocksOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignIpv6CidrBlocks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::AssignIpv6SubnetCidrBlockOutcome EcmClient::AssignIpv6SubnetCidrBlock(const AssignIpv6SubnetCidrBlockRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignIpv6SubnetCidrBlock");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignIpv6SubnetCidrBlockResponse rsp = AssignIpv6SubnetCidrBlockResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignIpv6SubnetCidrBlockOutcome(rsp);
+        else
+            return AssignIpv6SubnetCidrBlockOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignIpv6SubnetCidrBlockOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::AssignIpv6SubnetCidrBlockAsync(const AssignIpv6SubnetCidrBlockRequest& request, const AssignIpv6SubnetCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignIpv6SubnetCidrBlock(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::AssignIpv6SubnetCidrBlockOutcomeCallable EcmClient::AssignIpv6SubnetCidrBlockCallable(const AssignIpv6SubnetCidrBlockRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignIpv6SubnetCidrBlockOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignIpv6SubnetCidrBlock(request);
         }
     );
 
@@ -2792,6 +2964,49 @@ EcmClient::DescribePriceRunInstanceOutcomeCallable EcmClient::DescribePriceRunIn
     return task->get_future();
 }
 
+EcmClient::DescribeRegionIpv6AddressesOutcome EcmClient::DescribeRegionIpv6Addresses(const DescribeRegionIpv6AddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegionIpv6Addresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionIpv6AddressesResponse rsp = DescribeRegionIpv6AddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionIpv6AddressesOutcome(rsp);
+        else
+            return DescribeRegionIpv6AddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionIpv6AddressesOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::DescribeRegionIpv6AddressesAsync(const DescribeRegionIpv6AddressesRequest& request, const DescribeRegionIpv6AddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegionIpv6Addresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::DescribeRegionIpv6AddressesOutcomeCallable EcmClient::DescribeRegionIpv6AddressesCallable(const DescribeRegionIpv6AddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionIpv6AddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegionIpv6Addresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::DescribeRouteConflictsOutcome EcmClient::DescribeRouteConflicts(const DescribeRouteConflictsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRouteConflicts");
@@ -4125,6 +4340,49 @@ EcmClient::ModifyIpv6AddressesAttributeOutcomeCallable EcmClient::ModifyIpv6Addr
     return task->get_future();
 }
 
+EcmClient::ModifyIpv6AddressesBandwidthOutcome EcmClient::ModifyIpv6AddressesBandwidth(const ModifyIpv6AddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIpv6AddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIpv6AddressesBandwidthResponse rsp = ModifyIpv6AddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIpv6AddressesBandwidthOutcome(rsp);
+        else
+            return ModifyIpv6AddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIpv6AddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ModifyIpv6AddressesBandwidthAsync(const ModifyIpv6AddressesBandwidthRequest& request, const ModifyIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIpv6AddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ModifyIpv6AddressesBandwidthOutcomeCallable EcmClient::ModifyIpv6AddressesBandwidthCallable(const ModifyIpv6AddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIpv6AddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIpv6AddressesBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::ModifyListenerOutcome EcmClient::ModifyListener(const ModifyListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyListener");
@@ -4856,6 +5114,49 @@ EcmClient::ModifyVpcAttributeOutcomeCallable EcmClient::ModifyVpcAttributeCallab
     return task->get_future();
 }
 
+EcmClient::QueryVpcTaskResultOutcome EcmClient::QueryVpcTaskResult(const QueryVpcTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryVpcTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryVpcTaskResultResponse rsp = QueryVpcTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryVpcTaskResultOutcome(rsp);
+        else
+            return QueryVpcTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryVpcTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::QueryVpcTaskResultAsync(const QueryVpcTaskResultRequest& request, const QueryVpcTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryVpcTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::QueryVpcTaskResultOutcomeCallable EcmClient::QueryVpcTaskResultCallable(const QueryVpcTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryVpcTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryVpcTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcmClient::RebootInstancesOutcome EcmClient::RebootInstances(const RebootInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RebootInstances");
@@ -4978,6 +5279,49 @@ EcmClient::ReleaseIpv6AddressesOutcomeCallable EcmClient::ReleaseIpv6AddressesCa
         [this, request]()
         {
             return this->ReleaseIpv6Addresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::ReleaseIpv6AddressesBandwidthOutcome EcmClient::ReleaseIpv6AddressesBandwidth(const ReleaseIpv6AddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseIpv6AddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseIpv6AddressesBandwidthResponse rsp = ReleaseIpv6AddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseIpv6AddressesBandwidthOutcome(rsp);
+        else
+            return ReleaseIpv6AddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseIpv6AddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::ReleaseIpv6AddressesBandwidthAsync(const ReleaseIpv6AddressesBandwidthRequest& request, const ReleaseIpv6AddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseIpv6AddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::ReleaseIpv6AddressesBandwidthOutcomeCallable EcmClient::ReleaseIpv6AddressesBandwidthCallable(const ReleaseIpv6AddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseIpv6AddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseIpv6AddressesBandwidth(request);
         }
     );
 
@@ -5623,6 +5967,49 @@ EcmClient::TerminateInstancesOutcomeCallable EcmClient::TerminateInstancesCallab
         [this, request]()
         {
             return this->TerminateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EcmClient::UnassignIpv6SubnetCidrBlockOutcome EcmClient::UnassignIpv6SubnetCidrBlock(const UnassignIpv6SubnetCidrBlockRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnassignIpv6SubnetCidrBlock");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnassignIpv6SubnetCidrBlockResponse rsp = UnassignIpv6SubnetCidrBlockResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnassignIpv6SubnetCidrBlockOutcome(rsp);
+        else
+            return UnassignIpv6SubnetCidrBlockOutcome(o.GetError());
+    }
+    else
+    {
+        return UnassignIpv6SubnetCidrBlockOutcome(outcome.GetError());
+    }
+}
+
+void EcmClient::UnassignIpv6SubnetCidrBlockAsync(const UnassignIpv6SubnetCidrBlockRequest& request, const UnassignIpv6SubnetCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnassignIpv6SubnetCidrBlock(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcmClient::UnassignIpv6SubnetCidrBlockOutcomeCallable EcmClient::UnassignIpv6SubnetCidrBlockCallable(const UnassignIpv6SubnetCidrBlockRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnassignIpv6SubnetCidrBlockOutcome()>>(
+        [this, request]()
+        {
+            return this->UnassignIpv6SubnetCidrBlock(request);
         }
     );
 

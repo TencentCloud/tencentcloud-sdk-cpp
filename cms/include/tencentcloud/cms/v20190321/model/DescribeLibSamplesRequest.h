@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool EvilTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取样本词ID列表过滤
+                     * @return SampleIDs 样本词ID列表过滤
+                     * 
+                     */
+                    std::vector<std::string> GetSampleIDs() const;
+
+                    /**
+                     * 设置样本词ID列表过滤
+                     * @param _sampleIDs 样本词ID列表过滤
+                     * 
+                     */
+                    void SetSampleIDs(const std::vector<std::string>& _sampleIDs);
+
+                    /**
+                     * 判断参数 SampleIDs 是否已赋值
+                     * @return SampleIDs 是否已赋值
+                     * 
+                     */
+                    bool SampleIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_evilTypeList;
                     bool m_evilTypeListHasBeenSet;
+
+                    /**
+                     * 样本词ID列表过滤
+                     */
+                    std::vector<std::string> m_sampleIDs;
+                    bool m_sampleIDsHasBeenSet;
 
                 };
             }

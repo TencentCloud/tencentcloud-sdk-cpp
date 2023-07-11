@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取模板ID
+                     * @return TemplateId 模板ID
                      * 
                      */
                     int64_t GetTemplateId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版ID
+                     * 模板ID
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

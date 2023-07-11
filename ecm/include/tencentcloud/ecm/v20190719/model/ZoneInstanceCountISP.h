@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取在当前可用区欲创建的实例数目。
-                     * @return InstanceCount 在当前可用区欲创建的实例数目。
+                     * 获取在当前可用区创建的实例数目。
+                     * @return InstanceCount 在当前可用区创建的实例数目。
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置在当前可用区欲创建的实例数目。
-                     * @param _instanceCount 在当前可用区欲创建的实例数目。
+                     * 设置在当前可用区创建的实例数目。
+                     * @param _instanceCount 在当前可用区创建的实例数目。
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -218,7 +218,7 @@ CMCC：中国移动
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 在当前可用区欲创建的实例数目。
+                     * 在当前可用区创建的实例数目。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;

@@ -47,6 +47,10 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowGroupByFilesRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowGroupByFilesResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h>
@@ -181,6 +185,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowEvidenceReportResponse> CreateFlowEvidenceReportOutcome;
                 typedef std::future<CreateFlowEvidenceReportOutcome> CreateFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowEvidenceReportRequest&, CreateFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowEvidenceReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowGroupByFilesResponse> CreateFlowGroupByFilesOutcome;
+                typedef std::future<CreateFlowGroupByFilesOutcome> CreateFlowGroupByFilesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowGroupByFilesRequest&, CreateFlowGroupByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowGroupByFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowGroupByTemplatesResponse> CreateFlowGroupByTemplatesOutcome;
+                typedef std::future<CreateFlowGroupByTemplatesOutcome> CreateFlowGroupByTemplatesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowGroupByTemplatesRequest&, CreateFlowGroupByTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowGroupByTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowRemindsResponse> CreateFlowRemindsOutcome;
                 typedef std::future<CreateFlowRemindsOutcome> CreateFlowRemindsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowRemindsRequest&, CreateFlowRemindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowRemindsAsyncHandler;
@@ -434,6 +444,27 @@ namespace TencentCloud
                 CreateFlowEvidenceReportOutcome CreateFlowEvidenceReport(const Model::CreateFlowEvidenceReportRequest &request);
                 void CreateFlowEvidenceReportAsync(const Model::CreateFlowEvidenceReportRequest& request, const CreateFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFlowEvidenceReportOutcomeCallable CreateFlowEvidenceReportCallable(const Model::CreateFlowEvidenceReportRequest& request);
+
+                /**
+                 *此接口（CreateFlowGroupByFiles）通过多文件创建合同组签署流程。<br/>
+PDF资源Id 通过上传文件接口获取
+此接口合同组中的子合同必须都是文件发起的合同
+                 * @param req CreateFlowGroupByFilesRequest
+                 * @return CreateFlowGroupByFilesOutcome
+                 */
+                CreateFlowGroupByFilesOutcome CreateFlowGroupByFiles(const Model::CreateFlowGroupByFilesRequest &request);
+                void CreateFlowGroupByFilesAsync(const Model::CreateFlowGroupByFilesRequest& request, const CreateFlowGroupByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowGroupByFilesOutcomeCallable CreateFlowGroupByFilesCallable(const Model::CreateFlowGroupByFilesRequest& request);
+
+                /**
+                 *此接口（CreateFlowGroupByTemplates）通过多模板创建合同组签署流程。<br/>
+此接口合同组中的子合同必须都是模板发起的合同。 <br/>目前最大仅支持50个子合同
+                 * @param req CreateFlowGroupByTemplatesRequest
+                 * @return CreateFlowGroupByTemplatesOutcome
+                 */
+                CreateFlowGroupByTemplatesOutcome CreateFlowGroupByTemplates(const Model::CreateFlowGroupByTemplatesRequest &request);
+                void CreateFlowGroupByTemplatesAsync(const Model::CreateFlowGroupByTemplatesRequest& request, const CreateFlowGroupByTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowGroupByTemplatesOutcomeCallable CreateFlowGroupByTemplatesCallable(const Model::CreateFlowGroupByTemplatesRequest& request);
 
                 /**
                  *指定需要批量催办的签署流程Id，批量催办合同，最多100个; 接口失败后返回错误信息

@@ -36,6 +36,8 @@ namespace TencentCloud
             {
                 /**
                 * 动态更新索引配置
+
+注意：该功能尚处于内测阶段，如需使用请联系技术支持
                 */
                 class DynamicIndex : public AbstractModel
                 {
