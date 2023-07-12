@@ -239,6 +239,20 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取课件页数
+                     * @return Pages 课件页数
+                     * 
+                     */
+                    uint64_t GetPages() const;
+
+                    /**
+                     * 判断参数 Pages 是否已赋值
+                     * @return Pages 是否已赋值
+                     * 
+                     */
+                    bool PagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -324,6 +338,12 @@ namespace TencentCloud
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 课件页数
+                     */
+                    uint64_t m_pages;
+                    bool m_pagesHasBeenSet;
 
                 };
             }

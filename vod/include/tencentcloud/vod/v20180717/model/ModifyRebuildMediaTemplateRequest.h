@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音画质重生模板号。
-                     * @return Definition 音画质重生模板号。
+                     * 获取视频重生模板号。
+                     * @return Definition 视频重生模板号。
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质重生模板号。
-                     * @param _definition 音画质重生模板号。
+                     * 设置视频重生模板号。
+                     * @param _definition 视频重生模板号。
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模板名称。
-                     * @return Name 音画质重生模板名称。
+                     * 获取视频重生模板名称。
+                     * @return Name 视频重生模板名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置音画质重生模板名称。
-                     * @param _name 音画质重生模板名称。
+                     * 设置视频重生模板名称。
+                     * @param _name 视频重生模板名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模板描述。
-                     * @return Comment 音画质重生模板描述。
+                     * 获取视频重生模板描述。
+                     * @return Comment 视频重生模板描述。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置音画质重生模板描述。
-                     * @param _comment 音画质重生模板描述。
+                     * 设置视频重生模板描述。
+                     * @param _comment 视频重生模板描述。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生视频控制信息。
-                     * @return RebuildVideoInfo 音画质重生视频控制信息。
+                     * 获取视频重生视频控制信息。
+                     * @return RebuildVideoInfo 视频重生视频控制信息。
                      * 
                      */
                     RebuildVideoInfo GetRebuildVideoInfo() const;
 
                     /**
-                     * 设置音画质重生视频控制信息。
-                     * @param _rebuildVideoInfo 音画质重生视频控制信息。
+                     * 设置视频重生视频控制信息。
+                     * @param _rebuildVideoInfo 视频重生视频控制信息。
                      * 
                      */
                     void SetRebuildVideoInfo(const RebuildVideoInfo& _rebuildVideoInfo);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RebuildVideoInfoHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生音频控制信息。
-                     * @return RebuildAudioInfo 音画质重生音频控制信息。
+                     * 获取视频重生音频控制信息。
+                     * @return RebuildAudioInfo 视频重生音频控制信息。
                      * 
                      */
                     RebuildAudioInfo GetRebuildAudioInfo() const;
 
                     /**
-                     * 设置音画质重生音频控制信息。
-                     * @param _rebuildAudioInfo 音画质重生音频控制信息。
+                     * 设置视频重生音频控制信息。
+                     * @param _rebuildAudioInfo 视频重生音频控制信息。
                      * 
                      */
                     void SetRebuildAudioInfo(const RebuildAudioInfo& _rebuildAudioInfo);
@@ -296,7 +296,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音画质重生模板号。
+                     * 视频重生模板号。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -308,25 +308,25 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 音画质重生模板名称。
+                     * 视频重生模板名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 音画质重生模板描述。
+                     * 视频重生模板描述。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 音画质重生视频控制信息。
+                     * 视频重生视频控制信息。
                      */
                     RebuildVideoInfo m_rebuildVideoInfo;
                     bool m_rebuildVideoInfoHasBeenSet;
 
                     /**
-                     * 音画质重生音频控制信息。
+                     * 视频重生音频控制信息。
                      */
                     RebuildAudioInfo m_rebuildAudioInfo;
                     bool m_rebuildAudioInfoHasBeenSet;

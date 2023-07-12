@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
-                     * @return SecurityGroupIds 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
+                     * 获取安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
+                     * @return SecurityGroupIds 安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
-                     * @param _securityGroupIds 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
+                     * 设置安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
+                     * @param _securityGroupIds 安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -147,10 +147,52 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * @return OrderField 排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * 
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * @param _orderField 排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * 
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * @return OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * 
+                     */
+                    std::string GetOrderDirection() const;
+
+                    /**
+                     * 设置排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * @param _orderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * 
+                     */
+                    void SetOrderDirection(const std::string& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     * 
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
+                     * 安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -177,6 +219,18 @@ namespace TencentCloud
                      */
                     std::string m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     */
+                    std::string m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
 
                 };
             }

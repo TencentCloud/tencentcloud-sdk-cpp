@@ -345,6 +345,31 @@ namespace TencentCloud
                      */
                     bool SnapshotTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapshotTime 实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSnapshotTime() const;
+
+                    /**
+                     * 设置实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _snapshotTime 实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSnapshotTime(const std::string& _snapshotTime);
+
+                    /**
+                     * 判断参数 SnapshotTime 是否已赋值
+                     * @return SnapshotTime 是否已赋值
+                     * 
+                     */
+                    bool SnapshotTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +456,13 @@ namespace TencentCloud
                      */
                     std::string m_snapshotType;
                     bool m_snapshotTypeHasBeenSet;
+
+                    /**
+                     * 实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshotTime;
+                    bool m_snapshotTimeHasBeenSet;
 
                 };
             }

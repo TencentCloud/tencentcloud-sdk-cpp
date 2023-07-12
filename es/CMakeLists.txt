@@ -31,6 +31,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CreateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/DeleteLogstashPipelinesResponse.h
+  include/tencentcloud/es/v20180416/model/TagInfo.h
   include/tencentcloud/es/v20180416/model/KeyValue.h
   include/tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesResponse.h
@@ -96,6 +97,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeLogstashPipelinesRequest.h
   include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
+  include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstancesRequest.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
   include/tencentcloud/es/v20180416/model/DeleteInstanceRequest.h
@@ -115,7 +117,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/BackingIndexMetaField.h
   include/tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescRequest.h
   include/tencentcloud/es/v20180416/model/NodeView.h
-  include/tencentcloud/es/v20180416/model/TagInfo.h
+  include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
@@ -146,6 +148,7 @@ set(es_src
   src/v20180416/model/CreateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceLogsRequest.cpp
   src/v20180416/model/DeleteLogstashPipelinesResponse.cpp
+  src/v20180416/model/TagInfo.cpp
   src/v20180416/model/KeyValue.cpp
   src/v20180416/model/UpdateLogstashPipelineDescResponse.cpp
   src/v20180416/model/DescribeInstancesResponse.cpp
@@ -211,6 +214,7 @@ set(es_src
   src/v20180416/model/DescribeLogstashPipelinesRequest.cpp
   src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
+  src/v20180416/model/ModifyEsVipSecurityGroupRequest.cpp
   src/v20180416/model/DescribeLogstashInstancesRequest.cpp
   src/v20180416/model/MasterNodeInfo.cpp
   src/v20180416/model/DeleteInstanceRequest.cpp
@@ -230,7 +234,7 @@ set(es_src
   src/v20180416/model/BackingIndexMetaField.cpp
   src/v20180416/model/UpdateLogstashPipelineDescRequest.cpp
   src/v20180416/model/NodeView.cpp
-  src/v20180416/model/TagInfo.cpp
+  src/v20180416/model/ModifyEsVipSecurityGroupResponse.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/DescribeLogstashInstanceLogsRequest.cpp
   src/v20180416/model/RestartInstanceRequest.cpp

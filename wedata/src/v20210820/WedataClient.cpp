@@ -2448,6 +2448,49 @@ WedataClient::DescribeClusterNamespaceListOutcomeCallable WedataClient::Describe
     return task->get_future();
 }
 
+WedataClient::DescribeColumnLineageOutcome WedataClient::DescribeColumnLineage(const DescribeColumnLineageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeColumnLineage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeColumnLineageResponse rsp = DescribeColumnLineageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeColumnLineageOutcome(rsp);
+        else
+            return DescribeColumnLineageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeColumnLineageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeColumnLineageAsync(const DescribeColumnLineageRequest& request, const DescribeColumnLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeColumnLineage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeColumnLineageOutcomeCallable WedataClient::DescribeColumnLineageCallable(const DescribeColumnLineageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeColumnLineageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeColumnLineage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeDataBasesOutcome WedataClient::DescribeDataBases(const DescribeDataBasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataBases");
@@ -5709,6 +5752,49 @@ WedataClient::DescribeTableInfoListOutcomeCallable WedataClient::DescribeTableIn
         [this, request]()
         {
             return this->DescribeTableInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeTableLineageOutcome WedataClient::DescribeTableLineage(const DescribeTableLineageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableLineage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableLineageResponse rsp = DescribeTableLineageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableLineageOutcome(rsp);
+        else
+            return DescribeTableLineageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableLineageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTableLineageAsync(const DescribeTableLineageRequest& request, const DescribeTableLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableLineage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTableLineageOutcomeCallable WedataClient::DescribeTableLineageCallable(const DescribeTableLineageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableLineageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableLineage(request);
         }
     );
 

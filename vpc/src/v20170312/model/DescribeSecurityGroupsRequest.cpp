@@ -26,7 +26,9 @@ DescribeSecurityGroupsRequest::DescribeSecurityGroupsRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,22 @@ string DescribeSecurityGroupsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +169,38 @@ void DescribeSecurityGroupsRequest::SetLimit(const string& _limit)
 bool DescribeSecurityGroupsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSecurityGroupsRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeSecurityGroupsRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeSecurityGroupsRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeSecurityGroupsRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeSecurityGroupsRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeSecurityGroupsRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
 }
 
 

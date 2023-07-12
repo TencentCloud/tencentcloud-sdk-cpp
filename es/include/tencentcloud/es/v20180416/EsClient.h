@@ -61,6 +61,8 @@
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
+#include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h>
+#include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartKibanaRequest.h>
@@ -168,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRequestTargetNodeTypesResponse> GetRequestTargetNodeTypesOutcome;
                 typedef std::future<GetRequestTargetNodeTypesOutcome> GetRequestTargetNodeTypesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetRequestTargetNodeTypesRequest&, GetRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestTargetNodeTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEsVipSecurityGroupResponse> ModifyEsVipSecurityGroupOutcome;
+                typedef std::future<ModifyEsVipSecurityGroupOutcome> ModifyEsVipSecurityGroupOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::ModifyEsVipSecurityGroupRequest&, ModifyEsVipSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEsVipSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -395,6 +400,15 @@ namespace TencentCloud
                 GetRequestTargetNodeTypesOutcome GetRequestTargetNodeTypes(const Model::GetRequestTargetNodeTypesRequest &request);
                 void GetRequestTargetNodeTypesAsync(const Model::GetRequestTargetNodeTypesRequest& request, const GetRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetRequestTargetNodeTypesOutcomeCallable GetRequestTargetNodeTypesCallable(const Model::GetRequestTargetNodeTypesRequest& request);
+
+                /**
+                 *修改绑定VIP的安全组，传安全组id列表
+                 * @param req ModifyEsVipSecurityGroupRequest
+                 * @return ModifyEsVipSecurityGroupOutcome
+                 */
+                ModifyEsVipSecurityGroupOutcome ModifyEsVipSecurityGroup(const Model::ModifyEsVipSecurityGroupRequest &request);
+                void ModifyEsVipSecurityGroupAsync(const Model::ModifyEsVipSecurityGroupRequest& request, const ModifyEsVipSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEsVipSecurityGroupOutcomeCallable ModifyEsVipSecurityGroupCallable(const Model::ModifyEsVipSecurityGroupRequest& request);
 
                 /**
                  *重启ES集群实例(用于系统版本更新等操作) 

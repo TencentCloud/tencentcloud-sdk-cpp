@@ -857,6 +857,49 @@ EsClient::GetRequestTargetNodeTypesOutcomeCallable EsClient::GetRequestTargetNod
     return task->get_future();
 }
 
+EsClient::ModifyEsVipSecurityGroupOutcome EsClient::ModifyEsVipSecurityGroup(const ModifyEsVipSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEsVipSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEsVipSecurityGroupResponse rsp = ModifyEsVipSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEsVipSecurityGroupOutcome(rsp);
+        else
+            return ModifyEsVipSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEsVipSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::ModifyEsVipSecurityGroupAsync(const ModifyEsVipSecurityGroupRequest& request, const ModifyEsVipSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEsVipSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::ModifyEsVipSecurityGroupOutcomeCallable EsClient::ModifyEsVipSecurityGroupCallable(const ModifyEsVipSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEsVipSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEsVipSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::RestartInstanceOutcome EsClient::RestartInstance(const RestartInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RestartInstance");

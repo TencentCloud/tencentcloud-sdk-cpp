@@ -337,6 +337,69 @@ namespace TencentCloud
                      */
                     bool CapacityHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统快照ID
+                     * @return SnapshotId 文件系统快照ID
+                     * 
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置文件系统快照ID
+                     * @param _snapshotId 文件系统快照ID
+                     * 
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     * 
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
+                    /**
+                     * 获取定期快照策略ID
+                     * @return AutoSnapshotPolicyId 定期快照策略ID
+                     * 
+                     */
+                    std::string GetAutoSnapshotPolicyId() const;
+
+                    /**
+                     * 设置定期快照策略ID
+                     * @param _autoSnapshotPolicyId 定期快照策略ID
+                     * 
+                     */
+                    void SetAutoSnapshotPolicyId(const std::string& _autoSnapshotPolicyId);
+
+                    /**
+                     * 判断参数 AutoSnapshotPolicyId 是否已赋值
+                     * @return AutoSnapshotPolicyId 是否已赋值
+                     * 
+                     */
+                    bool AutoSnapshotPolicyIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启默认扩容，仅Turbo类型文件存储支持
+                     * @return EnableAutoScaleUp 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 
+                     */
+                    bool GetEnableAutoScaleUp() const;
+
+                    /**
+                     * 设置是否开启默认扩容，仅Turbo类型文件存储支持
+                     * @param _enableAutoScaleUp 是否开启默认扩容，仅Turbo类型文件存储支持
+                     * 
+                     */
+                    void SetEnableAutoScaleUp(const bool& _enableAutoScaleUp);
+
+                    /**
+                     * 判断参数 EnableAutoScaleUp 是否已赋值
+                     * @return EnableAutoScaleUp 是否已赋值
+                     * 
+                     */
+                    bool EnableAutoScaleUpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +485,24 @@ namespace TencentCloud
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;
+
+                    /**
+                     * 文件系统快照ID
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * 定期快照策略ID
+                     */
+                    std::string m_autoSnapshotPolicyId;
+                    bool m_autoSnapshotPolicyIdHasBeenSet;
+
+                    /**
+                     * 是否开启默认扩容，仅Turbo类型文件存储支持
+                     */
+                    bool m_enableAutoScaleUp;
+                    bool m_enableAutoScaleUpHasBeenSet;
 
                 };
             }

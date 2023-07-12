@@ -1706,7 +1706,7 @@ namespace TencentCloud
                 DescribeQualityInspectTemplatesOutcomeCallable DescribeQualityInspectTemplatesCallable(const Model::DescribeQualityInspectTemplatesRequest& request);
 
                 /**
-                 *获取音画质重生模板列表。
+                 *获取视频重生模板列表。
                  * @param req DescribeRebuildMediaTemplatesRequest
                  * @return DescribeRebuildMediaTemplatesOutcome
                  */
@@ -2149,7 +2149,7 @@ namespace TencentCloud
                 ModifyQualityInspectTemplateOutcomeCallable ModifyQualityInspectTemplateCallable(const Model::ModifyQualityInspectTemplateRequest& request);
 
                 /**
-                 *修改音画质重生模板。
+                 *修改视频重生模板。
                  * @param req ModifyRebuildMediaTemplateRequest
                  * @return ModifyRebuildMediaTemplateOutcome
                  */
@@ -2377,7 +2377,7 @@ namespace TencentCloud
                 PushUrlCacheOutcomeCallable PushUrlCacheCallable(const Model::PushUrlCacheRequest& request);
 
                 /**
-                 *发起音画质重生
+                 *发起视频重生
                  * @param req RebuildMediaRequest
                  * @return RebuildMediaOutcome
                  */
@@ -2386,7 +2386,7 @@ namespace TencentCloud
                 RebuildMediaOutcomeCallable RebuildMediaCallable(const Model::RebuildMediaRequest& request);
 
                 /**
-                 *使用模板发起音画质重生。
+                 *使用模板发起视频重生。
                  * @param req RebuildMediaByTemplateRequest
                  * @return RebuildMediaByTemplateOutcome
                  */

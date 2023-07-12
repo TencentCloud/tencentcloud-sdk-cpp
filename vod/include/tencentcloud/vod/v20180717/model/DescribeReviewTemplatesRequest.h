@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取审核模版唯一标识过滤条件，数组长度限制：100。
-                     * @return Definitions 审核模版唯一标识过滤条件，数组长度限制：100。
+                     * 获取审核模板唯一标识过滤条件，数组长度限制：100。
+                     * @return Definitions 审核模板唯一标识过滤条件，数组长度限制：100。
                      * 
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置审核模版唯一标识过滤条件，数组长度限制：100。
-                     * @param _definitions 审核模版唯一标识过滤条件，数组长度限制：100。
+                     * 设置审核模板唯一标识过滤条件，数组长度限制：100。
+                     * @param _definitions 审核模板唯一标识过滤条件，数组长度限制：100。
                      * 
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
@@ -164,7 +164,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 审核模版唯一标识过滤条件，数组长度限制：100。
+                     * 审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
-                     * @return TimeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * 获取实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月
+                     * @return TimeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月
                      * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
-                     * @param _timeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * 设置实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月
+                     * @param _timeSpan 实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月
                      * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
@@ -201,7 +201,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月
+                     * 实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;

@@ -37,7 +37,8 @@ DescribeDocumentResponse::DescribeDocumentResponse() :
     m_transcodeInfoHasBeenSet(false),
     m_documentTypeHasBeenSet(false),
     m_documentSizeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_pagesHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome DescribeDocumentResponse::Deserialize(const string &payload)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Pages") && !rsp["Pages"].IsNull())
+    {
+        if (!rsp["Pages"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pages` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pages = rsp["Pages"].GetUint64();
+        m_pagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ string DescribeDocumentResponse::ToJsonString() const
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_pagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pages, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -487,6 +506,16 @@ uint64_t DescribeDocumentResponse::GetUpdateTime() const
 bool DescribeDocumentResponse::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+uint64_t DescribeDocumentResponse::GetPages() const
+{
+    return m_pages;
+}
+
+bool DescribeDocumentResponse::PagesHasBeenSet() const
+{
+    return m_pagesHasBeenSet;
 }
 
 

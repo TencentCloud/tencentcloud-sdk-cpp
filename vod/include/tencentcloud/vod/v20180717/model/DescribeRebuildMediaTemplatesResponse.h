@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模板详情列表。
-                     * @return RebuildMediaTemplateSet 音画质重生模板详情列表。
+                     * 获取视频重生模板详情列表。
+                     * @return RebuildMediaTemplateSet 视频重生模板详情列表。
                      * 
                      */
                     std::vector<RebuildMediaTemplate> GetRebuildMediaTemplateSet() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 音画质重生模板详情列表。
+                     * 视频重生模板详情列表。
                      */
                     std::vector<RebuildMediaTemplate> m_rebuildMediaTemplateSet;
                     bool m_rebuildMediaTemplateSetHasBeenSet;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模板 ID。
-                     * @return Definition 音画质重生模板 ID。
+                     * 获取视频重生模板 ID。
+                     * @return Definition 视频重生模板 ID。
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质重生模板 ID。
-                     * @param _definition 音画质重生模板 ID。
+                     * 设置视频重生模板 ID。
+                     * @param _definition 视频重生模板 ID。
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生后的文件配置。
-                     * @return OutputConfig 音画质重生后的文件配置。
+                     * 获取视频重生后的文件配置。
+                     * @return OutputConfig 视频重生后的文件配置。
                      * 
                      */
                     RebuildMediaOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置音画质重生后的文件配置。
-                     * @param _outputConfig 音画质重生后的文件配置。
+                     * 设置视频重生后的文件配置。
+                     * @param _outputConfig 视频重生后的文件配置。
                      * 
                      */
                     void SetOutputConfig(const RebuildMediaOutputConfig& _outputConfig);
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 音画质重生模板 ID。
+                     * 视频重生模板 ID。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 音画质重生后的文件配置。
+                     * 视频重生后的文件配置。
                      */
                     RebuildMediaOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;

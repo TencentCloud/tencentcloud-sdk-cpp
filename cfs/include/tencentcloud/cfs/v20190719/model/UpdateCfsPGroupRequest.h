@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取权限组描述信息，1-255个字符
-                     * @return DescInfo 权限组描述信息，1-255个字符
+                     * 获取权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空
+                     * @return DescInfo 权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空
                      * 
                      */
                     std::string GetDescInfo() const;
 
                     /**
-                     * 设置权限组描述信息，1-255个字符
-                     * @param _descInfo 权限组描述信息，1-255个字符
+                     * 设置权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空
+                     * @param _descInfo 权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空
                      * 
                      */
                     void SetDescInfo(const std::string& _descInfo);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 权限组描述信息，1-255个字符
+                     * 权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空
                      */
                     std::string m_descInfo;
                     bool m_descInfoHasBeenSet;

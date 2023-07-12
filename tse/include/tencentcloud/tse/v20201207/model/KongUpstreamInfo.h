@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SourceIDHasBeenSet() const;
 
                     /**
-                     * 获取名字空间
-                     * @return Namespace 名字空间
+                     * 获取命名空间
+                     * @return Namespace 命名空间
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置名字空间
-                     * @param _namespace 名字空间
+                     * 设置命名空间
+                     * @param _namespace 命名空间
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -467,7 +467,7 @@ namespace TencentCloud
                     bool m_sourceIDHasBeenSet;
 
                     /**
-                     * 名字空间
+                     * 命名空间
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

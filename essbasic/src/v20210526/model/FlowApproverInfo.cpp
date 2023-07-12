@@ -41,7 +41,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_approverNeedSignReviewHasBeenSet(false),
     m_approverVerifyTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
-    m_signIdHasBeenSet(false)
+    m_signIdHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,16 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_signIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -482,6 +493,14 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -821,5 +840,21 @@ void FlowApproverInfo::SetSignId(const string& _signId)
 bool FlowApproverInfo::SignIdHasBeenSet() const
 {
     return m_signIdHasBeenSet;
+}
+
+string FlowApproverInfo::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void FlowApproverInfo::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool FlowApproverInfo::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
 }
 

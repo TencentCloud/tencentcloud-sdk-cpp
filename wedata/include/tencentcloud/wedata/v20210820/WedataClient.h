@@ -135,6 +135,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h>
@@ -287,6 +289,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableLineageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableSchemaInfoRequest.h>
@@ -601,6 +605,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterNamespaceListResponse> DescribeClusterNamespaceListOutcome;
                 typedef std::future<DescribeClusterNamespaceListOutcome> DescribeClusterNamespaceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeClusterNamespaceListRequest&, DescribeClusterNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNamespaceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeColumnLineageResponse> DescribeColumnLineageOutcome;
+                typedef std::future<DescribeColumnLineageOutcome> DescribeColumnLineageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeColumnLineageRequest&, DescribeColumnLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnLineageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataBasesResponse> DescribeDataBasesOutcome;
                 typedef std::future<DescribeDataBasesOutcome> DescribeDataBasesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataBasesRequest&, DescribeDataBasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBasesAsyncHandler;
@@ -829,6 +836,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTableInfoListResponse> DescribeTableInfoListOutcome;
                 typedef std::future<DescribeTableInfoListOutcome> DescribeTableInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableInfoListRequest&, DescribeTableInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableLineageResponse> DescribeTableLineageOutcome;
+                typedef std::future<DescribeTableLineageOutcome> DescribeTableLineageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTableLineageRequest&, DescribeTableLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableLineageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableQualityDetailsResponse> DescribeTableQualityDetailsOutcome;
                 typedef std::future<DescribeTableQualityDetailsOutcome> DescribeTableQualityDetailsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableQualityDetailsRequest&, DescribeTableQualityDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableQualityDetailsAsyncHandler;
@@ -1546,6 +1556,15 @@ namespace TencentCloud
                 DescribeClusterNamespaceListOutcomeCallable DescribeClusterNamespaceListCallable(const Model::DescribeClusterNamespaceListRequest& request);
 
                 /**
+                 *列出字段血缘信息
+                 * @param req DescribeColumnLineageRequest
+                 * @return DescribeColumnLineageOutcome
+                 */
+                DescribeColumnLineageOutcome DescribeColumnLineage(const Model::DescribeColumnLineageRequest &request);
+                void DescribeColumnLineageAsync(const Model::DescribeColumnLineageRequest& request, const DescribeColumnLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeColumnLineageOutcomeCallable DescribeColumnLineageCallable(const Model::DescribeColumnLineageRequest& request);
+
+                /**
                  *查询数据来源列表
                  * @param req DescribeDataBasesRequest
                  * @return DescribeDataBasesOutcome
@@ -2238,6 +2257,15 @@ namespace TencentCloud
                 DescribeTableInfoListOutcome DescribeTableInfoList(const Model::DescribeTableInfoListRequest &request);
                 void DescribeTableInfoListAsync(const Model::DescribeTableInfoListRequest& request, const DescribeTableInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableInfoListOutcomeCallable DescribeTableInfoListCallable(const Model::DescribeTableInfoListRequest& request);
+
+                /**
+                 *列出表血缘信息
+                 * @param req DescribeTableLineageRequest
+                 * @return DescribeTableLineageOutcome
+                 */
+                DescribeTableLineageOutcome DescribeTableLineage(const Model::DescribeTableLineageRequest &request);
+                void DescribeTableLineageAsync(const Model::DescribeTableLineageRequest& request, const DescribeTableLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableLineageOutcomeCallable DescribeTableLineageCallable(const Model::DescribeTableLineageRequest& request);
 
                 /**
                  *质量报告-查询表质量详情

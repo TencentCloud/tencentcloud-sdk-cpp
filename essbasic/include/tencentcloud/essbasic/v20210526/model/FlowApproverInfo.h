@@ -555,6 +555,31 @@ HANDWRITE -手写签名
                      */
                     bool SignIdHasBeenSet() const;
 
+                    /**
+                     * 获取SMS: 短信; NONE: 不发信息
+默认为SMS(该字段对子客无效)
+                     * @return NotifyType SMS: 短信; NONE: 不发信息
+默认为SMS(该字段对子客无效)
+                     * 
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置SMS: 短信; NONE: 不发信息
+默认为SMS(该字段对子客无效)
+                     * @param _notifyType SMS: 短信; NONE: 不发信息
+默认为SMS(该字段对子客无效)
+                     * 
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     * 
+                     */
+                    bool NotifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -696,6 +721,13 @@ HANDWRITE -手写签名
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
+
+                    /**
+                     * SMS: 短信; NONE: 不发信息
+默认为SMS(该字段对子客无效)
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
 
                 };
             }
