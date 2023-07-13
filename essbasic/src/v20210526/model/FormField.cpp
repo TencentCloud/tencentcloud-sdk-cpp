@@ -23,7 +23,8 @@ using namespace std;
 FormField::FormField() :
     m_componentValueHasBeenSet(false),
     m_componentIdHasBeenSet(false),
-    m_componentNameHasBeenSet(false)
+    m_componentNameHasBeenSet(false),
+    m_lockComponentValueHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome FormField::Deserialize(const rapidjson::Value &value)
         m_componentNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LockComponentValue") && !value["LockComponentValue"].IsNull())
+    {
+        if (!value["LockComponentValue"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FormField.LockComponentValue` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockComponentValue = value["LockComponentValue"].GetBool();
+        m_lockComponentValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void FormField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ComponentName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_componentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lockComponentValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockComponentValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockComponentValue, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void FormField::SetComponentName(const string& _componentName)
 bool FormField::ComponentNameHasBeenSet() const
 {
     return m_componentNameHasBeenSet;
+}
+
+bool FormField::GetLockComponentValue() const
+{
+    return m_lockComponentValue;
+}
+
+void FormField::SetLockComponentValue(const bool& _lockComponentValue)
+{
+    m_lockComponentValue = _lockComponentValue;
+    m_lockComponentValueHasBeenSet = true;
+}
+
+bool FormField::LockComponentValueHasBeenSet() const
+{
+    return m_lockComponentValueHasBeenSet;
 }
 

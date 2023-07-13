@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容的目标容量
-                     * @return TargetCapacity 扩容的目标容量
+                     * 获取扩容的目标容量（单位GiB）
+                     * @return TargetCapacity 扩容的目标容量（单位GiB）
                      * 
                      */
                     uint64_t GetTargetCapacity() const;
 
                     /**
-                     * 设置扩容的目标容量
-                     * @param _targetCapacity 扩容的目标容量
+                     * 设置扩容的目标容量（单位GiB）
+                     * @param _targetCapacity 扩容的目标容量（单位GiB）
                      * 
                      */
                     void SetTargetCapacity(const uint64_t& _targetCapacity);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 扩容的目标容量
+                     * 扩容的目标容量（单位GiB）
                      */
                     uint64_t m_targetCapacity;
                     bool m_targetCapacityHasBeenSet;

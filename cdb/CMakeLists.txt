@@ -278,6 +278,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeviceNetInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteAuditRuleResponse.h
+  include/tencentcloud/cdb/v20170320/model/InstanceAuditLogFilters.h
   include/tencentcloud/cdb/v20170320/model/DescribeUploadedFilesRequest.h
   include/tencentcloud/cdb/v20170320/model/InstanceInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeDefaultParamsResponse.h
@@ -681,6 +682,7 @@ set(cdb_src
   src/v20170320/model/DeviceNetInfo.cpp
   src/v20170320/model/ModifyDBInstanceVipVportResponse.cpp
   src/v20170320/model/DeleteAuditRuleResponse.cpp
+  src/v20170320/model/InstanceAuditLogFilters.cpp
   src/v20170320/model/DescribeUploadedFilesRequest.cpp
   src/v20170320/model/InstanceInfo.cpp
   src/v20170320/model/DescribeDefaultParamsResponse.cpp

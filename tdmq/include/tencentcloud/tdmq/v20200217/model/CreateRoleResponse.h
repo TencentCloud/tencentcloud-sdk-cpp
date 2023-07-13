@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/EnvironmentRoleSet.h>
 
 
 namespace TencentCloud
@@ -87,6 +88,22 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取批量绑定名字空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvironmentRoleSets 批量绑定名字空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<EnvironmentRoleSet> GetEnvironmentRoleSets() const;
+
+                    /**
+                     * 判断参数 EnvironmentRoleSets 是否已赋值
+                     * @return EnvironmentRoleSets 是否已赋值
+                     * 
+                     */
+                    bool EnvironmentRoleSetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +124,13 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 批量绑定名字空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EnvironmentRoleSet> m_environmentRoleSets;
+                    bool m_environmentRoleSetsHasBeenSet;
 
                 };
             }

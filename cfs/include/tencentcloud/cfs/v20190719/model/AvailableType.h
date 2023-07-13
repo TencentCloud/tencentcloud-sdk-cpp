@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ProtocolsHasBeenSet() const;
 
                     /**
-                     * 获取存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
-                     * @return Type 存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
+                     * 获取存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
+                     * @return Type 存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
-                     * @param _type 存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
+                     * 设置存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
+                     * @param _type 存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -119,7 +119,7 @@ namespace TencentCloud
                     bool m_protocolsHasBeenSet;
 
                     /**
-                     * 存储类型。返回值中 SD 为标准型存储、HP 为性能型存储
+                     * 存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

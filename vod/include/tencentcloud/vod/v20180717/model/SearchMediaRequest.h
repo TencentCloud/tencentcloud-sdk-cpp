@@ -369,146 +369,6 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。
-<li>Sort.Field 可选 CreateTime 。</li>
-<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     * @return Sort 排序方式。
-<li>Sort.Field 可选 CreateTime 。</li>
-<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     * 
-                     */
-                    SortBy GetSort() const;
-
-                    /**
-                     * 设置排序方式。
-<li>Sort.Field 可选 CreateTime 。</li>
-<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     * @param _sort 排序方式。
-<li>Sort.Field 可选 CreateTime 。</li>
-<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     * 
-                     */
-                    void SetSort(const SortBy& _sort);
-
-                    /**
-                     * 判断参数 Sort 是否已赋值
-                     * @return Sort 是否已赋值
-                     * 
-                     */
-                    bool SortHasBeenSet() const;
-
-                    /**
-                     * 获取<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * @return Offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * 
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * @param _offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * 
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     * 
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * @return Limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * 
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * @param _limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     * 
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-                     * @return Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-                     * 
-                     */
-                    std::vector<std::string> GetFilters() const;
-
-                    /**
-                     * 设置指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-                     * @param _filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-                     * 
-                     */
-                    void SetFilters(const std::vector<std::string>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     * 
-                     */
-                    bool FiltersHasBeenSet() const;
-
-                    /**
                      * 获取媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
 <li>单个存储地区长度限制：20个字符。</li>
 <li>数组长度限制：20。</li>
@@ -722,6 +582,146 @@ namespace TencentCloud
                      * 
                      */
                     bool TrtcRoomIdsHasBeenSet() const;
+
+                    /**
+                     * 获取指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+<li>basicInfo（视频基础信息）。</li>
+<li>metaData（视频元信息）。</li>
+<li>transcodeInfo（视频转码结果信息）。</li>
+<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
+<li>imageSpriteInfo（视频雪碧图信息）。</li>
+<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
+<li>sampleSnapshotInfo（采样截图信息）。</li>
+<li>keyFrameDescInfo（打点信息）。</li>
+<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     * @return Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+<li>basicInfo（视频基础信息）。</li>
+<li>metaData（视频元信息）。</li>
+<li>transcodeInfo（视频转码结果信息）。</li>
+<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
+<li>imageSpriteInfo（视频雪碧图信息）。</li>
+<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
+<li>sampleSnapshotInfo（采样截图信息）。</li>
+<li>keyFrameDescInfo（打点信息）。</li>
+<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     * 
+                     */
+                    std::vector<std::string> GetFilters() const;
+
+                    /**
+                     * 设置指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+<li>basicInfo（视频基础信息）。</li>
+<li>metaData（视频元信息）。</li>
+<li>transcodeInfo（视频转码结果信息）。</li>
+<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
+<li>imageSpriteInfo（视频雪碧图信息）。</li>
+<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
+<li>sampleSnapshotInfo（采样截图信息）。</li>
+<li>keyFrameDescInfo（打点信息）。</li>
+<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     * @param _filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+<li>basicInfo（视频基础信息）。</li>
+<li>metaData（视频元信息）。</li>
+<li>transcodeInfo（视频转码结果信息）。</li>
+<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
+<li>imageSpriteInfo（视频雪碧图信息）。</li>
+<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
+<li>sampleSnapshotInfo（采样截图信息）。</li>
+<li>keyFrameDescInfo（打点信息）。</li>
+<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     * 
+                     */
+                    void SetFilters(const std::vector<std::string>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式。
+<li>Sort.Field 可选 CreateTime 。</li>
+<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * @return Sort 排序方式。
+<li>Sort.Field 可选 CreateTime 。</li>
+<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * 
+                     */
+                    SortBy GetSort() const;
+
+                    /**
+                     * 设置排序方式。
+<li>Sort.Field 可选 CreateTime 。</li>
+<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * @param _sort 排序方式。
+<li>Sort.Field 可选 CreateTime 。</li>
+<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     * 
+                     */
+                    void SetSort(const SortBy& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     * 
+                     */
+                    bool SortHasBeenSet() const;
+
+                    /**
+                     * 获取<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @return Offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置<div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @param _offset <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @return Limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置<div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * @param _limit <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
 
                     /**
                      * 获取（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
@@ -1007,44 +1007,6 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 排序方式。
-<li>Sort.Field 可选 CreateTime 。</li>
-<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
-                     */
-                    SortBy m_sort;
-                    bool m_sortHasBeenSet;
-
-                    /**
-                     * <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
-<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-                     */
-                    std::vector<std::string> m_filters;
-                    bool m_filtersHasBeenSet;
-
-                    /**
                      * 媒体文件存储地区，如 ap-chongqing，参见[地域列表](https://cloud.tencent.com/document/product/266/9760#.E5.B7.B2.E6.94.AF.E6.8C.81.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
 <li>单个存储地区长度限制：20个字符。</li>
 <li>数组长度限制：20。</li>
@@ -1102,6 +1064,44 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_trtcRoomIds;
                     bool m_trtcRoomIdsHasBeenSet;
+
+                    /**
+                     * 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
+<li>basicInfo（视频基础信息）。</li>
+<li>metaData（视频元信息）。</li>
+<li>transcodeInfo（视频转码结果信息）。</li>
+<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
+<li>imageSpriteInfo（视频雪碧图信息）。</li>
+<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
+<li>sampleSnapshotInfo（采样截图信息）。</li>
+<li>keyFrameDescInfo（打点信息）。</li>
+<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
+<li>miniProgramReviewInfo（小程序审核信息）。</li>
+                     */
+                    std::vector<std::string> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序方式。
+<li>Sort.Field 可选 CreateTime 。</li>
+<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
+                     */
+                    SortBy m_sort;
+                    bool m_sortHasBeenSet;
+
+                    /**
+                     * <div id="p_offset">分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <div id="p_limit">分页返回的记录条数，默认值：10。将返回第 Offset 到第 Offset+Limit-1 条。
+<li>取值范围：Offset + Limit 不超过5000。（参见：<a href="#maxResultsDesc">接口返回结果数限制</a>）</li></div>
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                     /**
                      * （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）

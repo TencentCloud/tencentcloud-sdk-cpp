@@ -222,6 +222,81 @@ namespace TencentCloud
                      */
                     bool DeleteTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Subnet 子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubnet() const;
+
+                    /**
+                     * 设置子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subnet 子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubnet(const std::string& _subnet);
+
+                    /**
+                     * 判断参数 Subnet 是否已赋值
+                     * @return Subnet 是否已赋值
+                     * 
+                     */
+                    bool SubnetHasBeenSet() const;
+
+                    /**
+                     * 获取虚拟IP列表(1对1 broker节点)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BrokerVipList 虚拟IP列表(1对1 broker节点)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VipEntity> GetBrokerVipList() const;
+
+                    /**
+                     * 设置虚拟IP列表(1对1 broker节点)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _brokerVipList 虚拟IP列表(1对1 broker节点)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBrokerVipList(const std::vector<VipEntity>& _brokerVipList);
+
+                    /**
+                     * 判断参数 BrokerVipList 是否已赋值
+                     * @return BrokerVipList 是否已赋值
+                     * 
+                     */
+                    bool BrokerVipListHasBeenSet() const;
+
+                    /**
+                     * 获取vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcId vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +347,27 @@ namespace TencentCloud
                      */
                     std::string m_deleteTimestamp;
                     bool m_deleteTimestampHasBeenSet;
+
+                    /**
+                     * 子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnet;
+                    bool m_subnetHasBeenSet;
+
+                    /**
+                     * 虚拟IP列表(1对1 broker节点)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VipEntity> m_brokerVipList;
+                    bool m_brokerVipListHasBeenSet;
+
+                    /**
+                     * vpc信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

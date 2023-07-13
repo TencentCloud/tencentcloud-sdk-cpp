@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/AggregationCondition.h>
 #include <tencentcloud/cdb/v20170320/model/AuditLogFilter.h>
+#include <tencentcloud/cdb/v20170320/model/InstanceAuditLogFilters.h>
 
 
 namespace TencentCloud
@@ -129,15 +130,15 @@ namespace TencentCloud
                     bool AggregationConditionsHasBeenSet() const;
 
                     /**
-                     * 获取该过滤条件下的审计日志结果集作为分析日志。
-                     * @return AuditLogFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * 获取已废弃。该过滤条件下的审计日志结果集作为分析日志。
+                     * @return AuditLogFilter 已废弃。该过滤条件下的审计日志结果集作为分析日志。
                      * 
                      */
                     AuditLogFilter GetAuditLogFilter() const;
 
                     /**
-                     * 设置该过滤条件下的审计日志结果集作为分析日志。
-                     * @param _auditLogFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * 设置已废弃。该过滤条件下的审计日志结果集作为分析日志。
+                     * @param _auditLogFilter 已废弃。该过滤条件下的审计日志结果集作为分析日志。
                      * 
                      */
                     void SetAuditLogFilter(const AuditLogFilter& _auditLogFilter);
@@ -148,6 +149,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AuditLogFilterHasBeenSet() const;
+
+                    /**
+                     * 获取该过滤条件下的审计日志结果集作为分析日志。
+                     * @return LogFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * 
+                     */
+                    std::vector<InstanceAuditLogFilters> GetLogFilter() const;
+
+                    /**
+                     * 设置该过滤条件下的审计日志结果集作为分析日志。
+                     * @param _logFilter 该过滤条件下的审计日志结果集作为分析日志。
+                     * 
+                     */
+                    void SetLogFilter(const std::vector<InstanceAuditLogFilters>& _logFilter);
+
+                    /**
+                     * 判断参数 LogFilter 是否已赋值
+                     * @return LogFilter 是否已赋值
+                     * 
+                     */
+                    bool LogFilterHasBeenSet() const;
 
                 private:
 
@@ -176,10 +198,16 @@ namespace TencentCloud
                     bool m_aggregationConditionsHasBeenSet;
 
                     /**
-                     * 该过滤条件下的审计日志结果集作为分析日志。
+                     * 已废弃。该过滤条件下的审计日志结果集作为分析日志。
                      */
                     AuditLogFilter m_auditLogFilter;
                     bool m_auditLogFilterHasBeenSet;
+
+                    /**
+                     * 该过滤条件下的审计日志结果集作为分析日志。
+                     */
+                    std::vector<InstanceAuditLogFilters> m_logFilter;
+                    bool m_logFilterHasBeenSet;
 
                 };
             }

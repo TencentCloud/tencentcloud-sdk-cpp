@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体文预处理任务 ID，如果未指定发起预处理任务则为空。
-                     * @return PreProcessTaskId 媒体文预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * 获取媒体文件预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * @return PreProcessTaskId 媒体文件预处理任务 ID，如果未指定发起预处理任务则为空。
                      * 
                      */
                     std::string GetPreProcessTaskId() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 媒体文预处理任务 ID，如果未指定发起预处理任务则为空。
+                     * 媒体文件预处理任务 ID，如果未指定发起预处理任务则为空。
                      */
                     std::string m_preProcessTaskId;
                     bool m_preProcessTaskIdHasBeenSet;

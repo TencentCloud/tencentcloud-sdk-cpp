@@ -145,6 +145,31 @@ CreateFlowsByTemplates 接口不使用此字段。
                      */
                     bool ComponentNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LockComponentValue 是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetLockComponentValue() const;
+
+                    /**
+                     * 设置是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lockComponentValue 是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLockComponentValue(const bool& _lockComponentValue);
+
+                    /**
+                     * 判断参数 LockComponentValue 是否已赋值
+                     * @return LockComponentValue 是否已赋值
+                     * 
+                     */
+                    bool LockComponentValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +198,13 @@ CreateFlowsByTemplates 接口不使用此字段。
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
+
+                    /**
+                     * 是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_lockComponentValue;
+                    bool m_lockComponentValueHasBeenSet;
 
                 };
             }

@@ -126,6 +126,49 @@ DbbrainClient::CancelKillTaskOutcomeCallable DbbrainClient::CancelKillTaskCallab
     return task->get_future();
 }
 
+DbbrainClient::CloseAuditServiceOutcome DbbrainClient::CloseAuditService(const CloseAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAuditServiceResponse rsp = CloseAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAuditServiceOutcome(rsp);
+        else
+            return CloseAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CloseAuditServiceAsync(const CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CloseAuditServiceOutcomeCallable DbbrainClient::CloseAuditServiceCallable(const CloseAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseAuditService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateAuditLogFileOutcome DbbrainClient::CreateAuditLogFile(const CreateAuditLogFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAuditLogFile");
@@ -807,6 +850,49 @@ DbbrainClient::DescribeAllUserGroupOutcomeCallable DbbrainClient::DescribeAllUse
         [this, request]()
         {
             return this->DescribeAllUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeAuditInstanceListOutcome DbbrainClient::DescribeAuditInstanceList(const DescribeAuditInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditInstanceListResponse rsp = DescribeAuditInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditInstanceListOutcome(rsp);
+        else
+            return DescribeAuditInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeAuditInstanceListAsync(const DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditInstanceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeAuditInstanceListOutcomeCallable DbbrainClient::DescribeAuditInstanceListCallable(const DescribeAuditInstanceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditInstanceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditInstanceList(request);
         }
     );
 
@@ -2061,6 +2147,49 @@ DbbrainClient::KillMySqlThreadsOutcomeCallable DbbrainClient::KillMySqlThreadsCa
     return task->get_future();
 }
 
+DbbrainClient::ModifyAuditServiceOutcome DbbrainClient::ModifyAuditService(const ModifyAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditServiceResponse rsp = ModifyAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditServiceOutcome(rsp);
+        else
+            return ModifyAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::ModifyAuditServiceAsync(const ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::ModifyAuditServiceOutcomeCallable DbbrainClient::ModifyAuditServiceCallable(const ModifyAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAuditService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::ModifyDiagDBInstanceConfOutcome DbbrainClient::ModifyDiagDBInstanceConf(const ModifyDiagDBInstanceConfRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDiagDBInstanceConf");
@@ -2140,6 +2269,49 @@ DbbrainClient::ModifySqlFiltersOutcomeCallable DbbrainClient::ModifySqlFiltersCa
         [this, request]()
         {
             return this->ModifySqlFilters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::OpenAuditServiceOutcome DbbrainClient::OpenAuditService(const OpenAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenAuditServiceResponse rsp = OpenAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenAuditServiceOutcome(rsp);
+        else
+            return OpenAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::OpenAuditServiceAsync(const OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::OpenAuditServiceOutcomeCallable DbbrainClient::OpenAuditServiceCallable(const OpenAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenAuditService(request);
         }
     );
 

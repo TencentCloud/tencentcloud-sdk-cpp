@@ -67,6 +67,111 @@ namespace TencentCloud
                      */
                     bool CanEditFlowHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许发起合同弹窗隐藏合同名称
+                     * @return HideShowFlowName 是否允许发起合同弹窗隐藏合同名称
+                     * 
+                     */
+                    bool GetHideShowFlowName() const;
+
+                    /**
+                     * 设置是否允许发起合同弹窗隐藏合同名称
+                     * @param _hideShowFlowName 是否允许发起合同弹窗隐藏合同名称
+                     * 
+                     */
+                    void SetHideShowFlowName(const bool& _hideShowFlowName);
+
+                    /**
+                     * 判断参数 HideShowFlowName 是否已赋值
+                     * @return HideShowFlowName 是否已赋值
+                     * 
+                     */
+                    bool HideShowFlowNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许发起合同弹窗隐藏合同类型
+                     * @return HideShowFlowType 是否允许发起合同弹窗隐藏合同类型
+                     * 
+                     */
+                    bool GetHideShowFlowType() const;
+
+                    /**
+                     * 设置是否允许发起合同弹窗隐藏合同类型
+                     * @param _hideShowFlowType 是否允许发起合同弹窗隐藏合同类型
+                     * 
+                     */
+                    void SetHideShowFlowType(const bool& _hideShowFlowType);
+
+                    /**
+                     * 判断参数 HideShowFlowType 是否已赋值
+                     * @return HideShowFlowType 是否已赋值
+                     * 
+                     */
+                    bool HideShowFlowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许发起合同弹窗隐藏合同到期时间
+                     * @return HideShowDeadline 是否允许发起合同弹窗隐藏合同到期时间
+                     * 
+                     */
+                    bool GetHideShowDeadline() const;
+
+                    /**
+                     * 设置是否允许发起合同弹窗隐藏合同到期时间
+                     * @param _hideShowDeadline 是否允许发起合同弹窗隐藏合同到期时间
+                     * 
+                     */
+                    void SetHideShowDeadline(const bool& _hideShowDeadline);
+
+                    /**
+                     * 判断参数 HideShowDeadline 是否已赋值
+                     * @return HideShowDeadline 是否已赋值
+                     * 
+                     */
+                    bool HideShowDeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取是否允许发起合同步骤跳过指定签署方步骤
+                     * @return CanSkipAddApprover 是否允许发起合同步骤跳过指定签署方步骤
+                     * 
+                     */
+                    bool GetCanSkipAddApprover() const;
+
+                    /**
+                     * 设置是否允许发起合同步骤跳过指定签署方步骤
+                     * @param _canSkipAddApprover 是否允许发起合同步骤跳过指定签署方步骤
+                     * 
+                     */
+                    void SetCanSkipAddApprover(const bool& _canSkipAddApprover);
+
+                    /**
+                     * 判断参数 CanSkipAddApprover 是否已赋值
+                     * @return CanSkipAddApprover 是否已赋值
+                     * 
+                     */
+                    bool CanSkipAddApproverHasBeenSet() const;
+
+                    /**
+                     * 获取定制化发起合同页合同描述信息
+                     * @return CustomCreateFlowDescription 定制化发起合同页合同描述信息
+                     * 
+                     */
+                    std::string GetCustomCreateFlowDescription() const;
+
+                    /**
+                     * 设置定制化发起合同页合同描述信息
+                     * @param _customCreateFlowDescription 定制化发起合同页合同描述信息
+                     * 
+                     */
+                    void SetCustomCreateFlowDescription(const std::string& _customCreateFlowDescription);
+
+                    /**
+                     * 判断参数 CustomCreateFlowDescription 是否已赋值
+                     * @return CustomCreateFlowDescription 是否已赋值
+                     * 
+                     */
+                    bool CustomCreateFlowDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +179,36 @@ namespace TencentCloud
                      */
                     bool m_canEditFlow;
                     bool m_canEditFlowHasBeenSet;
+
+                    /**
+                     * 是否允许发起合同弹窗隐藏合同名称
+                     */
+                    bool m_hideShowFlowName;
+                    bool m_hideShowFlowNameHasBeenSet;
+
+                    /**
+                     * 是否允许发起合同弹窗隐藏合同类型
+                     */
+                    bool m_hideShowFlowType;
+                    bool m_hideShowFlowTypeHasBeenSet;
+
+                    /**
+                     * 是否允许发起合同弹窗隐藏合同到期时间
+                     */
+                    bool m_hideShowDeadline;
+                    bool m_hideShowDeadlineHasBeenSet;
+
+                    /**
+                     * 是否允许发起合同步骤跳过指定签署方步骤
+                     */
+                    bool m_canSkipAddApprover;
+                    bool m_canSkipAddApproverHasBeenSet;
+
+                    /**
+                     * 定制化发起合同页合同描述信息
+                     */
+                    std::string m_customCreateFlowDescription;
+                    bool m_customCreateFlowDescriptionHasBeenSet;
 
                 };
             }

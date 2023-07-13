@@ -175,6 +175,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h
+  include/tencentcloud/tdmq/v20200217/model/EnvironmentRoleSet.h
   include/tencentcloud/tdmq/v20200217/model/SendMsgResponse.h
   include/tencentcloud/tdmq/v20200217/model/VpcConfig.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQClusterRecentStats.h
@@ -484,6 +485,7 @@ set(tdmq_src
   src/v20200217/model/DescribeEnvironmentRolesRequest.cpp
   src/v20200217/model/DescribeRocketMQClustersResponse.cpp
   src/v20200217/model/DeleteRolesResponse.cpp
+  src/v20200217/model/EnvironmentRoleSet.cpp
   src/v20200217/model/SendMsgResponse.cpp
   src/v20200217/model/VpcConfig.cpp
   src/v20200217/model/RocketMQClusterRecentStats.cpp

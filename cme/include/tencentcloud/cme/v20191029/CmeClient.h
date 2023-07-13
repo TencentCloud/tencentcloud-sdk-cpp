@@ -318,7 +318,7 @@ namespace TencentCloud
                 CreateClassOutcomeCallable CreateClassCallable(const Model::CreateClassRequest& request);
 
                 /**
-                 *创建媒体链接或分类路径链接，将源资源信息链接到目标。
+                 *创建媒体链接或分类路径链接，将资源信息链接到目标。
                  * @param req CreateLinkRequest
                  * @return CreateLinkOutcome
                  */

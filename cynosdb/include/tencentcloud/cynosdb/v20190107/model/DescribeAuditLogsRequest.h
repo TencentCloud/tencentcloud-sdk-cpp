@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/AuditLogFilter.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceAuditLogFilter.h>
 
 
 namespace TencentCloud
@@ -161,15 +162,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。可按设置的过滤条件过滤日志。
-                     * @return Filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 获取已废弃。
+                     * @return Filter 已废弃。
                      * 
                      */
                     AuditLogFilter GetFilter() const;
 
                     /**
-                     * 设置过滤条件。可按设置的过滤条件过滤日志。
-                     * @param _filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 设置已废弃。
+                     * @param _filter 已废弃。
                      * 
                      */
                     void SetFilter(const AuditLogFilter& _filter);
@@ -223,6 +224,27 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取审计日志过滤条件。
+                     * @return LogFilter 审计日志过滤条件。
+                     * 
+                     */
+                    std::vector<InstanceAuditLogFilter> GetLogFilter() const;
+
+                    /**
+                     * 设置审计日志过滤条件。
+                     * @param _logFilter 审计日志过滤条件。
+                     * 
+                     */
+                    void SetLogFilter(const std::vector<InstanceAuditLogFilter>& _logFilter);
+
+                    /**
+                     * 判断参数 LogFilter 是否已赋值
+                     * @return LogFilter 是否已赋值
+                     * 
+                     */
+                    bool LogFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,7 +281,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 过滤条件。可按设置的过滤条件过滤日志。
+                     * 已废弃。
                      */
                     AuditLogFilter m_filter;
                     bool m_filterHasBeenSet;
@@ -275,6 +297,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 审计日志过滤条件。
+                     */
+                    std::vector<InstanceAuditLogFilter> m_logFilter;
+                    bool m_logFilterHasBeenSet;
 
                 };
             }

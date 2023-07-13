@@ -28,7 +28,8 @@ CreateAuditLogFileRequest::CreateAuditLogFileRequest() :
     m_endTimeHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_filterHasBeenSet(false)
+    m_filterHasBeenSet(false),
+    m_logFilterHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,21 @@ string CreateAuditLogFileRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_logFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_logFilter.begin(); itr != m_logFilter.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -190,6 +206,22 @@ void CreateAuditLogFileRequest::SetFilter(const AuditLogFilter& _filter)
 bool CreateAuditLogFileRequest::FilterHasBeenSet() const
 {
     return m_filterHasBeenSet;
+}
+
+vector<InstanceAuditLogFilter> CreateAuditLogFileRequest::GetLogFilter() const
+{
+    return m_logFilter;
+}
+
+void CreateAuditLogFileRequest::SetLogFilter(const vector<InstanceAuditLogFilter>& _logFilter)
+{
+    m_logFilter = _logFilter;
+    m_logFilterHasBeenSet = true;
+}
+
+bool CreateAuditLogFileRequest::LogFilterHasBeenSet() const
+{
+    return m_logFilterHasBeenSet;
 }
 
 

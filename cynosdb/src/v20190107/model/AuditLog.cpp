@@ -34,7 +34,13 @@ AuditLog::AuditLog() :
     m_execTimeHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_sentRowsHasBeenSet(false),
-    m_threadIdHasBeenSet(false)
+    m_threadIdHasBeenSet(false),
+    m_checkRowsHasBeenSet(false),
+    m_cpuTimeHasBeenSet(false),
+    m_ioWaitTimeHasBeenSet(false),
+    m_lockWaitTimeHasBeenSet(false),
+    m_trxLivingTimeHasBeenSet(false),
+    m_nsTimeHasBeenSet(false)
 {
 }
 
@@ -183,6 +189,66 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
         m_threadIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckRows") && !value["CheckRows"].IsNull())
+    {
+        if (!value["CheckRows"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.CheckRows` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkRows = value["CheckRows"].GetInt64();
+        m_checkRowsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuTime") && !value["CpuTime"].IsNull())
+    {
+        if (!value["CpuTime"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.CpuTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuTime = value["CpuTime"].GetDouble();
+        m_cpuTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IoWaitTime") && !value["IoWaitTime"].IsNull())
+    {
+        if (!value["IoWaitTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.IoWaitTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ioWaitTime = value["IoWaitTime"].GetInt64();
+        m_ioWaitTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LockWaitTime") && !value["LockWaitTime"].IsNull())
+    {
+        if (!value["LockWaitTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.LockWaitTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockWaitTime = value["LockWaitTime"].GetInt64();
+        m_lockWaitTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrxLivingTime") && !value["TrxLivingTime"].IsNull())
+    {
+        if (!value["TrxLivingTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.TrxLivingTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trxLivingTime = value["TrxLivingTime"].GetInt64();
+        m_trxLivingTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NsTime") && !value["NsTime"].IsNull())
+    {
+        if (!value["NsTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.NsTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nsTime = value["NsTime"].GetInt64();
+        m_nsTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +366,54 @@ void AuditLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ThreadId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threadId, allocator);
+    }
+
+    if (m_checkRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckRows";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkRows, allocator);
+    }
+
+    if (m_cpuTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuTime, allocator);
+    }
+
+    if (m_ioWaitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IoWaitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ioWaitTime, allocator);
+    }
+
+    if (m_lockWaitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockWaitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockWaitTime, allocator);
+    }
+
+    if (m_trxLivingTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrxLivingTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trxLivingTime, allocator);
+    }
+
+    if (m_nsTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NsTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nsTime, allocator);
     }
 
 }
@@ -527,5 +641,101 @@ void AuditLog::SetThreadId(const int64_t& _threadId)
 bool AuditLog::ThreadIdHasBeenSet() const
 {
     return m_threadIdHasBeenSet;
+}
+
+int64_t AuditLog::GetCheckRows() const
+{
+    return m_checkRows;
+}
+
+void AuditLog::SetCheckRows(const int64_t& _checkRows)
+{
+    m_checkRows = _checkRows;
+    m_checkRowsHasBeenSet = true;
+}
+
+bool AuditLog::CheckRowsHasBeenSet() const
+{
+    return m_checkRowsHasBeenSet;
+}
+
+double AuditLog::GetCpuTime() const
+{
+    return m_cpuTime;
+}
+
+void AuditLog::SetCpuTime(const double& _cpuTime)
+{
+    m_cpuTime = _cpuTime;
+    m_cpuTimeHasBeenSet = true;
+}
+
+bool AuditLog::CpuTimeHasBeenSet() const
+{
+    return m_cpuTimeHasBeenSet;
+}
+
+int64_t AuditLog::GetIoWaitTime() const
+{
+    return m_ioWaitTime;
+}
+
+void AuditLog::SetIoWaitTime(const int64_t& _ioWaitTime)
+{
+    m_ioWaitTime = _ioWaitTime;
+    m_ioWaitTimeHasBeenSet = true;
+}
+
+bool AuditLog::IoWaitTimeHasBeenSet() const
+{
+    return m_ioWaitTimeHasBeenSet;
+}
+
+int64_t AuditLog::GetLockWaitTime() const
+{
+    return m_lockWaitTime;
+}
+
+void AuditLog::SetLockWaitTime(const int64_t& _lockWaitTime)
+{
+    m_lockWaitTime = _lockWaitTime;
+    m_lockWaitTimeHasBeenSet = true;
+}
+
+bool AuditLog::LockWaitTimeHasBeenSet() const
+{
+    return m_lockWaitTimeHasBeenSet;
+}
+
+int64_t AuditLog::GetTrxLivingTime() const
+{
+    return m_trxLivingTime;
+}
+
+void AuditLog::SetTrxLivingTime(const int64_t& _trxLivingTime)
+{
+    m_trxLivingTime = _trxLivingTime;
+    m_trxLivingTimeHasBeenSet = true;
+}
+
+bool AuditLog::TrxLivingTimeHasBeenSet() const
+{
+    return m_trxLivingTimeHasBeenSet;
+}
+
+int64_t AuditLog::GetNsTime() const
+{
+    return m_nsTime;
+}
+
+void AuditLog::SetNsTime(const int64_t& _nsTime)
+{
+    m_nsTime = _nsTime;
+    m_nsTimeHasBeenSet = true;
+}
+
+bool AuditLog::NsTimeHasBeenSet() const
+{
+    return m_nsTimeHasBeenSet;
 }
 

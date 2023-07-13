@@ -27,7 +27,10 @@ Route::Route() :
     m_vipListHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_domainPortHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false)
+    m_deleteTimestampHasBeenSet(false),
+    m_subnetHasBeenSet(false),
+    m_brokerVipListHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,46 @@ CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
         m_deleteTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("Subnet") && !value["Subnet"].IsNull())
+    {
+        if (!value["Subnet"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Route.Subnet` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnet = string(value["Subnet"].GetString());
+        m_subnetHasBeenSet = true;
+    }
+
+    if (value.HasMember("BrokerVipList") && !value["BrokerVipList"].IsNull())
+    {
+        if (!value["BrokerVipList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Route.BrokerVipList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BrokerVipList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VipEntity item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_brokerVipList.push_back(item);
+        }
+        m_brokerVipListHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Route.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +227,37 @@ void Route::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "DeleteTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deleteTimestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subnet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnet.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_brokerVipListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerVipList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_brokerVipList.begin(); itr != m_brokerVipList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +373,53 @@ void Route::SetDeleteTimestamp(const string& _deleteTimestamp)
 bool Route::DeleteTimestampHasBeenSet() const
 {
     return m_deleteTimestampHasBeenSet;
+}
+
+string Route::GetSubnet() const
+{
+    return m_subnet;
+}
+
+void Route::SetSubnet(const string& _subnet)
+{
+    m_subnet = _subnet;
+    m_subnetHasBeenSet = true;
+}
+
+bool Route::SubnetHasBeenSet() const
+{
+    return m_subnetHasBeenSet;
+}
+
+vector<VipEntity> Route::GetBrokerVipList() const
+{
+    return m_brokerVipList;
+}
+
+void Route::SetBrokerVipList(const vector<VipEntity>& _brokerVipList)
+{
+    m_brokerVipList = _brokerVipList;
+    m_brokerVipListHasBeenSet = true;
+}
+
+bool Route::BrokerVipListHasBeenSet() const
+{
+    return m_brokerVipListHasBeenSet;
+}
+
+string Route::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void Route::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool Route::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 

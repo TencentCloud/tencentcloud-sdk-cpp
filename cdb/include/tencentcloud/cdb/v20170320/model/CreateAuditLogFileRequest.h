@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/AuditLogFilter.h>
+#include <tencentcloud/cdb/v20170320/model/InstanceAuditLogFilters.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 获取实例 ID，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 设置实例 ID，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param _instanceId 实例 ID，与云数据库控制台页面中显示的实例 ID 相同。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，格式为："2017-07-12 10:29:20"。
-                     * @return StartTime 开始时间，格式为："2017-07-12 10:29:20"。
+                     * 获取开始时间。
+                     * @return StartTime 开始时间。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，格式为："2017-07-12 10:29:20"。
-                     * @param _startTime 开始时间，格式为："2017-07-12 10:29:20"。
+                     * 设置开始时间。
+                     * @param _startTime 开始时间。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -86,15 +87,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，格式为："2017-07-12 10:29:20"。
-                     * @return EndTime 结束时间，格式为："2017-07-12 10:29:20"。
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，格式为："2017-07-12 10:29:20"。
-                     * @param _endTime 结束时间，格式为："2017-07-12 10:29:20"。
+                     * 设置结束时间。
+                     * @param _endTime 结束时间。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -161,15 +162,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。可按设置的过滤条件过滤日志。
-                     * @return Filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 获取已废弃。
+                     * @return Filter 已废弃。
                      * 
                      */
                     AuditLogFilter GetFilter() const;
 
                     /**
-                     * 设置过滤条件。可按设置的过滤条件过滤日志。
-                     * @param _filter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 设置已废弃。
+                     * @param _filter 已废弃。
                      * 
                      */
                     void SetFilter(const AuditLogFilter& _filter);
@@ -181,22 +182,43 @@ namespace TencentCloud
                      */
                     bool FilterHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件。可按设置的过滤条件过滤日志。
+                     * @return LogFilter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 
+                     */
+                    std::vector<InstanceAuditLogFilters> GetLogFilter() const;
+
+                    /**
+                     * 设置过滤条件。可按设置的过滤条件过滤日志。
+                     * @param _logFilter 过滤条件。可按设置的过滤条件过滤日志。
+                     * 
+                     */
+                    void SetLogFilter(const std::vector<InstanceAuditLogFilters>& _logFilter);
+
+                    /**
+                     * 判断参数 LogFilter 是否已赋值
+                     * @return LogFilter 是否已赋值
+                     * 
+                     */
+                    bool LogFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 实例 ID，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，格式为："2017-07-12 10:29:20"。
+                     * 开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，格式为："2017-07-12 10:29:20"。
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -217,10 +239,16 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 过滤条件。可按设置的过滤条件过滤日志。
+                     * 已废弃。
                      */
                     AuditLogFilter m_filter;
                     bool m_filterHasBeenSet;
+
+                    /**
+                     * 过滤条件。可按设置的过滤条件过滤日志。
+                     */
+                    std::vector<InstanceAuditLogFilters> m_logFilter;
+                    bool m_logFilterHasBeenSet;
 
                 };
             }

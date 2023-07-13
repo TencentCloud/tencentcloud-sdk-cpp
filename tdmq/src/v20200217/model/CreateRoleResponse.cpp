@@ -26,7 +26,8 @@ using namespace std;
 CreateRoleResponse::CreateRoleResponse() :
     m_roleNameHasBeenSet(false),
     m_tokenHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_environmentRoleSetsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,26 @@ CoreInternalOutcome CreateRoleResponse::Deserialize(const string &payload)
         m_remarkHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnvironmentRoleSets") && !rsp["EnvironmentRoleSets"].IsNull())
+    {
+        if (!rsp["EnvironmentRoleSets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EnvironmentRoleSets` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["EnvironmentRoleSets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EnvironmentRoleSet item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_environmentRoleSets.push_back(item);
+        }
+        m_environmentRoleSetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +147,21 @@ string CreateRoleResponse::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentRoleSetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvironmentRoleSets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_environmentRoleSets.begin(); itr != m_environmentRoleSets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +204,16 @@ string CreateRoleResponse::GetRemark() const
 bool CreateRoleResponse::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+vector<EnvironmentRoleSet> CreateRoleResponse::GetEnvironmentRoleSets() const
+{
+    return m_environmentRoleSets;
+}
+
+bool CreateRoleResponse::EnvironmentRoleSetsHasBeenSet() const
+{
+    return m_environmentRoleSetsHasBeenSet;
 }
 
 

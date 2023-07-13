@@ -35,10 +35,6 @@ SearchMediaRequest::SearchMediaRequest() :
     m_streamIdsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_storageRegionsHasBeenSet(false),
     m_storageClassesHasBeenSet(false),
     m_mediaTypesHasBeenSet(false),
@@ -46,6 +42,10 @@ SearchMediaRequest::SearchMediaRequest() :
     m_reviewResultsHasBeenSet(false),
     m_trtcSdkAppIdsHasBeenSet(false),
     m_trtcRoomIdsHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_textHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_streamIdHasBeenSet(false),
@@ -206,44 +206,6 @@ string SearchMediaRequest::ToJsonString() const
         m_expireTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_sortHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Sort";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_sort.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_filtersHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_storageRegionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -333,6 +295,44 @@ string SearchMediaRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sort.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_textHasBeenSet)
@@ -596,70 +596,6 @@ bool SearchMediaRequest::ExpireTimeHasBeenSet() const
     return m_expireTimeHasBeenSet;
 }
 
-SortBy SearchMediaRequest::GetSort() const
-{
-    return m_sort;
-}
-
-void SearchMediaRequest::SetSort(const SortBy& _sort)
-{
-    m_sort = _sort;
-    m_sortHasBeenSet = true;
-}
-
-bool SearchMediaRequest::SortHasBeenSet() const
-{
-    return m_sortHasBeenSet;
-}
-
-uint64_t SearchMediaRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void SearchMediaRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool SearchMediaRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-uint64_t SearchMediaRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void SearchMediaRequest::SetLimit(const uint64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool SearchMediaRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-vector<string> SearchMediaRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void SearchMediaRequest::SetFilters(const vector<string>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool SearchMediaRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 vector<string> SearchMediaRequest::GetStorageRegions() const
 {
     return m_storageRegions;
@@ -770,6 +706,70 @@ void SearchMediaRequest::SetTrtcRoomIds(const vector<string>& _trtcRoomIds)
 bool SearchMediaRequest::TrtcRoomIdsHasBeenSet() const
 {
     return m_trtcRoomIdsHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void SearchMediaRequest::SetFilters(const vector<string>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool SearchMediaRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+SortBy SearchMediaRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void SearchMediaRequest::SetSort(const SortBy& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool SearchMediaRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
+uint64_t SearchMediaRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void SearchMediaRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool SearchMediaRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t SearchMediaRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void SearchMediaRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool SearchMediaRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 string SearchMediaRequest::GetText() const

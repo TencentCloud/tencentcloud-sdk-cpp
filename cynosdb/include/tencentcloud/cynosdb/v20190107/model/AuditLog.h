@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取执行时间。
-                     * @return ExecTime 执行时间。
+                     * 获取执行时间，微秒。
+                     * @return ExecTime 执行时间，微秒。
                      * 
                      */
                     int64_t GetExecTime() const;
 
                     /**
-                     * 设置执行时间。
-                     * @param _execTime 执行时间。
+                     * 设置执行时间，微秒。
+                     * @param _execTime 执行时间，微秒。
                      * 
                      */
                     void SetExecTime(const int64_t& _execTime);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool ExecTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间戳。
-                     * @return Timestamp 时间戳。
+                     * 获取时间。
+                     * @return Timestamp 时间。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
-                     * 设置时间戳。
-                     * @param _timestamp 时间戳。
+                     * 设置时间。
+                     * @param _timestamp 时间。
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取发送行数。
-                     * @return SentRows 发送行数。
+                     * 获取返回行数。
+                     * @return SentRows 返回行数。
                      * 
                      */
                     int64_t GetSentRows() const;
 
                     /**
-                     * 设置发送行数。
-                     * @param _sentRows 发送行数。
+                     * 设置返回行数。
+                     * @param _sentRows 返回行数。
                      * 
                      */
                     void SetSentRows(const int64_t& _sentRows);
@@ -339,6 +339,156 @@ namespace TencentCloud
                      * 
                      */
                     bool ThreadIdHasBeenSet() const;
+
+                    /**
+                     * 获取扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckRows 扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCheckRows() const;
+
+                    /**
+                     * 设置扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _checkRows 扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCheckRows(const int64_t& _checkRows);
+
+                    /**
+                     * 判断参数 CheckRows 是否已赋值
+                     * @return CheckRows 是否已赋值
+                     * 
+                     */
+                    bool CheckRowsHasBeenSet() const;
+
+                    /**
+                     * 获取cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuTime cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetCpuTime() const;
+
+                    /**
+                     * 设置cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuTime cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuTime(const double& _cpuTime);
+
+                    /**
+                     * 判断参数 CpuTime 是否已赋值
+                     * @return CpuTime 是否已赋值
+                     * 
+                     */
+                    bool CpuTimeHasBeenSet() const;
+
+                    /**
+                     * 获取IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IoWaitTime IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIoWaitTime() const;
+
+                    /**
+                     * 设置IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ioWaitTime IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIoWaitTime(const int64_t& _ioWaitTime);
+
+                    /**
+                     * 判断参数 IoWaitTime 是否已赋值
+                     * @return IoWaitTime 是否已赋值
+                     * 
+                     */
+                    bool IoWaitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LockWaitTime 锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLockWaitTime() const;
+
+                    /**
+                     * 设置锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lockWaitTime 锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLockWaitTime(const int64_t& _lockWaitTime);
+
+                    /**
+                     * 判断参数 LockWaitTime 是否已赋值
+                     * @return LockWaitTime 是否已赋值
+                     * 
+                     */
+                    bool LockWaitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取事物持续等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrxLivingTime 事物持续等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTrxLivingTime() const;
+
+                    /**
+                     * 设置事物持续等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trxLivingTime 事物持续等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrxLivingTime(const int64_t& _trxLivingTime);
+
+                    /**
+                     * 判断参数 TrxLivingTime 是否已赋值
+                     * @return TrxLivingTime 是否已赋值
+                     * 
+                     */
+                    bool TrxLivingTimeHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NsTime 开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNsTime() const;
+
+                    /**
+                     * 设置开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nsTime 开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNsTime(const int64_t& _nsTime);
+
+                    /**
+                     * 判断参数 NsTime 是否已赋值
+                     * @return NsTime 是否已赋值
+                     * 
+                     */
+                    bool NsTimeHasBeenSet() const;
 
                 private:
 
@@ -403,19 +553,19 @@ namespace TencentCloud
                     bool m_userHasBeenSet;
 
                     /**
-                     * 执行时间。
+                     * 执行时间，微秒。
                      */
                     int64_t m_execTime;
                     bool m_execTimeHasBeenSet;
 
                     /**
-                     * 时间戳。
+                     * 时间。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 发送行数。
+                     * 返回行数。
                      */
                     int64_t m_sentRows;
                     bool m_sentRowsHasBeenSet;
@@ -425,6 +575,48 @@ namespace TencentCloud
                      */
                     int64_t m_threadId;
                     bool m_threadIdHasBeenSet;
+
+                    /**
+                     * 扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_checkRows;
+                    bool m_checkRowsHasBeenSet;
+
+                    /**
+                     * cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_cpuTime;
+                    bool m_cpuTimeHasBeenSet;
+
+                    /**
+                     * IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ioWaitTime;
+                    bool m_ioWaitTimeHasBeenSet;
+
+                    /**
+                     * 锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lockWaitTime;
+                    bool m_lockWaitTimeHasBeenSet;
+
+                    /**
+                     * 事物持续等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_trxLivingTime;
+                    bool m_trxLivingTimeHasBeenSet;
+
+                    /**
+                     * 开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nsTime;
+                    bool m_nsTimeHasBeenSet;
 
                 };
             }

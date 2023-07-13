@@ -30,7 +30,8 @@ DescribeAuditLogsRequest::DescribeAuditLogsRequest() :
     m_orderByHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_logFilterHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,21 @@ string DescribeAuditLogsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_logFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_logFilter.begin(); itr != m_logFilter.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -240,6 +256,22 @@ void DescribeAuditLogsRequest::SetOffset(const int64_t& _offset)
 bool DescribeAuditLogsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+vector<InstanceAuditLogFilter> DescribeAuditLogsRequest::GetLogFilter() const
+{
+    return m_logFilter;
+}
+
+void DescribeAuditLogsRequest::SetLogFilter(const vector<InstanceAuditLogFilter>& _logFilter)
+{
+    m_logFilter = _logFilter;
+    m_logFilterHasBeenSet = true;
+}
+
+bool DescribeAuditLogsRequest::LogFilterHasBeenSet() const
+{
+    return m_logFilterHasBeenSet;
 }
 
 
