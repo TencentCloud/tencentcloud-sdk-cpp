@@ -97,6 +97,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditLogsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditLogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAuditRulesRequest.h>
@@ -448,6 +450,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
                 typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogsResponse> DescribeAuditLogsOutcome;
+                typedef std::future<DescribeAuditLogsOutcome> DescribeAuditLogsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeAuditLogsRequest&, DescribeAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditPoliciesResponse> DescribeAuditPoliciesOutcome;
                 typedef std::future<DescribeAuditPoliciesOutcome> DescribeAuditPoliciesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeAuditPoliciesRequest&, DescribeAuditPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditPoliciesAsyncHandler;
@@ -1141,6 +1146,15 @@ namespace TencentCloud
                 DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
                 void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
+
+                /**
+                 *本接口(DescribeAuditLogs)用于查询数据库审计日志。
+                 * @param req DescribeAuditLogsRequest
+                 * @return DescribeAuditLogsOutcome
+                 */
+                DescribeAuditLogsOutcome DescribeAuditLogs(const Model::DescribeAuditLogsRequest &request);
+                void DescribeAuditLogsAsync(const Model::DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogsOutcomeCallable DescribeAuditLogsCallable(const Model::DescribeAuditLogsRequest& request);
 
                 /**
                  *本接口(DescribeAuditPolicies)用于查询云数据库实例的审计策略。

@@ -51,27 +51,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群容器网络配置信息
-                     * @return ClusterCIDRSettings 集群容器网络配置信息
-                     * 
-                     */
-                    ClusterCIDRSettings GetClusterCIDRSettings() const;
-
-                    /**
-                     * 设置集群容器网络配置信息
-                     * @param _clusterCIDRSettings 集群容器网络配置信息
-                     * 
-                     */
-                    void SetClusterCIDRSettings(const ClusterCIDRSettings& _clusterCIDRSettings);
-
-                    /**
-                     * 判断参数 ClusterCIDRSettings 是否已赋值
-                     * @return ClusterCIDRSettings 是否已赋值
-                     * 
-                     */
-                    bool ClusterCIDRSettingsHasBeenSet() const;
-
-                    /**
                      * 获取集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
                      * @return ClusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
                      * 
@@ -91,6 +70,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群容器网络配置信息
+                     * @return ClusterCIDRSettings 集群容器网络配置信息
+                     * 
+                     */
+                    ClusterCIDRSettings GetClusterCIDRSettings() const;
+
+                    /**
+                     * 设置集群容器网络配置信息
+                     * @param _clusterCIDRSettings 集群容器网络配置信息
+                     * 
+                     */
+                    void SetClusterCIDRSettings(const ClusterCIDRSettings& _clusterCIDRSettings);
+
+                    /**
+                     * 判断参数 ClusterCIDRSettings 是否已赋值
+                     * @return ClusterCIDRSettings 是否已赋值
+                     * 
+                     */
+                    bool ClusterCIDRSettingsHasBeenSet() const;
 
                     /**
                      * 获取CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。
@@ -242,16 +242,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群容器网络配置信息
-                     */
-                    ClusterCIDRSettings m_clusterCIDRSettings;
-                    bool m_clusterCIDRSettingsHasBeenSet;
-
-                    /**
                      * 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 集群容器网络配置信息
+                     */
+                    ClusterCIDRSettings m_clusterCIDRSettings;
+                    bool m_clusterCIDRSettingsHasBeenSet;
 
                     /**
                      * CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。

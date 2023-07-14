@@ -507,7 +507,7 @@ namespace TencentCloud
                 DescribeSnapshotOperationLogsOutcomeCallable DescribeSnapshotOperationLogsCallable(const Model::DescribeSnapshotOperationLogsRequest& request);
 
                 /**
-                 *查询文件系统配额
+                 *查询文件系统配额（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）
                  * @param req DescribeUserQuotaRequest
                  * @return DescribeUserQuotaOutcome
                  */

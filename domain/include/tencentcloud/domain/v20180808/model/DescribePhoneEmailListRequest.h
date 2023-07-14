@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取手机或者邮箱精确搜索
-                     * @return Code 手机或者邮箱精确搜索
+                     * 获取手机或者邮箱，用于精确搜索
+                     * @return Code 手机或者邮箱，用于精确搜索
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置手机或者邮箱精确搜索
-                     * @param _code 手机或者邮箱精确搜索
+                     * 设置手机或者邮箱，用于精确搜索
+                     * @param _code 手机或者邮箱，用于精确搜索
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 手机或者邮箱精确搜索
+                     * 手机或者邮箱，用于精确搜索
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

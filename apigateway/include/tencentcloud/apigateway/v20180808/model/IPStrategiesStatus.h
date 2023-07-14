@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_IPSTRATEGYSSTATUS_H_
-#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_IPSTRATEGYSSTATUS_H_
+#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_IPSTRATEGIESSTATUS_H_
+#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_IPSTRATEGIESSTATUS_H_
 
 #include <string>
 #include <vector>
@@ -38,11 +38,11 @@ namespace TencentCloud
                 /**
                 * 策略列表
                 */
-                class IPStrategysStatus : public AbstractModel
+                class IPStrategiesStatus : public AbstractModel
                 {
                 public:
-                    IPStrategysStatus();
-                    ~IPStrategysStatus() = default;
+                    IPStrategiesStatus();
+                    ~IPStrategiesStatus() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -119,4 +119,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_IPSTRATEGYSSTATUS_H_
+#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_IPSTRATEGIESSTATUS_H_

@@ -59,7 +59,20 @@ CustomerProfile::CustomerProfile() :
     m_followTimeHasBeenSet(false),
     m_nextFollowTimeHasBeenSet(false),
     m_enterpriseTagsHasBeenSet(false),
-    m_channelTagsHasBeenSet(false)
+    m_channelTagsHasBeenSet(false),
+    m_leadIdHasBeenSet(false),
+    m_wxIdHasBeenSet(false),
+    m_positionHasBeenSet(false),
+    m_isBindWxHasBeenSet(false),
+    m_isInvalidHasBeenSet(false),
+    m_invalidTypeHasBeenSet(false),
+    m_invalidTypeNameHasBeenSet(false),
+    m_invalidTimeHasBeenSet(false),
+    m_invalidRemarkHasBeenSet(false),
+    m_isLoseHasBeenSet(false),
+    m_loseTypeHasBeenSet(false),
+    m_loseTypeNameHasBeenSet(false),
+    m_loseRemarkHasBeenSet(false)
 {
 }
 
@@ -498,6 +511,136 @@ CoreInternalOutcome CustomerProfile::Deserialize(const rapidjson::Value &value)
         m_channelTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("LeadId") && !value["LeadId"].IsNull())
+    {
+        if (!value["LeadId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.LeadId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_leadId = value["LeadId"].GetUint64();
+        m_leadIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WxId") && !value["WxId"].IsNull())
+    {
+        if (!value["WxId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.WxId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxId = string(value["WxId"].GetString());
+        m_wxIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Position") && !value["Position"].IsNull())
+    {
+        if (!value["Position"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.Position` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_position = string(value["Position"].GetString());
+        m_positionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsBindWx") && !value["IsBindWx"].IsNull())
+    {
+        if (!value["IsBindWx"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.IsBindWx` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBindWx = value["IsBindWx"].GetInt64();
+        m_isBindWxHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInvalid") && !value["IsInvalid"].IsNull())
+    {
+        if (!value["IsInvalid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.IsInvalid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInvalid = value["IsInvalid"].GetInt64();
+        m_isInvalidHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidType") && !value["InvalidType"].IsNull())
+    {
+        if (!value["InvalidType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.InvalidType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidType = string(value["InvalidType"].GetString());
+        m_invalidTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidTypeName") && !value["InvalidTypeName"].IsNull())
+    {
+        if (!value["InvalidTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.InvalidTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidTypeName = string(value["InvalidTypeName"].GetString());
+        m_invalidTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidTime") && !value["InvalidTime"].IsNull())
+    {
+        if (!value["InvalidTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.InvalidTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidTime = value["InvalidTime"].GetUint64();
+        m_invalidTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvalidRemark") && !value["InvalidRemark"].IsNull())
+    {
+        if (!value["InvalidRemark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.InvalidRemark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invalidRemark = string(value["InvalidRemark"].GetString());
+        m_invalidRemarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsLose") && !value["IsLose"].IsNull())
+    {
+        if (!value["IsLose"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.IsLose` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLose = value["IsLose"].GetInt64();
+        m_isLoseHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoseType") && !value["LoseType"].IsNull())
+    {
+        if (!value["LoseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.LoseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loseType = string(value["LoseType"].GetString());
+        m_loseTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoseTypeName") && !value["LoseTypeName"].IsNull())
+    {
+        if (!value["LoseTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.LoseTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loseTypeName = string(value["LoseTypeName"].GetString());
+        m_loseTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoseRemark") && !value["LoseRemark"].IsNull())
+    {
+        if (!value["LoseRemark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomerProfile.LoseRemark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loseRemark = string(value["LoseRemark"].GetString());
+        m_loseRemarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -842,6 +985,110 @@ void CustomerProfile::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_leadIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeadId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_leadId, allocator);
+    }
+
+    if (m_wxIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wxId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_positionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Position";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_position.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isBindWxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsBindWx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBindWx, allocator);
+    }
+
+    if (m_isInvalidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInvalid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInvalid, allocator);
+    }
+
+    if (m_invalidTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invalidType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invalidTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invalidTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invalidTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidTime, allocator);
+    }
+
+    if (m_invalidRemarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidRemark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invalidRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLoseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLose";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLose, allocator);
+    }
+
+    if (m_loseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loseTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoseTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loseTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loseRemarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoseRemark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loseRemark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1469,5 +1716,213 @@ void CustomerProfile::SetChannelTags(const vector<ChannelTag>& _channelTags)
 bool CustomerProfile::ChannelTagsHasBeenSet() const
 {
     return m_channelTagsHasBeenSet;
+}
+
+uint64_t CustomerProfile::GetLeadId() const
+{
+    return m_leadId;
+}
+
+void CustomerProfile::SetLeadId(const uint64_t& _leadId)
+{
+    m_leadId = _leadId;
+    m_leadIdHasBeenSet = true;
+}
+
+bool CustomerProfile::LeadIdHasBeenSet() const
+{
+    return m_leadIdHasBeenSet;
+}
+
+string CustomerProfile::GetWxId() const
+{
+    return m_wxId;
+}
+
+void CustomerProfile::SetWxId(const string& _wxId)
+{
+    m_wxId = _wxId;
+    m_wxIdHasBeenSet = true;
+}
+
+bool CustomerProfile::WxIdHasBeenSet() const
+{
+    return m_wxIdHasBeenSet;
+}
+
+string CustomerProfile::GetPosition() const
+{
+    return m_position;
+}
+
+void CustomerProfile::SetPosition(const string& _position)
+{
+    m_position = _position;
+    m_positionHasBeenSet = true;
+}
+
+bool CustomerProfile::PositionHasBeenSet() const
+{
+    return m_positionHasBeenSet;
+}
+
+int64_t CustomerProfile::GetIsBindWx() const
+{
+    return m_isBindWx;
+}
+
+void CustomerProfile::SetIsBindWx(const int64_t& _isBindWx)
+{
+    m_isBindWx = _isBindWx;
+    m_isBindWxHasBeenSet = true;
+}
+
+bool CustomerProfile::IsBindWxHasBeenSet() const
+{
+    return m_isBindWxHasBeenSet;
+}
+
+int64_t CustomerProfile::GetIsInvalid() const
+{
+    return m_isInvalid;
+}
+
+void CustomerProfile::SetIsInvalid(const int64_t& _isInvalid)
+{
+    m_isInvalid = _isInvalid;
+    m_isInvalidHasBeenSet = true;
+}
+
+bool CustomerProfile::IsInvalidHasBeenSet() const
+{
+    return m_isInvalidHasBeenSet;
+}
+
+string CustomerProfile::GetInvalidType() const
+{
+    return m_invalidType;
+}
+
+void CustomerProfile::SetInvalidType(const string& _invalidType)
+{
+    m_invalidType = _invalidType;
+    m_invalidTypeHasBeenSet = true;
+}
+
+bool CustomerProfile::InvalidTypeHasBeenSet() const
+{
+    return m_invalidTypeHasBeenSet;
+}
+
+string CustomerProfile::GetInvalidTypeName() const
+{
+    return m_invalidTypeName;
+}
+
+void CustomerProfile::SetInvalidTypeName(const string& _invalidTypeName)
+{
+    m_invalidTypeName = _invalidTypeName;
+    m_invalidTypeNameHasBeenSet = true;
+}
+
+bool CustomerProfile::InvalidTypeNameHasBeenSet() const
+{
+    return m_invalidTypeNameHasBeenSet;
+}
+
+uint64_t CustomerProfile::GetInvalidTime() const
+{
+    return m_invalidTime;
+}
+
+void CustomerProfile::SetInvalidTime(const uint64_t& _invalidTime)
+{
+    m_invalidTime = _invalidTime;
+    m_invalidTimeHasBeenSet = true;
+}
+
+bool CustomerProfile::InvalidTimeHasBeenSet() const
+{
+    return m_invalidTimeHasBeenSet;
+}
+
+string CustomerProfile::GetInvalidRemark() const
+{
+    return m_invalidRemark;
+}
+
+void CustomerProfile::SetInvalidRemark(const string& _invalidRemark)
+{
+    m_invalidRemark = _invalidRemark;
+    m_invalidRemarkHasBeenSet = true;
+}
+
+bool CustomerProfile::InvalidRemarkHasBeenSet() const
+{
+    return m_invalidRemarkHasBeenSet;
+}
+
+int64_t CustomerProfile::GetIsLose() const
+{
+    return m_isLose;
+}
+
+void CustomerProfile::SetIsLose(const int64_t& _isLose)
+{
+    m_isLose = _isLose;
+    m_isLoseHasBeenSet = true;
+}
+
+bool CustomerProfile::IsLoseHasBeenSet() const
+{
+    return m_isLoseHasBeenSet;
+}
+
+string CustomerProfile::GetLoseType() const
+{
+    return m_loseType;
+}
+
+void CustomerProfile::SetLoseType(const string& _loseType)
+{
+    m_loseType = _loseType;
+    m_loseTypeHasBeenSet = true;
+}
+
+bool CustomerProfile::LoseTypeHasBeenSet() const
+{
+    return m_loseTypeHasBeenSet;
+}
+
+string CustomerProfile::GetLoseTypeName() const
+{
+    return m_loseTypeName;
+}
+
+void CustomerProfile::SetLoseTypeName(const string& _loseTypeName)
+{
+    m_loseTypeName = _loseTypeName;
+    m_loseTypeNameHasBeenSet = true;
+}
+
+bool CustomerProfile::LoseTypeNameHasBeenSet() const
+{
+    return m_loseTypeNameHasBeenSet;
+}
+
+string CustomerProfile::GetLoseRemark() const
+{
+    return m_loseRemark;
+}
+
+void CustomerProfile::SetLoseRemark(const string& _loseRemark)
+{
+    m_loseRemark = _loseRemark;
+    m_loseRemarkHasBeenSet = true;
+}
+
+bool CustomerProfile::LoseRemarkHasBeenSet() const
+{
+    return m_loseRemarkHasBeenSet;
 }
 

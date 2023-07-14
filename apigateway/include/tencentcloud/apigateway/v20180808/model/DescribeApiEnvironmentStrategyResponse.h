@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/ApiEnvironmentStrategyStataus.h>
+#include <tencentcloud/apigateway/v20180808/model/ApiEnvironmentStrategyStatus.h>
 
 
 namespace TencentCloud
@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    ApiEnvironmentStrategyStataus GetResult() const;
+                    ApiEnvironmentStrategyStatus GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -66,7 +66,7 @@ namespace TencentCloud
                      * api绑定策略详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ApiEnvironmentStrategyStataus m_result;
+                    ApiEnvironmentStrategyStatus m_result;
                     bool m_resultHasBeenSet;
 
                 };

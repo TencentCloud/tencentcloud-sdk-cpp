@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool HourHasBeenSet() const;
 
                     /**
-                     * 获取是否激活定期快照功能
-                     * @return IsActivated 是否激活定期快照功能
+                     * 获取是否激活定期快照功能,1代表已激活，0代表未激活
+                     * @return IsActivated 是否激活定期快照功能,1代表已激活，0代表未激活
                      * 
                      */
                     uint64_t GetIsActivated() const;
 
                     /**
-                     * 设置是否激活定期快照功能
-                     * @param _isActivated 是否激活定期快照功能
+                     * 设置是否激活定期快照功能,1代表已激活，0代表未激活
+                     * @param _isActivated 是否激活定期快照功能,1代表已激活，0代表未激活
                      * 
                      */
                     void SetIsActivated(const uint64_t& _isActivated);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool NextActiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取快照策略状态
-                     * @return Status 快照策略状态
+                     * 获取快照策略状态，1代表快照策略状态正常。这里只有一种状态
+                     * @return Status 快照策略状态，1代表快照策略状态正常。这里只有一种状态
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置快照策略状态
-                     * @param _status 快照策略状态
+                     * 设置快照策略状态，1代表快照策略状态正常。这里只有一种状态
+                     * @param _status 快照策略状态，1代表快照策略状态正常。这里只有一种状态
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -371,15 +371,15 @@ namespace TencentCloud
                     bool IntervalDaysHasBeenSet() const;
 
                     /**
-                     * 获取跨地域复制的快照保留时间
-                     * @return CrossRegionsAliveDays 跨地域复制的快照保留时间
+                     * 获取跨地域复制的快照保留时间，单位天
+                     * @return CrossRegionsAliveDays 跨地域复制的快照保留时间，单位天
                      * 
                      */
                     uint64_t GetCrossRegionsAliveDays() const;
 
                     /**
-                     * 设置跨地域复制的快照保留时间
-                     * @param _crossRegionsAliveDays 跨地域复制的快照保留时间
+                     * 设置跨地域复制的快照保留时间，单位天
+                     * @param _crossRegionsAliveDays 跨地域复制的快照保留时间，单位天
                      * 
                      */
                     void SetCrossRegionsAliveDays(const uint64_t& _crossRegionsAliveDays);
@@ -430,7 +430,7 @@ namespace TencentCloud
                     bool m_hourHasBeenSet;
 
                     /**
-                     * 是否激活定期快照功能
+                     * 是否激活定期快照功能,1代表已激活，0代表未激活
                      */
                     uint64_t m_isActivated;
                     bool m_isActivatedHasBeenSet;
@@ -442,7 +442,7 @@ namespace TencentCloud
                     bool m_nextActiveTimeHasBeenSet;
 
                     /**
-                     * 快照策略状态
+                     * 快照策略状态，1代表快照策略状态正常。这里只有一种状态
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -486,7 +486,7 @@ namespace TencentCloud
                     bool m_intervalDaysHasBeenSet;
 
                     /**
-                     * 跨地域复制的快照保留时间
+                     * 跨地域复制的快照保留时间，单位天
                      */
                     uint64_t m_crossRegionsAliveDays;
                     bool m_crossRegionsAliveDaysHasBeenSet;

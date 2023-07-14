@@ -211,6 +211,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsResponse.h
   include/tencentcloud/cdb/v20170320/model/RollbackTimeRange.h
+  include/tencentcloud/cdb/v20170320/model/AuditLog.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DisassociateSecurityGroupsResponse.h
@@ -221,6 +222,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplatesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeAuditLogsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/RoVipInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsRequest.h
@@ -344,6 +346,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeleteParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/DBSwitchInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeTasksResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeAuditLogsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesResponse.h
   include/tencentcloud/cdb/v20170320/model/IsolateDBInstanceResponse.h
   include/tencentcloud/cdb/v20170320/model/AdjustCdbProxyRequest.h
@@ -615,6 +618,7 @@ set(cdb_src
   src/v20170320/model/ReloadBalanceProxyNodeRequest.cpp
   src/v20170320/model/DescribeAccountsResponse.cpp
   src/v20170320/model/RollbackTimeRange.cpp
+  src/v20170320/model/AuditLog.cpp
   src/v20170320/model/DescribeAuditLogFilesRequest.cpp
   src/v20170320/model/ModifyBackupConfigRequest.cpp
   src/v20170320/model/DisassociateSecurityGroupsResponse.cpp
@@ -625,6 +629,7 @@ set(cdb_src
   src/v20170320/model/DescribeProxyConnectionPoolConfRequest.cpp
   src/v20170320/model/DescribeParamTemplatesRequest.cpp
   src/v20170320/model/DescribeAccountPrivilegesResponse.cpp
+  src/v20170320/model/DescribeAuditLogsRequest.cpp
   src/v20170320/model/DescribeBackupConfigRequest.cpp
   src/v20170320/model/RoVipInfo.cpp
   src/v20170320/model/DescribeAccountsRequest.cpp
@@ -748,6 +753,7 @@ set(cdb_src
   src/v20170320/model/DeleteParamTemplateResponse.cpp
   src/v20170320/model/DBSwitchInfo.cpp
   src/v20170320/model/DescribeTasksResponse.cpp
+  src/v20170320/model/DescribeAuditLogsResponse.cpp
   src/v20170320/model/DescribeAuditPoliciesResponse.cpp
   src/v20170320/model/IsolateDBInstanceResponse.cpp
   src/v20170320/model/AdjustCdbProxyRequest.cpp

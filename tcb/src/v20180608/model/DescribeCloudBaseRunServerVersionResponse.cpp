@@ -142,21 +142,21 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
 
     if (rsp.HasMember("Cpu") && !rsp["Cpu"].IsNull())
     {
-        if (!rsp["Cpu"].IsInt64())
+        if (!rsp["Cpu"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_cpu = rsp["Cpu"].GetInt64();
+        m_cpu = rsp["Cpu"].GetDouble();
         m_cpuHasBeenSet = true;
     }
 
     if (rsp.HasMember("Mem") && !rsp["Mem"].IsNull())
     {
-        if (!rsp["Mem"].IsInt64())
+        if (!rsp["Mem"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `Mem` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Mem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_mem = rsp["Mem"].GetInt64();
+        m_mem = rsp["Mem"].GetDouble();
         m_memHasBeenSet = true;
     }
 
@@ -897,7 +897,7 @@ bool DescribeCloudBaseRunServerVersionResponse::BuildDirHasBeenSet() const
     return m_buildDirHasBeenSet;
 }
 
-int64_t DescribeCloudBaseRunServerVersionResponse::GetCpu() const
+double DescribeCloudBaseRunServerVersionResponse::GetCpu() const
 {
     return m_cpu;
 }
@@ -907,7 +907,7 @@ bool DescribeCloudBaseRunServerVersionResponse::CpuHasBeenSet() const
     return m_cpuHasBeenSet;
 }
 
-int64_t DescribeCloudBaseRunServerVersionResponse::GetMem() const
+double DescribeCloudBaseRunServerVersionResponse::GetMem() const
 {
     return m_mem;
 }

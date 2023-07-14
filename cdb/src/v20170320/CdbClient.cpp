@@ -1631,6 +1631,49 @@ CdbClient::DescribeAuditLogFilesOutcomeCallable CdbClient::DescribeAuditLogFiles
     return task->get_future();
 }
 
+CdbClient::DescribeAuditLogsOutcome CdbClient::DescribeAuditLogs(const DescribeAuditLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogsResponse rsp = DescribeAuditLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogsOutcome(rsp);
+        else
+            return DescribeAuditLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeAuditLogsAsync(const DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeAuditLogsOutcomeCallable CdbClient::DescribeAuditLogsCallable(const DescribeAuditLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeAuditPoliciesOutcome CdbClient::DescribeAuditPolicies(const DescribeAuditPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuditPolicies");

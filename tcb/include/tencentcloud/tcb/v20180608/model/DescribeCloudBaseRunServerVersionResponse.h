@@ -112,7 +112,7 @@ namespace TencentCloud
                      * @return Cpu 请使用CPUSize
                      * 
                      */
-                    int64_t GetCpu() const;
+                    double GetCpu() const;
 
                     /**
                      * 判断参数 Cpu 是否已赋值
@@ -126,7 +126,7 @@ namespace TencentCloud
                      * @return Mem 请使用MemSize
                      * 
                      */
-                    int64_t GetMem() const;
+                    double GetMem() const;
 
                     /**
                      * 判断参数 Mem 是否已赋值
@@ -683,13 +683,13 @@ namespace TencentCloud
                     /**
                      * 请使用CPUSize
                      */
-                    int64_t m_cpu;
+                    double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 请使用MemSize
                      */
-                    int64_t m_mem;
+                    double m_mem;
                     bool m_memHasBeenSet;
 
                     /**

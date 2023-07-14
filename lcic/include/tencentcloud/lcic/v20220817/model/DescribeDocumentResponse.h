@@ -253,6 +253,20 @@ namespace TencentCloud
                      */
                     bool PagesHasBeenSet() const;
 
+                    /**
+                     * 获取课件预览地址
+                     * @return Preview 课件预览地址
+                     * 
+                     */
+                    std::string GetPreview() const;
+
+                    /**
+                     * 判断参数 Preview 是否已赋值
+                     * @return Preview 是否已赋值
+                     * 
+                     */
+                    bool PreviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +358,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pages;
                     bool m_pagesHasBeenSet;
+
+                    /**
+                     * 课件预览地址
+                     */
+                    std::string m_preview;
+                    bool m_previewHasBeenSet;
 
                 };
             }

@@ -38,7 +38,8 @@ DescribeDocumentResponse::DescribeDocumentResponse() :
     m_documentTypeHasBeenSet(false),
     m_documentSizeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_pagesHasBeenSet(false)
+    m_pagesHasBeenSet(false),
+    m_previewHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome DescribeDocumentResponse::Deserialize(const string &payload)
         m_pagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Preview") && !rsp["Preview"].IsNull())
+    {
+        if (!rsp["Preview"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Preview` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preview = string(rsp["Preview"].GetString());
+        m_previewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +365,14 @@ string DescribeDocumentResponse::ToJsonString() const
         string key = "Pages";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pages, allocator);
+    }
+
+    if (m_previewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Preview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preview.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -516,6 +535,16 @@ uint64_t DescribeDocumentResponse::GetPages() const
 bool DescribeDocumentResponse::PagesHasBeenSet() const
 {
     return m_pagesHasBeenSet;
+}
+
+string DescribeDocumentResponse::GetPreview() const
+{
+    return m_preview;
+}
+
+bool DescribeDocumentResponse::PreviewHasBeenSet() const
+{
+    return m_previewHasBeenSet;
 }
 
 

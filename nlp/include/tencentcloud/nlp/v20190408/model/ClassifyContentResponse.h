@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一级分类。分类详情见附录-三级分类体系表。
-                     * @return FirstClassification 一级分类。分类详情见附录-三级分类体系表。
+                     * 获取一级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
+                     * @return FirstClassification 一级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
                      * 
                      */
                     Category GetFirstClassification() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool FirstClassificationHasBeenSet() const;
 
                     /**
-                     * 获取二级分类。分类详情见附录-三级分类体系表。
-                     * @return SecondClassification 二级分类。分类详情见附录-三级分类体系表。
+                     * 获取二级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
+                     * @return SecondClassification 二级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
                      * 
                      */
                     Category GetSecondClassification() const;
@@ -73,9 +73,9 @@ namespace TencentCloud
                     bool SecondClassificationHasBeenSet() const;
 
                     /**
-                     * 获取三级分类。分类详情见附录-三级分类体系表。
+                     * 获取三级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThirdClassification 三级分类。分类详情见附录-三级分类体系表。
+                     * @return ThirdClassification 三级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一级分类。分类详情见附录-三级分类体系表。
+                     * 一级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
                      */
                     Category m_firstClassification;
                     bool m_firstClassificationHasBeenSet;
 
                     /**
-                     * 二级分类。分类详情见附录-三级分类体系表。
+                     * 二级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
                      */
                     Category m_secondClassification;
                     bool m_secondClassificationHasBeenSet;
 
                     /**
-                     * 三级分类。分类详情见附录-三级分类体系表。
+                     * 三级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Category m_thirdClassification;

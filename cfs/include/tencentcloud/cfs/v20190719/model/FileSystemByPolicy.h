@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统大小
-                     * @return SizeByte 文件系统大小
+                     * 获取文件系统大小，单位Byte
+                     * @return SizeByte 文件系统大小，单位Byte
                      * 
                      */
                     uint64_t GetSizeByte() const;
 
                     /**
-                     * 设置文件系统大小
-                     * @param _sizeByte 文件系统大小
+                     * 设置文件系统大小，单位Byte
+                     * @param _sizeByte 文件系统大小，单位Byte
                      * 
                      */
                     void SetSizeByte(const uint64_t& _sizeByte);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SizeByteHasBeenSet() const;
 
                     /**
-                     * 获取存储类型
-                     * @return StorageType 存储类型
+                     * 获取存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
+                     * @return StorageType 存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置存储类型
-                     * @param _storageType 存储类型
+                     * 设置存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
+                     * @param _storageType 存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取快照总大小
-                     * @return TotalSnapshotSize 快照总大小
+                     * 获取快照总大小，单位GiB
+                     * @return TotalSnapshotSize 快照总大小，单位GiB
                      * 
                      */
                     uint64_t GetTotalSnapshotSize() const;
 
                     /**
-                     * 设置快照总大小
-                     * @param _totalSnapshotSize 快照总大小
+                     * 设置快照总大小，单位GiB
+                     * @param _totalSnapshotSize 快照总大小，单位GiB
                      * 
                      */
                     void SetTotalSnapshotSize(const uint64_t& _totalSnapshotSize);
@@ -208,19 +208,19 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 文件系统大小
+                     * 文件系统大小，单位Byte
                      */
                     uint64_t m_sizeByte;
                     bool m_sizeByteHasBeenSet;
 
                     /**
-                     * 存储类型
+                     * 存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 快照总大小
+                     * 快照总大小，单位GiB
                      */
                     uint64_t m_totalSnapshotSize;
                     bool m_totalSnapshotSizeHasBeenSet;

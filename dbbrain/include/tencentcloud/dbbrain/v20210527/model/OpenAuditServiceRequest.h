@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取与Product保持一致。如："dcdb" ,"mariadb"。
-                     * @return Product 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 获取服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
+                     * @return Product 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置与Product保持一致。如："dcdb" ,"mariadb"。
-                     * @param _product 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 设置服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
+                     * @param _product 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodeRequestTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例ID。
+                     * @param _instanceId 实例ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志保存总时长，只能是7,30,90,180,365,1095,1825
-                     * @return LogExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825
+                     * 获取日志保存总时长，只能是7,30,90,180,365,1095,1825。
+                     * @return LogExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     int64_t GetLogExpireDay() const;
 
                     /**
-                     * 设置日志保存总时长，只能是7,30,90,180,365,1095,1825
-                     * @param _logExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825
+                     * 设置日志保存总时长，只能是7,30,90,180,365,1095,1825。
+                     * @param _logExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     void SetLogExpireDay(const int64_t& _logExpireDay);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取高频日志保存时长，只能是7,30,90,180,365,1095,1825
-                     * @return HotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825
+                     * 获取高频日志保存时长，只能是7,30,90,180,365,1095,1825。
+                     * @return HotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     int64_t GetHotLogExpireDay() const;
 
                     /**
-                     * 设置高频日志保存时长，只能是7,30,90,180,365,1095,1825
-                     * @param _hotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825
+                     * 设置高频日志保存时长，只能是7,30,90,180,365,1095,1825。
+                     * @param _hotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     void SetHotLogExpireDay(const int64_t& _hotLogExpireDay);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 与Product保持一致。如："dcdb" ,"mariadb"。
+                     * 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
@@ -162,19 +162,19 @@ namespace TencentCloud
                     bool m_nodeRequestTypeHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志保存总时长，只能是7,30,90,180,365,1095,1825
+                     * 日志保存总时长，只能是7,30,90,180,365,1095,1825。
                      */
                     int64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * 高频日志保存时长，只能是7,30,90,180,365,1095,1825
+                     * 高频日志保存时长，只能是7,30,90,180,365,1095,1825。
                      */
                     int64_t m_hotLogExpireDay;
                     bool m_hotLogExpireDayHasBeenSet;

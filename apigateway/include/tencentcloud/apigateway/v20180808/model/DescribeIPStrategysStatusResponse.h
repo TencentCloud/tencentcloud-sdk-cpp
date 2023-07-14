@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/IPStrategysStatus.h>
+#include <tencentcloud/apigateway/v20180808/model/IPStrategiesStatus.h>
 
 
 namespace TencentCloud
@@ -51,7 +51,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    IPStrategysStatus GetResult() const;
+                    IPStrategiesStatus GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -66,7 +66,7 @@ namespace TencentCloud
                      * 符合条件的策略列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    IPStrategysStatus m_result;
+                    IPStrategiesStatus m_result;
                     bool m_resultHasBeenSet;
 
                 };

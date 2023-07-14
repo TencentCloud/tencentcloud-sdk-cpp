@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APIENVIRONMENTSTRATEGYSTATAUS_H_
-#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APIENVIRONMENTSTRATEGYSTATAUS_H_
+#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APIENVIRONMENTSTRATEGYSTATUS_H_
+#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APIENVIRONMENTSTRATEGYSTATUS_H_
 
 #include <string>
 #include <vector>
@@ -38,11 +38,11 @@ namespace TencentCloud
                 /**
                 * API绑定策略列表
                 */
-                class ApiEnvironmentStrategyStataus : public AbstractModel
+                class ApiEnvironmentStrategyStatus : public AbstractModel
                 {
                 public:
-                    ApiEnvironmentStrategyStataus();
-                    ~ApiEnvironmentStrategyStataus() = default;
+                    ApiEnvironmentStrategyStatus();
+                    ~ApiEnvironmentStrategyStatus() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
@@ -119,4 +119,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APIENVIRONMENTSTRATEGYSTATAUS_H_
+#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_APIENVIRONMENTSTRATEGYSTATUS_H_

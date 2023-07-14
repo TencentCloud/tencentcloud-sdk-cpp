@@ -136,11 +136,14 @@ CoreInternalOutcome DescribeCurveDataResponse::Deserialize(const string &payload
 
     if (rsp.HasMember("NewValues") && !rsp["NewValues"].IsNull())
     {
-        if (!rsp["NewValues"].IsLosslessDouble())
+        if (!rsp["NewValues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NewValues` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NewValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `NewValues` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            m_newValues.push_back((*itr).GetDouble());
         }
-        m_newValues = rsp["NewValues"].GetDouble();
         m_newValuesHasBeenSet = true;
     }
 
@@ -217,7 +220,12 @@ string DescribeCurveDataResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewValues";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_newValues, allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_newValues.begin(); itr != m_newValues.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -292,7 +300,7 @@ bool DescribeCurveDataResponse::TimeHasBeenSet() const
     return m_timeHasBeenSet;
 }
 
-double DescribeCurveDataResponse::GetNewValues() const
+vector<double> DescribeCurveDataResponse::GetNewValues() const
 {
     return m_newValues;
 }

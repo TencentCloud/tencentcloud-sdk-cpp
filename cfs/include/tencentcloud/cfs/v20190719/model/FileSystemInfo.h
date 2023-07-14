@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool LifeCycleStateHasBeenSet() const;
 
                     /**
-                     * 获取文件系统已使用容量
-                     * @return SizeByte 文件系统已使用容量
+                     * 获取文件系统已使用容量,单位Byte
+                     * @return SizeByte 文件系统已使用容量,单位Byte
                      * 
                      */
                     uint64_t GetSizeByte() const;
 
                     /**
-                     * 设置文件系统已使用容量
-                     * @param _sizeByte 文件系统已使用容量
+                     * 设置文件系统已使用容量,单位Byte
+                     * @param _sizeByte 文件系统已使用容量,单位Byte
                      * 
                      */
                     void SetSizeByte(const uint64_t& _sizeByte);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool SizeByteHasBeenSet() const;
 
                     /**
-                     * 获取文件系统最大空间限制
-                     * @return SizeLimit 文件系统最大空间限制
+                     * 获取文件系统最大空间限制,GiB
+                     * @return SizeLimit 文件系统最大空间限制,GiB
                      * 
                      */
                     uint64_t GetSizeLimit() const;
 
                     /**
-                     * 设置文件系统最大空间限制
-                     * @param _sizeLimit 文件系统最大空间限制
+                     * 设置文件系统最大空间限制,GiB
+                     * @param _sizeLimit 文件系统最大空间限制,GiB
                      * 
                      */
                     void SetSizeLimit(const uint64_t& _sizeLimit);
@@ -242,15 +242,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取文件系统协议类型
-                     * @return Protocol 文件系统协议类型
+                     * 获取文件系统协议类型, 支持 NFS,CIFS,TURBO
+                     * @return Protocol 文件系统协议类型, 支持 NFS,CIFS,TURBO
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置文件系统协议类型
-                     * @param _protocol 文件系统协议类型
+                     * 设置文件系统协议类型, 支持 NFS,CIFS,TURBO
+                     * @param _protocol 文件系统协议类型, 支持 NFS,CIFS,TURBO
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -263,15 +263,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取文件系统存储类型
-                     * @return StorageType 文件系统存储类型
+                     * 获取存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
+                     * @return StorageType 存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置文件系统存储类型
-                     * @param _storageType 文件系统存储类型
+                     * 设置存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
+                     * @param _storageType 存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -368,15 +368,15 @@ namespace TencentCloud
                     bool FsNameHasBeenSet() const;
 
                     /**
-                     * 获取文件系统是否加密
-                     * @return Encrypted 文件系统是否加密
+                     * 获取文件系统是否加密,true：代表加密，false：非加密
+                     * @return Encrypted 文件系统是否加密,true：代表加密，false：非加密
                      * 
                      */
                     bool GetEncrypted() const;
 
                     /**
-                     * 设置文件系统是否加密
-                     * @param _encrypted 文件系统是否加密
+                     * 设置文件系统是否加密,true：代表加密，false：非加密
+                     * @param _encrypted 文件系统是否加密,true：代表加密，false：非加密
                      * 
                      */
                     void SetEncrypted(const bool& _encrypted);
@@ -431,15 +431,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
-                     * @return BandwidthLimit 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     * 获取文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s
+                     * @return BandwidthLimit 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s
                      * 
                      */
                     double GetBandwidthLimit() const;
 
                     /**
-                     * 设置文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
-                     * @param _bandwidthLimit 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     * 设置文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s
+                     * @param _bandwidthLimit 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s
                      * 
                      */
                     void SetBandwidthLimit(const double& _bandwidthLimit);
@@ -495,14 +495,22 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统生命周期管理状态
+NotAvailable：不可用
+Available:可用
                      * @return TieringState 文件系统生命周期管理状态
+NotAvailable：不可用
+Available:可用
                      * 
                      */
                     std::string GetTieringState() const;
 
                     /**
                      * 设置文件系统生命周期管理状态
+NotAvailable：不可用
+Available:可用
                      * @param _tieringState 文件系统生命周期管理状态
+NotAvailable：不可用
+Available:可用
                      * 
                      */
                     void SetTieringState(const std::string& _tieringState);
@@ -572,13 +580,13 @@ namespace TencentCloud
                     bool m_lifeCycleStateHasBeenSet;
 
                     /**
-                     * 文件系统已使用容量
+                     * 文件系统已使用容量,单位Byte
                      */
                     uint64_t m_sizeByte;
                     bool m_sizeByteHasBeenSet;
 
                     /**
-                     * 文件系统最大空间限制
+                     * 文件系统最大空间限制,GiB
                      */
                     uint64_t m_sizeLimit;
                     bool m_sizeLimitHasBeenSet;
@@ -596,13 +604,13 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 文件系统协议类型
+                     * 文件系统协议类型, 支持 NFS,CIFS,TURBO
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 文件系统存储类型
+                     * 存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
@@ -632,7 +640,7 @@ namespace TencentCloud
                     bool m_fsNameHasBeenSet;
 
                     /**
-                     * 文件系统是否加密
+                     * 文件系统是否加密,true：代表加密，false：非加密
                      */
                     bool m_encrypted;
                     bool m_encryptedHasBeenSet;
@@ -650,7 +658,7 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定
+                     * 文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s
                      */
                     double m_bandwidthLimit;
                     bool m_bandwidthLimitHasBeenSet;
@@ -669,6 +677,8 @@ namespace TencentCloud
 
                     /**
                      * 文件系统生命周期管理状态
+NotAvailable：不可用
+Available:可用
                      */
                     std::string m_tieringState;
                     bool m_tieringStateHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照重复时间点
-                     * @return Hour 快照重复时间点
+                     * 获取快照重复时间点,0-23
+                     * @return Hour 快照重复时间点,0-23
                      * 
                      */
                     std::string GetHour() const;
 
                     /**
-                     * 设置快照重复时间点
-                     * @param _hour 快照重复时间点
+                     * 设置快照重复时间点,0-23
+                     * @param _hour 快照重复时间点,0-23
                      * 
                      */
                     void SetHour(const std::string& _hour);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取快照重复日期，星期一到星期日
-                     * @return DayOfWeek 快照重复日期，星期一到星期日
+                     * 获取快照重复日期，星期一到星期日。 1代表星期一、7代表星期天
+                     * @return DayOfWeek 快照重复日期，星期一到星期日。 1代表星期一、7代表星期天
                      * 
                      */
                     std::string GetDayOfWeek() const;
 
                     /**
-                     * 设置快照重复日期，星期一到星期日
-                     * @param _dayOfWeek 快照重复日期，星期一到星期日
+                     * 设置快照重复日期，星期一到星期日。 1代表星期一、7代表星期天
+                     * @param _dayOfWeek 快照重复日期，星期一到星期日。 1代表星期一、7代表星期天
                      * 
                      */
                     void SetDayOfWeek(const std::string& _dayOfWeek);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DayOfWeekHasBeenSet() const;
 
                     /**
-                     * 获取快照保留时长
-                     * @return AliveDays 快照保留时长
+                     * 获取快照保留时长，单位天
+                     * @return AliveDays 快照保留时长，单位天
                      * 
                      */
                     uint64_t GetAliveDays() const;
 
                     /**
-                     * 设置快照保留时长
-                     * @param _aliveDays 快照保留时长
+                     * 设置快照保留时长，单位天
+                     * @param _aliveDays 快照保留时长，单位天
                      * 
                      */
                     void SetAliveDays(const uint64_t& _aliveDays);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 快照重复时间点
+                     * 快照重复时间点,0-23
                      */
                     std::string m_hour;
                     bool m_hourHasBeenSet;
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 快照重复日期，星期一到星期日
+                     * 快照重复日期，星期一到星期日。 1代表星期一、7代表星期天
                      */
                     std::string m_dayOfWeek;
                     bool m_dayOfWeekHasBeenSet;
 
                     /**
-                     * 快照保留时长
+                     * 快照保留时长，单位天
                      */
                     uint64_t m_aliveDays;
                     bool m_aliveDaysHasBeenSet;

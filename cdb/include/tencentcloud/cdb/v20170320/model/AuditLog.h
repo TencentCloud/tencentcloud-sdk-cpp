@@ -1,0 +1,573 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_AUDITLOG_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_AUDITLOG_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cdb
+    {
+        namespace V20170320
+        {
+            namespace Model
+            {
+                /**
+                * 审计日志详细信息
+                */
+                class AuditLog : public AbstractModel
+                {
+                public:
+                    AuditLog();
+                    ~AuditLog() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取影响行数。
+                     * @return AffectRows 影响行数。
+                     * 
+                     */
+                    int64_t GetAffectRows() const;
+
+                    /**
+                     * 设置影响行数。
+                     * @param _affectRows 影响行数。
+                     * 
+                     */
+                    void SetAffectRows(const int64_t& _affectRows);
+
+                    /**
+                     * 判断参数 AffectRows 是否已赋值
+                     * @return AffectRows 是否已赋值
+                     * 
+                     */
+                    bool AffectRowsHasBeenSet() const;
+
+                    /**
+                     * 获取错误码。
+                     * @return ErrCode 错误码。
+                     * 
+                     */
+                    int64_t GetErrCode() const;
+
+                    /**
+                     * 设置错误码。
+                     * @param _errCode 错误码。
+                     * 
+                     */
+                    void SetErrCode(const int64_t& _errCode);
+
+                    /**
+                     * 判断参数 ErrCode 是否已赋值
+                     * @return ErrCode 是否已赋值
+                     * 
+                     */
+                    bool ErrCodeHasBeenSet() const;
+
+                    /**
+                     * 获取SQL 类型。
+                     * @return SqlType SQL 类型。
+                     * 
+                     */
+                    std::string GetSqlType() const;
+
+                    /**
+                     * 设置SQL 类型。
+                     * @param _sqlType SQL 类型。
+                     * 
+                     */
+                    void SetSqlType(const std::string& _sqlType);
+
+                    /**
+                     * 判断参数 SqlType 是否已赋值
+                     * @return SqlType 是否已赋值
+                     * 
+                     */
+                    bool SqlTypeHasBeenSet() const;
+
+                    /**
+                     * 获取审计策略名称，逐步下线。
+                     * @return PolicyName 审计策略名称，逐步下线。
+                     * 
+                     */
+                    std::string GetPolicyName() const;
+
+                    /**
+                     * 设置审计策略名称，逐步下线。
+                     * @param _policyName 审计策略名称，逐步下线。
+                     * 
+                     */
+                    void SetPolicyName(const std::string& _policyName);
+
+                    /**
+                     * 判断参数 PolicyName 是否已赋值
+                     * @return PolicyName 是否已赋值
+                     * 
+                     */
+                    bool PolicyNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称。
+                     * @return DBName 数据库名称。
+                     * 
+                     */
+                    std::string GetDBName() const;
+
+                    /**
+                     * 设置数据库名称。
+                     * @param _dBName 数据库名称。
+                     * 
+                     */
+                    void SetDBName(const std::string& _dBName);
+
+                    /**
+                     * 判断参数 DBName 是否已赋值
+                     * @return DBName 是否已赋值
+                     * 
+                     */
+                    bool DBNameHasBeenSet() const;
+
+                    /**
+                     * 获取SQL 语句。
+                     * @return Sql SQL 语句。
+                     * 
+                     */
+                    std::string GetSql() const;
+
+                    /**
+                     * 设置SQL 语句。
+                     * @param _sql SQL 语句。
+                     * 
+                     */
+                    void SetSql(const std::string& _sql);
+
+                    /**
+                     * 判断参数 Sql 是否已赋值
+                     * @return Sql 是否已赋值
+                     * 
+                     */
+                    bool SqlHasBeenSet() const;
+
+                    /**
+                     * 获取客户端地址。
+                     * @return Host 客户端地址。
+                     * 
+                     */
+                    std::string GetHost() const;
+
+                    /**
+                     * 设置客户端地址。
+                     * @param _host 客户端地址。
+                     * 
+                     */
+                    void SetHost(const std::string& _host);
+
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     * 
+                     */
+                    bool HostHasBeenSet() const;
+
+                    /**
+                     * 获取用户名。
+                     * @return User 用户名。
+                     * 
+                     */
+                    std::string GetUser() const;
+
+                    /**
+                     * 设置用户名。
+                     * @param _user 用户名。
+                     * 
+                     */
+                    void SetUser(const std::string& _user);
+
+                    /**
+                     * 判断参数 User 是否已赋值
+                     * @return User 是否已赋值
+                     * 
+                     */
+                    bool UserHasBeenSet() const;
+
+                    /**
+                     * 获取执行时间，微秒。
+                     * @return ExecTime 执行时间，微秒。
+                     * 
+                     */
+                    int64_t GetExecTime() const;
+
+                    /**
+                     * 设置执行时间，微秒。
+                     * @param _execTime 执行时间，微秒。
+                     * 
+                     */
+                    void SetExecTime(const int64_t& _execTime);
+
+                    /**
+                     * 判断参数 ExecTime 是否已赋值
+                     * @return ExecTime 是否已赋值
+                     * 
+                     */
+                    bool ExecTimeHasBeenSet() const;
+
+                    /**
+                     * 获取时间。
+                     * @return Timestamp 时间。
+                     * 
+                     */
+                    std::string GetTimestamp() const;
+
+                    /**
+                     * 设置时间。
+                     * @param _timestamp 时间。
+                     * 
+                     */
+                    void SetTimestamp(const std::string& _timestamp);
+
+                    /**
+                     * 判断参数 Timestamp 是否已赋值
+                     * @return Timestamp 是否已赋值
+                     * 
+                     */
+                    bool TimestampHasBeenSet() const;
+
+                    /**
+                     * 获取返回行数。
+                     * @return SentRows 返回行数。
+                     * 
+                     */
+                    int64_t GetSentRows() const;
+
+                    /**
+                     * 设置返回行数。
+                     * @param _sentRows 返回行数。
+                     * 
+                     */
+                    void SetSentRows(const int64_t& _sentRows);
+
+                    /**
+                     * 判断参数 SentRows 是否已赋值
+                     * @return SentRows 是否已赋值
+                     * 
+                     */
+                    bool SentRowsHasBeenSet() const;
+
+                    /**
+                     * 获取线程ID。
+                     * @return ThreadId 线程ID。
+                     * 
+                     */
+                    int64_t GetThreadId() const;
+
+                    /**
+                     * 设置线程ID。
+                     * @param _threadId 线程ID。
+                     * 
+                     */
+                    void SetThreadId(const int64_t& _threadId);
+
+                    /**
+                     * 判断参数 ThreadId 是否已赋值
+                     * @return ThreadId 是否已赋值
+                     * 
+                     */
+                    bool ThreadIdHasBeenSet() const;
+
+                    /**
+                     * 获取扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckRows 扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCheckRows() const;
+
+                    /**
+                     * 设置扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _checkRows 扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCheckRows(const int64_t& _checkRows);
+
+                    /**
+                     * 判断参数 CheckRows 是否已赋值
+                     * @return CheckRows 是否已赋值
+                     * 
+                     */
+                    bool CheckRowsHasBeenSet() const;
+
+                    /**
+                     * 获取cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuTime cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetCpuTime() const;
+
+                    /**
+                     * 设置cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuTime cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuTime(const double& _cpuTime);
+
+                    /**
+                     * 判断参数 CpuTime 是否已赋值
+                     * @return CpuTime 是否已赋值
+                     * 
+                     */
+                    bool CpuTimeHasBeenSet() const;
+
+                    /**
+                     * 获取IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IoWaitTime IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIoWaitTime() const;
+
+                    /**
+                     * 设置IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ioWaitTime IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIoWaitTime(const uint64_t& _ioWaitTime);
+
+                    /**
+                     * 判断参数 IoWaitTime 是否已赋值
+                     * @return IoWaitTime 是否已赋值
+                     * 
+                     */
+                    bool IoWaitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LockWaitTime 锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLockWaitTime() const;
+
+                    /**
+                     * 设置锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lockWaitTime 锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLockWaitTime(const uint64_t& _lockWaitTime);
+
+                    /**
+                     * 判断参数 LockWaitTime 是否已赋值
+                     * @return LockWaitTime 是否已赋值
+                     * 
+                     */
+                    bool LockWaitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NsTime 开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetNsTime() const;
+
+                    /**
+                     * 设置开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nsTime 开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNsTime(const uint64_t& _nsTime);
+
+                    /**
+                     * 判断参数 NsTime 是否已赋值
+                     * @return NsTime 是否已赋值
+                     * 
+                     */
+                    bool NsTimeHasBeenSet() const;
+
+                    /**
+                     * 获取事物持续时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrxLivingTime 事物持续时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTrxLivingTime() const;
+
+                    /**
+                     * 设置事物持续时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trxLivingTime 事物持续时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrxLivingTime(const uint64_t& _trxLivingTime);
+
+                    /**
+                     * 判断参数 TrxLivingTime 是否已赋值
+                     * @return TrxLivingTime 是否已赋值
+                     * 
+                     */
+                    bool TrxLivingTimeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 影响行数。
+                     */
+                    int64_t m_affectRows;
+                    bool m_affectRowsHasBeenSet;
+
+                    /**
+                     * 错误码。
+                     */
+                    int64_t m_errCode;
+                    bool m_errCodeHasBeenSet;
+
+                    /**
+                     * SQL 类型。
+                     */
+                    std::string m_sqlType;
+                    bool m_sqlTypeHasBeenSet;
+
+                    /**
+                     * 审计策略名称，逐步下线。
+                     */
+                    std::string m_policyName;
+                    bool m_policyNameHasBeenSet;
+
+                    /**
+                     * 数据库名称。
+                     */
+                    std::string m_dBName;
+                    bool m_dBNameHasBeenSet;
+
+                    /**
+                     * SQL 语句。
+                     */
+                    std::string m_sql;
+                    bool m_sqlHasBeenSet;
+
+                    /**
+                     * 客户端地址。
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
+
+                    /**
+                     * 用户名。
+                     */
+                    std::string m_user;
+                    bool m_userHasBeenSet;
+
+                    /**
+                     * 执行时间，微秒。
+                     */
+                    int64_t m_execTime;
+                    bool m_execTimeHasBeenSet;
+
+                    /**
+                     * 时间。
+                     */
+                    std::string m_timestamp;
+                    bool m_timestampHasBeenSet;
+
+                    /**
+                     * 返回行数。
+                     */
+                    int64_t m_sentRows;
+                    bool m_sentRowsHasBeenSet;
+
+                    /**
+                     * 线程ID。
+                     */
+                    int64_t m_threadId;
+                    bool m_threadIdHasBeenSet;
+
+                    /**
+                     * 扫描行数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_checkRows;
+                    bool m_checkRowsHasBeenSet;
+
+                    /**
+                     * cpu执行时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_cpuTime;
+                    bool m_cpuTimeHasBeenSet;
+
+                    /**
+                     * IO等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ioWaitTime;
+                    bool m_ioWaitTimeHasBeenSet;
+
+                    /**
+                     * 锁等待时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lockWaitTime;
+                    bool m_lockWaitTimeHasBeenSet;
+
+                    /**
+                     * 开始时间，与timestamp构成一个精确到纳秒的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_nsTime;
+                    bool m_nsTimeHasBeenSet;
+
+                    /**
+                     * 事物持续时间，微秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_trxLivingTime;
+                    bool m_trxLivingTimeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_AUDITLOG_H_

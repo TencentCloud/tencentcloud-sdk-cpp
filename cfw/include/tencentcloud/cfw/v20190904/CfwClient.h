@@ -31,6 +31,8 @@
 #include <tencentcloud/cfw/v20190904/model/AddNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateAcRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteAddressTemplateRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteAddressTemplateResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h>
@@ -195,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAcRulesResponse> CreateAcRulesOutcome;
                 typedef std::future<CreateAcRulesOutcome> CreateAcRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateAcRulesRequest&, CreateAcRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAddressTemplateResponse> CreateAddressTemplateOutcome;
+                typedef std::future<CreateAddressTemplateOutcome> CreateAddressTemplateOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateAddressTemplateRequest&, CreateAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAddressTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateChooseVpcsResponse> CreateChooseVpcsOutcome;
                 typedef std::future<CreateChooseVpcsOutcome> CreateChooseVpcsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateChooseVpcsRequest&, CreateChooseVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChooseVpcsAsyncHandler;
@@ -213,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAcRuleResponse> DeleteAcRuleOutcome;
                 typedef std::future<DeleteAcRuleOutcome> DeleteAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAcRuleRequest&, DeleteAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAddressTemplateResponse> DeleteAddressTemplateOutcome;
+                typedef std::future<DeleteAddressTemplateOutcome> DeleteAddressTemplateOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteAddressTemplateRequest&, DeleteAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAddressTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAllAccessControlRuleResponse> DeleteAllAccessControlRuleOutcome;
                 typedef std::future<DeleteAllAccessControlRuleOutcome> DeleteAllAccessControlRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAllAccessControlRuleRequest&, DeleteAllAccessControlRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllAccessControlRuleAsyncHandler;
@@ -442,6 +452,15 @@ namespace TencentCloud
                 CreateAcRulesOutcomeCallable CreateAcRulesCallable(const Model::CreateAcRulesRequest& request);
 
                 /**
+                 *创建地址模板规则
+                 * @param req CreateAddressTemplateRequest
+                 * @return CreateAddressTemplateOutcome
+                 */
+                CreateAddressTemplateOutcome CreateAddressTemplate(const Model::CreateAddressTemplateRequest &request);
+                void CreateAddressTemplateAsync(const Model::CreateAddressTemplateRequest& request, const CreateAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAddressTemplateOutcomeCallable CreateAddressTemplateCallable(const Model::CreateAddressTemplateRequest& request);
+
+                /**
                  *创建、选择vpc
                  * @param req CreateChooseVpcsRequest
                  * @return CreateChooseVpcsOutcome
@@ -494,6 +513,15 @@ namespace TencentCloud
                 DeleteAcRuleOutcome DeleteAcRule(const Model::DeleteAcRuleRequest &request);
                 void DeleteAcRuleAsync(const Model::DeleteAcRuleRequest& request, const DeleteAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAcRuleOutcomeCallable DeleteAcRuleCallable(const Model::DeleteAcRuleRequest& request);
+
+                /**
+                 *删除地址模板规则
+                 * @param req DeleteAddressTemplateRequest
+                 * @return DeleteAddressTemplateOutcome
+                 */
+                DeleteAddressTemplateOutcome DeleteAddressTemplate(const Model::DeleteAddressTemplateRequest &request);
+                void DeleteAddressTemplateAsync(const Model::DeleteAddressTemplateRequest& request, const DeleteAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAddressTemplateOutcomeCallable DeleteAddressTemplateCallable(const Model::DeleteAddressTemplateRequest& request);
 
                 /**
                  *全部删除规则

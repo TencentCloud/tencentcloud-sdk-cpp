@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取快照定期备份在一星期哪一天
-                     * @return DayOfWeek 快照定期备份在一星期哪一天
+                     * 获取快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日
+                     * @return DayOfWeek 快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日
                      * 
                      */
                     std::string GetDayOfWeek() const;
 
                     /**
-                     * 设置快照定期备份在一星期哪一天
-                     * @param _dayOfWeek 快照定期备份在一星期哪一天
+                     * 设置快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日
+                     * @param _dayOfWeek 快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日
                      * 
                      */
                     void SetDayOfWeek(const std::string& _dayOfWeek);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AliveDaysHasBeenSet() const;
 
                     /**
-                     * 获取是否激活定期快照功能
-                     * @return IsActivated 是否激活定期快照功能
+                     * 获取是否激活定期快照功能；1代表激活，0代表未激活
+                     * @return IsActivated 是否激活定期快照功能；1代表激活，0代表未激活
                      * 
                      */
                     uint64_t GetIsActivated() const;
 
                     /**
-                     * 设置是否激活定期快照功能
-                     * @param _isActivated 是否激活定期快照功能
+                     * 设置是否激活定期快照功能；1代表激活，0代表未激活
+                     * @param _isActivated 是否激活定期快照功能；1代表激活，0代表未激活
                      * 
                      */
                     void SetIsActivated(const uint64_t& _isActivated);
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 快照定期备份在一星期哪一天
+                     * 快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日
                      */
                     std::string m_dayOfWeek;
                     bool m_dayOfWeekHasBeenSet;
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_aliveDaysHasBeenSet;
 
                     /**
-                     * 是否激活定期快照功能
+                     * 是否激活定期快照功能；1代表激活，0代表未激活
                      */
                     uint64_t m_isActivated;
                     bool m_isActivatedHasBeenSet;

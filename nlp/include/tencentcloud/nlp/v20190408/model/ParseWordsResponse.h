@@ -61,10 +61,8 @@ namespace TencentCloud
                     bool NormalTextHasBeenSet() const;
 
                     /**
-                     * 获取基础粒度分词和词性标注的结果。（词性表请参见附录）
-
-                     * @return BasicParticiples 基础粒度分词和词性标注的结果。（词性表请参见附录）
-
+                     * 获取基础粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）
+                     * @return BasicParticiples 基础粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）
                      * 
                      */
                     std::vector<BasicParticiple> GetBasicParticiples() const;
@@ -77,8 +75,8 @@ namespace TencentCloud
                     bool BasicParticiplesHasBeenSet() const;
 
                     /**
-                     * 获取复合粒度分词和词性标注的结果。（词性表请参见附录）
-                     * @return CompoundParticiples 复合粒度分词和词性标注的结果。（词性表请参见附录）
+                     * 获取复合粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）
+                     * @return CompoundParticiples 复合粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）
                      * 
                      */
                     std::vector<CompoundParticiple> GetCompoundParticiples() const;
@@ -91,9 +89,9 @@ namespace TencentCloud
                     bool CompoundParticiplesHasBeenSet() const;
 
                     /**
-                     * 获取实体识别结果。（实体类型数据请参见附录）
+                     * 获取实体识别结果。（请参见附录[实体类型数据](https://cloud.tencent.com/document/product/271/90592)）
 
-                     * @return Entities 实体识别结果。（实体类型数据请参见附录）
+                     * @return Entities 实体识别结果。（请参见附录[实体类型数据](https://cloud.tencent.com/document/product/271/90592)）
 
                      * 
                      */
@@ -115,20 +113,19 @@ namespace TencentCloud
                     bool m_normalTextHasBeenSet;
 
                     /**
-                     * 基础粒度分词和词性标注的结果。（词性表请参见附录）
-
+                     * 基础粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）
                      */
                     std::vector<BasicParticiple> m_basicParticiples;
                     bool m_basicParticiplesHasBeenSet;
 
                     /**
-                     * 复合粒度分词和词性标注的结果。（词性表请参见附录）
+                     * 复合粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）
                      */
                     std::vector<CompoundParticiple> m_compoundParticiples;
                     bool m_compoundParticiplesHasBeenSet;
 
                     /**
-                     * 实体识别结果。（实体类型数据请参见附录）
+                     * 实体识别结果。（请参见附录[实体类型数据](https://cloud.tencent.com/document/product/271/90592)）
 
                      */
                     std::vector<Entity> m_entities;

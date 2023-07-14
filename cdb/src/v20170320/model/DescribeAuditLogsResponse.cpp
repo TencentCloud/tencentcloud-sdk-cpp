@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeAuditLogsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Apigateway::V20180808::Model;
+using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
-DescribeIPStrategysStatusResponse::DescribeIPStrategysStatusResponse() :
-    m_resultHasBeenSet(false)
+DescribeAuditLogsResponse::DescribeAuditLogsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeIPStrategysStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeAuditLogsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,67 @@ CoreInternalOutcome DescribeIPStrategysStatusResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
+    {
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            AuditLog item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
         }
-
-        m_resultHasBeenSet = true;
+        m_itemsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeIPStrategysStatusResponse::ToJsonString() const
+string DescribeAuditLogsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +138,24 @@ string DescribeIPStrategysStatusResponse::ToJsonString() const
 }
 
 
-IPStrategiesStatus DescribeIPStrategysStatusResponse::GetResult() const
+int64_t DescribeAuditLogsResponse::GetTotalCount() const
 {
-    return m_result;
+    return m_totalCount;
 }
 
-bool DescribeIPStrategysStatusResponse::ResultHasBeenSet() const
+bool DescribeAuditLogsResponse::TotalCountHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<AuditLog> DescribeAuditLogsResponse::GetItems() const
+{
+    return m_items;
+}
+
+bool DescribeAuditLogsResponse::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 
 

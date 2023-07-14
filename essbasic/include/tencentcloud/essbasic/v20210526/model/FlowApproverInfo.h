@@ -556,19 +556,19 @@ HANDWRITE -手写签名
                     bool SignIdHasBeenSet() const;
 
                     /**
-                     * 获取SMS: 短信; NONE: 不发信息
-默认为SMS(该字段对子客无效)
-                     * @return NotifyType SMS: 短信; NONE: 不发信息
-默认为SMS(该字段对子客无效)
+                     * 获取SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
+默认为SMS(签署方为子客时该字段不生效)
+                     * @return NotifyType SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
+默认为SMS(签署方为子客时该字段不生效)
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置SMS: 短信; NONE: 不发信息
-默认为SMS(该字段对子客无效)
-                     * @param _notifyType SMS: 短信; NONE: 不发信息
-默认为SMS(该字段对子客无效)
+                     * 设置SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
+默认为SMS(签署方为子客时该字段不生效)
+                     * @param _notifyType SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
+默认为SMS(签署方为子客时该字段不生效)
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -723,8 +723,8 @@ HANDWRITE -手写签名
                     bool m_signIdHasBeenSet;
 
                     /**
-                     * SMS: 短信; NONE: 不发信息
-默认为SMS(该字段对子客无效)
+                     * SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息
+默认为SMS(签署方为子客时该字段不生效)
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

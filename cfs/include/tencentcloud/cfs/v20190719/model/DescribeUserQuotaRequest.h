@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取Limit 页面大小
-                     * @return Limit Limit 页面大小
+                     * 获取Limit 页面大小，可填范围为大于0的整数
+                     * @return Limit Limit 页面大小，可填范围为大于0的整数
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置Limit 页面大小
-                     * @param _limit Limit 页面大小
+                     * 设置Limit 页面大小，可填范围为大于0的整数
+                     * @param _limit Limit 页面大小，可填范围为大于0的整数
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -158,7 +158,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * Limit 页面大小
+                     * Limit 页面大小，可填范围为大于0的整数
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

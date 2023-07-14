@@ -48,14 +48,30 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型
+CreateCfsSnapshot：创建快照
+DeleteCfsSnapshot：删除快照
+CreateCfsFileSystem：创建文件系统
+UpdateCfsSnapshotAttribute：更新快照
                      * @return Action 操作类型
+CreateCfsSnapshot：创建快照
+DeleteCfsSnapshot：删除快照
+CreateCfsFileSystem：创建文件系统
+UpdateCfsSnapshotAttribute：更新快照
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置操作类型
+CreateCfsSnapshot：创建快照
+DeleteCfsSnapshot：删除快照
+CreateCfsFileSystem：创建文件系统
+UpdateCfsSnapshotAttribute：更新快照
                      * @param _action 操作类型
+CreateCfsSnapshot：创建快照
+DeleteCfsSnapshot：删除快照
+CreateCfsFileSystem：创建文件系统
+UpdateCfsSnapshotAttribute：更新快照
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -90,14 +106,30 @@ namespace TencentCloud
 
                     /**
                      * 获取操作名称
+CreateCfsSnapshot
+DeleteCfsSnapshot
+CreateCfsFileSystem
+UpdateCfsSnapshotAttribute
                      * @return ActionName 操作名称
+CreateCfsSnapshot
+DeleteCfsSnapshot
+CreateCfsFileSystem
+UpdateCfsSnapshotAttribute
                      * 
                      */
                     std::string GetActionName() const;
 
                     /**
                      * 设置操作名称
+CreateCfsSnapshot
+DeleteCfsSnapshot
+CreateCfsFileSystem
+UpdateCfsSnapshotAttribute
                      * @param _actionName 操作名称
+CreateCfsSnapshot
+DeleteCfsSnapshot
+CreateCfsFileSystem
+UpdateCfsSnapshotAttribute
                      * 
                      */
                     void SetActionName(const std::string& _actionName);
@@ -110,15 +142,15 @@ namespace TencentCloud
                     bool ActionNameHasBeenSet() const;
 
                     /**
-                     * 获取操作者
-                     * @return Operator 操作者
+                     * 获取操作者uin
+                     * @return Operator 操作者uin
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者
-                     * @param _operator 操作者
+                     * 设置操作者uin
+                     * @param _operator 操作者uin
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -131,15 +163,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取结果
-                     * @return Result 结果
+                     * 获取1-任务进行中；2-任务成功；3-任务失败
+                     * @return Result 1-任务进行中；2-任务成功；3-任务失败
                      * 
                      */
                     uint64_t GetResult() const;
 
                     /**
-                     * 设置结果
-                     * @param _result 结果
+                     * 设置1-任务进行中；2-任务成功；3-任务失败
+                     * @param _result 1-任务进行中；2-任务成功；3-任务失败
                      * 
                      */
                     void SetResult(const uint64_t& _result);
@@ -155,6 +187,10 @@ namespace TencentCloud
 
                     /**
                      * 操作类型
+CreateCfsSnapshot：创建快照
+DeleteCfsSnapshot：删除快照
+CreateCfsFileSystem：创建文件系统
+UpdateCfsSnapshotAttribute：更新快照
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
@@ -167,18 +203,22 @@ namespace TencentCloud
 
                     /**
                      * 操作名称
+CreateCfsSnapshot
+DeleteCfsSnapshot
+CreateCfsFileSystem
+UpdateCfsSnapshotAttribute
                      */
                     std::string m_actionName;
                     bool m_actionNameHasBeenSet;
 
                     /**
-                     * 操作者
+                     * 操作者uin
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 结果
+                     * 1-任务进行中；2-任务成功；3-任务失败
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;

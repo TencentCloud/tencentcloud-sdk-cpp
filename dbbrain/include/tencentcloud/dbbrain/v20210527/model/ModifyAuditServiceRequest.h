@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB for MariaDB。
-                     * @return Product 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB for MariaDB。
+                     * 获取服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
+                     * @return Product 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB for MariaDB。
-                     * @param _product 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB for MariaDB。
+                     * 设置服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
+                     * @param _product 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志保存总时长，只能是7,30,90,180,365,1095,1825
-                     * @return LogExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825
+                     * 获取日志保存总时长，只能是7,30,90,180,365,1095,1825。
+                     * @return LogExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     int64_t GetLogExpireDay() const;
 
                     /**
-                     * 设置日志保存总时长，只能是7,30,90,180,365,1095,1825
-                     * @param _logExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825
+                     * 设置日志保存总时长，只能是7,30,90,180,365,1095,1825。
+                     * @param _logExpireDay 日志保存总时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     void SetLogExpireDay(const int64_t& _logExpireDay);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LogExpireDayHasBeenSet() const;
 
                     /**
-                     * 获取高频日志保存时长，只能是7,30,90,180,365,1095,1825
-                     * @return HotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825
+                     * 获取高频日志保存时长，只能是7,30,90,180,365,1095,1825。
+                     * @return HotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     int64_t GetHotLogExpireDay() const;
 
                     /**
-                     * 设置高频日志保存时长，只能是7,30,90,180,365,1095,1825
-                     * @param _hotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825
+                     * 设置高频日志保存时长，只能是7,30,90,180,365,1095,1825。
+                     * @param _hotLogExpireDay 高频日志保存时长，只能是7,30,90,180,365,1095,1825。
                      * 
                      */
                     void SetHotLogExpireDay(const int64_t& _hotLogExpireDay);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB for MariaDB。
+                     * 服务产品类型，支持值包括： "dcdb" - 云数据库 Tdsql， "mariadb" - 云数据库 MariaDB。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
@@ -168,13 +168,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志保存总时长，只能是7,30,90,180,365,1095,1825
+                     * 日志保存总时长，只能是7,30,90,180,365,1095,1825。
                      */
                     int64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
-                     * 高频日志保存时长，只能是7,30,90,180,365,1095,1825
+                     * 高频日志保存时长，只能是7,30,90,180,365,1095,1825。
                      */
                     int64_t m_hotLogExpireDay;
                     bool m_hotLogExpireDayHasBeenSet;

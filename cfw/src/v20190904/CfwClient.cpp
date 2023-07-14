@@ -212,6 +212,49 @@ CfwClient::CreateAcRulesOutcomeCallable CfwClient::CreateAcRulesCallable(const C
     return task->get_future();
 }
 
+CfwClient::CreateAddressTemplateOutcome CfwClient::CreateAddressTemplate(const CreateAddressTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAddressTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAddressTemplateResponse rsp = CreateAddressTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAddressTemplateOutcome(rsp);
+        else
+            return CreateAddressTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAddressTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateAddressTemplateAsync(const CreateAddressTemplateRequest& request, const CreateAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAddressTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateAddressTemplateOutcomeCallable CfwClient::CreateAddressTemplateCallable(const CreateAddressTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAddressTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAddressTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateChooseVpcsOutcome CfwClient::CreateChooseVpcs(const CreateChooseVpcsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateChooseVpcs");
@@ -463,6 +506,49 @@ CfwClient::DeleteAcRuleOutcomeCallable CfwClient::DeleteAcRuleCallable(const Del
         [this, request]()
         {
             return this->DeleteAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DeleteAddressTemplateOutcome CfwClient::DeleteAddressTemplate(const DeleteAddressTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAddressTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAddressTemplateResponse rsp = DeleteAddressTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAddressTemplateOutcome(rsp);
+        else
+            return DeleteAddressTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAddressTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteAddressTemplateAsync(const DeleteAddressTemplateRequest& request, const DeleteAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAddressTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteAddressTemplateOutcomeCallable CfwClient::DeleteAddressTemplateCallable(const DeleteAddressTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAddressTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAddressTemplate(request);
         }
     );
 

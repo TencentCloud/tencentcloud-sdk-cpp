@@ -110,7 +110,7 @@ string DescribeApiEnvironmentStrategyResponse::ToJsonString() const
 }
 
 
-ApiEnvironmentStrategyStataus DescribeApiEnvironmentStrategyResponse::GetResult() const
+ApiEnvironmentStrategyStatus DescribeApiEnvironmentStrategyResponse::GetResult() const
 {
     return m_result;
 }

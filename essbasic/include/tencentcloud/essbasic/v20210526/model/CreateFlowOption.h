@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CanEditFlowHasBeenSet() const;
 
                     /**
-                     * 获取是否允许发起合同弹窗隐藏合同名称
-                     * @return HideShowFlowName 是否允许发起合同弹窗隐藏合同名称
+                     * 获取是否允许发起合同弹窗隐藏合同名称，true-允许，false-不允许
+                     * @return HideShowFlowName 是否允许发起合同弹窗隐藏合同名称，true-允许，false-不允许
                      * 
                      */
                     bool GetHideShowFlowName() const;
 
                     /**
-                     * 设置是否允许发起合同弹窗隐藏合同名称
-                     * @param _hideShowFlowName 是否允许发起合同弹窗隐藏合同名称
+                     * 设置是否允许发起合同弹窗隐藏合同名称，true-允许，false-不允许
+                     * @param _hideShowFlowName 是否允许发起合同弹窗隐藏合同名称，true-允许，false-不允许
                      * 
                      */
                     void SetHideShowFlowName(const bool& _hideShowFlowName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HideShowFlowNameHasBeenSet() const;
 
                     /**
-                     * 获取是否允许发起合同弹窗隐藏合同类型
-                     * @return HideShowFlowType 是否允许发起合同弹窗隐藏合同类型
+                     * 获取是否允许发起合同弹窗隐藏合同类型，true-允许，false-不允许
+                     * @return HideShowFlowType 是否允许发起合同弹窗隐藏合同类型，true-允许，false-不允许
                      * 
                      */
                     bool GetHideShowFlowType() const;
 
                     /**
-                     * 设置是否允许发起合同弹窗隐藏合同类型
-                     * @param _hideShowFlowType 是否允许发起合同弹窗隐藏合同类型
+                     * 设置是否允许发起合同弹窗隐藏合同类型，true-允许，false-不允许
+                     * @param _hideShowFlowType 是否允许发起合同弹窗隐藏合同类型，true-允许，false-不允许
                      * 
                      */
                     void SetHideShowFlowType(const bool& _hideShowFlowType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool HideShowFlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否允许发起合同弹窗隐藏合同到期时间
-                     * @return HideShowDeadline 是否允许发起合同弹窗隐藏合同到期时间
+                     * 获取是否允许发起合同弹窗隐藏合同到期时间，true-允许，false-不允许
+                     * @return HideShowDeadline 是否允许发起合同弹窗隐藏合同到期时间，true-允许，false-不允许
                      * 
                      */
                     bool GetHideShowDeadline() const;
 
                     /**
-                     * 设置是否允许发起合同弹窗隐藏合同到期时间
-                     * @param _hideShowDeadline 是否允许发起合同弹窗隐藏合同到期时间
+                     * 设置是否允许发起合同弹窗隐藏合同到期时间，true-允许，false-不允许
+                     * @param _hideShowDeadline 是否允许发起合同弹窗隐藏合同到期时间，true-允许，false-不允许
                      * 
                      */
                     void SetHideShowDeadline(const bool& _hideShowDeadline);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool HideShowDeadlineHasBeenSet() const;
 
                     /**
-                     * 获取是否允许发起合同步骤跳过指定签署方步骤
-                     * @return CanSkipAddApprover 是否允许发起合同步骤跳过指定签署方步骤
+                     * 获取是否允许发起合同步骤跳过指定签署方步骤，true-允许，false-不允许
+                     * @return CanSkipAddApprover 是否允许发起合同步骤跳过指定签署方步骤，true-允许，false-不允许
                      * 
                      */
                     bool GetCanSkipAddApprover() const;
 
                     /**
-                     * 设置是否允许发起合同步骤跳过指定签署方步骤
-                     * @param _canSkipAddApprover 是否允许发起合同步骤跳过指定签署方步骤
+                     * 设置是否允许发起合同步骤跳过指定签署方步骤，true-允许，false-不允许
+                     * @param _canSkipAddApprover 是否允许发起合同步骤跳过指定签署方步骤，true-允许，false-不允许
                      * 
                      */
                     void SetCanSkipAddApprover(const bool& _canSkipAddApprover);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CanSkipAddApproverHasBeenSet() const;
 
                     /**
-                     * 获取定制化发起合同页合同描述信息
-                     * @return CustomCreateFlowDescription 定制化发起合同页合同描述信息
+                     * 获取定制化发起合同弹窗的描述信息，描述信息最长500
+                     * @return CustomCreateFlowDescription 定制化发起合同弹窗的描述信息，描述信息最长500
                      * 
                      */
                     std::string GetCustomCreateFlowDescription() const;
 
                     /**
-                     * 设置定制化发起合同页合同描述信息
-                     * @param _customCreateFlowDescription 定制化发起合同页合同描述信息
+                     * 设置定制化发起合同弹窗的描述信息，描述信息最长500
+                     * @param _customCreateFlowDescription 定制化发起合同弹窗的描述信息，描述信息最长500
                      * 
                      */
                     void SetCustomCreateFlowDescription(const std::string& _customCreateFlowDescription);
@@ -181,31 +181,31 @@ namespace TencentCloud
                     bool m_canEditFlowHasBeenSet;
 
                     /**
-                     * 是否允许发起合同弹窗隐藏合同名称
+                     * 是否允许发起合同弹窗隐藏合同名称，true-允许，false-不允许
                      */
                     bool m_hideShowFlowName;
                     bool m_hideShowFlowNameHasBeenSet;
 
                     /**
-                     * 是否允许发起合同弹窗隐藏合同类型
+                     * 是否允许发起合同弹窗隐藏合同类型，true-允许，false-不允许
                      */
                     bool m_hideShowFlowType;
                     bool m_hideShowFlowTypeHasBeenSet;
 
                     /**
-                     * 是否允许发起合同弹窗隐藏合同到期时间
+                     * 是否允许发起合同弹窗隐藏合同到期时间，true-允许，false-不允许
                      */
                     bool m_hideShowDeadline;
                     bool m_hideShowDeadlineHasBeenSet;
 
                     /**
-                     * 是否允许发起合同步骤跳过指定签署方步骤
+                     * 是否允许发起合同步骤跳过指定签署方步骤，true-允许，false-不允许
                      */
                     bool m_canSkipAddApprover;
                     bool m_canSkipAddApproverHasBeenSet;
 
                     /**
-                     * 定制化发起合同页合同描述信息
+                     * 定制化发起合同弹窗的描述信息，描述信息最长500
                      */
                     std::string m_customCreateFlowDescription;
                     bool m_customCreateFlowDescriptionHasBeenSet;

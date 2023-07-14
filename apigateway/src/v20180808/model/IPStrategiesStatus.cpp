@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/apigateway/v20180808/model/ApiEnvironmentStrategyStataus.h>
+#include <tencentcloud/apigateway/v20180808/model/IPStrategiesStatus.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
 using namespace std;
 
-ApiEnvironmentStrategyStataus::ApiEnvironmentStrategyStataus() :
+IPStrategiesStatus::IPStrategiesStatus() :
     m_totalCountHasBeenSet(false),
-    m_apiEnvironmentStrategySetHasBeenSet(false)
+    m_strategySetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ApiEnvironmentStrategyStataus::Deserialize(const rapidjson::Value &value)
+CoreInternalOutcome IPStrategiesStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -35,37 +35,37 @@ CoreInternalOutcome ApiEnvironmentStrategyStataus::Deserialize(const rapidjson::
     {
         if (!value["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategyStataus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IPStrategiesStatus.TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
         m_totalCount = value["TotalCount"].GetInt64();
         m_totalCountHasBeenSet = true;
     }
 
-    if (value.HasMember("ApiEnvironmentStrategySet") && !value["ApiEnvironmentStrategySet"].IsNull())
+    if (value.HasMember("StrategySet") && !value["StrategySet"].IsNull())
     {
-        if (!value["ApiEnvironmentStrategySet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ApiEnvironmentStrategyStataus.ApiEnvironmentStrategySet` is not array type"));
+        if (!value["StrategySet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IPStrategiesStatus.StrategySet` is not array type"));
 
-        const rapidjson::Value &tmpValue = value["ApiEnvironmentStrategySet"];
+        const rapidjson::Value &tmpValue = value["StrategySet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ApiEnvironmentStrategy item;
+            IPStrategy item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_apiEnvironmentStrategySet.push_back(item);
+            m_strategySet.push_back(item);
         }
-        m_apiEnvironmentStrategySetHasBeenSet = true;
+        m_strategySetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-void ApiEnvironmentStrategyStataus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+void IPStrategiesStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
@@ -76,15 +76,15 @@ void ApiEnvironmentStrategyStataus::ToJsonObject(rapidjson::Value &value, rapidj
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_apiEnvironmentStrategySetHasBeenSet)
+    if (m_strategySetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApiEnvironmentStrategySet";
+        string key = "StrategySet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_apiEnvironmentStrategySet.begin(); itr != m_apiEnvironmentStrategySet.end(); ++itr, ++i)
+        for (auto itr = m_strategySet.begin(); itr != m_strategySet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -94,35 +94,35 @@ void ApiEnvironmentStrategyStataus::ToJsonObject(rapidjson::Value &value, rapidj
 }
 
 
-int64_t ApiEnvironmentStrategyStataus::GetTotalCount() const
+int64_t IPStrategiesStatus::GetTotalCount() const
 {
     return m_totalCount;
 }
 
-void ApiEnvironmentStrategyStataus::SetTotalCount(const int64_t& _totalCount)
+void IPStrategiesStatus::SetTotalCount(const int64_t& _totalCount)
 {
     m_totalCount = _totalCount;
     m_totalCountHasBeenSet = true;
 }
 
-bool ApiEnvironmentStrategyStataus::TotalCountHasBeenSet() const
+bool IPStrategiesStatus::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
 }
 
-vector<ApiEnvironmentStrategy> ApiEnvironmentStrategyStataus::GetApiEnvironmentStrategySet() const
+vector<IPStrategy> IPStrategiesStatus::GetStrategySet() const
 {
-    return m_apiEnvironmentStrategySet;
+    return m_strategySet;
 }
 
-void ApiEnvironmentStrategyStataus::SetApiEnvironmentStrategySet(const vector<ApiEnvironmentStrategy>& _apiEnvironmentStrategySet)
+void IPStrategiesStatus::SetStrategySet(const vector<IPStrategy>& _strategySet)
 {
-    m_apiEnvironmentStrategySet = _apiEnvironmentStrategySet;
-    m_apiEnvironmentStrategySetHasBeenSet = true;
+    m_strategySet = _strategySet;
+    m_strategySetHasBeenSet = true;
 }
 
-bool ApiEnvironmentStrategyStataus::ApiEnvironmentStrategySetHasBeenSet() const
+bool IPStrategiesStatus::StrategySetHasBeenSet() const
 {
-    return m_apiEnvironmentStrategySetHasBeenSet;
+    return m_strategySetHasBeenSet;
 }
 

@@ -921,6 +921,283 @@ namespace TencentCloud
                      */
                     bool ChannelTagsHasBeenSet() const;
 
+                    /**
+                     * 获取关联线索id
+                     * @return LeadId 关联线索id
+                     * 
+                     */
+                    uint64_t GetLeadId() const;
+
+                    /**
+                     * 设置关联线索id
+                     * @param _leadId 关联线索id
+                     * 
+                     */
+                    void SetLeadId(const uint64_t& _leadId);
+
+                    /**
+                     * 判断参数 LeadId 是否已赋值
+                     * @return LeadId 是否已赋值
+                     * 
+                     */
+                    bool LeadIdHasBeenSet() const;
+
+                    /**
+                     * 获取客户微信id
+                     * @return WxId 客户微信id
+                     * 
+                     */
+                    std::string GetWxId() const;
+
+                    /**
+                     * 设置客户微信id
+                     * @param _wxId 客户微信id
+                     * 
+                     */
+                    void SetWxId(const std::string& _wxId);
+
+                    /**
+                     * 判断参数 WxId 是否已赋值
+                     * @return WxId 是否已赋值
+                     * 
+                     */
+                    bool WxIdHasBeenSet() const;
+
+                    /**
+                     * 获取顾问职位
+                     * @return Position 顾问职位
+                     * 
+                     */
+                    std::string GetPosition() const;
+
+                    /**
+                     * 设置顾问职位
+                     * @param _position 顾问职位
+                     * 
+                     */
+                    void SetPosition(const std::string& _position);
+
+                    /**
+                     * 判断参数 Position 是否已赋值
+                     * @return Position 是否已赋值
+                     * 
+                     */
+                    bool PositionHasBeenSet() const;
+
+                    /**
+                     * 获取是否关联微信 1 是 0 否
+                     * @return IsBindWx 是否关联微信 1 是 0 否
+                     * 
+                     */
+                    int64_t GetIsBindWx() const;
+
+                    /**
+                     * 设置是否关联微信 1 是 0 否
+                     * @param _isBindWx 是否关联微信 1 是 0 否
+                     * 
+                     */
+                    void SetIsBindWx(const int64_t& _isBindWx);
+
+                    /**
+                     * 判断参数 IsBindWx 是否已赋值
+                     * @return IsBindWx 是否已赋值
+                     * 
+                     */
+                    bool IsBindWxHasBeenSet() const;
+
+                    /**
+                     * 获取是否无效
+                     * @return IsInvalid 是否无效
+                     * 
+                     */
+                    int64_t GetIsInvalid() const;
+
+                    /**
+                     * 设置是否无效
+                     * @param _isInvalid 是否无效
+                     * 
+                     */
+                    void SetIsInvalid(const int64_t& _isInvalid);
+
+                    /**
+                     * 判断参数 IsInvalid 是否已赋值
+                     * @return IsInvalid 是否已赋值
+                     * 
+                     */
+                    bool IsInvalidHasBeenSet() const;
+
+                    /**
+                     * 获取无效类型
+                     * @return InvalidType 无效类型
+                     * 
+                     */
+                    std::string GetInvalidType() const;
+
+                    /**
+                     * 设置无效类型
+                     * @param _invalidType 无效类型
+                     * 
+                     */
+                    void SetInvalidType(const std::string& _invalidType);
+
+                    /**
+                     * 判断参数 InvalidType 是否已赋值
+                     * @return InvalidType 是否已赋值
+                     * 
+                     */
+                    bool InvalidTypeHasBeenSet() const;
+
+                    /**
+                     * 获取无效类型名称
+                     * @return InvalidTypeName 无效类型名称
+                     * 
+                     */
+                    std::string GetInvalidTypeName() const;
+
+                    /**
+                     * 设置无效类型名称
+                     * @param _invalidTypeName 无效类型名称
+                     * 
+                     */
+                    void SetInvalidTypeName(const std::string& _invalidTypeName);
+
+                    /**
+                     * 判断参数 InvalidTypeName 是否已赋值
+                     * @return InvalidTypeName 是否已赋值
+                     * 
+                     */
+                    bool InvalidTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InvalidTime 无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInvalidTime() const;
+
+                    /**
+                     * 设置无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _invalidTime 无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInvalidTime(const uint64_t& _invalidTime);
+
+                    /**
+                     * 判断参数 InvalidTime 是否已赋值
+                     * @return InvalidTime 是否已赋值
+                     * 
+                     */
+                    bool InvalidTimeHasBeenSet() const;
+
+                    /**
+                     * 获取由顾问手动输入的无效原因文字
+                     * @return InvalidRemark 由顾问手动输入的无效原因文字
+                     * 
+                     */
+                    std::string GetInvalidRemark() const;
+
+                    /**
+                     * 设置由顾问手动输入的无效原因文字
+                     * @param _invalidRemark 由顾问手动输入的无效原因文字
+                     * 
+                     */
+                    void SetInvalidRemark(const std::string& _invalidRemark);
+
+                    /**
+                     * 判断参数 InvalidRemark 是否已赋值
+                     * @return InvalidRemark 是否已赋值
+                     * 
+                     */
+                    bool InvalidRemarkHasBeenSet() const;
+
+                    /**
+                     * 获取线索是否战败
+                     * @return IsLose 线索是否战败
+                     * 
+                     */
+                    int64_t GetIsLose() const;
+
+                    /**
+                     * 设置线索是否战败
+                     * @param _isLose 线索是否战败
+                     * 
+                     */
+                    void SetIsLose(const int64_t& _isLose);
+
+                    /**
+                     * 判断参数 IsLose 是否已赋值
+                     * @return IsLose 是否已赋值
+                     * 
+                     */
+                    bool IsLoseHasBeenSet() const;
+
+                    /**
+                     * 获取战败类型
+                     * @return LoseType 战败类型
+                     * 
+                     */
+                    std::string GetLoseType() const;
+
+                    /**
+                     * 设置战败类型
+                     * @param _loseType 战败类型
+                     * 
+                     */
+                    void SetLoseType(const std::string& _loseType);
+
+                    /**
+                     * 判断参数 LoseType 是否已赋值
+                     * @return LoseType 是否已赋值
+                     * 
+                     */
+                    bool LoseTypeHasBeenSet() const;
+
+                    /**
+                     * 获取战败类型名称
+                     * @return LoseTypeName 战败类型名称
+                     * 
+                     */
+                    std::string GetLoseTypeName() const;
+
+                    /**
+                     * 设置战败类型名称
+                     * @param _loseTypeName 战败类型名称
+                     * 
+                     */
+                    void SetLoseTypeName(const std::string& _loseTypeName);
+
+                    /**
+                     * 判断参数 LoseTypeName 是否已赋值
+                     * @return LoseTypeName 是否已赋值
+                     * 
+                     */
+                    bool LoseTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取战败申请原因
+                     * @return LoseRemark 战败申请原因
+                     * 
+                     */
+                    std::string GetLoseRemark() const;
+
+                    /**
+                     * 设置战败申请原因
+                     * @param _loseRemark 战败申请原因
+                     * 
+                     */
+                    void SetLoseRemark(const std::string& _loseRemark);
+
+                    /**
+                     * 判断参数 LoseRemark 是否已赋值
+                     * @return LoseRemark 是否已赋值
+                     * 
+                     */
+                    bool LoseRemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1169,6 +1446,85 @@ namespace TencentCloud
                      */
                     std::vector<ChannelTag> m_channelTags;
                     bool m_channelTagsHasBeenSet;
+
+                    /**
+                     * 关联线索id
+                     */
+                    uint64_t m_leadId;
+                    bool m_leadIdHasBeenSet;
+
+                    /**
+                     * 客户微信id
+                     */
+                    std::string m_wxId;
+                    bool m_wxIdHasBeenSet;
+
+                    /**
+                     * 顾问职位
+                     */
+                    std::string m_position;
+                    bool m_positionHasBeenSet;
+
+                    /**
+                     * 是否关联微信 1 是 0 否
+                     */
+                    int64_t m_isBindWx;
+                    bool m_isBindWxHasBeenSet;
+
+                    /**
+                     * 是否无效
+                     */
+                    int64_t m_isInvalid;
+                    bool m_isInvalidHasBeenSet;
+
+                    /**
+                     * 无效类型
+                     */
+                    std::string m_invalidType;
+                    bool m_invalidTypeHasBeenSet;
+
+                    /**
+                     * 无效类型名称
+                     */
+                    std::string m_invalidTypeName;
+                    bool m_invalidTypeNameHasBeenSet;
+
+                    /**
+                     * 无效时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_invalidTime;
+                    bool m_invalidTimeHasBeenSet;
+
+                    /**
+                     * 由顾问手动输入的无效原因文字
+                     */
+                    std::string m_invalidRemark;
+                    bool m_invalidRemarkHasBeenSet;
+
+                    /**
+                     * 线索是否战败
+                     */
+                    int64_t m_isLose;
+                    bool m_isLoseHasBeenSet;
+
+                    /**
+                     * 战败类型
+                     */
+                    std::string m_loseType;
+                    bool m_loseTypeHasBeenSet;
+
+                    /**
+                     * 战败类型名称
+                     */
+                    std::string m_loseTypeName;
+                    bool m_loseTypeNameHasBeenSet;
+
+                    /**
+                     * 战败申请原因
+                     */
+                    std::string m_loseRemark;
+                    bool m_loseRemarkHasBeenSet;
 
                 };
             }

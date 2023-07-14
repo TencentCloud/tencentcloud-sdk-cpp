@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateAddressTemplateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Apigateway::V20180808::Model;
+using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
-DescribeIPStrategysStatusResponse::DescribeIPStrategysStatusResponse() :
-    m_resultHasBeenSet(false)
+CreateAddressTemplateResponse::CreateAddressTemplateResponse() :
+    m_statusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeIPStrategysStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateAddressTemplateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome DescribeIPStrategysStatusResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_resultHasBeenSet = true;
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeIPStrategysStatusResponse::ToJsonString() const
+string CreateAddressTemplateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string DescribeIPStrategysStatusResponse::ToJsonString() const
 }
 
 
-IPStrategiesStatus DescribeIPStrategysStatusResponse::GetResult() const
+int64_t CreateAddressTemplateResponse::GetStatus() const
 {
-    return m_result;
+    return m_status;
 }
 
-bool DescribeIPStrategysStatusResponse::ResultHasBeenSet() const
+bool CreateAddressTemplateResponse::StatusHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 
