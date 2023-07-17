@@ -712,6 +712,48 @@ HYBRID_PAID:
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * @return ModelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * 
+                     */
+                    bool GetModelTurboEnable() const;
+
+                    /**
+                     * 设置是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * @param _modelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * 
+                     */
+                    void SetModelTurboEnable(const bool& _modelTurboEnable);
+
+                    /**
+                     * 判断参数 ModelTurboEnable 是否已赋值
+                     * @return ModelTurboEnable 是否已赋值
+                     * 
+                     */
+                    bool ModelTurboEnableHasBeenSet() const;
+
+                    /**
+                     * 获取服务分类
+                     * @return ServiceCategory 服务分类
+                     * 
+                     */
+                    std::string GetServiceCategory() const;
+
+                    /**
+                     * 设置服务分类
+                     * @param _serviceCategory 服务分类
+                     * 
+                     */
+                    void SetServiceCategory(const std::string& _serviceCategory);
+
+                    /**
+                     * 判断参数 ServiceCategory 是否已赋值
+                     * @return ServiceCategory 是否已赋值
+                     * 
+                     */
+                    bool ServiceCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -898,6 +940,18 @@ HYBRID_PAID:
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     */
+                    bool m_modelTurboEnable;
+                    bool m_modelTurboEnableHasBeenSet;
+
+                    /**
+                     * 服务分类
+                     */
+                    std::string m_serviceCategory;
+                    bool m_serviceCategoryHasBeenSet;
 
                 };
             }

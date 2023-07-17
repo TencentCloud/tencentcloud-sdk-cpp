@@ -1076,7 +1076,7 @@ namespace TencentCloud
                 ListEventHistoryOutcomeCallable ListEventHistoryCallable(const Model::ListEventHistoryRequest& request);
 
                 /**
-                 *本接口（ListFirmwares）用于获取固件列表 
+                 *本接口（ListFirmwares）用于获取固件列表
                  * @param req ListFirmwaresRequest
                  * @return ListFirmwaresOutcome
                  */

@@ -51,6 +51,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobSubmissionLogResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsRequest.h>
@@ -131,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobSavepointResponse> DescribeJobSavepointOutcome;
                 typedef std::future<DescribeJobSavepointOutcome> DescribeJobSavepointOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobSavepointRequest&, DescribeJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSavepointAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobSubmissionLogResponse> DescribeJobSubmissionLogOutcome;
+                typedef std::future<DescribeJobSubmissionLogOutcome> DescribeJobSubmissionLogOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobSubmissionLogRequest&, DescribeJobSubmissionLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSubmissionLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobsResponse> DescribeJobsOutcome;
                 typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobsRequest&, DescribeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsAsyncHandler;
@@ -295,6 +300,15 @@ namespace TencentCloud
                 DescribeJobSavepointOutcome DescribeJobSavepoint(const Model::DescribeJobSavepointRequest &request);
                 void DescribeJobSavepointAsync(const Model::DescribeJobSavepointRequest& request, const DescribeJobSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeJobSavepointOutcomeCallable DescribeJobSavepointCallable(const Model::DescribeJobSavepointRequest& request);
+
+                /**
+                 *查询作业实例启动日志
+                 * @param req DescribeJobSubmissionLogRequest
+                 * @return DescribeJobSubmissionLogOutcome
+                 */
+                DescribeJobSubmissionLogOutcome DescribeJobSubmissionLog(const Model::DescribeJobSubmissionLogRequest &request);
+                void DescribeJobSubmissionLogAsync(const Model::DescribeJobSubmissionLogRequest& request, const DescribeJobSubmissionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobSubmissionLogOutcomeCallable DescribeJobSubmissionLogCallable(const Model::DescribeJobSubmissionLogRequest& request);
 
                 /**
                  *查询作业

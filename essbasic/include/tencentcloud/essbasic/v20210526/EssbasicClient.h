@@ -51,6 +51,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h>
@@ -169,6 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateMultiFlowSignQRCodeResponse> ChannelCreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<ChannelCreateMultiFlowSignQRCodeOutcome> ChannelCreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateMultiFlowSignQRCodeRequest&, ChannelCreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateOrganizationModifyQrCodeResponse> ChannelCreateOrganizationModifyQrCodeOutcome;
+                typedef std::future<ChannelCreateOrganizationModifyQrCodeOutcome> ChannelCreateOrganizationModifyQrCodeOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateOrganizationModifyQrCodeRequest&, ChannelCreateOrganizationModifyQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateOrganizationModifyQrCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreatePrepareFlowResponse> ChannelCreatePrepareFlowOutcome;
                 typedef std::future<ChannelCreatePrepareFlowOutcome> ChannelCreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreatePrepareFlowRequest&, ChannelCreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreatePrepareFlowAsyncHandler;
@@ -426,6 +431,15 @@ namespace TencentCloud
                 ChannelCreateMultiFlowSignQRCodeOutcome ChannelCreateMultiFlowSignQRCode(const Model::ChannelCreateMultiFlowSignQRCodeRequest &request);
                 void ChannelCreateMultiFlowSignQRCodeAsync(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request, const ChannelCreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateMultiFlowSignQRCodeOutcomeCallable ChannelCreateMultiFlowSignQRCodeCallable(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request);
+
+                /**
+                 *生成渠道子客编辑企业信息二维码
+                 * @param req ChannelCreateOrganizationModifyQrCodeRequest
+                 * @return ChannelCreateOrganizationModifyQrCodeOutcome
+                 */
+                ChannelCreateOrganizationModifyQrCodeOutcome ChannelCreateOrganizationModifyQrCode(const Model::ChannelCreateOrganizationModifyQrCodeRequest &request);
+                void ChannelCreateOrganizationModifyQrCodeAsync(const Model::ChannelCreateOrganizationModifyQrCodeRequest& request, const ChannelCreateOrganizationModifyQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateOrganizationModifyQrCodeOutcomeCallable ChannelCreateOrganizationModifyQrCodeCallable(const Model::ChannelCreateOrganizationModifyQrCodeRequest& request);
 
                 /**
                  *创建预发起合同

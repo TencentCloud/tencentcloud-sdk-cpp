@@ -171,6 +171,38 @@ namespace TencentCloud
                      */
                     bool OriginalVersionHasBeenSet() const;
 
+                    /**
+                     * 获取创建账号ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateUserId 创建账号ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateUserId() const;
+
+                    /**
+                     * 判断参数 CreateUserId 是否已赋值
+                     * @return CreateUserId 是否已赋值
+                     * 
+                     */
+                    bool CreateUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取创建账号ID昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorNickName 创建账号ID昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatorNickName() const;
+
+                    /**
+                     * 判断参数 CreatorNickName 是否已赋值
+                     * @return CreatorNickName 是否已赋值
+                     * 
+                     */
+                    bool CreatorNickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -228,6 +260,20 @@ namespace TencentCloud
                      */
                     std::string m_originalVersion;
                     bool m_originalVersionHasBeenSet;
+
+                    /**
+                     * 创建账号ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createUserId;
+                    bool m_createUserIdHasBeenSet;
+
+                    /**
+                     * 创建账号ID昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorNickName;
+                    bool m_creatorNickNameHasBeenSet;
 
                 };
             }

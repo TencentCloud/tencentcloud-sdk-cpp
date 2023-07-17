@@ -246,6 +246,31 @@ namespace TencentCloud
                      */
                     bool PipelineArgsHasBeenSet() const;
 
+                    /**
+                     * 获取Stable Diffusion 模型优化参数，控制Lora模型的影响效果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoraScale Stable Diffusion 模型优化参数，控制Lora模型的影响效果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLoraScale() const;
+
+                    /**
+                     * 设置Stable Diffusion 模型优化参数，控制Lora模型的影响效果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _loraScale Stable Diffusion 模型优化参数，控制Lora模型的影响效果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLoraScale(const std::string& _loraScale);
+
+                    /**
+                     * 判断参数 LoraScale 是否已赋值
+                     * @return LoraScale 是否已赋值
+                     * 
+                     */
+                    bool LoraScaleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     std::string m_pipelineArgs;
                     bool m_pipelineArgsHasBeenSet;
+
+                    /**
+                     * Stable Diffusion 模型优化参数，控制Lora模型的影响效果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loraScale;
+                    bool m_loraScaleHasBeenSet;
 
                 };
             }

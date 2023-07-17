@@ -792,6 +792,31 @@ namespace TencentCloud
                     bool RdmaIpAddressesHasBeenSet() const;
 
                     /**
+                     * 获取实例所在的专用集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DedicatedClusterId 实例所在的专用集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置实例所在的专用集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dedicatedClusterId 实例所在的专用集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     * 
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolatedSource 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
@@ -1160,6 +1185,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_rdmaIpAddresses;
                     bool m_rdmaIpAddressesHasBeenSet;
+
+                    /**
+                     * 实例所在的专用集群`ID`。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
                      * 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>

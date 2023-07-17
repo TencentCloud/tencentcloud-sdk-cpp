@@ -28,7 +28,8 @@ HyperParameter::HyperParameter() :
     m_enableDistributedHasBeenSet(false),
     m_minBlockSizePtHasBeenSet(false),
     m_minBlockSizeTfHasBeenSet(false),
-    m_pipelineArgsHasBeenSet(false)
+    m_pipelineArgsHasBeenSet(false),
+    m_loraScaleHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome HyperParameter::Deserialize(const rapidjson::Value &value)
         m_pipelineArgsHasBeenSet = true;
     }
 
+    if (value.HasMember("LoraScale") && !value["LoraScale"].IsNull())
+    {
+        if (!value["LoraScale"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HyperParameter.LoraScale` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loraScale = string(value["LoraScale"].GetString());
+        m_loraScaleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void HyperParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PipelineArgs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pipelineArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loraScaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraScale";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loraScale.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void HyperParameter::SetPipelineArgs(const string& _pipelineArgs)
 bool HyperParameter::PipelineArgsHasBeenSet() const
 {
     return m_pipelineArgsHasBeenSet;
+}
+
+string HyperParameter::GetLoraScale() const
+{
+    return m_loraScale;
+}
+
+void HyperParameter::SetLoraScale(const string& _loraScale)
+{
+    m_loraScale = _loraScale;
+    m_loraScaleHasBeenSet = true;
+}
+
+bool HyperParameter::LoraScaleHasBeenSet() const
+{
+    return m_loraScaleHasBeenSet;
 }
 

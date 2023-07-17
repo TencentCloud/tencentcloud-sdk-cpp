@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
-                     * @return ResourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * 获取待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     * @return ResourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
-                     * @param _resourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * 设置待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     * @param _resourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -154,18 +154,18 @@ namespace TencentCloud
 
                     /**
                      * 获取货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * @return Currency 货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * @param _currency 货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * 
                      */
                     void SetCurrency(const std::string& _currency);
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。
+                     * 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
@@ -233,7 +233,7 @@ namespace TencentCloud
 
                     /**
                      * 货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;

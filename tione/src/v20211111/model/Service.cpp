@@ -25,31 +25,31 @@ Service::Service() :
     m_serviceIdHasBeenSet(false),
     m_serviceGroupNameHasBeenSet(false),
     m_serviceDescriptionHasBeenSet(false),
+    m_serviceInfoHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_ingressNameHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subUinHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_latestVersionHasBeenSet(false),
-    m_serviceInfoHasBeenSet(false),
     m_businessStatusHasBeenSet(false),
-    m_createSourceHasBeenSet(false),
-    m_billingInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_weightHasBeenSet(false),
-    m_ingressNameHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
     m_scheduledActionHasBeenSet(false),
     m_createFailedReasonHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_billingInfoHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_createSourceHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_latestVersionHasBeenSet(false)
 {
 }
 
@@ -96,6 +96,23 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         }
         m_serviceDescription = string(value["ServiceDescription"].GetString());
         m_serviceDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceInfo") && !value["ServiceInfo"].IsNull())
+    {
+        if (!value["ServiceInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ServiceInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serviceInfo.Deserialize(value["ServiceInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serviceInfoHasBeenSet = true;
     }
 
     if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
@@ -146,6 +163,46 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         }
         m_resourceGroupId = string(value["ResourceGroupId"].GetString());
         m_resourceGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    {
+        if (!value["ResourceGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
+        m_resourceGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Service.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IngressName") && !value["IngressName"].IsNull())
+    {
+        if (!value["IngressName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.IngressName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ingressName = string(value["IngressName"].GetString());
+        m_ingressNameHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedBy") && !value["CreatedBy"].IsNull())
@@ -208,43 +265,6 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Version") && !value["Version"].IsNull())
-    {
-        if (!value["Version"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.Version` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_version = string(value["Version"].GetString());
-        m_versionHasBeenSet = true;
-    }
-
-    if (value.HasMember("LatestVersion") && !value["LatestVersion"].IsNull())
-    {
-        if (!value["LatestVersion"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.LatestVersion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_latestVersion = string(value["LatestVersion"].GetString());
-        m_latestVersionHasBeenSet = true;
-    }
-
-    if (value.HasMember("ServiceInfo") && !value["ServiceInfo"].IsNull())
-    {
-        if (!value["ServiceInfo"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.ServiceInfo` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_serviceInfo.Deserialize(value["ServiceInfo"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_serviceInfoHasBeenSet = true;
-    }
-
     if (value.HasMember("BusinessStatus") && !value["BusinessStatus"].IsNull())
     {
         if (!value["BusinessStatus"].IsString())
@@ -253,56 +273,6 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         }
         m_businessStatus = string(value["BusinessStatus"].GetString());
         m_businessStatusHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreateSource") && !value["CreateSource"].IsNull())
-    {
-        if (!value["CreateSource"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.CreateSource` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createSource = string(value["CreateSource"].GetString());
-        m_createSourceHasBeenSet = true;
-    }
-
-    if (value.HasMember("BillingInfo") && !value["BillingInfo"].IsNull())
-    {
-        if (!value["BillingInfo"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.BillingInfo` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_billingInfo = string(value["BillingInfo"].GetString());
-        m_billingInfoHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(value["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
-
-    if (value.HasMember("Weight") && !value["Weight"].IsNull())
-    {
-        if (!value["Weight"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_weight = value["Weight"].GetInt64();
-        m_weightHasBeenSet = true;
-    }
-
-    if (value.HasMember("IngressName") && !value["IngressName"].IsNull())
-    {
-        if (!value["IngressName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Service.IngressName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ingressName = string(value["IngressName"].GetString());
-        m_ingressNameHasBeenSet = true;
     }
 
     if (value.HasMember("ServiceLimit") && !value["ServiceLimit"].IsNull())
@@ -349,34 +319,64 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_createFailedReasonHasBeenSet = true;
     }
 
-    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    if (value.HasMember("Status") && !value["Status"].IsNull())
     {
-        if (!value["ResourceGroupName"].IsString())
+        if (!value["Status"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Service.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Service.Status` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
-        m_resourceGroupNameHasBeenSet = true;
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
     }
 
-    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    if (value.HasMember("BillingInfo") && !value["BillingInfo"].IsNull())
     {
-        if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Service.Tags` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Tags"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["BillingInfo"].IsString())
         {
-            Tag item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_tags.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Service.BillingInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_tagsHasBeenSet = true;
+        m_billingInfo = string(value["BillingInfo"].GetString());
+        m_billingInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetInt64();
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateSource") && !value["CreateSource"].IsNull())
+    {
+        if (!value["CreateSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.CreateSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createSource = string(value["CreateSource"].GetString());
+        m_createSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestVersion") && !value["LatestVersion"].IsNull())
+    {
+        if (!value["LatestVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.LatestVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestVersion = string(value["LatestVersion"].GetString());
+        m_latestVersionHasBeenSet = true;
     }
 
 
@@ -418,6 +418,15 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_serviceDescription.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_serviceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -456,6 +465,37 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ResourceGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ingressNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IngressName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ingressName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdByHasBeenSet)
@@ -506,77 +546,12 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, m_appId, allocator);
     }
 
-    if (m_versionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Version";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_latestVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LatestVersion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_latestVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_serviceInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceInfo";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_serviceInfo.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_businessStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_businessStatus.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_createSourceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateSource";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createSource.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_billingInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BillingInfo";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_billingInfo.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_weightHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Weight";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_weight, allocator);
-    }
-
-    if (m_ingressNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IngressName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ingressName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceLimitHasBeenSet)
@@ -605,27 +580,52 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_createFailedReason.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_resourceGroupNameHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceGroupName";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_tagsHasBeenSet)
+    if (m_billingInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
+        string key = "BillingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingInfo.c_str(), allocator).Move(), allocator);
+    }
 
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_createSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -693,6 +693,22 @@ void Service::SetServiceDescription(const string& _serviceDescription)
 bool Service::ServiceDescriptionHasBeenSet() const
 {
     return m_serviceDescriptionHasBeenSet;
+}
+
+ServiceInfo Service::GetServiceInfo() const
+{
+    return m_serviceInfo;
+}
+
+void Service::SetServiceInfo(const ServiceInfo& _serviceInfo)
+{
+    m_serviceInfo = _serviceInfo;
+    m_serviceInfoHasBeenSet = true;
+}
+
+bool Service::ServiceInfoHasBeenSet() const
+{
+    return m_serviceInfoHasBeenSet;
 }
 
 string Service::GetClusterId() const
@@ -773,6 +789,54 @@ void Service::SetResourceGroupId(const string& _resourceGroupId)
 bool Service::ResourceGroupIdHasBeenSet() const
 {
     return m_resourceGroupIdHasBeenSet;
+}
+
+string Service::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void Service::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool Service::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
+}
+
+vector<Tag> Service::GetTags() const
+{
+    return m_tags;
+}
+
+void Service::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Service::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string Service::GetIngressName() const
+{
+    return m_ingressName;
+}
+
+void Service::SetIngressName(const string& _ingressName)
+{
+    m_ingressName = _ingressName;
+    m_ingressNameHasBeenSet = true;
+}
+
+bool Service::IngressNameHasBeenSet() const
+{
+    return m_ingressNameHasBeenSet;
 }
 
 string Service::GetCreatedBy() const
@@ -871,54 +935,6 @@ bool Service::AppIdHasBeenSet() const
     return m_appIdHasBeenSet;
 }
 
-string Service::GetVersion() const
-{
-    return m_version;
-}
-
-void Service::SetVersion(const string& _version)
-{
-    m_version = _version;
-    m_versionHasBeenSet = true;
-}
-
-bool Service::VersionHasBeenSet() const
-{
-    return m_versionHasBeenSet;
-}
-
-string Service::GetLatestVersion() const
-{
-    return m_latestVersion;
-}
-
-void Service::SetLatestVersion(const string& _latestVersion)
-{
-    m_latestVersion = _latestVersion;
-    m_latestVersionHasBeenSet = true;
-}
-
-bool Service::LatestVersionHasBeenSet() const
-{
-    return m_latestVersionHasBeenSet;
-}
-
-ServiceInfo Service::GetServiceInfo() const
-{
-    return m_serviceInfo;
-}
-
-void Service::SetServiceInfo(const ServiceInfo& _serviceInfo)
-{
-    m_serviceInfo = _serviceInfo;
-    m_serviceInfoHasBeenSet = true;
-}
-
-bool Service::ServiceInfoHasBeenSet() const
-{
-    return m_serviceInfoHasBeenSet;
-}
-
 string Service::GetBusinessStatus() const
 {
     return m_businessStatus;
@@ -933,86 +949,6 @@ void Service::SetBusinessStatus(const string& _businessStatus)
 bool Service::BusinessStatusHasBeenSet() const
 {
     return m_businessStatusHasBeenSet;
-}
-
-string Service::GetCreateSource() const
-{
-    return m_createSource;
-}
-
-void Service::SetCreateSource(const string& _createSource)
-{
-    m_createSource = _createSource;
-    m_createSourceHasBeenSet = true;
-}
-
-bool Service::CreateSourceHasBeenSet() const
-{
-    return m_createSourceHasBeenSet;
-}
-
-string Service::GetBillingInfo() const
-{
-    return m_billingInfo;
-}
-
-void Service::SetBillingInfo(const string& _billingInfo)
-{
-    m_billingInfo = _billingInfo;
-    m_billingInfoHasBeenSet = true;
-}
-
-bool Service::BillingInfoHasBeenSet() const
-{
-    return m_billingInfoHasBeenSet;
-}
-
-string Service::GetStatus() const
-{
-    return m_status;
-}
-
-void Service::SetStatus(const string& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool Service::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-int64_t Service::GetWeight() const
-{
-    return m_weight;
-}
-
-void Service::SetWeight(const int64_t& _weight)
-{
-    m_weight = _weight;
-    m_weightHasBeenSet = true;
-}
-
-bool Service::WeightHasBeenSet() const
-{
-    return m_weightHasBeenSet;
-}
-
-string Service::GetIngressName() const
-{
-    return m_ingressName;
-}
-
-void Service::SetIngressName(const string& _ingressName)
-{
-    m_ingressName = _ingressName;
-    m_ingressNameHasBeenSet = true;
-}
-
-bool Service::IngressNameHasBeenSet() const
-{
-    return m_ingressNameHasBeenSet;
 }
 
 ServiceLimit Service::GetServiceLimit() const
@@ -1063,35 +999,99 @@ bool Service::CreateFailedReasonHasBeenSet() const
     return m_createFailedReasonHasBeenSet;
 }
 
-string Service::GetResourceGroupName() const
+string Service::GetStatus() const
 {
-    return m_resourceGroupName;
+    return m_status;
 }
 
-void Service::SetResourceGroupName(const string& _resourceGroupName)
+void Service::SetStatus(const string& _status)
 {
-    m_resourceGroupName = _resourceGroupName;
-    m_resourceGroupNameHasBeenSet = true;
+    m_status = _status;
+    m_statusHasBeenSet = true;
 }
 
-bool Service::ResourceGroupNameHasBeenSet() const
+bool Service::StatusHasBeenSet() const
 {
-    return m_resourceGroupNameHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
-vector<Tag> Service::GetTags() const
+string Service::GetBillingInfo() const
 {
-    return m_tags;
+    return m_billingInfo;
 }
 
-void Service::SetTags(const vector<Tag>& _tags)
+void Service::SetBillingInfo(const string& _billingInfo)
 {
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
+    m_billingInfo = _billingInfo;
+    m_billingInfoHasBeenSet = true;
 }
 
-bool Service::TagsHasBeenSet() const
+bool Service::BillingInfoHasBeenSet() const
 {
-    return m_tagsHasBeenSet;
+    return m_billingInfoHasBeenSet;
+}
+
+int64_t Service::GetWeight() const
+{
+    return m_weight;
+}
+
+void Service::SetWeight(const int64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool Service::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+string Service::GetCreateSource() const
+{
+    return m_createSource;
+}
+
+void Service::SetCreateSource(const string& _createSource)
+{
+    m_createSource = _createSource;
+    m_createSourceHasBeenSet = true;
+}
+
+bool Service::CreateSourceHasBeenSet() const
+{
+    return m_createSourceHasBeenSet;
+}
+
+string Service::GetVersion() const
+{
+    return m_version;
+}
+
+void Service::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool Service::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string Service::GetLatestVersion() const
+{
+    return m_latestVersion;
+}
+
+void Service::SetLatestVersion(const string& _latestVersion)
+{
+    m_latestVersion = _latestVersion;
+    m_latestVersionHasBeenSet = true;
+}
+
+bool Service::LatestVersionHasBeenSet() const
+{
+    return m_latestVersionHasBeenSet;
 }
 

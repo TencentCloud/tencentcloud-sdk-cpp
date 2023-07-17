@@ -31,7 +31,9 @@ DescribeFirmwareTaskResponse::DescribeFirmwareTaskResponse() :
     m_productNameHasBeenSet(false),
     m_upgradeModeHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_originalVersionHasBeenSet(false)
+    m_originalVersionHasBeenSet(false),
+    m_createUserIdHasBeenSet(false),
+    m_creatorNickNameHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
         m_originalVersionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateUserId") && !rsp["CreateUserId"].IsNull())
+    {
+        if (!rsp["CreateUserId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateUserId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUserId = rsp["CreateUserId"].GetUint64();
+        m_createUserIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreatorNickName") && !rsp["CreatorNickName"].IsNull())
+    {
+        if (!rsp["CreatorNickName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreatorNickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorNickName = string(rsp["CreatorNickName"].GetString());
+        m_creatorNickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ string DescribeFirmwareTaskResponse::ToJsonString() const
         string key = "OriginalVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originalVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createUserId, allocator);
+    }
+
+    if (m_creatorNickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorNickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +351,26 @@ string DescribeFirmwareTaskResponse::GetOriginalVersion() const
 bool DescribeFirmwareTaskResponse::OriginalVersionHasBeenSet() const
 {
     return m_originalVersionHasBeenSet;
+}
+
+uint64_t DescribeFirmwareTaskResponse::GetCreateUserId() const
+{
+    return m_createUserId;
+}
+
+bool DescribeFirmwareTaskResponse::CreateUserIdHasBeenSet() const
+{
+    return m_createUserIdHasBeenSet;
+}
+
+string DescribeFirmwareTaskResponse::GetCreatorNickName() const
+{
+    return m_creatorNickName;
+}
+
+bool DescribeFirmwareTaskResponse::CreatorNickNameHasBeenSet() const
+{
+    return m_creatorNickNameHasBeenSet;
 }
 
 

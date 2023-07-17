@@ -54,6 +54,7 @@ Instance::Instance() :
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_rdmaIpAddressesHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false),
     m_isolatedSourceHasBeenSet(false),
     m_gPUInfoHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
@@ -469,6 +470,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_rdmaIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("DedicatedClusterId") && !value["DedicatedClusterId"].IsNull())
+    {
+        if (!value["DedicatedClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.DedicatedClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dedicatedClusterId = string(value["DedicatedClusterId"].GetString());
+        m_dedicatedClusterIdHasBeenSet = true;
+    }
+
     if (value.HasMember("IsolatedSource") && !value["IsolatedSource"].IsNull())
     {
         if (!value["IsolatedSource"].IsString())
@@ -859,6 +870,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isolatedSourceHasBeenSet)
@@ -1447,6 +1466,22 @@ void Instance::SetRdmaIpAddresses(const vector<string>& _rdmaIpAddresses)
 bool Instance::RdmaIpAddressesHasBeenSet() const
 {
     return m_rdmaIpAddressesHasBeenSet;
+}
+
+string Instance::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void Instance::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool Instance::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
 }
 
 string Instance::GetIsolatedSource() const

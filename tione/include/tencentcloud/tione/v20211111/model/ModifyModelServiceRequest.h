@@ -564,6 +564,27 @@ HYBRID_PAID:
                      */
                     bool VolumeMountHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启
+                     * @return ModelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启
+                     * 
+                     */
+                    bool GetModelTurboEnable() const;
+
+                    /**
+                     * 设置是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启
+                     * @param _modelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启
+                     * 
+                     */
+                    void SetModelTurboEnable(const bool& _modelTurboEnable);
+
+                    /**
+                     * 判断参数 ModelTurboEnable 是否已赋值
+                     * @return ModelTurboEnable 是否已赋值
+                     * 
+                     */
+                    bool ModelTurboEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -708,6 +729,12 @@ HYBRID_PAID:
                      */
                     VolumeMount m_volumeMount;
                     bool m_volumeMountHasBeenSet;
+
+                    /**
+                     * 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启
+                     */
+                    bool m_modelTurboEnable;
+                    bool m_modelTurboEnableHasBeenSet;
 
                 };
             }

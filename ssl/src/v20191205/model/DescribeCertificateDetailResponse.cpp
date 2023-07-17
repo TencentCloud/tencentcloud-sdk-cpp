@@ -63,7 +63,8 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_encryptPrivateKeyHasBeenSet(false),
     m_certFingerprintHasBeenSet(false),
     m_encryptCertFingerprintHasBeenSet(false),
-    m_encryptAlgorithmHasBeenSet(false)
+    m_encryptAlgorithmHasBeenSet(false),
+    m_dvRevokeAuthDetailHasBeenSet(false)
 {
 }
 
@@ -542,6 +543,26 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_encryptAlgorithmHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DvRevokeAuthDetail") && !rsp["DvRevokeAuthDetail"].IsNull())
+    {
+        if (!rsp["DvRevokeAuthDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DvRevokeAuthDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DvRevokeAuthDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DvAuths item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dvRevokeAuthDetail.push_back(item);
+        }
+        m_dvRevokeAuthDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -886,6 +907,21 @@ string DescribeCertificateDetailResponse::ToJsonString() const
         string key = "EncryptAlgorithm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dvRevokeAuthDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DvRevokeAuthDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dvRevokeAuthDetail.begin(); itr != m_dvRevokeAuthDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1298,6 +1334,16 @@ string DescribeCertificateDetailResponse::GetEncryptAlgorithm() const
 bool DescribeCertificateDetailResponse::EncryptAlgorithmHasBeenSet() const
 {
     return m_encryptAlgorithmHasBeenSet;
+}
+
+vector<DvAuths> DescribeCertificateDetailResponse::GetDvRevokeAuthDetail() const
+{
+    return m_dvRevokeAuthDetail;
+}
+
+bool DescribeCertificateDetailResponse::DvRevokeAuthDetailHasBeenSet() const
+{
+    return m_dvRevokeAuthDetailHasBeenSet;
 }
 
 

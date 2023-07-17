@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取聚合ID, 可通过接口DescribeBackups获取
-                     * @return GroupId 聚合ID, 可通过接口DescribeBackups获取
+                     * 获取单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）
+                     * @return GroupId 单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置聚合ID, 可通过接口DescribeBackups获取
-                     * @param _groupId 聚合ID, 可通过接口DescribeBackups获取
+                     * 设置单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）
+                     * @param _groupId 单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 聚合ID, 可通过接口DescribeBackups获取
+                     * 单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

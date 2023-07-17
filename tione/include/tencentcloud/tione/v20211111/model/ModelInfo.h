@@ -227,6 +227,31 @@ namespace TencentCloud
                      */
                     bool ModelTypeHasBeenSet() const;
 
+                    /**
+                     * 获取模型格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelFormat 模型格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModelFormat() const;
+
+                    /**
+                     * 设置模型格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modelFormat 模型格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModelFormat(const std::string& _modelFormat);
+
+                    /**
+                     * 判断参数 ModelFormat 是否已赋值
+                     * @return ModelFormat 是否已赋值
+                     * 
+                     */
+                    bool ModelFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +304,13 @@ namespace TencentCloud
                      */
                     std::string m_modelType;
                     bool m_modelTypeHasBeenSet;
+
+                    /**
+                     * 模型格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modelFormat;
+                    bool m_modelFormatHasBeenSet;
 
                 };
             }

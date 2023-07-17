@@ -31,8 +31,8 @@
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h>
 #include <tencentcloud/tione/v20211111/model/WorkloadStatus.h>
-#include <tencentcloud/tione/v20211111/model/Pod.h>
 #include <tencentcloud/tione/v20211111/model/CronScaleJob.h>
+#include <tencentcloud/tione/v20211111/model/Pod.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 
 
@@ -535,6 +535,110 @@ HYBRID_PAID:
                     bool ModelHotUpdateEnableHasBeenSet() const;
 
                     /**
+                     * 获取实例数量调节方式,默认为手动
+支持：自动 - "AUTO", 手动 - "MANUAL"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScaleMode 实例数量调节方式,默认为手动
+支持：自动 - "AUTO", 手动 - "MANUAL"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScaleMode() const;
+
+                    /**
+                     * 设置实例数量调节方式,默认为手动
+支持：自动 - "AUTO", 手动 - "MANUAL"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scaleMode 实例数量调节方式,默认为手动
+支持：自动 - "AUTO", 手动 - "MANUAL"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScaleMode(const std::string& _scaleMode);
+
+                    /**
+                     * 判断参数 ScaleMode 是否已赋值
+                     * @return ScaleMode 是否已赋值
+                     * 
+                     */
+                    bool ScaleModeHasBeenSet() const;
+
+                    /**
+                     * 获取定时伸缩任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CronScaleJobs 定时伸缩任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CronScaleJob> GetCronScaleJobs() const;
+
+                    /**
+                     * 设置定时伸缩任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cronScaleJobs 定时伸缩任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCronScaleJobs(const std::vector<CronScaleJob>& _cronScaleJobs);
+
+                    /**
+                     * 判断参数 CronScaleJobs 是否已赋值
+                     * @return CronScaleJobs 是否已赋值
+                     * 
+                     */
+                    bool CronScaleJobsHasBeenSet() const;
+
+                    /**
+                     * 获取定时伸缩策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScaleStrategy 定时伸缩策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScaleStrategy() const;
+
+                    /**
+                     * 设置定时伸缩策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scaleStrategy 定时伸缩策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScaleStrategy(const std::string& _scaleStrategy);
+
+                    /**
+                     * 判断参数 ScaleStrategy 是否已赋值
+                     * @return ScaleStrategy 是否已赋值
+                     * 
+                     */
+                    bool ScaleStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取定时停止的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduledAction 定时停止的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduledAction() const;
+
+                    /**
+                     * 设置定时停止的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduledAction 定时停止的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduledAction(const std::string& _scheduledAction);
+
+                    /**
+                     * 判断参数 ScheduledAction 是否已赋值
+                     * @return ScheduledAction 是否已赋值
+                     * 
+                     */
+                    bool ScheduledActionHasBeenSet() const;
+
+                    /**
                      * 获取Pod列表信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pods Pod列表信息
@@ -585,85 +689,6 @@ HYBRID_PAID:
                     bool PodInfosHasBeenSet() const;
 
                     /**
-                     * 获取定时伸缩策略
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScaleStrategy 定时伸缩策略
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetScaleStrategy() const;
-
-                    /**
-                     * 设置定时伸缩策略
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scaleStrategy 定时伸缩策略
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetScaleStrategy(const std::string& _scaleStrategy);
-
-                    /**
-                     * 判断参数 ScaleStrategy 是否已赋值
-                     * @return ScaleStrategy 是否已赋值
-                     * 
-                     */
-                    bool ScaleStrategyHasBeenSet() const;
-
-                    /**
-                     * 获取定时伸缩任务
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CronScaleJobs 定时伸缩任务
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<CronScaleJob> GetCronScaleJobs() const;
-
-                    /**
-                     * 设置定时伸缩任务
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cronScaleJobs 定时伸缩任务
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCronScaleJobs(const std::vector<CronScaleJob>& _cronScaleJobs);
-
-                    /**
-                     * 判断参数 CronScaleJobs 是否已赋值
-                     * @return CronScaleJobs 是否已赋值
-                     * 
-                     */
-                    bool CronScaleJobsHasBeenSet() const;
-
-                    /**
-                     * 获取实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScaleMode 实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetScaleMode() const;
-
-                    /**
-                     * 设置实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scaleMode 实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetScaleMode(const std::string& _scaleMode);
-
-                    /**
-                     * 判断参数 ScaleMode 是否已赋值
-                     * @return ScaleMode 是否已赋值
-                     * 
-                     */
-                    bool ScaleModeHasBeenSet() const;
-
-                    /**
                      * 获取服务限速限流相关配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceLimit 服务限速限流相关配置
@@ -689,29 +714,29 @@ HYBRID_PAID:
                     bool ServiceLimitHasBeenSet() const;
 
                     /**
-                     * 获取定时停止的配置
+                     * 获取是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduledAction 定时停止的配置
+                     * @return ModelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetScheduledAction() const;
+                    bool GetModelTurboEnable() const;
 
                     /**
-                     * 设置定时停止的配置
+                     * 设置是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduledAction 定时停止的配置
+                     * @param _modelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetScheduledAction(const std::string& _scheduledAction);
+                    void SetModelTurboEnable(const bool& _modelTurboEnable);
 
                     /**
-                     * 判断参数 ScheduledAction 是否已赋值
-                     * @return ScheduledAction 是否已赋值
+                     * 判断参数 ModelTurboEnable 是否已赋值
+                     * @return ModelTurboEnable 是否已赋值
                      * 
                      */
-                    bool ScheduledActionHasBeenSet() const;
+                    bool ModelTurboEnableHasBeenSet() const;
 
                 private:
 
@@ -849,6 +874,35 @@ HYBRID_PAID:
                     bool m_modelHotUpdateEnableHasBeenSet;
 
                     /**
+                     * 实例数量调节方式,默认为手动
+支持：自动 - "AUTO", 手动 - "MANUAL"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scaleMode;
+                    bool m_scaleModeHasBeenSet;
+
+                    /**
+                     * 定时伸缩任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CronScaleJob> m_cronScaleJobs;
+                    bool m_cronScaleJobsHasBeenSet;
+
+                    /**
+                     * 定时伸缩策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scaleStrategy;
+                    bool m_scaleStrategyHasBeenSet;
+
+                    /**
+                     * 定时停止的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduledAction;
+                    bool m_scheduledActionHasBeenSet;
+
+                    /**
                      * Pod列表信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -863,28 +917,6 @@ HYBRID_PAID:
                     bool m_podInfosHasBeenSet;
 
                     /**
-                     * 定时伸缩策略
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_scaleStrategy;
-                    bool m_scaleStrategyHasBeenSet;
-
-                    /**
-                     * 定时伸缩任务
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<CronScaleJob> m_cronScaleJobs;
-                    bool m_cronScaleJobsHasBeenSet;
-
-                    /**
-                     * 实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_scaleMode;
-                    bool m_scaleModeHasBeenSet;
-
-                    /**
                      * 服务限速限流相关配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -892,11 +924,11 @@ HYBRID_PAID:
                     bool m_serviceLimitHasBeenSet;
 
                     /**
-                     * 定时停止的配置
+                     * 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_scheduledAction;
-                    bool m_scheduledActionHasBeenSet;
+                    bool m_modelTurboEnable;
+                    bool m_modelTurboEnableHasBeenSet;
 
                 };
             }

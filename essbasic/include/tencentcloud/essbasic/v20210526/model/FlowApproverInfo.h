@@ -368,19 +368,31 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
-HANDWRITE -手写签名
-                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
-HANDWRITE -手写签名
+                     * 获取	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+	HANDWRITE – 手写签名
+	OCR_ESIGN -- AI智能识别手写签名
+	ESIGN -- 个人印章类型
+	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
+                     * @return ComponentLimitType 	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+	HANDWRITE – 手写签名
+	OCR_ESIGN -- AI智能识别手写签名
+	ESIGN -- 个人印章类型
+	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
                      * 
                      */
                     std::vector<std::string> GetComponentLimitType() const;
 
                     /**
-                     * 设置个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
-HANDWRITE -手写签名
-                     * @param _componentLimitType 个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
-HANDWRITE -手写签名
+                     * 设置	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+	HANDWRITE – 手写签名
+	OCR_ESIGN -- AI智能识别手写签名
+	ESIGN -- 个人印章类型
+	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
+                     * @param _componentLimitType 	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+	HANDWRITE – 手写签名
+	OCR_ESIGN -- AI智能识别手写签名
+	ESIGN -- 个人印章类型
+	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
                      * 
                      */
                     void SetComponentLimitType(const std::vector<std::string>& _componentLimitType);
@@ -670,8 +682,11 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
-HANDWRITE -手写签名
+                     * 	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+	HANDWRITE – 手写签名
+	OCR_ESIGN -- AI智能识别手写签名
+	ESIGN -- 个人印章类型
+	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
                      */
                     std::vector<std::string> m_componentLimitType;
                     bool m_componentLimitTypeHasBeenSet;

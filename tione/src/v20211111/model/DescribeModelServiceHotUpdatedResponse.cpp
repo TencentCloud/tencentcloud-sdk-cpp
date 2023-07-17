@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-DescribeModelServiceHotUpdatedResponse::DescribeModelServiceHotUpdatedResponse()
+DescribeModelServiceHotUpdatedResponse::DescribeModelServiceHotUpdatedResponse() :
+    m_modelTurboFlagHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DescribeModelServiceHotUpdatedResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("ModelTurboFlag") && !rsp["ModelTurboFlag"].IsNull())
+    {
+        if (!rsp["ModelTurboFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelTurboFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelTurboFlag = string(rsp["ModelTurboFlag"].GetString());
+        m_modelTurboFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string DescribeModelServiceHotUpdatedResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_modelTurboFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelTurboFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelTurboFlag.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeModelServiceHotUpdatedResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeModelServiceHotUpdatedResponse::GetModelTurboFlag() const
+{
+    return m_modelTurboFlag;
+}
+
+bool DescribeModelServiceHotUpdatedResponse::ModelTurboFlagHasBeenSet() const
+{
+    return m_modelTurboFlagHasBeenSet;
+}
 
 

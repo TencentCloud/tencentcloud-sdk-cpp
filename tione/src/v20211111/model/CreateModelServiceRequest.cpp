@@ -49,7 +49,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_scheduledActionHasBeenSet(false),
     m_volumeMountHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_modelTurboEnableHasBeenSet(false),
+    m_serviceCategoryHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,22 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelTurboEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelTurboEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modelTurboEnable, allocator);
+    }
+
+    if (m_serviceCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -743,6 +761,38 @@ void CreateModelServiceRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateModelServiceRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+bool CreateModelServiceRequest::GetModelTurboEnable() const
+{
+    return m_modelTurboEnable;
+}
+
+void CreateModelServiceRequest::SetModelTurboEnable(const bool& _modelTurboEnable)
+{
+    m_modelTurboEnable = _modelTurboEnable;
+    m_modelTurboEnableHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ModelTurboEnableHasBeenSet() const
+{
+    return m_modelTurboEnableHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetServiceCategory() const
+{
+    return m_serviceCategory;
+}
+
+void CreateModelServiceRequest::SetServiceCategory(const string& _serviceCategory)
+{
+    m_serviceCategory = _serviceCategory;
+    m_serviceCategoryHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ServiceCategoryHasBeenSet() const
+{
+    return m_serviceCategoryHasBeenSet;
 }
 
 

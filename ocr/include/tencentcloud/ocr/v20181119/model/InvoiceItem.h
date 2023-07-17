@@ -163,15 +163,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取旋转后的图片四点坐标。
-                     * @return Polygon 旋转后的图片四点坐标。
+                     * 获取该发票在原图片中的四点坐标。
+                     * @return Polygon 该发票在原图片中的四点坐标。
                      * 
                      */
                     Polygon GetPolygon() const;
 
                     /**
-                     * 设置旋转后的图片四点坐标。
-                     * @param _polygon 旋转后的图片四点坐标。
+                     * 设置该发票在原图片中的四点坐标。
+                     * @param _polygon 该发票在原图片中的四点坐标。
                      * 
                      */
                     void SetPolygon(const Polygon& _polygon);
@@ -363,7 +363,7 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 旋转后的图片四点坐标。
+                     * 该发票在原图片中的四点坐标。
                      */
                     Polygon m_polygon;
                     bool m_polygonHasBeenSet;

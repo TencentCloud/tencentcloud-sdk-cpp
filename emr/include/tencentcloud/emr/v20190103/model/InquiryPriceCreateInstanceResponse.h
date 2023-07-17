@@ -79,11 +79,11 @@ namespace TencentCloud
                     /**
                      * 获取购买实例的时间单位。取值范围：
 <li>s：表示秒。</li>
-<li>m：表示月份。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 购买实例的时间单位。取值范围：
 <li>s：表示秒。</li>
-<li>m：表示月份。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,7 +147,7 @@ namespace TencentCloud
                     /**
                      * 购买实例的时间单位。取值范围：
 <li>s：表示秒。</li>
-<li>m：表示月份。</li>
+<li>m：表示月份。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;

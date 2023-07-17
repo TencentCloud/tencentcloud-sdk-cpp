@@ -51,10 +51,12 @@ namespace TencentCloud
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 云盘类型
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
@@ -64,10 +66,12 @@ namespace TencentCloud
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType 云盘类型
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -81,14 +85,18 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volume 云盘大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 设置云盘大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volume 云盘大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolume(const int64_t& _volume);
@@ -102,14 +110,18 @@ namespace TencentCloud
 
                     /**
                      * 获取该类型云盘个数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 该类型云盘个数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该类型云盘个数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 该类型云盘个数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -128,18 +140,21 @@ namespace TencentCloud
 <li>CLOUD_SSD：表示云SSD。</li>
 <li>CLOUD_PREMIUM：表示高效云盘。</li>
 <li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 云盘大小
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
                      * 该类型云盘个数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

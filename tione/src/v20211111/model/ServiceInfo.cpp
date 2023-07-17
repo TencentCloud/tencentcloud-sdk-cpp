@@ -39,13 +39,14 @@ ServiceInfo::ServiceInfo() :
     m_hybridBillingPrepaidReplicasHasBeenSet(false),
     m_oldHybridBillingPrepaidReplicasHasBeenSet(false),
     m_modelHotUpdateEnableHasBeenSet(false),
+    m_scaleModeHasBeenSet(false),
+    m_cronScaleJobsHasBeenSet(false),
+    m_scaleStrategyHasBeenSet(false),
+    m_scheduledActionHasBeenSet(false),
     m_podsHasBeenSet(false),
     m_podInfosHasBeenSet(false),
-    m_scaleStrategyHasBeenSet(false),
-    m_cronScaleJobsHasBeenSet(false),
-    m_scaleModeHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
-    m_scheduledActionHasBeenSet(false)
+    m_modelTurboEnableHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,56 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_modelHotUpdateEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleMode") && !value["ScaleMode"].IsNull())
+    {
+        if (!value["ScaleMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScaleMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleMode = string(value["ScaleMode"].GetString());
+        m_scaleModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CronScaleJobs") && !value["CronScaleJobs"].IsNull())
+    {
+        if (!value["CronScaleJobs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.CronScaleJobs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CronScaleJobs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CronScaleJob item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cronScaleJobs.push_back(item);
+        }
+        m_cronScaleJobsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScaleStrategy") && !value["ScaleStrategy"].IsNull())
+    {
+        if (!value["ScaleStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScaleStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleStrategy = string(value["ScaleStrategy"].GetString());
+        m_scaleStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduledAction") && !value["ScheduledAction"].IsNull())
+    {
+        if (!value["ScheduledAction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScheduledAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduledAction = string(value["ScheduledAction"].GetString());
+        m_scheduledActionHasBeenSet = true;
+    }
+
     if (value.HasMember("Pods") && !value["Pods"].IsNull())
     {
         if (!value["Pods"].IsObject())
@@ -333,46 +384,6 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_podInfosHasBeenSet = true;
     }
 
-    if (value.HasMember("ScaleStrategy") && !value["ScaleStrategy"].IsNull())
-    {
-        if (!value["ScaleStrategy"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScaleStrategy` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_scaleStrategy = string(value["ScaleStrategy"].GetString());
-        m_scaleStrategyHasBeenSet = true;
-    }
-
-    if (value.HasMember("CronScaleJobs") && !value["CronScaleJobs"].IsNull())
-    {
-        if (!value["CronScaleJobs"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.CronScaleJobs` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["CronScaleJobs"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            CronScaleJob item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_cronScaleJobs.push_back(item);
-        }
-        m_cronScaleJobsHasBeenSet = true;
-    }
-
-    if (value.HasMember("ScaleMode") && !value["ScaleMode"].IsNull())
-    {
-        if (!value["ScaleMode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScaleMode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_scaleMode = string(value["ScaleMode"].GetString());
-        m_scaleModeHasBeenSet = true;
-    }
-
     if (value.HasMember("ServiceLimit") && !value["ServiceLimit"].IsNull())
     {
         if (!value["ServiceLimit"].IsObject())
@@ -390,14 +401,14 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_serviceLimitHasBeenSet = true;
     }
 
-    if (value.HasMember("ScheduledAction") && !value["ScheduledAction"].IsNull())
+    if (value.HasMember("ModelTurboEnable") && !value["ModelTurboEnable"].IsNull())
     {
-        if (!value["ScheduledAction"].IsString())
+        if (!value["ModelTurboEnable"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScheduledAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ModelTurboEnable` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_scheduledAction = string(value["ScheduledAction"].GetString());
-        m_scheduledActionHasBeenSet = true;
+        m_modelTurboEnable = value["ModelTurboEnable"].GetBool();
+        m_modelTurboEnableHasBeenSet = true;
     }
 
 
@@ -570,6 +581,45 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_modelHotUpdateEnable, allocator);
     }
 
+    if (m_scaleModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scaleMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cronScaleJobsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronScaleJobs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cronScaleJobs.begin(); itr != m_cronScaleJobs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_scaleStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scaleStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduledActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduledAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduledAction.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_podsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -594,37 +644,6 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         }
     }
 
-    if (m_scaleStrategyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ScaleStrategy";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scaleStrategy.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cronScaleJobsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CronScaleJobs";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_cronScaleJobs.begin(); itr != m_cronScaleJobs.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_scaleModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ScaleMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scaleMode.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_serviceLimitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -634,12 +653,12 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         m_serviceLimit.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_scheduledActionHasBeenSet)
+    if (m_modelTurboEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ScheduledAction";
+        string key = "ModelTurboEnable";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scheduledAction.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_modelTurboEnable, allocator);
     }
 
 }
@@ -933,6 +952,70 @@ bool ServiceInfo::ModelHotUpdateEnableHasBeenSet() const
     return m_modelHotUpdateEnableHasBeenSet;
 }
 
+string ServiceInfo::GetScaleMode() const
+{
+    return m_scaleMode;
+}
+
+void ServiceInfo::SetScaleMode(const string& _scaleMode)
+{
+    m_scaleMode = _scaleMode;
+    m_scaleModeHasBeenSet = true;
+}
+
+bool ServiceInfo::ScaleModeHasBeenSet() const
+{
+    return m_scaleModeHasBeenSet;
+}
+
+vector<CronScaleJob> ServiceInfo::GetCronScaleJobs() const
+{
+    return m_cronScaleJobs;
+}
+
+void ServiceInfo::SetCronScaleJobs(const vector<CronScaleJob>& _cronScaleJobs)
+{
+    m_cronScaleJobs = _cronScaleJobs;
+    m_cronScaleJobsHasBeenSet = true;
+}
+
+bool ServiceInfo::CronScaleJobsHasBeenSet() const
+{
+    return m_cronScaleJobsHasBeenSet;
+}
+
+string ServiceInfo::GetScaleStrategy() const
+{
+    return m_scaleStrategy;
+}
+
+void ServiceInfo::SetScaleStrategy(const string& _scaleStrategy)
+{
+    m_scaleStrategy = _scaleStrategy;
+    m_scaleStrategyHasBeenSet = true;
+}
+
+bool ServiceInfo::ScaleStrategyHasBeenSet() const
+{
+    return m_scaleStrategyHasBeenSet;
+}
+
+string ServiceInfo::GetScheduledAction() const
+{
+    return m_scheduledAction;
+}
+
+void ServiceInfo::SetScheduledAction(const string& _scheduledAction)
+{
+    m_scheduledAction = _scheduledAction;
+    m_scheduledActionHasBeenSet = true;
+}
+
+bool ServiceInfo::ScheduledActionHasBeenSet() const
+{
+    return m_scheduledActionHasBeenSet;
+}
+
 Pod ServiceInfo::GetPods() const
 {
     return m_pods;
@@ -965,54 +1048,6 @@ bool ServiceInfo::PodInfosHasBeenSet() const
     return m_podInfosHasBeenSet;
 }
 
-string ServiceInfo::GetScaleStrategy() const
-{
-    return m_scaleStrategy;
-}
-
-void ServiceInfo::SetScaleStrategy(const string& _scaleStrategy)
-{
-    m_scaleStrategy = _scaleStrategy;
-    m_scaleStrategyHasBeenSet = true;
-}
-
-bool ServiceInfo::ScaleStrategyHasBeenSet() const
-{
-    return m_scaleStrategyHasBeenSet;
-}
-
-vector<CronScaleJob> ServiceInfo::GetCronScaleJobs() const
-{
-    return m_cronScaleJobs;
-}
-
-void ServiceInfo::SetCronScaleJobs(const vector<CronScaleJob>& _cronScaleJobs)
-{
-    m_cronScaleJobs = _cronScaleJobs;
-    m_cronScaleJobsHasBeenSet = true;
-}
-
-bool ServiceInfo::CronScaleJobsHasBeenSet() const
-{
-    return m_cronScaleJobsHasBeenSet;
-}
-
-string ServiceInfo::GetScaleMode() const
-{
-    return m_scaleMode;
-}
-
-void ServiceInfo::SetScaleMode(const string& _scaleMode)
-{
-    m_scaleMode = _scaleMode;
-    m_scaleModeHasBeenSet = true;
-}
-
-bool ServiceInfo::ScaleModeHasBeenSet() const
-{
-    return m_scaleModeHasBeenSet;
-}
-
 ServiceLimit ServiceInfo::GetServiceLimit() const
 {
     return m_serviceLimit;
@@ -1029,19 +1064,19 @@ bool ServiceInfo::ServiceLimitHasBeenSet() const
     return m_serviceLimitHasBeenSet;
 }
 
-string ServiceInfo::GetScheduledAction() const
+bool ServiceInfo::GetModelTurboEnable() const
 {
-    return m_scheduledAction;
+    return m_modelTurboEnable;
 }
 
-void ServiceInfo::SetScheduledAction(const string& _scheduledAction)
+void ServiceInfo::SetModelTurboEnable(const bool& _modelTurboEnable)
 {
-    m_scheduledAction = _scheduledAction;
-    m_scheduledActionHasBeenSet = true;
+    m_modelTurboEnable = _modelTurboEnable;
+    m_modelTurboEnableHasBeenSet = true;
 }
 
-bool ServiceInfo::ScheduledActionHasBeenSet() const
+bool ServiceInfo::ModelTurboEnableHasBeenSet() const
 {
-    return m_scheduledActionHasBeenSet;
+    return m_modelTurboEnableHasBeenSet;
 }
 

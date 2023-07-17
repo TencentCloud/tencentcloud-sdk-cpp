@@ -28,7 +28,8 @@ WorkloadStatus::WorkloadStatus() :
     m_unavailableReplicasHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statefulSetConditionHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
+    m_conditionsHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome WorkloadStatus::Deserialize(const rapidjson::Value &value)
         m_conditionsHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadStatus.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +231,14 @@ void WorkloadStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -351,5 +370,21 @@ void WorkloadStatus::SetConditions(const vector<StatefulSetCondition>& _conditio
 bool WorkloadStatus::ConditionsHasBeenSet() const
 {
     return m_conditionsHasBeenSet;
+}
+
+string WorkloadStatus::GetReason() const
+{
+    return m_reason;
+}
+
+void WorkloadStatus::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool WorkloadStatus::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

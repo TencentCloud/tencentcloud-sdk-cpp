@@ -370,7 +370,13 @@ namespace TencentCloud
                 CreateBatchCancelFlowUrlOutcomeCallable CreateBatchCancelFlowUrlCallable(const Model::CreateBatchCancelFlowUrlRequest& request);
 
                 /**
-                 *生成子客编辑企业信息二维码
+                 *根据产品要求，调整接口目录
+
+新接口：ChannelCreateOrganizationModifyQrCode 
+
+老接口目前无线上流量，测试用例已下线处理
+
+生成子客编辑企业信息二维码
                  * @param req CreateChannelSubOrganizationModifyQrCodeRequest
                  * @return CreateChannelSubOrganizationModifyQrCodeOutcome
                  */

@@ -100,7 +100,7 @@ namespace TencentCloud
                 BeautifyPicOutcomeCallable BeautifyPicCallable(const Model::BeautifyPicRequest& request);
 
                 /**
-                 *视频美颜
+                 *视频美颜(此接口目前已下线)
                  * @param req BeautifyVideoRequest
                  * @return BeautifyVideoOutcome
                  */

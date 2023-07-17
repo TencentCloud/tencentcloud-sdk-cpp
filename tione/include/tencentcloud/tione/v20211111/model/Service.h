@@ -25,9 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/ServiceInfo.h>
+#include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/ScheduledAction.h>
-#include <tencentcloud/tione/v20211111/model/Tag.h>
 
 
 namespace TencentCloud
@@ -137,6 +137,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ServiceDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取服务的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceInfo 服务的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ServiceInfo GetServiceInfo() const;
+
+                    /**
+                     * 设置服务的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceInfo 服务的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceInfo(const ServiceInfo& _serviceInfo);
+
+                    /**
+                     * 判断参数 ServiceInfo 是否已赋值
+                     * @return ServiceInfo 是否已赋值
+                     * 
+                     */
+                    bool ServiceInfoHasBeenSet() const;
 
                     /**
                      * 获取集群id
@@ -262,6 +287,81 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取包年包月服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupName 包年包月服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置包年包月服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupName 包年包月服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags 服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取服务所在的 ingress 的 name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IngressName 服务所在的 ingress 的 name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIngressName() const;
+
+                    /**
+                     * 设置服务所在的 ingress 的 name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ingressName 服务所在的 ingress 的 name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIngressName(const std::string& _ingressName);
+
+                    /**
+                     * 判断参数 IngressName 是否已赋值
+                     * @return IngressName 是否已赋值
+                     * 
+                     */
+                    bool IngressNameHasBeenSet() const;
 
                     /**
                      * 获取创建者
@@ -414,81 +514,6 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetVersion() const;
-
-                    /**
-                     * 设置版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetVersion(const std::string& _version);
-
-                    /**
-                     * 判断参数 Version 是否已赋值
-                     * @return Version 是否已赋值
-                     * 
-                     */
-                    bool VersionHasBeenSet() const;
-
-                    /**
-                     * 获取服务组下服务的最高版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestVersion 服务组下服务的最高版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetLatestVersion() const;
-
-                    /**
-                     * 设置服务组下服务的最高版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestVersion 服务组下服务的最高版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetLatestVersion(const std::string& _latestVersion);
-
-                    /**
-                     * 判断参数 LatestVersion 是否已赋值
-                     * @return LatestVersion 是否已赋值
-                     * 
-                     */
-                    bool LatestVersionHasBeenSet() const;
-
-                    /**
-                     * 获取服务的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceInfo 服务的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    ServiceInfo GetServiceInfo() const;
-
-                    /**
-                     * 设置服务的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceInfo 服务的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetServiceInfo(const ServiceInfo& _serviceInfo);
-
-                    /**
-                     * 判断参数 ServiceInfo 是否已赋值
-                     * @return ServiceInfo 是否已赋值
-                     * 
-                     */
-                    bool ServiceInfoHasBeenSet() const;
-
-                    /**
                      * 获取服务的业务状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessStatus 服务的业务状态
@@ -514,62 +539,79 @@ namespace TencentCloud
                     bool BusinessStatusHasBeenSet() const;
 
                     /**
-                     * 获取服务的创建来源
-AUTO_ML: 来自自动学习的一键发布
-DEFAULT: 其他来源
+                     * 获取已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateSource 服务的创建来源
-AUTO_ML: 来自自动学习的一键发布
-DEFAULT: 其他来源
+                     * @return ServiceLimit 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetCreateSource() const;
+                    ServiceLimit GetServiceLimit() const;
 
                     /**
-                     * 设置服务的创建来源
-AUTO_ML: 来自自动学习的一键发布
-DEFAULT: 其他来源
+                     * 设置已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createSource 服务的创建来源
-AUTO_ML: 来自自动学习的一键发布
-DEFAULT: 其他来源
+                     * @param _serviceLimit 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetCreateSource(const std::string& _createSource);
+                    void SetServiceLimit(const ServiceLimit& _serviceLimit);
 
                     /**
-                     * 判断参数 CreateSource 是否已赋值
-                     * @return CreateSource 是否已赋值
+                     * 判断参数 ServiceLimit 是否已赋值
+                     * @return ServiceLimit 是否已赋值
                      * 
                      */
-                    bool CreateSourceHasBeenSet() const;
+                    bool ServiceLimitHasBeenSet() const;
 
                     /**
-                     * 获取费用信息
+                     * 获取已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingInfo 费用信息
+                     * @return ScheduledAction 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetBillingInfo() const;
+                    ScheduledAction GetScheduledAction() const;
 
                     /**
-                     * 设置费用信息
+                     * 设置已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingInfo 费用信息
+                     * @param _scheduledAction 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBillingInfo(const std::string& _billingInfo);
+                    void SetScheduledAction(const ScheduledAction& _scheduledAction);
 
                     /**
-                     * 判断参数 BillingInfo 是否已赋值
-                     * @return BillingInfo 是否已赋值
+                     * 判断参数 ScheduledAction 是否已赋值
+                     * @return ScheduledAction 是否已赋值
                      * 
                      */
-                    bool BillingInfoHasBeenSet() const;
+                    bool ScheduledActionHasBeenSet() const;
+
+                    /**
+                     * 获取服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateFailedReason 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateFailedReason() const;
+
+                    /**
+                     * 设置服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createFailedReason 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateFailedReason(const std::string& _createFailedReason);
+
+                    /**
+                     * 判断参数 CreateFailedReason 是否已赋值
+                     * @return CreateFailedReason 是否已赋值
+                     * 
+                     */
+                    bool CreateFailedReasonHasBeenSet() const;
 
                     /**
                      * 获取服务状态
@@ -629,6 +671,31 @@ Waiting 就绪中
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取费用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingInfo 费用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillingInfo() const;
+
+                    /**
+                     * 设置费用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingInfo 费用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingInfo(const std::string& _billingInfo);
+
+                    /**
+                     * 判断参数 BillingInfo 是否已赋值
+                     * @return BillingInfo 是否已赋值
+                     * 
+                     */
+                    bool BillingInfoHasBeenSet() const;
+
+                    /**
                      * 获取模型权重
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 模型权重
@@ -654,154 +721,87 @@ Waiting 就绪中
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取服务所在的 ingress 的 name
+                     * 获取服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IngressName 服务所在的 ingress 的 name
+                     * @return CreateSource 服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetIngressName() const;
+                    std::string GetCreateSource() const;
 
                     /**
-                     * 设置服务所在的 ingress 的 name
+                     * 设置服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ingressName 服务所在的 ingress 的 name
+                     * @param _createSource 服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetIngressName(const std::string& _ingressName);
+                    void SetCreateSource(const std::string& _createSource);
 
                     /**
-                     * 判断参数 IngressName 是否已赋值
-                     * @return IngressName 是否已赋值
+                     * 判断参数 CreateSource 是否已赋值
+                     * @return CreateSource 是否已赋值
                      * 
                      */
-                    bool IngressNameHasBeenSet() const;
+                    bool CreateSourceHasBeenSet() const;
 
                     /**
-                     * 获取服务限速限流相关配置
+                     * 获取版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceLimit 服务限速限流相关配置
+                     * @return Version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    ServiceLimit GetServiceLimit() const;
+                    std::string GetVersion() const;
 
                     /**
-                     * 设置服务限速限流相关配置
+                     * 设置版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceLimit 服务限速限流相关配置
+                     * @param _version 版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetServiceLimit(const ServiceLimit& _serviceLimit);
+                    void SetVersion(const std::string& _version);
 
                     /**
-                     * 判断参数 ServiceLimit 是否已赋值
-                     * @return ServiceLimit 是否已赋值
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
                      * 
                      */
-                    bool ServiceLimitHasBeenSet() const;
+                    bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取定时停止的配置
+                     * 获取服务组下服务的最高版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduledAction 定时停止的配置
+                     * @return LatestVersion 服务组下服务的最高版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    ScheduledAction GetScheduledAction() const;
+                    std::string GetLatestVersion() const;
 
                     /**
-                     * 设置定时停止的配置
+                     * 设置服务组下服务的最高版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduledAction 定时停止的配置
+                     * @param _latestVersion 服务组下服务的最高版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetScheduledAction(const ScheduledAction& _scheduledAction);
+                    void SetLatestVersion(const std::string& _latestVersion);
 
                     /**
-                     * 判断参数 ScheduledAction 是否已赋值
-                     * @return ScheduledAction 是否已赋值
+                     * 判断参数 LatestVersion 是否已赋值
+                     * @return LatestVersion 是否已赋值
                      * 
                      */
-                    bool ScheduledActionHasBeenSet() const;
-
-                    /**
-                     * 获取服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateFailedReason 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetCreateFailedReason() const;
-
-                    /**
-                     * 设置服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createFailedReason 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCreateFailedReason(const std::string& _createFailedReason);
-
-                    /**
-                     * 判断参数 CreateFailedReason 是否已赋值
-                     * @return CreateFailedReason 是否已赋值
-                     * 
-                     */
-                    bool CreateFailedReasonHasBeenSet() const;
-
-                    /**
-                     * 获取包年包月服务对应的资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupName 包年包月服务对应的资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetResourceGroupName() const;
-
-                    /**
-                     * 设置包年包月服务对应的资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceGroupName 包年包月服务对应的资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetResourceGroupName(const std::string& _resourceGroupName);
-
-                    /**
-                     * 判断参数 ResourceGroupName 是否已赋值
-                     * @return ResourceGroupName 是否已赋值
-                     * 
-                     */
-                    bool ResourceGroupNameHasBeenSet() const;
-
-                    /**
-                     * 获取服务的标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 服务的标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<Tag> GetTags() const;
-
-                    /**
-                     * 设置服务的标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 服务的标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTags(const std::vector<Tag>& _tags);
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     * 
-                     */
-                    bool TagsHasBeenSet() const;
+                    bool LatestVersionHasBeenSet() const;
 
                 private:
 
@@ -829,6 +829,13 @@ Waiting 就绪中
                      */
                     std::string m_serviceDescription;
                     bool m_serviceDescriptionHasBeenSet;
+
+                    /**
+                     * 服务的详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ServiceInfo m_serviceInfo;
+                    bool m_serviceInfoHasBeenSet;
 
                     /**
                      * 集群id
@@ -864,6 +871,27 @@ Waiting 就绪中
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 包年包月服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 服务所在的 ingress 的 name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ingressName;
+                    bool m_ingressNameHasBeenSet;
 
                     /**
                      * 创建者
@@ -908,27 +936,6 @@ Waiting 就绪中
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_version;
-                    bool m_versionHasBeenSet;
-
-                    /**
-                     * 服务组下服务的最高版本号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_latestVersion;
-                    bool m_latestVersionHasBeenSet;
-
-                    /**
-                     * 服务的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    ServiceInfo m_serviceInfo;
-                    bool m_serviceInfoHasBeenSet;
-
-                    /**
                      * 服务的业务状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -936,20 +943,25 @@ Waiting 就绪中
                     bool m_businessStatusHasBeenSet;
 
                     /**
-                     * 服务的创建来源
-AUTO_ML: 来自自动学习的一键发布
-DEFAULT: 其他来源
+                     * 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_createSource;
-                    bool m_createSourceHasBeenSet;
+                    ServiceLimit m_serviceLimit;
+                    bool m_serviceLimitHasBeenSet;
 
                     /**
-                     * 费用信息
+                     * 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_billingInfo;
-                    bool m_billingInfoHasBeenSet;
+                    ScheduledAction m_scheduledAction;
+                    bool m_scheduledActionHasBeenSet;
+
+                    /**
+                     * 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createFailedReason;
+                    bool m_createFailedReasonHasBeenSet;
 
                     /**
                      * 服务状态
@@ -967,6 +979,13 @@ Waiting 就绪中
                     bool m_statusHasBeenSet;
 
                     /**
+                     * 费用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billingInfo;
+                    bool m_billingInfoHasBeenSet;
+
+                    /**
                      * 模型权重
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -974,46 +993,27 @@ Waiting 就绪中
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 服务所在的 ingress 的 name
+                     * 服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_ingressName;
-                    bool m_ingressNameHasBeenSet;
+                    std::string m_createSource;
+                    bool m_createSourceHasBeenSet;
 
                     /**
-                     * 服务限速限流相关配置
+                     * 版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ServiceLimit m_serviceLimit;
-                    bool m_serviceLimitHasBeenSet;
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                     /**
-                     * 定时停止的配置
+                     * 服务组下服务的最高版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ScheduledAction m_scheduledAction;
-                    bool m_scheduledActionHasBeenSet;
-
-                    /**
-                     * 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_createFailedReason;
-                    bool m_createFailedReasonHasBeenSet;
-
-                    /**
-                     * 包年包月服务对应的资源组名字
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_resourceGroupName;
-                    bool m_resourceGroupNameHasBeenSet;
-
-                    /**
-                     * 服务的标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Tag> m_tags;
-                    bool m_tagsHasBeenSet;
+                    std::string m_latestVersion;
+                    bool m_latestVersionHasBeenSet;
 
                 };
             }

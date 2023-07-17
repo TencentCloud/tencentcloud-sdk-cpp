@@ -40,7 +40,10 @@ FlowCreateApprover::FlowCreateApprover() :
     m_approverOptionHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
     m_signIdHasBeenSet(false),
-    m_approverNeedSignReviewHasBeenSet(false)
+    m_approverNeedSignReviewHasBeenSet(false),
+    m_signComponentsHasBeenSet(false),
+    m_componentsHasBeenSet(false),
+    m_componentLimitTypeHasBeenSet(false)
 {
 }
 
@@ -266,6 +269,59 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_approverNeedSignReviewHasBeenSet = true;
     }
 
+    if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
+    {
+        if (!value["SignComponents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.SignComponents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignComponents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_signComponents.push_back(item);
+        }
+        m_signComponentsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_components.push_back(item);
+        }
+        m_componentsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentLimitType") && !value["ComponentLimitType"].IsNull())
+    {
+        if (!value["ComponentLimitType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ComponentLimitType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ComponentLimitType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_componentLimitType.push_back((*itr).GetString());
+        }
+        m_componentLimitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +494,49 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ApproverNeedSignReview";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_approverNeedSignReview, allocator);
+    }
+
+    if (m_signComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_componentLimitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentLimitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_componentLimitType.begin(); itr != m_componentLimitType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -761,5 +860,53 @@ void FlowCreateApprover::SetApproverNeedSignReview(const bool& _approverNeedSign
 bool FlowCreateApprover::ApproverNeedSignReviewHasBeenSet() const
 {
     return m_approverNeedSignReviewHasBeenSet;
+}
+
+vector<Component> FlowCreateApprover::GetSignComponents() const
+{
+    return m_signComponents;
+}
+
+void FlowCreateApprover::SetSignComponents(const vector<Component>& _signComponents)
+{
+    m_signComponents = _signComponents;
+    m_signComponentsHasBeenSet = true;
+}
+
+bool FlowCreateApprover::SignComponentsHasBeenSet() const
+{
+    return m_signComponentsHasBeenSet;
+}
+
+vector<Component> FlowCreateApprover::GetComponents() const
+{
+    return m_components;
+}
+
+void FlowCreateApprover::SetComponents(const vector<Component>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
+}
+
+vector<string> FlowCreateApprover::GetComponentLimitType() const
+{
+    return m_componentLimitType;
+}
+
+void FlowCreateApprover::SetComponentLimitType(const vector<string>& _componentLimitType)
+{
+    m_componentLimitType = _componentLimitType;
+    m_componentLimitTypeHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ComponentLimitTypeHasBeenSet() const
+{
+    return m_componentLimitTypeHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/ssl/v20191205/model/DvAuthDetail.h>
 #include <tencentcloud/ssl/v20191205/model/SubmittedData.h>
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
+#include <tencentcloud/ssl/v20191205/model/DvAuths.h>
 
 
 namespace TencentCloud
@@ -607,6 +608,22 @@ namespace TencentCloud
                      */
                     bool CAEndTimesHasBeenSet() const;
 
+                    /**
+                     * 获取DV证书吊销验证值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DvRevokeAuthDetail DV证书吊销验证值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DvAuths> GetDvRevokeAuthDetail() const;
+
+                    /**
+                     * 判断参数 DvRevokeAuthDetail 是否已赋值
+                     * @return DvRevokeAuthDetail 是否已赋值
+                     * 
+                     */
+                    bool DvRevokeAuthDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -853,6 +870,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_cAEndTimes;
                     bool m_cAEndTimesHasBeenSet;
+
+                    /**
+                     * DV证书吊销验证值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DvAuths> m_dvRevokeAuthDetail;
+                    bool m_dvRevokeAuthDetailHasBeenSet;
 
                 };
             }

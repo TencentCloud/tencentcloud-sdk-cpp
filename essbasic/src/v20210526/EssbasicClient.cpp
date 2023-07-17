@@ -642,6 +642,49 @@ EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateOrganizationModifyQrCodeOutcome EssbasicClient::ChannelCreateOrganizationModifyQrCode(const ChannelCreateOrganizationModifyQrCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateOrganizationModifyQrCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateOrganizationModifyQrCodeResponse rsp = ChannelCreateOrganizationModifyQrCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateOrganizationModifyQrCodeOutcome(rsp);
+        else
+            return ChannelCreateOrganizationModifyQrCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateOrganizationModifyQrCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateOrganizationModifyQrCodeAsync(const ChannelCreateOrganizationModifyQrCodeRequest& request, const ChannelCreateOrganizationModifyQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateOrganizationModifyQrCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateOrganizationModifyQrCodeOutcomeCallable EssbasicClient::ChannelCreateOrganizationModifyQrCodeCallable(const ChannelCreateOrganizationModifyQrCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateOrganizationModifyQrCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateOrganizationModifyQrCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreatePrepareFlowOutcome EssbasicClient::ChannelCreatePrepareFlow(const ChannelCreatePrepareFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreatePrepareFlow");

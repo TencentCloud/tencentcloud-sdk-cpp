@@ -28,7 +28,8 @@ ModelInfo::ModelInfo() :
     m_modelSourceHasBeenSet(false),
     m_cosPathInfoHasBeenSet(false),
     m_algorithmFrameworkHasBeenSet(false),
-    m_modelTypeHasBeenSet(false)
+    m_modelTypeHasBeenSet(false),
+    m_modelFormatHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_modelTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelFormat") && !value["ModelFormat"].IsNull())
+    {
+        if (!value["ModelFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ModelFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelFormat = string(value["ModelFormat"].GetString());
+        m_modelFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ModelType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void ModelInfo::SetModelType(const string& _modelType)
 bool ModelInfo::ModelTypeHasBeenSet() const
 {
     return m_modelTypeHasBeenSet;
+}
+
+string ModelInfo::GetModelFormat() const
+{
+    return m_modelFormat;
+}
+
+void ModelInfo::SetModelFormat(const string& _modelFormat)
+{
+    m_modelFormat = _modelFormat;
+    m_modelFormatHasBeenSet = true;
+}
+
+bool ModelInfo::ModelFormatHasBeenSet() const
+{
+    return m_modelFormatHasBeenSet;
 }
 

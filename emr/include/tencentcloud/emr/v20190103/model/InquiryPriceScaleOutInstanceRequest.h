@@ -215,18 +215,18 @@ namespace TencentCloud
 
                     /**
                      * 获取货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * @return Currency 货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * 
                      */
                     std::string GetCurrency() const;
 
                     /**
                      * 设置货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * @param _currency 货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      * 
                      */
                     void SetCurrency(const std::string& _currency);
@@ -332,7 +332,7 @@ namespace TencentCloud
 
                     /**
                      * 货币种类。取值范围：
-<li>CNY：表示人民币。</li>
+<li>CNY：表示人民币。</li>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;

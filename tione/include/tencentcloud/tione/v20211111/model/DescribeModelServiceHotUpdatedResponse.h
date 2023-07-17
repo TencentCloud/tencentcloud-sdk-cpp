@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取模型加速标志位.Allowed 允许模型加速. Forbidden 禁止模型加速
+                     * @return ModelTurboFlag 模型加速标志位.Allowed 允许模型加速. Forbidden 禁止模型加速
+                     * 
+                     */
+                    std::string GetModelTurboFlag() const;
+
+                    /**
+                     * 判断参数 ModelTurboFlag 是否已赋值
+                     * @return ModelTurboFlag 是否已赋值
+                     * 
+                     */
+                    bool ModelTurboFlagHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 模型加速标志位.Allowed 允许模型加速. Forbidden 禁止模型加速
+                     */
+                    std::string m_modelTurboFlag;
+                    bool m_modelTurboFlagHasBeenSet;
 
                 };
             }

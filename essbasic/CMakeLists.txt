@@ -57,6 +57,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20210526/model/RecipientComponentInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h
@@ -127,6 +128,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesResponse.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h
@@ -325,6 +327,7 @@ set(essbasic_src
   src/v20210526/model/FlowApproverDetail.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesRequest.cpp
+  src/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20210526/model/RecipientComponentInfo.cpp
   src/v20210526/model/ChannelDescribeRolesRequest.cpp
@@ -395,6 +398,7 @@ set(essbasic_src
   src/v20210526/model/ModifyExtendedServiceResponse.cpp
   src/v20210526/model/ChannelCreateUserRolesRequest.cpp
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
+  src/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.cpp
   src/v20210526/model/ChannelDeleteSealPoliciesResponse.cpp
   src/v20210526/model/Component.cpp
   src/v20210526/model/GetDownloadFlowUrlRequest.cpp

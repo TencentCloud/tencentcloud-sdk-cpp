@@ -642,6 +642,49 @@ OceanusClient::DescribeJobSavepointOutcomeCallable OceanusClient::DescribeJobSav
     return task->get_future();
 }
 
+OceanusClient::DescribeJobSubmissionLogOutcome OceanusClient::DescribeJobSubmissionLog(const DescribeJobSubmissionLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobSubmissionLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobSubmissionLogResponse rsp = DescribeJobSubmissionLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobSubmissionLogOutcome(rsp);
+        else
+            return DescribeJobSubmissionLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobSubmissionLogOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeJobSubmissionLogAsync(const DescribeJobSubmissionLogRequest& request, const DescribeJobSubmissionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobSubmissionLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeJobSubmissionLogOutcomeCallable OceanusClient::DescribeJobSubmissionLogCallable(const DescribeJobSubmissionLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobSubmissionLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobSubmissionLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DescribeJobsOutcome OceanusClient::DescribeJobs(const DescribeJobsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobs");

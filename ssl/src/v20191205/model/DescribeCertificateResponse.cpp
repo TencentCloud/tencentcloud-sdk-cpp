@@ -58,7 +58,8 @@ DescribeCertificateResponse::DescribeCertificateResponse() :
     m_tagsHasBeenSet(false),
     m_cAEncryptAlgorithmsHasBeenSet(false),
     m_cACommonNamesHasBeenSet(false),
-    m_cAEndTimesHasBeenSet(false)
+    m_cAEndTimesHasBeenSet(false),
+    m_dvRevokeAuthDetailHasBeenSet(false)
 {
 }
 
@@ -489,6 +490,26 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
         m_cAEndTimesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DvRevokeAuthDetail") && !rsp["DvRevokeAuthDetail"].IsNull())
+    {
+        if (!rsp["DvRevokeAuthDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DvRevokeAuthDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DvRevokeAuthDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DvAuths item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dvRevokeAuthDetail.push_back(item);
+        }
+        m_dvRevokeAuthDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -806,6 +827,21 @@ string DescribeCertificateResponse::ToJsonString() const
         for (auto itr = m_cAEndTimes.begin(); itr != m_cAEndTimes.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dvRevokeAuthDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DvRevokeAuthDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dvRevokeAuthDetail.begin(); itr != m_dvRevokeAuthDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1169,6 +1205,16 @@ vector<string> DescribeCertificateResponse::GetCAEndTimes() const
 bool DescribeCertificateResponse::CAEndTimesHasBeenSet() const
 {
     return m_cAEndTimesHasBeenSet;
+}
+
+vector<DvAuths> DescribeCertificateResponse::GetDvRevokeAuthDetail() const
+{
+    return m_dvRevokeAuthDetail;
+}
+
+bool DescribeCertificateResponse::DvRevokeAuthDetailHasBeenSet() const
+{
+    return m_dvRevokeAuthDetailHasBeenSet;
 }
 
 

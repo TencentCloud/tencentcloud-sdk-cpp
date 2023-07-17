@@ -235,6 +235,31 @@ Stopping 停止中
                      */
                     bool ConditionsHasBeenSet() const;
 
+                    /**
+                     * 获取状态异常时，展示原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Reason 状态异常时，展示原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置状态异常时，展示原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reason 状态异常时，展示原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +314,13 @@ Stopping 停止中
                      */
                     std::vector<StatefulSetCondition> m_conditions;
                     bool m_conditionsHasBeenSet;
+
+                    /**
+                     * 状态异常时，展示原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

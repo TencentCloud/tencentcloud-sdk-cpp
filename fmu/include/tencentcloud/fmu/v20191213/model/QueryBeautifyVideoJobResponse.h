@@ -74,6 +74,20 @@ namespace TencentCloud
                      */
                     bool BeautifyVideoOutputHasBeenSet() const;
 
+                    /**
+                     * 获取当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
+                     * @return JobStatusCode 当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
+                     * 
+                     */
+                    int64_t GetJobStatusCode() const;
+
+                    /**
+                     * 判断参数 JobStatusCode 是否已赋值
+                     * @return JobStatusCode 是否已赋值
+                     * 
+                     */
+                    bool JobStatusCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +102,12 @@ namespace TencentCloud
                      */
                     BeautifyVideoOutput m_beautifyVideoOutput;
                     bool m_beautifyVideoOutputHasBeenSet;
+
+                    /**
+                     * 当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成
+                     */
+                    int64_t m_jobStatusCode;
+                    bool m_jobStatusCodeHasBeenSet;
 
                 };
             }

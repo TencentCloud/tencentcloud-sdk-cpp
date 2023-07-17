@@ -26,6 +26,7 @@
 #include <tencentcloud/ssl/v20191205/model/SubmittedData.h>
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
 #include <tencentcloud/ssl/v20191205/model/RootCertificates.h>
+#include <tencentcloud/ssl/v20191205/model/DvAuths.h>
 
 
 namespace TencentCloud
@@ -688,6 +689,22 @@ namespace TencentCloud
                      */
                     bool EncryptAlgorithmHasBeenSet() const;
 
+                    /**
+                     * 获取DV证书吊销验证值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DvRevokeAuthDetail DV证书吊销验证值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DvAuths> GetDvRevokeAuthDetail() const;
+
+                    /**
+                     * 判断参数 DvRevokeAuthDetail 是否已赋值
+                     * @return DvRevokeAuthDetail 是否已赋值
+                     * 
+                     */
+                    bool DvRevokeAuthDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -969,6 +986,13 @@ namespace TencentCloud
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;
+
+                    /**
+                     * DV证书吊销验证值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DvAuths> m_dvRevokeAuthDetail;
+                    bool m_dvRevokeAuthDetailHasBeenSet;
 
                 };
             }
