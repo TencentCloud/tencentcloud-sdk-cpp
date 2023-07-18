@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份文件名称
-                     * @return FileName 备份文件名称
+                     * 获取备份文件名称。
+                     * @return FileName 备份文件名称。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置备份文件名称
-                     * @param _fileName 备份文件名称
+                     * 设置备份文件名称。
+                     * @param _fileName 备份文件名称。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取备份文件大小，单位B，如果为0，表示无效
-                     * @return FileSize 备份文件大小，单位B，如果为0，表示无效
+                     * 获取备份文件大小，单位B，如果为0，表示无效。
+                     * @return FileSize 备份文件大小，单位B，如果为0，表示无效。
                      * 
                      */
-                    uint64_t GetFileSize() const;
+                    int64_t GetFileSize() const;
 
                     /**
-                     * 设置备份文件大小，单位B，如果为0，表示无效
-                     * @param _fileSize 备份文件大小，单位B，如果为0，表示无效
+                     * 设置备份文件大小，单位B，如果为0，表示无效。
+                     * @param _fileSize 备份文件大小，单位B，如果为0，表示无效。
                      * 
                      */
-                    void SetFileSize(const uint64_t& _fileSize);
+                    void SetFileSize(const int64_t& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取备份文件外网下载地址（6小时）
-                     * @return DownloadUrl 备份文件外网下载地址（6小时）
+                     * 获取备份文件外网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
+                     * @return DownloadUrl 备份文件外网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
                      * 
                      */
                     std::string GetDownloadUrl() const;
 
                     /**
-                     * 设置备份文件外网下载地址（6小时）
-                     * @param _downloadUrl 备份文件外网下载地址（6小时）
+                     * 设置备份文件外网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
+                     * @param _downloadUrl 备份文件外网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
                      * 
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取备份文件内网下载地址（6小时）
-                     * @return InnerDownloadUrl 备份文件内网下载地址（6小时）
+                     * 获取备份文件内网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
+                     * @return InnerDownloadUrl 备份文件内网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
                      * 
                      */
                     std::string GetInnerDownloadUrl() const;
 
                     /**
-                     * 设置备份文件内网下载地址（6小时）
-                     * @param _innerDownloadUrl 备份文件内网下载地址（6小时）
+                     * 设置备份文件内网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
+                     * @param _innerDownloadUrl 备份文件内网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
                      * 
                      */
                     void SetInnerDownloadUrl(const std::string& _innerDownloadUrl);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份文件名称
+                     * 备份文件名称。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 备份文件大小，单位B，如果为0，表示无效
+                     * 备份文件大小，单位B，如果为0，表示无效。
                      */
-                    uint64_t m_fileSize;
+                    int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 备份文件外网下载地址（6小时）
+                     * 备份文件外网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
-                     * 备份文件内网下载地址（6小时）
+                     * 备份文件内网下载地址。下载地址的有效时长为6小时，过期后请重新获取。
                      */
                     std::string m_innerDownloadUrl;
                     bool m_innerDownloadUrlHasBeenSet;

@@ -689,6 +689,31 @@ namespace TencentCloud
                      */
                     bool MetricDurationHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义展示标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomShowTags 用户自定义展示标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCustomShowTags() const;
+
+                    /**
+                     * 设置用户自定义展示标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customShowTags 用户自定义展示标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomShowTags(const std::vector<std::string>& _customShowTags);
+
+                    /**
+                     * 判断参数 CustomShowTags 是否已赋值
+                     * @return CustomShowTags 是否已赋值
+                     * 
+                     */
+                    bool CustomShowTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -870,6 +895,13 @@ namespace TencentCloud
                      */
                     int64_t m_metricDuration;
                     bool m_metricDurationHasBeenSet;
+
+                    /**
+                     * 用户自定义展示标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_customShowTags;
+                    bool m_customShowTagsHasBeenSet;
 
                 };
             }

@@ -379,6 +379,27 @@ namespace TencentCloud
                      */
                     bool LogSourceHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义展示标签列表
+                     * @return CustomShowTags 用户自定义展示标签列表
+                     * 
+                     */
+                    std::vector<std::string> GetCustomShowTags() const;
+
+                    /**
+                     * 设置用户自定义展示标签列表
+                     * @param _customShowTags 用户自定义展示标签列表
+                     * 
+                     */
+                    void SetCustomShowTags(const std::vector<std::string>& _customShowTags);
+
+                    /**
+                     * 判断参数 CustomShowTags 是否已赋值
+                     * @return CustomShowTags 是否已赋值
+                     * 
+                     */
+                    bool CustomShowTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -476,6 +497,12 @@ namespace TencentCloud
                      */
                     std::string m_logSource;
                     bool m_logSourceHasBeenSet;
+
+                    /**
+                     * 用户自定义展示标签列表
+                     */
+                    std::vector<std::string> m_customShowTags;
+                    bool m_customShowTagsHasBeenSet;
 
                 };
             }

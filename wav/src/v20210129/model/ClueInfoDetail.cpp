@@ -43,6 +43,7 @@ ClueInfoDetail::ClueInfoDetail() :
     m_sourceChannelNameHasBeenSet(false),
     m_genderHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_leadStatusHasBeenSet(false),
     m_levelCodeHasBeenSet(false),
     m_importAtTimeHasBeenSet(false),
@@ -301,6 +302,16 @@ CoreInternalOutcome ClueInfoDetail::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
     }
 
     if (value.HasMember("LeadStatus") && !value["LeadStatus"].IsNull())
@@ -779,6 +790,14 @@ void ClueInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_leadStatusHasBeenSet)
@@ -1366,6 +1385,22 @@ void ClueInfoDetail::SetCreateTime(const string& _createTime)
 bool ClueInfoDetail::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string ClueInfoDetail::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void ClueInfoDetail::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool ClueInfoDetail::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 
 int64_t ClueInfoDetail::GetLeadStatus() const

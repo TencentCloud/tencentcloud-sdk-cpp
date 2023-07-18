@@ -40,6 +40,49 @@ VrsClient::VrsClient(const Credential &credential, const string &region, const C
 }
 
 
+VrsClient::CancelVRSTaskOutcome VrsClient::CancelVRSTask(const CancelVRSTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelVRSTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelVRSTaskResponse rsp = CancelVRSTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelVRSTaskOutcome(rsp);
+        else
+            return CancelVRSTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelVRSTaskOutcome(outcome.GetError());
+    }
+}
+
+void VrsClient::CancelVRSTaskAsync(const CancelVRSTaskRequest& request, const CancelVRSTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelVRSTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VrsClient::CancelVRSTaskOutcomeCallable VrsClient::CancelVRSTaskCallable(const CancelVRSTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelVRSTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelVRSTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VrsClient::CreateVRSTaskOutcome VrsClient::CreateVRSTask(const CreateVRSTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateVRSTask");
@@ -162,6 +205,49 @@ VrsClient::DetectEnvAndSoundQualityOutcomeCallable VrsClient::DetectEnvAndSoundQ
         [this, request]()
         {
             return this->DetectEnvAndSoundQuality(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VrsClient::DownloadVRSModelOutcome VrsClient::DownloadVRSModel(const DownloadVRSModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadVRSModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadVRSModelResponse rsp = DownloadVRSModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadVRSModelOutcome(rsp);
+        else
+            return DownloadVRSModelOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadVRSModelOutcome(outcome.GetError());
+    }
+}
+
+void VrsClient::DownloadVRSModelAsync(const DownloadVRSModelRequest& request, const DownloadVRSModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadVRSModel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VrsClient::DownloadVRSModelOutcomeCallable VrsClient::DownloadVRSModelCallable(const DownloadVRSModelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadVRSModelOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadVRSModel(request);
         }
     );
 

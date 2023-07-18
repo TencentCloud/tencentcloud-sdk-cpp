@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool OrganizationHasBeenSet() const;
 
+                    /**
+                     * 获取签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。
+                     * @return JumpUrl 签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。
+                     * 
+                     */
+                    std::string GetJumpUrl() const;
+
+                    /**
+                     * 设置签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。
+                     * @param _jumpUrl 签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。
+                     * 
+                     */
+                    void SetJumpUrl(const std::string& _jumpUrl);
+
+                    /**
+                     * 判断参数 JumpUrl 是否已赋值
+                     * @return JumpUrl 是否已赋值
+                     * 
+                     */
+                    bool JumpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     OrganizationInfo m_organization;
                     bool m_organizationHasBeenSet;
+
+                    /**
+                     * 签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。
+                     */
+                    std::string m_jumpUrl;
+                    bool m_jumpUrlHasBeenSet;
 
                 };
             }

@@ -19,18 +19,36 @@ set(goosefs_public_header
   )
 
 set(goosefs_public_header_model
-  include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h
-  include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
-  include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenRequest.h
+  include/tencentcloud/goosefs/v20220519/model/ClientToken.h
+  include/tencentcloud/goosefs/v20220519/model/RoleToken.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeClusterRolesRequest.h
+  include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenRequest.h
+  include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeClusterRolesResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h
+  include/tencentcloud/goosefs/v20220519/model/ClusterRole.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenResponse.h
   )
 
 set(goosefs_src
   src/v20220519/GoosefsClient.cpp
-  src/v20220519/model/CreateDataRepositoryTaskRequest.cpp
-  src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
-  src/v20220519/model/DescribeDataRepositoryTaskStatusRequest.cpp
   src/v20220519/model/DescribeDataRepositoryTaskStatusResponse.cpp
+  src/v20220519/model/DescribeClusterRoleTokenRequest.cpp
+  src/v20220519/model/ClientToken.cpp
+  src/v20220519/model/RoleToken.cpp
+  src/v20220519/model/DescribeClusterRoleTokenResponse.cpp
+  src/v20220519/model/DescribeClusterRolesRequest.cpp
+  src/v20220519/model/CreateDataRepositoryTaskRequest.cpp
+  src/v20220519/model/DescribeClusterClientTokenRequest.cpp
+  src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
+  src/v20220519/model/DescribeClusterRolesResponse.cpp
+  src/v20220519/model/DescribeDataRepositoryTaskStatusRequest.cpp
+  src/v20220519/model/ClusterRole.cpp
+  src/v20220519/model/DescribeClusterClientTokenResponse.cpp
   )
 
 set(goosefs_include

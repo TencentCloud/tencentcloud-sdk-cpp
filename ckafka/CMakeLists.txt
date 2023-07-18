@@ -66,6 +66,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ClickHouseParam.h
   include/tencentcloud/ckafka/v20190819/model/FilterMapParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreResp.h
+  include/tencentcloud/ckafka/v20190819/model/EsRecordMapping.h
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoTopics.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetRequest.h
@@ -391,6 +392,7 @@ set(ckafka_src
   src/v20190819/model/ClickHouseParam.cpp
   src/v20190819/model/FilterMapParam.cpp
   src/v20190819/model/CreateInstancePreResp.cpp
+  src/v20190819/model/EsRecordMapping.cpp
   src/v20190819/model/ModifyDatahubTaskResponse.cpp
   src/v20190819/model/GroupInfoTopics.cpp
   src/v20190819/model/FetchMessageListByOffsetRequest.cpp

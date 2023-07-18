@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBESEARCHEXPORTLISTREQUEST_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBESEARCHEXPORTLISTREQUEST_H_
+#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERCLIENTTOKENREQUEST_H_
+#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERCLIENTTOKENREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Goosefs
     {
-        namespace V20180228
+        namespace V20220519
         {
             namespace Model
             {
                 /**
-                * DescribeSearchExportList请求参数结构体
+                * DescribeClusterClientToken请求参数结构体
                 */
-                class DescribeSearchExportListRequest : public AbstractModel
+                class DescribeClusterClientTokenRequest : public AbstractModel
                 {
                 public:
-                    DescribeSearchExportListRequest();
-                    ~DescribeSearchExportListRequest() = default;
+                    DescribeClusterClientTokenRequest();
+                    ~DescribeClusterClientTokenRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取ES查询条件JSON
-                     * @return Query ES查询条件JSON
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
                      * 
                      */
-                    std::string GetQuery() const;
+                    std::string GetClusterId() const;
 
                     /**
-                     * 设置ES查询条件JSON
-                     * @param _query ES查询条件JSON
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
                      * 
                      */
-                    void SetQuery(const std::string& _query);
+                    void SetClusterId(const std::string& _clusterId);
 
                     /**
-                     * 判断参数 Query 是否已赋值
-                     * @return Query 是否已赋值
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
                      * 
                      */
-                    bool QueryHasBeenSet() const;
+                    bool ClusterIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * ES查询条件JSON
+                     * 集群ID
                      */
-                    std::string m_query;
-                    bool m_queryHasBeenSet;
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBESEARCHEXPORTLISTREQUEST_H_
+#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERCLIENTTOKENREQUEST_H_

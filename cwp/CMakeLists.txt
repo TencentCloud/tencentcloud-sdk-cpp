@@ -85,7 +85,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachineRegionsRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeSearchExportListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulLevelCountResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportBaselineItemDetectListRequest.h
@@ -636,7 +635,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DeleteScanTaskResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportIgnoreBaselineRuleRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachineRegionsResponse.h
-  include/tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h
   include/tencentcloud/cwp/v20180228/model/DestroyOrderRequest.h
   include/tencentcloud/cwp/v20180228/model/AssetWebAppBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineRuleDetectListResponse.h
@@ -787,7 +785,6 @@ set(cwp_src
   src/v20180228/model/ExportAssetCoreModuleListRequest.cpp
   src/v20180228/model/DescribeComponentStatisticsResponse.cpp
   src/v20180228/model/DescribeMachineRegionsRequest.cpp
-  src/v20180228/model/DescribeSearchExportListResponse.cpp
   src/v20180228/model/DescribeAttackLogsRequest.cpp
   src/v20180228/model/DescribeVulLevelCountResponse.cpp
   src/v20180228/model/ExportBaselineItemDetectListRequest.cpp
@@ -1338,7 +1335,6 @@ set(cwp_src
   src/v20180228/model/DeleteScanTaskResponse.cpp
   src/v20180228/model/ExportIgnoreBaselineRuleRequest.cpp
   src/v20180228/model/DescribeMachineRegionsResponse.cpp
-  src/v20180228/model/DescribeSearchExportListRequest.cpp
   src/v20180228/model/DestroyOrderRequest.cpp
   src/v20180228/model/AssetWebAppBaseInfo.cpp
   src/v20180228/model/DescribeBaselineRuleDetectListResponse.cpp

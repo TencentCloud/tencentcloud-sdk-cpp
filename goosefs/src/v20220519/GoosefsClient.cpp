@@ -83,6 +83,135 @@ GoosefsClient::CreateDataRepositoryTaskOutcomeCallable GoosefsClient::CreateData
     return task->get_future();
 }
 
+GoosefsClient::DescribeClusterClientTokenOutcome GoosefsClient::DescribeClusterClientToken(const DescribeClusterClientTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterClientToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterClientTokenResponse rsp = DescribeClusterClientTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterClientTokenOutcome(rsp);
+        else
+            return DescribeClusterClientTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterClientTokenOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeClusterClientTokenAsync(const DescribeClusterClientTokenRequest& request, const DescribeClusterClientTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterClientToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DescribeClusterClientTokenOutcomeCallable GoosefsClient::DescribeClusterClientTokenCallable(const DescribeClusterClientTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterClientTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterClientToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GoosefsClient::DescribeClusterRoleTokenOutcome GoosefsClient::DescribeClusterRoleToken(const DescribeClusterRoleTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterRoleToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterRoleTokenResponse rsp = DescribeClusterRoleTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterRoleTokenOutcome(rsp);
+        else
+            return DescribeClusterRoleTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterRoleTokenOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeClusterRoleTokenAsync(const DescribeClusterRoleTokenRequest& request, const DescribeClusterRoleTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterRoleToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DescribeClusterRoleTokenOutcomeCallable GoosefsClient::DescribeClusterRoleTokenCallable(const DescribeClusterRoleTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterRoleTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterRoleToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GoosefsClient::DescribeClusterRolesOutcome GoosefsClient::DescribeClusterRoles(const DescribeClusterRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterRolesResponse rsp = DescribeClusterRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterRolesOutcome(rsp);
+        else
+            return DescribeClusterRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterRolesOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeClusterRolesAsync(const DescribeClusterRolesRequest& request, const DescribeClusterRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DescribeClusterRolesOutcomeCallable GoosefsClient::DescribeClusterRolesCallable(const DescribeClusterRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GoosefsClient::DescribeDataRepositoryTaskStatusOutcome GoosefsClient::DescribeDataRepositoryTaskStatus(const DescribeDataRepositoryTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataRepositoryTaskStatus");

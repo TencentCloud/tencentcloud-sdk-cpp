@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名ID。
-                     * @return DomainId 域名ID。
+                     * 获取域名ID 例如：domain-123abc
+                     * @return DomainId 域名ID 例如：domain-123abc
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名ID。
-                     * @param _domainId 域名ID。
+                     * 设置域名ID 例如：domain-123abc
+                     * @param _domainId 域名ID 例如：domain-123abc
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名ID。
+                     * 域名ID 例如：domain-123abc
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;

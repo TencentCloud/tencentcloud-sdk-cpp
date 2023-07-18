@@ -371,8 +371,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeScanTaskStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchLogsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesRequest.h>
@@ -1109,9 +1107,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScanVulSettingResponse> DescribeScanVulSettingOutcome;
                 typedef std::future<DescribeScanVulSettingOutcome> DescribeScanVulSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanVulSettingRequest&, DescribeScanVulSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanVulSettingAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSearchExportListResponse> DescribeSearchExportListOutcome;
-                typedef std::future<DescribeSearchExportListOutcome> DescribeSearchExportListOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeSearchExportListRequest&, DescribeSearchExportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchExportListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSearchLogsResponse> DescribeSearchLogsOutcome;
                 typedef std::future<DescribeSearchLogsOutcome> DescribeSearchLogsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSearchLogsRequest&, DescribeSearchLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchLogsAsyncHandler;
@@ -2983,17 +2978,6 @@ namespace TencentCloud
                 DescribeScanVulSettingOutcome DescribeScanVulSetting(const Model::DescribeScanVulSettingRequest &request);
                 void DescribeScanVulSettingAsync(const Model::DescribeScanVulSettingRequest& request, const DescribeScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScanVulSettingOutcomeCallable DescribeScanVulSettingCallable(const Model::DescribeScanVulSettingRequest& request);
-
-                /**
-                 *旧版日志下载接口下线
-
-导出ES查询文档列表
-                 * @param req DescribeSearchExportListRequest
-                 * @return DescribeSearchExportListOutcome
-                 */
-                DescribeSearchExportListOutcome DescribeSearchExportList(const Model::DescribeSearchExportListRequest &request);
-                void DescribeSearchExportListAsync(const Model::DescribeSearchExportListRequest& request, const DescribeSearchExportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSearchExportListOutcomeCallable DescribeSearchExportListCallable(const Model::DescribeSearchExportListRequest& request);
 
                 /**
                  *获取历史搜索记录

@@ -150,15 +150,15 @@ blacklist：黑名单
                     bool RefererTypeHasBeenSet() const;
 
                     /**
-                     * 获取referer 内容列表列表
-                     * @return Referers referer 内容列表列表
+                     * 获取referer 内容列表
+                     * @return Referers referer 内容列表
                      * 
                      */
                     std::vector<std::string> GetReferers() const;
 
                     /**
-                     * 设置referer 内容列表列表
-                     * @param _referers referer 内容列表列表
+                     * 设置referer 内容列表
+                     * @param _referers referer 内容列表
                      * 
                      */
                     void SetReferers(const std::vector<std::string>& _referers);
@@ -230,7 +230,7 @@ blacklist：黑名单
                     bool m_refererTypeHasBeenSet;
 
                     /**
-                     * referer 内容列表列表
+                     * referer 内容列表
                      */
                     std::vector<std::string> m_referers;
                     bool m_referersHasBeenSet;

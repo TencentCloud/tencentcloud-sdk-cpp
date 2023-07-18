@@ -27,7 +27,8 @@ ChannelCreateFlowSignUrlRequest::ChannelCreateFlowSignUrlRequest() :
     m_flowIdHasBeenSet(false),
     m_flowApproverInfosHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_organizationHasBeenSet(false)
+    m_organizationHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string ChannelCreateFlowSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_organization.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_jumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -174,6 +183,22 @@ void ChannelCreateFlowSignUrlRequest::SetOrganization(const OrganizationInfo& _o
 bool ChannelCreateFlowSignUrlRequest::OrganizationHasBeenSet() const
 {
     return m_organizationHasBeenSet;
+}
+
+string ChannelCreateFlowSignUrlRequest::GetJumpUrl() const
+{
+    return m_jumpUrl;
+}
+
+void ChannelCreateFlowSignUrlRequest::SetJumpUrl(const string& _jumpUrl)
+{
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
+}
+
+bool ChannelCreateFlowSignUrlRequest::JumpUrlHasBeenSet() const
+{
+    return m_jumpUrlHasBeenSet;
 }
 
 

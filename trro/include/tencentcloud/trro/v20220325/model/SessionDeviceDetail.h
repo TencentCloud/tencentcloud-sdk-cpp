@@ -340,6 +340,306 @@ namespace TencentCloud
                      */
                     bool DeviceIdHasBeenSet() const;
 
+                    /**
+                     * 获取sdk版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ver sdk版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVer() const;
+
+                    /**
+                     * 设置sdk版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ver sdk版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVer(const std::string& _ver);
+
+                    /**
+                     * 判断参数 Ver 是否已赋值
+                     * @return Ver 是否已赋值
+                     * 
+                     */
+                    bool VerHasBeenSet() const;
+
+                    /**
+                     * 获取模式(p2p/server)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SdkMode 模式(p2p/server)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSdkMode() const;
+
+                    /**
+                     * 设置模式(p2p/server)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sdkMode 模式(p2p/server)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSdkMode(const std::string& _sdkMode);
+
+                    /**
+                     * 判断参数 SdkMode 是否已赋值
+                     * @return SdkMode 是否已赋值
+                     * 
+                     */
+                    bool SdkModeHasBeenSet() const;
+
+                    /**
+                     * 获取解码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DecodeCost 解码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetDecodeCost() const;
+
+                    /**
+                     * 设置解码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _decodeCost 解码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDecodeCost(const std::vector<int64_t>& _decodeCost);
+
+                    /**
+                     * 判断参数 DecodeCost 是否已赋值
+                     * @return DecodeCost 是否已赋值
+                     * 
+                     */
+                    bool DecodeCostHasBeenSet() const;
+
+                    /**
+                     * 获取渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenderConst 渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetRenderConst() const;
+
+                    /**
+                     * 设置渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _renderConst 渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRenderConst(const std::vector<int64_t>& _renderConst);
+
+                    /**
+                     * 判断参数 RenderConst 是否已赋值
+                     * @return RenderConst 是否已赋值
+                     * 
+                     */
+                    bool RenderConstHasBeenSet() const;
+
+                    /**
+                     * 获取卡顿k100
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return K100 卡顿k100
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<double> GetK100() const;
+
+                    /**
+                     * 设置卡顿k100
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _k100 卡顿k100
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetK100(const std::vector<double>& _k100);
+
+                    /**
+                     * 判断参数 K100 是否已赋值
+                     * @return K100 是否已赋值
+                     * 
+                     */
+                    bool K100HasBeenSet() const;
+
+                    /**
+                     * 获取卡顿k150
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return K150 卡顿k150
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<double> GetK150() const;
+
+                    /**
+                     * 设置卡顿k150
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _k150 卡顿k150
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetK150(const std::vector<double>& _k150);
+
+                    /**
+                     * 判断参数 K150 是否已赋值
+                     * @return K150 是否已赋值
+                     * 
+                     */
+                    bool K150HasBeenSet() const;
+
+                    /**
+                     * 获取nack请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NACK nack请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetNACK() const;
+
+                    /**
+                     * 设置nack请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nACK nack请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNACK(const std::vector<int64_t>& _nACK);
+
+                    /**
+                     * 判断参数 NACK 是否已赋值
+                     * @return NACK 是否已赋值
+                     * 
+                     */
+                    bool NACKHasBeenSet() const;
+
+                    /**
+                     * 获取服务端调控码率,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BitRateEstimate 服务端调控码率,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetBitRateEstimate() const;
+
+                    /**
+                     * 设置服务端调控码率,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bitRateEstimate 服务端调控码率,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBitRateEstimate(const std::vector<int64_t>& _bitRateEstimate);
+
+                    /**
+                     * 判断参数 BitRateEstimate 是否已赋值
+                     * @return BitRateEstimate 是否已赋值
+                     * 
+                     */
+                    bool BitRateEstimateHasBeenSet() const;
+
+                    /**
+                     * 获取宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Width 宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 设置宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _width 宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWidth(const int64_t& _width);
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     * 
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Height 高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetHeight() const;
+
+                    /**
+                     * 设置高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _height 高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHeight(const int64_t& _height);
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     * 
+                     */
+                    bool HeightHasBeenSet() const;
+
+                    /**
+                     * 获取编码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncodeCost 编码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetEncodeCost() const;
+
+                    /**
+                     * 设置编码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encodeCost 编码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncodeCost(const std::vector<int64_t>& _encodeCost);
+
+                    /**
+                     * 判断参数 EncodeCost 是否已赋值
+                     * @return EncodeCost 是否已赋值
+                     * 
+                     */
+                    bool EncodeCostHasBeenSet() const;
+
+                    /**
+                     * 获取采集耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CaptureCost 采集耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetCaptureCost() const;
+
+                    /**
+                     * 设置采集耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _captureCost 采集耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCaptureCost(const std::vector<int64_t>& _captureCost);
+
+                    /**
+                     * 判断参数 CaptureCost 是否已赋值
+                     * @return CaptureCost 是否已赋值
+                     * 
+                     */
+                    bool CaptureCostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +725,90 @@ namespace TencentCloud
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * sdk版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ver;
+                    bool m_verHasBeenSet;
+
+                    /**
+                     * 模式(p2p/server)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sdkMode;
+                    bool m_sdkModeHasBeenSet;
+
+                    /**
+                     * 解码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_decodeCost;
+                    bool m_decodeCostHasBeenSet;
+
+                    /**
+                     * 渲染耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_renderConst;
+                    bool m_renderConstHasBeenSet;
+
+                    /**
+                     * 卡顿k100
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_k100;
+                    bool m_k100HasBeenSet;
+
+                    /**
+                     * 卡顿k150
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_k150;
+                    bool m_k150HasBeenSet;
+
+                    /**
+                     * nack请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_nACK;
+                    bool m_nACKHasBeenSet;
+
+                    /**
+                     * 服务端调控码率,单位：kbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_bitRateEstimate;
+                    bool m_bitRateEstimateHasBeenSet;
+
+                    /**
+                     * 宽度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 高度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_height;
+                    bool m_heightHasBeenSet;
+
+                    /**
+                     * 编码耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_encodeCost;
+                    bool m_encodeCostHasBeenSet;
+
+                    /**
+                     * 采集耗时，单位：ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_captureCost;
+                    bool m_captureCostHasBeenSet;
 
                 };
             }

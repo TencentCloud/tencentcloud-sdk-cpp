@@ -246,6 +246,27 @@ namespace TencentCloud
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型 1:在线 2:离线  默认为1
+                     * @return ModelType 任务类型 1:在线 2:离线  默认为1
+                     * 
+                     */
+                    int64_t GetModelType() const;
+
+                    /**
+                     * 设置任务类型 1:在线 2:离线  默认为1
+                     * @param _modelType 任务类型 1:在线 2:离线  默认为1
+                     * 
+                     */
+                    void SetModelType(const int64_t& _modelType);
+
+                    /**
+                     * 判断参数 ModelType 是否已赋值
+                     * @return ModelType 是否已赋值
+                     * 
+                     */
+                    bool ModelTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +325,12 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 任务类型 1:在线 2:离线  默认为1
+                     */
+                    int64_t m_modelType;
+                    bool m_modelTypeHasBeenSet;
 
                 };
             }

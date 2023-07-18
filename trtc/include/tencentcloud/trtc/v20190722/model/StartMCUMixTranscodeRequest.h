@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool LayoutParamsHasBeenSet() const;
 
                     /**
-                     * 获取第三方CDN转推参数。
-                     * @return PublishCdnParams 第三方CDN转推参数。
+                     * 获取第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推
+                     * @return PublishCdnParams 第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推
                      * 
                      */
                     PublishCdnParams GetPublishCdnParams() const;
 
                     /**
-                     * 设置第三方CDN转推参数。
-                     * @param _publishCdnParams 第三方CDN转推参数。
+                     * 设置第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推
+                     * @param _publishCdnParams 第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推
                      * 
                      */
                     void SetPublishCdnParams(const PublishCdnParams& _publishCdnParams);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_layoutParamsHasBeenSet;
 
                     /**
-                     * 第三方CDN转推参数。
+                     * 第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推
                      */
                     PublishCdnParams m_publishCdnParams;
                     bool m_publishCdnParamsHasBeenSet;

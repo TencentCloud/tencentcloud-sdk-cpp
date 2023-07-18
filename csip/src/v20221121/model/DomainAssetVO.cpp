@@ -53,7 +53,8 @@ DomainAssetVO::DomainAssetVO() :
     m_sourceTypeHasBeenSet(false),
     m_memberIdHasBeenSet(false),
     m_cCAttackHasBeenSet(false),
-    m_webAttackHasBeenSet(false)
+    m_webAttackHasBeenSet(false),
+    m_serviceRiskHasBeenSet(false)
 {
 }
 
@@ -417,6 +418,16 @@ CoreInternalOutcome DomainAssetVO::Deserialize(const rapidjson::Value &value)
         m_webAttackHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceRisk") && !value["ServiceRisk"].IsNull())
+    {
+        if (!value["ServiceRisk"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainAssetVO.ServiceRisk` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceRisk = value["ServiceRisk"].GetUint64();
+        m_serviceRiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -718,6 +729,14 @@ void DomainAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "WebAttack";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_webAttack, allocator);
+    }
+
+    if (m_serviceRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceRisk, allocator);
     }
 
 }
@@ -1249,5 +1268,21 @@ void DomainAssetVO::SetWebAttack(const int64_t& _webAttack)
 bool DomainAssetVO::WebAttackHasBeenSet() const
 {
     return m_webAttackHasBeenSet;
+}
+
+uint64_t DomainAssetVO::GetServiceRisk() const
+{
+    return m_serviceRisk;
+}
+
+void DomainAssetVO::SetServiceRisk(const uint64_t& _serviceRisk)
+{
+    m_serviceRisk = _serviceRisk;
+    m_serviceRiskHasBeenSet = true;
+}
+
+bool DomainAssetVO::ServiceRiskHasBeenSet() const
+{
+    return m_serviceRiskHasBeenSet;
 }
 

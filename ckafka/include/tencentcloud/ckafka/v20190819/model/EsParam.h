@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/DropCls.h>
 #include <tencentcloud/ckafka/v20190819/model/FailureParam.h>
+#include <tencentcloud/ckafka/v20190819/model/EsRecordMapping.h>
 
 
 namespace TencentCloud
@@ -405,6 +406,48 @@ namespace TencentCloud
                      */
                     bool DropDlqHasBeenSet() const;
 
+                    /**
+                     * 获取使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * @return RecordMappingList 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * 
+                     */
+                    std::vector<EsRecordMapping> GetRecordMappingList() const;
+
+                    /**
+                     * 设置使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * @param _recordMappingList 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     * 
+                     */
+                    void SetRecordMappingList(const std::vector<EsRecordMapping>& _recordMappingList);
+
+                    /**
+                     * 判断参数 RecordMappingList 是否已赋值
+                     * @return RecordMappingList 是否已赋值
+                     * 
+                     */
+                    bool RecordMappingListHasBeenSet() const;
+
+                    /**
+                     * 获取消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * @return DateField 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * 
+                     */
+                    std::string GetDateField() const;
+
+                    /**
+                     * 设置消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * @param _dateField 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     * 
+                     */
+                    void SetDateField(const std::string& _dateField);
+
+                    /**
+                     * 判断参数 DateField 是否已赋值
+                     * @return DateField 是否已赋值
+                     * 
+                     */
+                    bool DateFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +551,18 @@ namespace TencentCloud
                      */
                     FailureParam m_dropDlq;
                     bool m_dropDlqHasBeenSet;
+
+                    /**
+                     * 使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配
+                     */
+                    std::vector<EsRecordMapping> m_recordMappingList;
+                    bool m_recordMappingListHasBeenSet;
+
+                    /**
+                     * 消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射
+                     */
+                    std::string m_dateField;
+                    bool m_dateFieldHasBeenSet;
 
                 };
             }

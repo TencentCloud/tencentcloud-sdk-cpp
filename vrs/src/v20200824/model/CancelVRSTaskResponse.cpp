@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListResponse.h>
+#include <tencentcloud/vrs/v20200824/model/CancelVRSTaskResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Vrs::V20200824::Model;
 using namespace std;
 
-DescribeSearchExportListResponse::DescribeSearchExportListResponse() :
-    m_taskIdHasBeenSet(false),
-    m_downloadUrlHasBeenSet(false)
+CancelVRSTaskResponse::CancelVRSTaskResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeSearchExportListResponse::Deserialize(const string &payload)
+CoreInternalOutcome CancelVRSTaskResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,40 @@ CoreInternalOutcome DescribeSearchExportListResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["TaskId"].IsUint64())
+        if (!rsp["Data"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
         }
-        m_taskId = rsp["TaskId"].GetUint64();
-        m_taskIdHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
-    {
-        if (!rsp["DownloadUrl"].IsString())
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
-        m_downloadUrlHasBeenSet = true;
+
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeSearchExportListResponse::ToJsonString() const
+string CancelVRSTaskResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIdHasBeenSet)
+    if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_taskId, allocator);
-    }
-
-    if (m_downloadUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DownloadUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +110,14 @@ string DescribeSearchExportListResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeSearchExportListResponse::GetTaskId() const
+CancelVRSTaskRsp CancelVRSTaskResponse::GetData() const
 {
-    return m_taskId;
+    return m_data;
 }
 
-bool DescribeSearchExportListResponse::TaskIdHasBeenSet() const
+bool CancelVRSTaskResponse::DataHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
-}
-
-string DescribeSearchExportListResponse::GetDownloadUrl() const
-{
-    return m_downloadUrl;
-}
-
-bool DescribeSearchExportListResponse::DownloadUrlHasBeenSet() const
-{
-    return m_downloadUrlHasBeenSet;
+    return m_dataHasBeenSet;
 }
 
 

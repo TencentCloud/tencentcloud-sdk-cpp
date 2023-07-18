@@ -23,12 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/vrs/v20200824/model/CancelVRSTaskRequest.h>
+#include <tencentcloud/vrs/v20200824/model/CancelVRSTaskResponse.h>
 #include <tencentcloud/vrs/v20200824/model/CreateVRSTaskRequest.h>
 #include <tencentcloud/vrs/v20200824/model/CreateVRSTaskResponse.h>
 #include <tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusRequest.h>
 #include <tencentcloud/vrs/v20200824/model/DescribeVRSTaskStatusResponse.h>
 #include <tencentcloud/vrs/v20200824/model/DetectEnvAndSoundQualityRequest.h>
 #include <tencentcloud/vrs/v20200824/model/DetectEnvAndSoundQualityResponse.h>
+#include <tencentcloud/vrs/v20200824/model/DownloadVRSModelRequest.h>
+#include <tencentcloud/vrs/v20200824/model/DownloadVRSModelResponse.h>
 #include <tencentcloud/vrs/v20200824/model/GetTrainingTextRequest.h>
 #include <tencentcloud/vrs/v20200824/model/GetTrainingTextResponse.h>
 
@@ -45,6 +49,9 @@ namespace TencentCloud
                 VrsClient(const Credential &credential, const std::string &region);
                 VrsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CancelVRSTaskResponse> CancelVRSTaskOutcome;
+                typedef std::future<CancelVRSTaskOutcome> CancelVRSTaskOutcomeCallable;
+                typedef std::function<void(const VrsClient*, const Model::CancelVRSTaskRequest&, CancelVRSTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelVRSTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVRSTaskResponse> CreateVRSTaskOutcome;
                 typedef std::future<CreateVRSTaskOutcome> CreateVRSTaskOutcomeCallable;
                 typedef std::function<void(const VrsClient*, const Model::CreateVRSTaskRequest&, CreateVRSTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVRSTaskAsyncHandler;
@@ -54,11 +61,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectEnvAndSoundQualityResponse> DetectEnvAndSoundQualityOutcome;
                 typedef std::future<DetectEnvAndSoundQualityOutcome> DetectEnvAndSoundQualityOutcomeCallable;
                 typedef std::function<void(const VrsClient*, const Model::DetectEnvAndSoundQualityRequest&, DetectEnvAndSoundQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectEnvAndSoundQualityAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadVRSModelResponse> DownloadVRSModelOutcome;
+                typedef std::future<DownloadVRSModelOutcome> DownloadVRSModelOutcomeCallable;
+                typedef std::function<void(const VrsClient*, const Model::DownloadVRSModelRequest&, DownloadVRSModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadVRSModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTrainingTextResponse> GetTrainingTextOutcome;
                 typedef std::future<GetTrainingTextOutcome> GetTrainingTextOutcomeCallable;
                 typedef std::function<void(const VrsClient*, const Model::GetTrainingTextRequest&, GetTrainingTextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTrainingTextAsyncHandler;
 
 
+
+                /**
+                 *声音复刻取消任务接口
+                 * @param req CancelVRSTaskRequest
+                 * @return CancelVRSTaskOutcome
+                 */
+                CancelVRSTaskOutcome CancelVRSTask(const Model::CancelVRSTaskRequest &request);
+                void CancelVRSTaskAsync(const Model::CancelVRSTaskRequest& request, const CancelVRSTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelVRSTaskOutcomeCallable CancelVRSTaskCallable(const Model::CancelVRSTaskRequest& request);
 
                 /**
                  *本接口服务对提交音频进行声音复刻任务创建接口，异步返回复刻结果。
@@ -94,6 +113,15 @@ namespace TencentCloud
                 DetectEnvAndSoundQualityOutcome DetectEnvAndSoundQuality(const Model::DetectEnvAndSoundQualityRequest &request);
                 void DetectEnvAndSoundQualityAsync(const Model::DetectEnvAndSoundQualityRequest& request, const DetectEnvAndSoundQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectEnvAndSoundQualityOutcomeCallable DetectEnvAndSoundQualityCallable(const Model::DetectEnvAndSoundQualityRequest& request);
+
+                /**
+                 *下载声音复刻离线模型
+                 * @param req DownloadVRSModelRequest
+                 * @return DownloadVRSModelOutcome
+                 */
+                DownloadVRSModelOutcome DownloadVRSModel(const Model::DownloadVRSModelRequest &request);
+                void DownloadVRSModelAsync(const Model::DownloadVRSModelRequest& request, const DownloadVRSModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadVRSModelOutcomeCallable DownloadVRSModelCallable(const Model::DownloadVRSModelRequest& request);
 
                 /**
                  *本接口用于获取声音复刻训练文本信息。

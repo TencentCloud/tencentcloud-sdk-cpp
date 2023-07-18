@@ -46,7 +46,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_clientCountHasBeenSet(false),
     m_totalCountHasBeenSet(false),
     m_logSetHasBeenSet(false),
-    m_metricDurationHasBeenSet(false)
+    m_metricDurationHasBeenSet(false),
+    m_customShowTagsHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,19 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_metricDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomShowTags") && !value["CustomShowTags"].IsNull())
+    {
+        if (!value["CustomShowTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CustomShowTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomShowTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customShowTags.push_back((*itr).GetString());
+        }
+        m_customShowTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +559,19 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MetricDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_metricDuration, allocator);
+    }
+
+    if (m_customShowTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomShowTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customShowTags.begin(); itr != m_customShowTags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -964,5 +991,21 @@ void ApmInstanceDetail::SetMetricDuration(const int64_t& _metricDuration)
 bool ApmInstanceDetail::MetricDurationHasBeenSet() const
 {
     return m_metricDurationHasBeenSet;
+}
+
+vector<string> ApmInstanceDetail::GetCustomShowTags() const
+{
+    return m_customShowTags;
+}
+
+void ApmInstanceDetail::SetCustomShowTags(const vector<string>& _customShowTags)
+{
+    m_customShowTags = _customShowTags;
+    m_customShowTagsHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CustomShowTagsHasBeenSet() const
+{
+    return m_customShowTagsHasBeenSet;
 }
 

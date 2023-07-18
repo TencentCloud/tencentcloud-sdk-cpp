@@ -45,11 +45,11 @@ CoreInternalOutcome BackupDownloadInfo::Deserialize(const rapidjson::Value &valu
 
     if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
     {
-        if (!value["FileSize"].IsUint64())
+        if (!value["FileSize"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `BackupDownloadInfo.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadInfo.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_fileSize = value["FileSize"].GetUint64();
+        m_fileSize = value["FileSize"].GetInt64();
         m_fileSizeHasBeenSet = true;
     }
 
@@ -131,12 +131,12 @@ bool BackupDownloadInfo::FileNameHasBeenSet() const
     return m_fileNameHasBeenSet;
 }
 
-uint64_t BackupDownloadInfo::GetFileSize() const
+int64_t BackupDownloadInfo::GetFileSize() const
 {
     return m_fileSize;
 }
 
-void BackupDownloadInfo::SetFileSize(const uint64_t& _fileSize)
+void BackupDownloadInfo::SetFileSize(const int64_t& _fileSize)
 {
     m_fileSize = _fileSize;
     m_fileSizeHasBeenSet = true;

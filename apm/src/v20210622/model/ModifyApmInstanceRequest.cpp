@@ -38,7 +38,8 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_logRegionHasBeenSet(false),
     m_logTopicIDHasBeenSet(false),
     m_logSetHasBeenSet(false),
-    m_logSourceHasBeenSet(false)
+    m_logSourceHasBeenSet(false),
+    m_customShowTagsHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,19 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "LogSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customShowTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomShowTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customShowTags.begin(); itr != m_customShowTags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -446,6 +460,22 @@ void ModifyApmInstanceRequest::SetLogSource(const string& _logSource)
 bool ModifyApmInstanceRequest::LogSourceHasBeenSet() const
 {
     return m_logSourceHasBeenSet;
+}
+
+vector<string> ModifyApmInstanceRequest::GetCustomShowTags() const
+{
+    return m_customShowTags;
+}
+
+void ModifyApmInstanceRequest::SetCustomShowTags(const vector<string>& _customShowTags)
+{
+    m_customShowTags = _customShowTags;
+    m_customShowTagsHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::CustomShowTagsHasBeenSet() const
+{
+    return m_customShowTagsHasBeenSet;
 }
 
 

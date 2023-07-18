@@ -872,6 +872,31 @@ namespace TencentCloud
                      */
                     bool WebAttackHasBeenSet() const;
 
+                    /**
+                     * 获取风险服务暴露数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceRisk 风险服务暴露数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetServiceRisk() const;
+
+                    /**
+                     * 设置风险服务暴露数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceRisk 风险服务暴露数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceRisk(const uint64_t& _serviceRisk);
+
+                    /**
+                     * 判断参数 ServiceRisk 是否已赋值
+                     * @return ServiceRisk 是否已赋值
+                     * 
+                     */
+                    bool ServiceRiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1104,6 +1129,13 @@ namespace TencentCloud
                      */
                     int64_t m_webAttack;
                     bool m_webAttackHasBeenSet;
+
+                    /**
+                     * 风险服务暴露数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_serviceRisk;
+                    bool m_serviceRiskHasBeenSet;
 
                 };
             }

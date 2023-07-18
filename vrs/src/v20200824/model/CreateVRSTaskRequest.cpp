@@ -30,7 +30,8 @@ CreateVRSTaskRequest::CreateVRSTaskRequest() :
     m_voiceLanguageHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_audioIdListHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_modelTypeHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string CreateVRSTaskRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modelType, allocator);
     }
 
 
@@ -244,6 +253,22 @@ void CreateVRSTaskRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateVRSTaskRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+int64_t CreateVRSTaskRequest::GetModelType() const
+{
+    return m_modelType;
+}
+
+void CreateVRSTaskRequest::SetModelType(const int64_t& _modelType)
+{
+    m_modelType = _modelType;
+    m_modelTypeHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::ModelTypeHasBeenSet() const
+{
+    return m_modelTypeHasBeenSet;
 }
 
 

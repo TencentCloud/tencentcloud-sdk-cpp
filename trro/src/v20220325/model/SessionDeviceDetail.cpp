@@ -34,7 +34,19 @@ SessionDeviceDetail::SessionDeviceDetail() :
     m_memUsedHasBeenSet(false),
     m_timeOffsetHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_verHasBeenSet(false),
+    m_sdkModeHasBeenSet(false),
+    m_decodeCostHasBeenSet(false),
+    m_renderConstHasBeenSet(false),
+    m_k100HasBeenSet(false),
+    m_k150HasBeenSet(false),
+    m_nACKHasBeenSet(false),
+    m_bitRateEstimateHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false),
+    m_encodeCostHasBeenSet(false),
+    m_captureCostHasBeenSet(false)
 {
 }
 
@@ -207,6 +219,150 @@ CoreInternalOutcome SessionDeviceDetail::Deserialize(const rapidjson::Value &val
         m_deviceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Ver") && !value["Ver"].IsNull())
+    {
+        if (!value["Ver"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.Ver` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ver = string(value["Ver"].GetString());
+        m_verHasBeenSet = true;
+    }
+
+    if (value.HasMember("SdkMode") && !value["SdkMode"].IsNull())
+    {
+        if (!value["SdkMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.SdkMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sdkMode = string(value["SdkMode"].GetString());
+        m_sdkModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DecodeCost") && !value["DecodeCost"].IsNull())
+    {
+        if (!value["DecodeCost"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.DecodeCost` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DecodeCost"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_decodeCost.push_back((*itr).GetInt64());
+        }
+        m_decodeCostHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenderConst") && !value["RenderConst"].IsNull())
+    {
+        if (!value["RenderConst"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.RenderConst` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RenderConst"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_renderConst.push_back((*itr).GetInt64());
+        }
+        m_renderConstHasBeenSet = true;
+    }
+
+    if (value.HasMember("K100") && !value["K100"].IsNull())
+    {
+        if (!value["K100"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.K100` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["K100"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_k100.push_back((*itr).GetDouble());
+        }
+        m_k100HasBeenSet = true;
+    }
+
+    if (value.HasMember("K150") && !value["K150"].IsNull())
+    {
+        if (!value["K150"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.K150` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["K150"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_k150.push_back((*itr).GetDouble());
+        }
+        m_k150HasBeenSet = true;
+    }
+
+    if (value.HasMember("NACK") && !value["NACK"].IsNull())
+    {
+        if (!value["NACK"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.NACK` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NACK"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nACK.push_back((*itr).GetInt64());
+        }
+        m_nACKHasBeenSet = true;
+    }
+
+    if (value.HasMember("BitRateEstimate") && !value["BitRateEstimate"].IsNull())
+    {
+        if (!value["BitRateEstimate"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.BitRateEstimate` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BitRateEstimate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bitRateEstimate.push_back((*itr).GetInt64());
+        }
+        m_bitRateEstimateHasBeenSet = true;
+    }
+
+    if (value.HasMember("Width") && !value["Width"].IsNull())
+    {
+        if (!value["Width"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.Width` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_width = value["Width"].GetInt64();
+        m_widthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Height") && !value["Height"].IsNull())
+    {
+        if (!value["Height"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.Height` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_height = value["Height"].GetInt64();
+        m_heightHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncodeCost") && !value["EncodeCost"].IsNull())
+    {
+        if (!value["EncodeCost"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.EncodeCost` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EncodeCost"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_encodeCost.push_back((*itr).GetInt64());
+        }
+        m_encodeCostHasBeenSet = true;
+    }
+
+    if (value.HasMember("CaptureCost") && !value["CaptureCost"].IsNull())
+    {
+        if (!value["CaptureCost"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionDeviceDetail.CaptureCost` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CaptureCost"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_captureCost.push_back((*itr).GetInt64());
+        }
+        m_captureCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -364,6 +520,142 @@ void SessionDeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ver.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sdkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sdkMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_decodeCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecodeCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_decodeCost.begin(); itr != m_decodeCost.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_renderConstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenderConst";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_renderConst.begin(); itr != m_renderConst.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_k100HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K100";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_k100.begin(); itr != m_k100.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_k150HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K150";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_k150.begin(); itr != m_k150.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_nACKHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NACK";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nACK.begin(); itr != m_nACK.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_bitRateEstimateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BitRateEstimate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bitRateEstimate.begin(); itr != m_bitRateEstimate.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_encodeCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncodeCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_encodeCost.begin(); itr != m_encodeCost.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_captureCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptureCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_captureCost.begin(); itr != m_captureCost.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -591,5 +883,197 @@ void SessionDeviceDetail::SetDeviceId(const string& _deviceId)
 bool SessionDeviceDetail::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+string SessionDeviceDetail::GetVer() const
+{
+    return m_ver;
+}
+
+void SessionDeviceDetail::SetVer(const string& _ver)
+{
+    m_ver = _ver;
+    m_verHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::VerHasBeenSet() const
+{
+    return m_verHasBeenSet;
+}
+
+string SessionDeviceDetail::GetSdkMode() const
+{
+    return m_sdkMode;
+}
+
+void SessionDeviceDetail::SetSdkMode(const string& _sdkMode)
+{
+    m_sdkMode = _sdkMode;
+    m_sdkModeHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::SdkModeHasBeenSet() const
+{
+    return m_sdkModeHasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetDecodeCost() const
+{
+    return m_decodeCost;
+}
+
+void SessionDeviceDetail::SetDecodeCost(const vector<int64_t>& _decodeCost)
+{
+    m_decodeCost = _decodeCost;
+    m_decodeCostHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::DecodeCostHasBeenSet() const
+{
+    return m_decodeCostHasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetRenderConst() const
+{
+    return m_renderConst;
+}
+
+void SessionDeviceDetail::SetRenderConst(const vector<int64_t>& _renderConst)
+{
+    m_renderConst = _renderConst;
+    m_renderConstHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::RenderConstHasBeenSet() const
+{
+    return m_renderConstHasBeenSet;
+}
+
+vector<double> SessionDeviceDetail::GetK100() const
+{
+    return m_k100;
+}
+
+void SessionDeviceDetail::SetK100(const vector<double>& _k100)
+{
+    m_k100 = _k100;
+    m_k100HasBeenSet = true;
+}
+
+bool SessionDeviceDetail::K100HasBeenSet() const
+{
+    return m_k100HasBeenSet;
+}
+
+vector<double> SessionDeviceDetail::GetK150() const
+{
+    return m_k150;
+}
+
+void SessionDeviceDetail::SetK150(const vector<double>& _k150)
+{
+    m_k150 = _k150;
+    m_k150HasBeenSet = true;
+}
+
+bool SessionDeviceDetail::K150HasBeenSet() const
+{
+    return m_k150HasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetNACK() const
+{
+    return m_nACK;
+}
+
+void SessionDeviceDetail::SetNACK(const vector<int64_t>& _nACK)
+{
+    m_nACK = _nACK;
+    m_nACKHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::NACKHasBeenSet() const
+{
+    return m_nACKHasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetBitRateEstimate() const
+{
+    return m_bitRateEstimate;
+}
+
+void SessionDeviceDetail::SetBitRateEstimate(const vector<int64_t>& _bitRateEstimate)
+{
+    m_bitRateEstimate = _bitRateEstimate;
+    m_bitRateEstimateHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::BitRateEstimateHasBeenSet() const
+{
+    return m_bitRateEstimateHasBeenSet;
+}
+
+int64_t SessionDeviceDetail::GetWidth() const
+{
+    return m_width;
+}
+
+void SessionDeviceDetail::SetWidth(const int64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+int64_t SessionDeviceDetail::GetHeight() const
+{
+    return m_height;
+}
+
+void SessionDeviceDetail::SetHeight(const int64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetEncodeCost() const
+{
+    return m_encodeCost;
+}
+
+void SessionDeviceDetail::SetEncodeCost(const vector<int64_t>& _encodeCost)
+{
+    m_encodeCost = _encodeCost;
+    m_encodeCostHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::EncodeCostHasBeenSet() const
+{
+    return m_encodeCostHasBeenSet;
+}
+
+vector<int64_t> SessionDeviceDetail::GetCaptureCost() const
+{
+    return m_captureCost;
+}
+
+void SessionDeviceDetail::SetCaptureCost(const vector<int64_t>& _captureCost)
+{
+    m_captureCost = _captureCost;
+    m_captureCostHasBeenSet = true;
+}
+
+bool SessionDeviceDetail::CaptureCostHasBeenSet() const
+{
+    return m_captureCostHasBeenSet;
 }
 

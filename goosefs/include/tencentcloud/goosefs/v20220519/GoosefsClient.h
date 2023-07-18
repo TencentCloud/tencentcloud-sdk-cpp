@@ -25,6 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeClusterRolesRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeClusterRolesResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h>
 
@@ -44,6 +50,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataRepositoryTaskResponse> CreateDataRepositoryTaskOutcome;
                 typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreateDataRepositoryTaskRequest&, CreateDataRepositoryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataRepositoryTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterClientTokenResponse> DescribeClusterClientTokenOutcome;
+                typedef std::future<DescribeClusterClientTokenOutcome> DescribeClusterClientTokenOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeClusterClientTokenRequest&, DescribeClusterClientTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterClientTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterRoleTokenResponse> DescribeClusterRoleTokenOutcome;
+                typedef std::future<DescribeClusterRoleTokenOutcome> DescribeClusterRoleTokenOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeClusterRoleTokenRequest&, DescribeClusterRoleTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRoleTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterRolesResponse> DescribeClusterRolesOutcome;
+                typedef std::future<DescribeClusterRolesOutcome> DescribeClusterRolesOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeClusterRolesRequest&, DescribeClusterRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataRepositoryTaskStatusResponse> DescribeDataRepositoryTaskStatusOutcome;
                 typedef std::future<DescribeDataRepositoryTaskStatusOutcome> DescribeDataRepositoryTaskStatusOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeDataRepositoryTaskStatusRequest&, DescribeDataRepositoryTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataRepositoryTaskStatusAsyncHandler;
@@ -58,6 +73,33 @@ namespace TencentCloud
                 CreateDataRepositoryTaskOutcome CreateDataRepositoryTask(const Model::CreateDataRepositoryTaskRequest &request);
                 void CreateDataRepositoryTaskAsync(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDataRepositoryTaskOutcomeCallable CreateDataRepositoryTaskCallable(const Model::CreateDataRepositoryTaskRequest& request);
+
+                /**
+                 *查询GooseFS集群客户端凭证
+                 * @param req DescribeClusterClientTokenRequest
+                 * @return DescribeClusterClientTokenOutcome
+                 */
+                DescribeClusterClientTokenOutcome DescribeClusterClientToken(const Model::DescribeClusterClientTokenRequest &request);
+                void DescribeClusterClientTokenAsync(const Model::DescribeClusterClientTokenRequest& request, const DescribeClusterClientTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterClientTokenOutcomeCallable DescribeClusterClientTokenCallable(const Model::DescribeClusterClientTokenRequest& request);
+
+                /**
+                 *查询GooseFS集群角色凭证
+                 * @param req DescribeClusterRoleTokenRequest
+                 * @return DescribeClusterRoleTokenOutcome
+                 */
+                DescribeClusterRoleTokenOutcome DescribeClusterRoleToken(const Model::DescribeClusterRoleTokenRequest &request);
+                void DescribeClusterRoleTokenAsync(const Model::DescribeClusterRoleTokenRequest& request, const DescribeClusterRoleTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterRoleTokenOutcomeCallable DescribeClusterRoleTokenCallable(const Model::DescribeClusterRoleTokenRequest& request);
+
+                /**
+                 *查询GooseFS集群角色
+                 * @param req DescribeClusterRolesRequest
+                 * @return DescribeClusterRolesOutcome
+                 */
+                DescribeClusterRolesOutcome DescribeClusterRoles(const Model::DescribeClusterRolesRequest &request);
+                void DescribeClusterRolesAsync(const Model::DescribeClusterRolesRequest& request, const DescribeClusterRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterRolesOutcomeCallable DescribeClusterRolesCallable(const Model::DescribeClusterRolesRequest& request);
 
                 /**
                  *获取数据流通任务实时状态，用作客户端控制

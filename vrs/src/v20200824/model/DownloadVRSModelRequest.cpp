@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h>
+#include <tencentcloud/vrs/v20200824/model/DownloadVRSModelRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Vrs::V20200824::Model;
 using namespace std;
 
-DescribeSearchExportListRequest::DescribeSearchExportListRequest() :
-    m_queryHasBeenSet(false)
+DownloadVRSModelRequest::DownloadVRSModelRequest() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-string DescribeSearchExportListRequest::ToJsonString() const
+string DownloadVRSModelRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_queryHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Query";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string DescribeSearchExportListRequest::ToJsonString() const
 }
 
 
-string DescribeSearchExportListRequest::GetQuery() const
+string DownloadVRSModelRequest::GetTaskId() const
 {
-    return m_query;
+    return m_taskId;
 }
 
-void DescribeSearchExportListRequest::SetQuery(const string& _query)
+void DownloadVRSModelRequest::SetTaskId(const string& _taskId)
 {
-    m_query = _query;
-    m_queryHasBeenSet = true;
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
 }
 
-bool DescribeSearchExportListRequest::QueryHasBeenSet() const
+bool DownloadVRSModelRequest::TaskIdHasBeenSet() const
 {
-    return m_queryHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

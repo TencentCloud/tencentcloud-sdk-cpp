@@ -7522,49 +7522,6 @@ CwpClient::DescribeScanVulSettingOutcomeCallable CwpClient::DescribeScanVulSetti
     return task->get_future();
 }
 
-CwpClient::DescribeSearchExportListOutcome CwpClient::DescribeSearchExportList(const DescribeSearchExportListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSearchExportList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSearchExportListResponse rsp = DescribeSearchExportListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSearchExportListOutcome(rsp);
-        else
-            return DescribeSearchExportListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSearchExportListOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeSearchExportListAsync(const DescribeSearchExportListRequest& request, const DescribeSearchExportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSearchExportList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeSearchExportListOutcomeCallable CwpClient::DescribeSearchExportListCallable(const DescribeSearchExportListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSearchExportListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSearchExportList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeSearchLogsOutcome CwpClient::DescribeSearchLogs(const DescribeSearchLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSearchLogs");
