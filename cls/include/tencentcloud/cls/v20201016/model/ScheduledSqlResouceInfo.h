@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_METRICDATUM_H_
-#define TENCENTCLOUD_MONITOR_V20180724_MODEL_METRICDATUM_H_
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_SCHEDULEDSQLRESOUCEINFO_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_SCHEDULEDSQLRESOUCEINFO_H_
 
 #include <string>
 #include <vector>
@@ -28,79 +28,79 @@
 
 namespace TencentCloud
 {
-    namespace Monitor
+    namespace Cls
     {
-        namespace V20180724
+        namespace V20201016
         {
             namespace Model
             {
                 /**
-                * 指标名称和值的封装
+                * ScheduledSql的资源信息
                 */
-                class MetricDatum : public AbstractModel
+                class ScheduledSqlResouceInfo : public AbstractModel
                 {
                 public:
-                    MetricDatum();
-                    ~MetricDatum() = default;
+                    ScheduledSqlResouceInfo();
+                    ~ScheduledSqlResouceInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取指标名称
-                     * @return MetricName 指标名称
+                     * 获取目标主题id
+                     * @return TopicId 目标主题id
                      * 
                      */
-                    std::string GetMetricName() const;
+                    std::string GetTopicId() const;
 
                     /**
-                     * 设置指标名称
-                     * @param _metricName 指标名称
+                     * 设置目标主题id
+                     * @param _topicId 目标主题id
                      * 
                      */
-                    void SetMetricName(const std::string& _metricName);
+                    void SetTopicId(const std::string& _topicId);
 
                     /**
-                     * 判断参数 MetricName 是否已赋值
-                     * @return MetricName 是否已赋值
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
                      * 
                      */
-                    bool MetricNameHasBeenSet() const;
+                    bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取指标的值
-                     * @return Value 指标的值
+                     * 获取topic的地域信息
+                     * @return Region topic的地域信息
                      * 
                      */
-                    uint64_t GetValue() const;
+                    std::string GetRegion() const;
 
                     /**
-                     * 设置指标的值
-                     * @param _value 指标的值
+                     * 设置topic的地域信息
+                     * @param _region topic的地域信息
                      * 
                      */
-                    void SetValue(const uint64_t& _value);
+                    void SetRegion(const std::string& _region);
 
                     /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
                      * 
                      */
-                    bool ValueHasBeenSet() const;
+                    bool RegionHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 指标名称
+                     * 目标主题id
                      */
-                    std::string m_metricName;
-                    bool m_metricNameHasBeenSet;
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
 
                     /**
-                     * 指标的值
+                     * topic的地域信息
                      */
-                    uint64_t m_value;
-                    bool m_valueHasBeenSet;
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }
@@ -108,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_METRICDATUM_H_
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_SCHEDULEDSQLRESOUCEINFO_H_

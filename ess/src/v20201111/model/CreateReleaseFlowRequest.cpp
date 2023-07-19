@@ -27,7 +27,8 @@ CreateReleaseFlowRequest::CreateReleaseFlowRequest() :
     m_needRelievedFlowIdHasBeenSet(false),
     m_reliveInfoHasBeenSet(false),
     m_releasedApproversHasBeenSet(false),
-    m_deadlineHasBeenSet(false)
+    m_deadlineHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string CreateReleaseFlowRequest::ToJsonString() const
         string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deadline, allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -173,6 +183,22 @@ void CreateReleaseFlowRequest::SetDeadline(const int64_t& _deadline)
 bool CreateReleaseFlowRequest::DeadlineHasBeenSet() const
 {
     return m_deadlineHasBeenSet;
+}
+
+Agent CreateReleaseFlowRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateReleaseFlowRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateReleaseFlowRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

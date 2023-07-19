@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取角色名
+                     * @return RoleName 角色名
+                     * 
+                     */
+                    std::string GetRoleName() const;
+
+                    /**
+                     * 设置角色名
+                     * @param _roleName 角色名
+                     * 
+                     */
+                    void SetRoleName(const std::string& _roleName);
+
+                    /**
+                     * 判断参数 RoleName 是否已赋值
+                     * @return RoleName 是否已赋值
+                     * 
+                     */
+                    bool RoleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 角色名
+                     */
+                    std::string m_roleName;
+                    bool m_roleNameHasBeenSet;
 
                 };
             }

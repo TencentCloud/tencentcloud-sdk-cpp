@@ -27,6 +27,8 @@
 #include <tencentcloud/wedata/v20210820/model/BatchCreateIntegrationTaskAlarmsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchDeleteIntegrationTasksRequest.h>
 #include <tencentcloud/wedata/v20210820/model/BatchDeleteIntegrationTasksResponse.h>
+#include <tencentcloud/wedata/v20210820/model/BatchDeleteTasksDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/BatchDeleteTasksDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchDeleteTasksNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/BatchDeleteTasksNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchForceSuccessIntegrationTaskInstancesRequest.h>
@@ -107,6 +109,8 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteFilePathRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteFilePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteInLongAgentRequest.h>
@@ -117,14 +121,20 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteOfflineTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteProjectParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteProjectParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteResourceFilesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteResourceFilesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleTemplateRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleTemplateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteTaskAlarmRegularRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteTaskAlarmRegularResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteTaskDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteTaskDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAlarmEventsRequest.h>
@@ -387,6 +397,8 @@
 #include <tencentcloud/wedata/v20210820/model/RegisterEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterEventListenerResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveWorkflowDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RemoveWorkflowDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RerunInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RerunInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RestartInLongAgentRequest.h>
@@ -407,8 +419,12 @@
 #include <tencentcloud/wedata/v20210820/model/StopIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitCustomFunctionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitSqlTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitSqlTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTaskTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTaskTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitWorkflowResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SuspendIntegrationTaskRequest.h>
@@ -443,6 +459,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDeleteIntegrationTasksResponse> BatchDeleteIntegrationTasksOutcome;
                 typedef std::future<BatchDeleteIntegrationTasksOutcome> BatchDeleteIntegrationTasksOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::BatchDeleteIntegrationTasksRequest&, BatchDeleteIntegrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteIntegrationTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchDeleteTasksDsResponse> BatchDeleteTasksDsOutcome;
+                typedef std::future<BatchDeleteTasksDsOutcome> BatchDeleteTasksDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::BatchDeleteTasksDsRequest&, BatchDeleteTasksDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteTasksDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchDeleteTasksNewResponse> BatchDeleteTasksNewOutcome;
                 typedef std::future<BatchDeleteTasksNewOutcome> BatchDeleteTasksNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::BatchDeleteTasksNewRequest&, BatchDeleteTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteTasksNewAsyncHandler;
@@ -563,6 +582,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDataSourcesResponse> DeleteDataSourcesOutcome;
                 typedef std::future<DeleteDataSourcesOutcome> DeleteDataSourcesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteDataSourcesRequest&, DeleteDataSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFilePathResponse> DeleteFilePathOutcome;
+                typedef std::future<DeleteFilePathOutcome> DeleteFilePathOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteFilePathRequest&, DeleteFilePathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFilePathAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFolderResponse> DeleteFolderOutcome;
                 typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteFolderRequest&, DeleteFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
@@ -578,9 +600,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOfflineTaskResponse> DeleteOfflineTaskOutcome;
                 typedef std::future<DeleteOfflineTaskOutcome> DeleteOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteOfflineTaskRequest&, DeleteOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOfflineTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProjectParamDsResponse> DeleteProjectParamDsOutcome;
+                typedef std::future<DeleteProjectParamDsOutcome> DeleteProjectParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteProjectParamDsRequest&, DeleteProjectParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteResourceResponse> DeleteResourceOutcome;
                 typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteResourceRequest&, DeleteResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteResourceFilesResponse> DeleteResourceFilesOutcome;
+                typedef std::future<DeleteResourceFilesOutcome> DeleteResourceFilesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteResourceFilesRequest&, DeleteResourceFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRuleResponse> DeleteRuleOutcome;
                 typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteRuleRequest&, DeleteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleAsyncHandler;
@@ -590,6 +618,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTaskAlarmRegularResponse> DeleteTaskAlarmRegularOutcome;
                 typedef std::future<DeleteTaskAlarmRegularOutcome> DeleteTaskAlarmRegularOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteTaskAlarmRegularRequest&, DeleteTaskAlarmRegularOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAlarmRegularAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTaskDsResponse> DeleteTaskDsOutcome;
+                typedef std::future<DeleteTaskDsOutcome> DeleteTaskDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteTaskDsRequest&, DeleteTaskDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWorkflowNewResponse> DeleteWorkflowNewOutcome;
                 typedef std::future<DeleteWorkflowNewOutcome> DeleteWorkflowNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteWorkflowNewRequest&, DeleteWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowNewAsyncHandler;
@@ -983,6 +1014,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterEventListenerResponse> RegisterEventListenerOutcome;
                 typedef std::future<RegisterEventListenerOutcome> RegisterEventListenerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RegisterEventListenerRequest&, RegisterEventListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterEventListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveWorkflowDsResponse> RemoveWorkflowDsOutcome;
+                typedef std::future<RemoveWorkflowDsOutcome> RemoveWorkflowDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RemoveWorkflowDsRequest&, RemoveWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWorkflowDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RerunInstancesResponse> RerunInstancesOutcome;
                 typedef std::future<RerunInstancesOutcome> RerunInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RerunInstancesRequest&, RerunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunInstancesAsyncHandler;
@@ -1013,9 +1047,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitCustomFunctionResponse> SubmitCustomFunctionOutcome;
                 typedef std::future<SubmitCustomFunctionOutcome> SubmitCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitCustomFunctionRequest&, SubmitCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCustomFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitSqlTaskResponse> SubmitSqlTaskOutcome;
+                typedef std::future<SubmitSqlTaskOutcome> SubmitSqlTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitSqlTaskRequest&, SubmitSqlTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSqlTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTaskResponse> SubmitTaskOutcome;
                 typedef std::future<SubmitTaskOutcome> SubmitTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitTaskRequest&, SubmitTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitTaskTestRunResponse> SubmitTaskTestRunOutcome;
+                typedef std::future<SubmitTaskTestRunOutcome> SubmitTaskTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitTaskTestRunRequest&, SubmitTaskTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTaskTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitWorkflowResponse> SubmitWorkflowOutcome;
                 typedef std::future<SubmitWorkflowOutcome> SubmitWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitWorkflowRequest&, SubmitWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitWorkflowAsyncHandler;
@@ -1057,6 +1097,15 @@ namespace TencentCloud
                 BatchDeleteIntegrationTasksOutcome BatchDeleteIntegrationTasks(const Model::BatchDeleteIntegrationTasksRequest &request);
                 void BatchDeleteIntegrationTasksAsync(const Model::BatchDeleteIntegrationTasksRequest& request, const BatchDeleteIntegrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeleteIntegrationTasksOutcomeCallable BatchDeleteIntegrationTasksCallable(const Model::BatchDeleteIntegrationTasksRequest& request);
+
+                /**
+                 *Ds批量删除任务，仅对任务状态为”已停止“有效；
+                 * @param req BatchDeleteTasksDsRequest
+                 * @return BatchDeleteTasksDsOutcome
+                 */
+                BatchDeleteTasksDsOutcome BatchDeleteTasksDs(const Model::BatchDeleteTasksDsRequest &request);
+                void BatchDeleteTasksDsAsync(const Model::BatchDeleteTasksDsRequest& request, const BatchDeleteTasksDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeleteTasksDsOutcomeCallable BatchDeleteTasksDsCallable(const Model::BatchDeleteTasksDsRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -1428,6 +1477,15 @@ namespace TencentCloud
                 DeleteDataSourcesOutcomeCallable DeleteDataSourcesCallable(const Model::DeleteDataSourcesRequest& request);
 
                 /**
+                 *开发空间-批量删除目录和文件
+                 * @param req DeleteFilePathRequest
+                 * @return DeleteFilePathOutcome
+                 */
+                DeleteFilePathOutcome DeleteFilePath(const Model::DeleteFilePathRequest &request);
+                void DeleteFilePathAsync(const Model::DeleteFilePathRequest& request, const DeleteFilePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFilePathOutcomeCallable DeleteFilePathCallable(const Model::DeleteFilePathRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 删除文件夹
                  * @param req DeleteFolderRequest
@@ -1474,6 +1532,15 @@ namespace TencentCloud
                 DeleteOfflineTaskOutcomeCallable DeleteOfflineTaskCallable(const Model::DeleteOfflineTaskRequest& request);
 
                 /**
+                 *删除项目参数
+                 * @param req DeleteProjectParamDsRequest
+                 * @return DeleteProjectParamDsOutcome
+                 */
+                DeleteProjectParamDsOutcome DeleteProjectParamDs(const Model::DeleteProjectParamDsRequest &request);
+                void DeleteProjectParamDsAsync(const Model::DeleteProjectParamDsRequest& request, const DeleteProjectParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProjectParamDsOutcomeCallable DeleteProjectParamDsCallable(const Model::DeleteProjectParamDsRequest& request);
+
+                /**
                  *资源管理删除资源
                  * @param req DeleteResourceRequest
                  * @return DeleteResourceOutcome
@@ -1481,6 +1548,15 @@ namespace TencentCloud
                 DeleteResourceOutcome DeleteResource(const Model::DeleteResourceRequest &request);
                 void DeleteResourceAsync(const Model::DeleteResourceRequest& request, const DeleteResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteResourceOutcomeCallable DeleteResourceCallable(const Model::DeleteResourceRequest& request);
+
+                /**
+                 *资源管理-批量删除资源文件
+                 * @param req DeleteResourceFilesRequest
+                 * @return DeleteResourceFilesOutcome
+                 */
+                DeleteResourceFilesOutcome DeleteResourceFiles(const Model::DeleteResourceFilesRequest &request);
+                void DeleteResourceFilesAsync(const Model::DeleteResourceFilesRequest& request, const DeleteResourceFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceFilesOutcomeCallable DeleteResourceFilesCallable(const Model::DeleteResourceFilesRequest& request);
 
                 /**
                  *删除质量规则接口
@@ -1508,6 +1584,15 @@ namespace TencentCloud
                 DeleteTaskAlarmRegularOutcome DeleteTaskAlarmRegular(const Model::DeleteTaskAlarmRegularRequest &request);
                 void DeleteTaskAlarmRegularAsync(const Model::DeleteTaskAlarmRegularRequest& request, const DeleteTaskAlarmRegularAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTaskAlarmRegularOutcomeCallable DeleteTaskAlarmRegularCallable(const Model::DeleteTaskAlarmRegularRequest& request);
+
+                /**
+                 *删除任务Ds
+                 * @param req DeleteTaskDsRequest
+                 * @return DeleteTaskDsOutcome
+                 */
+                DeleteTaskDsOutcome DeleteTaskDs(const Model::DeleteTaskDsRequest &request);
+                void DeleteTaskDsAsync(const Model::DeleteTaskDsRequest& request, const DeleteTaskDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTaskDsOutcomeCallable DeleteTaskDsCallable(const Model::DeleteTaskDsRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -2721,6 +2806,15 @@ namespace TencentCloud
                 RegisterEventListenerOutcomeCallable RegisterEventListenerCallable(const Model::RegisterEventListenerRequest& request);
 
                 /**
+                 *删除编排空间工作流
+                 * @param req RemoveWorkflowDsRequest
+                 * @return RemoveWorkflowDsOutcome
+                 */
+                RemoveWorkflowDsOutcome RemoveWorkflowDs(const Model::RemoveWorkflowDsRequest &request);
+                void RemoveWorkflowDsAsync(const Model::RemoveWorkflowDsRequest& request, const RemoveWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveWorkflowDsOutcomeCallable RemoveWorkflowDsCallable(const Model::RemoveWorkflowDsRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 实例批量重跑
                  * @param req RerunInstancesRequest
@@ -2814,6 +2908,15 @@ namespace TencentCloud
                 SubmitCustomFunctionOutcomeCallable SubmitCustomFunctionCallable(const Model::SubmitCustomFunctionRequest& request);
 
                 /**
+                 *即席分析提交SQL任务
+                 * @param req SubmitSqlTaskRequest
+                 * @return SubmitSqlTaskOutcome
+                 */
+                SubmitSqlTaskOutcome SubmitSqlTask(const Model::SubmitSqlTaskRequest &request);
+                void SubmitSqlTaskAsync(const Model::SubmitSqlTaskRequest& request, const SubmitSqlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitSqlTaskOutcomeCallable SubmitSqlTaskCallable(const Model::SubmitSqlTaskRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 提交任务
                  * @param req SubmitTaskRequest
@@ -2822,6 +2925,15 @@ namespace TencentCloud
                 SubmitTaskOutcome SubmitTask(const Model::SubmitTaskRequest &request);
                 void SubmitTaskAsync(const Model::SubmitTaskRequest& request, const SubmitTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitTaskOutcomeCallable SubmitTaskCallable(const Model::SubmitTaskRequest& request);
+
+                /**
+                 *无
+                 * @param req SubmitTaskTestRunRequest
+                 * @return SubmitTaskTestRunOutcome
+                 */
+                SubmitTaskTestRunOutcome SubmitTaskTestRun(const Model::SubmitTaskTestRunRequest &request);
+                void SubmitTaskTestRunAsync(const Model::SubmitTaskTestRunRequest& request, const SubmitTaskTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTaskTestRunOutcomeCallable SubmitTaskTestRunCallable(const Model::SubmitTaskTestRunRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

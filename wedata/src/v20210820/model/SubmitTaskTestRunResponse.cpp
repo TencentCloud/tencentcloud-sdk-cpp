@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTaskTestRunResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Monitor::V20180724::Model;
+using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-PutMonitorDataResponse::PutMonitorDataResponse()
+SubmitTaskTestRunResponse::SubmitTaskTestRunResponse() :
+    m_jobIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome PutMonitorDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome SubmitTaskTestRunResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +63,59 @@ CoreInternalOutcome PutMonitorDataResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = rsp["JobId"].GetInt64();
+        m_jobIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecordId") && !rsp["RecordId"].IsNull())
+    {
+        if (!rsp["RecordId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecordId` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RecordId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recordId.push_back((*itr).GetInt64());
+        }
+        m_recordIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string PutMonitorDataResponse::ToJsonString() const
+string SubmitTaskTestRunResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobId, allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recordId.begin(); itr != m_recordId.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +128,25 @@ string PutMonitorDataResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t SubmitTaskTestRunResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool SubmitTaskTestRunResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
+}
+
+vector<int64_t> SubmitTaskTestRunResponse::GetRecordId() const
+{
+    return m_recordId;
+}
+
+bool SubmitTaskTestRunResponse::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
 
 

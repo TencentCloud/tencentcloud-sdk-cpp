@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建合同配置信息
+                * 创建合同个性化参数
                 */
                 class CreateFlowOption : public AbstractModel
                 {

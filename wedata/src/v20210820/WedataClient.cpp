@@ -126,6 +126,49 @@ WedataClient::BatchDeleteIntegrationTasksOutcomeCallable WedataClient::BatchDele
     return task->get_future();
 }
 
+WedataClient::BatchDeleteTasksDsOutcome WedataClient::BatchDeleteTasksDs(const BatchDeleteTasksDsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteTasksDs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteTasksDsResponse rsp = BatchDeleteTasksDsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteTasksDsOutcome(rsp);
+        else
+            return BatchDeleteTasksDsOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteTasksDsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::BatchDeleteTasksDsAsync(const BatchDeleteTasksDsRequest& request, const BatchDeleteTasksDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeleteTasksDs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::BatchDeleteTasksDsOutcomeCallable WedataClient::BatchDeleteTasksDsCallable(const BatchDeleteTasksDsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeleteTasksDsOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeleteTasksDs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::BatchDeleteTasksNewOutcome WedataClient::BatchDeleteTasksNew(const BatchDeleteTasksNewRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchDeleteTasksNew");
@@ -1846,6 +1889,49 @@ WedataClient::DeleteDataSourcesOutcomeCallable WedataClient::DeleteDataSourcesCa
     return task->get_future();
 }
 
+WedataClient::DeleteFilePathOutcome WedataClient::DeleteFilePath(const DeleteFilePathRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFilePath");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFilePathResponse rsp = DeleteFilePathResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFilePathOutcome(rsp);
+        else
+            return DeleteFilePathOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFilePathOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteFilePathAsync(const DeleteFilePathRequest& request, const DeleteFilePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFilePath(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteFilePathOutcomeCallable WedataClient::DeleteFilePathCallable(const DeleteFilePathRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFilePathOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFilePath(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DeleteFolderOutcome WedataClient::DeleteFolder(const DeleteFolderRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteFolder");
@@ -2061,6 +2147,49 @@ WedataClient::DeleteOfflineTaskOutcomeCallable WedataClient::DeleteOfflineTaskCa
     return task->get_future();
 }
 
+WedataClient::DeleteProjectParamDsOutcome WedataClient::DeleteProjectParamDs(const DeleteProjectParamDsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProjectParamDs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProjectParamDsResponse rsp = DeleteProjectParamDsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProjectParamDsOutcome(rsp);
+        else
+            return DeleteProjectParamDsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProjectParamDsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteProjectParamDsAsync(const DeleteProjectParamDsRequest& request, const DeleteProjectParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteProjectParamDs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteProjectParamDsOutcomeCallable WedataClient::DeleteProjectParamDsCallable(const DeleteProjectParamDsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteProjectParamDsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteProjectParamDs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DeleteResourceOutcome WedataClient::DeleteResource(const DeleteResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteResource");
@@ -2097,6 +2226,49 @@ WedataClient::DeleteResourceOutcomeCallable WedataClient::DeleteResourceCallable
         [this, request]()
         {
             return this->DeleteResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteResourceFilesOutcome WedataClient::DeleteResourceFiles(const DeleteResourceFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResourceFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourceFilesResponse rsp = DeleteResourceFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourceFilesOutcome(rsp);
+        else
+            return DeleteResourceFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourceFilesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteResourceFilesAsync(const DeleteResourceFilesRequest& request, const DeleteResourceFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteResourceFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteResourceFilesOutcomeCallable WedataClient::DeleteResourceFilesCallable(const DeleteResourceFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteResourceFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteResourceFiles(request);
         }
     );
 
@@ -2226,6 +2398,49 @@ WedataClient::DeleteTaskAlarmRegularOutcomeCallable WedataClient::DeleteTaskAlar
         [this, request]()
         {
             return this->DeleteTaskAlarmRegular(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteTaskDsOutcome WedataClient::DeleteTaskDs(const DeleteTaskDsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTaskDs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTaskDsResponse rsp = DeleteTaskDsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTaskDsOutcome(rsp);
+        else
+            return DeleteTaskDsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTaskDsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteTaskDsAsync(const DeleteTaskDsRequest& request, const DeleteTaskDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTaskDs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteTaskDsOutcomeCallable WedataClient::DeleteTaskDsCallable(const DeleteTaskDsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTaskDsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTaskDs(request);
         }
     );
 
@@ -7866,6 +8081,49 @@ WedataClient::RegisterEventListenerOutcomeCallable WedataClient::RegisterEventLi
     return task->get_future();
 }
 
+WedataClient::RemoveWorkflowDsOutcome WedataClient::RemoveWorkflowDs(const RemoveWorkflowDsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveWorkflowDs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveWorkflowDsResponse rsp = RemoveWorkflowDsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveWorkflowDsOutcome(rsp);
+        else
+            return RemoveWorkflowDsOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveWorkflowDsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RemoveWorkflowDsAsync(const RemoveWorkflowDsRequest& request, const RemoveWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveWorkflowDs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::RemoveWorkflowDsOutcomeCallable WedataClient::RemoveWorkflowDsCallable(const RemoveWorkflowDsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveWorkflowDsOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveWorkflowDs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::RerunInstancesOutcome WedataClient::RerunInstances(const RerunInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RerunInstances");
@@ -8296,6 +8554,49 @@ WedataClient::SubmitCustomFunctionOutcomeCallable WedataClient::SubmitCustomFunc
     return task->get_future();
 }
 
+WedataClient::SubmitSqlTaskOutcome WedataClient::SubmitSqlTask(const SubmitSqlTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitSqlTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitSqlTaskResponse rsp = SubmitSqlTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitSqlTaskOutcome(rsp);
+        else
+            return SubmitSqlTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitSqlTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::SubmitSqlTaskAsync(const SubmitSqlTaskRequest& request, const SubmitSqlTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitSqlTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::SubmitSqlTaskOutcomeCallable WedataClient::SubmitSqlTaskCallable(const SubmitSqlTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitSqlTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitSqlTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::SubmitTaskOutcome WedataClient::SubmitTask(const SubmitTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitTask");
@@ -8332,6 +8633,49 @@ WedataClient::SubmitTaskOutcomeCallable WedataClient::SubmitTaskCallable(const S
         [this, request]()
         {
             return this->SubmitTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::SubmitTaskTestRunOutcome WedataClient::SubmitTaskTestRun(const SubmitTaskTestRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTaskTestRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTaskTestRunResponse rsp = SubmitTaskTestRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTaskTestRunOutcome(rsp);
+        else
+            return SubmitTaskTestRunOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTaskTestRunOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::SubmitTaskTestRunAsync(const SubmitTaskTestRunRequest& request, const SubmitTaskTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitTaskTestRun(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::SubmitTaskTestRunOutcomeCallable WedataClient::SubmitTaskTestRunCallable(const SubmitTaskTestRunRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitTaskTestRunOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitTaskTestRun(request);
         }
     );
 

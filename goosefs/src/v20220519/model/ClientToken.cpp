@@ -21,7 +21,10 @@ using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
 ClientToken::ClientToken() :
-    m_localDirectoryHasBeenSet(false)
+    m_nodeIpHasBeenSet(false),
+    m_localDirectoryHasBeenSet(false),
+    m_gooseFSDirectoryHasBeenSet(false),
+    m_tokenHasBeenSet(false)
 {
 }
 
@@ -29,6 +32,16 @@ CoreInternalOutcome ClientToken::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("NodeIp") && !value["NodeIp"].IsNull())
+    {
+        if (!value["NodeIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientToken.NodeIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeIp = string(value["NodeIp"].GetString());
+        m_nodeIpHasBeenSet = true;
+    }
 
     if (value.HasMember("LocalDirectory") && !value["LocalDirectory"].IsNull())
     {
@@ -40,12 +53,40 @@ CoreInternalOutcome ClientToken::Deserialize(const rapidjson::Value &value)
         m_localDirectoryHasBeenSet = true;
     }
 
+    if (value.HasMember("GooseFSDirectory") && !value["GooseFSDirectory"].IsNull())
+    {
+        if (!value["GooseFSDirectory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientToken.GooseFSDirectory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gooseFSDirectory = string(value["GooseFSDirectory"].GetString());
+        m_gooseFSDirectoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("Token") && !value["Token"].IsNull())
+    {
+        if (!value["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientToken.Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(value["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ClientToken::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_nodeIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeIp.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_localDirectoryHasBeenSet)
     {
@@ -55,8 +96,40 @@ void ClientToken::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_localDirectory.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_gooseFSDirectoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSDirectory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gooseFSDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string ClientToken::GetNodeIp() const
+{
+    return m_nodeIp;
+}
+
+void ClientToken::SetNodeIp(const string& _nodeIp)
+{
+    m_nodeIp = _nodeIp;
+    m_nodeIpHasBeenSet = true;
+}
+
+bool ClientToken::NodeIpHasBeenSet() const
+{
+    return m_nodeIpHasBeenSet;
+}
 
 string ClientToken::GetLocalDirectory() const
 {
@@ -72,5 +145,37 @@ void ClientToken::SetLocalDirectory(const string& _localDirectory)
 bool ClientToken::LocalDirectoryHasBeenSet() const
 {
     return m_localDirectoryHasBeenSet;
+}
+
+string ClientToken::GetGooseFSDirectory() const
+{
+    return m_gooseFSDirectory;
+}
+
+void ClientToken::SetGooseFSDirectory(const string& _gooseFSDirectory)
+{
+    m_gooseFSDirectory = _gooseFSDirectory;
+    m_gooseFSDirectoryHasBeenSet = true;
+}
+
+bool ClientToken::GooseFSDirectoryHasBeenSet() const
+{
+    return m_gooseFSDirectoryHasBeenSet;
+}
+
+string ClientToken::GetToken() const
+{
+    return m_token;
+}
+
+void ClientToken::SetToken(const string& _token)
+{
+    m_token = _token;
+    m_tokenHasBeenSet = true;
+}
+
+bool ClientToken::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
 }
 

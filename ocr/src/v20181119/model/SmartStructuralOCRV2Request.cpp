@@ -28,7 +28,8 @@ SmartStructuralOCRV2Request::SmartStructuralOCRV2Request() :
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
     m_itemNamesHasBeenSet(false),
-    m_returnFullTextHasBeenSet(false)
+    m_returnFullTextHasBeenSet(false),
+    m_configIdHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string SmartStructuralOCRV2Request::ToJsonString() const
         string key = "ReturnFullText";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_returnFullText, allocator);
+    }
+
+    if (m_configIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void SmartStructuralOCRV2Request::SetReturnFullText(const bool& _returnFullText)
 bool SmartStructuralOCRV2Request::ReturnFullTextHasBeenSet() const
 {
     return m_returnFullTextHasBeenSet;
+}
+
+string SmartStructuralOCRV2Request::GetConfigId() const
+{
+    return m_configId;
+}
+
+void SmartStructuralOCRV2Request::SetConfigId(const string& _configId)
+{
+    m_configId = _configId;
+    m_configIdHasBeenSet = true;
+}
+
+bool SmartStructuralOCRV2Request::ConfigIdHasBeenSet() const
+{
+    return m_configIdHasBeenSet;
 }
 
 

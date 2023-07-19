@@ -224,27 +224,6 @@ namespace TencentCloud
                     bool ReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取计算cpu核心数。
-                     * @return MachineCpu 计算cpu核心数。
-                     * 
-                     */
-                    int64_t GetMachineCpu() const;
-
-                    /**
-                     * 设置计算cpu核心数。
-                     * @param _machineCpu 计算cpu核心数。
-                     * 
-                     */
-                    void SetMachineCpu(const int64_t& _machineCpu);
-
-                    /**
-                     * 判断参数 MachineCpu 是否已赋值
-                     * @return MachineCpu 是否已赋值
-                     * 
-                     */
-                    bool MachineCpuHasBeenSet() const;
-
-                    /**
                      * 获取实例内存容量，单位：GB。
 KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
                      * @return MachineMemory 实例内存容量，单位：GB。
@@ -517,6 +496,27 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool DiskSizeHasBeenSet() const;
 
                     /**
+                     * 获取计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * @return MachineCpu 计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 
+                     */
+                    int64_t GetMachineCpu() const;
+
+                    /**
+                     * 设置计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * @param _machineCpu 计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 
+                     */
+                    void SetMachineCpu(const int64_t& _machineCpu);
+
+                    /**
+                     * 判断参数 MachineCpu 是否已赋值
+                     * @return MachineCpu 是否已赋值
+                     * 
+                     */
+                    bool MachineCpuHasBeenSet() const;
+
+                    /**
                      * 获取项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
                      * @return ProjectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
                      * 
@@ -536,6 +536,27 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                      * 
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li>
+                     * @return Compression 数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li>
+                     * 
+                     */
+                    std::string GetCompression() const;
+
+                    /**
+                     * 设置数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li>
+                     * @param _compression 数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li>
+                     * 
+                     */
+                    void SetCompression(const std::string& _compression);
+
+                    /**
+                     * 判断参数 Compression 是否已赋值
+                     * @return Compression 是否已赋值
+                     * 
+                     */
+                    bool CompressionHasBeenSet() const;
 
                 private:
 
@@ -589,12 +610,6 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                      */
                     int64_t m_replicasNum;
                     bool m_replicasNumHasBeenSet;
-
-                    /**
-                     * 计算cpu核心数。
-                     */
-                    int64_t m_machineCpu;
-                    bool m_machineCpuHasBeenSet;
 
                     /**
                      * 实例内存容量，单位：GB。
@@ -674,10 +689,22 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool m_diskSizeHasBeenSet;
 
                     /**
+                     * 计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     */
+                    int64_t m_machineCpu;
+                    bool m_machineCpuHasBeenSet;
+
+                    /**
                      * 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li>
+                     */
+                    std::string m_compression;
+                    bool m_compressionHasBeenSet;
 
                 };
             }

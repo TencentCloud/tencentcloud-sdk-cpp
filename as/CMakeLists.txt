@@ -30,6 +30,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/LaunchConfiguration.h
   include/tencentcloud/as/v20180419/model/DescribeAccountLimitsResponse.h
   include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h
+  include/tencentcloud/as/v20180419/model/RelatedInstance.h
   include/tencentcloud/as/v20180419/model/Advice.h
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/ClearLaunchConfigurationAttributesResponse.h
@@ -175,6 +176,7 @@ set(as_src
   src/v20180419/model/LaunchConfiguration.cpp
   src/v20180419/model/DescribeAccountLimitsResponse.cpp
   src/v20180419/model/CreateLaunchConfigurationResponse.cpp
+  src/v20180419/model/RelatedInstance.cpp
   src/v20180419/model/Advice.cpp
   src/v20180419/model/CreateLifecycleHookResponse.cpp
   src/v20180419/model/ClearLaunchConfigurationAttributesResponse.cpp

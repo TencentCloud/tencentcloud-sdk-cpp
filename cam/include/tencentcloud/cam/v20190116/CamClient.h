@@ -823,7 +823,7 @@ namespace TencentCloud
                 DisableUserSSOOutcomeCallable DisableUserSSOCallable(const Model::DisableUserSSORequest& request);
 
                 /**
-                 *查询账户摘要 
+                 *查询账户摘要
                  * @param req GetAccountSummaryRequest
                  * @return GetAccountSummaryOutcome
                  */

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取CPU 核数。
-                     * @return MachineCpu CPU 核数。
+                     * 获取CPU 核数，可忽略不传
+                     * @return MachineCpu CPU 核数，可忽略不传
                      * 
                      */
                     int64_t GetMachineCpu() const;
 
                     /**
-                     * 设置CPU 核数。
-                     * @param _machineCpu CPU 核数。
+                     * 设置CPU 核数，可忽略不传
+                     * @param _machineCpu CPU 核数，可忽略不传
                      * 
                      */
                     void SetMachineCpu(const int64_t& _machineCpu);
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * CPU 核数。
+                     * CPU 核数，可忽略不传
                      */
                     int64_t m_machineCpu;
                     bool m_machineCpuHasBeenSet;

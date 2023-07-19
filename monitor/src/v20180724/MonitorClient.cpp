@@ -5286,49 +5286,6 @@ MonitorClient::ModifyPrometheusTempOutcomeCallable MonitorClient::ModifyPromethe
     return task->get_future();
 }
 
-MonitorClient::PutMonitorDataOutcome MonitorClient::PutMonitorData(const PutMonitorDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "PutMonitorData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PutMonitorDataResponse rsp = PutMonitorDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PutMonitorDataOutcome(rsp);
-        else
-            return PutMonitorDataOutcome(o.GetError());
-    }
-    else
-    {
-        return PutMonitorDataOutcome(outcome.GetError());
-    }
-}
-
-void MonitorClient::PutMonitorDataAsync(const PutMonitorDataRequest& request, const PutMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PutMonitorData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MonitorClient::PutMonitorDataOutcomeCallable MonitorClient::PutMonitorDataCallable(const PutMonitorDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PutMonitorDataOutcome()>>(
-        [this, request]()
-        {
-            return this->PutMonitorData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 MonitorClient::ResumeGrafanaInstanceOutcome MonitorClient::ResumeGrafanaInstance(const ResumeGrafanaInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeGrafanaInstance");

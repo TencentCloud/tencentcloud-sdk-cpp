@@ -1021,6 +1021,85 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userId UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
+                     * 获取OwnerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerId OwnerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerId() const;
+
+                    /**
+                     * 设置OwnerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerId OwnerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerId(const std::string& _ownerId);
+
+                    /**
+                     * 判断参数 OwnerId 是否已赋值
+                     * @return OwnerId 是否已赋值
+                     * 
+                     */
+                    bool OwnerIdHasBeenSet() const;
+
+                    /**
+                     * 获取TenantId
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TenantId TenantId
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTenantId() const;
+
+                    /**
+                     * 设置TenantId
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tenantId TenantId
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTenantId(const std::string& _tenantId);
+
+                    /**
+                     * 判断参数 TenantId 是否已赋值
+                     * @return TenantId 是否已赋值
+                     * 
+                     */
+                    bool TenantIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1289,6 +1368,28 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * UserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
+
+                    /**
+                     * OwnerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerId;
+                    bool m_ownerIdHasBeenSet;
+
+                    /**
+                     * TenantId
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tenantId;
+                    bool m_tenantIdHasBeenSet;
 
                 };
             }

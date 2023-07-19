@@ -28,6 +28,7 @@
 #include <tencentcloud/as/v20180419/model/LifecycleActionResultInfo.h>
 #include <tencentcloud/as/v20180419/model/DetailedStatusMessage.h>
 #include <tencentcloud/as/v20180419/model/InvocationResult.h>
+#include <tencentcloud/as/v20180419/model/RelatedInstance.h>
 
 
 namespace TencentCloud
@@ -301,23 +302,23 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取伸缩活动相关实例信息集合。
-                     * @return ActivityRelatedInstanceSet 伸缩活动相关实例信息集合。
-                     * 
+                     * 获取该参数已废弃，请勿使用。
+                     * @return ActivityRelatedInstanceSet 该参数已废弃，请勿使用。
+                     * @deprecated
                      */
                     std::vector<ActivtyRelatedInstance> GetActivityRelatedInstanceSet() const;
 
                     /**
-                     * 设置伸缩活动相关实例信息集合。
-                     * @param _activityRelatedInstanceSet 伸缩活动相关实例信息集合。
-                     * 
+                     * 设置该参数已废弃，请勿使用。
+                     * @param _activityRelatedInstanceSet 该参数已废弃，请勿使用。
+                     * @deprecated
                      */
                     void SetActivityRelatedInstanceSet(const std::vector<ActivtyRelatedInstance>& _activityRelatedInstanceSet);
 
                     /**
                      * 判断参数 ActivityRelatedInstanceSet 是否已赋值
                      * @return ActivityRelatedInstanceSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ActivityRelatedInstanceSetHasBeenSet() const;
 
@@ -405,6 +406,27 @@ namespace TencentCloud
                      */
                     bool InvocationResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩活动相关实例信息集合。
+                     * @return RelatedInstanceSet 伸缩活动相关实例信息集合。
+                     * 
+                     */
+                    std::vector<RelatedInstance> GetRelatedInstanceSet() const;
+
+                    /**
+                     * 设置伸缩活动相关实例信息集合。
+                     * @param _relatedInstanceSet 伸缩活动相关实例信息集合。
+                     * 
+                     */
+                    void SetRelatedInstanceSet(const std::vector<RelatedInstance>& _relatedInstanceSet);
+
+                    /**
+                     * 判断参数 RelatedInstanceSet 是否已赋值
+                     * @return RelatedInstanceSet 是否已赋值
+                     * 
+                     */
+                    bool RelatedInstanceSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -478,7 +500,7 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 伸缩活动相关实例信息集合。
+                     * 该参数已废弃，请勿使用。
                      */
                     std::vector<ActivtyRelatedInstance> m_activityRelatedInstanceSet;
                     bool m_activityRelatedInstanceSetHasBeenSet;
@@ -506,6 +528,12 @@ namespace TencentCloud
                      */
                     std::vector<InvocationResult> m_invocationResultSet;
                     bool m_invocationResultSetHasBeenSet;
+
+                    /**
+                     * 伸缩活动相关实例信息集合。
+                     */
+                    std::vector<RelatedInstance> m_relatedInstanceSet;
+                    bool m_relatedInstanceSetHasBeenSet;
 
                 };
             }

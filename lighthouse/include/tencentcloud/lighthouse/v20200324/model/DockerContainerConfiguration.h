@@ -175,6 +175,27 @@ namespace TencentCloud
                      */
                     bool CommandHasBeenSet() const;
 
+                    /**
+                     * 获取容器重启策略
+                     * @return RestartPolicy 容器重启策略
+                     * 
+                     */
+                    std::string GetRestartPolicy() const;
+
+                    /**
+                     * 设置容器重启策略
+                     * @param _restartPolicy 容器重启策略
+                     * 
+                     */
+                    void SetRestartPolicy(const std::string& _restartPolicy);
+
+                    /**
+                     * 判断参数 RestartPolicy 是否已赋值
+                     * @return RestartPolicy 是否已赋值
+                     * 
+                     */
+                    bool RestartPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +233,12 @@ namespace TencentCloud
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * 容器重启策略
+                     */
+                    std::string m_restartPolicy;
+                    bool m_restartPolicyHasBeenSet;
 
                 };
             }

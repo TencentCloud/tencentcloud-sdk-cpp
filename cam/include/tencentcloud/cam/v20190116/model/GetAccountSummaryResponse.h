@@ -74,14 +74,14 @@ namespace TencentCloud
                     /**
                      * 获取身份提供商数
                      * @return Idps 身份提供商数
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetIdps() const;
 
                     /**
                      * 判断参数 Idps 是否已赋值
                      * @return Idps 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IdpsHasBeenSet() const;
 
@@ -127,6 +127,20 @@ namespace TencentCloud
                      */
                     bool MemberHasBeenSet() const;
 
+                    /**
+                     * 获取身份提供商数。
+                     * @return IdentityProviders 身份提供商数。
+                     * 
+                     */
+                    uint64_t GetIdentityProviders() const;
+
+                    /**
+                     * 判断参数 IdentityProviders 是否已赋值
+                     * @return IdentityProviders 是否已赋值
+                     * 
+                     */
+                    bool IdentityProvidersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +178,12 @@ namespace TencentCloud
                      */
                     uint64_t m_member;
                     bool m_memberHasBeenSet;
+
+                    /**
+                     * 身份提供商数。
+                     */
+                    uint64_t m_identityProviders;
+                    bool m_identityProvidersHasBeenSet;
 
                 };
             }

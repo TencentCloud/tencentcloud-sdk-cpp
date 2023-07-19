@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_PUTMONITORDATARESPONSE_H_
-#define TENCENTCLOUD_MONITOR_V20180724_MODEL_PUTMONITORDATARESPONSE_H_
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_CREATESCHEDULEDSQLRESPONSE_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_CREATESCHEDULEDSQLRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,25 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Monitor
+    namespace Cls
     {
-        namespace V20180724
+        namespace V20201016
         {
             namespace Model
             {
                 /**
-                * PutMonitorData返回参数结构体
+                * CreateScheduledSql返回参数结构体
                 */
-                class PutMonitorDataResponse : public AbstractModel
+                class CreateScheduledSqlResponse : public AbstractModel
                 {
                 public:
-                    PutMonitorDataResponse();
-                    ~PutMonitorDataResponse() = default;
+                    CreateScheduledSqlResponse();
+                    ~CreateScheduledSqlResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取任务id
+                     * @return TaskId 任务id
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 任务id
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -51,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_PUTMONITORDATARESPONSE_H_
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_CREATESCHEDULEDSQLRESPONSE_H_

@@ -51,7 +51,10 @@ TaskCanvasInfo::TaskCanvasInfo() :
     m_targetServiceIdHasBeenSet(false),
     m_targetServiceTypeHasBeenSet(false),
     m_alarmTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_tenantIdHasBeenSet(false)
 {
 }
 
@@ -370,6 +373,36 @@ CoreInternalOutcome TaskCanvasInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerId") && !value["OwnerId"].IsNull())
+    {
+        if (!value["OwnerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.OwnerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerId = string(value["OwnerId"].GetString());
+        m_ownerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TenantId") && !value["TenantId"].IsNull())
+    {
+        if (!value["TenantId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.TenantId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tenantId = string(value["TenantId"].GetString());
+        m_tenantIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -623,6 +656,30 @@ void TaskCanvasInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tenantIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TenantId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tenantId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1122,5 +1179,53 @@ void TaskCanvasInfo::SetCreateTime(const string& _createTime)
 bool TaskCanvasInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetUserId() const
+{
+    return m_userId;
+}
+
+void TaskCanvasInfo::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
+
+string TaskCanvasInfo::GetOwnerId() const
+{
+    return m_ownerId;
+}
+
+void TaskCanvasInfo::SetOwnerId(const string& _ownerId)
+{
+    m_ownerId = _ownerId;
+    m_ownerIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::OwnerIdHasBeenSet() const
+{
+    return m_ownerIdHasBeenSet;
+}
+
+string TaskCanvasInfo::GetTenantId() const
+{
+    return m_tenantId;
+}
+
+void TaskCanvasInfo::SetTenantId(const string& _tenantId)
+{
+    m_tenantId = _tenantId;
+    m_tenantIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::TenantIdHasBeenSet() const
+{
+    return m_tenantIdHasBeenSet;
 }
 

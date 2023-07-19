@@ -728,6 +728,49 @@ ClsClient::CreateMachineGroupOutcomeCallable ClsClient::CreateMachineGroupCallab
     return task->get_future();
 }
 
+ClsClient::CreateScheduledSqlOutcome ClsClient::CreateScheduledSql(const CreateScheduledSqlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScheduledSql");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScheduledSqlResponse rsp = CreateScheduledSqlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScheduledSqlOutcome(rsp);
+        else
+            return CreateScheduledSqlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScheduledSqlOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateScheduledSqlAsync(const CreateScheduledSqlRequest& request, const CreateScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScheduledSql(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateScheduledSqlOutcomeCallable ClsClient::CreateScheduledSqlCallable(const CreateScheduledSqlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScheduledSqlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScheduledSql(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateShipperOutcome ClsClient::CreateShipper(const CreateShipperRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateShipper");

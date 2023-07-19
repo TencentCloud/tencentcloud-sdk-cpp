@@ -31,7 +31,6 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_periodHasBeenSet(false),
     m_shardNumHasBeenSet(false),
     m_replicasNumHasBeenSet(false),
-    m_machineCpuHasBeenSet(false),
     m_machineMemoryHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
@@ -44,7 +43,9 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_resourceTagsHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_machineCpuHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_compressionHasBeenSet(false)
 {
 }
 
@@ -117,14 +118,6 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "ReplicasNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicasNum, allocator);
-    }
-
-    if (m_machineCpuHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MachineCpu";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_machineCpu, allocator);
     }
 
     if (m_machineMemoryHasBeenSet)
@@ -235,12 +228,28 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_diskSize, allocator);
     }
 
+    if (m_machineCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_machineCpu, allocator);
+    }
+
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_compressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compression";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_compression.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -377,22 +386,6 @@ void CreateInstancesRequest::SetReplicasNum(const int64_t& _replicasNum)
 bool CreateInstancesRequest::ReplicasNumHasBeenSet() const
 {
     return m_replicasNumHasBeenSet;
-}
-
-int64_t CreateInstancesRequest::GetMachineCpu() const
-{
-    return m_machineCpu;
-}
-
-void CreateInstancesRequest::SetMachineCpu(const int64_t& _machineCpu)
-{
-    m_machineCpu = _machineCpu;
-    m_machineCpuHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::MachineCpuHasBeenSet() const
-{
-    return m_machineCpuHasBeenSet;
 }
 
 int64_t CreateInstancesRequest::GetMachineMemory() const
@@ -587,6 +580,22 @@ bool CreateInstancesRequest::DiskSizeHasBeenSet() const
     return m_diskSizeHasBeenSet;
 }
 
+int64_t CreateInstancesRequest::GetMachineCpu() const
+{
+    return m_machineCpu;
+}
+
+void CreateInstancesRequest::SetMachineCpu(const int64_t& _machineCpu)
+{
+    m_machineCpu = _machineCpu;
+    m_machineCpuHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::MachineCpuHasBeenSet() const
+{
+    return m_machineCpuHasBeenSet;
+}
+
 int64_t CreateInstancesRequest::GetProjectId() const
 {
     return m_projectId;
@@ -601,6 +610,22 @@ void CreateInstancesRequest::SetProjectId(const int64_t& _projectId)
 bool CreateInstancesRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateInstancesRequest::GetCompression() const
+{
+    return m_compression;
+}
+
+void CreateInstancesRequest::SetCompression(const string& _compression)
+{
+    m_compression = _compression;
+    m_compressionHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::CompressionHasBeenSet() const
+{
+    return m_compressionHasBeenSet;
 }
 
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
 DescribeClusterRolesRequest::DescribeClusterRolesRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_roleNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeClusterRolesRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeClusterRolesRequest::SetClusterId(const string& _clusterId)
 bool DescribeClusterRolesRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribeClusterRolesRequest::GetRoleName() const
+{
+    return m_roleName;
+}
+
+void DescribeClusterRolesRequest::SetRoleName(const string& _roleName)
+{
+    m_roleName = _roleName;
+    m_roleNameHasBeenSet = true;
+}
+
+bool DescribeClusterRolesRequest::RoleNameHasBeenSet() const
+{
+    return m_roleNameHasBeenSet;
 }
 
 

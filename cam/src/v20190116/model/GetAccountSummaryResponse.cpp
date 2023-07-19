@@ -29,7 +29,8 @@ GetAccountSummaryResponse::GetAccountSummaryResponse() :
     m_idpsHasBeenSet(false),
     m_userHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_memberHasBeenSet(false)
+    m_memberHasBeenSet(false),
+    m_identityProvidersHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome GetAccountSummaryResponse::Deserialize(const string &payload
         m_memberHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IdentityProviders") && !rsp["IdentityProviders"].IsNull())
+    {
+        if (!rsp["IdentityProviders"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IdentityProviders` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identityProviders = rsp["IdentityProviders"].GetUint64();
+        m_identityProvidersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string GetAccountSummaryResponse::ToJsonString() const
         string key = "Member";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_member, allocator);
+    }
+
+    if (m_identityProvidersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityProviders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identityProviders, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ uint64_t GetAccountSummaryResponse::GetMember() const
 bool GetAccountSummaryResponse::MemberHasBeenSet() const
 {
     return m_memberHasBeenSet;
+}
+
+uint64_t GetAccountSummaryResponse::GetIdentityProviders() const
+{
+    return m_identityProviders;
+}
+
+bool GetAccountSummaryResponse::IdentityProvidersHasBeenSet() const
+{
+    return m_identityProvidersHasBeenSet;
 }
 
 
