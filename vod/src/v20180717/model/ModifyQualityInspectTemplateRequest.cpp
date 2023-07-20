@@ -36,8 +36,8 @@ ModifyQualityInspectTemplateRequest::ModifyQualityInspectTemplateRequest() :
     m_noiseConfigureHasBeenSet(false),
     m_mosaicConfigureHasBeenSet(false),
     m_qRCodeConfigureHasBeenSet(false),
-    m_qualityEvaluationConfigureHasBeenSet(false),
-    m_voiceConfigureHasBeenSet(false)
+    m_voiceConfigureHasBeenSet(false),
+    m_qualityEvaluationConfigureHasBeenSet(false)
 {
 }
 
@@ -160,15 +160,6 @@ string ModifyQualityInspectTemplateRequest::ToJsonString() const
         m_qRCodeConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_qualityEvaluationConfigureHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QualityEvaluationConfigure";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_qualityEvaluationConfigure.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_voiceConfigureHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +167,15 @@ string ModifyQualityInspectTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voiceConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_qualityEvaluationConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityEvaluationConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityEvaluationConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -394,22 +394,6 @@ bool ModifyQualityInspectTemplateRequest::QRCodeConfigureHasBeenSet() const
     return m_qRCodeConfigureHasBeenSet;
 }
 
-QualityEvaluationConfigureInfoForUpdate ModifyQualityInspectTemplateRequest::GetQualityEvaluationConfigure() const
-{
-    return m_qualityEvaluationConfigure;
-}
-
-void ModifyQualityInspectTemplateRequest::SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfoForUpdate& _qualityEvaluationConfigure)
-{
-    m_qualityEvaluationConfigure = _qualityEvaluationConfigure;
-    m_qualityEvaluationConfigureHasBeenSet = true;
-}
-
-bool ModifyQualityInspectTemplateRequest::QualityEvaluationConfigureHasBeenSet() const
-{
-    return m_qualityEvaluationConfigureHasBeenSet;
-}
-
 VoiceConfigureInfoForUpdate ModifyQualityInspectTemplateRequest::GetVoiceConfigure() const
 {
     return m_voiceConfigure;
@@ -424,6 +408,22 @@ void ModifyQualityInspectTemplateRequest::SetVoiceConfigure(const VoiceConfigure
 bool ModifyQualityInspectTemplateRequest::VoiceConfigureHasBeenSet() const
 {
     return m_voiceConfigureHasBeenSet;
+}
+
+QualityEvaluationConfigureInfoForUpdate ModifyQualityInspectTemplateRequest::GetQualityEvaluationConfigure() const
+{
+    return m_qualityEvaluationConfigure;
+}
+
+void ModifyQualityInspectTemplateRequest::SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfoForUpdate& _qualityEvaluationConfigure)
+{
+    m_qualityEvaluationConfigure = _qualityEvaluationConfigure;
+    m_qualityEvaluationConfigureHasBeenSet = true;
+}
+
+bool ModifyQualityInspectTemplateRequest::QualityEvaluationConfigureHasBeenSet() const
+{
+    return m_qualityEvaluationConfigureHasBeenSet;
 }
 
 

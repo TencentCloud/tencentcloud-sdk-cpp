@@ -35,8 +35,8 @@ CreateQualityInspectTemplateRequest::CreateQualityInspectTemplateRequest() :
     m_noiseConfigureHasBeenSet(false),
     m_mosaicConfigureHasBeenSet(false),
     m_qRCodeConfigureHasBeenSet(false),
-    m_qualityEvaluationConfigureHasBeenSet(false),
-    m_voiceConfigureHasBeenSet(false)
+    m_voiceConfigureHasBeenSet(false),
+    m_qualityEvaluationConfigureHasBeenSet(false)
 {
 }
 
@@ -151,15 +151,6 @@ string CreateQualityInspectTemplateRequest::ToJsonString() const
         m_qRCodeConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_qualityEvaluationConfigureHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QualityEvaluationConfigure";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_qualityEvaluationConfigure.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_voiceConfigureHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -167,6 +158,15 @@ string CreateQualityInspectTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voiceConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_qualityEvaluationConfigureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityEvaluationConfigure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityEvaluationConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -369,22 +369,6 @@ bool CreateQualityInspectTemplateRequest::QRCodeConfigureHasBeenSet() const
     return m_qRCodeConfigureHasBeenSet;
 }
 
-QualityEvaluationConfigureInfo CreateQualityInspectTemplateRequest::GetQualityEvaluationConfigure() const
-{
-    return m_qualityEvaluationConfigure;
-}
-
-void CreateQualityInspectTemplateRequest::SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure)
-{
-    m_qualityEvaluationConfigure = _qualityEvaluationConfigure;
-    m_qualityEvaluationConfigureHasBeenSet = true;
-}
-
-bool CreateQualityInspectTemplateRequest::QualityEvaluationConfigureHasBeenSet() const
-{
-    return m_qualityEvaluationConfigureHasBeenSet;
-}
-
 VoiceConfigureInfo CreateQualityInspectTemplateRequest::GetVoiceConfigure() const
 {
     return m_voiceConfigure;
@@ -399,6 +383,22 @@ void CreateQualityInspectTemplateRequest::SetVoiceConfigure(const VoiceConfigure
 bool CreateQualityInspectTemplateRequest::VoiceConfigureHasBeenSet() const
 {
     return m_voiceConfigureHasBeenSet;
+}
+
+QualityEvaluationConfigureInfo CreateQualityInspectTemplateRequest::GetQualityEvaluationConfigure() const
+{
+    return m_qualityEvaluationConfigure;
+}
+
+void CreateQualityInspectTemplateRequest::SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure)
+{
+    m_qualityEvaluationConfigure = _qualityEvaluationConfigure;
+    m_qualityEvaluationConfigureHasBeenSet = true;
+}
+
+bool CreateQualityInspectTemplateRequest::QualityEvaluationConfigureHasBeenSet() const
+{
+    return m_qualityEvaluationConfigureHasBeenSet;
 }
 
 

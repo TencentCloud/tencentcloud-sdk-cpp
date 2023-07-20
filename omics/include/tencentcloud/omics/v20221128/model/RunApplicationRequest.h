@@ -253,6 +253,27 @@ namespace TencentCloud
                      */
                     bool TableRowUuidsHasBeenSet() const;
 
+                    /**
+                     * 获取应用版本ID。不填表示使用当前最新版本。
+                     * @return ApplicationVersionId 应用版本ID。不填表示使用当前最新版本。
+                     * 
+                     */
+                    std::string GetApplicationVersionId() const;
+
+                    /**
+                     * 设置应用版本ID。不填表示使用当前最新版本。
+                     * @param _applicationVersionId 应用版本ID。不填表示使用当前最新版本。
+                     * 
+                     */
+                    void SetApplicationVersionId(const std::string& _applicationVersionId);
+
+                    /**
+                     * 判断参数 ApplicationVersionId 是否已赋值
+                     * @return ApplicationVersionId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationVersionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +335,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tableRowUuids;
                     bool m_tableRowUuidsHasBeenSet;
+
+                    /**
+                     * 应用版本ID。不填表示使用当前最新版本。
+                     */
+                    std::string m_applicationVersionId;
+                    bool m_applicationVersionIdHasBeenSet;
 
                 };
             }

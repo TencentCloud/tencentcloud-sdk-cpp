@@ -94,8 +94,10 @@ namespace TencentCloud
 
                     /**
                      * 获取应用SECRET
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppSecret 应用SECRET
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -103,8 +105,10 @@ namespace TencentCloud
 
                     /**
                      * 设置应用SECRET
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiAppSecret 应用SECRET
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,8 +198,10 @@ namespace TencentCloud
 
                     /**
                      * 获取应用KEY
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiAppKey 应用KEY
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,8 +209,10 @@ namespace TencentCloud
 
                     /**
                      * 设置应用KEY
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiAppKey 应用KEY
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -234,6 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 应用SECRET
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiAppSecret;
@@ -262,6 +271,7 @@ namespace TencentCloud
 
                     /**
                      * 应用KEY
+注意:此字段可能返回null，表示取不到有效值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiAppKey;

@@ -28,7 +28,8 @@ InstanceStateInfo::InstanceStateInfo() :
     m_instanceStateDescHasBeenSet(false),
     m_flowMsgHasBeenSet(false),
     m_processNameHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_processSubNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome InstanceStateInfo::Deserialize(const rapidjson::Value &value
         m_requestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessSubName") && !value["ProcessSubName"].IsNull())
+    {
+        if (!value["ProcessSubName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceStateInfo.ProcessSubName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processSubName = string(value["ProcessSubName"].GetString());
+        m_processSubNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void InstanceStateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processSubNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessSubName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processSubName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void InstanceStateInfo::SetRequestId(const string& _requestId)
 bool InstanceStateInfo::RequestIdHasBeenSet() const
 {
     return m_requestIdHasBeenSet;
+}
+
+string InstanceStateInfo::GetProcessSubName() const
+{
+    return m_processSubName;
+}
+
+void InstanceStateInfo::SetProcessSubName(const string& _processSubName)
+{
+    m_processSubName = _processSubName;
+    m_processSubNameHasBeenSet = true;
+}
+
+bool InstanceStateInfo::ProcessSubNameHasBeenSet() const
+{
+    return m_processSubNameHasBeenSet;
 }
 

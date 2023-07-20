@@ -75,7 +75,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ErrlogItem.h
   include/tencentcloud/cdb/v20170320/model/ProxyGroupInfo.h
   include/tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h
-  include/tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescRequest.h
   include/tencentcloud/cdb/v20170320/model/BackupConfig.h
   include/tencentcloud/cdb/v20170320/model/DescribeCDBProxyResponse.h
   include/tencentcloud/cdb/v20170320/model/Rule.h
@@ -303,7 +302,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateBackupRequest.h
   include/tencentcloud/cdb/v20170320/model/AccountInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeRemoteBackupConfigResponse.h
-  include/tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescResponse.h
   include/tencentcloud/cdb/v20170320/model/AdjustCdbProxyAddressResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h
@@ -482,7 +480,6 @@ set(cdb_src
   src/v20170320/model/ErrlogItem.cpp
   src/v20170320/model/ProxyGroupInfo.cpp
   src/v20170320/model/AssociateSecurityGroupsResponse.cpp
-  src/v20170320/model/ModifyCDBProxyDescRequest.cpp
   src/v20170320/model/BackupConfig.cpp
   src/v20170320/model/DescribeCDBProxyResponse.cpp
   src/v20170320/model/Rule.cpp
@@ -710,7 +707,6 @@ set(cdb_src
   src/v20170320/model/CreateBackupRequest.cpp
   src/v20170320/model/AccountInfo.cpp
   src/v20170320/model/DescribeRemoteBackupConfigResponse.cpp
-  src/v20170320/model/ModifyCDBProxyDescResponse.cpp
   src/v20170320/model/AdjustCdbProxyAddressResponse.cpp
   src/v20170320/model/ModifyDBInstanceVipVportRequest.cpp
   src/v20170320/model/DescribeDBImportRecordsRequest.cpp

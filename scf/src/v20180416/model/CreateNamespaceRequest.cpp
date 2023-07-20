@@ -24,7 +24,8 @@ using namespace std;
 
 CreateNamespaceRequest::CreateNamespaceRequest() :
     m_namespaceHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_resourceEnvHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceEnv.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void CreateNamespaceRequest::SetDescription(const string& _description)
 bool CreateNamespaceRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+NamespaceResourceEnv CreateNamespaceRequest::GetResourceEnv() const
+{
+    return m_resourceEnv;
+}
+
+void CreateNamespaceRequest::SetResourceEnv(const NamespaceResourceEnv& _resourceEnv)
+{
+    m_resourceEnv = _resourceEnv;
+    m_resourceEnvHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::ResourceEnvHasBeenSet() const
+{
+    return m_resourceEnvHasBeenSet;
 }
 
 

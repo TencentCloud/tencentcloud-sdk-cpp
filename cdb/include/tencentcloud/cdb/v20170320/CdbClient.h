@@ -241,8 +241,6 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupEncryptionStatusResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolResponse.h>
-#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescRequest.h>
-#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCdbProxyAddressDescRequest.h>
@@ -666,9 +664,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCDBProxyConnectionPoolResponse> ModifyCDBProxyConnectionPoolOutcome;
                 typedef std::future<ModifyCDBProxyConnectionPoolOutcome> ModifyCDBProxyConnectionPoolOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyConnectionPoolRequest&, ModifyCDBProxyConnectionPoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyConnectionPoolAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyCDBProxyDescResponse> ModifyCDBProxyDescOutcome;
-                typedef std::future<ModifyCDBProxyDescOutcome> ModifyCDBProxyDescOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyDescRequest&, ModifyCDBProxyDescOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyDescAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCDBProxyVipVPortResponse> ModifyCDBProxyVipVPortOutcome;
                 typedef std::future<ModifyCDBProxyVipVPortOutcome> ModifyCDBProxyVipVPortOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyVipVPortRequest&, ModifyCDBProxyVipVPortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyVipVPortAsyncHandler;
@@ -1813,17 +1808,6 @@ namespace TencentCloud
                 ModifyCDBProxyConnectionPoolOutcome ModifyCDBProxyConnectionPool(const Model::ModifyCDBProxyConnectionPoolRequest &request);
                 void ModifyCDBProxyConnectionPoolAsync(const Model::ModifyCDBProxyConnectionPoolRequest& request, const ModifyCDBProxyConnectionPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCDBProxyConnectionPoolOutcomeCallable ModifyCDBProxyConnectionPoolCallable(const Model::ModifyCDBProxyConnectionPoolRequest& request);
-
-                /**
-                 *当前接口已经废弃，请使用+ModifyCdbProxyAddressDesc+进行替代。
-
-修改数据库代理描述
-                 * @param req ModifyCDBProxyDescRequest
-                 * @return ModifyCDBProxyDescOutcome
-                 */
-                ModifyCDBProxyDescOutcome ModifyCDBProxyDesc(const Model::ModifyCDBProxyDescRequest &request);
-                void ModifyCDBProxyDescAsync(const Model::ModifyCDBProxyDescRequest& request, const ModifyCDBProxyDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyCDBProxyDescOutcomeCallable ModifyCDBProxyDescCallable(const Model::ModifyCDBProxyDescRequest& request);
 
                 /**
                  *当前接口已经废弃，请使用+ModifyCdbProxyAddressVipAndVPort+进行替代。

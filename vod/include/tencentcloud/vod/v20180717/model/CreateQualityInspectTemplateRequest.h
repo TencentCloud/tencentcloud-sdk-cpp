@@ -29,8 +29,8 @@
 #include <tencentcloud/vod/v20180717/model/NoiseConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/MosaicConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/QRCodeConfigureInfo.h>
-#include <tencentcloud/vod/v20180717/model/QualityEvaluationConfigureInfo.h>
 #include <tencentcloud/vod/v20180717/model/VoiceConfigureInfo.h>
+#include <tencentcloud/vod/v20180717/model/QualityEvaluationConfigureInfo.h>
 
 
 namespace TencentCloud
@@ -305,27 +305,6 @@ namespace TencentCloud
                     bool QRCodeConfigureHasBeenSet() const;
 
                     /**
-                     * 获取视频画面质量评价的控制参数。
-                     * @return QualityEvaluationConfigure 视频画面质量评价的控制参数。
-                     * 
-                     */
-                    QualityEvaluationConfigureInfo GetQualityEvaluationConfigure() const;
-
-                    /**
-                     * 设置视频画面质量评价的控制参数。
-                     * @param _qualityEvaluationConfigure 视频画面质量评价的控制参数。
-                     * 
-                     */
-                    void SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure);
-
-                    /**
-                     * 判断参数 QualityEvaluationConfigure 是否已赋值
-                     * @return QualityEvaluationConfigure 是否已赋值
-                     * 
-                     */
-                    bool QualityEvaluationConfigureHasBeenSet() const;
-
-                    /**
                      * 获取音频（静音、低音、爆音）检测的控制参数。
                      * @return VoiceConfigure 音频（静音、低音、爆音）检测的控制参数。
                      * 
@@ -345,6 +324,27 @@ namespace TencentCloud
                      * 
                      */
                     bool VoiceConfigureHasBeenSet() const;
+
+                    /**
+                     * 获取视频画面质量评价的控制参数。
+                     * @return QualityEvaluationConfigure 视频画面质量评价的控制参数。
+                     * 
+                     */
+                    QualityEvaluationConfigureInfo GetQualityEvaluationConfigure() const;
+
+                    /**
+                     * 设置视频画面质量评价的控制参数。
+                     * @param _qualityEvaluationConfigure 视频画面质量评价的控制参数。
+                     * 
+                     */
+                    void SetQualityEvaluationConfigure(const QualityEvaluationConfigureInfo& _qualityEvaluationConfigure);
+
+                    /**
+                     * 判断参数 QualityEvaluationConfigure 是否已赋值
+                     * @return QualityEvaluationConfigure 是否已赋值
+                     * 
+                     */
+                    bool QualityEvaluationConfigureHasBeenSet() const;
 
                 private:
 
@@ -421,16 +421,16 @@ namespace TencentCloud
                     bool m_qRCodeConfigureHasBeenSet;
 
                     /**
-                     * 视频画面质量评价的控制参数。
-                     */
-                    QualityEvaluationConfigureInfo m_qualityEvaluationConfigure;
-                    bool m_qualityEvaluationConfigureHasBeenSet;
-
-                    /**
                      * 音频（静音、低音、爆音）检测的控制参数。
                      */
                     VoiceConfigureInfo m_voiceConfigure;
                     bool m_voiceConfigureHasBeenSet;
+
+                    /**
+                     * 视频画面质量评价的控制参数。
+                     */
+                    QualityEvaluationConfigureInfo m_qualityEvaluationConfigure;
+                    bool m_qualityEvaluationConfigureHasBeenSet;
 
                 };
             }

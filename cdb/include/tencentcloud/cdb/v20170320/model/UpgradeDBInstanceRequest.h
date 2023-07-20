@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
-                     * @return Cpu 升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     * 获取升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。
+                     * @return Cpu 升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
-                     * @param _cpu 升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     * 设置升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。
+                     * @param _cpu 升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -468,7 +468,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     * 升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;

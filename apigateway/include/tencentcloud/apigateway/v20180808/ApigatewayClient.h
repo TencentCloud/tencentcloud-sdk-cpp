@@ -814,7 +814,7 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeApiOutcomeCallable DescribeApiCallable(const Model::DescribeApiRequest& request);
 
                 /**
-                 *本接口（DescribeApiApp）用于根据应用ID搜索应用。
+                 *本接口（DescribeApiApp）用于根据应用ID搜索应用。此接口已下线，如需使用功能请使用DescribeApiAppsStatus接口。
                  * @param req DescribeApiAppRequest
                  * @return DescribeApiAppOutcome
                  */

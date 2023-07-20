@@ -22,7 +22,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/AccessInfo.h
   include/tencentcloud/scf/v20180416/model/UpdateAliasRequest.h
   include/tencentcloud/scf/v20180416/model/Trigger.h
-  include/tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigRequest.h
+  include/tencentcloud/scf/v20180416/model/ListTriggersResponse.h
   include/tencentcloud/scf/v20180416/model/ListAliasesResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h
@@ -36,6 +36,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationResponse.h
   include/tencentcloud/scf/v20180416/model/PublishLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/UsageInfo.h
+  include/tencentcloud/scf/v20180416/model/NamespaceResourceEnvTKE.h
   include/tencentcloud/scf/v20180416/model/PublicNetConfigIn.h
   include/tencentcloud/scf/v20180416/model/DeleteProvisionedConcurrencyConfigRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteReservedConcurrencyConfigResponse.h
@@ -66,7 +67,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/UpdateFunctionConfigurationRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteReservedConcurrencyConfigRequest.h
   include/tencentcloud/scf/v20180416/model/GetFunctionEventInvokeConfigResponse.h
-  include/tencentcloud/scf/v20180416/model/ListTriggersResponse.h
+  include/tencentcloud/scf/v20180416/model/GetProvisionedConcurrencyConfigRequest.h
   include/tencentcloud/scf/v20180416/model/TerminateAsyncEventRequest.h
   include/tencentcloud/scf/v20180416/model/ListLayersRequest.h
   include/tencentcloud/scf/v20180416/model/CopyFunctionRequest.h
@@ -87,6 +88,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/LogSearchContext.h
   include/tencentcloud/scf/v20180416/model/TriggerInfo.h
   include/tencentcloud/scf/v20180416/model/RequestStatus.h
+  include/tencentcloud/scf/v20180416/model/K8SToleration.h
   include/tencentcloud/scf/v20180416/model/CreateFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/GetAccountRequest.h
   include/tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigResponse.h
@@ -113,6 +115,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/Filter.h
   include/tencentcloud/scf/v20180416/model/Variable.h
   include/tencentcloud/scf/v20180416/model/GetFunctionResponse.h
+  include/tencentcloud/scf/v20180416/model/K8SLabel.h
   include/tencentcloud/scf/v20180416/model/GetFunctionEventInvokeConfigRequest.h
   include/tencentcloud/scf/v20180416/model/Code.h
   include/tencentcloud/scf/v20180416/model/PutTotalConcurrencyConfigRequest.h
@@ -157,6 +160,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/ListAsyncEventsResponse.h
   include/tencentcloud/scf/v20180416/model/ListNamespacesResponse.h
   include/tencentcloud/scf/v20180416/model/EipConfigOut.h
+  include/tencentcloud/scf/v20180416/model/NamespaceResourceEnv.h
   include/tencentcloud/scf/v20180416/model/UpdateFunctionCodeResponse.h
   )
 
@@ -165,7 +169,7 @@ set(scf_src
   src/v20180416/model/AccessInfo.cpp
   src/v20180416/model/UpdateAliasRequest.cpp
   src/v20180416/model/Trigger.cpp
-  src/v20180416/model/GetProvisionedConcurrencyConfigRequest.cpp
+  src/v20180416/model/ListTriggersResponse.cpp
   src/v20180416/model/ListAliasesResponse.cpp
   src/v20180416/model/DeleteLayerVersionResponse.cpp
   src/v20180416/model/GetReservedConcurrencyConfigResponse.cpp
@@ -179,6 +183,7 @@ set(scf_src
   src/v20180416/model/UpdateFunctionConfigurationResponse.cpp
   src/v20180416/model/PublishLayerVersionResponse.cpp
   src/v20180416/model/UsageInfo.cpp
+  src/v20180416/model/NamespaceResourceEnvTKE.cpp
   src/v20180416/model/PublicNetConfigIn.cpp
   src/v20180416/model/DeleteProvisionedConcurrencyConfigRequest.cpp
   src/v20180416/model/DeleteReservedConcurrencyConfigResponse.cpp
@@ -209,7 +214,7 @@ set(scf_src
   src/v20180416/model/UpdateFunctionConfigurationRequest.cpp
   src/v20180416/model/DeleteReservedConcurrencyConfigRequest.cpp
   src/v20180416/model/GetFunctionEventInvokeConfigResponse.cpp
-  src/v20180416/model/ListTriggersResponse.cpp
+  src/v20180416/model/GetProvisionedConcurrencyConfigRequest.cpp
   src/v20180416/model/TerminateAsyncEventRequest.cpp
   src/v20180416/model/ListLayersRequest.cpp
   src/v20180416/model/CopyFunctionRequest.cpp
@@ -230,6 +235,7 @@ set(scf_src
   src/v20180416/model/LogSearchContext.cpp
   src/v20180416/model/TriggerInfo.cpp
   src/v20180416/model/RequestStatus.cpp
+  src/v20180416/model/K8SToleration.cpp
   src/v20180416/model/CreateFunctionRequest.cpp
   src/v20180416/model/GetAccountRequest.cpp
   src/v20180416/model/PutTotalConcurrencyConfigResponse.cpp
@@ -256,6 +262,7 @@ set(scf_src
   src/v20180416/model/Filter.cpp
   src/v20180416/model/Variable.cpp
   src/v20180416/model/GetFunctionResponse.cpp
+  src/v20180416/model/K8SLabel.cpp
   src/v20180416/model/GetFunctionEventInvokeConfigRequest.cpp
   src/v20180416/model/Code.cpp
   src/v20180416/model/PutTotalConcurrencyConfigRequest.cpp
@@ -300,6 +307,7 @@ set(scf_src
   src/v20180416/model/ListAsyncEventsResponse.cpp
   src/v20180416/model/ListNamespacesResponse.cpp
   src/v20180416/model/EipConfigOut.cpp
+  src/v20180416/model/NamespaceResourceEnv.cpp
   src/v20180416/model/UpdateFunctionCodeResponse.cpp
   )
 

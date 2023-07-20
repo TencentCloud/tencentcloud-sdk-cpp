@@ -174,14 +174,18 @@ namespace TencentCloud
 
                     /**
                      * 获取极速高清转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TEHDConfig 极速高清转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TEHDConfigForUpdate GetTEHDConfig() const;
 
                     /**
                      * 设置极速高清转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tEHDConfig 极速高清转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
@@ -195,14 +199,18 @@ namespace TencentCloud
 
                     /**
                      * 获取字幕流配置参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubtitleTemplate 字幕流配置参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubtitleTemplate GetSubtitleTemplate() const;
 
                     /**
                      * 设置字幕流配置参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subtitleTemplate 字幕流配置参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
@@ -277,12 +285,14 @@ namespace TencentCloud
 
                     /**
                      * 极速高清转码参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
 
                     /**
                      * 字幕流配置参数。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubtitleTemplate m_subtitleTemplate;
                     bool m_subtitleTemplateHasBeenSet;

@@ -32,7 +32,8 @@ RunApplicationRequest::RunApplicationRequest() :
     m_optionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tableIdHasBeenSet(false),
-    m_tableRowUuidsHasBeenSet(false)
+    m_tableRowUuidsHasBeenSet(false),
+    m_applicationVersionIdHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string RunApplicationRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_applicationVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationVersionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -295,6 +304,22 @@ void RunApplicationRequest::SetTableRowUuids(const vector<string>& _tableRowUuid
 bool RunApplicationRequest::TableRowUuidsHasBeenSet() const
 {
     return m_tableRowUuidsHasBeenSet;
+}
+
+string RunApplicationRequest::GetApplicationVersionId() const
+{
+    return m_applicationVersionId;
+}
+
+void RunApplicationRequest::SetApplicationVersionId(const string& _applicationVersionId)
+{
+    m_applicationVersionId = _applicationVersionId;
+    m_applicationVersionIdHasBeenSet = true;
+}
+
+bool RunApplicationRequest::ApplicationVersionIdHasBeenSet() const
+{
+    return m_applicationVersionIdHasBeenSet;
 }
 
 

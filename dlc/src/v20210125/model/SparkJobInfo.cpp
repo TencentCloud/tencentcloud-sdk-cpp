@@ -60,7 +60,8 @@ SparkJobInfo::SparkJobInfo() :
     m_sessionIdHasBeenSet(false),
     m_dataEngineClusterTypeHasBeenSet(false),
     m_dataEngineImageVersionHasBeenSet(false),
-    m_isInheritHasBeenSet(false)
+    m_isInheritHasBeenSet(false),
+    m_isSessionStartedHasBeenSet(false)
 {
 }
 
@@ -476,6 +477,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_isInheritHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSessionStarted") && !value["IsSessionStarted"].IsNull())
+    {
+        if (!value["IsSessionStarted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.IsSessionStarted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSessionStarted = value["IsSessionStarted"].GetBool();
+        m_isSessionStartedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -802,6 +813,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsInherit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isInherit, allocator);
+    }
+
+    if (m_isSessionStartedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSessionStarted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSessionStarted, allocator);
     }
 
 }
@@ -1445,5 +1464,21 @@ void SparkJobInfo::SetIsInherit(const uint64_t& _isInherit)
 bool SparkJobInfo::IsInheritHasBeenSet() const
 {
     return m_isInheritHasBeenSet;
+}
+
+bool SparkJobInfo::GetIsSessionStarted() const
+{
+    return m_isSessionStarted;
+}
+
+void SparkJobInfo::SetIsSessionStarted(const bool& _isSessionStarted)
+{
+    m_isSessionStarted = _isSessionStarted;
+    m_isSessionStartedHasBeenSet = true;
+}
+
+bool SparkJobInfo::IsSessionStartedHasBeenSet() const
+{
+    return m_isSessionStartedHasBeenSet;
 }
 

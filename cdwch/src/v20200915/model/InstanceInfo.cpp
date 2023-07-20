@@ -62,7 +62,11 @@ InstanceInfo::InstanceInfo() :
     m_canAttachCbsLvmHasBeenSet(false),
     m_canAttachCosHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_upgradeVersionsHasBeenSet(false)
+    m_upgradeVersionsHasBeenSet(false),
+    m_esIndexIdHasBeenSet(false),
+    m_esIndexUsernameHasBeenSet(false),
+    m_esIndexPasswordHasBeenSet(false),
+    m_hasEsIndexHasBeenSet(false)
 {
 }
 
@@ -532,6 +536,46 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_upgradeVersionsHasBeenSet = true;
     }
 
+    if (value.HasMember("EsIndexId") && !value["EsIndexId"].IsNull())
+    {
+        if (!value["EsIndexId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsIndexId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esIndexId = string(value["EsIndexId"].GetString());
+        m_esIndexIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsIndexUsername") && !value["EsIndexUsername"].IsNull())
+    {
+        if (!value["EsIndexUsername"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsIndexUsername` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esIndexUsername = string(value["EsIndexUsername"].GetString());
+        m_esIndexUsernameHasBeenSet = true;
+    }
+
+    if (value.HasMember("EsIndexPassword") && !value["EsIndexPassword"].IsNull())
+    {
+        if (!value["EsIndexPassword"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsIndexPassword` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esIndexPassword = string(value["EsIndexPassword"].GetString());
+        m_esIndexPasswordHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasEsIndex") && !value["HasEsIndex"].IsNull())
+    {
+        if (!value["HasEsIndex"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HasEsIndex` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasEsIndex = value["HasEsIndex"].GetBool();
+        m_hasEsIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -890,6 +934,38 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpgradeVersions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_upgradeVersions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esIndexIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsIndexId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esIndexId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esIndexUsernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsIndexUsername";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esIndexUsername.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esIndexPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsIndexPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esIndexPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasEsIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasEsIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasEsIndex, allocator);
     }
 
 }
@@ -1565,5 +1641,69 @@ void InstanceInfo::SetUpgradeVersions(const string& _upgradeVersions)
 bool InstanceInfo::UpgradeVersionsHasBeenSet() const
 {
     return m_upgradeVersionsHasBeenSet;
+}
+
+string InstanceInfo::GetEsIndexId() const
+{
+    return m_esIndexId;
+}
+
+void InstanceInfo::SetEsIndexId(const string& _esIndexId)
+{
+    m_esIndexId = _esIndexId;
+    m_esIndexIdHasBeenSet = true;
+}
+
+bool InstanceInfo::EsIndexIdHasBeenSet() const
+{
+    return m_esIndexIdHasBeenSet;
+}
+
+string InstanceInfo::GetEsIndexUsername() const
+{
+    return m_esIndexUsername;
+}
+
+void InstanceInfo::SetEsIndexUsername(const string& _esIndexUsername)
+{
+    m_esIndexUsername = _esIndexUsername;
+    m_esIndexUsernameHasBeenSet = true;
+}
+
+bool InstanceInfo::EsIndexUsernameHasBeenSet() const
+{
+    return m_esIndexUsernameHasBeenSet;
+}
+
+string InstanceInfo::GetEsIndexPassword() const
+{
+    return m_esIndexPassword;
+}
+
+void InstanceInfo::SetEsIndexPassword(const string& _esIndexPassword)
+{
+    m_esIndexPassword = _esIndexPassword;
+    m_esIndexPasswordHasBeenSet = true;
+}
+
+bool InstanceInfo::EsIndexPasswordHasBeenSet() const
+{
+    return m_esIndexPasswordHasBeenSet;
+}
+
+bool InstanceInfo::GetHasEsIndex() const
+{
+    return m_hasEsIndex;
+}
+
+void InstanceInfo::SetHasEsIndex(const bool& _hasEsIndex)
+{
+    m_hasEsIndex = _hasEsIndex;
+    m_hasEsIndexHasBeenSet = true;
+}
+
+bool InstanceInfo::HasEsIndexHasBeenSet() const
+{
+    return m_hasEsIndexHasBeenSet;
 }
 

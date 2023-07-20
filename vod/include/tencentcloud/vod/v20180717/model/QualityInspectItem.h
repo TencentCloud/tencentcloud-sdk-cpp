@@ -47,47 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取置信度，取值范围：[0, 100]。
-<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
-<li>Mosaic：马赛克；</li>
-<li>QRCode：二维码；</li>
-<li>AppletCode：小程序码；</li>
-<li>BarCode：条形码。</li>
-                     * @return Confidence 置信度，取值范围：[0, 100]。
-<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
-<li>Mosaic：马赛克；</li>
-<li>QRCode：二维码；</li>
-<li>AppletCode：小程序码；</li>
-<li>BarCode：条形码。</li>
-                     * 
-                     */
-                    uint64_t GetConfidence() const;
-
-                    /**
-                     * 设置置信度，取值范围：[0, 100]。
-<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
-<li>Mosaic：马赛克；</li>
-<li>QRCode：二维码；</li>
-<li>AppletCode：小程序码；</li>
-<li>BarCode：条形码。</li>
-                     * @param _confidence 置信度，取值范围：[0, 100]。
-<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
-<li>Mosaic：马赛克；</li>
-<li>QRCode：二维码；</li>
-<li>AppletCode：小程序码；</li>
-<li>BarCode：条形码。</li>
-                     * 
-                     */
-                    void SetConfidence(const uint64_t& _confidence);
-
-                    /**
-                     * 判断参数 Confidence 是否已赋值
-                     * @return Confidence 是否已赋值
-                     * 
-                     */
-                    bool ConfidenceHasBeenSet() const;
-
-                    /**
                      * 获取异常片段起始的偏移时间，单位：秒。
                      * @return StartTimeOffset 异常片段起始的偏移时间，单位：秒。
                      * 
@@ -174,18 +133,48 @@ namespace TencentCloud
                      */
                     bool AreaCoordSetHasBeenSet() const;
 
-                private:
-
                     /**
-                     * 置信度，取值范围：[0, 100]。
+                     * 获取置信度，取值范围：[0, 100]。
 <font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
 <li>Mosaic：马赛克；</li>
 <li>QRCode：二维码；</li>
 <li>AppletCode：小程序码；</li>
 <li>BarCode：条形码。</li>
+                     * @return Confidence 置信度，取值范围：[0, 100]。
+<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
+<li>Mosaic：马赛克；</li>
+<li>QRCode：二维码；</li>
+<li>AppletCode：小程序码；</li>
+<li>BarCode：条形码。</li>
+                     * 
                      */
-                    uint64_t m_confidence;
-                    bool m_confidenceHasBeenSet;
+                    uint64_t GetConfidence() const;
+
+                    /**
+                     * 设置置信度，取值范围：[0, 100]。
+<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
+<li>Mosaic：马赛克；</li>
+<li>QRCode：二维码；</li>
+<li>AppletCode：小程序码；</li>
+<li>BarCode：条形码。</li>
+                     * @param _confidence 置信度，取值范围：[0, 100]。
+<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
+<li>Mosaic：马赛克；</li>
+<li>QRCode：二维码；</li>
+<li>AppletCode：小程序码；</li>
+<li>BarCode：条形码。</li>
+                     * 
+                     */
+                    void SetConfidence(const uint64_t& _confidence);
+
+                    /**
+                     * 判断参数 Confidence 是否已赋值
+                     * @return Confidence 是否已赋值
+                     * 
+                     */
+                    bool ConfidenceHasBeenSet() const;
+
+                private:
 
                     /**
                      * 异常片段起始的偏移时间，单位：秒。
@@ -210,6 +199,17 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_areaCoordSet;
                     bool m_areaCoordSetHasBeenSet;
+
+                    /**
+                     * 置信度，取值范围：[0, 100]。
+<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：
+<li>Mosaic：马赛克；</li>
+<li>QRCode：二维码；</li>
+<li>AppletCode：小程序码；</li>
+<li>BarCode：条形码。</li>
+                     */
+                    uint64_t m_confidence;
+                    bool m_confidenceHasBeenSet;
 
                 };
             }

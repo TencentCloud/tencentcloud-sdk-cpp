@@ -246,6 +246,31 @@ namespace TencentCloud
                      */
                     bool RequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取流程的二级名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessSubName 流程的二级名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProcessSubName() const;
+
+                    /**
+                     * 设置流程的二级名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processSubName 流程的二级名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessSubName(const std::string& _processSubName);
+
+                    /**
+                     * 判断参数 ProcessSubName 是否已赋值
+                     * @return ProcessSubName 是否已赋值
+                     * 
+                     */
+                    bool ProcessSubNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
+
+                    /**
+                     * 流程的二级名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_processSubName;
+                    bool m_processSubNameHasBeenSet;
 
                 };
             }

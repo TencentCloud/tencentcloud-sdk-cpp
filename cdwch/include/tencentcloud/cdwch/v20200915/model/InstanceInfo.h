@@ -1112,6 +1112,106 @@ Modify 集群变更中；
                      */
                     bool UpgradeVersionsHasBeenSet() const;
 
+                    /**
+                     * 获取ex-index
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsIndexId ex-index
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEsIndexId() const;
+
+                    /**
+                     * 设置ex-index
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _esIndexId ex-index
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEsIndexId(const std::string& _esIndexId);
+
+                    /**
+                     * 判断参数 EsIndexId 是否已赋值
+                     * @return EsIndexId 是否已赋值
+                     * 
+                     */
+                    bool EsIndexIdHasBeenSet() const;
+
+                    /**
+                     * 获取username
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsIndexUsername username
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEsIndexUsername() const;
+
+                    /**
+                     * 设置username
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _esIndexUsername username
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEsIndexUsername(const std::string& _esIndexUsername);
+
+                    /**
+                     * 判断参数 EsIndexUsername 是否已赋值
+                     * @return EsIndexUsername 是否已赋值
+                     * 
+                     */
+                    bool EsIndexUsernameHasBeenSet() const;
+
+                    /**
+                     * 获取password
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsIndexPassword password
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEsIndexPassword() const;
+
+                    /**
+                     * 设置password
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _esIndexPassword password
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEsIndexPassword(const std::string& _esIndexPassword);
+
+                    /**
+                     * 判断参数 EsIndexPassword 是否已赋值
+                     * @return EsIndexPassword 是否已赋值
+                     * 
+                     */
+                    bool EsIndexPasswordHasBeenSet() const;
+
+                    /**
+                     * 获取true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasEsIndex true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetHasEsIndex() const;
+
+                    /**
+                     * 设置true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasEsIndex true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasEsIndex(const bool& _hasEsIndex);
+
+                    /**
+                     * 判断参数 HasEsIndex 是否已赋值
+                     * @return HasEsIndex 是否已赋值
+                     * 
+                     */
+                    bool HasEsIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1410,6 +1510,34 @@ Modify 集群变更中；
                      */
                     std::string m_upgradeVersions;
                     bool m_upgradeVersionsHasBeenSet;
+
+                    /**
+                     * ex-index
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esIndexId;
+                    bool m_esIndexIdHasBeenSet;
+
+                    /**
+                     * username
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esIndexUsername;
+                    bool m_esIndexUsernameHasBeenSet;
+
+                    /**
+                     * password
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esIndexPassword;
+                    bool m_esIndexPasswordHasBeenSet;
+
+                    /**
+                     * true
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hasEsIndex;
+                    bool m_hasEsIndexHasBeenSet;
 
                 };
             }

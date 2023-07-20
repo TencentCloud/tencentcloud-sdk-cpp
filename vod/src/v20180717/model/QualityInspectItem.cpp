@@ -21,10 +21,10 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 QualityInspectItem::QualityInspectItem() :
-    m_confidenceHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
-    m_areaCoordSetHasBeenSet(false)
+    m_areaCoordSetHasBeenSet(false),
+    m_confidenceHasBeenSet(false)
 {
 }
 
@@ -32,16 +32,6 @@ CoreInternalOutcome QualityInspectItem::Deserialize(const rapidjson::Value &valu
 {
     string requestId = "";
 
-
-    if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
-    {
-        if (!value["Confidence"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `QualityInspectItem.Confidence` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_confidence = value["Confidence"].GetUint64();
-        m_confidenceHasBeenSet = true;
-    }
 
     if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
     {
@@ -76,20 +66,22 @@ CoreInternalOutcome QualityInspectItem::Deserialize(const rapidjson::Value &valu
         m_areaCoordSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
+    {
+        if (!value["Confidence"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityInspectItem.Confidence` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_confidence = value["Confidence"].GetUint64();
+        m_confidenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void QualityInspectItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_confidenceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Confidence";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_confidence, allocator);
-    }
 
     if (m_startTimeOffsetHasBeenSet)
     {
@@ -120,24 +112,16 @@ void QualityInspectItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
+    if (m_confidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Confidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_confidence, allocator);
+    }
+
 }
 
-
-uint64_t QualityInspectItem::GetConfidence() const
-{
-    return m_confidence;
-}
-
-void QualityInspectItem::SetConfidence(const uint64_t& _confidence)
-{
-    m_confidence = _confidence;
-    m_confidenceHasBeenSet = true;
-}
-
-bool QualityInspectItem::ConfidenceHasBeenSet() const
-{
-    return m_confidenceHasBeenSet;
-}
 
 double QualityInspectItem::GetStartTimeOffset() const
 {
@@ -185,5 +169,21 @@ void QualityInspectItem::SetAreaCoordSet(const vector<int64_t>& _areaCoordSet)
 bool QualityInspectItem::AreaCoordSetHasBeenSet() const
 {
     return m_areaCoordSetHasBeenSet;
+}
+
+uint64_t QualityInspectItem::GetConfidence() const
+{
+    return m_confidence;
+}
+
+void QualityInspectItem::SetConfidence(const uint64_t& _confidence)
+{
+    m_confidence = _confidence;
+    m_confidenceHasBeenSet = true;
+}
+
+bool QualityInspectItem::ConfidenceHasBeenSet() const
+{
+    return m_confidenceHasBeenSet;
 }
 

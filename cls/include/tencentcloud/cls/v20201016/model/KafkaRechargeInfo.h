@@ -320,18 +320,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset
+                     * 获取导入数据位置，-2:最早（默认），-1：最晚
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Offset 导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset
+                     * @return Offset 导入数据位置，-2:最早（默认），-1：最晚
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset
+                     * 设置导入数据位置，-2:最早（默认），-1：最晚
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offset 导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset
+                     * @param _offset 导入数据位置，-2:最早（默认），-1：最晚
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -498,7 +498,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset
+                     * 导入数据位置，-2:最早（默认），-1：最晚
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
