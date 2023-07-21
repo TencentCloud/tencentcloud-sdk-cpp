@@ -59,6 +59,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/AuditApplyClientResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentBillsRequest.h
   include/tencentcloud/partners/v20180321/model/AgentPayDealsResponse.h
+  include/tencentcloud/partners/v20180321/model/RefundMap.h
   include/tencentcloud/partners/v20180321/model/AgentSalesmanElem.h
   include/tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h
   include/tencentcloud/partners/v20180321/model/DealGoodsPriceNewElem.h
@@ -111,6 +112,7 @@ set(partners_src
   src/v20180321/model/AuditApplyClientResponse.cpp
   src/v20180321/model/DescribeAgentBillsRequest.cpp
   src/v20180321/model/AgentPayDealsResponse.cpp
+  src/v20180321/model/RefundMap.cpp
   src/v20180321/model/AgentSalesmanElem.cpp
   src/v20180321/model/DescribeClientBalanceNewRequest.cpp
   src/v20180321/model/DealGoodsPriceNewElem.cpp

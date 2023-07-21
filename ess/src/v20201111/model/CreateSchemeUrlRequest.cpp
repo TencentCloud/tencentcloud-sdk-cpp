@@ -32,7 +32,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_flowGroupIdHasBeenSet(false),
     m_pathTypeHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_hidesHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,19 @@ string CreateSchemeUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hidesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hides";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hides.begin(); itr != m_hides.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -291,6 +305,22 @@ void CreateSchemeUrlRequest::SetAgent(const Agent& _agent)
 bool CreateSchemeUrlRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+vector<int64_t> CreateSchemeUrlRequest::GetHides() const
+{
+    return m_hides;
+}
+
+void CreateSchemeUrlRequest::SetHides(const vector<int64_t>& _hides)
+{
+    m_hides = _hides;
+    m_hidesHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::HidesHasBeenSet() const
+{
+    return m_hidesHasBeenSet;
 }
 
 

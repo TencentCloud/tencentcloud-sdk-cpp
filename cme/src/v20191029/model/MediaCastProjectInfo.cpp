@@ -27,7 +27,8 @@ MediaCastProjectInfo::MediaCastProjectInfo() :
     m_outputMediaSettingHasBeenSet(false),
     m_playSettingHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
+    m_stopTimeHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome MediaCastProjectInfo::Deserialize(const rapidjson::Value &va
         m_stopTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastProjectInfo.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetDouble();
+        m_durationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -217,6 +228,14 @@ void MediaCastProjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "StopTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_stopTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
     }
 
 }
@@ -332,5 +351,21 @@ void MediaCastProjectInfo::SetStopTime(const string& _stopTime)
 bool MediaCastProjectInfo::StopTimeHasBeenSet() const
 {
     return m_stopTimeHasBeenSet;
+}
+
+double MediaCastProjectInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void MediaCastProjectInfo::SetDuration(const double& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool MediaCastProjectInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
 }
 

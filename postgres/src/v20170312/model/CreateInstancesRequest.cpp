@@ -23,36 +23,36 @@ using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
 CreateInstancesRequest::CreateInstancesRequest() :
+    m_zoneHasBeenSet(false),
     m_specCodeHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_zoneHasBeenSet(false),
     m_charsetHasBeenSet(false),
     m_adminNameHasBeenSet(false),
     m_adminPasswordHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
+    m_dBMajorVersionHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
+    m_dBKernelVersionHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_autoVoucherHasBeenSet(false),
-    m_voucherIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_dBNodeSetHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false),
+    m_voucherIdsHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_needSupportIpv6HasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_dBMajorVersionHasBeenSet(false),
-    m_dBKernelVersionHasBeenSet(false),
-    m_dBNodeSetHasBeenSet(false),
     m_needSupportTDEHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
     m_kMSRegionHasBeenSet(false),
     m_dBEngineHasBeenSet(false),
     m_dBEngineConfigHasBeenSet(false),
-    m_syncModeHasBeenSet(false)
+    m_syncModeHasBeenSet(false),
+    m_needSupportIpv6HasBeenSet(false)
 {
 }
 
@@ -62,6 +62,14 @@ string CreateInstancesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_specCodeHasBeenSet)
     {
@@ -95,14 +103,6 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_period, allocator);
     }
 
-    if (m_zoneHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_charsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -127,12 +127,12 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_adminPassword.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_projectIdHasBeenSet)
+    if (m_dBMajorVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
+        string key = "DBMajorVersion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dBVersionHasBeenSet)
@@ -143,12 +143,59 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dBKernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBKernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_instanceChargeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBNodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBNodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dBNodeSet.begin(); itr != m_dBNodeSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
     if (m_autoVoucherHasBeenSet)
@@ -172,28 +219,12 @@ string CreateInstancesRequest::ToJsonString() const
         }
     }
 
-    if (m_vpcIdHasBeenSet)
+    if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
+        string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subnetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_autoRenewFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoRenewFlag";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_autoRenewFlag, allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
     if (m_activityIdHasBeenSet)
@@ -210,14 +241,6 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_needSupportIpv6HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NeedSupportIpv6";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_needSupportIpv6, allocator);
     }
 
     if (m_tagListHasBeenSet)
@@ -245,37 +268,6 @@ string CreateInstancesRequest::ToJsonString() const
         for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_dBMajorVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBMajorVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dBKernelVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBKernelVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dBNodeSetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBNodeSet";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_dBNodeSet.begin(); itr != m_dBNodeSet.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -327,6 +319,14 @@ string CreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_syncMode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_needSupportIpv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSupportIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSupportIpv6, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -334,6 +334,22 @@ string CreateInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateInstancesRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateInstancesRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
 
 string CreateInstancesRequest::GetSpecCode() const
 {
@@ -399,22 +415,6 @@ bool CreateInstancesRequest::PeriodHasBeenSet() const
     return m_periodHasBeenSet;
 }
 
-string CreateInstancesRequest::GetZone() const
-{
-    return m_zone;
-}
-
-void CreateInstancesRequest::SetZone(const string& _zone)
-{
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::ZoneHasBeenSet() const
-{
-    return m_zoneHasBeenSet;
-}
-
 string CreateInstancesRequest::GetCharset() const
 {
     return m_charset;
@@ -463,20 +463,20 @@ bool CreateInstancesRequest::AdminPasswordHasBeenSet() const
     return m_adminPasswordHasBeenSet;
 }
 
-int64_t CreateInstancesRequest::GetProjectId() const
+string CreateInstancesRequest::GetDBMajorVersion() const
 {
-    return m_projectId;
+    return m_dBMajorVersion;
 }
 
-void CreateInstancesRequest::SetProjectId(const int64_t& _projectId)
+void CreateInstancesRequest::SetDBMajorVersion(const string& _dBMajorVersion)
 {
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
+    m_dBMajorVersion = _dBMajorVersion;
+    m_dBMajorVersionHasBeenSet = true;
 }
 
-bool CreateInstancesRequest::ProjectIdHasBeenSet() const
+bool CreateInstancesRequest::DBMajorVersionHasBeenSet() const
 {
-    return m_projectIdHasBeenSet;
+    return m_dBMajorVersionHasBeenSet;
 }
 
 string CreateInstancesRequest::GetDBVersion() const
@@ -495,6 +495,22 @@ bool CreateInstancesRequest::DBVersionHasBeenSet() const
     return m_dBVersionHasBeenSet;
 }
 
+string CreateInstancesRequest::GetDBKernelVersion() const
+{
+    return m_dBKernelVersion;
+}
+
+void CreateInstancesRequest::SetDBKernelVersion(const string& _dBKernelVersion)
+{
+    m_dBKernelVersion = _dBKernelVersion;
+    m_dBKernelVersionHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DBKernelVersionHasBeenSet() const
+{
+    return m_dBKernelVersionHasBeenSet;
+}
+
 string CreateInstancesRequest::GetInstanceChargeType() const
 {
     return m_instanceChargeType;
@@ -509,38 +525,6 @@ void CreateInstancesRequest::SetInstanceChargeType(const string& _instanceCharge
 bool CreateInstancesRequest::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
-}
-
-uint64_t CreateInstancesRequest::GetAutoVoucher() const
-{
-    return m_autoVoucher;
-}
-
-void CreateInstancesRequest::SetAutoVoucher(const uint64_t& _autoVoucher)
-{
-    m_autoVoucher = _autoVoucher;
-    m_autoVoucherHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::AutoVoucherHasBeenSet() const
-{
-    return m_autoVoucherHasBeenSet;
-}
-
-vector<string> CreateInstancesRequest::GetVoucherIds() const
-{
-    return m_voucherIds;
-}
-
-void CreateInstancesRequest::SetVoucherIds(const vector<string>& _voucherIds)
-{
-    m_voucherIds = _voucherIds;
-    m_voucherIdsHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::VoucherIdsHasBeenSet() const
-{
-    return m_voucherIdsHasBeenSet;
 }
 
 string CreateInstancesRequest::GetVpcId() const
@@ -575,6 +559,22 @@ bool CreateInstancesRequest::SubnetIdHasBeenSet() const
     return m_subnetIdHasBeenSet;
 }
 
+vector<DBNode> CreateInstancesRequest::GetDBNodeSet() const
+{
+    return m_dBNodeSet;
+}
+
+void CreateInstancesRequest::SetDBNodeSet(const vector<DBNode>& _dBNodeSet)
+{
+    m_dBNodeSet = _dBNodeSet;
+    m_dBNodeSetHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DBNodeSetHasBeenSet() const
+{
+    return m_dBNodeSetHasBeenSet;
+}
+
 int64_t CreateInstancesRequest::GetAutoRenewFlag() const
 {
     return m_autoRenewFlag;
@@ -589,6 +589,54 @@ void CreateInstancesRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool CreateInstancesRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void CreateInstancesRequest::SetAutoVoucher(const uint64_t& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
+}
+
+vector<string> CreateInstancesRequest::GetVoucherIds() const
+{
+    return m_voucherIds;
+}
+
+void CreateInstancesRequest::SetVoucherIds(const vector<string>& _voucherIds)
+{
+    m_voucherIds = _voucherIds;
+    m_voucherIdsHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::VoucherIdsHasBeenSet() const
+{
+    return m_voucherIdsHasBeenSet;
+}
+
+int64_t CreateInstancesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void CreateInstancesRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 int64_t CreateInstancesRequest::GetActivityId() const
@@ -623,22 +671,6 @@ bool CreateInstancesRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-uint64_t CreateInstancesRequest::GetNeedSupportIpv6() const
-{
-    return m_needSupportIpv6;
-}
-
-void CreateInstancesRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6)
-{
-    m_needSupportIpv6 = _needSupportIpv6;
-    m_needSupportIpv6HasBeenSet = true;
-}
-
-bool CreateInstancesRequest::NeedSupportIpv6HasBeenSet() const
-{
-    return m_needSupportIpv6HasBeenSet;
-}
-
 vector<Tag> CreateInstancesRequest::GetTagList() const
 {
     return m_tagList;
@@ -669,54 +701,6 @@ void CreateInstancesRequest::SetSecurityGroupIds(const vector<string>& _security
 bool CreateInstancesRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
-}
-
-string CreateInstancesRequest::GetDBMajorVersion() const
-{
-    return m_dBMajorVersion;
-}
-
-void CreateInstancesRequest::SetDBMajorVersion(const string& _dBMajorVersion)
-{
-    m_dBMajorVersion = _dBMajorVersion;
-    m_dBMajorVersionHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::DBMajorVersionHasBeenSet() const
-{
-    return m_dBMajorVersionHasBeenSet;
-}
-
-string CreateInstancesRequest::GetDBKernelVersion() const
-{
-    return m_dBKernelVersion;
-}
-
-void CreateInstancesRequest::SetDBKernelVersion(const string& _dBKernelVersion)
-{
-    m_dBKernelVersion = _dBKernelVersion;
-    m_dBKernelVersionHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::DBKernelVersionHasBeenSet() const
-{
-    return m_dBKernelVersionHasBeenSet;
-}
-
-vector<DBNode> CreateInstancesRequest::GetDBNodeSet() const
-{
-    return m_dBNodeSet;
-}
-
-void CreateInstancesRequest::SetDBNodeSet(const vector<DBNode>& _dBNodeSet)
-{
-    m_dBNodeSet = _dBNodeSet;
-    m_dBNodeSetHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::DBNodeSetHasBeenSet() const
-{
-    return m_dBNodeSetHasBeenSet;
 }
 
 uint64_t CreateInstancesRequest::GetNeedSupportTDE() const
@@ -813,6 +797,22 @@ void CreateInstancesRequest::SetSyncMode(const string& _syncMode)
 bool CreateInstancesRequest::SyncModeHasBeenSet() const
 {
     return m_syncModeHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetNeedSupportIpv6() const
+{
+    return m_needSupportIpv6;
+}
+
+void CreateInstancesRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6)
+{
+    m_needSupportIpv6 = _needSupportIpv6;
+    m_needSupportIpv6HasBeenSet = true;
+}
+
+bool CreateInstancesRequest::NeedSupportIpv6HasBeenSet() const
+{
+    return m_needSupportIpv6HasBeenSet;
 }
 
 

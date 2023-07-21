@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/partners/v20180321/model/DealGoodsPriceNewElem.h>
 #include <tencentcloud/partners/v20180321/model/ProductInfoElem.h>
+#include <tencentcloud/partners/v20180321/model/RefundMap.h>
 
 
 namespace TencentCloud
@@ -757,6 +758,31 @@ namespace TencentCloud
                      */
                     bool ResourceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RefundMap 退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RefundMap> GetRefundMap() const;
+
+                    /**
+                     * 设置退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _refundMap 退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRefundMap(const std::vector<RefundMap>& _refundMap);
+
+                    /**
+                     * 判断参数 RefundMap 是否已赋值
+                     * @return RefundMap 是否已赋值
+                     * 
+                     */
+                    bool RefundMapHasBeenSet() const;
+
                 private:
 
                     /**
@@ -957,6 +983,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
+
+                    /**
+                     * 退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RefundMap> m_refundMap;
+                    bool m_refundMapHasBeenSet;
 
                 };
             }

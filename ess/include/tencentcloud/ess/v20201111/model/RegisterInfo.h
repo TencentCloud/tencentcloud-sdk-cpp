@@ -70,23 +70,44 @@ namespace TencentCloud
                     /**
                      * 获取社会统一信用代码
                      * @return Uscc 社会统一信用代码
-                     * 
+                     * @deprecated
                      */
                     std::string GetUscc() const;
 
                     /**
                      * 设置社会统一信用代码
                      * @param _uscc 社会统一信用代码
-                     * 
+                     * @deprecated
                      */
                     void SetUscc(const std::string& _uscc);
 
                     /**
                      * 判断参数 Uscc 是否已赋值
                      * @return Uscc 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UsccHasBeenSet() const;
+
+                    /**
+                     * 获取社会统一信用代码
+                     * @return UnifiedSocialCreditCode 社会统一信用代码
+                     * 
+                     */
+                    std::string GetUnifiedSocialCreditCode() const;
+
+                    /**
+                     * 设置社会统一信用代码
+                     * @param _unifiedSocialCreditCode 社会统一信用代码
+                     * 
+                     */
+                    void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
+
+                    /**
+                     * 判断参数 UnifiedSocialCreditCode 是否已赋值
+                     * @return UnifiedSocialCreditCode 是否已赋值
+                     * 
+                     */
+                    bool UnifiedSocialCreditCodeHasBeenSet() const;
 
                 private:
 
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_uscc;
                     bool m_usccHasBeenSet;
+
+                    /**
+                     * 社会统一信用代码
+                     */
+                    std::string m_unifiedSocialCreditCode;
+                    bool m_unifiedSocialCreditCodeHasBeenSet;
 
                 };
             }

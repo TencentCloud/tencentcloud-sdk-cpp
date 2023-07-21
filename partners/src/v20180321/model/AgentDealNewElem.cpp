@@ -49,7 +49,8 @@ AgentDealNewElem::AgentDealNewElem() :
     m_productInfoHasBeenSet(false),
     m_paymentMethodHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+    m_resourceIdsHasBeenSet(false),
+    m_refundMapHasBeenSet(false)
 {
 }
 
@@ -368,6 +369,26 @@ CoreInternalOutcome AgentDealNewElem::Deserialize(const rapidjson::Value &value)
         m_resourceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("RefundMap") && !value["RefundMap"].IsNull())
+    {
+        if (!value["RefundMap"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentDealNewElem.RefundMap` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RefundMap"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RefundMap item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_refundMap.push_back(item);
+        }
+        m_refundMapHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -617,6 +638,21 @@ void AgentDealNewElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_refundMapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefundMap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_refundMap.begin(); itr != m_refundMap.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1085,5 +1121,21 @@ void AgentDealNewElem::SetResourceIds(const vector<string>& _resourceIds)
 bool AgentDealNewElem::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
+}
+
+vector<RefundMap> AgentDealNewElem::GetRefundMap() const
+{
+    return m_refundMap;
+}
+
+void AgentDealNewElem::SetRefundMap(const vector<RefundMap>& _refundMap)
+{
+    m_refundMap = _refundMap;
+    m_refundMapHasBeenSet = true;
+}
+
+bool AgentDealNewElem::RefundMapHasBeenSet() const
+{
+    return m_refundMapHasBeenSet;
 }
 

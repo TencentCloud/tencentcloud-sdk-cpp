@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FunctionHasBeenSet() const;
 
                     /**
-                     * 获取规则的开关
-                     * @return Status 规则的开关
+                     * 获取规则的开关，0表示规则关闭，1表示规则打开
+                     * @return Status 规则的开关，0表示规则关闭，1表示规则打开
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置规则的开关
-                     * @param _status 规则的开关
+                     * 设置规则的开关，0表示规则关闭，1表示规则打开
+                     * @param _status 规则的开关，0表示规则关闭，1表示规则打开
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_functionHasBeenSet;
 
                     /**
-                     * 规则的开关
+                     * 规则的开关，0表示规则关闭，1表示规则打开
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

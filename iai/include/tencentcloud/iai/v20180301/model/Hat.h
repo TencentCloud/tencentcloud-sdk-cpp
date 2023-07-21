@@ -74,18 +74,18 @@ AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：�
 
                     /**
                      * 获取帽子颜色。
-AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系。
                      * @return Color 帽子颜色。
-AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系。
                      * 
                      */
                     AttributeItem GetColor() const;
 
                     /**
                      * 设置帽子颜色。
-AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系。
                      * @param _color 帽子颜色。
-AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系。
                      * 
                      */
                     void SetColor(const AttributeItem& _color);
@@ -108,7 +108,7 @@ AttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：�
 
                     /**
                      * 帽子颜色。
-AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。
+AttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系。
                      */
                     AttributeItem m_color;
                     bool m_colorHasBeenSet;

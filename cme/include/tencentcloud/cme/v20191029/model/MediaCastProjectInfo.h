@@ -205,6 +205,27 @@ namespace TencentCloud
                      */
                     bool StopTimeHasBeenSet() const;
 
+                    /**
+                     * 获取推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。
+                     * @return Duration 推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。
+                     * 
+                     */
+                    double GetDuration() const;
+
+                    /**
+                     * 设置推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。
+                     * @param _duration 推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。
+                     * 
+                     */
+                    void SetDuration(const double& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     * 
+                     */
+                    bool DurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +271,12 @@ namespace TencentCloud
                      */
                     std::string m_stopTime;
                     bool m_stopTimeHasBeenSet;
+
+                    /**
+                     * 推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。
+                     */
+                    double m_duration;
+                    bool m_durationHasBeenSet;
 
                 };
             }

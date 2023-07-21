@@ -40,7 +40,8 @@ CloneDBInstanceRequest::CloneDBInstanceRequest() :
     m_voucherIdsHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_backupSetIdHasBeenSet(false),
-    m_recoveryTargetTimeHasBeenSet(false)
+    m_recoveryTargetTimeHasBeenSet(false),
+    m_syncModeHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,14 @@ string CloneDBInstanceRequest::ToJsonString() const
         string key = "RecoveryTargetTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recoveryTargetTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -508,6 +517,22 @@ void CloneDBInstanceRequest::SetRecoveryTargetTime(const string& _recoveryTarget
 bool CloneDBInstanceRequest::RecoveryTargetTimeHasBeenSet() const
 {
     return m_recoveryTargetTimeHasBeenSet;
+}
+
+string CloneDBInstanceRequest::GetSyncMode() const
+{
+    return m_syncMode;
+}
+
+void CloneDBInstanceRequest::SetSyncMode(const string& _syncMode)
+{
+    m_syncMode = _syncMode;
+    m_syncModeHasBeenSet = true;
+}
+
+bool CloneDBInstanceRequest::SyncModeHasBeenSet() const
+{
+    return m_syncModeHasBeenSet;
 }
 
 

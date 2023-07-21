@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IdsHasBeenSet() const;
 
                     /**
-                     * 获取开关状态
-                     * @return Status 开关状态
+                     * 获取开关状态，0表示关闭，1表示开启，2表示只观察
+                     * @return Status 开关状态，0表示关闭，1表示开启，2表示只观察
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置开关状态
-                     * @param _status 开关状态
+                     * 设置开关状态，0表示关闭，1表示开启，2表示只观察
+                     * @param _status 开关状态，0表示关闭，1表示开启，2表示只观察
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -106,15 +106,19 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取设置为观察模式原因
-                     * @return Reason 设置为观察模式原因
+                     * 获取设置为观察模式原因，
+1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他
+                     * @return Reason 设置为观察模式原因，
+1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他
                      * 
                      */
                     uint64_t GetReason() const;
 
                     /**
-                     * 设置设置为观察模式原因
-                     * @param _reason 设置为观察模式原因
+                     * 设置设置为观察模式原因，
+1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他
+                     * @param _reason 设置为观察模式原因，
+1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他
                      * 
                      */
                     void SetReason(const uint64_t& _reason);
@@ -141,13 +145,14 @@ namespace TencentCloud
                     bool m_idsHasBeenSet;
 
                     /**
-                     * 开关状态
+                     * 开关状态，0表示关闭，1表示开启，2表示只观察
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 设置为观察模式原因
+                     * 设置为观察模式原因，
+1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他
                      */
                     uint64_t m_reason;
                     bool m_reasonHasBeenSet;

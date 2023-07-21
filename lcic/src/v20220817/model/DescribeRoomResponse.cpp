@@ -41,7 +41,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_groupIdHasBeenSet(false),
     m_enableDirectControlHasBeenSet(false),
     m_interactionModeHasBeenSet(false),
-    m_videoOrientationHasBeenSet(false)
+    m_videoOrientationHasBeenSet(false),
+    m_isGradingRequiredPostClassHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_videoOrientationHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsGradingRequiredPostClass") && !rsp["IsGradingRequiredPostClass"].IsNull())
+    {
+        if (!rsp["IsGradingRequiredPostClass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsGradingRequiredPostClass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isGradingRequiredPostClass = rsp["IsGradingRequiredPostClass"].GetInt64();
+        m_isGradingRequiredPostClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +430,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "VideoOrientation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoOrientation, allocator);
+    }
+
+    if (m_isGradingRequiredPostClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGradingRequiredPostClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isGradingRequiredPostClass, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -611,6 +630,16 @@ uint64_t DescribeRoomResponse::GetVideoOrientation() const
 bool DescribeRoomResponse::VideoOrientationHasBeenSet() const
 {
     return m_videoOrientationHasBeenSet;
+}
+
+int64_t DescribeRoomResponse::GetIsGradingRequiredPostClass() const
+{
+    return m_isGradingRequiredPostClass;
+}
+
+bool DescribeRoomResponse::IsGradingRequiredPostClassHasBeenSet() const
+{
+    return m_isGradingRequiredPostClassHasBeenSet;
 }
 
 

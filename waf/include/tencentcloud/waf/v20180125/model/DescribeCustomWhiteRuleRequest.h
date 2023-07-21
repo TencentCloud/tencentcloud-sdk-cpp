@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取偏移量
+                     * @return Offset 偏移量
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param _offset 偏移
+                     * 设置偏移量
+                     * @param _offset 偏移量
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 偏移
+                     * 偏移量
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

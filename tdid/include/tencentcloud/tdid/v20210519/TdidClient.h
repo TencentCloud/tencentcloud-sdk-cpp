@@ -41,14 +41,8 @@
 #include <tencentcloud/tdid/v20210519/model/GetAgencyTDidResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h>
 #include <tencentcloud/tdid/v20210519/model/GetAuthorityIssuerResponse.h>
-#include <tencentcloud/tdid/v20210519/model/GetConsortiumClusterListRequest.h>
-#include <tencentcloud/tdid/v20210519/model/GetConsortiumClusterListResponse.h>
-#include <tencentcloud/tdid/v20210519/model/GetConsortiumListRequest.h>
-#include <tencentcloud/tdid/v20210519/model/GetConsortiumListResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetCptInfoRequest.h>
 #include <tencentcloud/tdid/v20210519/model/GetCptInfoResponse.h>
-#include <tencentcloud/tdid/v20210519/model/GetCredentialCptRankRequest.h>
-#include <tencentcloud/tdid/v20210519/model/GetCredentialCptRankResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetCredentialStatusRequest.h>
 #include <tencentcloud/tdid/v20210519/model/GetCredentialStatusResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetDidDocumentRequest.h>
@@ -100,18 +94,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetAuthorityIssuerResponse> GetAuthorityIssuerOutcome;
                 typedef std::future<GetAuthorityIssuerOutcome> GetAuthorityIssuerOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::GetAuthorityIssuerRequest&, GetAuthorityIssuerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorityIssuerAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetConsortiumClusterListResponse> GetConsortiumClusterListOutcome;
-                typedef std::future<GetConsortiumClusterListOutcome> GetConsortiumClusterListOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::GetConsortiumClusterListRequest&, GetConsortiumClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetConsortiumClusterListAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetConsortiumListResponse> GetConsortiumListOutcome;
-                typedef std::future<GetConsortiumListOutcome> GetConsortiumListOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::GetConsortiumListRequest&, GetConsortiumListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetConsortiumListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCptInfoResponse> GetCptInfoOutcome;
                 typedef std::future<GetCptInfoOutcome> GetCptInfoOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::GetCptInfoRequest&, GetCptInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCptInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetCredentialCptRankResponse> GetCredentialCptRankOutcome;
-                typedef std::future<GetCredentialCptRankOutcome> GetCredentialCptRankOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::GetCredentialCptRankRequest&, GetCredentialCptRankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCredentialCptRankAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCredentialStatusResponse> GetCredentialStatusOutcome;
                 typedef std::future<GetCredentialStatusOutcome> GetCredentialStatusOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::GetCredentialStatusRequest&, GetCredentialStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCredentialStatusAsyncHandler;
@@ -231,28 +216,6 @@ DID添加标签
                 GetAuthorityIssuerOutcomeCallable GetAuthorityIssuerCallable(const Model::GetAuthorityIssuerRequest& request);
 
                 /**
-                 *下线已有内测接口，待上线正式版本的接口
-
-获取联盟bcos网络列表
-                 * @param req GetConsortiumClusterListRequest
-                 * @return GetConsortiumClusterListOutcome
-                 */
-                GetConsortiumClusterListOutcome GetConsortiumClusterList(const Model::GetConsortiumClusterListRequest &request);
-                void GetConsortiumClusterListAsync(const Model::GetConsortiumClusterListRequest& request, const GetConsortiumClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetConsortiumClusterListOutcomeCallable GetConsortiumClusterListCallable(const Model::GetConsortiumClusterListRequest& request);
-
-                /**
-                 *下线已有内测接口，待上线正式版本的接口
-
-获取联盟列表
-                 * @param req GetConsortiumListRequest
-                 * @return GetConsortiumListOutcome
-                 */
-                GetConsortiumListOutcome GetConsortiumList(const Model::GetConsortiumListRequest &request);
-                void GetConsortiumListAsync(const Model::GetConsortiumListRequest& request, const GetConsortiumListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetConsortiumListOutcomeCallable GetConsortiumListCallable(const Model::GetConsortiumListRequest& request);
-
-                /**
                  *该接口不再使用
 
 凭证模版详情
@@ -262,17 +225,6 @@ DID添加标签
                 GetCptInfoOutcome GetCptInfo(const Model::GetCptInfoRequest &request);
                 void GetCptInfoAsync(const Model::GetCptInfoRequest& request, const GetCptInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetCptInfoOutcomeCallable GetCptInfoCallable(const Model::GetCptInfoRequest& request);
-
-                /**
-                 *下线已有内测接口，待上线正式版本的接口
-
-凭证颁发按机构排行
-                 * @param req GetCredentialCptRankRequest
-                 * @return GetCredentialCptRankOutcome
-                 */
-                GetCredentialCptRankOutcome GetCredentialCptRank(const Model::GetCredentialCptRankRequest &request);
-                void GetCredentialCptRankAsync(const Model::GetCredentialCptRankRequest& request, const GetCredentialCptRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetCredentialCptRankOutcomeCallable GetCredentialCptRankCallable(const Model::GetCredentialCptRankRequest& request);
 
                 /**
                  *该接口不再使用

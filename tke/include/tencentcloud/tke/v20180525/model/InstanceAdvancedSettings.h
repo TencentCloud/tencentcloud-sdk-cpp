@@ -77,18 +77,18 @@ namespace TencentCloud
                     bool DesiredPodNumberHasBeenSet() const;
 
                     /**
-                     * 获取GPU驱动相关参数
+                     * 获取GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GPUArgs GPU驱动相关参数
+                     * @return GPUArgs GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GPUArgs GetGPUArgs() const;
 
                     /**
-                     * 设置GPU驱动相关参数
+                     * 设置GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gPUArgs GPU驱动相关参数
+                     * @param _gPUArgs GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_desiredPodNumberHasBeenSet;
 
                     /**
-                     * GPU驱动相关参数
+                     * GPU驱动相关参数,相关的GPU参数获取:https://cloud.tencent.com/document/api/213/15715
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GPUArgs m_gPUArgs;

@@ -121,7 +121,7 @@ ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按�
 CopyWarn，复印件告警
 BorderCheckWarn，边框和框内遮挡告警
 ReshootWarn，翻拍告警
-DetectPsWarn，PS检测告警
+DetectPsWarn，PS检测告警（疑似存在PS痕迹）
 TempIdWarn，临时身份证告警
 Quality，图片质量告警（评价图片模糊程度）
 
@@ -133,7 +133,7 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
 CopyWarn，复印件告警
 BorderCheckWarn，边框和框内遮挡告警
 ReshootWarn，翻拍告警
-DetectPsWarn，PS检测告警
+DetectPsWarn，PS检测告警（疑似存在PS痕迹）
 TempIdWarn，临时身份证告警
 Quality，图片质量告警（评价图片模糊程度）
 
@@ -150,7 +150,7 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
 CopyWarn，复印件告警
 BorderCheckWarn，边框和框内遮挡告警
 ReshootWarn，翻拍告警
-DetectPsWarn，PS检测告警
+DetectPsWarn，PS检测告警（疑似存在PS痕迹）
 TempIdWarn，临时身份证告警
 Quality，图片质量告警（评价图片模糊程度）
 
@@ -162,7 +162,7 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
 CopyWarn，复印件告警
 BorderCheckWarn，边框和框内遮挡告警
 ReshootWarn，翻拍告警
-DetectPsWarn，PS检测告警
+DetectPsWarn，PS检测告警（疑似存在PS痕迹）
 TempIdWarn，临时身份证告警
 Quality，图片质量告警（评价图片模糊程度）
 
@@ -233,7 +233,7 @@ ImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按�
 CopyWarn，复印件告警
 BorderCheckWarn，边框和框内遮挡告警
 ReshootWarn，翻拍告警
-DetectPsWarn，PS检测告警
+DetectPsWarn，PS检测告警（疑似存在PS痕迹）
 TempIdWarn，临时身份证告警
 Quality，图片质量告警（评价图片模糊程度）
 

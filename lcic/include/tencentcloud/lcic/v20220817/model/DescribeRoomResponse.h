@@ -331,6 +331,20 @@ video 纯视频
                      */
                     bool VideoOrientationHasBeenSet() const;
 
+                    /**
+                     * 获取开启课后评分。 0：不开启(默认)  1：开启
+                     * @return IsGradingRequiredPostClass 开启课后评分。 0：不开启(默认)  1：开启
+                     * 
+                     */
+                    int64_t GetIsGradingRequiredPostClass() const;
+
+                    /**
+                     * 判断参数 IsGradingRequiredPostClass 是否已赋值
+                     * @return IsGradingRequiredPostClass 是否已赋值
+                     * 
+                     */
+                    bool IsGradingRequiredPostClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -458,6 +472,12 @@ video 纯视频
                      */
                     uint64_t m_videoOrientation;
                     bool m_videoOrientationHasBeenSet;
+
+                    /**
+                     * 开启课后评分。 0：不开启(默认)  1：开启
+                     */
+                    int64_t m_isGradingRequiredPostClass;
+                    bool m_isGradingRequiredPostClassHasBeenSet;
 
                 };
             }

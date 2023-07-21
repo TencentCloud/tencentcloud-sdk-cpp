@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
-                     * @return SpecCode 售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
+                     * 获取售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
+                     * @return SpecCode 售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
-                     * @param _specCode 售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
+                     * 设置售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
+                     * @param _specCode 售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -108,15 +108,23 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
-                     * @return Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 获取购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
+                     * @return Period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
-                     * @param _period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 设置购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
+                     * @param _period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -129,15 +137,27 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取续费标记：0-正常续费（默认）；1-自动续费。
-                     * @return AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费。
+                     * 获取续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
+                     * @return AutoRenewFlag 续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置续费标记：0-正常续费（默认）；1-自动续费。
-                     * @param _autoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费。
+                     * 设置续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
+                     * @param _autoRenewFlag 续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -150,15 +170,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID。
-                     * @return VpcId 私有网络ID。
+                     * 获取私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID。
-                     * @param _vpcId 私有网络ID。
+                     * 设置私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -171,15 +191,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取已配置的私有网络中的子网ID。
-                     * @return SubnetId 已配置的私有网络中的子网ID。
+                     * 获取私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置已配置的私有网络中的子网ID。
-                     * @param _subnetId 已配置的私有网络中的子网ID。
+                     * 设置私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -192,15 +212,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取新购实例的实例名称。
-                     * @return Name 新购实例的实例名称。
+                     * 获取新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * @return Name 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置新购实例的实例名称。
-                     * @param _name 新购实例的实例名称。
+                     * 设置新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * @param _name 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -213,15 +233,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
-                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 获取实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：后付费，即按量计费
+默认值：PREPAID
+                     * @return InstanceChargeType 实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：后付费，即按量计费
+默认值：PREPAID
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
-                     * @param _instanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 设置实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：后付费，即按量计费
+默认值：PREPAID
+                     * @param _instanceChargeType 实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：后付费，即按量计费
+默认值：PREPAID
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -234,15 +266,19 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID。
-                     * @return SecurityGroupIds 安全组ID。
+                     * 获取实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
+                     * @return SecurityGroupIds 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID。
-                     * @param _securityGroupIds 安全组ID。
+                     * 设置实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
+                     * @param _securityGroupIds 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -276,15 +312,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例需要绑定的Tag信息，默认为空。
-                     * @return TagList 实例需要绑定的Tag信息，默认为空。
+                     * 获取实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
+                     * @return TagList 实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
-                     * 设置实例需要绑定的Tag信息，默认为空。
-                     * @param _tagList 实例需要绑定的Tag信息，默认为空。
+                     * 设置实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
+                     * @param _tagList 实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
                      * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
@@ -297,15 +333,19 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取购买多可用区实例时填写。
-                     * @return DBNodeSet 购买多可用区实例时填写。
+                     * 获取实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     * @return DBNodeSet 实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
                      * 
                      */
                     std::vector<DBNode> GetDBNodeSet() const;
 
                     /**
-                     * 设置购买多可用区实例时填写。
-                     * @param _dBNodeSet 购买多可用区实例时填写。
+                     * 设置实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     * @param _dBNodeSet 实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
                      * 
                      */
                     void SetDBNodeSet(const std::vector<DBNode>& _dBNodeSet);
@@ -318,15 +358,27 @@ namespace TencentCloud
                     bool DBNodeSetHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券。1（是），0（否），默认不使用。
-                     * @return AutoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 获取是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @return AutoVoucher 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券。1（是），0（否），默认不使用。
-                     * @param _autoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 设置是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @param _autoVoucher 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -422,6 +474,43 @@ namespace TencentCloud
                      */
                     bool RecoveryTargetTimeHasBeenSet() const;
 
+                    /**
+                     * 获取主从同步方式，支持： 
+<li>Semi-sync：半同步
+<li>Async：异步
+主实例默认值：Semi-sync
+只读实例默认值：Async
+                     * @return SyncMode 主从同步方式，支持： 
+<li>Semi-sync：半同步
+<li>Async：异步
+主实例默认值：Semi-sync
+只读实例默认值：Async
+                     * 
+                     */
+                    std::string GetSyncMode() const;
+
+                    /**
+                     * 设置主从同步方式，支持： 
+<li>Semi-sync：半同步
+<li>Async：异步
+主实例默认值：Semi-sync
+只读实例默认值：Async
+                     * @param _syncMode 主从同步方式，支持： 
+<li>Semi-sync：半同步
+<li>Async：异步
+主实例默认值：Semi-sync
+只读实例默认值：Async
+                     * 
+                     */
+                    void SetSyncMode(const std::string& _syncMode);
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     * 
+                     */
+                    bool SyncModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,7 +520,7 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。
+                     * 售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
@@ -443,43 +532,52 @@ namespace TencentCloud
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 续费标记：0-正常续费（默认）；1-自动续费。
+                     * 续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 私有网络ID。
+                     * 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 已配置的私有网络中的子网ID。
+                     * 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 新购实例的实例名称。
+                     * 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月
+<li>POSTPAID_BY_HOUR：后付费，即按量计费
+默认值：PREPAID
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 安全组ID。
+                     * 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
@@ -491,19 +589,23 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例需要绑定的Tag信息，默认为空。
+                     * 实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 购买多可用区实例时填写。
+                     * 实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
                      */
                     std::vector<DBNode> m_dBNodeSet;
                     bool m_dBNodeSetHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
@@ -531,6 +633,16 @@ namespace TencentCloud
                      */
                     std::string m_recoveryTargetTime;
                     bool m_recoveryTargetTimeHasBeenSet;
+
+                    /**
+                     * 主从同步方式，支持： 
+<li>Semi-sync：半同步
+<li>Async：异步
+主实例默认值：Semi-sync
+只读实例默认值：Async
+                     */
+                    std::string m_syncMode;
+                    bool m_syncModeHasBeenSet;
 
                 };
             }

@@ -39,7 +39,8 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_groupIdHasBeenSet(false),
     m_enableDirectControlHasBeenSet(false),
     m_interactionModeHasBeenSet(false),
-    m_videoOrientationHasBeenSet(false)
+    m_videoOrientationHasBeenSet(false),
+    m_isGradingRequiredPostClassHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,14 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "VideoOrientation";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_videoOrientation, allocator);
+    }
+
+    if (m_isGradingRequiredPostClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGradingRequiredPostClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isGradingRequiredPostClass, allocator);
     }
 
 
@@ -469,6 +478,22 @@ void ModifyRoomRequest::SetVideoOrientation(const uint64_t& _videoOrientation)
 bool ModifyRoomRequest::VideoOrientationHasBeenSet() const
 {
     return m_videoOrientationHasBeenSet;
+}
+
+uint64_t ModifyRoomRequest::GetIsGradingRequiredPostClass() const
+{
+    return m_isGradingRequiredPostClass;
+}
+
+void ModifyRoomRequest::SetIsGradingRequiredPostClass(const uint64_t& _isGradingRequiredPostClass)
+{
+    m_isGradingRequiredPostClass = _isGradingRequiredPostClass;
+    m_isGradingRequiredPostClassHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::IsGradingRequiredPostClassHasBeenSet() const
+{
+    return m_isGradingRequiredPostClassHasBeenSet;
 }
 
 

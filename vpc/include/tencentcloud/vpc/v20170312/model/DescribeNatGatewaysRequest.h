@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取NAT网关统一 ID，形如：`nat-123xx454`。
-                     * @return NatGatewayIds NAT网关统一 ID，形如：`nat-123xx454`。
+                     * 获取NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。
+                     * @return NatGatewayIds NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。
                      * 
                      */
                     std::vector<std::string> GetNatGatewayIds() const;
 
                     /**
-                     * 设置NAT网关统一 ID，形如：`nat-123xx454`。
-                     * @param _natGatewayIds NAT网关统一 ID，形如：`nat-123xx454`。
+                     * 设置NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。
+                     * @param _natGatewayIds NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。
                      * 
                      */
                     void SetNatGatewayIds(const std::vector<std::string>& _natGatewayIds);
@@ -65,12 +65,12 @@ namespace TencentCloud
                     bool NatGatewayIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，参数不支持同时指定NatGatewayIds和Filters。
+                     * 获取过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
 <li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
-                     * @return Filters 过滤条件，参数不支持同时指定NatGatewayIds和Filters。
+                     * @return Filters 过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
@@ -80,12 +80,12 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，参数不支持同时指定NatGatewayIds和Filters。
+                     * 设置过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
 <li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>
-                     * @param _filters 过滤条件，参数不支持同时指定NatGatewayIds和Filters。
+                     * @param _filters 过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>
@@ -146,13 +146,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * NAT网关统一 ID，形如：`nat-123xx454`。
+                     * NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。
                      */
                     std::vector<std::string> m_natGatewayIds;
                     bool m_natGatewayIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，参数不支持同时指定NatGatewayIds和Filters。
+                     * 过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。
 <li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>
 <li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>
 <li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>

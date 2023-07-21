@@ -233,6 +233,54 @@ namespace TencentCloud
                      */
                     bool ExtHasBeenSet() const;
 
+                    /**
+                     * 获取文档转码任务创建时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 文档转码任务创建时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取文档转码任务分配时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssignTime 文档转码任务分配时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAssignTime() const;
+
+                    /**
+                     * 判断参数 AssignTime 是否已赋值
+                     * @return AssignTime 是否已赋值
+                     * 
+                     */
+                    bool AssignTimeHasBeenSet() const;
+
+                    /**
+                     * 获取文档转码任务完成时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinishedTime 文档转码任务完成时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetFinishedTime() const;
+
+                    /**
+                     * 判断参数 FinishedTime 是否已赋值
+                     * @return FinishedTime 是否已赋值
+                     * 
+                     */
+                    bool FinishedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +365,27 @@ namespace TencentCloud
                      */
                     std::string m_ext;
                     bool m_extHasBeenSet;
+
+                    /**
+                     * 文档转码任务创建时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 文档转码任务分配时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_assignTime;
+                    bool m_assignTimeHasBeenSet;
+
+                    /**
+                     * 文档转码任务完成时间，单位s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_finishedTime;
+                    bool m_finishedTimeHasBeenSet;
 
                 };
             }

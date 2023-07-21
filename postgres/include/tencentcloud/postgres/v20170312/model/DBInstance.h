@@ -26,8 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h>
 #include <tencentcloud/postgres/v20170312/model/Tag.h>
-#include <tencentcloud/postgres/v20170312/model/NetworkAccess.h>
 #include <tencentcloud/postgres/v20170312/model/DBNode.h>
+#include <tencentcloud/postgres/v20170312/model/NetworkAccess.h>
 
 
 namespace TencentCloud
@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段
-                     * @return Region 实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段
+                     * 获取实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段。
+                     * @return Region 实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段
-                     * @param _region 实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段
+                     * 设置实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段。
+                     * @param _region 实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段
-                     * @return Zone 实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段
+                     * 获取实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段。
+                     * @return Zone 实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段
-                     * @param _zone 实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段
+                     * 设置实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段。
+                     * @param _zone 实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -93,36 +93,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
-                     * 
-                     */
-                    uint64_t GetProjectId() const;
-
-                    /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
-                     * 
-                     */
-                    void SetProjectId(const uint64_t& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     * 
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
-                     * 获取私有网络ID
-                     * @return VpcId 私有网络ID
+                     * 获取私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _vpcId 私有网络ID
+                     * 设置私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -135,15 +114,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -156,15 +135,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return DBInstanceId 实例ID
+                     * 获取实例ID。
+                     * @return DBInstanceId 实例ID。
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _dBInstanceId 实例ID
+                     * 设置实例ID。
+                     * @param _dBInstanceId 实例ID。
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -177,15 +156,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return DBInstanceName 实例名称
+                     * 获取实例名称。
+                     * @return DBInstanceName 实例名称。
                      * 
                      */
                     std::string GetDBInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _dBInstanceName 实例名称
+                     * 设置实例名称。
+                     * @param _dBInstanceName 实例名称。
                      * 
                      */
                     void SetDBInstanceName(const std::string& _dBInstanceName);
@@ -198,15 +177,15 @@ namespace TencentCloud
                     bool DBInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）
-                     * @return DBInstanceStatus 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）
+                     * 获取实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）、audit-switching（审计状态变更中）、primary-switching（主备切换中）
+                     * @return DBInstanceStatus 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）、audit-switching（审计状态变更中）、primary-switching（主备切换中）
                      * 
                      */
                     std::string GetDBInstanceStatus() const;
 
                     /**
-                     * 设置实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）
-                     * @param _dBInstanceStatus 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）
+                     * 设置实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）、audit-switching（审计状态变更中）、primary-switching（主备切换中）
+                     * @param _dBInstanceStatus 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）、audit-switching（审计状态变更中）、primary-switching（主备切换中）
                      * 
                      */
                     void SetDBInstanceStatus(const std::string& _dBInstanceStatus);
@@ -303,78 +282,40 @@ namespace TencentCloud
                     bool DBInstanceClassHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）
-                     * @return DBInstanceType 实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）
+                     * 获取PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBMajorVersion PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetDBInstanceType() const;
+                    std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）
-                     * @param _dBInstanceType 实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）
+                     * 设置PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dBMajorVersion PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetDBInstanceType(const std::string& _dBInstanceType);
+                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
 
                     /**
-                     * 判断参数 DBInstanceType 是否已赋值
-                     * @return DBInstanceType 是否已赋值
+                     * 判断参数 DBMajorVersion 是否已赋值
+                     * @return DBMajorVersion 是否已赋值
                      * 
                      */
-                    bool DBInstanceTypeHasBeenSet() const;
+                    bool DBMajorVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例版本，目前只支持standard（双机高可用版, 一主一从）
-                     * @return DBInstanceVersion 实例版本，目前只支持standard（双机高可用版, 一主一从）
-                     * 
-                     */
-                    std::string GetDBInstanceVersion() const;
-
-                    /**
-                     * 设置实例版本，目前只支持standard（双机高可用版, 一主一从）
-                     * @param _dBInstanceVersion 实例版本，目前只支持standard（双机高可用版, 一主一从）
-                     * 
-                     */
-                    void SetDBInstanceVersion(const std::string& _dBInstanceVersion);
-
-                    /**
-                     * 判断参数 DBInstanceVersion 是否已赋值
-                     * @return DBInstanceVersion 是否已赋值
-                     * 
-                     */
-                    bool DBInstanceVersionHasBeenSet() const;
-
-                    /**
-                     * 获取实例DB字符集
-                     * @return DBCharset 实例DB字符集
-                     * 
-                     */
-                    std::string GetDBCharset() const;
-
-                    /**
-                     * 设置实例DB字符集
-                     * @param _dBCharset 实例DB字符集
-                     * 
-                     */
-                    void SetDBCharset(const std::string& _dBCharset);
-
-                    /**
-                     * 判断参数 DBCharset 是否已赋值
-                     * @return DBCharset 是否已赋值
-                     * 
-                     */
-                    bool DBCharsetHasBeenSet() const;
-
-                    /**
-                     * 获取PostgreSQL版本
-                     * @return DBVersion PostgreSQL版本
+                     * 获取PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+                     * @return DBVersion PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
                      * 
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL版本
-                     * @param _dBVersion PostgreSQL版本
+                     * 设置PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+                     * @param _dBVersion PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
                      * 
                      */
                     void SetDBVersion(const std::string& _dBVersion);
@@ -387,15 +328,127 @@ namespace TencentCloud
                     bool DBVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间
-                     * @return CreateTime 实例创建时间
+                     * 获取PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBKernelVersion PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDBKernelVersion() const;
+
+                    /**
+                     * 设置PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dBKernelVersion PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+
+                    /**
+                     * 判断参数 DBKernelVersion 是否已赋值
+                     * @return DBKernelVersion 是否已赋值
+                     * 
+                     */
+                    bool DBKernelVersionHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型，类型有：
+<li>primary：主实例
+<li>readonly：只读实例
+<li>guard：灾备实例
+<li>temp：临时实例
+                     * @return DBInstanceType 实例类型，类型有：
+<li>primary：主实例
+<li>readonly：只读实例
+<li>guard：灾备实例
+<li>temp：临时实例
+                     * 
+                     */
+                    std::string GetDBInstanceType() const;
+
+                    /**
+                     * 设置实例类型，类型有：
+<li>primary：主实例
+<li>readonly：只读实例
+<li>guard：灾备实例
+<li>temp：临时实例
+                     * @param _dBInstanceType 实例类型，类型有：
+<li>primary：主实例
+<li>readonly：只读实例
+<li>guard：灾备实例
+<li>temp：临时实例
+                     * 
+                     */
+                    void SetDBInstanceType(const std::string& _dBInstanceType);
+
+                    /**
+                     * 判断参数 DBInstanceType 是否已赋值
+                     * @return DBInstanceType 是否已赋值
+                     * 
+                     */
+                    bool DBInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例版本，目前只支持standard（双机高可用版, 一主一从）。
+                     * @return DBInstanceVersion 实例版本，目前只支持standard（双机高可用版, 一主一从）。
+                     * 
+                     */
+                    std::string GetDBInstanceVersion() const;
+
+                    /**
+                     * 设置实例版本，目前只支持standard（双机高可用版, 一主一从）。
+                     * @param _dBInstanceVersion 实例版本，目前只支持standard（双机高可用版, 一主一从）。
+                     * 
+                     */
+                    void SetDBInstanceVersion(const std::string& _dBInstanceVersion);
+
+                    /**
+                     * 判断参数 DBInstanceVersion 是否已赋值
+                     * @return DBInstanceVersion 是否已赋值
+                     * 
+                     */
+                    bool DBInstanceVersionHasBeenSet() const;
+
+                    /**
+                     * 获取实例字符集，目前只支持：
+<li> UTF8
+<li> LATIN1
+                     * @return DBCharset 实例字符集，目前只支持：
+<li> UTF8
+<li> LATIN1
+                     * 
+                     */
+                    std::string GetDBCharset() const;
+
+                    /**
+                     * 设置实例字符集，目前只支持：
+<li> UTF8
+<li> LATIN1
+                     * @param _dBCharset 实例字符集，目前只支持：
+<li> UTF8
+<li> LATIN1
+                     * 
+                     */
+                    void SetDBCharset(const std::string& _dBCharset);
+
+                    /**
+                     * 判断参数 DBCharset 是否已赋值
+                     * @return DBCharset 是否已赋值
+                     * 
+                     */
+                    bool DBCharsetHasBeenSet() const;
+
+                    /**
+                     * 获取实例创建时间。
+                     * @return CreateTime 实例创建时间。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置实例创建时间
-                     * @param _createTime 实例创建时间
+                     * 设置实例创建时间。
+                     * @param _createTime 实例创建时间。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -408,15 +461,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例执行最后一次更新的时间
-                     * @return UpdateTime 实例执行最后一次更新的时间
+                     * 获取实例执行最后一次更新的时间。
+                     * @return UpdateTime 实例执行最后一次更新的时间。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置实例执行最后一次更新的时间
-                     * @param _updateTime 实例执行最后一次更新的时间
+                     * 设置实例执行最后一次更新的时间。
+                     * @param _updateTime 实例执行最后一次更新的时间。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -429,15 +482,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间
-                     * @return ExpireTime 实例到期时间
+                     * 获取实例到期时间。
+                     * @return ExpireTime 实例到期时间。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置实例到期时间
-                     * @param _expireTime 实例到期时间
+                     * 设置实例到期时间。
+                     * @param _expireTime 实例到期时间。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -450,15 +503,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例隔离时间
-                     * @return IsolatedTime 实例隔离时间
+                     * 获取实例隔离时间。
+                     * @return IsolatedTime 实例隔离时间。
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置实例隔离时间
-                     * @param _isolatedTime 实例隔离时间
+                     * 设置实例隔离时间。
+                     * @param _isolatedTime 实例隔离时间。
                      * 
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
@@ -471,15 +524,23 @@ namespace TencentCloud
                     bool IsolatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）
-                     * @return PayType 计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）
+                     * 获取计费模式：
+<li>prepaid：包年包月,预付费
+<li>postpaid：按量计费，后付费
+                     * @return PayType 计费模式：
+<li>prepaid：包年包月,预付费
+<li>postpaid：按量计费，后付费
                      * 
                      */
                     std::string GetPayType() const;
 
                     /**
-                     * 设置计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）
-                     * @param _payType 计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）
+                     * 设置计费模式：
+<li>prepaid：包年包月,预付费
+<li>postpaid：按量计费，后付费
+                     * @param _payType 计费模式：
+<li>prepaid：包年包月,预付费
+<li>postpaid：按量计费，后付费
                      * 
                      */
                     void SetPayType(const std::string& _payType);
@@ -492,15 +553,27 @@ namespace TencentCloud
                     bool PayTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费，1：自动续费，0：不自动续费
-                     * @return AutoRenew 是否自动续费，1：自动续费，0：不自动续费
+                     * 获取是否自动续费：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
+                     * @return AutoRenew 是否自动续费：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置是否自动续费，1：自动续费，0：不自动续费
-                     * @param _autoRenew 是否自动续费，1：自动续费，0：不自动续费
+                     * 设置是否自动续费：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
+                     * @param _autoRenew 是否自动续费：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
@@ -513,15 +586,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取实例网络连接信息
-                     * @return DBInstanceNetInfo 实例网络连接信息
+                     * 获取实例网络连接信息。
+                     * @return DBInstanceNetInfo 实例网络连接信息。
                      * 
                      */
                     std::vector<DBInstanceNetInfo> GetDBInstanceNetInfo() const;
 
                     /**
-                     * 设置实例网络连接信息
-                     * @param _dBInstanceNetInfo 实例网络连接信息
+                     * 设置实例网络连接信息。
+                     * @param _dBInstanceNetInfo 实例网络连接信息。
                      * 
                      */
                     void SetDBInstanceNetInfo(const std::vector<DBInstanceNetInfo>& _dBInstanceNetInfo);
@@ -534,15 +607,15 @@ namespace TencentCloud
                     bool DBInstanceNetInfoHasBeenSet() const;
 
                     /**
-                     * 获取机器类型
-                     * @return Type 机器类型
+                     * 获取机器类型。
+                     * @return Type 机器类型。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置机器类型
-                     * @param _type 机器类型
+                     * 设置机器类型。
+                     * @param _type 机器类型。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -555,15 +628,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取用户的AppId
-                     * @return AppId 用户的AppId
+                     * 获取用户的AppId。
+                     * @return AppId 用户的AppId。
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户的AppId
-                     * @param _appId 用户的AppId
+                     * 设置用户的AppId。
+                     * @param _appId 用户的AppId。
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -576,15 +649,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取实例的Uid
-                     * @return Uid 实例的Uid
+                     * 获取实例的Uid。
+                     * @return Uid 实例的Uid。
                      * 
                      */
                     uint64_t GetUid() const;
 
                     /**
-                     * 设置实例的Uid
-                     * @param _uid 实例的Uid
+                     * 设置实例的Uid。
+                     * @param _uid 实例的Uid。
                      * 
                      */
                     void SetUid(const uint64_t& _uid);
@@ -597,39 +670,39 @@ namespace TencentCloud
                     bool UidHasBeenSet() const;
 
                     /**
-                     * 获取实例是否支持Ipv6，1：支持，0：不支持
-                     * @return SupportIpv6 实例是否支持Ipv6，1：支持，0：不支持
+                     * 获取项目ID。
+                     * @return ProjectId 项目ID。
                      * 
                      */
-                    uint64_t GetSupportIpv6() const;
+                    uint64_t GetProjectId() const;
 
                     /**
-                     * 设置实例是否支持Ipv6，1：支持，0：不支持
-                     * @param _supportIpv6 实例是否支持Ipv6，1：支持，0：不支持
+                     * 设置项目ID。
+                     * @param _projectId 项目ID。
                      * 
                      */
-                    void SetSupportIpv6(const uint64_t& _supportIpv6);
+                    void SetProjectId(const uint64_t& _projectId);
 
                     /**
-                     * 判断参数 SupportIpv6 是否已赋值
-                     * @return SupportIpv6 是否已赋值
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
                      * 
                      */
-                    bool SupportIpv6HasBeenSet() const;
+                    bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例绑定的标签信息
+                     * 获取实例绑定的标签信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagList 实例绑定的标签信息
+                     * @return TagList 实例绑定的标签信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
-                     * 设置实例绑定的标签信息
+                     * 设置实例绑定的标签信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagList 实例绑定的标签信息
+                     * @param _tagList 实例绑定的标签信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -643,18 +716,18 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取主实例信息，仅在实例为只读实例时返回
+                     * 获取主实例信息，仅在实例为只读实例时返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MasterDBInstanceId 主实例信息，仅在实例为只读实例时返回
+                     * @return MasterDBInstanceId 主实例信息，仅在实例为只读实例时返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterDBInstanceId() const;
 
                     /**
-                     * 设置主实例信息，仅在实例为只读实例时返回
+                     * 设置主实例信息，仅在实例为只读实例时返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _masterDBInstanceId 主实例信息，仅在实例为只读实例时返回
+                     * @param _masterDBInstanceId 主实例信息，仅在实例为只读实例时返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -668,18 +741,18 @@ namespace TencentCloud
                     bool MasterDBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取只读实例数量
+                     * 获取只读实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReadOnlyInstanceNum 只读实例数量
+                     * @return ReadOnlyInstanceNum 只读实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadOnlyInstanceNum() const;
 
                     /**
-                     * 设置只读实例数量
+                     * 设置只读实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _readOnlyInstanceNum 只读实例数量
+                     * @param _readOnlyInstanceNum 只读实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -693,18 +766,18 @@ namespace TencentCloud
                     bool ReadOnlyInstanceNumHasBeenSet() const;
 
                     /**
-                     * 获取只读实例在只读组中的状态
+                     * 获取只读实例在只读组中的状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusInReadonlyGroup 只读实例在只读组中的状态
+                     * @return StatusInReadonlyGroup 只读实例在只读组中的状态。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusInReadonlyGroup() const;
 
                     /**
-                     * 设置只读实例在只读组中的状态
+                     * 设置只读实例在只读组中的状态。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusInReadonlyGroup 只读实例在只读组中的状态
+                     * @param _statusInReadonlyGroup 只读实例在只读组中的状态。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -718,18 +791,18 @@ namespace TencentCloud
                     bool StatusInReadonlyGroupHasBeenSet() const;
 
                     /**
-                     * 获取下线时间
+                     * 获取下线时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OfflineTime 下线时间
+                     * @return OfflineTime 下线时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置下线时间
+                     * 设置下线时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offlineTime 下线时间
+                     * @param _offlineTime 下线时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -743,29 +816,160 @@ namespace TencentCloud
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据库内核版本
+                     * 获取实例的节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DBKernelVersion 数据库内核版本
+                     * @return DBNodeSet 实例的节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetDBKernelVersion() const;
+                    std::vector<DBNode> GetDBNodeSet() const;
 
                     /**
-                     * 设置数据库内核版本
+                     * 设置实例的节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dBKernelVersion 数据库内核版本
+                     * @param _dBNodeSet 实例的节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+                    void SetDBNodeSet(const std::vector<DBNode>& _dBNodeSet);
 
                     /**
-                     * 判断参数 DBKernelVersion 是否已赋值
-                     * @return DBKernelVersion 是否已赋值
+                     * 判断参数 DBNodeSet 是否已赋值
+                     * @return DBNodeSet 是否已赋值
                      * 
                      */
-                    bool DBKernelVersionHasBeenSet() const;
+                    bool DBNodeSetHasBeenSet() const;
+
+                    /**
+                     * 获取实例是否支持TDE数据加密：
+<li>0：不支持
+<li>1：支持
+默认值：0
+TDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportTDE 实例是否支持TDE数据加密：
+<li>0：不支持
+<li>1：支持
+默认值：0
+TDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsSupportTDE() const;
+
+                    /**
+                     * 设置实例是否支持TDE数据加密：
+<li>0：不支持
+<li>1：支持
+默认值：0
+TDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportTDE 实例是否支持TDE数据加密：
+<li>0：不支持
+<li>1：支持
+默认值：0
+TDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportTDE(const int64_t& _isSupportTDE);
+
+                    /**
+                     * 判断参数 IsSupportTDE 是否已赋值
+                     * @return IsSupportTDE 是否已赋值
+                     * 
+                     */
+                    bool IsSupportTDEHasBeenSet() const;
+
+                    /**
+                     * 获取数据库引擎，支持：
+<li>postgresql：云数据库PostgreSQL
+<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL
+默认值：postgresql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBEngine 数据库引擎，支持：
+<li>postgresql：云数据库PostgreSQL
+<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL
+默认值：postgresql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDBEngine() const;
+
+                    /**
+                     * 设置数据库引擎，支持：
+<li>postgresql：云数据库PostgreSQL
+<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL
+默认值：postgresql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dBEngine 数据库引擎，支持：
+<li>postgresql：云数据库PostgreSQL
+<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL
+默认值：postgresql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDBEngine(const std::string& _dBEngine);
+
+                    /**
+                     * 判断参数 DBEngine 是否已赋值
+                     * @return DBEngine 是否已赋值
+                     * 
+                     */
+                    bool DBEngineHasBeenSet() const;
+
+                    /**
+                     * 获取数据库引擎的配置信息，配置格式如下：
+{"$key1":"$value1", "$key2":"$value2"}
+各引擎支持如下：
+mssql_compatible引擎：
+<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。
+<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：
+"af_ZA", "sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY", "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "hy_AM", "az_Cyrl_AZ", "az_Latn_AZ", "eu_ES", "be_BY", "bg_BG", "ca_ES", "zh_HK", "zh_MO", "zh_CN", "zh_SG", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL", "en_AU", "en_BZ", "en_CA", "en_IE", "en_JM", "en_NZ", "en_PH", "en_ZA", "en_TT", "en_GB", "en_US", "en_ZW", "et_EE", "fo_FO", "fa_IR", "fi_FI", "fr_BE", "fr_CA", "fr_FR", "fr_LU", "fr_MC", "fr_CH", "mk_MK", "ka_GE", "de_AT", "de_DE", "de_LI", "de_LU", "de_CH", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "it_CH", "ja_JP", "kn_IN", "kok_IN", "ko_KR", "ky_KG", "lv_LV", "lt_LT", "ms_BN", "ms_MY", "mr_IN", "mn_MN", "nb_NO", "nn_NO", "pl_PL", "pt_BR", "pt_PT", "pa_IN", "ro_RO", "ru_RU", "sa_IN", "sr_Cyrl_RS", "sr_Latn_RS", "sk_SK", "sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_SV", "es_GT", "es_HN", "es_MX", "es_NI", "es_PA", "es_PY","es_PE", "es_PR", "es_ES", "es_TRADITIONAL", "es_UY", "es_VE", "sw_KE", "sv_FI", "sv_SE", "tt_RU", "te_IN", "th_TH", "tr_TR", "uk_UA", "ur_IN", "ur_PK", "uz_Cyrl_UZ", "uz_Latn_UZ", "vi_VN"。
+<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下："bbf_unicode_general_ci_as", "bbf_unicode_cp1_ci_as", "bbf_unicode_CP1250_ci_as", "bbf_unicode_CP1251_ci_as", "bbf_unicode_cp1253_ci_as", "bbf_unicode_cp1254_ci_as", "bbf_unicode_cp1255_ci_as", "bbf_unicode_cp1256_ci_as", "bbf_unicode_cp1257_ci_as", "bbf_unicode_cp1258_ci_as", "bbf_unicode_cp874_ci_as", "sql_latin1_general_cp1250_ci_as", "sql_latin1_general_cp1251_ci_as", "sql_latin1_general_cp1_ci_as", "sql_latin1_general_cp1253_ci_as", "sql_latin1_general_cp1254_ci_as", "sql_latin1_general_cp1255_ci_as","sql_latin1_general_cp1256_ci_as", "sql_latin1_general_cp1257_ci_as", "sql_latin1_general_cp1258_ci_as", "chinese_prc_ci_as", "cyrillic_general_ci_as", "finnish_swedish_ci_as", "french_ci_as", "japanese_ci_as", "korean_wansung_ci_as", "latin1_general_ci_as", "modern_spanish_ci_as", "polish_ci_as", "thai_ci_as", "traditional_spanish_ci_as", "turkish_ci_as", "ukrainian_ci_as", "vietnamese_ci_as"。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBEngineConfig 数据库引擎的配置信息，配置格式如下：
+{"$key1":"$value1", "$key2":"$value2"}
+各引擎支持如下：
+mssql_compatible引擎：
+<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。
+<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：
+"af_ZA", "sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY", "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "hy_AM", "az_Cyrl_AZ", "az_Latn_AZ", "eu_ES", "be_BY", "bg_BG", "ca_ES", "zh_HK", "zh_MO", "zh_CN", "zh_SG", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL", "en_AU", "en_BZ", "en_CA", "en_IE", "en_JM", "en_NZ", "en_PH", "en_ZA", "en_TT", "en_GB", "en_US", "en_ZW", "et_EE", "fo_FO", "fa_IR", "fi_FI", "fr_BE", "fr_CA", "fr_FR", "fr_LU", "fr_MC", "fr_CH", "mk_MK", "ka_GE", "de_AT", "de_DE", "de_LI", "de_LU", "de_CH", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "it_CH", "ja_JP", "kn_IN", "kok_IN", "ko_KR", "ky_KG", "lv_LV", "lt_LT", "ms_BN", "ms_MY", "mr_IN", "mn_MN", "nb_NO", "nn_NO", "pl_PL", "pt_BR", "pt_PT", "pa_IN", "ro_RO", "ru_RU", "sa_IN", "sr_Cyrl_RS", "sr_Latn_RS", "sk_SK", "sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_SV", "es_GT", "es_HN", "es_MX", "es_NI", "es_PA", "es_PY","es_PE", "es_PR", "es_ES", "es_TRADITIONAL", "es_UY", "es_VE", "sw_KE", "sv_FI", "sv_SE", "tt_RU", "te_IN", "th_TH", "tr_TR", "uk_UA", "ur_IN", "ur_PK", "uz_Cyrl_UZ", "uz_Latn_UZ", "vi_VN"。
+<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下："bbf_unicode_general_ci_as", "bbf_unicode_cp1_ci_as", "bbf_unicode_CP1250_ci_as", "bbf_unicode_CP1251_ci_as", "bbf_unicode_cp1253_ci_as", "bbf_unicode_cp1254_ci_as", "bbf_unicode_cp1255_ci_as", "bbf_unicode_cp1256_ci_as", "bbf_unicode_cp1257_ci_as", "bbf_unicode_cp1258_ci_as", "bbf_unicode_cp874_ci_as", "sql_latin1_general_cp1250_ci_as", "sql_latin1_general_cp1251_ci_as", "sql_latin1_general_cp1_ci_as", "sql_latin1_general_cp1253_ci_as", "sql_latin1_general_cp1254_ci_as", "sql_latin1_general_cp1255_ci_as","sql_latin1_general_cp1256_ci_as", "sql_latin1_general_cp1257_ci_as", "sql_latin1_general_cp1258_ci_as", "chinese_prc_ci_as", "cyrillic_general_ci_as", "finnish_swedish_ci_as", "french_ci_as", "japanese_ci_as", "korean_wansung_ci_as", "latin1_general_ci_as", "modern_spanish_ci_as", "polish_ci_as", "thai_ci_as", "traditional_spanish_ci_as", "turkish_ci_as", "ukrainian_ci_as", "vietnamese_ci_as"。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDBEngineConfig() const;
+
+                    /**
+                     * 设置数据库引擎的配置信息，配置格式如下：
+{"$key1":"$value1", "$key2":"$value2"}
+各引擎支持如下：
+mssql_compatible引擎：
+<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。
+<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：
+"af_ZA", "sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY", "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "hy_AM", "az_Cyrl_AZ", "az_Latn_AZ", "eu_ES", "be_BY", "bg_BG", "ca_ES", "zh_HK", "zh_MO", "zh_CN", "zh_SG", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL", "en_AU", "en_BZ", "en_CA", "en_IE", "en_JM", "en_NZ", "en_PH", "en_ZA", "en_TT", "en_GB", "en_US", "en_ZW", "et_EE", "fo_FO", "fa_IR", "fi_FI", "fr_BE", "fr_CA", "fr_FR", "fr_LU", "fr_MC", "fr_CH", "mk_MK", "ka_GE", "de_AT", "de_DE", "de_LI", "de_LU", "de_CH", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "it_CH", "ja_JP", "kn_IN", "kok_IN", "ko_KR", "ky_KG", "lv_LV", "lt_LT", "ms_BN", "ms_MY", "mr_IN", "mn_MN", "nb_NO", "nn_NO", "pl_PL", "pt_BR", "pt_PT", "pa_IN", "ro_RO", "ru_RU", "sa_IN", "sr_Cyrl_RS", "sr_Latn_RS", "sk_SK", "sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_SV", "es_GT", "es_HN", "es_MX", "es_NI", "es_PA", "es_PY","es_PE", "es_PR", "es_ES", "es_TRADITIONAL", "es_UY", "es_VE", "sw_KE", "sv_FI", "sv_SE", "tt_RU", "te_IN", "th_TH", "tr_TR", "uk_UA", "ur_IN", "ur_PK", "uz_Cyrl_UZ", "uz_Latn_UZ", "vi_VN"。
+<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下："bbf_unicode_general_ci_as", "bbf_unicode_cp1_ci_as", "bbf_unicode_CP1250_ci_as", "bbf_unicode_CP1251_ci_as", "bbf_unicode_cp1253_ci_as", "bbf_unicode_cp1254_ci_as", "bbf_unicode_cp1255_ci_as", "bbf_unicode_cp1256_ci_as", "bbf_unicode_cp1257_ci_as", "bbf_unicode_cp1258_ci_as", "bbf_unicode_cp874_ci_as", "sql_latin1_general_cp1250_ci_as", "sql_latin1_general_cp1251_ci_as", "sql_latin1_general_cp1_ci_as", "sql_latin1_general_cp1253_ci_as", "sql_latin1_general_cp1254_ci_as", "sql_latin1_general_cp1255_ci_as","sql_latin1_general_cp1256_ci_as", "sql_latin1_general_cp1257_ci_as", "sql_latin1_general_cp1258_ci_as", "chinese_prc_ci_as", "cyrillic_general_ci_as", "finnish_swedish_ci_as", "french_ci_as", "japanese_ci_as", "korean_wansung_ci_as", "latin1_general_ci_as", "modern_spanish_ci_as", "polish_ci_as", "thai_ci_as", "traditional_spanish_ci_as", "turkish_ci_as", "ukrainian_ci_as", "vietnamese_ci_as"。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dBEngineConfig 数据库引擎的配置信息，配置格式如下：
+{"$key1":"$value1", "$key2":"$value2"}
+各引擎支持如下：
+mssql_compatible引擎：
+<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。
+<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：
+"af_ZA", "sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY", "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "hy_AM", "az_Cyrl_AZ", "az_Latn_AZ", "eu_ES", "be_BY", "bg_BG", "ca_ES", "zh_HK", "zh_MO", "zh_CN", "zh_SG", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL", "en_AU", "en_BZ", "en_CA", "en_IE", "en_JM", "en_NZ", "en_PH", "en_ZA", "en_TT", "en_GB", "en_US", "en_ZW", "et_EE", "fo_FO", "fa_IR", "fi_FI", "fr_BE", "fr_CA", "fr_FR", "fr_LU", "fr_MC", "fr_CH", "mk_MK", "ka_GE", "de_AT", "de_DE", "de_LI", "de_LU", "de_CH", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "it_CH", "ja_JP", "kn_IN", "kok_IN", "ko_KR", "ky_KG", "lv_LV", "lt_LT", "ms_BN", "ms_MY", "mr_IN", "mn_MN", "nb_NO", "nn_NO", "pl_PL", "pt_BR", "pt_PT", "pa_IN", "ro_RO", "ru_RU", "sa_IN", "sr_Cyrl_RS", "sr_Latn_RS", "sk_SK", "sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_SV", "es_GT", "es_HN", "es_MX", "es_NI", "es_PA", "es_PY","es_PE", "es_PR", "es_ES", "es_TRADITIONAL", "es_UY", "es_VE", "sw_KE", "sv_FI", "sv_SE", "tt_RU", "te_IN", "th_TH", "tr_TR", "uk_UA", "ur_IN", "ur_PK", "uz_Cyrl_UZ", "uz_Latn_UZ", "vi_VN"。
+<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下："bbf_unicode_general_ci_as", "bbf_unicode_cp1_ci_as", "bbf_unicode_CP1250_ci_as", "bbf_unicode_CP1251_ci_as", "bbf_unicode_cp1253_ci_as", "bbf_unicode_cp1254_ci_as", "bbf_unicode_cp1255_ci_as", "bbf_unicode_cp1256_ci_as", "bbf_unicode_cp1257_ci_as", "bbf_unicode_cp1258_ci_as", "bbf_unicode_cp874_ci_as", "sql_latin1_general_cp1250_ci_as", "sql_latin1_general_cp1251_ci_as", "sql_latin1_general_cp1_ci_as", "sql_latin1_general_cp1253_ci_as", "sql_latin1_general_cp1254_ci_as", "sql_latin1_general_cp1255_ci_as","sql_latin1_general_cp1256_ci_as", "sql_latin1_general_cp1257_ci_as", "sql_latin1_general_cp1258_ci_as", "chinese_prc_ci_as", "cyrillic_general_ci_as", "finnish_swedish_ci_as", "french_ci_as", "japanese_ci_as", "korean_wansung_ci_as", "latin1_general_ci_as", "modern_spanish_ci_as", "polish_ci_as", "thai_ci_as", "traditional_spanish_ci_as", "turkish_ci_as", "ukrainian_ci_as", "vietnamese_ci_as"。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDBEngineConfig(const std::string& _dBEngineConfig);
+
+                    /**
+                     * 判断参数 DBEngineConfig 是否已赋值
+                     * @return DBEngineConfig 是否已赋值
+                     * 
+                     */
+                    bool DBEngineConfigHasBeenSet() const;
 
                     /**
                      * 获取实例网络信息列表（此字段已废弃）
@@ -793,184 +997,78 @@ namespace TencentCloud
                     bool NetworkAccessListHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL主要版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DBMajorVersion PostgreSQL主要版本
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取实例是否支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @return SupportIpv6 实例是否支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
-                    std::string GetDBMajorVersion() const;
+                    uint64_t GetSupportIpv6() const;
 
                     /**
-                     * 设置PostgreSQL主要版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dBMajorVersion PostgreSQL主要版本
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置实例是否支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @param _supportIpv6 实例是否支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
-                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
+                    void SetSupportIpv6(const uint64_t& _supportIpv6);
 
                     /**
-                     * 判断参数 DBMajorVersion 是否已赋值
-                     * @return DBMajorVersion 是否已赋值
+                     * 判断参数 SupportIpv6 是否已赋值
+                     * @return SupportIpv6 是否已赋值
                      * 
                      */
-                    bool DBMajorVersionHasBeenSet() const;
-
-                    /**
-                     * 获取实例的节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DBNodeSet 实例的节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<DBNode> GetDBNodeSet() const;
-
-                    /**
-                     * 设置实例的节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dBNodeSet 实例的节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetDBNodeSet(const std::vector<DBNode>& _dBNodeSet);
-
-                    /**
-                     * 判断参数 DBNodeSet 是否已赋值
-                     * @return DBNodeSet 是否已赋值
-                     * 
-                     */
-                    bool DBNodeSetHasBeenSet() const;
-
-                    /**
-                     * 获取实例是否支持TDE数据加密  0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsSupportTDE 实例是否支持TDE数据加密  0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetIsSupportTDE() const;
-
-                    /**
-                     * 设置实例是否支持TDE数据加密  0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isSupportTDE 实例是否支持TDE数据加密  0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetIsSupportTDE(const int64_t& _isSupportTDE);
-
-                    /**
-                     * 判断参数 IsSupportTDE 是否已赋值
-                     * @return IsSupportTDE 是否已赋值
-                     * 
-                     */
-                    bool IsSupportTDEHasBeenSet() const;
-
-                    /**
-                     * 获取数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DBEngine 数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDBEngine() const;
-
-                    /**
-                     * 设置数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dBEngine 数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetDBEngine(const std::string& _dBEngine);
-
-                    /**
-                     * 判断参数 DBEngine 是否已赋值
-                     * @return DBEngine 是否已赋值
-                     * 
-                     */
-                    bool DBEngineHasBeenSet() const;
-
-                    /**
-                     * 获取数据库引擎的配置信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DBEngineConfig 数据库引擎的配置信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDBEngineConfig() const;
-
-                    /**
-                     * 设置数据库引擎的配置信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dBEngineConfig 数据库引擎的配置信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetDBEngineConfig(const std::string& _dBEngineConfig);
-
-                    /**
-                     * 判断参数 DBEngineConfig 是否已赋值
-                     * @return DBEngineConfig 是否已赋值
-                     * 
-                     */
-                    bool DBEngineConfigHasBeenSet() const;
+                    bool SupportIpv6HasBeenSet() const;
 
                 private:
 
                     /**
-                     * 实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段
+                     * 实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段
+                     * 实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 项目ID
-                     */
-                    uint64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
-                     * 私有网络ID
+                     * 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称。
                      */
                     std::string m_dBInstanceName;
                     bool m_dBInstanceNameHasBeenSet;
 
                     /**
-                     * 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）
+                     * 实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolating（隔离中）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、network changing（网络变更中）、upgrading（内核版本升级中）、audit-switching（审计状态变更中）、primary-switching（主备切换中）
                      */
                     std::string m_dBInstanceStatus;
                     bool m_dBInstanceStatusHasBeenSet;
@@ -1000,136 +1098,196 @@ namespace TencentCloud
                     bool m_dBInstanceClassHasBeenSet;
 
                     /**
-                     * 实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）
+                     * PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_dBInstanceType;
-                    bool m_dBInstanceTypeHasBeenSet;
+                    std::string m_dBMajorVersion;
+                    bool m_dBMajorVersionHasBeenSet;
 
                     /**
-                     * 实例版本，目前只支持standard（双机高可用版, 一主一从）
-                     */
-                    std::string m_dBInstanceVersion;
-                    bool m_dBInstanceVersionHasBeenSet;
-
-                    /**
-                     * 实例DB字符集
-                     */
-                    std::string m_dBCharset;
-                    bool m_dBCharsetHasBeenSet;
-
-                    /**
-                     * PostgreSQL版本
+                     * PostgreSQL社区大版本+小版本号，如12.4，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
 
                     /**
-                     * 实例创建时间
+                     * PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBKernelVersion;
+                    bool m_dBKernelVersionHasBeenSet;
+
+                    /**
+                     * 实例类型，类型有：
+<li>primary：主实例
+<li>readonly：只读实例
+<li>guard：灾备实例
+<li>temp：临时实例
+                     */
+                    std::string m_dBInstanceType;
+                    bool m_dBInstanceTypeHasBeenSet;
+
+                    /**
+                     * 实例版本，目前只支持standard（双机高可用版, 一主一从）。
+                     */
+                    std::string m_dBInstanceVersion;
+                    bool m_dBInstanceVersionHasBeenSet;
+
+                    /**
+                     * 实例字符集，目前只支持：
+<li> UTF8
+<li> LATIN1
+                     */
+                    std::string m_dBCharset;
+                    bool m_dBCharsetHasBeenSet;
+
+                    /**
+                     * 实例创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例执行最后一次更新的时间
+                     * 实例执行最后一次更新的时间。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 实例到期时间
+                     * 实例到期时间。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 实例隔离时间
+                     * 实例隔离时间。
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
 
                     /**
-                     * 计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）
+                     * 计费模式：
+<li>prepaid：包年包月,预付费
+<li>postpaid：按量计费，后付费
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
-                     * 是否自动续费，1：自动续费，0：不自动续费
+                     * 是否自动续费：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 实例网络连接信息
+                     * 实例网络连接信息。
                      */
                     std::vector<DBInstanceNetInfo> m_dBInstanceNetInfo;
                     bool m_dBInstanceNetInfoHasBeenSet;
 
                     /**
-                     * 机器类型
+                     * 机器类型。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 用户的AppId
+                     * 用户的AppId。
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 实例的Uid
+                     * 实例的Uid。
                      */
                     uint64_t m_uid;
                     bool m_uidHasBeenSet;
 
                     /**
-                     * 实例是否支持Ipv6，1：支持，0：不支持
+                     * 项目ID。
                      */
-                    uint64_t m_supportIpv6;
-                    bool m_supportIpv6HasBeenSet;
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例绑定的标签信息
+                     * 实例绑定的标签信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 主实例信息，仅在实例为只读实例时返回
+                     * 主实例信息，仅在实例为只读实例时返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterDBInstanceId;
                     bool m_masterDBInstanceIdHasBeenSet;
 
                     /**
-                     * 只读实例数量
+                     * 只读实例数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readOnlyInstanceNum;
                     bool m_readOnlyInstanceNumHasBeenSet;
 
                     /**
-                     * 只读实例在只读组中的状态
+                     * 只读实例在只读组中的状态。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusInReadonlyGroup;
                     bool m_statusInReadonlyGroupHasBeenSet;
 
                     /**
-                     * 下线时间
+                     * 下线时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
-                     * 数据库内核版本
+                     * 实例的节点信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_dBKernelVersion;
-                    bool m_dBKernelVersionHasBeenSet;
+                    std::vector<DBNode> m_dBNodeSet;
+                    bool m_dBNodeSetHasBeenSet;
+
+                    /**
+                     * 实例是否支持TDE数据加密：
+<li>0：不支持
+<li>1：支持
+默认值：0
+TDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isSupportTDE;
+                    bool m_isSupportTDEHasBeenSet;
+
+                    /**
+                     * 数据库引擎，支持：
+<li>postgresql：云数据库PostgreSQL
+<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL
+默认值：postgresql
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBEngine;
+                    bool m_dBEngineHasBeenSet;
+
+                    /**
+                     * 数据库引擎的配置信息，配置格式如下：
+{"$key1":"$value1", "$key2":"$value2"}
+各引擎支持如下：
+mssql_compatible引擎：
+<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。
+<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：
+"af_ZA", "sq_AL", "ar_DZ", "ar_BH", "ar_EG", "ar_IQ", "ar_JO", "ar_KW", "ar_LB", "ar_LY", "ar_MA", "ar_OM", "ar_QA", "ar_SA", "ar_SY", "ar_TN", "ar_AE", "ar_YE", "hy_AM", "az_Cyrl_AZ", "az_Latn_AZ", "eu_ES", "be_BY", "bg_BG", "ca_ES", "zh_HK", "zh_MO", "zh_CN", "zh_SG", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_BE", "nl_NL", "en_AU", "en_BZ", "en_CA", "en_IE", "en_JM", "en_NZ", "en_PH", "en_ZA", "en_TT", "en_GB", "en_US", "en_ZW", "et_EE", "fo_FO", "fa_IR", "fi_FI", "fr_BE", "fr_CA", "fr_FR", "fr_LU", "fr_MC", "fr_CH", "mk_MK", "ka_GE", "de_AT", "de_DE", "de_LI", "de_LU", "de_CH", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "it_CH", "ja_JP", "kn_IN", "kok_IN", "ko_KR", "ky_KG", "lv_LV", "lt_LT", "ms_BN", "ms_MY", "mr_IN", "mn_MN", "nb_NO", "nn_NO", "pl_PL", "pt_BR", "pt_PT", "pa_IN", "ro_RO", "ru_RU", "sa_IN", "sr_Cyrl_RS", "sr_Latn_RS", "sk_SK", "sl_SI", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_DO", "es_EC", "es_SV", "es_GT", "es_HN", "es_MX", "es_NI", "es_PA", "es_PY","es_PE", "es_PR", "es_ES", "es_TRADITIONAL", "es_UY", "es_VE", "sw_KE", "sv_FI", "sv_SE", "tt_RU", "te_IN", "th_TH", "tr_TR", "uk_UA", "ur_IN", "ur_PK", "uz_Cyrl_UZ", "uz_Latn_UZ", "vi_VN"。
+<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下："bbf_unicode_general_ci_as", "bbf_unicode_cp1_ci_as", "bbf_unicode_CP1250_ci_as", "bbf_unicode_CP1251_ci_as", "bbf_unicode_cp1253_ci_as", "bbf_unicode_cp1254_ci_as", "bbf_unicode_cp1255_ci_as", "bbf_unicode_cp1256_ci_as", "bbf_unicode_cp1257_ci_as", "bbf_unicode_cp1258_ci_as", "bbf_unicode_cp874_ci_as", "sql_latin1_general_cp1250_ci_as", "sql_latin1_general_cp1251_ci_as", "sql_latin1_general_cp1_ci_as", "sql_latin1_general_cp1253_ci_as", "sql_latin1_general_cp1254_ci_as", "sql_latin1_general_cp1255_ci_as","sql_latin1_general_cp1256_ci_as", "sql_latin1_general_cp1257_ci_as", "sql_latin1_general_cp1258_ci_as", "chinese_prc_ci_as", "cyrillic_general_ci_as", "finnish_swedish_ci_as", "french_ci_as", "japanese_ci_as", "korean_wansung_ci_as", "latin1_general_ci_as", "modern_spanish_ci_as", "polish_ci_as", "thai_ci_as", "traditional_spanish_ci_as", "turkish_ci_as", "ukrainian_ci_as", "vietnamese_ci_as"。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBEngineConfig;
+                    bool m_dBEngineConfigHasBeenSet;
 
                     /**
                      * 实例网络信息列表（此字段已废弃）
@@ -1139,41 +1297,13 @@ namespace TencentCloud
                     bool m_networkAccessListHasBeenSet;
 
                     /**
-                     * PostgreSQL主要版本
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 实例是否支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
                      */
-                    std::string m_dBMajorVersion;
-                    bool m_dBMajorVersionHasBeenSet;
-
-                    /**
-                     * 实例的节点信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<DBNode> m_dBNodeSet;
-                    bool m_dBNodeSetHasBeenSet;
-
-                    /**
-                     * 实例是否支持TDE数据加密  0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_isSupportTDE;
-                    bool m_isSupportTDEHasBeenSet;
-
-                    /**
-                     * 数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_dBEngine;
-                    bool m_dBEngineHasBeenSet;
-
-                    /**
-                     * 数据库引擎的配置信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_dBEngineConfig;
-                    bool m_dBEngineConfigHasBeenSet;
+                    uint64_t m_supportIpv6;
+                    bool m_supportIpv6HasBeenSet;
 
                 };
             }

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DenyTimeThresholdHasBeenSet() const;
 
                     /**
-                     * 获取自动封禁状态
-                     * @return DefenseStatus 自动封禁状态
+                     * 获取自动封禁状态，0表示关闭，1表示打开
+                     * @return DefenseStatus 自动封禁状态，0表示关闭，1表示打开
                      * 
                      */
                     int64_t GetDefenseStatus() const;
 
                     /**
-                     * 设置自动封禁状态
-                     * @param _defenseStatus 自动封禁状态
+                     * 设置自动封禁状态，0表示关闭，1表示打开
+                     * @param _defenseStatus 自动封禁状态，0表示关闭，1表示打开
                      * 
                      */
                     void SetDefenseStatus(const int64_t& _defenseStatus);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_denyTimeThresholdHasBeenSet;
 
                     /**
-                     * 自动封禁状态
+                     * 自动封禁状态，0表示关闭，1表示打开
                      */
                     int64_t m_defenseStatus;
                     bool m_defenseStatusHasBeenSet;

@@ -35,7 +35,8 @@ CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_openIdHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_hidesHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,19 @@ string CreateSignUrlsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hidesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hides";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hides.begin(); itr != m_hides.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -371,6 +385,22 @@ void CreateSignUrlsRequest::SetOperator(const UserInfo& _operator)
 bool CreateSignUrlsRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+vector<int64_t> CreateSignUrlsRequest::GetHides() const
+{
+    return m_hides;
+}
+
+void CreateSignUrlsRequest::SetHides(const vector<int64_t>& _hides)
+{
+    m_hides = _hides;
+    m_hidesHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::HidesHasBeenSet() const
+{
+    return m_hidesHasBeenSet;
 }
 
 

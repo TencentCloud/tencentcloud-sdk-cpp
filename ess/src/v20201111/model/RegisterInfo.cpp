@@ -22,7 +22,8 @@ using namespace std;
 
 RegisterInfo::RegisterInfo() :
     m_legalNameHasBeenSet(false),
-    m_usccHasBeenSet(false)
+    m_usccHasBeenSet(false),
+    m_unifiedSocialCreditCodeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
         m_usccHasBeenSet = true;
     }
 
+    if (value.HasMember("UnifiedSocialCreditCode") && !value["UnifiedSocialCreditCode"].IsNull())
+    {
+        if (!value["UnifiedSocialCreditCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfo.UnifiedSocialCreditCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unifiedSocialCreditCode = string(value["UnifiedSocialCreditCode"].GetString());
+        m_unifiedSocialCreditCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Uscc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uscc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unifiedSocialCreditCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnifiedSocialCreditCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unifiedSocialCreditCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RegisterInfo::SetUscc(const string& _uscc)
 bool RegisterInfo::UsccHasBeenSet() const
 {
     return m_usccHasBeenSet;
+}
+
+string RegisterInfo::GetUnifiedSocialCreditCode() const
+{
+    return m_unifiedSocialCreditCode;
+}
+
+void RegisterInfo::SetUnifiedSocialCreditCode(const string& _unifiedSocialCreditCode)
+{
+    m_unifiedSocialCreditCode = _unifiedSocialCreditCode;
+    m_unifiedSocialCreditCodeHasBeenSet = true;
+}
+
+bool RegisterInfo::UnifiedSocialCreditCodeHasBeenSet() const
+{
+    return m_unifiedSocialCreditCodeHasBeenSet;
 }
 

@@ -173,11 +173,11 @@ TaskId 和起始时间必须指定一项
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取指定地区查询预热纪录
+                     * 获取指定地区查询预热记录
 mainland：境内
 overseas：境外
 global：全球
-                     * @return Area 指定地区查询预热纪录
+                     * @return Area 指定地区查询预热记录
 mainland：境内
 overseas：境外
 global：全球
@@ -186,11 +186,11 @@ global：全球
                     std::string GetArea() const;
 
                     /**
-                     * 设置指定地区查询预热纪录
+                     * 设置指定地区查询预热记录
 mainland：境内
 overseas：境外
 global：全球
-                     * @param _area 指定地区查询预热纪录
+                     * @param _area 指定地区查询预热记录
 mainland：境内
 overseas：境外
 global：全球
@@ -282,7 +282,7 @@ TaskId 和起始时间必须指定一项
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 指定地区查询预热纪录
+                     * 指定地区查询预热记录
 mainland：境内
 overseas：境外
 global：全球
