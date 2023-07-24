@@ -109,10 +109,10 @@ namespace TencentCloud
                     /**
                      * 获取托管类型，取值有：
 <li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为apply。
+<li>none：不托管EO；</li>不填，默认取值为none。
                      * @return ApplyType 托管类型，取值有：
 <li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为apply。
+<li>none：不托管EO；</li>不填，默认取值为none。
                      * 
                      */
                     std::string GetApplyType() const;
@@ -120,10 +120,10 @@ namespace TencentCloud
                     /**
                      * 设置托管类型，取值有：
 <li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为apply。
+<li>none：不托管EO；</li>不填，默认取值为none。
                      * @param _applyType 托管类型，取值有：
 <li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为apply。
+<li>none：不托管EO；</li>不填，默认取值为none。
                      * 
                      */
                     void SetApplyType(const std::string& _applyType);
@@ -158,7 +158,7 @@ namespace TencentCloud
                     /**
                      * 托管类型，取值有：
 <li>apply：托管EO；</li>
-<li>none：不托管EO；</li>不填，默认取值为apply。
+<li>none：不托管EO；</li>不填，默认取值为none。
                      */
                     std::string m_applyType;
                     bool m_applyTypeHasBeenSet;

@@ -31,6 +31,8 @@
 #include <tencentcloud/domain/v20180808/model/CheckDomainResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateDomainBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/CreateDomainRedemptionRequest.h>
+#include <tencentcloud/domain/v20180808/model/CreateDomainRedemptionResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreatePhoneEmailRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDomainBatchResponse> CreateDomainBatchOutcome;
                 typedef std::future<CreateDomainBatchOutcome> CreateDomainBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateDomainBatchRequest&, CreateDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDomainRedemptionResponse> CreateDomainRedemptionOutcome;
+                typedef std::future<CreateDomainRedemptionOutcome> CreateDomainRedemptionOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::CreateDomainRedemptionRequest&, CreateDomainRedemptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainRedemptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePhoneEmailResponse> CreatePhoneEmailOutcome;
                 typedef std::future<CreatePhoneEmailOutcome> CreatePhoneEmailOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreatePhoneEmailRequest&, CreatePhoneEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePhoneEmailAsyncHandler;
@@ -205,6 +210,15 @@ namespace TencentCloud
                 CreateDomainBatchOutcome CreateDomainBatch(const Model::CreateDomainBatchRequest &request);
                 void CreateDomainBatchAsync(const Model::CreateDomainBatchRequest& request, const CreateDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDomainBatchOutcomeCallable CreateDomainBatchCallable(const Model::CreateDomainBatchRequest& request);
+
+                /**
+                 *创建赎回订单。
+                 * @param req CreateDomainRedemptionRequest
+                 * @return CreateDomainRedemptionOutcome
+                 */
+                CreateDomainRedemptionOutcome CreateDomainRedemption(const Model::CreateDomainRedemptionRequest &request);
+                void CreateDomainRedemptionAsync(const Model::CreateDomainRedemptionRequest& request, const CreateDomainRedemptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDomainRedemptionOutcomeCallable CreateDomainRedemptionCallable(const Model::CreateDomainRedemptionRequest& request);
 
                 /**
                  *此接口用于创建有效的手机、邮箱

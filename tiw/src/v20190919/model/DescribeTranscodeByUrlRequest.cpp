@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DescribeCDBProxyRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTranscodeByUrlRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Tiw::V20190919::Model;
 using namespace std;
 
-DescribeCDBProxyRequest::DescribeCDBProxyRequest() :
-    m_instanceIdHasBeenSet(false),
-    m_proxyGroupIdHasBeenSet(false)
+DescribeTranscodeByUrlRequest::DescribeTranscodeByUrlRequest() :
+    m_sdkAppIdHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
-string DescribeCDBProxyRequest::ToJsonString() const
+string DescribeTranscodeByUrlRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIdHasBeenSet)
+    if (m_sdkAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
     }
 
-    if (m_proxyGroupIdHasBeenSet)
+    if (m_urlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyGroupId";
+        string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_proxyGroupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,36 +59,36 @@ string DescribeCDBProxyRequest::ToJsonString() const
 }
 
 
-string DescribeCDBProxyRequest::GetInstanceId() const
+int64_t DescribeTranscodeByUrlRequest::GetSdkAppId() const
 {
-    return m_instanceId;
+    return m_sdkAppId;
 }
 
-void DescribeCDBProxyRequest::SetInstanceId(const string& _instanceId)
+void DescribeTranscodeByUrlRequest::SetSdkAppId(const int64_t& _sdkAppId)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_sdkAppId = _sdkAppId;
+    m_sdkAppIdHasBeenSet = true;
 }
 
-bool DescribeCDBProxyRequest::InstanceIdHasBeenSet() const
+bool DescribeTranscodeByUrlRequest::SdkAppIdHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_sdkAppIdHasBeenSet;
 }
 
-string DescribeCDBProxyRequest::GetProxyGroupId() const
+string DescribeTranscodeByUrlRequest::GetUrl() const
 {
-    return m_proxyGroupId;
+    return m_url;
 }
 
-void DescribeCDBProxyRequest::SetProxyGroupId(const string& _proxyGroupId)
+void DescribeTranscodeByUrlRequest::SetUrl(const string& _url)
 {
-    m_proxyGroupId = _proxyGroupId;
-    m_proxyGroupIdHasBeenSet = true;
+    m_url = _url;
+    m_urlHasBeenSet = true;
 }
 
-bool DescribeCDBProxyRequest::ProxyGroupIdHasBeenSet() const
+bool DescribeTranscodeByUrlRequest::UrlHasBeenSet() const
 {
-    return m_proxyGroupIdHasBeenSet;
+    return m_urlHasBeenSet;
 }
 
 

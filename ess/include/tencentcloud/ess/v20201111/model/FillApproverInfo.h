@@ -36,6 +36,9 @@ namespace TencentCloud
             {
                 /**
                 * 补充签署人信息
+- RecipientId 必须指定
+-  通过企业自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填
+- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填
                 */
                 class FillApproverInfo : public AbstractModel
                 {
@@ -117,6 +120,48 @@ WEWORKAPP场景下指企业自有应用获取企微明文的userid
                      */
                     bool CustomUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取补充签署人姓名
+                     * @return ApproverName 补充签署人姓名
+                     * 
+                     */
+                    std::string GetApproverName() const;
+
+                    /**
+                     * 设置补充签署人姓名
+                     * @param _approverName 补充签署人姓名
+                     * 
+                     */
+                    void SetApproverName(const std::string& _approverName);
+
+                    /**
+                     * 判断参数 ApproverName 是否已赋值
+                     * @return ApproverName 是否已赋值
+                     * 
+                     */
+                    bool ApproverNameHasBeenSet() const;
+
+                    /**
+                     * 获取补充签署人手机号
+                     * @return ApproverMobile 补充签署人手机号
+                     * 
+                     */
+                    std::string GetApproverMobile() const;
+
+                    /**
+                     * 设置补充签署人手机号
+                     * @param _approverMobile 补充签署人手机号
+                     * 
+                     */
+                    void SetApproverMobile(const std::string& _approverMobile);
+
+                    /**
+                     * 判断参数 ApproverMobile 是否已赋值
+                     * @return ApproverMobile 是否已赋值
+                     * 
+                     */
+                    bool ApproverMobileHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +183,18 @@ WEWORKAPP场景下指企业自有应用获取企微明文的userid
                      */
                     std::string m_customUserId;
                     bool m_customUserIdHasBeenSet;
+
+                    /**
+                     * 补充签署人姓名
+                     */
+                    std::string m_approverName;
+                    bool m_approverNameHasBeenSet;
+
+                    /**
+                     * 补充签署人手机号
+                     */
+                    std::string m_approverMobile;
+                    bool m_approverMobileHasBeenSet;
 
                 };
             }

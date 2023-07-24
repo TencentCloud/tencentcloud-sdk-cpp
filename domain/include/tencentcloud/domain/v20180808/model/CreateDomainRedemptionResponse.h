@@ -14,36 +14,33 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_RWINSTANCEINFO_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_RWINSTANCEINFO_H_
+#ifndef TENCENTCLOUD_DOMAIN_V20180808_MODEL_CREATEDOMAINREDEMPTIONRESPONSE_H_
+#define TENCENTCLOUD_DOMAIN_V20180808_MODEL_CREATEDOMAINREDEMPTIONRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
-#include <tencentcloud/core/utils/rapidjson/document.h>
-#include <tencentcloud/core/utils/rapidjson/writer.h>
-#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Domain
     {
-        namespace V20170320
+        namespace V20180808
         {
             namespace Model
             {
                 /**
-                * 代理实例信息
+                * CreateDomainRedemption返回参数结构体
                 */
-                class RWInstanceInfo : public AbstractModel
+                class CreateDomainRedemptionResponse : public AbstractModel
                 {
                 public:
-                    RWInstanceInfo();
-                    ~RWInstanceInfo() = default;
-                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
-                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+                    CreateDomainRedemptionResponse();
+                    ~CreateDomainRedemptionResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:
@@ -54,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_RWINSTANCEINFO_H_
+#endif // !TENCENTCLOUD_DOMAIN_V20180808_MODEL_CREATEDOMAINREDEMPTIONRESPONSE_H_

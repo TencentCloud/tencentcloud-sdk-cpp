@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
 namespace TencentCloud
@@ -106,6 +107,27 @@ namespace TencentCloud
                      */
                     bool OpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +147,12 @@ namespace TencentCloud
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
+
+                    /**
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

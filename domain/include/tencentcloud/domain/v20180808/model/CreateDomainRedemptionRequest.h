@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDID_V20210519_MODEL_GETAGENCYTDIDREQUEST_H_
-#define TENCENTCLOUD_TDID_V20210519_MODEL_GETAGENCYTDIDREQUEST_H_
+#ifndef TENCENTCLOUD_DOMAIN_V20180808_MODEL_CREATEDOMAINREDEMPTIONREQUEST_H_
+#define TENCENTCLOUD_DOMAIN_V20180808_MODEL_CREATEDOMAINREDEMPTIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Tdid
+    namespace Domain
     {
-        namespace V20210519
+        namespace V20180808
         {
             namespace Model
             {
                 /**
-                * GetAgencyTDid请求参数结构体
+                * CreateDomainRedemption请求参数结构体
                 */
-                class GetAgencyTDidRequest : public AbstractModel
+                class CreateDomainRedemptionRequest : public AbstractModel
                 {
                 public:
-                    GetAgencyTDidRequest();
-                    ~GetAgencyTDidRequest() = default;
+                    CreateDomainRedemptionRequest();
+                    ~CreateDomainRedemptionRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取网络ID
-                     * @return ClusterId 网络ID
+                     * 获取域名 ID
+                     * @return DomainId 域名 ID
                      * 
                      */
-                    std::string GetClusterId() const;
+                    std::string GetDomainId() const;
 
                     /**
-                     * 设置网络ID
-                     * @param _clusterId 网络ID
+                     * 设置域名 ID
+                     * @param _domainId 域名 ID
                      * 
                      */
-                    void SetClusterId(const std::string& _clusterId);
+                    void SetDomainId(const std::string& _domainId);
 
                     /**
-                     * 判断参数 ClusterId 是否已赋值
-                     * @return ClusterId 是否已赋值
+                     * 判断参数 DomainId 是否已赋值
+                     * @return DomainId 是否已赋值
                      * 
                      */
-                    bool ClusterIdHasBeenSet() const;
+                    bool DomainIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 网络ID
+                     * 域名 ID
                      */
-                    std::string m_clusterId;
-                    bool m_clusterIdHasBeenSet;
+                    std::string m_domainId;
+                    bool m_domainIdHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDID_V20210519_MODEL_GETAGENCYTDIDREQUEST_H_
+#endif // !TENCENTCLOUD_DOMAIN_V20180808_MODEL_CREATEDOMAINREDEMPTIONREQUEST_H_

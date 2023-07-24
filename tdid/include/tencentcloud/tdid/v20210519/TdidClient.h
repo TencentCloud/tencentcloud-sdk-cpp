@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/tdid/v20210519/model/AddLabelRequest.h>
-#include <tencentcloud/tdid/v20210519/model/AddLabelResponse.h>
 #include <tencentcloud/tdid/v20210519/model/CheckChainRequest.h>
 #include <tencentcloud/tdid/v20210519/model/CheckChainResponse.h>
 #include <tencentcloud/tdid/v20210519/model/CreateCredentialRequest.h>
@@ -37,8 +35,6 @@
 #include <tencentcloud/tdid/v20210519/model/CreateTDidByPrivateKeyResponse.h>
 #include <tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyRequest.h>
 #include <tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyResponse.h>
-#include <tencentcloud/tdid/v20210519/model/GetAgencyTDidRequest.h>
-#include <tencentcloud/tdid/v20210519/model/GetAgencyTDidResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h>
 #include <tencentcloud/tdid/v20210519/model/GetAuthorityIssuerResponse.h>
 #include <tencentcloud/tdid/v20210519/model/GetCptInfoRequest.h>
@@ -67,9 +63,6 @@ namespace TencentCloud
                 TdidClient(const Credential &credential, const std::string &region);
                 TdidClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::AddLabelResponse> AddLabelOutcome;
-                typedef std::future<AddLabelOutcome> AddLabelOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::AddLabelRequest&, AddLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckChainResponse> CheckChainOutcome;
                 typedef std::future<CheckChainOutcome> CheckChainOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::CheckChainRequest&, CheckChainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckChainAsyncHandler;
@@ -88,9 +81,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTDidByPublicKeyResponse> CreateTDidByPublicKeyOutcome;
                 typedef std::future<CreateTDidByPublicKeyOutcome> CreateTDidByPublicKeyOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::CreateTDidByPublicKeyRequest&, CreateTDidByPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDidByPublicKeyAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetAgencyTDidResponse> GetAgencyTDidOutcome;
-                typedef std::future<GetAgencyTDidOutcome> GetAgencyTDidOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::GetAgencyTDidRequest&, GetAgencyTDidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAgencyTDidAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAuthorityIssuerResponse> GetAuthorityIssuerOutcome;
                 typedef std::future<GetAuthorityIssuerOutcome> GetAuthorityIssuerOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::GetAuthorityIssuerRequest&, GetAuthorityIssuerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorityIssuerAsyncHandler;
@@ -114,18 +104,6 @@ namespace TencentCloud
                 typedef std::function<void(const TdidClient*, const Model::VerifyCredentialRequest&, VerifyCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyCredentialAsyncHandler;
 
 
-
-                /**
-                 *下线已有内测接口，待上线正式版本的接口
-
-DID添加标签
-
-                 * @param req AddLabelRequest
-                 * @return AddLabelOutcome
-                 */
-                AddLabelOutcome AddLabel(const Model::AddLabelRequest &request);
-                void AddLabelAsync(const Model::AddLabelRequest& request, const AddLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddLabelOutcomeCallable AddLabelCallable(const Model::AddLabelRequest& request);
 
                 /**
                  *该接口不再使用
@@ -192,17 +170,6 @@ DID添加标签
                 CreateTDidByPublicKeyOutcome CreateTDidByPublicKey(const Model::CreateTDidByPublicKeyRequest &request);
                 void CreateTDidByPublicKeyAsync(const Model::CreateTDidByPublicKeyRequest& request, const CreateTDidByPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTDidByPublicKeyOutcomeCallable CreateTDidByPublicKeyCallable(const Model::CreateTDidByPublicKeyRequest& request);
-
-                /**
-                 *该接口已废弃
-
-本机构DID详情
-                 * @param req GetAgencyTDidRequest
-                 * @return GetAgencyTDidOutcome
-                 */
-                GetAgencyTDidOutcome GetAgencyTDid(const Model::GetAgencyTDidRequest &request);
-                void GetAgencyTDidAsync(const Model::GetAgencyTDidRequest& request, const GetAgencyTDidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetAgencyTDidOutcomeCallable GetAgencyTDidCallable(const Model::GetAgencyTDidRequest& request);
 
                 /**
                  *该接口不再使用

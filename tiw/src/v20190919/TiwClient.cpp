@@ -1201,6 +1201,49 @@ TiwClient::DescribeTranscodeOutcomeCallable TiwClient::DescribeTranscodeCallable
     return task->get_future();
 }
 
+TiwClient::DescribeTranscodeByUrlOutcome TiwClient::DescribeTranscodeByUrl(const DescribeTranscodeByUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTranscodeByUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTranscodeByUrlResponse rsp = DescribeTranscodeByUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTranscodeByUrlOutcome(rsp);
+        else
+            return DescribeTranscodeByUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTranscodeByUrlOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeTranscodeByUrlAsync(const DescribeTranscodeByUrlRequest& request, const DescribeTranscodeByUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTranscodeByUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeTranscodeByUrlOutcomeCallable TiwClient::DescribeTranscodeByUrlCallable(const DescribeTranscodeByUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTranscodeByUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTranscodeByUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeTranscodeCallbackOutcome TiwClient::DescribeTranscodeCallback(const DescribeTranscodeCallbackRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTranscodeCallback");

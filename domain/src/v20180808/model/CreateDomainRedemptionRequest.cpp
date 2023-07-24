@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdid/v20210519/model/GetAgencyTDidRequest.h>
+#include <tencentcloud/domain/v20180808/model/CreateDomainRedemptionRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tdid::V20210519::Model;
+using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-GetAgencyTDidRequest::GetAgencyTDidRequest() :
-    m_clusterIdHasBeenSet(false)
+CreateDomainRedemptionRequest::CreateDomainRedemptionRequest() :
+    m_domainIdHasBeenSet(false)
 {
 }
 
-string GetAgencyTDidRequest::ToJsonString() const
+string CreateDomainRedemptionRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clusterIdHasBeenSet)
+    if (m_domainIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
+        string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string GetAgencyTDidRequest::ToJsonString() const
 }
 
 
-string GetAgencyTDidRequest::GetClusterId() const
+string CreateDomainRedemptionRequest::GetDomainId() const
 {
-    return m_clusterId;
+    return m_domainId;
 }
 
-void GetAgencyTDidRequest::SetClusterId(const string& _clusterId)
+void CreateDomainRedemptionRequest::SetDomainId(const string& _domainId)
 {
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
+    m_domainId = _domainId;
+    m_domainIdHasBeenSet = true;
 }
 
-bool GetAgencyTDidRequest::ClusterIdHasBeenSet() const
+bool CreateDomainRedemptionRequest::DomainIdHasBeenSet() const
 {
-    return m_clusterIdHasBeenSet;
+    return m_domainIdHasBeenSet;
 }
 
 

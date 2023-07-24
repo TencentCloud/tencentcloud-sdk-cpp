@@ -23,6 +23,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h
   include/tencentcloud/domain/v20180808/model/BatchModifyDomainInfoRequest.h
   include/tencentcloud/domain/v20180808/model/DomainSimpleInfo.h
+  include/tencentcloud/domain/v20180808/model/CreateDomainRedemptionResponse.h
   include/tencentcloud/domain/v20180808/model/UpdateProhibitionBatchRequest.h
   include/tencentcloud/domain/v20180808/model/TransferInDomainBatchResponse.h
   include/tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h
@@ -46,6 +47,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h
   include/tencentcloud/domain/v20180808/model/PhoneEmailData.h
@@ -76,7 +78,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribePhoneEmailListResponse.h
   include/tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h
   include/tencentcloud/domain/v20180808/model/DeletePhoneEmailResponse.h
-  include/tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h
+  include/tencentcloud/domain/v20180808/model/CreateDomainRedemptionRequest.h
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h
   include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h
@@ -90,6 +92,7 @@ set(domain_src
   src/v20180808/model/RenewDomainBatchResponse.cpp
   src/v20180808/model/BatchModifyDomainInfoRequest.cpp
   src/v20180808/model/DomainSimpleInfo.cpp
+  src/v20180808/model/CreateDomainRedemptionResponse.cpp
   src/v20180808/model/UpdateProhibitionBatchRequest.cpp
   src/v20180808/model/TransferInDomainBatchResponse.cpp
   src/v20180808/model/DeleteTemplateResponse.cpp
@@ -113,6 +116,7 @@ set(domain_src
   src/v20180808/model/DescribeDomainBaseInfoResponse.cpp
   src/v20180808/model/DescribeTemplateListResponse.cpp
   src/v20180808/model/TransferProhibitionBatchRequest.cpp
+  src/v20180808/model/DescribeTemplateListRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsRequest.cpp
   src/v20180808/model/DescribeDomainNameListResponse.cpp
   src/v20180808/model/PhoneEmailData.cpp
@@ -143,7 +147,7 @@ set(domain_src
   src/v20180808/model/DescribePhoneEmailListResponse.cpp
   src/v20180808/model/CheckBatchStatusResponse.cpp
   src/v20180808/model/DeletePhoneEmailResponse.cpp
-  src/v20180808/model/DescribeTemplateListRequest.cpp
+  src/v20180808/model/CreateDomainRedemptionRequest.cpp
   src/v20180808/model/CreatePhoneEmailResponse.cpp
   src/v20180808/model/SetDomainAutoRenewRequest.cpp
   src/v20180808/model/ModifyDomainOwnerBatchRequest.cpp

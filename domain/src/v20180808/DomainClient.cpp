@@ -212,6 +212,49 @@ DomainClient::CreateDomainBatchOutcomeCallable DomainClient::CreateDomainBatchCa
     return task->get_future();
 }
 
+DomainClient::CreateDomainRedemptionOutcome DomainClient::CreateDomainRedemption(const CreateDomainRedemptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomainRedemption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainRedemptionResponse rsp = CreateDomainRedemptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainRedemptionOutcome(rsp);
+        else
+            return CreateDomainRedemptionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainRedemptionOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::CreateDomainRedemptionAsync(const CreateDomainRedemptionRequest& request, const CreateDomainRedemptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDomainRedemption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::CreateDomainRedemptionOutcomeCallable DomainClient::CreateDomainRedemptionCallable(const CreateDomainRedemptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDomainRedemptionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDomainRedemption(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::CreatePhoneEmailOutcome DomainClient::CreatePhoneEmail(const CreatePhoneEmailRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePhoneEmail");

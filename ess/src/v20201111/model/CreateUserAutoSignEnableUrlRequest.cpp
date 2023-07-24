@@ -29,7 +29,8 @@ CreateUserAutoSignEnableUrlRequest::CreateUserAutoSignEnableUrlRequest() :
     m_urlTypeHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_notifyAddressHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,15 @@ string CreateUserAutoSignEnableUrlRequest::ToJsonString() const
         string key = "ExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expiredTime, allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -216,6 +226,22 @@ void CreateUserAutoSignEnableUrlRequest::SetExpiredTime(const int64_t& _expiredT
 bool CreateUserAutoSignEnableUrlRequest::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+Agent CreateUserAutoSignEnableUrlRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateUserAutoSignEnableUrlRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateUserAutoSignEnableUrlRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

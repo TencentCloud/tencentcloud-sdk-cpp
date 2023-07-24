@@ -116,10 +116,10 @@ namespace TencentCloud
                     bool RectHasBeenSet() const;
 
                     /**
-                     * 获取字段在原图中的中的四点坐标。
+                     * 获取字段在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Polygon 字段在原图中的中的四点坐标。
+                     * @return Polygon 字段在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -127,10 +127,10 @@ namespace TencentCloud
                     Polygon GetPolygon() const;
 
                     /**
-                     * 设置字段在原图中的中的四点坐标。
+                     * 设置字段在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _polygon 字段在原图中的中的四点坐标。
+                     * @param _polygon 字段在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_rectHasBeenSet;
 
                     /**
-                     * 字段在原图中的中的四点坐标。
+                     * 字段在原图中的四点坐标。
 注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */

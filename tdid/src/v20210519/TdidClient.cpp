@@ -40,49 +40,6 @@ TdidClient::TdidClient(const Credential &credential, const string &region, const
 }
 
 
-TdidClient::AddLabelOutcome TdidClient::AddLabel(const AddLabelRequest &request)
-{
-    auto outcome = MakeRequest(request, "AddLabel");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AddLabelResponse rsp = AddLabelResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AddLabelOutcome(rsp);
-        else
-            return AddLabelOutcome(o.GetError());
-    }
-    else
-    {
-        return AddLabelOutcome(outcome.GetError());
-    }
-}
-
-void TdidClient::AddLabelAsync(const AddLabelRequest& request, const AddLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddLabel(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdidClient::AddLabelOutcomeCallable TdidClient::AddLabelCallable(const AddLabelRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AddLabelOutcome()>>(
-        [this, request]()
-        {
-            return this->AddLabel(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdidClient::CheckChainOutcome TdidClient::CheckChain(const CheckChainRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckChain");
@@ -334,49 +291,6 @@ TdidClient::CreateTDidByPublicKeyOutcomeCallable TdidClient::CreateTDidByPublicK
         [this, request]()
         {
             return this->CreateTDidByPublicKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TdidClient::GetAgencyTDidOutcome TdidClient::GetAgencyTDid(const GetAgencyTDidRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetAgencyTDid");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetAgencyTDidResponse rsp = GetAgencyTDidResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetAgencyTDidOutcome(rsp);
-        else
-            return GetAgencyTDidOutcome(o.GetError());
-    }
-    else
-    {
-        return GetAgencyTDidOutcome(outcome.GetError());
-    }
-}
-
-void TdidClient::GetAgencyTDidAsync(const GetAgencyTDidRequest& request, const GetAgencyTDidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetAgencyTDid(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdidClient::GetAgencyTDidOutcomeCallable TdidClient::GetAgencyTDidCallable(const GetAgencyTDidRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetAgencyTDidOutcome()>>(
-        [this, request]()
-        {
-            return this->GetAgencyTDid(request);
         }
     );
 

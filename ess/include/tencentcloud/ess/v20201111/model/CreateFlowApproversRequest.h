@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/FillApproverInfo.h>
+#include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
 namespace TencentCloud
@@ -128,6 +129,35 @@ namespace TencentCloud
                      */
                     bool InitiatorHasBeenSet() const;
 
+                    /**
+                     * 获取代理相关应用信息，如集团主企业代子企业操作
+
+
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作
+
+
+                     * 
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置代理相关应用信息，如集团主企业代子企业操作
+
+
+                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作
+
+
+                     * 
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     * 
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +183,14 @@ namespace TencentCloud
                      */
                     std::string m_initiator;
                     bool m_initiatorHasBeenSet;
+
+                    /**
+                     * 代理相关应用信息，如集团主企业代子企业操作
+
+
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

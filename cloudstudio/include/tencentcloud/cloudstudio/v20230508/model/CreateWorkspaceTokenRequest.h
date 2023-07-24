@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool TokenExpiredLimitSecHasBeenSet() const;
 
+                    /**
+                     * 获取token 授权策略，可选值为 workspace-run-only, all。默认为 all
+                     * @return Policies token 授权策略，可选值为 workspace-run-only, all。默认为 all
+                     * 
+                     */
+                    std::vector<std::string> GetPolicies() const;
+
+                    /**
+                     * 设置token 授权策略，可选值为 workspace-run-only, all。默认为 all
+                     * @param _policies token 授权策略，可选值为 workspace-run-only, all。默认为 all
+                     * 
+                     */
+                    void SetPolicies(const std::vector<std::string>& _policies);
+
+                    /**
+                     * 判断参数 Policies 是否已赋值
+                     * @return Policies 是否已赋值
+                     * 
+                     */
+                    bool PoliciesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     uint64_t m_tokenExpiredLimitSec;
                     bool m_tokenExpiredLimitSecHasBeenSet;
+
+                    /**
+                     * token 授权策略，可选值为 workspace-run-only, all。默认为 all
+                     */
+                    std::vector<std::string> m_policies;
+                    bool m_policiesHasBeenSet;
 
                 };
             }

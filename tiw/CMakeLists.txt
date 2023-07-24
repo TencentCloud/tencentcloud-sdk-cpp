@@ -59,7 +59,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/PPTErrSlide.h
   include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeRunningTasksResponse.h
-  include/tencentcloud/tiw/v20190919/model/DescribeApplicationUsageResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeAPIServiceResponse.h
   include/tencentcloud/tiw/v20190919/model/TimeValue.h
   include/tencentcloud/tiw/v20190919/model/DescribeWarningCallbackResponse.h
@@ -110,13 +110,13 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeUserStatusRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/RecordTaskSearchResult.h
-  include/tencentcloud/tiw/v20190919/model/ModifyWhiteboardApplicationConfigResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeWarningCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOfflineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/ApplicationItem.h
-  include/tencentcloud/tiw/v20190919/model/DescribeWarningCallbackRequest.h
+  include/tencentcloud/tiw/v20190919/model/DescribeTranscodeByUrlResponse.h
   include/tencentcloud/tiw/v20190919/model/CreatePPTCheckTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTIWDailyUsageResponse.h
@@ -128,7 +128,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribePPTCheckCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/Whiteboard.h
   include/tencentcloud/tiw/v20190919/model/PauseOnlineRecordResponse.h
-  include/tencentcloud/tiw/v20190919/model/ModifyWhiteboardBucketConfigResponse.h
+  include/tencentcloud/tiw/v20190919/model/ModifyWhiteboardApplicationConfigResponse.h
   include/tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h
@@ -145,6 +145,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/SetPPTCheckCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/StopWhiteboardPushResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeTranscodeByUrlRequest.h
   include/tencentcloud/tiw/v20190919/model/SetWarningCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribePostpaidUsageRequest.h
   include/tencentcloud/tiw/v20190919/model/LayoutParams.h
@@ -163,12 +164,13 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/RunningTaskItem.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyResponse.h
   include/tencentcloud/tiw/v20190919/model/SetPPTCheckCallbackRequest.h
-  include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeApplicationUsageResponse.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/Tag.h
   include/tencentcloud/tiw/v20190919/model/DescribeUsageSummaryRequest.h
   include/tencentcloud/tiw/v20190919/model/SnapshotWhiteboard.h
   include/tencentcloud/tiw/v20190919/model/CreatePPTCheckTaskResponse.h
+  include/tencentcloud/tiw/v20190919/model/ModifyWhiteboardBucketConfigResponse.h
   include/tencentcloud/tiw/v20190919/model/CreateTranscodeRequest.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackRequest.h
@@ -225,7 +227,7 @@ set(tiw_src
   src/v20190919/model/PPTErrSlide.cpp
   src/v20190919/model/PauseOnlineRecordRequest.cpp
   src/v20190919/model/DescribeRunningTasksResponse.cpp
-  src/v20190919/model/DescribeApplicationUsageResponse.cpp
+  src/v20190919/model/DescribeWhiteboardPushResponse.cpp
   src/v20190919/model/DescribeAPIServiceResponse.cpp
   src/v20190919/model/TimeValue.cpp
   src/v20190919/model/DescribeWarningCallbackResponse.cpp
@@ -276,13 +278,13 @@ set(tiw_src
   src/v20190919/model/DescribeUserStatusRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackRequest.cpp
   src/v20190919/model/RecordTaskSearchResult.cpp
-  src/v20190919/model/ModifyWhiteboardApplicationConfigResponse.cpp
+  src/v20190919/model/DescribeWarningCallbackRequest.cpp
   src/v20190919/model/SetTranscodeCallbackResponse.cpp
   src/v20190919/model/StopOnlineRecordRequest.cpp
   src/v20190919/model/SetOfflineRecordCallbackRequest.cpp
   src/v20190919/model/SetVideoGenerationTaskCallbackResponse.cpp
   src/v20190919/model/ApplicationItem.cpp
-  src/v20190919/model/DescribeWarningCallbackRequest.cpp
+  src/v20190919/model/DescribeTranscodeByUrlResponse.cpp
   src/v20190919/model/CreatePPTCheckTaskRequest.cpp
   src/v20190919/model/SetWhiteboardPushCallbackRequest.cpp
   src/v20190919/model/DescribeTIWDailyUsageResponse.cpp
@@ -294,7 +296,7 @@ set(tiw_src
   src/v20190919/model/DescribePPTCheckCallbackRequest.cpp
   src/v20190919/model/Whiteboard.cpp
   src/v20190919/model/PauseOnlineRecordResponse.cpp
-  src/v20190919/model/ModifyWhiteboardBucketConfigResponse.cpp
+  src/v20190919/model/ModifyWhiteboardApplicationConfigResponse.cpp
   src/v20190919/model/CreateSnapshotTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeResponse.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyRequest.cpp
@@ -311,6 +313,7 @@ set(tiw_src
   src/v20190919/model/SetPPTCheckCallbackResponse.cpp
   src/v20190919/model/DescribeOnlineRecordRequest.cpp
   src/v20190919/model/StopWhiteboardPushResponse.cpp
+  src/v20190919/model/DescribeTranscodeByUrlRequest.cpp
   src/v20190919/model/SetWarningCallbackRequest.cpp
   src/v20190919/model/DescribePostpaidUsageRequest.cpp
   src/v20190919/model/LayoutParams.cpp
@@ -329,12 +332,13 @@ set(tiw_src
   src/v20190919/model/RunningTaskItem.cpp
   src/v20190919/model/SetTranscodeCallbackKeyResponse.cpp
   src/v20190919/model/SetPPTCheckCallbackRequest.cpp
-  src/v20190919/model/DescribeWhiteboardPushResponse.cpp
+  src/v20190919/model/DescribeApplicationUsageResponse.cpp
   src/v20190919/model/StartOnlineRecordResponse.cpp
   src/v20190919/model/Tag.cpp
   src/v20190919/model/DescribeUsageSummaryRequest.cpp
   src/v20190919/model/SnapshotWhiteboard.cpp
   src/v20190919/model/CreatePPTCheckTaskResponse.cpp
+  src/v20190919/model/ModifyWhiteboardBucketConfigResponse.cpp
   src/v20190919/model/CreateTranscodeRequest.cpp
   src/v20190919/model/SetTranscodeCallbackKeyRequest.cpp
   src/v20190919/model/SetTranscodeCallbackRequest.cpp

@@ -25,7 +25,8 @@ using namespace std;
 BindEmployeeUserIdWithClientOpenIdRequest::BindEmployeeUserIdWithClientOpenIdRequest() :
     m_operatorHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_openIdHasBeenSet(false)
+    m_openIdHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,15 @@ string BindEmployeeUserIdWithClientOpenIdRequest::ToJsonString() const
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -115,6 +125,22 @@ void BindEmployeeUserIdWithClientOpenIdRequest::SetOpenId(const string& _openId)
 bool BindEmployeeUserIdWithClientOpenIdRequest::OpenIdHasBeenSet() const
 {
     return m_openIdHasBeenSet;
+}
+
+Agent BindEmployeeUserIdWithClientOpenIdRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void BindEmployeeUserIdWithClientOpenIdRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool BindEmployeeUserIdWithClientOpenIdRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

@@ -55,16 +55,12 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskBackupsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskConfigQuotaRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskConfigQuotaResponse.h>
-#include <tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsRequest.h>
-#include <tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskStoragePoolRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskStoragePoolResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumResponse.h>
-#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOperationLogsRequest.h>
-#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOperationLogsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotsRequest.h>
@@ -171,9 +167,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDiskConfigQuotaResponse> DescribeDiskConfigQuotaOutcome;
                 typedef std::future<DescribeDiskConfigQuotaOutcome> DescribeDiskConfigQuotaOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDiskConfigQuotaRequest&, DescribeDiskConfigQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskConfigQuotaAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDiskOperationLogsResponse> DescribeDiskOperationLogsOutcome;
-                typedef std::future<DescribeDiskOperationLogsOutcome> DescribeDiskOperationLogsOutcomeCallable;
-                typedef std::function<void(const CbsClient*, const Model::DescribeDiskOperationLogsRequest&, DescribeDiskOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskOperationLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiskStoragePoolResponse> DescribeDiskStoragePoolOutcome;
                 typedef std::future<DescribeDiskStoragePoolOutcome> DescribeDiskStoragePoolOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDiskStoragePoolRequest&, DescribeDiskStoragePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskStoragePoolAsyncHandler;
@@ -183,9 +176,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesDiskNumResponse> DescribeInstancesDiskNumOutcome;
                 typedef std::future<DescribeInstancesDiskNumOutcome> DescribeInstancesDiskNumOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeInstancesDiskNumRequest&, DescribeInstancesDiskNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDiskNumAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSnapshotOperationLogsResponse> DescribeSnapshotOperationLogsOutcome;
-                typedef std::future<DescribeSnapshotOperationLogsOutcome> DescribeSnapshotOperationLogsOutcomeCallable;
-                typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotOperationLogsRequest&, DescribeSnapshotOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotOperationLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotSharePermissionResponse> DescribeSnapshotSharePermissionOutcome;
                 typedef std::future<DescribeSnapshotSharePermissionOutcome> DescribeSnapshotSharePermissionOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotSharePermissionRequest&, DescribeSnapshotSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotSharePermissionAsyncHandler;
@@ -439,17 +429,6 @@ namespace TencentCloud
                 DescribeDiskConfigQuotaOutcomeCallable DescribeDiskConfigQuotaCallable(const Model::DescribeDiskConfigQuotaRequest& request);
 
                 /**
-                 *接口已废弃，切换至云审计接口。见https://tapd.woa.com/pro/prong/stories/view/1010114221880719007
-
-查询云盘操作日志功能已迁移至LookUpEvents接口（https://cloud.tencent.com/document/product/629/12359），本接口（DescribeDiskOperationLogs）即将下线，后续不再提供调用，请知悉。
-                 * @param req DescribeDiskOperationLogsRequest
-                 * @return DescribeDiskOperationLogsOutcome
-                 */
-                DescribeDiskOperationLogsOutcome DescribeDiskOperationLogs(const Model::DescribeDiskOperationLogsRequest &request);
-                void DescribeDiskOperationLogsAsync(const Model::DescribeDiskOperationLogsRequest& request, const DescribeDiskOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDiskOperationLogsOutcomeCallable DescribeDiskOperationLogsCallable(const Model::DescribeDiskOperationLogsRequest& request);
-
-                /**
                  *本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。
 
 * 可以根据独享集群ID(CdcId)、可用区(zone)等信息来查询和过滤云硬盘独享集群详细信息，不同的过滤条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
@@ -483,18 +462,6 @@ namespace TencentCloud
                 DescribeInstancesDiskNumOutcome DescribeInstancesDiskNum(const Model::DescribeInstancesDiskNumRequest &request);
                 void DescribeInstancesDiskNumAsync(const Model::DescribeInstancesDiskNumRequest& request, const DescribeInstancesDiskNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesDiskNumOutcomeCallable DescribeInstancesDiskNumCallable(const Model::DescribeInstancesDiskNumRequest& request);
-
-                /**
-                 *接口已废弃，切换至云审计接口。见https://tapd.woa.com/pro/prong/stories/view/1010114221880719007
-
-查询快照操作日志功能已迁移至LookUpEvents接口（https://cloud.tencent.com/document/product/629/12359），本接口（DescribeSnapshotOperationLogs）即将下线，后续不再提供调用，请知悉。
-
-                 * @param req DescribeSnapshotOperationLogsRequest
-                 * @return DescribeSnapshotOperationLogsOutcome
-                 */
-                DescribeSnapshotOperationLogsOutcome DescribeSnapshotOperationLogs(const Model::DescribeSnapshotOperationLogsRequest &request);
-                void DescribeSnapshotOperationLogsAsync(const Model::DescribeSnapshotOperationLogsRequest& request, const DescribeSnapshotOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSnapshotOperationLogsOutcomeCallable DescribeSnapshotOperationLogsCallable(const Model::DescribeSnapshotOperationLogsRequest& request);
 
                 /**
                  *本接口（DescribeSnapshotSharePermission）用于查询快照的分享信息。

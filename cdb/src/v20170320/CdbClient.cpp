@@ -2190,49 +2190,6 @@ CdbClient::DescribeBinlogsOutcomeCallable CdbClient::DescribeBinlogsCallable(con
     return task->get_future();
 }
 
-CdbClient::DescribeCDBProxyOutcome CdbClient::DescribeCDBProxy(const DescribeCDBProxyRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCDBProxy");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCDBProxyResponse rsp = DescribeCDBProxyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCDBProxyOutcome(rsp);
-        else
-            return DescribeCDBProxyOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCDBProxyOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::DescribeCDBProxyAsync(const DescribeCDBProxyRequest& request, const DescribeCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCDBProxy(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::DescribeCDBProxyOutcomeCallable CdbClient::DescribeCDBProxyCallable(const DescribeCDBProxyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCDBProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCDBProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::DescribeCdbProxyInfoOutcome CdbClient::DescribeCdbProxyInfo(const DescribeCdbProxyInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdbProxyInfo");
@@ -3344,49 +3301,6 @@ CdbClient::DescribeProjectSecurityGroupsOutcomeCallable CdbClient::DescribeProje
         [this, request]()
         {
             return this->DescribeProjectSecurityGroups(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CdbClient::DescribeProxyConnectionPoolConfOutcome CdbClient::DescribeProxyConnectionPoolConf(const DescribeProxyConnectionPoolConfRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeProxyConnectionPoolConf");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeProxyConnectionPoolConfResponse rsp = DescribeProxyConnectionPoolConfResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeProxyConnectionPoolConfOutcome(rsp);
-        else
-            return DescribeProxyConnectionPoolConfOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeProxyConnectionPoolConfOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::DescribeProxyConnectionPoolConfAsync(const DescribeProxyConnectionPoolConfRequest& request, const DescribeProxyConnectionPoolConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeProxyConnectionPoolConf(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::DescribeProxyConnectionPoolConfOutcomeCallable CdbClient::DescribeProxyConnectionPoolConfCallable(const DescribeProxyConnectionPoolConfRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeProxyConnectionPoolConfOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeProxyConnectionPoolConf(request);
         }
     );
 
@@ -4684,92 +4598,6 @@ CdbClient::ModifyBackupEncryptionStatusOutcomeCallable CdbClient::ModifyBackupEn
     return task->get_future();
 }
 
-CdbClient::ModifyCDBProxyConnectionPoolOutcome CdbClient::ModifyCDBProxyConnectionPool(const ModifyCDBProxyConnectionPoolRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyCDBProxyConnectionPool");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyCDBProxyConnectionPoolResponse rsp = ModifyCDBProxyConnectionPoolResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyCDBProxyConnectionPoolOutcome(rsp);
-        else
-            return ModifyCDBProxyConnectionPoolOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyCDBProxyConnectionPoolOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::ModifyCDBProxyConnectionPoolAsync(const ModifyCDBProxyConnectionPoolRequest& request, const ModifyCDBProxyConnectionPoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCDBProxyConnectionPool(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::ModifyCDBProxyConnectionPoolOutcomeCallable CdbClient::ModifyCDBProxyConnectionPoolCallable(const ModifyCDBProxyConnectionPoolRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyCDBProxyConnectionPoolOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCDBProxyConnectionPool(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CdbClient::ModifyCDBProxyVipVPortOutcome CdbClient::ModifyCDBProxyVipVPort(const ModifyCDBProxyVipVPortRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyCDBProxyVipVPort");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyCDBProxyVipVPortResponse rsp = ModifyCDBProxyVipVPortResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyCDBProxyVipVPortOutcome(rsp);
-        else
-            return ModifyCDBProxyVipVPortOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyCDBProxyVipVPortOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::ModifyCDBProxyVipVPortAsync(const ModifyCDBProxyVipVPortRequest& request, const ModifyCDBProxyVipVPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCDBProxyVipVPort(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::ModifyCDBProxyVipVPortOutcomeCallable CdbClient::ModifyCDBProxyVipVPortCallable(const ModifyCDBProxyVipVPortRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyCDBProxyVipVPortOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCDBProxyVipVPort(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::ModifyCdbProxyAddressDescOutcome CdbClient::ModifyCdbProxyAddressDesc(const ModifyCdbProxyAddressDescRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCdbProxyAddressDesc");
@@ -5666,49 +5494,6 @@ CdbClient::OpenWanServiceOutcomeCallable CdbClient::OpenWanServiceCallable(const
         [this, request]()
         {
             return this->OpenWanService(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CdbClient::QueryCDBProxyOutcome CdbClient::QueryCDBProxy(const QueryCDBProxyRequest &request)
-{
-    auto outcome = MakeRequest(request, "QueryCDBProxy");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        QueryCDBProxyResponse rsp = QueryCDBProxyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return QueryCDBProxyOutcome(rsp);
-        else
-            return QueryCDBProxyOutcome(o.GetError());
-    }
-    else
-    {
-        return QueryCDBProxyOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::QueryCDBProxyAsync(const QueryCDBProxyRequest& request, const QueryCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->QueryCDBProxy(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::QueryCDBProxyOutcomeCallable CdbClient::QueryCDBProxyCallable(const QueryCDBProxyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<QueryCDBProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->QueryCDBProxy(request);
         }
     );
 

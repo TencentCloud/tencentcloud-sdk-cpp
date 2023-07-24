@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTranscodeByUrlResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Tiw::V20190919::Model;
 using namespace std;
 
-DescribeProxyConnectionPoolConfResponse::DescribeProxyConnectionPoolConfResponse() :
-    m_countHasBeenSet(false),
-    m_poolConfHasBeenSet(false)
+DescribeTranscodeByUrlResponse::DescribeTranscodeByUrlResponse() :
+    m_progressHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeProxyConnectionPoolConfResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTranscodeByUrlResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,58 +64,68 @@ CoreInternalOutcome DescribeProxyConnectionPoolConfResponse::Deserialize(const s
     }
 
 
-    if (rsp.HasMember("Count") && !rsp["Count"].IsNull())
+    if (rsp.HasMember("Progress") && !rsp["Progress"].IsNull())
     {
-        if (!rsp["Count"].IsInt64())
+        if (!rsp["Progress"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Count` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Progress` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_count = rsp["Count"].GetInt64();
-        m_countHasBeenSet = true;
+        m_progress = rsp["Progress"].GetInt64();
+        m_progressHasBeenSet = true;
     }
 
-    if (rsp.HasMember("PoolConf") && !rsp["PoolConf"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["PoolConf"].IsObject())
+        if (!rsp["Status"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `PoolConf` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_poolConf.Deserialize(rsp["PoolConf"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        m_poolConfHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeProxyConnectionPoolConfResponse::ToJsonString() const
+string DescribeTranscodeByUrlResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_countHasBeenSet)
+    if (m_progressHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Count";
+        string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_count, allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
-    if (m_poolConfHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PoolConf";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_poolConf.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -129,24 +140,34 @@ string DescribeProxyConnectionPoolConfResponse::ToJsonString() const
 }
 
 
-int64_t DescribeProxyConnectionPoolConfResponse::GetCount() const
+int64_t DescribeTranscodeByUrlResponse::GetProgress() const
 {
-    return m_count;
+    return m_progress;
 }
 
-bool DescribeProxyConnectionPoolConfResponse::CountHasBeenSet() const
+bool DescribeTranscodeByUrlResponse::ProgressHasBeenSet() const
 {
-    return m_countHasBeenSet;
+    return m_progressHasBeenSet;
 }
 
-PoolConf DescribeProxyConnectionPoolConfResponse::GetPoolConf() const
+string DescribeTranscodeByUrlResponse::GetStatus() const
 {
-    return m_poolConf;
+    return m_status;
 }
 
-bool DescribeProxyConnectionPoolConfResponse::PoolConfHasBeenSet() const
+bool DescribeTranscodeByUrlResponse::StatusHasBeenSet() const
 {
-    return m_poolConfHasBeenSet;
+    return m_statusHasBeenSet;
+}
+
+string DescribeTranscodeByUrlResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool DescribeTranscodeByUrlResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

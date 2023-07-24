@@ -728,49 +728,6 @@ CbsClient::DescribeDiskConfigQuotaOutcomeCallable CbsClient::DescribeDiskConfigQ
     return task->get_future();
 }
 
-CbsClient::DescribeDiskOperationLogsOutcome CbsClient::DescribeDiskOperationLogs(const DescribeDiskOperationLogsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDiskOperationLogs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDiskOperationLogsResponse rsp = DescribeDiskOperationLogsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDiskOperationLogsOutcome(rsp);
-        else
-            return DescribeDiskOperationLogsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDiskOperationLogsOutcome(outcome.GetError());
-    }
-}
-
-void CbsClient::DescribeDiskOperationLogsAsync(const DescribeDiskOperationLogsRequest& request, const DescribeDiskOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDiskOperationLogs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CbsClient::DescribeDiskOperationLogsOutcomeCallable CbsClient::DescribeDiskOperationLogsCallable(const DescribeDiskOperationLogsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDiskOperationLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDiskOperationLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CbsClient::DescribeDiskStoragePoolOutcome CbsClient::DescribeDiskStoragePool(const DescribeDiskStoragePoolRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiskStoragePool");
@@ -893,49 +850,6 @@ CbsClient::DescribeInstancesDiskNumOutcomeCallable CbsClient::DescribeInstancesD
         [this, request]()
         {
             return this->DescribeInstancesDiskNum(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CbsClient::DescribeSnapshotOperationLogsOutcome CbsClient::DescribeSnapshotOperationLogs(const DescribeSnapshotOperationLogsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSnapshotOperationLogs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSnapshotOperationLogsResponse rsp = DescribeSnapshotOperationLogsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSnapshotOperationLogsOutcome(rsp);
-        else
-            return DescribeSnapshotOperationLogsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSnapshotOperationLogsOutcome(outcome.GetError());
-    }
-}
-
-void CbsClient::DescribeSnapshotOperationLogsAsync(const DescribeSnapshotOperationLogsRequest& request, const DescribeSnapshotOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSnapshotOperationLogs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CbsClient::DescribeSnapshotOperationLogsOutcomeCallable CbsClient::DescribeSnapshotOperationLogsCallable(const DescribeSnapshotOperationLogsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSnapshotOperationLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSnapshotOperationLogs(request);
         }
     );
 

@@ -23,7 +23,9 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 DescribeThirdPartyAuthCodeRequest::DescribeThirdPartyAuthCodeRequest() :
-    m_authCodeHasBeenSet(false)
+    m_authCodeHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,24 @@ string DescribeThirdPartyAuthCodeRequest::ToJsonString() const
         string key = "AuthCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_authCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -64,6 +84,38 @@ void DescribeThirdPartyAuthCodeRequest::SetAuthCode(const string& _authCode)
 bool DescribeThirdPartyAuthCodeRequest::AuthCodeHasBeenSet() const
 {
     return m_authCodeHasBeenSet;
+}
+
+UserInfo DescribeThirdPartyAuthCodeRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeThirdPartyAuthCodeRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeThirdPartyAuthCodeRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
+
+Agent DescribeThirdPartyAuthCodeRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DescribeThirdPartyAuthCodeRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DescribeThirdPartyAuthCodeRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

@@ -23,7 +23,9 @@ using namespace std;
 FillApproverInfo::FillApproverInfo() :
     m_recipientIdHasBeenSet(false),
     m_approverSourceHasBeenSet(false),
-    m_customUserIdHasBeenSet(false)
+    m_customUserIdHasBeenSet(false),
+    m_approverNameHasBeenSet(false),
+    m_approverMobileHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome FillApproverInfo::Deserialize(const rapidjson::Value &value)
         m_customUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverName") && !value["ApproverName"].IsNull())
+    {
+        if (!value["ApproverName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.ApproverName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverName = string(value["ApproverName"].GetString());
+        m_approverNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverMobile") && !value["ApproverMobile"].IsNull())
+    {
+        if (!value["ApproverMobile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.ApproverMobile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverMobile = string(value["ApproverMobile"].GetString());
+        m_approverMobileHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void FillApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CustomUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverMobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverMobile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverMobile.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void FillApproverInfo::SetCustomUserId(const string& _customUserId)
 bool FillApproverInfo::CustomUserIdHasBeenSet() const
 {
     return m_customUserIdHasBeenSet;
+}
+
+string FillApproverInfo::GetApproverName() const
+{
+    return m_approverName;
+}
+
+void FillApproverInfo::SetApproverName(const string& _approverName)
+{
+    m_approverName = _approverName;
+    m_approverNameHasBeenSet = true;
+}
+
+bool FillApproverInfo::ApproverNameHasBeenSet() const
+{
+    return m_approverNameHasBeenSet;
+}
+
+string FillApproverInfo::GetApproverMobile() const
+{
+    return m_approverMobile;
+}
+
+void FillApproverInfo::SetApproverMobile(const string& _approverMobile)
+{
+    m_approverMobile = _approverMobile;
+    m_approverMobileHasBeenSet = true;
+}
+
+bool FillApproverInfo::ApproverMobileHasBeenSet() const
+{
+    return m_approverMobileHasBeenSet;
 }
 

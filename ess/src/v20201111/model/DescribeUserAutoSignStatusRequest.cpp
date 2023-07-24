@@ -25,7 +25,8 @@ using namespace std;
 DescribeUserAutoSignStatusRequest::DescribeUserAutoSignStatusRequest() :
     m_operatorHasBeenSet(false),
     m_sceneKeyHasBeenSet(false),
-    m_userInfoHasBeenSet(false)
+    m_userInfoHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,15 @@ string DescribeUserAutoSignStatusRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_userInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -116,6 +126,22 @@ void DescribeUserAutoSignStatusRequest::SetUserInfo(const UserThreeFactor& _user
 bool DescribeUserAutoSignStatusRequest::UserInfoHasBeenSet() const
 {
     return m_userInfoHasBeenSet;
+}
+
+Agent DescribeUserAutoSignStatusRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DescribeUserAutoSignStatusRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DescribeUserAutoSignStatusRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

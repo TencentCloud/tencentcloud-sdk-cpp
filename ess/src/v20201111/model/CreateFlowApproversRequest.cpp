@@ -26,7 +26,8 @@ CreateFlowApproversRequest::CreateFlowApproversRequest() :
     m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_approversHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,15 @@ string CreateFlowApproversRequest::ToJsonString() const
         string key = "Initiator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_initiator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -147,6 +157,22 @@ void CreateFlowApproversRequest::SetInitiator(const string& _initiator)
 bool CreateFlowApproversRequest::InitiatorHasBeenSet() const
 {
     return m_initiatorHasBeenSet;
+}
+
+Agent CreateFlowApproversRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateFlowApproversRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateFlowApproversRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

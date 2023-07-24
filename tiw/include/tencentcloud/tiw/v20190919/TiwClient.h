@@ -77,6 +77,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeTIWRoomDailyUsageResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTranscodeByUrlRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTranscodeByUrlResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeSearchRequest.h>
@@ -244,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTranscodeResponse> DescribeTranscodeOutcome;
                 typedef std::future<DescribeTranscodeOutcome> DescribeTranscodeOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeRequest&, DescribeTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTranscodeByUrlResponse> DescribeTranscodeByUrlOutcome;
+                typedef std::future<DescribeTranscodeByUrlOutcome> DescribeTranscodeByUrlOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeByUrlRequest&, DescribeTranscodeByUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeByUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTranscodeCallbackResponse> DescribeTranscodeCallbackOutcome;
                 typedef std::future<DescribeTranscodeCallbackOutcome> DescribeTranscodeCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeCallbackRequest&, DescribeTranscodeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeCallbackAsyncHandler;
@@ -603,6 +608,15 @@ namespace TencentCloud
                 DescribeTranscodeOutcome DescribeTranscode(const Model::DescribeTranscodeRequest &request);
                 void DescribeTranscodeAsync(const Model::DescribeTranscodeRequest& request, const DescribeTranscodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTranscodeOutcomeCallable DescribeTranscodeCallable(const Model::DescribeTranscodeRequest& request);
+
+                /**
+                 *通过文档URL查询转码任务，返回最近的一次转码结果
+                 * @param req DescribeTranscodeByUrlRequest
+                 * @return DescribeTranscodeByUrlOutcome
+                 */
+                DescribeTranscodeByUrlOutcome DescribeTranscodeByUrl(const Model::DescribeTranscodeByUrlRequest &request);
+                void DescribeTranscodeByUrlAsync(const Model::DescribeTranscodeByUrlRequest& request, const DescribeTranscodeByUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTranscodeByUrlOutcomeCallable DescribeTranscodeByUrlCallable(const Model::DescribeTranscodeByUrlRequest& request);
 
                 /**
                  *查询文档转码回调地址

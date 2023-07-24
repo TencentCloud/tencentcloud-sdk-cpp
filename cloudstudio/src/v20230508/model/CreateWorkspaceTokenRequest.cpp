@@ -24,7 +24,8 @@ using namespace std;
 
 CreateWorkspaceTokenRequest::CreateWorkspaceTokenRequest() :
     m_spaceKeyHasBeenSet(false),
-    m_tokenExpiredLimitSecHasBeenSet(false)
+    m_tokenExpiredLimitSecHasBeenSet(false),
+    m_policiesHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string CreateWorkspaceTokenRequest::ToJsonString() const
         string key = "TokenExpiredLimitSec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tokenExpiredLimitSec, allocator);
+    }
+
+    if (m_policiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policies";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policies.begin(); itr != m_policies.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void CreateWorkspaceTokenRequest::SetTokenExpiredLimitSec(const uint64_t& _token
 bool CreateWorkspaceTokenRequest::TokenExpiredLimitSecHasBeenSet() const
 {
     return m_tokenExpiredLimitSecHasBeenSet;
+}
+
+vector<string> CreateWorkspaceTokenRequest::GetPolicies() const
+{
+    return m_policies;
+}
+
+void CreateWorkspaceTokenRequest::SetPolicies(const vector<string>& _policies)
+{
+    m_policies = _policies;
+    m_policiesHasBeenSet = true;
+}
+
+bool CreateWorkspaceTokenRequest::PoliciesHasBeenSet() const
+{
+    return m_policiesHasBeenSet;
 }
 
 
