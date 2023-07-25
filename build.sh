@@ -8,10 +8,10 @@ build_sdk() {
     if ! command -v cmake3 > /dev/null
     then
         cmake .. $1
-        cmake --build . -j
+        cmake --build .
     else
         cmake3 .. $1
-        cmake3 --build . -j
+        cmake3 --build .
     fi
 }
 
