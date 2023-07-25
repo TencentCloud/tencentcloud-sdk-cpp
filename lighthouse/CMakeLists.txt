@@ -19,10 +19,11 @@ set(lighthouse_public_header
   )
 
 set(lighthouse_public_header_model
-  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainersRequest.h
   include/tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DockerContainerPublishPort.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h
@@ -30,6 +31,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/AttachCcnRequest.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeZonesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RegionInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceDeniedActions.h
@@ -41,9 +43,10 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerDetailRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
+  include/tencentcloud/lighthouse/v20200324/model/RerunDockerContainerResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceBlueprint.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleRequest.h
@@ -60,6 +63,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h
   include/tencentcloud/lighthouse/v20200324/model/CreateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/AttachDisksRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DockerContainer.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateDisksResponse.h
@@ -68,10 +72,11 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/KeyPair.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerConfigurationRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Disk.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ZoneInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h
@@ -79,6 +84,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RerunDockerContainerRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceTrafficPackage.h
@@ -87,13 +93,17 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDiskNumRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DetailPrice.h
+  include/tencentcloud/lighthouse/v20200324/model/StopDockerContainersResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceReturnable.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RestartDockerContainersResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RemoveDockerContainersRequest.h
   include/tencentcloud/lighthouse/v20200324/model/RenewDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/DockerContainerPublishPort.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RestartDockerContainersRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeScenesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h
@@ -106,16 +116,19 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeAllScenesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/StartDockerContainersResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h
   include/tencentcloud/lighthouse/v20200324/model/SceneInfo.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h
   include/tencentcloud/lighthouse/v20200324/model/IsolateInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/StopDockerContainersRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeRegionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDiskNumResponse.h
@@ -129,12 +142,14 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerConfigurationResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Instance.h
   include/tencentcloud/lighthouse/v20200324/model/DockerContainerVolume.h
+  include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/IsolateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DiskPrice.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h
@@ -150,11 +165,15 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/CreateDiskBackupResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskDiscountResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyDockerContainerRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiskChargePrepaid.h
+  include/tencentcloud/lighthouse/v20200324/model/RunDockerContainersResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DetachCcnRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RenameDockerContainerResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DockerActivity.h
   include/tencentcloud/lighthouse/v20200324/model/Filter.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Snapshot.h
@@ -181,6 +200,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DetachDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/LoginConfiguration.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RemoveDockerContainersResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DockerContainerConfiguration.h
   include/tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagResponse.h
@@ -188,15 +208,18 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/RenewDiskChargePrepaid.h
+  include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateDisksRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RenewDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InternetAccessible.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePriceDetail.h
-  include/tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainersResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyDockerContainerResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerDetailResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Price.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableResponse.h
@@ -214,13 +237,16 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/StartDockerContainersRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/RenameDockerContainerRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
   include/tencentcloud/lighthouse/v20200324/model/IsolateDisksResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/RunDockerContainersRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiskDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Scene.h
@@ -238,10 +264,11 @@ set(lighthouse_public_header_model
 
 set(lighthouse_src
   src/v20200324/LighthouseClient.cpp
-  src/v20200324/model/DescribeInstancesTrafficPackagesRequest.cpp
+  src/v20200324/model/DescribeDockerContainersRequest.cpp
   src/v20200324/model/AssociateInstancesKeyPairsResponse.cpp
-  src/v20200324/model/RenewInstancesRequest.cpp
+  src/v20200324/model/DescribeInstancesTrafficPackagesRequest.cpp
   src/v20200324/model/DescribeDisksDeniedActionsRequest.cpp
+  src/v20200324/model/DockerContainerPublishPort.cpp
   src/v20200324/model/InquirePriceCreateBlueprintRequest.cpp
   src/v20200324/model/DescribeDiskBackupsRequest.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsRequest.cpp
@@ -249,6 +276,7 @@ set(lighthouse_src
   src/v20200324/model/AttachCcnRequest.cpp
   src/v20200324/model/CreateInstancesRequest.cpp
   src/v20200324/model/DescribeZonesRequest.cpp
+  src/v20200324/model/RebootInstancesResponse.cpp
   src/v20200324/model/RegionInfo.cpp
   src/v20200324/model/DescribeBlueprintInstancesResponse.cpp
   src/v20200324/model/InstanceDeniedActions.cpp
@@ -260,9 +288,10 @@ set(lighthouse_src
   src/v20200324/model/InquirePriceRenewInstancesResponse.cpp
   src/v20200324/model/DeleteFirewallRulesResponse.cpp
   src/v20200324/model/ModifyInstancesAttributeRequest.cpp
+  src/v20200324/model/DescribeDockerContainerDetailRequest.cpp
   src/v20200324/model/DescribeGeneralResourceQuotasRequest.cpp
   src/v20200324/model/DeleteKeyPairsRequest.cpp
-  src/v20200324/model/SystemDisk.cpp
+  src/v20200324/model/RerunDockerContainerResponse.cpp
   src/v20200324/model/ResetInstanceBlueprint.cpp
   src/v20200324/model/DescribeBundlesResponse.cpp
   src/v20200324/model/ModifyInstancesBundleRequest.cpp
@@ -279,6 +308,7 @@ set(lighthouse_src
   src/v20200324/model/ResetAttachCcnRequest.cpp
   src/v20200324/model/CreateDisksRequest.cpp
   src/v20200324/model/AttachDisksRequest.cpp
+  src/v20200324/model/DockerContainer.cpp
   src/v20200324/model/ImportKeyPairResponse.cpp
   src/v20200324/model/DescribeSnapshotsRequest.cpp
   src/v20200324/model/TerminateDisksResponse.cpp
@@ -287,10 +317,11 @@ set(lighthouse_src
   src/v20200324/model/DescribeDiskBackupsDeniedActionsRequest.cpp
   src/v20200324/model/KeyPair.cpp
   src/v20200324/model/DescribeFirewallRulesTemplateRequest.cpp
-  src/v20200324/model/DescribeKeyPairsResponse.cpp
+  src/v20200324/model/DescribeDockerContainerConfigurationRequest.cpp
   src/v20200324/model/ModifyBlueprintAttributeRequest.cpp
   src/v20200324/model/InquirePriceRenewDisksRequest.cpp
   src/v20200324/model/Disk.cpp
+  src/v20200324/model/ModifyFirewallRulesResponse.cpp
   src/v20200324/model/ZoneInfo.cpp
   src/v20200324/model/DescribeBlueprintInstancesRequest.cpp
   src/v20200324/model/ApplyInstanceSnapshotResponse.cpp
@@ -298,6 +329,7 @@ set(lighthouse_src
   src/v20200324/model/ModifyFirewallRulesRequest.cpp
   src/v20200324/model/CreateBlueprintRequest.cpp
   src/v20200324/model/DeleteFirewallRulesRequest.cpp
+  src/v20200324/model/RerunDockerContainerRequest.cpp
   src/v20200324/model/DescribeInstanceVncUrlRequest.cpp
   src/v20200324/model/ModifyFirewallRuleDescriptionRequest.cpp
   src/v20200324/model/InstanceTrafficPackage.cpp
@@ -306,13 +338,17 @@ set(lighthouse_src
   src/v20200324/model/TrafficPackage.cpp
   src/v20200324/model/DescribeInstancesDiskNumRequest.cpp
   src/v20200324/model/DetailPrice.cpp
+  src/v20200324/model/StopDockerContainersResponse.cpp
   src/v20200324/model/ApplyDiskBackupResponse.cpp
   src/v20200324/model/DescribeBlueprintsRequest.cpp
   src/v20200324/model/InstanceReturnable.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsResponse.cpp
+  src/v20200324/model/RestartDockerContainersResponse.cpp
+  src/v20200324/model/RemoveDockerContainersRequest.cpp
   src/v20200324/model/RenewDisksRequest.cpp
   src/v20200324/model/ModifyDisksAttributeRequest.cpp
-  src/v20200324/model/DockerContainerPublishPort.cpp
+  src/v20200324/model/DescribeKeyPairsResponse.cpp
+  src/v20200324/model/RestartDockerContainersRequest.cpp
   src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
   src/v20200324/model/DescribeScenesRequest.cpp
   src/v20200324/model/StartInstancesRequest.cpp
@@ -325,16 +361,19 @@ set(lighthouse_src
   src/v20200324/model/DescribeBundleDiscountResponse.cpp
   src/v20200324/model/DescribeAllScenesRequest.cpp
   src/v20200324/model/ModifyDisksRenewFlagRequest.cpp
+  src/v20200324/model/StartDockerContainersResponse.cpp
   src/v20200324/model/DisassociateInstancesKeyPairsRequest.cpp
   src/v20200324/model/DataDiskPrice.cpp
   src/v20200324/model/SceneInfo.cpp
   src/v20200324/model/ImportKeyPairRequest.cpp
+  src/v20200324/model/DescribeDockerActivitiesRequest.cpp
   src/v20200324/model/DeleteBlueprintsResponse.cpp
   src/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.cpp
   src/v20200324/model/IsolateInstancesRequest.cpp
   src/v20200324/model/StopInstancesResponse.cpp
   src/v20200324/model/CreateInstancesResponse.cpp
   src/v20200324/model/ModifyBlueprintAttributeResponse.cpp
+  src/v20200324/model/StopDockerContainersRequest.cpp
   src/v20200324/model/DescribeModifyInstanceBundlesRequest.cpp
   src/v20200324/model/DescribeRegionsRequest.cpp
   src/v20200324/model/DescribeInstancesDiskNumResponse.cpp
@@ -348,12 +387,14 @@ set(lighthouse_src
   src/v20200324/model/ResetInstancesPasswordResponse.cpp
   src/v20200324/model/StartInstancesResponse.cpp
   src/v20200324/model/LoginSettings.cpp
+  src/v20200324/model/DescribeDockerContainerConfigurationResponse.cpp
   src/v20200324/model/Instance.cpp
   src/v20200324/model/DockerContainerVolume.cpp
+  src/v20200324/model/StopInstancesRequest.cpp
   src/v20200324/model/IsolateInstancesResponse.cpp
   src/v20200324/model/CreateKeyPairResponse.cpp
   src/v20200324/model/DescribeInstanceVncUrlResponse.cpp
-  src/v20200324/model/ModifyFirewallRulesResponse.cpp
+  src/v20200324/model/DescribeDockerActivitiesResponse.cpp
   src/v20200324/model/DiskPrice.cpp
   src/v20200324/model/DescribeCcnAttachedInstancesResponse.cpp
   src/v20200324/model/DescribeBundlesRequest.cpp
@@ -369,11 +410,15 @@ set(lighthouse_src
   src/v20200324/model/CreateDiskBackupResponse.cpp
   src/v20200324/model/DescribeSnapshotsDeniedActionsRequest.cpp
   src/v20200324/model/DescribeDiskDiscountResponse.cpp
-  src/v20200324/model/ResetInstancesPasswordRequest.cpp
+  src/v20200324/model/ModifyDockerContainerRequest.cpp
   src/v20200324/model/DiskChargePrepaid.cpp
+  src/v20200324/model/RunDockerContainersResponse.cpp
   src/v20200324/model/CreateKeyPairRequest.cpp
+  src/v20200324/model/ResetInstancesPasswordRequest.cpp
   src/v20200324/model/DescribeInstancesRequest.cpp
   src/v20200324/model/DetachCcnRequest.cpp
+  src/v20200324/model/RenameDockerContainerResponse.cpp
+  src/v20200324/model/DockerActivity.cpp
   src/v20200324/model/Filter.cpp
   src/v20200324/model/DescribeSnapshotsResponse.cpp
   src/v20200324/model/Snapshot.cpp
@@ -400,6 +445,7 @@ set(lighthouse_src
   src/v20200324/model/DetachDisksResponse.cpp
   src/v20200324/model/LoginConfiguration.cpp
   src/v20200324/model/DescribeResetInstanceBlueprintsRequest.cpp
+  src/v20200324/model/RemoveDockerContainersResponse.cpp
   src/v20200324/model/DockerContainerConfiguration.cpp
   src/v20200324/model/ResetAttachCcnResponse.cpp
   src/v20200324/model/ModifyInstancesRenewFlagResponse.cpp
@@ -407,15 +453,18 @@ set(lighthouse_src
   src/v20200324/model/DisassociateInstancesKeyPairsResponse.cpp
   src/v20200324/model/TerminateInstancesRequest.cpp
   src/v20200324/model/RenewDiskChargePrepaid.cpp
+  src/v20200324/model/SystemDisk.cpp
   src/v20200324/model/TerminateDisksRequest.cpp
   src/v20200324/model/ResetInstanceRequest.cpp
   src/v20200324/model/DescribeDiskConfigsResponse.cpp
   src/v20200324/model/RenewDisksResponse.cpp
   src/v20200324/model/InternetAccessible.cpp
   src/v20200324/model/InstancePriceDetail.cpp
-  src/v20200324/model/RebootInstancesResponse.cpp
+  src/v20200324/model/DescribeDockerContainersResponse.cpp
+  src/v20200324/model/ModifyDockerContainerResponse.cpp
   src/v20200324/model/DescribeDiskBackupsDeniedActionsResponse.cpp
   src/v20200324/model/DescribeInstanceLoginKeyPairAttributeRequest.cpp
+  src/v20200324/model/DescribeDockerContainerDetailResponse.cpp
   src/v20200324/model/DescribeBundleDiscountRequest.cpp
   src/v20200324/model/Price.cpp
   src/v20200324/model/DescribeDisksReturnableResponse.cpp
@@ -433,13 +482,16 @@ set(lighthouse_src
   src/v20200324/model/ModifySnapshotAttributeResponse.cpp
   src/v20200324/model/DescribeGeneralResourceQuotasResponse.cpp
   src/v20200324/model/ModifyInstancesRenewFlagRequest.cpp
-  src/v20200324/model/StopInstancesRequest.cpp
+  src/v20200324/model/StartDockerContainersRequest.cpp
+  src/v20200324/model/RenewInstancesRequest.cpp
   src/v20200324/model/DescribeFirewallRulesTemplateResponse.cpp
   src/v20200324/model/RenewInstancesResponse.cpp
+  src/v20200324/model/RenameDockerContainerRequest.cpp
   src/v20200324/model/DescribeDisksDeniedActionsResponse.cpp
   src/v20200324/model/ResetInstanceResponse.cpp
   src/v20200324/model/IsolateDisksResponse.cpp
   src/v20200324/model/DescribeFirewallRulesRequest.cpp
+  src/v20200324/model/RunDockerContainersRequest.cpp
   src/v20200324/model/DiskDeniedActions.cpp
   src/v20200324/model/InquirePriceCreateInstancesRequest.cpp
   src/v20200324/model/Scene.cpp

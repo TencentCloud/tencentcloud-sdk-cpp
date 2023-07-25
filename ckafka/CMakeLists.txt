@@ -69,6 +69,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/EsRecordMapping.h
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoTopics.h
+  include/tencentcloud/ckafka/v20190819/model/InstanceScalingDownRequest.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetRequest.h
   include/tencentcloud/ckafka/v20190819/model/Region.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstancePreRequest.h
@@ -89,6 +90,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h
   include/tencentcloud/ckafka/v20190819/model/TopicMessageHeapRanking.h
   include/tencentcloud/ckafka/v20190819/model/DorisConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/SendMessageRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicFlowRanking.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h
@@ -266,6 +268,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h
   include/tencentcloud/ckafka/v20190819/model/InquiryDiskParam.h
   include/tencentcloud/ckafka/v20190819/model/LowercaseParam.h
+  include/tencentcloud/ckafka/v20190819/model/ScalingDownResp.h
   include/tencentcloud/ckafka/v20190819/model/SendMessageResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/InquiryBasePrice.h
@@ -299,7 +302,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsResponse.h
   include/tencentcloud/ckafka/v20190819/model/ClsParam.h
-  include/tencentcloud/ckafka/v20190819/model/SendMessageRequest.h
+  include/tencentcloud/ckafka/v20190819/model/InstanceScalingDownResponse.h
   include/tencentcloud/ckafka/v20190819/model/ConsumerRecord.h
   include/tencentcloud/ckafka/v20190819/model/PostgreSQLConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/KVParam.h
@@ -395,6 +398,7 @@ set(ckafka_src
   src/v20190819/model/EsRecordMapping.cpp
   src/v20190819/model/ModifyDatahubTaskResponse.cpp
   src/v20190819/model/GroupInfoTopics.cpp
+  src/v20190819/model/InstanceScalingDownRequest.cpp
   src/v20190819/model/FetchMessageListByOffsetRequest.cpp
   src/v20190819/model/Region.cpp
   src/v20190819/model/ModifyInstancePreRequest.cpp
@@ -415,6 +419,7 @@ set(ckafka_src
   src/v20190819/model/DynamicDiskConfig.cpp
   src/v20190819/model/TopicMessageHeapRanking.cpp
   src/v20190819/model/DorisConnectParam.cpp
+  src/v20190819/model/SendMessageRequest.cpp
   src/v20190819/model/TopicFlowRanking.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupResponse.cpp
   src/v20190819/model/DeleteAclRuleRequest.cpp
@@ -592,6 +597,7 @@ set(ckafka_src
   src/v20190819/model/DescribeDatahubTasksResponse.cpp
   src/v20190819/model/InquiryDiskParam.cpp
   src/v20190819/model/LowercaseParam.cpp
+  src/v20190819/model/ScalingDownResp.cpp
   src/v20190819/model/SendMessageResponse.cpp
   src/v20190819/model/DescribeDatahubGroupOffsetsRequest.cpp
   src/v20190819/model/InquiryBasePrice.cpp
@@ -625,7 +631,7 @@ set(ckafka_src
   src/v20190819/model/DescribeTopicDetailRequest.cpp
   src/v20190819/model/DescribeGroupOffsetsResponse.cpp
   src/v20190819/model/ClsParam.cpp
-  src/v20190819/model/SendMessageRequest.cpp
+  src/v20190819/model/InstanceScalingDownResponse.cpp
   src/v20190819/model/ConsumerRecord.cpp
   src/v20190819/model/PostgreSQLConnectParam.cpp
   src/v20190819/model/KVParam.cpp

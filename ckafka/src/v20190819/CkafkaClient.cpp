@@ -2964,6 +2964,49 @@ CkafkaClient::InquireCkafkaPriceOutcomeCallable CkafkaClient::InquireCkafkaPrice
     return task->get_future();
 }
 
+CkafkaClient::InstanceScalingDownOutcome CkafkaClient::InstanceScalingDown(const InstanceScalingDownRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstanceScalingDown");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstanceScalingDownResponse rsp = InstanceScalingDownResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstanceScalingDownOutcome(rsp);
+        else
+            return InstanceScalingDownOutcome(o.GetError());
+    }
+    else
+    {
+        return InstanceScalingDownOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::InstanceScalingDownAsync(const InstanceScalingDownRequest& request, const InstanceScalingDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstanceScalingDown(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::InstanceScalingDownOutcomeCallable CkafkaClient::InstanceScalingDownCallable(const InstanceScalingDownRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstanceScalingDownOutcome()>>(
+        [this, request]()
+        {
+            return this->InstanceScalingDown(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::ModifyAclRuleOutcome CkafkaClient::ModifyAclRule(const ModifyAclRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAclRule");

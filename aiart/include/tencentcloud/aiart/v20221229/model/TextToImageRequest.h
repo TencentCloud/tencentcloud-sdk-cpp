@@ -47,10 +47,10 @@ namespace TencentCloud
                     /**
                      * 获取文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
-不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+不能为空，推荐使用中文。最多可传256个 utf-8 字符。
                      * @return Prompt 文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
-不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+不能为空，推荐使用中文。最多可传256个 utf-8 字符。
                      * 
                      */
                     std::string GetPrompt() const;
@@ -58,10 +58,10 @@ namespace TencentCloud
                     /**
                      * 设置文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
-不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+不能为空，推荐使用中文。最多可传256个 utf-8 字符。
                      * @param _prompt 文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
-不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+不能为空，推荐使用中文。最多可传256个 utf-8 字符。
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -76,10 +76,10 @@ namespace TencentCloud
                     /**
                      * 获取反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
-推荐使用中文。最多可传512个 utf-8 字符。
+推荐使用中文。最多可传256个 utf-8 字符。
                      * @return NegativePrompt 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
-推荐使用中文。最多可传512个 utf-8 字符。
+推荐使用中文。最多可传256个 utf-8 字符。
                      * 
                      */
                     std::string GetNegativePrompt() const;
@@ -87,10 +87,10 @@ namespace TencentCloud
                     /**
                      * 设置反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
-推荐使用中文。最多可传512个 utf-8 字符。
+推荐使用中文。最多可传256个 utf-8 字符。
                      * @param _negativePrompt 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
-推荐使用中文。最多可传512个 utf-8 字符。
+推荐使用中文。最多可传256个 utf-8 字符。
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -106,11 +106,9 @@ namespace TencentCloud
                      * 获取绘画风格。
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
-如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
                      * @return Styles 绘画风格。
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
-如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
                      * 
                      */
                     std::vector<std::string> GetStyles() const;
@@ -119,11 +117,9 @@ namespace TencentCloud
                      * 设置绘画风格。
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
-如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
                      * @param _styles 绘画风格。
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
-如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
                      * 
                      */
                     void SetStyles(const std::vector<std::string>& _styles);
@@ -218,12 +214,33 @@ namespace TencentCloud
                      */
                     bool LogoParamHasBeenSet() const;
 
+                    /**
+                     * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 
+                     */
+                    std::string GetRspImgType() const;
+
+                    /**
+                     * 设置返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * @param _rspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 
+                     */
+                    void SetRspImgType(const std::string& _rspImgType);
+
+                    /**
+                     * 判断参数 RspImgType 是否已赋值
+                     * @return RspImgType 是否已赋值
+                     * 
+                     */
+                    bool RspImgTypeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 文本描述。
 算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。
-不能为空，推荐使用中文。最多可传512个 utf-8 字符。
+不能为空，推荐使用中文。最多可传256个 utf-8 字符。
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
@@ -231,7 +248,7 @@ namespace TencentCloud
                     /**
                      * 反向文本描述。
 用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。
-推荐使用中文。最多可传512个 utf-8 字符。
+推荐使用中文。最多可传256个 utf-8 字符。
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
@@ -240,7 +257,6 @@ namespace TencentCloud
                      * 绘画风格。
 请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
 推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
-如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。
                      */
                     std::vector<std::string> m_styles;
                     bool m_stylesHasBeenSet;
@@ -267,6 +283,12 @@ namespace TencentCloud
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
+
+                    /**
+                     * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     */
+                    std::string m_rspImgType;
+                    bool m_rspImgTypeHasBeenSet;
 
                 };
             }

@@ -159,6 +159,8 @@
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/InstanceScalingDownResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceRequest.h>
@@ -399,6 +401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquireCkafkaPriceResponse> InquireCkafkaPriceOutcome;
                 typedef std::future<InquireCkafkaPriceOutcome> InquireCkafkaPriceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::InquireCkafkaPriceRequest&, InquireCkafkaPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireCkafkaPriceAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstanceScalingDownResponse> InstanceScalingDownOutcome;
+                typedef std::future<InstanceScalingDownOutcome> InstanceScalingDownOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::InstanceScalingDownRequest&, InstanceScalingDownOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstanceScalingDownAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAclRuleResponse> ModifyAclRuleOutcome;
                 typedef std::future<ModifyAclRuleOutcome> ModifyAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyAclRuleRequest&, ModifyAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclRuleAsyncHandler;
@@ -1048,6 +1053,15 @@ namespace TencentCloud
                 InquireCkafkaPriceOutcome InquireCkafkaPrice(const Model::InquireCkafkaPriceRequest &request);
                 void InquireCkafkaPriceAsync(const Model::InquireCkafkaPriceRequest& request, const InquireCkafkaPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquireCkafkaPriceOutcomeCallable InquireCkafkaPriceCallable(const Model::InquireCkafkaPriceRequest& request);
+
+                /**
+                 *按量实例缩容
+                 * @param req InstanceScalingDownRequest
+                 * @return InstanceScalingDownOutcome
+                 */
+                InstanceScalingDownOutcome InstanceScalingDown(const Model::InstanceScalingDownRequest &request);
+                void InstanceScalingDownAsync(const Model::InstanceScalingDownRequest& request, const InstanceScalingDownAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstanceScalingDownOutcomeCallable InstanceScalingDownCallable(const Model::InstanceScalingDownRequest& request);
 
                 /**
                  *修改AC策略，目前只支持预设规则的是否应用到新增topic这一项的修改

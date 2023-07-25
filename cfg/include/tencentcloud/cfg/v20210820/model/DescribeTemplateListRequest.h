@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfg/v20210820/model/TagWithDescribe.h>
+#include <tencentcloud/cfg/v20210820/model/ActionFilter.h>
 
 
 namespace TencentCloud
@@ -211,6 +212,27 @@ namespace TencentCloud
                      */
                     bool TemplateIdListHasBeenSet() const;
 
+                    /**
+                     * 获取过滤参数
+                     * @return Filters 过滤参数
+                     * 
+                     */
+                    std::vector<ActionFilter> GetFilters() const;
+
+                    /**
+                     * 设置过滤参数
+                     * @param _filters 过滤参数
+                     * 
+                     */
+                    void SetFilters(const std::vector<ActionFilter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +282,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_templateIdList;
                     bool m_templateIdListHasBeenSet;
+
+                    /**
+                     * 过滤参数
+                     */
+                    std::vector<ActionFilter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

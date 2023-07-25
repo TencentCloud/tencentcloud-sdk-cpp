@@ -33,6 +33,7 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusRequest.h
   include/tencentcloud/cfg/v20210820/model/DescribeTemplateResponse.h
   include/tencentcloud/cfg/v20210820/model/DescribePolicy.h
+  include/tencentcloud/cfg/v20210820/model/ActionFilter.h
   include/tencentcloud/cfg/v20210820/model/DescribeTemplateRequest.h
   include/tencentcloud/cfg/v20210820/model/ExecuteTaskInstanceRequest.h
   include/tencentcloud/cfg/v20210820/model/TaskGroupInstance.h
@@ -77,6 +78,7 @@ set(cfg_src
   src/v20210820/model/ModifyTaskRunStatusRequest.cpp
   src/v20210820/model/DescribeTemplateResponse.cpp
   src/v20210820/model/DescribePolicy.cpp
+  src/v20210820/model/ActionFilter.cpp
   src/v20210820/model/DescribeTemplateRequest.cpp
   src/v20210820/model/ExecuteTaskInstanceRequest.cpp
   src/v20210820/model/TaskGroupInstance.cpp

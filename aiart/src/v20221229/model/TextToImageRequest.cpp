@@ -28,7 +28,8 @@ TextToImageRequest::TextToImageRequest() :
     m_stylesHasBeenSet(false),
     m_resultConfigHasBeenSet(false),
     m_logoAddHasBeenSet(false),
-    m_logoParamHasBeenSet(false)
+    m_logoParamHasBeenSet(false),
+    m_rspImgTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string TextToImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logoParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_rspImgTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RspImgType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rspImgType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void TextToImageRequest::SetLogoParam(const LogoParam& _logoParam)
 bool TextToImageRequest::LogoParamHasBeenSet() const
 {
     return m_logoParamHasBeenSet;
+}
+
+string TextToImageRequest::GetRspImgType() const
+{
+    return m_rspImgType;
+}
+
+void TextToImageRequest::SetRspImgType(const string& _rspImgType)
+{
+    m_rspImgType = _rspImgType;
+    m_rspImgTypeHasBeenSet = true;
+}
+
+bool TextToImageRequest::RspImgTypeHasBeenSet() const
+{
+    return m_rspImgTypeHasBeenSet;
 }
 
 

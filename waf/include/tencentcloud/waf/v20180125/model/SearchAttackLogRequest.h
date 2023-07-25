@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。
-                     * @return Context 查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。
+                     * 获取接口升级，这个字段传空字符串,翻页使用Page字段
+                     * @return Context 接口升级，这个字段传空字符串,翻页使用Page字段
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。
-                     * @param _context 查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。
+                     * 设置接口升级，这个字段传空字符串,翻页使用Page字段
+                     * @param _context 接口升级，这个字段传空字符串,翻页使用Page字段
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。
+                     * 接口升级，这个字段传空字符串,翻页使用Page字段
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

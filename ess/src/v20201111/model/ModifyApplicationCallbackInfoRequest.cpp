@@ -25,7 +25,8 @@ using namespace std;
 ModifyApplicationCallbackInfoRequest::ModifyApplicationCallbackInfoRequest() :
     m_operatorHasBeenSet(false),
     m_operateTypeHasBeenSet(false),
-    m_callbackInfoHasBeenSet(false)
+    m_callbackInfoHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,15 @@ string ModifyApplicationCallbackInfoRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_callbackInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -116,6 +126,22 @@ void ModifyApplicationCallbackInfoRequest::SetCallbackInfo(const CallbackInfo& _
 bool ModifyApplicationCallbackInfoRequest::CallbackInfoHasBeenSet() const
 {
     return m_callbackInfoHasBeenSet;
+}
+
+Agent ModifyApplicationCallbackInfoRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void ModifyApplicationCallbackInfoRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool ModifyApplicationCallbackInfoRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

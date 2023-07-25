@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取翻页游标，如果没有下一页了，这个参数为空""
-                     * @return Context 翻页游标，如果没有下一页了，这个参数为空""
+                     * 获取接口升级，此字段无效，默认返回空字符串
+                     * @return Context 接口升级，此字段无效，默认返回空字符串
                      * 
                      */
                     std::string GetContext() const;
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 翻页游标，如果没有下一页了，这个参数为空""
+                     * 接口升级，此字段无效，默认返回空字符串
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

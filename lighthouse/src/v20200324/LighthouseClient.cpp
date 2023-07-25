@@ -1330,6 +1330,178 @@ LighthouseClient::DescribeDisksReturnableOutcomeCallable LighthouseClient::Descr
     return task->get_future();
 }
 
+LighthouseClient::DescribeDockerActivitiesOutcome LighthouseClient::DescribeDockerActivities(const DescribeDockerActivitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDockerActivities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDockerActivitiesResponse rsp = DescribeDockerActivitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDockerActivitiesOutcome(rsp);
+        else
+            return DescribeDockerActivitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDockerActivitiesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeDockerActivitiesAsync(const DescribeDockerActivitiesRequest& request, const DescribeDockerActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDockerActivities(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeDockerActivitiesOutcomeCallable LighthouseClient::DescribeDockerActivitiesCallable(const DescribeDockerActivitiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDockerActivitiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDockerActivities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeDockerContainerConfigurationOutcome LighthouseClient::DescribeDockerContainerConfiguration(const DescribeDockerContainerConfigurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDockerContainerConfiguration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDockerContainerConfigurationResponse rsp = DescribeDockerContainerConfigurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDockerContainerConfigurationOutcome(rsp);
+        else
+            return DescribeDockerContainerConfigurationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDockerContainerConfigurationOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeDockerContainerConfigurationAsync(const DescribeDockerContainerConfigurationRequest& request, const DescribeDockerContainerConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDockerContainerConfiguration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeDockerContainerConfigurationOutcomeCallable LighthouseClient::DescribeDockerContainerConfigurationCallable(const DescribeDockerContainerConfigurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDockerContainerConfigurationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDockerContainerConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeDockerContainerDetailOutcome LighthouseClient::DescribeDockerContainerDetail(const DescribeDockerContainerDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDockerContainerDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDockerContainerDetailResponse rsp = DescribeDockerContainerDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDockerContainerDetailOutcome(rsp);
+        else
+            return DescribeDockerContainerDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDockerContainerDetailOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeDockerContainerDetailAsync(const DescribeDockerContainerDetailRequest& request, const DescribeDockerContainerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDockerContainerDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeDockerContainerDetailOutcomeCallable LighthouseClient::DescribeDockerContainerDetailCallable(const DescribeDockerContainerDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDockerContainerDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDockerContainerDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeDockerContainersOutcome LighthouseClient::DescribeDockerContainers(const DescribeDockerContainersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDockerContainers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDockerContainersResponse rsp = DescribeDockerContainersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDockerContainersOutcome(rsp);
+        else
+            return DescribeDockerContainersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDockerContainersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeDockerContainersAsync(const DescribeDockerContainersRequest& request, const DescribeDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDockerContainers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeDockerContainersOutcomeCallable LighthouseClient::DescribeDockerContainersCallable(const DescribeDockerContainersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDockerContainersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeFirewallRulesOutcome LighthouseClient::DescribeFirewallRules(const DescribeFirewallRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFirewallRules");
@@ -2749,6 +2921,49 @@ LighthouseClient::ModifyDisksRenewFlagOutcomeCallable LighthouseClient::ModifyDi
     return task->get_future();
 }
 
+LighthouseClient::ModifyDockerContainerOutcome LighthouseClient::ModifyDockerContainer(const ModifyDockerContainerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDockerContainer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDockerContainerResponse rsp = ModifyDockerContainerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDockerContainerOutcome(rsp);
+        else
+            return ModifyDockerContainerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDockerContainerOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyDockerContainerAsync(const ModifyDockerContainerRequest& request, const ModifyDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDockerContainer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyDockerContainerOutcomeCallable LighthouseClient::ModifyDockerContainerCallable(const ModifyDockerContainerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDockerContainerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDockerContainer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyFirewallRuleDescriptionOutcome LighthouseClient::ModifyFirewallRuleDescription(const ModifyFirewallRuleDescriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFirewallRuleDescription");
@@ -3093,6 +3308,92 @@ LighthouseClient::RebootInstancesOutcomeCallable LighthouseClient::RebootInstanc
     return task->get_future();
 }
 
+LighthouseClient::RemoveDockerContainersOutcome LighthouseClient::RemoveDockerContainers(const RemoveDockerContainersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveDockerContainers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveDockerContainersResponse rsp = RemoveDockerContainersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveDockerContainersOutcome(rsp);
+        else
+            return RemoveDockerContainersOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveDockerContainersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RemoveDockerContainersAsync(const RemoveDockerContainersRequest& request, const RemoveDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveDockerContainers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RemoveDockerContainersOutcomeCallable LighthouseClient::RemoveDockerContainersCallable(const RemoveDockerContainersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveDockerContainersOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::RenameDockerContainerOutcome LighthouseClient::RenameDockerContainer(const RenameDockerContainerRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenameDockerContainer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenameDockerContainerResponse rsp = RenameDockerContainerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenameDockerContainerOutcome(rsp);
+        else
+            return RenameDockerContainerOutcome(o.GetError());
+    }
+    else
+    {
+        return RenameDockerContainerOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RenameDockerContainerAsync(const RenameDockerContainerRequest& request, const RenameDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenameDockerContainer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RenameDockerContainerOutcomeCallable LighthouseClient::RenameDockerContainerCallable(const RenameDockerContainerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenameDockerContainerOutcome()>>(
+        [this, request]()
+        {
+            return this->RenameDockerContainer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::RenewDisksOutcome LighthouseClient::RenewDisks(const RenewDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewDisks");
@@ -3172,6 +3473,49 @@ LighthouseClient::RenewInstancesOutcomeCallable LighthouseClient::RenewInstances
         [this, request]()
         {
             return this->RenewInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::RerunDockerContainerOutcome LighthouseClient::RerunDockerContainer(const RerunDockerContainerRequest &request)
+{
+    auto outcome = MakeRequest(request, "RerunDockerContainer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RerunDockerContainerResponse rsp = RerunDockerContainerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RerunDockerContainerOutcome(rsp);
+        else
+            return RerunDockerContainerOutcome(o.GetError());
+    }
+    else
+    {
+        return RerunDockerContainerOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RerunDockerContainerAsync(const RerunDockerContainerRequest& request, const RerunDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RerunDockerContainer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RerunDockerContainerOutcomeCallable LighthouseClient::RerunDockerContainerCallable(const RerunDockerContainerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RerunDockerContainerOutcome()>>(
+        [this, request]()
+        {
+            return this->RerunDockerContainer(request);
         }
     );
 
@@ -3308,6 +3652,135 @@ LighthouseClient::ResetInstancesPasswordOutcomeCallable LighthouseClient::ResetI
     return task->get_future();
 }
 
+LighthouseClient::RestartDockerContainersOutcome LighthouseClient::RestartDockerContainers(const RestartDockerContainersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartDockerContainers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartDockerContainersResponse rsp = RestartDockerContainersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartDockerContainersOutcome(rsp);
+        else
+            return RestartDockerContainersOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartDockerContainersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RestartDockerContainersAsync(const RestartDockerContainersRequest& request, const RestartDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartDockerContainers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RestartDockerContainersOutcomeCallable LighthouseClient::RestartDockerContainersCallable(const RestartDockerContainersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartDockerContainersOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::RunDockerContainersOutcome LighthouseClient::RunDockerContainers(const RunDockerContainersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunDockerContainers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunDockerContainersResponse rsp = RunDockerContainersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunDockerContainersOutcome(rsp);
+        else
+            return RunDockerContainersOutcome(o.GetError());
+    }
+    else
+    {
+        return RunDockerContainersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::RunDockerContainersAsync(const RunDockerContainersRequest& request, const RunDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunDockerContainers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::RunDockerContainersOutcomeCallable LighthouseClient::RunDockerContainersCallable(const RunDockerContainersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunDockerContainersOutcome()>>(
+        [this, request]()
+        {
+            return this->RunDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::StartDockerContainersOutcome LighthouseClient::StartDockerContainers(const StartDockerContainersRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartDockerContainers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartDockerContainersResponse rsp = StartDockerContainersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartDockerContainersOutcome(rsp);
+        else
+            return StartDockerContainersOutcome(o.GetError());
+    }
+    else
+    {
+        return StartDockerContainersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::StartDockerContainersAsync(const StartDockerContainersRequest& request, const StartDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartDockerContainers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::StartDockerContainersOutcomeCallable LighthouseClient::StartDockerContainersCallable(const StartDockerContainersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartDockerContainersOutcome()>>(
+        [this, request]()
+        {
+            return this->StartDockerContainers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::StartInstancesOutcome LighthouseClient::StartInstances(const StartInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "StartInstances");
@@ -3344,6 +3817,49 @@ LighthouseClient::StartInstancesOutcomeCallable LighthouseClient::StartInstances
         [this, request]()
         {
             return this->StartInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::StopDockerContainersOutcome LighthouseClient::StopDockerContainers(const StopDockerContainersRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopDockerContainers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopDockerContainersResponse rsp = StopDockerContainersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopDockerContainersOutcome(rsp);
+        else
+            return StopDockerContainersOutcome(o.GetError());
+    }
+    else
+    {
+        return StopDockerContainersOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::StopDockerContainersAsync(const StopDockerContainersRequest& request, const StopDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopDockerContainers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::StopDockerContainersOutcomeCallable LighthouseClient::StopDockerContainersCallable(const StopDockerContainersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopDockerContainersOutcome()>>(
+        [this, request]()
+        {
+            return this->StopDockerContainers(request);
         }
     );
 

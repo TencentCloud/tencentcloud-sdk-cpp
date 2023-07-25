@@ -30,7 +30,8 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_taskStatusHasBeenSet(false),
     m_taskStartTimeHasBeenSet(false),
     m_taskEndTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,21 @@ string DescribeTaskListRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -251,6 +267,22 @@ void DescribeTaskListRequest::SetTags(const vector<TagWithDescribe>& _tags)
 bool DescribeTaskListRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<ActionFilter> DescribeTaskListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeTaskListRequest::SetFilters(const vector<ActionFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

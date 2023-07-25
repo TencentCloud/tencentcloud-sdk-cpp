@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加载后续内容的Context
-                     * @return Context 加载后续内容的Context
+                     * 获取新接口此字段失效，默认返回空字符串
+                     * @return Context 新接口此字段失效，默认返回空字符串
                      * 
                      */
                     std::string GetContext() const;
@@ -144,7 +144,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加载后续内容的Context
+                     * 新接口此字段失效，默认返回空字符串
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

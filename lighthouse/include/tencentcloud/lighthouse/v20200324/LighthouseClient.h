@@ -83,6 +83,14 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeDisksDeniedActionsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerConfigurationRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerConfigurationResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerDetailRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerContainerDetailResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerContainersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h>
@@ -149,6 +157,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDockerContainerRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDockerContainerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesRequest.h>
@@ -165,18 +175,32 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RemoveDockerContainersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RemoveDockerContainersResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenameDockerContainerRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenameDockerContainerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewDisksRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RerunDockerContainerRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RerunDockerContainerResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/StartDockerContainersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/StartDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/StopDockerContainersRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/StopDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/TerminateDisksRequest.h>
@@ -287,6 +311,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDisksReturnableResponse> DescribeDisksReturnableOutcome;
                 typedef std::future<DescribeDisksReturnableOutcome> DescribeDisksReturnableOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeDisksReturnableRequest&, DescribeDisksReturnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisksReturnableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDockerActivitiesResponse> DescribeDockerActivitiesOutcome;
+                typedef std::future<DescribeDockerActivitiesOutcome> DescribeDockerActivitiesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDockerActivitiesRequest&, DescribeDockerActivitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDockerActivitiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDockerContainerConfigurationResponse> DescribeDockerContainerConfigurationOutcome;
+                typedef std::future<DescribeDockerContainerConfigurationOutcome> DescribeDockerContainerConfigurationOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDockerContainerConfigurationRequest&, DescribeDockerContainerConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDockerContainerConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDockerContainerDetailResponse> DescribeDockerContainerDetailOutcome;
+                typedef std::future<DescribeDockerContainerDetailOutcome> DescribeDockerContainerDetailOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDockerContainerDetailRequest&, DescribeDockerContainerDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDockerContainerDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDockerContainersResponse> DescribeDockerContainersOutcome;
+                typedef std::future<DescribeDockerContainersOutcome> DescribeDockerContainersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDockerContainersRequest&, DescribeDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDockerContainersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFirewallRulesResponse> DescribeFirewallRulesOutcome;
                 typedef std::future<DescribeFirewallRulesOutcome> DescribeFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesRequest&, DescribeFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesAsyncHandler;
@@ -386,6 +422,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDisksRenewFlagResponse> ModifyDisksRenewFlagOutcome;
                 typedef std::future<ModifyDisksRenewFlagOutcome> ModifyDisksRenewFlagOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksRenewFlagRequest&, ModifyDisksRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDockerContainerResponse> ModifyDockerContainerOutcome;
+                typedef std::future<ModifyDockerContainerOutcome> ModifyDockerContainerOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyDockerContainerRequest&, ModifyDockerContainerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDockerContainerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFirewallRuleDescriptionResponse> ModifyFirewallRuleDescriptionOutcome;
                 typedef std::future<ModifyFirewallRuleDescriptionOutcome> ModifyFirewallRuleDescriptionOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallRuleDescriptionRequest&, ModifyFirewallRuleDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRuleDescriptionAsyncHandler;
@@ -410,12 +449,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveDockerContainersResponse> RemoveDockerContainersOutcome;
+                typedef std::future<RemoveDockerContainersOutcome> RemoveDockerContainersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RemoveDockerContainersRequest&, RemoveDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDockerContainersAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenameDockerContainerResponse> RenameDockerContainerOutcome;
+                typedef std::future<RenameDockerContainerOutcome> RenameDockerContainerOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RenameDockerContainerRequest&, RenameDockerContainerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameDockerContainerAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewDisksResponse> RenewDisksOutcome;
                 typedef std::future<RenewDisksOutcome> RenewDisksOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RenewDisksRequest&, RenewDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewInstancesResponse> RenewInstancesOutcome;
                 typedef std::future<RenewInstancesOutcome> RenewInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RenewInstancesRequest&, RenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RerunDockerContainerResponse> RerunDockerContainerOutcome;
+                typedef std::future<RerunDockerContainerOutcome> RerunDockerContainerOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RerunDockerContainerRequest&, RerunDockerContainerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunDockerContainerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAttachCcnResponse> ResetAttachCcnOutcome;
                 typedef std::future<ResetAttachCcnOutcome> ResetAttachCcnOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetAttachCcnRequest&, ResetAttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAttachCcnAsyncHandler;
@@ -425,9 +473,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
                 typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartDockerContainersResponse> RestartDockerContainersOutcome;
+                typedef std::future<RestartDockerContainersOutcome> RestartDockerContainersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RestartDockerContainersRequest&, RestartDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDockerContainersAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunDockerContainersResponse> RunDockerContainersOutcome;
+                typedef std::future<RunDockerContainersOutcome> RunDockerContainersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RunDockerContainersRequest&, RunDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunDockerContainersAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartDockerContainersResponse> StartDockerContainersOutcome;
+                typedef std::future<StartDockerContainersOutcome> StartDockerContainersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::StartDockerContainersRequest&, StartDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartDockerContainersAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartInstancesResponse> StartInstancesOutcome;
                 typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StartInstancesRequest&, StartInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopDockerContainersResponse> StopDockerContainersOutcome;
+                typedef std::future<StopDockerContainersOutcome> StopDockerContainersOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::StopDockerContainersRequest&, StopDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDockerContainersAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopInstancesResponse> StopInstancesOutcome;
                 typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
@@ -745,6 +805,42 @@ namespace TencentCloud
                 DescribeDisksReturnableOutcome DescribeDisksReturnable(const Model::DescribeDisksReturnableRequest &request);
                 void DescribeDisksReturnableAsync(const Model::DescribeDisksReturnableRequest& request, const DescribeDisksReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDisksReturnableOutcomeCallable DescribeDisksReturnableCallable(const Model::DescribeDisksReturnableRequest& request);
+
+                /**
+                 *查询实例内的Docker活动列表。
+                 * @param req DescribeDockerActivitiesRequest
+                 * @return DescribeDockerActivitiesOutcome
+                 */
+                DescribeDockerActivitiesOutcome DescribeDockerActivities(const Model::DescribeDockerActivitiesRequest &request);
+                void DescribeDockerActivitiesAsync(const Model::DescribeDockerActivitiesRequest& request, const DescribeDockerActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDockerActivitiesOutcomeCallable DescribeDockerActivitiesCallable(const Model::DescribeDockerActivitiesRequest& request);
+
+                /**
+                 *查询实例内的Docker容器配置信息
+                 * @param req DescribeDockerContainerConfigurationRequest
+                 * @return DescribeDockerContainerConfigurationOutcome
+                 */
+                DescribeDockerContainerConfigurationOutcome DescribeDockerContainerConfiguration(const Model::DescribeDockerContainerConfigurationRequest &request);
+                void DescribeDockerContainerConfigurationAsync(const Model::DescribeDockerContainerConfigurationRequest& request, const DescribeDockerContainerConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDockerContainerConfigurationOutcomeCallable DescribeDockerContainerConfigurationCallable(const Model::DescribeDockerContainerConfigurationRequest& request);
+
+                /**
+                 *查询实例内的Docker容器详情
+                 * @param req DescribeDockerContainerDetailRequest
+                 * @return DescribeDockerContainerDetailOutcome
+                 */
+                DescribeDockerContainerDetailOutcome DescribeDockerContainerDetail(const Model::DescribeDockerContainerDetailRequest &request);
+                void DescribeDockerContainerDetailAsync(const Model::DescribeDockerContainerDetailRequest& request, const DescribeDockerContainerDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDockerContainerDetailOutcomeCallable DescribeDockerContainerDetailCallable(const Model::DescribeDockerContainerDetailRequest& request);
+
+                /**
+                 *查询实例内的容器列表。
+                 * @param req DescribeDockerContainersRequest
+                 * @return DescribeDockerContainersOutcome
+                 */
+                DescribeDockerContainersOutcome DescribeDockerContainers(const Model::DescribeDockerContainersRequest &request);
+                void DescribeDockerContainersAsync(const Model::DescribeDockerContainersRequest& request, const DescribeDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDockerContainersOutcomeCallable DescribeDockerContainersCallable(const Model::DescribeDockerContainersRequest& request);
 
                 /**
                  *本接口（DescribeFirewallRules）用于查询实例的防火墙规则。
@@ -1077,6 +1173,16 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyDisksRenewFlagOutcomeCallable ModifyDisksRenewFlagCallable(const Model::ModifyDisksRenewFlagRequest& request);
 
                 /**
+                 *修改实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。
+请注意：本接口会重新创建并运行实例内的Docker容器。
+                 * @param req ModifyDockerContainerRequest
+                 * @return ModifyDockerContainerOutcome
+                 */
+                ModifyDockerContainerOutcome ModifyDockerContainer(const Model::ModifyDockerContainerRequest &request);
+                void ModifyDockerContainerAsync(const Model::ModifyDockerContainerRequest& request, const ModifyDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDockerContainerOutcomeCallable ModifyDockerContainerCallable(const Model::ModifyDockerContainerRequest& request);
+
+                /**
                  *本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。
 
 * FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接修改防火墙规则备注。
@@ -1185,6 +1291,24 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request);
 
                 /**
+                 *删除实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询删除情况。
+                 * @param req RemoveDockerContainersRequest
+                 * @return RemoveDockerContainersOutcome
+                 */
+                RemoveDockerContainersOutcome RemoveDockerContainers(const Model::RemoveDockerContainersRequest &request);
+                void RemoveDockerContainersAsync(const Model::RemoveDockerContainersRequest& request, const RemoveDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveDockerContainersOutcomeCallable RemoveDockerContainersCallable(const Model::RemoveDockerContainersRequest& request);
+
+                /**
+                 *重命名实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重命名情况。
+                 * @param req RenameDockerContainerRequest
+                 * @return RenameDockerContainerOutcome
+                 */
+                RenameDockerContainerOutcome RenameDockerContainer(const Model::RenameDockerContainerRequest &request);
+                void RenameDockerContainerAsync(const Model::RenameDockerContainerRequest& request, const RenameDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenameDockerContainerOutcomeCallable RenameDockerContainerCallable(const Model::RenameDockerContainerRequest& request);
+
+                /**
                  *本接口(RenewDisks)用于续费一个或多个轻量应用服务器云硬盘。
 
 只有状态为 ATTACHED，UNATTACHED 或 SHUTDOWN 的数据盘才可以进行此操作。
@@ -1208,6 +1332,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 RenewInstancesOutcome RenewInstances(const Model::RenewInstancesRequest &request);
                 void RenewInstancesAsync(const Model::RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewInstancesOutcomeCallable RenewInstancesCallable(const Model::RenewInstancesRequest& request);
+
+                /**
+                 *重新创建并运行实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。
+                 * @param req RerunDockerContainerRequest
+                 * @return RerunDockerContainerOutcome
+                 */
+                RerunDockerContainerOutcome RerunDockerContainer(const Model::RerunDockerContainerRequest &request);
+                void RerunDockerContainerAsync(const Model::RerunDockerContainerRequest& request, const RerunDockerContainerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RerunDockerContainerOutcomeCallable RerunDockerContainerCallable(const Model::RerunDockerContainerRequest& request);
 
                 /**
                  *本接口 (ResetAttachCcn) 用于关联云联网实例申请过期时，重新申请关联操作。
@@ -1247,6 +1380,33 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
 
                 /**
+                 *重启实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重启情况。
+                 * @param req RestartDockerContainersRequest
+                 * @return RestartDockerContainersOutcome
+                 */
+                RestartDockerContainersOutcome RestartDockerContainers(const Model::RestartDockerContainersRequest &request);
+                void RestartDockerContainersAsync(const Model::RestartDockerContainersRequest& request, const RestartDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartDockerContainersOutcomeCallable RestartDockerContainersCallable(const Model::RestartDockerContainersRequest& request);
+
+                /**
+                 *创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用DescribeDockerActivities接口查询创建情况。
+                 * @param req RunDockerContainersRequest
+                 * @return RunDockerContainersOutcome
+                 */
+                RunDockerContainersOutcome RunDockerContainers(const Model::RunDockerContainersRequest &request);
+                void RunDockerContainersAsync(const Model::RunDockerContainersRequest& request, const RunDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunDockerContainersOutcomeCallable RunDockerContainersCallable(const Model::RunDockerContainersRequest& request);
+
+                /**
+                 *启动实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询启动情况。
+                 * @param req StartDockerContainersRequest
+                 * @return StartDockerContainersOutcome
+                 */
+                StartDockerContainersOutcome StartDockerContainers(const Model::StartDockerContainersRequest &request);
+                void StartDockerContainersAsync(const Model::StartDockerContainersRequest& request, const StartDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartDockerContainersOutcomeCallable StartDockerContainersCallable(const Model::StartDockerContainersRequest& request);
+
+                /**
                  *本接口（StartInstances）用于启动一个或多个实例。
 
 * 只有状态为 STOPPED 的实例才可以进行此操作。
@@ -1259,6 +1419,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 StartInstancesOutcome StartInstances(const Model::StartInstancesRequest &request);
                 void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartInstancesOutcomeCallable StartInstancesCallable(const Model::StartInstancesRequest& request);
+
+                /**
+                 *停止实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询停止情况。
+                 * @param req StopDockerContainersRequest
+                 * @return StopDockerContainersOutcome
+                 */
+                StopDockerContainersOutcome StopDockerContainers(const Model::StopDockerContainersRequest &request);
+                void StopDockerContainersAsync(const Model::StopDockerContainersRequest& request, const StopDockerContainersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopDockerContainersOutcomeCallable StopDockerContainersCallable(const Model::StopDockerContainersRequest& request);
 
                 /**
                  *本接口（StopInstances）用于关闭一个或多个实例。

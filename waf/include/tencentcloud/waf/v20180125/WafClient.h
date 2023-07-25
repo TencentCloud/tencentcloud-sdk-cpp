@@ -449,7 +449,9 @@ namespace TencentCloud
                 DescribeAttackOverviewOutcomeCallable DescribeAttackOverviewCallable(const Model::DescribeAttackOverviewRequest& request);
 
                 /**
-                 *描述WAF自动封禁IP详情,对齐自动封堵状态
+                 *接口已废弃
+
+描述WAF自动封禁IP详情,对齐自动封堵状态
                  * @param req DescribeAutoDenyIPRequest
                  * @return DescribeAutoDenyIPOutcome
                  */

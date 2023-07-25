@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间秒，EndTime-StartTime不得超过31天秒数31243600
-                     * @return EndTime 结束时间秒，EndTime-StartTime不得超过31天秒数31243600
+                     * 获取结束时间秒，EndTime-StartTime不得超过1天秒数86400
+                     * @return EndTime 结束时间秒，EndTime-StartTime不得超过1天秒数86400
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间秒，EndTime-StartTime不得超过31天秒数31243600
-                     * @param _endTime 结束时间秒，EndTime-StartTime不得超过31天秒数31243600
+                     * 设置结束时间秒，EndTime-StartTime不得超过1天秒数86400
+                     * @param _endTime 结束时间秒，EndTime-StartTime不得超过1天秒数86400
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间秒，EndTime-StartTime不得超过31天秒数31243600
+                     * 结束时间秒，EndTime-StartTime不得超过1天秒数86400
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

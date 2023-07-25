@@ -395,11 +395,11 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 获取签署人查看合同时认证方式, 
 1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
 如果不传默认为1
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * @return ApproverVerifyTypes 签署人查看合同时认证方式, 
 1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
 如果不传默认为1
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * 
                      */
                     std::vector<int64_t> GetApproverVerifyTypes() const;
@@ -408,11 +408,11 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 设置签署人查看合同时认证方式, 
 1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
 如果不传默认为1
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * @param _approverVerifyTypes 签署人查看合同时认证方式, 
 1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
 如果不传默认为1
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * 
                      */
                     void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
@@ -428,11 +428,11 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 获取签署人签署合同时的认证方式
 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
 合同签署认证方式的优先级 verifyChannel>approverSignTypes
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * @return ApproverSignTypes 签署人签署合同时的认证方式
 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
 合同签署认证方式的优先级 verifyChannel>approverSignTypes
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * 
                      */
                     std::vector<int64_t> GetApproverSignTypes() const;
@@ -441,11 +441,11 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 设置签署人签署合同时的认证方式
 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
 合同签署认证方式的优先级 verifyChannel>approverSignTypes
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * @param _approverSignTypes 签署人签署合同时的认证方式
 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
 合同签署认证方式的优先级 verifyChannel>approverSignTypes
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      * 
                      */
                     void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
@@ -581,7 +581,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 签署人查看合同时认证方式, 
 1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
 如果不传默认为1
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      */
                     std::vector<int64_t> m_approverVerifyTypes;
                     bool m_approverVerifyTypesHasBeenSet;
@@ -590,7 +590,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      * 签署人签署合同时的认证方式
 1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
 合同签署认证方式的优先级 verifyChannel>approverSignTypes
-模板发起的时候,认证方式以模版配置为主
+模板发起的时候,认证方式以模板配置为主
                      */
                     std::vector<int64_t> m_approverSignTypes;
                     bool m_approverSignTypesHasBeenSet;

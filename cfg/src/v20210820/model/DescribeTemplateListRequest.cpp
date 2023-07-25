@@ -30,7 +30,8 @@ DescribeTemplateListRequest::DescribeTemplateListRequest() :
     m_isUsedHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateSourceHasBeenSet(false),
-    m_templateIdListHasBeenSet(false)
+    m_templateIdListHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,21 @@ string DescribeTemplateListRequest::ToJsonString() const
         for (auto itr = m_templateIdList.begin(); itr != m_templateIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -256,6 +272,22 @@ void DescribeTemplateListRequest::SetTemplateIdList(const vector<int64_t>& _temp
 bool DescribeTemplateListRequest::TemplateIdListHasBeenSet() const
 {
     return m_templateIdListHasBeenSet;
+}
+
+vector<ActionFilter> DescribeTemplateListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeTemplateListRequest::SetFilters(const vector<ActionFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeTemplateListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 
