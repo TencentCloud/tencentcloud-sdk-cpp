@@ -71,14 +71,18 @@ namespace TencentCloud
 
                     /**
                      * 获取转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+<font color=red>注意：取值 0 表示原始文件。</font> 
                      * @return Definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+<font color=red>注意：取值 0 表示原始文件。</font> 
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
                      * 设置转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+<font color=red>注意：取值 0 表示原始文件。</font> 
                      * @param _definition 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+<font color=red>注意：取值 0 表示原始文件。</font> 
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -347,6 +351,7 @@ namespace TencentCloud
 
                     /**
                      * 转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。
+<font color=red>注意：取值 0 表示原始文件。</font> 
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

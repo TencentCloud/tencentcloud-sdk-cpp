@@ -23,10 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ms/v20180408/model/CancelEncryptTaskRequest.h>
+#include <tencentcloud/ms/v20180408/model/CancelEncryptTaskResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateBindInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/CreateBindInstanceResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceResponse.h>
+#include <tencentcloud/ms/v20180408/model/CreateEncryptInstanceRequest.h>
+#include <tencentcloud/ms/v20180408/model/CreateEncryptInstanceResponse.h>
+#include <tencentcloud/ms/v20180408/model/CreateOrderInstanceRequest.h>
+#include <tencentcloud/ms/v20180408/model/CreateOrderInstanceResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateResourceInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/CreateResourceInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/CreateShieldInstanceRequest.h>
@@ -37,6 +43,12 @@
 #include <tencentcloud/ms/v20180408/model/DeleteShieldInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeApkDetectionResultRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeApkDetectionResultResponse.h>
+#include <tencentcloud/ms/v20180408/model/DescribeEncryptInstancesRequest.h>
+#include <tencentcloud/ms/v20180408/model/DescribeEncryptInstancesResponse.h>
+#include <tencentcloud/ms/v20180408/model/DescribeEncryptPlanRequest.h>
+#include <tencentcloud/ms/v20180408/model/DescribeEncryptPlanResponse.h>
+#include <tencentcloud/ms/v20180408/model/DescribeOrderInstancesRequest.h>
+#include <tencentcloud/ms/v20180408/model/DescribeOrderInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeResourceInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeShieldInstancesRequest.h>
@@ -63,12 +75,21 @@ namespace TencentCloud
                 MsClient(const Credential &credential, const std::string &region);
                 MsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CancelEncryptTaskResponse> CancelEncryptTaskOutcome;
+                typedef std::future<CancelEncryptTaskOutcome> CancelEncryptTaskOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::CancelEncryptTaskRequest&, CancelEncryptTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelEncryptTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBindInstanceResponse> CreateBindInstanceOutcome;
                 typedef std::future<CreateBindInstanceOutcome> CreateBindInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::CreateBindInstanceRequest&, CreateBindInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBindInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCosSecKeyInstanceResponse> CreateCosSecKeyInstanceOutcome;
                 typedef std::future<CreateCosSecKeyInstanceOutcome> CreateCosSecKeyInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::CreateCosSecKeyInstanceRequest&, CreateCosSecKeyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosSecKeyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEncryptInstanceResponse> CreateEncryptInstanceOutcome;
+                typedef std::future<CreateEncryptInstanceOutcome> CreateEncryptInstanceOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::CreateEncryptInstanceRequest&, CreateEncryptInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEncryptInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrderInstanceResponse> CreateOrderInstanceOutcome;
+                typedef std::future<CreateOrderInstanceOutcome> CreateOrderInstanceOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::CreateOrderInstanceRequest&, CreateOrderInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResourceInstancesResponse> CreateResourceInstancesOutcome;
                 typedef std::future<CreateResourceInstancesOutcome> CreateResourceInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::CreateResourceInstancesRequest&, CreateResourceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceInstancesAsyncHandler;
@@ -84,6 +105,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApkDetectionResultResponse> DescribeApkDetectionResultOutcome;
                 typedef std::future<DescribeApkDetectionResultOutcome> DescribeApkDetectionResultOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeApkDetectionResultRequest&, DescribeApkDetectionResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApkDetectionResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEncryptInstancesResponse> DescribeEncryptInstancesOutcome;
+                typedef std::future<DescribeEncryptInstancesOutcome> DescribeEncryptInstancesOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::DescribeEncryptInstancesRequest&, DescribeEncryptInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEncryptInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEncryptPlanResponse> DescribeEncryptPlanOutcome;
+                typedef std::future<DescribeEncryptPlanOutcome> DescribeEncryptPlanOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::DescribeEncryptPlanRequest&, DescribeEncryptPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEncryptPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrderInstancesResponse> DescribeOrderInstancesOutcome;
+                typedef std::future<DescribeOrderInstancesOutcome> DescribeOrderInstancesOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::DescribeOrderInstancesRequest&, DescribeOrderInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrderInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceInstancesResponse> DescribeResourceInstancesOutcome;
                 typedef std::future<DescribeResourceInstancesOutcome> DescribeResourceInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeResourceInstancesRequest&, DescribeResourceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceInstancesAsyncHandler;
@@ -106,6 +136,15 @@ namespace TencentCloud
 
 
                 /**
+                 *该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务。
+                 * @param req CancelEncryptTaskRequest
+                 * @return CancelEncryptTaskOutcome
+                 */
+                CancelEncryptTaskOutcome CancelEncryptTask(const Model::CancelEncryptTaskRequest &request);
+                void CancelEncryptTaskAsync(const Model::CancelEncryptTaskRequest& request, const CancelEncryptTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelEncryptTaskOutcomeCallable CancelEncryptTaskCallable(const Model::CancelEncryptTaskRequest& request);
+
+                /**
                  *将应用和资源进行绑定。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）
                  * @param req CreateBindInstanceRequest
                  * @return CreateBindInstanceOutcome
@@ -122,6 +161,26 @@ namespace TencentCloud
                 CreateCosSecKeyInstanceOutcome CreateCosSecKeyInstance(const Model::CreateCosSecKeyInstanceRequest &request);
                 void CreateCosSecKeyInstanceAsync(const Model::CreateCosSecKeyInstanceRequest& request, const CreateCosSecKeyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCosSecKeyInstanceOutcomeCallable CreateCosSecKeyInstanceCallable(const Model::CreateCosSecKeyInstanceRequest& request);
+
+                /**
+                 *该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于创建加固任务。
+                 * @param req CreateEncryptInstanceRequest
+                 * @return CreateEncryptInstanceOutcome
+                 */
+                CreateEncryptInstanceOutcome CreateEncryptInstance(const Model::CreateEncryptInstanceRequest &request);
+                void CreateEncryptInstanceAsync(const Model::CreateEncryptInstanceRequest& request, const CreateEncryptInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEncryptInstanceOutcomeCallable CreateEncryptInstanceCallable(const Model::CreateEncryptInstanceRequest& request);
+
+                /**
+                 *该接口供渠道合作应用加固使用，接口调用有白名单用户限制。
+订单类型有：免费试用、按年收费、按次收费。
+应用加固支持的平台类型有：android安卓加固 、ios源码混淆 、sdk加固、applet小程序加固。
+                 * @param req CreateOrderInstanceRequest
+                 * @return CreateOrderInstanceOutcome
+                 */
+                CreateOrderInstanceOutcome CreateOrderInstance(const Model::CreateOrderInstanceRequest &request);
+                void CreateOrderInstanceAsync(const Model::CreateOrderInstanceRequest& request, const CreateOrderInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrderInstanceOutcomeCallable CreateOrderInstanceCallable(const Model::CreateOrderInstanceRequest& request);
 
                 /**
                  *用户可以使用该接口自建资源，只支持白名单用户
@@ -167,6 +226,37 @@ namespace TencentCloud
                 DescribeApkDetectionResultOutcome DescribeApkDetectionResult(const Model::DescribeApkDetectionResultRequest &request);
                 void DescribeApkDetectionResultAsync(const Model::DescribeApkDetectionResultRequest& request, const DescribeApkDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApkDetectionResultOutcomeCallable DescribeApkDetectionResultCallable(const Model::DescribeApkDetectionResultRequest& request);
+
+                /**
+                 *该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点：1. 多任务分页查询  2.根据任务Id唯一值查询单记录
+                 * @param req DescribeEncryptInstancesRequest
+                 * @return DescribeEncryptInstancesOutcome
+                 */
+                DescribeEncryptInstancesOutcome DescribeEncryptInstances(const Model::DescribeEncryptInstancesRequest &request);
+                void DescribeEncryptInstancesAsync(const Model::DescribeEncryptInstancesRequest& request, const DescribeEncryptInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEncryptInstancesOutcomeCallable DescribeEncryptInstancesCallable(const Model::DescribeEncryptInstancesRequest& request);
+
+                /**
+                 *该接口供渠道合作应用加固使用，接口调用有白名单用户限制。入参中的条件过滤字段均为精准匹配。
+                 * @param req DescribeEncryptPlanRequest
+                 * @return DescribeEncryptPlanOutcome
+                 */
+                DescribeEncryptPlanOutcome DescribeEncryptPlan(const Model::DescribeEncryptPlanRequest &request);
+                void DescribeEncryptPlanAsync(const Model::DescribeEncryptPlanRequest& request, const DescribeEncryptPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEncryptPlanOutcomeCallable DescribeEncryptPlanCallable(const Model::DescribeEncryptPlanRequest& request);
+
+                /**
+                 *该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配。
+接口功能点：
+1.支持多订单分页查询；
+2.支持唯一订单号精准匹配查询；
+3.支持唯一资源号精准匹配查询；
+                 * @param req DescribeOrderInstancesRequest
+                 * @return DescribeOrderInstancesOutcome
+                 */
+                DescribeOrderInstancesOutcome DescribeOrderInstances(const Model::DescribeOrderInstancesRequest &request);
+                void DescribeOrderInstancesAsync(const Model::DescribeOrderInstancesRequest& request, const DescribeOrderInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrderInstancesOutcomeCallable DescribeOrderInstancesCallable(const Model::DescribeOrderInstancesRequest& request);
 
                 /**
                  *获取某个用户的所有资源信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）

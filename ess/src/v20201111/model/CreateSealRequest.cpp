@@ -26,6 +26,7 @@ CreateSealRequest::CreateSealRequest() :
     m_operatorHasBeenSet(false),
     m_sealNameHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_generateSourceHasBeenSet(false),
     m_sealTypeHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_imageHasBeenSet(false),
@@ -35,8 +36,7 @@ CreateSealRequest::CreateSealRequest() :
     m_sealHorizontalTextHasBeenSet(false),
     m_sealChordTextHasBeenSet(false),
     m_sealCentralTypeHasBeenSet(false),
-    m_fileTokenHasBeenSet(false),
-    m_generateSourceHasBeenSet(false)
+    m_fileTokenHasBeenSet(false)
 {
 }
 
@@ -71,6 +71,14 @@ string CreateSealRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_generateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenerateSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_generateSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sealTypeHasBeenSet)
@@ -153,14 +161,6 @@ string CreateSealRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_generateSourceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GenerateSource";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_generateSource.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -215,6 +215,22 @@ void CreateSealRequest::SetAgent(const Agent& _agent)
 bool CreateSealRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateSealRequest::GetGenerateSource() const
+{
+    return m_generateSource;
+}
+
+void CreateSealRequest::SetGenerateSource(const string& _generateSource)
+{
+    m_generateSource = _generateSource;
+    m_generateSourceHasBeenSet = true;
+}
+
+bool CreateSealRequest::GenerateSourceHasBeenSet() const
+{
+    return m_generateSourceHasBeenSet;
 }
 
 string CreateSealRequest::GetSealType() const
@@ -375,22 +391,6 @@ void CreateSealRequest::SetFileToken(const string& _fileToken)
 bool CreateSealRequest::FileTokenHasBeenSet() const
 {
     return m_fileTokenHasBeenSet;
-}
-
-string CreateSealRequest::GetGenerateSource() const
-{
-    return m_generateSource;
-}
-
-void CreateSealRequest::SetGenerateSource(const string& _generateSource)
-{
-    m_generateSource = _generateSource;
-    m_generateSourceHasBeenSet = true;
-}
-
-bool CreateSealRequest::GenerateSourceHasBeenSet() const
-{
-    return m_generateSourceHasBeenSet;
 }
 
 

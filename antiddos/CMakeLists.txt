@@ -61,6 +61,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/CreateNewL7RulesResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSAIRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigRequest.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesResponse.h
   include/tencentcloud/antiddos/v20200309/model/CcBlackWhiteIpPolicy.h
   include/tencentcloud/antiddos/v20200309/model/DescribeDDoSConnectLimitListResponse.h
@@ -244,6 +245,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DeleteCCRequestLimitPolicyResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateCcBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/BGPInstance.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeBizMonitorTrendResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListPortAclListResponse.h
   include/tencentcloud/antiddos/v20200309/model/CCPrecisionPlyRecord.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCPrecisionPlyListResponse.h
@@ -251,7 +253,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeListPortAclListRequest.h
   include/tencentcloud/antiddos/v20200309/model/OverviewDDoSEvent.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCLevelPolicyResponse.h
-  include/tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigResponse.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeBizMonitorTrendRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSTrendResponse.h
   include/tencentcloud/antiddos/v20200309/model/BGPInstanceUsages.h
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSSpeedLimitConfigResponse.h
@@ -320,6 +322,7 @@ set(antiddos_src
   src/v20200309/model/CreateNewL7RulesResponse.cpp
   src/v20200309/model/CreateDDoSAIRequest.cpp
   src/v20200309/model/DescribeListProtectThresholdConfigRequest.cpp
+  src/v20200309/model/DescribeListWaterPrintConfigResponse.cpp
   src/v20200309/model/ModifyNewDomainRulesResponse.cpp
   src/v20200309/model/CcBlackWhiteIpPolicy.cpp
   src/v20200309/model/DescribeDDoSConnectLimitListResponse.cpp
@@ -503,6 +506,7 @@ set(antiddos_src
   src/v20200309/model/DeleteCCRequestLimitPolicyResponse.cpp
   src/v20200309/model/CreateCcBlackWhiteIpListRequest.cpp
   src/v20200309/model/BGPInstance.cpp
+  src/v20200309/model/DescribeBizMonitorTrendResponse.cpp
   src/v20200309/model/DescribeListPortAclListResponse.cpp
   src/v20200309/model/CCPrecisionPlyRecord.cpp
   src/v20200309/model/DescribeCCPrecisionPlyListResponse.cpp
@@ -510,7 +514,7 @@ set(antiddos_src
   src/v20200309/model/DescribeListPortAclListRequest.cpp
   src/v20200309/model/OverviewDDoSEvent.cpp
   src/v20200309/model/DescribeCCLevelPolicyResponse.cpp
-  src/v20200309/model/DescribeListWaterPrintConfigResponse.cpp
+  src/v20200309/model/DescribeBizMonitorTrendRequest.cpp
   src/v20200309/model/DescribeOverviewDDoSTrendResponse.cpp
   src/v20200309/model/BGPInstanceUsages.cpp
   src/v20200309/model/DeleteDDoSSpeedLimitConfigResponse.cpp

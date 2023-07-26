@@ -87,6 +87,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupInfoResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteShipperRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicRequest.h>
@@ -129,6 +131,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeMachinesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShipperTasksResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShippersRequest.h>
@@ -161,6 +165,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyShipperRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicRequest.h>
@@ -287,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMachineGroupInfoResponse> DeleteMachineGroupInfoOutcome;
                 typedef std::future<DeleteMachineGroupInfoOutcome> DeleteMachineGroupInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteMachineGroupInfoRequest&, DeleteMachineGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMachineGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteScheduledSqlResponse> DeleteScheduledSqlOutcome;
+                typedef std::future<DeleteScheduledSqlOutcome> DeleteScheduledSqlOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteScheduledSqlRequest&, DeleteScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledSqlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShipperResponse> DeleteShipperOutcome;
                 typedef std::future<DeleteShipperOutcome> DeleteShipperOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteShipperRequest&, DeleteShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShipperAsyncHandler;
@@ -350,6 +359,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePartitionsResponse> DescribePartitionsOutcome;
                 typedef std::future<DescribePartitionsOutcome> DescribePartitionsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribePartitionsRequest&, DescribePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScheduledSqlInfoResponse> DescribeScheduledSqlInfoOutcome;
+                typedef std::future<DescribeScheduledSqlInfoOutcome> DescribeScheduledSqlInfoOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeScheduledSqlInfoRequest&, DescribeScheduledSqlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledSqlInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeShipperTasksResponse> DescribeShipperTasksOutcome;
                 typedef std::future<DescribeShipperTasksOutcome> DescribeShipperTasksOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeShipperTasksRequest&, DescribeShipperTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShipperTasksAsyncHandler;
@@ -398,6 +410,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMachineGroupResponse> ModifyMachineGroupOutcome;
                 typedef std::future<ModifyMachineGroupOutcome> ModifyMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyMachineGroupRequest&, ModifyMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyScheduledSqlResponse> ModifyScheduledSqlOutcome;
+                typedef std::future<ModifyScheduledSqlOutcome> ModifyScheduledSqlOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyScheduledSqlRequest&, ModifyScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledSqlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyShipperResponse> ModifyShipperOutcome;
                 typedef std::future<ModifyShipperOutcome> ModifyShipperOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyShipperRequest&, ModifyShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShipperAsyncHandler;
@@ -714,6 +729,15 @@ namespace TencentCloud
                 DeleteMachineGroupInfoOutcomeCallable DeleteMachineGroupInfoCallable(const Model::DeleteMachineGroupInfoRequest& request);
 
                 /**
+                 *本接口用于删除ScheduledSql任务
+                 * @param req DeleteScheduledSqlRequest
+                 * @return DeleteScheduledSqlOutcome
+                 */
+                DeleteScheduledSqlOutcome DeleteScheduledSql(const Model::DeleteScheduledSqlRequest &request);
+                void DeleteScheduledSqlAsync(const Model::DeleteScheduledSqlRequest& request, const DeleteScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScheduledSqlOutcomeCallable DeleteScheduledSqlCallable(const Model::DeleteScheduledSqlRequest& request);
+
+                /**
                  *删除投递COS任务
                  * @param req DeleteShipperRequest
                  * @return DeleteShipperOutcome
@@ -903,6 +927,15 @@ namespace TencentCloud
                 DescribePartitionsOutcomeCallable DescribePartitionsCallable(const Model::DescribePartitionsRequest& request);
 
                 /**
+                 *本接口用于获取ScheduledSql任务列表
+                 * @param req DescribeScheduledSqlInfoRequest
+                 * @return DescribeScheduledSqlInfoOutcome
+                 */
+                DescribeScheduledSqlInfoOutcome DescribeScheduledSqlInfo(const Model::DescribeScheduledSqlInfoRequest &request);
+                void DescribeScheduledSqlInfoAsync(const Model::DescribeScheduledSqlInfoRequest& request, const DescribeScheduledSqlInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScheduledSqlInfoOutcomeCallable DescribeScheduledSqlInfoCallable(const Model::DescribeScheduledSqlInfoRequest& request);
+
+                /**
                  *获取投递任务列表
                  * @param req DescribeShipperTasksRequest
                  * @return DescribeShipperTasksOutcome
@@ -1046,6 +1079,15 @@ namespace TencentCloud
                 ModifyMachineGroupOutcome ModifyMachineGroup(const Model::ModifyMachineGroupRequest &request);
                 void ModifyMachineGroupAsync(const Model::ModifyMachineGroupRequest& request, const ModifyMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMachineGroupOutcomeCallable ModifyMachineGroupCallable(const Model::ModifyMachineGroupRequest& request);
+
+                /**
+                 *本接口用于修改ScheduledSql任务
+                 * @param req ModifyScheduledSqlRequest
+                 * @return ModifyScheduledSqlOutcome
+                 */
+                ModifyScheduledSqlOutcome ModifyScheduledSql(const Model::ModifyScheduledSqlRequest &request);
+                void ModifyScheduledSqlAsync(const Model::ModifyScheduledSqlRequest& request, const ModifyScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyScheduledSqlOutcomeCallable ModifyScheduledSqlCallable(const Model::ModifyScheduledSqlRequest& request);
 
                 /**
                  *修改现有的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。

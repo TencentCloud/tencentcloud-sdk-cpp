@@ -662,6 +662,31 @@ namespace TencentCloud
                      */
                     bool MedicalHospitalizedInvoiceHasBeenSet() const;
 
+                    /**
+                     * 获取增值税销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VatSalesList 增值税销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VatInvoiceInfo GetVatSalesList() const;
+
+                    /**
+                     * 设置增值税销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vatSalesList 增值税销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVatSalesList(const VatInvoiceInfo& _vatSalesList);
+
+                    /**
+                     * 判断参数 VatSalesList 是否已赋值
+                     * @return VatSalesList 是否已赋值
+                     * 
+                     */
+                    bool VatSalesListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -831,6 +856,13 @@ namespace TencentCloud
                      */
                     MedicalInvoice m_medicalHospitalizedInvoice;
                     bool m_medicalHospitalizedInvoiceHasBeenSet;
+
+                    /**
+                     * 增值税销货清单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VatInvoiceInfo m_vatSalesList;
+                    bool m_vatSalesListHasBeenSet;
 
                 };
             }

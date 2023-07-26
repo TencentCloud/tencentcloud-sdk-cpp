@@ -27,6 +27,7 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_createTimeHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_vpcsHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false),
     m_virtualHostNumberHasBeenSet(false),
     m_queueNumberHasBeenSet(false),
     m_messagePublishRateHasBeenSet(false),
@@ -114,6 +115,19 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
             m_vpcs.push_back(item);
         }
         m_vpcsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
+    {
+        if (!value["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ZoneIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ZoneIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
     }
 
     if (value.HasMember("VirtualHostNumber") && !value["VirtualHostNumber"].IsNull())
@@ -285,6 +299,19 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -473,6 +500,22 @@ void RabbitMQClusterInfo::SetVpcs(const vector<VpcEndpointInfo>& _vpcs)
 bool RabbitMQClusterInfo::VpcsHasBeenSet() const
 {
     return m_vpcsHasBeenSet;
+}
+
+vector<int64_t> RabbitMQClusterInfo::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void RabbitMQClusterInfo::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 
 int64_t RabbitMQClusterInfo::GetVirtualHostNumber() const

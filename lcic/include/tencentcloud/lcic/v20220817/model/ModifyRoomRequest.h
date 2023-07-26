@@ -496,6 +496,27 @@ video 纯视频
                      */
                     bool IsGradingRequiredPostClassHasBeenSet() const;
 
+                    /**
+                     * 获取房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * @return RoomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * 
+                     */
+                    uint64_t GetRoomType() const;
+
+                    /**
+                     * 设置房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * @param _roomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     * 
+                     */
+                    void SetRoomType(const uint64_t& _roomType);
+
+                    /**
+                     * 判断参数 RoomType 是否已赋值
+                     * @return RoomType 是否已赋值
+                     * 
+                     */
+                    bool RoomTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +645,12 @@ video 纯视频
                      */
                     uint64_t m_isGradingRequiredPostClass;
                     bool m_isGradingRequiredPostClassHasBeenSet;
+
+                    /**
+                     * 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+                     */
+                    uint64_t m_roomType;
+                    bool m_roomTypeHasBeenSet;
 
                 };
             }

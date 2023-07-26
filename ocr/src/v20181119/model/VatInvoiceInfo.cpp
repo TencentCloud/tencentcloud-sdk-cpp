@@ -62,7 +62,11 @@ VatInvoiceInfo::VatInvoiceInfo() :
     m_receiptorHasBeenSet(false),
     m_electronicFullMarkHasBeenSet(false),
     m_electronicFullNumberHasBeenSet(false),
-    m_formNameHasBeenSet(false)
+    m_formNameHasBeenSet(false),
+    m_blockChainMarkHasBeenSet(false),
+    m_acquisitionMarkHasBeenSet(false),
+    m_subTotalHasBeenSet(false),
+    m_subTaxHasBeenSet(false)
 {
 }
 
@@ -501,6 +505,46 @@ CoreInternalOutcome VatInvoiceInfo::Deserialize(const rapidjson::Value &value)
         m_formNameHasBeenSet = true;
     }
 
+    if (value.HasMember("BlockChainMark") && !value["BlockChainMark"].IsNull())
+    {
+        if (!value["BlockChainMark"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.BlockChainMark` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockChainMark = value["BlockChainMark"].GetInt64();
+        m_blockChainMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("AcquisitionMark") && !value["AcquisitionMark"].IsNull())
+    {
+        if (!value["AcquisitionMark"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.AcquisitionMark` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_acquisitionMark = value["AcquisitionMark"].GetInt64();
+        m_acquisitionMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubTotal") && !value["SubTotal"].IsNull())
+    {
+        if (!value["SubTotal"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.SubTotal` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTotal = string(value["SubTotal"].GetString());
+        m_subTotalHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubTax") && !value["SubTax"].IsNull())
+    {
+        if (!value["SubTax"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceInfo.SubTax` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTax = string(value["SubTax"].GetString());
+        m_subTaxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -849,6 +893,38 @@ void VatInvoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FormName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_formName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blockChainMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockChainMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockChainMark, allocator);
+    }
+
+    if (m_acquisitionMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AcquisitionMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_acquisitionMark, allocator);
+    }
+
+    if (m_subTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTotal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTax.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1524,5 +1600,69 @@ void VatInvoiceInfo::SetFormName(const string& _formName)
 bool VatInvoiceInfo::FormNameHasBeenSet() const
 {
     return m_formNameHasBeenSet;
+}
+
+int64_t VatInvoiceInfo::GetBlockChainMark() const
+{
+    return m_blockChainMark;
+}
+
+void VatInvoiceInfo::SetBlockChainMark(const int64_t& _blockChainMark)
+{
+    m_blockChainMark = _blockChainMark;
+    m_blockChainMarkHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::BlockChainMarkHasBeenSet() const
+{
+    return m_blockChainMarkHasBeenSet;
+}
+
+int64_t VatInvoiceInfo::GetAcquisitionMark() const
+{
+    return m_acquisitionMark;
+}
+
+void VatInvoiceInfo::SetAcquisitionMark(const int64_t& _acquisitionMark)
+{
+    m_acquisitionMark = _acquisitionMark;
+    m_acquisitionMarkHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::AcquisitionMarkHasBeenSet() const
+{
+    return m_acquisitionMarkHasBeenSet;
+}
+
+string VatInvoiceInfo::GetSubTotal() const
+{
+    return m_subTotal;
+}
+
+void VatInvoiceInfo::SetSubTotal(const string& _subTotal)
+{
+    m_subTotal = _subTotal;
+    m_subTotalHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::SubTotalHasBeenSet() const
+{
+    return m_subTotalHasBeenSet;
+}
+
+string VatInvoiceInfo::GetSubTax() const
+{
+    return m_subTax;
+}
+
+void VatInvoiceInfo::SetSubTax(const string& _subTax)
+{
+    m_subTax = _subTax;
+    m_subTaxHasBeenSet = true;
+}
+
+bool VatInvoiceInfo::SubTaxHasBeenSet() const
+{
+    return m_subTaxHasBeenSet;
 }
 

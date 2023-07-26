@@ -929,6 +929,90 @@ namespace TencentCloud
                      */
                     bool FormNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否有区块链标记（0：没有，1：有）	
+                     * @return BlockChainMark 是否有区块链标记（0：没有，1：有）	
+                     * 
+                     */
+                    int64_t GetBlockChainMark() const;
+
+                    /**
+                     * 设置是否有区块链标记（0：没有，1：有）	
+                     * @param _blockChainMark 是否有区块链标记（0：没有，1：有）	
+                     * 
+                     */
+                    void SetBlockChainMark(const int64_t& _blockChainMark);
+
+                    /**
+                     * 判断参数 BlockChainMark 是否已赋值
+                     * @return BlockChainMark 是否已赋值
+                     * 
+                     */
+                    bool BlockChainMarkHasBeenSet() const;
+
+                    /**
+                     * 获取是否有收购标记（0：没有，1：有）	
+                     * @return AcquisitionMark 是否有收购标记（0：没有，1：有）	
+                     * 
+                     */
+                    int64_t GetAcquisitionMark() const;
+
+                    /**
+                     * 设置是否有收购标记（0：没有，1：有）	
+                     * @param _acquisitionMark 是否有收购标记（0：没有，1：有）	
+                     * 
+                     */
+                    void SetAcquisitionMark(const int64_t& _acquisitionMark);
+
+                    /**
+                     * 判断参数 AcquisitionMark 是否已赋值
+                     * @return AcquisitionMark 是否已赋值
+                     * 
+                     */
+                    bool AcquisitionMarkHasBeenSet() const;
+
+                    /**
+                     * 获取小计金额
+                     * @return SubTotal 小计金额
+                     * 
+                     */
+                    std::string GetSubTotal() const;
+
+                    /**
+                     * 设置小计金额
+                     * @param _subTotal 小计金额
+                     * 
+                     */
+                    void SetSubTotal(const std::string& _subTotal);
+
+                    /**
+                     * 判断参数 SubTotal 是否已赋值
+                     * @return SubTotal 是否已赋值
+                     * 
+                     */
+                    bool SubTotalHasBeenSet() const;
+
+                    /**
+                     * 获取小计税额
+                     * @return SubTax 小计税额
+                     * 
+                     */
+                    std::string GetSubTax() const;
+
+                    /**
+                     * 设置小计税额
+                     * @param _subTax 小计税额
+                     * 
+                     */
+                    void SetSubTax(const std::string& _subTax);
+
+                    /**
+                     * 判断参数 SubTax 是否已赋值
+                     * @return SubTax 是否已赋值
+                     * 
+                     */
+                    bool SubTaxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1182,6 +1266,30 @@ namespace TencentCloud
                      */
                     std::string m_formName;
                     bool m_formNameHasBeenSet;
+
+                    /**
+                     * 是否有区块链标记（0：没有，1：有）	
+                     */
+                    int64_t m_blockChainMark;
+                    bool m_blockChainMarkHasBeenSet;
+
+                    /**
+                     * 是否有收购标记（0：没有，1：有）	
+                     */
+                    int64_t m_acquisitionMark;
+                    bool m_acquisitionMarkHasBeenSet;
+
+                    /**
+                     * 小计金额
+                     */
+                    std::string m_subTotal;
+                    bool m_subTotalHasBeenSet;
+
+                    /**
+                     * 小计税额
+                     */
+                    std::string m_subTax;
+                    bool m_subTaxHasBeenSet;
 
                 };
             }

@@ -40,7 +40,8 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_enableDirectControlHasBeenSet(false),
     m_interactionModeHasBeenSet(false),
     m_videoOrientationHasBeenSet(false),
-    m_isGradingRequiredPostClassHasBeenSet(false)
+    m_isGradingRequiredPostClassHasBeenSet(false),
+    m_roomTypeHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,14 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "IsGradingRequiredPostClass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isGradingRequiredPostClass, allocator);
+    }
+
+    if (m_roomTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_roomType, allocator);
     }
 
 
@@ -494,6 +503,22 @@ void ModifyRoomRequest::SetIsGradingRequiredPostClass(const uint64_t& _isGrading
 bool ModifyRoomRequest::IsGradingRequiredPostClassHasBeenSet() const
 {
     return m_isGradingRequiredPostClassHasBeenSet;
+}
+
+uint64_t ModifyRoomRequest::GetRoomType() const
+{
+    return m_roomType;
+}
+
+void ModifyRoomRequest::SetRoomType(const uint64_t& _roomType)
+{
+    m_roomType = _roomType;
+    m_roomTypeHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::RoomTypeHasBeenSet() const
+{
+    return m_roomTypeHasBeenSet;
 }
 
 

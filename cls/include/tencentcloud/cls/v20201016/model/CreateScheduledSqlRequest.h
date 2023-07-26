@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EnableFlagHasBeenSet() const;
 
                     /**
-                     * 获取加工任务目的topic_id以及别名
-                     * @return DstResource 加工任务目的topic_id以及别名
+                     * 获取定时SQL分析目标日志主题
+                     * @return DstResource 定时SQL分析目标日志主题
                      * 
                      */
                     ScheduledSqlResouceInfo GetDstResource() const;
 
                     /**
-                     * 设置加工任务目的topic_id以及别名
-                     * @param _dstResource 加工任务目的topic_id以及别名
+                     * 设置定时SQL分析目标日志主题
+                     * @param _dstResource 定时SQL分析目标日志主题
                      * 
                      */
                     void SetDstResource(const ScheduledSqlResouceInfo& _dstResource);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DstResourceHasBeenSet() const;
 
                     /**
-                     * 获取ScheduledSQL语句
-                     * @return ScheduledSqlContent ScheduledSQL语句
+                     * 获取查询语句
+                     * @return ScheduledSqlContent 查询语句
                      * 
                      */
                     std::string GetScheduledSqlContent() const;
 
                     /**
-                     * 设置ScheduledSQL语句
-                     * @param _scheduledSqlContent ScheduledSQL语句
+                     * 设置查询语句
+                     * @param _scheduledSqlContent 查询语句
                      * 
                      */
                     void SetScheduledSqlContent(const std::string& _scheduledSqlContent);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ProcessPeriodHasBeenSet() const;
 
                     /**
-                     * 获取调度时间窗口
-                     * @return ProcessTimeWindow 调度时间窗口
+                     * 获取单次查询的时间窗口
+                     * @return ProcessTimeWindow 单次查询的时间窗口
                      * 
                      */
                     std::string GetProcessTimeWindow() const;
 
                     /**
-                     * 设置调度时间窗口
-                     * @param _processTimeWindow 调度时间窗口
+                     * 设置单次查询的时间窗口
+                     * @param _processTimeWindow 单次查询的时间窗口
                      * 
                      */
                     void SetProcessTimeWindow(const std::string& _processTimeWindow);
@@ -337,13 +337,13 @@ namespace TencentCloud
                     bool m_enableFlagHasBeenSet;
 
                     /**
-                     * 加工任务目的topic_id以及别名
+                     * 定时SQL分析目标日志主题
                      */
                     ScheduledSqlResouceInfo m_dstResource;
                     bool m_dstResourceHasBeenSet;
 
                     /**
-                     * ScheduledSQL语句
+                     * 查询语句
                      */
                     std::string m_scheduledSqlContent;
                     bool m_scheduledSqlContentHasBeenSet;
@@ -367,7 +367,7 @@ namespace TencentCloud
                     bool m_processPeriodHasBeenSet;
 
                     /**
-                     * 调度时间窗口
+                     * 单次查询的时间窗口
                      */
                     std::string m_processTimeWindow;
                     bool m_processTimeWindowHasBeenSet;

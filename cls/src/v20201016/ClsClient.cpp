@@ -1416,6 +1416,49 @@ ClsClient::DeleteMachineGroupInfoOutcomeCallable ClsClient::DeleteMachineGroupIn
     return task->get_future();
 }
 
+ClsClient::DeleteScheduledSqlOutcome ClsClient::DeleteScheduledSql(const DeleteScheduledSqlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScheduledSql");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScheduledSqlResponse rsp = DeleteScheduledSqlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScheduledSqlOutcome(rsp);
+        else
+            return DeleteScheduledSqlOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScheduledSqlOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteScheduledSqlAsync(const DeleteScheduledSqlRequest& request, const DeleteScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScheduledSql(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteScheduledSqlOutcomeCallable ClsClient::DeleteScheduledSqlCallable(const DeleteScheduledSqlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScheduledSqlOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScheduledSql(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteShipperOutcome ClsClient::DeleteShipper(const DeleteShipperRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteShipper");
@@ -2319,6 +2362,49 @@ ClsClient::DescribePartitionsOutcomeCallable ClsClient::DescribePartitionsCallab
     return task->get_future();
 }
 
+ClsClient::DescribeScheduledSqlInfoOutcome ClsClient::DescribeScheduledSqlInfo(const DescribeScheduledSqlInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScheduledSqlInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScheduledSqlInfoResponse rsp = DescribeScheduledSqlInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScheduledSqlInfoOutcome(rsp);
+        else
+            return DescribeScheduledSqlInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScheduledSqlInfoOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeScheduledSqlInfoAsync(const DescribeScheduledSqlInfoRequest& request, const DescribeScheduledSqlInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScheduledSqlInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeScheduledSqlInfoOutcomeCallable ClsClient::DescribeScheduledSqlInfoCallable(const DescribeScheduledSqlInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScheduledSqlInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScheduledSqlInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeShipperTasksOutcome ClsClient::DescribeShipperTasks(const DescribeShipperTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeShipperTasks");
@@ -3000,6 +3086,49 @@ ClsClient::ModifyMachineGroupOutcomeCallable ClsClient::ModifyMachineGroupCallab
         [this, request]()
         {
             return this->ModifyMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyScheduledSqlOutcome ClsClient::ModifyScheduledSql(const ModifyScheduledSqlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyScheduledSql");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyScheduledSqlResponse rsp = ModifyScheduledSqlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyScheduledSqlOutcome(rsp);
+        else
+            return ModifyScheduledSqlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyScheduledSqlOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyScheduledSqlAsync(const ModifyScheduledSqlRequest& request, const ModifyScheduledSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyScheduledSql(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyScheduledSqlOutcomeCallable ClsClient::ModifyScheduledSqlCallable(const ModifyScheduledSqlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyScheduledSqlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyScheduledSql(request);
         }
     );
 

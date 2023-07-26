@@ -108,15 +108,36 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章
-                     * @return SealType 电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章
+                     * 获取本接口支持上传图片印章及系统直接生成印章；如果要使用系统生成印章，此值传：SealGenerateSourceSystem；如果要使用图片上传请传字段 Image
+                     * @return GenerateSource 本接口支持上传图片印章及系统直接生成印章；如果要使用系统生成印章，此值传：SealGenerateSourceSystem；如果要使用图片上传请传字段 Image
+                     * 
+                     */
+                    std::string GetGenerateSource() const;
+
+                    /**
+                     * 设置本接口支持上传图片印章及系统直接生成印章；如果要使用系统生成印章，此值传：SealGenerateSourceSystem；如果要使用图片上传请传字段 Image
+                     * @param _generateSource 本接口支持上传图片印章及系统直接生成印章；如果要使用系统生成印章，此值传：SealGenerateSourceSystem；如果要使用图片上传请传字段 Image
+                     * 
+                     */
+                    void SetGenerateSource(const std::string& _generateSource);
+
+                    /**
+                     * 判断参数 GenerateSource 是否已赋值
+                     * @return GenerateSource 是否已赋值
+                     * 
+                     */
+                    bool GenerateSourceHasBeenSet() const;
+
+                    /**
+                     * 获取电子印章类型，OFFICIAL-公章,CONTRACT-合同专用章
+                     * @return SealType 电子印章类型，OFFICIAL-公章,CONTRACT-合同专用章
                      * 
                      */
                     std::string GetSealType() const;
 
                     /**
-                     * 设置电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章
-                     * @param _sealType 电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章
+                     * 设置电子印章类型，OFFICIAL-公章,CONTRACT-合同专用章
+                     * @param _sealType 电子印章类型，OFFICIAL-公章,CONTRACT-合同专用章
                      * 
                      */
                     void SetSealType(const std::string& _sealType);
@@ -254,15 +275,15 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取电子印章生成时的横向文字。
-                     * @return SealHorizontalText 电子印章生成时的横向文字。
+                     * 获取暂时不支持横向文字设置
+                     * @return SealHorizontalText 暂时不支持横向文字设置
                      * 
                      */
                     std::string GetSealHorizontalText() const;
 
                     /**
-                     * 设置电子印章生成时的横向文字。
-                     * @param _sealHorizontalText 电子印章生成时的横向文字。
+                     * 设置暂时不支持横向文字设置
+                     * @param _sealHorizontalText 暂时不支持横向文字设置
                      * 
                      */
                     void SetSealHorizontalText(const std::string& _sealHorizontalText);
@@ -275,15 +296,15 @@ namespace TencentCloud
                     bool SealHorizontalTextHasBeenSet() const;
 
                     /**
-                     * 获取电子印章下弦文字
-                     * @return SealChordText 电子印章下弦文字
+                     * 获取暂时不支持下弦文字设置
+                     * @return SealChordText 暂时不支持下弦文字设置
                      * 
                      */
                     std::string GetSealChordText() const;
 
                     /**
-                     * 设置电子印章下弦文字
-                     * @param _sealChordText 电子印章下弦文字
+                     * 设置暂时不支持下弦文字设置
+                     * @param _sealChordText 暂时不支持下弦文字设置
                      * 
                      */
                     void SetSealChordText(const std::string& _sealChordText);
@@ -296,19 +317,15 @@ namespace TencentCloud
                     bool SealChordTextHasBeenSet() const;
 
                     /**
-                     * 获取电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星
-系统生成的印章只支持STAR
-                     * @return SealCentralType 电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星
-系统生成的印章只支持STAR
+                     * 获取系统生成的印章只支持STAR
+                     * @return SealCentralType 系统生成的印章只支持STAR
                      * 
                      */
                     std::string GetSealCentralType() const;
 
                     /**
-                     * 设置电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星
-系统生成的印章只支持STAR
-                     * @param _sealCentralType 电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星
-系统生成的印章只支持STAR
+                     * 设置系统生成的印章只支持STAR
+                     * @param _sealCentralType 系统生成的印章只支持STAR
                      * 
                      */
                     void SetSealCentralType(const std::string& _sealCentralType);
@@ -345,35 +362,6 @@ namespace TencentCloud
                      */
                     bool FileTokenHasBeenSet() const;
 
-                    /**
-                     * 获取印章生成来源方式
-取值：
-SealGenerateSourceSystem 表示系统生成企业印章
-                     * @return GenerateSource 印章生成来源方式
-取值：
-SealGenerateSourceSystem 表示系统生成企业印章
-                     * 
-                     */
-                    std::string GetGenerateSource() const;
-
-                    /**
-                     * 设置印章生成来源方式
-取值：
-SealGenerateSourceSystem 表示系统生成企业印章
-                     * @param _generateSource 印章生成来源方式
-取值：
-SealGenerateSourceSystem 表示系统生成企业印章
-                     * 
-                     */
-                    void SetGenerateSource(const std::string& _generateSource);
-
-                    /**
-                     * 判断参数 GenerateSource 是否已赋值
-                     * @return GenerateSource 是否已赋值
-                     * 
-                     */
-                    bool GenerateSourceHasBeenSet() const;
-
                 private:
 
                     /**
@@ -395,7 +383,13 @@ SealGenerateSourceSystem 表示系统生成企业印章
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章
+                     * 本接口支持上传图片印章及系统直接生成印章；如果要使用系统生成印章，此值传：SealGenerateSourceSystem；如果要使用图片上传请传字段 Image
+                     */
+                    std::string m_generateSource;
+                    bool m_generateSourceHasBeenSet;
+
+                    /**
+                     * 电子印章类型，OFFICIAL-公章,CONTRACT-合同专用章
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;
@@ -436,20 +430,19 @@ SealGenerateSourceSystem 表示系统生成企业印章
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 电子印章生成时的横向文字。
+                     * 暂时不支持横向文字设置
                      */
                     std::string m_sealHorizontalText;
                     bool m_sealHorizontalTextHasBeenSet;
 
                     /**
-                     * 电子印章下弦文字
+                     * 暂时不支持下弦文字设置
                      */
                     std::string m_sealChordText;
                     bool m_sealChordTextHasBeenSet;
 
                     /**
-                     * 电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星
-系统生成的印章只支持STAR
+                     * 系统生成的印章只支持STAR
                      */
                     std::string m_sealCentralType;
                     bool m_sealCentralTypeHasBeenSet;
@@ -460,14 +453,6 @@ SealGenerateSourceSystem 表示系统生成企业印章
                      */
                     std::string m_fileToken;
                     bool m_fileTokenHasBeenSet;
-
-                    /**
-                     * 印章生成来源方式
-取值：
-SealGenerateSourceSystem 表示系统生成企业印章
-                     */
-                    std::string m_generateSource;
-                    bool m_generateSourceHasBeenSet;
 
                 };
             }

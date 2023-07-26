@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ConcernTypeHasBeenSet() const;
 
                     /**
-                     * 获取实体类型
+                     * 获取实体类型 1: 非云上IP，2: 云上IP，3: 域名，4: IP，5: 文件，6: 进程
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EntityType 实体类型
+                     * @return EntityType 实体类型 1: 非云上IP，2: 云上IP，3: 域名，4: IP，5: 文件，6: 进程
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEntityType() const;
 
                     /**
-                     * 设置实体类型
+                     * 设置实体类型 1: 非云上IP，2: 云上IP，3: 域名，4: IP，5: 文件，6: 进程
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _entityType 实体类型
+                     * @param _entityType 实体类型 1: 非云上IP，2: 云上IP，3: 域名，4: IP，5: 文件，6: 进程
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -931,7 +931,7 @@ namespace TencentCloud
                     bool m_concernTypeHasBeenSet;
 
                     /**
-                     * 实体类型
+                     * 实体类型 1: 非云上IP，2: 云上IP，3: 域名，4: IP，5: 文件，6: 进程
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_entityType;

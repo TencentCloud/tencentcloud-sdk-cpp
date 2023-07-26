@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取热词
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Word 热词
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置热词
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _word 热词
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWord(const std::string& _word);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 热词
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_word;
                     bool m_wordHasBeenSet;
 
                     /**
                      * 权重
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

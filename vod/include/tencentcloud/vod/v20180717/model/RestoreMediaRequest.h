@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件唯一标识列表。
-                     * @return FileIds 媒体文件唯一标识列表。
+                     * 获取媒体文件唯一标识列表，最大长度：100。
+                     * @return FileIds 媒体文件唯一标识列表，最大长度：100。
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置媒体文件唯一标识列表。
-                     * @param _fileIds 媒体文件唯一标识列表。
+                     * 设置媒体文件唯一标识列表，最大长度：100。
+                     * @param _fileIds 媒体文件唯一标识列表，最大长度：100。
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取解冻出的临时媒体文件的可访问持续时长，单位为“天”。
-                     * @return RestoreDay 解冻出的临时媒体文件的可访问持续时长，单位为“天”。
+                     * 获取解冻出的临时媒体文件的可访问持续时长，必须大于0，单位为“天”。
+                     * @return RestoreDay 解冻出的临时媒体文件的可访问持续时长，必须大于0，单位为“天”。
                      * 
                      */
                     uint64_t GetRestoreDay() const;
 
                     /**
-                     * 设置解冻出的临时媒体文件的可访问持续时长，单位为“天”。
-                     * @param _restoreDay 解冻出的临时媒体文件的可访问持续时长，单位为“天”。
+                     * 设置解冻出的临时媒体文件的可访问持续时长，必须大于0，单位为“天”。
+                     * @param _restoreDay 解冻出的临时媒体文件的可访问持续时长，必须大于0，单位为“天”。
                      * 
                      */
                     void SetRestoreDay(const uint64_t& _restoreDay);
@@ -153,13 +153,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件唯一标识列表。
+                     * 媒体文件唯一标识列表，最大长度：100。
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * 解冻出的临时媒体文件的可访问持续时长，单位为“天”。
+                     * 解冻出的临时媒体文件的可访问持续时长，必须大于0，单位为“天”。
                      */
                     uint64_t m_restoreDay;
                     bool m_restoreDayHasBeenSet;

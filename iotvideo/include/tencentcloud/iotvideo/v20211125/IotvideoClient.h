@@ -59,6 +59,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateTaskFileUrlRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CreateTaskFileUrlResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DeleteCloudStorageEventRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DeleteCloudStorageEventResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DeleteDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DeleteFirmwareRequest.h>
@@ -123,6 +125,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceEventHistoryRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceEventHistoryResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeDevicePackagesRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeDevicePackagesResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceStatusLogRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceStatusLogResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDevicesRequest.h>
@@ -281,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTaskFileUrlResponse> CreateTaskFileUrlOutcome;
                 typedef std::future<CreateTaskFileUrlOutcome> CreateTaskFileUrlOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateTaskFileUrlRequest&, CreateTaskFileUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFileUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudStorageEventResponse> DeleteCloudStorageEventOutcome;
+                typedef std::future<DeleteCloudStorageEventOutcome> DeleteCloudStorageEventOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DeleteCloudStorageEventRequest&, DeleteCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudStorageEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -377,6 +384,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceEventHistoryResponse> DescribeDeviceEventHistoryOutcome;
                 typedef std::future<DescribeDeviceEventHistoryOutcome> DescribeDeviceEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceEventHistoryRequest&, DescribeDeviceEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceEventHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDevicePackagesResponse> DescribeDevicePackagesOutcome;
+                typedef std::future<DescribeDevicePackagesOutcome> DescribeDevicePackagesOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeDevicePackagesRequest&, DescribeDevicePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicePackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceStatusLogResponse> DescribeDeviceStatusLogOutcome;
                 typedef std::future<DescribeDeviceStatusLogOutcome> DescribeDeviceStatusLogOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceStatusLogRequest&, DescribeDeviceStatusLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceStatusLogAsyncHandler;
@@ -678,6 +688,15 @@ namespace TencentCloud
                 CreateTaskFileUrlOutcomeCallable CreateTaskFileUrlCallable(const Model::CreateTaskFileUrlRequest& request);
 
                 /**
+                 *删除云存事件
+                 * @param req DeleteCloudStorageEventRequest
+                 * @return DeleteCloudStorageEventOutcome
+                 */
+                DeleteCloudStorageEventOutcome DeleteCloudStorageEvent(const Model::DeleteCloudStorageEventRequest &request);
+                void DeleteCloudStorageEventAsync(const Model::DeleteCloudStorageEventRequest& request, const DeleteCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudStorageEventOutcomeCallable DeleteCloudStorageEventCallable(const Model::DeleteCloudStorageEventRequest& request);
+
+                /**
                  *删除设备
                  * @param req DeleteDeviceRequest
                  * @return DeleteDeviceOutcome
@@ -964,6 +983,15 @@ namespace TencentCloud
                 DescribeDeviceEventHistoryOutcome DescribeDeviceEventHistory(const Model::DescribeDeviceEventHistoryRequest &request);
                 void DescribeDeviceEventHistoryAsync(const Model::DescribeDeviceEventHistoryRequest& request, const DescribeDeviceEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceEventHistoryOutcomeCallable DescribeDeviceEventHistoryCallable(const Model::DescribeDeviceEventHistoryRequest& request);
+
+                /**
+                 *根据设备信息拉取有效套餐列表
+                 * @param req DescribeDevicePackagesRequest
+                 * @return DescribeDevicePackagesOutcome
+                 */
+                DescribeDevicePackagesOutcome DescribeDevicePackages(const Model::DescribeDevicePackagesRequest &request);
+                void DescribeDevicePackagesAsync(const Model::DescribeDevicePackagesRequest& request, const DescribeDevicePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDevicePackagesOutcomeCallable DescribeDevicePackagesCallable(const Model::DescribeDevicePackagesRequest& request);
 
                 /**
                  *获取设备上下线日志

@@ -1760,6 +1760,49 @@ AntiddosClient::DescribeBizHttpStatusOutcomeCallable AntiddosClient::DescribeBiz
     return task->get_future();
 }
 
+AntiddosClient::DescribeBizMonitorTrendOutcome AntiddosClient::DescribeBizMonitorTrend(const DescribeBizMonitorTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBizMonitorTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBizMonitorTrendResponse rsp = DescribeBizMonitorTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBizMonitorTrendOutcome(rsp);
+        else
+            return DescribeBizMonitorTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBizMonitorTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeBizMonitorTrendAsync(const DescribeBizMonitorTrendRequest& request, const DescribeBizMonitorTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBizMonitorTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeBizMonitorTrendOutcomeCallable AntiddosClient::DescribeBizMonitorTrendCallable(const DescribeBizMonitorTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBizMonitorTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBizMonitorTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeBizTrendOutcome AntiddosClient::DescribeBizTrend(const DescribeBizTrendRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBizTrend");

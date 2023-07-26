@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool VehicleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取序号
+                     * @return SerialNumber 序号
+                     * 
+                     */
+                    std::string GetSerialNumber() const;
+
+                    /**
+                     * 设置序号
+                     * @param _serialNumber 序号
+                     * 
+                     */
+                    void SetSerialNumber(const std::string& _serialNumber);
+
+                    /**
+                     * 判断参数 SerialNumber 是否已赋值
+                     * @return SerialNumber 是否已赋值
+                     * 
+                     */
+                    bool SerialNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_vehicleType;
                     bool m_vehicleTypeHasBeenSet;
+
+                    /**
+                     * 序号
+                     */
+                    std::string m_serialNumber;
+                    bool m_serialNumberHasBeenSet;
 
                 };
             }

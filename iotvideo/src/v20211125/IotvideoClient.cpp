@@ -814,6 +814,49 @@ IotvideoClient::CreateTaskFileUrlOutcomeCallable IotvideoClient::CreateTaskFileU
     return task->get_future();
 }
 
+IotvideoClient::DeleteCloudStorageEventOutcome IotvideoClient::DeleteCloudStorageEvent(const DeleteCloudStorageEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudStorageEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudStorageEventResponse rsp = DeleteCloudStorageEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudStorageEventOutcome(rsp);
+        else
+            return DeleteCloudStorageEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudStorageEventOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DeleteCloudStorageEventAsync(const DeleteCloudStorageEventRequest& request, const DeleteCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudStorageEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DeleteCloudStorageEventOutcomeCallable IotvideoClient::DeleteCloudStorageEventCallable(const DeleteCloudStorageEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudStorageEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudStorageEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DeleteDeviceOutcome IotvideoClient::DeleteDevice(const DeleteDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDevice");
@@ -2183,6 +2226,49 @@ IotvideoClient::DescribeDeviceEventHistoryOutcomeCallable IotvideoClient::Descri
         [this, request]()
         {
             return this->DescribeDeviceEventHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeDevicePackagesOutcome IotvideoClient::DescribeDevicePackages(const DescribeDevicePackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDevicePackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDevicePackagesResponse rsp = DescribeDevicePackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDevicePackagesOutcome(rsp);
+        else
+            return DescribeDevicePackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDevicePackagesOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeDevicePackagesAsync(const DescribeDevicePackagesRequest& request, const DescribeDevicePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDevicePackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeDevicePackagesOutcomeCallable IotvideoClient::DescribeDevicePackagesCallable(const DescribeDevicePackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDevicePackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDevicePackages(request);
         }
     );
 

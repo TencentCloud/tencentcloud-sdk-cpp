@@ -32,7 +32,8 @@ VatInvoiceItemInfo::VatInvoiceItemInfo() :
     m_dateStartHasBeenSet(false),
     m_dateEndHasBeenSet(false),
     m_licensePlateHasBeenSet(false),
-    m_vehicleTypeHasBeenSet(false)
+    m_vehicleTypeHasBeenSet(false),
+    m_serialNumberHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome VatInvoiceItemInfo::Deserialize(const rapidjson::Value &valu
         m_vehicleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SerialNumber") && !value["SerialNumber"].IsNull())
+    {
+        if (!value["SerialNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItemInfo.SerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialNumber = string(value["SerialNumber"].GetString());
+        m_serialNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void VatInvoiceItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "VehicleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vehicleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serialNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serialNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void VatInvoiceItemInfo::SetVehicleType(const string& _vehicleType)
 bool VatInvoiceItemInfo::VehicleTypeHasBeenSet() const
 {
     return m_vehicleTypeHasBeenSet;
+}
+
+string VatInvoiceItemInfo::GetSerialNumber() const
+{
+    return m_serialNumber;
+}
+
+void VatInvoiceItemInfo::SetSerialNumber(const string& _serialNumber)
+{
+    m_serialNumber = _serialNumber;
+    m_serialNumberHasBeenSet = true;
+}
+
+bool VatInvoiceItemInfo::SerialNumberHasBeenSet() const
+{
+    return m_serialNumberHasBeenSet;
 }
 

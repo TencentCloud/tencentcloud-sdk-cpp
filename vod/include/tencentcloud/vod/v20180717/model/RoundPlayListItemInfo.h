@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 加权轮播媒体文件信息
+                * 轮播媒体文件信息
                 */
                 class RoundPlayListItemInfo : public AbstractModel
                 {

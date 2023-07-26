@@ -44,7 +44,8 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_nonTaxIncomeElectronicBillHasBeenSet(false),
     m_trainTicketHasBeenSet(false),
     m_medicalOutpatientInvoiceHasBeenSet(false),
-    m_medicalHospitalizedInvoiceHasBeenSet(false)
+    m_medicalHospitalizedInvoiceHasBeenSet(false),
+    m_vatSalesListHasBeenSet(false)
 {
 }
 
@@ -461,6 +462,23 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_medicalHospitalizedInvoiceHasBeenSet = true;
     }
 
+    if (value.HasMember("VatSalesList") && !value["VatSalesList"].IsNull())
+    {
+        if (!value["VatSalesList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.VatSalesList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vatSalesList.Deserialize(value["VatSalesList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vatSalesListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -682,6 +700,15 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_medicalHospitalizedInvoice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vatSalesListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VatSalesList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vatSalesList.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1069,5 +1096,21 @@ void SingleInvoiceItem::SetMedicalHospitalizedInvoice(const MedicalInvoice& _med
 bool SingleInvoiceItem::MedicalHospitalizedInvoiceHasBeenSet() const
 {
     return m_medicalHospitalizedInvoiceHasBeenSet;
+}
+
+VatInvoiceInfo SingleInvoiceItem::GetVatSalesList() const
+{
+    return m_vatSalesList;
+}
+
+void SingleInvoiceItem::SetVatSalesList(const VatInvoiceInfo& _vatSalesList)
+{
+    m_vatSalesList = _vatSalesList;
+    m_vatSalesListHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::VatSalesListHasBeenSet() const
+{
+    return m_vatSalesListHasBeenSet;
 }
 

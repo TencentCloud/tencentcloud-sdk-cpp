@@ -91,6 +91,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordExistExceptDefaultNSRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordExistExceptDefaultNSResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordFilterListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordFilterListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordLineListRequest.h>
@@ -273,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordExistExceptDefaultNSResponse> DescribeRecordExistExceptDefaultNSOutcome;
                 typedef std::future<DescribeRecordExistExceptDefaultNSOutcome> DescribeRecordExistExceptDefaultNSOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordExistExceptDefaultNSRequest&, DescribeRecordExistExceptDefaultNSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordExistExceptDefaultNSAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordFilterListResponse> DescribeRecordFilterListOutcome;
+                typedef std::future<DescribeRecordFilterListOutcome> DescribeRecordFilterListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeRecordFilterListRequest&, DescribeRecordFilterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordFilterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordGroupListResponse> DescribeRecordGroupListOutcome;
                 typedef std::future<DescribeRecordGroupListOutcome> DescribeRecordGroupListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordGroupListRequest&, DescribeRecordGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordGroupListAsyncHandler;
@@ -680,6 +685,15 @@ namespace TencentCloud
                 DescribeRecordExistExceptDefaultNSOutcome DescribeRecordExistExceptDefaultNS(const Model::DescribeRecordExistExceptDefaultNSRequest &request);
                 void DescribeRecordExistExceptDefaultNSAsync(const Model::DescribeRecordExistExceptDefaultNSRequest& request, const DescribeRecordExistExceptDefaultNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordExistExceptDefaultNSOutcomeCallable DescribeRecordExistExceptDefaultNSCallable(const Model::DescribeRecordExistExceptDefaultNSRequest& request);
+
+                /**
+                 *获取某个域名下的解析记录列表
+                 * @param req DescribeRecordFilterListRequest
+                 * @return DescribeRecordFilterListOutcome
+                 */
+                DescribeRecordFilterListOutcome DescribeRecordFilterList(const Model::DescribeRecordFilterListRequest &request);
+                void DescribeRecordFilterListAsync(const Model::DescribeRecordFilterListRequest& request, const DescribeRecordFilterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordFilterListOutcomeCallable DescribeRecordFilterListCallable(const Model::DescribeRecordFilterListRequest& request);
 
                 /**
                  *查询解析记录分组列表

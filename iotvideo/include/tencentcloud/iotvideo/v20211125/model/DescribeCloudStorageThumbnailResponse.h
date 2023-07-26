@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool ThumbnailURLHasBeenSet() const;
 
+                    /**
+                     * 获取缩略图访问地址的过期时间
+                     * @return ExpireTime 缩略图访问地址的过期时间
+                     * 
+                     */
+                    int64_t GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_thumbnailURL;
                     bool m_thumbnailURLHasBeenSet;
+
+                    /**
+                     * 缩略图访问地址的过期时间
+                     */
+                    int64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
 
                 };
             }

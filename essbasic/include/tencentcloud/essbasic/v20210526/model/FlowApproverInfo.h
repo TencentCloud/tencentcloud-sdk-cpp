@@ -347,15 +347,15 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件
-                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
                      * 
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件
-                     * @param _signComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
+                     * @param _signComponents 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
                      * 
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
@@ -368,12 +368,12 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+                     * 获取签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
 	HANDWRITE – 手写签名
 	OCR_ESIGN -- AI智能识别手写签名
 	ESIGN -- 个人印章类型
 	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-                     * @return ComponentLimitType 	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+                     * @return ComponentLimitType 签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
 	HANDWRITE – 手写签名
 	OCR_ESIGN -- AI智能识别手写签名
 	ESIGN -- 个人印章类型
@@ -383,12 +383,12 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     std::vector<std::string> GetComponentLimitType() const;
 
                     /**
-                     * 设置	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+                     * 设置签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
 	HANDWRITE – 手写签名
 	OCR_ESIGN -- AI智能识别手写签名
 	ESIGN -- 个人印章类型
 	SYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）
-                     * @param _componentLimitType 	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+                     * @param _componentLimitType 签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
 	HANDWRITE – 手写签名
 	OCR_ESIGN -- AI智能识别手写签名
 	ESIGN -- 个人印章类型
@@ -676,13 +676,13 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * 使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 	签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
+                     * 签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式
 	HANDWRITE – 手写签名
 	OCR_ESIGN -- AI智能识别手写签名
 	ESIGN -- 个人印章类型

@@ -178,6 +178,31 @@ namespace TencentCloud
                     bool VpcsHasBeenSet() const;
 
                     /**
+                     * 获取可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneIds 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneIds 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
+                    /**
                      * 获取虚拟主机数量
                      * @return VirtualHostNumber 虚拟主机数量
                      * 
@@ -393,18 +418,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
                      * 设置实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterStatus 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterStatus(const int64_t& _clusterStatus);
@@ -454,6 +475,13 @@ namespace TencentCloud
                      */
                     std::vector<VpcEndpointInfo> m_vpcs;
                     bool m_vpcsHasBeenSet;
+
+                    /**
+                     * 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                     /**
                      * 虚拟主机数量
@@ -518,7 +546,6 @@ namespace TencentCloud
 
                     /**
                      * 实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;

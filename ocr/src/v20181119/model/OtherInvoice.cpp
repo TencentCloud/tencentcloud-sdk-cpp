@@ -24,7 +24,8 @@ OtherInvoice::OtherInvoice() :
     m_titleHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_otherInvoiceListItemsHasBeenSet(false),
-    m_otherInvoiceTableItemsHasBeenSet(false)
+    m_otherInvoiceTableItemsHasBeenSet(false),
+    m_dateHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome OtherInvoice::Deserialize(const rapidjson::Value &value)
         m_otherInvoiceTableItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("Date") && !value["Date"].IsNull())
+    {
+        if (!value["Date"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OtherInvoice.Date` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_date = string(value["Date"].GetString());
+        m_dateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -144,6 +155,14 @@ void OtherInvoice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Date";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -211,5 +230,21 @@ void OtherInvoice::SetOtherInvoiceTableItems(const vector<OtherInvoiceList>& _ot
 bool OtherInvoice::OtherInvoiceTableItemsHasBeenSet() const
 {
     return m_otherInvoiceTableItemsHasBeenSet;
+}
+
+string OtherInvoice::GetDate() const
+{
+    return m_date;
+}
+
+void OtherInvoice::SetDate(const string& _date)
+{
+    m_date = _date;
+    m_dateHasBeenSet = true;
+}
+
+bool OtherInvoice::DateHasBeenSet() const
+{
+    return m_dateHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Iotvideo::V20211125::Model;
 using namespace std;
 
 DescribeCloudStorageThumbnailResponse::DescribeCloudStorageThumbnailResponse() :
-    m_thumbnailURLHasBeenSet(false)
+    m_thumbnailURLHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DescribeCloudStorageThumbnailResponse::Deserialize(const str
         m_thumbnailURLHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = rsp["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string DescribeCloudStorageThumbnailResponse::ToJsonString() const
         string key = "ThumbnailURL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_thumbnailURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string DescribeCloudStorageThumbnailResponse::GetThumbnailURL() const
 bool DescribeCloudStorageThumbnailResponse::ThumbnailURLHasBeenSet() const
 {
     return m_thumbnailURLHasBeenSet;
+}
+
+int64_t DescribeCloudStorageThumbnailResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool DescribeCloudStorageThumbnailResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 
 

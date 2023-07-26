@@ -1502,6 +1502,49 @@ DnspodClient::DescribeRecordExistExceptDefaultNSOutcomeCallable DnspodClient::De
     return task->get_future();
 }
 
+DnspodClient::DescribeRecordFilterListOutcome DnspodClient::DescribeRecordFilterList(const DescribeRecordFilterListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordFilterList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordFilterListResponse rsp = DescribeRecordFilterListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordFilterListOutcome(rsp);
+        else
+            return DescribeRecordFilterListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordFilterListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeRecordFilterListAsync(const DescribeRecordFilterListRequest& request, const DescribeRecordFilterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordFilterList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeRecordFilterListOutcomeCallable DnspodClient::DescribeRecordFilterListCallable(const DescribeRecordFilterListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordFilterListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordFilterList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeRecordGroupListOutcome DnspodClient::DescribeRecordGroupList(const DescribeRecordGroupListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordGroupList");

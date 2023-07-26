@@ -39,7 +39,9 @@ RoomInfo::RoomInfo() :
     m_groupIdHasBeenSet(false),
     m_enableDirectControlHasBeenSet(false),
     m_interactionModeHasBeenSet(false),
-    m_videoOrientationHasBeenSet(false)
+    m_videoOrientationHasBeenSet(false),
+    m_isGradingRequiredPostClassHasBeenSet(false),
+    m_roomTypeHasBeenSet(false)
 {
 }
 
@@ -241,6 +243,26 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_videoOrientationHasBeenSet = true;
     }
 
+    if (value.HasMember("IsGradingRequiredPostClass") && !value["IsGradingRequiredPostClass"].IsNull())
+    {
+        if (!value["IsGradingRequiredPostClass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.IsGradingRequiredPostClass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isGradingRequiredPostClass = value["IsGradingRequiredPostClass"].GetInt64();
+        m_isGradingRequiredPostClassHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoomType") && !value["RoomType"].IsNull())
+    {
+        if (!value["RoomType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.RoomType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_roomType = value["RoomType"].GetInt64();
+        m_roomTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +425,22 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "VideoOrientation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoOrientation, allocator);
+    }
+
+    if (m_isGradingRequiredPostClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGradingRequiredPostClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isGradingRequiredPostClass, allocator);
+    }
+
+    if (m_roomTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roomType, allocator);
     }
 
 }
@@ -710,5 +748,37 @@ void RoomInfo::SetVideoOrientation(const int64_t& _videoOrientation)
 bool RoomInfo::VideoOrientationHasBeenSet() const
 {
     return m_videoOrientationHasBeenSet;
+}
+
+int64_t RoomInfo::GetIsGradingRequiredPostClass() const
+{
+    return m_isGradingRequiredPostClass;
+}
+
+void RoomInfo::SetIsGradingRequiredPostClass(const int64_t& _isGradingRequiredPostClass)
+{
+    m_isGradingRequiredPostClass = _isGradingRequiredPostClass;
+    m_isGradingRequiredPostClassHasBeenSet = true;
+}
+
+bool RoomInfo::IsGradingRequiredPostClassHasBeenSet() const
+{
+    return m_isGradingRequiredPostClassHasBeenSet;
+}
+
+int64_t RoomInfo::GetRoomType() const
+{
+    return m_roomType;
+}
+
+void RoomInfo::SetRoomType(const int64_t& _roomType)
+{
+    m_roomType = _roomType;
+    m_roomTypeHasBeenSet = true;
+}
+
+bool RoomInfo::RoomTypeHasBeenSet() const
+{
+    return m_roomTypeHasBeenSet;
 }
 

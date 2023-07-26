@@ -40,6 +40,49 @@ MsClient::MsClient(const Credential &credential, const string &region, const Cli
 }
 
 
+MsClient::CancelEncryptTaskOutcome MsClient::CancelEncryptTask(const CancelEncryptTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelEncryptTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelEncryptTaskResponse rsp = CancelEncryptTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelEncryptTaskOutcome(rsp);
+        else
+            return CancelEncryptTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelEncryptTaskOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::CancelEncryptTaskAsync(const CancelEncryptTaskRequest& request, const CancelEncryptTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelEncryptTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::CancelEncryptTaskOutcomeCallable MsClient::CancelEncryptTaskCallable(const CancelEncryptTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelEncryptTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelEncryptTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MsClient::CreateBindInstanceOutcome MsClient::CreateBindInstance(const CreateBindInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBindInstance");
@@ -119,6 +162,92 @@ MsClient::CreateCosSecKeyInstanceOutcomeCallable MsClient::CreateCosSecKeyInstan
         [this, request]()
         {
             return this->CreateCosSecKeyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::CreateEncryptInstanceOutcome MsClient::CreateEncryptInstance(const CreateEncryptInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEncryptInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEncryptInstanceResponse rsp = CreateEncryptInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEncryptInstanceOutcome(rsp);
+        else
+            return CreateEncryptInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEncryptInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::CreateEncryptInstanceAsync(const CreateEncryptInstanceRequest& request, const CreateEncryptInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEncryptInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::CreateEncryptInstanceOutcomeCallable MsClient::CreateEncryptInstanceCallable(const CreateEncryptInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEncryptInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEncryptInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::CreateOrderInstanceOutcome MsClient::CreateOrderInstance(const CreateOrderInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrderInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrderInstanceResponse rsp = CreateOrderInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrderInstanceOutcome(rsp);
+        else
+            return CreateOrderInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrderInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::CreateOrderInstanceAsync(const CreateOrderInstanceRequest& request, const CreateOrderInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrderInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::CreateOrderInstanceOutcomeCallable MsClient::CreateOrderInstanceCallable(const CreateOrderInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrderInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrderInstance(request);
         }
     );
 
@@ -334,6 +463,135 @@ MsClient::DescribeApkDetectionResultOutcomeCallable MsClient::DescribeApkDetecti
         [this, request]()
         {
             return this->DescribeApkDetectionResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::DescribeEncryptInstancesOutcome MsClient::DescribeEncryptInstances(const DescribeEncryptInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEncryptInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEncryptInstancesResponse rsp = DescribeEncryptInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEncryptInstancesOutcome(rsp);
+        else
+            return DescribeEncryptInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEncryptInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::DescribeEncryptInstancesAsync(const DescribeEncryptInstancesRequest& request, const DescribeEncryptInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEncryptInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::DescribeEncryptInstancesOutcomeCallable MsClient::DescribeEncryptInstancesCallable(const DescribeEncryptInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEncryptInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEncryptInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::DescribeEncryptPlanOutcome MsClient::DescribeEncryptPlan(const DescribeEncryptPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEncryptPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEncryptPlanResponse rsp = DescribeEncryptPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEncryptPlanOutcome(rsp);
+        else
+            return DescribeEncryptPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEncryptPlanOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::DescribeEncryptPlanAsync(const DescribeEncryptPlanRequest& request, const DescribeEncryptPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEncryptPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::DescribeEncryptPlanOutcomeCallable MsClient::DescribeEncryptPlanCallable(const DescribeEncryptPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEncryptPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEncryptPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MsClient::DescribeOrderInstancesOutcome MsClient::DescribeOrderInstances(const DescribeOrderInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrderInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrderInstancesResponse rsp = DescribeOrderInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrderInstancesOutcome(rsp);
+        else
+            return DescribeOrderInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrderInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::DescribeOrderInstancesAsync(const DescribeOrderInstancesRequest& request, const DescribeOrderInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrderInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::DescribeOrderInstancesOutcomeCallable MsClient::DescribeOrderInstancesCallable(const DescribeOrderInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrderInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrderInstances(request);
         }
     );
 

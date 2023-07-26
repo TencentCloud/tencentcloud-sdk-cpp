@@ -132,6 +132,27 @@ namespace TencentCloud
                      */
                     bool OtherInvoiceTableItemsHasBeenSet() const;
 
+                    /**
+                     * 获取发票日期
+                     * @return Date 发票日期
+                     * 
+                     */
+                    std::string GetDate() const;
+
+                    /**
+                     * 设置发票日期
+                     * @param _date 发票日期
+                     * 
+                     */
+                    void SetDate(const std::string& _date);
+
+                    /**
+                     * 判断参数 Date 是否已赋值
+                     * @return Date 是否已赋值
+                     * 
+                     */
+                    bool DateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,6 +178,12 @@ namespace TencentCloud
                      */
                     std::vector<OtherInvoiceList> m_otherInvoiceTableItems;
                     bool m_otherInvoiceTableItemsHasBeenSet;
+
+                    /**
+                     * 发票日期
+                     */
+                    std::string m_date;
+                    bool m_dateHasBeenSet;
 
                 };
             }
