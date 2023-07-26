@@ -14,7 +14,7 @@
 ## 编译工具
 - [cmake](https://cmake.org/)
 
-安装 cmake 3.0 或以上版本，参照[官方安装文档](https://cmake.org/install/)，或使用包管理器：
+安装 cmake 3.12 或以上版本，参照[官方安装文档](https://cmake.org/install/)，或使用包管理器：
 
 ```
 ubuntu
@@ -29,6 +29,8 @@ brew install cmake
 windows chocolatey
 choco install cmake.install
 ```
+
+如果操作系统版本较低，自带包管理器无法方便升级 cmake，可以考虑使用 pip 安装：`pip install --upgrade pip && pip install cmake`
 
 - vcpkg（仅windows平台需要）
 ```
