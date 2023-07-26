@@ -20,13 +20,19 @@ install_sdk() {
         echo 'Project has not been built, run "./build.sh build" first'
         return
     fi
-    echo Installing sdk, require root password...
     cd sdk_build
+    if [ "$(whoami)" != "root" ]
+    then
+        SUDO=sudo
+        echo "Installing sdk, using sudo, require password..."
+    else
+        SUDO=
+    fi
     if ! command -v cmake3 > /dev/null
     then
-        sudo cmake --build . --target install
+        $SUDO cmake --build . --target install
     else
-        sudo cmake3 --build . --target install
+        $SUDO cmake3 --build . --target install
     fi
 }
 
