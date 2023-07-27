@@ -231,6 +231,48 @@ namespace TencentCloud
                      */
                     bool FileTypeHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent
+                     * @return OrderBy 排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent
+                     * @param _orderBy 排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序类型，可选值：asc,desc
+                     * @return OrderByType 排序类型，可选值：asc,desc
+                     * 
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序类型，可选值：asc,desc
+                     * @param _orderByType 排序类型，可选值：asc,desc
+                     * 
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     * 
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +328,18 @@ namespace TencentCloud
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序类型，可选值：asc,desc
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                 };
             }

@@ -206,6 +206,27 @@ Config = {"CropIdCard":true,"CropPortrait":true}
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。
+                     * @return EnableRecognitionRectify 默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。
+                     * 
+                     */
+                    bool GetEnableRecognitionRectify() const;
+
+                    /**
+                     * 设置默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。
+                     * @param _enableRecognitionRectify 默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。
+                     * 
+                     */
+                    void SetEnableRecognitionRectify(const bool& _enableRecognitionRectify);
+
+                    /**
+                     * 判断参数 EnableRecognitionRectify 是否已赋值
+                     * @return EnableRecognitionRectify 是否已赋值
+                     * 
+                     */
+                    bool EnableRecognitionRectifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +272,12 @@ Config = {"CropIdCard":true,"CropPortrait":true}
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。
+                     */
+                    bool m_enableRecognitionRectify;
+                    bool m_enableRecognitionRectifyHasBeenSet;
 
                 };
             }

@@ -384,6 +384,49 @@ EssClient::CreateDocumentOutcomeCallable EssClient::CreateDocumentCallable(const
     return task->get_future();
 }
 
+EssClient::CreateEmbedWebUrlOutcome EssClient::CreateEmbedWebUrl(const CreateEmbedWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEmbedWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEmbedWebUrlResponse rsp = CreateEmbedWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEmbedWebUrlOutcome(rsp);
+        else
+            return CreateEmbedWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEmbedWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateEmbedWebUrlAsync(const CreateEmbedWebUrlRequest& request, const CreateEmbedWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEmbedWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateEmbedWebUrlOutcomeCallable EssClient::CreateEmbedWebUrlCallable(const CreateEmbedWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEmbedWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEmbedWebUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowOutcome EssClient::CreateFlow(const CreateFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlow");
@@ -943,6 +986,49 @@ EssClient::CreateMultiFlowSignQRCodeOutcomeCallable EssClient::CreateMultiFlowSi
     return task->get_future();
 }
 
+EssClient::CreateOrganizationBatchSignUrlOutcome EssClient::CreateOrganizationBatchSignUrl(const CreateOrganizationBatchSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationBatchSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationBatchSignUrlResponse rsp = CreateOrganizationBatchSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationBatchSignUrlOutcome(rsp);
+        else
+            return CreateOrganizationBatchSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationBatchSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateOrganizationBatchSignUrlAsync(const CreateOrganizationBatchSignUrlRequest& request, const CreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationBatchSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateOrganizationBatchSignUrlOutcomeCallable EssClient::CreateOrganizationBatchSignUrlCallable(const CreateOrganizationBatchSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationBatchSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationBatchSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreatePrepareFlowOutcome EssClient::CreatePrepareFlow(const CreatePrepareFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrepareFlow");
@@ -1237,6 +1323,49 @@ EssClient::CreateUserAutoSignEnableUrlOutcomeCallable EssClient::CreateUserAutoS
         [this, request]()
         {
             return this->CreateUserAutoSignEnableUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateWebThemeConfigOutcome EssClient::CreateWebThemeConfig(const CreateWebThemeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWebThemeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWebThemeConfigResponse rsp = CreateWebThemeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWebThemeConfigOutcome(rsp);
+        else
+            return CreateWebThemeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWebThemeConfigOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateWebThemeConfigAsync(const CreateWebThemeConfigRequest& request, const CreateWebThemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWebThemeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateWebThemeConfigOutcomeCallable EssClient::CreateWebThemeConfigCallable(const CreateWebThemeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWebThemeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWebThemeConfig(request);
         }
     );
 

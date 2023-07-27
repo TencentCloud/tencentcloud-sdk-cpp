@@ -61,6 +61,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesRequest.h>
@@ -186,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateUserRolesResponse> ChannelCreateUserRolesOutcome;
                 typedef std::future<ChannelCreateUserRolesOutcome> ChannelCreateUserRolesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserRolesRequest&, ChannelCreateUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateWebThemeConfigResponse> ChannelCreateWebThemeConfigOutcome;
+                typedef std::future<ChannelCreateWebThemeConfigOutcome> ChannelCreateWebThemeConfigOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateWebThemeConfigRequest&, ChannelCreateWebThemeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateWebThemeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelDeleteRoleUsersResponse> ChannelDeleteRoleUsersOutcome;
                 typedef std::future<ChannelDeleteRoleUsersOutcome> ChannelDeleteRoleUsersOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDeleteRoleUsersRequest&, ChannelDeleteRoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDeleteRoleUsersAsyncHandler;
@@ -481,6 +486,15 @@ namespace TencentCloud
                 ChannelCreateUserRolesOutcome ChannelCreateUserRoles(const Model::ChannelCreateUserRolesRequest &request);
                 void ChannelCreateUserRolesAsync(const Model::ChannelCreateUserRolesRequest& request, const ChannelCreateUserRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateUserRolesOutcomeCallable ChannelCreateUserRolesCallable(const Model::ChannelCreateUserRolesRequest& request);
+
+                /**
+                 *生成页面主题配置
+                 * @param req ChannelCreateWebThemeConfigRequest
+                 * @return ChannelCreateWebThemeConfigOutcome
+                 */
+                ChannelCreateWebThemeConfigOutcome ChannelCreateWebThemeConfig(const Model::ChannelCreateWebThemeConfigRequest &request);
+                void ChannelCreateWebThemeConfigAsync(const Model::ChannelCreateWebThemeConfigRequest& request, const ChannelCreateWebThemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateWebThemeConfigOutcomeCallable ChannelCreateWebThemeConfigCallable(const Model::ChannelCreateWebThemeConfigRequest& request);
 
                 /**
                  *通过此接口，删除员工绑定的角色，支持以电子签userId、客户系统userId两种方式调用。

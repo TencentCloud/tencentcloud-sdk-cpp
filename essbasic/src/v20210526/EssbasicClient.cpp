@@ -857,6 +857,49 @@ EssbasicClient::ChannelCreateUserRolesOutcomeCallable EssbasicClient::ChannelCre
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateWebThemeConfigOutcome EssbasicClient::ChannelCreateWebThemeConfig(const ChannelCreateWebThemeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateWebThemeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateWebThemeConfigResponse rsp = ChannelCreateWebThemeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateWebThemeConfigOutcome(rsp);
+        else
+            return ChannelCreateWebThemeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateWebThemeConfigOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateWebThemeConfigAsync(const ChannelCreateWebThemeConfigRequest& request, const ChannelCreateWebThemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateWebThemeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateWebThemeConfigOutcomeCallable EssbasicClient::ChannelCreateWebThemeConfigCallable(const ChannelCreateWebThemeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateWebThemeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateWebThemeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDeleteRoleUsersOutcome EssbasicClient::ChannelDeleteRoleUsers(const ChannelDeleteRoleUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDeleteRoleUsers");

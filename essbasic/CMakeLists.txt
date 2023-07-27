@@ -23,6 +23,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/Department.h
@@ -36,6 +37,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/RemindFlowRecords.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
+  include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowFileInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowOption.h
@@ -51,6 +53,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverUrlInfo.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRole.h
@@ -130,7 +133,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesResponse.h
-  include/tencentcloud/essbasic/v20210526/model/Component.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigResponse.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsRequest.h
@@ -293,6 +296,7 @@ set(essbasic_src
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiResponse.cpp
   src/v20210526/model/ChannelCreateFlowRemindsResponse.cpp
+  src/v20210526/model/Component.cpp
   src/v20210526/model/ChannelDeleteSealPoliciesRequest.cpp
   src/v20210526/model/ChannelBatchCancelFlowsResponse.cpp
   src/v20210526/model/Department.cpp
@@ -306,6 +310,7 @@ set(essbasic_src
   src/v20210526/model/RemindFlowRecords.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlResponse.cpp
   src/v20210526/model/CreateSealByImageResponse.cpp
+  src/v20210526/model/WebThemeConfig.cpp
   src/v20210526/model/OperateChannelTemplateResponse.cpp
   src/v20210526/model/FlowFileInfo.cpp
   src/v20210526/model/CreateFlowOption.cpp
@@ -321,6 +326,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCancelFlowResponse.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/FlowApproverUrlInfo.cpp
+  src/v20210526/model/ChannelCreateWebThemeConfigRequest.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
   src/v20210526/model/ChannelRole.cpp
@@ -400,7 +406,7 @@ set(essbasic_src
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
   src/v20210526/model/ChannelCreateOrganizationModifyQrCodeResponse.cpp
   src/v20210526/model/ChannelDeleteSealPoliciesResponse.cpp
-  src/v20210526/model/Component.cpp
+  src/v20210526/model/ChannelCreateWebThemeConfigResponse.cpp
   src/v20210526/model/GetDownloadFlowUrlRequest.cpp
   src/v20210526/model/ChannelCreateEmbedWebUrlResponse.cpp
   src/v20210526/model/ChannelBatchCancelFlowsRequest.cpp

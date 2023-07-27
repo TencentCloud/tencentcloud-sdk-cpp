@@ -14,57 +14,59 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_GENERATEAPIDOCUMENTRESPONSE_H_
-#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_GENERATEAPIDOCUMENTRESPONSE_H_
+#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATEEMBEDWEBURLRESPONSE_H_
+#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATEEMBEDWEBURLRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/apigateway/v20180808/model/DocumentSDK.h>
 
 
 namespace TencentCloud
 {
-    namespace Apigateway
+    namespace Ess
     {
-        namespace V20180808
+        namespace V20201111
         {
             namespace Model
             {
                 /**
-                * GenerateApiDocument返回参数结构体
+                * CreateEmbedWebUrl返回参数结构体
                 */
-                class GenerateApiDocumentResponse : public AbstractModel
+                class CreateEmbedWebUrlResponse : public AbstractModel
                 {
                 public:
-                    GenerateApiDocumentResponse();
-                    ~GenerateApiDocumentResponse() = default;
+                    CreateEmbedWebUrlResponse();
+                    ~CreateEmbedWebUrlResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取api文档&sdk链接。
-                     * @return Result api文档&sdk链接。
+                     * 获取嵌入的web链接，有效期：5分钟
+EmbedType=PREVIEW_CC_FLOW，该url为h5链接
+                     * @return WebUrl 嵌入的web链接，有效期：5分钟
+EmbedType=PREVIEW_CC_FLOW，该url为h5链接
                      * 
                      */
-                    DocumentSDK GetResult() const;
+                    std::string GetWebUrl() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 WebUrl 是否已赋值
+                     * @return WebUrl 是否已赋值
                      * 
                      */
-                    bool ResultHasBeenSet() const;
+                    bool WebUrlHasBeenSet() const;
 
                 private:
 
                     /**
-                     * api文档&sdk链接。
+                     * 嵌入的web链接，有效期：5分钟
+EmbedType=PREVIEW_CC_FLOW，该url为h5链接
                      */
-                    DocumentSDK m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_webUrl;
+                    bool m_webUrlHasBeenSet;
 
                 };
             }
@@ -72,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_GENERATEAPIDOCUMENTRESPONSE_H_
+#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATEEMBEDWEBURLRESPONSE_H_

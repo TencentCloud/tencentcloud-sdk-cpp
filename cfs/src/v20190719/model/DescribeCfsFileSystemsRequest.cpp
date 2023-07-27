@@ -25,7 +25,9 @@ using namespace std;
 DescribeCfsFileSystemsRequest::DescribeCfsFileSystemsRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeCfsFileSystemsRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeCfsFileSystemsRequest::SetSubnetId(const string& _subnetId)
 bool DescribeCfsFileSystemsRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+uint64_t DescribeCfsFileSystemsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeCfsFileSystemsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeCfsFileSystemsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeCfsFileSystemsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeCfsFileSystemsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeCfsFileSystemsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

@@ -580,6 +580,48 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool ComponentLimitTypeHasBeenSet() const;
 
+                    /**
+                     * 获取合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+                     * @return ApproverVerifyTypes 合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+                     * 
+                     */
+                    std::vector<int64_t> GetApproverVerifyTypes() const;
+
+                    /**
+                     * 设置合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+                     * @param _approverVerifyTypes 合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+                     * 
+                     */
+                    void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
+
+                    /**
+                     * 判断参数 ApproverVerifyTypes 是否已赋值
+                     * @return ApproverVerifyTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverVerifyTypesHasBeenSet() const;
+
+                    /**
+                     * 获取合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+                     * @return ApproverSignTypes 合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+                     * 
+                     */
+                    std::vector<uint64_t> GetApproverSignTypes() const;
+
+                    /**
+                     * 设置合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+                     * @param _approverSignTypes 合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+                     * 
+                     */
+                    void SetApproverSignTypes(const std::vector<uint64_t>& _approverSignTypes);
+
+                    /**
+                     * 判断参数 ApproverSignTypes 是否已赋值
+                     * @return ApproverSignTypes 是否已赋值
+                     * 
+                     */
+                    bool ApproverSignTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -731,6 +773,18 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     std::vector<std::string> m_componentLimitType;
                     bool m_componentLimitTypeHasBeenSet;
+
+                    /**
+                     * 合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)
+                     */
+                    std::vector<int64_t> m_approverVerifyTypes;
+                    bool m_approverVerifyTypesHasBeenSet;
+
+                    /**
+                     * 合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素
+                     */
+                    std::vector<uint64_t> m_approverSignTypes;
+                    bool m_approverSignTypesHasBeenSet;
 
                 };
             }

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/facefusion/v20220927/model/MergeInfo.h>
 #include <tencentcloud/facefusion/v20220927/model/LogoParam.h>
+#include <tencentcloud/facefusion/v20220927/model/FuseParam.h>
 
 
 namespace TencentCloud
@@ -240,6 +241,27 @@ namespace TencentCloud
                      */
                     bool LogoParamHasBeenSet() const;
 
+                    /**
+                     * 获取融合参数。
+                     * @return FuseParam 融合参数。
+                     * 
+                     */
+                    FuseParam GetFuseParam() const;
+
+                    /**
+                     * 设置融合参数。
+                     * @param _fuseParam 融合参数。
+                     * 
+                     */
+                    void SetFuseParam(const FuseParam& _fuseParam);
+
+                    /**
+                     * 判断参数 FuseParam 是否已赋值
+                     * @return FuseParam 是否已赋值
+                     * 
+                     */
+                    bool FuseParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +318,12 @@ namespace TencentCloud
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
+
+                    /**
+                     * 融合参数。
+                     */
+                    FuseParam m_fuseParam;
+                    bool m_fuseParamHasBeenSet;
 
                 };
             }

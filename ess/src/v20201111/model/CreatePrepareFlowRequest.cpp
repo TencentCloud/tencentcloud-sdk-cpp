@@ -30,7 +30,8 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_deadlineHasBeenSet(false),
     m_userFlowTypeIdHasBeenSet(false),
     m_approversHasBeenSet(false),
-    m_intelligentStatusHasBeenSet(false)
+    m_intelligentStatusHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,15 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "IntelligentStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_intelligentStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -247,6 +257,22 @@ void CreatePrepareFlowRequest::SetIntelligentStatus(const string& _intelligentSt
 bool CreatePrepareFlowRequest::IntelligentStatusHasBeenSet() const
 {
     return m_intelligentStatusHasBeenSet;
+}
+
+Agent CreatePrepareFlowRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreatePrepareFlowRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

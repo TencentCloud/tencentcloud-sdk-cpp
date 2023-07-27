@@ -3093,49 +3093,6 @@ ApigatewayClient::EnableApiKeyOutcomeCallable ApigatewayClient::EnableApiKeyCall
     return task->get_future();
 }
 
-ApigatewayClient::GenerateApiDocumentOutcome ApigatewayClient::GenerateApiDocument(const GenerateApiDocumentRequest &request)
-{
-    auto outcome = MakeRequest(request, "GenerateApiDocument");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GenerateApiDocumentResponse rsp = GenerateApiDocumentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GenerateApiDocumentOutcome(rsp);
-        else
-            return GenerateApiDocumentOutcome(o.GetError());
-    }
-    else
-    {
-        return GenerateApiDocumentOutcome(outcome.GetError());
-    }
-}
-
-void ApigatewayClient::GenerateApiDocumentAsync(const GenerateApiDocumentRequest& request, const GenerateApiDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GenerateApiDocument(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ApigatewayClient::GenerateApiDocumentOutcomeCallable ApigatewayClient::GenerateApiDocumentCallable(const GenerateApiDocumentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GenerateApiDocumentOutcome()>>(
-        [this, request]()
-        {
-            return this->GenerateApiDocument(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 ApigatewayClient::ImportOpenApiOutcome ApigatewayClient::ImportOpenApi(const ImportOpenApiRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportOpenApi");

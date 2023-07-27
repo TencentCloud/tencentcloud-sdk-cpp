@@ -29,7 +29,8 @@ FaceFusionRequest::FaceFusionRequest() :
     m_imageHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
     m_celebrityIdentifyHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_fuseParamHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,15 @@ string FaceFusionRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fuseParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuseParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fuseParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -214,6 +224,22 @@ void FaceFusionRequest::SetUrl(const string& _url)
 bool FaceFusionRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+FuseParam FaceFusionRequest::GetFuseParam() const
+{
+    return m_fuseParam;
+}
+
+void FaceFusionRequest::SetFuseParam(const FuseParam& _fuseParam)
+{
+    m_fuseParam = _fuseParam;
+    m_fuseParamHasBeenSet = true;
+}
+
+bool FaceFusionRequest::FuseParamHasBeenSet() const
+{
+    return m_fuseParamHasBeenSet;
 }
 
 

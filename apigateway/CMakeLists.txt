@@ -185,7 +185,6 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/APIDocInfo.h
   include/tencentcloud/apigateway/v20180808/model/CosConfig.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiIncrementRequest.h
-  include/tencentcloud/apigateway/v20180808/model/GenerateApiDocumentRequest.h
   include/tencentcloud/apigateway/v20180808/model/ServiceUsagePlanSet.h
   include/tencentcloud/apigateway/v20180808/model/CreateUpstreamRequest.h
   include/tencentcloud/apigateway/v20180808/model/ModifyServiceEnvironmentStrategyResponse.h
@@ -228,12 +227,11 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/DeletePluginResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUpstreamBindApis.h
   include/tencentcloud/apigateway/v20180808/model/ModifyServiceEnvironmentStrategyRequest.h
-  include/tencentcloud/apigateway/v20180808/model/DocumentSDK.h
   include/tencentcloud/apigateway/v20180808/model/CreateAPIDocRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiAppBindApisStatusResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceSubDomainsRequest.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiAppRequest.h
-  include/tencentcloud/apigateway/v20180808/model/GenerateApiDocumentResponse.h
+  include/tencentcloud/apigateway/v20180808/model/ReleaseService.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlanEnvironmentsResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceSubDomainsResponse.h
   include/tencentcloud/apigateway/v20180808/model/AttachPluginRequest.h
@@ -281,7 +279,6 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/UsagePlanInfo.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceEnvironmentReleaseHistoryRequest.h
   include/tencentcloud/apigateway/v20180808/model/UnbindApiAppRequest.h
-  include/tencentcloud/apigateway/v20180808/model/ReleaseService.h
   include/tencentcloud/apigateway/v20180808/model/ServiceEnvironmentSet.h
   include/tencentcloud/apigateway/v20180808/model/CreateServiceResponse.h
   include/tencentcloud/apigateway/v20180808/model/DeleteAPIDocResponse.h
@@ -484,7 +481,6 @@ set(apigateway_src
   src/v20180808/model/APIDocInfo.cpp
   src/v20180808/model/CosConfig.cpp
   src/v20180808/model/ModifyApiIncrementRequest.cpp
-  src/v20180808/model/GenerateApiDocumentRequest.cpp
   src/v20180808/model/ServiceUsagePlanSet.cpp
   src/v20180808/model/CreateUpstreamRequest.cpp
   src/v20180808/model/ModifyServiceEnvironmentStrategyResponse.cpp
@@ -527,12 +523,11 @@ set(apigateway_src
   src/v20180808/model/DeletePluginResponse.cpp
   src/v20180808/model/DescribeUpstreamBindApis.cpp
   src/v20180808/model/ModifyServiceEnvironmentStrategyRequest.cpp
-  src/v20180808/model/DocumentSDK.cpp
   src/v20180808/model/CreateAPIDocRequest.cpp
   src/v20180808/model/DescribeApiAppBindApisStatusResponse.cpp
   src/v20180808/model/DescribeServiceSubDomainsRequest.cpp
   src/v20180808/model/ModifyApiAppRequest.cpp
-  src/v20180808/model/GenerateApiDocumentResponse.cpp
+  src/v20180808/model/ReleaseService.cpp
   src/v20180808/model/DescribeUsagePlanEnvironmentsResponse.cpp
   src/v20180808/model/DescribeServiceSubDomainsResponse.cpp
   src/v20180808/model/AttachPluginRequest.cpp
@@ -580,7 +575,6 @@ set(apigateway_src
   src/v20180808/model/UsagePlanInfo.cpp
   src/v20180808/model/DescribeServiceEnvironmentReleaseHistoryRequest.cpp
   src/v20180808/model/UnbindApiAppRequest.cpp
-  src/v20180808/model/ReleaseService.cpp
   src/v20180808/model/ServiceEnvironmentSet.cpp
   src/v20180808/model/CreateServiceResponse.cpp
   src/v20180808/model/DeleteAPIDocResponse.cpp

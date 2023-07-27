@@ -44,15 +44,61 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
-                     * @return SpecCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * 获取实例所属主可用区， 如：ap-guangzhou-3；
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     * @return Zone 实例所属主可用区， 如：ap-guangzhou-3；
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置实例所属主可用区， 如：ap-guangzhou-3；
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     * @param _zone 实例所属主可用区， 如：ap-guangzhou-3；
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取只读实例的主实例ID。
+                     * @return MasterDBInstanceId 只读实例的主实例ID。
+                     * 
+                     */
+                    std::string GetMasterDBInstanceId() const;
+
+                    /**
+                     * 设置只读实例的主实例ID。
+                     * @param _masterDBInstanceId 只读实例的主实例ID。
+                     * 
+                     */
+                    void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
+
+                    /**
+                     * 判断参数 MasterDBInstanceId 是否已赋值
+                     * @return MasterDBInstanceId 是否已赋值
+                     * 
+                     */
+                    bool MasterDBInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
+                     * @return SpecCode 售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
-                     * @param _specCode 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * 设置售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
+                     * @param _specCode 售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -86,15 +132,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取一次性购买的实例数量。取值1-100
-                     * @return InstanceCount 一次性购买的实例数量。取值1-100
+                     * 获取购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
+                     * @return InstanceCount 购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
                      * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
-                     * 设置一次性购买的实例数量。取值1-100
-                     * @param _instanceCount 一次性购买的实例数量。取值1-100
+                     * 设置购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
+                     * @param _instanceCount 购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
                      * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
@@ -107,15 +153,23 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
-                     * @return Period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 获取购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
+                     * @return Period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
-                     * @param _period 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 设置购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
+                     * @param _period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -128,99 +182,69 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取只读实例的主实例ID
-                     * @return MasterDBInstanceId 只读实例的主实例ID
+                     * 获取私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @return VpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
-                    std::string GetMasterDBInstanceId() const;
+                    std::string GetVpcId() const;
 
                     /**
-                     * 设置只读实例的主实例ID
-                     * @param _masterDBInstanceId 只读实例的主实例ID
+                     * 设置私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
+                     * @param _vpcId 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      * 
                      */
-                    void SetMasterDBInstanceId(const std::string& _masterDBInstanceId);
+                    void SetVpcId(const std::string& _vpcId);
 
                     /**
-                     * 判断参数 MasterDBInstanceId 是否已赋值
-                     * @return MasterDBInstanceId 是否已赋值
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
                      * 
                      */
-                    bool MasterDBInstanceIdHasBeenSet() const;
+                    bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @return Zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 获取私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @return SubnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
-                    std::string GetZone() const;
+                    std::string GetSubnetId() const;
 
                     /**
-                     * 设置可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
-                     * @param _zone 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 设置私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
+                     * @param _subnetId 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      * 
                      */
-                    void SetZone(const std::string& _zone);
+                    void SetSubnetId(const std::string& _subnetId);
 
                     /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
                      * 
                      */
-                    bool ZoneHasBeenSet() const;
+                    bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
-                     * 
-                     */
-                    uint64_t GetProjectId() const;
-
-                    /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
-                     * 
-                     */
-                    void SetProjectId(const uint64_t& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     * 
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
-                     * 获取【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * @return DBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * 
-                     */
-                    std::string GetDBVersion() const;
-
-                    /**
-                     * 设置【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * @param _dBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
-                     * 
-                     */
-                    void SetDBVersion(const std::string& _dBVersion);
-
-                    /**
-                     * 判断参数 DBVersion 是否已赋值
-                     * @return DBVersion 是否已赋值
-                     * 
-                     */
-                    bool DBVersionHasBeenSet() const;
-
-                    /**
-                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
-                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
+                     * 获取实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月。
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
+                     * @return InstanceChargeType 实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月。
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
-                     * @param _instanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
+                     * 设置实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月。
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
+                     * @param _instanceChargeType 实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月。
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -233,15 +257,27 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券。1（是），0（否），默认不使用。
-                     * @return AutoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 获取是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @return AutoVoucher 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
                     uint64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券。1（是），0（否），默认不使用。
-                     * @param _autoVoucher 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 设置是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @param _autoVoucher 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      * 
                      */
                     void SetAutoVoucher(const uint64_t& _autoVoucher);
@@ -275,15 +311,27 @@ namespace TencentCloud
                     bool VoucherIdsHasBeenSet() const;
 
                     /**
-                     * 获取续费标记：0-正常续费（默认）；1-自动续费；
-                     * @return AutoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     * 获取续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
+                     * @return AutoRenewFlag 续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置续费标记：0-正常续费（默认）；1-自动续费；
-                     * @param _autoRenewFlag 续费标记：0-正常续费（默认）；1-自动续费；
+                     * 设置续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
+                     * @param _autoRenewFlag 续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -296,46 +344,25 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID。
-                     * @return VpcId 私有网络ID。
+                     * 获取项目ID。
+                     * @return ProjectId 项目ID。
                      * 
                      */
-                    std::string GetVpcId() const;
+                    uint64_t GetProjectId() const;
 
                     /**
-                     * 设置私有网络ID。
-                     * @param _vpcId 私有网络ID。
+                     * 设置项目ID。
+                     * @param _projectId 项目ID。
                      * 
                      */
-                    void SetVpcId(const std::string& _vpcId);
+                    void SetProjectId(const uint64_t& _projectId);
 
                     /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
                      * 
                      */
-                    bool VpcIdHasBeenSet() const;
-
-                    /**
-                     * 获取私有网络子网ID。
-                     * @return SubnetId 私有网络子网ID。
-                     * 
-                     */
-                    std::string GetSubnetId() const;
-
-                    /**
-                     * 设置私有网络子网ID。
-                     * @param _subnetId 私有网络子网ID。
-                     * 
-                     */
-                    void SetSubnetId(const std::string& _subnetId);
-
-                    /**
-                     * 判断参数 SubnetId 是否已赋值
-                     * @return SubnetId 是否已赋值
-                     * 
-                     */
-                    bool SubnetIdHasBeenSet() const;
+                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取优惠活动ID
@@ -359,48 +386,6 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名(后续支持)
-                     * @return Name 实例名(后续支持)
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置实例名(后续支持)
-                     * @param _name 实例名(后续支持)
-                     * 
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取是否需要支持Ipv6，1：是，0：否
-                     * @return NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否
-                     * 
-                     */
-                    uint64_t GetNeedSupportIpv6() const;
-
-                    /**
-                     * 设置是否需要支持Ipv6，1：是，0：否
-                     * @param _needSupportIpv6 是否需要支持Ipv6，1：是，0：否
-                     * 
-                     */
-                    void SetNeedSupportIpv6(const uint64_t& _needSupportIpv6);
-
-                    /**
-                     * 判断参数 NeedSupportIpv6 是否已赋值
-                     * @return NeedSupportIpv6 是否已赋值
-                     * 
-                     */
-                    bool NeedSupportIpv6HasBeenSet() const;
-
-                    /**
                      * 获取只读组ID。
                      * @return ReadOnlyGroupId 只读组ID。
                      * 
@@ -422,15 +407,15 @@ namespace TencentCloud
                     bool ReadOnlyGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
-                     * @return TagList 实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
+                     * 获取实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
+                     * @return TagList 实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
                      * 
                      */
                     Tag GetTagList() const;
 
                     /**
-                     * 设置实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
-                     * @param _tagList 实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
+                     * 设置实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
+                     * @param _tagList 实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
                      * 
                      */
                     void SetTagList(const Tag& _tagList);
@@ -443,15 +428,19 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取安全组id
-                     * @return SecurityGroupIds 安全组id
+                     * 获取实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
+                     * @return SecurityGroupIds 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组id
-                     * @param _securityGroupIds 安全组id
+                     * 设置实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
+                     * @param _securityGroupIds 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -463,10 +452,98 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @return NeedSupportIpv6 是否需要支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     * 
+                     */
+                    uint64_t GetNeedSupportIpv6() const;
+
+                    /**
+                     * 设置是否需要支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     * @param _needSupportIpv6 是否需要支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     * 
+                     */
+                    void SetNeedSupportIpv6(const uint64_t& _needSupportIpv6);
+
+                    /**
+                     * 判断参数 NeedSupportIpv6 是否已赋值
+                     * @return NeedSupportIpv6 是否已赋值
+                     * 
+                     */
+                    bool NeedSupportIpv6HasBeenSet() const;
+
+                    /**
+                     * 获取实例名(后续支持)
+                     * @return Name 实例名(后续支持)
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置实例名(后续支持)
+                     * @param _name 实例名(后续支持)
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * @return DBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * 
+                     */
+                    std::string GetDBVersion() const;
+
+                    /**
+                     * 设置【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * @param _dBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * 
+                     */
+                    void SetDBVersion(const std::string& _dBVersion);
+
+                    /**
+                     * 判断参数 DBVersion 是否已赋值
+                     * @return DBVersion 是否已赋值
+                     * 
+                     */
+                    bool DBVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 售卖规格ID。该参数可以通过调用DescribeClasses的返回值中的SpecCode字段来获取。
+                     * 实例所属主可用区， 如：ap-guangzhou-3；
+可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 只读实例的主实例ID。
+                     */
+                    std::string m_masterDBInstanceId;
+                    bool m_masterDBInstanceIdHasBeenSet;
+
+                    /**
+                     * 售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
@@ -478,49 +555,45 @@ namespace TencentCloud
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 一次性购买的实例数量。取值1-100
+                     * 购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。
+                     * 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+<li>后付费：只支持1
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 只读实例的主实例ID
+                     * 私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。
                      */
-                    std::string m_masterDBInstanceId;
-                    bool m_masterDBInstanceIdHasBeenSet;
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。
+                     * 私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。
                      */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 项目ID。
-                     */
-                    uint64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
-                     * 【废弃】不再需要指定，内核版本号与主实例保持一致
-                     */
-                    std::string m_dBVersion;
-                    bool m_dBVersionHasBeenSet;
-
-                    /**
-                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
+                     * 实例计费类型，目前支持：
+<li>PREPAID：预付费，即包年包月。
+<li>POSTPAID_BY_HOUR：后付费，即按量计费。
+默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券。1（是），0（否），默认不使用。
+                     * 是否自动使用代金券：
+<li>0：否
+<li>1：是
+默认值：0
                      */
                     uint64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
@@ -532,22 +605,19 @@ namespace TencentCloud
                     bool m_voucherIdsHasBeenSet;
 
                     /**
-                     * 续费标记：0-正常续费（默认）；1-自动续费；
+                     * 续费标记：
+<li>0：手动续费
+<li>1：自动续费
+默认值：0
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 私有网络ID。
+                     * 项目ID。
                      */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
-
-                    /**
-                     * 私有网络子网ID。
-                     */
-                    std::string m_subnetId;
-                    bool m_subnetIdHasBeenSet;
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 优惠活动ID
@@ -556,34 +626,44 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 实例名(后续支持)
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
-                     * 是否需要支持Ipv6，1：是，0：否
-                     */
-                    uint64_t m_needSupportIpv6;
-                    bool m_needSupportIpv6HasBeenSet;
-
-                    /**
                      * 只读组ID。
                      */
                     std::string m_readOnlyGroupId;
                     bool m_readOnlyGroupIdHasBeenSet;
 
                     /**
-                     * 实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）
+                     * 实例需要绑定的Tag信息，默认为空；可以通过调用 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 返回值中的 Tags 字段来获取。
                      */
                     Tag m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 安全组id
+                     * 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 是否需要支持Ipv6：
+<li>0：否
+<li>1：是
+默认值：0
+                     */
+                    uint64_t m_needSupportIpv6;
+                    bool m_needSupportIpv6HasBeenSet;
+
+                    /**
+                     * 实例名(后续支持)
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     */
+                    std::string m_dBVersion;
+                    bool m_dBVersionHasBeenSet;
 
                 };
             }

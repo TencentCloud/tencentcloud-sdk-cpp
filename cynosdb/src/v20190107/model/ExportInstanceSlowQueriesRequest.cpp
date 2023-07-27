@@ -31,7 +31,9 @@ ExportInstanceSlowQueriesRequest::ExportInstanceSlowQueriesRequest() :
     m_usernameHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_databaseHasBeenSet(false),
-    m_fileTypeHasBeenSet(false)
+    m_fileTypeHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string ExportInstanceSlowQueriesRequest::ToJsonString() const
         string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +282,38 @@ void ExportInstanceSlowQueriesRequest::SetFileType(const string& _fileType)
 bool ExportInstanceSlowQueriesRequest::FileTypeHasBeenSet() const
 {
     return m_fileTypeHasBeenSet;
+}
+
+string ExportInstanceSlowQueriesRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void ExportInstanceSlowQueriesRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool ExportInstanceSlowQueriesRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string ExportInstanceSlowQueriesRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void ExportInstanceSlowQueriesRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool ExportInstanceSlowQueriesRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
 }
 
 

@@ -24,7 +24,9 @@ PackageInfo::PackageInfo() :
     m_statusHasBeenSet(false),
     m_cSTypeHasBeenSet(false),
     m_cSShiftDurationHasBeenSet(false),
-    m_cSExpiredTimeHasBeenSet(false)
+    m_cSExpiredTimeHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome PackageInfo::Deserialize(const rapidjson::Value &value)
         m_cSExpiredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackageInfo.CreatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = value["CreatedAt"].GetInt64();
+        m_createdAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedAt") && !value["UpdatedAt"].IsNull())
+    {
+        if (!value["UpdatedAt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackageInfo.UpdatedAt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedAt = value["UpdatedAt"].GetInt64();
+        m_updatedAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void PackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CSExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cSExpiredTime, allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createdAt, allocator);
+    }
+
+    if (m_updatedAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updatedAt, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void PackageInfo::SetCSExpiredTime(const int64_t& _cSExpiredTime)
 bool PackageInfo::CSExpiredTimeHasBeenSet() const
 {
     return m_cSExpiredTimeHasBeenSet;
+}
+
+int64_t PackageInfo::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void PackageInfo::SetCreatedAt(const int64_t& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool PackageInfo::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
+}
+
+int64_t PackageInfo::GetUpdatedAt() const
+{
+    return m_updatedAt;
+}
+
+void PackageInfo::SetUpdatedAt(const int64_t& _updatedAt)
+{
+    m_updatedAt = _updatedAt;
+    m_updatedAtHasBeenSet = true;
+}
+
+bool PackageInfo::UpdatedAtHasBeenSet() const
+{
+    return m_updatedAtHasBeenSet;
 }
 

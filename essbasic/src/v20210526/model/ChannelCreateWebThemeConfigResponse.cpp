@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/apigateway/v20180808/model/GenerateApiDocumentResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateWebThemeConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Apigateway::V20180808::Model;
+using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-GenerateApiDocumentResponse::GenerateApiDocumentResponse() :
-    m_resultHasBeenSet(false)
+ChannelCreateWebThemeConfigResponse::ChannelCreateWebThemeConfigResponse()
 {
 }
 
-CoreInternalOutcome GenerateApiDocumentResponse::Deserialize(const string &payload)
+CoreInternalOutcome ChannelCreateWebThemeConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,41 +61,15 @@ CoreInternalOutcome GenerateApiDocumentResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
-    {
-        if (!rsp["Result"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_resultHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string GenerateApiDocumentResponse::ToJsonString() const
+string ChannelCreateWebThemeConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_resultHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -109,15 +82,5 @@ string GenerateApiDocumentResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-DocumentSDK GenerateApiDocumentResponse::GetResult() const
-{
-    return m_result;
-}
-
-bool GenerateApiDocumentResponse::ResultHasBeenSet() const
-{
-    return m_resultHasBeenSet;
-}
 
 

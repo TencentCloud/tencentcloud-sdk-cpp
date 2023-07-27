@@ -43,7 +43,9 @@ FlowCreateApprover::FlowCreateApprover() :
     m_approverNeedSignReviewHasBeenSet(false),
     m_signComponentsHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_componentLimitTypeHasBeenSet(false)
+    m_componentLimitTypeHasBeenSet(false),
+    m_approverVerifyTypesHasBeenSet(false),
+    m_approverSignTypesHasBeenSet(false)
 {
 }
 
@@ -322,6 +324,32 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_componentLimitTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverVerifyTypes") && !value["ApproverVerifyTypes"].IsNull())
+    {
+        if (!value["ApproverVerifyTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverVerifyTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApproverVerifyTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_approverVerifyTypes.push_back((*itr).GetInt64());
+        }
+        m_approverVerifyTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverSignTypes") && !value["ApproverSignTypes"].IsNull())
+    {
+        if (!value["ApproverSignTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverSignTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApproverSignTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_approverSignTypes.push_back((*itr).GetUint64());
+        }
+        m_approverSignTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -536,6 +564,32 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         for (auto itr = m_componentLimitType.begin(); itr != m_componentLimitType.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_approverVerifyTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverVerifyTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_approverVerifyTypes.begin(); itr != m_approverVerifyTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_approverSignTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSignTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_approverSignTypes.begin(); itr != m_approverSignTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -908,5 +962,37 @@ void FlowCreateApprover::SetComponentLimitType(const vector<string>& _componentL
 bool FlowCreateApprover::ComponentLimitTypeHasBeenSet() const
 {
     return m_componentLimitTypeHasBeenSet;
+}
+
+vector<int64_t> FlowCreateApprover::GetApproverVerifyTypes() const
+{
+    return m_approverVerifyTypes;
+}
+
+void FlowCreateApprover::SetApproverVerifyTypes(const vector<int64_t>& _approverVerifyTypes)
+{
+    m_approverVerifyTypes = _approverVerifyTypes;
+    m_approverVerifyTypesHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverVerifyTypesHasBeenSet() const
+{
+    return m_approverVerifyTypesHasBeenSet;
+}
+
+vector<uint64_t> FlowCreateApprover::GetApproverSignTypes() const
+{
+    return m_approverSignTypes;
+}
+
+void FlowCreateApprover::SetApproverSignTypes(const vector<uint64_t>& _approverSignTypes)
+{
+    m_approverSignTypes = _approverSignTypes;
+    m_approverSignTypesHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverSignTypesHasBeenSet() const
+{
+    return m_approverSignTypesHasBeenSet;
 }
 

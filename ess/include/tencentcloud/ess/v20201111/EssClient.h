@@ -39,6 +39,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h>
@@ -79,6 +83,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h>
@@ -173,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
                 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEmbedWebUrlResponse> CreateEmbedWebUrlOutcome;
+                typedef std::future<CreateEmbedWebUrlOutcome> CreateEmbedWebUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateEmbedWebUrlRequest&, CreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedWebUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowResponse> CreateFlowOutcome;
                 typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowRequest&, CreateFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowAsyncHandler;
@@ -212,6 +221,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationBatchSignUrlResponse> CreateOrganizationBatchSignUrlOutcome;
+                typedef std::future<CreateOrganizationBatchSignUrlOutcome> CreateOrganizationBatchSignUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateOrganizationBatchSignUrlRequest&, CreateOrganizationBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationBatchSignUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrepareFlowResponse> CreatePrepareFlowOutcome;
                 typedef std::future<CreatePrepareFlowOutcome> CreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePrepareFlowRequest&, CreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrepareFlowAsyncHandler;
@@ -233,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserAutoSignEnableUrlResponse> CreateUserAutoSignEnableUrlOutcome;
                 typedef std::future<CreateUserAutoSignEnableUrlOutcome> CreateUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignEnableUrlRequest&, CreateUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignEnableUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWebThemeConfigResponse> CreateWebThemeConfigOutcome;
+                typedef std::future<CreateWebThemeConfigOutcome> CreateWebThemeConfigOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateWebThemeConfigRequest&, CreateWebThemeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebThemeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIntegrationDepartmentResponse> DeleteIntegrationDepartmentOutcome;
                 typedef std::future<DeleteIntegrationDepartmentOutcome> DeleteIntegrationDepartmentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteIntegrationDepartmentRequest&, DeleteIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationDepartmentAsyncHandler;
@@ -405,6 +420,15 @@ namespace TencentCloud
                 CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request);
 
                 /**
+                 *本接口（CreateEmbedWebUrl）用于创建嵌入web的链接 本接口支持创建：创建印章，创建模板，修改模板，预览模板，预览合同流程的web链接 进入web连接后与当前控制台操作保持一致
+                 * @param req CreateEmbedWebUrlRequest
+                 * @return CreateEmbedWebUrlOutcome
+                 */
+                CreateEmbedWebUrlOutcome CreateEmbedWebUrl(const Model::CreateEmbedWebUrlRequest &request);
+                void CreateEmbedWebUrlAsync(const Model::CreateEmbedWebUrlRequest& request, const CreateEmbedWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEmbedWebUrlOutcomeCallable CreateEmbedWebUrlCallable(const Model::CreateEmbedWebUrlRequest& request);
+
+                /**
                  *通过模板创建签署流程<br/>
 适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。<br/>
 注：该接口是通过模板生成合同流程的前置接口，先创建一个不包含签署文件的流程。<br/>
@@ -556,6 +580,16 @@ PDF资源Id 通过上传文件接口获取
                 CreateMultiFlowSignQRCodeOutcomeCallable CreateMultiFlowSignQRCodeCallable(const Model::CreateMultiFlowSignQRCodeRequest& request);
 
                 /**
+                 *通过此接口，创建企业批量签署链接，企业员工点击链接即可跳转控制台进行批量签署。
+如果没有UserId，Name和Mobile必填，对应的员工必须在企业下已经实名，且该员工为批量签署合同中的签署方。
+                 * @param req CreateOrganizationBatchSignUrlRequest
+                 * @return CreateOrganizationBatchSignUrlOutcome
+                 */
+                CreateOrganizationBatchSignUrlOutcome CreateOrganizationBatchSignUrl(const Model::CreateOrganizationBatchSignUrlRequest &request);
+                void CreateOrganizationBatchSignUrlAsync(const Model::CreateOrganizationBatchSignUrlRequest& request, const CreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationBatchSignUrlOutcomeCallable CreateOrganizationBatchSignUrlCallable(const Model::CreateOrganizationBatchSignUrlRequest& request);
+
+                /**
                  *创建快速发起流程
 适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.
 注：该接口文件的resourceId 是通过上传文件之后获取的。
@@ -629,6 +663,15 @@ PDF资源Id 通过上传文件接口获取
                 CreateUserAutoSignEnableUrlOutcome CreateUserAutoSignEnableUrl(const Model::CreateUserAutoSignEnableUrlRequest &request);
                 void CreateUserAutoSignEnableUrlAsync(const Model::CreateUserAutoSignEnableUrlRequest& request, const CreateUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserAutoSignEnableUrlOutcomeCallable CreateUserAutoSignEnableUrlCallable(const Model::CreateUserAutoSignEnableUrlRequest& request);
+
+                /**
+                 *用来创建页面主题配置
+                 * @param req CreateWebThemeConfigRequest
+                 * @return CreateWebThemeConfigOutcome
+                 */
+                CreateWebThemeConfigOutcome CreateWebThemeConfig(const Model::CreateWebThemeConfigRequest &request);
+                void CreateWebThemeConfigAsync(const Model::CreateWebThemeConfigRequest& request, const CreateWebThemeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWebThemeConfigOutcomeCallable CreateWebThemeConfigCallable(const Model::CreateWebThemeConfigRequest& request);
 
                 /**
                  *通过此接口，删除企业的部门。

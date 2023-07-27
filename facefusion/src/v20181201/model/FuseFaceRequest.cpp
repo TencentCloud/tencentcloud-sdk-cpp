@@ -29,7 +29,8 @@ FuseFaceRequest::FuseFaceRequest() :
     m_mergeInfosHasBeenSet(false),
     m_fuseProfileDegreeHasBeenSet(false),
     m_fuseFaceDegreeHasBeenSet(false),
-    m_celebrityIdentifyHasBeenSet(false)
+    m_celebrityIdentifyHasBeenSet(false),
+    m_fuseParamHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,15 @@ string FuseFaceRequest::ToJsonString() const
         string key = "CelebrityIdentify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_celebrityIdentify, allocator);
+    }
+
+    if (m_fuseParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuseParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fuseParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +231,22 @@ void FuseFaceRequest::SetCelebrityIdentify(const int64_t& _celebrityIdentify)
 bool FuseFaceRequest::CelebrityIdentifyHasBeenSet() const
 {
     return m_celebrityIdentifyHasBeenSet;
+}
+
+FuseParam FuseFaceRequest::GetFuseParam() const
+{
+    return m_fuseParam;
+}
+
+void FuseFaceRequest::SetFuseParam(const FuseParam& _fuseParam)
+{
+    m_fuseParam = _fuseParam;
+    m_fuseParamHasBeenSet = true;
+}
+
+bool FuseFaceRequest::FuseParamHasBeenSet() const
+{
+    return m_fuseParamHasBeenSet;
 }
 
 

@@ -134,6 +134,56 @@ namespace TencentCloud
                      */
                     bool CSExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取云存套餐创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedAt 云存套餐创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCreatedAt() const;
+
+                    /**
+                     * 设置云存套餐创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createdAt 云存套餐创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatedAt(const int64_t& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     * 
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取云存套餐更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedAt 云存套餐更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUpdatedAt() const;
+
+                    /**
+                     * 设置云存套餐更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updatedAt 云存套餐更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdatedAt(const int64_t& _updatedAt);
+
+                    /**
+                     * 判断参数 UpdatedAt 是否已赋值
+                     * @return UpdatedAt 是否已赋值
+                     * 
+                     */
+                    bool UpdatedAtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +210,20 @@ namespace TencentCloud
                      */
                     int64_t m_cSExpiredTime;
                     bool m_cSExpiredTimeHasBeenSet;
+
+                    /**
+                     * 云存套餐创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * 云存套餐更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updatedAt;
+                    bool m_updatedAtHasBeenSet;
 
                 };
             }

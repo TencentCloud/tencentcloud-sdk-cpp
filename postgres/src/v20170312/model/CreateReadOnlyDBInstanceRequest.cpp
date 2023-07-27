@@ -23,26 +23,26 @@ using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
 CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
+    m_zoneHasBeenSet(false),
+    m_masterDBInstanceIdHasBeenSet(false),
     m_specCodeHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_masterDBInstanceIdHasBeenSet(false),
-    m_zoneHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_dBVersionHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_activityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_needSupportIpv6HasBeenSet(false),
     m_readOnlyGroupIdHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_needSupportIpv6HasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_dBVersionHasBeenSet(false)
 {
 }
 
@@ -52,6 +52,22 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterDBInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterDBInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_masterDBInstanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_specCodeHasBeenSet)
     {
@@ -85,36 +101,20 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_period, allocator);
     }
 
-    if (m_masterDBInstanceIdHasBeenSet)
+    if (m_vpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MasterDBInstanceId";
+        string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_masterDBInstanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_zoneHasBeenSet)
+    if (m_subnetIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
+        string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_projectIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
-    }
-
-    if (m_dBVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceChargeTypeHasBeenSet)
@@ -154,20 +154,12 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
-    if (m_vpcIdHasBeenSet)
+    if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
+        string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subnetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
     if (m_activityIdHasBeenSet)
@@ -176,22 +168,6 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         string key = "ActivityId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_activityId, allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_needSupportIpv6HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NeedSupportIpv6";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_needSupportIpv6, allocator);
     }
 
     if (m_readOnlyGroupIdHasBeenSet)
@@ -224,6 +200,30 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         }
     }
 
+    if (m_needSupportIpv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSupportIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSupportIpv6, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -231,6 +231,38 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateReadOnlyDBInstanceRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string CreateReadOnlyDBInstanceRequest::GetMasterDBInstanceId() const
+{
+    return m_masterDBInstanceId;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetMasterDBInstanceId(const string& _masterDBInstanceId)
+{
+    m_masterDBInstanceId = _masterDBInstanceId;
+    m_masterDBInstanceIdHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::MasterDBInstanceIdHasBeenSet() const
+{
+    return m_masterDBInstanceIdHasBeenSet;
+}
 
 string CreateReadOnlyDBInstanceRequest::GetSpecCode() const
 {
@@ -296,68 +328,36 @@ bool CreateReadOnlyDBInstanceRequest::PeriodHasBeenSet() const
     return m_periodHasBeenSet;
 }
 
-string CreateReadOnlyDBInstanceRequest::GetMasterDBInstanceId() const
+string CreateReadOnlyDBInstanceRequest::GetVpcId() const
 {
-    return m_masterDBInstanceId;
+    return m_vpcId;
 }
 
-void CreateReadOnlyDBInstanceRequest::SetMasterDBInstanceId(const string& _masterDBInstanceId)
+void CreateReadOnlyDBInstanceRequest::SetVpcId(const string& _vpcId)
 {
-    m_masterDBInstanceId = _masterDBInstanceId;
-    m_masterDBInstanceIdHasBeenSet = true;
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
 }
 
-bool CreateReadOnlyDBInstanceRequest::MasterDBInstanceIdHasBeenSet() const
+bool CreateReadOnlyDBInstanceRequest::VpcIdHasBeenSet() const
 {
-    return m_masterDBInstanceIdHasBeenSet;
+    return m_vpcIdHasBeenSet;
 }
 
-string CreateReadOnlyDBInstanceRequest::GetZone() const
+string CreateReadOnlyDBInstanceRequest::GetSubnetId() const
 {
-    return m_zone;
+    return m_subnetId;
 }
 
-void CreateReadOnlyDBInstanceRequest::SetZone(const string& _zone)
+void CreateReadOnlyDBInstanceRequest::SetSubnetId(const string& _subnetId)
 {
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
 }
 
-bool CreateReadOnlyDBInstanceRequest::ZoneHasBeenSet() const
+bool CreateReadOnlyDBInstanceRequest::SubnetIdHasBeenSet() const
 {
-    return m_zoneHasBeenSet;
-}
-
-uint64_t CreateReadOnlyDBInstanceRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void CreateReadOnlyDBInstanceRequest::SetProjectId(const uint64_t& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool CreateReadOnlyDBInstanceRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
-}
-
-string CreateReadOnlyDBInstanceRequest::GetDBVersion() const
-{
-    return m_dBVersion;
-}
-
-void CreateReadOnlyDBInstanceRequest::SetDBVersion(const string& _dBVersion)
-{
-    m_dBVersion = _dBVersion;
-    m_dBVersionHasBeenSet = true;
-}
-
-bool CreateReadOnlyDBInstanceRequest::DBVersionHasBeenSet() const
-{
-    return m_dBVersionHasBeenSet;
+    return m_subnetIdHasBeenSet;
 }
 
 string CreateReadOnlyDBInstanceRequest::GetInstanceChargeType() const
@@ -424,36 +424,20 @@ bool CreateReadOnlyDBInstanceRequest::AutoRenewFlagHasBeenSet() const
     return m_autoRenewFlagHasBeenSet;
 }
 
-string CreateReadOnlyDBInstanceRequest::GetVpcId() const
+uint64_t CreateReadOnlyDBInstanceRequest::GetProjectId() const
 {
-    return m_vpcId;
+    return m_projectId;
 }
 
-void CreateReadOnlyDBInstanceRequest::SetVpcId(const string& _vpcId)
+void CreateReadOnlyDBInstanceRequest::SetProjectId(const uint64_t& _projectId)
 {
-    m_vpcId = _vpcId;
-    m_vpcIdHasBeenSet = true;
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
 }
 
-bool CreateReadOnlyDBInstanceRequest::VpcIdHasBeenSet() const
+bool CreateReadOnlyDBInstanceRequest::ProjectIdHasBeenSet() const
 {
-    return m_vpcIdHasBeenSet;
-}
-
-string CreateReadOnlyDBInstanceRequest::GetSubnetId() const
-{
-    return m_subnetId;
-}
-
-void CreateReadOnlyDBInstanceRequest::SetSubnetId(const string& _subnetId)
-{
-    m_subnetId = _subnetId;
-    m_subnetIdHasBeenSet = true;
-}
-
-bool CreateReadOnlyDBInstanceRequest::SubnetIdHasBeenSet() const
-{
-    return m_subnetIdHasBeenSet;
+    return m_projectIdHasBeenSet;
 }
 
 int64_t CreateReadOnlyDBInstanceRequest::GetActivityId() const
@@ -470,38 +454,6 @@ void CreateReadOnlyDBInstanceRequest::SetActivityId(const int64_t& _activityId)
 bool CreateReadOnlyDBInstanceRequest::ActivityIdHasBeenSet() const
 {
     return m_activityIdHasBeenSet;
-}
-
-string CreateReadOnlyDBInstanceRequest::GetName() const
-{
-    return m_name;
-}
-
-void CreateReadOnlyDBInstanceRequest::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool CreateReadOnlyDBInstanceRequest::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-uint64_t CreateReadOnlyDBInstanceRequest::GetNeedSupportIpv6() const
-{
-    return m_needSupportIpv6;
-}
-
-void CreateReadOnlyDBInstanceRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6)
-{
-    m_needSupportIpv6 = _needSupportIpv6;
-    m_needSupportIpv6HasBeenSet = true;
-}
-
-bool CreateReadOnlyDBInstanceRequest::NeedSupportIpv6HasBeenSet() const
-{
-    return m_needSupportIpv6HasBeenSet;
 }
 
 string CreateReadOnlyDBInstanceRequest::GetReadOnlyGroupId() const
@@ -550,6 +502,54 @@ void CreateReadOnlyDBInstanceRequest::SetSecurityGroupIds(const vector<string>& 
 bool CreateReadOnlyDBInstanceRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+uint64_t CreateReadOnlyDBInstanceRequest::GetNeedSupportIpv6() const
+{
+    return m_needSupportIpv6;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6)
+{
+    m_needSupportIpv6 = _needSupportIpv6;
+    m_needSupportIpv6HasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::NeedSupportIpv6HasBeenSet() const
+{
+    return m_needSupportIpv6HasBeenSet;
+}
+
+string CreateReadOnlyDBInstanceRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string CreateReadOnlyDBInstanceRequest::GetDBVersion() const
+{
+    return m_dBVersion;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetDBVersion(const string& _dBVersion)
+{
+    m_dBVersion = _dBVersion;
+    m_dBVersionHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::DBVersionHasBeenSet() const
+{
+    return m_dBVersionHasBeenSet;
 }
 
 

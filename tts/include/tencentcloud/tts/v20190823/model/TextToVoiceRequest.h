@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool VoiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取主语言类型：<li>1-中文（默认）</li><li>2-英文</li>
-                     * @return PrimaryLanguage 主语言类型：<li>1-中文（默认）</li><li>2-英文</li>
+                     * 获取主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
+                     * @return PrimaryLanguage 主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
                      * 
                      */
                     int64_t GetPrimaryLanguage() const;
 
                     /**
-                     * 设置主语言类型：<li>1-中文（默认）</li><li>2-英文</li>
-                     * @param _primaryLanguage 主语言类型：<li>1-中文（默认）</li><li>2-英文</li>
+                     * 设置主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
+                     * @param _primaryLanguage 主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
                      * 
                      */
                     void SetPrimaryLanguage(const int64_t& _primaryLanguage);
@@ -398,7 +398,7 @@ namespace TencentCloud
                     bool m_voiceTypeHasBeenSet;
 
                     /**
-                     * 主语言类型：<li>1-中文（默认）</li><li>2-英文</li>
+                     * 主语言类型：<li>1-中文（默认）</li><li>2-英文</li><li>3-日文</li>
                      */
                     int64_t m_primaryLanguage;
                     bool m_primaryLanguageHasBeenSet;
