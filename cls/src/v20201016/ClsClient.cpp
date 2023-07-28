@@ -1889,6 +1889,49 @@ ClsClient::DescribeCosRechargesOutcomeCallable ClsClient::DescribeCosRechargesCa
     return task->get_future();
 }
 
+ClsClient::DescribeDashboardsOutcome ClsClient::DescribeDashboards(const DescribeDashboardsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDashboards");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDashboardsResponse rsp = DescribeDashboardsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDashboardsOutcome(rsp);
+        else
+            return DescribeDashboardsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDashboardsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeDashboardsAsync(const DescribeDashboardsRequest& request, const DescribeDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDashboards(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeDashboardsOutcomeCallable ClsClient::DescribeDashboardsCallable(const DescribeDashboardsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDashboardsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDashboards(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeDataTransformInfoOutcome ClsClient::DescribeDataTransformInfo(const DescribeDataTransformInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataTransformInfo");

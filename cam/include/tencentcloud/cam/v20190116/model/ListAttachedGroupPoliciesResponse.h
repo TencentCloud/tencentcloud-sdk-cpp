@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略总数
-                     * @return TotalNum 策略总数
+                     * 获取策略总数。取值范围大于等于0。
+                     * @return TotalNum 策略总数。取值范围大于等于0。
                      * 
                      */
                     uint64_t GetTotalNum() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略总数
+                     * 策略总数。取值范围大于等于0。
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;

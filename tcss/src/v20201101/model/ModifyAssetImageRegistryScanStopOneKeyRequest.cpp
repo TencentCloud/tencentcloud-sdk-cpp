@@ -25,7 +25,8 @@ using namespace std;
 ModifyAssetImageRegistryScanStopOneKeyRequest::ModifyAssetImageRegistryScanStopOneKeyRequest() :
     m_allHasBeenSet(false),
     m_imagesHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_taskIDHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,14 @@ string ModifyAssetImageRegistryScanStopOneKeyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_taskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskID, allocator);
     }
 
 
@@ -126,6 +135,22 @@ void ModifyAssetImageRegistryScanStopOneKeyRequest::SetId(const vector<uint64_t>
 bool ModifyAssetImageRegistryScanStopOneKeyRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+uint64_t ModifyAssetImageRegistryScanStopOneKeyRequest::GetTaskID() const
+{
+    return m_taskID;
+}
+
+void ModifyAssetImageRegistryScanStopOneKeyRequest::SetTaskID(const uint64_t& _taskID)
+{
+    m_taskID = _taskID;
+    m_taskIDHasBeenSet = true;
+}
+
+bool ModifyAssetImageRegistryScanStopOneKeyRequest::TaskIDHasBeenSet() const
+{
+    return m_taskIDHasBeenSet;
 }
 
 

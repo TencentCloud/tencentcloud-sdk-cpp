@@ -26,7 +26,8 @@ DescribeVpcEndPointServiceRequest::DescribeVpcEndPointServiceRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_endPointServiceIdsHasBeenSet(false)
+    m_endPointServiceIdsHasBeenSet(false),
+    m_isListAuthorizedEndPointServiceHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeVpcEndPointServiceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isListAuthorizedEndPointServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsListAuthorizedEndPointService";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isListAuthorizedEndPointService, allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeVpcEndPointServiceRequest::SetEndPointServiceIds(const vector<strin
 bool DescribeVpcEndPointServiceRequest::EndPointServiceIdsHasBeenSet() const
 {
     return m_endPointServiceIdsHasBeenSet;
+}
+
+bool DescribeVpcEndPointServiceRequest::GetIsListAuthorizedEndPointService() const
+{
+    return m_isListAuthorizedEndPointService;
+}
+
+void DescribeVpcEndPointServiceRequest::SetIsListAuthorizedEndPointService(const bool& _isListAuthorizedEndPointService)
+{
+    m_isListAuthorizedEndPointService = _isListAuthorizedEndPointService;
+    m_isListAuthorizedEndPointServiceHasBeenSet = true;
+}
+
+bool DescribeVpcEndPointServiceRequest::IsListAuthorizedEndPointServiceHasBeenSet() const
+{
+    return m_isListAuthorizedEndPointServiceHasBeenSet;
 }
 
 

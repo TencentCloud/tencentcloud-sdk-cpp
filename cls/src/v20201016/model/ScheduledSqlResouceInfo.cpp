@@ -22,7 +22,9 @@ using namespace std;
 
 ScheduledSqlResouceInfo::ScheduledSqlResouceInfo() :
     m_topicIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_bizTypeHasBeenSet(false),
+    m_metricNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome ScheduledSqlResouceInfo::Deserialize(const rapidjson::Value 
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("BizType") && !value["BizType"].IsNull())
+    {
+        if (!value["BizType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlResouceInfo.BizType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizType = value["BizType"].GetInt64();
+        m_bizTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricName") && !value["MetricName"].IsNull())
+    {
+        if (!value["MetricName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledSqlResouceInfo.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricName = string(value["MetricName"].GetString());
+        m_metricNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void ScheduledSqlResouceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bizType, allocator);
+    }
+
+    if (m_metricNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void ScheduledSqlResouceInfo::SetRegion(const string& _region)
 bool ScheduledSqlResouceInfo::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+int64_t ScheduledSqlResouceInfo::GetBizType() const
+{
+    return m_bizType;
+}
+
+void ScheduledSqlResouceInfo::SetBizType(const int64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool ScheduledSqlResouceInfo::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
+}
+
+string ScheduledSqlResouceInfo::GetMetricName() const
+{
+    return m_metricName;
+}
+
+void ScheduledSqlResouceInfo::SetMetricName(const string& _metricName)
+{
+    m_metricName = _metricName;
+    m_metricNameHasBeenSet = true;
+}
+
+bool ScheduledSqlResouceInfo::MetricNameHasBeenSet() const
+{
+    return m_metricNameHasBeenSet;
 }
 

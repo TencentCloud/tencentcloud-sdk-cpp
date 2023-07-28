@@ -35,7 +35,8 @@ LicenseDetail::LicenseDetail() :
     m_buyTimeHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_aliasHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_freezeNumHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome LicenseDetail::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("FreezeNum") && !value["FreezeNum"].IsNull())
+    {
+        if (!value["FreezeNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseDetail.FreezeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freezeNum = value["FreezeNum"].GetInt64();
+        m_freezeNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void LicenseDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_freezeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreezeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freezeNum, allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void LicenseDetail::SetTags(const vector<Tags>& _tags)
 bool LicenseDetail::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t LicenseDetail::GetFreezeNum() const
+{
+    return m_freezeNum;
+}
+
+void LicenseDetail::SetFreezeNum(const int64_t& _freezeNum)
+{
+    m_freezeNum = _freezeNum;
+    m_freezeNumHasBeenSet = true;
+}
+
+bool LicenseDetail::FreezeNumHasBeenSet() const
+{
+    return m_freezeNumHasBeenSet;
 }
 

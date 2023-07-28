@@ -109,6 +109,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeCosRechargesResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeDashboardsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeDashboardsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeDataTransformInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeDataTransformInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsRequest.h>
@@ -326,6 +328,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCosRechargesResponse> DescribeCosRechargesOutcome;
                 typedef std::future<DescribeCosRechargesOutcome> DescribeCosRechargesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeCosRechargesRequest&, DescribeCosRechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRechargesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDashboardsResponse> DescribeDashboardsOutcome;
+                typedef std::future<DescribeDashboardsOutcome> DescribeDashboardsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeDashboardsRequest&, DescribeDashboardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDashboardsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataTransformInfoResponse> DescribeDataTransformInfoOutcome;
                 typedef std::future<DescribeDataTransformInfoOutcome> DescribeDataTransformInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeDataTransformInfoRequest&, DescribeDataTransformInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataTransformInfoAsyncHandler;
@@ -826,6 +831,15 @@ namespace TencentCloud
                 DescribeCosRechargesOutcome DescribeCosRecharges(const Model::DescribeCosRechargesRequest &request);
                 void DescribeCosRechargesAsync(const Model::DescribeCosRechargesRequest& request, const DescribeCosRechargesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCosRechargesOutcomeCallable DescribeCosRechargesCallable(const Model::DescribeCosRechargesRequest& request);
+
+                /**
+                 *本接口用于获取仪表盘
+                 * @param req DescribeDashboardsRequest
+                 * @return DescribeDashboardsOutcome
+                 */
+                DescribeDashboardsOutcome DescribeDashboards(const Model::DescribeDashboardsRequest &request);
+                void DescribeDashboardsAsync(const Model::DescribeDashboardsRequest& request, const DescribeDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDashboardsOutcomeCallable DescribeDashboardsCallable(const Model::DescribeDashboardsRequest& request);
 
                 /**
                  *本接口用于获取数据加工任务列表基本信息

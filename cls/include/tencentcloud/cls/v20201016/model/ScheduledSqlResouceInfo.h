@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取topic的地域信息
-                     * @return Region topic的地域信息
+                     * 获取主题的的地域信息
+                     * @return Region 主题的的地域信息
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置topic的地域信息
-                     * @param _region topic的地域信息
+                     * 设置主题的的地域信息
+                     * @param _region 主题的的地域信息
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -88,6 +88,48 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取主题类型：0为日志主题，1为指标主题
+                     * @return BizType 主题类型：0为日志主题，1为指标主题
+                     * 
+                     */
+                    int64_t GetBizType() const;
+
+                    /**
+                     * 设置主题类型：0为日志主题，1为指标主题
+                     * @param _bizType 主题类型：0为日志主题，1为指标主题
+                     * 
+                     */
+                    void SetBizType(const int64_t& _bizType);
+
+                    /**
+                     * 判断参数 BizType 是否已赋值
+                     * @return BizType 是否已赋值
+                     * 
+                     */
+                    bool BizTypeHasBeenSet() const;
+
+                    /**
+                     * 获取指标名称
+                     * @return MetricName 指标名称
+                     * 
+                     */
+                    std::string GetMetricName() const;
+
+                    /**
+                     * 设置指标名称
+                     * @param _metricName 指标名称
+                     * 
+                     */
+                    void SetMetricName(const std::string& _metricName);
+
+                    /**
+                     * 判断参数 MetricName 是否已赋值
+                     * @return MetricName 是否已赋值
+                     * 
+                     */
+                    bool MetricNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,10 +139,22 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * topic的地域信息
+                     * 主题的的地域信息
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 主题类型：0为日志主题，1为指标主题
+                     */
+                    int64_t m_bizType;
+                    bool m_bizTypeHasBeenSet;
+
+                    /**
+                     * 指标名称
+                     */
+                    std::string m_metricName;
+                    bool m_metricNameHasBeenSet;
 
                 };
             }

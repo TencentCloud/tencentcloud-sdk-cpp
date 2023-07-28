@@ -429,6 +429,56 @@ namespace TencentCloud
                      */
                     bool VideoOrientationHasBeenSet() const;
 
+                    /**
+                     * 获取开启课后评分。 0：不开启(默认)  1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsGradingRequiredPostClass 开启课后评分。 0：不开启(默认)  1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsGradingRequiredPostClass() const;
+
+                    /**
+                     * 设置开启课后评分。 0：不开启(默认)  1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isGradingRequiredPostClass 开启课后评分。 0：不开启(默认)  1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsGradingRequiredPostClass(const int64_t& _isGradingRequiredPostClass);
+
+                    /**
+                     * 判断参数 IsGradingRequiredPostClass 是否已赋值
+                     * @return IsGradingRequiredPostClass 是否已赋值
+                     * 
+                     */
+                    bool IsGradingRequiredPostClassHasBeenSet() const;
+
+                    /**
+                     * 获取房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoomType 房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRoomType() const;
+
+                    /**
+                     * 设置房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _roomType 房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRoomType(const int64_t& _roomType);
+
+                    /**
+                     * 判断参数 RoomType 是否已赋值
+                     * @return RoomType 是否已赋值
+                     * 
+                     */
+                    bool RoomTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -537,6 +587,20 @@ namespace TencentCloud
                      */
                     int64_t m_videoOrientation;
                     bool m_videoOrientationHasBeenSet;
+
+                    /**
+                     * 开启课后评分。 0：不开启(默认)  1：开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isGradingRequiredPostClass;
+                    bool m_isGradingRequiredPostClassHasBeenSet;
+
+                    /**
+                     * 房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_roomType;
+                    bool m_roomTypeHasBeenSet;
 
                 };
             }

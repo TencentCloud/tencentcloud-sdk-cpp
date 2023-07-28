@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色），默认 false
-                     * @return VoiceoverDialogueSplit 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色），默认 false
+                     * 获取旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
+                     * @return VoiceoverDialogueSplit 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
                      * 
                      */
                     bool GetVoiceoverDialogueSplit() const;
 
                     /**
-                     * 设置旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色），默认 false
-                     * @param _voiceoverDialogueSplit 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色），默认 false
+                     * 设置旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
+                     * @param _voiceoverDialogueSplit 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
                      * 
                      */
                     void SetVoiceoverDialogueSplit(const bool& _voiceoverDialogueSplit);
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色），默认 false
+                     * 旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false
                      */
                     bool m_voiceoverDialogueSplit;
                     bool m_voiceoverDialogueSplitHasBeenSet;

@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取停止的任务ID
+                     * @return TaskID 停止的任务ID
+                     * 
+                     */
+                    uint64_t GetTaskID() const;
+
+                    /**
+                     * 设置停止的任务ID
+                     * @param _taskID 停止的任务ID
+                     * 
+                     */
+                    void SetTaskID(const uint64_t& _taskID);
+
+                    /**
+                     * 判断参数 TaskID 是否已赋值
+                     * @return TaskID 是否已赋值
+                     * 
+                     */
+                    bool TaskIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 停止的任务ID
+                     */
+                    uint64_t m_taskID;
+                    bool m_taskIDHasBeenSet;
 
                 };
             }

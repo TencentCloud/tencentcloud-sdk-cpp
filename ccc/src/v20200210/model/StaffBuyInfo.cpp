@@ -23,7 +23,8 @@ using namespace std;
 StaffBuyInfo::StaffBuyInfo() :
     m_numHasBeenSet(false),
     m_buyTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_sipNumHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome StaffBuyInfo::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SipNum") && !value["SipNum"].IsNull())
+    {
+        if (!value["SipNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffBuyInfo.SipNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sipNum = value["SipNum"].GetInt64();
+        m_sipNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void StaffBuyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_sipNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SipNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sipNum, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void StaffBuyInfo::SetEndTime(const int64_t& _endTime)
 bool StaffBuyInfo::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t StaffBuyInfo::GetSipNum() const
+{
+    return m_sipNum;
+}
+
+void StaffBuyInfo::SetSipNum(const int64_t& _sipNum)
+{
+    m_sipNum = _sipNum;
+    m_sipNumHasBeenSet = true;
+}
+
+bool StaffBuyInfo::SipNumHasBeenSet() const
+{
+    return m_sipNumHasBeenSet;
 }
 

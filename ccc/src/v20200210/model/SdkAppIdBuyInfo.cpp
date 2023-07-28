@@ -25,7 +25,8 @@ SdkAppIdBuyInfo::SdkAppIdBuyInfo() :
     m_nameHasBeenSet(false),
     m_staffBuyNumHasBeenSet(false),
     m_staffBuyListHasBeenSet(false),
-    m_phoneNumBuyListHasBeenSet(false)
+    m_phoneNumBuyListHasBeenSet(false),
+    m_sipBuyNumHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome SdkAppIdBuyInfo::Deserialize(const rapidjson::Value &value)
         m_phoneNumBuyListHasBeenSet = true;
     }
 
+    if (value.HasMember("SipBuyNum") && !value["SipBuyNum"].IsNull())
+    {
+        if (!value["SipBuyNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdBuyInfo.SipBuyNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sipBuyNum = value["SipBuyNum"].GetInt64();
+        m_sipBuyNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -163,6 +174,14 @@ void SdkAppIdBuyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sipBuyNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SipBuyNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sipBuyNum, allocator);
     }
 
 }
@@ -246,5 +265,21 @@ void SdkAppIdBuyInfo::SetPhoneNumBuyList(const vector<PhoneNumBuyInfo>& _phoneNu
 bool SdkAppIdBuyInfo::PhoneNumBuyListHasBeenSet() const
 {
     return m_phoneNumBuyListHasBeenSet;
+}
+
+int64_t SdkAppIdBuyInfo::GetSipBuyNum() const
+{
+    return m_sipBuyNum;
+}
+
+void SdkAppIdBuyInfo::SetSipBuyNum(const int64_t& _sipBuyNum)
+{
+    m_sipBuyNum = _sipBuyNum;
+    m_sipBuyNumHasBeenSet = true;
+}
+
+bool SdkAppIdBuyInfo::SipBuyNumHasBeenSet() const
+{
+    return m_sipBuyNumHasBeenSet;
 }
 

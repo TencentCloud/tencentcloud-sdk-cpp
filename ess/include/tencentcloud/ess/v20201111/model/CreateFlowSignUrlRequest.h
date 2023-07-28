@@ -68,15 +68,23 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
-                     * @return FlowApproverInfos 流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * 获取流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。
+
+签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * @return FlowApproverInfos 流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。
+
+签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
                      * 
                      */
                     std::vector<FlowCreateApprover> GetFlowApproverInfos() const;
 
                     /**
-                     * 设置流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
-                     * @param _flowApproverInfos 流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * 设置流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。
+
+签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * @param _flowApproverInfos 流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。
+
+签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
                      * 
                      */
                     void SetFlowApproverInfos(const std::vector<FlowCreateApprover>& _flowApproverInfos);
@@ -181,7 +189,9 @@ namespace TencentCloud
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 流程签署人，其中ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。还需注意签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
+                     * 流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。
+
+签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。
                      */
                     std::vector<FlowCreateApprover> m_flowApproverInfos;
                     bool m_flowApproverInfosHasBeenSet;

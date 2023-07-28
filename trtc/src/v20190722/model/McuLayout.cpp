@@ -30,7 +30,8 @@ McuLayout::McuLayout() :
     m_renderModeHasBeenSet(false),
     m_backGroundColorHasBeenSet(false),
     m_backgroundImageUrlHasBeenSet(false),
-    m_customCropHasBeenSet(false)
+    m_customCropHasBeenSet(false),
+    m_backgroundRenderModeHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome McuLayout::Deserialize(const rapidjson::Value &value)
         m_customCropHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundRenderMode") && !value["BackgroundRenderMode"].IsNull())
+    {
+        if (!value["BackgroundRenderMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayout.BackgroundRenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backgroundRenderMode = value["BackgroundRenderMode"].GetUint64();
+        m_backgroundRenderModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ void McuLayout::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customCrop.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_backgroundRenderModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundRenderMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backgroundRenderMode, allocator);
     }
 
 }
@@ -403,5 +422,21 @@ void McuLayout::SetCustomCrop(const McuCustomCrop& _customCrop)
 bool McuLayout::CustomCropHasBeenSet() const
 {
     return m_customCropHasBeenSet;
+}
+
+uint64_t McuLayout::GetBackgroundRenderMode() const
+{
+    return m_backgroundRenderMode;
+}
+
+void McuLayout::SetBackgroundRenderMode(const uint64_t& _backgroundRenderMode)
+{
+    m_backgroundRenderMode = _backgroundRenderMode;
+    m_backgroundRenderModeHasBeenSet = true;
+}
+
+bool McuLayout::BackgroundRenderModeHasBeenSet() const
+{
+    return m_backgroundRenderModeHasBeenSet;
 }
 

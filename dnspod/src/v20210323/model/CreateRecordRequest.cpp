@@ -33,7 +33,8 @@ CreateRecordRequest::CreateRecordRequest() :
     m_mXHasBeenSet(false),
     m_tTLHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string CreateRecordRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +323,22 @@ void CreateRecordRequest::SetStatus(const string& _status)
 bool CreateRecordRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CreateRecordRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void CreateRecordRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool CreateRecordRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 

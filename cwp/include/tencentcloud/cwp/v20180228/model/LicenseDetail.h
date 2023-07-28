@@ -370,6 +370,31 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FreezeNum 冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFreezeNum() const;
+
+                    /**
+                     * 设置冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _freezeNum 冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFreezeNum(const int64_t& _freezeNum);
+
+                    /**
+                     * 判断参数 FreezeNum 是否已赋值
+                     * @return FreezeNum 是否已赋值
+                     * 
+                     */
+                    bool FreezeNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +488,13 @@ namespace TencentCloud
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 冻结数,当为0时 为未冻结,非0 则表示冻结授权数额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_freezeNum;
+                    bool m_freezeNumHasBeenSet;
 
                 };
             }

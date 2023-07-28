@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
-CreateAssetImageRegistryScanTaskOneKeyResponse::CreateAssetImageRegistryScanTaskOneKeyResponse()
+CreateAssetImageRegistryScanTaskOneKeyResponse::CreateAssetImageRegistryScanTaskOneKeyResponse() :
+    m_taskIDHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateAssetImageRegistryScanTaskOneKeyResponse::Deserialize(
     }
 
 
+    if (rsp.HasMember("TaskID") && !rsp["TaskID"].IsNull())
+    {
+        if (!rsp["TaskID"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskID` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskID = rsp["TaskID"].GetUint64();
+        m_taskIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateAssetImageRegistryScanTaskOneKeyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_taskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskID, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateAssetImageRegistryScanTaskOneKeyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateAssetImageRegistryScanTaskOneKeyResponse::GetTaskID() const
+{
+    return m_taskID;
+}
+
+bool CreateAssetImageRegistryScanTaskOneKeyResponse::TaskIDHasBeenSet() const
+{
+    return m_taskIDHasBeenSet;
+}
 
 

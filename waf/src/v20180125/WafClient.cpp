@@ -685,6 +685,49 @@ WafClient::DescribeAccessFastAnalysisOutcomeCallable WafClient::DescribeAccessFa
     return task->get_future();
 }
 
+WafClient::DescribeAccessHistogramOutcome WafClient::DescribeAccessHistogram(const DescribeAccessHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessHistogramResponse rsp = DescribeAccessHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessHistogramOutcome(rsp);
+        else
+            return DescribeAccessHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessHistogramOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAccessHistogramAsync(const DescribeAccessHistogramRequest& request, const DescribeAccessHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAccessHistogramOutcomeCallable WafClient::DescribeAccessHistogramCallable(const DescribeAccessHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessHistogram(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeAccessIndexOutcome WafClient::DescribeAccessIndex(const DescribeAccessIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccessIndex");

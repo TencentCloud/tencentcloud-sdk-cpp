@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/RegistryConnDetectResult.h>
 
 
 namespace TencentCloud
@@ -130,8 +131,8 @@ namespace TencentCloud
                     bool RegistryVersionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，列表：public（公网）
-                     * @return NetType 网络类型，列表：public（公网）
+                     * 获取网络类型，列表：public（公网）,private（私网）
+                     * @return NetType 网络类型，列表：public（公网）,private（私网）
                      * 
                      */
                     std::string GetNetType() const;
@@ -191,6 +192,34 @@ namespace TencentCloud
                      */
                     bool InsecureHasBeenSet() const;
 
+                    /**
+                     * 获取联通性检测结果详情
+                     * @return ConnDetectDetail 联通性检测结果详情
+                     * 
+                     */
+                    std::vector<RegistryConnDetectResult> GetConnDetectDetail() const;
+
+                    /**
+                     * 判断参数 ConnDetectDetail 是否已赋值
+                     * @return ConnDetectDetail 是否已赋值
+                     * 
+                     */
+                    bool ConnDetectDetailHasBeenSet() const;
+
+                    /**
+                     * 获取tcr情况下instance_id
+                     * @return InstanceID tcr情况下instance_id
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,7 +260,7 @@ namespace TencentCloud
                     bool m_registryVersionHasBeenSet;
 
                     /**
-                     * 网络类型，列表：public（公网）
+                     * 网络类型，列表：public（公网）,private（私网）
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
@@ -256,6 +285,18 @@ namespace TencentCloud
                      */
                     uint64_t m_insecure;
                     bool m_insecureHasBeenSet;
+
+                    /**
+                     * 联通性检测结果详情
+                     */
+                    std::vector<RegistryConnDetectResult> m_connDetectDetail;
+                    bool m_connDetectDetailHasBeenSet;
+
+                    /**
+                     * tcr情况下instance_id
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                 };
             }

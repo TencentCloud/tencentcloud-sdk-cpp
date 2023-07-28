@@ -240,6 +240,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/AddComplianceAssetPolicySetToWhitelistResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeUnauthorizedCoresTendencyResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallPolicyStatusResponse.h
+  include/tencentcloud/tcss/v20201101/model/ConnDetectConfig.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetContainerListResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyContainerNetStatusRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulIgnoreLocalImageListRequest.h
@@ -437,6 +438,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ModifyAccessControlStatusRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateProcessEventsExportJobRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulDetailResponse.h
+  include/tencentcloud/tcss/v20201101/model/RegistryConnDetectResult.h
   include/tencentcloud/tcss/v20201101/model/ModifyCompliancePeriodTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/RiskSyscallEventInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeEscapeEventTendencyResponse.h
@@ -1059,6 +1061,7 @@ set(tcss_src
   src/v20201101/model/AddComplianceAssetPolicySetToWhitelistResponse.cpp
   src/v20201101/model/DescribeUnauthorizedCoresTendencyResponse.cpp
   src/v20201101/model/DescribeNetworkFirewallPolicyStatusResponse.cpp
+  src/v20201101/model/ConnDetectConfig.cpp
   src/v20201101/model/DescribeAssetContainerListResponse.cpp
   src/v20201101/model/ModifyContainerNetStatusRequest.cpp
   src/v20201101/model/DescribeVulIgnoreLocalImageListRequest.cpp
@@ -1256,6 +1259,7 @@ set(tcss_src
   src/v20201101/model/ModifyAccessControlStatusRequest.cpp
   src/v20201101/model/CreateProcessEventsExportJobRequest.cpp
   src/v20201101/model/DescribeVulDetailResponse.cpp
+  src/v20201101/model/RegistryConnDetectResult.cpp
   src/v20201101/model/ModifyCompliancePeriodTaskResponse.cpp
   src/v20201101/model/RiskSyscallEventInfo.cpp
   src/v20201101/model/DescribeEscapeEventTendencyResponse.cpp

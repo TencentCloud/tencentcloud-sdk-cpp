@@ -53,6 +53,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAccessExportsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessHistogramRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewRequest.h>
@@ -184,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccessFastAnalysisResponse> DescribeAccessFastAnalysisOutcome;
                 typedef std::future<DescribeAccessFastAnalysisOutcome> DescribeAccessFastAnalysisOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAccessFastAnalysisRequest&, DescribeAccessFastAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessFastAnalysisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessHistogramResponse> DescribeAccessHistogramOutcome;
+                typedef std::future<DescribeAccessHistogramOutcome> DescribeAccessHistogramOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAccessHistogramRequest&, DescribeAccessHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessHistogramAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccessIndexResponse> DescribeAccessIndexOutcome;
                 typedef std::future<DescribeAccessIndexOutcome> DescribeAccessIndexOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAccessIndexRequest&, DescribeAccessIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessIndexAsyncHandler;
@@ -429,6 +434,15 @@ namespace TencentCloud
                 DescribeAccessFastAnalysisOutcome DescribeAccessFastAnalysis(const Model::DescribeAccessFastAnalysisRequest &request);
                 void DescribeAccessFastAnalysisAsync(const Model::DescribeAccessFastAnalysisRequest& request, const DescribeAccessFastAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccessFastAnalysisOutcomeCallable DescribeAccessFastAnalysisCallable(const Model::DescribeAccessFastAnalysisRequest& request);
+
+                /**
+                 *本接口用于访问日志柱状趋势图
+                 * @param req DescribeAccessHistogramRequest
+                 * @return DescribeAccessHistogramOutcome
+                 */
+                DescribeAccessHistogramOutcome DescribeAccessHistogram(const Model::DescribeAccessHistogramRequest &request);
+                void DescribeAccessHistogramAsync(const Model::DescribeAccessHistogramRequest& request, const DescribeAccessHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessHistogramOutcomeCallable DescribeAccessHistogramCallable(const Model::DescribeAccessHistogramRequest& request);
 
                 /**
                  *本接口用于获取访问日志索引配置信息

@@ -357,6 +357,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeSnapshotFilesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSnapshotPoliciesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSnapshotPoliciesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSpecificTrafficPackageUsedDetailsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSpecificTrafficPackageUsedDetailsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetResourceDashboardRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetResourceDashboardResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsRequest.h>
@@ -1150,6 +1152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSnapshotPoliciesResponse> DescribeSnapshotPoliciesOutcome;
                 typedef std::future<DescribeSnapshotPoliciesOutcome> DescribeSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSnapshotPoliciesRequest&, DescribeSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpecificTrafficPackageUsedDetailsResponse> DescribeSpecificTrafficPackageUsedDetailsOutcome;
+                typedef std::future<DescribeSpecificTrafficPackageUsedDetailsOutcome> DescribeSpecificTrafficPackageUsedDetailsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSpecificTrafficPackageUsedDetailsRequest&, DescribeSpecificTrafficPackageUsedDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecificTrafficPackageUsedDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubnetResourceDashboardResponse> DescribeSubnetResourceDashboardOutcome;
                 typedef std::future<DescribeSubnetResourceDashboardOutcome> DescribeSubnetResourceDashboardOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSubnetResourceDashboardRequest&, DescribeSubnetResourceDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetResourceDashboardAsyncHandler;
@@ -3228,6 +3233,15 @@ namespace TencentCloud
                 DescribeSnapshotPoliciesOutcome DescribeSnapshotPolicies(const Model::DescribeSnapshotPoliciesRequest &request);
                 void DescribeSnapshotPoliciesAsync(const Model::DescribeSnapshotPoliciesRequest& request, const DescribeSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSnapshotPoliciesOutcomeCallable DescribeSnapshotPoliciesCallable(const Model::DescribeSnapshotPoliciesRequest& request);
+
+                /**
+                 *本接口 (DescribeSpecificTrafficPackageUsedDetails) 用于查询指定 共享流量包 的用量明细。
+                 * @param req DescribeSpecificTrafficPackageUsedDetailsRequest
+                 * @return DescribeSpecificTrafficPackageUsedDetailsOutcome
+                 */
+                DescribeSpecificTrafficPackageUsedDetailsOutcome DescribeSpecificTrafficPackageUsedDetails(const Model::DescribeSpecificTrafficPackageUsedDetailsRequest &request);
+                void DescribeSpecificTrafficPackageUsedDetailsAsync(const Model::DescribeSpecificTrafficPackageUsedDetailsRequest& request, const DescribeSpecificTrafficPackageUsedDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpecificTrafficPackageUsedDetailsOutcomeCallable DescribeSpecificTrafficPackageUsedDetailsCallable(const Model::DescribeSpecificTrafficPackageUsedDetailsRequest& request);
 
                 /**
                  *本接口(DescribeSubnetResourceDashboard)用于查看Subnet资源信息。

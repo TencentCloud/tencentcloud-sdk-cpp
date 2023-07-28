@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool ZOrderHasBeenSet() const;
 
                     /**
-                     * 获取子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
-                     * @return RenderMode 子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
+                     * 获取子画面在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底。不填默认为0。
+                     * @return RenderMode 子画面在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底。不填默认为0。
                      * 
                      */
                     uint64_t GetRenderMode() const;
 
                     /**
-                     * 设置子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
-                     * @param _renderMode 子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
+                     * 设置子画面在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底。不填默认为0。
+                     * @param _renderMode 子画面在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底。不填默认为0。
                      * 
                      */
                     void SetRenderMode(const uint64_t& _renderMode);
@@ -286,6 +286,27 @@ namespace TencentCloud
                      */
                     bool CustomCropHasBeenSet() const;
 
+                    /**
+                     * 获取子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * @return BackgroundRenderMode 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * 
+                     */
+                    uint64_t GetBackgroundRenderMode() const;
+
+                    /**
+                     * 设置子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * @param _backgroundRenderMode 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * 
+                     */
+                    void SetBackgroundRenderMode(const uint64_t& _backgroundRenderMode);
+
+                    /**
+                     * 判断参数 BackgroundRenderMode 是否已赋值
+                     * @return BackgroundRenderMode 是否已赋值
+                     * 
+                     */
+                    bool BackgroundRenderModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -325,7 +346,7 @@ namespace TencentCloud
                     bool m_zOrderHasBeenSet;
 
                     /**
-                     * 子画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。
+                     * 子画面在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底。不填默认为0。
                      */
                     uint64_t m_renderMode;
                     bool m_renderModeHasBeenSet;
@@ -354,6 +375,12 @@ namespace TencentCloud
                      */
                     McuCustomCrop m_customCrop;
                     bool m_customCropHasBeenSet;
+
+                    /**
+                     * 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     */
+                    uint64_t m_backgroundRenderMode;
+                    bool m_backgroundRenderModeHasBeenSet;
 
                 };
             }

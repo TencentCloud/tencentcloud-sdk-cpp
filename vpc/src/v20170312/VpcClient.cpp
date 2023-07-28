@@ -7221,6 +7221,49 @@ VpcClient::DescribeSnapshotPoliciesOutcomeCallable VpcClient::DescribeSnapshotPo
     return task->get_future();
 }
 
+VpcClient::DescribeSpecificTrafficPackageUsedDetailsOutcome VpcClient::DescribeSpecificTrafficPackageUsedDetails(const DescribeSpecificTrafficPackageUsedDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpecificTrafficPackageUsedDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpecificTrafficPackageUsedDetailsResponse rsp = DescribeSpecificTrafficPackageUsedDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpecificTrafficPackageUsedDetailsOutcome(rsp);
+        else
+            return DescribeSpecificTrafficPackageUsedDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpecificTrafficPackageUsedDetailsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSpecificTrafficPackageUsedDetailsAsync(const DescribeSpecificTrafficPackageUsedDetailsRequest& request, const DescribeSpecificTrafficPackageUsedDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpecificTrafficPackageUsedDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSpecificTrafficPackageUsedDetailsOutcomeCallable VpcClient::DescribeSpecificTrafficPackageUsedDetailsCallable(const DescribeSpecificTrafficPackageUsedDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpecificTrafficPackageUsedDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpecificTrafficPackageUsedDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeSubnetResourceDashboardOutcome VpcClient::DescribeSubnetResourceDashboard(const DescribeSubnetResourceDashboardRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnetResourceDashboard");

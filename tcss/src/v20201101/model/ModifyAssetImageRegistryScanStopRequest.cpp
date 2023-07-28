@@ -28,7 +28,8 @@ ModifyAssetImageRegistryScanStopRequest::ModifyAssetImageRegistryScanStopRequest
     m_idHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_excludeImageListHasBeenSet(false),
-    m_onlyScanLatestHasBeenSet(false)
+    m_onlyScanLatestHasBeenSet(false),
+    m_taskIDHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string ModifyAssetImageRegistryScanStopRequest::ToJsonString() const
         string key = "OnlyScanLatest";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_onlyScanLatest, allocator);
+    }
+
+    if (m_taskIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskID, allocator);
     }
 
 
@@ -213,6 +222,22 @@ void ModifyAssetImageRegistryScanStopRequest::SetOnlyScanLatest(const bool& _onl
 bool ModifyAssetImageRegistryScanStopRequest::OnlyScanLatestHasBeenSet() const
 {
     return m_onlyScanLatestHasBeenSet;
+}
+
+uint64_t ModifyAssetImageRegistryScanStopRequest::GetTaskID() const
+{
+    return m_taskID;
+}
+
+void ModifyAssetImageRegistryScanStopRequest::SetTaskID(const uint64_t& _taskID)
+{
+    m_taskID = _taskID;
+    m_taskIDHasBeenSet = true;
+}
+
+bool ModifyAssetImageRegistryScanStopRequest::TaskIDHasBeenSet() const
+{
+    return m_taskIDHasBeenSet;
 }
 
 

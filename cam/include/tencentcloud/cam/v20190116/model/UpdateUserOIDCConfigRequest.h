@@ -44,18 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取身份提供商URL。OpenID Connect身份提供商标识。
-对应企业IdP提供的Openid-configuration中"issuer"字段的值。
+对应企业IdP提供的Openid-configuration中"issuer"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      * @return IdentityUrl 身份提供商URL。OpenID Connect身份提供商标识。
-对应企业IdP提供的Openid-configuration中"issuer"字段的值。
+对应企业IdP提供的Openid-configuration中"issuer"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      * 
                      */
                     std::string GetIdentityUrl() const;
 
                     /**
                      * 设置身份提供商URL。OpenID Connect身份提供商标识。
-对应企业IdP提供的Openid-configuration中"issuer"字段的值。
+对应企业IdP提供的Openid-configuration中"issuer"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      * @param _identityUrl 身份提供商URL。OpenID Connect身份提供商标识。
-对应企业IdP提供的Openid-configuration中"issuer"字段的值。
+对应企业IdP提供的Openid-configuration中"issuer"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      * 
                      */
                     void SetIdentityUrl(const std::string& _identityUrl);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
-                     * 获取签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     * @return IdentityKey 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
+                     * 获取RSA签名公钥，JWKS格式，需要进行base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     * @return IdentityKey RSA签名公钥，JWKS格式，需要进行base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
                      * 
                      */
                     std::string GetIdentityKey() const;
 
                     /**
-                     * 设置签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     * @param _identityKey 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
+                     * 设置RSA签名公钥，JWKS格式，需要进行base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     * @param _identityKey RSA签名公钥，JWKS格式，需要进行base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
                      * 
                      */
                     void SetIdentityKey(const std::string& _identityKey);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IdentityKeyHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID，在OpenID Connect身份提供商注册的客户端ID。
-                     * @return ClientId 客户端ID，在OpenID Connect身份提供商注册的客户端ID。
+                     * 获取客户端ID，在OpenID Connect身份提供商注册的客户端ID，允许英文字母、数字、特殊字符.-_:/，不能以特殊字符.-_:/开头，单个客户端ID最大64个字符。
+                     * @return ClientId 客户端ID，在OpenID Connect身份提供商注册的客户端ID，允许英文字母、数字、特殊字符.-_:/，不能以特殊字符.-_:/开头，单个客户端ID最大64个字符。
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置客户端ID，在OpenID Connect身份提供商注册的客户端ID。
-                     * @param _clientId 客户端ID，在OpenID Connect身份提供商注册的客户端ID。
+                     * 设置客户端ID，在OpenID Connect身份提供商注册的客户端ID，允许英文字母、数字、特殊字符.-_:/，不能以特殊字符.-_:/开头，单个客户端ID最大64个字符。
+                     * @param _clientId 客户端ID，在OpenID Connect身份提供商注册的客户端ID，允许英文字母、数字、特殊字符.-_:/，不能以特殊字符.-_:/开头，单个客户端ID最大64个字符。
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值。
-                     * @return AuthorizationEndpoint 授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值。
+                     * 获取授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
+                     * @return AuthorizationEndpoint 授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      * 
                      */
                     std::string GetAuthorizationEndpoint() const;
 
                     /**
-                     * 设置授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值。
-                     * @param _authorizationEndpoint 授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值。
+                     * 设置授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
+                     * @param _authorizationEndpoint 授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      * 
                      */
                     void SetAuthorizationEndpoint(const std::string& _authorizationEndpoint);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AuthorizationEndpointHasBeenSet() const;
 
                     /**
-                     * 获取授权请求Response type，固定值id_token。
-                     * @return ResponseType 授权请求Response type，固定值id_token。
+                     * 获取授权请求Response type，有code，id_token，固定值id_token。
+                     * @return ResponseType 授权请求Response type，有code，id_token，固定值id_token。
                      * 
                      */
                     std::string GetResponseType() const;
 
                     /**
-                     * 设置授权请求Response type，固定值id_token。
-                     * @param _responseType 授权请求Response type，固定值id_token。
+                     * 设置授权请求Response type，有code，id_token，固定值id_token。
+                     * @param _responseType 授权请求Response type，有code，id_token，固定值id_token。
                      * 
                      */
                     void SetResponseType(const std::string& _responseType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ResponseTypeHasBeenSet() const;
 
                     /**
-                     * 获取授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。
-                     * @return ResponseMode 授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。
+                     * 获取授权请求Response mode。授权请求返回模式，有form_post和fragment两种可选模式，推荐选择form_post模式。
+                     * @return ResponseMode 授权请求Response mode。授权请求返回模式，有form_post和fragment两种可选模式，推荐选择form_post模式。
                      * 
                      */
                     std::string GetResponseMode() const;
 
                     /**
-                     * 设置授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。
-                     * @param _responseMode 授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。
+                     * 设置授权请求Response mode。授权请求返回模式，有form_post和fragment两种可选模式，推荐选择form_post模式。
+                     * @param _responseMode 授权请求Response mode。授权请求返回模式，有form_post和fragment两种可选模式，推荐选择form_post模式。
                      * 
                      */
                     void SetResponseMode(const std::string& _responseMode);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ResponseModeHasBeenSet() const;
 
                     /**
-                     * 获取映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段
-                     * @return MappingFiled 映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段
+                     * 获取映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段,仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-255个中文或英文字符
+                     * @return MappingFiled 映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段,仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-255个中文或英文字符
                      * 
                      */
                     std::string GetMappingFiled() const;
 
                     /**
-                     * 设置映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段
-                     * @param _mappingFiled 映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段
+                     * 设置映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段,仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-255个中文或英文字符
+                     * @param _mappingFiled 映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段,仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-255个中文或英文字符
                      * 
                      */
                     void SetMappingFiled(const std::string& _mappingFiled);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool MappingFiledHasBeenSet() const;
 
                     /**
-                     * 获取授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
-                     * @return Scope 授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
+                     * 获取授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。
+                     * @return Scope 授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。
                      * 
                      */
                     std::vector<std::string> GetScope() const;
 
                     /**
-                     * 设置授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
-                     * @param _scope 授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
+                     * 设置授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。
+                     * @param _scope 授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。
                      * 
                      */
                     void SetScope(const std::vector<std::string>& _scope);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取描述，长度为1~255个英文或中文字符，默认值为空。
+                     * @return Description 描述，长度为1~255个英文或中文字符，默认值为空。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置描述，长度为1~255个英文或中文字符，默认值为空。
+                     * @param _description 描述，长度为1~255个英文或中文字符，默认值为空。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -239,55 +239,55 @@ namespace TencentCloud
 
                     /**
                      * 身份提供商URL。OpenID Connect身份提供商标识。
-对应企业IdP提供的Openid-configuration中"issuer"字段的值。
+对应企业IdP提供的Openid-configuration中"issuer"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      */
                     std::string m_identityUrl;
                     bool m_identityUrlHasBeenSet;
 
                     /**
-                     * 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
+                     * RSA签名公钥，JWKS格式，需要进行base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
                      */
                     std::string m_identityKey;
                     bool m_identityKeyHasBeenSet;
 
                     /**
-                     * 客户端ID，在OpenID Connect身份提供商注册的客户端ID。
+                     * 客户端ID，在OpenID Connect身份提供商注册的客户端ID，允许英文字母、数字、特殊字符.-_:/，不能以特殊字符.-_:/开头，单个客户端ID最大64个字符。
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值。
+                     * 授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中"authorization_endpoint"字段的值，该URL必须以https开头，符合标准URL格式，不允许带有query参数（以?标识）、fragment片段（以#标识）和登录信息（以@标识）。
                      */
                     std::string m_authorizationEndpoint;
                     bool m_authorizationEndpointHasBeenSet;
 
                     /**
-                     * 授权请求Response type，固定值id_token。
+                     * 授权请求Response type，有code，id_token，固定值id_token。
                      */
                     std::string m_responseType;
                     bool m_responseTypeHasBeenSet;
 
                     /**
-                     * 授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。
+                     * 授权请求Response mode。授权请求返回模式，有form_post和fragment两种可选模式，推荐选择form_post模式。
                      */
                     std::string m_responseMode;
                     bool m_responseModeHasBeenSet;
 
                     /**
-                     * 映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段
+                     * 映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段,仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-255个中文或英文字符
                      */
                     std::string m_mappingFiled;
                     bool m_mappingFiledHasBeenSet;
 
                     /**
-                     * 授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
+                     * 授权请求Scope。有openid; email;profile三种。代表授权请求信息范围openid表示请求访问用户的身份信息，email表示请求访问用户的电子邮件地址，profile表示请求访问用户的基本信息。默认必选openid。
                      */
                     std::vector<std::string> m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 描述
+                     * 描述，长度为1~255个英文或中文字符，默认值为空。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

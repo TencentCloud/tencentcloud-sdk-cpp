@@ -32,7 +32,8 @@ UpdateAssetImageRegistryRegistryDetailRequest::UpdateAssetImageRegistryRegistryD
     m_registryVersionHasBeenSet(false),
     m_registryRegionHasBeenSet(false),
     m_speedLimitHasBeenSet(false),
-    m_insecureHasBeenSet(false)
+    m_insecureHasBeenSet(false),
+    m_connDetectConfigHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string UpdateAssetImageRegistryRegistryDetailRequest::ToJsonString() const
         string key = "Insecure";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_insecure, allocator);
+    }
+
+    if (m_connDetectConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnDetectConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_connDetectConfig.begin(); itr != m_connDetectConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void UpdateAssetImageRegistryRegistryDetailRequest::SetInsecure(const uint64_t& 
 bool UpdateAssetImageRegistryRegistryDetailRequest::InsecureHasBeenSet() const
 {
     return m_insecureHasBeenSet;
+}
+
+vector<ConnDetectConfig> UpdateAssetImageRegistryRegistryDetailRequest::GetConnDetectConfig() const
+{
+    return m_connDetectConfig;
+}
+
+void UpdateAssetImageRegistryRegistryDetailRequest::SetConnDetectConfig(const vector<ConnDetectConfig>& _connDetectConfig)
+{
+    m_connDetectConfig = _connDetectConfig;
+    m_connDetectConfigHasBeenSet = true;
+}
+
+bool UpdateAssetImageRegistryRegistryDetailRequest::ConnDetectConfigHasBeenSet() const
+{
+    return m_connDetectConfigHasBeenSet;
 }
 
 

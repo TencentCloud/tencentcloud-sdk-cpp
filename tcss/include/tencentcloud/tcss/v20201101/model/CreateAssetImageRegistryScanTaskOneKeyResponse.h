@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取扫描任务id
+                     * @return TaskID 扫描任务id
+                     * 
+                     */
+                    uint64_t GetTaskID() const;
+
+                    /**
+                     * 判断参数 TaskID 是否已赋值
+                     * @return TaskID 是否已赋值
+                     * 
+                     */
+                    bool TaskIDHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 扫描任务id
+                     */
+                    uint64_t m_taskID;
+                    bool m_taskIDHasBeenSet;
 
                 };
             }

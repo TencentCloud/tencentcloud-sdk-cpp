@@ -182,6 +182,27 @@ namespace TencentCloud
                      */
                     bool WaterMarkListHasBeenSet() const;
 
+                    /**
+                     * 获取背景图在输出时的显示模式：0为裁剪，1为缩放并显示黑底，2为变比例伸缩。后台默认为变比例伸缩。
+                     * @return BackgroundRenderMode 背景图在输出时的显示模式：0为裁剪，1为缩放并显示黑底，2为变比例伸缩。后台默认为变比例伸缩。
+                     * 
+                     */
+                    uint64_t GetBackgroundRenderMode() const;
+
+                    /**
+                     * 设置背景图在输出时的显示模式：0为裁剪，1为缩放并显示黑底，2为变比例伸缩。后台默认为变比例伸缩。
+                     * @param _backgroundRenderMode 背景图在输出时的显示模式：0为裁剪，1为缩放并显示黑底，2为变比例伸缩。后台默认为变比例伸缩。
+                     * 
+                     */
+                    void SetBackgroundRenderMode(const uint64_t& _backgroundRenderMode);
+
+                    /**
+                     * 判断参数 BackgroundRenderMode 是否已赋值
+                     * @return BackgroundRenderMode 是否已赋值
+                     * 
+                     */
+                    bool BackgroundRenderModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +241,12 @@ namespace TencentCloud
                      */
                     std::vector<McuWaterMarkParams> m_waterMarkList;
                     bool m_waterMarkListHasBeenSet;
+
+                    /**
+                     * 背景图在输出时的显示模式：0为裁剪，1为缩放并显示黑底，2为变比例伸缩。后台默认为变比例伸缩。
+                     */
+                    uint64_t m_backgroundRenderMode;
+                    bool m_backgroundRenderModeHasBeenSet;
 
                 };
             }

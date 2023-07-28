@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/ConnDetectConfig.h>
 
 
 namespace TencentCloud
@@ -252,6 +253,27 @@ namespace TencentCloud
                      */
                     bool InsecureHasBeenSet() const;
 
+                    /**
+                     * 获取联通性检测的记录ID
+                     * @return ConnDetectConfig 联通性检测的记录ID
+                     * 
+                     */
+                    std::vector<ConnDetectConfig> GetConnDetectConfig() const;
+
+                    /**
+                     * 设置联通性检测的记录ID
+                     * @param _connDetectConfig 联通性检测的记录ID
+                     * 
+                     */
+                    void SetConnDetectConfig(const std::vector<ConnDetectConfig>& _connDetectConfig);
+
+                    /**
+                     * 判断参数 ConnDetectConfig 是否已赋值
+                     * @return ConnDetectConfig 是否已赋值
+                     * 
+                     */
+                    bool ConnDetectConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +335,12 @@ namespace TencentCloud
                      */
                     uint64_t m_insecure;
                     bool m_insecureHasBeenSet;
+
+                    /**
+                     * 联通性检测的记录ID
+                     */
+                    std::vector<ConnDetectConfig> m_connDetectConfig;
+                    bool m_connDetectConfigHasBeenSet;
 
                 };
             }

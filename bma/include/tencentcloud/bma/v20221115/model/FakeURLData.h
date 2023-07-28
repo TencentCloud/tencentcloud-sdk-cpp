@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool HeatHasBeenSet() const;
 
                     /**
-                     * 获取协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
+                     * 获取拦截处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BlockStatus 协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
+                     * @return BlockStatus 拦截处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBlockStatus() const;
 
                     /**
-                     * 设置协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
+                     * 设置拦截处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _blockStatus 协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
+                     * @param _blockStatus 拦截处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool BlockStatusHasBeenSet() const;
 
                     /**
-                     * 获取协助处置状态说明
+                     * 获取拦截处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BlockNote 协助处置状态说明
+                     * @return BlockNote 拦截处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBlockNote() const;
 
                     /**
-                     * 设置协助处置状态说明
+                     * 设置拦截处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _blockNote 协助处置状态说明
+                     * @param _blockNote 拦截处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -596,6 +596,31 @@ namespace TencentCloud
                      */
                     bool AccountStatusHasBeenSet() const;
 
+                    /**
+                     * 获取审核状态：0-未审核 1-审核中 2-审核成功 3-审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuditStatus 审核状态：0-未审核 1-审核中 2-审核成功 3-审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAuditStatus() const;
+
+                    /**
+                     * 设置审核状态：0-未审核 1-审核中 2-审核成功 3-审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _auditStatus 审核状态：0-未审核 1-审核中 2-审核成功 3-审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAuditStatus(const int64_t& _auditStatus);
+
+                    /**
+                     * 判断参数 AuditStatus 是否已赋值
+                     * @return AuditStatus 是否已赋值
+                     * 
+                     */
+                    bool AuditStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,14 +666,14 @@ namespace TencentCloud
                     bool m_heatHasBeenSet;
 
                     /**
-                     * 协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
+                     * 拦截处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_blockStatus;
                     bool m_blockStatusHasBeenSet;
 
                     /**
-                     * 协助处置状态说明
+                     * 拦截处置状态说明
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_blockNote;
@@ -751,6 +776,13 @@ namespace TencentCloud
                      */
                     int64_t m_accountStatus;
                     bool m_accountStatusHasBeenSet;
+
+                    /**
+                     * 审核状态：0-未审核 1-审核中 2-审核成功 3-审核失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_auditStatus;
+                    bool m_auditStatusHasBeenSet;
 
                 };
             }

@@ -47,15 +47,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取调用方员工/经办人信息
+UserId 必填，在企业控制台组织架构中可以查到员工的UserId
+注：请保证对应
+                     * @return Operator 调用方员工/经办人信息
+UserId 必填，在企业控制台组织架构中可以查到员工的UserId
+注：请保证对应
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param _operator 调用方用户信息，userId 必填
+                     * 设置调用方员工/经办人信息
+UserId 必填，在企业控制台组织架构中可以查到员工的UserId
+注：请保证对应
+                     * @param _operator 调用方员工/经办人信息
+UserId 必填，在企业控制台组织架构中可以查到员工的UserId
+注：请保证对应
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -68,15 +76,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 获取代理相关应用信息
+如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息
+如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
-                     * @param _agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 设置代理相关应用信息
+如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param _agent 代理相关应用信息
+如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -89,15 +101,23 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 获取查询内容类型
+0-模板列表及详情（默认）
+1-仅模板列表
+                     * @return ContentType 查询内容类型
+0-模板列表及详情（默认）
+1-仅模板列表
                      * 
                      */
                     int64_t GetContentType() const;
 
                     /**
-                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param _contentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 设置查询内容类型
+0-模板列表及详情（默认）
+1-仅模板列表
+                     * @param _contentType 查询内容类型
+0-模板列表及详情（默认）
+1-仅模板列表
                      * 
                      */
                     void SetContentType(const int64_t& _contentType);
@@ -110,15 +130,23 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 获取搜索条件，本字段用于指定模板Id进行查询。
+Key：template-id
+Values：需要查询的模板Id列表
+                     * @return Filters 搜索条件，本字段用于指定模板Id进行查询。
+Key：template-id
+Values：需要查询的模板Id列表
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @param _filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 设置搜索条件，本字段用于指定模板Id进行查询。
+Key：template-id
+Values：需要查询的模板Id列表
+                     * @param _filters 搜索条件，本字段用于指定模板Id进行查询。
+Key：template-id
+Values：需要查询的模板Id列表
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -131,15 +159,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询偏移位置，默认0
-                     * @return Offset 查询偏移位置，默认0
+                     * 获取查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
+                     * @return Offset 查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询偏移位置，默认0
-                     * @param _offset 查询偏移位置，默认0
+                     * 设置查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
+                     * @param _offset 查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -152,15 +180,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询个数，默认20，最大200
-                     * @return Limit 查询个数，默认20，最大200
+                     * 获取指定每页多少条数据，如果不传默认为20，单页最大200。
+                     * @return Limit 指定每页多少条数据，如果不传默认为20，单页最大200。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询个数，默认20，最大200
-                     * @param _limit 查询个数，默认20，最大200
+                     * 设置指定每页多少条数据，如果不传默认为20，单页最大200。
+                     * @param _limit 指定每页多少条数据，如果不传默认为20，单页最大200。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -173,18 +201,22 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取ApplicationId不为空，查询指定应用下的模板列表
+                     * 获取用于查询指定应用号下单模板列表。
+ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
-                     * @return ApplicationId ApplicationId不为空，查询指定应用下的模板列表
+                     * @return ApplicationId 用于查询指定应用号下单模板列表。
+ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置ApplicationId不为空，查询指定应用下的模板列表
+                     * 设置用于查询指定应用号下单模板列表。
+ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
-                     * @param _applicationId ApplicationId不为空，查询指定应用下的模板列表
+                     * @param _applicationId 用于查询指定应用号下单模板列表。
+ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
                      * 
                      */
@@ -267,43 +299,51 @@ ApplicationId为空，查询所有应用下的模板列表
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 调用方员工/经办人信息
+UserId 必填，在企业控制台组织架构中可以查到员工的UserId
+注：请保证对应
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * 代理相关应用信息
+如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 查询内容类型
+0-模板列表及详情（默认）
+1-仅模板列表
                      */
                     int64_t m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 搜索条件，本字段用于指定模板Id进行查询。
+Key：template-id
+Values：需要查询的模板Id列表
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询偏移位置，默认0
+                     * 查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询个数，默认20，最大200
+                     * 指定每页多少条数据，如果不传默认为20，单页最大200。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * ApplicationId不为空，查询指定应用下的模板列表
+                     * 用于查询指定应用号下单模板列表。
+ApplicationId不为空，查询指定应用下的模板列表
 ApplicationId为空，查询所有应用下的模板列表
                      */
                     std::string m_applicationId;

@@ -25,7 +25,8 @@ McuVideoParams::McuVideoParams() :
     m_layoutParamsHasBeenSet(false),
     m_backGroundColorHasBeenSet(false),
     m_backgroundImageUrlHasBeenSet(false),
-    m_waterMarkListHasBeenSet(false)
+    m_waterMarkListHasBeenSet(false),
+    m_backgroundRenderModeHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,16 @@ CoreInternalOutcome McuVideoParams::Deserialize(const rapidjson::Value &value)
         m_waterMarkListHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundRenderMode") && !value["BackgroundRenderMode"].IsNull())
+    {
+        if (!value["BackgroundRenderMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuVideoParams.BackgroundRenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backgroundRenderMode = value["BackgroundRenderMode"].GetUint64();
+        m_backgroundRenderModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ void McuVideoParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_backgroundRenderModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundRenderMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backgroundRenderMode, allocator);
     }
 
 }
@@ -245,5 +264,21 @@ void McuVideoParams::SetWaterMarkList(const vector<McuWaterMarkParams>& _waterMa
 bool McuVideoParams::WaterMarkListHasBeenSet() const
 {
     return m_waterMarkListHasBeenSet;
+}
+
+uint64_t McuVideoParams::GetBackgroundRenderMode() const
+{
+    return m_backgroundRenderMode;
+}
+
+void McuVideoParams::SetBackgroundRenderMode(const uint64_t& _backgroundRenderMode)
+{
+    m_backgroundRenderMode = _backgroundRenderMode;
+    m_backgroundRenderModeHasBeenSet = true;
+}
+
+bool McuVideoParams::BackgroundRenderModeHasBeenSet() const
+{
+    return m_backgroundRenderModeHasBeenSet;
 }
 
