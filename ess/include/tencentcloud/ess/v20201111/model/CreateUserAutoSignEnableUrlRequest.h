@@ -113,15 +113,23 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool AutoSignConfigHasBeenSet() const;
 
                     /**
-                     * 获取链接类型，空-默认小程序端链接，H5SIGN-h5端链接
-                     * @return UrlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 获取链接类型，
+空-默认小程序端链接
+H5SIGN-h5端链接
+                     * @return UrlType 链接类型，
+空-默认小程序端链接
+H5SIGN-h5端链接
                      * 
                      */
                     std::string GetUrlType() const;
 
                     /**
-                     * 设置链接类型，空-默认小程序端链接，H5SIGN-h5端链接
-                     * @param _urlType 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 设置链接类型，
+空-默认小程序端链接
+H5SIGN-h5端链接
+                     * @param _urlType 链接类型，
+空-默认小程序端链接
+H5SIGN-h5端链接
                      * 
                      */
                     void SetUrlType(const std::string& _urlType);
@@ -134,15 +142,27 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool UrlTypeHasBeenSet() const;
 
                     /**
-                     * 获取通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
-                     * @return NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * 获取通知类型
+
+默认不设置为不通知开通方，
+SMS 为短信通知 , 此种方式需要NotifyAddress填写手机号。
+                     * @return NotifyType 通知类型
+
+默认不设置为不通知开通方，
+SMS 为短信通知 , 此种方式需要NotifyAddress填写手机号。
                      * 
                      */
                     std::string GetNotifyType() const;
 
                     /**
-                     * 设置通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
-                     * @param _notifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * 设置通知类型
+
+默认不设置为不通知开通方，
+SMS 为短信通知 , 此种方式需要NotifyAddress填写手机号。
+                     * @param _notifyType 通知类型
+
+默认不设置为不通知开通方，
+SMS 为短信通知 , 此种方式需要NotifyAddress填写手机号。
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -155,15 +175,15 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取若上方填写为 SMS，则此处为手机号
-                     * @return NotifyAddress 若上方填写为 SMS，则此处为手机号
+                     * 获取如果通知类型NotifyType选择为SMS，则此处为手机号, 其他通知类型不需要设置此项
+                     * @return NotifyAddress 如果通知类型NotifyType选择为SMS，则此处为手机号, 其他通知类型不需要设置此项
                      * 
                      */
                     std::string GetNotifyAddress() const;
 
                     /**
-                     * 设置若上方填写为 SMS，则此处为手机号
-                     * @param _notifyAddress 若上方填写为 SMS，则此处为手机号
+                     * 设置如果通知类型NotifyType选择为SMS，则此处为手机号, 其他通知类型不需要设置此项
+                     * @param _notifyAddress 如果通知类型NotifyType选择为SMS，则此处为手机号, 其他通知类型不需要设置此项
                      * 
                      */
                     void SetNotifyAddress(const std::string& _notifyAddress);
@@ -239,19 +259,24 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool m_autoSignConfigHasBeenSet;
 
                     /**
-                     * 链接类型，空-默认小程序端链接，H5SIGN-h5端链接
+                     * 链接类型，
+空-默认小程序端链接
+H5SIGN-h5端链接
                      */
                     std::string m_urlType;
                     bool m_urlTypeHasBeenSet;
 
                     /**
-                     * 通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。
+                     * 通知类型
+
+默认不设置为不通知开通方，
+SMS 为短信通知 , 此种方式需要NotifyAddress填写手机号。
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * 若上方填写为 SMS，则此处为手机号
+                     * 如果通知类型NotifyType选择为SMS，则此处为手机号, 其他通知类型不需要设置此项
                      */
                     std::string m_notifyAddress;
                     bool m_notifyAddressHasBeenSet;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_QUERYBARCODEREQUEST_H_
-#define TENCENTCLOUD_OCR_V20181119_MODEL_QUERYBARCODEREQUEST_H_
+#ifndef TENCENTCLOUD_TIONE_V20211111_MODEL_STOPCREATINGIMAGEREQUEST_H_
+#define TENCENTCLOUD_TIONE_V20211111_MODEL_STOPCREATINGIMAGEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Ocr
+    namespace Tione
     {
-        namespace V20181119
+        namespace V20211111
         {
             namespace Model
             {
                 /**
-                * QueryBarCode请求参数结构体
+                * StopCreatingImage请求参数结构体
                 */
-                class QueryBarCodeRequest : public AbstractModel
+                class StopCreatingImageRequest : public AbstractModel
                 {
                 public:
-                    QueryBarCodeRequest();
-                    ~QueryBarCodeRequest() = default;
+                    StopCreatingImageRequest();
+                    ~StopCreatingImageRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取条形码
-                     * @return BarCode 条形码
+                     * 获取镜像保存记录ID
+                     * @return RecordId 镜像保存记录ID
                      * 
                      */
-                    std::string GetBarCode() const;
+                    std::string GetRecordId() const;
 
                     /**
-                     * 设置条形码
-                     * @param _barCode 条形码
+                     * 设置镜像保存记录ID
+                     * @param _recordId 镜像保存记录ID
                      * 
                      */
-                    void SetBarCode(const std::string& _barCode);
+                    void SetRecordId(const std::string& _recordId);
 
                     /**
-                     * 判断参数 BarCode 是否已赋值
-                     * @return BarCode 是否已赋值
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
                      * 
                      */
-                    bool BarCodeHasBeenSet() const;
+                    bool RecordIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 条形码
+                     * 镜像保存记录ID
                      */
-                    std::string m_barCode;
-                    bool m_barCodeHasBeenSet;
+                    std::string m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_QUERYBARCODEREQUEST_H_
+#endif // !TENCENTCLOUD_TIONE_V20211111_MODEL_STOPCREATINGIMAGEREQUEST_H_

@@ -191,7 +191,7 @@ CreateReview:发起审核
 默认：SignReview；SignReview:签署审核
 
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若发起个人审核，则指定该字段为：SignReview（注意，给个人审核时，需联系客户经理开白使用）
+若发起个人审核，则指定该字段为：SignReview
                      * @return OperateType 操作类型：（接口通过该字段区分操作类型）
 
 SignReview:签署审核
@@ -200,7 +200,7 @@ CreateReview:发起审核
 默认：SignReview；SignReview:签署审核
 
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若发起个人审核，则指定该字段为：SignReview（注意，给个人审核时，需联系客户经理开白使用）
+若发起个人审核，则指定该字段为：SignReview
                      * 
                      */
                     std::string GetOperateType() const;
@@ -214,7 +214,7 @@ CreateReview:发起审核
 默认：SignReview；SignReview:签署审核
 
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若发起个人审核，则指定该字段为：SignReview（注意，给个人审核时，需联系客户经理开白使用）
+若发起个人审核，则指定该字段为：SignReview
                      * @param _operateType 操作类型：（接口通过该字段区分操作类型）
 
 SignReview:签署审核
@@ -223,7 +223,7 @@ CreateReview:发起审核
 默认：SignReview；SignReview:签署审核
 
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若发起个人审核，则指定该字段为：SignReview（注意，给个人审核时，需联系客户经理开白使用）
+若发起个人审核，则指定该字段为：SignReview
                      * 
                      */
                     void SetOperateType(const std::string& _operateType);
@@ -285,7 +285,7 @@ CreateReview:发起审核
 默认：SignReview；SignReview:签署审核
 
 该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程
-若发起个人审核，则指定该字段为：SignReview（注意，给个人审核时，需联系客户经理开白使用）
+若发起个人审核，则指定该字段为：SignReview
                      */
                     std::string m_operateType;
                     bool m_operateTypeHasBeenSet;

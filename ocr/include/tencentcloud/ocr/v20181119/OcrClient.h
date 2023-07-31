@@ -111,8 +111,6 @@
 #include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/QueryBarCodeRequest.h>
-#include <tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
@@ -185,8 +183,6 @@
 #include <tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseResponse.h>
-#include <tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsRequest.h>
-#include <tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRRequest.h>
@@ -339,9 +335,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QrcodeOCRResponse> QrcodeOCROutcome;
                 typedef std::future<QrcodeOCROutcome> QrcodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QrcodeOCRRequest&, QrcodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QrcodeOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::QueryBarCodeResponse> QueryBarCodeOutcome;
-                typedef std::future<QueryBarCodeOutcome> QueryBarCodeOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::QueryBarCodeRequest&, QueryBarCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBarCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
@@ -450,9 +443,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyBizLicenseResponse> VerifyBizLicenseOutcome;
                 typedef std::future<VerifyBizLicenseOutcome> VerifyBizLicenseOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyBizLicenseRequest&, VerifyBizLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBizLicenseAsyncHandler;
-                typedef Outcome<Core::Error, Model::VerifyEnterpriseFourFactorsResponse> VerifyEnterpriseFourFactorsOutcome;
-                typedef std::future<VerifyEnterpriseFourFactorsOutcome> VerifyEnterpriseFourFactorsOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::VerifyEnterpriseFourFactorsRequest&, VerifyEnterpriseFourFactorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyEnterpriseFourFactorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyOfdVatInvoiceOCRResponse> VerifyOfdVatInvoiceOCROutcome;
                 typedef std::future<VerifyOfdVatInvoiceOCROutcome> VerifyOfdVatInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyOfdVatInvoiceOCRRequest&, VerifyOfdVatInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyOfdVatInvoiceOCRAsyncHandler;
@@ -1183,19 +1173,6 @@ namespace TencentCloud
                 QrcodeOCROutcomeCallable QrcodeOCRCallable(const Model::QrcodeOCRRequest& request);
 
                 /**
-                 *库源服务调整，该接口在2023年6月1日将正式下线。
-
-本接口支持条形码备案信息查询，返回条形码查询结果的相关信息，包括产品名称、产品英文名称、品牌名称、规格型号、宽度、高度、深度、关键字、产品描述、厂家名称、厂家地址、企业社会信用代码13个字段信息。
-
-产品优势：直联中国物品编码中心，查询结果更加准确、可靠。
-                 * @param req QueryBarCodeRequest
-                 * @return QueryBarCodeOutcome
-                 */
-                QueryBarCodeOutcome QueryBarCode(const Model::QueryBarCodeRequest &request);
-                void QueryBarCodeAsync(const Model::QueryBarCodeRequest& request, const QueryBarCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryBarCodeOutcomeCallable QueryBarCodeCallable(const Model::QueryBarCodeRequest& request);
-
-                /**
                  *本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。
 
 默认接口请求频率限制：5次/秒。
@@ -1733,17 +1710,6 @@ namespace TencentCloud
                 VerifyBizLicenseOutcome VerifyBizLicense(const Model::VerifyBizLicenseRequest &request);
                 void VerifyBizLicenseAsync(const Model::VerifyBizLicenseRequest& request, const VerifyBizLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyBizLicenseOutcomeCallable VerifyBizLicenseCallable(const Model::VerifyBizLicenseRequest& request);
-
-                /**
-                 *库源服务调整，该接口在2023年6月1日将正式下线。
-
-此接口基于企业四要素授权“姓名、证件号码、企业标识、企业全称”，验证企业信息是否一致。
-                 * @param req VerifyEnterpriseFourFactorsRequest
-                 * @return VerifyEnterpriseFourFactorsOutcome
-                 */
-                VerifyEnterpriseFourFactorsOutcome VerifyEnterpriseFourFactors(const Model::VerifyEnterpriseFourFactorsRequest &request);
-                void VerifyEnterpriseFourFactorsAsync(const Model::VerifyEnterpriseFourFactorsRequest& request, const VerifyEnterpriseFourFactorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                VerifyEnterpriseFourFactorsOutcomeCallable VerifyEnterpriseFourFactorsCallable(const Model::VerifyEnterpriseFourFactorsRequest& request);
 
                 /**
                  *本接口支持OFD格式的增值税电子普通发票和增值税电子专用发票的识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。

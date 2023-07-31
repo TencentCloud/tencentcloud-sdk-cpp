@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SrcTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取任务启动状态.   1正常开启,  2关闭
-                     * @return EnableFlag 任务启动状态.   1正常开启,  2关闭
+                     * 获取任务启动状态.   1开启,  2关闭
+                     * @return EnableFlag 任务启动状态.   1开启,  2关闭
                      * 
                      */
                     int64_t GetEnableFlag() const;
 
                     /**
-                     * 设置任务启动状态.   1正常开启,  2关闭
-                     * @param _enableFlag 任务启动状态.   1正常开启,  2关闭
+                     * 设置任务启动状态.   1开启,  2关闭
+                     * @param _enableFlag 任务启动状态.   1开启,  2关闭
                      * 
                      */
                     void SetEnableFlag(const int64_t& _enableFlag);
@@ -289,7 +289,7 @@ namespace TencentCloud
                     bool m_srcTopicIdHasBeenSet;
 
                     /**
-                     * 任务启动状态.   1正常开启,  2关闭
+                     * 任务启动状态.   1开启,  2关闭
                      */
                     int64_t m_enableFlag;
                     bool m_enableFlagHasBeenSet;

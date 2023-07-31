@@ -110,8 +110,8 @@ ProcessTimeout - 转换文件超时
                     bool TaskMessageHasBeenSet() const;
 
                     /**
-                     * 获取资源Id，也是FileId，用于文件发起使用
-                     * @return ResourceId 资源Id，也是FileId，用于文件发起使用
+                     * 获取资源Id，也是FileId，用于文件发起时使用
+                     * @return ResourceId 资源Id，也是FileId，用于文件发起时使用
                      * 
                      */
                     std::string GetResourceId() const;
@@ -156,7 +156,7 @@ ProcessTimeout - 转换文件超时
                     bool m_taskMessageHasBeenSet;
 
                     /**
-                     * 资源Id，也是FileId，用于文件发起使用
+                     * 资源Id，也是FileId，用于文件发起时使用
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

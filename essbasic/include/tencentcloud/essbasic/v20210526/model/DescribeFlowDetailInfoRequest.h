@@ -67,18 +67,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一）
+（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
                      * @return FlowIds 合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一）
+（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一）
+（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
                      * @param _flowIds 合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一）
+（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -142,7 +142,7 @@ namespace TencentCloud
 
                     /**
                      * 合同(流程)编号数组，最多支持100个。
-（备注：该参数和合同组编号必须二选一）
+（备注：该参数和合同组编号必须二选一, 如果填写FlowGroupId则忽略此FlowIds的入参）
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

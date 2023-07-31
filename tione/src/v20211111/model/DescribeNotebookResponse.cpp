@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/QueryBarCodeResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-QueryBarCodeResponse::QueryBarCodeResponse() :
-    m_barCodeHasBeenSet(false),
-    m_productDataRecordsHasBeenSet(false)
+DescribeNotebookResponse::DescribeNotebookResponse() :
+    m_notebookDetailHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome QueryBarCodeResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeNotebookResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,40 @@ CoreInternalOutcome QueryBarCodeResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("BarCode") && !rsp["BarCode"].IsNull())
+    if (rsp.HasMember("NotebookDetail") && !rsp["NotebookDetail"].IsNull())
     {
-        if (!rsp["BarCode"].IsString())
+        if (!rsp["NotebookDetail"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `BarCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail` is not object type").SetRequestId(requestId));
         }
-        m_barCode = string(rsp["BarCode"].GetString());
-        m_barCodeHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("ProductDataRecords") && !rsp["ProductDataRecords"].IsNull())
-    {
-        if (!rsp["ProductDataRecords"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ProductDataRecords` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ProductDataRecords"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        CoreInternalOutcome outcome = m_notebookDetail.Deserialize(rsp["NotebookDetail"]);
+        if (!outcome.IsSuccess())
         {
-            ProductDataRecord item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_productDataRecords.push_back(item);
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_productDataRecordsHasBeenSet = true;
+
+        m_notebookDetailHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string QueryBarCodeResponse::ToJsonString() const
+string DescribeNotebookResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_barCodeHasBeenSet)
+    if (m_notebookDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BarCode";
+        string key = "NotebookDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_barCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_productDataRecordsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProductDataRecords";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_productDataRecords.begin(); itr != m_productDataRecords.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_notebookDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string QueryBarCodeResponse::ToJsonString() const
 }
 
 
-string QueryBarCodeResponse::GetBarCode() const
+NotebookDetail DescribeNotebookResponse::GetNotebookDetail() const
 {
-    return m_barCode;
+    return m_notebookDetail;
 }
 
-bool QueryBarCodeResponse::BarCodeHasBeenSet() const
+bool DescribeNotebookResponse::NotebookDetailHasBeenSet() const
 {
-    return m_barCodeHasBeenSet;
-}
-
-vector<ProductDataRecord> QueryBarCodeResponse::GetProductDataRecords() const
-{
-    return m_productDataRecords;
-}
-
-bool QueryBarCodeResponse::ProductDataRecordsHasBeenSet() const
-{
-    return m_productDataRecordsHasBeenSet;
+    return m_notebookDetailHasBeenSet;
 }
 
 

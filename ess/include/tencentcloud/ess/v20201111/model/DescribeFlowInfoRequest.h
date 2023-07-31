@@ -67,14 +67,22 @@ namespace TencentCloud
 
                     /**
                      * 获取需要查询的流程ID列表，限制最大100个
+
+如果查询合同组的信息,不要传此参数
                      * @return FlowIds 需要查询的流程ID列表，限制最大100个
+
+如果查询合同组的信息,不要传此参数
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置需要查询的流程ID列表，限制最大100个
+
+如果查询合同组的信息,不要传此参数
                      * @param _flowIds 需要查询的流程ID列表，限制最大100个
+
+如果查询合同组的信息,不要传此参数
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -108,15 +116,23 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同组ID
-                     * @return FlowGroupId 合同组ID
+                     * 获取合同组ID, 如果传此参数会忽略FlowIds入参
+ 所以如传此参数不要传FlowIds参数
+
+                     * @return FlowGroupId 合同组ID, 如果传此参数会忽略FlowIds入参
+ 所以如传此参数不要传FlowIds参数
+
                      * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
-                     * 设置合同组ID
-                     * @param _flowGroupId 合同组ID
+                     * 设置合同组ID, 如果传此参数会忽略FlowIds入参
+ 所以如传此参数不要传FlowIds参数
+
+                     * @param _flowGroupId 合同组ID, 如果传此参数会忽略FlowIds入参
+ 所以如传此参数不要传FlowIds参数
+
                      * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
@@ -138,6 +154,8 @@ namespace TencentCloud
 
                     /**
                      * 需要查询的流程ID列表，限制最大100个
+
+如果查询合同组的信息,不要传此参数
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
@@ -149,7 +167,9 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同组ID
+                     * 合同组ID, 如果传此参数会忽略FlowIds入参
+ 所以如传此参数不要传FlowIds参数
+
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;

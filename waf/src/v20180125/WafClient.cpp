@@ -1674,6 +1674,49 @@ WafClient::GetAttackDownloadRecordsOutcomeCallable WafClient::GetAttackDownloadR
     return task->get_future();
 }
 
+WafClient::GetAttackHistogramOutcome WafClient::GetAttackHistogram(const GetAttackHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAttackHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAttackHistogramResponse rsp = GetAttackHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAttackHistogramOutcome(rsp);
+        else
+            return GetAttackHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAttackHistogramOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GetAttackHistogramAsync(const GetAttackHistogramRequest& request, const GetAttackHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAttackHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::GetAttackHistogramOutcomeCallable WafClient::GetAttackHistogramCallable(const GetAttackHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAttackHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAttackHistogram(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAccessPeriodOutcome WafClient::ModifyAccessPeriod(const ModifyAccessPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccessPeriod");

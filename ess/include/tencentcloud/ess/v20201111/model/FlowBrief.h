@@ -233,18 +233,26 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取拒签或者取消的原因描述
+                     * 获取当合同被拒签或者取消后(当FlowStatus=3或者FlowStatus=6的时候)
+此字段展示拒签或者取消的原因描述
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowMessage 拒签或者取消的原因描述
+                     * @return FlowMessage 当合同被拒签或者取消后(当FlowStatus=3或者FlowStatus=6的时候)
+此字段展示拒签或者取消的原因描述
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
-                     * 设置拒签或者取消的原因描述
+                     * 设置当合同被拒签或者取消后(当FlowStatus=3或者FlowStatus=6的时候)
+此字段展示拒签或者取消的原因描述
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _flowMessage 拒签或者取消的原因描述
+                     * @param _flowMessage 当合同被拒签或者取消后(当FlowStatus=3或者FlowStatus=6的时候)
+此字段展示拒签或者取消的原因描述
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -361,7 +369,9 @@ namespace TencentCloud
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 拒签或者取消的原因描述
+                     * 当合同被拒签或者取消后(当FlowStatus=3或者FlowStatus=6的时候)
+此字段展示拒签或者取消的原因描述
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMessage;

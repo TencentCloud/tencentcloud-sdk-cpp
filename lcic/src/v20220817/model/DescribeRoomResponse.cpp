@@ -29,6 +29,7 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_endTimeHasBeenSet(false),
     m_teacherIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
+    m_audienceTypeHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_maxMicNumberHasBeenSet(false),
     m_autoMicHasBeenSet(false),
@@ -129,6 +130,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         }
         m_sdkAppId = rsp["SdkAppId"].GetUint64();
         m_sdkAppIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AudienceType") && !rsp["AudienceType"].IsNull())
+    {
+        if (!rsp["AudienceType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudienceType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audienceType = rsp["AudienceType"].GetUint64();
+        m_audienceTypeHasBeenSet = true;
     }
 
     if (rsp.HasMember("Resolution") && !rsp["Resolution"].IsNull())
@@ -334,6 +345,14 @@ string DescribeRoomResponse::ToJsonString() const
         value.AddMember(iKey, m_sdkAppId, allocator);
     }
 
+    if (m_audienceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudienceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audienceType, allocator);
+    }
+
     if (m_resolutionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -519,6 +538,16 @@ uint64_t DescribeRoomResponse::GetSdkAppId() const
 bool DescribeRoomResponse::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetAudienceType() const
+{
+    return m_audienceType;
+}
+
+bool DescribeRoomResponse::AudienceTypeHasBeenSet() const
+{
+    return m_audienceTypeHasBeenSet;
 }
 
 uint64_t DescribeRoomResponse::GetResolution() const

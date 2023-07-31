@@ -69,15 +69,23 @@ namespace TencentCloud
                     bool UserInfoHasBeenSet() const;
 
                     /**
-                     * 获取接受自动签开启的回调地址。需要保证post返回200
-                     * @return CallbackUrl 接受自动签开启的回调地址。需要保证post返回200
+                     * 获取接受回调URL地址。支持http://或者https://协议
+
+Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+                     * @return CallbackUrl 接受回调URL地址。支持http://或者https://协议
+
+Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置接受自动签开启的回调地址。需要保证post返回200
-                     * @param _callbackUrl 接受自动签开启的回调地址。需要保证post返回200
+                     * 设置接受回调URL地址。支持http://或者https://协议
+
+Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
+                     * @param _callbackUrl 接受回调URL地址。支持http://或者https://协议
+
+Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -90,15 +98,23 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否回调证书信息，默认false-不需要
-                     * @return CertInfoCallback 是否回调证书信息，默认false-不需要
+                     * 获取是否回调证书信息
+false-不需要 (默认值)
+true-需要
+                     * @return CertInfoCallback 是否回调证书信息
+false-不需要 (默认值)
+true-需要
                      * 
                      */
                     bool GetCertInfoCallback() const;
 
                     /**
-                     * 设置是否回调证书信息，默认false-不需要
-                     * @param _certInfoCallback 是否回调证书信息，默认false-不需要
+                     * 设置是否回调证书信息
+false-不需要 (默认值)
+true-需要
+                     * @param _certInfoCallback 是否回调证书信息
+false-不需要 (默认值)
+true-需要
                      * 
                      */
                     void SetCertInfoCallback(const bool& _certInfoCallback);
@@ -111,15 +127,23 @@ namespace TencentCloud
                     bool CertInfoCallbackHasBeenSet() const;
 
                     /**
-                     * 获取是否支持用户自定义签名印章，默认false-不需要
-                     * @return UserDefineSeal 是否支持用户自定义签名印章，默认false-不需要
+                     * 获取是否支持用户自定义签名印章
+false-不需要(默认)
+true-需要
+                     * @return UserDefineSeal 是否支持用户自定义签名印章
+false-不需要(默认)
+true-需要
                      * 
                      */
                     bool GetUserDefineSeal() const;
 
                     /**
-                     * 设置是否支持用户自定义签名印章，默认false-不需要
-                     * @param _userDefineSeal 是否支持用户自定义签名印章，默认false-不需要
+                     * 设置是否支持用户自定义签名印章
+false-不需要(默认)
+true-需要
+                     * @param _userDefineSeal 是否支持用户自定义签名印章
+false-不需要(默认)
+true-需要
                      * 
                      */
                     void SetUserDefineSeal(const bool& _userDefineSeal);
@@ -132,15 +156,27 @@ namespace TencentCloud
                     bool UserDefineSealHasBeenSet() const;
 
                     /**
-                     * 获取是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
-                     * @return SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
+                     * 获取是否需要回调的时候返回印章(签名) 图片的 base64
+
+false-不需要(默认)
+true-需要(
+                     * @return SealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
+
+false-不需要(默认)
+true-需要(
                      * 
                      */
                     bool GetSealImgCallback() const;
 
                     /**
-                     * 设置是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
-                     * @param _sealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
+                     * 设置是否需要回调的时候返回印章(签名) 图片的 base64
+
+false-不需要(默认)
+true-需要(
+                     * @param _sealImgCallback 是否需要回调的时候返回印章(签名) 图片的 base64
+
+false-不需要(默认)
+true-需要(
                      * 
                      */
                     void SetSealImgCallback(const bool& _sealImgCallback);
@@ -153,15 +189,47 @@ namespace TencentCloud
                     bool SealImgCallbackHasBeenSet() const;
 
                     /**
-                     * 获取开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
-                     * @return VerifyChannels 开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * 获取开通时候的验证方式, 分布为
+
+WEIXINAPP : 微信人脸识别
+INSIGHT : 慧眼人脸认别
+TELECOM : 运营商三要素验证
+
+如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。
+
+如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * @return VerifyChannels 开通时候的验证方式, 分布为
+
+WEIXINAPP : 微信人脸识别
+INSIGHT : 慧眼人脸认别
+TELECOM : 运营商三要素验证
+
+如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。
+
+如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
                      * 
                      */
                     std::vector<std::string> GetVerifyChannels() const;
 
                     /**
-                     * 设置开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
-                     * @param _verifyChannels 开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * 设置开通时候的验证方式, 分布为
+
+WEIXINAPP : 微信人脸识别
+INSIGHT : 慧眼人脸认别
+TELECOM : 运营商三要素验证
+
+如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。
+
+如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * @param _verifyChannels 开通时候的验证方式, 分布为
+
+WEIXINAPP : 微信人脸识别
+INSIGHT : 慧眼人脸认别
+TELECOM : 运营商三要素验证
+
+如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。
+
+如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
                      * 
                      */
                     void SetVerifyChannels(const std::vector<std::string>& _verifyChannels);
@@ -182,31 +250,48 @@ namespace TencentCloud
                     bool m_userInfoHasBeenSet;
 
                     /**
-                     * 接受自动签开启的回调地址。需要保证post返回200
+                     * 接受回调URL地址。支持http://或者https://协议
+
+Post数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 是否回调证书信息，默认false-不需要
+                     * 是否回调证书信息
+false-不需要 (默认值)
+true-需要
                      */
                     bool m_certInfoCallback;
                     bool m_certInfoCallbackHasBeenSet;
 
                     /**
-                     * 是否支持用户自定义签名印章，默认false-不需要
+                     * 是否支持用户自定义签名印章
+false-不需要(默认)
+true-需要
                      */
                     bool m_userDefineSeal;
                     bool m_userDefineSealHasBeenSet;
 
                     /**
-                     * 是否需要回调的时候返回印章(签名) 图片的 base64，默认false-不需要
+                     * 是否需要回调的时候返回印章(签名) 图片的 base64
+
+false-不需要(默认)
+true-需要(
                      */
                     bool m_sealImgCallback;
                     bool m_sealImgCallbackHasBeenSet;
 
                     /**
-                     * 开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
+                     * 开通时候的验证方式, 分布为
+
+WEIXINAPP : 微信人脸识别
+INSIGHT : 慧眼人脸认别
+TELECOM : 运营商三要素验证
+
+如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。
+
+如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。
                      */
                     std::vector<std::string> m_verifyChannels;
                     bool m_verifyChannelsHasBeenSet;

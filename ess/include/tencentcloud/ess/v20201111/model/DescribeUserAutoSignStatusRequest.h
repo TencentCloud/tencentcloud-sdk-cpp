@@ -92,15 +92,15 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool SceneKeyHasBeenSet() const;
 
                     /**
-                     * 获取查询开启状态的用户信息
-                     * @return UserInfo 查询开启状态的用户信息
+                     * 获取要查询开启状态的用户信息
+                     * @return UserInfo 要查询开启状态的用户信息
                      * 
                      */
                     UserThreeFactor GetUserInfo() const;
 
                     /**
-                     * 设置查询开启状态的用户信息
-                     * @param _userInfo 查询开启状态的用户信息
+                     * 设置要查询开启状态的用户信息
+                     * @param _userInfo 要查询开启状态的用户信息
                      * 
                      */
                     void SetUserInfo(const UserThreeFactor& _userInfo);
@@ -149,7 +149,7 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                     bool m_sceneKeyHasBeenSet;
 
                     /**
-                     * 查询开启状态的用户信息
+                     * 要查询开启状态的用户信息
                      */
                     UserThreeFactor m_userInfo;
                     bool m_userInfoHasBeenSet;

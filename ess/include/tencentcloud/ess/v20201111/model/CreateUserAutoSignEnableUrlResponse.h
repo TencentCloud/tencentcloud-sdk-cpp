@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取base64格式跳转二维码
-                     * @return QrCode base64格式跳转二维码
+                     * 获取base64格式跳转二维码,可以通过微信扫描后跳转到业务界面
+                     * @return QrCode base64格式跳转二维码,可以通过微信扫描后跳转到业务界面
                      * 
                      */
                     std::string GetQrCode() const;
@@ -154,7 +154,7 @@ namespace TencentCloud
                     bool m_pathHasBeenSet;
 
                     /**
-                     * base64格式跳转二维码
+                     * base64格式跳转二维码,可以通过微信扫描后跳转到业务界面
                      */
                     std::string m_qrCode;
                     bool m_qrCodeHasBeenSet;

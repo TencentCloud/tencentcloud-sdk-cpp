@@ -114,6 +114,20 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
+                     * 获取观看类型。互动观看 （默认）	
+                     * @return AudienceType 观看类型。互动观看 （默认）	
+                     * 
+                     */
+                    uint64_t GetAudienceType() const;
+
+                    /**
+                     * 判断参数 AudienceType 是否已赋值
+                     * @return AudienceType 是否已赋值
+                     * 
+                     */
+                    bool AudienceTypeHasBeenSet() const;
+
+                    /**
                      * 获取分辨率。可以有如下取值：
 1 标清
 2 高清
@@ -390,6 +404,12 @@ video 纯视频
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 观看类型。互动观看 （默认）	
+                     */
+                    uint64_t m_audienceType;
+                    bool m_audienceTypeHasBeenSet;
 
                     /**
                      * 分辨率。可以有如下取值：

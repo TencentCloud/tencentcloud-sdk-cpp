@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_DETAIL_H_
-#define TENCENTCLOUD_OCR_V20181119_MODEL_DETAIL_H_
+#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_LOGHISTOGRAMINFO_H_
+#define TENCENTCLOUD_WAF_V20180125_MODEL_LOGHISTOGRAMINFO_H_
 
 #include <string>
 #include <vector>
@@ -28,79 +28,79 @@
 
 namespace TencentCloud
 {
-    namespace Ocr
+    namespace Waf
     {
-        namespace V20181119
+        namespace V20180125
         {
             namespace Model
             {
                 /**
-                * 企业四要素核验结果
+                * 攻击日志统计详情
                 */
-                class Detail : public AbstractModel
+                class LogHistogramInfo : public AbstractModel
                 {
                 public:
-                    Detail();
-                    ~Detail() = default;
+                    LogHistogramInfo();
+                    ~LogHistogramInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取企业四要素核验结果状态码
-                     * @return Result 企业四要素核验结果状态码
+                     * 获取日志条数
+                     * @return Count 日志条数
                      * 
                      */
-                    int64_t GetResult() const;
+                    int64_t GetCount() const;
 
                     /**
-                     * 设置企业四要素核验结果状态码
-                     * @param _result 企业四要素核验结果状态码
+                     * 设置日志条数
+                     * @param _count 日志条数
                      * 
                      */
-                    void SetResult(const int64_t& _result);
+                    void SetCount(const int64_t& _count);
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
                      * 
                      */
-                    bool ResultHasBeenSet() const;
+                    bool CountHasBeenSet() const;
 
                     /**
-                     * 获取企业四要素核验结果描述
-                     * @return Desc 企业四要素核验结果描述
+                     * 获取时间戳
+                     * @return TimeStamp 时间戳
                      * 
                      */
-                    std::string GetDesc() const;
+                    int64_t GetTimeStamp() const;
 
                     /**
-                     * 设置企业四要素核验结果描述
-                     * @param _desc 企业四要素核验结果描述
+                     * 设置时间戳
+                     * @param _timeStamp 时间戳
                      * 
                      */
-                    void SetDesc(const std::string& _desc);
+                    void SetTimeStamp(const int64_t& _timeStamp);
 
                     /**
-                     * 判断参数 Desc 是否已赋值
-                     * @return Desc 是否已赋值
+                     * 判断参数 TimeStamp 是否已赋值
+                     * @return TimeStamp 是否已赋值
                      * 
                      */
-                    bool DescHasBeenSet() const;
+                    bool TimeStampHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 企业四要素核验结果状态码
+                     * 日志条数
                      */
-                    int64_t m_result;
-                    bool m_resultHasBeenSet;
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                     /**
-                     * 企业四要素核验结果描述
+                     * 时间戳
                      */
-                    std::string m_desc;
-                    bool m_descHasBeenSet;
+                    int64_t m_timeStamp;
+                    bool m_timeStampHasBeenSet;
 
                 };
             }
@@ -108,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_DETAIL_H_
+#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_LOGHISTOGRAMINFO_H_

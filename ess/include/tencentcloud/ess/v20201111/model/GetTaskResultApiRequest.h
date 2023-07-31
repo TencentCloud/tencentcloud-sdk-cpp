@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id，通过CreateConvertTaskApi得到
-                     * @return TaskId 任务Id，通过CreateConvertTaskApi得到
+                     * 获取任务Id，通过接口CreateConvertTaskApi或CreateMergeFileTask得到的返回任务id
+                     * @return TaskId 任务Id，通过接口CreateConvertTaskApi或CreateMergeFileTask得到的返回任务id
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id，通过CreateConvertTaskApi得到
-                     * @param _taskId 任务Id，通过CreateConvertTaskApi得到
+                     * 设置任务Id，通过接口CreateConvertTaskApi或CreateMergeFileTask得到的返回任务id
+                     * @param _taskId 任务Id，通过接口CreateConvertTaskApi或CreateMergeFileTask得到的返回任务id
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -132,7 +132,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id，通过CreateConvertTaskApi得到
+                     * 任务Id，通过接口CreateConvertTaskApi或CreateMergeFileTask得到的返回任务id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

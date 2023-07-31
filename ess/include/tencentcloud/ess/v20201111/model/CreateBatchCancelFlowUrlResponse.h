@@ -59,7 +59,9 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程撤回失败信息
+数组里边的错误原因与传进来的FlowIds一一对应,如果是空字符串则标识没有出错
                      * @return FailMessages 签署流程撤回失败信息
+数组里边的错误原因与传进来的FlowIds一一对应,如果是空字符串则标识没有出错
                      * 
                      */
                     std::vector<std::string> GetFailMessages() const;
@@ -73,7 +75,11 @@ namespace TencentCloud
 
                     /**
                      * 获取签署连接过期时间字符串：年月日-时分秒
+
+例如:2023-07-28 17:25:59
                      * @return UrlExpireOn 签署连接过期时间字符串：年月日-时分秒
+
+例如:2023-07-28 17:25:59
                      * 
                      */
                     std::string GetUrlExpireOn() const;
@@ -95,12 +101,15 @@ namespace TencentCloud
 
                     /**
                      * 签署流程撤回失败信息
+数组里边的错误原因与传进来的FlowIds一一对应,如果是空字符串则标识没有出错
                      */
                     std::vector<std::string> m_failMessages;
                     bool m_failMessagesHasBeenSet;
 
                     /**
                      * 签署连接过期时间字符串：年月日-时分秒
+
+例如:2023-07-28 17:25:59
                      */
                     std::string m_urlExpireOn;
                     bool m_urlExpireOnHasBeenSet;

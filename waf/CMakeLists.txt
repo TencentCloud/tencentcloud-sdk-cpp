@@ -55,6 +55,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifySpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h
+  include/tencentcloud/waf/v20180125/model/GetAttackHistogramRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessExportsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleRequest.h
@@ -64,6 +65,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeVipInfoRequest.h
+  include/tencentcloud/waf/v20180125/model/GetAttackHistogramResponse.h
   include/tencentcloud/waf/v20180125/model/FiltersItemNew.h
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h
   include/tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h
@@ -91,6 +93,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h
+  include/tencentcloud/waf/v20180125/model/LogHistogramInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DomainPackageNew.h
   include/tencentcloud/waf/v20180125/model/RuleList.h
@@ -207,6 +210,7 @@ set(waf_src
   src/v20180125/model/ModifySpartaProtectionResponse.cpp
   src/v20180125/model/DeleteDownloadRecordRequest.cpp
   src/v20180125/model/DescribeUserCdcClbWafRegionsResponse.cpp
+  src/v20180125/model/GetAttackHistogramRequest.cpp
   src/v20180125/model/DeleteAccessExportResponse.cpp
   src/v20180125/model/DescribeAccessExportsRequest.cpp
   src/v20180125/model/DescribeCustomWhiteRuleRequest.cpp
@@ -216,6 +220,7 @@ set(waf_src
   src/v20180125/model/ModifyWafAutoDenyStatusRequest.cpp
   src/v20180125/model/ModifyAccessPeriodResponse.cpp
   src/v20180125/model/DescribeVipInfoRequest.cpp
+  src/v20180125/model/GetAttackHistogramResponse.cpp
   src/v20180125/model/FiltersItemNew.cpp
   src/v20180125/model/DescribeAutoDenyIPResponse.cpp
   src/v20180125/model/SwitchDomainRulesResponse.cpp
@@ -243,6 +248,7 @@ set(waf_src
   src/v20180125/model/DescribeAttackOverviewResponse.cpp
   src/v20180125/model/ModifyWafAutoDenyStatusResponse.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusResponse.cpp
+  src/v20180125/model/LogHistogramInfo.cpp
   src/v20180125/model/DeleteDomainWhiteRulesRequest.cpp
   src/v20180125/model/DomainPackageNew.cpp
   src/v20180125/model/RuleList.cpp

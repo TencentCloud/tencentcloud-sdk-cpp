@@ -183,15 +183,15 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取合同组ID
-                     * @return FlowGroupId 合同组ID
+                     * 获取合同组ID 
+                     * @return FlowGroupId 合同组ID 
                      * 
                      */
                     std::string GetFlowGroupId() const;
 
                     /**
-                     * 设置合同组ID
-                     * @param _flowGroupId 合同组ID
+                     * 设置合同组ID 
+                     * @param _flowGroupId 合同组ID 
                      * 
                      */
                     void SetFlowGroupId(const std::string& _flowGroupId);
@@ -225,15 +225,27 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool PathTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
-                     * @return AutoJumpBack 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     * 获取是否自动回跳
+true：是，
+false：否。
+该参数只针对"APP" 类型的签署链接有效
+                     * @return AutoJumpBack 是否自动回跳
+true：是，
+false：否。
+该参数只针对"APP" 类型的签署链接有效
                      * 
                      */
                     bool GetAutoJumpBack() const;
 
                     /**
-                     * 设置是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
-                     * @param _autoJumpBack 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     * 设置是否自动回跳
+true：是，
+false：否。
+该参数只针对"APP" 类型的签署链接有效
+                     * @param _autoJumpBack 是否自动回跳
+true：是，
+false：否。
+该参数只针对"APP" 类型的签署链接有效
                      * 
                      */
                     void SetAutoJumpBack(const bool& _autoJumpBack);
@@ -349,7 +361,7 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 合同组ID
+                     * 合同组ID 
                      */
                     std::string m_flowGroupId;
                     bool m_flowGroupIdHasBeenSet;
@@ -361,7 +373,10 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool m_pathTypeHasBeenSet;
 
                     /**
-                     * 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
+                     * 是否自动回跳
+true：是，
+false：否。
+该参数只针对"APP" 类型的签署链接有效
                      */
                     bool m_autoJumpBack;
                     bool m_autoJumpBackHasBeenSet;

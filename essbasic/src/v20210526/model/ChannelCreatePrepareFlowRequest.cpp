@@ -26,9 +26,9 @@ ChannelCreatePrepareFlowRequest::ChannelCreatePrepareFlowRequest() :
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_flowInfoHasBeenSet(false),
-    m_flowApproverListHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_flowOptionHasBeenSet(false),
+    m_flowApproverListHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
     m_organizationHasBeenSet(false),
@@ -68,21 +68,6 @@ string ChannelCreatePrepareFlowRequest::ToJsonString() const
         m_flowInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_flowApproverListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowApproverList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_flowApproverList.begin(); itr != m_flowApproverList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +84,21 @@ string ChannelCreatePrepareFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowApproverListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowApproverList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_flowApproverList.begin(); itr != m_flowApproverList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_flowIdHasBeenSet)
@@ -191,22 +191,6 @@ bool ChannelCreatePrepareFlowRequest::FlowInfoHasBeenSet() const
     return m_flowInfoHasBeenSet;
 }
 
-vector<CommonFlowApprover> ChannelCreatePrepareFlowRequest::GetFlowApproverList() const
-{
-    return m_flowApproverList;
-}
-
-void ChannelCreatePrepareFlowRequest::SetFlowApproverList(const vector<CommonFlowApprover>& _flowApproverList)
-{
-    m_flowApproverList = _flowApproverList;
-    m_flowApproverListHasBeenSet = true;
-}
-
-bool ChannelCreatePrepareFlowRequest::FlowApproverListHasBeenSet() const
-{
-    return m_flowApproverListHasBeenSet;
-}
-
 Agent ChannelCreatePrepareFlowRequest::GetAgent() const
 {
     return m_agent;
@@ -237,6 +221,22 @@ void ChannelCreatePrepareFlowRequest::SetFlowOption(const CreateFlowOption& _flo
 bool ChannelCreatePrepareFlowRequest::FlowOptionHasBeenSet() const
 {
     return m_flowOptionHasBeenSet;
+}
+
+vector<CommonFlowApprover> ChannelCreatePrepareFlowRequest::GetFlowApproverList() const
+{
+    return m_flowApproverList;
+}
+
+void ChannelCreatePrepareFlowRequest::SetFlowApproverList(const vector<CommonFlowApprover>& _flowApproverList)
+{
+    m_flowApproverList = _flowApproverList;
+    m_flowApproverListHasBeenSet = true;
+}
+
+bool ChannelCreatePrepareFlowRequest::FlowApproverListHasBeenSet() const
+{
+    return m_flowApproverListHasBeenSet;
 }
 
 string ChannelCreatePrepareFlowRequest::GetFlowId() const

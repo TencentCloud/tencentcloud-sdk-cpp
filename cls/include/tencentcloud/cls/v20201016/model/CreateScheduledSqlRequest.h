@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取任务启动状态.  1正常开启,  2关闭
-                     * @return EnableFlag 任务启动状态.  1正常开启,  2关闭
+                     * 获取任务启动状态.  1开启,  2关闭
+                     * @return EnableFlag 任务启动状态.  1开启,  2关闭
                      * 
                      */
                     int64_t GetEnableFlag() const;
 
                     /**
-                     * 设置任务启动状态.  1正常开启,  2关闭
-                     * @param _enableFlag 任务启动状态.  1正常开启,  2关闭
+                     * 设置任务启动状态.  1开启,  2关闭
+                     * @param _enableFlag 任务启动状态.  1开启,  2关闭
                      * 
                      */
                     void SetEnableFlag(const int64_t& _enableFlag);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ProcessStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取调度类型，1:持续运行 2:指定调度结束时间
-                     * @return ProcessType 调度类型，1:持续运行 2:指定调度结束时间
+                     * 获取调度类型，1:持续运行 2:指定时间范围
+                     * @return ProcessType 调度类型，1:持续运行 2:指定时间范围
                      * 
                      */
                     int64_t GetProcessType() const;
 
                     /**
-                     * 设置调度类型，1:持续运行 2:指定调度结束时间
-                     * @param _processType 调度类型，1:持续运行 2:指定调度结束时间
+                     * 设置调度类型，1:持续运行 2:指定时间范围
+                     * @param _processType 调度类型，1:持续运行 2:指定时间范围
                      * 
                      */
                     void SetProcessType(const int64_t& _processType);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool ProcessEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
-                     * @return SyntaxRule 语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
+                     * 获取查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
+                     * @return SyntaxRule 查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
-                     * 设置语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
-                     * @param _syntaxRule 语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
+                     * 设置查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
+                     * @param _syntaxRule 查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -331,7 +331,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 任务启动状态.  1正常开启,  2关闭
+                     * 任务启动状态.  1开启,  2关闭
                      */
                     int64_t m_enableFlag;
                     bool m_enableFlagHasBeenSet;
@@ -355,7 +355,7 @@ namespace TencentCloud
                     bool m_processStartTimeHasBeenSet;
 
                     /**
-                     * 调度类型，1:持续运行 2:指定调度结束时间
+                     * 调度类型，1:持续运行 2:指定时间范围
                      */
                     int64_t m_processType;
                     bool m_processTypeHasBeenSet;
@@ -391,7 +391,7 @@ namespace TencentCloud
                     bool m_processEndTimeHasBeenSet;
 
                     /**
-                     * 语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
+                     * 查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;

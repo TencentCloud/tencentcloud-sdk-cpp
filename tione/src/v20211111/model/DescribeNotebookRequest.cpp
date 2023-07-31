@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/QueryBarCodeRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-QueryBarCodeRequest::QueryBarCodeRequest() :
-    m_barCodeHasBeenSet(false)
+DescribeNotebookRequest::DescribeNotebookRequest() :
+    m_idHasBeenSet(false)
 {
 }
 
-string QueryBarCodeRequest::ToJsonString() const
+string DescribeNotebookRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_barCodeHasBeenSet)
+    if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BarCode";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_barCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string QueryBarCodeRequest::ToJsonString() const
 }
 
 
-string QueryBarCodeRequest::GetBarCode() const
+string DescribeNotebookRequest::GetId() const
 {
-    return m_barCode;
+    return m_id;
 }
 
-void QueryBarCodeRequest::SetBarCode(const string& _barCode)
+void DescribeNotebookRequest::SetId(const string& _id)
 {
-    m_barCode = _barCode;
-    m_barCodeHasBeenSet = true;
+    m_id = _id;
+    m_idHasBeenSet = true;
 }
 
-bool QueryBarCodeRequest::BarCodeHasBeenSet() const
+bool DescribeNotebookRequest::IdHasBeenSet() const
 {
-    return m_barCodeHasBeenSet;
+    return m_idHasBeenSet;
 }
 
 

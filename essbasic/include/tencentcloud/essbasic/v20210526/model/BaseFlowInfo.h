@@ -71,14 +71,18 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程类型
+<br/>客户自定义，用于合同分类展示
                      * @return FlowType 合同流程类型
+<br/>客户自定义，用于合同分类展示
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置合同流程类型
+<br/>客户自定义，用于合同分类展示
                      * @param _flowType 合同流程类型
+<br/>客户自定义，用于合同分类展示
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -134,14 +138,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否顺序签署(true:无序签,false:顺序签)
+<br/>默认false，有序签署合同
                      * @return Unordered 是否顺序签署(true:无序签,false:顺序签)
+<br/>默认false，有序签署合同
                      * 
                      */
                     bool GetUnordered() const;
 
                     /**
                      * 设置是否顺序签署(true:无序签,false:顺序签)
+<br/>默认false，有序签署合同
                      * @param _unordered 是否顺序签署(true:无序签,false:顺序签)
+<br/>默认false，有序签署合同
                      * 
                      */
                     void SetUnordered(const bool& _unordered);
@@ -196,15 +204,27 @@ namespace TencentCloud
                     bool FormFieldsHasBeenSet() const;
 
                     /**
-                     * 获取本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
-                     * @return NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * 获取本企业(发起方企业)是否需要签署审批
+<br/>true：开启发起方签署审批
+<br/>false：不开启发起方签署审批
+<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * @return NeedSignReview 本企业(发起方企业)是否需要签署审批
+<br/>true：开启发起方签署审批
+<br/>false：不开启发起方签署审批
+<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
                      * 
                      */
                     bool GetNeedSignReview() const;
 
                     /**
-                     * 设置本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
-                     * @param _needSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * 设置本企业(发起方企业)是否需要签署审批
+<br/>true：开启发起方签署审批
+<br/>false：不开启发起方签署审批
+<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * @param _needSignReview 本企业(发起方企业)是否需要签署审批
+<br/>true：开启发起方签署审批
+<br/>false：不开启发起方签署审批
+<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
                      * 
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
@@ -259,15 +279,27 @@ namespace TencentCloud
                     bool CcInfosHasBeenSet() const;
 
                     /**
-                     * 获取是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
-                     * @return NeedCreateReview 是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * 获取是否需要开启发起方发起前审核
+<br/>true：开启发起方发起前审核
+<br/>false：不开启发起方发起前审核
+<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * @return NeedCreateReview 是否需要开启发起方发起前审核
+<br/>true：开启发起方发起前审核
+<br/>false：不开启发起方发起前审核
+<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
                      * 
                      */
                     bool GetNeedCreateReview() const;
 
                     /**
-                     * 设置是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
-                     * @param _needCreateReview 是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * 设置是否需要开启发起方发起前审核
+<br/>true：开启发起方发起前审核
+<br/>false：不开启发起方发起前审核
+<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * @param _needCreateReview 是否需要开启发起方发起前审核
+<br/>true：开启发起方发起前审核
+<br/>false：不开启发起方发起前审核
+<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
                      * 
                      */
                     void SetNeedCreateReview(const bool& _needCreateReview);
@@ -289,6 +321,7 @@ namespace TencentCloud
 
                     /**
                      * 合同流程类型
+<br/>客户自定义，用于合同分类展示
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
@@ -307,6 +340,7 @@ namespace TencentCloud
 
                     /**
                      * 是否顺序签署(true:无序签,false:顺序签)
+<br/>默认false，有序签署合同
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
@@ -324,7 +358,10 @@ namespace TencentCloud
                     bool m_formFieldsHasBeenSet;
 
                     /**
-                     * 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批。使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
+                     * 本企业(发起方企业)是否需要签署审批
+<br/>true：开启发起方签署审批
+<br/>false：不开启发起方签署审批
+<br/>开启后，使用ChannelCreateFlowSignReview接口提交审批结果，才能继续完成签署
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
@@ -342,7 +379,10 @@ namespace TencentCloud
                     bool m_ccInfosHasBeenSet;
 
                     /**
-                     * 是否需要发起前审核，当指定NeedCreateReview=true，则发起后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
+                     * 是否需要开启发起方发起前审核
+<br/>true：开启发起方发起前审核
+<br/>false：不开启发起方发起前审核
+<br/>当指定NeedCreateReview=true，则提交审核后，需要使用接口：ChannelCreateFlowSignReview，来完成发起前审核，审核通过后，可以继续查看，签署合同
                      */
                     bool m_needCreateReview;
                     bool m_needCreateReviewHasBeenSet;

@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-VerifyEnterpriseFourFactorsResponse::VerifyEnterpriseFourFactorsResponse() :
-    m_stateHasBeenSet(false),
-    m_detailHasBeenSet(false)
+CreateNotebookImageResponse::CreateNotebookImageResponse()
 {
 }
 
-CoreInternalOutcome VerifyEnterpriseFourFactorsResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateNotebookImageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,59 +61,15 @@ CoreInternalOutcome VerifyEnterpriseFourFactorsResponse::Deserialize(const strin
     }
 
 
-    if (rsp.HasMember("State") && !rsp["State"].IsNull())
-    {
-        if (!rsp["State"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `State` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_state = rsp["State"].GetInt64();
-        m_stateHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Detail") && !rsp["Detail"].IsNull())
-    {
-        if (!rsp["Detail"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Detail` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_detail.Deserialize(rsp["Detail"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_detailHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string VerifyEnterpriseFourFactorsResponse::ToJsonString() const
+string CreateNotebookImageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_stateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "State";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_state, allocator);
-    }
-
-    if (m_detailHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Detail";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_detail.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -128,25 +82,5 @@ string VerifyEnterpriseFourFactorsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t VerifyEnterpriseFourFactorsResponse::GetState() const
-{
-    return m_state;
-}
-
-bool VerifyEnterpriseFourFactorsResponse::StateHasBeenSet() const
-{
-    return m_stateHasBeenSet;
-}
-
-Detail VerifyEnterpriseFourFactorsResponse::GetDetail() const
-{
-    return m_detail;
-}
-
-bool VerifyEnterpriseFourFactorsResponse::DetailHasBeenSet() const
-{
-    return m_detailHasBeenSet;
-}
 
 

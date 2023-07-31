@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-                     * @return Host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
+                     * 获取默认为*，表示任何host都可以访问。支持填写IP或网段，支持“;”分隔。
+                     * @return Host 默认为*，表示任何host都可以访问。支持填写IP或网段，支持“;”分隔。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-                     * @param _host 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
+                     * 设置默认为*，表示任何host都可以访问。支持填写IP或网段，支持“;”分隔。
+                     * @param _host 默认为*，表示任何host都可以访问。支持填写IP或网段，支持“;”分隔。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 默认为\*，表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
+                     * 默认为*，表示任何host都可以访问。支持填写IP或网段，支持“;”分隔。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

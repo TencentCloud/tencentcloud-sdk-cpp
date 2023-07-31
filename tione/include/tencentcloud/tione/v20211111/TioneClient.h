@@ -31,6 +31,10 @@
 #include <tencentcloud/tione/v20211111/model/CreateDatasetResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookImageRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateOptimizedModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateOptimizedModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h>
@@ -47,6 +51,10 @@
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceGroupResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteNotebookResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteNotebookImageRecordRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteNotebookImageRecordResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionRequest.h>
@@ -99,6 +107,14 @@
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceHotUpdatedResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServicesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServicesResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookImageKernelsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookImageKernelsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookImageRecordsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebookImageRecordsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebooksRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingFrameworksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingFrameworksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingMetricsRequest.h>
@@ -119,18 +135,28 @@
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/StartNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/StartNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/StopCreatingImageRequest.h>
+#include <tencentcloud/tione/v20211111/model/StopCreatingImageResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopModelAccelerateTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/StopNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/StopNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h>
 
@@ -159,6 +185,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateModelServiceResponse> CreateModelServiceOutcome;
                 typedef std::future<CreateModelServiceOutcome> CreateModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateModelServiceRequest&, CreateModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNotebookResponse> CreateNotebookOutcome;
+                typedef std::future<CreateNotebookOutcome> CreateNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateNotebookRequest&, CreateNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNotebookImageResponse> CreateNotebookImageOutcome;
+                typedef std::future<CreateNotebookImageOutcome> CreateNotebookImageOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateNotebookImageRequest&, CreateNotebookImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOptimizedModelResponse> CreateOptimizedModelOutcome;
                 typedef std::future<CreateOptimizedModelOutcome> CreateOptimizedModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateOptimizedModelRequest&, CreateOptimizedModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOptimizedModelAsyncHandler;
@@ -183,6 +215,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteModelServiceGroupResponse> DeleteModelServiceGroupOutcome;
                 typedef std::future<DeleteModelServiceGroupOutcome> DeleteModelServiceGroupOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteModelServiceGroupRequest&, DeleteModelServiceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNotebookResponse> DeleteNotebookOutcome;
+                typedef std::future<DeleteNotebookOutcome> DeleteNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteNotebookRequest&, DeleteNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotebookAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNotebookImageRecordResponse> DeleteNotebookImageRecordOutcome;
+                typedef std::future<DeleteNotebookImageRecordOutcome> DeleteNotebookImageRecordOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteNotebookImageRecordRequest&, DeleteNotebookImageRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotebookImageRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTrainingModelResponse> DeleteTrainingModelOutcome;
                 typedef std::future<DeleteTrainingModelOutcome> DeleteTrainingModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteTrainingModelRequest&, DeleteTrainingModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrainingModelAsyncHandler;
@@ -261,6 +299,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelServicesResponse> DescribeModelServicesOutcome;
                 typedef std::future<DescribeModelServicesOutcome> DescribeModelServicesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeModelServicesRequest&, DescribeModelServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookResponse> DescribeNotebookOutcome;
+                typedef std::future<DescribeNotebookOutcome> DescribeNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeNotebookRequest&, DescribeNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookImageKernelsResponse> DescribeNotebookImageKernelsOutcome;
+                typedef std::future<DescribeNotebookImageKernelsOutcome> DescribeNotebookImageKernelsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeNotebookImageKernelsRequest&, DescribeNotebookImageKernelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookImageKernelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookImageRecordsResponse> DescribeNotebookImageRecordsOutcome;
+                typedef std::future<DescribeNotebookImageRecordsOutcome> DescribeNotebookImageRecordsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeNotebookImageRecordsRequest&, DescribeNotebookImageRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookImageRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebooksResponse> DescribeNotebooksOutcome;
+                typedef std::future<DescribeNotebooksOutcome> DescribeNotebooksOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeNotebooksRequest&, DescribeNotebooksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebooksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrainingFrameworksResponse> DescribeTrainingFrameworksOutcome;
                 typedef std::future<DescribeTrainingFrameworksOutcome> DescribeTrainingFrameworksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingFrameworksRequest&, DescribeTrainingFrameworksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingFrameworksAsyncHandler;
@@ -291,6 +341,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModelServicePartialConfigResponse> ModifyModelServicePartialConfigOutcome;
                 typedef std::future<ModifyModelServicePartialConfigOutcome> ModifyModelServicePartialConfigOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServicePartialConfigRequest&, ModifyModelServicePartialConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServicePartialConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotebookResponse> ModifyNotebookOutcome;
+                typedef std::future<ModifyNotebookOutcome> ModifyNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyNotebookRequest&, ModifyNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotebookTagsResponse> ModifyNotebookTagsOutcome;
+                typedef std::future<ModifyNotebookTagsOutcome> ModifyNotebookTagsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyNotebookTagsRequest&, ModifyNotebookTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyServiceGroupWeightsResponse> ModifyServiceGroupWeightsOutcome;
                 typedef std::future<ModifyServiceGroupWeightsOutcome> ModifyServiceGroupWeightsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyServiceGroupWeightsRequest&, ModifyServiceGroupWeightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceGroupWeightsAsyncHandler;
@@ -300,15 +356,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartModelAccelerateTaskResponse> RestartModelAccelerateTaskOutcome;
                 typedef std::future<RestartModelAccelerateTaskOutcome> RestartModelAccelerateTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::RestartModelAccelerateTaskRequest&, RestartModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartModelAccelerateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartNotebookResponse> StartNotebookOutcome;
+                typedef std::future<StartNotebookOutcome> StartNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::StartNotebookRequest&, StartNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartNotebookAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartTrainingTaskResponse> StartTrainingTaskOutcome;
                 typedef std::future<StartTrainingTaskOutcome> StartTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StartTrainingTaskRequest&, StartTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartTrainingTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopBatchTaskResponse> StopBatchTaskOutcome;
                 typedef std::future<StopBatchTaskOutcome> StopBatchTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopBatchTaskRequest&, StopBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopBatchTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopCreatingImageResponse> StopCreatingImageOutcome;
+                typedef std::future<StopCreatingImageOutcome> StopCreatingImageOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::StopCreatingImageRequest&, StopCreatingImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCreatingImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopModelAccelerateTaskResponse> StopModelAccelerateTaskOutcome;
                 typedef std::future<StopModelAccelerateTaskOutcome> StopModelAccelerateTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopModelAccelerateTaskRequest&, StopModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopModelAccelerateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopNotebookResponse> StopNotebookOutcome;
+                typedef std::future<StopNotebookOutcome> StopNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::StopNotebookRequest&, StopNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopNotebookAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopTrainingTaskResponse> StopTrainingTaskOutcome;
                 typedef std::future<StopTrainingTaskOutcome> StopTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopTrainingTaskRequest&, StopTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrainingTaskAsyncHandler;
@@ -350,6 +415,24 @@ namespace TencentCloud
                 CreateModelServiceOutcome CreateModelService(const Model::CreateModelServiceRequest &request);
                 void CreateModelServiceAsync(const Model::CreateModelServiceRequest& request, const CreateModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateModelServiceOutcomeCallable CreateModelServiceCallable(const Model::CreateModelServiceRequest& request);
+
+                /**
+                 *创建Notebook
+                 * @param req CreateNotebookRequest
+                 * @return CreateNotebookOutcome
+                 */
+                CreateNotebookOutcome CreateNotebook(const Model::CreateNotebookRequest &request);
+                void CreateNotebookAsync(const Model::CreateNotebookRequest& request, const CreateNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNotebookOutcomeCallable CreateNotebookCallable(const Model::CreateNotebookRequest& request);
+
+                /**
+                 *保存镜像
+                 * @param req CreateNotebookImageRequest
+                 * @return CreateNotebookImageOutcome
+                 */
+                CreateNotebookImageOutcome CreateNotebookImage(const Model::CreateNotebookImageRequest &request);
+                void CreateNotebookImageAsync(const Model::CreateNotebookImageRequest& request, const CreateNotebookImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNotebookImageOutcomeCallable CreateNotebookImageCallable(const Model::CreateNotebookImageRequest& request);
 
                 /**
                  *保存优化模型
@@ -422,6 +505,24 @@ namespace TencentCloud
                 DeleteModelServiceGroupOutcome DeleteModelServiceGroup(const Model::DeleteModelServiceGroupRequest &request);
                 void DeleteModelServiceGroupAsync(const Model::DeleteModelServiceGroupRequest& request, const DeleteModelServiceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteModelServiceGroupOutcomeCallable DeleteModelServiceGroupCallable(const Model::DeleteModelServiceGroupRequest& request);
+
+                /**
+                 *删除Notebook
+                 * @param req DeleteNotebookRequest
+                 * @return DeleteNotebookOutcome
+                 */
+                DeleteNotebookOutcome DeleteNotebook(const Model::DeleteNotebookRequest &request);
+                void DeleteNotebookAsync(const Model::DeleteNotebookRequest& request, const DeleteNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNotebookOutcomeCallable DeleteNotebookCallable(const Model::DeleteNotebookRequest& request);
+
+                /**
+                 *删除notebook镜像保存记录
+                 * @param req DeleteNotebookImageRecordRequest
+                 * @return DeleteNotebookImageRecordOutcome
+                 */
+                DeleteNotebookImageRecordOutcome DeleteNotebookImageRecord(const Model::DeleteNotebookImageRecordRequest &request);
+                void DeleteNotebookImageRecordAsync(const Model::DeleteNotebookImageRecordRequest& request, const DeleteNotebookImageRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNotebookImageRecordOutcomeCallable DeleteNotebookImageRecordCallable(const Model::DeleteNotebookImageRecordRequest& request);
 
                 /**
                  *删除模型
@@ -658,6 +759,42 @@ namespace TencentCloud
                 DescribeModelServicesOutcomeCallable DescribeModelServicesCallable(const Model::DescribeModelServicesRequest& request);
 
                 /**
+                 *Notebook详情
+                 * @param req DescribeNotebookRequest
+                 * @return DescribeNotebookOutcome
+                 */
+                DescribeNotebookOutcome DescribeNotebook(const Model::DescribeNotebookRequest &request);
+                void DescribeNotebookAsync(const Model::DescribeNotebookRequest& request, const DescribeNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookOutcomeCallable DescribeNotebookCallable(const Model::DescribeNotebookRequest& request);
+
+                /**
+                 *查询镜像kernel
+                 * @param req DescribeNotebookImageKernelsRequest
+                 * @return DescribeNotebookImageKernelsOutcome
+                 */
+                DescribeNotebookImageKernelsOutcome DescribeNotebookImageKernels(const Model::DescribeNotebookImageKernelsRequest &request);
+                void DescribeNotebookImageKernelsAsync(const Model::DescribeNotebookImageKernelsRequest& request, const DescribeNotebookImageKernelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookImageKernelsOutcomeCallable DescribeNotebookImageKernelsCallable(const Model::DescribeNotebookImageKernelsRequest& request);
+
+                /**
+                 *查看notebook镜像保存记录
+                 * @param req DescribeNotebookImageRecordsRequest
+                 * @return DescribeNotebookImageRecordsOutcome
+                 */
+                DescribeNotebookImageRecordsOutcome DescribeNotebookImageRecords(const Model::DescribeNotebookImageRecordsRequest &request);
+                void DescribeNotebookImageRecordsAsync(const Model::DescribeNotebookImageRecordsRequest& request, const DescribeNotebookImageRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookImageRecordsOutcomeCallable DescribeNotebookImageRecordsCallable(const Model::DescribeNotebookImageRecordsRequest& request);
+
+                /**
+                 *Notebook列表
+                 * @param req DescribeNotebooksRequest
+                 * @return DescribeNotebooksOutcome
+                 */
+                DescribeNotebooksOutcome DescribeNotebooks(const Model::DescribeNotebooksRequest &request);
+                void DescribeNotebooksAsync(const Model::DescribeNotebooksRequest& request, const DescribeNotebooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebooksOutcomeCallable DescribeNotebooksCallable(const Model::DescribeNotebooksRequest& request);
+
+                /**
                  *训练框架列表
                  * @param req DescribeTrainingFrameworksRequest
                  * @return DescribeTrainingFrameworksOutcome
@@ -748,6 +885,24 @@ namespace TencentCloud
                 ModifyModelServicePartialConfigOutcomeCallable ModifyModelServicePartialConfigCallable(const Model::ModifyModelServicePartialConfigRequest& request);
 
                 /**
+                 *修改Notebook
+                 * @param req ModifyNotebookRequest
+                 * @return ModifyNotebookOutcome
+                 */
+                ModifyNotebookOutcome ModifyNotebook(const Model::ModifyNotebookRequest &request);
+                void ModifyNotebookAsync(const Model::ModifyNotebookRequest& request, const ModifyNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotebookOutcomeCallable ModifyNotebookCallable(const Model::ModifyNotebookRequest& request);
+
+                /**
+                 *修改Notebook标签
+                 * @param req ModifyNotebookTagsRequest
+                 * @return ModifyNotebookTagsOutcome
+                 */
+                ModifyNotebookTagsOutcome ModifyNotebookTags(const Model::ModifyNotebookTagsRequest &request);
+                void ModifyNotebookTagsAsync(const Model::ModifyNotebookTagsRequest& request, const ModifyNotebookTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotebookTagsOutcomeCallable ModifyNotebookTagsCallable(const Model::ModifyNotebookTagsRequest& request);
+
+                /**
                  *更新推理服务组流量分配
                  * @param req ModifyServiceGroupWeightsRequest
                  * @return ModifyServiceGroupWeightsOutcome
@@ -775,6 +930,15 @@ namespace TencentCloud
                 RestartModelAccelerateTaskOutcomeCallable RestartModelAccelerateTaskCallable(const Model::RestartModelAccelerateTaskRequest& request);
 
                 /**
+                 *启动Notebook
+                 * @param req StartNotebookRequest
+                 * @return StartNotebookOutcome
+                 */
+                StartNotebookOutcome StartNotebook(const Model::StartNotebookRequest &request);
+                void StartNotebookAsync(const Model::StartNotebookRequest& request, const StartNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartNotebookOutcomeCallable StartNotebookCallable(const Model::StartNotebookRequest& request);
+
+                /**
                  *启动模型训练任务
                  * @param req StartTrainingTaskRequest
                  * @return StartTrainingTaskOutcome
@@ -793,6 +957,15 @@ namespace TencentCloud
                 StopBatchTaskOutcomeCallable StopBatchTaskCallable(const Model::StopBatchTaskRequest& request);
 
                 /**
+                 *停止保存镜像
+                 * @param req StopCreatingImageRequest
+                 * @return StopCreatingImageOutcome
+                 */
+                StopCreatingImageOutcome StopCreatingImage(const Model::StopCreatingImageRequest &request);
+                void StopCreatingImageAsync(const Model::StopCreatingImageRequest& request, const StopCreatingImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopCreatingImageOutcomeCallable StopCreatingImageCallable(const Model::StopCreatingImageRequest& request);
+
+                /**
                  *停止模型加速任务
                  * @param req StopModelAccelerateTaskRequest
                  * @return StopModelAccelerateTaskOutcome
@@ -800,6 +973,15 @@ namespace TencentCloud
                 StopModelAccelerateTaskOutcome StopModelAccelerateTask(const Model::StopModelAccelerateTaskRequest &request);
                 void StopModelAccelerateTaskAsync(const Model::StopModelAccelerateTaskRequest& request, const StopModelAccelerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopModelAccelerateTaskOutcomeCallable StopModelAccelerateTaskCallable(const Model::StopModelAccelerateTaskRequest& request);
+
+                /**
+                 *停止Notebook
+                 * @param req StopNotebookRequest
+                 * @return StopNotebookOutcome
+                 */
+                StopNotebookOutcome StopNotebook(const Model::StopNotebookRequest &request);
+                void StopNotebookAsync(const Model::StopNotebookRequest& request, const StopNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopNotebookOutcomeCallable StopNotebookCallable(const Model::StopNotebookRequest& request);
 
                 /**
                  *停止模型训练任务

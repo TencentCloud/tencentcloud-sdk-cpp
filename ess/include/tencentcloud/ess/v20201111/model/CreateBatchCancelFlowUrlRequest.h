@@ -66,15 +66,19 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取需要执行撤回的签署流程id数组，最多100个
-                     * @return FlowIds 需要执行撤回的签署流程id数组，最多100个
+                     * 获取需要执行撤回的流程(合同)的编号列表，最多100个.
+列表中的流程(合同)编号不要重复.
+                     * @return FlowIds 需要执行撤回的流程(合同)的编号列表，最多100个.
+列表中的流程(合同)编号不要重复.
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置需要执行撤回的签署流程id数组，最多100个
-                     * @param _flowIds 需要执行撤回的签署流程id数组，最多100个
+                     * 设置需要执行撤回的流程(合同)的编号列表，最多100个.
+列表中的流程(合同)编号不要重复.
+                     * @param _flowIds 需要执行撤回的流程(合同)的编号列表，最多100个.
+列表中的流程(合同)编号不要重复.
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -120,7 +124,8 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 需要执行撤回的签署流程id数组，最多100个
+                     * 需要执行撤回的流程(合同)的编号列表，最多100个.
+列表中的流程(合同)编号不要重复.
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

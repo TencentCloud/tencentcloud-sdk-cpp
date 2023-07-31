@@ -212,6 +212,92 @@ TioneClient::CreateModelServiceOutcomeCallable TioneClient::CreateModelServiceCa
     return task->get_future();
 }
 
+TioneClient::CreateNotebookOutcome TioneClient::CreateNotebook(const CreateNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNotebookResponse rsp = CreateNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNotebookOutcome(rsp);
+        else
+            return CreateNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateNotebookAsync(const CreateNotebookRequest& request, const CreateNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNotebook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreateNotebookOutcomeCallable TioneClient::CreateNotebookCallable(const CreateNotebookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNotebookOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNotebook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::CreateNotebookImageOutcome TioneClient::CreateNotebookImage(const CreateNotebookImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNotebookImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNotebookImageResponse rsp = CreateNotebookImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNotebookImageOutcome(rsp);
+        else
+            return CreateNotebookImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNotebookImageOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateNotebookImageAsync(const CreateNotebookImageRequest& request, const CreateNotebookImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNotebookImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreateNotebookImageOutcomeCallable TioneClient::CreateNotebookImageCallable(const CreateNotebookImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNotebookImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNotebookImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateOptimizedModelOutcome TioneClient::CreateOptimizedModel(const CreateOptimizedModelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOptimizedModel");
@@ -549,6 +635,92 @@ TioneClient::DeleteModelServiceGroupOutcomeCallable TioneClient::DeleteModelServ
         [this, request]()
         {
             return this->DeleteModelServiceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DeleteNotebookOutcome TioneClient::DeleteNotebook(const DeleteNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNotebookResponse rsp = DeleteNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNotebookOutcome(rsp);
+        else
+            return DeleteNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteNotebookAsync(const DeleteNotebookRequest& request, const DeleteNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNotebook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteNotebookOutcomeCallable TioneClient::DeleteNotebookCallable(const DeleteNotebookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNotebookOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNotebook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DeleteNotebookImageRecordOutcome TioneClient::DeleteNotebookImageRecord(const DeleteNotebookImageRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNotebookImageRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNotebookImageRecordResponse rsp = DeleteNotebookImageRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNotebookImageRecordOutcome(rsp);
+        else
+            return DeleteNotebookImageRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNotebookImageRecordOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteNotebookImageRecordAsync(const DeleteNotebookImageRecordRequest& request, const DeleteNotebookImageRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNotebookImageRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteNotebookImageRecordOutcomeCallable TioneClient::DeleteNotebookImageRecordCallable(const DeleteNotebookImageRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNotebookImageRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNotebookImageRecord(request);
         }
     );
 
@@ -1674,6 +1846,178 @@ TioneClient::DescribeModelServicesOutcomeCallable TioneClient::DescribeModelServ
     return task->get_future();
 }
 
+TioneClient::DescribeNotebookOutcome TioneClient::DescribeNotebook(const DescribeNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookResponse rsp = DescribeNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookOutcome(rsp);
+        else
+            return DescribeNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeNotebookAsync(const DescribeNotebookRequest& request, const DescribeNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeNotebookOutcomeCallable TioneClient::DescribeNotebookCallable(const DescribeNotebookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeNotebookImageKernelsOutcome TioneClient::DescribeNotebookImageKernels(const DescribeNotebookImageKernelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookImageKernels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookImageKernelsResponse rsp = DescribeNotebookImageKernelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookImageKernelsOutcome(rsp);
+        else
+            return DescribeNotebookImageKernelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookImageKernelsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeNotebookImageKernelsAsync(const DescribeNotebookImageKernelsRequest& request, const DescribeNotebookImageKernelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookImageKernels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeNotebookImageKernelsOutcomeCallable TioneClient::DescribeNotebookImageKernelsCallable(const DescribeNotebookImageKernelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookImageKernelsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookImageKernels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeNotebookImageRecordsOutcome TioneClient::DescribeNotebookImageRecords(const DescribeNotebookImageRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookImageRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookImageRecordsResponse rsp = DescribeNotebookImageRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookImageRecordsOutcome(rsp);
+        else
+            return DescribeNotebookImageRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookImageRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeNotebookImageRecordsAsync(const DescribeNotebookImageRecordsRequest& request, const DescribeNotebookImageRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookImageRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeNotebookImageRecordsOutcomeCallable TioneClient::DescribeNotebookImageRecordsCallable(const DescribeNotebookImageRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookImageRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookImageRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeNotebooksOutcome TioneClient::DescribeNotebooks(const DescribeNotebooksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebooks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebooksResponse rsp = DescribeNotebooksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebooksOutcome(rsp);
+        else
+            return DescribeNotebooksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebooksOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeNotebooksAsync(const DescribeNotebooksRequest& request, const DescribeNotebooksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebooks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeNotebooksOutcomeCallable TioneClient::DescribeNotebooksCallable(const DescribeNotebooksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebooksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebooks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeTrainingFrameworksOutcome TioneClient::DescribeTrainingFrameworks(const DescribeTrainingFrameworksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrainingFrameworks");
@@ -2104,6 +2448,92 @@ TioneClient::ModifyModelServicePartialConfigOutcomeCallable TioneClient::ModifyM
     return task->get_future();
 }
 
+TioneClient::ModifyNotebookOutcome TioneClient::ModifyNotebook(const ModifyNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotebookResponse rsp = ModifyNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotebookOutcome(rsp);
+        else
+            return ModifyNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyNotebookAsync(const ModifyNotebookRequest& request, const ModifyNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNotebook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyNotebookOutcomeCallable TioneClient::ModifyNotebookCallable(const ModifyNotebookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNotebookOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNotebook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::ModifyNotebookTagsOutcome TioneClient::ModifyNotebookTags(const ModifyNotebookTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotebookTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotebookTagsResponse rsp = ModifyNotebookTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotebookTagsOutcome(rsp);
+        else
+            return ModifyNotebookTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotebookTagsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyNotebookTagsAsync(const ModifyNotebookTagsRequest& request, const ModifyNotebookTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNotebookTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyNotebookTagsOutcomeCallable TioneClient::ModifyNotebookTagsCallable(const ModifyNotebookTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNotebookTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNotebookTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::ModifyServiceGroupWeightsOutcome TioneClient::ModifyServiceGroupWeights(const ModifyServiceGroupWeightsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyServiceGroupWeights");
@@ -2233,6 +2663,49 @@ TioneClient::RestartModelAccelerateTaskOutcomeCallable TioneClient::RestartModel
     return task->get_future();
 }
 
+TioneClient::StartNotebookOutcome TioneClient::StartNotebook(const StartNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartNotebookResponse rsp = StartNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartNotebookOutcome(rsp);
+        else
+            return StartNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return StartNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::StartNotebookAsync(const StartNotebookRequest& request, const StartNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartNotebook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::StartNotebookOutcomeCallable TioneClient::StartNotebookCallable(const StartNotebookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartNotebookOutcome()>>(
+        [this, request]()
+        {
+            return this->StartNotebook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::StartTrainingTaskOutcome TioneClient::StartTrainingTask(const StartTrainingTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "StartTrainingTask");
@@ -2319,6 +2792,49 @@ TioneClient::StopBatchTaskOutcomeCallable TioneClient::StopBatchTaskCallable(con
     return task->get_future();
 }
 
+TioneClient::StopCreatingImageOutcome TioneClient::StopCreatingImage(const StopCreatingImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopCreatingImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopCreatingImageResponse rsp = StopCreatingImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopCreatingImageOutcome(rsp);
+        else
+            return StopCreatingImageOutcome(o.GetError());
+    }
+    else
+    {
+        return StopCreatingImageOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::StopCreatingImageAsync(const StopCreatingImageRequest& request, const StopCreatingImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopCreatingImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::StopCreatingImageOutcomeCallable TioneClient::StopCreatingImageCallable(const StopCreatingImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopCreatingImageOutcome()>>(
+        [this, request]()
+        {
+            return this->StopCreatingImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::StopModelAccelerateTaskOutcome TioneClient::StopModelAccelerateTask(const StopModelAccelerateTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "StopModelAccelerateTask");
@@ -2355,6 +2871,49 @@ TioneClient::StopModelAccelerateTaskOutcomeCallable TioneClient::StopModelAccele
         [this, request]()
         {
             return this->StopModelAccelerateTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::StopNotebookOutcome TioneClient::StopNotebook(const StopNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopNotebookResponse rsp = StopNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopNotebookOutcome(rsp);
+        else
+            return StopNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return StopNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::StopNotebookAsync(const StopNotebookRequest& request, const StopNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopNotebook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::StopNotebookOutcomeCallable TioneClient::StopNotebookCallable(const StopNotebookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopNotebookOutcome()>>(
+        [this, request]()
+        {
+            return this->StopNotebook(request);
         }
     );
 

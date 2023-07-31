@@ -22,9 +22,9 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/BaseFlowInfo.h>
-#include <tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowOption.h>
+#include <tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h>
 #include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
@@ -112,27 +112,6 @@ namespace TencentCloud
                     bool FlowInfoHasBeenSet() const;
 
                     /**
-                     * 获取合同签署人信息
-                     * @return FlowApproverList 合同签署人信息
-                     * 
-                     */
-                    std::vector<CommonFlowApprover> GetFlowApproverList() const;
-
-                    /**
-                     * 设置合同签署人信息
-                     * @param _flowApproverList 合同签署人信息
-                     * 
-                     */
-                    void SetFlowApproverList(const std::vector<CommonFlowApprover>& _flowApproverList);
-
-                    /**
-                     * 判断参数 FlowApproverList 是否已赋值
-                     * @return FlowApproverList 是否已赋值
-                     * 
-                     */
-                    bool FlowApproverListHasBeenSet() const;
-
-                    /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
                      * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
                      * 
@@ -173,6 +152,27 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowOptionHasBeenSet() const;
+
+                    /**
+                     * 获取合同签署人信息
+                     * @return FlowApproverList 合同签署人信息
+                     * 
+                     */
+                    std::vector<CommonFlowApprover> GetFlowApproverList() const;
+
+                    /**
+                     * 设置合同签署人信息
+                     * @param _flowApproverList 合同签署人信息
+                     * 
+                     */
+                    void SetFlowApproverList(const std::vector<CommonFlowApprover>& _flowApproverList);
+
+                    /**
+                     * 判断参数 FlowApproverList 是否已赋值
+                     * @return FlowApproverList 是否已赋值
+                     * 
+                     */
+                    bool FlowApproverListHasBeenSet() const;
 
                     /**
                      * 获取通过flowid快速获得之前成功通过页面发起的合同生成链接
@@ -279,12 +279,6 @@ namespace TencentCloud
                     bool m_flowInfoHasBeenSet;
 
                     /**
-                     * 合同签署人信息
-                     */
-                    std::vector<CommonFlowApprover> m_flowApproverList;
-                    bool m_flowApproverListHasBeenSet;
-
-                    /**
                      * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填
                      */
                     Agent m_agent;
@@ -295,6 +289,12 @@ namespace TencentCloud
                      */
                     CreateFlowOption m_flowOption;
                     bool m_flowOptionHasBeenSet;
+
+                    /**
+                     * 合同签署人信息
+                     */
+                    std::vector<CommonFlowApprover> m_flowApproverList;
+                    bool m_flowApproverListHasBeenSet;
 
                     /**
                      * 通过flowid快速获得之前成功通过页面发起的合同生成链接

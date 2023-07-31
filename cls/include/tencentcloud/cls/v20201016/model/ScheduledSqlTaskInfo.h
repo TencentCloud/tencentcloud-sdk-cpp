@@ -287,15 +287,15 @@ namespace TencentCloud
                     bool ProcessStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取调度类型，1:持续运行 2:指定调度结束时间
-                     * @return ProcessType 调度类型，1:持续运行 2:指定调度结束时间
+                     * 获取调度类型，1:持续运行 2:指定时间范围
+                     * @return ProcessType 调度类型，1:持续运行 2:指定时间范围
                      * 
                      */
                     int64_t GetProcessType() const;
 
                     /**
-                     * 设置调度类型，1:持续运行 2:指定调度结束时间
-                     * @param _processType 调度类型，1:持续运行 2:指定调度结束时间
+                     * 设置调度类型，1:持续运行 2:指定时间范围
+                     * @param _processType 调度类型，1:持续运行 2:指定时间范围
                      * 
                      */
                     void SetProcessType(const int64_t& _processType);
@@ -508,7 +508,7 @@ namespace TencentCloud
                     bool m_processStartTimeHasBeenSet;
 
                     /**
-                     * 调度类型，1:持续运行 2:指定调度结束时间
+                     * 调度类型，1:持续运行 2:指定时间范围
                      */
                     int64_t m_processType;
                     bool m_processTypeHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否已开通自动签
-                     * @return IsOpen 是否已开通自动签
+                     * 获取查询用户是否已开通自动签
+                     * @return IsOpen 查询用户是否已开通自动签
                      * 
                      */
                     bool GetIsOpen() const;
@@ -59,7 +59,11 @@ namespace TencentCloud
 
                     /**
                      * 获取自动签许可生效时间。当且仅当已开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      * @return LicenseFrom 自动签许可生效时间。当且仅当已开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      * 
                      */
                     int64_t GetLicenseFrom() const;
@@ -73,7 +77,9 @@ namespace TencentCloud
 
                     /**
                      * 获取自动签许可到期时间。当且仅当已开通自动签时有值。
+值为unix时间戳,单位为秒。
                      * @return LicenseTo 自动签许可到期时间。当且仅当已开通自动签时有值。
+值为unix时间戳,单位为秒。
                      * 
                      */
                     int64_t GetLicenseTo() const;
@@ -88,19 +94,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否已开通自动签
+                     * 查询用户是否已开通自动签
                      */
                     bool m_isOpen;
                     bool m_isOpenHasBeenSet;
 
                     /**
                      * 自动签许可生效时间。当且仅当已开通自动签时有值。
+
+值为unix时间戳,单位为秒。
                      */
                     int64_t m_licenseFrom;
                     bool m_licenseFromHasBeenSet;
 
                     /**
                      * 自动签许可到期时间。当且仅当已开通自动签时有值。
+值为unix时间戳,单位为秒。
                      */
                     int64_t m_licenseTo;
                     bool m_licenseToHasBeenSet;

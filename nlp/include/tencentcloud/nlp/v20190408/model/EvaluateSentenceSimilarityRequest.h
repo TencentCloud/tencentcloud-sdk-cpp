@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过64字符。
-                     * @return SentencePairList 待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过64字符。
+                     * 获取待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过500字符。
+                     * @return SentencePairList 待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过500字符。
                      * 
                      */
                     std::vector<SentencePair> GetSentencePairList() const;
 
                     /**
-                     * 设置待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过64字符。
-                     * @param _sentencePairList 待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过64字符。
+                     * 设置待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过500字符。
+                     * @param _sentencePairList 待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过500字符。
                      * 
                      */
                     void SetSentencePairList(const std::vector<SentencePair>& _sentencePairList);
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过64字符。
+                     * 待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过500字符。
                      */
                     std::vector<SentencePair> m_sentencePairList;
                     bool m_sentencePairListHasBeenSet;

@@ -44,9 +44,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取出证报告 ID，用于查询出证报告接口DescribeChannelFlowEvidenceReport时用到
+                     * 获取出证报告 ID，可用户DescribeChannelFlowEvidenceReport接口查询出证PDF的下载地址
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportId 出证报告 ID，用于查询出证报告接口DescribeChannelFlowEvidenceReport时用到
+                     * @return ReportId 出证报告 ID，可用户DescribeChannelFlowEvidenceReport接口查询出证PDF的下载地址
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,12 +62,16 @@ namespace TencentCloud
                     bool ReportIdHasBeenSet() const;
 
                     /**
-                     * 获取执行中：EvidenceStatusExecuting
-成功：EvidenceStatusSuccess
-失败：EvidenceStatusFailed
-                     * @return Status 执行中：EvidenceStatusExecuting
-成功：EvidenceStatusSuccess
-失败：EvidenceStatusFailed
+                     * 获取出征任务的执行状态,状态列表如下
+
+- EvidenceStatusExecuting : 出征任务正在执行中
+- EvidenceStatusSuccess : 出征任务执行成功
+- EvidenceStatusFailed : 出征任务执行失败
+                     * @return Status 出征任务的执行状态,状态列表如下
+
+- EvidenceStatusExecuting : 出征任务正在执行中
+- EvidenceStatusSuccess : 出征任务执行成功
+- EvidenceStatusFailed : 出征任务执行失败
                      * 
                      */
                     std::string GetStatus() const;
@@ -96,16 +102,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 出证报告 ID，用于查询出证报告接口DescribeChannelFlowEvidenceReport时用到
+                     * 出证报告 ID，可用户DescribeChannelFlowEvidenceReport接口查询出证PDF的下载地址
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
 
                     /**
-                     * 执行中：EvidenceStatusExecuting
-成功：EvidenceStatusSuccess
-失败：EvidenceStatusFailed
+                     * 出征任务的执行状态,状态列表如下
+
+- EvidenceStatusExecuting : 出征任务正在执行中
+- EvidenceStatusSuccess : 出征任务执行成功
+- EvidenceStatusFailed : 出征任务执行失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
